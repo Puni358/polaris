@@ -1,0 +1,63 @@
+# Energy Optimizer Configuration
+status_label: "PROTOTYPE_ASSUMPTION"
+algorithm: "RULE_BASED_HEURISTIC_D1" # D1 rule-based optimizer
+weights:
+  fuel_cost: 1.0
+  renewable_curtailment_penalty: 0.05
+  battery_cycling_penalty: 0.01
+  unmet_critical_load_penalty: 1000.0
+  # RT-01 Stage 1 (RT01_CROSS_HORIZON_RESERVATION_DESIGN_MEMO.md Sec.2/6):
+  # soft price ($ per Wh-equivalent) on the two new reservation-shortfall
+  # slack variables in system/optimization/implementations/milp.py (s_term,
+  # s_fuel). Modest relative to unmet_critical_load_penalty (10.0 $/Wh in
+  # loads.yaml, which this must never outweigh) and above
+  # renewable_curtailment_penalty, so the solver prefers banking reservation
+  # margin over cheap curtailment but never trades away demand service for
+  # it. Purely additive/soft -- read defensively by milp.py (defaults to 0.0,
+  # i.e. fully inert/backward-compatible, if absent).
+  reserve_shortfall_penalty: 0.5
+# RT-01 Stage 1 static reservation sizing (same memo, Sec.2/6), SUPERSEDED as
+# the active mechanism by Stage 2 below (RT01_STAGE2_FORECAST_OUTLOOK_RESERVATION_REPORT.md).
+# Stage 1 was validated (RT01_STAGE1_RESERVATION_IMPLEMENTATION_REPORT.md) to
+# be a bit-identical no-help / net-negative always-on standing policy on the
+# governed 168h scenario (steps-119-121 shortfall unchanged; +3.69L diesel;
+# first fuel exhaustion 19h earlier; -0.93pp renewable utilization). It is
+# left at its fully-inert default here (terminal_target_soc_pct == battery
+# min_soc_pct, fuel_reserve_target_l == 0.0) so the ONLY active reservation
+# pressure on this shipped config is the genuinely targeted Stage 2
+# outlook_trigger mechanism below -- isolating its own effect cleanly rather
+# than stacking an already-confirmed-counterproductive standing policy under
+# it. Both static knobs remain fully supported and still read defensively by
+# milp.py (a future config could re-enable them; they combine with Stage 2 via
+# elementwise max, never reducing either floor).
+reservation:
+  terminal_target_soc_pct: 20.0   # inert (== battery.yaml min_soc_pct) -- Stage 1 static policy disabled
+  fuel_reserve_target_l: 0.0      # inert -- Stage 1 static policy disabled
+  # RT-01 Stage 2 (RT01_CROSS_HORIZON_RESERVATION_DESIGN_MEMO.md Sec.2/6):
+  # genuine forecast-outlook trigger. Only engages the soft terminal-energy /
+  # fuel-reserve targets (milp.py) on a receding-horizon call whose
+  # ForecastBundle.metadata["extended_outlook"] (system/forecasting/
+  # implementations/baseline.py) reports a projected net-renewable-margin
+  # deficit, within a bounded lookahead, at or above a minimum confidence --
+  # never an always-on standing policy, and never driven by anything beyond
+  # what `baseline.py`'s own imperfect persistence/clear-sky methodology
+  # (extended with an explicit, documented uncertainty discount) can
+  # genuinely compute from actuals already observed at the forecast origin.
+  outlook_trigger:
+    enabled: true
+    min_confidence: 0.3            # ignore outlook signals below this confidence (0..1; decays with lookahead distance)
+    max_lookahead_h: 72.0          # ignore outlook signals computed beyond this many hours ahead of origin
+    deficit_threshold_wh: 0.0      # projected_min_net_renewable_margin_wh must be more negative than -this to trigger
+    term_target_scale: 1.0         # Wh of extra terminal-SOC target per confidence-discounted Wh of projected deficit
+    fuel_target_scale_l_per_wh: 0.00025  # L of fuel-reserve target per confidence-discounted Wh of projected deficit (defaults to diesel.yaml's marginal_fuel_consumption_l_per_wh -- the physical liters needed to cover that deficit via diesel)
+# Solver continuous tolerances & time constants (Unlocking deferred parameters):
+# - epsilon_tol: Tightened continuous-variable feasibility and energy balance tolerance (1e-5 Wh / 1e-5 relative)
+#   eliminates precision arbitrage and energy micro-leakage without triggering solver sub-optimal exits or timeouts.
+# - tau_cont: Continuous-time transition interval parameter and action-discrimination threshold (1.0 hour / 1.0 W).
+#   Under the 1-hour RHC interval discretization rule, 1.0 W integrates to 1.0 Wh over 1 hour.
+# - mip_rel_gap: Relative branch-and-bound optimality gap tolerance for HiGHS (1e-4 = 0.01%).
+solver_tolerance: 1e-5
+epsilon_tol: 1e-5
+tau_cont: 1.0
+mip_rel_gap: 1e-4
+
