@@ -1,0 +1,51 @@
+{
+  "register_name": "POLARIS_EMS_ECD_MINIMUM_DECISION_REGISTER",
+  "version": "1.0.0",
+  "status": "AUDITED",
+  "decisions": [
+    {
+      "decision_id": "DEC-001",
+      "related_blocker": "BLK-006",
+      "question": "What is the maximum allowed Time-To-Live (TTL) numerical duration for an operational T_required override payload in production deployment?",
+      "decision_owner": "POLARIS Governance Committee / Station Operator",
+      "allowed_options": [
+        "12.0 hours",
+        "24.0 hours",
+        "48.0 hours",
+        "72.0 hours (aligned with baseline test horizon)"
+      ],
+      "current_evidence": "HD-03 governance model closes operational override precedence, but leaves site-specific numerical TTL to site deployment configuration.",
+      "recommended_classification": "GOVERNANCE_DECISION_REQUIRED_FOR_PRODUCTION_DEPLOYMENT",
+      "implementation_can_proceed_without_it": true
+    },
+    {
+      "decision_id": "DEC-002",
+      "related_blocker": "BLK-007",
+      "question": "What is the maximum permitted telemetry age (staleness threshold) for StationState telemetry before ECD fails closed to UNKNOWN_INVALID?",
+      "decision_owner": "POLARIS Site Operations / SCADA Engineering",
+      "allowed_options": [
+        "30.0 seconds",
+        "60.0 seconds",
+        "300.0 seconds (5 minutes)",
+        "600.0 seconds (10 minutes)"
+      ],
+      "current_evidence": "Telemetry freshness requirement established in contract, but exact numerical cutoff depends on SCADA polling frequency.",
+      "recommended_classification": "GOVERNANCE_DECISION_REQUIRED_FOR_PRODUCTION_DEPLOYMENT",
+      "implementation_can_proceed_without_it": true
+    },
+    {
+      "decision_id": "DEC-003",
+      "related_blocker": "BLK-008",
+      "question": "What cryptographic authentication and authorization mechanism will be deployed at the API ingress layer for operational override payloads?",
+      "decision_owner": "POLARIS Security & Infrastructure Team",
+      "allowed_options": [
+        "Ed25519 Payload Signature Verification",
+        "mTLS Client Certificate Authentication with JWT Role Claims",
+        "HMAC-SHA256 Signed Control Packets"
+      ],
+      "current_evidence": "Upstream boundary established in BLK-008 resolution audit. ECD module accepts pre-validated AuthorizedHorizon objects.",
+      "recommended_classification": "GOVERNANCE_DECISION_REQUIRED_FOR_PRODUCTION_DEPLOYMENT",
+      "implementation_can_proceed_without_it": true
+    }
+  ]
+}

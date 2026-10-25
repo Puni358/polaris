@@ -1,0 +1,133 @@
+{
+  "experiment_id": "EXP-CANDIDATE-S-SW-DIESEL-REDUCTION-2024",
+  "audit_title": "POLARIS Research Implementation Audit: Candidate S & Candidate SW (Post-Audit Revision)",
+  "governance_status": "IMPLEMENTATION READY FOR AI RE-REVIEW",
+  "date_utc": "2026-10-05T16:12:00Z",
+  "production_files_modified": 0,
+  "simulator_behavior_modified": false,
+  "preregistration_modified": false,
+  "blockers_resolved": {
+    "blocker_1_soc_range_correction": {
+      "status": "RESOLVED",
+      "detail": "Corrected Control B Origin 1 SOC range from [56.12%, 84.45%] to [65.58%, 93.85%], matching frozen telemetry and all_results.json"
+    },
+    "blocker_2_archive_hourly_traces": {
+      "status": "RESOLVED",
+      "artifact_path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/origin_1_diagnostic_trace/origin_1_hourly_traces.json",
+      "sha256": "88ea4a0db60f4bb9582fe119a18df6e93b3fe817a2d0feef5841db9e3eca055c",
+      "records_count": 24,
+      "arms_included": ["Control_Frozen_B", "Candidate_S", "Candidate_SW", "EBR_Off_Diagnostic"]
+    },
+    "blocker_3_forensic_unmet_equivalence": {
+      "status": "RESOLVED",
+      "report_path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/origin_1_diagnostic_trace/CANDIDATE_SW_UNMET_FORENSIC_EXPLANATION.md",
+      "conclusion": "Unmet load equality (87,061.64 Wh) is physically authentic: unmet load occurs strictly during hours where diesel is 0.0 W in both arms. Diesel runs only in hours 8 and 9 where unmet is 0.0 W for both arms, but SW runs higher diesel power (50.85 kW vs 44.73 kW in h8; 56.89 kW vs 49.86 kW in h9) to meet lookahead reserve envelope, burning 36.9372 L vs 33.6496 L fuel."
+    },
+    "blocker_4_gap19_integration_test": {
+      "status": "RESOLVED",
+      "test_name": "test_gap19_integration_candidate_s_and_sw_ebr_consumption",
+      "method": "Direct HiGHS solver interception in live GAP19 solve path",
+      "verification": "Asserts Layer-C constraint bounds match E_stage2_target[t] + min_e_wh across all t=0..23, terminal target remains 100,000 Wh, and candidate trajectories reach GAP19 unchanged"
+    },
+    "blocker_5_diagnostic_field_cleanup": {
+      "status": "RESOLVED",
+      "detail": "Removed mislabelled stage2_target_23_wh diagnostic field from call_history and replaced with j2_shortfall_wh"
+    }
+  },
+  "implementation_files": [
+    {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/candidate_s_sw_adapter.py",
+      "sha256": "a3ba73ad32ed2be20c0f197689081abf64402da41205a674fe76a15767e40de4",
+      "description": "Pure functions and non-invasive optimizer wrappers implementing Candidate 2 Variant S and Variant SW EBR logic"
+    },
+    {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/test_candidate_s_sw_implementation.py",
+      "sha256": "e8b73fa1bfbde0f0f078195d0fb93780f5521e347a57de76b66c8eda9d558164",
+      "description": "Comprehensive test suite covering mathematical identities, hand-calculated values, horizon edge, direct PV Watts, input validation, Origin 1 smoke test, GAP19 solver integration test, and cryptographic hash verification"
+    },
+    {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/origin_1_diagnostic_trace/origin_1_hourly_traces.json",
+      "sha256": "88ea4a0db60f4bb9582fe119a18df6e93b3fe817a2d0feef5841db9e3eca055c",
+      "description": "Archived 24-hour hourly records for Control B, Candidate S, Candidate SW, and EBR-off with all required telemetry fields"
+    },
+    {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/origin_1_diagnostic_trace/CANDIDATE_SW_UNMET_FORENSIC_EXPLANATION.md",
+      "sha256": "ae9c7ae5e4a681e2d6571193770c4f855f166048ffe189b638f9d84fc4598389",
+      "description": "Forensic proof of Candidate SW vs EBR-off unmet load equivalence and fuel disparity"
+    }
+  ],
+  "test_results": {
+    "total_tests": 12,
+    "passed_tests": 12,
+    "failed_tests": 0,
+    "execution_time_seconds": 45.03,
+    "tests_summary": [
+      "test_variant_s_zero_solar_identity: PASSED",
+      "test_variant_s_full_solar_zero_reserve: PASSED",
+      "test_variant_s_hand_calculated_values: PASSED",
+      "test_variant_sw_zero_renewables_identity: PASSED",
+      "test_variant_sw_zero_wind_equals_variant_s: PASSED",
+      "test_ordering_and_monotonicity: PASSED",
+      "test_horizon_edge_t23_terminal_target: PASSED",
+      "test_direct_pv_watts_input_no_scaling: PASSED",
+      "test_input_validation_errors: PASSED",
+      "test_deterministic_smoke_origin_1: PASSED",
+      "test_gap19_integration_candidate_s_and_sw_ebr_consumption: PASSED",
+      "test_immutable_baseline_and_production_hashes: PASSED"
+    ]
+  },
+  "smoke_test_origin_1": {
+    "origin_index": 1,
+    "forecast_start": "2024-05-01 00:00:00+00:00",
+    "hours_executed": 24,
+    "control_b": {
+      "diesel_fuel_liters": 51.8493,
+      "unmet_critical_load_wh": 66790.1,
+      "served_load_wh": 293209.9,
+      "curtailment_wh": 145009.96,
+      "soc_range_pct": [65.58, 93.85],
+      "benchmark_reproduced": true
+    },
+    "candidate_s": {
+      "diesel_fuel_liters": 35.2992,
+      "fuel_saving_vs_control_b_liters": 16.5501,
+      "fuel_saving_pct": 31.92,
+      "unmet_load_wh": 80764.94,
+      "served_load_wh": 279235.06,
+      "curtailment_wh": 172933.37,
+      "soc_range_pct": [61.71, 93.71],
+      "soc_violations_below_20": 0,
+      "max_busbar_error_w": 0.0,
+      "all_steps_optimal_or_feasible": true
+    },
+    "candidate_sw": {
+      "diesel_fuel_liters": 36.9372,
+      "fuel_saving_vs_control_b_liters": 14.9121,
+      "fuel_saving_pct": 28.76,
+      "unmet_load_wh": 87061.64,
+      "served_load_wh": 272938.36,
+      "curtailment_wh": 27173.61,
+      "soc_range_pct": [44.32, 94.02],
+      "soc_violations_below_20": 0,
+      "max_busbar_error_w": 0.0,
+      "all_steps_optimal_or_feasible": true
+    },
+    "ebr_off_diagnostic": {
+      "diesel_fuel_liters": 33.6496,
+      "unmet_load_wh": 87061.64,
+      "served_load_wh": 272938.36,
+      "curtailment_wh": 14023.28,
+      "soc_range_pct": [44.32, 94.02],
+      "soc_violations_below_20": 0
+    }
+  },
+  "verified_baseline_hashes": {
+    "gap19_solver": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "causal_nwp_forecaster": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "hourly_telemetry_123_frozen_b": "13359f2742a0eecce14dc1c506ce0a933a9a5a441082120f83adf21d8c3f48e5",
+    "hourly_telemetry_123_frozen_b_summary": "46c412837c5713877c42aabb223b7d22be47bca09eeba25472aa675eb009396f",
+    "hourly_baseline_reconciliation_report": "70985bc3ba9e5909fb2ac43fa46feae3a81cc569b65c2a67c334ab40f3f6ce08",
+    "preregistration_markdown": "1f018b1aba2651950b8cd5474ee9ea4dd2c6db6e9d9a584b1a5791eb59e80be5",
+    "preregistration_json": "3607876afea7cea169887faa3b92c7a21142e9fbc5bd38ac93a6b72351342ba4"
+  }
+}

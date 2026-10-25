@@ -1,0 +1,27 @@
+{
+  "S1": {
+    "description": "R_CF_candidate >= 99.1589%",
+    "candidate_r_cf": 99.18507519741145,
+    "control_r_cf": 99.1589,
+    "delta_pp": 0.02617519741144747,
+    "pass": true
+  },
+  "S2": {
+    "description": "R_P_candidate >= 97.7963%",
+    "candidate_r_p": 97.81161685801035,
+    "control_r_p": 97.7963,
+    "delta_pp": 0.015316858010351098,
+    "pass": true
+  },
+  "S3": {
+    "description": "zero realized SOC violations below 20.0%",
+    "violations_count": 0,
+    "pass": true
+  },
+  "fuel_inventory_gate": {
+    "description": "zero fuel inventory violations",
+    "violations_count": 0,
+    "pass": true
+  },
+  "all_gates_pass": true
+}

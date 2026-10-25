@@ -1,0 +1,23 @@
+VALUE_ID,PARAMETER_NAME,VALUE,UNIT,SOURCE,TYPE,STATUS,AUTHORIZED,VALIDATION_REQUIRED,GOVERNANCE_NOTE
+VAL_01,Critical Load Service Target,100,%,D03 Decision Sheet,STAKEHOLDER_AUTHORIZED_VALUE,APPROVED,YES,NO,Governed SLA target
+VAL_02,Maximum Unmet Critical Load,0,kWh,D04 Decision Sheet,STAKEHOLDER_AUTHORIZED_VALUE,APPROVED,YES,NO,Governed SLA limit in normal ops
+VAL_03,Intentional Critical Interruption,0,minutes,D05 Decision Sheet,STAKEHOLDER_AUTHORIZED_VALUE,APPROVED,YES,NO,Governed policy limit
+VAL_04,Unmet Load Penalty Weight,10000.0,$/kWh,milp.py line 49,CURRENT_IMPLEMENTATION_FACT,FROZEN_PROTOTYPE,NO,NO,Prototype soft penalty; NOT policy
+VAL_05,Marginal Fuel Cost Proxy,0.625,$/kWh,milp.py line 111,CURRENT_IMPLEMENTATION_FACT,FROZEN_PROTOTYPE,NO,NO,Prototype cost proxy; NOT policy
+VAL_06,Penalty Cost Ratio,16000:1,ratio,milp.py calculated,CURRENT_IMPLEMENTATION_FACT,FROZEN_PROTOTYPE,NO,NO,Objective ratio; NOT policy exchange rate
+VAL_07,Technical Min SOC Floor,20.0,%,battery.yaml,CURRENT_IMPLEMENTATION_FACT,FROZEN_PROTOTYPE,NO,YES,Cell degradation floor; NOT emergency reserve
+VAL_08,Battery Energy Capacity,200.0,kWh,battery.yaml,CURRENT_IMPLEMENTATION_FACT,FROZEN_PROTOTYPE,NO,YES,Physical hardware spec
+VAL_09,Base Diesel Fuel Consumption,5.0,L/h,diesel.yaml,CURRENT_IMPLEMENTATION_FACT,PROTOTYPE_ASSUMPTION,NO,YES,Requires generator bench test calibration
+VAL_10,Marginal Diesel Fuel Consumption,0.25,L/kWh,diesel.yaml,CURRENT_IMPLEMENTATION_FACT,PROTOTYPE_ASSUMPTION,NO,YES,Requires generator bench test calibration
+VAL_11,Baseline Emergency Reserve Floor,35.0,% SOC,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Provisional advisory value; NOT authorized policy
+VAL_12,Precautionary Emergency Reserve,45.0,% SOC,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Provisional advisory value; NOT authorized policy
+VAL_13,Baseline Terminal SOC Floor,35.0,% SOC,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Provisional advisory value; NOT authorized policy
+VAL_14,Precautionary Terminal SOC Target,55-65,% SOC,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Provisional advisory range; NOT authorized policy
+VAL_15,Solar Forecast Derate Margin,15-25,%,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Requires historical forecast error calibration
+VAL_16,Wind Forecast Derate Margin,20-30,%,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Requires historical forecast error calibration
+VAL_17,Demand Safety Margin,+10,%,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Requires load forecast error calibration
+VAL_18,Renewable Utilization Target,50-70,%,Advisory Stakeholder Proposal,NOT_ESTABLISHED,REJECTED,NO,NO,Explicitly rejected by D09 (no % target)
+VAL_19,Emergency Fuel Reserve Duration,30,days,Advisory Stakeholder Proposal,PROVISIONAL_ENGINEERING_VALUE,PROVISIONAL,NO,YES,Requires station fuel logistics audit
+VAL_20,Load Restoration Dwell Time,5,minutes,Advisory Stakeholder Proposal,NOT_ESTABLISHED,PROVISIONAL,NO,YES,Advisory hardware protection parameter
+VAL_21,Critical Unmet Event Review Trigger,15,minutes,Advisory Stakeholder Proposal,NOT_ESTABLISHED,PROVISIONAL,NO,YES,Advisory exception reporting trigger
+VAL_22,Critical Unmet Cumulative Trigger,2.0,kWh,Advisory Stakeholder Proposal,NOT_ESTABLISHED,PROVISIONAL,NO,YES,Advisory exception reporting trigger

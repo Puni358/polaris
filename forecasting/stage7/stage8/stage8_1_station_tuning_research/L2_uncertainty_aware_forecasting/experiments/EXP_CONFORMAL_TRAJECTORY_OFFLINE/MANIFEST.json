@@ -1,0 +1,67 @@
+{
+  "manifest_version": "1.0.0",
+  "experiment_id": "EXP-CONFORMAL-TRAJECTORY-OFFLINE",
+  "created_at": "2026-10-05T02:39:48.503197+00:00",
+  "verdict": "CONFORMAL-TRAJECTORY-SUPPORTED",
+  "inputs": {
+    "historical_dataset": {
+      "path": "/home/punith-bs/01polaris (Copy)/candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "blind_2025_predictions": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_predictions.csv",
+      "sha256": "65e0a0acf2d7196bfa557b319419f0c340b63f1d01d69d5b20c93217742e9500"
+    },
+    "blind_2025_features": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2025_CORRECTED.csv",
+      "sha256": "9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087"
+    }
+  },
+  "artifacts": [
+    {
+      "filename": "PREREGISTRATION.md",
+      "bytes": 9351,
+      "sha256": "90d1fe2f7f654ed15536d0eda92a16ef427c9a7d803397a329e8c2f8feea88fa"
+    },
+    {
+      "filename": "PREREGISTRATION.json",
+      "bytes": 3521,
+      "sha256": "6c085d8fb86254e9567286725f42d4b4e96e1768cb9dce8b07b87cd7c7477f31"
+    },
+    {
+      "filename": "RESULTS.md",
+      "bytes": 6055,
+      "sha256": "92659df6978904d3f07f2b8c2e283e7198cbd30fd6f02ca14168e84577cc8db3"
+    },
+    {
+      "filename": "RESULTS.json",
+      "bytes": 2022,
+      "sha256": "cd58c81872965dce43e50ae5db388efcf8d12fe0cf3cb96fb2e2a6858d715f39"
+    },
+    {
+      "filename": "COVERAGE.csv",
+      "bytes": 5883,
+      "sha256": "d822281a267f9ba3e7698cae5c3e99617c9552fcd568bd95a728775860e887f4"
+    },
+    {
+      "filename": "WIDTH.csv",
+      "bytes": 5297,
+      "sha256": "b1df2668fb900ab9a7fb24742101793de3194cfc01c73f3e74e0109713a6dcd5"
+    },
+    {
+      "filename": "REGIME_COVERAGE.csv",
+      "bytes": 13972,
+      "sha256": "820ba76aaea8b7136b8e4f02d81d4037b1bcb279488e26ff8072f0649d8233d0"
+    },
+    {
+      "filename": "ORIGIN_RESULTS.csv",
+      "bytes": 274830,
+      "sha256": "3385ad0efa3fe4943f6f945e62a3484cae2c670b16ccb64fb7a3405f5f9addf4"
+    },
+    {
+      "filename": "EXECUTION_AUDIT.md",
+      "bytes": 1627,
+      "sha256": "d38f26f7ed934a5dc26f5e816c96f308dacb097e6d9e71d5fa56356791364674"
+    }
+  ]
+}

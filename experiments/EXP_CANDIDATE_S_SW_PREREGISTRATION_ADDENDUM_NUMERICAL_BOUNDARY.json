@@ -1,0 +1,36 @@
+{
+  "experiment_id": "EXP-CANDIDATE-S-SW-DIESEL-REDUCTION-2024",
+  "addendum_id": "ADDENDUM-NUMERICAL-BOUNDARY-RESIDUE-01",
+  "governance_status": "APPROVED BY INDEPENDENT AI REVIEW AUDIT",
+  "date_utc": "2026-10-05T17:58:00Z",
+  "numerical_boundary_parameters": {
+    "eps_integrality": 1e-6,
+    "eps_primal": 1e-7,
+    "big_m_watts": 50000.0,
+    "tau_residue_bound_watts": 0.055,
+    "formula": "tau = big_m * (eps_integrality + eps_primal)"
+  },
+  "extraction_rule": {
+    "condition": "if raw_p_chg > 0 and raw_p_dis > 0",
+    "within_bound_action": "if min(raw_p_chg, raw_p_dis) <= 0.055: zero the smaller flow",
+    "exceeds_bound_action": "if min(raw_p_chg, raw_p_dis) > 0.055: raise ValueError('Genuine simultaneous charge/discharge violation')",
+    "unrounded_evaluation": true,
+    "binary_normalization_permitted": false,
+    "solver_tolerances_modified": false,
+    "milp_model_modified": false
+  },
+  "execution_rules": {
+    "universal_application": "Applies identically across Control Frozen B, Candidate S, and Candidate SW",
+    "reexecution_scope": "Full 123 origins re-executed from scratch",
+    "prior_partial_run_status": "Discarded as non-campaign diagnostic material",
+    "frozen_control_b_status": "Remains permanently immutable; newly re-executed Control B serves as synchronized comparison reference",
+    "campaign_completeness_requirement": "All 123 origins must succeed with zero failures for safety/fuel gate evaluation"
+  },
+  "unmodified_governed_files": [
+    "system/optimization/implementations/gap19_highs_native.py",
+    "system/schemas/dispatch_plan.py",
+    "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/candidate_s_sw_adapter.py",
+    "experiments/EXP_CANDIDATE_S_SW_PREREGISTRATION.md",
+    "experiments/EXP_CANDIDATE_S_SW_PREREGISTRATION.json"
+  ]
+}

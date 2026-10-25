@@ -1,0 +1,65 @@
+{
+  "document_name": "POLARIS_LOCAL_SYSTEM_ARCHITECTURE",
+  "version": "1.0.0",
+  "phase": "Phase D0 \u2014 System Architecture & Design",
+  "timestamp_utc": "2026-09-16 01:50:17+0000",
+  "core_principle": "STRICTLY LOCAL, OFFLINE-CAPABLE, SELF-CONTAINED, END-TO-END ENERGY MANAGEMENT SYSTEM",
+  "runtime_network_requirement": "ZERO NETWORK CONNECTIVITY (100% OFFLINE)",
+  "deployment_target": "Local PC (CPU-compatible local Python runtime)",
+  "governance_status": {
+    "polaris_research_phase": "CLOSED",
+    "abc2_checkpoint": "FROZEN",
+    "pard_c_c3_branch": "CLOSED",
+    "odd_firewall": "SEALED_0_ROWS_ACCESSED",
+    "polaris_system_build": "STARTING_PHASE_D0"
+  },
+  "system_goals": [
+    "Build an offline-first microgrid Energy Management System (EMS) for remote/off-grid stations.",
+    "Decouple operational forecasting engines from energy optimization and dispatch logic via stable contracts.",
+    "Implement a receding-horizon Model Predictive Control (MPC) dispatch loop with a Digital Twin simulator.",
+    "Provide transparent local CLI tools for forecasting, optimization, simulation, and evaluation.",
+    "Enforce 100% local data and execution isolation with zero cloud or network dependencies."
+  ],
+  "architecture_layers": {
+    "layer_1_data": "Local files (CSV, Parquet, NetCDF, JSON) managed by LocalWeatherProvider and LocalDataProvider.",
+    "layer_2_forecasting": "ForecastEngine implementations (HistGBDT, Chronos, TimesFM, Persistence) outputting versioned ForecastBundle.",
+    "layer_3_optimization": "EnergyOptimizer (LP/MILP/Heuristic) taking ForecastBundle + StationState -> DispatchPlan.",
+    "layer_4_simulation": "Digital Twin Simulator stepping actual environmental state against DispatchPlan in closed-loop MPC.",
+    "layer_5_evaluation": "Decoupled ForecastMetrics and EnergyManagementMetrics evaluation engine."
+  },
+  "forecast_bundle_contract": {
+    "horizon_hours": 24,
+    "fields": [
+      "origin_timestamp (ISO 8601 UTC string)",
+      "horizon_hours (int, default 24)",
+      "timestamps (array of 24 UTC strings)",
+      "solar (object: point[24], lower[24], upper[24])",
+      "wind (object: point[24], lower[24], upper[24])",
+      "demand (object: point[24], lower[24], upper[24])",
+      "metadata (model_id, model_version, feature_version, generation_timestamp)"
+    ]
+  },
+  "dispatch_plan_contract": {
+    "horizon_hours": 24,
+    "fields": [
+      "timestamps (array of 24 UTC strings)",
+      "solar_used (array of 24 floats, W)",
+      "wind_used (array of 24 floats, W)",
+      "battery_charge (array of 24 floats, W)",
+      "battery_discharge (array of 24 floats, W)",
+      "battery_soc (array of 24 floats, % or Wh)",
+      "diesel_power (array of 24 floats, W)",
+      "load_served (array of 24 floats, W)",
+      "flexible_load_schedule (array of 24 floats, W)",
+      "renewable_curtailment (array of 24 floats, W)",
+      "unmet_load (array of 24 floats, W)",
+      "objective_value (float)",
+      "constraint_status (string: OPTIMAL, FEASIBLE, INFEASIBLE)"
+    ]
+  },
+  "validated_vs_unvalidated": {
+    "research_validated": "Phase C-1/C-2 GBDT feature extractability for H7-H12 daytime solar transmission and irradiance.",
+    "operational_prototype": "Operational H1-H24 solar, wind, and demand forecasting modules (marked as PROTOTYPE / UNVALIDATED OPERATIONAL COMPONENTS)."
+  },
+  "first_milestone": "Milestone D1 \u2014 Local System Foundation, Interfaces, Schemas, & Offline Test Harness."
+}

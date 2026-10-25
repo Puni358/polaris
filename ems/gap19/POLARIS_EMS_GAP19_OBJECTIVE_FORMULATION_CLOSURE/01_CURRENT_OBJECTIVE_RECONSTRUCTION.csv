@@ -1,0 +1,19 @@
+audit_document,01_CURRENT_OBJECTIVE_RECONSTRUCTION
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,REPRODUCIBLE_CODE_AUDIT
+execution_performed,READ_ONLY
+
+# ============================================================
+# CURRENT IMPLEMENTATION OBJECTIVE RECONSTRUCTION (milp.py)
+# ============================================================
+
+term_index,variable_symbol,variable_name,physical_units,coefficient_formula,prototype_numerical_value,coefficient_units,temporal_weighting,classification_type,governed_target_stage
+1,p_curt_sol,Solar Curtailment Power,W,curt_penalty_per_wh * dt * w_t,0.001,$/Wh,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,Stage 4 (Renewable Utilization)
+2,p_curt_wind,Wind Curtailment Power,W,curt_penalty_per_wh * dt * w_t,0.001,$/Wh,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,Stage 4 (Renewable Utilization)
+3,p_chg,Battery Charge Power,W,deg_penalty_per_wh * dt * w_t,0.00005,$/Wh,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,GOVERNANCE_BLOCKER (Unassigned)
+4,p_dis,Battery Discharge Power,W,deg_penalty_per_wh * dt * w_t,0.00005,$/Wh,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,GOVERNANCE_BLOCKER (Unassigned)
+5,p_diesel,Diesel Generator Power,W,fuel_cost_per_l * marg_fuel_l_wh * dt * w_t,0.000625,$/Wh,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,Stage 3 (Fuel Conservation)
+6,u_diesel,Diesel Online Binary,unitless binary,fuel_cost_per_l * base_fuel_l_h * dt * w_t,12.50,$/h,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,Stage 3 (Fuel Conservation)
+7,v_start,Diesel Startup Binary,unitless binary,startup_cost * w_t,15.00,$,Discounted (gamma^t),CURRENT IMPLEMENTATION FACT,Stage 3 (Fuel Conservation)
+8,p_unmet,Unmet Load Power,W,unmet_penalty_per_wh * dt,10.00,$/Wh,Unweighted (gamma^t = 1.0),CURRENT IMPLEMENTATION FACT,Stage 1 (Critical Reliability)

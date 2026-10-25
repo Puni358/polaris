@@ -1,0 +1,222 @@
+{
+  "experiment_name": "cloud_to_ghi_nonlinear_validation_20261010",
+  "timestamp_utc": "2026-10-10T03:45:36.811719+00:00",
+  "execution_duration_seconds": 1.04,
+  "protocol_reference": "experiments/stage4_planner_cf_consistency_2025/cloud_to_ghi_nonlinear_experiment_20261010/CLOUD_TO_GHI_EXPERIMENT_PROTOCOL.md",
+  "reproducibility": {
+    "training_dataset": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "training_sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16",
+    "validation_dataset": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+    "validation_sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "pvlib_version": "0.16.1",
+    "seed": 20261010
+  },
+  "sample_counts": {
+    "training_origins_2024": 347,
+    "training_hours_2024": 8328,
+    "training_daylight_hours_2024": 4434,
+    "total_origins_2025": 365,
+    "blind_origins_excluded_2025": 123,
+    "blind_origin_dates": "2025-05-01 to 2025-08-31",
+    "blind_outcomes_accessed": false,
+    "non_blind_origins_evaluated_2025": 242,
+    "non_blind_hours_2025": 5808,
+    "non_blind_daylight_hours_2025": 1873
+  },
+  "model_selection": {
+    "gamma_grid_min": 0.1,
+    "gamma_grid_max": 1.0,
+    "gamma_grid_step": 0.01,
+    "training_baseline_daylight_mae": 96.75308850693926,
+    "selected_gamma": 0.25,
+    "training_selected_daylight_mae": 70.92552516241643
+  },
+  "physical_bounds": {
+    "baseline_min_w_m2": 0.0,
+    "baseline_max_w_m2": 602.2566471940299,
+    "candidate_min_w_m2": 0.0,
+    "candidate_max_w_m2": 613.8515343790266,
+    "baseline_negative_violations": 0,
+    "candidate_negative_violations": 0,
+    "baseline_exceeds_clearsky_violations": 0,
+    "candidate_exceeds_clearsky_violations": 0,
+    "all_physical_bounds_passed": true
+  },
+  "validation_metrics": {
+    "daylight": {
+      "sample_hours": 1873,
+      "baseline": {
+        "mae": 85.40839769687159,
+        "rmse": 130.28861202290105,
+        "bias": -77.37174146145303
+      },
+      "candidate": {
+        "mae": 59.54192628706363,
+        "rmse": 93.92262322285825,
+        "bias": -30.53023149404851
+      },
+      "delta_mae_candidate_minus_baseline": -25.866471409807957,
+      "delta_mae_ci_95": [
+        -36.588040851733325,
+        -14.658645446860264
+      ],
+      "bootstrap_mean": -25.48638316586611,
+      "bootstrap_std": 5.7332035032311115
+    },
+    "all_hours": {
+      "sample_hours": 5808,
+      "baseline": {
+        "mae": 27.99401995183204,
+        "rmse": 74.01850603911792,
+        "bias": -25.40230901365384
+      },
+      "candidate": {
+        "mae": 19.652439209653963,
+        "rmse": 53.378789244106635,
+        "bias": -10.2965672490277
+      },
+      "delta_mae_candidate_minus_baseline": -8.341580742178078,
+      "delta_mae_ci_95": [
+        -14.61323177029391,
+        -3.455725755303639
+      ],
+      "bootstrap_mean": -8.391015615402733,
+      "bootstrap_std": 2.8609679162530304
+    }
+  },
+  "subgroup_metrics": {
+    "season_djf": {
+      "subgroup": "Season DJF",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 90,
+      "daylight_hours": 273,
+      "baseline": {
+        "mae": 35.120119223167386,
+        "rmse": 50.23375659678278,
+        "bias": -33.49411112701278
+      },
+      "candidate": {
+        "mae": 26.194814709803367,
+        "rmse": 38.60263660969501,
+        "bias": -18.59300663531901
+      },
+      "candidate_minus_baseline_mae": -8.925304513364019
+    },
+    "season_mam": {
+      "subgroup": "Season MAM",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 61,
+      "daylight_hours": 823,
+      "baseline": {
+        "mae": 130.52615342945077,
+        "rmse": 176.76068701641242,
+        "bias": -125.49080385006246
+      },
+      "candidate": {
+        "mae": 85.60293457982525,
+        "rmse": 124.10784802227008,
+        "bias": -56.65559620444683
+      },
+      "candidate_minus_baseline_mae": -44.92321884962553
+    },
+    "season_son": {
+      "subgroup": "Season SON",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 91,
+      "daylight_hours": 777,
+      "baseline": {
+        "mae": 55.28843251721726,
+        "rmse": 83.29921269357698,
+        "bias": -41.82039620466618
+      },
+      "candidate": {
+        "mae": 43.65460535482329,
+        "rmse": 66.53115466542602,
+        "bias": -7.05235148088937
+      },
+      "candidate_minus_baseline_mae": -11.63382716239397
+    },
+    "season_jja": {
+      "subgroup": "Season JJA",
+      "status": "NOT EVALUATED",
+      "sample_size_origin_days": 0,
+      "reason": "Below protocol minimum size of 20 origin-days"
+    },
+    "cloud_overcast": {
+      "subgroup": "Cloud Regime Overcast",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 141,
+      "daylight_hours": 1038,
+      "baseline": {
+        "mae": 94.97132330486916,
+        "rmse": 139.9104918992602,
+        "bias": -94.43414973108199
+      },
+      "candidate": {
+        "mae": 68.74191158616662,
+        "rmse": 106.88290416500871,
+        "bias": -54.5348833318008
+      },
+      "candidate_minus_baseline_mae": -26.229411718702536
+    },
+    "cloud_partial": {
+      "subgroup": "Cloud Regime Partial",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 93,
+      "daylight_hours": 770,
+      "baseline": {
+        "mae": 77.24095112454228,
+        "rmse": 121.22863894843688,
+        "bias": -61.883164142610205
+      },
+      "candidate": {
+        "mae": 49.709739747933725,
+        "rmse": 76.64288459106139,
+        "bias": -2.331657979721299
+      },
+      "candidate_minus_baseline_mae": -27.531211376608553
+    },
+    "cloud_clear": {
+      "subgroup": "Cloud Regime Clear",
+      "status": "NOT EVALUATED",
+      "sample_size_origin_days": 8,
+      "reason": "Below protocol minimum size of 20 origin-days"
+    },
+    "period_jan_apr_2025": {
+      "subgroup": "Period Jan-Apr 2025",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 120,
+      "daylight_hours": 1096,
+      "baseline": {
+        "mae": 106.76169417916303,
+        "rmse": 155.21056066309845,
+        "bias": -102.575569257551
+      },
+      "candidate": {
+        "mae": 70.80510910125227,
+        "rmse": 109.25796683457689,
+        "bias": -47.17467745228269
+      },
+      "candidate_minus_baseline_mae": -35.95658507791076
+    },
+    "period_sep_dec_2025": {
+      "subgroup": "Period Sep-Dec 2025",
+      "status": "EVALUATED",
+      "sample_size_origin_days": 122,
+      "daylight_hours": 777,
+      "baseline": {
+        "mae": 55.28843251721726,
+        "rmse": 83.29921269357698,
+        "bias": -41.82039620466618
+      },
+      "candidate": {
+        "mae": 43.65460535482329,
+        "rmse": 66.53115466542602,
+        "bias": -7.05235148088937
+      },
+      "candidate_minus_baseline_mae": -11.63382716239397
+    }
+  },
+  "verdict": "IMPROVED"
+}

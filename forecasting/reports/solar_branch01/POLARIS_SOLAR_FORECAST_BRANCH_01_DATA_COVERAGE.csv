@@ -1,0 +1,6 @@
+dataset_name,file_path,variables,start_time,end_time,total_hours,valid_hours,missing_hours,coverage_pct,causal_status
+Nuolja_2024_hourly_5var,(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv,"SW_IN, TA, RH, TS_-0.01m, PRECIP",2024-01-01T00:00:00Z,2024-12-31T23:00:00Z,8784,8784,0,100.0,PASS
+Clearsky_Decomposition_2024,data/POLARIS_v0_1_clearsky_decomposition.csv,"actual_SW_IN, clearsky_ghi, solar_elevation, solar_zenith, kt",2024-01-01T00:00:00Z,2024-12-31T23:00:00Z,8784,8784,0,100.0,PASS
+Stage8_1_Full_37_Feature_Matrix,stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv,"37 features + metadata (8328 rows, 347 origins x 24h)",2024-01-20T00:00:00Z,2024-12-31T23:00:00Z,8328,8328,0,100.0,CONDITIONAL (Sparse 00:00 UTC origins only)
+AROME_21x21_Spatial_NWP_Cache,arome_cache_21x21/,"21x21 spatial grid u700, v700, cloud fields",2024-01-20T00:00:00Z,2024-12-31T00:00:00Z,8304,8304,24,99.71,CONDITIONAL (00:00 UTC Issue Times Only)
+EUMETSAT_CMIC_Satellite_Archive,stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_347_ORIGIN_COVERAGE.csv,"Cloud Microphysics (COT, CWP, CTP)",2024-01-20T00:00:00Z,2024-12-31T00:00:00Z,8328,6246,2082,75.0,NOT_ESTABLISHED (Latency & incomplete coverage)

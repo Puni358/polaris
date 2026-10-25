@@ -1,0 +1,46 @@
+{
+  "audit_name": "STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT",
+  "governance_status": "FEASIBILITY_RESEARCH_ONLY",
+  "target_site": "SITES Nuolja (68.362°N, 18.739°E, 702m ASL)",
+  "research_question": "Is there any remaining atmospheric radiative information that is physically relevant to broadband SW_IN, genuinely independent of Stage8.1, causally available, available for all 347 benchmark origins, and potentially large enough to matter relative to ~36 W/m² MAE?",
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "odd_accessed": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "domain_evaluations": {
+    "A_vertical_aerosol_structure_type": {
+      "physical_magnitude_w_m2": "< 1.50",
+      "mechanism": "Aerosol layer height, SSA, asymmetry parameter at sub-Arctic background AOD <0.05",
+      "causal_347_origin_feasibility": false,
+      "causal_blocker": "No 3D NRT aerosol LiDAR network covers Nuolja for 2024",
+      "classification": "B. IMMATERIAL / D. NON-CAUSAL"
+    },
+    "B_vertical_water_vapor_structure": {
+      "physical_magnitude_w_m2": "< 1.80",
+      "mechanism": "Pressure broadening of near-IR H2O lines for fixed column TCWV",
+      "redundancy_with_stage8_1": true,
+      "redundancy_details": "MEPS q(p) profile at 925, 850, 700, 500 hPa already present in Stage 8.1",
+      "classification": "C. REDUNDANT / B. IMMATERIAL"
+    },
+    "C_total_column_ozone": {
+      "physical_magnitude_w_m2": "< 0.75",
+      "mechanism": "UV and Chappuis band absorption across 100 DU seasonal variation",
+      "impact_relative_to_mae_pct": "< 2.1%",
+      "classification": "B. PHYSICALLY REAL BUT IMMATERIAL"
+    },
+    "D_rayleigh_molecular_scattering": {
+      "physical_magnitude": "Deterministically governed by surface pressure and solar zenith angle",
+      "derivability": "100% derivable from psfc and solar_elevation in Stage 8.1",
+      "classification": "C. ALREADY REPRESENTED / DERIVABLE"
+    },
+    "E_minor_trace_gases": {
+      "physical_magnitude_w_m2": "< 0.10",
+      "mechanism": "Background CO2, CH4, N2O, O2 near-IR absorption",
+      "classification": "B. QUANTITATIVELY NEGLIGIBLE"
+    }
+  },
+  "surviving_class_a_candidates": 0,
+  "route_verdict": "ALL_ROUTES_CLOSED",
+  "experiment_authorized": false
+}

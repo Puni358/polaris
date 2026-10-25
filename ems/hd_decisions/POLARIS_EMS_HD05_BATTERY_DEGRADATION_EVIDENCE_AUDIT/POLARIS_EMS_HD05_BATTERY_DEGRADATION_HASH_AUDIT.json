@@ -1,0 +1,24 @@
+{
+  "audit_metadata": {
+    "package": "POLARIS_EMS_HD05_BATTERY_DEGRADATION_EVIDENCE_AUDIT",
+    "date": "2026-09-22",
+    "mode": "READ-ONLY EVIDENCE AUDIT"
+  },
+  "audited_artifacts": {
+    "system/config/battery.yaml": {
+      "symbol": "deg_penalty_per_wh",
+      "line": 11,
+      "value": 0.00005,
+      "comment": "Cycling penalty"
+    },
+    "system/optimization/implementations/milp.py": {
+      "symbols": ["deg_penalty", "c[base+4]", "c[base+5]"],
+      "lines": [33, 109, 110],
+      "formulation": "c[base+4] = deg_penalty * dt * w_t, c[base+5] = deg_penalty * dt * w_t"
+    },
+    "POLARIS_SYSTEM_D5_SCIENTIFIC_INTERPRETATION.md": {
+      "line": 261,
+      "finding": "LEVEL 3 — NOT ESTABLISHED: Field reliability under physical component aging."
+    }
+  }
+}

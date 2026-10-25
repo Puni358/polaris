@@ -1,0 +1,11 @@
+{
+  "audit_title": "POLARIS Branch 01 Stopped Campaign Solar Provenance Audit",
+  "completed_trajectories": 14,
+  "completed_h1_steps": 336,
+  "demand_mismatches": 0,
+  "wind_mismatches": 0,
+  "static_treatment_solar_hash_count": 336,
+  "solar_receding_horizon_status": "SOLAR_RECEDING_HORIZON_DEFECT_CONFIRMED",
+  "root_cause": "TIMESTAMP_NORMALIZATION_MISMATCH_ZERO_FEATURE_FALLBACK",
+  "affected_component": "scripts/run_polaris_branch01_remediated_campaign.py lines 156-162"
+}

@@ -1,0 +1,20 @@
+{
+  "cache_key": "cdc3da0b1a0e5a57c939c381",
+  "content_sha256": "51030314b3a068f2ad94c57dc60584b452314d154abbdc5d85878a02a3c6dd68",
+  "detail": "validated (v2 lead-6)",
+  "forecast_start": "2025-08-02T00:00:00+00:00",
+  "payload": {
+    "forecast_reference_time_utc": "2025-08-01T18:00:00+00:00",
+    "per_horizon": [
+      {
+        "horizon_hour": 1,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 6,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-08-02T00:00:00+00:00"
+      }
+    ],
+    "pressure_hpa": 700.0
+  },
+  "retrieval_status": "OK"
+}

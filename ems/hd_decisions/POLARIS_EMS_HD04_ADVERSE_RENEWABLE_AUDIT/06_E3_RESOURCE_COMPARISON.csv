@@ -1,0 +1,3 @@
+Resource_Metric,Formula_Under_Zero_Renewables,Baseline_Uniformity,Comparison_Validity,Limiting_Resource_Identification
+Battery Survivability Ratio R_batt,T_batt / T_required,Evaluated against P_solar=0 P_wind=0 & D_critical,UNBIASED & MATHEMATICALLY VALID,arg min(R_batt R_fuel)
+Diesel Survivability Ratio R_fuel,T_fuel / T_required,Evaluated against P_solar=0 P_wind=0 & D_critical,UNBIASED & MATHEMATICALLY VALID,arg min(R_batt R_fuel)

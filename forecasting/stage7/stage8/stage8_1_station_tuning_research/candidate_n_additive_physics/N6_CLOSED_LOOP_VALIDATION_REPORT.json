@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "governance": {
+    "winner": null,
+    "governance_status": "RESEARCH_ONLY",
+    "production_default": "system.forecasting.implementations.baseline.LocalBaselineForecastEngine (UNCHANGED)",
+    "real_time_operational_availability": "UNPROVEN (18Z MEPS pressure levels)",
+    "u700_v700_nan_policy": "Horizons 20-24 legitimately NaN; horizons 1-19 verified strictly non-NaN"
+  },
+  "simulation_parameters": {
+    "fixture": "POLARIS_HYBRID_FIXTURE_H1_0",
+    "origin_timestamp": "2024-06-01 00:00:00+00:00",
+    "smoke_index": 3648,
+    "duration_hours": 24,
+    "completed_steps": 24,
+    "initial_battery_soc_pct": 80.0,
+    "initial_fuel_liters": 500.0
+  },
+  "candidate_n6_results": {
+    "router_mode": "NORMAL",
+    "solver_status": "OPTIMAL",
+    "objective_value": 31.0554,
+    "battery_soc_min_pct": 44.13,
+    "battery_soc_max_pct": 95.0,
+    "battery_soc_final_pct": 95.0,
+    "diesel_fuel_consumed_l": 29.0554,
+    "diesel_fuel_remaining_l": 470.9446,
+    "total_unmet_load_wh": 88800.0,
+    "ebr_target_min_wh": 15000.0,
+    "ebr_target_max_wh": 50885.01,
+    "all_ebr_ge_floor": true
+  },
+  "baseline_comparison_results": {
+    "router_mode": "NORMAL",
+    "solver_status": "OPTIMAL",
+    "objective_value": 29.7419,
+    "battery_soc_min_pct": 57.83,
+    "battery_soc_max_pct": 95.0,
+    "battery_soc_final_pct": 95.0,
+    "diesel_fuel_consumed_l": 27.7419,
+    "diesel_fuel_remaining_l": 472.2581,
+    "total_unmet_load_wh": 88800.0
+  },
+  "verification_checklist": {
+    "forecast_finite_and_bounded": true,
+    "night_zeroing_strictly_observed": true,
+    "lower_bound_le_point": true,
+    "ebr_wh_units_and_floor_preserved": true,
+    "soc_within_operational_bounds": true,
+    "failed_steps_count": 0,
+    "failed_step_messages": []
+  },
+  "protected_assets_verification": {
+    "candidate_n6_model.joblib": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/candidate_n6_model.joblib",
+      "hash": "b1b54c93e2dbefdcb562e4229394a2492b299b66426beaafead17f6777395197",
+      "verified": true
+    },
+    "candidate_n1_model.joblib": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/candidate_n1_model.joblib",
+      "hash": "7265dabe6ea2c81bc38e724b41e0c02dd1e485cd124939b7249320b3f4abf9d7",
+      "verified": true
+    },
+    "CANDIDATE_N_MANIFEST.json": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/CANDIDATE_N_MANIFEST.json",
+      "hash": "1666a6860706ab266eec7d7995b7ee31308d21263aa1112485e229b916be1031",
+      "verified": true
+    },
+    "ensemble_parameters.json": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage4/stage4_results/ensemble_parameters.json",
+      "hash": "26cfbd19744a4a01719470d20808b5316af7262aed6c2cd84376d8987ce0abc0",
+      "verified": true
+    }
+  }
+}

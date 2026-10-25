@@ -1,0 +1,187 @@
+{
+  "analysis_name": "cloud_to_ghi_bootstrap_gap_sensitivity_20261010",
+  "timestamp_utc": "2026-10-10T04:06:23.570364+00:00",
+  "execution_duration_seconds": 2.87,
+  "final_status": "ROBUST_TO_GAP_SENSITIVITY",
+  "input_checksums": {
+    "training_dataset_csv": {
+      "path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+      "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"
+    },
+    "validation_dataset_csv": {
+      "path": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+      "sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5"
+    },
+    "existing_validation_metrics_json": {
+      "path": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/cloud_to_ghi_nonlinear_experiment_20261010/results/CLOUD_TO_GHI_VALIDATION_METRICS.json",
+      "sha256": "f6addc4bbabd11d16e27622d360b9ed3fd71aa43b120e6b99c8c0dcf9483eba3"
+    },
+    "existing_validation_report_md": {
+      "path": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/cloud_to_ghi_nonlinear_experiment_20261010/results/CLOUD_TO_GHI_VALIDATION_REPORT.md",
+      "sha256": "177e9042c86abe8a2e1bec7bc64c725d9867c7be98513530e5548b280705a0d3"
+    },
+    "existing_per_origin_metrics_csv": {
+      "path": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/cloud_to_ghi_nonlinear_experiment_20261010/results/CLOUD_TO_GHI_PER_ORIGIN_METRICS.csv",
+      "sha256": "c66321a7f7aae8e57a65a6d1176e366a0e9219ecea3f95557061e9a6f2867995"
+    }
+  },
+  "point_estimates_invariance_verification": {
+    "frozen_gamma": 0.25,
+    "population_daylight_baseline_mae": 85.40839769687159,
+    "population_daylight_candidate_mae": 59.54192628706363,
+    "population_daylight_delta_mae": -25.866471409807957,
+    "population_all_hours_delta_mae": -8.341580742178078,
+    "matches_existing_metrics": true
+  },
+  "sample_counts": {
+    "total_non_blind_origins": 242,
+    "segment_1_jan_apr_origins": 120,
+    "segment_2_sep_dec_origins": 122,
+    "blind_origins_excluded": 123,
+    "blind_period": "2025-05-01 to 2025-08-31",
+    "blind_outcomes_accessed": false
+  },
+  "bootstrap_configuration": {
+    "stationary_bootstrap_type": "Politis & Romano (1994)",
+    "mean_block_length_days": 10.0,
+    "p_block_termination": 0.1,
+    "resamples_B": 2000,
+    "seed": 20261010,
+    "interval_formulation": "Percentile 95% Confidence Interval"
+  },
+  "bootstrap_comparison": {
+    "method_1_original_naive_circular": {
+      "method_name": "original_naive_circular",
+      "description": "Original stationary bootstrap treating concatenated 242 origins as an uninterrupted circular sequence (crosses April 30 -> Sept 1 gap and Dec 31 -> Jan 1 wraparound).",
+      "n_resamples": 2000,
+      "mean_block_length_days": 10.0,
+      "seed": 20261010,
+      "daylight_diff_mae_ci_95": [
+        -36.588040851733325,
+        -14.658645446860264
+      ],
+      "daylight_diff_mae_boot_mean": -25.48638316586611,
+      "daylight_diff_mae_boot_std": 5.7332035032311115,
+      "all_hours_diff_mae_ci_95": [
+        -14.61323177029391,
+        -3.455725755303639
+      ],
+      "all_hours_diff_mae_boot_mean": -8.391015615402733,
+      "all_hours_diff_mae_boot_std": 2.8609679162530304,
+      "excludes_zero": true
+    },
+    "method_2_gap_aware_stratified_combined": {
+      "method_name": "gap_aware_stratified_combined",
+      "description": "Segment-stratified stationary bootstrap: independently generates 120-day path from Jan-Apr and 122-day path from Sep-Dec. Strictly prevents blocks from crossing the April 30 to September 1 gap.",
+      "n_resamples": 2000,
+      "mean_block_length_days": 10.0,
+      "seed": 20261010,
+      "segment_1_origins": 120,
+      "segment_2_origins": 122,
+      "total_origins": 242,
+      "daylight_diff_mae_ci_95": [
+        -35.57443674023879,
+        -15.649497629921306
+      ],
+      "daylight_diff_mae_boot_mean": -25.38220101213154,
+      "daylight_diff_mae_boot_std": 5.228441338065139,
+      "all_hours_diff_mae_ci_95": [
+        -13.246087576138347,
+        -4.191705291598186
+      ],
+      "all_hours_diff_mae_boot_mean": -8.278458385688285,
+      "all_hours_diff_mae_boot_std": 2.3720616246171766,
+      "excludes_zero": true
+    },
+    "method_3_gap_aware_pooled_boundary_terminating": {
+      "method_name": "gap_aware_pooled_boundary_terminating",
+      "description": "Pooled multi-episode stationary bootstrap: draws blocks uniformly across pooled 242 origins, but blocks unconditionally terminate upon reaching April 30 or December 31 sequence boundaries.",
+      "n_resamples": 2000,
+      "mean_block_length_days": 10.0,
+      "seed": 20261010,
+      "daylight_diff_mae_ci_95": [
+        -38.594996309884294,
+        -14.920172272801524
+      ],
+      "daylight_diff_mae_boot_mean": -26.589926963635232,
+      "daylight_diff_mae_boot_std": 6.08447127035341,
+      "all_hours_diff_mae_ci_95": [
+        -15.127135157251725,
+        -3.6463435704123626
+      ],
+      "all_hours_diff_mae_boot_mean": -8.7704186476105,
+      "all_hours_diff_mae_boot_std": 2.9337423000593432,
+      "excludes_zero": true
+    },
+    "contiguous_segment_1_jan_apr": {
+      "segment_name": "Jan-Apr 2025 (Segment 1)",
+      "n_origins": 120,
+      "daylight_hours": 1096,
+      "point_estimate_daylight_delta_mae": -35.95658507791076,
+      "point_estimate_all_hours_delta_mae": -13.683478210204925,
+      "n_resamples": 2000,
+      "mean_block_length_days": 10.0,
+      "seed": 20261010,
+      "daylight_diff_mae_ci_95": [
+        -47.602446423501334,
+        -20.39816434855304
+      ],
+      "daylight_diff_mae_boot_mean": -34.98185263112318,
+      "daylight_diff_mae_boot_std": 7.210311687610725,
+      "all_hours_diff_mae_ci_95": [
+        -22.956034578618844,
+        -5.737486864037272
+      ],
+      "all_hours_diff_mae_boot_mean": -13.644930136682516,
+      "all_hours_diff_mae_boot_std": 4.548214168611705,
+      "excludes_zero": true
+    },
+    "contiguous_segment_2_sep_dec": {
+      "segment_name": "Sep-Dec 2025 (Segment 2)",
+      "n_origins": 122,
+      "daylight_hours": 777,
+      "point_estimate_daylight_delta_mae": -11.63382716239397,
+      "point_estimate_all_hours_delta_mae": -3.0872553637910247,
+      "n_resamples": 2000,
+      "mean_block_length_days": 10.0,
+      "seed": 20261010,
+      "daylight_diff_mae_ci_95": [
+        -15.46583532845093,
+        -6.9650283354691815
+      ],
+      "daylight_diff_mae_boot_mean": -11.386006137241948,
+      "daylight_diff_mae_boot_std": 2.2030624658132383,
+      "all_hours_diff_mae_ci_95": [
+        -5.212802424558076,
+        -1.182560497308177
+      ],
+      "all_hours_diff_mae_boot_mean": -3.074205134151764,
+      "all_hours_diff_mae_boot_std": 1.0580619332207963,
+      "excludes_zero": true
+    }
+  },
+  "findings": {
+    "original_ci_daylight_delta_mae": [
+      -36.588040851733325,
+      -14.658645446860264
+    ],
+    "gap_aware_stratified_ci_daylight_delta_mae": [
+      -35.57443674023879,
+      -15.649497629921306
+    ],
+    "gap_aware_terminating_ci_daylight_delta_mae": [
+      -38.594996309884294,
+      -14.920172272801524
+    ],
+    "segment_1_ci_daylight_delta_mae": [
+      -47.602446423501334,
+      -20.39816434855304
+    ],
+    "segment_2_ci_daylight_delta_mae": [
+      -15.46583532845093,
+      -6.9650283354691815
+    ],
+    "seam_crossing_impact_assessment": "Preventing seam-crossing blocks shifts the 95% CI upper bound slightly from -14.66 W/m\u00b2 (naive) to -15.65 W/m\u00b2 (stratified) and -14.92 W/m\u00b2 (terminating). In all formulations, the confidence interval remains bounded far below zero.",
+    "primary_verdict_robustness": "The candidate's statistically significant out-of-sample improvement over the baseline is fully robust to calendar-gap-aware stationary resampling."
+  }
+}

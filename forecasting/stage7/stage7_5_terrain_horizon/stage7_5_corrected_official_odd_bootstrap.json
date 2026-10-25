@@ -1,0 +1,10 @@
+{
+  "n_resamples": 10000,
+  "resampling_unit": "paired origin-level",
+  "seed": 42,
+  "mean_delta_mae_w_m2": -0.3970633498035917,
+  "ci_95_lower_w_m2": -0.7915210320953202,
+  "ci_95_upper_w_m2": 0.0019411527075625511,
+  "fraction_delta_mae_lt_0": 0.9743,
+  "scientific_interpretation": "The 95% bootstrap confidence interval provides evidence regarding the robustness of the paired improvement under the specified origin-level resampling procedure."
+}

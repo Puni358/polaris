@@ -1,0 +1,7 @@
+# Configuration (repo-relative). Loaded by load_canonical_configs (run_diesel_reduction_campaign.py:71-83): battery, diesel, solar_pv, loads; terminal_target_wh=100000, critical_demand_baseline_w=11600.
+# NOT FROZEN: D1-D8, D10, D11 and BUD not APPROVED (see config/EXPERIMENT_CONFIG.json).
+eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216  system/config/battery.yaml
+421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3  system/config/diesel.yaml
+611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e  system/config/solar_pv.yaml
+eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467  system/config/loads.yaml
+0be61c4ce9a66d1b103be5dbdb86e1b23a688b745568464d416ef0ca994392aa  experiments/run_diesel_reduction_campaign.py

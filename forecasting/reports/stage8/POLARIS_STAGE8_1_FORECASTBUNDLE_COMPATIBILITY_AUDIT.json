@@ -1,0 +1,151 @@
+{
+  "project": "POLARIS",
+  "task": "STAGE8.1 CHAMPION -> FORECASTBUNDLE v1.0 CONTRACT-RESOLUTION AUDIT",
+  "timestamp": "2026-09-17T19:24:00Z",
+  "audit_scope": "STRICT READ-ONLY follow-up audit evaluating unresolved interface claims between Stage8.1 Solar Irradiance Champion output and ForecastEngine -> ForecastBundle v1.0 interface.",
+  "authoritative_stage8_1_champion": {
+    "model_name": "Stage 8.1 Solar Irradiance Forecasting Champion (37 Features)",
+    "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "hyperparameters": {
+      "loss": "absolute_error",
+      "max_depth": 4,
+      "min_samples_leaf": 30,
+      "l2_regularization": 10.0,
+      "random_state": 42
+    },
+    "freeze_manifest": "POLARIS_REPRODUCIBLE_BASELINE_FREEZE.json",
+    "prediction_hash": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "target_variable": "Surface downwelling shortwave radiation (SW_IN)",
+    "units": "W/m^2",
+    "horizon": "24 hourly steps (h=1..24)",
+    "prediction_type": "Point estimate (y_pred)"
+  },
+  "champion_output_specification": {
+    "predicted_fields": ["y_pred"],
+    "target_quantity": "SW_IN (Solar Irradiance)",
+    "unit": "W/m^2",
+    "horizon_steps": 24,
+    "timestamp_format": "ISO 8601 UTC (origin_timestamp, valid_timestamp)",
+    "interval_bounds_natively_produced": false
+  },
+  "forecastbundle_specification": {
+    "schema_version": "1.0.0",
+    "horizon_hours": 24,
+    "required_fields": {
+      "solar_irradiance": "TimeseriesForecast (unit: W/m^2, 24 values for point, lower, upper)",
+      "solar_generation": "TimeseriesForecast (unit: W, 24 values for point, lower, upper)",
+      "wind_generation": "TimeseriesForecast (unit: W, 24 values for point, lower, upper)",
+      "demand": "TimeseriesForecast (unit: W, 24 values for point, lower, upper)",
+      "metadata": "Dict[str, Any]"
+    },
+    "validation_rules": [
+      "Exact 24-hour horizon and 24 timestamp strings",
+      "Exact schema_version 1.0.0",
+      "Unit matching (W/m^2 for solar_irradiance, W for others)",
+      "Physical non-negativity across all point arrays",
+      "Interval order constraint: lower <= point <= upper",
+      "Chronological 1-hour timestamp monotonicity"
+    ]
+  },
+  "resolutions": {
+    "pv_conversion_mapping": {
+      "method": "_irradiance_to_power_w()",
+      "location": "system/forecasting/implementations/baseline.py (LocalBaselineForecastEngine)",
+      "status": "NOT ESTABLISHED",
+      "finding": "Private helper method on LocalBaselineForecastEngine. Not part of ForecastEngine base interface or Stage8.1 freeze contract."
+    },
+    "uncertainty_representation": {
+      "status": "NOT ESTABLISHED",
+      "finding": "NO EXISTING AUTHORIZED UNCERTAINTY REPRESENTATION FOR THE POINT-ONLY STAGE8.1 CHAMPION WAS ESTABLISHED."
+    },
+    "wind_sourcing": {
+      "status": "NOT ESTABLISHED",
+      "finding": "Sourced via persistent baseline observation array in LocalBaselineForecastEngine. Prototype convenience, not an established architecture path for Stage8.1."
+    },
+    "demand_sourcing": {
+      "status": "NOT ESTABLISHED",
+      "finding": "Sourced via persistent baseline observation array in LocalBaselineForecastEngine. Prototype convenience, not an established architecture path for Stage8.1."
+    },
+    "combined_composition": {
+      "status": "NOT ESTABLISHED",
+      "finding": "COMPOSITION PATH NOT CURRENTLY ESTABLISHED."
+    }
+  },
+  "compatibility_matrix": [
+    {
+      "champion_field": "y_pred (SW_IN W/m^2)",
+      "forecastbundle_field": "solar_irradiance.point",
+      "compatibility_status": "COMPATIBLE",
+      "mapping": "Direct assignment: max(0.0, y_pred)",
+      "classification": "DIRECTLY COMPATIBLE"
+    },
+    {
+      "champion_field": "y_pred (SW_IN W/m^2)",
+      "forecastbundle_field": "solar_irradiance.lower/upper",
+      "compatibility_status": "NOT ESTABLISHED",
+      "mapping": "No authorized contract mechanism for point-only source",
+      "classification": "UNRESOLVED / NOT ESTABLISHED"
+    },
+    {
+      "champion_field": "y_pred (SW_IN W/m^2)",
+      "forecastbundle_field": "solar_generation.point (W)",
+      "compatibility_status": "NOT ESTABLISHED",
+      "mapping": "_irradiance_to_power_w is engine-private, not established for Stage8.1",
+      "classification": "UNRESOLVED / NOT ESTABLISHED"
+    },
+    {
+      "champion_field": "y_pred (SW_IN W/m^2)",
+      "forecastbundle_field": "solar_generation.lower/upper",
+      "compatibility_status": "NOT ESTABLISHED",
+      "mapping": "No authorized bound conversion mechanism",
+      "classification": "UNRESOLVED / NOT ESTABLISHED"
+    },
+    {
+      "champion_field": "N/A (Unpredicted)",
+      "forecastbundle_field": "wind_generation (W)",
+      "compatibility_status": "NOT ESTABLISHED",
+      "mapping": "Composition path not currently established",
+      "classification": "UNRESOLVED / NOT ESTABLISHED"
+    },
+    {
+      "champion_field": "N/A (Unpredicted)",
+      "forecastbundle_field": "demand (W)",
+      "compatibility_status": "NOT ESTABLISHED",
+      "mapping": "Composition path not currently established",
+      "classification": "UNRESOLVED / NOT ESTABLISHED"
+    },
+    {
+      "champion_field": "valid_timestamp",
+      "forecastbundle_field": "timestamps",
+      "compatibility_status": "COMPATIBLE",
+      "mapping": "Format ISO 8601 UTC strings",
+      "classification": "DIRECTLY COMPATIBLE"
+    },
+    {
+      "champion_field": "origin_timestamp",
+      "forecastbundle_field": "origin_timestamp",
+      "compatibility_status": "COMPATIBLE",
+      "mapping": "Format ISO 8601 UTC string",
+      "classification": "DIRECTLY COMPATIBLE"
+    }
+  ],
+  "architecture_constraints": {
+    "forecast_bundle_modified": false,
+    "station_state_modified": false,
+    "dispatch_plan_modified": false,
+    "milp_optimizer_modified": false,
+    "digital_twin_modified": false,
+    "evaluator_modified": false,
+    "d4_c1_semantics_modified": false,
+    "stage8_1_champion_modified": false
+  },
+  "final_decision": "NOT ESTABLISHED",
+  "implementation_status": "NOT AUTHORIZED",
+  "contract_change_required": false,
+  "adapter_layer_required": true,
+  "next_gate": {
+    "decision": "NOT ESTABLISHED",
+    "statement": "Material required interface facts (PV mapping applicability, point-only uncertainty bounds, and multi-channel composition) are NOT ESTABLISHED in the existing project evidence. Implementation remains NOT AUTHORIZED.",
+    "authorization_status": "Follow-up audit complete. Technical decision updated to NOT ESTABLISHED. Implementation/execution NOT authorized."
+  }
+}

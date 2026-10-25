@@ -1,0 +1,6 @@
+# Solar Photovoltaic Array Parameters (Irradiance W/m^2 -> Electrical Power W)
+status_label: "PROTOTYPE_ASSUMPTION"
+array_area_m2: 300.0          # 300 m^2 panel surface area
+panel_efficiency: 0.20        # 20% panel efficiency
+performance_ratio: 0.85        # System losses (inverter, wiring, temperature)
+max_inverter_power_w: 60000.0  # 60 kW AC inverter rating

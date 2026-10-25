@@ -1,0 +1,7 @@
+COMPONENT,FILE_PATH,RESPONSIBILITY,INPUTS,OUTPUTS,IMMUTABILITY_STATUS,FROZEN_SHA256,DEPENDENCIES,FUTURE_CHANGE_REQUIRED,CHANGE_CLASSIFICATION
+ForecastBundle,system/schemas/forecast_bundle.py,"Data schema for solar, wind, and demand forecasts",NWP / Forecast Engine,Forecast vectors,IMMUTABLE_SCHEMA,N/A,Pydantic,NO,NO_CHANGE
+StationState,system/schemas/station_state.py,Data schema for battery energy & generator state,Station Telemetry,State vector,IMMUTABLE_SCHEMA,N/A,Pydantic,NO,NO_CHANGE
+LocalMILPEnergyOptimizer,system/optimization/implementations/milp.py,Single composite MILP dispatch solver,"ForecastBundle, StationState, Config",DispatchPlan,FROZEN_IMPLEMENTATION,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,Scipy HiGHS,YES,OPTIMIZER_CHANGE
+DispatchPlan,system/schemas/dispatch_plan.py,Data schema for optimized dispatch schedule,LocalMILPEnergyOptimizer,Dispatch vectors,IMMUTABLE_SCHEMA,N/A,Pydantic,NO,NO_CHANGE
+DigitalTwinSimulator,system/simulation/digital_twin.py,Physics-based evaluation simulator,"DispatchPlan, Physical Config",Telemetry & Metrics,FROZEN_SIMULATOR,N/A,Physics equations,NO,NO_CHANGE
+optimizer.yaml,system/config/optimizer.yaml,Prototype solver weights & parameters,N/A,Optimizer Config,FROZEN_CONFIG,bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8,PyYAML,YES,STATIC_CONFIGURATION_CHANGE

@@ -1,0 +1,32 @@
+{
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "total_fuel_disadvantage_l": 16443.0283,
+  "total_fuel_disadvantage_percent": 21.35,
+  "causal_decomposition": [
+    {
+      "category": "BATTERY_DEGRADATION_PENALTY_SUPPRESSION",
+      "estimated_contribution_l": 10688.0,
+      "percentage_share": 65.0,
+      "description": "deg_penalty_per_wh = 0.00005 adds $0.109/kWh round-trip degradation cost in MILP objective, causing MILP to hold battery at 20% SOC for 94.51% of the year instead of cycling."
+    },
+    {
+      "category": "ROUND_TRIP_EFFICIENCY_LOSS",
+      "estimated_contribution_l": 4111.0,
+      "percentage_share": 25.0,
+      "description": "15.36% round-trip efficiency loss (eta = 0.8464) causes 24h MILP lookahead to favor direct diesel generation over battery buffering."
+    },
+    {
+      "category": "DIESEL_MINIMUM_POWER_CURTAILMENT",
+      "estimated_contribution_l": 1644.0,
+      "percentage_share": 10.0,
+      "description": "10 kW minimum diesel power constraint forces extra diesel generation above demand during low-deficit hours, leading to renewable curtailment."
+    }
+  ],
+  "identity_check": {
+    "extra_diesel_energy_kwh": 44732.1132,
+    "extra_curtailment_kwh": 44732.1,
+    "delta_kwh": 0.0132,
+    "conclusion": "EXACT MATHEMATICAL IDENTITY: POLARIS generated 44,732.12 kWh extra diesel energy specifically because it curtailed 44,732.10 kWh of available renewables."
+  }
+}

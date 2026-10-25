@@ -1,0 +1,29 @@
+{
+  "manifest_version": "1.0",
+  "created_timestamp_iso": "2026-10-08 03:40:06 UTC",
+  "total_runtime_s": 54.74650573730469,
+  "experiment_verdict": "CERTIFIED LOWER BOUND",
+  "hashes": {
+    "population_hash": "7c81256f12630a2ef2e30ccfa5a7edf697f7a1717ca8c90df60440c61def9c35",
+    "input_hash": "dcabbfa272adeb6e9592e07d3d02decb689ec52b2e0097e43c4e0e9962cf19f1",
+    "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b",
+    "pc_sw_telemetry_csv_hash": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+    "causal_nwp_physics_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "base_configuration_hash": "e4ef245e7f99c6056be067939c1f325a727c0feaa3894cb657944121d207b829",
+    "formulation_g_configuration_hash": "adaf0e1f635718e32efbc8f868be2460f8ad04c86d16a4c103ecd90175c1fdca",
+    "research_module_sha256": "157e5aa8f452441fafeba93ce962a3cf49a2bfb5832dfb74475b7fb25c469efe"
+  },
+  "artifact_file_hashes": {
+    "EXPERIMENT_DEFINITION.json": "dd37cdbefad21bf8f9c720565363681e8f1cc598acdf264666bce6a2c75528aa",
+    "FORMULATION_CONFIG.json": "2e756ea0877c130f01bb33fa04bd943ba3fbb40a325fcb2de221803a094451ce",
+    "POPULATION_INPUT_MANIFEST.json": "e6d687ded4c0775a286379bf4cc86cf29ae45954c6c181f5ec39caad33f05412",
+    "EBR_TELEMETRY_MANIFEST.json": "0a91b3a3025decf968151e1fdda0c0907186ccaaff44996fb7ecd60a416157ef",
+    "SOLVER_SETTINGS.json": "f1ef782feaf7728a1f8618fa34e65bfb5f73bc35daa4fc4d7d396c23b20d03b7",
+    "PER_ORIGIN_RESULTS.json": "420b8aec6b39c29d452f4abc1d0dd594f00ce6315b1aa618cf3afed1def524d9",
+    "PER_ORIGIN_RESULTS.csv": "4afda0bbd8d5163da4ec79c2bb1af1e1cbfabf4cd6b3f1b423faa45dede3f711",
+    "AGGREGATE_RESULTS.json": "a768f4f05d59ca0e84c01b0faacf8cda3fef0917e196a66feba0e4b4d77346a4",
+    "INDEPENDENT_CHECKS_SUMMARY.json": "363bdba816efe24da6d11a4faace0d81cbb89740e19ba8f29f28aca8799b577c",
+    "FINAL_REPORT.md": "266f566a3f1bfdc00d0db36727bce417c0dfb51066099d2ce16c2a53665b3160",
+    "global_lower_bound_ebr_full_realized_research.py": "157e5aa8f452441fafeba93ce962a3cf49a2bfb5832dfb74475b7fb25c469efe"
+  }
+}

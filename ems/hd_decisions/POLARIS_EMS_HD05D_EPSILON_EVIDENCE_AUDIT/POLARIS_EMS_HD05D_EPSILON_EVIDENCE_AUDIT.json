@@ -1,0 +1,65 @@
+{
+  "audit_name": "POLARIS EMS HD-05D-epsilon Extra-Fuel Tolerance Evidence Audit",
+  "timestamp": "2026-09-23T04:06:00Z",
+  "governance_scope": {
+    "decision_id": "HD-05D-epsilon",
+    "topic": "Numerical Extra-Fuel Tolerance for Stage-3 Lexicographic Formulation",
+    "status": "GOVERNANCE_DECISION_REQUIRED"
+  },
+  "closed_decisions": {
+    "HD-05A": "Stage 3 — Resource Management",
+    "HD-05B": "Extra diesel allowed during NORMAL operation to reduce battery cycling",
+    "HD-05C": "Battery degradation subordinate to critical service during EMERGENCY",
+    "HD-05D_structure": "Stage 3a: min fuel -> F*; Stage 3b: min cycling s.t. fuel <= F* + epsilon"
+  },
+  "audit_findings": {
+    "numerical_epsilon_exists": false,
+    "epsilon_derivable_from_repo": false,
+    "solver_tolerance_confusion_flag": "solver_tolerance (1e-5) in optimizer.yaml is numerical solver feasibility tolerance, NOT policy extra-fuel tolerance",
+    "seasonal_fuel_budget_status": "Structure approved (D08); numerical volume is STATION_DATA_REQUIRED / NOT_AUTHORIZED",
+    "survival_window_status": "T_required unresolved; cannot constrain epsilon",
+    "historical_runs_status": "Prototype scalar objective runs do not authorize lexicographic epsilon"
+  },
+  "derivation_evaluations": [
+    {
+      "source": "Fuel budget",
+      "derivable": false,
+      "reason": "Numerical budget volume is uncalibrated / missing"
+    },
+    {
+      "source": "Fuel survivability",
+      "derivable": false,
+      "reason": "Emergency reserve does not govern normal operating fuel slack"
+    },
+    {
+      "source": "Resupply window",
+      "derivable": false,
+      "reason": "Authoritative resupply interval T_required is missing"
+    },
+    {
+      "source": "Generator operating curve",
+      "derivable": false,
+      "reason": "Technical efficiency curves do not define policy fuel tolerance"
+    },
+    {
+      "source": "Prototype c_deg cost",
+      "derivable": false,
+      "reason": "c_deg ($0.00005/Wh) is an uncalibrated regularizer assumption"
+    }
+  ],
+  "classifications": {
+    "HD05D_EPSILON_EVIDENCE": "NOT_ESTABLISHED",
+    "HD05D_EPSILON_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD05D_EPSILON_REPRESENTATION": "UNRESOLVED",
+    "HD05D_EPSILON_POLICY_BASIS": "GOVERNANCE_REQUIRED",
+    "HD05D_EPSILON_OPERATIONAL_BASIS": "ABSENT",
+    "HD05D_EPSILON_DERIVATION": "NOT_POSSIBLE_WITH_CURRENT_EVIDENCE",
+    "HD05D_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "final_verdict": {
+    "HD05D_EPSILON_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_EPSILON_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_EPSILON_NUMERICAL_VALUE": "GOVERNANCE_DECISION_REQUIRED"
+  }
+}

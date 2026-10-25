@@ -1,0 +1,24 @@
+TEST_ID,TEST_NAME,VERIFICATION_TARGET,RESULT
+TEST_01_GAP03_DEFERRED,GAP_03 Preemption Status Check,GAP_03 status set to IMPLEMENTATION_DEFERRED in Gap Register,PASS
+TEST_02_GAP10_DEFERRED,GAP_10 Target Generation Status Check,GAP_10 status set to IMPLEMENTATION_DEFERRED in Gap Register,PASS
+TEST_03_GAP12_DEFERRED,GAP_12 Terminal SOC Placement Check,GAP_12 status set to IMPLEMENTATION_DEFERRED in Gap Register,PASS
+TEST_04_GAP15_PROVISIONAL,GAP_15 Curtailment Diagnostic Check,Curtailment formula marked PROVISIONAL_DIAGNOSTIC_ONLY; status set to IMPLEMENTATION_DEFERRED,PASS
+TEST_05_GAP19_DEFERRED,GAP_19 Solver Architecture Check,GAP_19 status set to IMPLEMENTATION_DEFERRED in Gap Register,PASS
+TEST_06_GAP21_GOVERNANCE_REQUIRED,GAP_21 Fallback Dispatch Check,GAP_21 status set to GOVERNANCE_CLARIFICATION_REQUIRED,PASS
+TEST_07_FIVE_LOAD_TIERS_PRESERVED,Five Load Tiers Preservation Check,"Critical, Essential, Deferrable, Interruptible, Noncritical preserved as 5 distinct tiers",PASS
+TEST_08_NO_D2_SHEDDING_ORDER_PROMOTION,No D2 Shedding Order Promotion Check,N->I->D->E exact shedding order is NOT present as authorized policy,PASS
+TEST_09_NO_D2_RESTORATION_ORDER_PROMOTION,No D2 Restoration Order Promotion Check,Exact reverse restoration sequence is NOT present as authorized policy,PASS
+TEST_10_NO_STAGE2_TARGET_SELECTION,No Stage 2 Target Selection Check,35% baseline reserve is NOT selected as executable Stage-2 target,PASS
+TEST_11_NO_TERMINAL_SOC_STAGE_SELECTION,No Terminal SOC Stage Selection Check,Terminal SOC stage placement remains deferred without premature assignment,PASS
+TEST_12_NO_SOLVER_ARCHITECTURE_SELECTION,No Solver Architecture Selection Check,Sequential 4-pass MILP is NOT selected as authorized solver implementation,PASS
+TEST_13_NO_FALLBACK_DISPATCH_AUTHORIZATION,No Fallback Dispatch Authorization Check,Fallback dispatch rules remain un-authorized pending governance sign-off,PASS
+TEST_14_EMERGENCY_STATE_NOT_EXECUTABLE,Emergency State Conceptual Structure Check,Emergency FSM marked as CONCEPTUAL_IMPLEMENTATION_STRUCTURE; triggers governed,PASS
+TEST_15_D10_FORMULA_NOT_EXECUTABLE,D10 Diagnostic Formula Non-Executable Check,Diagnostic curtailment formula marked non-executable / provisional only,PASS
+TEST_16_SOLAR_WIND_DEMAND_UNCERTAINTY_PRESERVED,Uncertainty Channels Completeness Check,"Solar, wind, and demand uncertainty channels all represented",PASS
+TEST_17_NO_PROVISIONAL_VALUE_PROMOTION,Provisional Numerical Value Check,"Zero provisional engineering numbers (0k/kWh, 35%, 45%, 55%, 65%, -15-25%) promoted to policy",PASS
+TEST_18_PACKAGE_STATUS_UNAMBIGUOUS,Package Status Terminology Check,Package status is IMPLEMENTATION_SPECIFICATION_PACKAGE = CORRECTED_PENDING_REVIEW,PASS
+TEST_19_22_ITEM_RECONCILIATION,22-Item Reconciled Count Check,"3 specified, 8 deferred, 5 station data, 2 numerical calibration, 4 governance clarification",PASS
+TEST_20_NO_CODE_MODIFICATION,Zero Code Modification Verification,milp.py SHA-256 = ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,PASS
+TEST_21_NO_CONFIG_MODIFICATION,Zero Config Modification Verification,All YAML configuration files remain unchanged,PASS
+TEST_22_NO_MODEL_MODIFICATION,Zero Model Modification Verification,Zero model files modified or trained,PASS
+TEST_23_NO_EXECUTION,Zero Execution Verification,"Zero MILP, MPC, EMS, Digital Twin, or model execution occurred",PASS

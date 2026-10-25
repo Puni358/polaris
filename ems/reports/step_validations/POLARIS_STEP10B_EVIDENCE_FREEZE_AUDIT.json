@@ -1,0 +1,93 @@
+{
+  "audit_version": "1.0.0",
+  "timestamp": "2026-09-20T11:57:00Z",
+  "step": "STEP10B_EVIDENCE_FREEZE_AUDIT",
+  "objective": "Freeze and independently verify completed Step 10B evidence artifacts and protected runtime integrity",
+  "artifact_verification": {
+    "all_artifacts_exist": true,
+    "manifest_hash_consistency": true,
+    "artifact_hashes": {
+      "raw_telemetry_csv": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_RAW.csv",
+        "sha256": "27a2f6b260dc759526f4c3feb2e329d32a802945d85cefc9159219d2870ac81b",
+        "status": "VERIFIED"
+      },
+      "execution_manifest": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION.json",
+        "sha256": "c5ce9864b83c5d0972082b67a80ed2c17cd7593a29c4d1e9c79451dcae0e3276",
+        "status": "VERIFIED"
+      },
+      "execution_report": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION.md",
+        "sha256": "28119d4a613e949268b473009ffe6d08b2a795a4e81ff9d8b997b6da33a10a4b",
+        "status": "VERIFIED"
+      },
+      "provenance_manifest": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_PROVENANCE.json",
+        "sha256": "26f4fe956d97f9263e93ad38021d63c0f280df8d70c7675cda6aad62002cfb1a",
+        "status": "VERIFIED"
+      },
+      "hashes_manifest": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_HASHES.json",
+        "sha256": "5f852a8503b68082f276ebe8388783f370eac414a7dfba9ba73ff8630746acbc",
+        "status": "VERIFIED"
+      },
+      "forensic_audit_md": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_FORENSIC_AUDIT.md",
+        "sha256": "65e93c1aab42e67f8d437edd3e8fdee68e8a617ece6894bce7389153f6cf4b80",
+        "status": "VERIFIED"
+      },
+      "forensic_audit_json": {
+        "path": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_FORENSIC_AUDIT.json",
+        "sha256": "e141016d83a54e15440f45c855b023e68e8ce6acdda5170e43628e314a9f3a6b",
+        "status": "VERIFIED"
+      }
+    }
+  },
+  "protected_runtime_integrity": {
+    "h10_fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "milp_optimizer_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "s81_solar_adapter_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "wind_arx_adapter_sha256": "f2eae833868d2d445187329b4fa94ef416845d4f7f7ffff073fc8b048b30146d",
+    "forecast_bundle_schema_sha256": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "station_state_schema_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+    "dispatch_plan_schema_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+    "digital_twin_simulator_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "runtime_runner_sha256": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "protected_hashes_status": "PASS"
+  },
+  "completed_trajectory_reconciliation": {
+    "expected_mpc_cycles": 24,
+    "actual_mpc_cycles": 24,
+    "expected_milp_solves": 24,
+    "actual_milp_solves": 24,
+    "expected_simulator_steps": 24,
+    "actual_simulator_steps": 24,
+    "monotonic_timestamps": true,
+    "nan_inf_present": false,
+    "truth_leakage_present": false
+  },
+  "reconciled_observed_quantities": {
+    "OBSERVED_DIESEL_CONSUMPTION_L": 195.5,
+    "OBSERVED_DIESEL_ENERGY_KWH": 562.002,
+    "OBSERVED_SOLAR_USED_KWH": 310.686,
+    "OBSERVED_WIND_USED_KWH": 67.889,
+    "OBSERVED_RENEWABLE_CURTAILMENT_KWH": 0.0,
+    "OBSERVED_LOAD_SERVED_KWH": 865.147,
+    "OBSERVED_UNMET_LOAD_KWH": 0.0,
+    "OBSERVED_BATTERY_CHARGE_THROUGHPUT_KWH": 278.076,
+    "OBSERVED_BATTERY_DISCHARGE_THROUGHPUT_KWH": 202.646,
+    "OBSERVED_SOC_MIN_PCT": 26.96,
+    "OBSERVED_SOC_MAX_PCT": 93.47,
+    "description": "Observed quantities for single H1.0 hybrid engineering trajectory. NOT fuel saved or diesel reduction."
+  },
+  "mandatory_status": {
+    "STEP10B_EVIDENCE_FREEZE": "PASS",
+    "OBSERVED_DIESEL_CONSUMPTION_L": 195.5,
+    "OBSERVED_DIESEL_RECONCILIATION": "PASS",
+    "MILP_SOLVES_DURING_AUDIT": 0,
+    "SIMULATOR_STEPS_DURING_AUDIT": 0,
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "FINAL_EVIDENCE_CLASSIFICATION": "A"
+  }
+}

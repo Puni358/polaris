@@ -1,0 +1,13 @@
+{
+  "origin_timestamp": "2024-10-07T00:00:00Z",
+  "policy_id": "POLARIS_STAGE8_1_H10_ML_FORECAST_TREATMENT",
+  "diesel_fuel_liters": 173.077,
+  "diesel_generation_kwh": 512.307,
+  "solar_used_kwh": 76.025,
+  "wind_used_kwh": 224.191,
+  "battery_charge_kwh": 316.015,
+  "battery_discharge_kwh": 241.038,
+  "generator_on_hours": 9,
+  "min_soc_pct": 23.1,
+  "max_soc_pct": 91.16
+}

@@ -1,0 +1,34 @@
+{
+  "experiment_id": "L2-EXP-05",
+  "title": "POLARIS L2 Physical Uncertainty Envelope Research",
+  "status": "PASS",
+  "scientific_decision": "FORMULATION-SUPPORTED-NUMERIC-BOUND-UNRESOLVED",
+  "timestamp_utc": "2026-10-04T05:43:57.373961+00:00",
+  "verified_hashes": {
+    "historical_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "exact_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "frozen_candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "frozen_skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "frozen_skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "frozen_skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff"
+  },
+  "runtime_environment": {
+    "python_executable": "/home/punith-bs/01polaris (Copy)/.venv/bin/python",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "scikit_learn_version": "1.6.0",
+    "numpy_version": "2.5.2",
+    "pandas_version": "3.0.5"
+  },
+  "artifacts_generated": {
+    "config": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/l2_exp_05_physical_envelope_research_config.json",
+    "method_lock": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/audits/L2_EXP_05_METHOD_SELECTION_LOCK.md",
+    "results_json": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_05_PHYSICAL_ENVELOPE_RESEARCH_RESULTS.json",
+    "results_md": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_05_PHYSICAL_ENVELOPE_RESEARCH_RESULTS.md",
+    "elevation_envelope_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_05_SOLAR_ELEVATION_ENVELOPE.csv",
+    "clearsky_ratio_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_05_CLEARSKY_RATIO_ANALYSIS.csv",
+    "formulation_comparison_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_05_FORMULATION_COMPARISON.csv",
+    "robustness_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_05_ROBUSTNESS.csv",
+    "execution_audit_md": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/audits/L2_EXP_05_PHYSICAL_ENVELOPE_EXECUTION_AUDIT.md"
+  }
+}

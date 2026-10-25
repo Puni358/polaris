@@ -1,0 +1,17 @@
+{
+  "package_name": "POLARIS_EMS_DEC004_OPTION_D_FINAL_SELECTION",
+  "audit_timestamp": "2026-09-23T22:55:00Z",
+  "decision_id": "DEC-004",
+  "final_selection": "OPTION_D_PROTECTED_CRITICAL_LOAD_FALLBACK",
+  "historical_artifact_integrity": "PASS",
+  "new_decision_package_hash_status": "PASS",
+  "artifact_hashes": {
+    "README.md": "6b842228c6feb8494947da4c626bbbfc9564676ad2d66d6a613b0f9cf441d66f",
+    "DEC004_FINAL_SELECTION.md": "cf401971aca11369206d5796587115cdfaed9da6535ce24f53b4cfcd535f668c",
+    "DEC004_HUMAN_DECISION_RECORD.json": "623d776a61513f047827b16affec4ca8caa3d19ab70c2587d13099e16380c961",
+    "DEC004_GOVERNANCE_RESOLUTION.md": "60875d19bf641d1e4b3455b18a5b920afaf0e10c08f4861638d29e773178ed08",
+    "OPTION_D_STATUS.md": "336d819a71cfedfe5316de7a7d12a0c5bad872e60c6ae651cfd9bdad8dbeef2a",
+    "OPEN_ITEMS_AFTER_DEC004.md": "83a045a61873d328c96a7268d242e86f2c4df3381e3ec6a9172b2d191d693da5",
+    "DEC004_FORENSIC_CORRECTION_REFERENCE.md": "4f5d076086b199ea29d00db9eda440bb8743821af5689e27bc1c5c9ccdd4500d"
+  }
+}

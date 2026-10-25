@@ -1,0 +1,7 @@
+Decision_SubID,Decision_Title,Status,Evidence_Summary,Remaining_Human_Decision,Implementation_Impact
+HD-01A,EBR Semantic Definition,OPEN,4 candidates evaluated (A/B/C/D),Choose candidate A B C or D,Determines Stage 2 objective structure
+HD-01B,Fixed vs Dynamic Target,OPEN,C & D are dynamic; A & B are fixed,Select static scalar vs dynamic load-derived target,Determines if pre-solve target generation pipeline needed
+HD-01C,Resilience Interval (N),OPEN,N is independent of MPC H=24h and survival T_required,Select resilience hours N (e.g. N <= 24h),Sets summation window for critical-load EBR
+HD-01D,Numerical Target Authorization,OPEN,Derivable for C/D; Required for A/B,Authorize scalar X%/Y Wh if A/B chosen,Populates static target parameter
+HD-01E,EBR vs Tech Min Relationship,OPEN,Tech min=20% (40kWh); EBR floor > 20%,Confirm EBR is strictly above 20% cell floor,Prevents Stage 2 tautological objective bug
+HD-01F,EBR vs Terminal Target Relationship,OPEN,E_term derivable as E_EBR(H),Approve E_term = E_EBR(H) linkage,Eliminates standalone terminal SOC parameter

@@ -1,0 +1,11 @@
+{
+  "forecast_input_file": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+  "forecast_input_file_hash": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+  "causal_nwp_physics_module": "system/forecasting/implementations/causal_nwp_physics.py",
+  "causal_nwp_physics_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "forecast_alignment": {
+    "origin_timestamp": "forecast_start - 1 hour (t0)",
+    "prediction_horizon": "t0 + 1..24 hours (calendar day 00:00 to 23:00 UTC)",
+    "leakage_check": "causal firewall validated; no actuals in forecast"
+  }
+}

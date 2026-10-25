@@ -1,0 +1,8 @@
+{
+  "status": "STAGE8.19 = NOT RECONSTRUCTABLE",
+  "invalidated_historical_mae": 34.821405,
+  "invalidated_historical_nmae": 27.0081,
+  "reason_for_invalidation": "Hardcoded metric literals following dynamic evaluation failure",
+  "clean_rerun_possible": false,
+  "provenance_status": "INVALIDATED_AND_EXPUNGED"
+}

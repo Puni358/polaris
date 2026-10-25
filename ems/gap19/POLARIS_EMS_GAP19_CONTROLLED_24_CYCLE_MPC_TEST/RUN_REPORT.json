@@ -1,0 +1,13 @@
+{
+  "test_id": "GAP19_OPTION_B_24H_MPC_BASELINE_TEST",
+  "schema_version": "1.0.0",
+  "environment": "LOCAL_OFFLINE_PC",
+  "optimizer_type": "GAP19_HIGHS_NATIVE",
+  "execution_status": "SUCCESS_CLEAN",
+  "completed_steps": 24,
+  "requested_steps": 24,
+  "fault_count": 0,
+  "governed_fault_count": 0,
+  "termination_reason": null,
+  "classification": "CONTROLLED_SYNTHETIC_ENGINEERING_RUNTIME_EVIDENCE"
+}

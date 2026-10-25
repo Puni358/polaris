@@ -1,0 +1,47 @@
+{
+  "audit_name": "POLARIS_EMS_DEC004_D1_D6_HASH_AUDIT",
+  "generated_at": "2026-09-23T20:16:30Z",
+  "status": "SEALED",
+  "artifact_hashes": [
+    {
+      "file": "POLARIS_EMS_DEC004_D1_D6_GOVERNANCE_ANALYSIS.md",
+      "sha256": "482c2486ea63f7b9b20c72481b55cebfe3e6e91bd16fc9b98049da9acecfc266"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D1_CRITICAL_LOAD_DECISION.md",
+      "sha256": "ae3835764983877366d50e9b4f6b9c268f7029846759df22c93bfc707a85a2c8"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D2_BATTERY_DECISION.md",
+      "sha256": "5e56e0bdb155e40b410b4b905095fde97b5b0d2389a4e7935252a486cdaa4886"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D3_RESOURCE_FAILURE_DECISION.md",
+      "sha256": "61bf34666cce1ac66eb081ff7191d0ecfb3d086f21cf8af7881d7c37a5ac01e4"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D4_CRITICAL_SHORTFALL_DECISION.md",
+      "sha256": "93b6af5d16a2582aae5303a37cfc801a3814faa13934aff47654b23296d4b6e9"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D5_ESCALATION_DECISION.md",
+      "sha256": "0d35b8dc832c23944f64446d06b1e4f8c194f3a97a34d296c7a736555856e917"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D6_EXCESS_GENERATION_DECISION.md",
+      "sha256": "345444328e35becf2731621e6e7ce21b94f9cccac041846de0567f1648a599d8"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D1_D6_DEPENDENCY_MATRIX.md",
+      "sha256": "1b2a9ed919f84a57d69c6bfb8ae59cd3fb6da20a1a17fa2aff885b9d2220bb16"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D1_D6_DECISION_FORM.md",
+      "sha256": "5e603211925d082494bfebaa6cfc395891972b39818bffc6fdc7a5d7271f4ea6"
+    },
+    {
+      "file": "POLARIS_EMS_DEC004_D1_D6_GOVERNANCE_STATUS.json",
+      "sha256": "dbfb0d3ad3cf2493930e3a82ebfbb9a28a0dfc16ddc72994e8795b1f40b07168"
+    }
+  ]
+}

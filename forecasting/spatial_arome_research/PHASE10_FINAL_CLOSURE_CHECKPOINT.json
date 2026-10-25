@@ -1,0 +1,166 @@
+{
+  "phase": "10",
+  "checkpoint": "PHASE10_FINAL_CLOSURE_CHECKPOINT",
+  "status": "PHASE10_CLOSED_ALL_CANDIDATES_REJECTED",
+  "date": "2026-09-14",
+  "objective": "Evaluate candidate neural architecture paradigms (temporal sequence, shared horizon embedding, disagreement-gated residual) on top of Stage8.1 37-feature matrix under locked EVEN-only firewall protocol.",
+  "protocol": {
+    "protected_champion": "Stage8.1_37_feature_HGB_UNTOUCHED",
+    "odd_firewall": "INTACT_ABSOLUTE",
+    "even_origins": 173,
+    "odd_origins": 174,
+    "total_origins": 347,
+    "horizons_per_origin": 24,
+    "outer_cv": "5-fold GroupKFold by origin",
+    "no_new_features": true,
+    "no_hyperparameter_sweeps": true,
+    "no_rescue_variants": true,
+    "odd_evaluation_authorized": false
+  },
+  "locked_gates": {
+    "G1": {"requirement": "aggregated_delta_mae <= -0.50 W/m²"},
+    "G2": {"requirement": "folds_improved >= 4/5"},
+    "G3": {"requirement": "max_fold_degradation <= +0.50 W/m²"},
+    "G4": {"requirement": "candidate_nMAE <= control_nMAE AND candidate_RMSE <= control_RMSE"},
+    "G5": {"requirement": "causal_availability_and_parser_compliance"},
+    "G6": {"requirement": "exact_control_reproduction_against_locked_reference"}
+  },
+  "candidate_A": {
+    "name": "Candidate A — BiGRU Temporal Sequence Regressor",
+    "architecture": "Dense(39->32, ReLU) -> Dropout(0.2) -> BiGRU(hidden=16/dir) -> Dropout(0.2) -> Dense(32->1, linear)",
+    "parameter_count": 6113,
+    "experiment_validity": "VALID_PYTORCH",
+    "invalid_proxy_note": "Initial sklearn MLP prototype was invalidated during audit; standard PyTorch nn.GRU sequence implementation used for final result.",
+    "even_oof_metrics": {
+      "mae": 54.7022,
+      "rmse": 126.5499
+    },
+    "fold_results": [
+      {"fold": 1, "mae": 53.0343, "rmse": 122.1581, "bias": -45.9053},
+      {"fold": 2, "mae": 46.8871, "rmse": 111.8654, "bias": -37.1397},
+      {"fold": 3, "mae": 45.4633, "rmse": 108.1309, "bias": -38.7683},
+      {"fold": 4, "mae": 69.3759, "rmse": 151.2010, "bias": -60.8768},
+      {"fold": 5, "mae": 59.3008, "rmse": 135.4479, "bias": -51.0647}
+    ],
+    "folds_improved": "0/5",
+    "gate_results": {
+      "G1": "FAIL",
+      "G2": "FAIL",
+      "G3": "FAIL",
+      "G4": "FAIL",
+      "G5": "PASS",
+      "G6": "UNNEEDED_REJECTED"
+    },
+    "verdict": "REJECTED_ON_EVEN",
+    "odd_evaluated": false
+  },
+  "candidate_B": {
+    "name": "Candidate B — Shared MLP + 24-Horizon Embedding",
+    "architecture": "Shared MLP (39->64->32->1) + 8-dim horizon embedding, trained jointly across all 24 horizons per origin",
+    "even_oof_metrics": {
+      "mae": 26.0112,
+      "rmse": 54.2820,
+      "bias": -2.7713,
+      "nmae_pct": 20.1750
+    },
+    "control_oof_metrics": {
+      "mae": 26.3668,
+      "rmse": 55.2513,
+      "bias": -0.1291,
+      "nmae_pct": 20.4507
+    },
+    "delta_mae_aggregate": -0.3556,
+    "fold_deltas": [
+      {"fold": 0, "control_mae": 29.1137, "cand_mae": 27.0406, "delta": -2.0731, "improved": true},
+      {"fold": 1, "control_mae": 22.8351, "cand_mae": 24.0944, "delta": 1.2593, "improved": false},
+      {"fold": 2, "control_mae": 25.5086, "cand_mae": 25.6572, "delta": 0.1486, "improved": false},
+      {"fold": 3, "control_mae": 30.0997, "cand_mae": 28.8913, "delta": -1.2084, "improved": true},
+      {"fold": 4, "control_mae": 24.3254, "cand_mae": 24.4093, "delta": 0.0839, "improved": false}
+    ],
+    "folds_improved": "2/5",
+    "max_degradation": 1.2593,
+    "gate_results": {
+      "G1": "FAIL",
+      "G2": "FAIL",
+      "G3": "FAIL",
+      "G4": "PASS",
+      "G5": "PASS",
+      "G6": "HONEST_APPROXIMATE"
+    },
+    "verdict": "REJECTED_ON_EVEN",
+    "odd_evaluated": false
+  },
+  "candidate_C": {
+    "name": "Candidate C — Disagreement-Gated Residual MLP",
+    "architecture": "Dense(39->16, ReLU) -> Dropout(0.2) -> {Magnitude: Dense(16->1, linear), Gate: Dense(16->1, sigmoid)} -> correction = gate * magnitude; output = anchor + correction",
+    "parameter_count": 674,
+    "frozen_anchor": "pred_stage4_fold",
+    "pre_training_audit": {
+      "checks_passed": "15/15",
+      "scaler_probe_isolated_to_even": true,
+      "g6_honest_comparison_enforced": true,
+      "odd_rows_accessed": false
+    },
+    "candidate_even_oof_metrics": {
+      "mae": 27.0940,
+      "rmse": 56.1025,
+      "bias": -0.6006,
+      "nmae_pct": 21.01
+    },
+    "paired_control_even_oof_metrics": {
+      "mae": 26.4522,
+      "rmse": 55.2715,
+      "bias": 0.1240,
+      "nmae_pct": 20.52
+    },
+    "locked_reference_metrics": {
+      "mae": 26.3668,
+      "rmse": 55.2513,
+      "nmae_pct": 20.4507
+    },
+    "delta_mae_aggregate": 0.6418,
+    "fold_results": [
+      {"fold": 1, "cand_mae": 28.0672, "ctrl_mae": 29.1246, "delta": -1.0574, "cand_rmse": 58.7187, "cand_nmae": 22.14, "cand_bias": -1.1934, "improved": true},
+      {"fold": 2, "cand_mae": 24.4340, "ctrl_mae": 22.3244, "delta": 2.1096, "cand_rmse": 51.5253, "cand_nmae": 21.25, "cand_bias": 3.8746, "improved": false},
+      {"fold": 3, "cand_mae": 27.0914, "ctrl_mae": 26.6015, "delta": 0.4899, "cand_rmse": 57.4712, "cand_nmae": 22.91, "cand_bias": 2.4879, "improved": false},
+      {"fold": 4, "cand_mae": 30.6395, "ctrl_mae": 29.7559, "delta": 0.8836, "cand_rmse": 60.2090, "cand_nmae": 20.19, "cand_bias": -11.6241, "improved": false},
+      {"fold": 5, "cand_mae": 25.2875, "ctrl_mae": 24.4930, "delta": 0.7945, "cand_rmse": 52.0357, "cand_nmae": 18.99, "cand_bias": 3.2470, "improved": false}
+    ],
+    "folds_improved": "1/5",
+    "max_degradation": 2.1096,
+    "gate_results": {
+      "G1": "FAIL",
+      "G2": "FAIL",
+      "G3": "FAIL",
+      "G4": "FAIL",
+      "G5": "PASS",
+      "G6": "FAIL_UNVERIFIED"
+    },
+    "verdict": "REJECTED_ON_EVEN",
+    "odd_evaluated": false
+  },
+  "final_verdict": "ALL_CANDIDATES_REJECTED_CHAMPION_UNCHANGED",
+  "odd_accessed_by_rejected_candidates": false,
+  "champion": {
+    "name": "Stage8.1 37-feature HistGradientBoostingRegressor",
+    "split": "ODD_OFFICIAL",
+    "mae_wm2": 36.188657,
+    "nmae_pct": 28.0688,
+    "rmse_wm2": 64.219495,
+    "bias_wm2": 1.439399,
+    "night_mae_wm2": 0.0,
+    "prediction_artifact": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv",
+    "sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "modified_by_phase10": false
+  },
+  "closure_notes": "Phase 10 architecture research is formally closed. No robust architecture-level improvement was demonstrated under the locked Phase 10 EVEN evaluation protocol across Candidate A (BiGRU sequence), Candidate B (horizon embedding), or Candidate C (disagreement-gated residual). ODD evaluation was not authorized for any candidate. No rescue variants are authorized. Official Stage 8.1 37-feature HGB champion remains protected.",
+  "artifacts": [
+    "/home/punith-bs/01polaris (Copy)/spatial_arome_research/PHASE10_FINAL_CLOSURE_CHECKPOINT.md",
+    "/home/punith-bs/01polaris (Copy)/spatial_arome_research/PHASE10_FINAL_CLOSURE_CHECKPOINT.json",
+    "/home/punith-bs/01polaris (Copy)/spatial_arome_research/PHASE10_CANDIDATE_A_FINAL_REJECTION_CHECKPOINT.md",
+    "/home/punith-bs/01polaris (Copy)/spatial_arome_research/PHASE10_CANDIDATE_B_FINAL_REJECTION_CHECKPOINT.md",
+    "/home/punith-bs/01polaris (Copy)/spatial_arome_research/PHASE10_CANDIDATE_C_DESIGN_CHECKPOINT.md",
+    "/home/punith-bs/01polaris (Copy)/PHASE10_CANDIDATE_C_AUDIT.json",
+    "/home/punith-bs/01polaris (Copy)/phase10_candidate_c_train.py"
+  ]
+}

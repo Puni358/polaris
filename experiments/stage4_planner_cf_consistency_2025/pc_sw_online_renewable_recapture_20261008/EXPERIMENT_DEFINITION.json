@@ -1,0 +1,18 @@
+{
+  "title": "POLARIS PC-SW Online Realized-Renewable Recapture Full Governed Execution",
+  "date": "2026-10-08",
+  "task_type": "EXECUTION ONLY",
+  "policy": "ONLINE REALIZED-RENEWABLE RECAPTURE",
+  "governed_baseline_path": "experiments/stage4_planner_cf_consistency_2025/CAMPAIGN_V12_615_20261006/PC_HOURLY_TELEMETRY.csv",
+  "causal_nwp_path": "system/forecasting/implementations/causal_nwp_physics.py",
+  "telemetry_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+  "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "population": 123,
+  "hours_executed": 2952,
+  "formula": {
+    "renewable_used_by_plan": "p_chg_plan + demand_realized - wind_realized - p_dis_plan - p_diesel_plan",
+    "recapture": "min(p_diesel_plan, max(0, solar_realized - renewable_used_by_plan))",
+    "p_diesel_actual": "p_diesel_plan - recapture"
+  },
+  "verdict": "FAIL \u2014 SEMANTIC/IDENTITY CHECK"
+}

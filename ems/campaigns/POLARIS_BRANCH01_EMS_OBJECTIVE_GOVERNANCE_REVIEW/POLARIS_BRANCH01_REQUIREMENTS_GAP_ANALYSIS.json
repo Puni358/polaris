@@ -1,0 +1,46 @@
+{
+  "audit_id": "POLARIS_BRANCH01_REQUIREMENTS_GAP_ANALYSIS",
+  "audit_mode": "READ_ONLY_GOVERNANCE_REVIEW",
+  "timestamp": "2026-09-21T20:05:03Z",
+  "requirements_gaps": {
+    "1_maximum_acceptable_unmet_load": "NOT_SPECIFIED",
+    "2_reliability_numeric_target": "NOT_SPECIFIED",
+    "3_fuel_minimization_numeric_target": "NOT_SPECIFIED",
+    "4_operating_cost_target": "NOT_SPECIFIED",
+    "5_fuel_vs_reliability_tradeoff": "NOT_SPECIFIED",
+    "6_renewable_utilization_target": "NOT_SPECIFIED",
+    "7_curtailment_limit": "NOT_SPECIFIED",
+    "8_battery_reserve_target": "NOT_SPECIFIED",
+    "9_diesel_usage_limit": "NOT_SPECIFIED",
+    "10_critical_load_priority": "NOT_SPECIFIED",
+    "11_load_shedding_priority": "NOT_SPECIFIED"
+  },
+  "implementation_assumptions": [
+    {
+      "assumption_id": "ASSUMPTION_01",
+      "target_component": "critical_load.unmet_penalty_per_wh",
+      "source_file": "system/config/loads.yaml",
+      "value": 10.0,
+      "status_label": "PROTOTYPE_ASSUMPTION",
+      "description": "Unmet load penalty set to $10,000/kWh as an unverified prototype heuristic rather than a governed requirement."
+    },
+    {
+      "assumption_id": "ASSUMPTION_02",
+      "target_component": "diesel_genset.operation",
+      "source_file": "system/config/diesel.yaml",
+      "value": "10kW min / 100kW max",
+      "status_label": "PROTOTYPE_ASSUMPTION",
+      "description": "Diesel generator dispatch is unconstrained whenever needed to serve load or preserve battery SOC."
+    },
+    {
+      "assumption_id": "ASSUMPTION_03",
+      "target_component": "fuel_cost_per_l",
+      "source_file": "system/config/diesel.yaml",
+      "value": 2.5,
+      "status_label": "PROTOTYPE_ASSUMPTION",
+      "description": "Fuel price fixed at $2.50/L without arctic logistics resupply cost scaling."
+    }
+  ],
+  "objective_modification": "NOT_AUTHORIZED",
+  "next_governed_step": "EXPLICIT_EMS_OBJECTIVE_SPECIFICATION_REVIEW"
+}

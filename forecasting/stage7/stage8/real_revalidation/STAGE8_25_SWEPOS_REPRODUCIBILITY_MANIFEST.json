@@ -1,0 +1,21 @@
+{
+  "stage": "STAGE8.25",
+  "timestamp": "2026-09-13T21:36:54.299386+05:30",
+  "execution_summary": {
+    "feasibility_audit": "COMPLETED",
+    "governed_experiment": "NOT_EXECUTED",
+    "reason": "FEASIBILITY_FAILED_DATA_UNAVAILABLE",
+    "verdict": "CLOSED_FEASIBILITY_UNAVAILABLE"
+  },
+  "data_provenance": {
+    "station_id": "ABIS",
+    "data_source": "SWEPOS / E-GVAP GNSS Tropospheric Delay",
+    "real_files_in_workspace": false,
+    "synthetic_data_generated": false
+  },
+  "governance_lock": {
+    "champion_model": "Stage 8.1 37-feature HGB Model",
+    "odd_run": false,
+    "odd_firewall_intact": true
+  }
+}

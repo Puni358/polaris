@@ -1,0 +1,10 @@
+slice,sample_count,stage_b_picp,stage_c_picp,stage_c_mpiw,stage_c_winkler,status
+1. h06_h10,0,NaN,NaN,NaN,NaN,BLOCKED
+2. h11_h15,0,NaN,NaN,NaN,NaN,BLOCKED
+3. h16_h20,0,NaN,NaN,NaN,NaN,BLOCKED
+4. h21_h24,0,NaN,NaN,NaN,NaN,BLOCKED
+5. elev_le15,0,NaN,NaN,NaN,NaN,BLOCKED
+6. elev_gt15,0,NaN,NaN,NaN,NaN,BLOCKED
+7. clear_lt0.20,0,NaN,NaN,NaN,NaN,BLOCKED
+8. partial_0.20_0.80,0,NaN,NaN,NaN,NaN,BLOCKED
+9. overcast_gt0.80,0,NaN,NaN,NaN,NaN,BLOCKED

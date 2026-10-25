@@ -1,0 +1,11 @@
+feature,description,missing_rate
+U_10m,Zonal 10m wind vector (East-West),0.0
+V_10m,Meridional 10m wind vector (North-South),0.0
+cloud_frac_north,North spatial probe cloud cover fraction,0.0
+cloud_frac_south,South spatial probe cloud cover fraction,0.0
+cloud_frac_east,East spatial probe cloud cover fraction,0.0
+cloud_frac_west,West spatial probe cloud cover fraction,0.0
+DeltaC_EW,East - West spatial cloud gradient,0.0
+DeltaC_NS,North - South spatial cloud gradient,0.0
+advection_proxy,U*DeltaC_EW + V*DeltaC_NS wind-aligned advection,0.0
+cloud_frac_upwind,Directional upwind probe cloud cover fraction,0.0

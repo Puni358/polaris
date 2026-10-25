@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-09-12T15:57:20.151871+00:00",
+  "stage": "STAGE 8.6B CAMS AOD550 + TCWV FORECASTING EXPERIMENT",
+  "control_model": "Stage 8.1 Champion (37 features)",
+  "candidate_model": "Stage 8.6B CAMS (39 features: 37 + AOD550 + TCWV)",
+  "control_reproduction": {
+    "expected_ctrl_mae_w_m2": 37.620054,
+    "actual_ctrl_mae_w_m2": 37.620053600000006,
+    "reproduction_error_w_m2": 3.999999975690116e-07,
+    "reproduction_pass": true
+  },
+  "candidate_results": {
+    "control_mae_w_m2": 37.620054,
+    "candidate_mae_w_m2": 37.867306,
+    "delta_mae_w_m2": 0.247252,
+    "control_nmae_pct": 37.9745,
+    "candidate_nmae_pct": 37.5944,
+    "delta_nmae_pp": -0.3801,
+    "control_rmse_w_m2": 60.160645,
+    "candidate_rmse_w_m2": 60.524544,
+    "delta_rmse_w_m2": 0.363899,
+    "control_bias_w_m2": 4.218739,
+    "candidate_bias_w_m2": 4.248021,
+    "delta_bias_w_m2": 0.029282,
+    "folds_improved": 3,
+    "max_fold_degradation_w_m2": 1.310037
+  },
+  "gates": {
+    "gate1_primary_mae": {
+      "required_threshold_w_m2": 37.120054,
+      "actual_candidate_mae_w_m2": 37.867306,
+      "pass": false
+    },
+    "gate2_fold_consistency": {
+      "required_folds_improved": 4,
+      "actual_folds_improved": 3,
+      "pass": false
+    },
+    "gate3_worst_fold_degradation": {
+      "required_max_degradation_w_m2": 0.5,
+      "actual_max_degradation_w_m2": 1.310037,
+      "pass": false
+    },
+    "gate4_directional_metrics": {
+      "control_nmae_pct": 37.9745,
+      "candidate_nmae_pct": 37.5944,
+      "control_rmse_w_m2": 60.160645,
+      "candidate_rmse_w_m2": 60.524544,
+      "pass": false
+    },
+    "gate5_causality": {
+      "causal_tuples_count": 8328,
+      "total_tuples_count": 8328,
+      "pass": true
+    },
+    "gate6_control_reproduction": {
+      "expected_mae": 37.620054,
+      "reproduced_mae": 37.620054,
+      "pass": true
+    }
+  },
+  "mechanism_forensics": {
+    "aod550_regimes": {
+      "low_aod_le_q25": {
+        "threshold": 0.0217,
+        "count": 722
+      },
+      "mid_aod_q25_q75": {
+        "range": "0.0217 to 0.0820",
+        "count": 1442
+      },
+      "high_aod_gt_q75": {
+        "threshold": 0.082,
+        "count": 721
+      }
+    },
+    "tcwv_regimes": {
+      "low_tcwv_le_q25": {
+        "threshold": 5.56,
+        "count": 722
+      },
+      "mid_tcwv_q25_q75": {
+        "range": "5.56 to 15.76",
+        "count": 1442
+      },
+      "high_tcwv_gt_q75": {
+        "threshold": 15.76,
+        "count": 721
+      }
+    }
+  },
+  "all_gates_pass": false,
+  "final_decision": "REJECTED"
+}

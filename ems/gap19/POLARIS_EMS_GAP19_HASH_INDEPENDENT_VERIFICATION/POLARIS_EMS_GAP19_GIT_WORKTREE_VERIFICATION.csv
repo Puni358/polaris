@@ -1,0 +1,7 @@
+PROPERTY,VALUE
+GIT_REPOSITORY_DETECTED,YES
+GIT_BRANCH,master
+PROTECTED_CODE_MODIFIED,NO (milp.py SHA256 matches baseline)
+PROTECTED_CONFIG_MODIFIED,NO (optimizer.yaml SHA256 matches baseline)
+UNTRACKED_GOVERNANCE_PACKAGES,YES (Governance packages stored in isolated workspace directories)
+GIT_WORKTREE_STATUS,CLEAN_PROTECTED_CORE

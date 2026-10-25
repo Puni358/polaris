@@ -1,0 +1,184 @@
+{
+  "artifact_name": "PHASE_C2_FROZEN_P1_PHYSICAL_SW_IN_DIAGNOSTIC",
+  "timestamp_utc": "2026-09-16 00:56:59+0000",
+  "governance_status": "PHASE C-2 COMPLETE AND FROZEN",
+  "odd_firewall": "SEALED_0_ROWS_ACCESSED",
+  "population_summary": {
+    "parent_eligible_origins": 104,
+    "theoretical_max_cells": 624,
+    "aggregate_valid_target_cells": 609,
+    "omitted_cells": 15,
+    "omitted_horizon": "H7 (15 cells omitted due to clearsky_GHI < 20 W/m\u00b2)"
+  },
+  "model_spec": {
+    "max_depth": 3,
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "min_samples_leaf": 10,
+    "random_state": 42
+  },
+  "results_by_horizon": {
+    "H7": {
+      "target": "SW_IN(t+7)",
+      "N_h": 89,
+      "omitted_cells": 15,
+      "fold_counts_1_to_5": [
+        18,
+        17,
+        18,
+        18,
+        18
+      ],
+      "mae_p0": 77.81711682290111,
+      "mae_p1": 58.309769160892245,
+      "delta_mae": 19.50734766200887,
+      "rmse_p0": 101.84252619714262,
+      "rmse_p1": 77.75090387101064,
+      "r2_p0": 0.23218506213858459,
+      "r2_p1": 0.5524834270798965,
+      "delta_r2": 0.3202983649413119,
+      "bootstrap_95ci_delta_mae": [
+        5.276809363868316,
+        34.04635755787851
+      ],
+      "bootstrap_resamples": 10000,
+      "degenerate_bootstraps": 0
+    },
+    "H8": {
+      "target": "SW_IN(t+8)",
+      "N_h": 104,
+      "omitted_cells": 0,
+      "fold_counts_1_to_5": [
+        21,
+        21,
+        21,
+        20,
+        21
+      ],
+      "mae_p0": 96.3352318060705,
+      "mae_p1": 61.21602100592152,
+      "delta_mae": 35.11921080014898,
+      "rmse_p0": 125.0665547793,
+      "rmse_p1": 81.97825244314492,
+      "r2_p0": 0.1482800559716172,
+      "r2_p1": 0.6340584223034331,
+      "delta_r2": 0.4857783663318159,
+      "bootstrap_95ci_delta_mae": [
+        20.959472889481617,
+        49.89383971044002
+      ],
+      "bootstrap_resamples": 10000,
+      "degenerate_bootstraps": 0
+    },
+    "H9": {
+      "target": "SW_IN(t+9)",
+      "N_h": 104,
+      "omitted_cells": 0,
+      "fold_counts_1_to_5": [
+        21,
+        21,
+        21,
+        20,
+        21
+      ],
+      "mae_p0": 111.57607039012176,
+      "mae_p1": 74.91051234930322,
+      "delta_mae": 36.66555804081854,
+      "rmse_p0": 142.3363508424943,
+      "rmse_p1": 101.10164799598972,
+      "r2_p0": 0.10493224112324107,
+      "r2_p1": 0.5484137305990775,
+      "delta_r2": 0.44348148947583643,
+      "bootstrap_95ci_delta_mae": [
+        19.559398578536012,
+        53.98741746798643
+      ],
+      "bootstrap_resamples": 10000,
+      "degenerate_bootstraps": 0
+    },
+    "H10": {
+      "target": "SW_IN(t+10)",
+      "N_h": 104,
+      "omitted_cells": 0,
+      "fold_counts_1_to_5": [
+        21,
+        21,
+        21,
+        20,
+        21
+      ],
+      "mae_p0": 123.02412736636244,
+      "mae_p1": 91.73956098066607,
+      "delta_mae": 31.284566385696365,
+      "rmse_p0": 150.92148952879236,
+      "rmse_p1": 114.85089038921767,
+      "r2_p0": 0.13815038187074802,
+      "r2_p1": 0.5008879435471412,
+      "delta_r2": 0.36273756167639315,
+      "bootstrap_95ci_delta_mae": [
+        12.2141502621523,
+        50.692896542830205
+      ],
+      "bootstrap_resamples": 10000,
+      "degenerate_bootstraps": 0
+    },
+    "H11": {
+      "target": "SW_IN(t+11)",
+      "N_h": 104,
+      "omitted_cells": 0,
+      "fold_counts_1_to_5": [
+        21,
+        21,
+        21,
+        20,
+        21
+      ],
+      "mae_p0": 147.24727617009873,
+      "mae_p1": 84.19450969145883,
+      "delta_mae": 63.052766478639896,
+      "rmse_p0": 174.82833920835088,
+      "rmse_p1": 107.4243256669929,
+      "r2_p0": -0.0522332759485693,
+      "r2_p1": 0.6027228009925644,
+      "delta_r2": 0.6549560769411337,
+      "bootstrap_95ci_delta_mae": [
+        44.23541714686917,
+        82.08495032499094
+      ],
+      "bootstrap_resamples": 10000,
+      "degenerate_bootstraps": 0
+    },
+    "H12": {
+      "target": "SW_IN(t+12)",
+      "N_h": 104,
+      "omitted_cells": 0,
+      "fold_counts_1_to_5": [
+        21,
+        21,
+        21,
+        20,
+        21
+      ],
+      "mae_p0": 137.1814953377952,
+      "mae_p1": 93.1949854391547,
+      "delta_mae": 43.986509898640506,
+      "rmse_p0": 167.01762960610213,
+      "rmse_p1": 128.48590582459374,
+      "r2_p0": 0.07337672741597412,
+      "r2_p1": 0.4516099662953973,
+      "delta_r2": 0.3782332388794232,
+      "bootstrap_95ci_delta_mae": [
+        25.281109477257708,
+        62.787185548410264
+      ],
+      "bootstrap_resamples": 10000,
+      "degenerate_bootstraps": 0
+    }
+  },
+  "statistical_protocol": {
+    "primary_estimand": "DeltaMAE(h) = MAE_P0(h) - MAE_P1(h) in W/m\u00b2",
+    "bootstrap": "Origin-level 10,000 paired block bootstrap with ordinary percentile 95% CIs",
+    "permutation_test": "REMOVED due to statistical incoherence of feature/prediction swapping",
+    "stage8_1_direct_comparison": "UNAVAILABLE (Stage8.1 champion lacks canonical GroupKFold EVEN OOF artifact)"
+  }
+}

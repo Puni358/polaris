@@ -1,0 +1,85 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE RESEARCH GOVERNANCE DECISION RECORD D4",
+  "timestamp": "2026-09-17T20:11:25Z",
+  "authoritative_inputs": [
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D1_D2.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D3_PV_MAPPING.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_RESEARCH_GOVERNANCE_PACKAGE.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "system/forecasting/implementations/baseline.py",
+    "system/schemas/forecast_bundle.py"
+  ],
+  "governance_decision_d4": {
+    "name": "Wind-Generation Forecast Source Authorization",
+    "status": "GOVERNANCE_DECISION_REQUIRED",
+    "value": "EXISTING_TECHNICAL_SOURCE_NOT_AUTHORIZED",
+    "statement": "A technical wind persistence generator exists in LocalBaselineForecastEngine, but no authorized wind forecast source is established for Stage8.1 integration. Human governance decision is required."
+  },
+  "candidate_wind_source_inspection": {
+    "file_path": "system/forecasting/implementations/baseline.py",
+    "function_class": "LocalBaselineForecastEngine.predict()",
+    "input_quantity_unit": "station_state.last_observed_wind_generation (W)",
+    "output_quantity_unit": "wind_gen_pts (W)",
+    "forecasting_mechanism": "Persistence of last observed wind generation with diurnal sine wave offset: max(0.0, last_obs_wind + 5000.0 * sin(h * pi / 6))",
+    "category": "Prototype persistence heuristic with synthetic diurnal wave",
+    "repository_usage": "Used exclusively inside LocalBaselineForecastEngine for standalone testing",
+    "capability": "Capable of producing 24-element float array in W for ForecastBundle.wind_generation",
+    "authorization_status": "UNAUTHORIZED for Stage8.1 solar forecast integration",
+    "documented_limitations": "Marked PROTOTYPE_UNVALIDATED; contains no meteorological wind prediction model"
+  },
+  "candidate_classification": "CASE_B_EXISTING_SOURCE_EXISTS_BUT_AUTHORIZATION_DOES_NOT",
+  "future_truth_assessment": {
+    "causal_integrity": "MAINTAINED",
+    "details": "Calculates wind values strictly from observable station_state at t0; does not leak future ground-truth actuals."
+  },
+  "forecastbundle_semantic_compatibility": {
+    "structural_compatibility": true,
+    "units": "W",
+    "details": "Output array satisfies schema structural validation, but structural compatibility does not constitute governance authorization."
+  },
+  "relationship_to_d1_d2_d3": {
+    "d1_d2": "If a wind source is authorized, D1 uncertainty bound semantics and D2 point-only degenerate representation rules will apply.",
+    "d3": "D3 PV mapping authorization does not serve as precedent for automatically authorizing baseline wind persistence. Each channel requires explicit authorization."
+  },
+  "scientific_claim_limitations": "Source governance classification only. Does not claim wind forecasting skill, power curve validity, or EMS optimization quality.",
+  "d4_frozen_contract_assessment": {
+    "d4_frozen_contract_change_required": "NO",
+    "reasoning": "ForecastBundle schema v1.0 already contains wind_generation field; missing element is governance source authorization, not schema structure."
+  },
+  "engineering_consequence_assessment": [
+    "Stage8.1 solar forecast integration remains BLOCKED at governance gate pending wind source authorization.",
+    "Any future adapter cannot populate a complete ForecastBundle until D4 and D5 are resolved.",
+    "No codebase modification or adapter implementation is authorized."
+  ],
+  "remaining_governance_decisions": {
+    "D1_LOWER_UPPER_SEMANTICS": "DECISION_RECORDED",
+    "D2_POINT_ONLY_REPRESENTATION": "DECISION_RECORDED",
+    "D3_PV_MAPPING": "DECISION_RECORDED",
+    "D4_WIND_SOURCE": "GOVERNANCE_DECISION_REQUIRED",
+    "D5_DEMAND_SOURCE": "NOT_ESTABLISHED",
+    "D6_MULTI_SOURCE_COMPOSITION": "NOT_ESTABLISHED",
+    "D7_FINAL_FROZEN_CONTRACT_CHANGE_REQUIRED": "NOT_ESTABLISHED"
+  },
+  "implementation_status": "NOT_AUTHORIZED",
+  "historical_artifact_protection": {
+    "d1_d2_decision_record_modified": false,
+    "d3_decision_record_modified": false,
+    "interval_semantics_audit_modified": false,
+    "point_semantics_check_modified": false,
+    "research_governance_package_modified": false,
+    "contract_resolution_modified": false,
+    "compatibility_audit_modified": false,
+    "source_code_modified": false
+  },
+  "final_control_state": {
+    "d4_status": "GOVERNANCE_DECISION_REQUIRED",
+    "d4_wind_source": "EXISTING_TECHNICAL_SOURCE_NOT_AUTHORIZED",
+    "d4_frozen_contract_change_required": "NO",
+    "d5_demand_source": "NOT_ESTABLISHED",
+    "d6_multi_source_composition": "NOT_ESTABLISHED",
+    "d7_final_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "D4_RECORDED_REMAINING_DECISIONS_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  }
+}

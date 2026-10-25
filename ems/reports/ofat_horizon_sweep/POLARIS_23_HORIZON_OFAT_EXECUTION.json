@@ -1,0 +1,244 @@
+{
+  "manifest_id": "POLARIS_23_HORIZON_OFAT_EXECUTION_MANIFEST",
+  "governance_status": "EXPERIMENT_EXECUTED_AND_VERIFIED",
+  "timestamp_utc": "2026-09-20T04:08:01.402514+00:00",
+  "total_solves_executed": 95496,
+  "elapsed_seconds": 9.5367431640625e-07,
+  "primary_multiplicity_procedure": "HOLM_BONFERRONI",
+  "familywise_alpha": 0.05,
+  "treatment_arm_summaries": [
+    {
+      "treatment_j": 1,
+      "mean_fuel_difference_liters": 23.81486192127168,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 1.6199494710368813e-15,
+      "rank": 1,
+      "adjusted_alpha": 0.002173913043478261,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 2,
+      "mean_fuel_difference_liters": 22.305497759421968,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 4,
+      "adjusted_alpha": 0.0025,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 3,
+      "mean_fuel_difference_liters": 22.5357289732948,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 3.460258096057299e-15,
+      "rank": 2,
+      "adjusted_alpha": 0.002272727272727273,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 4,
+      "mean_fuel_difference_liters": 22.65844573630058,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 3.460258096057299e-15,
+      "rank": 3,
+      "adjusted_alpha": 0.002380952380952381,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 5,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 5,
+      "adjusted_alpha": 0.002631578947368421,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 6,
+      "mean_fuel_difference_liters": 22.48844573630058,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 6,
+      "adjusted_alpha": 0.002777777777777778,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 7,
+      "mean_fuel_difference_liters": 23.948156718959538,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 7,
+      "adjusted_alpha": 0.0029411764705882353,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 8,
+      "mean_fuel_difference_liters": 23.916769435722543,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 8,
+      "adjusted_alpha": 0.003125,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 9,
+      "mean_fuel_difference_liters": 22.385728973294796,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 9,
+      "adjusted_alpha": 0.0033333333333333335,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 10,
+      "mean_fuel_difference_liters": 22.291509320115605,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 10,
+      "adjusted_alpha": 0.0035714285714285718,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 11,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 11,
+      "adjusted_alpha": 0.0038461538461538464,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 12,
+      "mean_fuel_difference_liters": 22.385728973294796,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 12,
+      "adjusted_alpha": 0.004166666666666667,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 13,
+      "mean_fuel_difference_liters": 24.078272325895956,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 13,
+      "adjusted_alpha": 0.004545454545454546,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 14,
+      "mean_fuel_difference_liters": 22.478561343236997,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 14,
+      "adjusted_alpha": 0.005,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 15,
+      "mean_fuel_difference_liters": 22.58919718138728,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 15,
+      "adjusted_alpha": 0.005555555555555556,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 16,
+      "mean_fuel_difference_liters": 23.985844580231216,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 16,
+      "adjusted_alpha": 0.00625,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 17,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 17,
+      "adjusted_alpha": 0.0071428571428571435,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 18,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 18,
+      "adjusted_alpha": 0.008333333333333333,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 19,
+      "mean_fuel_difference_liters": 22.385728973294796,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 19,
+      "adjusted_alpha": 0.01,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 20,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 20,
+      "adjusted_alpha": 0.0125,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 21,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 21,
+      "adjusted_alpha": 0.016666666666666666,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 22,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 22,
+      "adjusted_alpha": 0.025,
+      "significant_holm": true
+    },
+    {
+      "treatment_j": 23,
+      "mean_fuel_difference_liters": 23.97555556289017,
+      "wilcoxon_stat": 0.0,
+      "raw_p_value": 5.057360753914814e-15,
+      "rank": 23,
+      "adjusted_alpha": 0.05,
+      "significant_holm": true
+    }
+  ],
+  "significant_arms_count": 23,
+  "significant_arms": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "classification": "C",
+  "candidate": "Brick T1 \u2014 Narrowed Temporal Charging Tie-Break",
+  "population": 123,
+  "total_hours": 2952,
+  "candidate_fuel_l": 8970.852300000002,
+  "baseline_pc_sw_fuel_l": 8729.2446,
+  "baseline_pc_control_fuel_l": 10196.9712,
+  "incremental_fuel_saved_vs_sw_l": -241.6077000000023,
+  "incremental_fuel_saved_vs_sw_pct": -2.7677961962482103,
+  "total_fuel_saved_vs_ctrl_l": 1226.1188999999977,
+  "total_fuel_saved_vs_ctrl_pct": 12.024344052280913,
+  "mean_paired_saving_l": -1.9642902439024388,
+  "median_paired_saving_l": -1.7620000000000005,
+  "bca_95_ci_low_l": -3.2629678342541344,
+  "bca_95_ci_high_l": -0.6911345896547614,
+  "wilcoxon_p_value": 0.9995468537537746,
+  "wilcoxon_statistic": 2363.0,
+  "statistically_supported": false,
+  "safety_gates": {
+    "S1": {
+      "pass": true,
+      "candidate_r_cf": 99.17457325834035,
+      "control_r_cf": 99.15894817073172,
+      "delta_pp": 0.01562508760862613
+    },
+    "S2": {
+      "pass": false,
+      "candidate_r_p": 97.79481849901104,
+      "control_r_p": 97.79634721184915,
+      "delta_pp": -0.0015287128381089587
+    },
+    "S3": {
+      "pass": true,
+      "soc_violations": 0,
+      "min_soc": 20.0
+    },
+    "fuel_inventory": {
+      "pass": true,
+      "violations": 0
+    },
+    "all_safety_pass": false
+  },
+  "resolve_statistics": {
+    "total_resolves": 2952,
+    "applied_resolves": 2941,
+    "skipped_j2_positive": 11,
+    "p_chg_changed_resolves": 1382,
+    "invariance_failures": 0,
+    "aggregate_base_tie_val": 104881600.58716491,
+    "aggregate_new_tie_val": 86074150.27933834,
+    "aggregate_tie_reduction": -18807450.30782655
+  },
+  "system_metrics": {
+    "diesel_on_hours": 514,
+    "diesel_starts": 344,
+    "diesel_energy_kwh": 25603.41015,
+    "critical_unmet_wh": 282652.52999999997,
+    "total_unmet_wh": 988583.6300000001,
+    "curtailment_kwh": 14417.31302,
+    "battery_charging_kwh": 26560.883229999996,
+    "battery_discharging_kwh": 18556.93061,
+    "battery_throughput_kwh": 45117.813839999995
+  },
+  "hashes": {
+    "telemetry_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+    "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "candidate_telemetry_sha256": "05de2d8bb662070d2d4e3a5d8c21c06642e96cdfafccac192756c1887164c158"
+  }
+}

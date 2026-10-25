@@ -1,0 +1,47 @@
+{
+  "execution_version": "1.0.0",
+  "execution_type": "SINGLE_TRAJECTORY_END_TO_END_ENGINEERING_VALIDATION",
+  "start_time_utc": "2026-09-20T06:21:46.080122+00:00",
+  "end_time_utc": "2026-09-20T06:22:10.690697+00:00",
+  "execution_duration_seconds": 24.467,
+  "fixture_specification": {
+    "directory": "POLARIS_HYBRID_FIXTURE_H1_0/",
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023"
+  },
+  "trajectory_specification": {
+    "origin_timestamp": "2024-01-01T00:00:00Z",
+    "end_timestamp": "2024-01-01T23:00:00Z",
+    "mpc_cycles_expected": 24,
+    "mpc_cycles_completed": 24
+  },
+  "initial_state": {
+    "timestamp": "2024-01-01T00:00:00Z",
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 100000.0,
+    "diesel_running": false
+  },
+  "solver_specification": {
+    "solver": "scipy.optimize.milp (HiGHS)",
+    "optimizer_hash": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35"
+  },
+  "metrics_summary": {
+    "trajectory_duration_hours": 24,
+    "completed_mpc_cycles": 24,
+    "completed_simulator_steps": 24,
+    "total_diesel_fuel_liters": 195.5,
+    "total_diesel_energy_kwh": 562.002,
+    "total_solar_used_kwh": 310.686,
+    "total_wind_used_kwh": 67.889,
+    "total_renewable_curtailment_kwh": 0.0,
+    "total_load_served_kwh": 865.147,
+    "total_unmet_load_kwh": 0.0,
+    "total_battery_charge_kwh": 278.076,
+    "total_battery_discharge_kwh": 202.646,
+    "min_battery_soc_pct": 26.96,
+    "max_battery_soc_pct": 93.47,
+    "execution_duration_seconds": 24.467
+  },
+  "truth_firewall_status": "PASS",
+  "provenance_status": "PASS",
+  "engineering_execution_status": "SUCCESS"
+}

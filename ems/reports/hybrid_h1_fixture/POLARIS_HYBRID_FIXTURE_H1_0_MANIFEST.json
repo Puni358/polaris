@@ -1,0 +1,62 @@
+{
+  "manifest_id": "POLARIS_HYBRID_FIXTURE_H1_0_MANIFEST",
+  "fixture_version": "H1.0",
+  "created_timestamp_utc": "2026-09-20T11:10:00Z",
+  "governance_classification": "A — H1.0 FIXTURE GENERATED AND EXACTLY REPRODUCIBLE",
+  "execution_authorized": false,
+  "canonical_fixture_files": [
+    {
+      "file_name": "fixture.csv",
+      "path": "POLARIS_HYBRID_FIXTURE_H1_0/fixture.csv",
+      "sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+      "size_bytes": 1054320,
+      "row_count": 8784
+    },
+    {
+      "file_name": "provenance.json",
+      "path": "POLARIS_HYBRID_FIXTURE_H1_0/provenance.json",
+      "sha256": "ed505b118ee774a628eeac1c8a437b8754f91c71fd2e22764b96e192385a0498",
+      "size_bytes": 1250
+    },
+    {
+      "file_name": "config.json",
+      "path": "POLARIS_HYBRID_FIXTURE_H1_0/config.json",
+      "sha256": "b60ca342f23179cafc7fc3ea5f1301f023e93c37976a188564cff2815a336762",
+      "size_bytes": 320
+    },
+    {
+      "file_name": "hashes.json",
+      "path": "POLARIS_HYBRID_FIXTURE_H1_0/hashes.json",
+      "sha256": "80b2a75fa7645f7435fce8a6e87bcbb49bb77b5d153d10fa8cd42a8a81ac712c",
+      "size_bytes": 410
+    }
+  ],
+  "source_data_hashes": {
+    "SITES_Nuolja_2024_SW_IN_csv": "0a2b9d2cbf3fea14a75d2e448f9650534f2ff540601d8c89df69e3b9334fa1f8",
+    "SMHI_188790_Abisko_Wind_csv": "b7f694aa957af57103176d9a2cb77bd506e2c0f56402eab5cc584ebd02d379fd"
+  },
+  "provenance_summary": {
+    "solar": "REAL_MEASURED (SITES Nuolja AWS 2024)",
+    "solar_pv": "DERIVED_ENGINEERING_QUANTITY (D3 Mapping)",
+    "wind_speed": "CONDITIONALLY_ESTABLISHED_REGIONAL_PROXY (SMHI 188790 10m)",
+    "wind_power": "SYNTHETIC_ENGINEERING_SCENARIO (POLAR_REFERENCE_TURBINE_SCENARIO, NOT_NUOLJA_HARDWARE)",
+    "synthetic_demand": "SYNTHETIC (SYNTHETIC_STATION_DEMAND != NULLOJA_MEASURED_DEMAND)"
+  },
+  "mandatory_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "FIXTURE_GENERATED": "YES",
+    "FIXTURE_DETERMINISM": "PASS",
+    "SOURCE_INTEGRITY": "PASS",
+    "PROVENANCE_VALIDATION": "PASS",
+    "PHYSICAL_VALIDATION": "PASS",
+    "HYBRID_FIXTURE_VERSION": "H1.0",
+    "HYBRID_BRANCH": "DESIGN AUTHORIZED / EXECUTION NOT AUTHORIZED",
+    "STEP9_FINAL_CLASSIFICATION": "A — H1.0 FIXTURE GENERATED AND EXACTLY REPRODUCIBLE"
+  }
+}

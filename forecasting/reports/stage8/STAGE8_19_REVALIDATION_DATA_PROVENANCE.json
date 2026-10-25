@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-09-13T10:49:28+05:30",
+  "document_title": "STAGE 8.19 REVALIDATION DATA PROVENANCE MANIFEST",
+  "search_directories": [
+    "data/",
+    "stage7/",
+    "stage7/stage8/",
+    "scratch/"
+  ],
+  "sources_searched": {
+    "abis_swepos_gnss_ztd": {
+      "status": "ABSENT",
+      "raw_files_found": 0,
+      "egvap_cost716_files": 0,
+      "swepos_station_files": 0,
+      "abis_station_data": 0
+    },
+    "arome_arctic_forecasts": {
+      "status": "ABSENT",
+      "grib_netcdf_files": 0,
+      "run_manifests": 0,
+      "variable_tables": 0
+    }
+  },
+  "protocol_compliance": {
+    "synthetic_abis_used": false,
+    "synthetic_arome_used": false,
+    "synthetic_data_substitution": "REJECTED_PER_PROTOCOL",
+    "stop_condition_triggered": true,
+    "stop_reason": "Required real input artifacts (ABIS GNSS ZTD and AROME-Arctic files) are absent from project workspace."
+  }
+}

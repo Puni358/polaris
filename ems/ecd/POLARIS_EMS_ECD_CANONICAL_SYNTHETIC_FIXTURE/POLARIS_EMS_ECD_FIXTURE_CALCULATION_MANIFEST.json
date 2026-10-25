@@ -1,0 +1,90 @@
+{
+  "manifest_name": "POLARIS EMS ECD Fixture Calculation Manifest",
+  "fixture_id": "ECD_CANONICAL_SYNTHETIC_FIXTURE_V1",
+  "equations": {
+    "battery_ac_energy": "E_AC_usable = capacity_wh * ((SOC_pct - min_soc_pct) / 100.0) * discharge_efficiency",
+    "battery_endurance": "T_battery = E_AC_usable / critical_load_w",
+    "diesel_fuel_rate": "f_rate = base_fuel_l_h + marginal_fuel_l_wh * critical_load_w",
+    "diesel_endurance": "T_diesel = fuel_remaining_l / f_rate",
+    "time_margin": "M_r = T_r - T_test",
+    "operating_mode": "if M_battery >= 0 and M_diesel >= 0 then NORMAL else EMERGENCY",
+    "resource_selection": "larger M_r -> preserved_resource; smaller M_r -> limiting_resource; if M_battery == M_diesel -> TIE / BOTH"
+  },
+  "verified_constants": {
+    "capacity_wh": 200000.0,
+    "min_soc_pct": 20.0,
+    "discharge_efficiency": 0.92,
+    "critical_load_w": 30000.0,
+    "f_rate_l_per_h": 12.5,
+    "T_test_hours": 2.0,
+    "T_required_hours": 72.0
+  },
+  "analytical_case_verifications": [
+    {
+      "case_id": "CASE_1",
+      "soc_pct": 80.0,
+      "fuel_l": 50.0,
+      "T_bat_h": 3.68,
+      "T_dis_h": 4.0,
+      "M_bat_h": 1.68,
+      "M_dis_h": 2.0,
+      "mode": "NORMAL",
+      "preserved": "N/A",
+      "limiting": "N/A",
+      "status": "PASS"
+    },
+    {
+      "case_id": "CASE_2",
+      "soc_pct": 30.0,
+      "fuel_l": 50.0,
+      "T_bat_h": 0.6133333333333333,
+      "T_dis_h": 4.0,
+      "M_bat_h": -1.3866666666666667,
+      "M_dis_h": 2.0,
+      "mode": "EMERGENCY",
+      "preserved": "DIESEL",
+      "limiting": "BATTERY",
+      "status": "PASS"
+    },
+    {
+      "case_id": "CASE_3",
+      "soc_pct": 80.0,
+      "fuel_l": 12.5,
+      "T_bat_h": 3.68,
+      "T_dis_h": 1.0,
+      "M_bat_h": 1.68,
+      "M_dis_h": -1.0,
+      "mode": "EMERGENCY",
+      "preserved": "BATTERY",
+      "limiting": "DIESEL",
+      "status": "PASS"
+    },
+    {
+      "case_id": "CASE_4",
+      "soc_pct": 30.0,
+      "fuel_l": 12.5,
+      "T_bat_h": 0.6133333333333333,
+      "T_dis_h": 1.0,
+      "M_bat_h": -1.3866666666666667,
+      "M_dis_h": -1.0,
+      "mode": "EMERGENCY",
+      "preserved": "DIESEL",
+      "limiting": "BATTERY",
+      "status": "PASS"
+    },
+    {
+      "case_id": "CASE_5",
+      "soc_pct": 80.0,
+      "fuel_l": 46.0,
+      "T_bat_h": 3.68,
+      "T_dis_h": 3.68,
+      "M_bat_h": 1.68,
+      "M_dis_h": 1.68,
+      "equality_error_h": 0.0,
+      "mode": "NORMAL",
+      "preserved": "TIE / BOTH",
+      "limiting": "TIE / BOTH",
+      "status": "PASS"
+    }
+  ]
+}

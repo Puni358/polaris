@@ -1,0 +1,52 @@
+{
+  "timestamp_utc": "2026-09-14T13:20:20.838842+00:00",
+  "document_title": "POLARIS PRE-REGISTERED HORIZON-CONDITIONAL LOCAL-SPATIAL 3X3 FORECASTING EXPERIMENT PROTOCOL",
+  "scientific_question": "Does adding a causal 3x3 local AROME cloud-state representation to the existing POLARIS forecasting inputs improve causal SW_IN forecasting under the locked POLARIS benchmark?",
+  "experiment_type": "Single Pre-Registered Forecasting Validation Experiment (NOT an information audit)",
+  "absolute_firewalls": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed",
+    "network_fetches": 0,
+    "feature_governance": "No new meteorological variables or derived features permitted. The only newly constructed representation is the pre-registered 3x3 spatial tensor formed directly from the existing frozen 11-channel causal AROME cache.",
+    "footprint": "Local 3x3 patch centered at station grid point y=209, x=548 (patch y=208..210, x=547..549)",
+    "channels": 11
+  },
+  "frozen_architecture_spec": {
+    "model_class": "PreRegisteredLocalSpatial3x3Model",
+    "spatial_conv": "Conv2d(11,16,k3,p1) -> BN(16) -> ReLU -> Conv2d(16,16,k3,p1) -> BN(16) -> ReLU",
+    "spatial_readout": "center feature [1,1] (16d), flattened 3x3 (144d) -> Linear(144,32) -> BN1d(32) -> ReLU",
+    "horizon_embedding": "nn.Embedding(24, 16)",
+    "horizon_gate": "concat(spatial_rep 32, horizon_emb 16) -> Linear(48,32) -> ReLU -> Linear(32,32) -> Sigmoid -> elementwise mult with spatial_rep",
+    "context_encoder": "Linear(38,32) -> BN1d(32) -> ReLU",
+    "fusion_head": "concat(gated_spatial 32, context 32, horizon_emb 16) = 80 -> Linear(80,32) -> ReLU -> Dropout(0.2) -> Linear(32,1)",
+    "exact_parameter_count": 15633
+  },
+  "training_protocol": {
+    "even_origins_count": 173,
+    "total_even_rows": 4152,
+    "daytime_even_rows": 2216,
+    "cross_validation": "GroupKFold by forecast_origin (n_splits=5)",
+    "spatial_scaling": "Per-channel Z-score standardization fit on training fold only, clipped to [-5, +5]",
+    "optimizer": "AdamW (lr=1e-3, weight_decay=1e-4)",
+    "batch_size": 8,
+    "max_epochs": 300,
+    "early_stopping_patience": 20,
+    "seed": 42,
+    "loss_function": "Daytime MAE / L1Loss with causal night zero mask"
+  },
+  "even_evaluation_gates": {
+    "G1": "Aggregate daytime \u0394MAE <= -0.50 W/m\u00b2 vs control (47.451469 W/m\u00b2)",
+    "G2": "At least 4 of 5 folds improve in daytime MAE",
+    "G3": "Maximum fold daytime MAE degradation <= +0.50 W/m\u00b2",
+    "G4": "Daytime nMAE <= 36.8045% AND Daytime RMSE <= 74.376601 W/m\u00b2",
+    "G5": "0 parser, shape, or temporal leakage defects",
+    "G6": "Control prediction CSV (SHA256: b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366) verified"
+  },
+  "decision_rules": {
+    "if_all_pass": "PROMOTED to ODD evaluation",
+    "if_any_fail": "REJECTED and local-spatial route CLOSED permanently. No retraining, rescue models, or seed sweeps."
+  }
+}

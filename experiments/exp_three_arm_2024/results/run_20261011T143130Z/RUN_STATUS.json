@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETED",
+  "started_utc": "2026-10-11T14:31:30.994463+00:00",
+  "runner_sha256": "aba1bb97b53f7e4509f5bacfbdfb87b8ed0bdde2b44696a2aae671712b798c16",
+  "calibration_artifact_sha256": "0fd914dd7770890f23a97782164204e7a76ef1cbacbe1b6e7c53c6b38d3d70e0",
+  "execute_instruction_ref": "NON_CMSG_REF :: recorded_at_utc=2026-10-11T14:22:57Z :: sha256_of_exact_instruction_text=2200f3e502d2da894d9fdddc979c393c44bf97821cdee0132d8f896f22304c65 :: declaration: this is a non-cmsg-format reference, used because no cmsg-format platform message ID was accessible in this AI assistant session. It identifies, by content hash and recording time, the project lead's (PuNi's) explicit 'POLARIS -- Prompt 6: Apply and Validate Fresh Execution Authorization' instruction message in this conversation, in which the project lead explicitly approved signer=PuNi, role=project lead, ceiling=14760, per-arm=2952, workers=1, retries=0, and the R1-R5 residual-risk disposition recorded in accepted_residual_risks below.",
+  "arms": {
+    "PC-Control": "COMPLETE",
+    "A": "COMPLETE",
+    "A_FIX": "COMPLETE",
+    "B": "COMPLETE",
+    "C": "COMPLETE"
+  },
+  "ended_utc": "2026-10-11T16:31:31.223481+00:00",
+  "solves_used": {
+    "PC-Control": 2952,
+    "A": 2952,
+    "A_FIX": 2952,
+    "B": 2952,
+    "C": 2952
+  }
+}

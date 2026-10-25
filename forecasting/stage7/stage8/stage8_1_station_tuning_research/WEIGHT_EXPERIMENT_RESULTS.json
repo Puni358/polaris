@@ -1,0 +1,57 @@
+{
+  "weighting_rule": "sample_weight = 1.0 + clip(solar_elevation,0,90)/30.0, defined pre-evaluation from Phase 1 findings",
+  "control_unweighted": {
+    "odd_2024": {
+      "n": 2883,
+      "mae": 36.204,
+      "rmse": 64.5752,
+      "bias": 0.9605,
+      "nmae_pct": 28.0807
+    },
+    "blind_2025": {
+      "n": 5978,
+      "mae": 35.9745,
+      "rmse": 65.9427,
+      "bias": 4.0802,
+      "nmae_pct": 28.2478
+    }
+  },
+  "weighted_candidate": {
+    "odd_2024": {
+      "n": 2883,
+      "mae": 35.4913,
+      "rmse": 62.9907,
+      "bias": 1.5671,
+      "nmae_pct": 27.5279
+    },
+    "blind_2025": {
+      "n": 5978,
+      "mae": 35.8626,
+      "rmse": 65.4575,
+      "bias": 5.192,
+      "nmae_pct": 28.1599
+    }
+  },
+  "bootstrap_mae_diff_vs_control_blind2025": {
+    "mean_diff": -0.1114,
+    "ci95_lo": -0.4449,
+    "ci95_hi": 0.2211,
+    "n_boot": 2000
+  },
+  "high_elevation_subset_blind2025": {
+    "control": {
+      "n": 978,
+      "mae": 100.925,
+      "rmse": 129.9378,
+      "bias": 13.7469,
+      "nmae_pct": 25.7694
+    },
+    "weighted": {
+      "n": 978,
+      "mae": 99.4319,
+      "rmse": 128.8231,
+      "bias": 19.953,
+      "nmae_pct": 25.3882
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "campaign_id": "POLARIS_BRANCH01_MULTI_TRAJECTORY_EMS_CAMPAIGN",
+    "execution_scope": "4,152 H1 execution steps across 173 separate 24-hour trajectory slices",
+    "phase_a_sequential_trajectories": 0,
+    "phase_b_parallel_8workers_trajectories": 173,
+    "total_trajectories": 173,
+    "elapsed_seconds": 2900.11
+  },
+  "identities": {
+    "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "control_id": "Stage81ForecastEngine",
+    "control_source_hash": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "optimizer_id": "LocalMILPEnergyOptimizer",
+    "optimizer_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "simulator_id": "DigitalTwinSimulator",
+    "simulator_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508"
+  },
+  "forensic_checks": {
+    "MULTI_TRAJECTORY_CAMPAIGN": "COMPLETE",
+    "FORENSIC_AUDIT": "PASS",
+    "MODEL_IDENTITY": "PASS",
+    "CONTROL_IDENTITY": "PASS",
+    "TRAJECTORY_COVERAGE": "REPRESENTATIVE_TRAJECTORY_SET",
+    "SAME_TRUTH": "PASS",
+    "CAUSALITY": "PASS",
+    "TREATMENT_FALLBACK": "NONE",
+    "MODEL_INFERENCE_EXECUTED": "YES",
+    "EMS_EXECUTED": "YES",
+    "MPC_EXECUTED": "YES",
+    "H1_EXECUTION_STEPS": 4152,
+    "ENERGY_RECONCILIATION": "PASS",
+    "BATTERY_PHYSICS": "PASS",
+    "DIESEL_ACCOUNTING": "PASS",
+    "CHECKPOINT_RECONCILIATION": "PASS",
+    "SLEEP_INHIBIT_STATUS": "ACTIVE",
+    "SLEEP_INHIBIT_RELEASE": "PASS",
+    "ANNUAL_RESULT_STATUS": "REPRESENTATIVE_TRAJECTORY_SET",
+    "NUOLJA_STATION_SPECIFIC_ANNUAL_SAVING": "NOT_ESTABLISHED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "generated_at_utc": "2026-10-02T18:34:52.381416+00:00",
+  "purpose": "Separate CORRECTED Stage 8.1 model for the 2025 blind test. Trained and evaluated ONLY on 2024 data (EVEN-train / ODD-eval), exact original procedure, exact original target/split/hyperparameters/model type -- only the terrain (4) and u700/v700 (2) features were rebuilt with corrected causal semantics; the other 31 features are unchanged from the historical 2024 pipeline's source files.",
+  "historical_artifact_untouched": true,
+  "retraining_scope": "2024 only; 2025 blind test NOT run by this script",
+  "input_feature_matrix": {
+    "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2024_CORRECTED.csv",
+    "sha256": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43"
+  },
+  "split": {
+    "total_origins": 347,
+    "even_train_origins": 174,
+    "odd_eval_origins": 173
+  },
+  "odd_counts": {
+    "origins": 173,
+    "forecast_hours": 4152,
+    "daytime_rows": 2883,
+    "night_rows": 1269
+  },
+  "features": {
+    "stage75_control_35": [
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold",
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h",
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "clearsky_ghi_terrain_adjusted"
+    ],
+    "stage8_1_candidate_37": [
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold",
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h",
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "clearsky_ghi_terrain_adjusted",
+      "u700",
+      "v700"
+    ],
+    "corrected_families": [
+      "terrain (4)",
+      "u700/v700 (2)"
+    ],
+    "unchanged_count": 31,
+    "nan_rows_in_u700_v700_train": 367,
+    "nan_rows_in_u700_v700_eval": 365,
+    "nan_handling": "native HistGradientBoostingRegressor missing-value support; model now trained WITH the same honest NaN pattern it will see at inference (unlike the historical model, which never saw real NaN for u700/v700)"
+  },
+  "model_definition": {
+    "estimator": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42,
+    "tuned": false
+  },
+  "corrected_stage7_5_control_2024_odd": {
+    "daytime_mae_w_m2": 36.361637,
+    "daytime_nmae_pct": 28.2029,
+    "daytime_rmse_w_m2": 64.810409,
+    "daytime_bias_w_m2": 2.104996,
+    "night_mae_w_m2": 0.0
+  },
+  "corrected_stage8_1_candidate_2024_odd": {
+    "daytime_mae_w_m2": 36.203997,
+    "daytime_nmae_pct": 28.0807,
+    "daytime_rmse_w_m2": 64.575152,
+    "daytime_bias_w_m2": 0.960484,
+    "night_mae_w_m2": 0.0
+  },
+  "deltas_candidate_minus_control": {
+    "delta_mae_w_m2": -0.157639,
+    "delta_nmae_pp": -0.1223,
+    "delta_rmse_w_m2": -0.235257,
+    "delta_bias_w_m2": -1.144512
+  },
+  "historical_buggy_terrain_reference_for_context_only": {
+    "note": "Historical stage7_5 control used UNCORRECTED terrain; these numbers are NOT a valid apples-to-apples baseline, provided for context only.",
+    "mae_w_m2": 36.613571,
+    "nmae_pct": 28.3983,
+    "rmse_w_m2": 65.347064,
+    "bias_w_m2": 1.307778
+  },
+  "artifacts": {
+    "model_control_35feature": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_control_35feature_model.joblib",
+      "sha256": "00783c858c0c08b36c2ea25b7a00edeee373e869535b485feb0314f9c21f4a67"
+    },
+    "model_candidate_37feature": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_candidate_37feature_model.joblib",
+      "sha256": "64ea4abada78a257f9ad053f1d869dddb983160490e06d1528954fd2205009ce"
+    },
+    "odd_predictions_csv": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_official_odd_predictions_2024.csv",
+      "sha256": "9a98a9d327d0128140a75702d3e07dc927b21b22cdc03b79f4721d493cf20049"
+    }
+  },
+  "artifact_roundtrip_identical": true
+}

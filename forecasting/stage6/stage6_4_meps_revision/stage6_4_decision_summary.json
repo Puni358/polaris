@@ -1,0 +1,117 @@
+{
+  "experiment": "POLARIS Stage 6.4 MEPS Revision Trajectory EVEN CV",
+  "control_reference_even": {
+    "daytime_mae_w_m2": 39.423597558976034,
+    "nmae_percent": 41.459399220861634,
+    "rmse_w_m2": 62.829010740048616
+  },
+  "candidate_even": {
+    "daytime_mae_w_m2": 39.15787800996154,
+    "nmae_percent": 40.23046606801776,
+    "rmse_w_m2": 62.112695917803386,
+    "delta_mae_w_m2": -0.26571954901449146,
+    "delta_nmae_percent": -1.2289331528438723,
+    "delta_rmse_w_m2": -0.7163148222452307
+  },
+  "per_fold_metrics": [
+    {
+      "fold": 1,
+      "train_origins": 29,
+      "val_origins": 29,
+      "val_samples_daytime": 591,
+      "control_mae": 49.90034011822971,
+      "candidate_mae": 50.186088578668546,
+      "delta_mae": 0.28574846043883895,
+      "control_rmse": 81.66196413461836,
+      "candidate_rmse": 82.38549830928531,
+      "delta_rmse": 0.7235341746669519,
+      "improved": false
+    },
+    {
+      "fold": 2,
+      "train_origins": 58,
+      "val_origins": 29,
+      "val_samples_daytime": 696,
+      "control_mae": 72.73944384743172,
+      "candidate_mae": 72.84569602133833,
+      "delta_mae": 0.10625217390661135,
+      "control_rmse": 106.49190111265354,
+      "candidate_rmse": 104.79509880644902,
+      "delta_rmse": -1.6968023062045177,
+      "improved": false
+    },
+    {
+      "fold": 3,
+      "train_origins": 87,
+      "val_origins": 29,
+      "val_samples_daytime": 648,
+      "control_mae": 42.74923690308985,
+      "candidate_mae": 42.17539666832419,
+      "delta_mae": -0.5738402347656617,
+      "control_rmse": 70.89905599379424,
+      "candidate_rmse": 69.6148253146515,
+      "delta_rmse": -1.2842306791427376,
+      "improved": true
+    },
+    {
+      "fold": 4,
+      "train_origins": 116,
+      "val_origins": 29,
+      "val_samples_daytime": 396,
+      "control_mae": 29.29291564782628,
+      "candidate_mae": 28.310401894800084,
+      "delta_mae": -0.9825137530261969,
+      "control_rmse": 50.41542643571861,
+      "candidate_rmse": 49.49230280213052,
+      "delta_rmse": -0.9231236335880908,
+      "improved": true
+    },
+    {
+      "fold": 5,
+      "train_origins": 145,
+      "val_origins": 29,
+      "val_samples_daytime": 221,
+      "control_mae": 2.4360512783026147,
+      "candidate_mae": 2.2718068866765613,
+      "delta_mae": -0.16424439162605342,
+      "control_rmse": 4.676706023458367,
+      "candidate_rmse": 4.275754356500589,
+      "delta_rmse": -0.40095166695777795,
+      "improved": true
+    }
+  ],
+  "gates": {
+    "gate1_mae_threshold_39_2236": {
+      "pass": true,
+      "value": 39.15787800996154,
+      "threshold": 39.2236
+    },
+    "gate2_fold_improvement_ge_4_of_5": {
+      "pass": false,
+      "improved_folds": 3,
+      "required": 4
+    },
+    "gate3_max_fold_degradation_le_0_15": {
+      "pass": false,
+      "max_degradation": 0.28574846043883895,
+      "limit": 0.15
+    },
+    "gate4_nmae_le_control": {
+      "pass": true,
+      "value": 40.23046606801776,
+      "control_value": 41.459399220861634
+    },
+    "gate5_rmse_le_control": {
+      "pass": true,
+      "value": 62.112695917803386,
+      "control_value": 62.829010740048616
+    }
+  },
+  "all_gates_pass": false,
+  "final_decision": "REJECT / KEEP STAGE 5.2 CHAMPION",
+  "failure_reasons": [
+    "Gate 2 Failed: Improved in 3/5 folds (Required: >= 4/5 folds)",
+    "Gate 3 Failed: Max fold degradation +0.2857 > limit +0.15 W/m\u00b2"
+  ],
+  "odd_test_evaluated": false
+}

@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "gate_name": "CONTROLLED_STATIC_INTEGRATION_IMPLEMENTATION_AND_VALIDATION",
+    "timestamp": "2026-09-21T08:42:53Z",
+    "governance_mode": "CONTROLLED_STATIC_INTEGRATION_VALIDATION_ONLY"
+  },
+  "model_identity": {
+    "selected_model": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "model_version": "1.0.0",
+    "model_artifact": "artifacts/model_runs/RUN_BRANCH01_CANDIDATE_A_HGB/model.joblib",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "architecture": "MultiOutputRegressor(HistGradientBoostingRegressor)",
+    "immutability_status": "FROZEN_IMMUTABLE"
+  },
+  "protected_components": {
+    "stage8_1_solar_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "stage8_1_modified": false,
+    "ems_modified": false,
+    "optimizer_modified": false,
+    "dispatchplan_modified": false,
+    "digital_twin_modified": false,
+    "model_modified": false
+  },
+  "execution_summary": {
+    "total_static_tests": 30,
+    "passed_static_tests": 30,
+    "failed_static_tests": 0,
+    "executed_milp": false,
+    "executed_mpc": false,
+    "executed_digital_twin": false,
+    "executed_ems": false,
+    "retrained_model": false,
+    "tuned_model": false
+  }
+}

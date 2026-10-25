@@ -1,0 +1,478 @@
+{
+ "experiment_id": "EXP-PLANNER-CF-CONSISTENCY-2025",
+ "design_version": "PLANNER-CF-PREREG-v1.1",
+ "supersedes": "PLANNER-CF-PREREG-v1.0",
+ "date_utc": "2026-10-06",
+ "governance_status": "PREREGISTRATION + IMPLEMENTATION HASHED AND TESTED - CAMPAIGN NOT RUN",
+ "governing_decision": "experiments/POST_STAGE4_GOVERNANCE_DECISION_RECORD.md (customer-first; Arm A governs; Arm B quarantined, not used)",
+ "markdown_companion": {
+  "path": "EXP_PLANNER_CUSTOMER_FIRST_CONSISTENCY_PREREGISTRATION.md",
+  "sha256": "057e277cff4f2f5c0d840b951dfbfc8f9c9865ff3596fefe5da448c76e7f5393"
+ },
+ "policy_hierarchy": [
+  "critical load service",
+  "non-critical load service",
+  "battery charging (reserve as battery-service requirement)",
+  "curtailment"
+ ],
+ "lexicographic_priorities": [
+  {
+   "priority": 5,
+   "term": "J1",
+   "definition": "sum unmet_crit_t * dt",
+   "class": "customer service (critical)"
+  },
+  {
+   "priority": 4,
+   "term": "J_nc",
+   "definition": "sum unmet_nc_t * dt",
+   "class": "customer service (non-critical)"
+  },
+  {
+   "priority": 3,
+   "term": "J2",
+   "definition": "sum s_j2_t",
+   "class": "battery-service requirement (reserve)"
+  },
+  {
+   "priority": 2,
+   "term": "J3",
+   "definition": "sum (0.00025*p_diesel_t + 5*u_diesel_t)*dt + 2.0*v_start_t",
+   "class": "economic objective (fuel and startup), not in customer-service hierarchy"
+  },
+  {
+   "priority": 1,
+   "term": "J4",
+   "definition": "sum (curt_sol_t + curt_wind_t)*dt",
+   "class": "curtailment"
+  }
+ ],
+ "planner_changes": {
+  "C1": "split served into served_c and served_nc; add unmet_nc; R4 replaced by non-critical balance; R3 uses total served",
+  "C2": "priorities as in lexicographic_priorities",
+  "C3": "flexible sink p_flex removed as planner variable; upper bound 0 W; preregistered change (B1)",
+  "C4_E1": "EMERGENCY row p_dis - p_served <= 0 references total served (preregistered semantic change)"
+ },
+ "unchanged": [
+  "EBR coefficients and reserve form",
+  "terminal 100000 Wh at horizon index 23 as implemented",
+  "battery 200 kWh, SOC 20-95%, 50 kW limits, eta 0.92",
+  "diesel 10-100 kW, base 5 L/h, marginal 0.25 L/kWh",
+  "startup 2.0 L in optimizer objective (U8 option A); simulator 0 L",
+  "forecasts, causal NWP, router, mode propagation",
+  "tau 0.055 W",
+  "HiGHS options threads=1, blend_multi_objectives=False, default tolerances",
+  "simulator fuel accounting"
+ ],
+ "arms": [
+  {
+   "id": "PC-Control",
+   "renewable_credit": "none",
+   "low_sun_protection": "n/a",
+   "role": "new control; gate basis"
+  },
+  {
+   "id": "PC-S",
+   "renewable_credit": "solar",
+   "low_sun_protection": "OFF",
+   "role": "efficiency candidate"
+  },
+  {
+   "id": "PC-SW",
+   "renewable_credit": "solar+wind",
+   "low_sun_protection": "OFF",
+   "role": "unprotected candidate"
+  },
+  {
+   "id": "PC-S-L",
+   "renewable_credit": "solar",
+   "low_sun_protection": "ON (1[e<15deg])",
+   "role": "protected candidate"
+  },
+  {
+   "id": "PC-SW-L",
+   "renewable_credit": "solar+wind",
+   "low_sun_protection": "ON",
+   "role": "protected candidate"
+  },
+  {
+   "id": "ORACLE-PHYS",
+   "renewable_credit": "no reserve constraint (Layer C and J2 removed)",
+   "low_sun_protection": "n/a",
+   "role": "PRIMARY oracle for NG7; perfect foresight; diagnostic only; not a candidate"
+  },
+  {
+   "id": "ORACLE-CTRL",
+   "renewable_credit": "Control EBR",
+   "low_sun_protection": "n/a",
+   "role": "SECONDARY diagnostic; bounds Control-EBR family only; not used for NG7; not a candidate"
+  }
+ ],
+ "runs": {
+  "candidate_control_closed_loop": "123 x 5 = 615",
+  "oracle_phys": "123 closed loops",
+  "oracle_ctrl": "123 closed loops"
+ },
+ "oracle_future_inputs": {
+  "calendar": "origin = forecast_start 00:00 UTC; offset j from origin 00:00; re-solve at step t (t=0..23) uses offsets j=t..t+23 (max j=46)",
+  "solar": "min(max(0, SW_IN(T)*300*0.20*0.85), 60000 W), T = origin + j hours, SW_IN from data/POLARIS_v0_1_SITES_Nuolja_2025_hourly_SW_IN.csv; same conversion as executor pv_from_sw_in; corrected-runner timestamp convention, no correction",
+  "wind": "max(0, round(4500 + 5000*sin((j+1)*pi/6), 2)), h=j+1; reproduces recorded realized wind for j in 0..23",
+  "demand": "max(10000, round(15000 + 3000*cos((j+1)*pi/12), 2)), h=j+1; reproduces recorded realized demand for j in 0..23",
+  "critical": "min(11600, D(j))",
+  "coverage_gate": "G12: SITES SW_IN must contain T for full 47-hour window; last origin 2025-08-31 needs data to 2025-09-01 22:00; otherwise origin BLOCKED"
+ },
+ "planned_telemetry": {
+  "harness_only": true,
+  "per_hour_fields": [
+   "served_c",
+   "served_nc",
+   "unmet_crit",
+   "unmet_nc",
+   "charge"
+  ],
+  "source": "solver solution vector via research harness wrapper",
+  "production_DispatchPlan_modified": false,
+  "G2_G3_use": "PLANNED values"
+ },
+ "gates": {
+  "S1_critical_first": "dR_CF = R_CF(candidate) - R_CF(PC-Control) >= 0.00 pp (aggregate, 123 origins)",
+  "S2_proportional": "dR_P = R_P(candidate) - R_P(PC-Control) >= 0.00 pp (aggregate, 123 origins)",
+  "S3_soc_floor": "zero hours with realized SOC < 20.00%",
+  "E1_diesel_gate": "two-sided paired Wilcoxon on Delta_o = Fuel(PC-Control,o) - Fuel(candidate,o), Holm across 4 candidate tests, adj p<0.05; AND BCa95 lower bound > 0.0 L/origin (10000, seed 42); evaluated only if S1-S3 pass",
+  "T40_report_only": "(Fuel(PC-Control)-Fuel(candidate))/Fuel(PC-Control) >= 40.0%; not a gate"
+ },
+ "audit_gates": {
+  "G1": "under ORACLE-PHYS (forecast=realized) planned charge equals realized charge within 1 W each hour; failure BLOCKED",
+  "G2": "planned values: NOT(unmet_nc_t>0 AND charge_t>0) every hour every arm; violation BLOCKED",
+  "G3": "planned unmet_crit_t > 0 is physically feasible only if S_avail_t + max_discharge_t < D_c,t, where S_avail_t = realized PV + realized wind + planned diesel (planned battery discharge NOT included) and max_discharge_t = min(50000 W, (E_t - E_min)*eta_dis) using realized start-of-hour state E_t; otherwise G3 fails; any arm with a G3 failure BLOCKED",
+  "G4": "every solve HighsModelStatus.kOptimal",
+  "G5": "shortfall-hour residual recorded (audited residual, not failure)",
+  "G6": "busbar |S_avail-(s+C+curt)|<=1e-3 W; SOC 19.999-95.001%; fuel accounting 5*on+0.25*kWh except listed starvation rows",
+  "G7": "determinism of repeated PC-Control run (1e-6 W, 1e-6 L)",
+  "G8": "hash guards (section hash_guards_sha256)",
+  "G9": "123 unique origins per arm; 2952 hours per arm",
+  "G10": "optimizer_received_mode == route; EMERGENCY steps build 24 EM rows counted at build time",
+  "G11": "old corrected telemetry not modified; new paths only",
+  "G12": "oracle SITES coverage for each origin's 47-hour window"
+ },
+ "no_go_conditions": {
+  "NG1": "realizability G1 fails -> planner correction not accepted",
+  "NG2": "priority inversion G2 fails in any arm -> NO-GO for that arm",
+  "NG3": "candidate NO-GO if (a) G3 fails in any hour of its run, or (b) realized critical-first reliability below PC-Control (S1); uses planned-vs-realized definitions of G2/G3",
+  "NG4": "candidate SOC < 20.00% hour -> rejected (S3)",
+  "NG5": "determinism (G7) or hash (G8) failure",
+  "NG6": "Arm B or any storage-first/brownout realization used -> NO-GO",
+  "NG7": "ORACLE-PHYS saving vs PC-Control < 40% -> record NOT REACHABLE under physics and customer-first priorities with perfect information and no reserve; ORACLE-CTRL neither triggers nor cancels NG7",
+  "NG8": "production or frozen artifact change (incl. production DispatchPlan) -> NO-GO",
+  "NG9": "post-hoc change to thresholds, arms, gates, oracle definition, or corrections -> NO-GO",
+  "NG10": "quarantined realization-run outputs used for comparison -> NO-GO for that comparison",
+  "NG11": "G12 fails for any origin -> origin not interpreted; missing origins make ORACLE-PHYS unable to establish NG7 -> BLOCKED"
+ },
+ "decision_rule": [
+  "NO-GO applies to named arm or claim",
+  "candidate eligibility S1-S3 then E1",
+  "winner = highest eligible saving",
+  "T40 PASS/FAIL report; NG7 decided by ORACLE-PHYS only",
+  "no arm declared correct because it looks better; report eligible set and winner change vs corrected results"
+ ],
+ "target": {
+  "relative_to": "PC-Control of the same run",
+  "threshold": "0.60 x Fuel(PC-Control)"
+ },
+ "reference_values_old_planner": {
+  "corrected_control_fuel_L": 6096.9004,
+  "threshold_40pct_L": 3658.14,
+  "S_fuel_L": 4687.6902,
+  "S_additional_reduction_needed_L": 1029.55,
+  "S_additional_reduction_pp_of_control": 16.89,
+  "S_additional_reduction_pct_of_S": 21.96,
+  "SW_fuel_L": 3768.5494,
+  "SW_reduction_needed_L": 110.41
+ },
+ "physics_relaxed_bound": {
+  "fuel_L": 1162.52,
+  "saving_pct": 80.93,
+  "status": "analytic offline; loose; does not establish reachability"
+ },
+ "statistics": {
+  "pairing": "origin-level, sorted, no subsetting",
+  "holm_family": "4 candidate tests incl. S",
+  "bca": "10000 resamples, seed 42, scipy.stats.bootstrap BCa",
+  "deterministic_comparisons": [
+   "D1 PC-Control vs old Control",
+   "D2 PC-S vs old S",
+   "D3 PC-S and PC-SW-L vs PC-Control"
+  ]
+ },
+ "hash_guards_sha256": {
+  "../system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+  "../system/simulation/research_realization_executor.py": "c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b",
+  "../system/schemas/dispatch_plan.py": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b",
+  "../system/forecasting/implementations/causal_nwp_physics.py": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "../experiments/candidate_s_sw_campaign_2024/research_numerical_extractor.py": "95b2f3b53609a6e420a18692b4b0e3927cb47841d9e1200cce04677094a5950e",
+  "stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_RESULTS.csv": "8c13b904e286e25167a8eca5144e545627b6c598f36716e93fcf9ee95a2ab57e",
+  "stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_HOURLY_TELEMETRY.csv": "6b3636d7ae4d596016f4e7b3b5fc63e9a26e374041b586b619b49afc2eec7d2e",
+  "STAGE4_2025_SW_LOW_SUN_RESEARCH_FREEZE.md": "e73558cfd03acd35fc55d24a055f7ccc6a31d0d973a3cc2e4443a8665ac21cd7",
+  "STAGE4_2025_SW_LOW_SUN_RESEARCH_FREEZE.json": "6b0bb6f7af44ef06731180d50239de222f301fa571c5862d115f7644d3be7b87",
+  "stage4_sw_low_sun_2025_holdout/STAGE4_123_ORIGIN_RESULTS.csv": "18d13dec71eab82919c900da52b5248699e4b5b8fa4c4ed8499aff494f4fa62b",
+  "POST_STAGE4_GOVERNANCE_DECISION_RECORD.md": "d3239b3ac9209644606014d1d52e63d2c3103560771b9c6c42924942f93d977f",
+  "../data/POLARIS_v0_1_SITES_Nuolja_2025_hourly_SW_IN.csv": "d457facdbeb57b9c582b623c524c0f50717306ca083ab93028f1bd700d1e7a2e"
+ },
+ "authorization_required_for": [
+  "C1-C4 incl. C3 flex removal and E1 EMERGENCY reference",
+  "ORACLE-PHYS as NG7 oracle; ORACLE-CTRL secondary",
+  "oracle future-input definitions and G12",
+  "planned-telemetry harness logging",
+  "40% definition and new paths"
+ ],
+ "oracle_solar_source": {
+  "path": "data/POLARIS_v0_1_SITES_Nuolja_2025_hourly_SW_IN.csv",
+  "sha256": "d457facdbeb57b9c582b623c524c0f50717306ca083ab93028f1bd700d1e7a2e",
+  "authoritative": true
+ },
+ "implementation": {
+  "paths_and_sha256": {
+   "experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py": {
+    "role": "planner (C1 literal p_served_c<=D_c, \u00a716.2)",
+    "sha256": "a8dd9fc7d84e3d2344ba4f99ba1b1cd0ec2165a83d8f7af438b69f8178815093"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/planned_telemetry_harness.py": {
+    "role": "harness",
+    "sha256": "83fe05ee968dc6448a07d0f904653d79a10ecbf2582dc5935f9267db4bc3e63c"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/oracle_runner.py": {
+    "role": "oracle (edited at G2/G3 fix: wires executed-hour recorder)",
+    "sha256": "a65adcb32fc48f53cb3db547107ab8d0183449cdfa8bb24f2602be6b6b817f20"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/planned_execution_telemetry.py": {
+    "role": "executed-hour telemetry and G2/G3 evaluator (harness-only, new at G2/G3 fix)",
+    "sha256": "bb6dd4bb0c2415a650bd1ed6809fa5627cb193e85aed7fa3b5f9a552147bd3c8"
+   },
+   "tests/test_planner_cf_v1.py": {
+    "role": "tests",
+    "sha256": "e660f2d56bd155b15102f80abc1c45cd99094c0fdbf980d94b1d9f6742a6b25e"
+   },
+   "tests/test_planned_execution_g23.py": {
+    "role": "tests for executed-hour telemetry and G2/G3 (new at G2/G3 fix)",
+    "sha256": "ac5cec1652496bb1d12ab7f087019add134963d581f9d5e48d4ed4c46b0ed558"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/planner_cf_campaign_runner.py": {
+    "role": "campaign runner, 615 closed-loop runs, authorization gate, post-run report (\u00a716.2)",
+    "sha256": "ea9400bfa11734cd6ab8427c0b6c8b872fedf73811f3cd66e38d6023ed370726"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/planner_cf_hash_guards.py": {
+    "role": "protected-artifact hash guards (\u00a79, G8, G11)",
+    "sha256": "defc138da3d56724ffaa74464c4dcb229c31314c956b52840d0bd16d902c57f0"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/planner_cf_statistics.py": {
+    "role": "S1-S3, E1 Wilcoxon/Holm/BCa, T40, winner, D1-D3 (\u00a716.2)",
+    "sha256": "1153bd61749352847423a381ddaa0b9ed1d8724a96730675d2773bcbf21f7bb9"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/planner_cf_audit_gates.py": {
+    "role": "G1,G2,G3,G4,G6,G7,G9,G10,G11,G12 evaluators (\u00a716.2)",
+    "sha256": "6f3d2cc4d7ae1c006a7ac0e2f70f668d64364f114be59d8604f4c71ff64b9654"
+   },
+   "tests/test_planner_cf_campaign_infra.py": {
+    "role": "synthetic/validation tests for campaign infrastructure (\u00a716.2)",
+    "sha256": "43e11f1a51f21cec58d07e8811824597163c9bedf6092c39d1ca8935fb95cb81"
+   },
+   "tests/test_planner_cf_closed_loop_synthetic.py": {
+    "role": "synthetic fake-origin closed-loop invariant tests (\u00a716.2)",
+    "sha256": "a6d5484da049596e01593d1d5a39cc33b28a7e5e4f2626320df3fe48aea9390d"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/oracle_audit_adapter.py": {
+    "role": "ORACLE-PHYS/CTRL -> G1/G12 audit inputs (\u00a716.3)",
+    "sha256": "c5aee087b2a8cdf9ccc28f81642002374fbe4a3ccfc7a125201da84c981ba802"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/oracle_driver.py": {
+    "role": "ORACLE audit driver: ORACLE-PHYS/CTRL over 123 origins, G12 gate first, G1, NG7 (\u00a716.4)",
+    "sha256": "a21da5cc462accbb4e69cc2682e31f15576301c43aa795295e7efc2e098346e1"
+   },
+   "tests/test_oracle_driver.py": {
+    "role": "synthetic oracle driver tests (\u00a716.4)",
+    "sha256": "31ffb352dc3d171bf7d1e2cf6b4baa8be78f08162371e2f9648125b696ebc01a"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/forensic_planned_capture.py": {
+    "role": "forensic planned-capture ORACLE-PHYS replay, diagnosis only (\u00a716.5)",
+    "sha256": "b690f2fedbdd22e68079018e3f9e886f12b1ec93ad5e3c073a1b558e6e437cf9"
+   },
+   "tests/test_forensic_planned_capture.py": {
+    "role": "synthetic tests for forensic capture (\u00a716.5)",
+    "sha256": "bb08a9e145435f06f8202ca078e439427264d871219be70bf75a76601844a21b"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/global_lower_bound.py": {
+    "role": "global lower-bound implementation/test (Amendment A1, \u00a716.6)",
+    "sha256": "8883f93bf91ee6045e9f082da662393091debcc69110324915829aaa395b647f"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/global_lower_bound_loader.py": {
+    "role": "global lower-bound implementation/test (Amendment A1, \u00a716.6)",
+    "sha256": "0de183821228003f71f43d5a004a017aa566b510b6d77fa23894f2b9a412f694"
+   },
+   "experiments/stage4_planner_cf_consistency_2025/global_lower_bound_manifest.py": {
+    "role": "global lower-bound implementation/test (Amendment A1, \u00a716.6)",
+    "sha256": "996c0836177da561e7fc5e2316d5e9e275dc120d712a3dba3281efa535e99fea"
+   },
+   "tests/test_global_lower_bound.py": {
+    "role": "global lower-bound implementation/test (Amendment A1, \u00a716.6)",
+    "sha256": "a15eaa2072c53f1ae3f0e945a9515244f85dd12a5d7636a370e2633d52874fce"
+   },
+   "tests/test_global_lower_bound_infra.py": {
+    "role": "global lower-bound implementation/test (Amendment A1, \u00a716.6)",
+    "sha256": "1432855b0da764bb94dce93765f593dd8d3ed7704c49ad6d5e637ccff4573f38"
+   },
+   "tests/test_planner_cf_v12.py": {
+    "role": "v1.2 test (A2, \u00a717.13)",
+    "sha256": "cccc28c49e11ce75e28ab737d917ea6561f0d594d40070caad0f79ee8b237c32"
+   },
+   "tests/test_oracle_v12_integration.py": {
+    "role": "v1.2 test (A2, \u00a717.13)",
+    "sha256": "f2753cd7287f4195f98d497fb895faab8984d9a1408a32d09b7ae934b31d2984"
+   }
+  },
+  "g2_g3_telemetry": {
+   "unit": "one executed-hour record per re-solve (plan hour 0); 24 records per origin per arm; lookahead rows not used",
+   "fields": [
+    "origin_id",
+    "arm",
+    "step",
+    "plan_hour",
+    "E_t_wh",
+    "pv_real_w",
+    "wind_real_w",
+    "planned_diesel_w",
+    "d_c_w",
+    "max_discharge_w",
+    "planned served_c/served_nc/unmet_crit/unmet_nc/charge"
+   ],
+   "max_discharge": "min(50000, max(0, (E_t - 40000)*0.92))",
+   "G2": "violation if planned unmet_nc > 1e-3 W and planned charge > 1e-3 W",
+   "G3": "violation if planned unmet_crit > 1e-3 W and NOT (pv_real + wind_real + planned_diesel + max_discharge < d_c); strict inequality; planned discharge excluded from supply",
+   "tolerance_w": 0.001,
+   "determinism": "records sorted by (arm, origin_id, step) before evaluation",
+   "scope": "harness-only; production DispatchPlan unmodified; no solve or realization in evaluator"
+  },
+  "tests_run": {
+   "new_g23": 12,
+   "new_planner": 23,
+   "passed_this_fix": 35,
+   "existing_route_propagation_not_rerun_this_fix": 8
+  },
+  "campaign_run": false,
+  "oracle_evaluated": false,
+  "campaign_infrastructure": {
+   "arms": [
+    "PC-Control",
+    "PC-S",
+    "PC-SW",
+    "PC-S-L",
+    "PC-SW-L"
+   ],
+   "runs": "123 origins x 5 arms = 615 closed-loop runs (not executed)",
+   "authorization_required": true,
+   "g7_repeat_origin_index": 1,
+   "reliability": "R = 100*sum(served)/sum(critical_demand)",
+   "E1": "Wilcoxon two-sided; Holm over 4 candidates; BCa 95% mean, 10000 resamples, default_rng(42); eligibility adj p<0.05 and BCa low>0; only if S1-S3 pass",
+   "G6_starvation": "fuel>1e-3 L with diesel power<=1e-3 W, listed explicitly",
+   "G1_G12": "oracle-side audits, run with oracle outputs",
+   "campaign_run": false,
+   "oracle_evaluated": false,
+   "G5": "shortfall residual recorded (audited, not failure)"
+  }
+ },
+ "resolution_table": {
+  "B1": "p_flex removed; fixed 0 W; preregistered C3",
+  "B2": "ORACLE-PHYS primary for NG7; ORACLE-CTRL secondary",
+  "B3": "oracle solar/wind/demand/calendar defined and implemented",
+  "B4": "harness-only planned telemetry; DispatchPlan unmodified",
+  "B5": "G3 exact feasibility rule",
+  "B6": "complete lexicographic priorities",
+  "B7": "G3 double-counting removed; S_avail excludes planned discharge",
+  "B8": "oracle solar hash pinned identically in MD and JSON"
+ },
+ "tests_run": {
+  "oracle_driver": 9,
+  "campaign_infra": 36,
+  "closed_loop_synthetic": 6,
+  "planner_cf_v1": 23,
+  "planned_execution_g23": 12,
+  "route_propagation": 8,
+  "passed": 184,
+  "note": "synthetic/unit/invariant only; oracle stubbed; no real origin",
+  "forensic_planned_capture": 20,
+  "lower_bound_synthetic": 70
+ },
+ "g7_repeat_origin": "ACCEPTED: earliest sorted population origin, index 1, 2025-05-01 00:00 UTC; fixed before execution",
+ "g6_starvation": {
+  "class": "fuel consumed with realized diesel power 0",
+  "status": "VERIFIED",
+  "example": "Candidate_SW origin 39 hour 22, 3.6293 L",
+  "mechanism": "residual fuel < 5 L/h base: max_p=0, fuel_consumed=avail_fuel (executor lines 181-185)"
+ },
+ "open_issue": "planner has no fuel-budget constraint; starved planned hours may break G1 under ORACLE-PHYS (NG1); governance decision required",
+ "fuel_budget": "NOT ADDED; Planner-CF formulation preserved; starvation visible via G6 and G1/NG1",
+ "forensic_status": "READY_FOR_AGY_FORENSIC_CAPTURE (not executed by CC)",
+ "lower_bound_governance": {
+  "amendment": "A1",
+  "date_utc": "2026-10-06",
+  "decision_record": "experiments/GOV_DECISION_LOWER_BOUND_CERTIFICATION_2026-10-06.md",
+  "decision_record_sha256": "056538cb380c9ca382f07cf05291bb5ef9b3d562ff89987da99f2cd3fcc6bcf4",
+  "configuration_hash": "e4ef245e7f99c6056be067939c1f325a727c0feaa3894cb657944121d207b829",
+  "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b",
+  "solver_settings": {
+   "time_limit_s": 60.0,
+   "threads": 1,
+   "mip_rel_gap": 1e-09,
+   "absolute_gap_threshold_L": 0.01
+  },
+  "tight_certification": "CERTIFIED_TIGHT iff feasible incumbent + finite dual + absolute gap <= 0.01 L + checks pass",
+  "lower_bound_status": "LOWER_BOUND_AVAILABLE for finite dual not tight; BLOCKED_NO_DUAL if no finite dual",
+  "aggregation": "L = sum of finite valid per-origin duals; no-dual origins counted as BLOCKED, zero contribution; no primal as bound; no unproven analytic bound",
+  "NG7": "L > 0.60 * F_c strict; NOT EVALUABLE until F_c exists; failure to trigger != reachability; rolling ORACLE-PHYS cannot independently trigger",
+  "rolling_oracle": "achievability benchmark, not a lower bound",
+  "class_B": "not admitted",
+  "class_C": "not resolved",
+  "G1": "unchanged, fails",
+  "real_run": "NOT RUN",
+  "campaign": "NOT RUN"
+ },
+ "amendment_A2": {
+  "section": "\u00a717",
+  "status": "APPLIED (governance and archive); v1.2 implementation NOT performed",
+  "decision_record": "experiments/GOV_DECISION_PLANNER_CF_V1_2_A2_2026-10-06.md",
+  "decision_record_sha256": "90bb4725753a9ea3d9288b917ad63a6c9173515acd508897a4aab567d15e98d0",
+  "archive_manifest": "experiments/stage4_planner_cf_consistency_2025/archive/v1.1/ARCHIVE_MANIFEST.json",
+  "archive_manifest_sha256": "e546b455e7b527a0d9352340c88f1d74ff8d0621d8d1157357cd5e90a3832e1d",
+  "NG1": "ACTIVE; text unchanged; evaluated against G1 as amended by \u00a717.3; ORACLE-PHYS only",
+  "class_B_rule": "seven conditions, \u00a717.3; 1 W G1 tolerance and 1 Wh J4 criterion",
+  "class_C_rule": "hour-0 fuel constraint only, \u00a717.2",
+  "ORACLE_CTRL": "not required by G1; not regenerated under v1.2; archived v1.1",
+  "campaign": "NOT RUN",
+  "v1_2_implementation": "NOT PERFORMED",
+  "v1_2_pins": {
+   "section": "\u00a717.13",
+   "pinned_files": {
+    "experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py": "a8dd9fc7d84e3d2344ba4f99ba1b1cd0ec2165a83d8f7af438b69f8178815093",
+    "experiments/stage4_planner_cf_consistency_2025/planner_cf_audit_gates.py": "6f3d2cc4d7ae1c006a7ac0e2f70f668d64364f114be59d8604f4c71ff64b9654",
+    "experiments/stage4_planner_cf_consistency_2025/oracle_runner.py": "a65adcb32fc48f53cb3db547107ab8d0183449cdfa8bb24f2602be6b6b817f20",
+    "experiments/stage4_planner_cf_consistency_2025/oracle_audit_adapter.py": "c5aee087b2a8cdf9ccc28f81642002374fbe4a3ccfc7a125201da84c981ba802",
+    "experiments/stage4_planner_cf_consistency_2025/oracle_driver.py": "a21da5cc462accbb4e69cc2682e31f15576301c43aa795295e7efc2e098346e1",
+    "tests/test_planner_cf_v1.py": "e660f2d56bd155b15102f80abc1c45cd99094c0fdbf980d94b1d9f6742a6b25e",
+    "tests/test_planner_cf_v12.py": "cccc28c49e11ce75e28ab737d917ea6561f0d594d40070caad0f79ee8b237c32",
+    "tests/test_oracle_driver.py": "31ffb352dc3d171bf7d1e2cf6b4baa8be78f08162371e2f9648125b696ebc01a",
+    "tests/test_oracle_v12_integration.py": "f2753cd7287f4195f98d497fb895faab8984d9a1408a32d09b7ae934b31d2984"
+   },
+   "superseded_v1_1_pins": {
+    "experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py": "b479550e5eabcc7d745b874eee92f15b3e07d63740d20ab82e42081b64d0215a",
+    "experiments/stage4_planner_cf_consistency_2025/planner_cf_audit_gates.py": "7f72b4f1791bc518af426b18bebd1e4a5ce1cdcde42a127a587c3931eee95123",
+    "experiments/stage4_planner_cf_consistency_2025/oracle_runner.py": "c9d2e6ab86411173b4fca672e491c3661d68a78e9633fa267b7963793a46fba5",
+    "experiments/stage4_planner_cf_consistency_2025/oracle_audit_adapter.py": "bba99808f4fc75b1be6efe158abad1cbb8cfc534835804e8eb0d7c996d9acdac",
+    "experiments/stage4_planner_cf_consistency_2025/oracle_driver.py": "9d0e1bcd59f5ef05472610bf926b02e7848caef547ba283dc704945171b98e6d",
+    "tests/test_planner_cf_v1.py": "63adfe363c59db7dbfda148d270062694fe107a4f7bc19c27b22d10ac295771a",
+    "tests/test_planner_cf_v12.py": null,
+    "tests/test_oracle_driver.py": "cafadd310df5139bdded2bd7382973b53ef1b09e1f183cf0d78c5a5908a55cc8",
+    "tests/test_oracle_v12_integration.py": null
+   },
+   "v1_1_archive_manifest_sha256": "e546b455e7b527a0d9352340c88f1d74ff8d0621d8d1157357cd5e90a3832e1d"
+  }
+ }
+}

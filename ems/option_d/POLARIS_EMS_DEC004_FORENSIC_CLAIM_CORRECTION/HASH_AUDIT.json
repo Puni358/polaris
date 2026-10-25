@@ -1,0 +1,36 @@
+{
+  "audit_name": "POLARIS_EMS_DEC004_FORENSIC_CLAIM_CORRECTION_HASH_AUDIT",
+  "generated_at": "2026-09-23T22:45:45Z",
+  "status": "SEALED",
+  "package_path": "POLARIS_EMS_DEC004_FORENSIC_CLAIM_CORRECTION",
+  "artifact_hashes": [
+    {
+      "file": "README.md",
+      "sha256": "87a5217da035a8a5643180d3954a50411f80247e684948e049cbf25cf3e242e6"
+    },
+    {
+      "file": "FORENSIC_CLAIM_VERIFICATION.md",
+      "sha256": "25ebe2c897e67895e6d25940cc936e914aa9be5a5ce3fb3c0bb4b3f9cd81e544"
+    },
+    {
+      "file": "RECOVERY_CLAIM_AUDIT.md",
+      "sha256": "66324c122930ed15c47487a4620ff4a16420c6ed52db32bc2383a87818e60fbd"
+    },
+    {
+      "file": "ESCALATION_CLAIM_AUDIT.md",
+      "sha256": "916a5b86a91de0d1ebea4d4806b559856c8b9474fb09e2de6459c5eb8e0f9399"
+    },
+    {
+      "file": "OBJECTIVE_COMPATIBILITY_CLAIM_AUDIT.md",
+      "sha256": "8c059848c607abcf18a2f7183543eff880c1415c8c689bafcc3a670eef31b1d5"
+    },
+    {
+      "file": "CORRECTION_REGISTER.md",
+      "sha256": "6635dea351db5aedc393ec4d2c435d2b93cd3f7c4d21a833006e44c37f90aba3"
+    },
+    {
+      "file": "EVIDENCE_TABLE.md",
+      "sha256": "9fb00c5dd8348d63592e050d0895f261abf883bade3d4bcf3da7d8c02828f95c"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Dependency_Item,Required_Data_Source,Uses_Future_Truth,Causality_Status,Notes
+Critical_Load_Forecast_t=H+1..H+N,ForecastBundle extended forecast,NO,CAUSALLY_VALID,Requires forecast window of H+N steps (e.g. 24+N)
+Discharge_Efficiency_eta_dis,battery.yaml,NO,CAUSALLY_VALID,Fixed physical constant
+Technical_Min_Floor_E_min_tech,battery.yaml,NO,CAUSALLY_VALID,Fixed physical constant
+Actual_Future_Demand,Actual telemetry post-t0,YES,BLOCKED,Prohibited in runtime optimization
+Digital_Twin_Internal_State,Simulator private fields,YES,BLOCKED,Prohibited in runtime optimization

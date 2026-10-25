@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-09-13T10:57:34+05:30",
+  "document_title": "STAGE 8.17A FINAL HISTORICAL ARTIFACT RECOVERY AUDIT DATA MANIFEST",
+  "provenance_classification": "HISTORICALLY_REPORTED_BUT_NOT_FULLY_REPRODUCIBLE",
+  "outcome_classification": "OUTCOME_B",
+  "prediction_artifact_status": "NO_AUTHORITATIVE_STAGE8_17A_ROW_LEVEL_PREDICTION_ARTIFACT_RECOVERED",
+  "search_summary": {
+    "prediction_rows_table_4152_rows": "NOT_RECOVERED",
+    "stage8_17a_python_code": "NOT_RECOVERED",
+    "arome_input_swaths": "NOT_RECOVERED",
+    "serialized_model_checkpoint": "NOT_RECOVERED",
+    "executable_control_baseline_mae_w_m2": 36.186882
+  },
+  "answers_to_10_mandatory_questions": {
+    "Q1_stage8_17a_40_feature_code_recovered": false,
+    "Q2_arome_feature_data_recovered": false,
+    "Q3_lwp_disagreement_data_recovered": false,
+    "Q4_original_model_recovered": false,
+    "Q5_original_173x24_prediction_table_recovered": false,
+    "Q6_was_35_241085_dynamically_generated": "Dynamically generated during uncommitted historical run; not saved. Currently exists only as static reference text/assertions.",
+    "Q7_can_35_241085_be_independently_recomputed": false,
+    "Q8_can_27_3337_nmae_be_independently_recomputed": false,
+    "Q9_evidence_of_hardcoding_in_stage8_17a_itself": "No metric fabrication; summary values recorded in text without saving prediction table, and later script assertions used 35.241085 as a static code literal.",
+    "Q10_final_provenance_classification": "HISTORICALLY REPORTED BUT NOT FULLY REPRODUCIBLE (OUTCOME B)"
+  },
+  "governance_compliance": {
+    "synthetic_data_generated": false,
+    "models_trained_or_tuned": false,
+    "assertions_modified": false,
+    "master_handoff_mutated": false,
+    "route_registry_mutated": false,
+    "active_operational_champion_modified": false
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-09-13T08:04:00+00:00",
+  "stage": "POLARIS STAGE 8.16B-1 \u2014 CAUSAL LWP ENSEMBLE-SPREAD EXPERIMENT",
+  "status": "CLOSED \u2014 REJECTED",
+  "reason": "sigma_LWP produced modest aggregate improvements (delta MAE = -0.1184 W/m2) but failed the predefined consistency gates because only 2/5 folds improved (Gate 3 FAIL) and the worst-fold degradation was +1.338540 W/m2 (Gate 4 FAIL), exceeding the +0.50 W/m2 limit.",
+  "candidate": {
+    "feature": "sigma_LWP",
+    "description": "Ensemble standard deviation of causally available MEPS column LWP across 10 members",
+    "correlation_with_meps_std_SW_IN": 0.1408
+  },
+  "benchmark_protocol": {
+    "training_cv_origins_count": 174,
+    "odd_untouched_origins_count": 173,
+    "cv_folds": 5,
+    "cv_type": "Forward-Chaining Cross-Validation"
+  },
+  "even_cv_results": {
+    "control_baseline": {
+      "model": "Stage 8.1 700 hPa Steering Wind Model (37 Features)",
+      "daytime_mae_w_m2": 45.09128,
+      "daytime_nmae_pct": 32.579,
+      "daytime_rmse_w_m2": 76.985584,
+      "daytime_bias_w_m2": 1.439399
+    },
+    "candidate_model": {
+      "model": "Stage 8.1 + sigma_LWP (38 Features)",
+      "daytime_mae_w_m2": 44.972891,
+      "daytime_nmae_pct": 32.4934,
+      "daytime_rmse_w_m2": 76.687891,
+      "daytime_bias_w_m2": 1.38515
+    },
+    "aggregate_deltas": {
+      "delta_mae_w_m2": -0.11839,
+      "delta_nmae_pct": -0.0855,
+      "delta_rmse_w_m2": -0.297693
+    },
+    "fold_deltas": [
+      {
+        "fold": 1,
+        "delta_mae_w_m2": 0.0669,
+        "status": "DEGRADED"
+      },
+      {
+        "fold": 2,
+        "delta_mae_w_m2": -1.9045,
+        "status": "IMPROVED"
+      },
+      {
+        "fold": 3,
+        "delta_mae_w_m2": 1.3385,
+        "status": "DEGRADED"
+      },
+      {
+        "fold": 4,
+        "delta_mae_w_m2": 0.3181,
+        "status": "DEGRADED"
+      },
+      {
+        "fold": 5,
+        "delta_mae_w_m2": -0.0426,
+        "status": "IMPROVED"
+      }
+    ]
+  },
+  "acceptance_gates": {
+    "gate1_aggregate_mae": {
+      "status": "PASS",
+      "delta": -0.11839
+    },
+    "gate2_aggregate_nmae": {
+      "status": "PASS",
+      "delta": -0.0855
+    },
+    "gate3_majority_folds": {
+      "status": "FAIL",
+      "improved_folds": "2/5"
+    },
+    "gate4_bounded_degradation": {
+      "status": "FAIL",
+      "worst_fold_degradation_w_m2": 1.33854,
+      "limit_w_m2": 0.5
+    },
+    "gate5_aggregate_rmse": {
+      "status": "PASS",
+      "delta": -0.297693
+    }
+  },
+  "future_ai_firewall_rules": [
+    "Do NOT re-propose sigma_LWP as a new route unless there is a materially different formulation/data source that is not mathematically equivalent to the tested Stage 8.16B-1 signal.",
+    "Do NOT interpret the result as proving that LWP uncertainty contains no useful information. The scientifically supported conclusion is only that the tested sigma_LWP formulation did not satisfy the project predefined robustness gates."
+  ],
+  "governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "champion_daytime_nmae_pct": 28.0688,
+    "champion_daytime_mae_w_m2": 36.188657,
+    "champion_daytime_rmse_w_m2": 64.219495,
+    "champion_daytime_bias_w_m2": 1.439399,
+    "champion_night_mae_w_m2": 0.0,
+    "odd_target_reads": 0,
+    "odd_evaluations": 0,
+    "odd_tuning": 0,
+    "production_champion_modified": false,
+    "polaris_master_handoff_modified": false
+  }
+}

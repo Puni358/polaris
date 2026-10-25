@@ -1,0 +1,92 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at_utc": "2026-10-04T08:24:00Z",
+  "workspace_path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/",
+  "purpose": "Self-contained navigation and index layer for F + NN / L2 uncertainty-aware forecasting research branch",
+  "established_conclusions": [
+    "1. F remains the current research control.",
+    "2. K improved blind 2023 forecast MAE but degraded the available 2024 EMS replay.",
+    "3. K degradation is primarily associated with forecast-driven battery-dispatch mismatch; terminal reserve is not the dominant mechanism.",
+    "4. F currently provides point forecasts, not calibrated uncertainty.",
+    "5. Historical F residuals show temporal persistence, making L2 uncertainty research worth investigating.",
+    "6. No uncertainty model is currently authorized or validated.",
+    "7. GAP19 remains the optimization authority.",
+    "8. L2 must not directly override optimizer decisions.",
+    "9. Any uncertainty signal must pass an out-of-sample calibration gate before being supplied to GAP19."
+  ],
+  "authoritative_input_artifacts": {
+    "frozen_f_model": {
+      "description": "Frozen Candidate F GBDT model (elevation_x_cloud)",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    },
+    "exact_2020_2023_f_38_feature_matrix": {
+      "description": "Exact Candidate F 38-feature historical matrix (2020–2023, 26,011 rows)",
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+      "sha256": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde"
+    },
+    "exact_frozen_f_predictions_2020_2023": {
+      "description": "Exact frozen Candidate F predictions across 2020–2023",
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_FROZEN_F_PREDICTIONS_2020_2023.csv",
+      "sha256": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0"
+    },
+    "historical_f_residual_dataset": {
+      "description": "Historical Candidate F residual dataset paired with SITES Nuolja observations",
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "residual_provenance_manifest": {
+      "description": "Residual dataset provenance manifest and error forensics index",
+      "path": "candidate_L_research/CANDIDATE_F_RESIDUAL_PROVENANCE_MANIFEST.json",
+      "sha256": "4e0dfb08ace1ac605be6421776aa0de68c74b329620e11b565505b36c1543933"
+    },
+    "historical_replay_forensic_audit": {
+      "description": "Historical replay forensic audit report",
+      "path": "CANDIDATE_F_HISTORICAL_REPLAY_FORENSIC_AUDIT.md",
+      "sha256": "cfdd3ad13769f6980230b35d3396d2848079d8a2326eacece3516cd6d23b02c2"
+    },
+    "candidate_k_experiment": {
+      "description": "Candidate K experiment manifest, report, and evaluation results",
+      "manifest_path": "candidate_L_research/candidate_K_experiment/candidate_K_manifest.json",
+      "manifest_sha256": "13f8f7d3f64b898bcce6004a89d6b942bb742b712aee09d6d8da956e74d32d2e",
+      "report_path": "candidate_L_research/candidate_K_experiment/candidate_K_report.md",
+      "report_sha256": "21f48931d7aa04bf1fbfa467fbf1b6abe1def3b3a1332154189e3bc864e69897",
+      "blind_results_path": "candidate_L_research/candidate_K_experiment/candidate_K_blind_results.csv",
+      "blind_results_sha256": "65d007d0ee2b2c9439ec41a0ae7c4e230e8e5ecd73276fbe614c13b19aefd261",
+      "validation_results_path": "candidate_L_research/candidate_K_experiment/candidate_K_validation_results.csv",
+      "validation_results_sha256": "e2bc8daac8fcf73e6efc22da82f0670bdb2ccb780f063f9f2b2415fdd7ccd7b7"
+    },
+    "k_ems_replay_results": {
+      "description": "Candidate K vs F full-horizon EMS replay manifest, report, degradation forensics, and summary results",
+      "manifest_path": "candidate_L_research/candidate_K_experiment/ems_replay/EMS_REPLAY_MANIFEST.json",
+      "manifest_sha256": "77251912e433fc98f6fcfd31d7ea6c5de39e21a9ae3d7d4eeacea886f029baf1",
+      "report_path": "candidate_L_research/candidate_K_experiment/ems_replay/EMS_REPLAY_REPORT.md",
+      "report_sha256": "c9f2dc2c0c6f24299521b702ae75ffbb016d7064ee0fe36b1fe4bdb15da32590",
+      "forensics_path": "candidate_L_research/candidate_K_experiment/ems_replay/K_EMS_DEGRADATION_FORENSICS.md",
+      "forensics_sha256": "7a82d61bc0dc57b67583de911bd7e43fcc6c7582dbf82b81c770cc08400a51e5",
+      "results_path": "candidate_L_research/candidate_K_experiment/ems_replay/ems_replay_results.csv",
+      "results_sha256": "d324c9bf8d9abb54a02ce2536b21fd45f39e3e2576dc6683f3f8bfe1c2c13c6c"
+    },
+    "terminal_reserve_ablation": {
+      "description": "Terminal reserve ablation experiment manifest, report, and summary results",
+      "manifest_path": "candidate_L_research/candidate_K_experiment/ems_replay/TERMINAL_RESERVE_ABLATION_MANIFEST.json",
+      "manifest_sha256": "eeb33913eeb1d7ae907107147b82e0e8f1f57ddb1764fe1b93e47893e0462195",
+      "report_path": "candidate_L_research/candidate_K_experiment/ems_replay/TERMINAL_RESERVE_ABLATION_REPORT.md",
+      "report_sha256": "190fa9592d25e79dbd27dc25ffec20a29371a7b5c7c840d2aacc249c35478842",
+      "results_path": "candidate_L_research/candidate_K_experiment/ems_replay/terminal_reserve_ablation_results.csv",
+      "results_sha256": "f26b6757300eb1c861649274ed7facd66fb8fffbc838add8e44b848516804107"
+    },
+    "k_f_dispatch_interaction_forensics": {
+      "description": "K/F dispatch-interaction forensics report with terminal reserve turned off",
+      "path": "candidate_L_research/candidate_K_experiment/ems_replay/K_F_DISPATCH_INTERACTION_FORENSICS_RESERVE_OFF.md",
+      "sha256": "c7eb017adb913a3dc9a38e4f085a39227ba2d808e761b370de453c02301f75d1"
+    }
+  },
+  "governance_locks": {
+    "neural_network_training_authorized": false,
+    "production_code_modification_authorized": false,
+    "stage8_1_modification_authorized": false,
+    "gap19_modification_authorized": false,
+    "frozen_artifacts_modification_authorized": false
+  }
+}

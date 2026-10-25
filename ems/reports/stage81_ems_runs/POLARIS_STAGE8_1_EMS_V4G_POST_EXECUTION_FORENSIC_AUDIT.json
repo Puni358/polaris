@@ -1,0 +1,187 @@
+{
+  "audit_id": "POLARIS_STAGE8_1_EMS_V4G_POST_EXECUTION_FORENSIC_AUDIT",
+  "audit_timestamp_utc": "2026-09-19T13:49:57.504859+00:00",
+  "audit_verdict": "VERIFIED_VALID",
+  "completeness_verification": {
+    "total_origins": 173,
+    "expected_origins": 173,
+    "origins_match": true,
+    "total_telemetry_rows": 4152,
+    "expected_telemetry_rows": 4152,
+    "rows_match": true,
+    "horizon_structure_valid": true,
+    "arms_evaluated": [
+      "Arm 1 (Control)",
+      "Arm 2 (V3 Reference)",
+      "Arm 3 (V4.G Candidate)"
+    ],
+    "arm_count": 3
+  },
+  "hash_provenance_verification": {
+    "raw_csv_sha256": "61389d23a307dcb1bbc5ea90f9bf43843b52d88f66d5ff1d03bb1dea55199788",
+    "raw_csv_hash_match": true,
+    "manifest_json_sha256": "620d8add38c8146c15e7646c0793f74a34437dbd2c9d719759b16b2be1e6934e",
+    "manifest_md_sha256": "206377a930bb235b319e5c3071a8341911b4bee2676e927eed824b62aef7a284",
+    "protected_input_hashes": {
+      "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv": {
+        "status": "MATCH",
+        "expected": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+        "actual": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+      },
+      "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": {
+        "status": "MATCH",
+        "expected": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+        "actual": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c"
+      },
+      "system/forecasting/implementations/s81_solar.py": {
+        "status": "MATCH",
+        "expected": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+        "actual": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c"
+      },
+      "system/forecasting/implementations/baseline.py": {
+        "status": "MATCH",
+        "expected": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+        "actual": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993"
+      },
+      "system/schemas/forecast_bundle.py": {
+        "status": "MATCH",
+        "expected": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+        "actual": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045"
+      },
+      "system/schemas/station_state.py": {
+        "status": "MATCH",
+        "expected": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+        "actual": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c"
+      },
+      "system/schemas/dispatch_plan.py": {
+        "status": "MATCH",
+        "expected": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+        "actual": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17"
+      },
+      "system/optimization/implementations/milp.py": {
+        "status": "MATCH",
+        "expected": "a22c4b7812ca61b8a5e5990e01f49aba929e37e954b9233d7e4e66e823c9c0b5",
+        "actual": "a22c4b7812ca61b8a5e5990e01f49aba929e37e954b9233d7e4e66e823c9c0b5"
+      },
+      "system/simulation/simulator.py": {
+        "status": "MATCH",
+        "expected": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+        "actual": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508"
+      },
+      "system/runtime/runner.py": {
+        "status": "MATCH",
+        "expected": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+        "actual": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c"
+      },
+      "POLARIS_STAGE8_1_EMS_V4G_SPECIFICATION_FREEZE.md": {
+        "status": "MATCH",
+        "expected": "f476fb86c6e0a923f72ff1ae689859e767d17474019df50c66f1e60fdd1861f6",
+        "actual": "f476fb86c6e0a923f72ff1ae689859e767d17474019df50c66f1e60fdd1861f6"
+      },
+      "POLARIS_STAGE8_1_EMS_V4G_IMPLEMENTATION.md": {
+        "status": "MATCH",
+        "expected": "393dde4db0d093a67fb2e6e14b05c7a85691f9a2ec9340728aaf10f25770b11d",
+        "actual": "393dde4db0d093a67fb2e6e14b05c7a85691f9a2ec9340728aaf10f25770b11d"
+      },
+      "POLARIS_STAGE8_1_EMS_V4G_EXECUTION_AUTHORIZATION.md": {
+        "status": "MATCH",
+        "expected": "d2fa6c4c6523dd7322c645751cd8c2399397244760198a530a218513125e9523",
+        "actual": "d2fa6c4c6523dd7322c645751cd8c2399397244760198a530a218513125e9523"
+      },
+      "POLARIS_STAGE8_1_EMS_V4G_RESOURCE_CONFIGURATION_CORRECTION.md": {
+        "status": "MATCH",
+        "expected": "4bf5f57b12597c19163a058c8bad6d8e093900ad51be7d7ed8091aa49c12e6a7",
+        "actual": "4bf5f57b12597c19163a058c8bad6d8e093900ad51be7d7ed8091aa49c12e6a7"
+      }
+    },
+    "all_protected_hashes_match": true
+  },
+  "experimental_isolation_verification": {
+    "forecast_identity_v3_vs_v4g": "VERIFIED_IDENTICAL (Both arms receive exact Stage8.1 empirical predictions)",
+    "initial_state_consistency": "VERIFIED_IDENTICAL (All 173 origins start from identical StationState)",
+    "future_truth_firewall": "VERIFIED_INTACT (Truth accessed strictly after MILP optimization)",
+    "v4g_weight_vector": "VERIFIED (w_13 = 0.5133, w_t = 1.0 for t != 13)",
+    "unmet_load_weight": "VERIFIED (w_unmet,t = 1.0 unweighted across all t)",
+    "solver_and_physical_constraints": "VERIFIED_IDENTICAL",
+    "retry_contamination": "ZERO (0 retries, 0 failed origins)"
+  },
+  "resource_and_thermal_audit": {
+    "max_workers": 2,
+    "thermal_monitoring_mode": "MANUAL",
+    "thermal_intervention_occurred": false,
+    "total_runtime_seconds": 3144.35
+  },
+  "primary_endpoint_reconstruction": {
+    "metric": "total_diesel_fuel_liters per 24-hour origin",
+    "reconstruction_status": "MATCH",
+    "total_fuel_liters": {
+      "control": 4671.0,
+      "v3_reference": 4149.97,
+      "v4g_candidate": 5579.99
+    },
+    "mean_fuel_liters_per_origin": {
+      "control": 27.0,
+      "v3_reference": 23.99,
+      "v4g_candidate": 32.25
+    },
+    "primary_comparison_v4g_minus_v3": {
+      "mean_difference_liters": 8.266,
+      "median_difference_liters": 5.13,
+      "bootstrap_95_ci_liters": [
+        6.7356,
+        9.8166
+      ],
+      "wilcoxon_stat": 15.0,
+      "p_value": 8.645153e-18,
+      "paired_counts": {
+        "positive_v4g_higher": 96,
+        "negative_v4g_lower": 3,
+        "zero_equal": 74,
+        "total_n": 173
+      }
+    }
+  },
+  "secondary_endpoints_audit": {
+    "diesel_energy_kwh": {
+      "identifiable": true,
+      "control_total": 3460.0,
+      "v3_reference_total": 8795.530000000002,
+      "v4g_candidate_total": 12431.969999999998
+    },
+    "renewable_curtailment_kwh": {
+      "identifiable": true,
+      "control_total": 30686.74,
+      "v3_reference_total": 3039.79,
+      "v4g_candidate_total": 5746.34
+    },
+    "battery_throughput_kwh": {
+      "identifiable": true,
+      "control_total": 31226.5,
+      "v3_reference_total": 13846.439999999999,
+      "v4g_candidate_total": 16568.39
+    },
+    "unmet_critical_load_kwh": {
+      "identifiable": true,
+      "control_total": 0.0,
+      "v3_reference_total": 0.0,
+      "v4g_candidate_total": 0.0
+    },
+    "diesel_runtime_hours": "NOT_IDENTIFIABLE_FROM_FROZEN_TELEMETRY",
+    "diesel_starts_count": "NOT_IDENTIFIABLE_FROM_FROZEN_TELEMETRY",
+    "diesel_average_power_kw": "NOT_IDENTIFIABLE_FROM_FROZEN_TELEMETRY",
+    "soc_min_max_delta": "NOT_IDENTIFIABLE_FROM_FROZEN_TELEMETRY"
+  },
+  "scientific_claim_boundary": {
+    "tests": "EMS dispatch consequences of replacing V3 exponential discounting (gamma=0.95) with V4.G single-horizon weight (w_13=0.5133, w_t=1.0 otherwise) in POLARIS synthetic station model.",
+    "does_not_establish": [
+      "Real Nuolja station physical performance",
+      "Real-world diesel fuel savings",
+      "Real station grid reliability",
+      "Global EMS robustness",
+      "Causal validity beyond experimental synthetic design",
+      "Universal optimality of h=14",
+      "General superiority of V4.G",
+      "Production readiness"
+    ]
+  }
+}

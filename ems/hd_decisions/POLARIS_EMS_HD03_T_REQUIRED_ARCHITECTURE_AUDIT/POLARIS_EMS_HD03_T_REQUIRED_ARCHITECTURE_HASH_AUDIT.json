@@ -1,0 +1,28 @@
+{
+  "audit_name": "POLARIS EMS HD-03 T_required Architecture Hash Audit",
+  "timestamp": "2026-09-23T06:55:00Z",
+  "audited_files": [
+    {
+      "path": "system/state/state.py",
+      "purpose": "StationState schema definition",
+      "key_lines": {
+        "schema_status": "t_required_hours field currently absent"
+      }
+    },
+    {
+      "path": "system/config/optimizer.yaml",
+      "purpose": "Optimizer configuration file",
+      "key_lines": {
+        "config_status": "No fixed T_required parameter defined"
+      }
+    },
+    {
+      "path": "POLARIS_EMS_HD03_T_REQUIRED_EVIDENCE_AUDIT/POLARIS_EMS_HD03_T_REQUIRED_EVIDENCE_AUDIT.md",
+      "purpose": "Prior HD-03 evidence audit establishing numerical value as absent",
+      "key_lines": {
+        "HD03_status": "HD03_NUMERICAL_VALUE = NOT_ESTABLISHED"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

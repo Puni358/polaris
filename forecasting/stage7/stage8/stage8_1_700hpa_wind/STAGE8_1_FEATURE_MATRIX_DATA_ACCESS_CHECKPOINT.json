@@ -1,0 +1,73 @@
+{
+  "stage": "STAGE8.1_DATA_ACCESS",
+  "timestamp": "2026-09-13T22:22:12.046400+05:30",
+  "candidate_a_data_availability": "100% AVAILABLE AND VERIFIED",
+  "feature_matrix": {
+    "file_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+    "file_size_bytes": 3875636,
+    "sha256_hash": "e7b304186eef6c7e6135ba7a9aa9d20a4d2f32eeb9b65085ef8e10e34ea0b541",
+    "dimensions": {
+      "total_rows": 8328,
+      "total_columns": 45,
+      "metadata_columns": 8,
+      "feature_columns": 37
+    },
+    "origin_alignment": {
+      "total_origins": 347,
+      "even_origins": 173,
+      "even_rows": 4152,
+      "odd_origins": 174,
+      "odd_rows": 4176
+    },
+    "data_provenance": "100% Authentic original Stage 8.1 artifacts (0 synthetic data, 0 missing NaNs)"
+  },
+  "feature_columns_37": [
+    "horizon_hour",
+    "month",
+    "hour",
+    "solar_elevation",
+    "solar_zenith",
+    "clearsky_ghi",
+    "fc_cloud_cover",
+    "fc_temperature_2m",
+    "fc_relative_humidity_2m",
+    "cloud_frac",
+    "pred_stage3b_cloud_nwp",
+    "phys_pred_fold",
+    "pred_stage4_fold",
+    "disagreement_fold",
+    "ctx_std_3h",
+    "ctx_std_6h",
+    "ctx_std_12h",
+    "ctx_std_24h",
+    "ctx_abs_change_1h",
+    "ctx_abs_change_3h",
+    "ctx_abs_change_6h",
+    "ctx_max_diff_6h",
+    "ctx_mean_diff_6h",
+    "ctx_slope_6h",
+    "ctx_kt_std_6h",
+    "ctx_last_obs",
+    "ctx_mean_24h",
+    "ctx_max_24h",
+    "lwp_latest",
+    "iwp_latest",
+    "lwp_x_cloud",
+    "terrain_horizon_elevation_deg",
+    "terrain_elevation_margin_deg",
+    "terrain_solar_obstruction_flag",
+    "clearsky_ghi_terrain_adjusted",
+    "u700",
+    "v700"
+  ],
+  "cloud_trajectories": {
+    "cloud_frac": "MEPS 2.5km total cloud cover fraction (0.0 to 1.0)",
+    "lwp_latest": "MEPS liquid water path column integral (kg/m2)",
+    "iwp_latest": "MEPS ice water path column integral (kg/m2)",
+    "lwp_x_cloud": "Interaction term (lwp_latest * cloud_frac)"
+  },
+  "reproduction_scripts": {
+    "primary_pipeline": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/run_stage8_1.py",
+    "matrix_assembly_script": "/home/punith-bs/01polaris (Copy)/scratch/assemble_stage8_1_matrix.py"
+  }
+}

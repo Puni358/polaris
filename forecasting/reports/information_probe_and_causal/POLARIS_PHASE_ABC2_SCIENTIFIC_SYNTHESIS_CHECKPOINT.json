@@ -1,0 +1,297 @@
+{
+  "checkpoint_name": "POLARIS_PHASE_ABC2_SCIENTIFIC_SYNTHESIS_CHECKPOINT",
+  "timestamp_utc": "2026-09-16 01:01:02+0000",
+  "purpose": "Consolidated, forensically audited scientific synthesis checkpoint spanning Phase A, Phase B, Phase C-1, and Phase C-2",
+  "governance_status": {
+    "phase_a": "COMPLETE_AND_FROZEN",
+    "phase_b": "COMPLETE_AND_FROZEN",
+    "phase_c1": "COMPLETE_AND_FROZEN",
+    "phase_c2": "COMPLETE_AND_FROZEN",
+    "odd_firewall": "SEALED_0_ROWS_ACCESSED",
+    "phase_c3_authorization": "NOT_AUTHORIZED"
+  },
+  "phase_a_summary": {
+    "total_even_origins": 174,
+    "eligible_even_origins": 104,
+    "daytime_hours_evaluated": 604,
+    "p0_features": 22,
+    "p1_features": 147,
+    "gbdt_aggregate_targets": {
+      "T1_volatility": {
+        "delta_R2": 0.309826,
+        "bootstrap_95ci": [
+          0.0506,
+          0.5886
+        ],
+        "p_val": "< 0.0001"
+      },
+      "T2_max_transition": {
+        "delta_R2": 0.305179,
+        "bootstrap_95ci": [
+          0.047,
+          0.5837
+        ],
+        "p_val": "< 0.0001"
+      },
+      "T3_mean_kt": {
+        "delta_R2": 0.598801,
+        "bootstrap_95ci": [
+          0.3639,
+          0.8421
+        ],
+        "p_val": "< 0.0001"
+      },
+      "T4_target": "DROPPED_UNAVAILABLE"
+    },
+    "section_9_rule": "Original 2-of-4 Section 9 rule remains unchanged",
+    "established_finding": "M1 (information absent) is inconsistent with tested aggregate targets T1-T3."
+  },
+  "phase_b_summary": {
+    "b1_rank": {
+      "mean_normalized_rank": 0.4459,
+      "mean_raw_rank": 2.2219
+    },
+    "b2_pinball_loss": {
+      "champion_q05_loss": 0.105774,
+      "neighbour_median_q05_loss": 0.126686,
+      "difference": 0.020912,
+      "dependence_caveat": "Reported p < 0.0001 treated 604 hourly observations as independent without origin clustering."
+    },
+    "b3_procedural_compromise": "B3 threshold was NOT frozen before computation. B3 is procedurally compromised and remains exploratory only."
+  },
+  "phase_c1_summary": {
+    "initial_execution": "INVALID_HISTORICAL_ONLY (canonical fold indexing loop mismatch range(5) vs 1..5)",
+    "corrected_execution": "VALID_AUTHORITATIVE (scratch/run_phase_c1_horizon_diagnostic_corrected.py)",
+    "forensic_audit": "PASS (All 15 checks verified)",
+    "parent_eligible_origins": 104,
+    "aggregate_valid_target_cells": 609,
+    "gbdt_transmission_targets": {
+      "H7": {
+        "N_h": 89,
+        "delta_R2": 0.5146,
+        "bootstrap_95ci": [
+          0.2639,
+          0.7858
+        ],
+        "permutation_p": 0.001
+      },
+      "H8": {
+        "N_h": 104,
+        "delta_R2": 0.5317,
+        "bootstrap_95ci": [
+          0.3024,
+          0.774
+        ],
+        "permutation_p": 0.001
+      },
+      "H9": {
+        "N_h": 104,
+        "delta_R2": 0.7013,
+        "bootstrap_95ci": [
+          0.4795,
+          0.9302
+        ],
+        "permutation_p": 0.001
+      },
+      "H10": {
+        "N_h": 104,
+        "delta_R2": 0.4718,
+        "bootstrap_95ci": [
+          0.2216,
+          0.7408
+        ],
+        "permutation_p": 0.001
+      },
+      "H11": {
+        "N_h": 104,
+        "delta_R2": 0.6373,
+        "bootstrap_95ci": [
+          0.3904,
+          0.8996
+        ],
+        "permutation_p": 0.001
+      },
+      "H12": {
+        "N_h": 104,
+        "delta_R2": 0.3037,
+        "bootstrap_95ci": [
+          0.0276,
+          0.585
+        ],
+        "permutation_p": 0.001
+      }
+    },
+    "controlled_finding": "Across all six H7-H12 horizons, the specified GBDT probe extracted positive incremental OOF predictive information for transmission index k(t+h) from P1 relative to P0."
+  },
+  "phase_c2_summary": {
+    "status": "VALID_AUTHORITATIVE (scratch/run_phase_c2_frozen_p1_physical_sw_in_diagnostic.py)",
+    "forensic_audit": "PASS (All 15 checks verified)",
+    "parent_eligible_origins": 104,
+    "aggregate_valid_target_cells": 609,
+    "p0_features": 22,
+    "p1_features": 147,
+    "gbdt_physical_sw_in_targets": {
+      "H7": {
+        "N_h": 89,
+        "p0_mae": 77.8171,
+        "p1_mae": 58.3098,
+        "delta_mae": 19.5073,
+        "bootstrap_95ci_delta_mae": [
+          5.2768,
+          34.0464
+        ],
+        "p0_r2": 0.2322,
+        "p1_r2": 0.5525,
+        "delta_r2": 0.3203
+      },
+      "H8": {
+        "N_h": 104,
+        "p0_mae": 96.3352,
+        "p1_mae": 61.216,
+        "delta_mae": 35.1192,
+        "bootstrap_95ci_delta_mae": [
+          20.9595,
+          49.8938
+        ],
+        "p0_r2": 0.1483,
+        "p1_r2": 0.6341,
+        "delta_r2": 0.4858
+      },
+      "H9": {
+        "N_h": 104,
+        "p0_mae": 111.5761,
+        "p1_mae": 74.9105,
+        "delta_mae": 36.6656,
+        "bootstrap_95ci_delta_mae": [
+          19.5594,
+          53.9874
+        ],
+        "p0_r2": 0.1049,
+        "p1_r2": 0.5484,
+        "delta_r2": 0.4435
+      },
+      "H10": {
+        "N_h": 104,
+        "p0_mae": 123.0241,
+        "p1_mae": 91.7396,
+        "delta_mae": 31.2846,
+        "bootstrap_95ci_delta_mae": [
+          12.2142,
+          50.6929
+        ],
+        "p0_r2": 0.1382,
+        "p1_r2": 0.5009,
+        "delta_r2": 0.3627
+      },
+      "H11": {
+        "N_h": 104,
+        "p0_mae": 147.2473,
+        "p1_mae": 84.1945,
+        "delta_mae": 63.0528,
+        "bootstrap_95ci_delta_mae": [
+          44.2354,
+          82.085
+        ],
+        "p0_r2": -0.0522,
+        "p1_r2": 0.6027,
+        "delta_r2": 0.655
+      },
+      "H12": {
+        "N_h": 104,
+        "p0_mae": 137.1815,
+        "p1_mae": 93.195,
+        "delta_mae": 43.9865,
+        "bootstrap_95ci_delta_mae": [
+          25.2811,
+          62.7872
+        ],
+        "p0_r2": 0.0734,
+        "p1_r2": 0.4516,
+        "delta_r2": 0.3782
+      }
+    },
+    "statistical_protocol": {
+      "bootstrap": "Origin-level 10,000 paired block bootstrap with ordinary percentile 95% CIs",
+      "degenerate_replicates": 0,
+      "permutation_test": "REMOVED due to statistical incoherence of feature/prediction swapping",
+      "stage8_1_direct_comparison": "UNAVAILABLE (Stage8.1 champion lacks canonical GroupKFold EVEN OOF artifact)"
+    },
+    "controlled_finding": "The specified GBDT readout trained on frozen P1 extracted positive incremental OOF predictive information for physical SW_IN(t+h) relative to P0 across all six horizons, with \u0394MAE ranging from +19.51 W/m\u00b2 to +63.05 W/m\u00b2."
+  },
+  "scientific_evidence_matrix": [
+    {
+      "phase": "Phase A",
+      "question": "Does frozen P1 contain incremental predictive info for aggregate future transmission statistics beyond P0?",
+      "population": "104 EVEN origins (604 daytime hours)",
+      "main_result": "GBDT \u0394R\u00b2 = +0.305 to +0.599 across T1-T3 (p < 0.0001)",
+      "demonstrated": "P1 contains substantial nonlinear predictive info for aggregate future transmission statistics.",
+      "supported": "Inconsistent with M1 (information absent) for tested aggregate targets.",
+      "not_established": "M2, M3, event timing, or Stage8.1 hourly error cause.",
+      "governance_status": "FROZEN"
+    },
+    {
+      "phase": "Phase B",
+      "question": "Are Stage8.1 point predictions positioned central to local causal state neighbours?",
+      "population": "104 EVEN origins (604 daytime hours)",
+      "main_result": "Normalized rank = 0.4459; Pinball loss \u0394 = +0.0209 (p < 0.0001, unclustered)",
+      "demonstrated": "Champion point forecasts concentrate near 5-neighbour local median.",
+      "supported": "Consistent with conditional-median / hedging behavior under L1/pinball loss.",
+      "not_established": "Proof of M3, proof of event timing, or B3 threshold validation (B3 compromised).",
+      "governance_status": "FROZEN"
+    },
+    {
+      "phase": "Phase C-1",
+      "question": "Does frozen P1 provide incremental OOF predictive info for individual transmission targets k(t+h) beyond P0?",
+      "population": "104 EVEN origins (609 valid target cells)",
+      "main_result": "GBDT \u0394R\u00b2 = +0.3037 to +0.7013 (p = 0.0010 at all horizons)",
+      "demonstrated": "Frozen P1 contains extractable predictive info for individual hourly transmission targets k(t+h).",
+      "supported": "Inconsistent with M1 for individual transmission targets.",
+      "not_established": "Stage8.1 representation inadequacy, head failure, M2, M3, timing, or physical SW_IN MAE reduction.",
+      "governance_status": "FROZEN"
+    },
+    {
+      "phase": "Phase C-2",
+      "question": "Can a downstream readout on frozen P1 extract predictive info for physical SW_IN(t+h) beyond P0?",
+      "population": "104 EVEN origins (609 valid target cells)",
+      "main_result": "GBDT \u0394MAE = +19.51 to +63.05 W/m\u00b2 (all 95% CIs exclude 0)",
+      "demonstrated": "Frozen P1 contains extractable predictive info for physical SW_IN(t+h) beyond P0 under the specified GBDT readout.",
+      "supported": "Information demonstrated in C-1 for k(t+h) transfers into physical irradiance prediction.",
+      "not_established": "Stage8.1 representation failure, head failure, loss failure, M2, M3, timing, or ODD performance.",
+      "governance_status": "FROZEN"
+    }
+  ],
+  "resulting_scientific_question": "The unresolved problem is no longer whether frozen P1 contains useful extractable predictive information (Phase A, C-1, and C-2 establish that it does). The unresolved problem is WHICH MECHANISM explains why that information has not been demonstrated through the existing Stage8.1 forecasting system itself. M2, M3, and event timing remain competing unproven hypotheses.",
+  "stage8_1_oof_limitation": "Direct paired OOF comparison with Stage8.1 is unavailable under existing frozen artifacts because no exact valid frozen Stage8.1 canonical GroupKFold OOF artifact exists. Reconstruction is strictly prohibited.",
+  "next_step_governance": {
+    "phase_a": "FROZEN / CLOSED",
+    "phase_b": "FROZEN / CLOSED",
+    "phase_c1": "FROZEN / CLOSED",
+    "phase_c2": "FROZEN / CLOSED",
+    "phase_c3_authorized": false,
+    "odd_status": "SEALED (0 rows accessed)",
+    "rules": [
+      "No follow-up experiment automatically authorized.",
+      "ODD firewall remains absolute.",
+      "Any future experiment requires a separate design and explicit authorization.",
+      "Future work must discriminate a specific mechanism rather than perform generic model/feature experimentation."
+    ]
+  },
+  "artifact_hashes": {
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+    "INFORMATION_PROBE_ELIGIBLE_EVEN_ORIGINS.csv": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e",
+    "PHASE_C1_HORIZON_DIAGNOSTIC.json": "6becb0e21567f3f4c86525a2105ce6cad84ee3fc2021ce16cce0a06f5a567c23",
+    "PHASE_C1_HORIZON_DIAGNOSTIC.md": "98a22c27b7717f2b9af91b41c8bdc64ec044cfb3af30dc2a51ebbccf1298c619",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.json": "52b5b97fa31f6b8c9faba0861485ae4e78b145add164c5fc34848c9f3650ed5a",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.md": "3cd44c7eeff9e8e2ff7c9e24708219708a57c1f80a6e2030c3aa64112781d0f9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.json": "0e81f0051f04140b059c29e0ffef914d58404dd16259c4118eb0440e7ca52fb9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.md": "bd4efea996c8d436d60df543aeca5006960d148c085f6ec1bbb4f4c131689fb3",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.json": "da9efe62360d5d3cb96fcfa69eee5a1e9d6afe63ed10a5228acbbffee35da35e",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.md": "d83ed20ae406398391e97850efec34f76e44a9aec13e7c30b92f407fe7047e9d",
+    "PHASE_C1_CORRECTION_AND_CLOSEOUT.json": "c292e0150e3fad00b4c3c20e2eca43cc391aabb5170c5b3db2af4ce06d5dc32f",
+    "PHASE_C1_CORRECTION_AND_CLOSEOUT.md": "6e192e88da0e4b39667da4ea83d32e8f2d79c99087698b9a015edb1c1bf2e3b7",
+    "PHASE_C2_FROZEN_P1_PHYSICAL_SW_IN_DIAGNOSTIC.json": "4db3461ab6296afa644bfa466de639017c47fbfda66d88323c1d77f1ff5417ed",
+    "PHASE_C2_FROZEN_P1_PHYSICAL_SW_IN_DIAGNOSTIC.md": "743ace7c386bd43646b14b67adf8a02a1841b5bb93f4b8131a1ba1e4f4bd863f",
+    "PHASE_C2_FORENSIC_INTEGRITY_AUDIT.json": "4990db86221f5893e7fbad18122d03b51aed5c344bed1e6d15e310c8afd01bbd",
+    "PHASE_C2_FORENSIC_INTEGRITY_AUDIT.md": "34b98ae9a2bb3d6d1b6938588a23c7c1dcd439d33e6a64d3fb85d99c09bc85f5"
+  }
+}

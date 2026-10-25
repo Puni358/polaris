@@ -1,0 +1,43 @@
+audit_document,HIGHS_VERSION_EVIDENCE
+audit_phase,GAP19_HIGHS_NATIVE_FEASIBILITY_CHECK
+audit_date,2026-09-22
+generation_mode,ACTUAL_ENVIRONMENT_INSPECTION
+execution_performed,READ_ONLY_PYTHON_INTROSPECTION_ONLY
+
+# ============================================================
+# ENVIRONMENT — ACTUALLY INSTALLED / VERIFIED
+# ============================================================
+
+item,value,verification_method,status
+Operating System,Linux x86_64,Platform from Python path and binary ABI tag in filename (_x86_64-linux-gnu.so),VERIFIED
+Python version,3.12.3,python3 --version in venv,VERIFIED
+scipy version,1.18.1,dist-info directory: scipy-1.18.1.dist-info,VERIFIED
+HiGHS version,1.12.0,"strings _core.cpython-312-x86_64-linux-gnu.so | grep version → '1.12.0'. Binary also contains 'Running HiGHS %d.%d.%d%s: %s'",VERIFIED
+HiGHS version source,Bundled within scipy 1.18.1,"_core.cpython-312-x86_64-linux-gnu.so is scipy's internal HiGHS build. Not a system HiGHS installation.",VERIFIED
+highspy standalone package,NOT INSTALLED,"pip3 show highspy: WARNING Package(s) not found. python3 -c 'import highspy': ModuleNotFoundError",VERIFIED_NOT_INSTALLED
+highspy search (system-wide),NOT FOUND,"find / -name 'highspy*' -type d returned no results outside proc.",VERIFIED_NOT_INSTALLED
+numpy version,2.5.2 and 2.5.3 (two dist-info dirs),dist-info scan,NOTED_DUAL_ENTRY
+pulp version,3.3.2,dist-info present,PRESENT_NOT_USED_BY_MILP
+
+# ============================================================
+# KEY FINDING: SCIPY _core MODULE EXPOSES HIGHS MULTI-OBJECTIVE API
+# ============================================================
+
+finding_id,finding
+F-V1,"scipy 1.18.1 bundles HiGHS 1.12.0. This is CONFIRMED by binary string extraction: '1.12.0' and 'Running HiGHS %d.%d.%d%s: %s'."
+F-V2,"scipy's internal HiGHS module (scipy.optimize._highspy._core) IS pybind11-bound and DOES expose HighsLinearObjective and addLinearObjective on the internal _Highs class."
+F-V3,"Verified by Python introspection: _h._Highs() instance has methods: addLinearObjective clearLinearObjectives getDualObjectiveValue getLinearObjective getNumLinearObjectives getObjectiveOffset getObjectiveSense getObjectiveValue changeObjectiveOffset changeObjectiveSense."
+F-V4,"HighsLinearObjective struct is exposed with fields: abs_tolerance coefficients offset priority rel_tolerance weight — ALL confirmed by Python introspection of the pybind11 class."
+F-V5,"blend_multi_objectives option is recognized by HighsOptionsManager (type kBool=0). Default value is True (blending mode). Lexicographic mode requires setting it to False."
+F-V6,"Standalone highspy package is NOT installed. The scipy internal _core module is a DIFFERENT access path to the same HiGHS 1.12.0 engine."
+
+# ============================================================
+# DISTINCTION: scipy._highspy._core vs standalone highspy
+# ============================================================
+
+access_path,package_name,installed,multi_obj_API_exposed,notes
+Primary (current POLARIS),scipy.optimize.milp via _highs_wrapper.py,YES,NO,"_highs_wrapper.py wraps only single-objective MILP. Does NOT call addLinearObjective."
+Internal scipy (lower-level),scipy.optimize._highspy._core._Highs(),YES,YES,"_Highs() object directly exposes addLinearObjective. Not used by scipy.optimize.milp wrapper."
+Standalone highspy,import highspy,NO,YES (if installed),"Would expose Highs() class with same underlying HiGHS 1.12.0 methods. Not currently installed."
+
+access_path_implication,"The scipy.optimize.milp() wrapper does NOT expose multi-objective. But the underlying HiGHS 1.12.0 engine IS present in the environment and already accessible at the lower level via scipy.optimize._highspy._core. Option B does NOT necessarily require installing a new package — it may be achievable by accessing scipy's own internal _Highs class directly, or by installing highspy which would use the same engine version."

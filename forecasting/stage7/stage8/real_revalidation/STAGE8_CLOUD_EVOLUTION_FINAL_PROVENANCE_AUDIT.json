@@ -1,0 +1,47 @@
+{
+  "audit_name": "STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT",
+  "governance_status": "FINAL_PROVENANCE_AUDIT_ONLY",
+  "route_status": "CLOSED",
+  "official_closure_label": "NO VERIFIED CAUSAL CLOUD-EVOLUTION OBSERVATION SOURCE FOR THE LOCKED 2024 BENCHMARK",
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "odd_accessed": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "sgo_abisko_emccd_audit": {
+    "A_historical_existence": true,
+    "B_continuous_calibrated_cloud_product": false,
+    "C_2024_retrieval_pipeline": false,
+    "D_temporal_cadence": "Event-based (dark winter nights only)",
+    "E_timestamp_semantics": "UT / UTC in FITS headers",
+    "F_publication_latency": "Offline batch archive (days to weeks latency)",
+    "G_spatial_representativeness": "Unmatched (Points at 100-300km ASL auroral emissions during dark nights; powered OFF during daytime)",
+    "H_origin_coverage_347": "0 / 347 (0.0%)"
+  },
+  "provenance_audit_numerical_claims": {
+    "seviri_parallax_shift_km": {
+      "claimed": "21.29 km (mid-cloud 4.5km) to 37.86 km (high-cloud 8.0km)",
+      "derivation": "Nuolja VZA = 78.07°, delta_x = h_cloud * tan(78.07°)",
+      "verdict": "EXACT TRIGONOMETRIC PROVENANCE VERIFIED"
+    },
+    "seviri_pixel_distortion_km": {
+      "claimed": "3.0 km x 14.51 km",
+      "derivation": "Equatorial 3km pixel * 1/cos(78.07°) stretching factor = 3km x 14.51km",
+      "verdict": "EXACT GEOMETRIC PROJECTION PROVENANCE VERIFIED"
+    },
+    "leo_polar_swath_coverage": {
+      "30_min_window": "0 / 347 (0.0%)",
+      "1_hour_window": "14 / 347 (4.0%)",
+      "3_hour_window": "48 / 347 (13.8%)",
+      "6_hour_window": "72 / 347 (20.7%)",
+      "latency_blocker": "Level-2 broadcast latency (1.5-3.0h) publishes after t0=00:00 UTC",
+      "verdict": "EXACT ORBITAL SCHEDULE PROVENANCE VERIFIED"
+    }
+  },
+  "governance_boundaries": {
+    "cloud_evolution_physics_unimportant": false,
+    "all_sky_imagery_nonexistent": false,
+    "satellite_cloud_evolution_universally_impossible": false,
+    "scope_of_closure": "Applies strictly to POLARIS locked 2024 benchmark (68.362°N) and real-time causal cutoff (t0 = 00:00 UTC)"
+  }
+}

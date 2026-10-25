@@ -1,0 +1,10 @@
+{
+  "test_id": "GAP19_OPTION_B_24H_MPC_BASELINE_TEST",
+  "scenario_filename": "demo_scenario.json",
+  "steps_to_run": 24,
+  "optimizer_type": "highs_native",
+  "forecast_engine_type": "baseline",
+  "initial_soc_pct": 80.0,
+  "terminal_target_wh": 100000.0,
+  "t_required_hours": 6
+}

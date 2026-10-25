@@ -1,0 +1,91 @@
+{
+  "experiment_id": "L2-EXP-12",
+  "title": "Horizon-Aware q10 Risk-Budget Comparison",
+  "created_at_utc": "2026-10-04T11:25:00.000000+00:00",
+  "governance": {
+    "mode": "STRICTLY_RESEARCH_ONLY",
+    "production_promotion_authorized": false,
+    "baseline_gap19_frozen": true,
+    "candidate_f_frozen": true,
+    "static_q10_frozen": true,
+    "held_out_2024_firewall": true,
+    "statement": "2024 evaluation outcomes were not used to select, tune, or modify the L2-EXP-12 formulation after pre-registration."
+  },
+  "research_objective": "Determine whether the conservatism of the validated static q10 solar-planning benchmark can be safely reduced by making relaxation horizon-aware and EMS-state-aware, rather than using the rejected hour-by-hour NN adaptive-q approach from L2-EXP-11.",
+  "core_question": "Can we recover some of q10's diesel/curtailment efficiency while retaining its reliability advantage by allocating a bounded reliability-risk budget across the full 24h horizon?",
+  "experimental_arms": {
+    "Arm_A": {
+      "name": "Candidate F Point Control",
+      "description": "Existing Candidate F / Stage8.1 point forecast control. Unmodified.",
+      "role": "Uncertainty-unaware point forecast control"
+    },
+    "Arm_B": {
+      "name": "Static q10 Safety Benchmark",
+      "description": "Existing validated static q10 planning benchmark. Unmodified.",
+      "role": "Primary safety and reliability benchmark"
+    },
+    "Arm_C": {
+      "name": "Fixed Modest q Relaxation",
+      "description": "Fixed daytime q = 0.15 (night q = 0.10). Evaluates constant non-state-aware relaxation.",
+      "role": "Research diagnostic for baseline relaxation cost/reliability trade-off",
+      "parameters": {
+        "q_daytime": 0.15,
+        "q_night": 0.10
+      }
+    },
+    "Arm_D": {
+      "name": "SOC-Aware q Relaxation",
+      "description": "q relaxes up to 0.20 only when initial battery SOC is comfortably above reserve threshold, with afternoon horizon decay.",
+      "role": "State-aware local relaxation",
+      "parameters": {
+        "q_min": 0.10,
+        "q_max": 0.20,
+        "soc_reserve_pct": 40.0,
+        "soc_high_pct": 80.0,
+        "horizon_decay_cutoff_hour": 18
+      },
+      "formula": "q_t = q_min + (q_max - q_min) * clip((SOC_0 - 40.0)/(80.0 - 40.0), 0.0, 1.0) * max(0.0, 1.0 - t/18.0)"
+    },
+    "Arm_E": {
+      "name": "Horizon Risk-Budget q Relaxation",
+      "description": "Allocates a bounded cumulative optimism energy budget (B_max = 15,000 Wh) across the 24h horizon, dynamically tightening q toward q10 during high-spread midday hours and when reserve margins decline.",
+      "role": "Primary research arm — horizon-level reliability-risk budgeting",
+      "parameters": {
+        "budget_max_wh": 15000.0,
+        "q_min": 0.10,
+        "q_max": 0.20,
+        "soc_min_pct": 30.0,
+        "soc_target_pct": 70.0
+      },
+      "budget_units": "Watt-hours of cumulative potential solar over-optimism energy relative to q10",
+      "formula": "E_opt,t = min( (B_rem / N_rem) * rho_soc, ((q_max - q_min)/0.40) * delta_p_t ); q_t = q_min + 0.40 * (E_opt,t / delta_p_t)"
+    },
+    "Arm_F": {
+      "name": "Perfect Foresight Diagnostic",
+      "description": "Dispatches with actual realized solar power. Upper bound on achievable efficiency.",
+      "role": "Physical efficiency diagnostic upper bound"
+    }
+  },
+  "acceptance_gates": {
+    "G1_soc_safety": "Zero SOC floor violations (< 20%) and zero SOC ceiling violations (> 95%) across all origins",
+    "G2_accounting": "Exact energy balance, exact non-anticipativity, zero silent clipping",
+    "G3_reliability": "Realized unmet critical load <= Arm B * 1.10 (71,529.6 Wh across 123 NORMAL origins)",
+    "G4_reliability_consistency": "Critical reliability statistically consistent with static q10",
+    "G5_efficiency": "Statistically significant reduction in diesel fuel and/or solar curtailment vs Arm B"
+  },
+  "evaluation_scope": {
+    "total_origins": 173,
+    "normal_origins": 123,
+    "emergency_origins": 50,
+    "evaluation_year": 2024,
+    "quarantined": true
+  },
+  "verified_input_hashes": {
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  }
+}

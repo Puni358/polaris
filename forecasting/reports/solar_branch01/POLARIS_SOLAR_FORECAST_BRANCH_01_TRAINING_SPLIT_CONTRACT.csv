@@ -1,0 +1,4 @@
+split_name,start_timestamp_utc,end_timestamp_utc,candidate_origins,embargo_hours,effective_origins,fit_preprocessing,purpose
+TRAIN,2024-01-01T00:00:00Z,2024-08-31T23:00:00Z,5832,24,5808,YES,Model fitting and scaler parameter fitting
+VALIDATION,2024-09-01T00:00:00Z,2024-10-31T23:00:00Z,1464,24,1440,NO,Hyperparameter tuning and early stopping
+TEST,2024-11-01T00:00:00Z,2024-12-31T23:00:00Z,1464,0,1464,NO,Held-back final governed evaluation

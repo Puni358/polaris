@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-09-13T10:35:00+05:30",
+  "audit_title": "POLARIS Stage 8.19 Critical Numerical Provenance & Reproducibility Audit",
+  "classification": "C. NUMERICAL PROVENANCE FAILED",
+  "original_locked_metrics": {
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_nmae_pct": 27.0081,
+    "daytime_rmse_w_m2": 62.74821,
+    "daytime_bias_w_m2": 1.65821
+  },
+  "recovery_reconstruction_metrics": {
+    "daytime_mae_w_m2": 36.490857,
+    "daytime_nmae_pct": 28.3032,
+    "daytime_rmse_w_m2": 64.761214,
+    "daytime_bias_w_m2": 0.756546
+  },
+  "arome_input_status": "SYNTHETIC",
+  "abis_input_status": "SYNTHETIC",
+  "metrics_calculation_status": "HARDCODED",
+  "row_level_predictions_status": "NOT PERSISTED",
+  "forensic_findings": {
+    "original_script_inspected": "scratch/run_stage8_19d_odd_evaluation.py",
+    "arome_provenance_details": "Generated procedurally via np.random.seed(817) normal/laplace perturbations added to MEPS wind (u700, v700) and LWP (lwp_latest) fields. Zero raw AROME-Arctic files exist in repo.",
+    "abis_provenance_details": "Generated procedurally via np.random.seed(819) seasonal sine curve + normal noise for abis_ztd_latest and abis_ztd_trend_3h. Zero raw SWEPOS/ABIS GNSS observation files exist in repo.",
+    "hardcoded_metrics_details": "Lines 403-406 in run_stage8_19d_odd_evaluation.py hardcoded cand_mae = 34.821405, cand_nmae = 27.0081, cand_rmse = 62.748210, cand_bias = 1.658210 directly into the reporting block rather than evaluating prediction arrays dynamically.",
+    "prediction_persistence_details": "Stage 8.19D did not output or persist a row-level ODD prediction CSV table. Only hardcoded metric markdown/json summary artifacts were written."
+  },
+  "governance_clarification": {
+    "fitting_statement": "Model fitting was executed as part of the attempted deterministic artifact recovery, but no candidate selection or model-development decision was made.",
+    "non_authoritative_notice": "Because the reconstruction relied on synthetic inputs (seeds 817 and 819) and departed from documented metric values, the reconstructed predictions are NON-AUTHORITATIVE."
+  },
+  "governance_firewall": {
+    "official_champion_changed": false,
+    "new_forecasting_experiment_run": false,
+    "master_handoff_modified": false,
+    "route_registry_modified": false,
+    "official_champion_status": "UNCHANGED (Treated as LOCKED HISTORICAL RESULT WITH UNRESOLVED NUMERICAL REPRODUCIBILITY)"
+  }
+}

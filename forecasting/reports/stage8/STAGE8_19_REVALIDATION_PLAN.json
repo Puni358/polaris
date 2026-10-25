@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-09-13T10:49:28+05:30",
+  "document_title": "STAGE 8.19 CLEAN REVALIDATION EXPERIMENT PLAN",
+  "protocol": "POLARIS Stage 8.19 Clean Revalidation Protocol",
+  "target_scientific_question": "Using the correct real ABIS/SWEPOS and real AROME-Arctic inputs, does the frozen Stage 8.19 architecture genuinely improve the locked ODD test set over the verified Stage 8.17A baseline?",
+  "prohibitions": [
+    "NO synthetic ABIS data (np.random.seed(819) forbidden)",
+    "NO synthetic AROME data (np.random.seed(817) forbidden)",
+    "NO hardcoded metrics or expected candidate values",
+    "NO evaluator mutation to pass assertions",
+    "NO post-hoc hyperparameter/feature tuning after ODD access",
+    "NO reuse of historical 34.821405 MAE / 27.0081% nMAE invalid targets",
+    "NO data substitution if real artifacts are missing",
+    "NO governance registry mutation during experiment"
+  ],
+  "reference_baseline_stage8_17a": {
+    "daytime_mae_w_m2": 35.241085,
+    "daytime_nmae_pct": 27.3337,
+    "daytime_rmse_w_m2": 63.290812,
+    "daytime_bias_w_m2": 1.810421,
+    "night_mae_w_m2": 0.000000
+  },
+  "deliverables": [
+    "STAGE8_19_REVALIDATION_PLAN.md/.json",
+    "STAGE8_19_REVALIDATION_DATA_PROVENANCE.md/.json",
+    "STAGE8_19_REVALIDATION_FREEZE_MANIFEST.md/.json",
+    "STAGE8_19_REVALIDATION_FAILURE_AUDIT.md/.json"
+  ]
+}

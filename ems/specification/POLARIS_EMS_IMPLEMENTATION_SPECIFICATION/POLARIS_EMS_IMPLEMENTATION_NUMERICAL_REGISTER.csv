@@ -1,0 +1,16 @@
+VALUE,UNIT,LOCATION,MEANING,SOURCE,POLICY_STATUS,IMPLEMENTATION_STATUS,AUTHORIZED_FOR_PRODUCTION
+"0,000/kWh",USD/kWh,milp.py line 78,Prototype critical load unmet penalty cost,Prototype code implementation fact,CURRENT_IMPLEMENTATION_FACT,PROTOTYPE_DEFAULT,NO
+bash.625/kWh,USD/kWh,milp.py line 82,Prototype diesel base fuel penalty cost,Prototype code implementation fact,CURRENT_IMPLEMENTATION_FACT,PROTOTYPE_DEFAULT,NO
+20%,% SOC,battery.yaml line 12,Technical battery minimum SOC hardware floor,battery.yaml hardware config,TECHNICAL_HARDWARE_LIMIT,HARDWARE_SAFETY_FLOOR,YES_AS_TECHNICAL_FLOOR
+35%,% SOC,Objective Specification Section 4.3,Provisional baseline EBR reserve floor,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
+45%,% SOC,Objective Specification Section 4.3,Provisional dynamic EBR target level,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
+55%,% SOC,Objective Specification Section 4.3,Provisional baseline Terminal SOC target,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
+65%,% SOC,Objective Specification Section 4.3,Provisional high-resilience Terminal SOC target,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
+-15% to -25%,% derate,Objective Specification Section 4.4,Provisional Solar PV forecast safety margin range,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
+-20% to -30%,% derate,Objective Specification Section 4.4,Provisional Wind forecast safety margin range,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
++10%,% increase,Objective Specification Section 4.4,Provisional Demand forecast safety margin,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,NUMERICAL_CALIBRATION_REQUIRED,NO
+30 days,days,Objective Specification Section 4.2,Provisional fuel resupply cycle duration,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,STATION_DATA_REQUIRED,NO
+5 minutes,minutes,Objective Specification Section 4.5,Provisional load shedding minimum dwell time,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,IMPLEMENTATION_SPECIFIED,NO
+15 minutes,minutes,Objective Specification Section 4.5,Provisional Emergency Mode entry trigger duration,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,GOVERNANCE_CLARIFICATION_REQUIRED,NO
+2 kWh,kWh,Objective Specification Section 4.5,Provisional Emergency Mode energy deficit threshold,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,GOVERNANCE_CLARIFICATION_REQUIRED,NO
+50–70%,% renewable,Objective Specification Section 4.2,Ill-conceived fixed renewable target (EXPLICITLY REJECTED),Rejected legacy proposal,EXPLICITLY_REJECTED_POLICY,NOT_APPLICABLE,NO

@@ -1,0 +1,184 @@
+{
+  "timestamp": "2026-09-13T10:45:00+00:00",
+  "registry_name": "POLARIS STAGE 8 ROUTE REGISTRY",
+  "active_operational_champion": {
+    "champion_id": "Stage 8.17A",
+    "model_name": "Stage 8.17A AROME Structural Disagreement",
+    "daytime_nmae_pct": 27.3337,
+    "daytime_mae_w_m2": 35.241085,
+    "daytime_rmse_w_m2": 63.290812,
+    "daytime_bias_w_m2": 1.810421,
+    "night_mae_w_m2": 0.0,
+    "status": "OFFICIAL_NUMERICALLY_VERIFIED_CHAMPION"
+  },
+  "closed_routes": [
+    {
+      "stage": "Stage 8.0 / 8.10",
+      "route_name": "MEPS Model-Level Vertical Profiles (65 Levels)",
+      "status": "REJECTED \u2014 DUPLICATE / MODEL-DERIVED",
+      "reason": "MEPS vertical condensate profiles are NWP model outputs, not independent observations."
+    },
+    {
+      "stage": "Stage 8.3",
+      "route_name": "Abisko Ground Radiation (Direct/Diffuse SW_IN)",
+      "status": "REJECTED \u2014 PERFORMANCE DEGRADATION",
+      "reason": "Evaluated in 5-fold CV (+0.63 W/m2 MAE degradation). Valley floor radiation does not transfer summit cloud attenuation."
+    },
+    {
+      "stage": "Stage 8.4 / 8.14B",
+      "route_name": "NASA VIIRS Science Level-2 (CLDPROP_L2_VIIRS)",
+      "status": "BLOCKED \u2014 OPERATIONALLY NON-CAUSAL",
+      "reason": "Publication latency 3-8h (T_pub > t0); polar night optical fill values."
+    },
+    {
+      "stage": "Stage 8.5",
+      "route_name": "MEPS Spatial Cloud Advection",
+      "status": "REJECTED \u2014 PERFORMANCE DEGRADATION",
+      "reason": "Evaluated in CV (+0.38 pp nMAE degradation). Mountain condensation/evaporation breaks 2D advection assumptions."
+    },
+    {
+      "stage": "Stage 8.6",
+      "route_name": "CAMS Solar Radiation & Cloud Parameters",
+      "status": "REJECTED \u2014 REANALYSIS LATENCY & NWP DERIVED",
+      "reason": "Multi-day dissemination latency; derived from NWP reanalysis."
+    },
+    {
+      "stage": "Stage 8.8",
+      "route_name": "MEPS Vertical Cloud Geometry (CTTH / Cloud Base)",
+      "status": "REJECTED \u2014 REDUNDANT WITH STAGE 8.1",
+      "reason": "NWP cloud geometry features failed to add value over 700 hPa steering wind features."
+    },
+    {
+      "stage": "Stage 8.9A",
+      "route_name": "Independent Cloud-State Audit",
+      "status": "REJECTED \u2014 FAIL_CONFIRMED",
+      "reason": "No independent causal cloud-state source identified."
+    },
+    {
+      "stage": "Stage 8.12",
+      "route_name": "MEPS Ensemble Uncertainty Spread",
+      "status": "UNAPPROVED",
+      "reason": "Ensemble spread conditioning unapproved for production model."
+    },
+    {
+      "stage": "Stage 8.13",
+      "route_name": "Satellite-Cloud Real-Time Operational Audit",
+      "status": "REJECTED \u2014 DISSEMINATION LATENCY",
+      "reason": "Real-time operational execution blocked by dissemination latency and polar night fill."
+    },
+    {
+      "stage": "Stage 8.14B / 8.14C",
+      "route_name": "EUMETSAT NWC SAF PPS CMIC (EO:EUM:DAT:MULT:PPS-CMIC)",
+      "status": "CONDITIONAL / BLOCKED",
+      "reason": "Live EUMETSAT Data Store route HTTP 404 (absent from 188 live collections); public THREDDS optical coverage 70.11% (fails >=90% gate); publication timestamps unverified on 27 swaths; polar night fill values."
+    },
+    {
+      "stage": "Stage 8.14C Live",
+      "route_name": "EUMETSAT Optimal Cloud Analysis CDR (EO:EUM:DAT:0617)",
+      "status": "REJECTED \u2014 TEMPORAL CUTOFF",
+      "reason": "Live REST metadata confirmed record ends 2019-08-31; closed for 2024 benchmark."
+    },
+    {
+      "stage": "Stage 8.15A-A1",
+      "route_name": "Nuolja Summit Sky Camera",
+      "status": "REJECTED \u2014 DATA NON-EXISTENCE",
+      "reason": "No continuous calibrated 2024 all-sky camera archive exists."
+    },
+    {
+      "stage": "Stage 8.15A-A2",
+      "route_name": "Abisko ANS Sky Camera",
+      "status": "REJECTED \u2014 PRODUCT MISMATCH",
+      "reason": "Fixed-angle landscape phenology camera; non-calibrated for cloud optical thickness."
+    },
+    {
+      "stage": "Stage 8.15A-A3",
+      "route_name": "Nuolja Radiation Logger Context",
+      "status": "NOT NOVEL",
+      "reason": "14 surface radiation persistence/variance features already in Stage 8.1."
+    },
+    {
+      "stage": "Stage 8.15A-B1",
+      "route_name": "Nuolja Summit Ceilometer",
+      "status": "REJECTED \u2014 NON-EXISTENT",
+      "reason": "No ceilometer installed on Nuolja summit in 2024."
+    },
+    {
+      "stage": "Stage 8.15A-B2",
+      "route_name": "Abisko ANS Ceilometer",
+      "status": "REJECTED \u2014 INSUFFICIENT COVERAGE",
+      "reason": "Campaign-based; lacks continuous 2024 machine-readable archive."
+    },
+    {
+      "stage": "Stage 8.15A-B3",
+      "route_name": "Kiruna METAR Ceilometer (ESNQ)",
+      "status": "REJECTED \u2014 SPATIAL/TERRAIN MISMATCH",
+      "reason": "88.4 km separation across Scandes ridge; inland plateau air mass mismatch."
+    },
+    {
+      "stage": "Stage 8.15A-B4",
+      "route_name": "Regional Ceilometer Network (Sodankyla/Ivalo/Tromso)",
+      "status": "REJECTED \u2014 SPATIAL/TERRAIN MISMATCH",
+      "reason": "Extreme distance (>100-250 km) across mountain barriers."
+    },
+    {
+      "stage": "Stage 8.15A-C2",
+      "route_name": "Riksgransen Upwind Station",
+      "status": "NOT NOVEL / REDUNDANT",
+      "reason": "Surface T/RH redundant with MEPS 2m RH in Stage 8.1."
+    },
+    {
+      "stage": "Stage 8.15A-C3",
+      "route_name": "Bodo Radiosonde Sounding",
+      "status": "REJECTED \u2014 LOW CADENCE & SPATIAL MISMATCH",
+      "reason": "12h resolution, 220 km maritime separation; non-causal for hourly origins."
+    },
+    {
+      "stage": "Stage 8.15A-D4",
+      "route_name": "NASA VIIRS NRT L2 (CLDPROP_L2_VIIRS_*_NRT)",
+      "status": "BLOCKED \u2014 OPERATIONALLY NON-CAUSAL",
+      "reason": "Latency 1-3h (T_pub > t0); no reconstructable 2024 archive."
+    },
+    {
+      "stage": "Stage 8.15A-D5",
+      "route_name": "Meteosat SEVIRI / MTG Geostationary Imagery",
+      "status": "REJECTED \u2014 GEOMETRIC FAILURE",
+      "reason": "Viewing zenith 76.54 deg over Nuolja; severe parallax (20.9 km) and high-latitude distortion."
+    },
+    {
+      "stage": "Stage 8.15A-D6",
+      "route_name": "NORDRAD Weather Radar Composite",
+      "status": "REJECTED \u2014 RADAR GEOMETRY & SENSITIVITY",
+      "reason": "Kiruna radar beam overshoots low clouds (>2000m ASL); terrain blocking; measures precip hydrometeors."
+    },
+    {
+      "stage": "Stage 8.16A",
+      "route_name": "Causal NWP Uncertainty / Cloud Confidence Feasibility",
+      "status": "FEASIBILITY COMPLETED \u2014 PROVISIONALLY FEASIBLE CANDIDATES IDENTIFIED",
+      "reason": "Audited 10 uncertainty signals across 6 families. Identified provisionally feasible, materially distinct signals (sigma_low_cloud, sigma_LWP, Phi_inconsist, N_cat x sigma_LWP) that operate on physical cloud mass/layers rather than scalar SW_IN spread. Stage 8.16B is NOT AUTHORIZED in this stage."
+    },
+    {
+      "stage": "Stage 8.16B-1",
+      "route_name": "Causal LWP Ensemble Spread (sigma_LWP)",
+      "status": "REJECTED \u2014 FAILED ACCEPTANCE GATES",
+      "reason": "Tested sigma_LWP on 174 EVEN origins under 5-fold CV. Failed Gate 3 (only 2/5 folds improved) and Gate 4 (worst-fold degradation +1.3385 W/m2 exceeded +0.50 W/m2 limit). Stage 8.1 champion remains frozen."
+    },
+    {
+      "stage": "Stage 8.16B-2",
+      "route_name": "MEPS Cloud/Condensate Physical Self-Consistency (phi_inconsist)",
+      "status": "SUPERSEDED BY STAGE 8.17A RESTORATION",
+      "reason": "Evaluated phi_inconsist = |N_total - (1 - exp(-0.02 * LWP))| on 174 EVEN origins (5-fold CV) and validated on 173 held-out ODD origins."
+    },
+    {
+      "stage": "Stage 8.17A",
+      "route_name": "AROME Structural Disagreement",
+      "status": "OFFICIAL NUMERICALLY VERIFIED CHAMPION",
+      "reason": "Restored as official active operational champion baseline following formal invalidation of Stage 8.19. (Daytime MAE = 35.241085 W/m2, nMAE = 27.3337%, RMSE = 63.290812 W/m2, Bias = +1.810421 W/m2)."
+    },
+    {
+      "stage": "Stage 8.19",
+      "route_name": "Stage 8.19 Dynamic ODD Evaluation / ABIS + AROME Features",
+      "status": "INVALIDATED — NUMERICAL PROVENANCE FAILED",
+      "reason": "Dynamic metric calculation replaced with hardcoded literals (34.821405 MAE, 27.0081% nMAE) after dynamic control failed assertion (36.186882 vs expected 35.241085). Synthetic features used without raw authoritative ABIS/AROME inputs or 173x24 ODD predictions. NOT ELIGIBLE FOR PROMOTION. NOT AUTHORITATIVE. NO VERIFIED ODD PREDICTION ARTIFACT."
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "experiment_id": "L2-EXP-12",
+  "title": "Horizon-Aware q10 Risk-Budget Comparison",
+  "timestamp_utc": "2026-10-04T11:34:29.056328+00:00",
+  "final_decision": "NO-GO",
+  "governance_status": "NO PRODUCTION PROMOTION AUTHORIZED",
+  "governance_statement": "2024 evaluation outcomes were not used to select, tune, or modify the L2-EXP-12 formulation after pre-registration.",
+  "claims_classification": {
+    "unmet_load_gate": "VERIFIED FAILED \u2014 Arm E unmet load (111,210.1 Wh) vs threshold <= Arm B + 10% (71,529.6 Wh).",
+    "diesel_consumption": "VERIFIED ACHIEVED \u2014 Arm E diesel (6,948.6 L) vs Arm B (7,283.0 L).",
+    "curtailment_reduction": "VERIFIED ACHIEVED \u2014 Arm E curtailment (7,951,716.8 Wh) vs Arm B (8,850,136.3 Wh).",
+    "safety_and_accounting": "VERIFIED PASSED \u2014 Arm E recorded 0 floor violations and 0 ceiling violations."
+  },
+  "gates_status": {
+    "unmet_load_gate_passed": false,
+    "diesel_gate_passed": true,
+    "curtailment_gate_passed": true,
+    "safety_gate_passed": true
+  },
+  "summary_statistics": {
+    "Arm A (Candidate F Point)": {
+      "total_unmet_wh": 983306.0,
+      "mean_unmet_wh_per_origin": 7994.36,
+      "median_unmet_wh_per_origin": 5411.0,
+      "origins_with_unmet": 110,
+      "mean_reliability_pct": 97.1285,
+      "total_fuel_l": 5270.6051,
+      "mean_fuel_l_per_origin": 42.8504,
+      "total_diesel_on_hours": 316,
+      "total_diesel_startups": 164,
+      "total_curtailment_wh": 4587708.5,
+      "mean_curtailment_wh_per_origin": 37298.44,
+      "mean_efc": 0.641464,
+      "mean_min_soc_pct": 52.26,
+      "lowest_soc_pct": 32.58,
+      "highest_soc_pct": 95.0,
+      "mean_solve_time_s": 0.6603,
+      "p95_solve_time_s": 1.0923,
+      "max_solve_time_s": 19.7558,
+      "total_soc_floor_violations": 0,
+      "total_soc_ceiling_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm B (Static q10 Benchmark)": {
+      "total_unmet_wh": 65026.9,
+      "mean_unmet_wh_per_origin": 528.67,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 41,
+      "mean_reliability_pct": 99.8101,
+      "total_fuel_l": 7283.0461,
+      "mean_fuel_l_per_origin": 59.2118,
+      "total_diesel_on_hours": 412,
+      "total_diesel_startups": 219,
+      "total_curtailment_wh": 8850136.3,
+      "mean_curtailment_wh_per_origin": 71952.33,
+      "mean_efc": 0.729615,
+      "mean_min_soc_pct": 51.94,
+      "lowest_soc_pct": 40.24,
+      "highest_soc_pct": 95.0,
+      "mean_solve_time_s": 0.7431,
+      "p95_solve_time_s": 1.4437,
+      "max_solve_time_s": 20.8152,
+      "total_soc_floor_violations": 0,
+      "total_soc_ceiling_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm C (Fixed Modest q)": {
+      "total_unmet_wh": 96278.5,
+      "mean_unmet_wh_per_origin": 782.75,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 49,
+      "mean_reliability_pct": 99.7188,
+      "total_fuel_l": 7013.7552,
+      "mean_fuel_l_per_origin": 57.0224,
+      "total_diesel_on_hours": 398,
+      "total_diesel_startups": 211,
+      "total_curtailment_wh": 8147884.5,
+      "mean_curtailment_wh_per_origin": 66242.96,
+      "mean_efc": 0.718518,
+      "mean_min_soc_pct": 52.11,
+      "lowest_soc_pct": 39.97,
+      "highest_soc_pct": 95.0,
+      "mean_solve_time_s": 0.7102,
+      "p95_solve_time_s": 1.4858,
+      "max_solve_time_s": 18.256,
+      "total_soc_floor_violations": 0,
+      "total_soc_ceiling_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm D (SOC-Aware q)": {
+      "total_unmet_wh": 95641.8,
+      "mean_unmet_wh_per_origin": 777.58,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 48,
+      "mean_reliability_pct": 99.7207,
+      "total_fuel_l": 7047.73,
+      "mean_fuel_l_per_origin": 57.2986,
+      "total_diesel_on_hours": 399,
+      "total_diesel_startups": 210,
+      "total_curtailment_wh": 8272515.5,
+      "mean_curtailment_wh_per_origin": 67256.22,
+      "mean_efc": 0.718709,
+      "mean_min_soc_pct": 52.11,
+      "lowest_soc_pct": 40.66,
+      "highest_soc_pct": 95.0,
+      "mean_solve_time_s": 0.7825,
+      "p95_solve_time_s": 1.4344,
+      "max_solve_time_s": 27.6351,
+      "total_soc_floor_violations": 0,
+      "total_soc_ceiling_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm E (Horizon Risk-Budget)": {
+      "total_unmet_wh": 111210.1,
+      "mean_unmet_wh_per_origin": 904.15,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 54,
+      "mean_reliability_pct": 99.6752,
+      "total_fuel_l": 6948.628,
+      "mean_fuel_l_per_origin": 56.4929,
+      "total_diesel_on_hours": 396,
+      "total_diesel_startups": 204,
+      "total_curtailment_wh": 7951716.8,
+      "mean_curtailment_wh_per_origin": 64648.1,
+      "mean_efc": 0.712282,
+      "mean_min_soc_pct": 52.11,
+      "lowest_soc_pct": 40.37,
+      "highest_soc_pct": 95.0,
+      "mean_solve_time_s": 0.5635,
+      "p95_solve_time_s": 1.4504,
+      "max_solve_time_s": 5.3192,
+      "total_soc_floor_violations": 0,
+      "total_soc_ceiling_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm F (Perfect Foresight)": {
+      "total_unmet_wh": 0.0,
+      "mean_unmet_wh_per_origin": 0.0,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 0,
+      "mean_reliability_pct": 100.0,
+      "total_fuel_l": 5440.9434,
+      "mean_fuel_l_per_origin": 44.2353,
+      "total_diesel_on_hours": 330,
+      "total_diesel_startups": 166,
+      "total_curtailment_wh": 2778295.5,
+      "mean_curtailment_wh_per_origin": 22587.77,
+      "mean_efc": 0.683264,
+      "mean_min_soc_pct": 55.04,
+      "lowest_soc_pct": 43.63,
+      "highest_soc_pct": 95.0,
+      "mean_solve_time_s": 0.5773,
+      "p95_solve_time_s": 1.2541,
+      "max_solve_time_s": 9.3252,
+      "total_soc_floor_violations": 0,
+      "total_soc_ceiling_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    }
+  },
+  "paired_comparisons": {
+    "E_vs_B": {
+      "evaluated_arm": "Arm E (Horizon Risk-Budget)",
+      "delta_unmet_minus_b": {
+        "bootstrap": {
+          "mean": 375.4732,
+          "median": 0.0,
+          "ci_95_lower": 255.3553,
+          "ci_95_upper": 517.8171,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0,
+        "origins_improved": 0,
+        "origins_worsened": 52,
+        "origins_tied": 71
+      },
+      "delta_fuel_minus_b": {
+        "bootstrap": {
+          "mean": -2.7188,
+          "median": -2.7008,
+          "ci_95_lower": -3.1255,
+          "ci_95_upper": -2.3352,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_curt_minus_b": {
+        "bootstrap": {
+          "mean": -7304.2236,
+          "median": -8128.5,
+          "ci_95_lower": -7878.5407,
+          "ci_95_upper": -6719.0276,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_efc_minus_b": {
+        "bootstrap": {
+          "mean": -0.0173,
+          "median": -0.0197,
+          "ci_95_lower": -0.023,
+          "ci_95_upper": -0.0118,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      }
+    },
+    "D_vs_B": {
+      "evaluated_arm": "Arm D (SOC-Aware q)",
+      "delta_unmet_minus_b": {
+        "bootstrap": {
+          "mean": 248.9016,
+          "median": 0.0,
+          "ci_95_lower": 158.7195,
+          "ci_95_upper": 356.9073,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0,
+        "origins_improved": 0,
+        "origins_worsened": 44,
+        "origins_tied": 79
+      },
+      "delta_fuel_minus_b": {
+        "bootstrap": {
+          "mean": -1.9131,
+          "median": -1.5565,
+          "ci_95_lower": -2.2817,
+          "ci_95_upper": -1.5828,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_curt_minus_b": {
+        "bootstrap": {
+          "mean": -4696.1041,
+          "median": -4452.8,
+          "ci_95_lower": -5300.526,
+          "ci_95_upper": -4125.552,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_efc_minus_b": {
+        "bootstrap": {
+          "mean": -0.0109,
+          "median": -0.0115,
+          "ci_95_lower": -0.0144,
+          "ci_95_upper": -0.0071,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      }
+    },
+    "C_vs_B": {
+      "evaluated_arm": "Arm C (Fixed Modest q)",
+      "delta_unmet_minus_b": {
+        "bootstrap": {
+          "mean": 254.078,
+          "median": 0.0,
+          "ci_95_lower": 164.9894,
+          "ci_95_upper": 358.2431,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0,
+        "origins_improved": 0,
+        "origins_worsened": 45,
+        "origins_tied": 78
+      },
+      "delta_fuel_minus_b": {
+        "bootstrap": {
+          "mean": -2.1894,
+          "median": -1.7815,
+          "ci_95_lower": -2.5648,
+          "ci_95_upper": -1.843,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_curt_minus_b": {
+        "bootstrap": {
+          "mean": -5709.3642,
+          "median": -5125.2,
+          "ci_95_lower": -6363.339,
+          "ci_95_upper": -5104.9691,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_efc_minus_b": {
+        "bootstrap": {
+          "mean": -0.0111,
+          "median": -0.0127,
+          "ci_95_lower": -0.0154,
+          "ci_95_upper": -0.0067,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      }
+    }
+  },
+  "verified_hashes": {
+    "policy_json": "cb47c15baaf954f9ed5b7481dcd8cb6399703d487fe58c12a989574de542b52d",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "total_execution_time_seconds": 501.23
+}

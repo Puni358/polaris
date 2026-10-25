@@ -1,0 +1,101 @@
+{
+  "build_timestamp_utc": "2026-10-16T11:05:10.631065+00:00",
+  "purpose": "Clean, un-contaminated Stage 4 baseline for Candidate F Successor (Option B)",
+  "protocol_reference": "CANDIDATE_F_SUCCESSOR_CLEAN_SPLIT_PROTOCOL_v1.md \u00a72 (Option A reuse-forward)",
+  "parameter_provenance": {
+    "source_file": "/home/punith-bs/01polaris (Copy)/stage4/stage4_results/ensemble_parameters.json",
+    "sha256": "26cfbd19744a4a01719470d20808b5316af7262aed6c2cd84376d8987ce0abc0",
+    "fitted_on": "2024-EVEN actual_SW_IN daytime rows only (TRAINING_INTEGRITY_VERIFIED)",
+    "horizons": 24
+  },
+  "stage3b_source": {
+    "source_file": "/home/punith-bs/01polaris (Copy)/stage3/stage3b_cloud_nwp_predictions.csv",
+    "sha256": "4a0db456d4b22ec25a0d26b92dfb45aca04d631dc3e9a3ff9b7ce0ed5ff961a9",
+    "model": "amazon/chronos-2 (frozen weights, no retraining)"
+  },
+  "input_datasets": {
+    "train.csv": "7f2435fe5b2b239c9a2950366d56ab4297f29f1e8813d23a9ab64f62ca50483d",
+    "validation.csv": "24e6828ee7cb7d45fd755844653e4ad9396f07bfe1a551b4411867bb07c948a9"
+  },
+  "output_artifacts": {
+    "train_baseline.csv": {
+      "sha256": "1b6ff36e50e0c415f3f1160a80aaa18fe2f6576245d28bbaaaed7cba1f9a1f57",
+      "origins": 174,
+      "rows": 4176,
+      "columns": [
+        "forecast_start",
+        "horizon_hour",
+        "timestamp",
+        "actual_SW_IN",
+        "is_daytime",
+        "is_night_causal",
+        "clearsky_ghi",
+        "cloud_frac",
+        "pred_stage3b_cloud_nwp",
+        "w_h",
+        "k_h",
+        "phys_pred_clean",
+        "pred_stage4_clean",
+        "residual_target"
+      ]
+    },
+    "validation_baseline.csv": {
+      "sha256": "087b5ca7d7ac70cf21918021854bfa01c59b6ee8e8eccb03253ad32b9c472664",
+      "origins": 173,
+      "rows": 4152,
+      "columns": [
+        "forecast_start",
+        "horizon_hour",
+        "timestamp",
+        "actual_SW_IN",
+        "is_daytime",
+        "is_night_causal",
+        "clearsky_ghi",
+        "cloud_frac",
+        "pred_stage3b_cloud_nwp",
+        "w_h",
+        "k_h",
+        "phys_pred_clean",
+        "pred_stage4_clean",
+        "residual_target"
+      ]
+    },
+    "blind_baseline.csv": {
+      "sha256": "59d20d27d358e1c6348d3278b688af3bc73b3969aa3b7918d795aeec9563091a",
+      "origins": 364,
+      "rows": 8736,
+      "columns": [
+        "forecast_start",
+        "horizon_hour",
+        "timestamp",
+        "actual_SW_IN",
+        "is_daytime",
+        "is_night_causal",
+        "clearsky_ghi",
+        "cloud_frac",
+        "pred_stage3b_cloud_nwp",
+        "w_h",
+        "k_h",
+        "phys_pred_clean",
+        "pred_stage4_clean",
+        "residual_target"
+      ]
+    }
+  },
+  "formula": {
+    "physics_model": "max(0.0, clearsky_ghi * (1.0 - k_h * cloud_frac))",
+    "stage4_ensemble": "max(0.0, w_h * pred_stage3b_cloud_nwp + (1.0 - w_h) * phys_pred_clean)",
+    "residual_target": "actual_SW_IN - pred_stage4_clean"
+  },
+  "blind_partition_policy": "BLIND (2025) BASELINE GENERATED USING FROZEN 2024-EVEN PARAMETERS",
+  "governance": {
+    "refit_on_validation": false,
+    "refit_on_blind": false,
+    "winner_status": "null"
+  },
+  "stage3b_2025_source": {
+    "source_file": "stage3/stage3b_2025/stage3b_cloud_nwp_predictions_2025.csv",
+    "sha256": "0a5263e6ea89c2a9f520041d9122ec72a196cc3975b37def8dd7a41803df6465",
+    "model": "amazon/chronos-2 (frozen weights, 2025 blind context)"
+  }
+}

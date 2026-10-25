@@ -1,0 +1,78 @@
+{
+  "phase": "S8.1-EMS-EMPIRICAL-LINK-RESEARCH-GATE",
+  "gate_decision": "A",
+  "classification": "A — READY FOR GOVERNED EXPERIMENT",
+  "timestamp": "2026-09-19T11:28:00+05:30",
+  "decision_summary": "The repository establishes the executable path required to conduct the empirical Stage8.1 → EMS replay. It does not yet establish an empirical relationship between Stage8.1 forecast error and downstream EMS outcomes, because that relationship can only be established by executing and evaluating the governed replay experiment. All data, architectural, temporal pairing, schema compatibility, causality firewall, and downstream EMS replay dependencies are fully ESTABLISHED.",
+  "integrity": {
+    "files_created": [
+      "POLARIS_STAGE8_1_EMS_EMPIRICAL_LINK_RESEARCH_GATE.md",
+      "POLARIS_STAGE8_1_EMS_EMPIRICAL_LINK_RESEARCH_GATE.json"
+    ],
+    "source_files_modified": "NONE",
+    "scientific_model_modified": false,
+    "ems_modified": false,
+    "forecastbundle_schema_modified": false,
+    "ui_modified": false,
+    "d5_modified": false,
+    "stage8_1_benchmark_modified": false,
+    "experiment_executed": false,
+    "model_retrained": false,
+    "d5_rerun": false,
+    "new_forecast_model": false
+  },
+  "authoritative_artifacts": {
+    "stage8_1_odd_predictions_csv": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "stage8_1_odd_predictions_hash": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "sites_nuolja_2024_actual_csv": "(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv",
+    "sites_nuolja_2024_actual_hash": "6842e0f71b1b1d4a3ea40d56cb620fd88ca7daa1701177dbf8954680795f45f3",
+    "s81_adapter_path": "system/forecasting/implementations/s81_solar.py",
+    "s81_adapter_hash": "22e50f122d2b6f689b94c93498aefe51441d8a1a2636ab1bc4a343189f24be94",
+    "forecast_bundle_schema_path": "system/schemas/forecast_bundle.py",
+    "forecast_bundle_schema_hash": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "runner_path": "system/runtime/runner.py",
+    "runner_hash": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69"
+  },
+  "chain_evaluations": {
+    "real_solar_observation": "ESTABLISHED",
+    "stage8_1_forecast_origin": "ESTABLISHED",
+    "stage8_1_24h_forecast": "ESTABLISHED",
+    "forecast_actual_temporal_pairing": "ESTABLISHED",
+    "forecastbundle_compatible_representation": "ESTABLISHED",
+    "frozen_ems_mpc": "ESTABLISHED",
+    "dispatch_plan": "ESTABLISHED",
+    "digital_twin_simulator": "ESTABLISHED",
+    "downstream_operational_metrics": "ESTABLISHED",
+    "empirical_link_execution_path": "ESTABLISHED",
+    "empirical_error_to_ems_relationship": "NOT_YET_ESTABLISHED"
+  },
+  "stage8_1_frozen_benchmark": {
+    "odd_test_origins": 173,
+    "total_evaluation_rows": 4152,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_percent": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "causality_audit": {
+    "target_leakage": "NONE",
+    "future_value_leakage": "NONE",
+    "controller_ground_truth_isolation": "ESTABLISHED",
+    "causality_preserved": true
+  },
+  "what_is_proven": [
+    "Stage8.1 ODD forecast outputs (4,152 rows, 173 origins) are frozen and hashed in POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv.",
+    "Deterministic row-by-row pairing between forecast predictions (y_pred) and hidden actual solar ground truth (y_true) is ESTABLISHED without reconstruction.",
+    "Stage81ForecastEngine in s81_solar.py correctly converts SW_IN predictions into valid ForecastBundle v1.0 objects using D3 PV transformation and D1/D2 degenerate interval bounds.",
+    "PolarisLocalRunner and LocalDataProvider enforce strict causality isolation, supplying hidden actual ground truth ONLY to the DigitalTwinSimulator and EvaluationEngine after controller optimization.",
+    "The frozen EMS runtime can execute origin-by-origin empirical replay without modifying schemas, optimizers, simulator physics, or model code."
+  ],
+  "what_is_not_proven": [
+    "The actual downstream operational metrics (fuel, curtailment, LSF delta) resulting from Stage8.1 empirical forecasts have NOT yet been measured (experiment not yet executed).",
+    "Stage8.1 is NOT proven to be operationally superior to baseline forecasts prior to experimental execution.",
+    "Empirical station PV generation is NOT proven (D3 formula remains an authorized engineering representation)."
+  ],
+  "blockers": [],
+  "next_authorized_step": "FORMAL_GOVERNANCE_AUTHORIZATION_OF_STAGE8.1_EMS_EMPIRICAL_LINK_REPLAY_EXPERIMENT"
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-09-13T10:12:14.955978+00:00",
+  "experiment_id": "POLARIS_STAGE8_21A_GOVERNED_EXPERIMENT",
+  "status": "COMPLETED_GOVERNED_REJECTION",
+  "artifacts_generated": [
+    "STAGE8_21A_EVEN_VALIDATION.md",
+    "STAGE8_21A_EVEN_VALIDATION.json",
+    "STAGE8_21A_FINAL_REPORT.md",
+    "STAGE8_21A_FINAL_REPORT.json",
+    "STAGE8_21A_EXECUTION_MANIFEST.md",
+    "STAGE8_21A_EXECUTION_MANIFEST.json"
+  ],
+  "even_validation_sha256": "e9585ca29cbcf03107fb6acbc040cca2355057168759ffe61b47640b858e08ed",
+  "final_report_sha256": "627ebd26af889c057d42495879836b65394060d99c8a80a1f862a0035c458fbc",
+  "governance": {
+    "odd_target_access": false,
+    "hyperparameter_tuning": false,
+    "master_handoff_modified": false,
+    "route_registry_modified": false
+  }
+}

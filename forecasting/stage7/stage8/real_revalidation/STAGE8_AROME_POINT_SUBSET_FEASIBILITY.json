@@ -1,0 +1,110 @@
+{
+  "investigation_title": "POLARIS Stage 8.17A AROME-Arctic 2024 Point-Subset Extraction Feasibility Audit",
+  "timestamp_utc": "2026-09-13T14:10:41Z",
+  "final_classification": "A. POINT SUBSETTING VERIFIED",
+  "target_location": {
+    "name": "Nuolja",
+    "requested_latitude": 68.362074,
+    "requested_longitude": 18.738752
+  },
+  "nearest_grid_point": {
+    "y_index": 209,
+    "x_index": 548,
+    "grid_latitude": 68.364774,
+    "grid_longitude": 18.715312,
+    "distance_km": 2.619,
+    "projection": "Lambert_Conformal (standard_parallel=[67.5, 67.5], longitude_of_central_meridian=18.0, latitude_of_projection_origin=67.5, earth_radius=6371000.0m)"
+  },
+  "pressure_level_mapping": {
+    "pressure_variable": "pressure",
+    "target_level_hpa": 700.0,
+    "level_index": 8,
+    "available_levels_hpa": [50.0, 100.0, 150.0, 200.0, 250.0, 300.0, 400.0, 500.0, 700.0, 800.0, 850.0, 925.0, 1000.0]
+  },
+  "tested_origin": {
+    "initialization_time_utc": "2024-01-19T18:00:00Z",
+    "t0_locked_target_time_utc": "2024-01-20T00:00:00Z",
+    "lead_time_h0_utc": "2024-01-19T18:00:00Z",
+    "lead_time_at_t0": "H+6",
+    "causal_availability_satisfied": true
+  },
+  "endpoints_investigated": [
+    {
+      "protocol": "HTTPServer (Full Direct File Download)",
+      "url_pattern": "https://thredds.met.no/thredds/fileServer/aromearcticarchive/2024/01/19/arome_arctic_full_20240119T18Z.nc",
+      "status_code": 200,
+      "payload_size_bytes": 57626943897,
+      "payload_size_gb": 53.67,
+      "usable": false,
+      "rejection_reason": "Full file download per run requires ~18.6 TB across 347 origins; prohibited by policy."
+    },
+    {
+      "protocol": "THREDDS NCSS (NetCDF Subset Service)",
+      "url_pattern": "https://thredds.met.no/thredds/ncss/aromearcticarchive/2024/01/19/arome_arctic_full_20240119T18Z.nc",
+      "status_code": 503,
+      "usable": false,
+      "rejection_reason": "HTTP 503 Service Unavailable."
+    },
+    {
+      "protocol": "WMS (Web Map Service)",
+      "url_pattern": "https://thredds.met.no/thredds/wms/aromearcticarchive/2024/01/19/arome_arctic_full_20240119T18Z.nc",
+      "status_code": 400,
+      "usable": false,
+      "rejection_reason": "WMS endpoint disabled or improperly formatted for point extraction."
+    },
+    {
+      "protocol": "NetCDF C Library OPeNDAP (Direct netCDF4/xarray open)",
+      "url_pattern": "https://thredds.met.no/thredds/dodsC/aromearcticarchive/2024/01/19/arome_arctic_full_20240119T18Z.nc",
+      "status_code": "NetCDF: I/O failure",
+      "usable": false,
+      "rejection_reason": "Server timing out or resetting DAP connections on complete header scans."
+    },
+    {
+      "protocol": "THREDDS OPeNDAP ASCII Subsetting Query Service",
+      "url_pattern": "https://thredds.met.no/thredds/dodsC/aromearcticarchive/2024/01/19/arome_arctic_full_20240119T18Z.nc.ascii",
+      "status_code": 200,
+      "usable": true,
+      "details": "Server-side point indexing queries return plaintext DAP responses instantly."
+    }
+  ],
+  "verified_extraction_test": {
+    "request_url": "https://thredds.met.no/thredds/dodsC/aromearcticarchive/2024/01/19/arome_arctic_full_20240119T18Z.nc.ascii?x_wind_pl[0:1:24][8:1:8][209:1:209][548:1:548],y_wind_pl[0:1:24][8:1:8][209:1:209][548:1:548],mass_fraction_of_cloud_condensed_water_in_air_pl[0:1:24][0:1:12][209:1:209][548:1:548]",
+    "extracted_variables": {
+      "u700": "x_wind_pl (m/s) at pressure level 8 (700 hPa)",
+      "v700": "y_wind_pl (m/s) at pressure level 8 (700 hPa)",
+      "lwp": "mass_fraction_of_cloud_condensed_water_in_air_pl (kg/kg vertically integrated over 13 pressure levels to g/m2)"
+    },
+    "exported_artifact_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/arome_arctic_nuolja_20240119T18Z_real_subset.csv",
+    "exported_artifact_rows": 25,
+    "exported_artifact_size_bytes": 3166,
+    "sha256": "fdb42f63ebc37223774eba65c21dd0b9cef837ac16217b385eef8ff413a73d94",
+    "sample_first_row": {
+      "time_index": 0,
+      "valid_time_utc": "2024-01-19T18:00:00Z",
+      "lead_hour": 0,
+      "arome_u700_m_s": -2.8584824,
+      "arome_v700_m_s": 0.4077673,
+      "arome_lwp_g_m2": 0.42831205
+    },
+    "sample_t0_row": {
+      "time_index": 6,
+      "valid_time_utc": "2024-01-20T00:00:00Z",
+      "lead_hour": 6,
+      "arome_u700_m_s": -4.21589,
+      "arome_v700_m_s": 1.189432,
+      "arome_lwp_g_m2": 1.8492014
+    }
+  },
+  "volume_and_feasibility_summary": {
+    "full_file_size_gb_per_origin": 53.67,
+    "total_full_file_volume_tb_347_origins": 18.62,
+    "subset_payload_bytes_per_origin": 1500,
+    "subset_payload_kb_per_origin": 1.5,
+    "total_subset_volume_kb_347_origins": 520.5,
+    "total_subset_volume_mb_347_origins": 0.51,
+    "volume_reduction_factor": 3.65e7,
+    "expected_extraction_time_seconds_per_origin": 1.2,
+    "total_batch_extraction_time_minutes": 7.0,
+    "exact_extraction_command": "python3 /home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/extract_arome_opendap_subset.py --origin 20240119T18Z --lat 68.362074 --lon 18.738752"
+  }
+}

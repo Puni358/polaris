@@ -1,0 +1,174 @@
+{
+  "timestamp": "2026-09-13T10:35:00+00:00",
+  "checkpoint_type": "POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT",
+  "stage": "POLARIS STAGE 8.19",
+  "official_operational_champion": {
+    "model_name": "Stage 8.19 ABIS GNSS Model",
+    "status": "FROZEN_OPERATIONAL_CHAMPION",
+    "total_features": 42,
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_nmae_pct": 27.0081,
+    "daytime_rmse_w_m2": 62.748210,
+    "daytime_bias_w_m2": 1.658210,
+    "night_mae_w_m2": 0.0
+  },
+  "authoritative_t0_definition": {
+    "benchmark_t0_utc": "00:00:00 UTC on Day D",
+    "benchmark_timezone": "UTC (+00:00)",
+    "local_timezone": "Europe/Stockholm (CET UTC+1 / CEST UTC+2)",
+    "local_clock_equivalent_t0": "01:00:00 CET (Winter) / 02:00:00 CEST (Summer) on Day D",
+    "h1_timestamp": "00:00:00 UTC Day D",
+    "h24_timestamp": "23:00:00 UTC Day D",
+    "sites_target_semantics": "Period-ending hourly averages. H1 (00:00:00 UTC) represents 10-minute average over 23:00-00:00 UTC."
+  },
+  "historical_predecessor": {
+    "model_name": "Stage 8.17A AROME Structural Disagreement Model",
+    "status": "HISTORICAL_PREDECESSOR",
+    "total_features": 40,
+    "daytime_mae_w_m2": 35.241085,
+    "daytime_nmae_pct": 27.3337,
+    "daytime_rmse_w_m2": 63.290812,
+    "daytime_bias_w_m2": 1.810421
+  },
+  "deltas_vs_predecessor": {
+    "delta_mae_w_m2": -0.419680,
+    "relative_mae_improvement_pct": 1.19,
+    "delta_nmae_pct": -0.3256,
+    "delta_rmse_w_m2": -0.542602,
+    "delta_bias_w_m2": -0.152211
+  },
+  "bootstrap_evidence": {
+    "resamples": 10000,
+    "seed": 42,
+    "mean_delta_mae_w_m2": -0.419680,
+    "ci_95_w_m2": [
+      -0.785420,
+      -0.051210
+    ],
+    "improvement_fraction_pct": 98.64,
+    "ci_excludes_zero": true
+  },
+  "causal_availability_inventory": [
+    {
+      "family": "Historical SW_IN Context",
+      "features": ["ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h", "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h", "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h", "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h"],
+      "data_source": "SITES Nuolja Station (SW_IN)",
+      "type": "Observed ground station time-series",
+      "valid_time_relationship": "Past 24h relative to t0 (00:00 UTC D-1 to 00:00 UTC Day D)",
+      "availability_relationship": "T_pub <= t0 (100% causal)",
+      "causal_cutoff": "t0 (00:00 UTC Day D)",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "Solar Geometry",
+      "features": ["solar_elevation", "solar_zenith", "month", "hour"],
+      "data_source": "Astronomical Solar Geometry Algorithm (NREL SPA)",
+      "type": "Deterministic astronomical calculation",
+      "valid_time_relationship": "Forecast horizon valid time (t0 + h)",
+      "availability_relationship": "Deterministic calculation known infinitely in advance",
+      "causal_cutoff": "None (Astronomical constant)",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "Clear-Sky Physics & Physical Self-Consistency",
+      "features": ["clearsky_ghi", "phi_inconsist"],
+      "data_source": "Simplified Solis / Ineichen Clear-Sky Model + MEPS LWP",
+      "type": "Physical model derived feature",
+      "valid_time_relationship": "Forecast horizon valid time (t0 + h)",
+      "availability_relationship": "T_pub <= t0 - 2.5h (MEPS issuance at 18Z D-1)",
+      "causal_cutoff": "t0 - 2.5h",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "MEPS NWP Forecast Features",
+      "features": ["fc_cloud_cover", "fc_temperature_2m", "fc_relative_humidity_2m", "cloud_frac", "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold", "disagreement_fold", "lwp_latest", "iwp_latest", "lwp_x_cloud", "u700", "v700", "meps_std_SW_IN", "meps_std_total_cloud", "meps_mean_total_cloud"],
+      "data_source": "MET Norway MEPS 2.5km Operational NWP (18Z D-1 run)",
+      "type": "Operational Numerical Weather Prediction",
+      "valid_time_relationship": "Forecast horizon valid time (t0 + h)",
+      "availability_relationship": "T_pub = 21:30 UTC D-1 <= t0 (2.5h causal margin)",
+      "causal_cutoff": "t0 - 2.5h",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "AROME Structural Disagreement Features",
+      "features": ["wind_disagreement_700", "LWP_disagreement"],
+      "data_source": "MET Norway AROME-Arctic 2.5km NWP vs MEPS (18Z D-1 run)",
+      "type": "Inter-model structural disagreement vector",
+      "valid_time_relationship": "Forecast horizon valid time (t0 + h)",
+      "availability_relationship": "T_pub = 21:30 UTC D-1 <= t0 (2.5h causal margin)",
+      "causal_cutoff": "t0 - 2.5h",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "Terrain / Horizon Features",
+      "features": ["terrain_horizon_elevation_deg", "terrain_elevation_margin_deg", "terrain_solar_obstruction_flag", "clearsky_ghi_terrain_adjusted"],
+      "data_source": "Lantmäteriet 2m DEM + Nuolja Local Horizon Mask",
+      "type": "Static physical topography + solar vector",
+      "valid_time_relationship": "Forecast horizon valid time (t0 + h)",
+      "availability_relationship": "Static geographic DEM (known in advance)",
+      "causal_cutoff": "None (Static topography)",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "ABIS GNSS Tropospheric Delay Features",
+      "features": ["abis_ztd_latest", "abis_ztd_trend_3h"],
+      "data_source": "Lantmäteriet SWEPOS / EUMETNET E-GVAP COST-716 NRT Product (Station ABIS)",
+      "type": "GNSS-derived Zenith Total Delay (ZTD)",
+      "valid_time_relationship": "22:00 UTC observation D-1 (t0 - 2h)",
+      "availability_relationship": "T_pub <= t0 - 30 min (NRT latency <= 1.5h, published by 23:30 UTC Day D-1)",
+      "causal_cutoff": "t0 - 30 min",
+      "future_target_leakage": false,
+      "governance_status": "CAUSAL_VERIFIED"
+    }
+  ],
+  "abis_causality_precision": {
+    "station_id": "ABIS",
+    "station_name": "Abisko Permanent Reference Station",
+    "coordinates": "68.3582 N, 18.8258 E, 380m ASL",
+    "target_proximity": "326 meters horizontally (< 0.5 km)",
+    "provider": "Lantmäteriet SWEPOS / EUMETNET E-GVAP",
+    "product": "E-GVAP COST-716 NRT Tropospheric Delay Product",
+    "primary_variable": "ZTD (Zenith Total Delay, mm)",
+    "scientific_definition": "GNSS-derived zenith total delay (ZTD), used as an independent observation-derived atmospheric feature.",
+    "causal_observation_timestamp": "22:00 UTC Day D-1 (t0 - 2h)",
+    "causal_publication_timestamp": "23:30 UTC Day D-1 (t0 - 30m)",
+    "causal_cutoff_margin": "T_pub <= t0 - 30 min",
+    "empirical_2024_coverage": "100.0% across 347 forecast origins (0 missing)"
+  },
+  "odd_firewall_audit": {
+    "odd_target_reads_pre_freeze": 0,
+    "odd_residual_reads_pre_freeze": 0,
+    "odd_prediction_reads_pre_freeze": 0,
+    "odd_metric_calculation_pre_freeze": 0,
+    "odd_tuning": 0,
+    "odd_feature_selection": 0,
+    "odd_gate_modification": 0,
+    "firewall_integrity_verified": true
+  },
+  "rules_for_future_experiments": {
+    "control_model": "Stage 8.19 ABIS GNSS Model (42 features, MAE = 34.821405 W/m2)",
+    "odd_access_rule": "ODD is locked and untouchable for all future development; access authorized ONLY in dedicated evaluation stage after pre-ODD freeze.",
+    "causal_governance_rule": "All candidate features must prove T_pub <= t0 before EVEN CV evaluation (t0 = 00:00:00 UTC Day D)."
+  },
+  "second_governance_lock": {
+    "rule_name": "Second Governance Lock — No Feature Grinding",
+    "status": "ENFORCED",
+    "rule_text": "Future research must prioritize genuinely independent information sources. Prohibited: algebraic transformations of existing features, spatial differentiation of existing NWP fields without strong justification, repackaging disagreement signals, arbitrary neighboring grid statistics, or redundant complexity."
+  },
+  "scientific_language_guardrails": {
+    "allowed_statement": "All features used by the frozen Stage 8.19 model were verified against the authoritative benchmark t0 convention (t0 = 00:00:00 UTC Day D), with data availability/publication time no later than t0. Under the locked POLARIS benchmark and governance protocol, the frozen Stage 8.19 ABIS GNSS candidate improved the held-out ODD benchmark relative to Stage 8.17A.",
+    "prohibited_statements": [
+      "ABIS proves GNSS is universally useful for solar forecasting",
+      "ZTD directly measures cloud liquid water content",
+      "All GNSS observations are spatially representative of mountain summits",
+      "The improvement is guaranteed to generalize to all polar stations",
+      "The remaining forecasting error is physically irreducible"
+    ]
+  }
+}

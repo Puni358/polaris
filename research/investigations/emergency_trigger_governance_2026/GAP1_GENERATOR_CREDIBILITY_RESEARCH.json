@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "project": "POLARIS Energy Management System",
+    "topic": "GAP 1 — CREDIBLE DISPATCHABLE GENERATION MODELING",
+    "version": "1.0.0-research",
+    "date": "2026-09-27",
+    "governance_status": "RESEARCH_ONLY_NO_GOVERNANCE_DECISION"
+  },
+  "core_question": "What evidence is POLARIS allowed to count as CREDIBLE dispatchable generation when determining whether six-hour critical-load survivability (69.60 kWh delivered) is guaranteed?",
+  "candidate_models": [
+    {
+      "id": "MODEL_A",
+      "name": "Nameplate Potential Energy",
+      "formula": "E_gen_A = H * sum(P_rated)",
+      "required_inputs": ["P_rated"],
+      "codebase_inputs_available": ["config['diesel']['max_power_w']"],
+      "missing_inputs": [],
+      "telemetry_dependency": "Static Config Only",
+      "risk_false_confidence": "HIGH",
+      "risk_premature_emergency": "LOW"
+    },
+    {
+      "id": "MODEL_B",
+      "name": "Available Operating Capacity",
+      "formula": "E_gen_B = H * sum(A_k * derate * P_rated)",
+      "required_inputs": ["A_k", "derate", "P_rated"],
+      "codebase_inputs_available": ["station_state.diesel_running"],
+      "missing_inputs": ["generator_fault_flag", "thermal_derating_table"],
+      "telemetry_dependency": "Asset Running Flag",
+      "risk_false_confidence": "MEDIUM",
+      "risk_premature_emergency": "LOW"
+    },
+    {
+      "id": "MODEL_C",
+      "name": "Fuel-Constrained Deliverable Energy",
+      "formula": "E_gen_C = min(H * P_avail, V_fuel_usable / BSFC)",
+      "required_inputs": ["V_fuel_usable", "BSFC", "P_avail"],
+      "codebase_inputs_available": ["station_state.diesel_fuel_remaining_liters (Optional)"],
+      "missing_inputs": ["verified_fuel_sensor_checksum", "unpumpable_dead_volume"],
+      "telemetry_dependency": "Fuel Tank Level Telemetry",
+      "risk_false_confidence": "LOW",
+      "risk_premature_emergency": "MEDIUM"
+    },
+    {
+      "id": "MODEL_D",
+      "name": "Critical-Load Bounded Energy",
+      "formula": "E_gen_D = min(H * P_avail, max(0, E_critical_req - E_batt_deliverable))",
+      "required_inputs": ["P_avail", "E_critical_req", "E_batt_deliverable"],
+      "codebase_inputs_available": ["station_state.diesel_running", "demand_critical"],
+      "missing_inputs": [],
+      "telemetry_dependency": "Asset Running Flag + Critical Demand",
+      "risk_false_confidence": "LOW",
+      "risk_premature_emergency": "LOW"
+    },
+    {
+      "id": "MODEL_E",
+      "name": "Time-Varying Status & Constraint Energy",
+      "formula": "E_gen_E = integral_0_to_6(min(sum(A_k(tau) * P_rated), P_critical(tau))) dtau",
+      "required_inputs": ["A_k(tau)", "startup_delay", "min_power", "P_critical(tau)"],
+      "codebase_inputs_available": ["station_state.diesel_running", "diesel_hours_running"],
+      "missing_inputs": ["warm_up_delay_model"],
+      "telemetry_dependency": "Dynamic State Vector",
+      "risk_false_confidence": "LOW",
+      "risk_premature_emergency": "MEDIUM"
+    }
+  ],
+  "downstream_dependencies": {
+    "gap_2_renewable_credibility": "Generators cover net gap; if generator satisfies 69.6 kWh alone, renewable derating choice has zero emergency entry impact.",
+    "gap_3_emergency_exit": "Determines whether generator availability (A_k=1) is required to exit Emergency Mode.",
+    "gap_4_missing_forecast_fallback": "If generator energy alone is credible for 69.6 kWh, missing forecasts do not trigger Emergency.",
+    "gap_5_exit_topology": "Influences whether system can exit Emergency into RESERVE_DEFICIT mode."
+  }
+}

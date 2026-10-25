@@ -1,0 +1,11 @@
+metric,value
+evaluated_trajectories,173 separate 24-hour trajectory slices
+evaluated_h1_steps,"4,152 H1 execution steps across 173 separate 24-hour trajectory slices"
+annual_result_status,REPRESENTATIVE_TRAJECTORY_SET
+control_diesel_kwh_sum,52802.079
+treatment_diesel_kwh_sum,0.000
+diesel_diff_kwh_signed,-52802.079
+control_fuel_litres_sum,15274.94
+treatment_fuel_litres_sum,0.00
+fuel_diff_litres_signed,-15274.94
+percentage_fuel_reduction,100.00%

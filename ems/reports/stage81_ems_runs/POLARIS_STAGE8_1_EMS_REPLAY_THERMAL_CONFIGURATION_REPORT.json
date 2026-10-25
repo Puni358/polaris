@@ -1,0 +1,34 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_REPLAY_THERMAL_CONFIGURATION_REPORT",
+  "date_utc": "2026-09-19",
+  "track": "SCIENTIFIC RESEARCH & SYSTEM INTEGRATION TRACK",
+  "phase": "THERMALLY CONTROLLED EXECUTION CONFIGURATION CORRECTION",
+  "task_type": "AUTHORIZED EXECUTION-RESOURCE CHANGE ONLY — ZERO EXECUTION",
+  "thermal_configuration_status": "PASS",
+  "max_workers_before": 8,
+  "max_workers_after": 2,
+  "scientific_protocol_changed": "NO",
+  "replay_semantics_changed": "NO",
+  "treatment_changed": "NO",
+  "control_changed": "NO",
+  "ems_changed": "NO",
+  "simulator_changed": "NO",
+  "statistical_method_changed": "NO",
+  "execution_performed": "NO",
+  "historical_evidence_preserved": "YES",
+  "source_file_hashes": {
+    "run_polaris_stage8_1_ems_empirical_replay.py": {
+      "previous_sha256": "8965139602021c28133c4c07d51baef7781ad372801ab37e7c7c41e90e7ffd4a",
+      "new_sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "description": "Changed max_workers from 8 to 2 in ProcessPoolExecutor instantiation (line 338)."
+    }
+  },
+  "protected_file_hashes": {
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/runtime/runner.py": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69",
+    "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+    "system/forecasting/implementations/s81_solar.py": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c"
+  },
+  "next_step": "FINAL EXECUTION WITH LIVE THERMAL MONITORING"
+}

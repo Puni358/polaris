@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "timestamp": "2026-10-04T13:38:35Z",
+  "execution_status": "FAILED",
+  "governance_status": "BLOCKED",
+  "pre_execution_checks": {
+    "manifest_hashes_verified": true,
+    "git_tracked_files_clean": true,
+    "research_unit_tests_passed": "43/43"
+  },
+  "failure_event": {
+    "origin_attempted": "2024-05-01 00:00:00",
+    "initial_timestamp": "2024-04-30T23:00:00Z",
+    "arm_failed": "ARM_A_BASELINE",
+    "timestep_index": 0,
+    "horizon_index_failed": 10,
+    "exception_type": "ValueError",
+    "exception_message": "Protected critical load (11600.0W) exceeds total demand (11325.76W) at index 10.",
+    "calling_module": "system/research/closed_loop_causal_nwp_runner.py",
+    "calling_line": 231,
+    "failing_module": "system/optimization/implementations/gap19_highs_native.py",
+    "failing_line": 107
+  },
+  "root_cause_analysis": {
+    "governed_baseline_power_w": 11600.0,
+    "source_file": "system/config/loads.yaml:5",
+    "forecast_demand_at_index_10_w": 11325.76,
+    "physical_invariant": "Critical load cannot exceed total demand (cp <= dp).",
+    "gap19_behavior": "GAP19 enforces line 106-107 fail-closed check: if cp > dp + 1e-4: raise ValueError(...). It does NOT clip critical_demand_w to demand.",
+    "runner_behavior": "ClosedLoopCausalNwpRunner passes static self.configs directly into GAP19 without per-timestep clipping.",
+    "immutability_constraint": "gap19_highs_native.py (production) and closed_loop_causal_nwp_runner.py (frozen hash 62cb1607a8dfa63edd804142f167916c1cc11bef30d49ae380d236efad03daa4) cannot be modified without violating governance and freezing rules."
+  },
+  "mandated_disposition": {
+    "rule": "If the runner cannot faithfully use the governed 11.6 kW scenario, mark the experiment BLOCKED.",
+    "safety_rule": "If an execution failure occurs, STOP and report it. Do not silently work around it.",
+    "experiment_blocked": true
+  }
+}

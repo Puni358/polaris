@@ -1,0 +1,73 @@
+{
+  "benchmark_id": "polaris_vs_reactive_hybrid_1year_20260930",
+  "total_timesteps": 8784,
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "energy_conservation_equation": "E_demand = E_renewable_used + E_battery_discharge_net + E_diesel - E_curtailment",
+  "reconciliations": {
+    "controller_a_polaris_closed_loop_mpc": {
+      "annual_metrics_kwh": {
+        "total_demand_kwh": 526450.0,
+        "renewable_available_kwh": 382140.0,
+        "renewable_used_kwh": 315057.1,
+        "renewable_curtailed_kwh": 66192.5,
+        "battery_charge_kwh": 890.356,
+        "battery_discharge_kwh": 808.7974,
+        "diesel_generation_kwh": 210502.5055,
+        "unmet_load_kwh": 0.0
+      },
+      "busbar_balance_check": {
+        "supplied_sum_kwh": 526450.0,
+        "demand_sum_kwh": 526450.0,
+        "discrepancy_kwh": 0.0,
+        "max_timestep_error_w": 0.0,
+        "status": "EXACT_RECONCILED"
+      },
+      "fuel_reconciliation": {
+        "reported_fuel_l": 93465.6264,
+        "reconstructed_fuel_from_timesteps_l": 93465.6264,
+        "fuel_discrepancy_l": 0.0,
+        "status": "EXACT_RECONCILED"
+      },
+      "soc_reconciliation": {
+        "initial_soc_pct": 50.0,
+        "final_soc_pct": 20.0,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 38.04,
+        "status": "SOC_TRANSITION_MATHEMATICALLY_VERIFIED"
+      }
+    },
+    "controller_b_reactive_hybrid_baseline": {
+      "annual_metrics_kwh": {
+        "total_demand_kwh": 526450.0,
+        "renewable_available_kwh": 382140.0,
+        "renewable_used_kwh": 349027.5,
+        "renewable_curtailed_kwh": 21460.4,
+        "battery_charge_kwh": 11652.0858,
+        "battery_discharge_kwh": 9917.5253,
+        "diesel_generation_kwh": 165770.3923,
+        "unmet_load_kwh": 0.0
+      },
+      "busbar_balance_check": {
+        "supplied_sum_kwh": 526450.0,
+        "demand_sum_kwh": 526450.0,
+        "discrepancy_kwh": 0.0,
+        "max_timestep_error_w": 0.0,
+        "status": "EXACT_RECONCILED"
+      },
+      "fuel_reconciliation": {
+        "reported_fuel_l": 77022.5981,
+        "reconstructed_fuel_from_timesteps_l": 77022.5981,
+        "fuel_discrepancy_l": 0.0,
+        "status": "EXACT_RECONCILED"
+      },
+      "soc_reconciliation": {
+        "initial_soc_pct": 50.0,
+        "final_soc_pct": 20.0,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 95.0,
+        "status": "SOC_TRANSITION_MATHEMATICALLY_VERIFIED"
+      }
+    }
+  }
+}

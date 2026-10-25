@@ -1,0 +1,49 @@
+{
+  "experiment_id": "L2-EXP-02",
+  "status": "BLOCKED",
+  "execution_summary": "Execution halted at pre-training gate. Preferred implementation LightGBM is not installed in the reproducible project virtual environment. Governance forbids unauthorized package installation or silent implementation substitution.",
+  "verified_hashes": {
+    "historical_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "exact_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "frozen_candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+  },
+  "runtime_info": {
+    "python_executable": "/home/punith-bs/01polaris (Copy)/.venv/bin/python",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "installed_packages": {
+      "scipy": "1.18.1",
+      "sklearn": "1.9.0",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "joblib": "1.6.0"
+    }
+  },
+  "gates": {
+    "P1_blind_picp": {
+      "status": "BLOCKED",
+      "required": "[76.0%, 84.0%]",
+      "observed": null
+    },
+    "P2_validation_picp": {
+      "status": "BLOCKED",
+      "required": "[76.0%, 84.0%]",
+      "observed": null
+    },
+    "P3_subslice_floor": {
+      "status": "BLOCKED",
+      "required": ">= 60.0%",
+      "observed": null
+    },
+    "P4_physical_constraints": {
+      "status": "BLOCKED",
+      "required": "Lower >= 0, Upper <= U, Night zeroed",
+      "observed": null
+    },
+    "P5_f_point_invariance": {
+      "status": "PASS",
+      "required": "Max diff == 0.0 W/m\u00b2",
+      "observed": 0.0
+    }
+  }
+}

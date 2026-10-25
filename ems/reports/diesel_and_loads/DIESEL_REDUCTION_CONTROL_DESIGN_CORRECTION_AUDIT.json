@@ -1,0 +1,68 @@
+{
+  "audit_id": "DIESEL-REDUCTION-CONTROL-DESIGN-CORRECTION-AUDIT",
+  "audit_date_utc": "2026-10-05T09:15:00+00:00",
+  "reference_audit": "DIESEL_REDUCTION_CONTROL_DESIGN_INDEPENDENT_AUDIT.md",
+  "corrected_verdict": "RESEARCH_DESIGN_COMPLETE — AWAITING SAFETY-GATE PREREGISTRATION",
+  "summary_of_corrections": {
+    "unsupported_claims_removed": [
+      "~35-45% diesel reduction",
+      "~50-65% diesel reduction",
+      "~15-25% diesel reduction",
+      "~40-55% diesel reduction",
+      "strictly guaranteeing 100% critical reliability",
+      "50-150 kWh curtailment recovered, 15-35 L saved",
+      "zero critical failures guaranteed"
+    ],
+    "mathematical_corrections": [
+      "EBR horizon edge: 6h window for t <= 18 shrinks to 1h (12,609 Wh) at t=23.",
+      "Terminal target at t=23 is max(12,609 Wh, 100,000 Wh) = 100,000 Wh.",
+      "Candidate 1 headroom formula can be negative on sunny days (infeasible on 53/173 origins) and raises diesel under J2 > J3. Marked BLOCKED / NOT READY.",
+      "Candidate 2 night-wind clamp inactive during Arctic summer solstice. Replaced with unbundled Variant S and Variant SW.",
+      "Removed synthetic 5,000 W wind margin and unverified 2-hour (25.2 kWh) emergency floor.",
+      "Variant S input: consumes bundle.solar_generation.point directly in Watts; no 51 * I or 60 kW cap in controller; 51 W/(W/m2) clarified as campaign adapter prototype.",
+      "Critical demand input: dynamic vector critical_demand[k] = min(11600.0, demand.point[k]), not a scalar constant.",
+      "No extra reserve floor: physical battery floor E_min = 40,000 Wh remains enforced in GAP19 busbar constraints.",
+      "Variant SW synthetic wind warning: campaign wind series is synthetic (4500 + 5000*sin); results cannot generalize to real wind forecasting; substantially replicates prior critical-aware experiment.",
+      "Candidate 3 lambda derivation (0.00035 L/Wh) mathematically incorrect. Reclassified as future parametric sweep requiring code changes.",
+      "Candidate 4 attribution corrected: 68.4% is total EBR-OFF fuel reduction, not step-0 alone. Resolved 2h vs 3h conflict. Flagged non-linearity for t >= 1."
+    ],
+    "protocol_corrections": [
+      "Rejected 6 diagnostic origins as validation set due to circularity and insufficient statistical power.",
+      "Mandated full 123-origin closed-loop campaign framework labelled as pre-specified paired historical evaluation set, not a pristine holdout.",
+      "Separated terminal target removal from primary candidate experiment to preserve causal isolation.",
+      "Defined exact research critical-load metrics (critical_unmet, critical_reliability) and prohibited campaign legacy reliability_pct.",
+      "Mandated 95% BCa bootstrap confidence intervals and paired two-sided Wilcoxon signed-rank test across all 123 origins.",
+      "Required safety-gate threshold preregistration before execution.",
+      "Replaced subjective 0-10 scores with qualitative multi-criteria evaluation."
+    ]
+  },
+  "candidate_disposition": {
+    "Candidate_1_Solar_Headroom": {
+      "status": "BLOCKED / NOT READY",
+      "reason": "Formula lacks lower clamp, causing mathematical infeasibility and conflict with J2 priority."
+    },
+    "Candidate_2_Net_Deficit_EBR": {
+      "status": "RESEARCH_DESIGN_COMPLETE — AWAITING SAFETY-GATE PREREGISTRATION",
+      "variants": ["Variant S (Solar Credit Only)", "Variant SW (Solar + Synthetic Wind Credit)"],
+      "core_question": "Can forecast-conditioned net-critical-deficit EBR reduce unnecessary diesel commitment relative to unconditional EBR while preserving critical-load reliability?"
+    },
+    "Candidate_3_Elastic_Slack": {
+      "status": "DEFERRED / FUTURE RESEARCH ONLY",
+      "reason": "Requires GAP19 objective code modification; derivation refuted; requires parametric sweep."
+    },
+    "Candidate_4_State_Triggered_JIT": {
+      "status": "BLOCKED / NOT READY",
+      "reason": "Non-linear for t >= 1 without big-M; lacks verified diesel startup delay."
+    }
+  },
+  "governance": {
+    "production_files_modified": 0,
+    "experiments_executed": 0,
+    "gap19_status": "UNCHANGED",
+    "stage8_1_status": "UNCHANGED",
+    "blockers_to_execution": [
+      "Safety-gate threshold preregistration",
+      "Governance approval of candidate implementation and preregistered acceptance bounds"
+    ]
+  }
+}

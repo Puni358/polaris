@@ -1,0 +1,8 @@
+conditioning_family,regime_label,n_2022,n_pooled,n_blind_2023,q90_strat_A_2022_only,cov_strat_A_on_2023,q90_strat_B_pooled_20_22,cov_strat_B_on_2023,actual_blind_q90,delta_margin_pooled_vs_2022,delta_cov_pooled_vs_2022
+unconditioned,All_Daylight,4030,12084,3646,155.7,0.8818,153.75,0.8779,172.48,-1.95,-0.0038
+forecast_cloud,Clear,964,3160,980,212.29,0.8857,224.92,0.9,224.91,12.63,0.0143
+forecast_cloud,Overcast,2315,6614,1941,118.35,0.8645,115.47,0.8594,136.93,-2.88,-0.0052
+forecast_cloud,Partial,751,2310,725,191.71,0.9021,174.6,0.8745,190.48,-17.11,-0.0276
+solar_elevation,High_gt_30,977,2930,976,187.06,0.8965,185.22,0.8965,191.31,-1.85,0.0
+solar_elevation,Low_0_15,1736,5209,1383,83.62,0.8764,85.21,0.8807,91.88,1.6,0.0043
+solar_elevation,Mid_15_30,1317,3945,1287,208.43,0.8834,211.67,0.8912,218.01,3.23,0.0078

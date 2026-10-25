@@ -1,0 +1,17 @@
+POLARIS STAGE 5.3 — FORENSIC ANALYSIS FINAL SUMMARY
+================================================================================
+Date: 2026-09-10
+Status: FINAL / FROZEN
+Audited Champion: Stage 5.2 Architecture A (39.0848 W/m² Daytime MAE / 30.32% nMAE)
+
+Key Findings:
+1. Mechanism Associations:
+   - Ground Volatility (ctx_std_6h): Strongly associated with regime corrections (-14.25 W/m² MAE change in extreme volatility bin).
+   - Clear-Sky GHI Potential: clearsky_ghi provides a physically interpretable measure of available solar potential and constrains the scale of physically plausible irradiance errors (-10.09 W/m² MAE change in high-solar bin).
+   - Stage-3B / Physics Disagreement: Functions as a model uncertainty indicator (-6.42 W/m² MAE change in high-disagreement bin).
+2. Gain Concentration: Top 5% of daytime hours account for 73.0% of net MAE reduction.
+3. Top Subgroup Interaction: ctx_std_6h x clearsky_ghi (Cell Gain Spread = 32.62 W/m²; extreme cell N=24).
+4. Residual Autocorrelation: Lag-1 ACF = 0.284; however, prior causal out-of-sample evaluations did not establish that this residual structure is operationally exploitable at forecast issuance time t0.
+5. Final Decision Gate: DECISION C ("Structure remains statistically detectable in specific high-flux regimes, but does NOT appear operationally exploitable using available surface and 1D NWP inputs without new physical observation sources").
+6. Next Action: Upstream irradiance forecast locked at Stage 5.2 Champion. Stage 5.3 status is FINAL / FROZEN.
+================================================================================

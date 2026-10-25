@@ -1,0 +1,59 @@
+{
+  "audit_name": "POLARIS EMS HD-03 T_required Architectural Decision-Structure Audit",
+  "timestamp": "2026-09-23T06:55:00Z",
+  "governance_scope": {
+    "decision_id": "HD-03-Architecture",
+    "topic": "Architectural Source Model for T_required",
+    "status": "GOVERNANCE_DECISION_REQUIRED"
+  },
+  "closed_baseline_decisions": {
+    "HD-01A": "EBR = CRITICAL_LOAD_BASED_DYNAMIC",
+    "HD-01B": "EBR resilience interval N = 6 HOURS",
+    "HD-02": "Terminal target derived from EBR at MPC boundary",
+    "HD-04": "Option A Zero-Renewable Emergency Survivability Baseline through T_required",
+    "HD-05": "Normal 5% relative extra-fuel tolerance; Emergency degradation subordinate",
+    "E3_policy": "In emergency mode, dynamically preserve resource with larger survivability margin"
+  },
+  "classifications": {
+    "HD03_ARCHITECTURAL_SOURCE_MODEL": "GOVERNANCE_DECISION_REQUIRED",
+    "HD03_OPTION_A_STATUS": "SUPPORTED",
+    "HD03_OPTION_B_STATUS": "SUPPORTED",
+    "HD03_OPTION_C_STATUS": "SUPPORTED",
+    "HD03_MISSING_INPUT_BEHAVIOR": "GOVERNANCE_REQUIRED",
+    "HD03_DETECTOR_OWNERSHIP": "GOVERNANCE_REQUIRED",
+    "HD03_RUNTIME_VARIABILITY": "GOVERNANCE_REQUIRED",
+    "HD03_PROTOTYPE_MODEL": "GOVERNANCE_REQUIRED",
+    "HD03_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD03_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD03_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "options_evaluated": [
+    {
+      "id": "OPTION_A",
+      "name": "Operational-Input Model",
+      "description": "T_required(t) is supplied dynamically by station/mission operations at runtime",
+      "status": "SUPPORTED_CONCEPTUALLY",
+      "schema_impact": "Requires new field in StationState (e.g. t_required_hours)"
+    },
+    {
+      "id": "OPTION_B",
+      "name": "Governed Fixed Parameter",
+      "description": "T_required is a single system-wide fixed policy parameter defined in central governance",
+      "status": "SUPPORTED_CONCEPTUALLY",
+      "schema_impact": "Defined in system optimizer config YAML"
+    },
+    {
+      "id": "OPTION_C",
+      "name": "Governed Configurable Parameter",
+      "description": "T_required is a mandatory deployment/station-specific configuration parameter required prior to boot",
+      "status": "SUPPORTED_CONCEPTUALLY",
+      "schema_impact": "Defined in station deployment manifest YAML"
+    }
+  ],
+  "final_verdict": {
+    "HD03_ARCHITECTURAL_SOURCE_MODEL": "GOVERNANCE_DECISION_REQUIRED",
+    "HD03_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD03_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD03_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  }
+}

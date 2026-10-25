@@ -1,0 +1,134 @@
+{
+  "title": "POLARIS PC-SW v1.2 Diesel Decision Causal Decomposition",
+  "date": "2026-10-08",
+  "status": "READ-ONLY forensic research. No production/policy change. No AGY execution.",
+  "hash_verification": {"status": "VERIFIED", "mismatches": []},
+  "governed_baseline": {
+    "fuel_L": 8729.2446,
+    "control_L": 10196.9712,
+    "saving_pct": 14.39,
+    "diesel_on_hours": 547,
+    "diesel_starts": 335,
+    "diesel_energy_kWh": 23976.98,
+    "diesel_and_charging_hours": 526,
+    "diesel_and_curtailment_hours": 147,
+    "label": "VERIFIED"
+  },
+  "method_limitations": {
+    "full_547_hour_individual_MILP_reconstruction": false,
+    "basis": "population-level aggregation of persisted certified telemetry (2952 resolves), reused EBR-off diagnostic (prior task), and one fully-traced representative resolve (origin 2)",
+    "label": "stated explicitly, not concealed"
+  },
+  "fuel_type_decomposition": {
+    "base_fuel_L": 2735.0,
+    "startup_fuel_L": 670.0,
+    "marginal_fuel_L": 5324.2446,
+    "total_L": 8729.2446,
+    "exact_and_nonoverlapping": true,
+    "label": "VERIFIED"
+  },
+  "run_length_distribution": {
+    "total_runs": 335,
+    "length_1h": 170,
+    "length_2h": 127,
+    "length_3h": 32,
+    "length_4h": 3,
+    "length_5h": 3,
+    "mean_run_length_h": 1.633,
+    "label": "VERIFIED"
+  },
+  "most_interesting_case_j1_jnc_j2_zero": {
+    "diesel_on_hours_with_zero_unmet_any": 539,
+    "diesel_on_hours_with_zero_unmet_pct": 98.5,
+    "diesel_on_hours_with_nonzero_critical_unmet": 1,
+    "j2_shortfall_zero_fraction_population": 1.0,
+    "interpretation": "In 98.5% of diesel-on hours J1=J_NC=J2=0 simultaneously; diesel supportable only via J3/Layer-C structure, not immediate J1/J_NC risk",
+    "label": "VERIFIED (counts), DERIVED (interpretation)"
+  },
+  "ebr_margin_at_diesel_charging_hours": {
+    "n_diesel_and_charging": 526,
+    "margin_Wh": {"min": 7280, "median": 86985, "mean": 86614, "max": 148027},
+    "hours_with_margin_le_4000Wh": 0,
+    "finding": "Zero diesel+charging hours occur at a tightly EBR-binding moment; banking always targets a future, not current, binding point",
+    "label": "VERIFIED"
+  },
+  "diesel_only_no_charge": {
+    "count": 21,
+    "fuel_L": 171.48,
+    "pct_of_total": 1.97,
+    "strict_immediate_necessity_by_naive_physical_check": 0,
+    "caveat": "naive check ignores planner's own reserve-preservation choice; not a full re-solve per hour",
+    "label": "VERIFIED (counts) / DIAGNOSTIC (necessity check)"
+  },
+  "diesel_charging_fuel": {
+    "hours": 526,
+    "fuel_L": 8557.77,
+    "pct_of_total": 98.04,
+    "label": "VERIFIED"
+  },
+  "central_test_single_resolve": {
+    "origin": 2,
+    "baseline_J3_L": 117.408,
+    "ebr_off_J3_L": 79.299,
+    "delta_L": -38.109,
+    "delta_pct": -32.5,
+    "J1_J_NC_unchanged": true,
+    "label": "DIAGNOSTIC (single resolve, reused from prior task)"
+  },
+  "local_vs_global_origin_proxy": {
+    "globally_beneficial_to_remove_reserve": 77,
+    "globally_harmful_to_remove_reserve": 44,
+    "tie": 2,
+    "decision_time_discriminator_found": false,
+    "discriminator_search_pvalues_range": [0.23, 0.96],
+    "forecast_error_group_difference_pvalue_range": [0.78, 0.92],
+    "label": "DIAGNOSTIC (reused full-population EBR-off counterfactual)"
+  },
+  "diesel_plus_curtailment_147_events": {
+    "renewable_alone_sufficient": 35,
+    "power_cap_limited": 68,
+    "soc_ceiling_limited": 33,
+    "discharge_exclusivity_limited": 11,
+    "label": "VERIFIED (reused from prior closed Rule-D/curtailment forensics, not re-derived)"
+  },
+  "fuel_accounting_buckets": {
+    "diesel_charging_superset_L": 8557.77,
+    "diesel_curtailment_subset_L": 2619.3851,
+    "ebr_attributable_aggregate_L": 724.5549,
+    "diesel_only_disjoint_L": 171.48,
+    "base_fuel_L": 2735.0,
+    "startup_fuel_L": 670.0,
+    "marginal_fuel_L": 5324.2446,
+    "terminal_driven_separate_L": "UNKNOWN",
+    "fuel_inventory_driven_L": "UNKNOWN",
+    "solver_degeneracy_net_L": 0,
+    "overlap_note": "diesel_curtailment_subset and ebr_attributable_aggregate are both nested within diesel_charging_superset; ebr_attributable_aggregate is an aggregate-level diagnostic figure, not hour-mapped",
+    "label": "VERIFIED where counted, DIAGNOSTIC for EBR-attributable, UNKNOWN for terminal/fuel-inventory isolation"
+  },
+  "legitimate_lever_search": {
+    "lever_found": false,
+    "reason": "The one robust population-wide local signature (large EBR margin at diesel+charging hours) cannot be distinguished, at decision time, between the 77-origin group where acting on it is beneficial and the 44-origin group where it is harmful (established in the immediately preceding discriminator-search task).",
+    "label": "DERIVED"
+  },
+  "anti_hindsight_audit_summary": {
+    "features_proposed_as_online_levers": 0,
+    "all_candidate_descriptors_disqualified_as_retrospective_or_post_treatment": true
+  },
+  "governance_classification": "D",
+  "classification_meaning": "Mechanism is real but no safe online lever exists",
+  "final_answers": {
+    "q1_physically_unavoidable_hours": "UNKNOWN exact count; bounded to a small subset of the 21 diesel-only hours at most, DERIVED not re-solved",
+    "q2_reserve_banking_driven_hours": 526,
+    "q3_objective_hierarchy_driven_hours_proxy": 539,
+    "q4_diesel_charging_despite_renewable_hours": "526 overall; 112/147 within the already-classified curtailment subset",
+    "q5_fuel_per_mechanism": "see fuel_accounting_buckets",
+    "q6_constraint_preventing_discharge_substitution": "Layer-C reserve row (e_next[t]+s_J2[t] >= target[t]+min_e_wh), not the SOC floor",
+    "q7_fuel_required_for_higher_priority_objectives": "724.5549 L aggregate (DIAGNOSTIC), unevenly distributed across origins",
+    "q8_largest_remaining_mechanism": "General forward-banking pattern in diesel+charging hours, outside the already-closed 147-event curtailment and single EBR-off aggregate figure",
+    "q9_nonarbitrary_lever_exists": false,
+    "q10_mathematical_spec_if_yes": "N/A",
+    "q11_next_mechanism_to_investigate": "Trajectory-shape (multi-hour-ahead) decision-time signal, untested in this or the preceding task"
+  },
+  "policy_experiment_executed": false,
+  "agy_execution_spec_provided": false
+}

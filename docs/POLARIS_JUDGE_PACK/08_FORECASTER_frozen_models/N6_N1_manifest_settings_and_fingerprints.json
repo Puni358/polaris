@@ -1,0 +1,152 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp_utc": "2026-10-17T01:50:42.127008+00:00",
+  "purpose": "POLARIS Candidate N (Additive Physics & High-Elevation k_t Specialist) Frozen Artifacts",
+  "governance": {
+    "winner_status": null,
+    "operational_promotion": false,
+    "blind_partition_inspected": false,
+    "evaluated_on": "2024-ODD (173 origins, 4152 rows, 2883 daytime)",
+    "trained_on": "2024-EVEN (174 origins, 4176 rows, 2885 daytime)"
+  },
+  "environment": {
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "scikit_learn_version": "1.9.0",
+    "numpy_version": "2.5.2",
+    "pandas_version": "3.0.5",
+    "joblib_version": "1.6.0"
+  },
+  "models": {
+    "candidate_n1": {
+      "file": "candidate_n1_model.joblib",
+      "sha256": "7265dabe6ea2c81bc38e724b41e0c02dd1e485cd124939b7249320b3f4abf9d7",
+      "features_count": 36,
+      "features": [
+        "month",
+        "hour",
+        "solar_elevation",
+        "solar_zenith",
+        "clearsky_ghi",
+        "fc_cloud_cover",
+        "fc_temperature_2m",
+        "fc_relative_humidity_2m",
+        "cloud_frac",
+        "ctx_std_3h",
+        "ctx_std_6h",
+        "ctx_std_12h",
+        "ctx_std_24h",
+        "ctx_abs_change_1h",
+        "ctx_abs_change_3h",
+        "ctx_abs_change_6h",
+        "ctx_max_diff_6h",
+        "ctx_mean_diff_6h",
+        "ctx_slope_6h",
+        "ctx_kt_std_6h",
+        "ctx_last_obs",
+        "ctx_mean_24h",
+        "ctx_max_24h",
+        "terrain_horizon_elevation_deg",
+        "terrain_elevation_margin_deg",
+        "terrain_solar_obstruction_flag",
+        "clearsky_ghi_terrain_adjusted",
+        "u700",
+        "v700",
+        "lwp_18z_fc",
+        "iwp_18z_fc",
+        "lwp_x_cloud_18z",
+        "elevation_x_cloud_frac",
+        "pred_stage4_clean",
+        "clean_attenuation",
+        "elevation_x_transition_cloud"
+      ],
+      "hyperparameters": {
+        "loss": "absolute_error",
+        "max_depth": 4,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0,
+        "max_features": 1.0,
+        "random_state": 42
+      },
+      "training_window_utc": {
+        "start": "2026-10-17T01:50:18.001986+00:00",
+        "end": "2026-10-17T01:50:18.147369+00:00"
+      }
+    },
+    "candidate_n6": {
+      "file": "candidate_n6_model.joblib",
+      "sha256": "b1b54c93e2dbefdcb562e4229394a2492b299b66426beaafead17f6777395197",
+      "features_count": 36,
+      "features": [
+        "month",
+        "hour",
+        "solar_elevation",
+        "solar_zenith",
+        "clearsky_ghi",
+        "fc_cloud_cover",
+        "fc_temperature_2m",
+        "fc_relative_humidity_2m",
+        "cloud_frac",
+        "ctx_std_3h",
+        "ctx_std_6h",
+        "ctx_std_12h",
+        "ctx_std_24h",
+        "ctx_abs_change_1h",
+        "ctx_abs_change_3h",
+        "ctx_abs_change_6h",
+        "ctx_max_diff_6h",
+        "ctx_mean_diff_6h",
+        "ctx_slope_6h",
+        "ctx_kt_std_6h",
+        "ctx_last_obs",
+        "ctx_mean_24h",
+        "ctx_max_24h",
+        "terrain_horizon_elevation_deg",
+        "terrain_elevation_margin_deg",
+        "terrain_solar_obstruction_flag",
+        "clearsky_ghi_terrain_adjusted",
+        "u700",
+        "v700",
+        "lwp_18z_fc",
+        "iwp_18z_fc",
+        "lwp_x_cloud_18z",
+        "elevation_x_cloud_frac",
+        "pred_stage4_clean",
+        "clean_attenuation",
+        "elevation_x_transition_cloud"
+      ],
+      "components": {
+        "bagged_additive_trees": {
+          "n_seeds": 25,
+          "seed_start": 100,
+          "max_features": 0.78,
+          "min_samples_leaf": 25,
+          "l2_reg": 15.0
+        },
+        "bagged_kt_trees": {
+          "n_seeds": 15,
+          "seed_start": 500,
+          "max_features": 0.8,
+          "min_samples_leaf": 30,
+          "l2_reg": 15.0
+        },
+        "blending": {
+          "ramp_start_deg": 22.0,
+          "ramp_full_deg": 32.0,
+          "max_ramp_weight": 0.55,
+          "obstruction_flag_filter": true
+        }
+      },
+      "training_window_utc": {
+        "start": "2026-10-17T01:50:18.171555+00:00",
+        "end": "2026-10-17T01:50:40.948906+00:00"
+      }
+    }
+  },
+  "data_provenance": {
+    "clean_matrix_file": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_k_baseline_conditioning/candidate_k_2024_clean_matrix.parquet",
+    "clean_matrix_sha256": "db9222dbd1bf02ac3dfaeff3b47ccea4990ffeeb27de2318bfe68dbbc3bfea0d",
+    "rows_total": 8328,
+    "train_rows": 4176,
+    "val_rows": 4152
+  }
+}

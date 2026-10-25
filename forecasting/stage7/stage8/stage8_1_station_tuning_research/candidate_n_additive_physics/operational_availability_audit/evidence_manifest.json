@@ -1,0 +1,106 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp_utc": "2026-10-17T03:50:23.824312+00:00",
+  "purpose": "POLARIS Candidate N6 Operational Feature Availability & Causality Audit Evidence Manifest",
+  "governance": {
+    "winner_status": null,
+    "operational_promotion_authorized": false,
+    "overall_verdict": "UNPROVEN",
+    "confidence": "HIGH"
+  },
+  "summary_metrics": {
+    "total_features_audited": 36,
+    "pass_count": 9,
+    "fail_count": 0,
+    "unproven_count": 27
+  },
+  "audit_outputs": {
+    "operational_causality_audit_md": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/operational_availability_audit/operational_causality_audit.md",
+      "sha256": "8760810d9d151c167fa2b96d32881e11e9a5eed240cadce8810bc65c88af7ce6",
+      "size_bytes": 13963
+    },
+    "feature_availability_ledger_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/operational_availability_audit/feature_availability_ledger.csv",
+      "sha256": "a28178f81f10ad227bae495a5ad73a03c51ff745888f018721502ef1347bb593",
+      "size_bytes": 18123
+    },
+    "temporal_lineage_md": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/operational_availability_audit/temporal_lineage.md",
+      "sha256": "59fefcec0a0821a34613da31d90838ce4805632eb61ec554b1c15b5cdea4b1e9",
+      "size_bytes": 12354
+    },
+    "availability_replay_results_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/operational_availability_audit/availability_replay_results.csv",
+      "sha256": "d9767de167469b358797461ca8e4673e0935663740ba14f7f1b918c1f48a4dc5",
+      "size_bytes": 2747
+    },
+    "remediation_plan_md": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/operational_availability_audit/remediation_plan.md",
+      "sha256": "0de438a11ad421f5efc3eb4db1d7ff08a01e7297343a8f07ce3a2e3242a1988e",
+      "size_bytes": 7015
+    }
+  },
+  "authoritative_reference_inputs": {
+    "candidate_n6_model_joblib": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/candidate_n6_model.joblib",
+      "sha256": "b1b54c93e2dbefdcb562e4229394a2492b299b66426beaafead17f6777395197",
+      "size_bytes": 3411510
+    },
+    "candidate_n1_model_joblib": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/candidate_n1_model.joblib",
+      "sha256": "7265dabe6ea2c81bc38e724b41e0c02dd1e485cd124939b7249320b3f4abf9d7",
+      "size_bytes": 84412
+    },
+    "candidate_n_manifest_json": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/CANDIDATE_N_MANIFEST.json",
+      "sha256": "1666a6860706ab266eec7d7995b7ee31308d21263aa1112485e229b916be1031",
+      "size_bytes": 4524
+    },
+    "candidate_n_hashes_sha256": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/HASHES.sha256",
+      "sha256": "00a0ce56796302b57e21b4509e8a6a960875e711544f06b21592fbbcd03f9385",
+      "size_bytes": 642
+    },
+    "polaris_inference_runner_py": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/polaris_inference_runner.py",
+      "sha256": "16820a89ccc8cda96def4d256adcb2faf444b55287299e6e466aa0f693c16c98",
+      "size_bytes": 13182
+    },
+    "ensemble_parameters_json": {
+      "path": "stage4/stage4_results/ensemble_parameters.json",
+      "sha256": "26cfbd19744a4a01719470d20808b5316af7262aed6c2cd84376d8987ce0abc0",
+      "size_bytes": 3109
+    },
+    "candidate_k_2024_clean_matrix_parquet": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_k_baseline_conditioning/candidate_k_2024_clean_matrix.parquet",
+      "sha256": "db9222dbd1bf02ac3dfaeff3b47ccea4990ffeeb27de2318bfe68dbbc3bfea0d",
+      "size_bytes": 956819
+    },
+    "dataset_v2_train_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_f_successor_18z/dataset_v2/train.csv",
+      "sha256": "7f2435fe5b2b239c9a2950366d56ab4297f29f1e8813d23a9ab64f62ca50483d",
+      "size_bytes": 1838221
+    },
+    "dataset_v2_val_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_f_successor_18z/dataset_v2/validation.csv",
+      "sha256": "24e6828ee7cb7d45fd755844653e4ad9396f07bfe1a551b4411867bb07c948a9",
+      "size_bytes": 1827198
+    },
+    "dataset_v2_blind_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/candidate_f_successor_18z/dataset_v2/blind.csv",
+      "sha256": "7563669248b906403cc644c1bc59f73bf7d232de11212f22bf7ba34465aea0a9",
+      "size_bytes": 3697426
+    },
+    "future_weather_forecasts_2024_csv": {
+      "path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+      "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16",
+      "size_bytes": 663057
+    },
+    "sites_met_2024_l2_csv": {
+      "path": "data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv",
+      "sha256": "f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473",
+      "size_bytes": 3096516
+    }
+  }
+}

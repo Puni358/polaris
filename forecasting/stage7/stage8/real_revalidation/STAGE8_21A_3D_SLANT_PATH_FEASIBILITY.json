@@ -1,0 +1,74 @@
+{
+  "timestamp_utc": "2026-09-13T09:46:52.995811+00:00",
+  "audit_title": "POLARIS Stage 8.21A 3D Solar Slant-Path Hydrometeor Geometry Feasibility Audit",
+  "final_classification": "A. FEASIBILITY VERIFIED \u2014 EXPERIMENT MAY BE DESIGNED",
+  "governance": {
+    "model_experiment_run": false,
+    "model_training": false,
+    "odd_access": false,
+    "operational_champion_changed": false,
+    "master_handoff_changed": false,
+    "route_registry_changed": false
+  },
+  "target_location": {
+    "name": "Nuolja",
+    "lat": 68.362074,
+    "lon": 18.738752,
+    "grid_y": 760,
+    "grid_x": 486
+  },
+  "feasibility_gates": {
+    "F1_3D_Fields_Exist": {
+      "status": "PASS",
+      "evidence": "meps_det_pl contains 3D q_l and q_i fields on 13 pressure levels."
+    },
+    "F2_Causal_Availability": {
+      "status": "PASS",
+      "evidence": "All 347 origins available from D-1 18Z run with 2.5h publication margin."
+    },
+    "F3_Spatial_Coverage": {
+      "status": "PASS",
+      "evidence": "25x25 grid window (62.5km) covers max ray displacement of 57.15km at 85\u00b0 zenith."
+    },
+    "F4_Vertical_Structure": {
+      "status": "PASS",
+      "evidence": "13 pressure levels allow discrete 3D ray interpolation."
+    },
+    "F5_Liquid_Ice_Semantics": {
+      "status": "PASS",
+      "evidence": "q_l and q_i are separately provided with CF standard mass fraction semantics."
+    },
+    "F6_Optical_Proxy_Defensibility": {
+      "status": "CONDITIONAL",
+      "evidence": "q_l/q_i are exact, but effective radii r_e must be parameterized (10\u00b5m liquid, 30\u00b5m ice)."
+    },
+    "F7_Operational_Tractability": {
+      "status": "PASS",
+      "evidence": "Total batch volume is ~535 MB, extracted in < 15 min via OPeNDAP."
+    },
+    "F8_Information_Novelty": {
+      "status": "PASS",
+      "evidence": "3D slant path adds spatial cloud beam intersection, distinct from 1D LWP and Stage 7.5 terrain."
+    },
+    "F9_No_Future_Leakage": {
+      "status": "PASS",
+      "evidence": "Ray geometry relies strictly on causal solar angles and forecast MEPS fields."
+    },
+    "F10_Protocol_Compatibility": {
+      "status": "PASS",
+      "evidence": "Fully compatible with 347-origin EVEN/ODD benchmark."
+    }
+  },
+  "spatial_ray_geometry": {
+    "cloud_height_km": 5.0,
+    "displacement_zenith_80_deg_km": 28.36,
+    "displacement_zenith_85_deg_km": 57.15,
+    "recommended_neighborhood_window": "25x25 grid cells (62.5 km)"
+  },
+  "volume_estimates": {
+    "payload_mb_per_origin": 1.54,
+    "total_payload_mb_347_origins": 516.2,
+    "total_payload_gb_347_origins": 0.5
+  },
+  "decision_summary": "Stage 8.21A is technically and scientifically feasible. It provides a novel 3D spatial hydrometeor ray-intersection operator. No model experiment is authorized by this audit."
+}

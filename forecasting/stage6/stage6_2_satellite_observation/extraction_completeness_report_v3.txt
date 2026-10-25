@@ -1,0 +1,70 @@
+POLARIS Stage 6.2 — V3 Production Extraction Completeness & Audit Report
+=============================================================================
+Date Executed: 2026-09-11
+Production Script: satellite_observation_extraction_v3.py
+Data Access Mechanism: OPeNDAP Remote Variable Subsetting (dodsC)
+Station Target: SITES Nuolja (68.362074°N, 18.738752°E)
+
+1. TOTAL ORIGINS & CHECKPOINT INTEGRITY
+---------------------------------------
+Expected Benchmark Origins: 347
+Total Origins Processed: 347
+Audit CSV Row Count: 347
+Feature CSV Row Count: 347
+Unique forecast_start Count: 347
+Duplicate Rows: 0
+Atomic Checkpointing Used: YES (save_dataframe_atomic after each origin)
+
+2. EXTRACTION STATUS BREAKDOWN
+------------------------------
+- VALID_OBSERVATION: 334 (96.25%)
+- NO_ELIGIBLE_PASS: 10 (2.88%)
+- ELIGIBLE_PASS_NO_VALID_PIXEL: 3 (0.86%)
+- DOWNLOAD_FAILURE: 0 (0.00%)
+- PROCESSING_FAILURE: 0 (0.00%)
+
+3. SATELLITE STATISTICS (VIIRS vs AVHRR)
+----------------------------------------
+AVHRR Observations: 332
+  - NOAA-18: 240
+  - NOAA-19: 36
+  - MetOp-B: 34
+  - MetOp-C: 22
+VIIRS Observations: 2
+  - Suomi-NPP: 1
+  - NOAA-21: 1
+Missing/Unobserved Origins: 13 (10 no pass, 3 outside 50 km)
+Overall Satellite Availability Rate: 96.25%
+
+4. OBSERVATION GEOMETRY (NEAREST PIXEL DISTANCE IN KM)
+------------------------------------------------------
+- Min: 0.0174 km (17.4 meters)
+- Median: 0.6423 km (642.3 meters)
+- Mean: 1.9125 km
+- Max: 49.6498 km (Strictly <= 50.0 km threshold)
+
+5. OBSERVATION AGE (HOURS PRIOR TO T0)
+--------------------------------------
+- Min: 0.0181 h (1.1 minutes prior to t0)
+- Median: 1.0717 h
+- Mean: 1.1873 h
+- Max: 11.1172 h
+
+6. CAUSALITY AUDIT
+------------------
+Total Origins Audited: 347
+Number Passing tacq <= t0: 347 (100.00%)
+Causality Violations: 0
+
+7. PERFORMANCE & STORAGE METRICS
+--------------------------------
+Pre-Run Runtime Estimate: 15--25 minutes (labeled pre-run estimate)
+ACTUAL Measured Wall-Clock Runtime: 7,085.7 seconds (1 hour 58 minutes 5.7 seconds)
+Average Time Per Processed Origin: 20.42 seconds
+Network Failures / Uncaught Errors: 0
+Residual Temporary Files in /tmp: 0 files (0 Bytes)
+
+8. OUTPUT FILE MANIFEST
+-----------------------
+- satellite_feature_summary_v3.csv (347 rows x 7 columns)
+- satellite_causality_audit_v3.csv (347 rows x 12 columns)

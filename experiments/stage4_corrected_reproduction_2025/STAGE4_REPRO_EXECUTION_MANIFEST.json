@@ -1,0 +1,413 @@
+{
+  "experiment_id": "EXP-STAGE4-CORRECTED-REPRODUCTION-2025-HOLDOUT",
+  "execution_timestamp_utc": "2026-10-05T20:40:02Z",
+  "runtime_seconds": 3164.6249957084656,
+  "origins_count": 123,
+  "hours_per_arm": 2952,
+  "total_arm_hours": 14760,
+  "execution_status": "SUCCESS",
+  "failures_count": 0,
+  "arms": [
+    "Control_Frozen_B",
+    "Candidate_S",
+    "Candidate_SW",
+    "Candidate_SL",
+    "Candidate_SWL"
+  ],
+  "metrics": {
+    "Control_Frozen_B": {
+      "arm": "Control_Frozen_B",
+      "total_diesel_fuel_l": 6096.9003999999995,
+      "total_served_load_wh": 36482733.71,
+      "total_unmet_load_wh": 7797266.28,
+      "total_curtailment_wh": 10015257.71,
+      "served_crit_first_wh": 32104314.81,
+      "unmet_crit_first_wh": 2138885.19,
+      "critical_first_reliability_pct": 93.75383962363331,
+      "served_crit_prop_wh": 28712906.550638087,
+      "unmet_crit_prop_wh": 5530293.449361915,
+      "proportional_reliability_pct": 83.84995137907113,
+      "min_soc_pct": 54.99,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 442,
+      "diesel_startups": 308,
+      "battery_throughput_wh": 26580247.05,
+      "efc": 66.450617625,
+      "residue_corrections_count": 133,
+      "max_residue_zeroed_w": 3.6489308788542764e-08,
+      "emergency_hours": 1391,
+      "normal_hours": 1561,
+      "emergency_active_hours": 1391
+    },
+    "Candidate_S": {
+      "arm": "Candidate_S",
+      "total_diesel_fuel_l": 4687.6902,
+      "total_served_load_wh": 36851528.22,
+      "total_unmet_load_wh": 7428471.74,
+      "total_curtailment_wh": 8269986.3,
+      "served_crit_first_wh": 32323683.99,
+      "unmet_crit_first_wh": 1919516.01,
+      "critical_first_reliability_pct": 94.39446076885338,
+      "served_crit_prop_wh": 28994618.938955866,
+      "unmet_crit_prop_wh": 5248581.061044134,
+      "proportional_reliability_pct": 84.67263263642377,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 327,
+      "diesel_startups": 237,
+      "battery_throughput_wh": 27648653.13,
+      "efc": 69.12163282499999,
+      "residue_corrections_count": 130,
+      "max_residue_zeroed_w": 1.6687250615138073e-09,
+      "emergency_hours": 1723,
+      "normal_hours": 1229,
+      "emergency_active_hours": 1723
+    },
+    "Candidate_SW": {
+      "arm": "Candidate_SW",
+      "total_diesel_fuel_l": 3768.5494,
+      "total_served_load_wh": 36139170.54,
+      "total_unmet_load_wh": 8140829.43,
+      "total_curtailment_wh": 8009080.59,
+      "served_crit_first_wh": 32200978.96,
+      "unmet_crit_first_wh": 2042221.04,
+      "critical_first_reliability_pct": 94.03612676385384,
+      "served_crit_prop_wh": 28513785.765727907,
+      "unmet_crit_prop_wh": 5729414.2342720935,
+      "proportional_reliability_pct": 83.26846137547865,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 248,
+      "diesel_startups": 159,
+      "battery_throughput_wh": 26815696.21,
+      "efc": 67.039240525,
+      "residue_corrections_count": 143,
+      "max_residue_zeroed_w": 0.004033273429740802,
+      "emergency_hours": 1815,
+      "normal_hours": 1137,
+      "emergency_active_hours": 1815
+    },
+    "Candidate_SL": {
+      "arm": "Candidate_SL",
+      "total_diesel_fuel_l": 5280.2375,
+      "total_served_load_wh": 37029772.67,
+      "total_unmet_load_wh": 7250227.31,
+      "total_curtailment_wh": 8655896.45,
+      "served_crit_first_wh": 32323244.55,
+      "unmet_crit_first_wh": 1919955.45,
+      "critical_first_reliability_pct": 94.39317747757218,
+      "served_crit_prop_wh": 29108923.711856514,
+      "unmet_crit_prop_wh": 5134276.288143485,
+      "proportional_reliability_pct": 85.00643547290123,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 379,
+      "diesel_startups": 281,
+      "battery_throughput_wh": 27715180.84,
+      "efc": 69.2879521,
+      "residue_corrections_count": 150,
+      "max_residue_zeroed_w": 0.00121266932436309,
+      "emergency_hours": 1689,
+      "normal_hours": 1263,
+      "emergency_active_hours": 1689
+    },
+    "Candidate_SWL": {
+      "arm": "Candidate_SWL",
+      "total_diesel_fuel_l": 5263.9645,
+      "total_served_load_wh": 37146352.89,
+      "total_unmet_load_wh": 7133647.11,
+      "total_curtailment_wh": 8682498.4,
+      "served_crit_first_wh": 32357985.6,
+      "unmet_crit_first_wh": 1885214.4,
+      "critical_first_reliability_pct": 94.49463134286515,
+      "served_crit_prop_wh": 29189276.40916841,
+      "unmet_crit_prop_wh": 5053923.590831588,
+      "proportional_reliability_pct": 85.24108847645199,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 375,
+      "diesel_startups": 270,
+      "battery_throughput_wh": 27784651.78,
+      "efc": 69.46162945,
+      "residue_corrections_count": 145,
+      "max_residue_zeroed_w": 0.00034957579714500753,
+      "emergency_hours": 1660,
+      "normal_hours": 1292,
+      "emergency_active_hours": 1660
+    }
+  },
+  "safety_report": {
+    "Control_Frozen_B": {
+      "fuel_l": 6096.9003999999995,
+      "critical_first_reliability_pct": 93.75383962363331,
+      "proportional_reliability_pct": 83.84995137907113,
+      "min_soc_pct": 54.99,
+      "soc_violations": 0
+    },
+    "Candidate_S": {
+      "delta_cf_pp": 0.6406211452200665,
+      "gate1_critical_first_pass": true,
+      "delta_prop_pp": 0.8226812573526416,
+      "gate2_proportional_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_soc_floor_pass": true,
+      "all_safety_gates_pass": true
+    },
+    "Candidate_SW": {
+      "delta_cf_pp": 0.28228714022053225,
+      "gate1_critical_first_pass": true,
+      "delta_prop_pp": -0.5814900035924779,
+      "gate2_proportional_pass": false,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_soc_floor_pass": true,
+      "all_safety_gates_pass": false
+    },
+    "Candidate_SL": {
+      "delta_cf_pp": 0.6393378539388692,
+      "gate1_critical_first_pass": true,
+      "delta_prop_pp": 1.1564840938301018,
+      "gate2_proportional_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_soc_floor_pass": true,
+      "all_safety_gates_pass": true
+    },
+    "Candidate_SWL": {
+      "delta_cf_pp": 0.7407917192318365,
+      "gate1_critical_first_pass": true,
+      "delta_prop_pp": 1.391137097380863,
+      "gate2_proportional_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_soc_floor_pass": true,
+      "all_safety_gates_pass": true
+    }
+  },
+  "statistical_report": {
+    "Candidate_SL": {
+      "total_saving_l": 816.6628999999994,
+      "saving_pct": 13.394722669243531,
+      "mean_paired_saving_l": 6.639535772357724,
+      "median_paired_saving_l": 6.446200000000005,
+      "bca_95_ci_low_l": 4.256664628994692,
+      "bca_95_ci_high_l": 8.956217362780702,
+      "ci_strictly_positive": true,
+      "wilcoxon_stat": 1665.0,
+      "wilcoxon_raw_p": 7.196041816356016e-07,
+      "holm_adjusted_p": 1.4392083632712033e-06,
+      "holm_significant_at_005": true,
+      "diesel_gate_pass": true,
+      "target_40pct_achieved": false
+    },
+    "Candidate_SWL": {
+      "total_saving_l": 832.9358999999995,
+      "saving_pct": 13.661628784357369,
+      "mean_paired_saving_l": 6.771836585365854,
+      "median_paired_saving_l": 7.537199999999995,
+      "bca_95_ci_low_l": 4.338153178468929,
+      "bca_95_ci_high_l": 9.128043204566104,
+      "ci_strictly_positive": true,
+      "wilcoxon_stat": 1784.0,
+      "wilcoxon_raw_p": 8.165915350633619e-07,
+      "holm_adjusted_p": 1.4392083632712033e-06,
+      "holm_significant_at_005": true,
+      "diesel_gate_pass": true,
+      "target_40pct_achieved": false
+    }
+  },
+  "factorial_report": {
+    "C1_wind_without_protection (SW - S)": {
+      "primary_proportional_reliability_pp": {
+        "mean": -1.40417126094512,
+        "std": 2.362359999709364,
+        "median": -1.0880440761471704,
+        "ci_95_bca_low": -1.835314141186951,
+        "ci_95_bca_high": -0.998465069290017,
+        "unit": "pp"
+      },
+      "critical_first_reliability_pp": {
+        "mean": -0.3583340049995329,
+        "std": 0.8695619862520759,
+        "median": -0.08622126436782196,
+        "ci_95_bca_low": -0.5184798984646343,
+        "ci_95_bca_high": -0.2134789216005422,
+        "unit": "pp"
+      },
+      "fuel_l": {
+        "mean": -7.472689430894307,
+        "std": 12.522488440845809,
+        "median": -5.436499999999995,
+        "ci_95_bca_low": -9.687738272820111,
+        "ci_95_bca_high": -5.348074501249042,
+        "unit": "L"
+      },
+      "unmet_load_kwh": {
+        "mean": 5.791525934959349,
+        "std": 9.870283654622074,
+        "median": 5.022040000000004,
+        "ci_95_bca_low": 4.101410539544915,
+        "ci_95_bca_high": 7.58419014410379,
+        "unit": "kWh"
+      },
+      "curtailment_kwh": {
+        "mean": -2.121184634146343,
+        "std": 15.054218218984627,
+        "median": -0.18603999999999132,
+        "ci_95_bca_low": -4.813947594088137,
+        "ci_95_bca_high": 0.45479419099017226,
+        "unit": "kWh"
+      }
+    },
+    "C2_protection_under_solar_plus_wind (SW-L - SW)": {
+      "primary_proportional_reliability_pp": {
+        "mean": 1.9726271009733483,
+        "std": 2.322271278884824,
+        "median": 1.5889299027985544,
+        "ci_95_bca_low": 1.5871529419620494,
+        "ci_95_bca_high": 2.401287026161153,
+        "unit": "pp"
+      },
+      "critical_first_reliability_pp": {
+        "mean": 0.4585045790113076,
+        "std": 0.9833533716247223,
+        "median": 0.1056860632183998,
+        "ci_95_bca_low": 0.3053371990239633,
+        "ci_95_bca_high": 0.6481201902702611,
+        "unit": "pp"
+      },
+      "fuel_l": {
+        "mean": 12.157846341463413,
+        "std": 12.000818528315316,
+        "median": 10.840699999999998,
+        "ci_95_bca_low": 10.044142219865915,
+        "ci_95_bca_high": 14.240038538161222,
+        "unit": "L"
+      },
+      "unmet_load_kwh": {
+        "mean": -8.188474146341463,
+        "std": 9.516992933259935,
+        "median": -7.183020000000006,
+        "ci_95_bca_low": -9.946655731756719,
+        "ci_95_bca_high": -6.600704473132704,
+        "unit": "kWh"
+      },
+      "curtailment_kwh": {
+        "mean": 5.474941544715446,
+        "std": 16.78438405214067,
+        "median": 5.387720000000002,
+        "ci_95_bca_low": 2.4730857897439344,
+        "ci_95_bca_high": 8.381618772389626,
+        "unit": "kWh"
+      }
+    },
+    "C3_protection_under_solar_only (S-L - S)": {
+      "primary_proportional_reliability_pp": {
+        "mean": 0.3338028364774608,
+        "std": 1.5913817037552072,
+        "median": 0.0,
+        "ci_95_bca_low": 0.0697688378979822,
+        "ci_95_bca_high": 0.6320099352386986,
+        "unit": "pp"
+      },
+      "critical_first_reliability_pp": {
+        "mean": -0.001283291281189451,
+        "std": 0.6125504208731609,
+        "median": 0.0,
+        "ci_95_bca_low": -0.10629422516587797,
+        "ci_95_bca_high": 0.10491596435239005,
+        "unit": "pp"
+      },
+      "fuel_l": {
+        "mean": 4.817457723577236,
+        "std": 9.741977041951134,
+        "median": 2.5130000000000052,
+        "ci_95_bca_low": 3.1728428553259116,
+        "ci_95_bca_high": 6.557005014540775,
+        "unit": "L"
+      },
+      "unmet_load_kwh": {
+        "mean": -1.4491417073170727,
+        "std": 6.529632300433547,
+        "median": 0.0,
+        "ci_95_bca_low": -2.6646925524573097,
+        "ci_95_bca_high": -0.36768298618335093,
+        "unit": "kWh"
+      },
+      "curtailment_kwh": {
+        "mean": 3.1374808943089416,
+        "std": 12.505082643467318,
+        "median": 0.0,
+        "ci_95_bca_low": 1.0069917726953515,
+        "ci_95_bca_high": 5.442165101534723,
+        "unit": "kWh"
+      }
+    },
+    "C4_interaction_primary_mechanism_diagnostic": {
+      "primary_proportional_reliability_pp": {
+        "mean": 1.6388242644958873,
+        "std": 2.310492039853676,
+        "median": 1.4060739467549155,
+        "ci_95_bca_low": 1.2559025892934819,
+        "ci_95_bca_high": 2.057582445833189,
+        "unit": "pp"
+      },
+      "critical_first_reliability_pp": {
+        "mean": 0.45978787029249707,
+        "std": 1.0106332671366598,
+        "median": 0.11596264367817355,
+        "ci_95_bca_low": 0.2978868758742044,
+        "ci_95_bca_high": 0.6515794035339888,
+        "unit": "pp"
+      },
+      "fuel_l": {
+        "mean": 7.340388617886179,
+        "std": 12.5438354441809,
+        "median": 6.093699999999998,
+        "ci_95_bca_low": 5.174878798782316,
+        "ci_95_bca_high": 9.550416084350958,
+        "unit": "L"
+      },
+      "unmet_load_kwh": {
+        "mean": -6.73933243902439,
+        "std": 9.570763723992668,
+        "median": -5.199240000000032,
+        "ci_95_bca_low": -8.480905034055601,
+        "ci_95_bca_high": -5.16081515455028,
+        "unit": "kWh"
+      },
+      "curtailment_kwh": {
+        "mean": 2.337460650406505,
+        "std": 15.802999034286607,
+        "median": 0.38665000000000305,
+        "ci_95_bca_low": -0.3526347381567577,
+        "ci_95_bca_high": 5.205187446225885,
+        "unit": "kWh"
+      },
+      "algebraic_identity_check_max_diff": 0.0
+    }
+  },
+  "artifact_paths": {
+    "hourly_telemetry_csv": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_HOURLY_TELEMETRY.csv",
+    "hourly_telemetry_json": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_HOURLY_TELEMETRY.json",
+    "origin_results_csv": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_RESULTS.csv",
+    "origin_results_json": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_RESULTS.json",
+    "checkpoint_jsonl": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_CHECKPOINT.jsonl",
+    "safety_report_md": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_SAFETY_REPORT.md",
+    "safety_report_json": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_SAFETY_REPORT.json",
+    "statistical_report_md": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_STATISTICAL_REPORT.md",
+    "statistical_report_json": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_STATISTICAL_REPORT.json",
+    "factorial_c4_md": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_FACTORIAL_C4_REPORT.md",
+    "factorial_c4_json": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_FACTORIAL_C4_REPORT.json",
+    "campaign_summary_md": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_CAMPAIGN_SUMMARY.md",
+    "execution_audit_md": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_EXECUTION_AUDIT.md",
+    "comparison_report_md": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_COMPARISON_TO_FROZEN_STAGE4.md",
+    "comparison_report_json": "/home/punith-bs/01polaris (Copy)/experiments/stage4_corrected_reproduction_2025/STAGE4_REPRO_COMPARISON_TO_FROZEN_STAGE4.json"
+  }
+}

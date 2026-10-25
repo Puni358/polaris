@@ -1,0 +1,4 @@
+Artifact_Name,Impact_Type,Field_Modification_Details,Schema_Justification
+ForecastBundle,NO_CHANGE,None,Normal MPC forecasts remain untouched
+StationState,NO_CHANGE,None,Detector reads existing initial state
+DispatchPlan,ADDITIVE_EXTENSION_REQUIRED,Add operating_mode and emergency_assessment fields,Required for auditability of detector execution

@@ -1,0 +1,53 @@
+{
+  "correction_metadata": {
+    "version": "1.0.0",
+    "title": "POLARIS EMS Implementation Specification Surgical Correction Audit Record",
+    "target_package": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION/",
+    "correction_date": "2026-09-22",
+    "task_type": "READ_ONLY_GOVERNANCE_SPECIFICATION_CORRECTION"
+  },
+  "governance_status_flags": {
+    "STAKEHOLDER_POLICY": "APPROVED",
+    "OBJECTIVE_SPECIFICATION": "REVIEW_PASSED",
+    "IMPLEMENTATION_SPECIFICATION_PACKAGE": "CORRECTED_PENDING_REVIEW",
+    "IMPLEMENTATION_SPECIFICATION_REVIEW": "PENDING_REVIEW",
+    "IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "EMS_CODE_MODIFICATION": "NO",
+    "MILP_MODIFICATION": "NO",
+    "CONFIGURATION_MODIFICATION": "NO",
+    "MODEL_MODIFICATION": "NO",
+    "MODEL_TRAINING": "NO",
+    "MODEL_INFERENCE": "NO",
+    "MILP_EXECUTION": "NO",
+    "MPC_EXECUTION": "NO",
+    "EMS_EXECUTION": "NO",
+    "DIGITAL_TWIN_EXECUTION": "NO",
+    "V2_RERUN": "NO",
+    "NEW_EMS_EXPERIMENT": "NO",
+    "NEXT_GOVERNED_STEP": "FRESH_IMPLEMENTATION_SPECIFICATION_REVIEW"
+  },
+  "surgical_corrections_applied": [
+    "Finding 01: GAP_03 (Deferrable scheduling) status updated to IMPLEMENTATION_DEFERRED due to unresolved preemption alternatives in IMP_DEC_02",
+    "Finding 02: GAP_10 (Stage 2 target generation) status updated to IMPLEMENTATION_DEFERRED due to multiple target function alternatives in IMP_DEC_03",
+    "Finding 03: GAP_12 (Terminal SOC stage placement) status updated to IMPLEMENTATION_DEFERRED due to unresolved stage placement alternatives in IMP_DEC_04",
+    "Finding 04: GAP_15 (Curtailment formula) reclassified as PROVISIONAL_DIAGNOSTIC_ONLY and executable classification set to IMPLEMENTATION_DEFERRED",
+    "Finding 05: GAP_19 (Solver architecture) status updated to IMPLEMENTATION_DEFERRED due to unresolved solver implementation alternatives in IMP_DEC_06",
+    "Finding 06: GAP_21 (Fail-closed vs fallback dispatch) fallback dispatch reclassified as GOVERNANCE_CLARIFICATION_REQUIRED",
+    "Finding 07: Ambiguous package completeness terminology replaced with IMPLEMENTATION_SPECIFICATION_PACKAGE = CORRECTED_PENDING_REVIEW"
+  ],
+  "item_classification_reconciliation": {
+    "total_items": 22,
+    "implementation_specified": 3,
+    "implementation_deferred": 8,
+    "station_data_required": 5,
+    "engineering_validation_required": 0,
+    "numerical_calibration_required": 2,
+    "governance_clarification_required": 4
+  },
+  "non_execution_confirmation": {
+    "NO_CODE_MODIFICATION": true,
+    "NO_CONFIGURATION_MODIFICATION": true,
+    "NO_MODEL_MODIFICATION": true,
+    "NO_EXECUTION_PERFORMED": true
+  }
+}

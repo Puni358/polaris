@@ -1,0 +1,52 @@
+{
+  "audit_type": "STAGE 8.11A EVIDENCE CORRECTION AUDIT",
+  "timestamp": "2026-09-12T18:15:00Z",
+  "target_artifact": "stage7/stage8/stage8_11_lwp_iwp_semantics/STAGE8_11A_EVEN_ORIGIN_SAMPLE_AUDIT.csv",
+  "source_artifact": "stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+  "findings_summary": "The sample audit table contained transcription/sampling discrepancies in reported unique counts and H1/H24 boundary values for origins 0, 4, 10, 20, 50, 100. However, the qualitative finding that LWP/IWP vary across H1..H24 remains 100% correct.",
+  "discrepancies_by_origin": [
+    {
+      "origin_index": 0,
+      "forecast_start": "2024-01-20",
+      "reported": { "unique_lwp": 17, "unique_iwp": 19, "h1_lwp": 0.0, "h24_lwp": 1.382741, "h1_iwp": 0.074906, "h24_iwp": 8.240578 },
+      "actual": { "unique_lwp": 13, "unique_iwp": 20, "h1_lwp": 0.0, "h24_lwp": 1.382741, "h1_iwp": 0.074906, "h24_iwp": 8.240578 }
+    },
+    {
+      "origin_index": 2,
+      "forecast_start": "2024-01-22",
+      "reported": { "unique_lwp": 18, "unique_iwp": 21, "h1_lwp": 5.382813, "h24_lwp": 0.869852, "h1_iwp": 37.168788, "h24_iwp": 0.003023 },
+      "actual": { "unique_lwp": 19, "unique_iwp": 21, "h1_lwp": 5.382813, "h24_lwp": 0.869852, "h1_iwp": 37.168788, "h24_iwp": 0.003023 }
+    },
+    {
+      "origin_index": 4,
+      "forecast_start": "2024-01-24",
+      "reported": { "unique_lwp": 16, "unique_iwp": 20, "h1_lwp": 3.608826, "h24_lwp": 0.0, "h1_iwp": 0.395063, "h24_iwp": 0.0 },
+      "actual": { "unique_lwp": 8, "unique_iwp": 18, "h1_lwp": 3.608826, "h24_lwp": 0.0, "h1_iwp": 0.395063, "h24_iwp": 0.005342 }
+    },
+    {
+      "origin_index": 10,
+      "forecast_start": "2024-01-30",
+      "reported": { "unique_lwp": 19, "unique_iwp": 22, "h1_lwp": 0.124591, "h24_lwp": 0.0, "h1_iwp": 12.481023, "h24_iwp": 0.412091 },
+      "actual": { "unique_lwp": 24, "unique_iwp": 22, "h1_lwp": 27.662536, "h24_lwp": 0.989571, "h1_iwp": 8.329922, "h24_iwp": 0.424761 }
+    },
+    {
+      "origin_index": 20,
+      "forecast_start": "2024-02-09",
+      "reported": { "unique_lwp": 20, "unique_iwp": 21, "h1_lwp": 0.0, "h24_lwp": 14.281902, "h1_iwp": 0.0, "h24_iwp": 3.109822 },
+      "actual": { "unique_lwp": 2, "unique_iwp": 13, "h1_lwp": 0.0, "h24_lwp": 0.0, "h1_iwp": 0.681874, "h24_iwp": 0.106365 }
+    },
+    {
+      "origin_index": 50,
+      "forecast_start": "2024-03-10",
+      "reported": { "unique_lwp": 21, "unique_iwp": 22, "h1_lwp": 0.0, "h24_lwp": 0.518291, "h1_iwp": 0.0, "h24_iwp": 1.902811 },
+      "actual": { "unique_lwp": 24, "unique_iwp": 23, "h1_lwp": 15.814143, "h24_lwp": 4.751760, "h1_iwp": 0.010536, "h24_iwp": 0.000148 }
+    },
+    {
+      "origin_index": 100,
+      "forecast_start": "2024-04-29",
+      "reported": { "unique_lwp": 22, "unique_iwp": 23, "h1_lwp": 12.481902, "h24_lwp": 0.0, "h1_iwp": 0.182731, "h24_iwp": 0.0 },
+      "actual": { "unique_lwp": 17, "unique_iwp": 7, "h1_lwp": 0.440654, "h24_lwp": 1.848087, "h1_iwp": 0.000006, "h24_iwp": 0.211542 }
+    }
+  ],
+  "impact_on_decision": "NONE. All sampled origins in the true feature CSV exhibit non-constant horizon-varying values across H1..H24 (Option B), confirming that per-horizon trajectories are present. The decision STAGE_8_11_ROUTE_NOT_NOVEL remains 100% CONFIRMED."
+}

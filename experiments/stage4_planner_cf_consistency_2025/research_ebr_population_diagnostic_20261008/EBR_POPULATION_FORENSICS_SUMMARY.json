@@ -1,0 +1,157 @@
+{
+  "title": "POLARIS PC-SW v1.2 EBR Population Attribution Forensics",
+  "date": "2026-10-08",
+  "status": "READ-ONLY research diagnostic. No production/policy change. No AGY execution.",
+  "hash_verification": {
+    "status": "VERIFIED",
+    "mismatches": []
+  },
+  "population": {
+    "origins": 123,
+    "hours_per_origin": 24,
+    "total_resolves": 2952,
+    "arm": "PC-SW",
+    "governed_baseline_fuel_L": 8729.2446,
+    "label": "VERIFIED"
+  },
+  "ebr_formulation": {
+    "formula": "E_SW[t] = (1/eta_dis) * sum_{k=t}^{min(t+5,23)} max(0, critical_demand[k]-solar[k]-wind[k]) * dt",
+    "source": "experiments/stage4_sw_low_sun_2025_holdout/stage4_low_sun_adapter.py:191-232 (compute_variant_sw_ebr)",
+    "eta_dis": 0.92,
+    "min_e_wh": 40000.0,
+    "horizon_hours": 6,
+    "priority_order": {"J1": 5, "J_NC": 4, "J2": 3, "J3": 2, "J4": 1},
+    "causal_nonanticipative": true,
+    "label": "VERIFIED"
+  },
+  "binding_audit": {
+    "n": 2952,
+    "binding_le_200Wh": {"count": 41, "pct": 1.4},
+    "near_binding_200_to_4000Wh": {"count": 19, "pct": 0.6},
+    "slack_gt_4000Wh": {"count": 2892, "pct": 98.0},
+    "margin_Wh": {
+      "min": -47063.0,
+      "p10": 25140.0,
+      "p25": 49240.0,
+      "median": 78691.2,
+      "mean": 75415.2,
+      "p75": 101060.0,
+      "p90": 122815.9
+    },
+    "j2_shortfall_zero_fraction": {"count": 2952, "total": 2952, "pct": 100.0},
+    "tightest_margin_origins": [
+      {"origin_id": 91, "min_margin_Wh": -47063.02},
+      {"origin_id": 10, "min_margin_Wh": -27253.37},
+      {"origin_id": 36, "min_margin_Wh": -10743.07}
+    ],
+    "label": "VERIFIED (from persisted PC_HOURLY_TELEMETRY.csv, no re-solve)"
+  },
+  "diesel_funded_banking": {
+    "diesel_on_resolves": {"count": 547, "pct_of_total": 18.5},
+    "diesel_on_and_charging": {"count": 526, "pct_of_diesel_on": 96.2},
+    "fuel_in_diesel_plus_charging_hours_L": 8557.77,
+    "pct_of_total_baseline_fuel": 98.04,
+    "diesel_charge_and_curtail_hours": 135,
+    "label": "VERIFIED"
+  },
+  "ebr_vs_terminal_separation": {
+    "rolling_ebr_enforced_every_resolve": true,
+    "terminal_floor_is_horizon_end_artifact_not_daily_realized_checkpoint": true,
+    "label": "VERIFIED/DERIVED"
+  },
+  "forecast_error_contribution": {
+    "representative_origin": 2,
+    "forecast_vs_realized_solar_hour0": {"forecast": 0.0, "realized": 0.0},
+    "forecast_vs_realized_wind_hours_0_5_identical": true,
+    "population_scale_decomposition": "UNKNOWN - not performed",
+    "label": "DIAGNOSTIC (single case) / UNKNOWN (population)"
+  },
+  "full_population_ebr_off_diagnostic": {
+    "description": "Closed-loop, 123-origin, read-only re-solve with reserve_enabled=False (existing unmodified optimizer flag). Not a policy candidate.",
+    "output_file": "PC_SW_EBR_OFF_HOURLY_TELEMETRY_DIAGNOSTIC.csv",
+    "baseline": {
+      "fuel_L": 8729.2446,
+      "diesel_energy_Wh": 23976984.68,
+      "diesel_on_hours": 547,
+      "critical_unmet_Wh": 279056.33,
+      "total_unmet_Wh": 985870.15,
+      "curtailment_Wh": 13209785.48,
+      "battery_charge_Wh": 25086130.82,
+      "battery_discharge_Wh": 17503789.63,
+      "R_CF_pct": 99.185075,
+      "R_P_pct": 97.773554
+    },
+    "ebr_off": {
+      "fuel_L": 8004.6897,
+      "diesel_energy_Wh": 21638755.27,
+      "diesel_on_hours": 519,
+      "critical_unmet_Wh": 279599.90,
+      "total_unmet_Wh": 1015209.32,
+      "curtailment_Wh": 12613127.64,
+      "battery_charge_Wh": 23836590.83,
+      "battery_discharge_Wh": 17966481.98,
+      "R_CF_pct": 99.183488,
+      "R_P_pct": 97.707296
+    },
+    "delta": {
+      "fuel_L": -724.5549,
+      "fuel_pct": -8.30,
+      "diesel_energy_Wh": -2338229.4,
+      "diesel_on_hours": -28,
+      "critical_unmet_Wh": 543.57,
+      "total_unmet_Wh": 29339.17,
+      "curtailment_Wh": -596657.84,
+      "battery_charge_Wh": -1249540.0,
+      "battery_discharge_Wh": 462692.4,
+      "R_CF_pp": -0.0016,
+      "R_P_pp": -0.0663
+    },
+    "per_origin_heterogeneity": {
+      "origins_worse_with_ebr_off": 44,
+      "origins_better_with_ebr_off": 77,
+      "origins_unchanged": 2,
+      "fuel_delta_per_origin_L": {"min": -52.39, "median": -4.42, "max": 22.62},
+      "mixture_confirmed": true
+    },
+    "solver_sanity": {
+      "non_optimal_or_busbar_error_rows": 0,
+      "soc_bound_violations": 0
+    },
+    "label": "DIAGNOSTIC - full closed-loop re-solve, read-only, not a policy campaign"
+  },
+  "future_need_test": {
+    "per_episode_classification": "UNKNOWN - not performed at full event granularity",
+    "origin_level_proxy": {
+      "A_B_needed_proxy_origins": 44,
+      "C_not_needed_proxy_origins": 77,
+      "D_indeterminate": "aggregate R_CF delta within plausible closed-loop noise; no boundary cases resolved"
+    },
+    "label": "DERIVED (origin-level proxy, not per-episode)"
+  },
+  "round_trip_loss_accounting": {
+    "theoretical_rate_pct": 15.4,
+    "formula": "1 - eta_chg*eta_dis = 1 - 0.92*0.92",
+    "per_event_traced": false,
+    "label": "VERIFIED (constant only) / UNKNOWN (per-event attribution)"
+  },
+  "non_arbitrary_lever_search": {
+    "lever_found": false,
+    "reason": "44/123 origins show EBR as net-beneficial in the realized closed loop, 77/123 show it as net-costly with no realized benefit; distinguishing these in advance (non-hindsight) was not achieved with any existing governed quantity.",
+    "label": "DERIVED"
+  },
+  "final_answer_to_central_question": {
+    "is_EBR_diesel_primarily": "mixture",
+    "breakdown": "Not primarily forecast-error-driven (tested case shows ~zero forecast error); genuinely mixed between necessary forward protection (~44/123 origins) and conservatively-unused reserve (~77/123 origins) in this specific 2025 holdout population; critical-service impact of full removal is negligible (-0.0016pp R_CF) while non-critical service absorbs most of the realized cost of removal (+0.0663pp R_P degradation).",
+    "non_arbitrary_lever_exists": false
+  },
+  "governance_classification": "D",
+  "classification_meaning": "EBR driver confirmed, but no safe parameter-free lever exists",
+  "policy_experiment_executed": false,
+  "agy_execution_spec_provided": false,
+  "limitations": [
+    "Per-event energy tracing (Phase 3/4) not performed at full granularity",
+    "Per-episode A/B/C/D future-need classification (Phase 8) not performed at full granularity; only origin-level proxy reported",
+    "Population-scale forecast-vs-realized shortfall decomposition (Phase 5/6) not performed; only one representative origin verified",
+    "Only the full-removal EBR variant was tested (existing reserve_enabled=False flag); no partial/intermediate variant tested"
+  ]
+}

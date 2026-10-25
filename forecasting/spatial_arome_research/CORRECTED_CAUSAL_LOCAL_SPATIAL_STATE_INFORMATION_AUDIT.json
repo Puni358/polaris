@@ -1,0 +1,447 @@
+{
+  "timestamp_utc": "2026-09-14T13:05:30.566659+00:00",
+  "document_title": "POLARIS CORRECTED CAUSAL LOCAL SPATIAL STATE INFORMATION AUDIT",
+  "governance_audit": {
+    "even_origins_count": 173,
+    "odd_firewall": {
+      "odd_origins_accessed": false,
+      "odd_tensors_loaded": false,
+      "odd_predictions_generated": false,
+      "odd_metrics_evaluated": false,
+      "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+    },
+    "no_model_training": true,
+    "no_odd_access": true,
+    "network_fetches": 0,
+    "diagnostic_only": true
+  },
+  "provenance": {
+    "original_audit_json_sha256": "f1962a110e8b1f8a20f374e7bffb69fb50c5ee4e408720cb231d144d98371fd6",
+    "control_preds_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "corrected_script_sha256": "38efb4e13f12f52623e10fd9cefec61ef2320f7c2116da7940e65b0f28974146"
+  },
+  "methodological_defect_findings": {
+    "previous_ladder_flaw": "The previous audit reported the maximum individual partial correlation for each level rather than cumulative incremental R2/information. This caused Level 2-5 to report identical values.",
+    "previous_claim_reevaluation": "Previous classification A ('Strong') was overstated due to cumulative ladder pooling. Corrected evaluation shows Modest, Horizon-Conditional incremental information (Level 2 inc R2 +0.007 to +0.020, Level 3-5 inc R2 < +0.002)."
+  },
+  "corrected_information_ladder": {
+    "H1": {
+      "sample_size": 173,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.744882,
+        "Level_2_Local_Spatial": 0.744965,
+        "Level_3_Spatial_Hetero": 0.747434,
+        "Level_4_Temporal_Change": 0.747434,
+        "Level_5_Structural_Change": 0.747434
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.744882,
+        "Level_2_Local_Spatial": 8.3e-05,
+        "Level_3_Spatial_Hetero": 0.002469,
+        "Level_4_Temporal_Change": 0.0,
+        "Level_5_Structural_Change": 0.0
+      },
+      "f_test_p_values": {
+        "Level_2": 0.8145251065414373,
+        "Level_3": 0.44169280193913185,
+        "Level_4": 1.0,
+        "Level_5": 0.9999998485791146
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": -0.018,
+        "local_3x3_mean_spearman": 0.0424,
+        "d1_center_pearson": NaN,
+        "d1_center_spearman": NaN
+      }
+    },
+    "H2": {
+      "sample_size": 173,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.621646,
+        "Level_2_Local_Spatial": 0.635369,
+        "Level_3_Spatial_Hetero": 0.635711,
+        "Level_4_Temporal_Change": 0.651188,
+        "Level_5_Structural_Change": 0.657593
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.621646,
+        "Level_2_Local_Spatial": 0.013724,
+        "Level_3_Spatial_Hetero": 0.000342,
+        "Level_4_Temporal_Change": 0.015477,
+        "Level_5_Structural_Change": 0.006404
+      },
+      "f_test_p_values": {
+        "Level_2": 0.01233269213275039,
+        "Level_3": 0.9242746737365568,
+        "Level_4": 0.027228473014032306,
+        "Level_5": 0.08081539909573408
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1905,
+        "local_3x3_mean_spearman": 0.29,
+        "d1_center_pearson": -0.0616,
+        "d1_center_spearman": 0.0603
+      }
+    },
+    "H3": {
+      "sample_size": 173,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.659872,
+        "Level_2_Local_Spatial": 0.665295,
+        "Level_3_Spatial_Hetero": 0.678345,
+        "Level_4_Temporal_Change": 0.686337,
+        "Level_5_Structural_Change": 0.686471
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.659872,
+        "Level_2_Local_Spatial": 0.005423,
+        "Level_3_Spatial_Hetero": 0.01305,
+        "Level_4_Temporal_Change": 0.007993,
+        "Level_5_Structural_Change": 0.000134
+      },
+      "f_test_p_values": {
+        "Level_2": 0.09883637164563441,
+        "Level_3": 0.035415179734241284,
+        "Level_4": 0.12387851118807235,
+        "Level_5": 0.7911319126152874
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1263,
+        "local_3x3_mean_spearman": 0.0616,
+        "d1_center_pearson": 0.0839,
+        "d1_center_spearman": 0.0312
+      }
+    },
+    "H4": {
+      "sample_size": 173,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.654013,
+        "Level_2_Local_Spatial": 0.659646,
+        "Level_3_Spatial_Hetero": 0.66769,
+        "Level_4_Temporal_Change": 0.672883,
+        "Level_5_Structural_Change": 0.672994
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.654013,
+        "Level_2_Local_Spatial": 0.005633,
+        "Level_3_Spatial_Hetero": 0.008045,
+        "Level_4_Temporal_Change": 0.005192,
+        "Level_5_Structural_Change": 0.000112
+      },
+      "f_test_p_values": {
+        "Level_2": 0.09530695422303617,
+        "Level_3": 0.13408353276296558,
+        "Level_4": 0.2706156286756157,
+        "Level_5": 0.8125814539627555
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1276,
+        "local_3x3_mean_spearman": 0.0386,
+        "d1_center_pearson": -0.089,
+        "d1_center_spearman": -0.0306
+      }
+    },
+    "H5": {
+      "sample_size": 173,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.732217,
+        "Level_2_Local_Spatial": 0.742636,
+        "Level_3_Spatial_Hetero": 0.743793,
+        "Level_4_Temporal_Change": 0.746979,
+        "Level_5_Structural_Change": 0.747149
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.732217,
+        "Level_2_Local_Spatial": 0.010419,
+        "Level_3_Spatial_Hetero": 0.001157,
+        "Level_4_Temporal_Change": 0.003186,
+        "Level_5_Structural_Change": 0.000169
+      },
+      "f_test_p_values": {
+        "Level_2": 0.009497722562822478,
+        "Level_3": 0.6848095138208145,
+        "Level_4": 0.3539424581131141,
+        "Level_5": 0.7399645902227489
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1973,
+        "local_3x3_mean_spearman": 0.1585,
+        "d1_center_pearson": -0.1536,
+        "d1_center_spearman": 0.0536
+      }
+    },
+    "H6": {
+      "sample_size": 173,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.581001,
+        "Level_2_Local_Spatial": 0.600791,
+        "Level_3_Spatial_Hetero": 0.605618,
+        "Level_4_Temporal_Change": 0.612001,
+        "Level_5_Structural_Change": 0.612692
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.581001,
+        "Level_2_Local_Spatial": 0.019789,
+        "Level_3_Spatial_Hetero": 0.004828,
+        "Level_4_Temporal_Change": 0.006383,
+        "Level_5_Structural_Change": 0.00069
+      },
+      "f_test_p_values": {
+        "Level_2": 0.004187003909137019,
+        "Level_3": 0.3598583657293663,
+        "Level_4": 0.25812039716837726,
+        "Level_5": 0.5883098756050578
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.2173,
+        "local_3x3_mean_spearman": 0.151,
+        "d1_center_pearson": -0.0894,
+        "d1_center_spearman": -0.0006
+      }
+    },
+    "H1\u2013H3": {
+      "sample_size": 519,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.67564,
+        "Level_2_Local_Spatial": 0.679387,
+        "Level_3_Spatial_Hetero": 0.68156,
+        "Level_4_Temporal_Change": 0.682791,
+        "Level_5_Structural_Change": 0.684002
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.67564,
+        "Level_2_Local_Spatial": 0.003747,
+        "Level_3_Spatial_Hetero": 0.002174,
+        "Level_4_Temporal_Change": 0.001231,
+        "Level_5_Structural_Change": 0.001212
+      },
+      "f_test_p_values": {
+        "Level_2": 0.01439371969460397,
+        "Level_3": 0.17406544305585853,
+        "Level_4": 0.3711508276838327,
+        "Level_5": 0.16220623554595018
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1075,
+        "local_3x3_mean_spearman": 0.1336,
+        "d1_center_pearson": 0.0037,
+        "d1_center_spearman": 0.0392
+      }
+    },
+    "H4\u2013H6": {
+      "sample_size": 519,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.654595,
+        "Level_2_Local_Spatial": 0.665149,
+        "Level_3_Spatial_Hetero": 0.666566,
+        "Level_4_Temporal_Change": 0.668486,
+        "Level_5_Structural_Change": 0.668714
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.654595,
+        "Level_2_Local_Spatial": 0.010554,
+        "Level_3_Spatial_Hetero": 0.001416,
+        "Level_4_Temporal_Change": 0.001921,
+        "Level_5_Structural_Change": 0.000228
+      },
+      "f_test_p_values": {
+        "Level_2": 6.341936094436496e-05,
+        "Level_3": 0.33642618448391176,
+        "Level_4": 0.2279190791718429,
+        "Level_5": 0.5531218188201769
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1748,
+        "local_3x3_mean_spearman": 0.1135,
+        "d1_center_pearson": -0.1045,
+        "d1_center_spearman": 0.0023
+      }
+    },
+    "H7\u2013H12": {
+      "sample_size": 1038,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.691087,
+        "Level_2_Local_Spatial": 0.696957,
+        "Level_3_Spatial_Hetero": 0.698056,
+        "Level_4_Temporal_Change": 0.69844,
+        "Level_5_Structural_Change": 0.699437
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.691087,
+        "Level_2_Local_Spatial": 0.00587,
+        "Level_3_Spatial_Hetero": 0.001099,
+        "Level_4_Temporal_Change": 0.000384,
+        "Level_5_Structural_Change": 0.000997
+      },
+      "f_test_p_values": {
+        "Level_2": 8.386816132475664e-06,
+        "Level_3": 0.15313005749218045,
+        "Level_4": 0.5191916796147784,
+        "Level_5": 0.06481778359024305
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.1379,
+        "local_3x3_mean_spearman": 0.155,
+        "d1_center_pearson": -0.0332,
+        "d1_center_spearman": 0.0125
+      }
+    },
+    "H13\u2013H18": {
+      "sample_size": 1038,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.674218,
+        "Level_2_Local_Spatial": 0.687729,
+        "Level_3_Spatial_Hetero": 0.688608,
+        "Level_4_Temporal_Change": 0.68922,
+        "Level_5_Structural_Change": 0.689327
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.674218,
+        "Level_2_Local_Spatial": 0.01351,
+        "Level_3_Spatial_Hetero": 0.000879,
+        "Level_4_Temporal_Change": 0.000612,
+        "Level_5_Structural_Change": 0.000106
+      },
+      "f_test_p_values": {
+        "Level_2": 3.60713683984355e-11,
+        "Level_3": 0.23311335243985776,
+        "Level_4": 0.362507279431457,
+        "Level_5": 0.5525942332945875
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.2036,
+        "local_3x3_mean_spearman": 0.2491,
+        "d1_center_pearson": -0.0606,
+        "d1_center_spearman": -0.0011
+      }
+    },
+    "H19\u2013H24": {
+      "sample_size": 865,
+      "cumulative_r2": {
+        "Level_1_Current_State": 0.689359,
+        "Level_2_Local_Spatial": 0.703386,
+        "Level_3_Spatial_Hetero": 0.705868,
+        "Level_4_Temporal_Change": 0.707428,
+        "Level_5_Structural_Change": 0.70758
+      },
+      "incremental_r2": {
+        "Level_1_Current_State": 0.689359,
+        "Level_2_Local_Spatial": 0.014027,
+        "Level_3_Spatial_Hetero": 0.002481,
+        "Level_4_Temporal_Change": 0.00156,
+        "Level_5_Structural_Change": 0.000152
+      },
+      "f_test_p_values": {
+        "Level_2": 2.8036286195441564e-10,
+        "Level_3": 0.026994756574859658,
+        "Level_4": 0.10208307431570136,
+        "Level_5": 0.504378553278898
+      },
+      "individual_partial_corrs": {
+        "local_3x3_mean_pearson": 0.2125,
+        "local_3x3_mean_spearman": 0.237,
+        "d1_center_pearson": -0.0944,
+        "d1_center_spearman": 0.0228
+      }
+    }
+  },
+  "sw_in_error_association_audit": {
+    "21x21 Std": {
+      "spearman_rho_raw": 0.1771,
+      "p_value_raw": 4.525889644701632e-17,
+      "partial_corr_given_center_pearson": 0.185,
+      "partial_corr_given_center_spearman": 0.1657,
+      "double_residual_spearman_given_center_and_3x3": 0.1396,
+      "p_value_double_residual": 4.165926573516852e-11,
+      "bh_adjusted_p_value": 1.3577668934104897e-16,
+      "is_significant_fdr_05": true
+    },
+    "21x21 Spatial Gradient": {
+      "spearman_rho_raw": 0.1873,
+      "p_value_raw": 5.958110453458735e-19,
+      "partial_corr_given_center_pearson": 0.215,
+      "partial_corr_given_center_spearman": 0.1766,
+      "double_residual_spearman_given_center_and_3x3": 0.1493,
+      "p_value_double_residual": 1.6353595382911528e-12,
+      "bh_adjusted_p_value": 3.574866272075241e-18,
+      "is_significant_fdr_05": true
+    },
+    "3x3 Local Mean": {
+      "spearman_rho_raw": -0.0833,
+      "p_value_raw": 8.684693767566461e-05,
+      "partial_corr_given_center_pearson": -0.1087,
+      "partial_corr_given_center_spearman": -0.0879,
+      "double_residual_spearman_given_center_and_3x3": 0.0171,
+      "p_value_double_residual": 0.42082905044719027,
+      "bh_adjusted_p_value": 0.00017369387535132923,
+      "is_significant_fdr_05": true
+    },
+    "3x3 Local Contrast": {
+      "spearman_rho_raw": 0.0007,
+      "p_value_raw": 0.9751756068016265,
+      "partial_corr_given_center_pearson": -0.0324,
+      "partial_corr_given_center_spearman": 0.0405,
+      "double_residual_spearman_given_center_and_3x3": 0.0113,
+      "p_value_double_residual": 0.5952620683904617,
+      "bh_adjusted_p_value": 0.9934547927635989,
+      "is_significant_fdr_05": false
+    },
+    "d1 Center Change": {
+      "spearman_rho_raw": 0.015,
+      "p_value_raw": 0.4796166665755735,
+      "partial_corr_given_center_pearson": 0.0391,
+      "partial_corr_given_center_spearman": 0.0286,
+      "double_residual_spearman_given_center_and_3x3": 0.0095,
+      "p_value_double_residual": 0.6543190777891842,
+      "bh_adjusted_p_value": 0.7194249998633603,
+      "is_significant_fdr_05": false
+    },
+    "Spatial Correlation": {
+      "spearman_rho_raw": -0.0002,
+      "p_value_raw": 0.9934547927635988,
+      "partial_corr_given_center_pearson": -0.003,
+      "partial_corr_given_center_spearman": -0.0147,
+      "double_residual_spearman_given_center_and_3x3": -0.009,
+      "p_value_double_residual": 0.6736369332610995,
+      "bh_adjusted_p_value": 0.9934547927635989,
+      "is_significant_fdr_05": false
+    }
+  },
+  "origin_level_robustness": {
+    "num_origins": 173,
+    "l2_r2_inc_median": 0.026182,
+    "l2_r2_inc_iqr": [
+      0.004652,
+      0.08449
+    ],
+    "l2_r2_inc_origin_bootstrap_95ci": [
+      0.018182,
+      0.031602
+    ],
+    "l2_r2_inc_fraction_positive": 0.9595,
+    "local_3x3_spearman_pcorr_median": 0.1577,
+    "local_3x3_spearman_pcorr_iqr": [
+      -0.0359,
+      0.3079
+    ],
+    "local_3x3_spearman_pcorr_bootstrap_95ci": [
+      0.0812,
+      0.2102
+    ],
+    "local_3x3_spearman_pcorr_fraction_positive": 0.703
+  },
+  "null_controls_validation": {
+    "real_descriptor_3x3_mean_spearman_pcorr": 0.1895,
+    "null1_origin_permuted_spearman_pcorr": -0.0115,
+    "null2_unrelated_field_spearman_pcorr": 0.0012,
+    "null3_random_patch_location_spearman_pcorr": 0.1749,
+    "real_beats_null1": true,
+    "real_beats_null2": true,
+    "real_beats_null3": true
+  },
+  "final_decision": {
+    "classification_code": "B \u2014 VALIDATED MODEST / HORIZON-CONDITIONAL INFORMATION",
+    "recommendation": "PROCEED ONLY FOR THE SPECIFIC HORIZON/FIELD REGIMES WHERE ADDITIONAL INFORMATION IS DEMONSTRATED",
+    "spatial_hypothesis_status": "REMAINS OPEN strictly for local station-neighborhood (3x3) representations at short forecast horizons (H1-H6). High-order spatial temporal/structural change features are CLOSED."
+  }
+}

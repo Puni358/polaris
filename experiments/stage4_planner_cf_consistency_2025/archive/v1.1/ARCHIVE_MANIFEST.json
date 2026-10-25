@@ -1,0 +1,186 @@
+{
+  "archive": "v1.1",
+  "status": "completed, non-accepted; sources preserved unchanged",
+  "files": [
+    {
+      "name": "research_numerical_extractor_planner_cf_v1.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py",
+      "archive": "archive/v1.1/research_numerical_extractor_planner_cf_v1.py",
+      "sha256": "b479550e5eabcc7d745b874eee92f15b3e07d63740d20ab82e42081b64d0215a",
+      "original_sha256_before_copy": "b479550e5eabcc7d745b874eee92f15b3e07d63740d20ab82e42081b64d0215a",
+      "pinned_v1_1_sha256": "b479550e5eabcc7d745b874eee92f15b3e07d63740d20ab82e42081b64d0215a",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "planner_cf_audit_gates.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/planner_cf_audit_gates.py",
+      "archive": "archive/v1.1/planner_cf_audit_gates.py",
+      "sha256": "7f72b4f1791bc518af426b18bebd1e4a5ce1cdcde42a127a587c3931eee95123",
+      "original_sha256_before_copy": "7f72b4f1791bc518af426b18bebd1e4a5ce1cdcde42a127a587c3931eee95123",
+      "pinned_v1_1_sha256": "7f72b4f1791bc518af426b18bebd1e4a5ce1cdcde42a127a587c3931eee95123",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "planner_cf_campaign_runner.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/planner_cf_campaign_runner.py",
+      "archive": "archive/v1.1/planner_cf_campaign_runner.py",
+      "sha256": "ea9400bfa11734cd6ab8427c0b6c8b872fedf73811f3cd66e38d6023ed370726",
+      "original_sha256_before_copy": "ea9400bfa11734cd6ab8427c0b6c8b872fedf73811f3cd66e38d6023ed370726",
+      "pinned_v1_1_sha256": "ea9400bfa11734cd6ab8427c0b6c8b872fedf73811f3cd66e38d6023ed370726",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "planner_cf_hash_guards.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/planner_cf_hash_guards.py",
+      "archive": "archive/v1.1/planner_cf_hash_guards.py",
+      "sha256": "defc138da3d56724ffaa74464c4dcb229c31314c956b52840d0bd16d902c57f0",
+      "original_sha256_before_copy": "defc138da3d56724ffaa74464c4dcb229c31314c956b52840d0bd16d902c57f0",
+      "pinned_v1_1_sha256": "defc138da3d56724ffaa74464c4dcb229c31314c956b52840d0bd16d902c57f0",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "planner_cf_statistics.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/planner_cf_statistics.py",
+      "archive": "archive/v1.1/planner_cf_statistics.py",
+      "sha256": "1153bd61749352847423a381ddaa0b9ed1d8724a96730675d2773bcbf21f7bb9",
+      "original_sha256_before_copy": "1153bd61749352847423a381ddaa0b9ed1d8724a96730675d2773bcbf21f7bb9",
+      "pinned_v1_1_sha256": "1153bd61749352847423a381ddaa0b9ed1d8724a96730675d2773bcbf21f7bb9",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "planned_telemetry_harness.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/planned_telemetry_harness.py",
+      "archive": "archive/v1.1/planned_telemetry_harness.py",
+      "sha256": "83fe05ee968dc6448a07d0f904653d79a10ecbf2582dc5935f9267db4bc3e63c",
+      "original_sha256_before_copy": "83fe05ee968dc6448a07d0f904653d79a10ecbf2582dc5935f9267db4bc3e63c",
+      "pinned_v1_1_sha256": "83fe05ee968dc6448a07d0f904653d79a10ecbf2582dc5935f9267db4bc3e63c",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "planned_execution_telemetry.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/planned_execution_telemetry.py",
+      "archive": "archive/v1.1/planned_execution_telemetry.py",
+      "sha256": "bb6dd4bb0c2415a650bd1ed6809fa5627cb193e85aed7fa3b5f9a552147bd3c8",
+      "original_sha256_before_copy": "bb6dd4bb0c2415a650bd1ed6809fa5627cb193e85aed7fa3b5f9a552147bd3c8",
+      "pinned_v1_1_sha256": "bb6dd4bb0c2415a650bd1ed6809fa5627cb193e85aed7fa3b5f9a552147bd3c8",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "oracle_runner.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/oracle_runner.py",
+      "archive": "archive/v1.1/oracle_runner.py",
+      "sha256": "c9d2e6ab86411173b4fca672e491c3661d68a78e9633fa267b7963793a46fba5",
+      "original_sha256_before_copy": "c9d2e6ab86411173b4fca672e491c3661d68a78e9633fa267b7963793a46fba5",
+      "pinned_v1_1_sha256": "c9d2e6ab86411173b4fca672e491c3661d68a78e9633fa267b7963793a46fba5",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "oracle_audit_adapter.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/oracle_audit_adapter.py",
+      "archive": "archive/v1.1/oracle_audit_adapter.py",
+      "sha256": "bba99808f4fc75b1be6efe158abad1cbb8cfc534835804e8eb0d7c996d9acdac",
+      "original_sha256_before_copy": "bba99808f4fc75b1be6efe158abad1cbb8cfc534835804e8eb0d7c996d9acdac",
+      "pinned_v1_1_sha256": "bba99808f4fc75b1be6efe158abad1cbb8cfc534835804e8eb0d7c996d9acdac",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "oracle_driver.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/oracle_driver.py",
+      "archive": "archive/v1.1/oracle_driver.py",
+      "sha256": "9d0e1bcd59f5ef05472610bf926b02e7848caef547ba283dc704945171b98e6d",
+      "original_sha256_before_copy": "9d0e1bcd59f5ef05472610bf926b02e7848caef547ba283dc704945171b98e6d",
+      "pinned_v1_1_sha256": "9d0e1bcd59f5ef05472610bf926b02e7848caef547ba283dc704945171b98e6d",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "forensic_planned_capture.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/forensic_planned_capture.py",
+      "archive": "archive/v1.1/forensic_planned_capture.py",
+      "sha256": "b690f2fedbdd22e68079018e3f9e886f12b1ec93ad5e3c073a1b558e6e437cf9",
+      "original_sha256_before_copy": "b690f2fedbdd22e68079018e3f9e886f12b1ec93ad5e3c073a1b558e6e437cf9",
+      "pinned_v1_1_sha256": "b690f2fedbdd22e68079018e3f9e886f12b1ec93ad5e3c073a1b558e6e437cf9",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "run_control_only.py",
+      "original": "experiments/stage4_planner_cf_consistency_2025/run_control_only.py",
+      "archive": "archive/v1.1/run_control_only.py",
+      "sha256": "5c2888b6d24e9e20a51171f3e667ffb46b700832e0b2193c1ba8e1aa35690640",
+      "original_sha256_before_copy": "5c2888b6d24e9e20a51171f3e667ffb46b700832e0b2193c1ba8e1aa35690640",
+      "pinned_v1_1_sha256": null,
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "test_planner_cf_v1.py",
+      "original": "tests/test_planner_cf_v1.py",
+      "archive": "archive/v1.1/tests/test_planner_cf_v1.py",
+      "sha256": "63adfe363c59db7dbfda148d270062694fe107a4f7bc19c27b22d10ac295771a",
+      "original_sha256_before_copy": "63adfe363c59db7dbfda148d270062694fe107a4f7bc19c27b22d10ac295771a",
+      "pinned_v1_1_sha256": "63adfe363c59db7dbfda148d270062694fe107a4f7bc19c27b22d10ac295771a",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "test_planned_execution_g23.py",
+      "original": "tests/test_planned_execution_g23.py",
+      "archive": "archive/v1.1/tests/test_planned_execution_g23.py",
+      "sha256": "ac5cec1652496bb1d12ab7f087019add134963d581f9d5e48d4ed4c46b0ed558",
+      "original_sha256_before_copy": "ac5cec1652496bb1d12ab7f087019add134963d581f9d5e48d4ed4c46b0ed558",
+      "pinned_v1_1_sha256": "ac5cec1652496bb1d12ab7f087019add134963d581f9d5e48d4ed4c46b0ed558",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "test_planner_cf_campaign_infra.py",
+      "original": "tests/test_planner_cf_campaign_infra.py",
+      "archive": "archive/v1.1/tests/test_planner_cf_campaign_infra.py",
+      "sha256": "43e11f1a51f21cec58d07e8811824597163c9bedf6092c39d1ca8935fb95cb81",
+      "original_sha256_before_copy": "43e11f1a51f21cec58d07e8811824597163c9bedf6092c39d1ca8935fb95cb81",
+      "pinned_v1_1_sha256": "43e11f1a51f21cec58d07e8811824597163c9bedf6092c39d1ca8935fb95cb81",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "test_planner_cf_closed_loop_synthetic.py",
+      "original": "tests/test_planner_cf_closed_loop_synthetic.py",
+      "archive": "archive/v1.1/tests/test_planner_cf_closed_loop_synthetic.py",
+      "sha256": "a6d5484da049596e01593d1d5a39cc33b28a7e5e4f2626320df3fe48aea9390d",
+      "original_sha256_before_copy": "a6d5484da049596e01593d1d5a39cc33b28a7e5e4f2626320df3fe48aea9390d",
+      "pinned_v1_1_sha256": "a6d5484da049596e01593d1d5a39cc33b28a7e5e4f2626320df3fe48aea9390d",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "test_oracle_driver.py",
+      "original": "tests/test_oracle_driver.py",
+      "archive": "archive/v1.1/tests/test_oracle_driver.py",
+      "sha256": "cafadd310df5139bdded2bd7382973b53ef1b09e1f183cf0d78c5a5908a55cc8",
+      "original_sha256_before_copy": "cafadd310df5139bdded2bd7382973b53ef1b09e1f183cf0d78c5a5908a55cc8",
+      "pinned_v1_1_sha256": "cafadd310df5139bdded2bd7382973b53ef1b09e1f183cf0d78c5a5908a55cc8",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    },
+    {
+      "name": "test_forensic_planned_capture.py",
+      "original": "tests/test_forensic_planned_capture.py",
+      "archive": "archive/v1.1/tests/test_forensic_planned_capture.py",
+      "sha256": "bb08a9e145435f06f8202ca078e439427264d871219be70bf75a76601844a21b",
+      "original_sha256_before_copy": "bb08a9e145435f06f8202ca078e439427264d871219be70bf75a76601844a21b",
+      "pinned_v1_1_sha256": "bb08a9e145435f06f8202ca078e439427264d871219be70bf75a76601844a21b",
+      "archive_matches_original": true,
+      "archive_matches_pin": true
+    }
+  ]
+}

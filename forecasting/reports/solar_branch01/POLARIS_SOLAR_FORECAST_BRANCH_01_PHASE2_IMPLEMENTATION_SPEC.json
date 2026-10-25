@@ -1,0 +1,39 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "specification_phase": "PHASE_2_IMPLEMENTATION_SPECIFICATION",
+  "version": "1.0.0",
+  "timestamp": "2026-09-21T07:17:40Z",
+  "directory_structure": "forecasting/solar_branch_01/",
+  "ingestion_contracts": {
+    "nuolja_sites_5var": {
+      "file": "(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv",
+      "rows": 8784,
+      "target_col": "SW_IN"
+    },
+    "clearsky_decomposition": {
+      "file": "data/POLARIS_v0_1_clearsky_decomposition.csv",
+      "rows": 8784,
+      "col": "clearsky_ghi"
+    },
+    "arome_cache_21x21": {
+      "dir": "arome_cache_21x21/",
+      "files": 346,
+      "base_issue_utc": "00:00"
+    }
+  },
+  "nwp_coverage_audit_summary": {
+    "total_origins": 8784,
+    "complete_origins": 8784,
+    "coverage_percentage": 100.0,
+    "lead_shifting_rule": "H_effective = H + (t - t_issue)"
+  },
+  "split_embargo_rule": "24h boundary embargo at [split_end - 24h, split_end]",
+  "reproducibility_mandate": "20-point governance rule + process-isolated replay runner",
+  "future_training_gate_prerequisites": [
+    "PHASE2_IMPLEMENTATION_SPECIFICATION == PASS",
+    "IMPLEMENTATION_TESTS == PASS",
+    "MODEL_RUN_MANIFEST_SCHEMA == READY",
+    "REPRODUCIBILITY_CHECKLIST == READY",
+    "EXPLICIT_TRAINING_AUTHORIZATION == GRANTED"
+  ]
+}

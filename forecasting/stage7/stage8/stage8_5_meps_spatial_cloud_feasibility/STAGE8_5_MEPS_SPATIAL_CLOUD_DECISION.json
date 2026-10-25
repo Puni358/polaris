@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-09-12T14:02:03.380500+00:00",
+  "stage": "STAGE 8.5 CAUSAL MEPS SPATIAL CLOUD-ADVECTION EXPERIMENT",
+  "candidate": "Stage 8.1 Champion (37 feats) + Causal MEPS Spatial Cloud/Advection Features (14 feats) = 51 Features",
+  "control_reproduction": {
+    "verified_reproduced_control_mae": 35.270823,
+    "reproduction_pass": true
+  },
+  "candidate_results": {
+    "control_mae_w_m2": 35.270823,
+    "candidate_mae_w_m2": 35.085741,
+    "delta_mae_w_m2": -0.185082,
+    "control_nmae_pct": 36.2419,
+    "candidate_nmae_pct": 36.619,
+    "delta_nmae_pp": 0.3772,
+    "control_rmse_w_m2": 56.761152,
+    "candidate_rmse_w_m2": 56.585549,
+    "delta_rmse_w_m2": -0.175603,
+    "control_bias_w_m2": 2.67498,
+    "candidate_bias_w_m2": 2.583969,
+    "delta_bias_w_m2": -0.091011,
+    "folds_improved": 2,
+    "max_fold_degradation_w_m2": 0.090224
+  },
+  "gates": {
+    "gate1_primary_mae": {
+      "required_delta_w_m2": -0.5,
+      "actual_delta_w_m2": -0.185082,
+      "pass": false
+    },
+    "gate2_folds_ge_4": {
+      "required_folds": 4,
+      "actual_folds": 2,
+      "pass": false
+    },
+    "gate3_degrad_le_0_5": {
+      "threshold_w_m2": 0.5,
+      "actual_w_m2": 0.090224,
+      "pass": true
+    },
+    "gate4_nmae_rmse_consistency": {
+      "pass": false
+    },
+    "gate5_causality": {
+      "pass": true
+    },
+    "gate6_control_reproduction": {
+      "pass": true
+    }
+  },
+  "all_gates_pass": false,
+  "final_decision": "REJECTED / FAIL EVEN GATES",
+  "odd_governance": {
+    "odd_target_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_tuning": false
+  }
+}

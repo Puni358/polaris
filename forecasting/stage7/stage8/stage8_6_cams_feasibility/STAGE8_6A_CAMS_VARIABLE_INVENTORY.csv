@@ -1,0 +1,3 @@
+variable_name,shortName,paramId,field_type,units,fill_value,physical_description,empirical_retrieved_count,stats_min_median_max
+total_aerosol_optical_depth_550nm,aod550,210207,forecast,dimensionless (~),9999.0 / NaN,Total aerosol optical depth at 550nm,8328,0.000806 / 0.035208 / 0.997614
+total_column_water_vapour,tcwv,137,forecast,kg m**-2,9999.0 / NaN,Total column vertically-integrated water vapour,8328,1.2728 / 7.9491 / 28.4828 kg/m^2

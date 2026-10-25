@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-09-13T02:52:00+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 — POST-PROMOTION NUMERICAL INTEGRITY AUDIT",
+  "audit_status": "POST-PROMOTION NUMERICAL INTEGRITY: PASS",
+  "all_10_consistency_checks_passed": true,
+  "discrepancy_reconciliations": {
+    "discrepancy_A_RMSE": {
+      "question": "Why is candidate RMSE 63.764094 W/m2 instead of earlier 64.230507 W/m2?",
+      "explanation": "64.230507 W/m2 was the candidate RMSE under the refit Stage 4 baseline protocol (where Stage 4 parameters were fit on EVEN origins, producing Control RMSE 65.083569 W/m2). 63.764094 W/m2 is the candidate RMSE under the official globally frozen Stage 4 baseline protocol (where ensemble_parameters.json was used without refitting, producing Control RMSE 64.219495 W/m2). Both values are 100% deterministically reproducible under their respective baseline protocols.",
+      "refit_protocol_candidate_rmse_w_m2": 64.230507,
+      "frozen_protocol_candidate_rmse_w_m2": 63.764094,
+      "frozen_protocol_delta_rmse_w_m2": -0.455401,
+      "verified": true
+    },
+    "discrepancy_B_bootstrap_mean": {
+      "question": "Why is bootstrap mean delta MAE -0.402099 W/m2 instead of earlier -0.413599 W/m2 for CI [-0.759039, -0.046315] W/m2?",
+      "explanation": "-0.413599 W/m2 (CI [-0.758142, -0.076533]) was the paired origin-level bootstrap mean under the refit Stage 4 baseline protocol. -0.402099 W/m2 (CI [-0.759039, -0.046315]) is the paired origin-level bootstrap mean under the official globally frozen Stage 4 baseline protocol (10,000 resamples, seed=42). The CI [-0.759039, -0.046315] belongs strictly and deterministically to the -0.402099 W/m2 mean under the frozen protocol.",
+      "refit_protocol_bootstrap_mean_w_m2": -0.413599,
+      "refit_protocol_bootstrap_95_ci_w_m2": [-0.758142, -0.076533],
+      "frozen_protocol_bootstrap_mean_w_m2": -0.402099,
+      "frozen_protocol_bootstrap_95_ci_w_m2": [-0.759039, -0.046315],
+      "frozen_protocol_pct_improving": 98.59,
+      "verified": true
+    }
+  },
+  "authoritative_promoted_metrics": {
+    "model_name": "Stage 8.16B-2 Stage 8.1 + phi_inconsist Model",
+    "official_control": {
+      "daytime_mae_w_m2": 36.188657,
+      "daytime_nmae_pct": 28.0688,
+      "daytime_rmse_w_m2": 64.219495,
+      "daytime_bias_w_m2": 1.439399,
+      "night_mae_w_m2": 0.0
+    },
+    "promoted_candidate": {
+      "daytime_mae_w_m2": 35.727549,
+      "daytime_nmae_pct": 27.7111,
+      "daytime_rmse_w_m2": 63.764094,
+      "daytime_bias_w_m2": 2.120119,
+      "night_mae_w_m2": 0.0
+    },
+    "held_out_deltas": {
+      "delta_mae_w_m2": -0.461108,
+      "delta_nmae_pct": -0.3576,
+      "delta_rmse_w_m2": -0.455401
+    },
+    "bootstrap": {
+      "resamples": 10000,
+      "seed": 42,
+      "mean_delta_mae_w_m2": -0.402099,
+      "ci_95_lower_w_m2": -0.759039,
+      "ci_95_upper_w_m2": -0.046315,
+      "pct_improving": 98.59
+    }
+  },
+  "consistency_checks": {
+    "c1_mae_delta_arithmetic": true,
+    "c2_nmae_delta_arithmetic": true,
+    "c3_rmse_delta_arithmetic": true,
+    "c4_bootstrap_paired_origins": true,
+    "c5_candidate_vector_frozen": true,
+    "c6_control_vector_historical_official": true,
+    "c7_odd_counts_unchanged": true,
+    "c8_daytime_mask_unchanged": true,
+    "c9_night_causally_zeroed": true,
+    "c10_no_odd_tuning": true
+  },
+  "governance": {
+    "odd_target_reads": 173,
+    "odd_tuning_decisions": 0,
+    "production_champion_modified": false,
+    "polaris_master_handoff_modified": false,
+    "champion_state": "FROZEN_NEW_OFFICIAL_OPERATIONAL_CHAMPION (Stage 8.16B-2 nMAE = 27.7111%)"
+  }
+}

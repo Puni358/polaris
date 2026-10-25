@@ -1,0 +1,2 @@
+GAP_ID,QUESTION,CURRENT_STATUS,CANDIDATE_OPTIONS,EVIDENCE_REQUIRED,IMPLEMENTATION_IMPACT,GOVERNANCE_REQUIRED,STATUS
+GAP19,Lexicographic Multi-Stage Solver Realization,IMPLEMENTATION_DEFERRED,Option A (Sequential 4-pass MILP) | Option B (Solver-native multi-objective API) | Option C (Epsilon penalty encoding),"Multi-pass solver convergence, execution speed, and objective lock numerical stability tests",HIGH (Determines optimizer core structure),Architecture authorization gate required before code implementation,REQUIRES_ARCHITECTURE_DECISION

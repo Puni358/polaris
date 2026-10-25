@@ -1,0 +1,31 @@
+POLARIS STAGE 5.3 — EVIDENCE VALIDATION SUMMARY
+================================================================================
+Date: 2026-09-10
+Status: FINAL / FROZEN
+Audited Champion: Stage 5.2 Architecture A (39.0848 W/m² Daytime MAE / 30.32% nMAE)
+
+Summary of Validation Audit:
+1. Hard-Error Reconciliation:
+   - Stage 4 hard error count (|e4| > 150 W/m²): 210 daytime test hours (MAE = 213.87 W/m²).
+   - Converted below 150 W/m² by Arch A: 55 daytime test hours (26.2%).
+   - Remained above 150 W/m² after Arch A: 158 daytime test hours (75.2%).
+   - Arch A total hard error count (|eA| > 150 W/m²): 180 daytime test hours (MAE = 210.52 W/m²).
+   - Ambiguity resolved: 210 was Stage 4 count, 180 is Arch A count.
+
+2. Gain Concentration & Gain Definition:
+   - 45.3% of daytime hours improved, 31.5% worsened, 23.1% unchanged (night/zero).
+   - Top 5% of daytime hours account for 73.0% of net MAE reduction (concentrated gains).
+
+3. Autocorrelation & Actionability Audit:
+   - Claim that "lag-1 ACF = +0.284 proves actionable structure remains" is REJECTED.
+   - Cross-check with Stage 4.5/4.6 proves prior causal out-of-sample evaluations did not establish that this residual structure is operationally exploitable at forecast issuance time t0.
+
+4. Decision Gate Re-Evaluation:
+   - Interim DECISION B (build Stage 5.4 GBDT stacker) is REJECTED.
+   - Formal Gate Selected: DECISION C ("Structure remains statistically detectable in specific high-flux regimes, but does NOT appear operationally exploitable using available 1D NWP and surface inputs without new physical observation sources").
+
+5. Next Action:
+   - Stage 5.4 GBDT model building is UNJUSTIFIED and STOPPED.
+   - Irradiance forecasting locked at Stage 5.2 Champion (39.0848 W/m² Daytime MAE).
+   - POLARIS Stage 5.3 is FINAL / FROZEN.
+================================================================================

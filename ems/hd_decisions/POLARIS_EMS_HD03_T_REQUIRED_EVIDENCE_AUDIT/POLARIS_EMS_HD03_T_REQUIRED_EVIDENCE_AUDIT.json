@@ -1,0 +1,38 @@
+{
+  "audit_name": "POLARIS EMS HD-03 T_required Operational Survival Window Evidence Audit",
+  "timestamp": "2026-09-23T06:49:00Z",
+  "governance_scope": {
+    "decision_id": "HD-03",
+    "topic": "Operational Survival Window T_required",
+    "status": "OPEN_DATA_AND_GOVERNANCE_REQUIRED"
+  },
+  "closed_baseline_decisions": {
+    "HD-01A": "EBR = CRITICAL_LOAD_BASED_DYNAMIC",
+    "HD-01B": "EBR resilience interval N = 6 HOURS",
+    "HD-02": "Terminal target derived from EBR at MPC boundary",
+    "HD-04": "Option A Zero-Renewable Emergency Survivability Baseline through T_required",
+    "HD-05": "Normal 5% relative extra-fuel tolerance; Emergency degradation subordinate",
+    "E3_policy": "In emergency mode, dynamically preserve resource with larger survivability margin"
+  },
+  "classifications": {
+    "HD03_AUTHORITATIVE_VALUE": "ABSENT",
+    "HD03_AUTHORITATIVE_SOURCE": "ABSENT",
+    "HD03_RESUPPLY_SCHEDULE": "ABSENT",
+    "HD03_RECOVERY_WINDOW": "ABSENT",
+    "HD03_STATION_AUTONOMY_REQUIREMENT": "ABSENT",
+    "HD03_MISSION_CONSTRAINT": "ABSENT",
+    "HD03_NUMERICAL_DERIVATION": "NOT_POSSIBLE",
+    "HD03_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD03_POLICY_STATUS": "GOVERNANCE_DECISION_REQUIRED",
+    "HD03_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD03_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "HD-04_IMPLEMENTATION_BLOCKED_BY_HD03": "YES"
+  },
+  "final_verdict": {
+    "verdict_conclusion": "CONCLUSION_C_NO_DATA_AND_GOVERNANCE_REQUIRED",
+    "HD03_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "exact_missing_input": "Authoritative station resupply schedule, fuel logistics delivery contract, or station-specific operational recovery window",
+    "HD03_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD03_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "phase": "PHASE9_CANDIDATE_DESIGN_CHECKPOINT",
+  "scoping_note": "Five handoff files contain predictions/errors/metadata only, not the raw Stage 8.1 feature matrix. This limits empirical testing in this session to calendar, horizon, and cross-model-disagreement signals.",
+  "candidate_1_calendar_bias_correction": {
+    "target": "H9-H12 Apr-May systematic negative bias",
+    "tests_run": [
+      {
+        "method": "in_sample_oracle_coarse_bins",
+        "delta_mae_w_m2": 0.35,
+        "verdict": "worse"
+      },
+      {
+        "method": "in_sample_oracle_narrow_scope_apr_may_h9_12_only",
+        "delta_mae_w_m2": -0.27,
+        "verdict": "below G1 threshold (-0.50) even best-case in-sample"
+      },
+      {
+        "method": "in_sample_oracle_finest_grain_month_x_horizon",
+        "delta_mae_w_m2": -1.54,
+        "verdict": "overfitting artifact, not generalizable (~10 obs/bin)"
+      },
+      {
+        "method": "forward_chaining_OOF_ridge_regression",
+        "delta_mae_w_m2": 7.67,
+        "folds_improving": "0/4",
+        "verdict": "fails - single year of data cannot support within-year seasonal forward-chaining"
+      },
+      {
+        "method": "interleaved_kfold_OOF_ridge_regression",
+        "delta_mae_w_m2": 1.28,
+        "folds_improving": "0/5",
+        "worst_fold_degradation": 1.82,
+        "verdict": "fails - fairest test, unambiguous negative result"
+      }
+    ],
+    "gates_passed": {
+      "G1": false,
+      "G2": false
+    },
+    "verdict": "EMPIRICALLY REJECTED"
+  },
+  "candidate_2_cross_model_disagreement": {
+    "target": "t0-available uncertainty/regime flag",
+    "test": "correlation of |HGB - Dynamic Ensemble Hybrid disagreement| vs |HGB abs error|",
+    "result_abs_correlation": 0.41,
+    "result_signed_correlation_pearson": -0.118,
+    "result_signed_correlation_spearman": -0.072,
+    "verdict": "real t0-causal signal confirmed, but magnitude-only (no reliable direction) -> not a standalone MAE-reduction mechanism; supports Candidate 3's plausibility"
+  },
+  "candidate_3_nwp_volatility_aware_modeling": {
+    "target": "H9-H12 error via its strongest correlate: within-day irradiance volatility (r=0.73 from Phase 3)",
+    "status": "NOT TESTABLE - requires raw MEPS cloud fraction/LWP/IWP forecast trajectories, not present in the five handoff files",
+    "theoretical_ranking": "best-targeted hypothesis, reuses already-approved Stage 3B+ feature sources (not new feature research)",
+    "blocker": "data access - Stage 8.1 training feature matrix not included in handoff package"
+  },
+  "ranking": [
+    {
+      "rank": "A",
+      "candidate": "NWP-forecast-volatility-aware regime modeling",
+      "status": "theoretically best, blocked on data access"
+    },
+    {
+      "rank": "B",
+      "candidate": "Cross-model disagreement uncertainty signal",
+      "status": "real but partial (magnitude-only)"
+    },
+    {
+      "rank": "C",
+      "candidate": "Calendar/shoulder-season residual bias correction",
+      "status": "empirically rejected"
+    }
+  ],
+  "other_candidates_considered": {
+    "horizon_gated_ensemble_H1_H3_foundation_models": "deprioritized - H1-H5 only 5.2% of total error, Phase 5 showed no reliable advantage on matched dates",
+    "mixture_of_experts_horizon_specific_model": "reduces to Candidate 1 or Candidate 3 depending on signal used; no independently new information"
+  },
+  "recommendation": "NO EVEN EXPERIMENT PREREGISTERED. Candidate 1 (only fully-testable candidate) is empirically rejected under honest OOF validation. Candidate 3 (best theoretical candidate) requires a data-access request for the Stage 8.1 raw feature matrix before it can be preregistered.",
+  "odd_accessed": false,
+  "status": "PHASE_7_COMPLETE_NO_ROBUST_TESTABLE_IMPROVEMENT_FOUND",
+  "next_action_recommended": "request Stage 8.1 training feature matrix / per-origin MEPS cloud fraction-LWP-IWP forecast trajectories to unblock Candidate 3 evaluation"
+}

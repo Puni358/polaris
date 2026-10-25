@@ -1,0 +1,10 @@
+{
+  "scenario": "synthetic_168h_endurance_scenario.json",
+  "ecd_t_required_hours": 0.05,
+  "controllers": [
+    "reactive_hybrid_a2",
+    "milp"
+  ],
+  "steps_per_controller": 168,
+  "output_dir": "/home/punith-bs/01polaris (Copy)/PILOT_168H_FUEL_AWARE_MILP_VS_REACTIVE_A2"
+}

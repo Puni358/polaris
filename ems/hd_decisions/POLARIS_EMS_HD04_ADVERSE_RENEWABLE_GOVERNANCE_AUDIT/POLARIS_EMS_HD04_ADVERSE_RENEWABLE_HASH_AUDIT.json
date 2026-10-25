@@ -1,0 +1,23 @@
+{
+  "audit_name": "POLARIS EMS HD-04 Adverse Renewable Hash Audit",
+  "timestamp": "2026-09-23T05:20:00Z",
+  "audited_files": [
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "purpose": "MILP solver implementation using point forecasts for solar and wind",
+      "key_lines": {
+        "solar_forecast": "Line 68: solar_gen = forecast_bundle.solar_generation.point",
+        "wind_forecast": "Line 69: wind_gen = forecast_bundle.wind_generation.point"
+      }
+    },
+    {
+      "path": "POLARIS_EMS_HD04_ADVERSE_RENEWABLE_AUDIT/HD04_ADVERSE_RENEWABLE_AUDIT.md",
+      "purpose": "Prior HD-04 evidence audit documenting zero-renewable proposal",
+      "key_lines": {
+        "proposal_status": "Line 54: Existing engineering proposal",
+        "human_decision_register": "Line 182: HD-04B Zero-Renewable Baseline Auth marked OPEN"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

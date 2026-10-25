@@ -1,0 +1,8 @@
+File Name,Relative Path,Textual Diff Summary,Semantic Diff Summary,Config Value Diff,Formatting / Whitespace Diff,Impact on EMS / Objectives / V2 Evidence
+milp.py,system/optimization/implementations/milp.py,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,NONE. 100% byte-for-byte identical to baseline frozen solver.
+battery.yaml,system/config/battery.yaml,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,NONE. File on disk is byte-for-byte identical to baseline.
+diesel.yaml,system/config/diesel.yaml,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,NONE. File on disk is byte-for-byte identical to baseline.
+loads.yaml,system/config/loads.yaml,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,NONE. File on disk is byte-for-byte identical to baseline.
+optimizer.yaml,system/config/optimizer.yaml,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,ZERO_DIFF,NONE. File on disk is byte-for-byte identical to baseline.
+POLARIS_EMS_GOVERNANCE_REVIEW.md,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_GOVERNANCE_REVIEW.md,Replaced 4000L statement in Section 6,Removed over-strong 4000L claim; added 16000:1 ratio clarification & 3-quantity distinction,NONE,Formatting preserved,NONE. Documentation correction only; aligns text with math.
+POLARIS_EMS_OBJECTIVE_SPECIFICATION.md,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_OBJECTIVE_SPECIFICATION.md,Added ratio boundary clarification in Section 19,Clarified that 16000:1 is an objective cost coefficient ratio,NONE,Formatting preserved,NONE. Documentation correction only; aligns text with math.

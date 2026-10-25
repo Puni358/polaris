@@ -1,0 +1,7 @@
+finding_id,category,description,severity,status,affected_gate
+FINDING_001,Artifact Provenance,"All 8 Phase 2 deliverables exist, are non-empty, and match SHA-256 hashes",PASS,RESOLVED,PHASE2_ARTIFACT_HASH_VERIFICATION
+FINDING_002,NWP Coverage Verification,"Independent verification confirms 100.0% coverage across 8784 origins via 00:00 UTC base issue runs and lead shifting (1h to 42h)",PASS,UPGRADED_TO_PASS,NWP_LEAD_COVERAGE
+FINDING_003,Stage 8.1 Firewall,s81_solar.py and Stage 8.1 champion files remain 100% untouched and isolated under forecasting/solar_branch_01/,PASS,RESOLVED,STAGE8_1_FIREWALL
+FINDING_004,Branch Isolation,Branch 01 implementation design is fully scoped inside forecasting/solar_branch_01/ namespace,PASS,RESOLVED,BRANCH_ISOLATION
+FINDING_005,Split Embargo Protection,24h horizon embargo rule at [split_end - 24h, split_end] prevents 24h target leakage across split boundaries,PASS,RESOLVED,SPLIT_BOUNDARY_INTEGRITY
+FINDING_006,Execution Firewall,"NEW_MODEL_TRAINED = NO, NEW_MODEL_INFERRED = NO, EMS_MODIFIED = NO. Zero training or EMS execution occurred",PASS,RESOLVED,EXECUTION_FIREWALL

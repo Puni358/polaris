@@ -1,0 +1,6 @@
+Decision_SubID,Decision_Title,Status,Evidence_Summary,Open_Human_Decision,Implementation_Impact
+HD-04A,Credit Renewable Generation in Survivability,OPEN,Zero renewable vs quantile forecast evaluated,Select whether detector credits any future renewables,Defines detector survivability math
+HD-04B,Zero-Renewable Baseline Authorization,OPEN,P=0 is technically valid conservative floor,Approve Zero Renewable Baseline for detector,Sets P_solar=0 P_wind=0 in detector
+HD-04C,Uniform Solar & Wind Assumption,OPEN,Solar & wind derating can be symmetric or separate,Select uniform vs technology-specific adverse rules,Determines if solar/wind have separate deratings
+HD-04D,Detector-Local Isolation,OPEN,Pre-solve separation keeps normal MPC 100% clean,Approve strict pre-solve detector-local isolation,Guarantees zero contamination of MPC
+HD-04E,Future Governance Replacement Rule,OPEN,Detector architecture easily swaps adverse rule,Define process for updating adverse rule in future,Allows modular policy updates

@@ -1,0 +1,25 @@
+{
+  "manifest_version": "1.0",
+  "created_timestamp_iso": "2026-10-07 23:32:03 UTC",
+  "total_runtime_s": 16.326777458190918,
+  "experiment_verdict": "PASS",
+  "hashes": {
+    "population_hash": "7c81256f12630a2ef2e30ccfa5a7edf697f7a1717ca8c90df60440c61def9c35",
+    "input_hash": "dcabbfa272adeb6e9592e07d3d02decb689ec52b2e0097e43c4e0e9962cf19f1",
+    "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b",
+    "base_configuration_hash": "e4ef245e7f99c6056be067939c1f325a727c0feaa3894cb657944121d207b829",
+    "terminal_only_configuration_hash": "e6c9a6fe313552fb09838be72d751f8d1ee3cb6e28e516427fdb538eb01032f7"
+  },
+  "artifact_file_hashes": {
+    "EXPERIMENT_DEFINITION.json": "7d653d0c139ddd6af957157b784511eb8647c83b603f2dd77dd1322a7bf13a3f",
+    "FORMULATION_CONFIG.json": "8e180ff11f1b005f1a30bc07e2cc87649f02b7811d292c75341f0dc4590d6eb3",
+    "POPULATION_INPUT_MANIFEST.json": "b142b9495cbda05796035eef10c7a6365b0acaae5b637b3417f365d8c7b04cc8",
+    "SOLVER_SETTINGS.json": "bf28367c9edfd12b7eac0db8323106e691c8e93997309fe595d303bc41f490a9",
+    "PER_ORIGIN_RESULTS.json": "ffecb73c45e1fd541dd6b95b0bd1ff982f42823bdd4a071e9babaf9dbab32e5a",
+    "PER_ORIGIN_RESULTS.csv": "9ec75676a04337de8f6534b6bccdd540fc9388cb9f5f6a7c72f172d80393f221",
+    "AGGREGATE_RESULTS.json": "ab4ad7004b5849f0b723be09cb7a3775cf8844b21cf936ae4c04c7ce9e70b327",
+    "INDEPENDENT_CHECKS_SUMMARY.json": "e9304f1c4095c9bff6b90e40e37c2c06d784e4e830a13e86ab41d08db94e06d2",
+    "FINAL_REPORT.md": "9efc7ef7db94e6ff1ab8769481b073f5ade59510eb2e9033ef4a7a8b814450f9",
+    "global_lower_bound_terminal_only_research.py": "6c9e3969d15ef7073a9d5f322b1be3e8bccfce714ee8cf48d2803284eb9e362a"
+  }
+}

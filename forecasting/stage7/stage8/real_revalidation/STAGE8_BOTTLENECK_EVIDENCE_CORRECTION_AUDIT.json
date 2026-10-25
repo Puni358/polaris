@@ -1,0 +1,37 @@
+{
+  "audit_type": "STAGE 8 BOTTLENECK EVIDENCE CORRECTION AUDIT",
+  "timestamp": "2026-09-12T18:20:00Z",
+  "corrections": [
+    {
+      "topic": "Stage 8.6 CAMS Aerosol Route",
+      "ai_statement": "CAMS AOD550 was never taken to a forecasting experiment.",
+      "actual_repository_fact": "Stage 8.6B WAS EXECUTED and REJECTED. CAMS AOD550 and TCWV were extracted for 347 origins and evaluated under 5-fold EVEN CV. Candidate EVEN MAE was 37.867306 W/m2 vs Control 37.620054 W/m2 (+0.247252 W/m2 degradation). Failed 4 of 6 decision gates.",
+      "provenance_files": [
+        "stage7/stage8/stage8_6_cams_feasibility/STAGE8_6B_CAMS_EXPERIMENT_REPORT.md",
+        "stage7/stage8/stage8_6_cams_feasibility/STAGE8_6_FINAL_DECISION.json"
+      ],
+      "correction_status": "FACTUALLY INCORRECT — CAMS IS CLOSED_REJECTED"
+    },
+    {
+      "topic": "Stage 8.7 DNI Direct/Diffuse Two-Head Architecture",
+      "ai_statement": "Omitted from bottleneck evidence analysis.",
+      "actual_repository_fact": "Stage 8.7 tested MEPS DNI-anchored direct/diffuse proxy decomposition. EVEN CV candidate MAE degraded by +11.825787 W/m2 (49.445841 vs 37.620054 W/m2 control), 0/5 folds improved.",
+      "provenance_files": [
+        "stage7/stage8/stage8_7_dni_two_head/STAGE8_7_FINAL_DECISION.json",
+        "stage7/stage8/stage8_7_dni_two_head/STAGE8_7B_EXPERIMENT_REPORT.md"
+      ],
+      "correction_status": "OMITTED — STAGE 8.7 IS CLOSED_REJECTED"
+    },
+    {
+      "topic": "Stage 8.9A Independent Cloud Feasibility",
+      "ai_statement": "Omitted or treated as an unexamined open route.",
+      "actual_repository_fact": "Stage 8.9A systematically evaluated 6 candidate independent cloud data sources (NASA VIIRS, Meteosat SEVIRI/MTG, Ceilometer, All-Sky Imager, Cloud Motion Vectors). All failed feasibility due to dissemination latency (3-8h), polar night optical masking, extreme parallax shift (>20.9 km), or mountainous terrain separation.",
+      "provenance_files": [
+        "stage7/stage8/stage8_9_independent_cloud/STAGE8_9A_DECISION.json",
+        "stage7/stage8/stage8_9_independent_cloud/STAGE8_9A_FEASIBILITY_REPORT.md"
+      ],
+      "correction_status": "OMITTED — STAGE 8.9A IS FAIL_CONFIRMED"
+    }
+  ],
+  "impact_on_route_authorization": "Prevents accidental re-opening of closed/rejected routes (CAMS Stage 8.6, DNI Stage 8.7, Independent Cloud Stage 8.9A) based on incomplete external evidence packets."
+}

@@ -1,0 +1,12 @@
+{
+  "anti_hindsight_pass": true,
+  "total_triggers_evaluated": 473,
+  "allowed_input_classes": [
+    "CURRENT_REALIZED",
+    "CURRENT_PLAN",
+    "CARRIED_STATE"
+  ],
+  "disallowed_input_classes_detected": [],
+  "flagged_event_id_used_as_trigger": false,
+  "future_lookahead_used_in_trigger": false
+}

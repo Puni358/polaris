@@ -1,0 +1,30 @@
+{
+  "csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+  "csv_shape": [
+    8328,
+    45
+  ],
+  "total_origins": 347,
+  "total_origins_pass": true,
+  "rows_per_origin_pass": true,
+  "horizon_hour_values_pass": true,
+  "even_origins": 173,
+  "even_origins_pass": true,
+  "odd_origins": 174,
+  "odd_origins_pass": true,
+  "features_present_pass": true,
+  "static_features_constant_pass": true,
+  "nan_count": 0,
+  "no_nan_pass": true,
+  "even_tensor_shape": [
+    173,
+    24,
+    39
+  ],
+  "even_tensor_shape_pass": true,
+  "model_param_count_actual": 6113,
+  "model_param_count_expected": 6113,
+  "model_param_count_pass": true,
+  "inner_split_seed_formula": "INNER_SPLIT_BASE_SEED + fold_idx",
+  "inner_split_base_seed": 42
+}

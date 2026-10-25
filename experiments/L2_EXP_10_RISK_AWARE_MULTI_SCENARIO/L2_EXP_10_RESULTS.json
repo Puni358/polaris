@@ -1,0 +1,293 @@
+{
+  "experiment_id": "L2-EXP-10",
+  "title": "Risk-Aware Multi-Scenario Trade-Off Optimization",
+  "timestamp_utc": "2026-10-04T10:13:52.518626+00:00",
+  "final_decision": "NO-GO",
+  "governance_status": "NO PRODUCTION PROMOTION AUTHORIZED",
+  "governance_statement": "2024 evaluation outcomes were not used to select, tune, or modify the L2-EXP-10 formulation after pre-registration.",
+  "claims_classification": {
+    "unmet_load_performance": "VERIFIED FAILED — Arm F total realized unmet critical load (79,138.6 Wh) exceeds the primary gate (<= Arm B + 10%, which is 70,406.2 Wh).",
+    "diesel_penalty_reduction": "VERIFIED ACHIEVED — Arm F reduced diesel consumption from 8,691.5 L (Arm D) to 7,224.1 L (Arm F), eliminating the diesel penalty.",
+    "curtailment_advantage": "VERIFIED ACHIEVED — Arm F curtailment (4,476,021.1 Wh) is lower than Arm B (8,853,679.5 Wh).",
+    "battery_cycling_tradeoff": "VERIFIED OBSERVED — Arm F mean EFC is 0.7464 vs 0.7258 (Arm B) and 0.4184 (Arm D).",
+    "safety_and_accounting": "PARTIALLY VERIFIED — Zero SOC-floor violations (lowest SOC 45.28%), but 604 upper bound overcharge occurrences during replay due to power ceiling pass-through."
+  },
+  "gates_status": {
+    "unmet_load_gate_passed": false,
+    "diesel_reduction_gate_passed": true,
+    "curtailment_gate_passed": true,
+    "safety_gate_passed": false
+  },
+  "summary_statistics": {
+    "Arm A (Candidate F Control)": {
+      "total_unmet_wh": 983306.0,
+      "mean_unmet_wh_per_origin": 7994.36,
+      "median_unmet_wh_per_origin": 5411.0,
+      "origins_with_unmet": 110,
+      "mean_reliability_pct": 97.1285,
+      "total_fuel_l": 5270.6051,
+      "mean_fuel_l_per_origin": 42.8504,
+      "total_diesel_on_hours": 316,
+      "total_diesel_startups": 164,
+      "total_curtailment_wh": 4587708.5,
+      "mean_curtailment_wh_per_origin": 37298.44,
+      "mean_efc": 0.641464,
+      "mean_min_soc_pct": 52.26,
+      "lowest_soc_pct": 32.58,
+      "mean_solve_time_s": 0.4298,
+      "p95_solve_time_s": 0.7373,
+      "max_solve_time_s": 12.7391,
+      "total_soc_floor_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm B (Static q10)": {
+      "total_unmet_wh": 64005.6,
+      "mean_unmet_wh_per_origin": 520.37,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 41,
+      "mean_reliability_pct": 99.8131,
+      "total_fuel_l": 7228.2474,
+      "mean_fuel_l_per_origin": 58.7662,
+      "total_diesel_on_hours": 411,
+      "total_diesel_startups": 216,
+      "total_curtailment_wh": 8853679.5,
+      "mean_curtailment_wh_per_origin": 71981.13,
+      "mean_efc": 0.725789,
+      "mean_min_soc_pct": 51.53,
+      "lowest_soc_pct": 38.67,
+      "mean_solve_time_s": 0.4866,
+      "p95_solve_time_s": 0.9653,
+      "max_solve_time_s": 13.6013,
+      "total_soc_floor_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm C (Adaptive Risk Budget)": {
+      "total_unmet_wh": 534374.0,
+      "mean_unmet_wh_per_origin": 4344.5,
+      "median_unmet_wh_per_origin": 2460.5,
+      "origins_with_unmet": 104,
+      "mean_reliability_pct": 98.4395,
+      "total_fuel_l": 5903.7481,
+      "mean_fuel_l_per_origin": 47.998,
+      "total_diesel_on_hours": 349,
+      "total_diesel_startups": 186,
+      "total_curtailment_wh": 5606788.5,
+      "mean_curtailment_wh_per_origin": 45583.65,
+      "mean_efc": 0.663361,
+      "mean_min_soc_pct": 52.89,
+      "lowest_soc_pct": 36.01,
+      "mean_solve_time_s": 0.4305,
+      "p95_solve_time_s": 0.7758,
+      "max_solve_time_s": 12.5546,
+      "total_soc_floor_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm D (Stochastic MILP)": {
+      "total_unmet_wh": 86731.1,
+      "mean_unmet_wh_per_origin": 705.13,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 34,
+      "mean_reliability_pct": 99.7467,
+      "total_fuel_l": 8691.497,
+      "mean_fuel_l_per_origin": 70.6626,
+      "total_diesel_on_hours": 1115,
+      "total_diesel_startups": 163,
+      "total_curtailment_wh": 5752493.6,
+      "mean_curtailment_wh_per_origin": 46768.24,
+      "mean_efc": 0.41845,
+      "mean_min_soc_pct": 20.7,
+      "lowest_soc_pct": 19.61,
+      "mean_solve_time_s": 1.401,
+      "p95_solve_time_s": 1.0935,
+      "max_solve_time_s": 74.5107,
+      "total_soc_floor_violations": 1,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm E (Perfect Foresight)": {
+      "total_unmet_wh": 0.0,
+      "mean_unmet_wh_per_origin": 0.0,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 0,
+      "mean_reliability_pct": 100.0,
+      "total_fuel_l": 5455.7356,
+      "mean_fuel_l_per_origin": 44.3556,
+      "total_diesel_on_hours": 331,
+      "total_diesel_startups": 166,
+      "total_curtailment_wh": 2782470.9,
+      "mean_curtailment_wh_per_origin": 22621.71,
+      "mean_efc": 0.683568,
+      "mean_min_soc_pct": 54.99,
+      "lowest_soc_pct": 45.22,
+      "mean_solve_time_s": 0.3802,
+      "p95_solve_time_s": 0.8204,
+      "max_solve_time_s": 6.1057,
+      "total_soc_floor_violations": 0,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    },
+    "Arm F (Risk-Aware Multi-Scenario)": {
+      "total_unmet_wh": 79138.6,
+      "mean_unmet_wh_per_origin": 643.4,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 45,
+      "mean_reliability_pct": 99.7689,
+      "total_fuel_l": 7224.1162,
+      "mean_fuel_l_per_origin": 58.7327,
+      "total_diesel_on_hours": 410,
+      "total_diesel_startups": 217,
+      "total_curtailment_wh": 4476021.1,
+      "mean_curtailment_wh_per_origin": 36390.42,
+      "mean_efc": 0.746405,
+      "mean_min_soc_pct": 58.81,
+      "lowest_soc_pct": 45.28,
+      "mean_solve_time_s": 1.6268,
+      "p95_solve_time_s": 4.6981,
+      "max_solve_time_s": 5.77,
+      "total_soc_floor_violations": 604,
+      "optimizer_status": "OPTIMAL",
+      "infeasible_origins": 0
+    }
+  },
+  "paired_comparisons": {
+    "F_vs_B": {
+      "delta_unmet_f_minus_ref": {
+        "bootstrap": {
+          "mean": 123.0325,
+          "median": 0.0,
+          "ci_95_lower": 25.9862,
+          "ci_95_upper": 257.1537,
+          "n": 123
+        },
+        "wilcoxon_p": 0.027708
+      },
+      "delta_fuel_f_minus_ref": {
+        "bootstrap": {
+          "mean": -0.0336,
+          "median": 0.0,
+          "ci_95_lower": -0.1008,
+          "ci_95_upper": 0.0,
+          "n": 123
+        },
+        "wilcoxon_p": 0.317311
+      },
+      "delta_curt_f_minus_ref": {
+        "bootstrap": {
+          "mean": -35590.7187,
+          "median": -21501.9,
+          "ci_95_lower": -42030.0683,
+          "ci_95_upper": -29514.9618,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_efc_f_minus_ref": {
+        "bootstrap": {
+          "mean": 0.0206,
+          "median": 0.0344,
+          "ci_95_lower": -0.0176,
+          "ci_95_upper": 0.0549,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      }
+    },
+    "F_vs_D": {
+      "delta_unmet_f_minus_ref": {
+        "bootstrap": {
+          "mean": -61.7276,
+          "median": 0.0,
+          "ci_95_lower": -350.0293,
+          "ci_95_upper": 172.148,
+          "n": 123
+        },
+        "wilcoxon_p": 0.179573
+      },
+      "delta_fuel_f_minus_ref": {
+        "bootstrap": {
+          "mean": -11.9299,
+          "median": -10.9606,
+          "ci_95_lower": -14.1642,
+          "ci_95_upper": -9.7927,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_curt_f_minus_ref": {
+        "bootstrap": {
+          "mean": -10377.8252,
+          "median": -5551.3,
+          "ci_95_lower": -15484.7455,
+          "ci_95_upper": -5306.1203,
+          "n": 123
+        },
+        "wilcoxon_p": 0.000442
+      },
+      "delta_efc_f_minus_ref": {
+        "bootstrap": {
+          "mean": 0.328,
+          "median": 0.3426,
+          "ci_95_lower": 0.2866,
+          "ci_95_upper": 0.3691,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      }
+    },
+    "F_vs_A": {
+      "delta_unmet_f_minus_ref": {
+        "bootstrap": {
+          "mean": -7350.9545,
+          "median": -5265.0,
+          "ci_95_lower": -8879.235,
+          "ci_95_upper": -5918.1203,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_fuel_f_minus_ref": {
+        "bootstrap": {
+          "mean": 15.8822,
+          "median": 15.8452,
+          "ci_95_lower": 14.0715,
+          "ci_95_upper": 17.7042,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "delta_curt_f_minus_ref": {
+        "bootstrap": {
+          "mean": -908.0276,
+          "median": 8111.5,
+          "ci_95_lower": -7682.3829,
+          "ci_95_upper": 5597.3122,
+          "n": 123
+        },
+        "wilcoxon_p": 0.744728
+      },
+      "delta_efc_f_minus_ref": {
+        "bootstrap": {
+          "mean": 0.1049,
+          "median": 0.1561,
+          "ci_95_lower": 0.0598,
+          "ci_95_upper": 0.1455,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      }
+    }
+  },
+  "verified_hashes": {
+    "policy_json": "562ac83943f41458f46dd69ca9532431bc160ef1bfc77f41776bafcb00d25716",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "total_execution_time_seconds": 593.74
+}

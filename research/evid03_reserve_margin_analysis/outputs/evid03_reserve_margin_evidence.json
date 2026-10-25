@@ -1,0 +1,354 @@
+{
+  "analysis": "EVID-03 reserve-shortfall/solar-credit units/horizon/margin evidence",
+  "commissioned_by": "project owner, this pass (2026-10-17), per directive item 1",
+  "scope": "offline, non-campaign, non-replay, non-sealed-data, descriptive-statistics-only",
+  "boundary_statement": "This analysis supplies EMPIRICAL EVIDENCE ONLY. It does not select, propose, recommend, or adopt any numeric reserve-shortfall ceiling or solar-credit cap. Any adoption of a specific number from this evidence into SAF-03, SAF-04, or SAF-05 requires a SEPARATE, explicit owner risk-tolerance decision, not implied by this report's existence.",
+  "existing_constants_cited_not_invented": {
+    "K_PV_W_PER_WM2": 51.0,
+    "P_INV_MAX_W": 60000.0,
+    "ETA_DIS": 0.95,
+    "EBR_BASE_WH": 15000.0,
+    "default_battery_capacity_wh": 200000.0,
+    "default_min_soc_pct": 20.0,
+    "default_min_e_wh_hard_floor": 40000.0,
+    "source_citation": "n6_solar.py and polaris_inference_runner.py (K_PV/P_INV_MAX_W/ETA_DIS/EBR_BASE_WH); system/config/battery.yaml + gap19_highs_native.py defaults (capacity_wh/min_soc_pct)"
+  },
+  "datasets": {
+    "primary": {
+      "dataset_label": "2020_2023_primary",
+      "raw_input_path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "raw_input_sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+      "pceeb_recorded_input_sha256_matches": true,
+      "pceeb_envelope_source_path": "research/pceeb_part_a_offline/outputs/pceeb_quantile_envelope_2020_2023.json",
+      "n_rows_skipped_missing_or_nonnumeric_this_pass": 0,
+      "reserve_shortfall_basis_evidence": {
+        "6h_rolling_ebr_window": {
+          "basis": "6h_rolling_ebr_window (E1)",
+          "lookahead_step_rank": 6,
+          "n_origins": 1369,
+          "source": "PCEEB Part (a) envelope (research/pceeb_part_a_offline/outputs/), read-only",
+          "irradiance_error_quantiles_wh_m2": {
+            "q05": -430.61314,
+            "q10": -272.6148,
+            "q25": -75.0444,
+            "q50": 0.0,
+            "q75": 0.9463,
+            "q90": 32.19116,
+            "q95": 71.54576
+          },
+          "generation_energy_equivalent_quantiles_wh": {
+            "q05": -21961.2701,
+            "q10": -13903.3548,
+            "q25": -3827.2644,
+            "q50": 0.0,
+            "q75": 48.2613,
+            "q90": 1641.7492,
+            "q95": 3648.8338
+          },
+          "as_pct_of_existing_ebr_base_wh_15000": {
+            "q05": -146.4085,
+            "q10": -92.689,
+            "q25": -25.5151,
+            "q50": 0.0,
+            "q75": 0.3217,
+            "q90": 10.945,
+            "q95": 24.3256
+          },
+          "as_pct_of_default_hard_soc_floor_min_e_wh_40000": {
+            "q05": -54.9032,
+            "q10": -34.7584,
+            "q25": -9.5682,
+            "q50": 0.0,
+            "q75": 0.1207,
+            "q90": 4.1044,
+            "q95": 9.1221
+          }
+        },
+        "full_horizon_terminal_target": {
+          "basis": "full_horizon_terminal_target (E1)",
+          "lookahead_step_rank": 19,
+          "n_origins": 1369,
+          "source": "PCEEB Part (a) envelope (research/pceeb_part_a_offline/outputs/), read-only",
+          "irradiance_error_quantiles_wh_m2": {
+            "q05": -1751.51414,
+            "q10": -1357.01934,
+            "q25": -659.5517,
+            "q50": -62.4524,
+            "q75": 27.925,
+            "q90": 305.22398,
+            "q95": 559.71134
+          },
+          "generation_energy_equivalent_quantiles_wh": {
+            "q05": -89327.2211,
+            "q10": -69207.9863,
+            "q25": -33637.1367,
+            "q50": -3185.0724,
+            "q75": 1424.175,
+            "q90": 15566.423,
+            "q95": 28545.2783
+          },
+          "as_pct_of_existing_ebr_base_wh_15000": {
+            "q05": -595.5148,
+            "q10": -461.3866,
+            "q25": -224.2476,
+            "q50": -21.2338,
+            "q75": 9.4945,
+            "q90": 103.7762,
+            "q95": 190.3019
+          },
+          "as_pct_of_default_hard_soc_floor_min_e_wh_40000": {
+            "q05": -223.3181,
+            "q10": -173.02,
+            "q25": -84.0928,
+            "q50": -7.9627,
+            "q75": 3.5604,
+            "q90": 38.9161,
+            "q95": 71.3632
+          }
+        }
+      },
+      "solar_credit_risk_evidence_overestimate_events": {
+        "6h_rolling_ebr_window": {
+          "basis": "6h_rolling_ebr_window (E1)",
+          "lookahead_step_rank": 6,
+          "n_origins": 1369,
+          "n_overestimate_events": 534,
+          "overestimate_event_rate": 0.390066,
+          "overestimate_magnitude_wh_m2_quantiles": {
+            "q05": 573.64666,
+            "q10": 473.05624,
+            "q25": 279.113575,
+            "q50": 133.5327,
+            "q75": 39.226325,
+            "q90": 12.59948,
+            "q95": 6.877425
+          },
+          "overestimate_magnitude_wh_m2_mean": 190.630635,
+          "overestimate_magnitude_wh_m2_max": 820.6273,
+          "overestimate_magnitude_generation_wh_quantiles": {
+            "q05": 29255.9797,
+            "q10": 24125.8682,
+            "q25": 14234.7923,
+            "q50": 6810.1677,
+            "q75": 2000.5426,
+            "q90": 642.5735,
+            "q95": 350.7487
+          },
+          "overestimate_magnitude_pct_of_ebr_base_wh_15000": {
+            "q05": 195.0399,
+            "q10": 160.8391,
+            "q25": 94.8986,
+            "q50": 45.4011,
+            "q75": 13.337,
+            "q90": 4.2838,
+            "q95": 2.3383
+          }
+        },
+        "full_horizon_terminal_target": {
+          "basis": "full_horizon_terminal_target (E1)",
+          "lookahead_step_rank": 19,
+          "n_origins": 1369,
+          "n_overestimate_events": 752,
+          "overestimate_event_rate": 0.549306,
+          "overestimate_magnitude_wh_m2_quantiles": {
+            "q05": 2172.12576,
+            "q10": 1702.12855,
+            "q25": 1155.221675,
+            "q50": 576.00455,
+            "q75": 216.462,
+            "q90": 69.47816,
+            "q95": 24.9697
+          },
+          "overestimate_magnitude_wh_m2_mean": 769.077893,
+          "overestimate_magnitude_wh_m2_max": 3967.8468,
+          "overestimate_magnitude_generation_wh_quantiles": {
+            "q05": 110778.4138,
+            "q10": 86808.556,
+            "q25": 58916.3054,
+            "q50": 29376.232,
+            "q75": 11039.562,
+            "q90": 3543.3862,
+            "q95": 1273.4547
+          },
+          "overestimate_magnitude_pct_of_ebr_base_wh_15000": {
+            "q05": 738.5228,
+            "q10": 578.7237,
+            "q25": 392.7754,
+            "q50": 195.8415,
+            "q75": 73.5971,
+            "q90": 23.6226,
+            "q95": 8.4897
+          }
+        }
+      }
+    },
+    "secondary_corroboration": {
+      "dataset_label": "2024_odd_fixture_corroboration",
+      "raw_input_path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "raw_input_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "pceeb_recorded_input_sha256_matches": true,
+      "pceeb_envelope_source_path": "research/pceeb_part_a_offline/outputs/pceeb_quantile_envelope_2024_odd_fixture.json",
+      "n_rows_skipped_missing_or_nonnumeric_this_pass": 0,
+      "reserve_shortfall_basis_evidence": {
+        "6h_rolling_ebr_window": {
+          "basis": "6h_rolling_ebr_window (E1)",
+          "lookahead_step_rank": 6,
+          "n_origins": 173,
+          "source": "PCEEB Part (a) envelope (research/pceeb_part_a_offline/outputs/), read-only",
+          "irradiance_error_quantiles_wh_m2": {
+            "q05": -181.646053,
+            "q10": -113.044639,
+            "q25": -1.189521,
+            "q50": 0.0,
+            "q75": 4.169833,
+            "q90": 45.235159,
+            "q95": 88.544299
+          },
+          "generation_energy_equivalent_quantiles_wh": {
+            "q05": -9263.9487,
+            "q10": -5765.2766,
+            "q25": -60.6656,
+            "q50": 0.0,
+            "q75": 212.6615,
+            "q90": 2306.9931,
+            "q95": 4515.7592
+          },
+          "as_pct_of_existing_ebr_base_wh_15000": {
+            "q05": -61.7597,
+            "q10": -38.4352,
+            "q25": -0.4044,
+            "q50": 0.0,
+            "q75": 1.4177,
+            "q90": 15.38,
+            "q95": 30.1051
+          },
+          "as_pct_of_default_hard_soc_floor_min_e_wh_40000": {
+            "q05": -23.1599,
+            "q10": -14.4132,
+            "q25": -0.1517,
+            "q50": 0.0,
+            "q75": 0.5317,
+            "q90": 5.7675,
+            "q95": 11.2894
+          }
+        },
+        "full_horizon_terminal_target": {
+          "basis": "full_horizon_terminal_target (E1)",
+          "lookahead_step_rank": 24,
+          "n_origins": 173,
+          "source": "PCEEB Part (a) envelope (research/pceeb_part_a_offline/outputs/), read-only",
+          "irradiance_error_quantiles_wh_m2": {
+            "q05": -1001.64442,
+            "q10": -677.825073,
+            "q25": -186.965951,
+            "q50": 6.470667,
+            "q75": 158.655448,
+            "q90": 608.395819,
+            "q95": 854.563966
+          },
+          "generation_energy_equivalent_quantiles_wh": {
+            "q05": -51083.8654,
+            "q10": -34569.0787,
+            "q25": -9535.2635,
+            "q50": 330.004,
+            "q75": 8091.4278,
+            "q90": 31028.1868,
+            "q95": 43582.7623
+          },
+          "as_pct_of_existing_ebr_base_wh_15000": {
+            "q05": -340.5591,
+            "q10": -230.4605,
+            "q25": -63.5684,
+            "q50": 2.2,
+            "q75": 53.9429,
+            "q90": 206.8546,
+            "q95": 290.5517
+          },
+          "as_pct_of_default_hard_soc_floor_min_e_wh_40000": {
+            "q05": -127.7097,
+            "q10": -86.4227,
+            "q25": -23.8382,
+            "q50": 0.825,
+            "q75": 20.2286,
+            "q90": 77.5705,
+            "q95": 108.9569
+          }
+        }
+      },
+      "solar_credit_risk_evidence_overestimate_events": {
+        "6h_rolling_ebr_window": {
+          "basis": "6h_rolling_ebr_window (E1)",
+          "lookahead_step_rank": 6,
+          "n_origins": 173,
+          "n_overestimate_events": 44,
+          "overestimate_event_rate": 0.254335,
+          "overestimate_magnitude_wh_m2_quantiles": {
+            "q05": 336.617523,
+            "q10": 242.254115,
+            "q25": 148.977574,
+            "q50": 86.195009,
+            "q75": 21.458919,
+            "q90": 9.035948,
+            "q95": 4.736938
+          },
+          "overestimate_magnitude_wh_m2_mean": 105.89339,
+          "overestimate_magnitude_wh_m2_max": 370.879848,
+          "overestimate_magnitude_generation_wh_quantiles": {
+            "q05": 17167.4937,
+            "q10": 12354.9599,
+            "q25": 7597.8563,
+            "q50": 4395.9455,
+            "q75": 1094.4049,
+            "q90": 460.8333,
+            "q95": 241.5838
+          },
+          "overestimate_magnitude_pct_of_ebr_base_wh_15000": {
+            "q05": 114.45,
+            "q10": 82.3664,
+            "q25": 50.6524,
+            "q50": 29.3063,
+            "q75": 7.296,
+            "q90": 3.0722,
+            "q95": 1.6106
+          }
+        },
+        "full_horizon_terminal_target": {
+          "basis": "full_horizon_terminal_target (E1)",
+          "lookahead_step_rank": 24,
+          "n_origins": 173,
+          "n_overestimate_events": 79,
+          "overestimate_event_rate": 0.456647,
+          "overestimate_magnitude_wh_m2_quantiles": {
+            "q05": 1294.209428,
+            "q10": 1015.804943,
+            "q25": 605.947636,
+            "q50": 244.644433,
+            "q75": 70.513412,
+            "q90": 15.076975,
+            "q95": 6.184784
+          },
+          "overestimate_magnitude_wh_m2_mean": 403.972725,
+          "overestimate_magnitude_wh_m2_max": 1778.157436,
+          "overestimate_magnitude_generation_wh_quantiles": {
+            "q05": 66004.6808,
+            "q10": 51806.0521,
+            "q25": 30903.3294,
+            "q50": 12476.8661,
+            "q75": 3596.184,
+            "q90": 768.9257,
+            "q95": 315.424
+          },
+          "overestimate_magnitude_pct_of_ebr_base_wh_15000": {
+            "q05": 440.0312,
+            "q10": 345.3737,
+            "q25": 206.0222,
+            "q50": 83.1791,
+            "q75": 23.9746,
+            "q90": 5.1262,
+            "q95": 2.1028
+          }
+        }
+      }
+    }
+  }
+}

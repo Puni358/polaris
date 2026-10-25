@@ -1,0 +1,111 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE LOWER / POINT / UPPER SEMANTIC EXTRACTION AUDIT",
+  "timestamp": "2026-09-17T19:47:00Z",
+  "control_state": {
+    "forecastbundle_version": "1.0.0",
+    "final_governance_decision": "NOT ESTABLISHED",
+    "implementation_status": "NOT AUTHORIZED",
+    "control_artifacts_preserved": true
+  },
+  "search_questions_findings": {
+    "Q1_point_representation": {
+      "level": "Level 3 (Contract) / Level 1 (Implementation)",
+      "finding": "Deterministic expected point predictions. Consumed by MILP and Rule-Based optimizers."
+    },
+    "Q2_lower_representation": {
+      "level": "Level 1 (Implementation - Prototype Only)",
+      "finding": "NOT ESTABLISHED. Baseline engine uses heuristic scaling marked PROTOTYPE_UNVALIDATED. Ignored by optimizers."
+    },
+    "Q3_upper_representation": {
+      "level": "Level 1 (Implementation - Prototype Only)",
+      "finding": "NOT ESTABLISHED. Baseline engine uses heuristic scaling marked PROTOTYPE_UNVALIDATED. Ignored by optimizers."
+    },
+    "Q4_intended_construct": {
+      "status": "NOT ESTABLISHED",
+      "details": "No schema, contract, or governance document specifies whether lower/upper form uncertainty bounds, prediction intervals, confidence intervals, operational envelopes, or scenario bounds."
+    },
+    "Q5_coverage_interpretation": {
+      "documented_coverage": null,
+      "details": "No 80%, 90%, 95%, quantile, or probability of containment interpretation is documented."
+    },
+    "Q6_Q7_ems_optimizer_consumption": {
+      "consumed_by_optimizer": false,
+      "consumed_fields": ["point"],
+      "ignored_fields": ["lower", "upper"],
+      "details": "MILP and Rule-Based optimizers consume ONLY .point arrays. lower and upper bounds are carried in ForecastBundle but ignored during optimization."
+    }
+  },
+  "point_only_forecast_question": {
+    "status": "NOT ESTABLISHED",
+    "explicit_statement": "NO EXISTING AUTHORIZED UNCERTAINTY REPRESENTATION FOR THE POINT-ONLY STAGE8.1 CHAMPION WAS ESTABLISHED."
+  },
+  "structural_vs_semantic_distinction": {
+    "structural_constraints_found": "PRESENT",
+    "structural_rules": [
+      "len(point) == len(lower) == len(upper) == 24",
+      "lower <= point <= upper",
+      "finite values (non-NaN, non-Inf)",
+      "non-negative point array"
+    ],
+    "semantic_definition_found": "NONE"
+  },
+  "semantic_conflict": "NONE",
+  "evidence_references": [
+    {
+      "source": "system/schemas/forecast_bundle.py",
+      "level": "Level 3 (Contract)",
+      "finding": "Defines structural validation rules for TimeseriesForecast. Defines no interval semantics."
+    },
+    {
+      "source": "system/forecasting/interface/base.py",
+      "level": "Level 3 (Contract)",
+      "finding": "Defines predict() interface returning ForecastBundle. Defines no point-only representation rule."
+    },
+    {
+      "source": "system/forecasting/implementations/baseline.py",
+      "level": "Level 1 (Implementation)",
+      "finding": "Uses heuristic percentage multipliers marked PROTOTYPE_UNVALIDATED."
+    },
+    {
+      "source": "system/optimization/implementations/milp.py",
+      "level": "Level 1 (Implementation)",
+      "finding": "Consumes ONLY .point arrays."
+    },
+    {
+      "source": "system/optimization/implementations/rule_based.py",
+      "level": "Level 1 (Implementation)",
+      "finding": "Consumes ONLY .point arrays."
+    }
+  ],
+  "governance_decision_required": {
+    "description": "Formally define and authorize the semantic meaning of lower, point, and upper in ForecastBundle, and specify the representation policy for point-only forecast models.",
+    "neutrality_principle": "Audit identifies required decision only; makes NO recommendations or selections."
+  },
+  "final_status": {
+    "interval_semantics_status": "NOT ESTABLISHED",
+    "point_only_representation_status": "NOT ESTABLISHED",
+    "semantic_conflict": "NONE",
+    "implementation_status": "NOT AUTHORIZED"
+  },
+  "verification": {
+    "files_modified": [
+      "POLARIS_FORECASTBUNDLE_INTERVAL_SEMANTICS_AUDIT.md",
+      "POLARIS_FORECASTBUNDLE_INTERVAL_SEMANTICS_AUDIT.json"
+    ],
+    "source_code_modified": false,
+    "forecastbundle_modified": false,
+    "forecastbundle_schema_modified": false,
+    "stage8_1_modified": false,
+    "d5_modified": false,
+    "compatibility_audit_modified": false,
+    "contract_resolution_modified": false,
+    "adapter_implemented": false,
+    "stage81_forecastengine_implemented": false,
+    "ems_executed": false,
+    "experiment_executed": false,
+    "uncertainty_intervals_created": false,
+    "new_semantic_policy_created": false,
+    "new_governance_decision_issued": false
+  }
+}

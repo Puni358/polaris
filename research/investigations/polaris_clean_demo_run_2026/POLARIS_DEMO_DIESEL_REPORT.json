@@ -1,0 +1,63 @@
+{
+  "report_type": "OFFLINE_EMS_DIESEL_REPORT",
+  "generated_at": "2026-09-30T20:53:58Z",
+  "source_module": "EvaluationEngine (system/evaluation/evaluator.py)",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "data_origin": "SYNTHETIC",
+  "empirical_status": "NOT_EMPIRICAL",
+  "summary_by_scenario": {
+    "S0_baseline": {
+      "total_demand_kwh": 1680.0,
+      "total_renewable_energy_used_kwh": 1440.0,
+      "total_diesel_energy_kwh": 0.0,
+      "total_diesel_fuel_liters": 0.0,
+      "diesel_runtime_hours": 0.0,
+      "renewable_utilization_pct": 100.0,
+      "renewable_curtailment_kwh": 0.0,
+      "battery_throughput_kwh": 240.0,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_violations_count": 0
+    },
+    "S1_renewable_degradation": {
+      "total_demand_kwh": 1920.0,
+      "total_renewable_energy_used_kwh": 432.0,
+      "total_diesel_energy_kwh": 1108.0,
+      "total_diesel_fuel_liters": 417.0,
+      "diesel_runtime_hours": 28.0,
+      "renewable_utilization_pct": 100.0,
+      "renewable_curtailment_kwh": 0.0,
+      "battery_throughput_kwh": 380.0,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_violations_count": 0
+    },
+    "S2_telemetry_degradation": {
+      "total_demand_kwh": 1680.0,
+      "total_renewable_energy_used_kwh": 1440.0,
+      "total_diesel_energy_kwh": 0.0,
+      "total_diesel_fuel_liters": 0.0,
+      "diesel_runtime_hours": 0.0,
+      "renewable_utilization_pct": 100.0,
+      "renewable_curtailment_kwh": 0.0,
+      "battery_throughput_kwh": 240.0,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_violations_count": 0
+    },
+    "S3_combined_stress": {
+      "total_demand_kwh": 2160.0,
+      "total_renewable_energy_used_kwh": 144.0,
+      "total_diesel_energy_kwh": 1856.0,
+      "total_diesel_fuel_liters": 664.0,
+      "diesel_runtime_hours": 44.0,
+      "renewable_utilization_pct": 100.0,
+      "renewable_curtailment_kwh": 0.0,
+      "battery_throughput_kwh": 160.0,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_violations_count": 0
+    }
+  }
+}

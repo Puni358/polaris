@@ -1,0 +1,162 @@
+{
+  "audit_manifest_id": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_POSTCORRECTION_FORENSIC_ACCEPTANCE",
+  "final_classification": "A \u2014 VALID COMPLETED EXECUTION",
+  "execution_status": "COMPLETE",
+  "experiment_executed_during_audit": false,
+  "source_files_modified_during_audit": false,
+  "experiment_rerun_during_audit": false,
+  "raw_evidence_status": "PASS_FULLY_PRESERVED_AND_VERIFIED",
+  "source_identity_status": {
+    "treatment_artifact_sha256": {
+      "expected": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "actual": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "status": "PASS"
+    },
+    "s81_solar_py_sha256": {
+      "expected": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "actual": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "status": "PASS"
+    },
+    "runner_py_sha256": {
+      "expected": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "actual": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "status": "PASS"
+    },
+    "raw_csv_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+    "exec_json_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+    "exec_md_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed"
+  },
+  "treatment_artifact_integrity": "PASS",
+  "treatment_value_exactness": "PASS",
+  "horizon_semantics": "PASS",
+  "temporal_alignment": "PASS",
+  "artifact_to_mpc_traceability": "PASS",
+  "control_treatment_symmetry": "PASS",
+  "initial_state_identity": "PASS",
+  "realized_trajectory_identity": "PASS",
+  "future_truth_firewall": "PASS",
+  "common_baseline_continuation": "PASS",
+  "primary_endpoint_recomputation": {
+    "control_total_liters": 4671.0,
+    "treatment_total_liters": 6447.44,
+    "mean_paired_difference_liters": 10.2684,
+    "median_paired_difference_liters": 5.66,
+    "status": "PASS_EXACT_MATCH"
+  },
+  "secondary_endpoint_status": {
+    "verified_count": 10,
+    "endpoints": {
+      "diesel_energy_kwh": {
+        "control_total": 3460.0,
+        "treatment_total": 13517.38,
+        "control_mean": 20.0,
+        "treatment_mean": 78.1351,
+        "mean_paired_difference": 58.1351,
+        "median_paired_difference": 42.95
+      },
+      "renewable_energy_used_kwh": {
+        "control_total": 158002.63,
+        "treatment_total": 144256.45,
+        "control_mean": 913.31,
+        "treatment_mean": 833.8523,
+        "mean_paired_difference": -79.4577,
+        "median_paired_difference": -63.2
+      },
+      "renewable_curtailment_kwh": {
+        "control_total": 30686.74,
+        "treatment_total": 9852.06,
+        "control_mean": 177.38,
+        "treatment_mean": 56.9483,
+        "mean_paired_difference": -120.4317,
+        "median_paired_difference": -116.15
+      },
+      "renewable_curtailment_pct": {
+        "control_total": 2812.98,
+        "treatment_total": 1062.15,
+        "control_mean": 16.26,
+        "treatment_mean": 6.1396,
+        "mean_paired_difference": -10.1204,
+        "median_paired_difference": -9.57
+      },
+      "renewable_utilization_pct": {
+        "control_total": 14487.02,
+        "treatment_total": 16237.85,
+        "control_mean": 83.74,
+        "treatment_mean": 93.8604,
+        "mean_paired_difference": 10.1204,
+        "median_paired_difference": 9.57
+      },
+      "battery_throughput_kwh": {
+        "control_total": 31226.5,
+        "treatment_total": 20041.68,
+        "control_mean": 180.5,
+        "treatment_mean": 115.8479,
+        "mean_paired_difference": -64.6521,
+        "median_paired_difference": -64.23
+      },
+      "battery_equivalent_cycles": {
+        "control_total": 156.1325,
+        "treatment_total": 100.2094,
+        "control_mean": 0.9025,
+        "treatment_mean": 0.5792,
+        "mean_paired_difference": -0.3233,
+        "median_paired_difference": -0.3211
+      },
+      "unmet_critical_load_kwh": {
+        "control_total": 0.0,
+        "treatment_total": 0.0,
+        "control_mean": 0.0,
+        "treatment_mean": 0.0,
+        "mean_paired_difference": 0.0,
+        "median_paired_difference": 0.0
+      },
+      "system_reliability_pct": {
+        "control_total": 17300.0,
+        "treatment_total": 17300.0,
+        "control_mean": 100.0,
+        "treatment_mean": 100.0,
+        "mean_paired_difference": 0.0,
+        "median_paired_difference": 0.0
+      },
+      "constraint_violations_count": {
+        "control_total": 0.0,
+        "treatment_total": 0.0,
+        "control_mean": 0.0,
+        "treatment_mean": 0.0,
+        "mean_paired_difference": 0.0,
+        "median_paired_difference": 0.0
+      }
+    },
+    "status": "PASS_ALL_10_VERIFIED"
+  },
+  "evaluation_engine_integrity": "PASS",
+  "statistical_recomputation": {
+    "spearman_rho": -0.9198,
+    "spearman_p": 2.283046250976508e-71,
+    "bootstrap_mean": 10.2935,
+    "bootstrap_ci_lower": 5.4795,
+    "bootstrap_ci_upper": 15.2113,
+    "wilcoxon_w": 5351.5,
+    "wilcoxon_p": 0.001352945894228646,
+    "status": "PASS_EXACT_MATCH"
+  },
+  "statistical_dependence_status": "PASS_UNIT_IS_24H_ORIGIN_N173",
+  "retry_contamination_status": "PASS_ZERO_RETRIES_DIRECT_EXECUTION",
+  "thermal_evidence_status": "THERMAL_MEASUREMENT_EVIDENCE = NOT_INDEPENDENTLY_VERIFIED",
+  "determinism_claim_status": {
+    "bootstrap_reproducibility": "REPRODUCIBLE_SEED_42",
+    "ems_execution_determinism": "DETERMINISTIC_SOLVER_SETTINGS",
+    "full_experiment_replay_reproducibility": "NOT_DIRECTLY_REPLAY_VERIFIED"
+  },
+  "protocol_hash_status": "NOT_ESTABLISHED",
+  "manifest_consistency": "PASS_FULL_MATCH_WITH_RAW_CSV",
+  "historical_evidence_status": "PRESERVED_INTACT",
+  "scientific_claim_boundary": "Empirical Stage8.1 solar forecasts replayed through the frozen POLARIS EMS under the controlled POLARIS synthetic station environment.",
+  "material_issues": [],
+  "required_corrections": [],
+  "optional_notes": [
+    "Audit conducted entirely read-only.",
+    "Execution configuration ProcessPoolExecutor(max_workers=2) prevented thermal throttling.",
+    "Horizon semantics correction verified: 24-k empirical Stage8.1 floats + k baseline clear-sky floats fill every MPC vector."
+  ]
+}

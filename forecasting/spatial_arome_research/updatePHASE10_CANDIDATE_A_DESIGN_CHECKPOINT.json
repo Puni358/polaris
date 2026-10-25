@@ -1,0 +1,292 @@
+{
+  "checkpoint": "PHASE10_CANDIDATE_A_DESIGN_CHECKPOINT",
+  "status": "DESIGN_FROZEN_INTEGRITY_VERIFICATION_COMPLETE",
+  "revision": "CORRECTED",
+  "date": "September 2026",
+  "odd_firewall": "INTACT",
+  "protected_champion": "Stage_8.1_37_feature_HGB_NOT_MODIFIED",
+
+  "executive_summary": {
+    "candidate_name": "Bidirectional GRU Temporal Sequence Model",
+    "purpose": "Test whether explicit 24-horizon sequence modeling improves over row-independent HGB",
+    "motivation": "Measured autocorrelation (0.67-0.93) in horizon-varying NWP features",
+    "total_parameters": 6049,
+    "scale_justification": "Small for 173 EVEN origins; prevents aggressive overfitting",
+    "causality_status": "VERIFIED - bidirectional GRU causally permissible (complete forecast trajectory at t0)"
+  },
+
+  "feature_inventory": {
+    "total_inputs_per_horizon": 39,
+    "breakdown": {
+      "static_per_origin": 14,
+      "horizon_varying": 25
+    },
+    "static_features_count": 14,
+    "static_features_list": [
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h"
+    ],
+    "static_features_source": "Prior day observations (Day D-1), available at t0",
+    "static_features_verification": "All 14 confirmed to have exactly 1 unique value per origin across H1-H24",
+    "horizon_varying_features_count": 25,
+    "horizon_varying_features_list": [
+      "is_daytime",
+      "is_night_causal",
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "clearsky_ghi_terrain_adjusted",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "u700",
+      "v700",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold",
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag"
+    ],
+    "verification_source": "Direct count from uploaded stage8_1_full_37_feature_matrix_2024.csv"
+  },
+
+  "architecture": {
+    "name": "Bidirectional GRU with Dense Input/Output Layers",
+    "frozen": true,
+    "no_hyperparameter_sweep": true,
+    "layers": [
+      {
+        "layer": 1,
+        "type": "Dense",
+        "input_dim": 39,
+        "output_dim": 32,
+        "activation": "ReLU",
+        "dropout": 0.2,
+        "dropout_position": "after_activation"
+      },
+      {
+        "layer": 2,
+        "type": "Bidirectional GRU",
+        "input_dim": 32,
+        "hidden_dim_per_direction": 16,
+        "bidirectional": true,
+        "output_dim": 32,
+        "return_sequences": true,
+        "dropout": 0.2,
+        "dropout_position": "after_gru"
+      },
+      {
+        "layer": 3,
+        "type": "Dense",
+        "input_dim": 32,
+        "output_dim": 1,
+        "activation": "Linear"
+      }
+    ]
+  },
+
+  "parameter_count": {
+    "dense1_weights": 1248,
+    "dense1_bias": 32,
+    "dense1_total": 1280,
+    "gru_single_direction": 2352,
+    "gru_bidirectional": 4704,
+    "dense_output_weights": 64,
+    "dense_output_bias": 1,
+    "dense_output_total": 65,
+    "total_parameters": 6049,
+    "correction_note": "Corrected from ~6850 estimate; GRU input is 32 (from Dense1), not 39 (raw input)",
+    "gru_detail": {
+      "formula": "bidirectional: 2 × [3_gates × ((input + hidden) × hidden + hidden)]",
+      "calculation": "2 × [3 × ((32 + 16) × 16 + 16)] = 2 × [3 × 784] = 2 × 2352 = 4704"
+    }
+  },
+
+  "causality_verification": {
+    "status": "VERIFIED",
+    "question": "Is bidirectional GRU processing causally permissible?",
+    "answer": "YES",
+    "reasoning": {
+      "forecast_availability": "At t0 (Day D, 00:00 UTC), MEPS produces complete 24+ hour deterministic forecast containing covariates for H1...H24",
+      "backward_gru_concern": "Backward GRU processes H24→H23→...→H1 when predicting H1. Uses H24 covariates.",
+      "backward_gru_justification": "H24 covariates are forecast values (model's prediction of t0+24h conditions), not observations",
+      "no_actual_observations": "actual_SW_IN is never used as input; only forecast covariates available at t0",
+      "no_future_errors": "No forecast errors, residuals, or differences computed from future times",
+      "no_odd_data": "Only EVEN split used; ODD never accessed",
+      "nwp_standard_practice": "Using complete forecast trajectory to make predictions is standard in NWP-driven forecasting"
+    },
+    "explicit_non_leakage_checklist": {
+      "no_actual_SW_IN": "PASS - actual_SW_IN excluded from inputs",
+      "no_future_observations": "PASS - only forecast covariates from t0",
+      "no_future_residuals": "PASS - no error computations from future times",
+      "no_ODD_data": "PASS - EVEN only",
+      "backward_GRU_uses_forecast_only": "PASS - H24 covariates are forecasts issued at t0",
+      "static_features_not_future": "PASS - ctx_* from prior day, available at t0",
+      "no_information_after_t0": "PASS - all 39 features known at t0"
+    }
+  },
+
+  "input_shape": {
+    "sequence_shape_per_origin": [24, 39],
+    "sequence_interpretation": "24 timesteps (horizons H1-H24), 39 features per timestep",
+    "batch_shape": [8, 24, 39],
+    "batch_interpretation": "8 origins per batch, 24 horizons, 39 features",
+    "batch_elements": 7488,
+    "static_features_broadcast": "14 static features identical across all 24 rows per origin",
+    "static_features_verification": "Confirmed: ctx_std_3h, ctx_std_6h, etc. have 1 unique value per origin",
+    "static_not_future": "NOT future information - summary statistics of prior day (Day D-1), available at t0"
+  },
+
+  "training_procedure": {
+    "data_selection": {
+      "split": "EVEN_only",
+      "origins_even": 173,
+      "rows_even": 4152,
+      "origins_odd": "LOCKED_NEVER_ACCESSED",
+      "cross_validation": "5_fold_GroupKFold_by_origin_id"
+    },
+    "per_fold_structure": {
+      "total_origins": 173,
+      "test_fold_origins": "~35",
+      "remaining_origins": "~138",
+      "training_origins": "~110 (80% of remaining)",
+      "internal_validation_origins": "~28 (20% of remaining)",
+      "leakage_guarantee": "Internal validation is subset of training pool, NOT from test fold"
+    },
+    "preprocessing": {
+      "standardization": "per_feature_per_fold",
+      "fit_data": "train_fold_only",
+      "apply_to": ["train_fold", "internal_validation_fold", "test_fold"],
+      "refit": "NO - never refit on validation or test data"
+    },
+    "batching": {
+      "batch_size": 8,
+      "rows_per_batch": 192,
+      "batch_composition": "8_origins × 24_horizons"
+    },
+    "optimization": {
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "beta_1": 0.9,
+      "beta_2": 0.999,
+      "epsilon": 1e-07,
+      "loss": "MAE",
+      "loss_computation": "mean absolute error over 24 horizons per origin",
+      "regularization_dropout": 0.2,
+      "regularization_weight_decay": 0.0001,
+      "early_stopping_patience": 20,
+      "max_epochs": 300
+    },
+    "early_stopping_procedure": {
+      "validation_data_source": "internal_validation_origins (20% of train)",
+      "validation_never_includes": "test_fold_origins",
+      "stopping_criterion": "validation_loss_plateaus_for_20_epochs",
+      "test_fold_evaluation": "after_stopping_using_test_fold_only"
+    }
+  },
+
+  "gate_requirements": {
+    "all_must_pass": true,
+    "G1": {
+      "name": "Aggregate MAE improvement",
+      "requirement": "candidate_mae <= control_mae - 0.50",
+      "control_mae_wm2": 26.3668,
+      "required_mae_wm2": 25.8668,
+      "status": "PENDING"
+    },
+    "G2": {
+      "name": "Fold consistency",
+      "requirement": "folds_improved >= 4/5",
+      "status": "PENDING"
+    },
+    "G3": {
+      "name": "Worst-fold safety",
+      "requirement": "max_fold_degradation <= +0.50 W/m2",
+      "status": "PENDING"
+    },
+    "G4": {
+      "name": "nMAE and RMSE safety",
+      "requirement": "candidate_nMAE <= control_nMAE AND candidate_RMSE <= control_RMSE",
+      "control_nmae_pct": 20.4507,
+      "control_rmse_wm2": 55.2513,
+      "status": "PENDING"
+    },
+    "G5": {
+      "name": "Causality and parser compliance",
+      "requirement": "no_future_actuals, no_odd_data, no_noncausal_features",
+      "status": "PRE_PASS"
+    },
+    "G6": {
+      "name": "Numerical reproducibility",
+      "requirement": "control_exactly_reproducible OR honestly_reported_as_approximate",
+      "control_status": "APPROXIMATE (default HGB hyperparameters, not exact original Stage 8.1 code)",
+      "status": "HONEST_APPROXIMATE"
+    }
+  },
+
+  "diagnostic_reporting": {
+    "required_outputs": [
+      "per_horizon_mae (H1, H2, ..., H24)",
+      "per_fold_mae_nmae_rmse_bias",
+      "fold_improvements_count",
+      "max_fold_degradation",
+      "h9_h12_aggregate_mae_diagnostic_only_not_tuning_target"
+    ]
+  },
+
+  "why_candidate_a_justified": {
+    "autocorrelation_alignment": {
+      "fc_cloud_cover_lag1_r": 0.674,
+      "fc_temperature_2m_lag1_r": 0.933,
+      "fc_relative_humidity_2m_lag1_r": 0.799,
+      "justification": "GRU explicitly models this trajectory structure HGB ignores"
+    },
+    "not_phase9_rescue": "Phase 9 added single features to HGB; Candidate A changes processing architecture (row-wise → sequence)",
+    "not_candidate_b_variant": {
+      "candidate_b_mechanism": "Symmetric multi-task embedding (permutation invariant)",
+      "candidate_a_mechanism": "Bidirectional recurrent (temporal structure aware)",
+      "difference": "Fundamentally different hypothesis and processing"
+    },
+    "appropriately_sized": "6049 params for 173 origins is conservative; allows trajectory learning without aggressive overfitting",
+    "causally_sound": "Complete MEPS forecast at t0; no future actuals, no future errors, no ODD data",
+    "honest_uncertainty": "H9-H12 error may be physical (input magnitude) not architectural; Candidate A not claimed to be silver bullet"
+  },
+
+  "explicit_non_claims": [
+    "Not claimed that Candidate A will pass all gates",
+    "Not claimed that GRU is the only sequence architecture worth testing",
+    "Not claimed that H9-H12 error is architecturally caused",
+    "Not claimed that 28.0688% nMAE is a theoretical lower bound",
+    "Not claimed that this will be the final champion"
+  ],
+
+  "next_step": "AWAITING_EXPLICIT_TRAINING_AUTHORIZATION",
+  "notes": [
+    "Design frozen after integrity verification",
+    "All features verified directly from uploaded matrix",
+    "Parameter count corrected: 6049 (not ~6850)",
+    "Causality of bidirectional GRU thoroughly documented",
+    "No further design changes without explicit user direction"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "correction_metadata": {
+    "title": "POLARIS EMS Objective Governance Wording Correction",
+    "version": "1.0.0",
+    "status": "WORDING_CORRECTION_COMPLETE",
+    "timestamp": "2026-09-21T21:31:00Z",
+    "output_directory": "POLARIS_EMS_OBJECTIVE_SPECIFICATION/"
+  },
+  "numerical_facts": {
+    "unmet_load_penalty_per_kwh": 10000.0,
+    "marginal_diesel_cost_per_kwh": 0.625,
+    "objective_coefficient_ratio": "16000:1"
+  },
+  "corrected_claim": {
+    "removed_invalid_statement": "The optimizer will consume up to 4,000 Liters of diesel fuel to prevent a single kWh of unmet critical load.",
+    "governed_statement": "The unmet-load penalty is 16,000 times the marginal diesel-energy cost on a $/kWh basis. The realized fuel required to avoid a unit of unmet load depends on generator operating constraints, base fuel consumption, startup costs, battery state, renewable availability, curtailment, objective discounting, horizon dynamics, and overall feasibility.",
+    "governed_clarification": "The 16,000:1 value is therefore an objective-cost coefficient ratio, not a claim that the optimizer will literally burn a fixed quantity of diesel to avoid one kWh of unmet load."
+  },
+  "distinguished_quantities": {
+    "A_objective_coefficient_ratio": "16000:1 ($10,000/kWh / $0.625/kWh)",
+    "B_physical_diesel_conversion": "$0.625/kWh (0.25 L/kWh x $2.50/L)",
+    "C_realized_dispatch_tradeoff": "Trajectory-dependent empirical outcome"
+  },
+  "v2_context": {
+    "fuel_diff_liters": 11350.179,
+    "unmet_load_diff_kwh": -30543.753,
+    "observed_v2_fuel_unmet_load_change_ratio_l_per_kwh": 0.3716,
+    "classification": "OBSERVED_V2_TRAJECTORY_SET_RESULT"
+  },
+  "governance_status_flags": {
+    "EMS_OBJECTIVE_WORDING_CORRECTION": "PASS",
+    "OBJECTIVE_COEFFICIENT_RATIO": "16000_TO_1",
+    "RATIO_INTERPRETATION": "OBJECTIVE_COST_COEFFICIENT_RATIO_ONLY",
+    "DIRECT_FUEL_PER_KWH_CLAIM": "NOT_SUPPORTED",
+    "REALIZED_FUEL_TRADEOFF": "TRAJECTORY_DEPENDENT",
+    "V2_EVIDENCE_LOCK": "PASS",
+    "OBJECTIVE_MODIFICATION": "NOT_AUTHORIZED",
+    "EMS_MODIFICATION": "NOT_AUTHORIZED",
+    "NEW_EMS_EXPERIMENT": "NOT_AUTHORIZED",
+    "NEXT_GOVERNED_STEP": "HUMAN_REVIEW_OF_EXPLICIT_EMS_OBJECTIVE_SPECIFICATION"
+  }
+}

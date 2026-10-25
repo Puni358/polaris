@@ -1,0 +1,51 @@
+EXP-THREE-ARM-2024 Arm C calibration record (calibration only; no experiment, runner, forecast evaluation, MILP or solver call)
+Authorized by PuNi (project lead) in the project thread at 2026-10-11T05:28:46Z; calibration section recorded 2026-10-11T05:30:04Z.
+Run location: CC sandbox replica of the repo root (system/ code, the frozen experiment modules, the four 2024 data files, this package; no 2025 data file present).
+The [hashes] check below verifies every code, configuration and input file against the frozen device-staged hashes.
+
+== 1. Calibration preflight (the checks calibrate_arm_c.main runs, run alone first)
+[decisions] PASS
+[arm_c_method] PASS
+[hashes] PASS
+[package_manifest] PASS
+[preregistration] PASS
+[authorization] PASS
+[output] artifact exists: False
+CALIBRATION PREFLIGHT PASS
+
+== 2. Calibration run
+$ python3 -I -W default experiments/exp_three_arm_2024/scripts/calibrate_arm_c.py --repo .
+(started 2026-10-11T05:30:26Z; sandbox repo replica, inputs hash-verified by preflight)
+calibration artifact written: /tmp/ai-0/-home-ai/aee2eb20-1887-5674-a5e6-aefcb8e09da1/scratchpad/sbx/experiments/exp_three_arm_2024/calibration/ARM_C_CALIBRATION.json sha256=65732ccc134f609f2c61a2a22ba4cb17a7e5408b21ac08e76cca22269228dab1
+exit code: 0
+(finished 2026-10-11T05:30:33Z)
+
+== 3. Artifact validation (calibrate_arm_c.load_artifact plus diagnostics)
+load_artifact: PASS  sha256 65732ccc134f609f2c61a2a22ba4cb17a7e5408b21ac08e76cca22269228dab1  file sha 65732ccc134f609f2c61a2a22ba4cb17a7e5408b21ac08e76cca22269228dab1
+weather hash recorded: 8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16
+weather hash expected: 8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16
+weather hash on disk : 8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16
+created_at_utc 2026-10-11T05:30:32Z software {'numpy': '2.5.3', 'pandas': '3.0.5', 'pvlib': '0.16.1', 'python': '3.13.16'}
+n_origins 222 2024-01-20 00:00:00 -> 2024-12-31 00:00:00
+origins in 2024-04-30..2024-09-01: 0  non-2024: 0
+calibration_window {'excluded_buffer_origins': ['2024-04-30 00:00:00', '2024-09-01 00:00:00'], 'first_origin_after_evaluation': '2024-09-02 00:00:00', 'last_origin_before_evaluation': '2024-04-29 00:00:00'}
+gamma_hat 0.18 daylight MAE 62.223 n_daylight_hours 1826
+grid 0.1 .. 1.0 n 91 at edge: False
+alpha 0.1 method split_conformal_lower space ghi_w_m2 rule {'cloud': 'closed_middle', 'elevation': 'right_closed'} min_days 20 policy merge_single_neighbour_else_lower
+elev edges [0.0, 5.0, 15.0, 30.0, 90.0] cloud edges [0.0, 0.2, 0.8, 1.0]
+merges [{'from': [3, 0], 'into': [2, 0], 'origin_days_before_merge': 10}, {'from': [3, 1], 'into': [2, 1], 'origin_days_before_merge': 10}, {'from': [3, 2], 'into': [2, 2], 'origin_days_before_merge': 7}]
+eb cb pooled  days hrs  own_days own_hrs  q_alpha  cov_pooled cov_own
+ 0  0 [0, 0]     45    61    45     61    -25.40 0.918 0.918
+ 0  1 [0, 1]     88   134    88    134    -12.35 0.910 0.910
+ 0  2 [0, 2]    133   278   133    278     -0.61 0.906 0.906
+ 1  0 [1, 0]     48   122    48    122   -126.33 0.910 0.910
+ 1  1 [1, 1]     80   186    80    186    -97.06 0.909 0.909
+ 1  2 [1, 2]    114   379   114    379    -22.79 0.902 0.902
+ 2  0 [2, 0]     39   167    38    136   -229.55 0.910 0.897
+ 2  1 [2, 1]     59   212    59    183   -179.51 0.906 0.923
+ 2  2 [2, 2]     66   287    66    273    -69.74 0.906 0.908
+ 3  0 [2, 0]     39   167    10     31   -229.55 0.910 0.968
+ 3  1 [2, 1]     59   212    10     29   -179.51 0.906 0.793
+ 3  2 [2, 2]     66   287     7     14    -69.74 0.906 0.857
+residual_space_diagnostic {'max_point_ghi_w_m2': 608.7670597388802, 'n_daylight_hours': 1826, 'n_hours_pv_map_nonlinear': 0, 'pv_slope_w_per_w_m2': 51.0}
+deterministic True

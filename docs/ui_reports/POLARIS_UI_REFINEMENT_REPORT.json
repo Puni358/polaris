@@ -1,0 +1,63 @@
+{
+  "phase": "S8.1-UI-REPORT-WORDING-CORRECTION",
+  "type": "DOCUMENTATION-ONLY GOVERNANCE & EVIDENCE CORRECTION",
+  "status": "DOCUMENTATION_CORRECTION_COMPLETE",
+  "classification": "A",
+  "classification_description": "UI REFINEMENT COMPLETE AND GOVERNANCE-CONFORMANT",
+  "timestamp": "2026-09-19T08:22:00+05:30",
+  "data_fidelity_corrections": {
+    "A1_screen02_voltage_phase_claim": {
+      "status": "CORRECTED",
+      "removed_terms": ["400V", "400 V", "3-Phase", "3-phase"],
+      "busbar_label": "MICROGRID AC / ENERGY BUS",
+      "disclaimer": "Electrical voltage/phase configuration: NOT EXPOSED BY RUNTIME"
+    },
+    "A2_screen04_battery_soc_semantics": {
+      "status": "CORRECTED",
+      "investigation_finding": "DispatchPlan schema serializes battery_soc key. app.js was searching for battery_soc_pct. Mapped plan.battery_soc in app.js.",
+      "displayed_column": "Planned Batt SOC (%)",
+      "dynamic_rendering": true
+    },
+    "A3_screen03_wind_provenance": {
+      "status": "CORRECTED",
+      "column_label": "Synthetic Wind Power (W)",
+      "badge": "SYNTHETIC DEMONSTRATION / CONDITIONAL REGIONAL PROXY (ABISKO 10m) — NOT MEASURED NUOLJA GENERATION",
+      "wind_speed_proxy": "ABISKO 10m CONDITIONAL REGIONAL PROXY"
+    },
+    "A4_synthetic_equipment_parameters": {
+      "status": "CORRECTED",
+      "provenance_tag": "Synthetic Scenario Parameter",
+      "parameters": ["PV Array Cap 60 kW", "BESS Cap 200 kWh", "GenSet Rating 100 kW"]
+    },
+    "A5_stress_scenario_separation": {
+      "status": "CORRECTED",
+      "separated_cards": ["S1 — NORMAL OPERATION", "S2 — LOW SOLAR", "S4 — HIGH DEMAND PEAK", "S5 — HIGH RENEWABLE", "S6 — BATTERY CONSTRAINED", "S7 — GOVERNED INFEASIBILITY"]
+    }
+  },
+  "presentation_refinements_characterization": "PRESENTATION-LAYER CORRECTIONS AND APPROVED-SPECIFICATION FIDELITY REFINEMENTS (implementation of approved specification POLARIS_UI_UX_ARCHITECTURE_AND_VISUAL_SPEC.md, not a new design phase)",
+  "governed_wording_corrections": {
+    "issue_A_stage81_point_only_forecasts": "Forecast intervals use the authorized degenerate representation lower = point = upper. These are not statistical prediction intervals and carry no coverage claim.",
+    "issue_B_local_presentation": "LOCAL PRESENTATION: localhost-only server; no external service dependency identified. NETWORK_ISOLATION_TEST: NOT PERFORMED IN THIS PHASE",
+    "issue_C_endpoint_verification": "LOCAL HTTP / PRESENTATION ENDPOINT VERIFICATION: HTTP 200 responses establish endpoint availability, not visual browser rendering. BROWSER_RENDERED_VERIFICATION: NOT PERFORMED IN THIS PHASE",
+    "issue_D_scenario_coverage": "Authorized/represented synthetic scenarios: S1, S2, S4, S5, and S6; S7 represents previously verified D4-C1 fault containment. S3 and S8 were not executed in this UI demonstration."
+  },
+  "testing": {
+    "test_file": "system/tests/test_ui_hmi.py",
+    "total_tests": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "protected_file_integrity": {
+    "all_matched": true,
+    "verified_files_count": 9
+  },
+  "governance_checks": {
+    "ui_implementation_changed": false,
+    "backend_files_modified": false,
+    "scientific_experiments_performed": false,
+    "new_scientific_claims": false,
+    "external_services_introduced": false,
+    "network_isolation_test_performed": false,
+    "browser_rendered_verification_performed": false
+  }
+}

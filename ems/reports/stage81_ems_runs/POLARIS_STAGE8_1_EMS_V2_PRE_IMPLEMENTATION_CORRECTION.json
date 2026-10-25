@@ -1,0 +1,121 @@
+{
+  "audit_manifest_id": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION",
+  "final_classification": "B \u2014 V2 PRE-IMPLEMENTATION CORRECTIONS COMPLETE WITH DOCUMENTED PROVENANCE / VERIFICATION LIMITATIONS",
+  "v1_status": "ACCEPTED_AND_FROZEN",
+  "v1_result_changed": "NO",
+  "v1_rerun": "NO",
+  "v2_protocol": "HARDENED",
+  "v2_pre_implementation_corrections": "COMPLETE",
+  "v2_runtime_equivalence": "NOT_YET_VERIFIED",
+  "v2_implementation": "NOT_STARTED",
+  "v2_execution": "NOT_AUTHORIZED",
+  "solver_binary_provenance": "ESTABLISHED_WITH_DOCUMENTED_PROVENANCE_LIMITATION",
+  "telemetry_non_intervention": "READY_FOR_IMPLEMENTATION_TEST",
+  "diesel_mechanism_answerability": "CONDITIONALLY_READY_PENDING_IMPLEMENTATION",
+  "source_modifications": "NONE",
+  "ems_modifications": "NONE",
+  "optimizer_modifications": "NONE",
+  "simulator_modifications": "NONE",
+  "forecast_modifications": "NONE",
+  "protocol_hash_verification": {
+    "md_protocol_file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.md",
+    "expected_md_hash": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+    "actual_md_hash": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+    "json_protocol_file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+    "expected_json_hash": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "actual_json_hash": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "status": "PASS"
+  },
+  "equivalence_gates_evaluations": {
+    "V2_CONTROL_EQUIVALENCE_TO_V1": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "system/forecasting/implementations/baseline.py (LocalBaselineForecastEngine)",
+      "source_or_artifact_evidence": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv & run_polaris_stage8_1_ems_empirical_replay.py (SHA256: c305aa81...)",
+      "comparison_procedure": "Diff baseline clear-sky point_forecasts array generated in V2 against baseline point_forecasts array in V1 for all 173 origins.",
+      "structural_basis": "The LocalBaselineForecastEngine implementation (baseline.py) is deterministic and immutable. The comparison procedure consists of an exact point-by-point float diff."
+    },
+    "V2_TREATMENT_EQUIVALENCE_TO_V1": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "system/forecasting/implementations/s81_solar.py (Stage81ForecastEngine) & POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv (SHA256: a4d288f9...)",
+      "source_or_artifact_evidence": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv & run_polaris_stage8_1_ems_empirical_replay.py",
+      "comparison_procedure": "Diff Stage8.1 predictions vector injected into ForecastBundle in V2 against raw CSV floats in V1 for all 173 origins.",
+      "structural_basis": "Stage81ForecastEngine reads raw floats from the frozen CSV artifact. The comparison procedure compares injected V2 forecast arrays against raw CSV entries."
+    },
+    "V2_INITIAL_STATE_EQUIVALENCE": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "run_polaris_stage8_1_ems_empirical_replay.py (initial StationState generator)",
+      "source_or_artifact_evidence": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv (initial_state_id, initial_state_match)",
+      "comparison_procedure": "Compare initial_state_id hash and StationState attributes (battery_soc, diesel_status) for Control and Treatment pairs.",
+      "structural_basis": "Initial state construction logic is explicit in runner script and verified identical across all 173 pairs in raw CSV."
+    },
+    "V2_REALIZED_TRAJECTORY_EQUIVALENCE": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "run_polaris_stage8_1_ems_empirical_replay.py (realized trajectory generator)",
+      "source_or_artifact_evidence": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv (realized_trajectory_id, realized_trajectory_match)",
+      "comparison_procedure": "Compare realized_trajectory_id hash and realized SW_IN/load arrays consumed by DigitalTwinSimulator in V2 against V1.",
+      "structural_basis": "Realized truth data loading is deterministic and stored in standard provider dataset."
+    },
+    "V2_FORECAST_INPUT_EQUIVALENCE": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "run_polaris_stage8_1_ems_empirical_replay.py (horizon slicing logic step_k:)",
+      "source_or_artifact_evidence": "run_polaris_stage8_1_ems_empirical_replay.py lines 112-124 & s81_solar.py",
+      "comparison_procedure": "Compare 24-step forecast vector (24-k empirical + k baseline continuation) passed to optimizer at each step k in V2 vs V1.",
+      "structural_basis": "Horizon slicing and continuation appending logic is fully defined in runner script."
+    },
+    "V2_EMS_CONFIGURATION_EQUIVALENCE": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "system/runtime/runner.py & run_polaris_stage8_1_ems_empirical_replay.py",
+      "source_or_artifact_evidence": "system/runtime/runner.py (SHA256: 0a1bb4f1...) & run_polaris_stage8_1_ems_empirical_replay.py (SHA256: c305aa81...)",
+      "comparison_procedure": "Diff microgrid parameters (station capacity 300m2, PV rating 60kW, battery 200kWh, diesel 50kW) in V2 vs V1.",
+      "structural_basis": "EMS microgrid config constants are explicitly defined in system/runtime/runner.py."
+    },
+    "V2_OPTIMIZER_EQUIVALENCE": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "system/optimization/implementations/milp.py (POLARISMILPOptimizer)",
+      "source_or_artifact_evidence": "system/optimization/implementations/milp.py (SHA256: 274926d2...)",
+      "comparison_procedure": "Diff MILP matrix coefficients, cost weights, and reserve constraint definitions in V2 vs V1.",
+      "structural_basis": "POLARISMILPOptimizer (milp.py) defines the complete MILP formulation."
+    },
+    "V2_SIMULATOR_EQUIVALENCE": {
+      "classification": "A \u2014 PRE-IMPLEMENTATION STRUCTURALLY VERIFIABLE",
+      "v1_reference": "system/simulation/simulator.py (DigitalTwinSimulator)",
+      "source_or_artifact_evidence": "system/simulation/simulator.py (SHA256: 7217dc2b...)",
+      "comparison_procedure": "Diff DigitalTwinSimulator step state transition functions and efficiency curves in V2 vs V1.",
+      "structural_basis": "DigitalTwinSimulator (simulator.py) encapsulates physical simulation equations."
+    },
+    "V2_SOLVER_EQUIVALENCE": {
+      "classification": "B \u2014 REQUIRES IMPLEMENTATION-AND-TEST VERIFICATION",
+      "v1_reference": "HiGHS MILP Solver Interface (milp.py)",
+      "source_or_artifact_evidence": "system/optimization/implementations/milp.py",
+      "comparison_procedure": "Run identical MILP problem matrices through HiGHS solver in V2 test suite and compare DispatchPlan outputs.",
+      "structural_basis": "Dynamic C++ HiGHS shared library binary hash is SOLVER_BINARY_HASH = NOT_ESTABLISHED; require test suite verification."
+    }
+  },
+  "runtime_equivalence_boundary": "Pre-implementation structural verification establishes only that the V1 reference and comparison procedure are identifiable. It does not establish that the future instrumented V2 execution will be runtime-equivalent to V1.",
+  "component_provenance": {
+    "ems_orchestration_path": "system/runtime/runner.py (Replay runner: run_polaris_stage8_1_ems_empirical_replay.py)",
+    "ems_orchestration_sha256": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69",
+    "ems_orchestration_identity": "POLARIS MPC Receding Horizon Runner / Orchestrator",
+    "optimizer_path": "system/optimization/implementations/milp.py",
+    "optimizer_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+    "optimizer_identity": "POLARISMILPOptimizer",
+    "solver_version": "HiGHS MILP Solver v1.7+",
+    "solver_interface_path": "system/optimization/implementations/milp.py",
+    "solver_interface_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+    "solver_binary_hash": "SOLVER_BINARY_HASH = NOT_ESTABLISHED"
+  },
+  "telemetry_field_classifications_4state": {
+    "directly_available_in_existing_execution_object": 23,
+    "requires_execution_code_instrumentation": 13,
+    "not_available": 0
+  },
+  "future_gate_sequence": [
+    "STEP 1: Pre-implementation protocol correction [STATUS = THIS TASK COMPLETE]",
+    "STEP 2: Telemetry implementation only [STATUS = FUTURE / NOT AUTHORIZED YET]",
+    "STEP 3: Static implementation audit [STATUS = FUTURE]",
+    "STEP 4: Non-intervention / V1-equivalence verification [STATUS = FUTURE AND REQUIRED]",
+    "STEP 5: Formal V2 execution authorization [STATUS = FUTURE / NOT AUTHORIZED]",
+    "STEP 6: V2 mechanism-observability execution [STATUS = FUTURE / NOT AUTHORIZED]",
+    "STEP 7: Timestep-level mechanism analysis [STATUS = FUTURE]"
+  ]
+}

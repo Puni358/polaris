@@ -1,0 +1,106 @@
+{
+  "governance": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "A2_TARGET_DEFINITION_GOVERNANCE_DECISION",
+    "authorization": "TARGET_DEFINITION_ONLY",
+    "date_utc": "2026-09-18T03:56:00Z"
+  },
+  "machine_readable_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A2_TARGET_DEFINED_PENDING_A2_RESEARCH_AUTHORIZATION",
+    "TARGET_DEFINITION_DECISION": "AUTHORIZED_CONDITIONAL_ABISKO_PROXY_TARGET",
+    "A2_READINESS": "READY_PENDING_A2_RESEARCH_AUTHORIZATION",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_TARGET_EMPIRICAL_STATUS": "MEASURED",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "A2_WIND_POWER_TARGET": "NOT_AUTHORIZED",
+    "A2_WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "A2_MODEL_TRAINING": "NOT_AUTHORIZED",
+    "A2_MODEL_INFERENCE": "NOT_AUTHORIZED",
+    "A2_MODEL_SELECTION": "NOT_AUTHORIZED",
+    "A2_BENCHMARKING": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_EXPERIMENT": "NOT_AUTHORIZED",
+    "REAL_DATA_INTEGRATION": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "TARGET_DEFINITION_ONLY"
+  },
+  "prior_governance_evidence_summary": {
+    "phase_a1_outcome": "WIND_TARGET_STATUS = NOT_ESTABLISHED; WIND_DATA_STATUS = INSUFFICIENT; No local ground wind measurements at Mount Nuolja AWS.",
+    "phase_a1_5_outcome": "Acquired SMHI Station 188790 (Abisko Aut) continuous 1-hour 10m wind speed dataset for 2024 (8,784 records, 100% complete, CC BY 4.0).",
+    "phase_a1_6_outcome": "TARGET_DECISION = PROXY_TARGET_CONDITIONALLY_SUPPORTED; Established Abisko wind speed as a conditionally supported regional proxy for the Nuolja microgrid context."
+  },
+  "authorized_target_specification": {
+    "target_variable": "WIND_SPEED",
+    "target_units": "m/s",
+    "measurement_height": "10.0 meters above ground",
+    "temporal_resolution": "1 hour",
+    "source_station": "Abisko Aut",
+    "smhi_station_id": "188790",
+    "empirical_status": "MEASURED",
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "direct_nuolja_measurement_status": "NOT_ESTABLISHED"
+  },
+  "mandatory_proxy_limitations": [
+    "Abisko measured wind speed is used as a conditionally supported regional proxy for the Mount Nuolja research context; it is not direct measured Nuolja wind.",
+    "The proxy designation supports use of the Abisko series as the empirical forecasting target for this research track; it does not establish meteorological equivalence between Abisko and Mount Nuolja.",
+    "Prohibited Claims: Abisko wind = Nuolja wind; Abisko measurements are direct Nuolja measurements; 310m altitude difference has been corrected; Nuolja wind conditions have been empirically reconstructed; a validated Abisko->Nuolja transfer model exists; Abisko and Nuolja are meteorologically equivalent sites."
+  ],
+  "altitude_limitation": {
+    "altitude_transfer_method": "NOT_ESTABLISHED",
+    "abisko_aut_elevation_m_asl": 392.235,
+    "nuolja_aws_elevation_m_asl": 702.0,
+    "altitude_difference_m": 309.765,
+    "governance_rule": "No power-law, log-law, or generic vertical scaling equation was applied or authorized. The target remains the actual measured Abisko 10m observation. Unresolved altitude difference remains a documented research limitation."
+  },
+  "wind_speed_vs_wind_power_boundary": {
+    "authorized_target_variable": "10m measured wind speed in m/s ONLY",
+    "A2_WIND_POWER_TARGET": "NOT_AUTHORIZED",
+    "A2_WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "governance_rule": "No turbine power curves (IEC 61400-12-1), Watt conversions, hub-height extrapolations, or wind generation forecasting claims are authorized. Conversion to wind power generation requires separate representation/modeling decisions and separate governance authorization."
+  },
+  "authorization_scope": {
+    "authorized_scope": "Authorizes ONLY the future research target definition: forecasting the measured 10m hourly Abisko wind-speed series as a conditionally supported regional proxy target for the Nuolja context.",
+    "non_authorized_activities": [
+      "Model training",
+      "Model inference",
+      "Model selection",
+      "Benchmarking",
+      "Feature engineering for a model",
+      "Forecast-window generation",
+      "ForecastBundle integration",
+      "EMS integration",
+      "New experiments"
+    ]
+  },
+  "firewall_compliance": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "LOCALBASELINEFORECASTENGINE_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A1_5_MODIFIED": "NO",
+    "A1_6_MODIFIED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "BENCHMARKING_EXECUTED": "NO",
+    "FORECAST_WINDOWS_CREATED": "NO",
+    "NEW_EXPERIMENT_EXECUTED": "NO",
+    "REAL_DATA_INTEGRATED": "NO",
+    "A2_MODEL_CREATED": "NO",
+    "IMPLEMENTATION_STATUS": "TARGET_DEFINITION_ONLY"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-09-12T15:47:00Z",
+  "stage": "STAGE 8.1 700 hPa STEERING WIND EXPERIMENT",
+  "audit_type": "FORENSIC_READ_ONLY",
+  "audits": {
+    "numerical_audit": "PASS",
+    "feature_audit": "PASS",
+    "data_source_audit": "PASS",
+    "causality_audit": "PASS",
+    "completeness_audit": "PASS",
+    "model_audit": "PASS",
+    "cv_methodology_audit": "PASS",
+    "odd_access_forensics": "PASS",
+    "result_shopping_audit": "PASS",
+    "artifact_audit": "PASS",
+    "gate_audit": "PASS",
+    "documentation": "PASS",
+    "integrity": "PASS"
+  },
+  "metrics": {
+    "control_mae_w_m2": 38.280605,
+    "candidate_mae_w_m2": 37.620054,
+    "delta_mae_w_m2": -0.660552,
+    "control_nmae_pct": 40.3918,
+    "candidate_nmae_pct": 37.9745,
+    "delta_nmae_pp": -2.4173,
+    "control_rmse_w_m2": 60.750856,
+    "candidate_rmse_w_m2": 60.160645,
+    "delta_rmse_w_m2": -0.59021,
+    "folds_improved": "5/5",
+    "fold_deltas": {
+      "F1": -0.506,
+      "F2": -0.5087,
+      "F3": -0.9164,
+      "F4": -1.0338,
+      "F5": -0.338
+    }
+  },
+  "odd_governance": {
+    "odd_target_accessed": "NO",
+    "odd_feature_accessed": "YES",
+    "odd_predictions_generated": "NO",
+    "odd_metrics_evaluated": "NO",
+    "odd_used_for_tuning": "NO"
+  },
+  "candidate": "U700 + V700",
+  "official_champion": "STAGE 7.5 TERRAIN/HORIZON",
+  "stage_status": "FROZEN_PENDING_ODD"
+}

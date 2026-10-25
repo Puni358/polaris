@@ -1,0 +1,254 @@
+{
+  "timestamp": "2026-09-13T02:46:08.311786+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 \u2014 LOCKED ODD VALIDATION",
+  "verdict": "VALIDATED CANDIDATE / POTENTIAL NEW CHAMPION",
+  "generalization_improved": true,
+  "candidate": {
+    "name": "Stage 8.1 + phi_inconsist",
+    "feature": "phi_inconsist",
+    "formula": "| N_total - (1 - exp(-0.02 * LWP_latest)) |",
+    "alpha": 0.02
+  },
+  "governance": {
+    "odd_target_reads": 173,
+    "odd_tuning_decisions": 0,
+    "odd_model_selection_decisions": 0,
+    "post_odd_model_modifications": 0,
+    "production_champion_modified": false,
+    "polaris_master_handoff_modified": false,
+    "production_champion_state": "FROZEN_OPERATIONAL_CHAMPION (Stage 8.1 nMAE = 28.0688%)"
+  },
+  "dataset_summary": {
+    "total_origins": 347,
+    "even_origins_count": 174,
+    "odd_origins_count": 173,
+    "odd_total_hours": 4152,
+    "odd_daytime_hours": 2883,
+    "odd_night_hours": 1269,
+    "odd_mean_daytime_actual_w_m2": 128.9285
+  },
+  "odd_metrics": {
+    "control": {
+      "daytime_mae_w_m2": 36.707059,
+      "daytime_nmae_pct": 28.4709,
+      "daytime_rmse_w_m2": 65.083569,
+      "daytime_bias_w_m2": 0.172159,
+      "night_mae_w_m2": 0.0
+    },
+    "candidate": {
+      "daytime_mae_w_m2": 36.211027,
+      "daytime_nmae_pct": 28.0861,
+      "daytime_rmse_w_m2": 64.230507,
+      "daytime_bias_w_m2": 0.994557,
+      "night_mae_w_m2": 0.0
+    },
+    "deltas": {
+      "delta_mae_w_m2": -0.496032,
+      "delta_nmae_pct": -0.3847,
+      "delta_rmse_w_m2": -0.853062,
+      "delta_bias_w_m2": 0.822399
+    }
+  },
+  "bootstrap_results": {
+    "resamples_count": 10000,
+    "random_seed": 42,
+    "mean_delta_mae_w_m2": -0.413599,
+    "ci_95_lower_w_m2": -0.758142,
+    "ci_95_upper_w_m2": -0.076533,
+    "pct_improving": 99.19
+  },
+  "horizon_breakdown": [
+    {
+      "horizon_hour": 1,
+      "count": 56,
+      "mean_actual": 6.8177,
+      "ctrl_mae": 3.8157,
+      "cand_mae": 3.720099,
+      "delta_mae": -0.095602
+    },
+    {
+      "horizon_hour": 2,
+      "count": 63,
+      "mean_actual": 11.1059,
+      "ctrl_mae": 6.125925,
+      "cand_mae": 6.255707,
+      "delta_mae": 0.129782
+    },
+    {
+      "horizon_hour": 3,
+      "count": 74,
+      "mean_actual": 20.2097,
+      "ctrl_mae": 10.996849,
+      "cand_mae": 10.666746,
+      "delta_mae": -0.330102
+    },
+    {
+      "horizon_hour": 4,
+      "count": 87,
+      "mean_actual": 33.3424,
+      "ctrl_mae": 16.074299,
+      "cand_mae": 15.740613,
+      "delta_mae": -0.333686
+    },
+    {
+      "horizon_hour": 5,
+      "count": 99,
+      "mean_actual": 57.9698,
+      "ctrl_mae": 24.592271,
+      "cand_mae": 24.854536,
+      "delta_mae": 0.262265
+    },
+    {
+      "horizon_hour": 6,
+      "count": 115,
+      "mean_actual": 88.1535,
+      "ctrl_mae": 31.5173,
+      "cand_mae": 30.302593,
+      "delta_mae": -1.214706
+    },
+    {
+      "horizon_hour": 7,
+      "count": 132,
+      "mean_actual": 112.7677,
+      "ctrl_mae": 38.801311,
+      "cand_mae": 40.470264,
+      "delta_mae": 1.668953
+    },
+    {
+      "horizon_hour": 8,
+      "count": 145,
+      "mean_actual": 148.7591,
+      "ctrl_mae": 41.247644,
+      "cand_mae": 42.364099,
+      "delta_mae": 1.116456
+    },
+    {
+      "horizon_hour": 9,
+      "count": 170,
+      "mean_actual": 170.0022,
+      "ctrl_mae": 47.384777,
+      "cand_mae": 48.308372,
+      "delta_mae": 0.923595
+    },
+    {
+      "horizon_hour": 10,
+      "count": 173,
+      "mean_actual": 203.6921,
+      "ctrl_mae": 55.144615,
+      "cand_mae": 55.804755,
+      "delta_mae": 0.66014
+    },
+    {
+      "horizon_hour": 11,
+      "count": 173,
+      "mean_actual": 241.9529,
+      "ctrl_mae": 64.631551,
+      "cand_mae": 63.683676,
+      "delta_mae": -0.947874
+    },
+    {
+      "horizon_hour": 12,
+      "count": 173,
+      "mean_actual": 262.972,
+      "ctrl_mae": 66.56838,
+      "cand_mae": 64.683946,
+      "delta_mae": -1.884434
+    },
+    {
+      "horizon_hour": 13,
+      "count": 173,
+      "mean_actual": 247.6221,
+      "ctrl_mae": 53.833449,
+      "cand_mae": 52.755982,
+      "delta_mae": -1.077468
+    },
+    {
+      "horizon_hour": 14,
+      "count": 173,
+      "mean_actual": 216.2639,
+      "ctrl_mae": 55.584023,
+      "cand_mae": 53.59066,
+      "delta_mae": -1.993363
+    },
+    {
+      "horizon_hour": 15,
+      "count": 173,
+      "mean_actual": 179.2603,
+      "ctrl_mae": 47.109934,
+      "cand_mae": 44.748843,
+      "delta_mae": -2.361091
+    },
+    {
+      "horizon_hour": 16,
+      "count": 158,
+      "mean_actual": 141.774,
+      "ctrl_mae": 44.178203,
+      "cand_mae": 41.756582,
+      "delta_mae": -2.42162
+    },
+    {
+      "horizon_hour": 17,
+      "count": 144,
+      "mean_actual": 84.0515,
+      "ctrl_mae": 32.702721,
+      "cand_mae": 31.28656,
+      "delta_mae": -1.416161
+    },
+    {
+      "horizon_hour": 18,
+      "count": 126,
+      "mean_actual": 53.8678,
+      "ctrl_mae": 23.562697,
+      "cand_mae": 22.641819,
+      "delta_mae": -0.920878
+    },
+    {
+      "horizon_hour": 19,
+      "count": 111,
+      "mean_actual": 39.26,
+      "ctrl_mae": 14.137583,
+      "cand_mae": 13.950469,
+      "delta_mae": -0.187114
+    },
+    {
+      "horizon_hour": 20,
+      "count": 96,
+      "mean_actual": 26.9726,
+      "ctrl_mae": 9.873423,
+      "cand_mae": 10.759142,
+      "delta_mae": 0.885719
+    },
+    {
+      "horizon_hour": 21,
+      "count": 82,
+      "mean_actual": 17.5901,
+      "ctrl_mae": 7.096083,
+      "cand_mae": 7.653964,
+      "delta_mae": 0.557881
+    },
+    {
+      "horizon_hour": 22,
+      "count": 71,
+      "mean_actual": 11.3331,
+      "ctrl_mae": 5.340333,
+      "cand_mae": 5.763229,
+      "delta_mae": 0.422896
+    },
+    {
+      "horizon_hour": 23,
+      "count": 61,
+      "mean_actual": 6.4148,
+      "ctrl_mae": 3.051319,
+      "cand_mae": 3.690588,
+      "delta_mae": 0.639268
+    },
+    {
+      "horizon_hour": 24,
+      "count": 55,
+      "mean_actual": 4.7105,
+      "ctrl_mae": 2.872768,
+      "cand_mae": 3.493807,
+      "delta_mae": 0.621039
+    }
+  ]
+}

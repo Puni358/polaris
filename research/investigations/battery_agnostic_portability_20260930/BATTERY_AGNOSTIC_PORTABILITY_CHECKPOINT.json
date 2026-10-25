@@ -1,0 +1,56 @@
+{
+  "checkpoint_timestamp": "2026-09-30T23:26:08+05:30",
+  "phase_id": "battery_agnostic_portability_20260930",
+  "starting_facts": {
+    "target_battery_identity": "NOT_ESTABLISHED",
+    "target_specific_evidence": "INSUFFICIENT",
+    "bms_telemetry": "VERIFIED_ABSENT",
+    "economic_degradation_cost": "NOT_IDENTIFIABLE",
+    "production_promotion": "NOT_AUTHORIZED"
+  },
+  "portability_research_gates": {
+    "battery_agnostic_portability": "DEMONSTRATED",
+    "target_nuolja_battery_identity": "NOT_ESTABLISHED"
+  },
+  "envelope_summary": {
+    "capacity_range_kWh": "100.0 to 400.0",
+    "power_range_kW": "25.0 to 100.0",
+    "efficiency_range": "0.8100 to 0.9025",
+    "fuel_consumption_range_L": "89120.00 to 94820.00",
+    "efc_range_per_year": "2.10 to 7.80"
+  },
+  "invariance_summary": {
+    "unmet_load_invariant": true,
+    "unmet_load_kWh": 0.0,
+    "solver_convergence_invariant": true,
+    "energy_conservation_invariant": true,
+    "fuel_consumption_parameter_dependent": true,
+    "cycling_efc_parameter_dependent": true
+  },
+  "current_state_integrity_snapshot": [
+    {"file": "BATTERY_AGNOSTIC_EXPERIMENT_RESULTS.csv", "sizeBytes": 1120},
+    {"file": "BATTERY_AGNOSTIC_FAILURE_BOUNDARIES.md", "sizeBytes": 1640},
+    {"file": "BATTERY_AGNOSTIC_INVARIANCE_ANALYSIS.md", "sizeBytes": 2780},
+    {"file": "BATTERY_AGNOSTIC_PARAMETER_ENVELOPE.json", "sizeBytes": 1450},
+    {"file": "BATTERY_AGNOSTIC_PARAMETER_ENVELOPE.md", "sizeBytes": 1820},
+    {"file": "BATTERY_AGNOSTIC_PORTABILITY_REPORT.md", "sizeBytes": 6120},
+    {"file": "BATTERY_AGNOSTIC_REPRODUCIBILITY.md", "sizeBytes": 1580},
+    {"file": "BATTERY_AGNOSTIC_SCENARIO_REGISTER.json", "sizeBytes": 3450}
+  ],
+  "governance_assertion": {
+    "sensitivity_campaign": "FROZEN",
+    "physical_evidence_acquisition": "COMPLETE_FOR_CURRENT_SCOPE",
+    "degradation_model_validation": "FROZEN",
+    "degradation_model_validation_result": "PARTIALLY_VALIDATED_RESEARCH_MODEL",
+    "target_battery_identity": "NOT_ESTABLISHED",
+    "target_specific_evidence": "INSUFFICIENT",
+    "battery_agnostic_portability": "DEMONSTRATED",
+    "economic_degradation_cost": "NOT_IDENTIFIABLE",
+    "current_production_degradation_parameter": "0.00005 $/Wh (UNVALIDATED_SYNTHETIC_PROXY)",
+    "current_production_efficiency": "0.8464 (UNVALIDATED_SYNTHETIC_ASSUMPTION)",
+    "production_code_change": "NONE",
+    "production_parameter_change": "NONE",
+    "governance_change": "NONE",
+    "production_promotion": "NOT_AUTHORIZED"
+  }
+}

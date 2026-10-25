@@ -1,0 +1,10 @@
+{
+  "solver_status": "OPTIMAL",
+  "solve_success": true,
+  "solve_duration_ms": 232.24952500095242,
+  "optimizer_class": "GAP19HighsNativeOptimizer",
+  "solvers_invoked": [
+    "highspy.Highs"
+  ],
+  "fallback_invoked": false
+}

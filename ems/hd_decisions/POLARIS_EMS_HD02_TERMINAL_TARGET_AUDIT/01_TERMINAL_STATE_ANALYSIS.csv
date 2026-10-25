@@ -1,0 +1,7 @@
+Property,Current_MILP_State,Governed_Specification_State,Semantic_Meaning,Units,Status
+Horizon_Length,H = 24 hours,H = 24 hours,Number of timesteps in MPC optimization window,Hours,IMPLEMENTATION_FACT
+Terminal_Energy_Variable,E_next[23] (index 23*K+6),E(H),Stored cell energy at final timestep t=H,Wh,IMPLEMENTATION_FACT
+Terminal_Energy_Bounds,40000.0 Wh to 190000.0 Wh,E_min_tech to E_max,Bounded by physical min (20%) and max (95%) SOC,Wh,IMPLEMENTATION_FACT
+Terminal_Constraint,None (Unconstrained above 20%),E(H) >= E_terminal_target (proposed),Constraint on terminal stored energy,Wh,GOVERNANCE_FACT
+Terminal_Objective_Term,None (0.0 cost in c vector),max(0 E_terminal_target - E(H)) in Stage 2,Penalty on terminal energy shortfall,Currency/Wh,GOVERNANCE_FACT
+End_of_Horizon_Incentive,Empty battery to 20% if diesel saved,Prevent end-of-horizon depletion,Solver depletes battery at t=H without terminal penalty,N/A,MATHEMATICAL_CONCLUSION

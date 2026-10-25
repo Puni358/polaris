@@ -1,0 +1,128 @@
+{
+  "audit_id": "DIESEL-REDUCTION-CONTROL-DESIGN-INDEPENDENT-AUDIT",
+  "audited_design": "DIESEL_REDUCTION_CONTROL_DESIGN.md / .json / _MANIFEST.json",
+  "audit_scope": "Read-only. No controller experiments, no simulation, no production or design-file edits. One read-only arithmetic check on the existing 2024 forecast fixture.",
+  "labels": ["VERIFIED", "INFERRED", "UNSUPPORTED", "BLOCKED", "WRONG"],
+  "final_verdict": "CORRECTION_REQUIRED",
+  "verdict_rationale": "No candidate is ready as written. Candidate 1 can be infeasible and pushes diesel up under J2 priority. Candidate 4 attributes 68.4% to step-0 when that figure is total EBR-removal fuel. Candidate 2 is closest, but its night-wind clamp is inactive on the named test origins. Every candidate needs the corrections below. Headline percentages and the 100% reliability guarantee are unsupported.",
+  "verified_gap19_facts": [
+    {"item": "Diesel binaries: p_diesel >= 10 kW * u and <= 100 kW * u; startup v_start >= u_t - u_{t-1}", "label": "VERIFIED", "source": "gap19_highs_native.py rows 9-11"},
+    {"item": "No minimum up-time and no start delay in the MILP", "label": "VERIFIED", "source": "gap19_highs_native.py constraint set"},
+    {"item": "diesel.yaml min_up_time_hours = 2; no start-time key; startup_cost 15.0 is a currency penalty, not litres", "label": "VERIFIED", "source": "system/config/diesel.yaml"},
+    {"item": "Startup fuel 2.0 L is a code default (startup_fuel_l), not a config value", "label": "VERIFIED", "source": "gap19_highs_native.py diesel_cfg default"},
+    {"item": "EBR window is range(t, min(t+6,24)); shrinks at horizon edge: 75,652 / 63,043 / 50,435 / 37,826 / 25,217 / 12,609 Wh for t=18..23 pattern", "label": "VERIFIED", "source": "gap19_highs_native.py EBR default branch"},
+    {"item": "Terminal applies only at t=23 as max(EBR[23], terminal)", "label": "VERIFIED", "source": "gap19_highs_native.py ~L151"},
+    {"item": "Layer C reserve is a soft slack s_J2 at priority 3, above fuel at priority 2", "label": "VERIFIED", "source": "gap19_highs_native.py ~L298-305, ~L365-385"},
+    {"item": "Non-critical unmet is not penalised in J1", "label": "VERIFIED", "source": "objective vector c1"}
+  ],
+  "candidate_audit": [
+    {
+      "candidate": "1_SOLAR_HEADROOM",
+      "verdict": "WRONG_AS_WRITTEN",
+      "findings": [
+        {"claim": "E_next[t] <= E_max - eta * sum min(P_sol, Pchg) * dt, no clamp", "label": "WRONG", "detail": "Cap can be negative on sunny days, making the variable bound below its lower bound and the MILP infeasible."},
+        {"claim": "Reserve floor intact whenever feasible", "label": "WRONG", "detail": "Cap is below the 115,652 Wh reserve target on 91 of 173 fixture origins, forcing s_J2 > 0."},
+        {"claim": "Solar pre-charge headroom reduces diesel", "label": "INFERRED", "detail": "Under J2 > J3, a cap below the reserve makes the solver burn diesel to charge toward the cap."},
+        {"claim": "Delta_risk_solar[k] de-rating", "label": "UNSUPPORTED", "detail": "Undefined value and source."},
+        {"claim": "Units of P_sol_exp", "label": "UNSUPPORTED", "detail": "Irradiance vs power not separated; 51*I with 60 kW clip not stated."},
+        {"claim": "50-150 kWh curtailment recovered, 15-35 L saved", "label": "UNSUPPORTED", "detail": "No computation."}
+      ],
+      "read_only_check": {"origins": 173, "cap_below_40000_Wh_infeasible": 53, "cap_below_115652_Wh": 91, "min_cap_Wh": -122991}
+    },
+    {
+      "candidate": "2_ROBUST_NET_EBR_FIRM_WIND",
+      "verdict": "CORRECTION_REQUIRED",
+      "findings": [
+        {"claim": "Night wind clamp (solar_elevation <= 0) prevents nocturnal wind-driven reserve collapse", "label": "WRONG", "detail": "The clamp never fires on origins 66 (2024-07-05, elevation 1.14 to 44.32 deg) and 56 (2024-06-25, 1.77 to 44.96 deg). Midnight-sun season at 68.36N."},
+        {"claim": "Mechanism is a new fix to the critical-aware failure", "label": "INFERRED", "detail": "Same family as the solar-only (-0.29 pp) and wind-including (-0.46 pp) critical-aware EBR variants that failed the reliability gate. Only the floor is new."},
+        {"claim": "Floor 25,217 Wh arithmetic", "label": "VERIFIED", "detail": "2 h * 11,600 W / 0.92 = 25,217.4 Wh"},
+        {"claim": "2-hour floor basis (diesel start/lockout)", "label": "UNSUPPORTED", "detail": "No start-time key. min_up_time_hours is a run-length minimum, not enforced by GAP19."},
+        {"claim": "5 kW firm-wind margin", "label": "UNSUPPORTED", "detail": "Derived from synthetic wind benchmark error, not measured wind."},
+        {"claim": "Solar credit P_solar_hat without realization rule", "label": "INFERRED", "detail": "Executor curtails surplus when plan discharges in the same hour (about 93-96% of curtailment), so credited solar may not reach the battery."},
+        {"claim": "Guaranteed zero critical failures", "label": "UNSUPPORTED", "detail": "Point-forecast credit with no error bound."},
+        {"claim": "Reserve is a hard protection", "label": "WRONG", "detail": "s_J2 is a soft slack at priority 3 above fuel."},
+        {"claim": "-35% to -45% diesel", "label": "UNSUPPORTED", "detail": "No computation. Closest prior variant gave -35.0% fuel with a reliability failure."}
+      ],
+      "exact_correction": [
+        "Replace elevation-gated wind rule with P_wind_firm = 0 at all hours (V2 Mode 1). Remove 5 kW margin.",
+        "Specify P_pv = min(60000, 51*I) on forecast irradiance.",
+        "Make solar credit a pre-registered de-rating, or drop it.",
+        "Justify the floor by a diesel start-delay measurement, or label it a governance choice.",
+        "Test one mechanism at a time (floor alone, or wind clamp alone) on the full 123-origin set."
+      ]
+    },
+    {
+      "candidate": "3_ELASTIC_SLACK",
+      "verdict": "WRONG_DERIVATION",
+      "findings": [
+        {"claim": "lambda = marginal fuel cost / risk multiplier = 0.00035 L/Wh", "label": "WRONG", "detail": "Marginal fuel is 0.00025 L/Wh (diesel.yaml). Dividing by a multiplier above 1 gives less than 0.00025. 0.00035 needs a multiplier of 0.71. Formula and value disagree."},
+        {"claim": "Reserve shortfall penalty 0.35 mL/Wh", "label": "INFERRED", "detail": "Comparable to fuel to fill the reserve (about 0.27 L/kWh), so the optimizer is roughly indifferent to the reserve."},
+        {"claim": "HiGHS configuration change, zero code", "label": "WRONG", "detail": "Merging J2 and J3 changes the objective vector and priority set. Code change."},
+        {"claim": "40-55% diesel reduction; Medium-Low safety", "label": "UNSUPPORTED", "detail": "No scoring function."}
+      ],
+      "exact_correction": "Define lambda as a sweep parameter with no claimed derivation. Report the full fuel-unmet frontier. Flag the objective change as a code change."
+    },
+    {
+      "candidate": "4_STATE_TRIGGERED_JIT",
+      "verdict": "CORRECTION_REQUIRED",
+      "findings": [
+        {"claim": "Step-0 commitment responsible for 68.4% of total diesel", "label": "WRONG", "detail": "68.4% is total fuel reduction from removing the whole EBR (6,603.98 -> 2,084.78 L, EBR_ABLATION_123_REPORT.md:25). Step-0 is a component. No figure isolates step-0 at 68.4%."},
+        {"claim": "Trigger covers 2 h (formula) and 3 h (text)", "label": "WRONG", "detail": "Internal inconsistency."},
+        {"claim": "Constraint u[t] <= I(E(t) <= E_trigger) is MILP-valid", "label": "UNSUPPORTED", "detail": "Valid as a bound only at t=0 (E(0) constant). For t>=1 a big-M is needed and not given."},
+        {"claim": "Diesel starts at least 2 h before battery reaches E_min", "label": "UNSUPPORTED", "detail": "Depends on instantaneous start, which is a model property, not a hardware measurement."},
+        {"claim": "<5 minute diesel start", "label": "UNSUPPORTED", "detail": "No source in repo."},
+        {"claim": "Eliminates step-0 commitment across 123 origins", "label": "INFERRED", "detail": "Verified for EBR-off only. Candidate-level effect unknown. Commitment may shift to t=1 under receding-horizon replanning."},
+        {"claim": "-50% to -65% diesel", "label": "UNSUPPORTED", "detail": "No computation."}
+      ],
+      "exact_correction": [
+        "Correct the 68.4% attribution to total EBR-removal fuel.",
+        "Resolve 2 h vs 3 h.",
+        "Give the big-M linearisation for t >= 1 with bounds from battery state limits.",
+        "Model a diesel start delay as a parameter before claiming safety."
+      ]
+    }
+  ],
+  "terminal_target": {
+    "label": "VERIFIED_PARTIAL",
+    "evidence": "TERMINAL_ABLATION_REPORT: removal gives -14.6% fuel (-56.6 L) and -10.2% curtailment, and +6.3% unmet (+20.2 kWh) across six origins. Partial contributor, not primary mechanism.",
+    "design_claim_status": "Design says additional 10-14% saving with no reliability cost: PARTIAL and misleading.",
+    "recommendation": "Keep as a separate experiment with reliability cost reported."
+  },
+  "hybrid_assessment": {
+    "label": "UNSUPPORTED",
+    "issues": [
+      "Changes three mechanisms at once. Terminal pruning has no isolated arm.",
+      "Acceptance criterion (critical_unmet = 0.0) conflicts with terminal evidence (+6.3% unmet) unless other mechanisms offset it. No offset shown."
+    ]
+  },
+  "ranking_assessment": {
+    "label": "UNSUPPORTED",
+    "reason": "Scores (9.4, 8.6, 8.1, 7.5) and percentage ranges have no defined scoring function or computation."
+  },
+  "experiment_protocol_assessment": {
+    "label": "CORRECTION_REQUIRED",
+    "issues": [
+      "Test origins (56, 77, 66, 23, 8, 30) are the diagnosis origins. No held-out set.",
+      "Six origins cannot support the significance tests the design requires. The 123-origin campaign is the one that could.",
+      "Origins 8 and 30 are not clean controls: origin 8 changes -19.3 L in the terminal ablation, origin 30 unchanged.",
+      "Acceptance criteria require 100% critical reliability and -25% fuel without basis."
+    ]
+  },
+  "best_candidate_to_implement_first": {
+    "answer": "None as written. For research, Candidate 2 with corrections (all-hours wind clamp, no solar credit beyond pre-registered de-rating), tested on the full 123-origin set against an unchanged control.",
+    "reason": "Changes one mechanism (reserve sizing), has a clear safety argument for the wind channel, needs no new model. Candidate 4 avoids forecasts but depends on a diesel start delay the repo does not contain. Candidate 1 is infeasible as written."
+  },
+  "unverified_items": [
+    "Whether a production config overrides the EBR default (no ebr_target_wh key found in config files).",
+    "Campaign origin dates for 77, 66, 23, 8, 30 (fixture IDs do not map to campaign IDs; only 2024-06-25 and 2024-07-05 confirmed by date).",
+    "Whether startup_fuel_l is set anywhere outside the code default.",
+    "Git status of design and production files (not run).",
+    "Stated SOC figures (90-95% pre-dawn) against trace data."
+  ],
+  "governance": {
+    "design_files_modified": 0,
+    "production_files_modified": 0,
+    "experiments_run": 0,
+    "controller_runs": 0
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "title": "POLARIS Stage8.1 \u2192 EMS V2 Telemetry Static Re-Audit Report",
+  "task_type": "READ-ONLY FINAL STATIC RE-AUDIT",
+  "final_classification": "A \u2014 STATIC NON-INTERVENTION RE-AUDIT PASS",
+  "classification_rationale": "Static source inspection of system/runtime/runner.py, system/telemetry/v2_logger.py, and test_v2_telemetry.py establishes that the corrected failure-isolation boundary strictly isolates telemetry exceptions in a dedicated try...except block (runner.py:218-260). Telemetry exceptions cannot alter execution_status, completed_steps, StationState, DispatchPlan, or EMS failure semantics. All 18 protected artifacts and 6 frozen scientific components remain 100% byte-for-bit untouched. All 35 bounded test suite tests pass.",
+  "primary_question_answer": "NO. Telemetry failure CANNOT alter EMS execution.",
+  "protected_artifacts_verified": true,
+  "protected_hashes": [
+    {
+      "file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "expected_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "actual_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv",
+      "expected_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "actual_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.json",
+      "expected_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "actual_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.md",
+      "expected_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "actual_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.md",
+      "expected_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "actual_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.json",
+      "expected_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "actual_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.md",
+      "expected_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "actual_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.json",
+      "expected_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "actual_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.md",
+      "expected_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "actual_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+      "expected_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "actual_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.md",
+      "expected_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "actual_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.json",
+      "expected_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "actual_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.md",
+      "expected_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "actual_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.json",
+      "expected_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "actual_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.md",
+      "expected_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "actual_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.json",
+      "expected_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "actual_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.md",
+      "expected_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "actual_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.json",
+      "expected_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "actual_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "match": true
+    }
+  ],
+  "frozen_components": [
+    {
+      "file": "system/optimization/implementations/milp.py",
+      "expected_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+      "actual_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+      "match": true
+    },
+    {
+      "file": "run_polaris_stage8_1_ems_empirical_replay.py",
+      "expected_sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "actual_sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "match": true
+    },
+    {
+      "file": "system/simulation/simulator.py",
+      "expected_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "actual_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "match": true
+    },
+    {
+      "file": "system/forecasting/implementations/s81_solar.py",
+      "expected_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "actual_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "match": true
+    },
+    {
+      "file": "system/schemas/station_state.py",
+      "expected_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "actual_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "match": true
+    },
+    {
+      "file": "system/schemas/dispatch_plan.py",
+      "expected_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "actual_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "match": true
+    }
+  ],
+  "implementation_hashes": {
+    "system/runtime/runner.py": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "system/telemetry/v2_logger.py": "131ff6f4dc83a2a57329362871eaab356b5b41fb2e7318b7a127bd47cd20aaac",
+    "system/tests/test_v2_telemetry.py": "aad44e780a850fbb76407496efe7c59cc6c957d8672c99b43faea7cc696abc76"
+  },
+  "exception_boundary_forensics": {
+    "isolation_structure": "EMS simulator step try...except (lines 195-215) is strictly separate from telemetry capture try...except (lines 218-260).",
+    "fault_containment": "Telemetry exceptions are caught by except Exception as te: and logged to self._telemetry_faults without altering execution_status or fault_events.",
+    "ems_fault_preservation": "Genuine optimizer/simulator failures retain existing governed FAILED_TERMINATED semantics."
+  },
+  "mutability_and_aliasing": {
+    "primitives": "Scalars passed as immutable Python primitives (int, float, str, bool).",
+    "lists": "Forecast vectors explicitly copied via list comprehension [float(v) for v in ...] inside record_step.",
+    "mutation_risk": "ZERO MUTATION POSSIBLE (statically verified)."
+  },
+  "future_truth_firewall": {
+    "status": "INTACT AND VERIFIED",
+    "details": "actual_solar_truth loaded from future_actuals[0] AFTER optimization completes for step k."
+  },
+  "forecast_immutability": {
+    "status": "INTACT AND VERIFIED",
+    "details": "Full 24-step forecast vectors preserved as 64-bit IEEE floats without rounding, truncation, scaling, or interpolation."
+  },
+  "mpc_ordering": {
+    "status": "INTACT AND VERIFIED",
+    "details": "Telemetry capture occurs at step 6, strictly after simulator state transition has completed."
+  },
+  "test_evidence_summary": [
+    {
+      "item": "TEST 1: Telemetry disabled normal execution",
+      "type": "TEST-VERIFIED",
+      "verification_details": "runner.run_pipeline(..., v2_telemetry_collector=None) produces clean SUCCESS_CLEAN execution"
+    },
+    {
+      "item": "TEST 2: Telemetry enabled successful execution",
+      "type": "TEST-VERIFIED",
+      "verification_details": "Enabled telemetry produces bit-for-bit identical fuel, energy, and load metrics as disabled telemetry"
+    },
+    {
+      "item": "TEST 3: Telemetry deliberate exception isolation",
+      "type": "TEST-VERIFIED",
+      "verification_details": "Faulty collector raising RuntimeError leaves EMS status SUCCESS_CLEAN and completed_steps intact"
+    },
+    {
+      "item": "TEST 4: Telemetry serialization failure isolation",
+      "type": "TEST-VERIFIED",
+      "verification_details": "Export failure does not affect MPC runner execution"
+    },
+    {
+      "item": "TEST 5: Optimizer deliberate failure preservation",
+      "type": "TEST-VERIFIED",
+      "verification_details": "Invalid optimizer config produces FAILED_TERMINATED with OPTIMIZATION_RUNTIME_FAILURE"
+    },
+    {
+      "item": "TEST 6: Simulator deliberate failure preservation",
+      "type": "TEST-VERIFIED",
+      "verification_details": "Physical state violation produces FAILED_TERMINATED with FAILED_STATE_VIOLATION"
+    },
+    {
+      "item": "TEST 7: DispatchPlan non-mutation equivalence",
+      "type": "TEST-VERIFIED",
+      "verification_details": "DispatchPlan outputs identical across disabled, enabled, and faulty telemetry"
+    },
+    {
+      "item": "TEST 8: StationState non-mutation equivalence",
+      "type": "TEST-VERIFIED",
+      "verification_details": "StationState trajectories identical across disabled, enabled, and faulty telemetry"
+    },
+    {
+      "item": "TEST 9: Timestep advancement equivalence",
+      "type": "TEST-VERIFIED",
+      "verification_details": "completed_steps count identical regardless of telemetry status or fault"
+    },
+    {
+      "item": "TEST 10: Forecast vectors equivalence",
+      "type": "TEST-VERIFIED",
+      "verification_details": "ForecastBundle vectors identical across disabled, enabled, and faulty telemetry"
+    },
+    {
+      "item": "37-field schema completeness & uniqueness",
+      "type": "TEST-VERIFIED",
+      "verification_details": "All 37 required fields present, unique, and mapped to availability class"
+    },
+    {
+      "item": "Exact float preservation",
+      "type": "TEST-VERIFIED",
+      "verification_details": "Raw float forecast vectors (length 24) preserved without rounding or truncation"
+    },
+    {
+      "item": "Deterministic serialization",
+      "type": "TEST-VERIFIED",
+      "verification_details": "export_json() and export_csv() produce byte-for-byte identical output on repeated calls"
+    },
+    {
+      "item": "Future-truth firewall sequence",
+      "type": "SOURCE-VERIFIED",
+      "verification_details": "actual_solar_truth loaded on runner.py:191 strictly AFTER s81_engine.predict() and MILPEnergyOptimizer.optimize()"
+    },
+    {
+      "item": "Primitive scalar immutability & list copying",
+      "type": "SOURCE-VERIFIED",
+      "verification_details": "Scalars passed by value; forecast lists copied via comprehension in record_step"
+    },
+    {
+      "item": "Telemetry return-value isolation",
+      "type": "SOURCE-VERIFIED",
+      "verification_details": "v2_telemetry_collector.record_step(...) return value is unassigned and discarded by runner.py"
+    },
+    {
+      "item": "MPC horizon step ordering",
+      "type": "SOURCE-VERIFIED",
+      "verification_details": "Telemetry capture occurs at step 6, strictly after physical simulator state transition"
+    }
+  ],
+  "diesel_mechanism_observability": "COMPLETE AND READY FOR ALL 7 HYPOTHESES (M1-M7)",
+  "required_final_governance_state": {
+    "v1": "ACCEPTED + FROZEN",
+    "v1_result": "UNCHANGED",
+    "v2_protocol": "HARDENED",
+    "v2_telemetry_implementation": "COMPLETE",
+    "v2_non_intervention_correction": "COMPLETE",
+    "v2_static_non_intervention_reaudit": "A",
+    "v2_execution": "NOT AUTHORIZED"
+  },
+  "next_step": "FORMAL V2 EXECUTION AUTHORIZATION REVIEW"
+}

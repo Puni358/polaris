@@ -1,0 +1,86 @@
+{
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "timestamp": "2026-10-04T14:26:25.451984+00:00",
+  "total_origins_evaluated": 123,
+  "total_hours_simulated": 2952,
+  "arms": {
+    "ARM_A_BASELINE": {
+      "total_diesel_fuel_liters": 5478.3113,
+      "mean_diesel_fuel_per_origin_l": 44.5391,
+      "total_diesel_on_hours": 441,
+      "total_diesel_startups": 367,
+      "total_unmet_critical_load_wh": 9049950.84,
+      "reliability_pct": 79.562,
+      "origins_with_unmet_load": 123,
+      "total_curtailment_wh": 7260782.33,
+      "mean_curtailment_per_origin_wh": 59030.75,
+      "total_battery_throughput_wh": 23628397.83,
+      "total_efc": 59.07,
+      "minimum_soc_observed_pct": 57.83,
+      "soc_floor_violations_count": 0,
+      "max_busbar_accounting_residual_w": 0.0,
+      "mean_solve_time_sec": 1.009
+    },
+    "ARM_B_CANDIDATE": {
+      "total_diesel_fuel_liters": 6603.9802,
+      "mean_diesel_fuel_per_origin_l": 53.6909,
+      "total_diesel_on_hours": 484,
+      "total_diesel_startups": 324,
+      "total_unmet_critical_load_wh": 7844419.08,
+      "reliability_pct": 82.2845,
+      "origins_with_unmet_load": 123,
+      "total_curtailment_wh": 9477704.0,
+      "mean_curtailment_per_origin_wh": 77054.5,
+      "total_battery_throughput_wh": 26671500.22,
+      "total_efc": 66.68,
+      "minimum_soc_observed_pct": 54.97,
+      "soc_floor_violations_count": 0,
+      "max_busbar_accounting_residual_w": 0.0,
+      "mean_solve_time_sec": 1.0775
+    },
+    "ARM_C_DIAGNOSTIC": {
+      "total_diesel_fuel_liters": 4954.7665,
+      "mean_diesel_fuel_per_origin_l": 40.2827,
+      "total_diesel_on_hours": 427,
+      "total_diesel_startups": 279,
+      "total_unmet_critical_load_wh": 8609035.6,
+      "reliability_pct": 80.5577,
+      "origins_with_unmet_load": 123,
+      "total_curtailment_wh": 5526595.54,
+      "mean_curtailment_per_origin_wh": 44931.67,
+      "total_battery_throughput_wh": 23091854.46,
+      "total_efc": 57.73,
+      "minimum_soc_observed_pct": 54.93,
+      "soc_floor_violations_count": 0,
+      "max_busbar_accounting_residual_w": 0.0,
+      "mean_solve_time_sec": 0.7592
+    }
+  },
+  "paired_comparison_A_vs_B": {
+    "total_fuel_savings_liters": -1125.6689,
+    "mean_fuel_savings_per_origin_l": -9.1518,
+    "median_fuel_savings_per_origin_l": -8.4424,
+    "bootstrap_95_ci_mean_l": [
+      -12.044919075957614,
+      -6.37553167902063
+    ],
+    "bootstrap_95_ci_median_l": [
+      -12.527100000000004,
+      -4.380000000000003
+    ],
+    "wilcoxon_stat": 1641.0,
+    "wilcoxon_p_value_two_sided": 4.201081808504508e-08,
+    "wilcoxon_p_value_one_sided_greater": 0.9999999789945909,
+    "wins_candidate_lower_fuel": 36,
+    "losses_candidate_higher_fuel": 87,
+    "ties": 0
+  },
+  "preregistered_success_gates": {
+    "statistically_significant_fuel_reduction": false,
+    "candidate_unmet_le_baseline_unmet": true,
+    "zero_soc_floor_violations": true,
+    "zero_optimizer_failures": true,
+    "overall_success_gate_status": "FAIL"
+  },
+  "final_scientific_verdict": "BENEFIT NOT DEMONSTRATED"
+}

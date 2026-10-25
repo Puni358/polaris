@@ -1,0 +1,49 @@
+{
+  "stage": "STAGE 8.3 AND 8.4 DUAL FORENSIC AUDIT",
+  "audit_date": "2026-09-12",
+  "stage_8_3_control_audit": {
+    "status": "RESOLVED_AND_VERIFIED",
+    "prompt_reference_control_mae_w_m2": 38.280605,
+    "prompt_reference_control_explanation": "EVEN CV MAE of Stage 6.6 31-feature model used as baseline control during Stage 8.1 evaluation",
+    "stage_8_3_actual_e0_control_mae_w_m2": 35.069059,
+    "stage_8_3_actual_e0_control_explanation": "Actual 5-fold EVEN CV MAE of the Stage 8.1 37-feature Champion model",
+    "stage_8_3_candidate_e1_mae_w_m2": 35.696286,
+    "delta_mae_w_m2": 0.627227,
+    "folds_improved": "1/5",
+    "gate_rejection_valid": true,
+    "stage_8_3_rerun_required": false
+  },
+  "stage_8_4_viirs_feasibility_audit": {
+    "status": "VERIFIED",
+    "snpp_usable_origins": "90/347",
+    "noaa20_usable_origins": "135/347",
+    "noaa21_usable_origins": "0/347",
+    "constellation_union_usable_origins": "225/347",
+    "empirical_usable_rate_pct": 64.84,
+    "physical_causal_origins": "346/347",
+    "operationally_causal_origins": "0/347",
+    "operational_causality_classification": "CONDITIONAL",
+    "operational_latency_delay": "3 to 13 hours for standard science L2 files",
+    "valid_cot_origins": 225,
+    "valid_cer_origins": 225,
+    "valid_phase_origins": 346,
+    "quality_valid_origins": 346,
+    "polar_night_fill_origins": 121,
+    "stage_6_2_reconciliation": "EXPLAINED",
+    "zero_placeholder_distances_used": true,
+    "actual_cmr_granules_enumerated": true
+  },
+  "governance": {
+    "odd_target_access": "NO",
+    "odd_predictions": "NO",
+    "odd_metrics": "NO",
+    "odd_tuning": "NO",
+    "champion_modified": "NO",
+    "current_champion": "Stage 8.1 U700+V700 Steering Wind Model",
+    "champion_odd_mae_w_m2": 36.188657,
+    "champion_odd_nmae_pct": 28.0688,
+    "forecasting_experiment_run": "NO",
+    "cv_run": "NO",
+    "integrity": "PASS"
+  }
+}

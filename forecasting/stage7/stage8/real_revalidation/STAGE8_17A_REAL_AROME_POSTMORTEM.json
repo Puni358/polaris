@@ -1,0 +1,684 @@
+{
+  "timestamp_utc": "2026-09-13T09:08:53.793745+00:00",
+  "experiment_title": "POLARIS Stage 8.17A Real AROME Postmortem Forensics",
+  "provenance": {
+    "real_arome_csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/arome_arctic_347_origins_real_subset.csv",
+    "real_arome_sha256": "db5fa7591e586c0e1288a76806a7717d4ad13779458cb48a961959d48ceec298",
+    "odd_predictions_csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_ODD_PREDICTIONS.csv",
+    "odd_predictions_sha256": "26bac202e3ce3cd851f1467a6a1c1b675b0409285058f895924d095eb8f0b908"
+  },
+  "feature_distributions": {
+    "wind_disagreement_700_daytime": {
+      "min": 0.1261298590816262,
+      "P25": 3.9881776936232987,
+      "P50": 6.454198354646341,
+      "P75": 9.928140868599222,
+      "P90": 13.749441894911188,
+      "P95": 16.019690524502554,
+      "P99": 23.899865948982637,
+      "max": 31.687183691721,
+      "mean": 7.439625454964855,
+      "std": 4.739634494420444,
+      "median": 6.454198354646341
+    },
+    "lwp_disagreement_daytime": {
+      "min": 0.0,
+      "P25": 0.045269045967601854,
+      "P50": 2.560068075957547,
+      "P75": 24.978693360463005,
+      "P90": 96.68021268094793,
+      "P95": 170.72758860297364,
+      "P99": 536.6740962082674,
+      "max": 1752.6338336578372,
+      "mean": 37.10831282574909,
+      "std": 111.80473466567125,
+      "median": 2.560068075957547
+    }
+  },
+  "correlations_with_forecast_error": {
+    "wind_disagreement_700": {
+      "spearman_abs_error": -0.0746393127834833,
+      "spearman_signed_residual": 0.04818525697166598,
+      "spearman_improvement": 0.03888492230480291,
+      "pearson_abs_error": -0.05263505768920221,
+      "pearson_signed_residual": 0.02719066147220456,
+      "pearson_improvement": 0.04099191675412565
+    },
+    "LWP_disagreement": {
+      "spearman_abs_error": 0.0745777230238083,
+      "spearman_signed_residual": 0.07633890870040462,
+      "spearman_improvement": 0.06744882600676766,
+      "pearson_abs_error": 0.025893926728134228,
+      "pearson_signed_residual": 0.05391200069380496,
+      "pearson_improvement": 0.0323741637908235
+    }
+  },
+  "quantile_analysis": [
+    {
+      "feature": "wind_disagreement_700",
+      "quantile": "(0.125, 3.383]",
+      "range": "[0.1261, 3.3818]",
+      "count": 577,
+      "ctrl_mae": 36.353583,
+      "cand_mae": 37.193082,
+      "delta_mae": 0.839499,
+      "ctrl_rmse": 61.665932,
+      "cand_rmse": 62.69913,
+      "delta_rmse": 1.033198,
+      "mean_signed_residual": -2.899553,
+      "mean_absolute_residual": 37.193082
+    },
+    {
+      "feature": "wind_disagreement_700",
+      "quantile": "(3.383, 5.427]",
+      "range": "[3.3842, 5.4250]",
+      "count": 576,
+      "ctrl_mae": 38.659706,
+      "cand_mae": 39.155963,
+      "delta_mae": 0.496257,
+      "ctrl_rmse": 65.553259,
+      "cand_rmse": 66.691171,
+      "delta_rmse": 1.137912,
+      "mean_signed_residual": -5.654146,
+      "mean_absolute_residual": 39.155963
+    },
+    {
+      "feature": "wind_disagreement_700",
+      "quantile": "(5.427, 7.596]",
+      "range": "[5.4272, 7.5944]",
+      "count": 577,
+      "ctrl_mae": 35.069967,
+      "cand_mae": 35.292373,
+      "delta_mae": 0.222405,
+      "ctrl_rmse": 65.06235,
+      "cand_rmse": 65.322305,
+      "delta_rmse": 0.259955,
+      "mean_signed_residual": -2.203244,
+      "mean_absolute_residual": 35.292373
+    },
+    {
+      "feature": "wind_disagreement_700",
+      "quantile": "(7.596, 10.928]",
+      "range": "[7.6026, 10.9219]",
+      "count": 576,
+      "ctrl_mae": 41.006538,
+      "cand_mae": 40.833671,
+      "delta_mae": -0.172867,
+      "ctrl_rmse": 70.31504,
+      "cand_rmse": 69.983207,
+      "delta_rmse": -0.331833,
+      "mean_signed_residual": 10.994205,
+      "mean_absolute_residual": 40.833671
+    },
+    {
+      "feature": "wind_disagreement_700",
+      "quantile": "(10.928, 31.687]",
+      "range": "[10.9320, 31.6872]",
+      "count": 577,
+      "ctrl_mae": 29.977895,
+      "cand_mae": 29.669372,
+      "delta_mae": -0.308523,
+      "ctrl_rmse": 57.898835,
+      "cand_rmse": 57.719201,
+      "delta_rmse": -0.179633,
+      "mean_signed_residual": 2.460092,
+      "mean_absolute_residual": 29.669372
+    },
+    {
+      "feature": "LWP_disagreement",
+      "quantile": "(-0.001, 0.838]",
+      "range": "[0.0000, 0.8320]",
+      "count": 1153,
+      "ctrl_mae": 30.723371,
+      "cand_mae": 31.316194,
+      "delta_mae": 0.592823,
+      "ctrl_rmse": 55.048391,
+      "cand_rmse": 55.49722,
+      "delta_rmse": 0.448829,
+      "mean_signed_residual": -0.496618,
+      "mean_absolute_residual": 31.316194
+    },
+    {
+      "feature": "LWP_disagreement",
+      "quantile": "(0.838, 6.303]",
+      "range": "[0.8395, 6.2983]",
+      "count": 577,
+      "ctrl_mae": 41.007705,
+      "cand_mae": 40.805903,
+      "delta_mae": -0.201802,
+      "ctrl_rmse": 70.312157,
+      "cand_rmse": 69.794964,
+      "delta_rmse": -0.517193,
+      "mean_signed_residual": -7.013434,
+      "mean_absolute_residual": 40.805903
+    },
+    {
+      "feature": "LWP_disagreement",
+      "quantile": "(6.303, 40.678]",
+      "range": "[6.3214, 40.6633]",
+      "count": 576,
+      "ctrl_mae": 39.639386,
+      "cand_mae": 40.039671,
+      "delta_mae": 0.400285,
+      "ctrl_rmse": 71.926953,
+      "cand_rmse": 73.172102,
+      "delta_rmse": 1.245149,
+      "mean_signed_residual": 3.877743,
+      "mean_absolute_residual": 40.039671
+    },
+    {
+      "feature": "LWP_disagreement",
+      "quantile": "(40.678, 1752.634]",
+      "range": "[40.6882, 1752.6338]",
+      "count": 577,
+      "ctrl_mae": 38.957734,
+      "cand_mae": 38.651537,
+      "delta_mae": -0.306197,
+      "ctrl_rmse": 66.706607,
+      "cand_rmse": 66.993258,
+      "delta_rmse": 0.286651,
+      "mean_signed_residual": 6.822886,
+      "mean_absolute_residual": 38.651537
+    }
+  ],
+  "horizon_analysis": [
+    {
+      "horizon_h": 1,
+      "count": 56,
+      "ctrl_mae": 3.720099,
+      "cand_mae": 3.459753,
+      "delta_mae": -0.260346,
+      "mean_wind_disagreement": 5.7822,
+      "mean_lwp_disagreement": 48.6697,
+      "spearman_wind_abs_err": 0.031,
+      "spearman_lwp_abs_err": -0.0594
+    },
+    {
+      "horizon_h": 2,
+      "count": 63,
+      "ctrl_mae": 6.255707,
+      "cand_mae": 6.294865,
+      "delta_mae": 0.039157,
+      "mean_wind_disagreement": 5.7627,
+      "mean_lwp_disagreement": 49.9277,
+      "spearman_wind_abs_err": -0.071,
+      "spearman_lwp_abs_err": -0.0046
+    },
+    {
+      "horizon_h": 3,
+      "count": 74,
+      "ctrl_mae": 10.666746,
+      "cand_mae": 10.380754,
+      "delta_mae": -0.285993,
+      "mean_wind_disagreement": 6.1601,
+      "mean_lwp_disagreement": 39.6676,
+      "spearman_wind_abs_err": -0.1997,
+      "spearman_lwp_abs_err": 0.0216
+    },
+    {
+      "horizon_h": 4,
+      "count": 87,
+      "ctrl_mae": 15.740613,
+      "cand_mae": 15.421324,
+      "delta_mae": -0.319289,
+      "mean_wind_disagreement": 6.1099,
+      "mean_lwp_disagreement": 27.9863,
+      "spearman_wind_abs_err": -0.118,
+      "spearman_lwp_abs_err": -0.0683
+    },
+    {
+      "horizon_h": 5,
+      "count": 99,
+      "ctrl_mae": 24.854536,
+      "cand_mae": 23.647176,
+      "delta_mae": -1.20736,
+      "mean_wind_disagreement": 6.4855,
+      "mean_lwp_disagreement": 28.7495,
+      "spearman_wind_abs_err": -0.0877,
+      "spearman_lwp_abs_err": -0.081
+    },
+    {
+      "horizon_h": 6,
+      "count": 115,
+      "ctrl_mae": 30.302593,
+      "cand_mae": 30.082,
+      "delta_mae": -0.220593,
+      "mean_wind_disagreement": 6.8295,
+      "mean_lwp_disagreement": 27.7447,
+      "spearman_wind_abs_err": -0.0885,
+      "spearman_lwp_abs_err": -0.1135
+    },
+    {
+      "horizon_h": 7,
+      "count": 132,
+      "ctrl_mae": 40.470264,
+      "cand_mae": 39.181458,
+      "delta_mae": -1.288807,
+      "mean_wind_disagreement": 7.5159,
+      "mean_lwp_disagreement": 48.6915,
+      "spearman_wind_abs_err": -0.0989,
+      "spearman_lwp_abs_err": 0.0666
+    },
+    {
+      "horizon_h": 8,
+      "count": 145,
+      "ctrl_mae": 42.364099,
+      "cand_mae": 42.612487,
+      "delta_mae": 0.248388,
+      "mean_wind_disagreement": 7.7795,
+      "mean_lwp_disagreement": 30.514,
+      "spearman_wind_abs_err": -0.1719,
+      "spearman_lwp_abs_err": 0.1327
+    },
+    {
+      "horizon_h": 9,
+      "count": 170,
+      "ctrl_mae": 48.308372,
+      "cand_mae": 48.274689,
+      "delta_mae": -0.033683,
+      "mean_wind_disagreement": 8.0846,
+      "mean_lwp_disagreement": 53.7539,
+      "spearman_wind_abs_err": -0.1249,
+      "spearman_lwp_abs_err": -0.0165
+    },
+    {
+      "horizon_h": 10,
+      "count": 173,
+      "ctrl_mae": 55.804755,
+      "cand_mae": 55.328402,
+      "delta_mae": -0.476352,
+      "mean_wind_disagreement": 8.3525,
+      "mean_lwp_disagreement": 42.8434,
+      "spearman_wind_abs_err": -0.1508,
+      "spearman_lwp_abs_err": -0.0524
+    },
+    {
+      "horizon_h": 11,
+      "count": 173,
+      "ctrl_mae": 63.683676,
+      "cand_mae": 63.887549,
+      "delta_mae": 0.203873,
+      "mean_wind_disagreement": 8.2312,
+      "mean_lwp_disagreement": 31.0595,
+      "spearman_wind_abs_err": -0.1573,
+      "spearman_lwp_abs_err": 0.1456
+    },
+    {
+      "horizon_h": 12,
+      "count": 173,
+      "ctrl_mae": 64.683946,
+      "cand_mae": 64.817762,
+      "delta_mae": 0.133816,
+      "mean_wind_disagreement": 8.059,
+      "mean_lwp_disagreement": 33.5955,
+      "spearman_wind_abs_err": -0.1087,
+      "spearman_lwp_abs_err": 0.1913
+    },
+    {
+      "horizon_h": 13,
+      "count": 173,
+      "ctrl_mae": 52.755982,
+      "cand_mae": 52.43707,
+      "delta_mae": -0.318912,
+      "mean_wind_disagreement": 7.9028,
+      "mean_lwp_disagreement": 30.8631,
+      "spearman_wind_abs_err": -0.1141,
+      "spearman_lwp_abs_err": 0.2394
+    },
+    {
+      "horizon_h": 14,
+      "count": 173,
+      "ctrl_mae": 53.59066,
+      "cand_mae": 53.250317,
+      "delta_mae": -0.340343,
+      "mean_wind_disagreement": 7.8958,
+      "mean_lwp_disagreement": 25.3287,
+      "spearman_wind_abs_err": -0.0841,
+      "spearman_lwp_abs_err": 0.3244
+    },
+    {
+      "horizon_h": 15,
+      "count": 173,
+      "ctrl_mae": 44.748843,
+      "cand_mae": 47.011175,
+      "delta_mae": 2.262333,
+      "mean_wind_disagreement": 8.0188,
+      "mean_lwp_disagreement": 24.4506,
+      "spearman_wind_abs_err": -0.2305,
+      "spearman_lwp_abs_err": 0.2001
+    },
+    {
+      "horizon_h": 16,
+      "count": 158,
+      "ctrl_mae": 41.756582,
+      "cand_mae": 43.553759,
+      "delta_mae": 1.797176,
+      "mean_wind_disagreement": 7.6406,
+      "mean_lwp_disagreement": 28.2239,
+      "spearman_wind_abs_err": -0.2433,
+      "spearman_lwp_abs_err": 0.0802
+    },
+    {
+      "horizon_h": 17,
+      "count": 144,
+      "ctrl_mae": 31.28656,
+      "cand_mae": 32.70522,
+      "delta_mae": 1.41866,
+      "mean_wind_disagreement": 7.2622,
+      "mean_lwp_disagreement": 25.175,
+      "spearman_wind_abs_err": -0.1195,
+      "spearman_lwp_abs_err": 0.1903
+    },
+    {
+      "horizon_h": 18,
+      "count": 126,
+      "ctrl_mae": 22.641819,
+      "cand_mae": 24.491454,
+      "delta_mae": 1.849635,
+      "mean_wind_disagreement": 6.8123,
+      "mean_lwp_disagreement": 35.2188,
+      "spearman_wind_abs_err": -0.0462,
+      "spearman_lwp_abs_err": 0.2169
+    },
+    {
+      "horizon_h": 19,
+      "count": 111,
+      "ctrl_mae": 13.950469,
+      "cand_mae": 15.156217,
+      "delta_mae": 1.205748,
+      "mean_wind_disagreement": 6.7781,
+      "mean_lwp_disagreement": 58.4306,
+      "spearman_wind_abs_err": 0.118,
+      "spearman_lwp_abs_err": 0.2815
+    },
+    {
+      "horizon_h": 20,
+      "count": 96,
+      "ctrl_mae": 10.759142,
+      "cand_mae": 10.551961,
+      "delta_mae": -0.207181,
+      "mean_wind_disagreement": 7.3168,
+      "mean_lwp_disagreement": 57.5441,
+      "spearman_wind_abs_err": -0.1913,
+      "spearman_lwp_abs_err": 0.2476
+    },
+    {
+      "horizon_h": 21,
+      "count": 82,
+      "ctrl_mae": 7.653964,
+      "cand_mae": 7.065205,
+      "delta_mae": -0.588759,
+      "mean_wind_disagreement": 6.7327,
+      "mean_lwp_disagreement": 41.1326,
+      "spearman_wind_abs_err": -0.0777,
+      "spearman_lwp_abs_err": 0.2983
+    },
+    {
+      "horizon_h": 22,
+      "count": 71,
+      "ctrl_mae": 5.763229,
+      "cand_mae": 5.46907,
+      "delta_mae": -0.294159,
+      "mean_wind_disagreement": 7.029,
+      "mean_lwp_disagreement": 44.2258,
+      "spearman_wind_abs_err": -0.1021,
+      "spearman_lwp_abs_err": 0.2491
+    },
+    {
+      "horizon_h": 23,
+      "count": 61,
+      "ctrl_mae": 3.690588,
+      "cand_mae": 3.197845,
+      "delta_mae": -0.492743,
+      "mean_wind_disagreement": 7.4706,
+      "mean_lwp_disagreement": 57.6147,
+      "spearman_wind_abs_err": -0.2462,
+      "spearman_lwp_abs_err": 0.1362
+    },
+    {
+      "horizon_h": 24,
+      "count": 55,
+      "ctrl_mae": 3.493807,
+      "cand_mae": 3.082725,
+      "delta_mae": -0.411082,
+      "mean_wind_disagreement": 7.194,
+      "mean_lwp_disagreement": 47.4067,
+      "spearman_wind_abs_err": -0.0636,
+      "spearman_lwp_abs_err": -0.1563
+    }
+  ],
+  "solar_regime_analysis": [
+    {
+      "regime": "Night",
+      "count": 667,
+      "ctrl_mae": 1.952011,
+      "cand_mae": 1.952011,
+      "delta_mae": 0.0,
+      "mean_wind_disagreement": 8.5092,
+      "mean_lwp_disagreement": 25.6136
+    },
+    {
+      "regime": "Low (0-15\u00b0)",
+      "count": 1071,
+      "ctrl_mae": 19.284723,
+      "cand_mae": 19.238474,
+      "delta_mae": -0.04625,
+      "mean_wind_disagreement": 7.5515,
+      "mean_lwp_disagreement": 30.2325
+    },
+    {
+      "regime": "Moderate (15-35\u00b0)",
+      "count": 835,
+      "ctrl_mae": 61.005318,
+      "cand_mae": 61.564605,
+      "delta_mae": 0.559287,
+      "mean_wind_disagreement": 6.7838,
+      "mean_lwp_disagreement": 50.1677
+    },
+    {
+      "regime": "High (>35\u00b0)",
+      "count": 310,
+      "ctrl_mae": 101.616194,
+      "cand_mae": 102.272653,
+      "delta_mae": 0.656459,
+      "mean_wind_disagreement": 6.5185,
+      "mean_lwp_disagreement": 50.4193
+    }
+  ],
+  "error_magnitude_regimes": [
+    {
+      "error_quantile": "E1_Lowest",
+      "count": 577,
+      "ctrl_mae": 0.376728,
+      "cand_mae": 0.862991,
+      "delta_mae": 0.486264,
+      "mean_improvement": -0.486264,
+      "mean_wind_disagreement": 8.2999,
+      "mean_lwp_disagreement": 33.2162
+    },
+    {
+      "error_quantile": "E2_Low",
+      "count": 576,
+      "ctrl_mae": 3.76709,
+      "cand_mae": 4.50005,
+      "delta_mae": 0.73296,
+      "mean_improvement": -0.73296,
+      "mean_wind_disagreement": 7.5501,
+      "mean_lwp_disagreement": 29.3638
+    },
+    {
+      "error_quantile": "E3_Mid",
+      "count": 577,
+      "ctrl_mae": 13.758519,
+      "cand_mae": 13.567008,
+      "delta_mae": -0.191511,
+      "mean_improvement": 0.191511,
+      "mean_wind_disagreement": 7.3986,
+      "mean_lwp_disagreement": 39.1503
+    },
+    {
+      "error_quantile": "E4_High",
+      "count": 576,
+      "ctrl_mae": 38.491097,
+      "cand_mae": 38.98081,
+      "delta_mae": 0.489713,
+      "mean_improvement": -0.489713,
+      "mean_wind_disagreement": 6.9749,
+      "mean_lwp_disagreement": 44.5338
+    },
+    {
+      "error_quantile": "E5_Highest",
+      "count": 577,
+      "ctrl_mae": 124.609424,
+      "cand_mae": 124.170328,
+      "delta_mae": -0.439096,
+      "mean_improvement": 0.439096,
+      "mean_wind_disagreement": 6.9739,
+      "mean_lwp_disagreement": 39.277
+    }
+  ],
+  "top_feature_redundancies": {
+    "wind_disagreement_700": [
+      {
+        "disagreement_feature": "wind_disagreement_700",
+        "existing_feature": "u700",
+        "spearman_r": 0.5694,
+        "pearson_r": 0.6783
+      },
+      {
+        "disagreement_feature": "wind_disagreement_700",
+        "existing_feature": "fc_cloud_cover",
+        "spearman_r": 0.3187,
+        "pearson_r": 0.2959
+      },
+      {
+        "disagreement_feature": "wind_disagreement_700",
+        "existing_feature": "cloud_frac",
+        "spearman_r": 0.3187,
+        "pearson_r": 0.2959
+      },
+      {
+        "disagreement_feature": "wind_disagreement_700",
+        "existing_feature": "phi_inconsist",
+        "spearman_r": 0.2287,
+        "pearson_r": 0.188
+      },
+      {
+        "disagreement_feature": "wind_disagreement_700",
+        "existing_feature": "ctx_abs_change_6h",
+        "spearman_r": -0.2212,
+        "pearson_r": -0.2009
+      }
+    ],
+    "lwp_disagreement": [
+      {
+        "disagreement_feature": "LWP_disagreement",
+        "existing_feature": "lwp_latest",
+        "spearman_r": 0.8939,
+        "pearson_r": 0.7212
+      },
+      {
+        "disagreement_feature": "LWP_disagreement",
+        "existing_feature": "lwp_x_cloud",
+        "spearman_r": 0.8883,
+        "pearson_r": 0.7106
+      },
+      {
+        "disagreement_feature": "LWP_disagreement",
+        "existing_feature": "cloud_frac",
+        "spearman_r": 0.6053,
+        "pearson_r": 0.233
+      },
+      {
+        "disagreement_feature": "LWP_disagreement",
+        "existing_feature": "fc_cloud_cover",
+        "spearman_r": 0.6053,
+        "pearson_r": 0.233
+      },
+      {
+        "disagreement_feature": "LWP_disagreement",
+        "existing_feature": "fc_relative_humidity_2m",
+        "spearman_r": 0.4703,
+        "pearson_r": 0.2194
+      }
+    ]
+  },
+  "feature_importance_ranks": {
+    "wind_disagreement_700_rank": 22,
+    "lwp_disagreement_rank": 23
+  },
+  "prediction_change_analysis": {
+    "stats": {
+      "min": -55.76843574627088,
+      "P25": -2.9135807876267634,
+      "P50": 0.0,
+      "P75": 1.6562492109710956,
+      "P90": 7.001571964315397,
+      "P95": 11.99705157812674,
+      "P99": 25.397401091329943,
+      "max": 55.9313845938473,
+      "mean": -0.4565645998320195,
+      "std": 8.21339947141166,
+      "median": 0.0
+    },
+    "correlations": {
+      "spearman_wind_disagreement": 0.004454868040804638,
+      "spearman_lwp_disagreement": -0.0977145821993036,
+      "spearman_control_abs_error": -0.07146048522753115,
+      "spearman_control_signed_residual": -0.008959208528683251
+    }
+  },
+  "failure_archetypes": {
+    "top_50_degradation_summary": {
+      "mean_horizon": 12.38,
+      "mean_solar_elevation": 34.49944664971129,
+      "mean_wind_disagreement": 6.847375157077571,
+      "mean_lwp_disagreement": 100.45484879034846,
+      "mean_actual_sw_in": 294.33013333333804,
+      "mean_ctrl_err": 83.30119893475376,
+      "mean_cand_err": 111.67362267614233,
+      "mean_degradation": 28.37242374138857
+    },
+    "top_50_improvement_summary": {
+      "mean_horizon": 12.08,
+      "mean_solar_elevation": 35.96176335431696,
+      "mean_wind_disagreement": 8.192345689161463,
+      "mean_lwp_disagreement": 87.28149491650785,
+      "mean_actual_sw_in": 322.809433333334,
+      "mean_ctrl_err": 125.54454366757616,
+      "mean_cand_err": 96.56726628827309,
+      "mean_improvement": 28.977277379303086
+    }
+  },
+  "scientific_interpretation": {
+    "what_data_definitely_shows": [
+      "Real historical AROME-Arctic 2024 NWP data yields an ODD Daytime MAE of 36.426418 W/m\u00b2 compared to Control MAE of 36.211027 W/m\u00b2 (+0.215391 W/m\u00b2 degradation).",
+      "The historical Stage 8.17A claim of 35.241085 W/m\u00b2 was an artifact of pseudo-random synthetic perturbations (seed 817).",
+      "Both disagreement features show near-zero correlation with signed forecast residuals (Spearman r = +0.048 for wind, +0.076 for LWP), meaning they do not provide directional error correction.",
+      "Wind disagreement has a small negative correlation with absolute forecast error (Spearman r = -0.0746), while LWP disagreement has a small positive correlation (Spearman r = +0.0746)."
+    ],
+    "what_data_suggests": [
+      "Scalar magnitude of 700 hPa wind disagreement captures broad atmospheric instability/synoptic change, which is already partially represented by context GHI standard deviation (ctx_std_6h).",
+      "Instantaneous column LWP disagreement suffers from fine-scale spatial/temporal advection shifts between AROME and MEPS grids that act as high-frequency noise."
+    ],
+    "what_data_does_not_establish": [
+      "The data does NOT establish that NWP disagreement in general is uninformative, only that instantaneous scalar magnitude disagreement at a single point fails.",
+      "The data does NOT establish that regional cloud advection cannot be modeled."
+    ],
+    "most_likely_failure_mechanism": "Unaligned Scalar Magnitude Representation: Scalar magnitude disagreement indicates when models differ but gives no directional vector signal, causing tree models to apply isotropic variance adjustments that increase mean squared error on uncalibrated cases.",
+    "whether_route_should_be_closed": "YES \u2014 Stage 8.17A is CLOSED."
+  },
+  "future_research_candidates": [
+    {
+      "candidate": "Directional Wind Vector Disagreement (Angle & Solar-Projected Component)",
+      "classification": "REQUIRES INDEPENDENT RESEARCH",
+      "rationale": "Decomposing wind vector disagreement into along-solar-azimuth and cross-solar-azimuth components could transform scalar noise into a directional steering signal."
+    },
+    {
+      "candidate": "Lead-Time Integrated Disagreement Trend (3h/6h Delta)",
+      "classification": "WEAK",
+      "rationale": "Instantaneous point disagreement is too noisy; temporal trajectory disagreement may filter sub-grid turbulence."
+    }
+  ],
+  "final_status": "CLOSED \u2014 EVIDENCE SUPPORTS A SPECIFIC NEW RESEARCH ROUTE"
+}

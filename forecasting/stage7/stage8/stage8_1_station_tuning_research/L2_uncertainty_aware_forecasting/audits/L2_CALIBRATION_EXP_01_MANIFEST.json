@@ -1,0 +1,102 @@
+{
+  "experiment_id": "L2-CALIBRATION-EXP-01",
+  "generated_at_utc": "2026-10-04T04:57:16.495448+00:00",
+  "runner_script": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/run_l2_calibration_exp_01.py",
+  "research_question": "Can validation-only conditional calibration of the existing L2-EXP-01 quantile predictions produce a blind 2023 interval that satisfies the calibration gates, without retraining or changing the underlying uncertainty model?",
+  "experiment_verdict": "NO-GO",
+  "best_method": "B_horizon_conditional",
+  "best_method_blind_picp": 0.7179417369997277,
+  "best_method_blind_picp_ci": [
+    0.7029676014157364,
+    0.7323781649877484
+  ],
+  "best_method_worst_slice": "4. h21_h24",
+  "best_method_worst_slice_picp": 0.25,
+  "governance_locks": {
+    "model_retrained": false,
+    "f_model_frozen": true,
+    "gap19_unmodified": true,
+    "calendar_year_2024_quarantined": true,
+    "blind_evaluation_single_use": true
+  },
+  "immutable_input_hashes": {
+    "frozen_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "exact_2020_2023_f_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions_2020_2023": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "historical_f_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "frozen_l2_exp_01_predictions": "1eb5b6db7c426c2c173c170a2cdd87945f0946f80153cc40f6180410de5a817c"
+  },
+  "methods_summary": {
+    "A_global": {
+      "blind_stage_c_picp": 0.7122243397767493,
+      "blind_stage_b_picp": 0.8034304383337871,
+      "blind_mpiw": 182.26656134631094,
+      "blind_winkler": 258.21984047781103,
+      "worst_slice": "4. h21_h24",
+      "worst_slice_picp": 0.25,
+      "gates": {
+        "P1": false,
+        "P2": false,
+        "P3": false,
+        "P4": true,
+        "P5": true
+      },
+      "status": "NO-GO"
+    },
+    "B_horizon_conditional": {
+      "blind_stage_c_picp": 0.7179417369997277,
+      "blind_stage_b_picp": 0.8107813776204738,
+      "blind_mpiw": 183.63166434113805,
+      "blind_winkler": 258.41398505989656,
+      "worst_slice": "4. h21_h24",
+      "worst_slice_picp": 0.25,
+      "gates": {
+        "P1": false,
+        "P2": false,
+        "P3": false,
+        "P4": true,
+        "P5": true
+      },
+      "status": "NO-GO"
+    },
+    "C_solar_elevation_conditional": {
+      "blind_stage_c_picp": 0.7114075687448952,
+      "blind_stage_b_picp": 0.801796896270079,
+      "blind_mpiw": 183.75625375034036,
+      "blind_winkler": 258.32926028450856,
+      "worst_slice": "4. h21_h24",
+      "worst_slice_picp": 0.25,
+      "gates": {
+        "P1": false,
+        "P2": false,
+        "P3": false,
+        "P4": true,
+        "P5": true
+      },
+      "status": "NO-GO"
+    },
+    "D_horizon_plus_elevation_conditional": {
+      "blind_stage_c_picp": 0.7165804519466377,
+      "blind_stage_b_picp": 0.8064252654505853,
+      "blind_mpiw": 185.44862787911788,
+      "blind_winkler": 258.50977326436157,
+      "worst_slice": "4. h21_h24",
+      "worst_slice_picp": 0.25,
+      "gates": {
+        "P1": false,
+        "P2": false,
+        "P3": false,
+        "P4": true,
+        "P5": true
+      },
+      "status": "NO-GO"
+    }
+  },
+  "output_artifacts": {
+    "results_json": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_CALIBRATION_EXP_01_RESULTS.json",
+    "blind_metrics_csv": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_CALIBRATION_EXP_01_BLIND_METRICS.csv",
+    "calibration_parameters_csv": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_CALIBRATION_EXP_01_CALIBRATION_PARAMETERS.csv",
+    "execution_audit_md": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/audits/L2_CALIBRATION_EXP_01_EXECUTION_AUDIT.md",
+    "results_md": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_CALIBRATION_EXP_01_RESULTS.md"
+  }
+}

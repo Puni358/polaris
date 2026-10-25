@@ -1,0 +1,34 @@
+{
+  "policy": "G1.3-E",
+  "status": "PROVENANCE_CLOSED_WITH_EXPLICIT_LIMITATIONS",
+  "evidence_boundary": "C",
+  "universal_freshness_threshold": null,
+  "resource_specific_rules_established": 0,
+  "nuolja_specific_rules_established": 0,
+  "production_implementation_authorized": false,
+  "source_status_counts": {
+    "DIRECTLY_VERIFIED": 1,
+    "REFERENCE_VERIFIED_BUT_NUMERICAL_SUPPORT_UNVERIFIED": 6,
+    "SOURCE_UNVERIFIED": 1,
+    "MISREPRESENTED_SOURCE": 0
+  },
+  "osha_loto_interlock_governance": true,
+  "osha_telemetry_freshness_rule": false,
+  "pre_post_protected_file_proof": {
+    "source_baseline_file": "G1.3E_AUDIT_CORRECTION_BASELINE_HASHES.json",
+    "source_provenance_file": "G1.3E_AUDIT_CORRECTION_PROVENANCE.json",
+    "protected_files_checked": 63,
+    "hash_mismatches": 0,
+    "scope_statement": "The 63 files included in the pre-correction protected-file baseline were SHA-256 identical in the post-correction comparison."
+  },
+  "current_state_hash_snapshot": {
+    "source_manifest_file": "SOURCE_HASH_MANIFEST.json",
+    "interpretation": "Current SHA-256 inventory of files included in this manifest."
+  },
+  "original_research_modified": 0,
+  "production_modified": 0,
+  "governance_modified": 0,
+  "canonical_fixture_modified": 0,
+  "frozen_campaign_modified": 0,
+  "timestamp_provenance_status": "RECORDED_BUT_RUNTIME_ORIGIN_UNVERIFIED"
+}

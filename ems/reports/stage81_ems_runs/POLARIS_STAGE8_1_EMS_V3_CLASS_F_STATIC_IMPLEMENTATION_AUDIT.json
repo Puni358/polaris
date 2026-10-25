@@ -1,0 +1,255 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V3_CLASS_F_STATIC_IMPLEMENTATION_AUDIT_MANIFEST",
+  "audit_classification": "GATE3_STATIC_AUDIT_CLASSIFICATION = A — CLASS F IMPLEMENTATION STATICALLY VERIFIED",
+  "status_flags": {
+    "V3_DESIGN_STATUS": "DESIGN_ONLY",
+    "V3_GATE2_STATUS": "REVIEW_COMPLETE",
+    "V3_GATE2A_STATUS": "SPECIFICATION_REVIEW_COMPLETE",
+    "V3_CLASS_F_PARAMETER_STATUS": "FROZEN_PREDECLARED",
+    "V3_IMPLEMENTATION": "COMPLETE",
+    "V3_STATIC_AUDIT": "VERIFIED_A",
+    "V3_EXECUTION": "NOT_AUTHORIZED",
+    "V2_MODIFICATION": "NO",
+    "V2_RERUN": "NO",
+    "V1_MODIFICATION": "NO",
+    "FORECAST_MODIFICATION": "NO",
+    "SIMULATOR_MODIFICATION": "NO",
+    "RAW_EVIDENCE_MODIFICATION": "NO"
+  },
+  "timestamp_utc": "2026-09-19T16:49:45+05:30",
+  "target_candidate": {
+    "candidate_id": "CLASS_F",
+    "name": "Horizon-Weighted MPC Objective",
+    "implementation_file": "system/optimization/implementations/milp.py"
+  },
+  "protected_sha256_verification": [
+    {
+      "file": "system/optimization/implementations/milp.py",
+      "expected_sha256": "fc4fafe712a62fa301b3fbe021cd933c64bd08bd96d6a644ba412207134a19c3",
+      "actual_sha256": "fc4fafe712a62fa301b3fbe021cd933c64bd08bd96d6a644ba412207134a19c3",
+      "status": "VERIFIED_AUTHORIZED_MODIFICATION"
+    },
+    {
+      "file": "system/simulation/simulator.py",
+      "expected_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "actual_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "system/runtime/runner.py",
+      "expected_sha256": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+      "actual_sha256": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "system/forecasting/implementations/s81_solar.py",
+      "expected_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "actual_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "system/forecasting/implementations/baseline.py",
+      "expected_sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+      "actual_sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "system/schemas/forecast_bundle.py",
+      "expected_sha256": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+      "actual_sha256": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "system/schemas/station_state.py",
+      "expected_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "actual_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "system/schemas/dispatch_plan.py",
+      "expected_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "actual_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_EXECUTION.json",
+      "expected_sha256": "09427eafb49c46caa6fbe9626f4edc57ff8dc8ffc4d64386e6073e1a8ab6f143",
+      "actual_sha256": "09427eafb49c46caa6fbe9626f4edc57ff8dc8ffc4d64386e6073e1a8ab6f143",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_EXECUTION_RAW.csv",
+      "expected_sha256": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+      "actual_sha256": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+      "expected_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "actual_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.json",
+      "expected_sha256": "6ddcc73add04bab6075d98378f61c5433da5b1e2399789969bb5622cbe002efd",
+      "actual_sha256": "6ddcc73add04bab6075d98378f61c5433da5b1e2399789969bb5622cbe002efd",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.md",
+      "expected_sha256": "8ec1d4c66697b52a9045ace89eb1f5b6361b44c3c2b2c53c6172173f70bb1355",
+      "actual_sha256": "8ec1d4c66697b52a9045ace89eb1f5b6361b44c3c2b2c53c6172173f70bb1355",
+      "status": "VERIFIED_BYTE_IDENTICAL"
+    }
+  ],
+  "modified_file_boundary": {
+    "authorized_files_modified": ["system/optimization/implementations/milp.py"],
+    "unauthorized_files_modified": []
+  },
+  "gamma_provenance": {
+    "source_code_line": "system/optimization/implementations/milp.py:95",
+    "source_expression": "gamma = float(config.get('optimizer', {}).get('horizon_discount_factor_gamma', 1.0))",
+    "default_value": 1.0,
+    "treatment_value": 0.95,
+    "provenance_assessment": "Verified. Default gamma=1.0 preserves exact baseline behavior when omitted. When treatment configuration horizon_discount_factor_gamma: 0.95 is supplied, gamma=0.95 is applied."
+  },
+  "t_index_provenance": {
+    "loop_variable": "t",
+    "loop_range": "range(H) where H=24 (milp.py:72, 86)",
+    "index_meaning": "Relative MILP decision timestep within 24-step optimization horizon",
+    "off_by_one_audit": "Verified. t=0 yields w_0 = 0.95^0 = 1.0. t=23 yields w_23 = 0.95^23 = 0.30735494488344665.",
+    "distinctions": {
+      "k": "MPC outer loop iteration index",
+      "h": "Forecast horizon offset",
+      "t": "Relative decision timestep within optimization horizon (0..23)"
+    }
+  },
+  "weight_sequence": {
+    "w_0": 1.0,
+    "w_1": 0.95,
+    "w_2": 0.9025,
+    "w_3": 0.857375,
+    "w_12": 0.5403600876626369,
+    "w_23": 0.30735494488344665
+  },
+  "objective_variable_mapping": [
+    {
+      "index": "base + 2",
+      "variable": "p_curt_sol",
+      "semantic_term": "solar curtailment penalty",
+      "baseline_coefficient": "curt_penalty_per_wh * dt",
+      "intervention_coefficient": "curt_penalty_per_wh * dt * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:98"
+    },
+    {
+      "index": "base + 3",
+      "variable": "p_curt_wind",
+      "semantic_term": "wind curtailment penalty",
+      "baseline_coefficient": "curt_penalty_per_wh * dt",
+      "intervention_coefficient": "curt_penalty_per_wh * dt * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:99"
+    },
+    {
+      "index": "base + 4",
+      "variable": "p_chg",
+      "semantic_term": "battery charging degradation cost",
+      "baseline_coefficient": "deg_penalty * dt",
+      "intervention_coefficient": "deg_penalty * dt * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:100"
+    },
+    {
+      "index": "base + 5",
+      "variable": "p_dis",
+      "semantic_term": "battery discharging degradation cost",
+      "baseline_coefficient": "deg_penalty * dt",
+      "intervention_coefficient": "deg_penalty * dt * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:101"
+    },
+    {
+      "index": "base + 7",
+      "variable": "p_diesel",
+      "semantic_term": "diesel fuel power cost",
+      "baseline_coefficient": "fuel_cost_per_l * marg_fuel_l_wh * dt",
+      "intervention_coefficient": "fuel_cost_per_l * marg_fuel_l_wh * dt * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:102"
+    },
+    {
+      "index": "base + 9",
+      "variable": "p_unmet",
+      "semantic_term": "critical unmet load penalty",
+      "baseline_coefficient": "unmet_penalty_per_wh * dt",
+      "intervention_coefficient": "unmet_penalty_per_wh * dt",
+      "weight_applied": "1.0 (UNWEIGHTED)",
+      "source_line": "milp.py:103"
+    },
+    {
+      "index": "base + 13",
+      "variable": "u_diesel",
+      "semantic_term": "diesel base running cost",
+      "baseline_coefficient": "fuel_cost_per_l * base_fuel_l_h * dt",
+      "intervention_coefficient": "fuel_cost_per_l * base_fuel_l_h * dt * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:104"
+    },
+    {
+      "index": "base + 14",
+      "variable": "v_start",
+      "semantic_term": "diesel startup event penalty",
+      "baseline_coefficient": "startup_cost",
+      "intervention_coefficient": "startup_cost * 0.95^t",
+      "weight_applied": "0.95^t",
+      "source_line": "milp.py:105"
+    }
+  ],
+  "unmet_load_semantics_audit": {
+    "source_verification": "c[base+9] = unmet_penalty_per_wh * dt is unweighted (gamma^t = 1.0).",
+    "milp_status": "Objective-penalized decision variable ($w_unmet = 10.0 $/Wh), NOT a hard linear constraint in scipy.optimize.milp matrix.",
+    "evaluation_status": "Post-execution evaluation invariant (P_unmet = 0.0 W enforced as hard safety invariant in simulator/evaluator).",
+    "claim_verification": "Class F does NOT alter unmet load penalty magnitude or constraint structure. Unweighted penalty does NOT guarantee zero unmet load during MILP optimization."
+  },
+  "constraint_and_physical_model_integrity": {
+    "decision_variables_per_step": "15 (VERIFIED UNCHANGED)",
+    "decision_horizon_steps": "24 (VERIFIED UNCHANGED)",
+    "total_decision_variables": "360 (VERIFIED UNCHANGED)",
+    "variable_bounds": "VERIFIED UNCHANGED",
+    "variable_integrality": "VERIFIED UNCHANGED",
+    "equality_constraints": "VERIFIED UNCHANGED (Solar, wind, bus balance, demand balance, energy transition)",
+    "inequality_constraints": "VERIFIED UNCHANGED (Charge/discharge bounds, exclusivity, diesel min/max, startup tracking)",
+    "simulator_and_evaluator": "VERIFIED UNCHANGED (Byte-identical hashes)"
+  },
+  "mechanical_test_scope_audit": {
+    "test_file": "system/tests/test_class_f_implementation.py",
+    "tests": [
+      {
+        "name": "test_class_f_baseline_equivalence",
+        "result": "PASSED",
+        "scope": "Verifies gamma=1.0 reproduces baseline objective value and dispatch plan."
+      },
+      {
+        "name": "test_class_f_horizon_discounting_mechanics",
+        "result": "PASSED",
+        "scope": "Verifies gamma=0.95 applies exact w_t = 0.95^t sequence to operational terms."
+      }
+    ],
+    "scientific_validation_disclaimer": "Mechanical unit tests verify coefficient matrix transformation only. They do NOT constitute scientific replay or 173-origin verification."
+  },
+  "scientific_execution_verification": {
+    "scientific_replays_run": 0,
+    "pilot_experiments_run": 0,
+    "origin_replays_run": 0,
+    "execution_authorized": false
+  },
+  "v1_v2_immutability_verification": {
+    "v1_result": "UNTOUCHED AND FROZEN",
+    "v2_raw_evidence": "UNTOUCHED AND FROZEN (SHA: 652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a)",
+    "v2_execution_json": "UNTOUCHED AND FROZEN (SHA: 09427eafb49c46caa6fbe9626f4edc57ff8dc8ffc4d64386e6073e1a8ab6f143)",
+    "v2_protocol": "UNTOUCHED AND FROZEN (SHA: 3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc)"
+  },
+  "blockers_identified": [],
+  "next_governed_step": "Formal Gate 4 Execution Authorization Review"
+}

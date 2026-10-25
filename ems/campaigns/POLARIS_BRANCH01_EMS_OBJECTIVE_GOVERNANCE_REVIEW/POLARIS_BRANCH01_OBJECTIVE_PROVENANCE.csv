@@ -1,0 +1,9 @@
+source_file,source_location,source_sha256,term_name,decision_variable,coefficient_value,coefficient_unit,semantic_role,governance_status
+system/optimization/implementations/milp.py,Line 107,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,p_curt_sol,c[base+2],0.001,$/Wh,Solar curtailment penalty term,PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 108,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,p_curt_wind,c[base+3],0.001,$/Wh,Wind curtailment penalty term,PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 109,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,p_chg,c[base+4],0.00005,$/Wh,Battery charging degradation penalty,PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 110,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,p_dis,c[base+5],0.00005,$/Wh,Battery discharging degradation penalty,PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 111,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,p_diesel,c[base+7],0.000625,$/Wh,Marginal diesel fuel cost ($2.50/L * 0.00025 L/Wh),PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 112,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,p_unmet,c[base+9],10.0,$/Wh,Unmet critical load penalty ($10000/kWh unweighted),PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 113,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,u_diesel,c[base+13],12.50,$/h,Base diesel running fuel cost ($2.50/L * 5.0 L/h),PROTOTYPE_ASSUMPTION
+system/optimization/implementations/milp.py,Line 114,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,v_start,c[base+14],15.0,$,Diesel generator startup cost penalty,PROTOTYPE_ASSUMPTION

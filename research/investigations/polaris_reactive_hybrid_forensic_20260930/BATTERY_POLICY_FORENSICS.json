@@ -1,0 +1,37 @@
+{
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "battery_hardware_parameters": {
+    "capacity_wh": 200000.0,
+    "min_soc_pct": 20.0,
+    "max_soc_pct": 95.0,
+    "min_e_wh": 40000.0,
+    "max_e_wh": 190000.0,
+    "initial_soc_pct": 50.0,
+    "initial_e_wh": 100000.0,
+    "charge_efficiency": 0.92,
+    "discharge_efficiency": 0.92,
+    "round_trip_efficiency": 0.8464,
+    "round_trip_energy_loss_pct": 15.36,
+    "max_charge_power_w": 50000.0,
+    "max_discharge_power_w": 50000.0,
+    "deg_penalty_per_wh": 0.00005
+  },
+  "annual_battery_performance_comparison": {
+    "polaris_discharge_kwh": 808.8,
+    "reactive_discharge_kwh": 9917.5253,
+    "polaris_cycles": 4.044,
+    "reactive_cycles": 49.5876,
+    "polaris_hours_at_min_soc_20pct": 8302,
+    "polaris_percent_time_at_min_soc": 94.51,
+    "polaris_max_soc_pct": 38.04,
+    "reactive_max_soc_pct": 95.0
+  },
+  "soc_57_83_reconciliation": {
+    "ecd_reference_target_pct": 57.83,
+    "ecd_reference_target_wh": 115652.17,
+    "active_milp_lower_bound_pct": 20.0,
+    "active_milp_lower_bound_wh": 40000.0,
+    "conclusion": "57.83% is an ECD 6-hour survivability reference target, NOT an active MILP constraint. The MILP bound is 20.0%."
+  }
+}

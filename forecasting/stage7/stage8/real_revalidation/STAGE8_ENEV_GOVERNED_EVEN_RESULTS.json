@@ -1,0 +1,158 @@
+{
+  "stage": "STAGE 8 \u2014 ENEV METAR GOVERNED EVEN EXPERIMENT RESULTS",
+  "timestamp": "2026-09-13T14:13:32.889447+00:00",
+  "final_verdict": "REJECTED_BY_EVEN_GATES",
+  "station": {
+    "icao": "ENEV",
+    "distance_km": 86,
+    "direction": "WNW"
+  },
+  "coverage_audit": {
+    "total_origins": 347,
+    "exact_2350_observed_count": 329,
+    "exact_2350_observed_pct": 94.81,
+    "exact_2350_missing_count": 18,
+    "exact_2350_missing_pct": 5.19,
+    "missing_origins_list": [
+      "2024-04-06 00:00:00+00:00",
+      "2024-04-07 00:00:00+00:00",
+      "2024-04-12 00:00:00+00:00",
+      "2024-04-23 00:00:00+00:00",
+      "2024-04-28 00:00:00+00:00",
+      "2024-05-07 00:00:00+00:00",
+      "2024-05-19 00:00:00+00:00",
+      "2024-06-03 00:00:00+00:00",
+      "2024-07-03 00:00:00+00:00",
+      "2024-08-24 00:00:00+00:00",
+      "2024-08-25 00:00:00+00:00",
+      "2024-09-20 00:00:00+00:00",
+      "2024-10-10 00:00:00+00:00",
+      "2024-10-18 00:00:00+00:00",
+      "2024-11-06 00:00:00+00:00",
+      "2024-12-03 00:00:00+00:00",
+      "2024-12-19 00:00:00+00:00",
+      "2024-12-26 00:00:00+00:00"
+    ]
+  },
+  "candidate_features": [
+    "enev_cloud_cover_okta",
+    "enev_cloud_base_m",
+    "enev_is_missing"
+  ],
+  "control_features_count": 37,
+  "candidate_features_count": 40,
+  "even_benchmark_origins": 174,
+  "control_metrics": {
+    "mae_w_m2": 37.620054,
+    "nmae_pct": 37.9745,
+    "rmse_w_m2": 60.160645,
+    "bias_w_m2": 4.218739
+  },
+  "candidate_metrics": {
+    "mae_w_m2": 37.818906,
+    "nmae_pct": 37.6237,
+    "rmse_w_m2": 60.677351,
+    "bias_w_m2": 3.3907
+  },
+  "deltas": {
+    "delta_mae_w_m2": 0.198852,
+    "delta_nmae_pct": -0.3508,
+    "delta_rmse_w_m2": 0.516706
+  },
+  "fold_summary": [
+    {
+      "fold": 1,
+      "ctrl_mae_w_m2": 49.311419,
+      "cand_mae_w_m2": 49.130659,
+      "delta_mae_w_m2": -0.18076,
+      "ctrl_nmae_pct": 29.5265,
+      "cand_nmae_pct": 29.4183,
+      "ctrl_rmse_w_m2": 81.354967,
+      "cand_rmse_w_m2": 81.298297,
+      "ctrl_bias_w_m2": 2.496543,
+      "cand_bias_w_m2": 1.626283,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    },
+    {
+      "fold": 2,
+      "ctrl_mae_w_m2": 70.5688,
+      "cand_mae_w_m2": 70.320078,
+      "delta_mae_w_m2": -0.248722,
+      "ctrl_nmae_pct": 36.9196,
+      "cand_nmae_pct": 36.7895,
+      "ctrl_rmse_w_m2": 103.743912,
+      "cand_rmse_w_m2": 103.564529,
+      "ctrl_bias_w_m2": 11.094607,
+      "cand_bias_w_m2": 7.877241,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    },
+    {
+      "fold": 3,
+      "ctrl_mae_w_m2": 40.345573,
+      "cand_mae_w_m2": 41.737897,
+      "delta_mae_w_m2": 1.392324,
+      "ctrl_nmae_pct": 28.1423,
+      "cand_nmae_pct": 29.1135,
+      "ctrl_rmse_w_m2": 67.25667,
+      "cand_rmse_w_m2": 69.678453,
+      "ctrl_bias_w_m2": 4.228522,
+      "cand_bias_w_m2": 3.648644,
+      "fold_improved": false,
+      "fold_degradation": 1.392324
+    },
+    {
+      "fold": 4,
+      "ctrl_mae_w_m2": 25.770418,
+      "cand_mae_w_m2": 25.897717,
+      "delta_mae_w_m2": 0.127298,
+      "ctrl_nmae_pct": 36.7313,
+      "cand_nmae_pct": 36.9127,
+      "ctrl_rmse_w_m2": 44.613169,
+      "cand_rmse_w_m2": 45.196849,
+      "ctrl_bias_w_m2": 3.861825,
+      "cand_bias_w_m2": 4.525122,
+      "fold_improved": false,
+      "fold_degradation": 0.127298
+    },
+    {
+      "fold": 5,
+      "ctrl_mae_w_m2": 2.104058,
+      "cand_mae_w_m2": 2.008177,
+      "delta_mae_w_m2": -0.095881,
+      "ctrl_nmae_pct": 58.5528,
+      "cand_nmae_pct": 55.8846,
+      "ctrl_rmse_w_m2": 3.834508,
+      "cand_rmse_w_m2": 3.648629,
+      "ctrl_bias_w_m2": -0.587801,
+      "cand_bias_w_m2": -0.723792,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    }
+  ],
+  "enev_feature_importances": {
+    "enev_cloud_cover_okta": -0.012748464274721271,
+    "enev_cloud_base_m": -0.010543167476898194,
+    "enev_is_missing": 0.0010171708124560475
+  },
+  "gate_evaluations": {
+    "g1_delta_mae_le_minus_0_50": false,
+    "g2_folds_improved_ge_4": false,
+    "g3_max_fold_degradation_le_0_50": false,
+    "g4_nmae_rmse_le_control": false,
+    "g5_100_percent_causal": true,
+    "g6_control_reproduced": true
+  },
+  "odd_firewall_status": {
+    "odd_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false,
+    "firewall_intact": true
+  },
+  "provenance_hashes": {
+    "script_sha256": "8b0ce51d17429f4b0a6bfd2e23c880abf36eabccb1fcd777fdaa44e57921c3a0",
+    "enev_metar_csv_sha256": "fca7069e029fe2c80b8972dc848fa9cbc540673f507ef84fe221d21812055a2d",
+    "nwp_csv_sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"
+  }
+}

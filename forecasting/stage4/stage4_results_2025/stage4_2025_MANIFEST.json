@@ -1,0 +1,63 @@
+{
+  "output_file": "/home/punith-bs/01polaris (Copy)/stage4/stage4_results_2025/ensemble_predictions.csv",
+  "sha256": "c4ef9b264bd263cb69af1ef3b833ad883c6f586d158017399d214f4a6dbe4af7",
+  "row_count": 8736,
+  "unique_origins": 364,
+  "train_origins": 182,
+  "test_origins": 182,
+  "columns": [
+    "forecast_start",
+    "horizon_hour",
+    "timestamp",
+    "actual_SW_IN",
+    "pred_stage3b_cloud_nwp",
+    "pred_ensemble"
+  ],
+  "input_hashes": {
+    "stage3b_predictions_2025": "0a5263e6ea89c2a9f520041d9122ec72a196cc3975b37def8dd7a41803df6465",
+    "clearsky_decomposition_2025": "f5f5e2c4c076c3c3eb40071b9954189bedd02f49654b8de9ad02e74ab4585336",
+    "nwp_2025_clean": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+    "sites_hourly_sw_in_2025": "d457facdbeb57b9c582b623c524c0f50717306ca083ab93028f1bd700d1e7a2e"
+  },
+  "model": {
+    "algorithm": "horizon-adaptive cloud-damped clearsky ensemble (w*chronos + (1-w)*physics(clearsky_ghi, cloud_frac, k)), fitted per-horizon via grid-initialized Nelder-Mead on TRAIN only",
+    "hyperparameters_changed": false,
+    "split_changed": false,
+    "target_changed": false,
+    "retrained_beyond_original_pipeline": false
+  },
+  "validation": {
+    "origin_count_ok": true,
+    "horizons_per_origin_ok": true,
+    "train_test_split_ok": true,
+    "no_duplicates": true,
+    "no_nan_inf": true,
+    "causal_alignment_ok": true,
+    "schema_ok": true
+  },
+  "comparison_vs_2024": {
+    "compared": true,
+    "2024_path": "/home/punith-bs/01polaris (Copy)/stage4/stage4_results/ensemble_predictions.csv",
+    "2024_sha256": "796faf9529cd3863560f8b11342aeff129b6f0c98765a568dddc1bcd273aad20",
+    "2024_rows": 8328,
+    "2024_origins": 347,
+    "schema_identical": true,
+    "algorithm_identical": true,
+    "split_logic_identical": true,
+    "note": "2024: 347 origins -> 174 even(train)/173 odd(test). 2025: 364 origins -> 182/182 (even split count differs only because 364 is even and 347 is odd; split LOGIC is identical positional even/odd indexing)."
+  },
+  "also_saved_other_stage4_artifacts": [
+    "cloud_regime_metrics.csv",
+    "correction_parameters.json",
+    "ensemble_parameters.json",
+    "final_metrics.csv",
+    "horizon_comparison.csv",
+    "horizon_metrics_full.csv",
+    "isotonic_predictions.csv",
+    "kt_bin_metrics.csv",
+    "monthly_metrics.csv",
+    "ridge_corrected_predictions.csv",
+    "seasonal_metrics.csv",
+    "solar_regime_metrics.csv"
+  ]
+}

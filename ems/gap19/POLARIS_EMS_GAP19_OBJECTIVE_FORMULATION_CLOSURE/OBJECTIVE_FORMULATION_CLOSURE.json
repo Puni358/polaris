@@ -1,0 +1,136 @@
+{
+  "audit_metadata": {
+    "audit_phase": "GAP19_OBJECTIVE_FORMULATION_CLOSURE",
+    "audit_date": "2026-09-22",
+    "generation_mode": "GOVERNED_FORMULATION_SPECIFICATION",
+    "execution_performed": false,
+    "code_modified": false
+  },
+  "current_implementation_summary": {
+    "objective_type": "SINGLE_SCALAR_COMPOSITE_COST_FUNCTION",
+    "solver_call": "scipy.optimize.milp()",
+    "decision_variable_count": 360,
+    "constraint_family_count": 12,
+    "unmet_load_penalty": 10.0,
+    "marginal_fuel_cost_wh": 0.000625,
+    "base_fuel_cost_h": 12.50,
+    "startup_cost_event": 15.0,
+    "battery_degradation_penalty_wh": 0.00005,
+    "curtailment_penalty_wh": 0.001,
+    "default_temporal_weighting": "DISCOUNTED_GAMMA_T_DEFAULT_1_0"
+  },
+  "governed_target_summary": {
+    "objective_type": "STRICT_4_STAGE_LEXICOGRAPHIC_HIERARCHY",
+    "stage_order": [
+      "Stage 1: Critical Reliability Boundary",
+      "Stage 2: Emergency Battery Reserve & Terminal Reserve",
+      "Stage 3: Fuel Conservation",
+      "Stage 4: Renewable Utilization"
+    ],
+    "stage_units": [
+      "Wh",
+      "Wh",
+      "Liters",
+      "Wh"
+    ]
+  },
+  "formulation_closure_by_stage": {
+    "stage_1_reliability": {
+      "mathematical_expression": "min J1 = sum(p_unmet_critical * dt)",
+      "units": "Wh",
+      "target_value": "J1* = 0 Wh",
+      "infeasibility_protocol": "Surfaces CRITICAL_RELIABILITY_INFEASIBLE event fault"
+    },
+    "stage_2_ebr_terminal": {
+      "mathematical_expression": "min J2 = sum(max(0, E_EBR_target - E_reserve_avail)) + max(0, E_terminal_target - E(H))",
+      "units": "Wh",
+      "linearization_method": "Non-negative slack variables s_EBR and s_term",
+      "numerical_parameters_status": "SYMBOLIC_GOVERNANCE_DECISION_REQUIRED"
+    },
+    "stage_3_fuel": {
+      "mathematical_expression": "min J3 = sum((F_base * u_diesel + F_marg * p_diesel) * dt + F_start * v_start)",
+      "units": "Liters",
+      "base_rate": "5.0 L/h",
+      "marginal_rate": "0.00025 L/Wh",
+      "startup_volume": "6.0 L per startup"
+    },
+    "stage_4_renewable": {
+      "mathematical_expression": "min J4 = sum((p_curt_sol + p_curt_wind) * dt)",
+      "units": "Wh",
+      "target_type": "Avoidable curtailment minimization without arbitrary percentage floor"
+    }
+  },
+  "key_unresolved_items_and_blockers": {
+    "battery_degradation_placement": "GOVERNANCE_BLOCKER",
+    "temporal_weighting_resolution": "RESOLVED_BY_EXISTING_GOVERNANCE_UNIFORM_WT_1_0",
+    "lexicographic_tolerances_status": "ENGINEERING_DEFINITION_REQUIRED",
+    "dispatchplan_reporting_schema": "ENGINEERING_DEFINITION_REQUIRED"
+  },
+  "blocker_classifications": [
+    {
+      "item_id": "OI-01",
+      "description": "Stage 2 EBR Target Value (E_EBR_target)",
+      "classification": "GOVERNANCE_DECISION_REQUIRED"
+    },
+    {
+      "item_id": "OI-02",
+      "description": "Stage 2 Terminal Reserve Target (E_terminal_target)",
+      "classification": "GOVERNANCE_DECISION_REQUIRED"
+    },
+    {
+      "item_id": "OI-03",
+      "description": "Lexicographic Tolerance Epsilon Values (epsilon_k)",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED"
+    },
+    {
+      "item_id": "OI-04",
+      "description": "Battery Degradation Stage Placement",
+      "classification": "GOVERNANCE_DECISION_REQUIRED"
+    },
+    {
+      "item_id": "OI-05",
+      "description": "5-Tier Load Breakdown in Schemas",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED"
+    },
+    {
+      "item_id": "OI-06",
+      "description": "Temporal Weighting Vector (w_t = 1.0)",
+      "classification": "RESOLVED_BY_EXISTING_GOVERNANCE"
+    },
+    {
+      "item_id": "OI-07",
+      "description": "DispatchPlan Multi-Stage Additive Fields",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED"
+    },
+    {
+      "item_id": "OI-08",
+      "description": "Fuel Tank Minimum & Seasonal Budget Limits",
+      "classification": "GOVERNANCE_DECISION_REQUIRED"
+    },
+    {
+      "item_id": "OI-09",
+      "description": "Empirical A/B Equivalence Benchmark Execution",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED"
+    },
+    {
+      "item_id": "OI-10",
+      "description": "Option B Access Architecture Path (_core vs highspy)",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED"
+    }
+  ],
+  "implementation_neutrality_result": {
+    "status": "VERIFIED_NEUTRAL",
+    "same_variables": true,
+    "same_constraints": true,
+    "same_stage_objectives": true,
+    "same_priorities": true,
+    "same_terminal_conditions": true
+  },
+  "required_human_governance_decisions": [
+    "Authorize Numerical EBR Target Value (E_EBR_target)",
+    "Authorize Numerical Terminal Target Value (E_terminal_target)",
+    "Assign Battery Degradation Objective Stage Placement",
+    "Authorize Seasonal Fuel Budget / Minimum Tank Reserve",
+    "Select Solver Architecture (Option A vs Option B)"
+  ]
+}

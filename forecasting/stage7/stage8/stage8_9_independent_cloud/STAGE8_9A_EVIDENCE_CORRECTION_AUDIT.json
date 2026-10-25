@@ -1,0 +1,56 @@
+{
+  "audit_stage": "STAGE 8.9A FORENSIC EVIDENCE AND CLAIM AUDIT",
+  "timestamp": "2026-09-12T17:40:00Z",
+  "audit_objective": "Verify evidence integrity and remove all unsupported numerical, empirical, or correlation claims from Stage 8.9A artifacts",
+  "overall_decision_verdict": "FAIL_CONFIRMED",
+  "decision_impact_explanation": "The removal of unsupported numerical correlation claims (r < 0.38 for Kiruna, r > 0.82 for AMV vs U700/V700) does not alter the FAIL decision. The FAIL verdict remains 100% justified based strictly on verified operational publication latency (t_pub > t_0), polar night optical retrieval masking (SZA > 84°), extreme geostationary viewing zenith angle (VZA = 76.54°), data non-existence (no 2024 Nuolja sky camera), extreme spatial separation (88.4 km across Scandes mountain barrier), and non-stationary mountain orographic cloud dynamics.",
+  "corrections": [
+    {
+      "claim_id": "C1_KIRUNA_CORRELATION",
+      "target_file": "STAGE8_9A_FEASIBILITY_REPORT.md / STAGE8_9A_SPATIAL_REPRESENTATIVENESS.md",
+      "previous_wording": "r < 0.38, R² < 0.14 for Kiruna ceilometer / Nuolja SW_IN correlation",
+      "evidence_status": "UNSUPPORTED NUMERICAL CLAIM (No empirical pairing calculation was executed in Stage 8.9A)",
+      "corrected_wording": "Kiruna Airport (ESNQ) is located 88.4 km ESE of Nuolja across the Scandes mountain ridge barrier on the inland Lapland plateau (460m ASL). Due to extreme spatial separation (88.4 km), mountain ridge obstruction, and microclimate mismatch (inland plateau vs mountain fjord valley), Kiruna observations are spatially non-representative of localized mountain cloudiness over Nuolja. No colocated correlation calculation was performed or claimed.",
+      "reason": "Removed uncalculated numerical correlation values to maintain strict evidence integrity."
+    },
+    {
+      "claim_id": "C2_AMV_U700_CORRELATION",
+      "target_file": "STAGE8_9A_INFORMATION_NOVELTY.md / STAGE8_9A_CLOUD_MOTION_ASSESSMENT.md",
+      "previous_wording": "Physical correlation between satellite AMVs at cloud top and MEPS U700/V700 steering winds is very high (r > 0.82)",
+      "evidence_status": "UNSUPPORTED NUMERICAL CLAIM (Qualitative physical expectation presented as empirical numerical correlation)",
+      "corrected_wording": "Satellite AMVs and optical flow products may provide information related to atmospheric steering flow, but no POLARIS-specific empirical redundancy test was performed in Stage 8.9A. However, observed cloud motion via satellite AMVs or optical flow fails operational feasibility due to dissemination latencies (t_pub > t_0), irregular polar satellite pass intervals, polar night illumination limits, and the physical inability of 2D translational advection to model non-stationary mountain cloud formation/evaporation across the Scandes ridges.",
+      "reason": "Removed uncalculated numerical correlation (r > 0.82) and replaced with precise, safe scientific phrasing."
+    },
+    {
+      "claim_id": "C3_GEO_SAT_GEOMETRY",
+      "target_file": "STAGE8_9A_SPATIAL_REPRESENTATIVENESS.md / STAGE8_9A_FEASIBILITY_REPORT.md",
+      "previous_wording": "VZA = 76.54°, >20.9 km parallax displacement, >39 km² footprint presented as general empirical findings",
+      "evidence_status": "THEORETICAL SPHERICAL GEOMETRY CALCULATION",
+      "corrected_wording": "Derived from theoretical spherical geometry calculations for latitude 68.362074°N, longitude 18.738752°E relative to sub-satellite point 0°N, 0°E (yielding VZA = 76.54°, tan(76.54°) * 5km = 20.9km horizontal parallax shift for a 5km cloud top, and N-S footprint expansion 3km / cos(76.54°) = 12.9km).",
+      "reason": "Explicitly labeled theoretical geometry calculations as distinct from empirical Level-2 product metadata measurements."
+    },
+    {
+      "claim_id": "C4_NWC_SAF_LATENCY",
+      "target_file": "STAGE8_9A_CAUSALITY_AUDIT.csv / STAGE8_9A_FEASIBILITY_REPORT.md",
+      "previous_wording": "30-60 minute latency presented as empirical 347-origin feed measurement",
+      "evidence_status": "DOCUMENTED PROVIDER SPECIFICATION & CATALOG AUDIT",
+      "corrected_wording": "Based on documented EUMETSAT NWC SAF PPS provider processing specifications (~30-60 min post-reception) and catalog inspection of MET Norway THREDDS endpoints.",
+      "reason": "Clarified source as documented provider specifications rather than empirical 347-origin feed log tracking."
+    },
+    {
+      "claim_id": "C5_SAFE_SCIENTIFIC_CONCLUSIONS",
+      "target_file": "STAGE8_9A_FEASIBILITY_REPORT.md / STAGE8_9A_DECISION.json",
+      "previous_wording": "Overly broad claims regarding general impossibility of cloud observations",
+      "evidence_status": "OVERLY BROAD CLAIM BOUNDARY",
+      "corrected_wording": "Stage 8.9A did not identify a verified independent cloud-state/cloud-motion data source that simultaneously met the required causal-availability, empirical-coverage, spatial-representativeness, and information-novelty criteria.",
+      "reason": "Restricted claim boundaries strictly to what was evaluated within Stage 8.9A."
+    }
+  ],
+  "firewall_verification": {
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "odd_tuning": 0,
+    "stage8_1_champion_unchanged": true
+  }
+}

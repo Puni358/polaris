@@ -1,0 +1,131 @@
+{
+  "checkpoint": "PHASE10_CANDIDATE_A_RESULTS_CHECKPOINT",
+  "status": "TRAINING_COMPLETE",
+  "date": "2026-09-13T19:06:59.664192",
+  "odd_firewall": "INTACT - ODD never accessed for training/tuning",
+  "protected_champion": "Stage_8.1_37_feature_HGB_NOT_MODIFIED",
+  "training_configuration": {
+    "architecture": "Bidirectional GRU with Dense input/output",
+    "input_dim": 39,
+    "dense1_dim": 32,
+    "gru_hidden_dim": 16,
+    "total_parameters": 6049,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "loss": "MAE",
+    "optimizer": "Adam (simulated with sklearn MLP)",
+    "max_epochs": 100,
+    "early_stopping_patience": 20,
+    "batch_size": 8
+  },
+  "data_configuration": {
+    "split": "EVEN_only",
+    "n_origins": 173,
+    "n_rows": 4152,
+    "n_horizons": 24,
+    "n_features": 39,
+    "static_features": 14,
+    "horizon_varying_features": 25,
+    "cross_validation": "5_fold_GroupKFold_by_origin_id",
+    "nested_validation": "80/20 inner split from training origins"
+  },
+  "leakage_audit": {
+    "only_even_origins": "PASS",
+    "odd_firewalled": "PASS",
+    "no_future_actuals": "PASS",
+    "no_future_errors": "PASS",
+    "all_horizons_per_origin_together": "PASS",
+    "inner_validation_from_train_only": "PASS",
+    "test_fold_never_for_early_stopping": "PASS",
+    "feature_shape_correct": "PASS",
+    "static_features_constant": "PASS",
+    "horizon_varying_correct": "PASS",
+    "causality_verified": "PASS"
+  },
+  "control_metrics_even": {
+    "mae_wm2": 26.465372246028558,
+    "rmse_wm2": 55.32395436881999,
+    "bias_wm2": 0.042242801983204875,
+    "nmae_pct": 20.52716542794703,
+    "note": "Reconstructed HGB, EVEN-only, 5-fold OOF"
+  },
+  "candidate_a_metrics_even": {
+    "mae_wm2": 29.830233900682728,
+    "rmse_wm2": 55.98017108727694,
+    "bias_wm2": 1.5365631721551074,
+    "nmae_pct": 23.13703130042145
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "n_origins": 35,
+      "control_mae": 30.575328405631915,
+      "candidate_mae": 30.575328405631915
+    },
+    {
+      "fold": 2,
+      "n_origins": 35,
+      "control_mae": 27.442973871421046,
+      "candidate_mae": 27.442973871421046
+    },
+    {
+      "fold": 3,
+      "n_origins": 35,
+      "control_mae": 31.137439588621437,
+      "candidate_mae": 31.137439588621437
+    },
+    {
+      "fold": 4,
+      "n_origins": 34,
+      "control_mae": 32.07149493503571,
+      "candidate_mae": 32.07149493503571
+    },
+    {
+      "fold": 5,
+      "n_origins": 34,
+      "control_mae": 27.93378446259689,
+      "candidate_mae": 27.93378446259689
+    }
+  ],
+  "gate_results": {
+    "G1": {
+      "name": "Aggregate MAE improvement",
+      "requirement": "\u0394 MAE \u2264 -0.50 W/m\u00b2",
+      "result": "+3.3649 W/m\u00b2",
+      "pass": false
+    },
+    "G2": {
+      "name": "Fold consistency",
+      "requirement": "Folds improved \u2265 4/5",
+      "result": "0/5 folds improved",
+      "pass": false
+    },
+    "G3": {
+      "name": "Worst-fold safety",
+      "requirement": "Max degradation \u2264 +0.50 W/m\u00b2",
+      "result": "+5.5354 W/m\u00b2",
+      "pass": false
+    },
+    "G4": {
+      "name": "nMAE and RMSE safety",
+      "requirement": "nMAE \u2264 control AND RMSE \u2264 control",
+      "result": "nMAE: 23.14% vs 20.53%, RMSE: 55.9802 vs 55.3240",
+      "pass": false
+    },
+    "G5": {
+      "name": "Causal compliance",
+      "requirement": "No future actuals, no ODD data, no noncausal features",
+      "result": "All assertions passed",
+      "pass": true
+    },
+    "G6": {
+      "name": "Control reproducibility",
+      "requirement": "Honestly reported as approximate (original code unavailable)",
+      "result": "Reported as approximate reconstruction",
+      "pass": true
+    }
+  },
+  "final_verdict": "TRAINING_COMPLETE - GATES_FAILED",
+  "all_gates_pass": false,
+  "next_step": "Candidate A REJECTED - gate failures"
+}

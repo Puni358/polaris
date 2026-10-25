@@ -1,0 +1,127 @@
+{
+  "manifest_id": "POLARIS_23_HORIZON_OFAT_EXECUTION_AUTHORIZATION_MANIFEST",
+  "governance_status": "EXECUTION_AUTHORIZED",
+  "authorization_classification": "FINAL_EXECUTION_AUTHORIZATION = AUTHORIZED",
+  "execution_authorization_status": "AUTHORIZED",
+  "empirical_execution_state": "AUTHORIZED_NOT_YET_EXECUTED",
+  "timestamp_utc": "2026-09-19T20:00:40+05:30",
+  "verification_gate_audit": {
+    "total_gates_checked": 16,
+    "total_gates_passed": 16,
+    "total_gates_failed": 0,
+    "gates": [
+      {
+        "gate_id": "GATE_01_SPECIFICATION_HASH_VERIFICATION",
+        "name": "Verify specification MD/JSON hashes match corrected frozen spec",
+        "status": "PASSED",
+        "verified_md_hash": "53e5f0b482526167d157257690bd45c3dfb76bb1c8ef15c0a5384eb311f5d085",
+        "verified_json_hash": "21703425eb572b2698cb13bcfb835419460823d55a4e1d8fbac11e529d445a23"
+      },
+      {
+        "gate_id": "GATE_02_PROTECTED_CODEBASE_HASH_VERIFICATION",
+        "name": "Verify all protected artifact/code hashes",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_03_TREATMENT_ARTIFACT_PROVENANCE",
+        "name": "Verify treatment artifact identity and Stage8.1 provenance",
+        "status": "PASSED",
+        "forecast_artifact": "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv",
+        "forecast_sha256": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c"
+      },
+      {
+        "gate_id": "GATE_04_EXACT_23_ARM_WEIGHT_CONSTRUCTION",
+        "name": "Verify exact 23-arm weight construction (w_j=1.0, w_t=0.95^t for t != j)",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_05_ANALYTICAL_J0_EXCLUSION",
+        "name": "Verify j=0 is excluded analytically (Delta_0 = 0.0)",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_06_SOLVE_COUNT_ACCOUNTING",
+        "name": "Verify expected solve count = 95,496",
+        "status": "PASSED",
+        "expected_solves": 95496
+      },
+      {
+        "gate_id": "GATE_07_FROZEN_V3_CONTROL_REUSE",
+        "name": "Verify V3 control reuse is explicitly frozen (No rerun of V3)",
+        "status": "PASSED",
+        "v3_raw_csv_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e"
+      },
+      {
+        "gate_id": "GATE_08_FUTURE_TRUTH_FIREWALL",
+        "name": "Verify future-truth firewall",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_09_TREATMENT_STATE_ISOLATION",
+        "name": "Verify treatment state trajectory isolation across all 23 arms",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_10_NO_PREEXECUTION_PILOT_SMOKE",
+        "name": "Verify zero pilot/smoke execution occurred prior to formal authorization",
+        "status": "PASSED",
+        "milp_solves_executed": 0
+      },
+      {
+        "gate_id": "GATE_11_RESOURCE_CONFIGURATION",
+        "name": "Verify MAX_WORKERS = 8",
+        "status": "PASSED",
+        "max_workers": 8
+      },
+      {
+        "gate_id": "GATE_12_THERMAL_GOVERNANCE_RULE",
+        "name": "Verify thermal manual-halt rule & rejection of 100C target",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_13_MULTIPLICITY_PROCEDURE_SOLE_PRIMARY",
+        "name": "Verify Holm-Bonferroni is sole primary confirmatory multiplicity procedure",
+        "status": "PASSED",
+        "primary_method": "HOLM_BONFERRONI",
+        "familywise_alpha": 0.05,
+        "bh_fdr_confirmatory_status": "NOT_USED"
+      },
+      {
+        "gate_id": "GATE_14_TELEMETRY_PRESERVATION",
+        "name": "Verify 37-field V2/V3 telemetry schema preservation",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_15_NO_STOPPING_OR_TUNING",
+        "name": "Verify prohibition of warm starts, parameter tuning, or result-dependent stopping",
+        "status": "PASSED"
+      },
+      {
+        "gate_id": "GATE_16_OUTPUT_FILE_FINALIZATION_CONTRACT",
+        "name": "Verify output files will only be finalized after complete formal run",
+        "status": "PASSED"
+      }
+    ]
+  },
+  "protected_provenance_hashes": {
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.json": "5c84d72bc13d52d9b1580ca02b66a5e1281db2bd1be97405e3a27f6cf4c0ff95",
+    "POLARIS_23_HORIZON_OFAT_EXPERIMENT_SPECIFICATION.md": "53e5f0b482526167d157257690bd45c3dfb76bb1c8ef15c0a5384eb311f5d085",
+    "POLARIS_23_HORIZON_OFAT_EXPERIMENT_SPECIFICATION.json": "21703425eb572b2698cb13bcfb835419460823d55a4e1d8fbac11e529d445a23",
+    "run_polaris_23_horizon_ofat_experiment.py": "b8ec6d0ab7363777d30756b8d5f71451a9f93dec752fd7e19d4c2f38b0ebd1be",
+    "system/optimization/implementations/milp.py": "e2a05fbdfedcd89574d71587d65b4c1069ebbd18cfcb9bcf51bfef252f4c9bf6",
+    "system/simulation/simulator.py": "aa7668697b0932bb821b016f4d221cd88bb82d36fb56358c2be6ce8806296cc7",
+    "system/runtime/runner.py": "4f32fb0f9aef7c11f74fa18cbf5e7ffecdf61681b4efb489bb2dfabf972b220e",
+    "system/forecasting/implementations/s81_solar.py": "b99e746a51d95bf085c88cbb5f154563a6f1d171e544ae5d01fbffbbbe834167",
+    "system/schemas/forecast_bundle.py": "090b8f44ff5ae7a8c3d9a16fbdadcd7acae6e511487ea0b7fb5ca8fa7b78972d",
+    "system/schemas/station_state.py": "ffcd75b6aedbf12d4d98d28a3f8fa3ddf7a14e9185a767431bf3bb79a835b3ec",
+    "system/schemas/dispatch_plan.py": "d76dbdcf1b3fb457385906f3458db9ebddbc8e0fdb291079d8efd4df6a83a005"
+  },
+  "authorized_execution_invocation": {
+    "command": "python3 run_polaris_23_horizon_ofat_experiment.py --authorize-execution",
+    "cwd": "/home/punith-bs/01polaris (Copy)",
+    "expected_solves": 95496,
+    "max_workers": 8
+  }
+}

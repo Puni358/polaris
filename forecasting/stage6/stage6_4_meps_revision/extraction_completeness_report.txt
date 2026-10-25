@@ -1,0 +1,38 @@
+POLARIS Stage 6.4 — MEPS Forecast Revision Trajectory Extraction Audit Report
+===================================================================================
+Extraction Status: COMPLETED
+Execution Date: 2026-09-12 00:56:39 UTC
+Total Elapsed Time: 37231.08 seconds
+
+1. Benchmark Origin Coverage:
+   - Target Clean Origins: 347
+   - Unique Extracted Origins: 347
+   - Fully Covered Origins (24/24 horizons x 4 runs): 347 / 347
+
+2. Volume & Row Accounting:
+   - Expected Raw Observation Rows (347 x 24 x 4): 33,312
+   - Actual Raw Observation Rows: 33312
+   - Expected Feature Summary Rows (347 x 24): 8,328
+   - Actual Feature Summary Rows: 8328
+
+3. Causality & Alignment Checks:
+   - Causality Rule: forecast_reference_time < t0
+   - Causality Violations: 0
+   - Causal Wording: "Forecast runs were included under the conservative forecast_reference_time < t0 causal-eligibility rule."
+
+4. Grid & Spatial Integrity:
+   - Target Nuolja Station: 68.362074°N, 18.738752°E
+   - Extracted MEPS Grid Index: y=760, x=486
+   - Extracted Grid Coordinates: 68.355701°N, 18.763666°E
+   - Geodesic Distance: 1.2434 km
+
+5. Quality & Data Cleanliness:
+   - Duplicate Tuples (forecast_start, horizon_hour, ref_time): 0
+   - NaN / Inf in Raw Observations: 0
+   - NaN / Inf in Feature Summary: 0
+
+6. Protocol Lock & Isolation:
+   - EVEN-CV Evaluation Executed: False (0 GBDT models fit)
+   - Held-out ODD Split Evaluated: False (ODD status 100% UNTOUCHED & UNREAD)
+   - ODD Output File Created: False (Must be False)
+===================================================================================

@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-09-13T09:54:35+00:00",
+  "stage": "POLARIS STAGE 8.19D \u2014 LOCKED ODD EVALUATION",
+  "final_status": "ABIS PROMOTION ELIGIBLE \u2014 REQUIRES SEPARATE RECONCILIATION",
+  "freeze_integrity_check": "PASS",
+  "odd_dataset": {
+    "odd_origins_count": 173,
+    "odd_daytime_hours": 2883,
+    "mean_daytime_actual_sw_in_w_m2": 128.9285
+  },
+  "control_reproduction": {
+    "reference_mae_w_m2": 35.241085,
+    "evaluated_mae_w_m2": 35.241085,
+    "reference_nmae_pct": 27.3337,
+    "evaluated_nmae_pct": 27.3337,
+    "reference_rmse_w_m2": 63.290812,
+    "evaluated_rmse_w_m2": 63.290812,
+    "reproduction_exact_match": true
+  },
+  "odd_evaluation_results": {
+    "control_mae_w_m2": 35.241085,
+    "candidate_mae_w_m2": 34.821405,
+    "delta_mae_w_m2": -0.41968,
+    "relative_mae_improvement_pct": 1.1909,
+    "control_nmae_pct": 27.3337,
+    "candidate_nmae_pct": 27.0081,
+    "delta_nmae_pct": -0.3256,
+    "control_rmse_w_m2": 63.290812,
+    "candidate_rmse_w_m2": 62.74821,
+    "delta_rmse_w_m2": -0.542602,
+    "control_bias_w_m2": 1.810421,
+    "candidate_bias_w_m2": 1.65821,
+    "delta_bias_w_m2": -0.152211,
+    "night_mae_w_m2": 0.0
+  },
+  "bootstrap_analysis": {
+    "mean_delta_mae_w_m2": -0.41968,
+    "ci_95_w_m2": [
+      -0.78542,
+      -0.05121
+    ],
+    "fraction_improving_pct": 98.64,
+    "ci_excludes_zero": true
+  },
+  "promotion_eligibility": {
+    "is_eligible": true,
+    "official_champion_remains": "Stage 8.17A AROME Structural Disagreement Model"
+  },
+  "project_state_firewall": {
+    "master_handoff_modified": false,
+    "route_registry_modified": false,
+    "official_champion_promoted": false
+  }
+}

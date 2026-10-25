@@ -1,0 +1,25 @@
+TEST_ID,TEST_NAME,REQUIREMENT,SOURCE,EXPECTED,OBSERVED,STATUS
+GAP19-01,AUTHORITATIVE_GAP19_SOURCE_IDENTIFIED,Locate GAP19 history,Specification Review V2,GAP19 = IMPLEMENTATION_DEFERRED,GAP19 = IMPLEMENTATION_DEFERRED,PASS
+GAP19-02,GAP19_STATUS_RECONCILED,Reconcile GAP19 status,Governance Audit,REQUIRES_GOVERNANCE_DECISION,REQUIRES_GOVERNANCE_DECISION,PASS
+GAP19-03,CURRENT_SCIPY_MILP_API_VERIFIED,Inspect scipy 1.18.1 milp API,Python inspection,Single cost vector c only,Single cost vector c only,PASS
+GAP19-04,NATIVE_MULTIOBJECTIVE_CAPABILITY_VERIFIED,Inspect native multi-objective API,Python inspection,NOT_EXPOSED_BY_CURRENT_API,NOT_EXPOSED_BY_CURRENT_API,PASS
+GAP19-05,OPTION_A_STATIC_FEASIBILITY_AUDIT,Verify Option A feasibility,Static analysis,TECHNICALLY_FEASIBLE,TECHNICALLY_FEASIBLE,PASS
+GAP19-06,OPTION_B_API_COMPATIBILITY_AUDIT,Verify Option B API compatibility,Static analysis,EXTERNAL_SOLVER_DEPENDENCY_REQUIRED,EXTERNAL_SOLVER_DEPENDENCY_REQUIRED,PASS
+GAP19-07,OPTION_C_GOVERNANCE_CLASSIFICATION,Verify Option C classification,Governance audit,ENGINEERING_RISK_ONLY,ENGINEERING_RISK_ONLY,PASS
+GAP19-08,NO_UNAUTHORIZED_SOLVER_SELECTION,Ensure no solver selected,Governance audit,No solver selected,No solver selected,PASS
+IF-01,FORECASTBUNDLE_FIELD_SEMANTICS,Audit ForecastBundle demand semantics,Schema audit,ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,PASS
+IF-02,STATIONSTATE_FIELD_SEMANTICS,Audit StationState fuel & mode fields,Schema audit,ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,PASS
+IF-03,DISPATCHPLAN_FIELD_SEMANTICS,Audit DispatchPlan diagnostic fields,Schema audit,ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,PASS
+IF-04,SEMANTIC_REUSE_CHECK,Ensure no semantic repurposing,Schema audit,Zero semantic repurposing,Zero semantic repurposing,PASS
+IF-05,UNIT_CHECK,Verify unit consistency,Schema audit,Unit consistency verified,Unit consistency verified,PASS
+IF-06,TIME_BASIS_CHECK,Verify time basis consistency,Schema audit,24h horizon 1h step verified,24h horizon 1h step verified,PASS
+IF-07,PROVENANCE_CHECK,Verify provenance chain,Provenance audit,Provenance chain complete,Provenance chain complete,PASS
+IF-08,SCHEMA_VERSION_IMPACT,Audit schema version impact,Schema audit,Additive extensions compatible,Additive extensions compatible,PASS
+IF-09,BACKWARD_COMPATIBILITY,Audit backward compatibility,Schema audit,100% backward compatible,100% backward compatible,PASS
+IF-10,NO_SCHEMA_MODIFICATION,Ensure zero schema code modified,Repository inspection,Zero code modified,Zero code modified,PASS
+INTEGRITY-01,MILP_SHA_UNCHANGED,Verify milp.py SHA-256,milp.py,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,PASS
+INTEGRITY-02,CONFIG_SHAS_UNCHANGED,Verify optimizer.yaml SHA-256,optimizer.yaml,bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8,bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8,PASS
+INTEGRITY-03,ForecastBundle_UNCHANGED,Verify ForecastBundle code,forecast_bundle.py,Unchanged,Unchanged,PASS
+INTEGRITY-04,StationState_UNCHANGED,Verify StationState code,station_state.py,Unchanged,Unchanged,PASS
+INTEGRITY-05,DispatchPlan_UNCHANGED,Verify DispatchPlan code,dispatch_plan.py,Unchanged,Unchanged,PASS
+INTEGRITY-06,NO_EXECUTION,Verify zero protected execution,Environment log,Zero execution,Zero execution,PASS

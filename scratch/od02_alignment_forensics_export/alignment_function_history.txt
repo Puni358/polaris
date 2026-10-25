@@ -1,0 +1,94 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: ALIGNMENT FUNCTION HISTORY & PROVENANCE
+Function: `_align_n6_bundle_od02` and `_align_timeseries_od02`
+Target File: `system/evaluation/n6_multi_origin_harness/adapters.py` (lines 606-696)
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+1. DIRECT GIT QUERY ATTEMPTS AND OUTCOMES
+--------------------------------------------------------------------------------
+Command:
+  $ git log -S "_align_n6_bundle_od02" system/evaluation/n6_multi_origin_harness/adapters.py
+Output:
+  fatal: your current branch 'master' does not have any commits yet
+
+Command:
+  $ git log -n 5
+Output:
+  fatal: your current branch 'master' does not have any commits yet
+
+Command:
+  $ git fsck --lost-found
+Output:
+  [Only dangling blobs found; 0 dangling commits, 0 dangling trees, 0 commit objects]
+
+Command:
+  $ find .git/refs -type f
+Output:
+  [Empty; no ref files exist in .git/refs/heads/ or .git/refs/tags/]
+
+Factual Finding:
+  In this working tree (`/home/punith-bs/01polaris (Copy)`), the Git object database
+  contains no commit objects. The repository was staged/copied with uncommitted working
+  tree files. Therefore, Git commit hashes, commit dates, commit authors, and Git diffs
+  cannot be queried via Git CLI commands.
+
+2. REGISTER AND REPORT PROVENANCE TRAIL
+--------------------------------------------------------------------------------
+Because local Git commits are unavailable, the authoritative provenance of
+`_align_n6_bundle_od02` is reconstructed directly from repository documentation,
+the Master Decision Register (MDR), and associated audit logs.
+
+A. Introduction Pass: Pass 22 (2026-10-19)
+   Document: `POLARIS_MASTER_DECISION_REGISTER.md` (v1.9.11 -> v1.9.12)
+   Section: Section 38: "POLARIS OD-01 & OD-02 -- Pilot Pre-Execution Owner Decisions -- 2026-10-19"
+   Entry: Section 38.1.2:
+     "2. OD-02 -- Hour-23 Solar Forecast Fallback: APPROVED.
+      - Decision: Retain the existing LocalBaselineForecastEngine final-slot solar output
+        (0.0 W/m^2) for dispatch step 23 (t0 + 24h, horizon h=25) when using the 24-horizon
+        N6 model artifact. Do not introduce the offline POLARIS_v0_1_clearsky_decomposition.csv
+        into runtime execution.
+      - Limitation Documented: At the Arctic latitude of Lake Torneträsk (68.35 N), solar
+        irradiance at midnight (00:00 local time) may be non-zero during the polar day
+        (midnight sun season, late May through mid-July). Clamping solar forecast to zero
+        at 00:00 UTC+1 during this seasonal window represents a documented operational
+        limitation of the boundary fallback, accepted for this pilot to prevent unverified
+        offline file dependencies or fabrication of N6 model outputs beyond its 24-horizon
+        contract.
+      - Scope: Retains runtime dependency isolation and schema consistency across forecast
+        adapters."
+
+B. Freeze Pass: Pass 23 (2026-10-19)
+   Document: `POLARIS_MASTER_DECISION_REGISTER.md` (v1.9.12 -> v1.9.13)
+   Section: Section 39: "POLARIS OD-02 -- Final Uncertainty-Scale Review Completion & Decision Freeze -- 2026-10-19"
+   Entry: Section 39.1.1 & 39.1.4:
+     "The solar point-forecast array is shifted by OD-02 (raw rows 1..23 -> dispatch steps 0..22,
+      step 23 = 0.0 W/m^2 baseline fallback), while ebr_target_wh remains unshifted...
+      Decision OD-02 is FROZEN. The time-alignment contract (solar point forecast shifted
+      1..23 -> 0..22, step 23 fallback to 0.0 W/m^2, demand/wind/EBR unshifted, Policy B
+      pointwise maximum) is sealed for pilot evaluation."
+
+C. Zero-Commit Governance Model
+   Throughout passes 18 through 23, POLARIS maintained a strict zero-commit protocol:
+     "Nothing staged, committed, or pushed by this pass; the 2 pre-existing 'A ' entries
+      (POLARIS_MASTER_HANDOFF.md, requirements.txt) present at session start remain untouched."
+   All code changes were recorded as verified file hash transitions in the MDR rather than
+   individual Git commits.
+
+3. COGNATE IMPLEMENTATION FILES INTRODUCED IN PASS 22/23
+--------------------------------------------------------------------------------
+1. `system/evaluation/n6_multi_origin_harness/adapters.py`:
+   - Line 606: `def _align_timeseries_od02(ts: Any) -> Any:`
+   - Line 641: `def _align_n6_bundle_od02(bundle: Any) -> Any:`
+   - Line 738: Cached call in `N6ForecastProviderAdapter.predict()`
+   - Line 1676: Fresh call in `N6RecedingHorizonForecastAdapter.predict()`
+
+2. `system/tests/test_n6_multi_origin_harness_adapters.py`:
+   - Line 1416: `TestOD02Alignment`: unit tests for `_align_n6_bundle_od02`,
+     verifying raw rows 1..23 -> dispatch steps 0..22, step 23 = 0.0,
+     unshifted demand/EBR, and idempotency.
+
+3. `system/tests/test_n6_receding_horizon_adapters.py`:
+   - Line 1255: `TestN6RecedingHorizonOD02Alignment`: multi-step RHC tests,
+     verifying that per-step views receive raw row 1 at hour 0, and step 23
+     receives 0.0 fallback.

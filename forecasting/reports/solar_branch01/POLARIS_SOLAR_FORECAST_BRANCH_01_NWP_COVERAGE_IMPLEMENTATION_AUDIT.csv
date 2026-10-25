@@ -1,0 +1,7 @@
+origin_time_utc,selected_issue_time_utc,min_required_lead_h,max_required_lead_h,effective_lead_range,missing_horizons,coverage_status,notes
+2024-01-20T00:00:00Z,2024-01-20T00:00:00Z,1,24,1h to 24h,None,COMPLETE,Direct alignment between NWP issue run and MPC origin 00:00 UTC
+2024-01-20T03:00:00Z,2024-01-20T00:00:00Z,4,27,4h to 27h,None,COMPLETE,Uses 00:00 UTC issue run with 3h lead shift (H_effective = H + 3)
+2024-01-20T06:00:00Z,2024-01-20T00:00:00Z,7,30,7h to 30h,None,COMPLETE,Uses 00:00 UTC issue run with 6h lead shift (H_effective = H + 6)
+2024-01-20T12:00:00Z,2024-01-20T00:00:00Z,13,36,13h to 36h,None,COMPLETE,Uses 00:00 UTC issue run with 12h lead shift (H_effective = H + 12)
+2024-01-20T18:00:00Z,2024-01-20T00:00:00Z,19,42,19h to 42h,None,COMPLETE,Uses 00:00 UTC issue run with 18h lead shift (H_effective = H + 18)
+AGGREGATE_2024_ALL_ORIGINS,00:00 UTC Daily Base Runs,1,42,1h to 42h,"0 out of 210,816 horizon-steps",COMPLETE (100.0%),"All 8,784 hourly origins cover complete H1..H24 sequence using lead shifting"

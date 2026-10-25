@@ -1,0 +1,6 @@
+metric_name,height_agl_km,threshold_q_kgkg,notes
+Liquid Cloud Peak Height,0.53,1e-5,Primary low boundary layer liquid cloud layer
+Liquid Cloud Top Height,2.01,1e-6,700 hPa level top for liquid water content
+Mixed-Phase Cloud Height,4.49,1e-6,500 hPa mid-troposphere condensate layer
+95th Percentile Cloud Condensate Height,6.01,1e-6,400 hPa upper ice cloud envelope
+99th Percentile / Max Ice Cloud Height,7.9,1e-6,300 hPa cirrus top envelope

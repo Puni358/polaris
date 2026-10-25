@@ -1,0 +1,16 @@
+{
+  "model_name": "POLARIS_EMS_GAP19_FROZEN_MILP_INSTANCE",
+  "sha256_canonical_hash": "9c740dc5de2a0cf28e17748dd12466e7f5ca00e733b93cfb34b148c60cfc779c",
+  "variable_count": 385,
+  "binary_variable_count": 120,
+  "continuous_variable_count": 265,
+  "constraint_count": 265,
+  "horizon_steps": 24,
+  "dt_hours": 1.0,
+  "objectives": [
+    "J1_critical_load",
+    "J2_emergency_reserve",
+    "J3_diesel_fuel",
+    "J4_renewable_curtailment"
+  ]
+}

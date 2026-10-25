@@ -1,0 +1,1095 @@
+{
+  "1_data_provenance": {
+    "csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+    "even_origins_count": 173,
+    "even_rows_count": 4152,
+    "odd_rows_present_in_even_subset": false
+  },
+  "3_section_13_forensic_status": {
+    "all_channels_real_arome": true,
+    "any_channel_has_spatial_variation": true,
+    "origins_produce_different_patterns": true,
+    "no_synthetic_wave_pattern": true,
+    "not_reconstructable_from_csv_alone": true,
+    "channel_details": [
+      {
+        "origin_id": 2,
+        "channels": [
+          {
+            "channel_idx": 0,
+            "channel_name": "surface_downwelling_shortwave_flux_in_air",
+            "source_netcdf_variable": "surface_downwelling_shortwave_flux_in_air",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 14.529297,
+            "patch_mean": 7.642839,
+            "patch_std": 3.97892928,
+            "patch_min": 2.568359,
+            "patch_max": 17.533203,
+            "n_unique_values": 424,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 1,
+            "channel_name": "cloud_area_fraction",
+            "source_netcdf_variable": "cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.999939,
+            "patch_mean": 0.998192,
+            "patch_std": 0.00358897,
+            "patch_min": 0.980469,
+            "patch_max": 1.0,
+            "n_unique_values": 129,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 2,
+            "channel_name": "high_type_cloud_area_fraction",
+            "source_netcdf_variable": "high_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.999939,
+            "patch_mean": 0.998189,
+            "patch_std": 0.00359266,
+            "patch_min": 0.980469,
+            "patch_max": 1.0,
+            "n_unique_values": 129,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 3,
+            "channel_name": "medium_type_cloud_area_fraction",
+            "source_netcdf_variable": "medium_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 3.1e-05,
+            "patch_mean": 0.066201,
+            "patch_std": 0.13536243,
+            "patch_min": 0.0,
+            "patch_max": 0.730652,
+            "n_unique_values": 204,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 4,
+            "channel_name": "low_type_cloud_area_fraction",
+            "source_netcdf_variable": "low_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 5.8e-05,
+            "patch_std": 0.00058704,
+            "patch_min": 0.0,
+            "patch_max": 0.011322,
+            "n_unique_values": 17,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 5,
+            "channel_name": "atmosphere_mass_content_of_cloud_liquid_water",
+            "source_netcdf_variable": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 6,
+            "channel_name": "atmosphere_mass_content_of_cloud_ice",
+            "source_netcdf_variable": "mass_fraction_of_cloud_ice_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 7,
+            "channel_name": "x_wind_10m",
+            "source_netcdf_variable": "x_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 2.490299,
+            "patch_mean": -3.191536,
+            "patch_std": 3.40069652,
+            "patch_min": -11.751888,
+            "patch_max": 4.454166,
+            "n_unique_values": 432,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 8,
+            "channel_name": "y_wind_10m",
+            "source_netcdf_variable": "y_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.124617,
+            "patch_mean": 0.287147,
+            "patch_std": 3.70054674,
+            "patch_min": -9.465227,
+            "patch_max": 9.228132,
+            "n_unique_values": 434,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 9,
+            "channel_name": "x_wind_700hPa",
+            "source_netcdf_variable": "x_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 6.668257,
+            "patch_mean": 6.812338,
+            "patch_std": 0.41125277,
+            "patch_min": 5.588179,
+            "patch_max": 8.074507,
+            "n_unique_values": 361,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 10,
+            "channel_name": "y_wind_700hPa",
+            "source_netcdf_variable": "y_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 7.48868,
+            "patch_mean": 7.823476,
+            "patch_std": 0.75558245,
+            "patch_min": 5.922274,
+            "patch_max": 9.575594,
+            "n_unique_values": 400,
+            "has_genuine_spatial_variation": true
+          }
+        ],
+        "checks": {
+          "n_variable_channels": 9,
+          "all_11_channels_real_arome": true
+        }
+      },
+      {
+        "origin_id": 42,
+        "channels": [
+          {
+            "channel_idx": 0,
+            "channel_name": "surface_downwelling_shortwave_flux_in_air",
+            "source_netcdf_variable": "surface_downwelling_shortwave_flux_in_air",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 120.8125,
+            "patch_mean": 74.322807,
+            "patch_std": 38.17567825,
+            "patch_min": 31.726562,
+            "patch_max": 171.492188,
+            "n_unique_values": 430,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 1,
+            "channel_name": "cloud_area_fraction",
+            "source_netcdf_variable": "cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.890106,
+            "patch_mean": 0.807762,
+            "patch_std": 0.16876003,
+            "patch_min": 0.43161,
+            "patch_max": 1.0,
+            "n_unique_values": 414,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 2,
+            "channel_name": "high_type_cloud_area_fraction",
+            "source_netcdf_variable": "high_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.880127,
+            "patch_mean": 0.781962,
+            "patch_std": 0.19209473,
+            "patch_min": 0.31427,
+            "patch_max": 1.0,
+            "n_unique_values": 414,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 3,
+            "channel_name": "medium_type_cloud_area_fraction",
+            "source_netcdf_variable": "medium_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.083099,
+            "patch_mean": 0.112299,
+            "patch_std": 0.05687136,
+            "patch_min": 0.030212,
+            "patch_max": 0.38855,
+            "n_unique_values": 429,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 4,
+            "channel_name": "low_type_cloud_area_fraction",
+            "source_netcdf_variable": "low_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 3e-06,
+            "patch_std": 9.24e-06,
+            "patch_min": 0.0,
+            "patch_max": 3.1e-05,
+            "n_unique_values": 2,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 5,
+            "channel_name": "atmosphere_mass_content_of_cloud_liquid_water",
+            "source_netcdf_variable": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 6,
+            "channel_name": "atmosphere_mass_content_of_cloud_ice",
+            "source_netcdf_variable": "mass_fraction_of_cloud_ice_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 7,
+            "channel_name": "x_wind_10m",
+            "source_netcdf_variable": "x_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 1.236192,
+            "patch_mean": -2.523428,
+            "patch_std": 1.93988967,
+            "patch_min": -6.366347,
+            "patch_max": 3.127793,
+            "n_unique_values": 433,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 8,
+            "channel_name": "y_wind_10m",
+            "source_netcdf_variable": "y_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 4.205032,
+            "patch_mean": 4.804327,
+            "patch_std": 4.21900654,
+            "patch_min": -4.721725,
+            "patch_max": 12.679642,
+            "n_unique_values": 429,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 9,
+            "channel_name": "x_wind_700hPa",
+            "source_netcdf_variable": "x_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 4.979034,
+            "patch_mean": 4.673248,
+            "patch_std": 0.79312116,
+            "patch_min": 2.075226,
+            "patch_max": 6.921906,
+            "n_unique_values": 423,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 10,
+            "channel_name": "y_wind_700hPa",
+            "source_netcdf_variable": "y_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 24.371046,
+            "patch_mean": 24.796177,
+            "patch_std": 1.41377974,
+            "patch_min": 21.352491,
+            "patch_max": 28.677687,
+            "n_unique_values": 415,
+            "has_genuine_spatial_variation": true
+          }
+        ],
+        "checks": {
+          "n_variable_channels": 9,
+          "all_11_channels_real_arome": true
+        }
+      },
+      {
+        "origin_id": 134,
+        "channels": [
+          {
+            "channel_idx": 0,
+            "channel_name": "surface_downwelling_shortwave_flux_in_air",
+            "source_netcdf_variable": "surface_downwelling_shortwave_flux_in_air",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 105.60347,
+            "patch_mean": 255.511673,
+            "patch_std": 102.64807129,
+            "patch_min": 50.44722,
+            "patch_max": 531.009705,
+            "n_unique_values": 434,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 1,
+            "channel_name": "cloud_area_fraction",
+            "source_netcdf_variable": "cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 1.0,
+            "patch_mean": 0.967049,
+            "patch_std": 0.10154981,
+            "patch_min": 0.180267,
+            "patch_max": 1.0,
+            "n_unique_values": 200,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 2,
+            "channel_name": "high_type_cloud_area_fraction",
+            "source_netcdf_variable": "high_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 3,
+            "channel_name": "medium_type_cloud_area_fraction",
+            "source_netcdf_variable": "medium_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.05541,
+            "patch_std": 0.14113817,
+            "patch_min": 0.0,
+            "patch_max": 0.770569,
+            "n_unique_values": 165,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 4,
+            "channel_name": "low_type_cloud_area_fraction",
+            "source_netcdf_variable": "low_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 1.0,
+            "patch_mean": 0.962961,
+            "patch_std": 0.1098992,
+            "patch_min": 0.162933,
+            "patch_max": 1.0,
+            "n_unique_values": 210,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 5,
+            "channel_name": "atmosphere_mass_content_of_cloud_liquid_water",
+            "source_netcdf_variable": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 2.7e-07,
+            "patch_min": 0.0,
+            "patch_max": 2e-06,
+            "n_unique_values": 3,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 6,
+            "channel_name": "atmosphere_mass_content_of_cloud_ice",
+            "source_netcdf_variable": "mass_fraction_of_cloud_ice_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 7,
+            "channel_name": "x_wind_10m",
+            "source_netcdf_variable": "x_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": -1.341874,
+            "patch_mean": 2.834679,
+            "patch_std": 1.62080646,
+            "patch_min": -1.955644,
+            "patch_max": 7.13127,
+            "n_unique_values": 434,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 8,
+            "channel_name": "y_wind_10m",
+            "source_netcdf_variable": "y_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.303835,
+            "patch_mean": 1.303298,
+            "patch_std": 1.29548097,
+            "patch_min": -2.286497,
+            "patch_max": 4.659792,
+            "n_unique_values": 432,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 9,
+            "channel_name": "x_wind_700hPa",
+            "source_netcdf_variable": "x_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.397631,
+            "patch_mean": 0.608407,
+            "patch_std": 0.22171481,
+            "patch_min": -0.047682,
+            "patch_max": 1.084154,
+            "n_unique_values": 346,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 10,
+            "channel_name": "y_wind_700hPa",
+            "source_netcdf_variable": "y_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 8.105938,
+            "patch_mean": 8.722369,
+            "patch_std": 0.44949099,
+            "patch_min": 7.649883,
+            "patch_max": 9.761211,
+            "n_unique_values": 381,
+            "has_genuine_spatial_variation": true
+          }
+        ],
+        "checks": {
+          "n_variable_channels": 8,
+          "all_11_channels_real_arome": true
+        }
+      },
+      {
+        "origin_id": 226,
+        "channels": [
+          {
+            "channel_idx": 0,
+            "channel_name": "surface_downwelling_shortwave_flux_in_air",
+            "source_netcdf_variable": "surface_downwelling_shortwave_flux_in_air",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 356.517548,
+            "patch_mean": 368.4104,
+            "patch_std": 43.03642654,
+            "patch_min": 164.064438,
+            "patch_max": 428.533173,
+            "n_unique_values": 424,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 1,
+            "channel_name": "cloud_area_fraction",
+            "source_netcdf_variable": "cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.361816,
+            "patch_mean": 0.296521,
+            "patch_std": 0.29342496,
+            "patch_min": 0.003723,
+            "patch_max": 1.0,
+            "n_unique_values": 420,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 2,
+            "channel_name": "high_type_cloud_area_fraction",
+            "source_netcdf_variable": "high_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.052704,
+            "patch_mean": 0.101147,
+            "patch_std": 0.08980107,
+            "patch_min": 0.002991,
+            "patch_max": 0.439545,
+            "n_unique_values": 426,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 3,
+            "channel_name": "medium_type_cloud_area_fraction",
+            "source_netcdf_variable": "medium_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 3.1e-05,
+            "patch_mean": 0.000137,
+            "patch_std": 0.00040401,
+            "patch_min": 0.0,
+            "patch_max": 0.002838,
+            "n_unique_values": 37,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 4,
+            "channel_name": "low_type_cloud_area_fraction",
+            "source_netcdf_variable": "low_type_cloud_area_fraction",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.326294,
+            "patch_mean": 0.202302,
+            "patch_std": 0.3310225,
+            "patch_min": 0.0,
+            "patch_max": 1.0,
+            "n_unique_values": 276,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 5,
+            "channel_name": "atmosphere_mass_content_of_cloud_liquid_water",
+            "source_netcdf_variable": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 6,
+            "channel_name": "atmosphere_mass_content_of_cloud_ice",
+            "source_netcdf_variable": "mass_fraction_of_cloud_ice_in_air_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 0.0,
+            "patch_mean": 0.0,
+            "patch_std": 0.0,
+            "patch_min": 0.0,
+            "patch_max": 0.0,
+            "n_unique_values": 1,
+            "has_genuine_spatial_variation": false
+          },
+          {
+            "channel_idx": 7,
+            "channel_name": "x_wind_10m",
+            "source_netcdf_variable": "x_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": -0.980814,
+            "patch_mean": 2.818902,
+            "patch_std": 1.68891525,
+            "patch_min": -2.852884,
+            "patch_max": 7.758444,
+            "n_unique_values": 421,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 8,
+            "channel_name": "y_wind_10m",
+            "source_netcdf_variable": "y_wind_10m",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": -0.707391,
+            "patch_mean": 0.275297,
+            "patch_std": 1.7045629,
+            "patch_min": -3.478875,
+            "patch_max": 5.089484,
+            "n_unique_values": 421,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 9,
+            "channel_name": "x_wind_700hPa",
+            "source_netcdf_variable": "x_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": 3.096348,
+            "patch_mean": 2.982624,
+            "patch_std": 0.34794453,
+            "patch_min": 1.908848,
+            "patch_max": 3.923985,
+            "n_unique_values": 395,
+            "has_genuine_spatial_variation": true
+          },
+          {
+            "channel_idx": 10,
+            "channel_name": "y_wind_700hPa",
+            "source_netcdf_variable": "y_wind_pl",
+            "shape": [
+              21,
+              21
+            ],
+            "center_value": -3.782099,
+            "patch_mean": -3.636183,
+            "patch_std": 0.41365319,
+            "patch_min": -4.448114,
+            "patch_max": -2.73913,
+            "n_unique_values": 373,
+            "has_genuine_spatial_variation": true
+          }
+        ],
+        "checks": {
+          "n_variable_channels": 9,
+          "all_11_channels_real_arome": true
+        }
+      }
+    ]
+  },
+  "4_section_14_independent_reconstruction": {
+    "origin_id": 2,
+    "cached_tensor_shape": [
+      24,
+      11,
+      21,
+      21
+    ],
+    "comparison_method": "Independent xarray dataset re-read from OpenDAP URL",
+    "pass": true,
+    "independent_tensor_shape": [
+      24,
+      11,
+      21,
+      21
+    ],
+    "per_channel_comparison": [
+      {
+        "ch": 0,
+        "name": "surface_downwelling_shortwave_flux_in_air",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 1,
+        "name": "cloud_area_fraction",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 2,
+        "name": "high_type_cloud_area_fraction",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 3,
+        "name": "medium_type_cloud_area_fraction",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 4,
+        "name": "low_type_cloud_area_fraction",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 5,
+        "name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 6,
+        "name": "mass_fraction_of_cloud_ice_in_air_pl",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 7,
+        "name": "x_wind_10m",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 8,
+        "name": "y_wind_10m",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 9,
+        "name": "x_wind_pl",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      },
+      {
+        "ch": 10,
+        "name": "y_wind_pl",
+        "match": true,
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+      }
+    ],
+    "channels_matched": 11,
+    "channels_total": 11,
+    "global_max_abs_diff": 0.0,
+    "global_mean_abs_diff": 0.0,
+    "shape_match": true
+  },
+  "5_section_12_control_reproduction": {
+    "locked_reference": {
+      "MAE_W_m2": 26.3668,
+      "nMAE_pct": 20.4507,
+      "RMSE_W_m2": 55.2513,
+      "bias_W_m2": -0.1291,
+      "tolerance_abs_pct": 5.0
+    },
+    "reconstructed_control_metrics": {
+      "MAE_W_m2": 25.639318,
+      "nMAE_pct": 19.8865,
+      "RMSE_W_m2": 54.369219,
+      "bias_W_m2": -5.043934
+    },
+    "absolute_differences": {
+      "MAE_diff_W_m2": 0.727482,
+      "MAE_diff_pct": 2.7591,
+      "nMAE_diff_pp": 0.5642,
+      "RMSE_diff_W_m2": 0.882081,
+      "bias_diff_W_m2": 4.914834
+    },
+    "g6_pass": true,
+    "fold_results": [
+      {
+        "fold": 1,
+        "mae": 27.358628,
+        "val_origins": [
+          6,
+          16,
+          26,
+          36,
+          46,
+          56,
+          66,
+          76,
+          86,
+          96,
+          106,
+          116,
+          126,
+          136,
+          146,
+          156,
+          166,
+          176,
+          186,
+          196,
+          206,
+          216,
+          226,
+          236,
+          246,
+          256,
+          266,
+          276,
+          286,
+          296,
+          306,
+          316,
+          326,
+          336,
+          346
+        ]
+      },
+      {
+        "fold": 2,
+        "mae": 21.591261,
+        "val_origins": [
+          4,
+          14,
+          24,
+          34,
+          44,
+          54,
+          64,
+          74,
+          84,
+          94,
+          104,
+          114,
+          124,
+          134,
+          144,
+          154,
+          164,
+          174,
+          184,
+          194,
+          204,
+          214,
+          224,
+          234,
+          244,
+          254,
+          264,
+          274,
+          284,
+          294,
+          304,
+          314,
+          324,
+          334,
+          344
+        ]
+      },
+      {
+        "fold": 3,
+        "mae": 25.950014,
+        "val_origins": [
+          2,
+          12,
+          22,
+          32,
+          42,
+          52,
+          62,
+          72,
+          82,
+          92,
+          102,
+          112,
+          122,
+          132,
+          142,
+          152,
+          162,
+          172,
+          182,
+          192,
+          202,
+          212,
+          222,
+          232,
+          242,
+          252,
+          262,
+          272,
+          282,
+          292,
+          302,
+          312,
+          322,
+          332,
+          342
+        ]
+      },
+      {
+        "fold": 4,
+        "mae": 29.003698,
+        "val_origins": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100,
+          110,
+          120,
+          130,
+          140,
+          150,
+          160,
+          170,
+          180,
+          190,
+          200,
+          210,
+          220,
+          230,
+          240,
+          250,
+          260,
+          270,
+          280,
+          290,
+          300,
+          310,
+          320,
+          330,
+          340
+        ]
+      },
+      {
+        "fold": 5,
+        "mae": 24.352342,
+        "val_origins": [
+          8,
+          18,
+          28,
+          38,
+          48,
+          58,
+          68,
+          78,
+          88,
+          98,
+          108,
+          118,
+          128,
+          138,
+          148,
+          158,
+          168,
+          178,
+          188,
+          198,
+          208,
+          218,
+          228,
+          238,
+          248,
+          258,
+          268,
+          278,
+          288,
+          298,
+          308,
+          318,
+          328,
+          338
+        ]
+      }
+    ]
+  },
+  "6_odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "7_candidate_neural_training_performed": false,
+  "8_final_validation_verdict": "VALIDATION PASS \u2014 READY FOR 21\u00d721 CANDIDATE RUN"
+}

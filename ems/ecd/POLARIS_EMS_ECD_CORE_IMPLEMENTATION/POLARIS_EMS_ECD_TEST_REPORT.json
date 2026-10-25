@@ -1,0 +1,94 @@
+{
+  "test_report_name": "POLARIS_EMS_ECD_TEST_REPORT",
+  "generated_at": "2026-09-23T18:47:00Z",
+  "test_framework": "pytest 9.1.1",
+  "environment": "Python 3.12.3",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "execution_duration_seconds": 0.08
+  },
+  "canonical_fixture_results": {
+    "fixture_id": "ECD_CANONICAL_SYNTHETIC_FIXTURE_V1",
+    "status": "5/5 PASS",
+    "cases": [
+      {
+        "case_id": "CASE_1",
+        "name": "NORMAL",
+        "status": "PASS",
+        "expected_mode": "NORMAL",
+        "actual_mode": "NORMAL",
+        "expected_t_battery_hours": 3.68,
+        "actual_t_battery_hours": 3.68,
+        "expected_t_diesel_hours": 4.0,
+        "actual_t_diesel_hours": 4.0,
+        "preserved_resource": "N/A",
+        "limiting_resource": "N/A"
+      },
+      {
+        "case_id": "CASE_2",
+        "name": "BATTERY_LIMITED_EMERGENCY",
+        "status": "PASS",
+        "expected_mode": "EMERGENCY",
+        "actual_mode": "EMERGENCY",
+        "expected_t_battery_hours": 0.6133333333333333,
+        "actual_t_battery_hours": 0.6133333333333333,
+        "expected_t_diesel_hours": 4.0,
+        "actual_t_diesel_hours": 4.0,
+        "preserved_resource": "DIESEL",
+        "limiting_resource": "BATTERY"
+      },
+      {
+        "case_id": "CASE_3",
+        "name": "DIESEL_LIMITED_EMERGENCY",
+        "status": "PASS",
+        "expected_mode": "EMERGENCY",
+        "actual_mode": "EMERGENCY",
+        "expected_t_battery_hours": 3.68,
+        "actual_t_battery_hours": 3.68,
+        "expected_t_diesel_hours": 1.0,
+        "actual_t_diesel_hours": 1.0,
+        "preserved_resource": "BATTERY",
+        "limiting_resource": "DIESEL"
+      },
+      {
+        "case_id": "CASE_4",
+        "name": "BOTH_FAIL_EMERGENCY",
+        "status": "PASS",
+        "expected_mode": "EMERGENCY",
+        "actual_mode": "EMERGENCY",
+        "expected_t_battery_hours": 0.6133333333333333,
+        "actual_t_battery_hours": 0.6133333333333333,
+        "expected_t_diesel_hours": 1.0,
+        "actual_t_diesel_hours": 1.0,
+        "preserved_resource": "DIESEL",
+        "limiting_resource": "BATTERY"
+      },
+      {
+        "case_id": "CASE_5",
+        "name": "EQUAL_MARGIN_TIE",
+        "status": "PASS",
+        "expected_mode": "NORMAL",
+        "actual_mode": "NORMAL",
+        "expected_t_battery_hours": 3.68,
+        "actual_t_battery_hours": 3.68,
+        "expected_t_diesel_hours": 3.68,
+        "actual_t_diesel_hours": 3.68,
+        "preserved_resource": "TIE / BOTH",
+        "limiting_resource": "TIE / BOTH",
+        "tie_status": true
+      }
+    ]
+  },
+  "safety_and_edge_case_tests": {
+    "missing_and_invalid_t_required": "PASS",
+    "invalid_telemetry_and_critical_load": "PASS",
+    "boundary_state_conditions": "PASS",
+    "tie_epsilon_behavior": "PASS",
+    "time_varying_critical_load_trajectory": "PASS",
+    "deterministic_reproducibility": "PASS (100 iterations byte-for-byte identical)"
+  }
+}

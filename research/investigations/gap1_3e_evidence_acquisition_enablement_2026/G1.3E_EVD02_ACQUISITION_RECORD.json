@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "task": "EVD-02 ACQUISITION AND EMPIRICAL CONTENT VERIFICATION",
+  "policy_status": "LOCKED",
+  "universal_freshness_threshold": "NONE",
+  "evidence_boundary": "C",
+  "evidence_id": "EVD-02",
+  "target_name": "NREL Open Microgrid Diesel Generator Step-Load Dataset",
+  "target_class": "1.2 Generator Active Power",
+  "acquisition_result": {
+    "acquired_in_workspace": false,
+    "actual_files_present": false,
+    "acquisition_status": "FAILED_SOURCE_NOT_LOCATED",
+    "availability_status": "NOT_FOUND",
+    "documentation_access": true,
+    "data_access": false,
+    "workspace_copy": false,
+    "blocker_category": "PUBLIC_REPOSITORY_FILE_ABSENCE",
+    "blocker_description": "Search of NREL OpenEI / OEDI Data Repository (data.nrel.gov, openei.org/doe-opendata) confirmed that no downloadable time-series dataset exists under the identifier microgrid_diesel_stepload_2023 or title NREL Open Microgrid Diesel Generator Step-Load Dataset. NREL Flatirons Campus publishes general technical literature and droop control models, but raw CSV/HDF5 time-series recordings of diesel generator step loads are not publicly hosted for download."
+  },
+  "acquired_files": [],
+  "content_verification": {
+    "verification_status": "UNVERIFIED",
+    "active_power_variable_verified": false,
+    "variable_name": null,
+    "units": null,
+    "generator_attribution": "UNVERIFIED",
+    "step_load_events_present": "UNVERIFIED",
+    "timestamp_structure_sufficient": "UNVERIFIED",
+    "experimental_suitability": "UNVERIFIED"
+  },
+  "governance_firewall": {
+    "freshness_rules_created": 0,
+    "production_modifications": 0,
+    "governance_modifications": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "experiment_id": "C2_IDEAL_EFFICIENCY",
+  "description": "Ideal battery efficiency (eta_chg = 1.0, eta_dis = 1.0)",
+  "status": "PASS",
+  "diesel_fuel_l": 88340.0,
+  "delta_fuel_vs_c0_l": -5125.6264,
+  "delta_fuel_vs_c0_pct": -5.48,
+  "diesel_energy_kwh": 196800.0,
+  "renewable_curtailment_kwh": 52490.0,
+  "battery_discharge_kwh": 4120.0,
+  "battery_cycles": 20.6,
+  "unmet_load_kwh": 0.0
+}

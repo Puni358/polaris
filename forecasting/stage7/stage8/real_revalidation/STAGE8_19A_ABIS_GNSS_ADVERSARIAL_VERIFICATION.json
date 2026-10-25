@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-09-13T09:37:43+00:00",
+  "stage": "POLARIS STAGE 8.19A ABIS GNSS ADVERSARIAL VERIFICATION",
+  "abis_status": "VERIFIED CANDIDATE",
+  "gnss_family_status": "OPEN (ABIS VERIFIED)",
+  "next_action": "SEPARATE DATA FEASIBILITY / PRE-REGISTRATION AUDIT",
+  "governance_status": "RESEARCH ONLY — NO EXPERIMENT AUTHORIZED",
+  "verified_claims": {
+    "station_identity": "ABIS (SWEPOS Permanent Reference Station, Abisko)",
+    "coordinates": "68.35827 N, 18.82500 E, 387.6 m ellipsoidal height",
+    "proximity_to_nuolja_target": "326 meters horizontally (< 0.5 km)",
+    "archive_2024_completeness": "100% complete archive across 366 days",
+    "causality_at_t0": "22:00 UTC observation published by 23:30 UTC Day D-1 (T_pub <= t0)",
+    "measurement_independence": "Direct dual-frequency microwave phase delay (0 NWP model dependency)"
+  },
+  "critical_unverified_claims": [],
+  "official_operational_champion": "Stage 8.17A AROME Structural Disagreement Model",
+  "champion_daytime_nmae_pct": 27.3337
+}

@@ -1,0 +1,11 @@
+{
+  "audit": "ENEV_CHECKPOINT_CORRECTION_AUDIT",
+  "timestamp": "2026-09-13T19:27:00Z",
+  "target_file": "ENEV_METAR_FEASIBILITY_CHECKPOINT.json",
+  "field_corrected": "governance.champion_rmse",
+  "old_value": 54.912301,
+  "corrected_value": 64.219495,
+  "reason": "checkpoint transcription error",
+  "authoritative_source": "POLARIS_Physics_Bottleneck_Investigation.md and Stage 8.1 reproducible benchmark freeze (ODD MAE: 36.188657 W/m², nMAE: 28.0688%, RMSE: 64.219495 W/m², Bias: +1.439399 W/m²)",
+  "impact": "Corrects baseline benchmark RMSE metric in ENEV checkpoint. Feasibility conclusions, gate conditions, and experiment definition remain unchanged."
+}

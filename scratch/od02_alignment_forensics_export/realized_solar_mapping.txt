@@ -1,0 +1,77 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: REALIZED SOLAR MAPPING IN REALIZED_LOADER.PY
+Source: `system/evaluation/n6_multi_origin_harness/realized_loader.py`
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+--------------------------------------------------------------------------------
+1. VERBATIM SOURCE EXCERPTS: realized_loader.py
+--------------------------------------------------------------------------------
+
+A. Module Docstring and Contract Specification (lines 1-26):
+1: """
+2: POLARIS -- Deterministic Realized Actuals Loader for Multi-Origin Campaign
+3: ===========================================================================
+4: Authoritative Dataset: POLARIS_HYBRID_FIXTURE_H1_0/fixture.csv
+5: Governed SHA-256: 762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023
+6: 
+7: Provides a pure, deterministic loader to construct `actuals_by_origin_and_step`
+8: for SingleShotPlanSlicingSimulatorAdapter and RecedingHorizonPlanSlicingSimulatorAdapter.
+9: 
+10: Temporal alignment contract:
+11:   For an origin t0 (e.g. 2024-06-07T00:00:00Z), the 24 simulator steps represent
+12:   transitions over consecutive 1-hour intervals [t0 + k, t0 + k + 1] for k in 0..23.
+13:   Each transition step k consumes the realized environmental observation at t0 + k + 1
+14:   (e.g. step 0 consumes 2024-06-07T01:00:00Z, step 23 consumes 2024-06-08T00:00:00Z).
+15:   The simulator's DigitalTwinSimulator.step() advances state to next_step['timestamp'].
+...
+26: """
+
+B. Step-Loop Observation Mapping (lines 217-231):
+217:         origin_steps: List[Dict[str, Any]] = []
+218:         for h in range(steps_per_origin):
+219:             # Transition step h advances state [t0 + h, t0 + h + 1], consuming observation at t0 + h + 1
+220:             step_dt = dt0 + datetime.timedelta(hours=h + 1)
+221:             step_ts = step_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+222:             if step_ts not in rows_by_ts:
+223:                 raise KeyError(
+224:                     f"Fail-closed: Missing actual observation for origin '{origin}' transition step {h} "
+225:                     f"({step_ts}) in authoritative fixture."
+226:                 )
+227:             origin_steps.append(rows_by_ts[step_ts])
+228: 
+229:         result[origin] = origin_steps
+230: 
+231:     return result
+
+--------------------------------------------------------------------------------
+2. DETAILED MAPPING TABLE FOR 24 DISPATCH STEPS
+--------------------------------------------------------------------------------
+Assuming origin $t_0 = \text{2024-06-07T00:00:00Z}$:
+
+Dispatch Step (k)  Transition Interval           Fixture Query Timestamp       SITES Physical Coverage Interval
+-----------------  ----------------------------  ----------------------------  --------------------------------------------
+Step 0             [00:00:00Z, 01:00:00Z]        2024-06-07T01:00:00Z          Mean of 01:00..01:50 [00:50, 01:50], mid 01:20
+Step 1             [01:00:00Z, 02:00:00Z]        2024-06-07T02:00:00Z          Mean of 02:00..02:50 [01:50, 02:50], mid 02:20
+Step 2             [02:00:00Z, 03:00:00Z]        2024-06-07T03:00:00Z          Mean of 03:00..03:50 [02:50, 03:50], mid 03:20
+...                ...                           ...                           ...
+Step 21            [21:00:00Z, 22:00:00Z]        2024-06-07T22:00:00Z          Mean of 22:00..22:50 [21:50, 22:50], mid 22:20
+Step 22            [22:00:00Z, 23:00:00Z]        2024-06-07T23:00:00Z          Mean of 23:00..23:50 [22:50, 23:50], mid 23:20
+Step 23            [23:00:00Z, 24:00:00Z]        2024-06-08T00:00:00Z          Mean of 00:00..00:50 [23:50, 00:50], mid 00:20
+
+--------------------------------------------------------------------------------
+3. CROSS-SYSTEM RECONCILIATION & INSIGHTS
+--------------------------------------------------------------------------------
+1. Why Step 0 queries `t0 + 1h`:
+   In discrete-time physical simulation (`DigitalTwinSimulator.step()`), an agent
+   executes action $u_0$ across $[t_0, t_0+1\text{h}]$, arriving at state $S_1$ at $t_0+1\text{h}$.
+   The realized loader pairs transition step 0 with the environmental reading stamped
+   at the end of that transition interval (`t0 + 1h`).
+2. Impact on Solar Forecast Alignment:
+   - Raw N6 output index 0 was stamped $t_0 + 0\text{h}$ (`2024-06-07T00:00:00Z`).
+   - Raw N6 output index 1 was stamped $t_0 + 1\text{h}$ (`2024-06-07T01:00:00Z`).
+   - Because `realized_loader.py` evaluates step 0 against `01:00:00Z`, the author of
+     `_align_n6_bundle_od02` mapped N6 index 1 (`01:00:00Z`) to dispatch step 0 so that
+     the forecast label (`01:00:00Z`) matches the realized observation query label (`01:00:00Z`).
+   - Symmetrically, step 23 evaluates against `t0 + 24h` (`2024-06-08T00:00:00Z`), for which
+     raw N6 (having only 24 points $t_0 \dots t_0+23\text{h}$) had no corresponding output.

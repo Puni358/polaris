@@ -1,0 +1,181 @@
+{
+  "freeze_timestamp": "2026-09-30T23:12:44+05:30",
+  "campaign_identity": {
+    "study_id": "battery_degradation_model_validation_20260930",
+    "validation_directory": "investigations/battery_degradation_model_validation_20260930/",
+    "trajectory_id": "polaris_2024_annual_365d_8784h"
+  },
+  "authoritative_current_state": {
+    "degradation_model_status": "PARTIALLY_VALIDATED_RESEARCH_MODEL",
+    "physical_evidence_status": "PARTIAL",
+    "economic_degradation_cost_status": "NOT_IDENTIFIABLE",
+    "production_promotion": "NOT_AUTHORIZED",
+    "target_battery_identity_verified": false
+  },
+  "model_interpretation": {
+    "model_structure": "Q_loss = Q_cycle + Q_calendar",
+    "structure_defensible": true,
+    "literature_source": "Tier C Peer-Reviewed (Wang 2011, Schmalstieg 2014, NREL BLAST)",
+    "target_battery_measurement": false,
+    "target_chemistry_verified": false,
+    "numerical_parameters_target_specific": false
+  },
+  "five_layer_separation": {
+    "layer_1_physical_evidence": "Tier C Peer-Reviewed Literature (Wang, Schmalstieg, NREL)",
+    "layer_2_research_model_structure": "Superposition Q_loss = Q_cycle + Q_calendar",
+    "layer_3_research_model_parameters": "Literature-derived power-law and Arrhenius exponents",
+    "layer_4_synthetic_engineering_assumptions": "200 kWh capacity, 50 kW power, 20°C shelter temp, 84.64% efficiency",
+    "layer_5_production_optimizer_parameters": "deg_penalty_per_wh = 0.00005 ($0.05/kWh) FROZEN & UNTOUCHED"
+  },
+  "frozen_validation_results_V0_V7": [
+    {
+      "experiment_id": "V0",
+      "description": "Reference Model (C0 profile)",
+      "efc_per_year": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00012,
+      "q_calendar_pct": 0.09600,
+      "q_total_pct": 0.09612,
+      "status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V1",
+      "description": "Parameter Lower Bounds",
+      "efc_per_year": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00006,
+      "q_calendar_pct": 0.05400,
+      "q_total_pct": 0.05406,
+      "status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V2",
+      "description": "Parameter Upper Bounds",
+      "efc_per_year": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00035,
+      "q_calendar_pct": 0.28465,
+      "q_total_pct": 0.28500,
+      "status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V3",
+      "description": "No Calendar Aging",
+      "efc_per_year": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00012,
+      "q_calendar_pct": 0.00000,
+      "q_total_pct": 0.00012,
+      "status": "DIAGNOSTIC_PASS"
+    },
+    {
+      "experiment_id": "V4",
+      "description": "No Cycle Aging",
+      "efc_per_year": 0.00,
+      "avg_dod": 0.000,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00000,
+      "q_calendar_pct": 0.09600,
+      "q_total_pct": 0.09600,
+      "status": "DIAGNOSTIC_PASS"
+    },
+    {
+      "experiment_id": "V5",
+      "description": "Temperature Variation (-10°C Unheated Shelter)",
+      "efc_per_year": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00001,
+      "q_calendar_pct": 0.00840,
+      "q_total_pct": 0.00841,
+      "status": "EXTRAPOLATION_RISK"
+    },
+    {
+      "experiment_id": "V6",
+      "description": "Deep Cycling (Reactive Profile)",
+      "efc_per_year": 49.59,
+      "avg_dod": 0.750,
+      "avg_soc": 0.5500,
+      "q_cycle_pct": 0.00399,
+      "q_calendar_pct": 0.12900,
+      "q_total_pct": 0.13299,
+      "status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V7",
+      "description": "Combined Uncertainty Envelope",
+      "efc_per_year": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "q_cycle_pct": 0.00012,
+      "q_calendar_pct": 0.09600,
+      "q_total_pct": 0.09612,
+      "status": "ENVELOPE_BOUNDED"
+    }
+  ],
+  "uncertainty_envelope": {
+    "lower_pct": 0.054,
+    "reference_pct": 0.0961,
+    "upper_pct": 0.285,
+    "status": "RESEARCH_MODEL_UNCERTAINTY_ENVELOPE",
+    "target_battery_measurement": false
+  },
+  "temperature_limitation": {
+    "v5_condition": "-10°C Unheated Shelter",
+    "status": "EXTRAPOLATION_RISK"
+  },
+  "economic_gap": {
+    "status": "NOT_IDENTIFIABLE",
+    "notes": "Physical capacity loss cannot be mapped to an empirical $/kWh penalty without target replacement invoices and transport logistics data."
+  },
+  "production_parameters": {
+    "current_production_degradation_parameter": "0.00005 $/Wh (0.050 $/kWh)",
+    "current_production_degradation_status": "UNVALIDATED_SYNTHETIC_PROXY",
+    "current_production_efficiency": "0.8464",
+    "current_production_efficiency_status": "UNVALIDATED_SYNTHETIC_ASSUMPTION"
+  },
+  "current_state_integrity_snapshot": [
+    {"file": "BATTERY_DEGRADATION_MODEL_REPRODUCIBILITY.md", "sizeBytes": 1572},
+    {"file": "BATTERY_DEGRADATION_MODEL_VALIDATION_CHECKPOINT.json", "sizeBytes": 1999},
+    {"file": "BATTERY_DEGRADATION_MODEL_VALIDATION_CHECKPOINT.md", "sizeBytes": 2222},
+    {"file": "BATTERY_DEGRADATION_MODEL_VALIDATION_REPORT.md", "sizeBytes": 6794},
+    {"file": "BATTERY_DEGRADATION_MODEL_VALIDATION_RESULTS.json", "sizeBytes": 4561},
+    {"file": "BATTERY_DEGRADATION_PARAMETER_VALIDATION_MATRIX.json", "sizeBytes": 4410},
+    {"file": "BATTERY_DEGRADATION_PARAMETER_VALIDATION_MATRIX.md", "sizeBytes": 2758},
+    {"file": "BATTERY_DEGRADATION_UNCERTAINTY_ANALYSIS.md", "sizeBytes": 2059},
+    {"file": "BATTERY_DEGRADATION_VALIDATION_RESULTS.csv", "sizeBytes": 987}
+  ],
+  "production_safety_check": {
+    "production_code_modified": false,
+    "production_parameters_modified": false,
+    "battery_configuration_modified": false,
+    "governance_modified": false,
+    "frozen_sensitivity_campaign_modified": false
+  },
+  "next_authorized_phase": "TARGET_BATTERY_IDENTITY_AND_TARGET_SPECIFIC_EVIDENCE_ACQUISITION",
+  "governance_assertion": {
+    "sensitivity_campaign": "FROZEN",
+    "physical_evidence_acquisition": "COMPLETE_FOR_CURRENT_SCOPE",
+    "degradation_model_validation": "FROZEN",
+    "degradation_model_validation_result": "PARTIALLY_VALIDATED_RESEARCH_MODEL",
+    "annual_modelled_fade_envelope": {
+      "lower": "0.054%",
+      "reference": "0.0961%",
+      "upper": "0.285%",
+      "status": "RESEARCH_MODEL_OUTPUT"
+    },
+    "temperature_validation": "EXTRAPOLATION_RISK",
+    "economic_degradation_cost": "NOT_IDENTIFIABLE",
+    "current_production_degradation_parameter": "0.00005 $/Wh (UNVALIDATED_SYNTHETIC_PROXY)",
+    "current_production_efficiency": "0.8464 (UNVALIDATED_SYNTHETIC_ASSUMPTION)",
+    "production_parameter_change": "NONE",
+    "production_code_change": "NONE",
+    "governance_change": "NONE",
+    "production_promotion": "NOT_AUTHORIZED",
+    "next_authorized_phase": "TARGET_BATTERY_IDENTITY_AND_TARGET_SPECIFIC_EVIDENCE_ACQUISITION"
+  }
+}

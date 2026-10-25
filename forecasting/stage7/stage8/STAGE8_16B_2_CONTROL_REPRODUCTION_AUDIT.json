@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-09-13T02:47:00+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 — FINAL CONTROL REPRODUCTION AUDIT",
+  "reproduction_outcome": "CONTROL REPRODUCED",
+  "discrepancy_summary": {
+    "historical_stage8_1_official_odd_mae_w_m2": 36.188657,
+    "historical_stage8_1_official_odd_nmae_pct": 28.0688,
+    "stage8_16b_2_refit_control_odd_mae_w_m2": 36.707059,
+    "stage8_16b_2_refit_control_odd_nmae_pct": 28.4709,
+    "stage8_16b_2_reconstructed_frozen_control_odd_mae_w_m2": 36.188657,
+    "stage8_16b_2_reconstructed_frozen_control_odd_nmae_pct": 28.0688,
+    "reproduction_match_error_w_m2": 0.0
+  },
+  "root_cause_analysis": {
+    "primary_cause_id": "Cause 8 / Cause 9: Stage 4 Parameter Source Mismatch",
+    "description": "Historical Stage 8.1 official evaluation (run_official_odd_evaluation.py) used globally frozen Stage 4 parameters from STAGE4_PARAMS_PATH (ensemble_parameters.json) without refitting on the EVEN split (STAGE 4 REFIT = NO). Stage 8.16B-2 validation script (run_stage8_16b_2_odd_validation.py) invoked fit_stage4_parameters(df_even), refitting Stage 4 parameters on the 174 EVEN training origins.",
+    "verification_proof": "When fit_stage4_parameters is replaced with globally frozen ensemble_parameters.json, the reconstructed Stage 8.1 Control daytime MAE matches 36.188657 W/m2 and nMAE matches 28.0688% EXACTLY to 6 decimal places."
+  },
+  "phi_candidate_impact_analysis": {
+    "candidate_remains_valid": true,
+    "frozen_stage4_protocol_metrics": {
+      "control_daytime_mae_w_m2": 36.188657,
+      "control_daytime_nmae_pct": 28.0688,
+      "candidate_daytime_mae_w_m2": 35.727549,
+      "candidate_daytime_nmae_pct": 27.7111,
+      "delta_mae_w_m2": -0.461108,
+      "delta_nmae_pct": -0.3576,
+      "delta_rmse_w_m2": -0.455401,
+      "bootstrap_mean_delta_mae_w_m2": -0.402099,
+      "bootstrap_95_ci_w_m2": [-0.759039, -0.046315],
+      "bootstrap_pct_improving": 98.59
+    },
+    "refit_stage4_protocol_metrics": {
+      "control_daytime_mae_w_m2": 36.707059,
+      "control_daytime_nmae_pct": 28.4709,
+      "candidate_daytime_mae_w_m2": 36.211027,
+      "candidate_daytime_nmae_pct": 28.0861,
+      "delta_mae_w_m2": -0.496032,
+      "delta_nmae_pct": -0.3847,
+      "delta_rmse_w_m2": -0.853062,
+      "bootstrap_mean_delta_mae_w_m2": -0.413599,
+      "bootstrap_95_ci_w_m2": [-0.758142, -0.076533],
+      "bootstrap_pct_improving": 99.19
+    },
+    "conclusion": "Under BOTH protocols (globally frozen Stage 4 and EVEN-refit Stage 4), the Phi candidate achieves a statistically significant held-out ODD improvement over Stage 8.1 Control of -0.4611 W/m2 (or -0.4960 W/m2) with a 95% bootstrap confidence interval strictly below zero."
+  },
+  "governance_audit": {
+    "odd_target_reads": 173,
+    "odd_tuning_decisions": 0,
+    "production_champion_modified": false,
+    "polaris_master_handoff_modified": false,
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION (Stage 8.1 nMAE = 28.0688%)"
+  }
+}

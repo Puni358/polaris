@@ -1,0 +1,72 @@
+{
+  "manifest_title": "POLARIS Stage 8.17A Real AROME-Arctic 2024 Data Acquisition & Integration Manifest",
+  "timestamp_utc": "2026-09-13T14:28:18Z",
+  "arome_real_data_ready": true,
+  "lwp_semantics_audit": {
+    "variable_name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+    "cf_standard_name": "mass_fraction_of_cloud_condensed_water_in_air",
+    "grib_param": "q_l (cloud liquid water specific content)",
+    "units": "kg/kg",
+    "cloud_ice_included": false,
+    "cloud_ice_separate_variable": "mass_fraction_of_cloud_ice_in_air_pl",
+    "liquid_water_only": true,
+    "hydrostatic_formula": "LWP = integral(q_l dp / g) [kg/m2], converted to g/m2 via x1000",
+    "surface_truncation_applied": true,
+    "surface_pressure_variable": "surface_air_pressure",
+    "nuolja_surface_pressure_hpa": 908.61,
+    "included_pressure_levels_hpa": [50.0, 100.0, 150.0, 200.0, 250.0, 300.0, 400.0, 500.0, 700.0, 800.0, 850.0],
+    "truncated_layer_hpa": "850.0 to 908.61",
+    "excluded_below_ground_levels_hpa": [925.0, 1000.0],
+    "audit_status": "PASSED (Physically Exact & Truncated at Surface Air Pressure)"
+  },
+  "u700_v700_semantics_audit": {
+    "u_variable": "x_wind_pl",
+    "v_variable": "y_wind_pl",
+    "pressure_level_hpa": 700.0,
+    "pressure_index": 8,
+    "units": "m/s",
+    "coordinate_order": "[time][pressure][y][x]",
+    "audit_status": "PASSED"
+  },
+  "target_grid": {
+    "name": "Nuolja",
+    "target_lat": 68.362074,
+    "target_lon": 18.738752,
+    "grid_y": 209,
+    "grid_x": 548,
+    "grid_lat": 68.364774,
+    "grid_lon": 18.715312,
+    "distance_km": 1.007
+  },
+  "extraction_summary": {
+    "total_origins": 347,
+    "successful_origins": 347,
+    "failed_origins": 0,
+    "horizons_per_origin": 24,
+    "total_forecast_tuples": 8328,
+    "usable_tuples": 8328,
+    "coverage_ratio": 1.0,
+    "synthetic_values": 0,
+    "missing_values": 0,
+    "interpolated_values": 0,
+    "causal_pass_count": 8328,
+    "causal_pass_ratio": 1.0,
+    "extraction_duration_seconds": 431.67
+  },
+  "causality_verification": {
+    "initialization_lead_time": "D-1 18:00 UTC",
+    "benchmark_t0": "D 00:00 UTC (H+6)",
+    "causal_buffer_hours": 6,
+    "future_horizons_relative_to_t0": "H1 (01:00 UTC) to H24 (24:00 UTC)",
+    "post_t0_leakage": false,
+    "causality_status": "VERIFIED CAUSAL"
+  },
+  "persistent_dataset_artifacts": {
+    "canonical_csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/arome_arctic_347_origins_real_subset.csv",
+    "canonical_csv_sha256": "db5fa7591e586c0e1288a76806a7717d4ad13779458cb48a961959d48ceec298",
+    "dataset_size_bytes": 1058245,
+    "dataset_size_kb": 1033.44,
+    "single_origin_test_csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/arome_arctic_nuolja_20240119T18Z_real_subset.csv",
+    "single_origin_test_csv_sha256": "fdb42f63ebc37223774eba65c21dd0b9cef837ac16217b385eef8ff413a73d94"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "manifest_id": "POLARIS_OFAT_CHAMPION_PROMOTION_AUDIT_MANIFEST",
+  "audit_type": "READ_ONLY_GOVERNANCE_AUDIT",
+  "audit_timestamp_utc": "2026-09-20T10:20:00Z",
+  "execution_boundaries": {
+    "milp_solves_executed": 0,
+    "experiment_reruns_executed": 0,
+    "trajectories_executed": 0,
+    "frozen_evidence_modified": false,
+    "raw_csv_modified": false,
+    "code_or_schemas_modified": false
+  },
+  "master_governance_state_verification": {
+    "master_state_freeze_status": "PASS",
+    "ofat_production_champion": "NOT_YET_ESTABLISHED",
+    "production_policy_promotion": "NOT_YET_DECIDED",
+    "verification_result": "CONSISTENT_PASS"
+  },
+  "frozen_evidence_hash_verification": {
+    "POLARIS_23_HORIZON_OFAT_EXECUTION_RAW.csv": {
+      "expected": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "actual": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_EXECUTION.json": {
+      "expected": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "actual": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_EXECUTION.md": {
+      "expected": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "actual": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_FORENSIC_FREEZE_AUDIT.json": {
+      "expected": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "actual": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_FORENSIC_FREEZE_AUDIT.md": {
+      "expected": "18078c29d12a1a6f82ddb99da7841ff13c606f7628b0e09e1f4c48ec56888fae",
+      "actual": "18078c29d12a1a6f82ddb99da7841ff13c606f7628b0e09e1f4c48ec56888fae",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_ANALYSIS_RECONCILIATION.json": {
+      "expected": "538bec346dc99f987bb3fb761b2b654032838f79861f5f91e0840a57d3df25e5",
+      "actual": "538bec346dc99f987bb3fb761b2b654032838f79861f5f91e0840a57d3df25e5",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_ANALYSIS_RECONCILIATION.md": {
+      "expected": "907c33c4ab091e54ff20bd5751a6068a7605c4148322ec652e68e9a58db70f2a",
+      "actual": "907c33c4ab091e54ff20bd5751a6068a7605c4148322ec652e68e9a58db70f2a",
+      "match": true
+    },
+    "POLARIS_DIESEL_IMPROVEMENT_DEVELOPMENTAL_RECONCILIATION.json": {
+      "expected": "95a4a6a31dc98980b0456e3fad9a9dbe68c446b3ff1f4ac0efe9191bd189f60d",
+      "actual": "95a4a6a31dc98980b0456e3fad9a9dbe68c446b3ff1f4ac0efe9191bd189f60d",
+      "match": true
+    },
+    "POLARIS_DIESEL_IMPROVEMENT_DEVELOPMENTAL_RECONCILIATION.md": {
+      "expected": "07f35ac9caf72b5058616dfa75a6a342cd40006a8c5d8f47a98fc966877b71e0",
+      "actual": "07f35ac9caf72b5058616dfa75a6a342cd40006a8c5d8f47a98fc966877b71e0",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_ARM5_TERMINOLOGY_CORRECTION.json": {
+      "expected": "94492edadd4905a4d05553064bc4c612e4c383eb5b3b11f4294e48c3849c46b4",
+      "actual": "94492edadd4905a4d05553064bc4c612e4c383eb5b3b11f4294e48c3849c46b4",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_ARM5_TERMINOLOGY_CORRECTION.md": {
+      "expected": "2090f9d63f7a091088b039c1cae48a127e02048cf1d34dc1d2aa556ed0dfc33e",
+      "actual": "2090f9d63f7a091088b039c1cae48a127e02048cf1d34dc1d2aa556ed0dfc33e",
+      "match": true
+    }
+  },
+  "predefined_promotion_criteria": {
+    "A_SCIENTIFIC_VALIDITY": "Protocol compliance, forensic audit pass, un-tuned, isolated execution",
+    "B_REPRODUCIBILITY": "Deterministic execution, raw telemetry preserved, 100% hash and lineage verification",
+    "C_STATISTICAL_EVIDENCE": "Statistically supported under confirmatory Holm-Bonferroni correction (alpha=0.05, 23 tests)",
+    "D_OPERATIONAL_SAFETY": "Zero constraint violations in tested synthetic trajectories (does not imply global safety)",
+    "E_SYSTEM_CONSTRAINTS": "Physical battery, SOC, diesel rating, and inverter limits satisfied in simulation",
+    "F_ROBUSTNESS_HETEROGENEITY": "Consistent directional response across origins; out-of-distribution robustness verified",
+    "G_GOVERNANCE_INTERPRETABILITY": "Understood objective sensitivity and clear multi-objective trade-off rationale",
+    "H_PRODUCTION_IMPLEMENTATION_READINESS": "Direct deployability into production schema/code without un-gated architecture changes"
+  },
+  "diesel_endpoint_reconciliation_summary": {
+    "v3_control_mean_liters": 61.1344,
+    "ofat_j14_mean_liters": 59.6374,
+    "ofat_j14_delta_v3_liters": -1.4970,
+    "ofat_j14_percentage_vs_v3": -2.45,
+    "maximum_observed_sensitivity_j10_liters": 59.4504,
+    "maximum_observed_sensitivity_j10_delta_v3_liters": -1.6840,
+    "maximum_observed_sensitivity_j10_percentage_vs_v3": -2.75,
+    "obsolete_harness_summary_values_discarded": true
+  },
+  "statistical_evidence_assessment": {
+    "multiplicity_procedure": "HOLM_BONFERRONI",
+    "alpha": 0.05,
+    "total_tests": 23,
+    "statistically_supported_arms": [2, 3, 4, 6, 9, 10, 12, 14, 15, 19],
+    "not_statistically_supported_arms": [1, 7, 8, 13, 16],
+    "operationally_invariant_arms": [5, 11, 17, 18, 20, 21, 22, 23]
+  },
+  "operational_invariance_assessment": {
+    "exact_telemetry_invariant_arms": [11, 17, 18, 20, 21, 22, 23],
+    "arm_5_status": "operationally invariant within the observed floating-point tolerance (0.0009 kW total battery discharge diff)",
+    "basis_for_promotion": "NOT_APPLICABLE (Invariant arms produce no operational difference relative to V3 control and provide no basis for promotion)"
+  },
+  "safety_and_constraints_assessment": {
+    "unmet_load_violations_observed": 0,
+    "soc_constraint_violations_observed": 0,
+    "milp_solver_failures_observed": 0,
+    "simulator_failures_observed": 0,
+    "scope_characterization": "Zero violations observed in the tested synthetic trajectories; does NOT constitute global or production safety qualification."
+  },
+  "robustness_heterogeneity_assessment": {
+    "origin_level_response_nature": "HETEROGENEITY_CONCENTRATED",
+    "origins_with_fuel_reduction_pct": 9.8,
+    "origins_with_zero_difference_pct": 89.6,
+    "out_of_distribution_robustness": "NOT_ESTABLISHED",
+    "real_world_robustness": "NOT_ESTABLISHED"
+  },
+  "production_implementation_readiness_assessment": {
+    "status": "NOT_ESTABLISHED",
+    "reasons": [
+      "OFAT evaluated single-horizon objective weight sensitivity (w_j=1.0, w_{t != j}=0.0), which is a diagnostic sensitivity probe rather than a complete production EMS policy design.",
+      "Real station electrical demand data is DATA_BLOCKED.",
+      "Nuolja wind power generation mapping is NOT_ESTABLISHED.",
+      "Multi-objective Pareto trade-off criteria (battery degradation, thermal management, generator cycling vs fuel) are NOT_ESTABLISHED for single-horizon objective vectors."
+    ]
+  },
+  "research_result_vs_production_policy_distinction": {
+    "frozen_evidence_establishes": "Controlled objective-weight sensitivity demonstrated in a synthetic simulation model.",
+    "frozen_evidence_does_not_establish": "Operational readiness as a complete production EMS policy for physical deployment."
+  },
+  "v3_vs_ofat_governance_comparison": {
+    "audit_conclusion": "No OFAT single-horizon configuration satisfies all predefined criteria required for production policy promotion.",
+    "ofat_production_champion_status": "NOT_ESTABLISHED"
+  },
+  "arm_eligibility_matrix": [
+    {"arm": 1, "scientific_validity": "PASS", "statistical_evidence": "FAIL", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 2, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 3, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 4, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 5, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 6, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 7, "scientific_validity": "PASS", "statistical_evidence": "FAIL", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 8, "scientific_validity": "PASS", "statistical_evidence": "FAIL", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 9, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 10, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 11, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 12, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 13, "scientific_validity": "PASS", "statistical_evidence": "FAIL", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 14, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 15, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 16, "scientific_validity": "PASS", "statistical_evidence": "FAIL", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 17, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 18, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 19, "scientific_validity": "PASS", "statistical_evidence": "PASS", "safety_evidence": "PASS", "robustness_evidence": "NOT_ESTABLISHED", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ESTABLISHED"},
+    {"arm": 20, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 21, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 22, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"},
+    {"arm": 23, "scientific_validity": "PASS", "statistical_evidence": "NOT_APPLICABLE", "safety_evidence": "PASS", "robustness_evidence": "NOT_APPLICABLE", "implementation_readiness": "NOT_ESTABLISHED", "promotion_eligibility": "NOT_ELIGIBLE"}
+  ],
+  "final_promotion_decision": "PROMOTION_NOT_ESTABLISHED",
+  "missing_evidence_summary": [
+    "Production implementation readiness criteria (OFAT is a single-horizon sensitivity probe, not a production EMS policy specification)",
+    "Real station demand data qualification (DATA_BLOCKED)",
+    "Nuolja wind power generation mapping (NOT_ESTABLISHED)",
+    "Multi-objective Pareto trade-off qualification (battery health, thermal management, generator start cycles)",
+    "Real-world and out-of-distribution robustness qualification"
+  ],
+  "recommended_post_audit_governance_state": {
+    "V3_REFERENCE": "FROZEN",
+    "OFAT": "COMPLETED / FROZEN RESEARCH",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_ESTABLISHED",
+    "PRODUCTION_POLICY_PROMOTION": "NOT_YET_DECIDED"
+  },
+  "next_authorized_step": "GOVERNANCE_HOLD_OR_REAL_DATA_UNBLOCKING",
+  "final_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "OFAT_PROMOTED_TO_PRODUCTION": "NO",
+    "V4G_PROMOTED": "NO",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_ESTABLISHED",
+    "PROMOTION_AUDIT_DECISION": "PROMOTION_NOT_ESTABLISHED",
+    "NEXT_AUTHORIZED_STEP": "GOVERNANCE_HOLD_OR_REAL_DATA_UNBLOCKING"
+  }
+}

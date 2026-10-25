@@ -1,0 +1,63 @@
+{
+  "gate_id": "D5-6",
+  "scenario_id": "S6",
+  "scenario_name": "168-Hour Persistent Error",
+  "requested_n": 168,
+  "completed_n_control": 168,
+  "completed_n_perturbed": 168,
+  "control_status": "SUCCESS_CLEAN",
+  "perturbed_status": "SUCCESS_CLEAN",
+  "pair_id": "PAIR_D5-6_20260917",
+  "actual_trajectory_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+  "initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+  "control_metrics": {
+    "unmet_load_wh": 0.0,
+    "total_demand_wh": 5561078.31,
+    "load_served_fraction_pct": 100.0,
+    "meets_95_percent_lsf_threshold": true,
+    "diesel_fuel_liters": 241.4846,
+    "diesel_operating_hours": 13.0,
+    "renewable_curtailment_wh": 1574534.69,
+    "renewable_utilization_pct": 77.0367,
+    "min_soc_pct": 20.0,
+    "max_soc_pct": 94.85,
+    "soc_boundary_contacts_count": 9,
+    "physical_constraint_violations_count": 0,
+    "max_busbar_residual_w": 0.0
+  },
+  "perturbed_metrics": {
+    "unmet_load_wh": 0.0,
+    "total_demand_wh": 5561078.31,
+    "load_served_fraction_pct": 100.0,
+    "meets_95_percent_lsf_threshold": true,
+    "diesel_fuel_liters": 144.8206,
+    "diesel_operating_hours": 9.0,
+    "renewable_curtailment_wh": 2265890.04,
+    "renewable_utilization_pct": 71.2642,
+    "min_soc_pct": 20.0,
+    "max_soc_pct": 95.0,
+    "soc_boundary_contacts_count": 11,
+    "physical_constraint_violations_count": 0,
+    "max_busbar_residual_w": 0.0
+  },
+  "control_faults": {
+    "execution_status": "SUCCESS_CLEAN",
+    "termination_reason": null,
+    "milp_infeasibility_events_count": 0,
+    "solver_runtime_failure_events_count": 0,
+    "governed_zero_dispatch_responses_count": 0,
+    "fault_events_count": 0,
+    "fault_events": [],
+    "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+  },
+  "perturbed_faults": {
+    "execution_status": "SUCCESS_CLEAN",
+    "termination_reason": null,
+    "milp_infeasibility_events_count": 0,
+    "solver_runtime_failure_events_count": 0,
+    "governed_zero_dispatch_responses_count": 0,
+    "fault_events_count": 0,
+    "fault_events": [],
+    "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+  }
+}

@@ -1,0 +1,12 @@
+GAP_ID,FEATURE,FROZEN_IMPLEMENTATION_FACT,GOVERNED_V2_SPECIFICATION,SUPPORT_STATUS,ACTION_REQUIRED
+GAP-01,Objective Structure,Single composite scalar weighted sum,4-Stage Lexicographic MILP,NOT_SUPPORTED,Replace scalar objective in milp.py with multi-stage solver
+GAP-02,Unmet Load Penalty,"$10,000/kWh soft penalty uniform across load",Stage 1 Hard Constraint p_unmet_critical=0,NOT_SUPPORTED,Enforce hard zero unmet load constraint for Critical tier
+GAP-03,Load Tiers,Single composite load demand vector,5-tier load classification (Critical to Noncritical),NOT_SUPPORTED,Decompose demand forecast into 5 tier vectors
+GAP-04,Diesel Objective,Marginal + base cost proxy in dollars,Stage 3 Actual fuel volume in Liters,PARTIALLY_SUPPORTED,Formulate Stage 3 objective in physical Liters
+GAP-05,Emergency Reserve,20% technical minimum SOC,Stage 2 Dynamic EBR energy target shortfall minimization,NOT_SUPPORTED,Add EBR target shortfall term to Stage 2
+GAP-06,Terminal SOC,Free terminal state E(H) >= E_min,Stage 2 Terminal Energy Target constraint,NOT_SUPPORTED,Add terminal energy target constraint to Stage 2
+GAP-07,Renewable Curtailment,Soft $0.001/Wh penalty on all curtailment,Stage 4 Avoidable curtailment minimization,PARTIALLY_SUPPORTED,Decompose total curtailment into necessary vs avoidable
+GAP-08,Forecast Uncertainty,Deterministic point forecast without margins,Deterministic safety margins + MPC correction,NOT_SUPPORTED,Add safety margin adjustment layer to ForecastBundle
+GAP-09,Operating Modes,Single static operating regime,4 governed operating modes,NOT_SUPPORTED,Implement mode state machine wrapper around optimizer
+GAP-10,Infeasibility Protocol,Return degraded plan with 1e9 objective,Governed infeasibility detection & fault logging,NOT_SUPPORTED,Implement explicit infeasibility detection & fault log
+GAP-11,Thermal Cycle Limits,No min-up / min-down time constraints,Diesel minimum-up and minimum-down constraints,NOT_SUPPORTED,Add binary time-in-state constraints to MILP formulation

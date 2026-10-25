@@ -1,0 +1,7 @@
+{
+  "expected_stage8_1_control_mae_w_m2": 35.270823,
+  "reproduced_stage8_8b_control_mae_w_m2": 35.270822800000005,
+  "absolute_difference_w_m2": 1.9999999523179213e-07,
+  "tolerance_w_m2": 0.01,
+  "control_reproduction_passed": true
+}

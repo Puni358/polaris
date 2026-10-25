@@ -1,0 +1,16 @@
+Parameter,Current Implementation Value,Authoritative Requirement,Source Document,Status,Stakeholder Decision Required
+Unmet Load Penalty,$10000.00/kWh ($10/Wh),NOT_SPECIFIED,loads.yaml L4 / milp.py L112,PROTOTYPE_ASSUMPTION,DECISION_14
+Marginal Diesel Fuel Cost,$0.625/kWh (0.00025 L/Wh x $2.50/L),NOT_SPECIFIED,diesel.yaml L6-7 / milp.py L111,PROTOTYPE_ASSUMPTION,DECISION_07 / DECISION_14
+Base Running Fuel Cost,$12.50/hour (5.0 L/h x $2.50/L),NOT_SPECIFIED,diesel.yaml L5,7 / milp.py L113,PROTOTYPE_ASSUMPTION,DECISION_07
+Generator Startup Penalty,$15.00/start,NOT_SPECIFIED,diesel.yaml L8 / milp.py L114,PROTOTYPE_ASSUMPTION,DECISION_07
+Renewable Curtailment Penalty,$1.00/kWh ($0.001/Wh),NOT_SPECIFIED,optimizer.yaml L6 / milp.py L107,PROTOTYPE_ASSUMPTION,DECISION_10
+BESS Degradation Penalty,$0.05/kWh ($0.00005/Wh),NOT_SPECIFIED,battery.yaml L11 / milp.py L109,PROTOTYPE_ASSUMPTION,DECISION_07
+Annual Fuel Consumption Target,Uncapped (minimized in objective),NOT_SPECIFIED,None,AUTHORIZATION_REQUIRED,DECISION_08
+Maximum Allowable Unmet Load,Uncapped soft penalty,NOT_SPECIFIED,None,AUTHORIZATION_REQUIRED,DECISION_04
+Maximum Outage Duration,Unconstrained solver horizon,NOT_SPECIFIED,None,AUTHORIZATION_REQUIRED,DECISION_05
+Critical Load Service Target,30 kW continuous baseline,NOT_SPECIFIED,loads.yaml L5,PROTOTYPE_ASSUMPTION,DECISION_03
+BESS Emergency Reserve Floor,20% SOC technical lower bound,NOT_SPECIFIED,battery.yaml L4,AUTHORIZATION_REQUIRED,DECISION_11
+Horizon Terminal SOC Target,Unconstrained (E_24 >= E_min),NOT_SPECIFIED,milp.py L123,AUTHORIZATION_REQUIRED,DECISION_12
+Renewable Integration Fraction %,Unconstrained (tracked post-hoc),NOT_SPECIFIED,None,AUTHORIZATION_REQUIRED,DECISION_09
+Generator Daily Startup Limit,Unconstrained soft penalty,NOT_SPECIFIED,None,AUTHORIZATION_REQUIRED,DECISION_07
+Forecast Uncertainty Reserve Floor,Zero (deterministic point forecast),NOT_SPECIFIED,None,AUTHORIZATION_REQUIRED,DECISION_13

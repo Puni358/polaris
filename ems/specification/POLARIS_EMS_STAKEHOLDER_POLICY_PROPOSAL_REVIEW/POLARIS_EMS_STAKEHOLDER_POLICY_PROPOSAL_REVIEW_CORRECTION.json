@@ -1,0 +1,51 @@
+{
+  "classification_correction_status": "PASS",
+  "corrections_made": [
+    "DECISION_10: Changed evidence_status from SUPPORTED to PARTIALLY_SUPPORTED (implementation fact supported, policy proposal unapproved)",
+    "DECISION_14: Changed evidence_status from SUPPORTED to PARTIALLY_SUPPORTED (coefficient rejection supported, policy proposal unapproved)",
+    "INTERNAL_CONSISTENCY: Clarified terminal SOC override resolution as PROPOSED_RESOLUTION pending authorization"
+  ],
+  "decisions_rechecked": [
+    "DECISION_01",
+    "DECISION_02",
+    "DECISION_03",
+    "DECISION_04",
+    "DECISION_05",
+    "DECISION_06",
+    "DECISION_07",
+    "DECISION_08",
+    "DECISION_09",
+    "DECISION_10",
+    "DECISION_11",
+    "DECISION_12",
+    "DECISION_13",
+    "DECISION_14",
+    "DECISION_15",
+    "DECISION_16"
+  ],
+  "final_category_counts": {
+    "A_DIRECTLY_SUPPORTED_SUBFACTS": 12,
+    "B_ROLE_BASED_PROPOSALS": 16,
+    "C_PROVISIONAL_NUMERICAL_ASSUMPTIONS": 9,
+    "D_HUMAN_AUTHORIZATION_REQUIRED": 16,
+    "E_ENGINEERING_VALIDATION_REQUIRED": 15,
+    "F_CLARIFICATION_REQUIRED": 2,
+    "FULLY_AUTHORIZED_POLICIES": 0
+  },
+  "policy_vs_implementation_boundary": "CURRENT_IMPLEMENTATION != STAKEHOLDER_POLICY",
+  "formal_stakeholder_authorization": "NOT_GRANTED",
+  "official_decision_sheet_modified": "NO",
+  "ems_modified": "NO",
+  "objective_modified": "NO",
+  "execution_firewall": {
+    "milp": 0,
+    "mpc": 0,
+    "ems": 0,
+    "digital_twin": 0,
+    "simulations": 0,
+    "v2_rerun": 0
+  },
+  "hash_status": "PASS",
+  "next_governed_step": "HUMAN_REVIEW_OF_ROLE_BASED_POLICY_PROPOSAL",
+  "audit_timestamp": "2026-09-21T17:29:01.877322+00:00"
+}

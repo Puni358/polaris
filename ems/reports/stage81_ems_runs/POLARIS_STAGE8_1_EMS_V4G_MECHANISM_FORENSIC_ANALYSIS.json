@@ -1,0 +1,250 @@
+{
+  "analysis_id": "POLARIS_STAGE8_1_EMS_V4G_MECHANISM_FORENSIC_ANALYSIS",
+  "timestamp_utc": "2026-09-19T13:56:12.024244+00:00",
+  "governance_flags": {
+    "V4G_EXECUTION": "COMPLETE",
+    "V4G_FORENSIC_AUDIT": "VALID",
+    "V4G_MECHANISM_ANALYSIS": "COMPLETE",
+    "NEW_EXPERIMENT": false,
+    "V4G_RERUN": false,
+    "V3_RERUN": false,
+    "CONTROL_RERUN": false,
+    "PARAMETER_TUNING": false,
+    "SOURCE_FILES_MODIFIED": false,
+    "RAW_EXECUTION_EVIDENCE_MODIFIED": false,
+    "CAUSAL_OVERCLAIM_REMOVED": true
+  },
+  "frozen_experiment_recap": {
+    "n_origins": 173,
+    "arms": {
+      "control": {
+        "engine": "LocalBaselineForecastEngine",
+        "gamma": 1.0,
+        "weights": "w_t = 1.0, for all t",
+        "total_fuel_l": 4671.0,
+        "mean_fuel_l_per_origin": 27.0
+      },
+      "v3_reference": {
+        "engine": "Stage81ForecastEngine",
+        "gamma": 0.95,
+        "weights": "w_t = 0.95^t",
+        "total_fuel_l": 4149.97,
+        "mean_fuel_l_per_origin": 23.99
+      },
+      "v4g_candidate": {
+        "engine": "Stage81ForecastEngine",
+        "weights": "w_13 = 0.5133, w_t = 1.0 for t != 13",
+        "total_fuel_l": 5579.99,
+        "mean_fuel_l_per_origin": 32.25
+      }
+    },
+    "primary_paired_comparison_v4g_minus_v3": {
+      "mean_difference_liters": 8.266,
+      "median_difference_liters": 5.13,
+      "bootstrap_95_ci_liters": [
+        6.7356,
+        9.8166
+      ],
+      "wilcoxon_stat": 15.0,
+      "p_value": 8.645153e-18,
+      "paired_counts": {
+        "positive_v4g_higher": 96,
+        "negative_v4g_lower": 3,
+        "zero_equal": 74
+      }
+    }
+  },
+  "data_availability_audit": {
+    "forecast_vectors": "AVAILABLE",
+    "forecast_horizon_errors": "PARTIALLY_AVAILABLE",
+    "forecast_differences": "AVAILABLE",
+    "optimizer_objective_status": "AVAILABLE",
+    "dispatch_plan": "PARTIALLY_AVAILABLE",
+    "diesel_commitment": "AVAILABLE",
+    "diesel_start_stop_events": "AVAILABLE",
+    "diesel_power": "AVAILABLE",
+    "diesel_runtime": "NOT_AVAILABLE",
+    "battery_charge": "AVAILABLE",
+    "battery_discharge": "AVAILABLE",
+    "soc": "AVAILABLE",
+    "battery_throughput": "AVAILABLE",
+    "renewable_available": "PARTIALLY_AVAILABLE",
+    "renewable_used": "AVAILABLE",
+    "renewable_curtailment": "AVAILABLE",
+    "load": "PARTIALLY_AVAILABLE",
+    "served_load": "AVAILABLE",
+    "unmet_load": "AVAILABLE",
+    "cumulative_diesel_fuel": "AVAILABLE",
+    "timestep_level_fuel_increment": "AVAILABLE",
+    "initial_state": "AVAILABLE",
+    "hidden_truth": "AVAILABLE",
+    "optimizer_inputs": "AVAILABLE"
+  },
+  "objective_weight_comparison": {
+    "v3_weights": [
+      1.0,
+      0.95,
+      0.9025,
+      0.857375,
+      0.814506,
+      0.773781,
+      0.735092,
+      0.698337,
+      0.66342,
+      0.630249,
+      0.598737,
+      0.5688,
+      0.54036,
+      0.513342,
+      0.487675,
+      0.463291,
+      0.440127,
+      0.41812,
+      0.397214,
+      0.377354,
+      0.358486,
+      0.340562,
+      0.323534,
+      0.307357
+    ],
+    "v4g_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5133,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "t13_comparison": {
+      "w_v3_13": 0.513342,
+      "w_v4g_13": 0.5133,
+      "abs_difference": -4.2e-05,
+      "rel_difference_pct": -0.0082
+    },
+    "horizons_where_v4g_differs_from_v3": "23 of 24 decision indices (all t except t=0 and t=13)",
+    "compound_intervention_statement": "V4.G does not provide a causal isolation test of h=14 relative to V3, because the V3 and V4.G objective vectors differ at 23 of 24 decision indices. The t=13 weights themselves are essentially identical."
+  },
+  "timestep_dispatch_divergence": {
+    "first_commitment_divergence_timestep_median": 9.0,
+    "first_power_divergence_timestep_median": 9.0,
+    "first_soc_divergence_timestep_median": 8.0,
+    "total_diesel_commitment_steps": {
+      "control": 346,
+      "v3_reference": 233,
+      "v4g_candidate": 312
+    },
+    "curtailment_kwh": {
+      "control": 30686.74,
+      "v3_reference": 3745.89,
+      "v4g_candidate": 10131.06
+    }
+  },
+  "mechanism_evidence_matrix": [
+    {
+      "mechanism": "Forecast Vector Identity (V3 == V4.G)",
+      "evidence": "100% identical Stage8.1 solar forecast vectors across all 173 origins and 4,152 timesteps.",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Confirms identical inputs; differences are downstream of objective weights."
+    },
+    {
+      "mechanism": "V4.G Objective Weight Structure",
+      "evidence": "w_13 = 0.5133, w_t = 1.0 for t != 13 across all MPC solves.",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Pre-declared frozen parameter specification."
+    },
+    {
+      "mechanism": "V3 / V4.G Difference at 23 of 24 Objective Indices",
+      "evidence": "V3 uses w_t = 0.95^t whereas V4.G uses w_t = 1.0 for t != 13. The two vectors differ at 23 of 24 decision timesteps.",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Mathematical property of objective formulation."
+    },
+    {
+      "mechanism": "t=13 Weight Equivalence",
+      "evidence": "w_V3(13) = 0.95^13 = 0.513342 vs w_V4G(13) = 0.513300 (difference < 0.000042).",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Numerical value equality."
+    },
+    {
+      "mechanism": "Earlier Diesel Commitment",
+      "evidence": "V4.G exhibited earlier diesel commitment than V3 under the tested synthetic EMS environment (median divergence step k=9).",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Observed execution behavior in digital twin."
+    },
+    {
+      "mechanism": "Increased Diesel Commitment Timesteps",
+      "evidence": "Diesel commitment occurred over 312 timesteps in V4.G versus 233 timesteps in V3, a difference of +79 timesteps (+33.9%).",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Direct accounting quantity from raw telemetry."
+    },
+    {
+      "mechanism": "Increased Renewable Curtailment",
+      "evidence": "V4.G exhibited higher renewable curtailment than V3: 10,131.06 kWh versus 3,745.89 kWh (+170.5%).",
+      "classification": "A \u2014 DIRECTLY OBSERVED",
+      "limitation": "Direct accounting quantity from raw telemetry."
+    },
+    {
+      "mechanism": "Specific Causal Attribution of Diesel Increase to Restored Late-Horizon Weights",
+      "evidence": "Relative to V3, V4.G restores full objective weighting at all timesteps except t=13, associated with earlier diesel commitment.",
+      "classification": "C \u2014 ASSOCIATION ONLY",
+      "limitation": "The preserved evidence establishes their occurrence under the V4.G objective structure but does not by itself isolate which individual weight changes produced them."
+    },
+    {
+      "mechanism": "Specific Causal Attribution to t=13 / h=14",
+      "evidence": "V3 and V4.G assign virtually identical weight at t=13 (0.513342 vs 0.513300), while differing at the other 23 decision indices.",
+      "classification": "E \u2014 NOT SUPPORTED",
+      "limitation": "V4.G is a compound weight intervention relative to V3."
+    },
+    {
+      "mechanism": "Global Statement that Distributed V3 Discounting Causes Lower Fuel",
+      "evidence": "Distributed discounting in V3 is associated with lower fuel, but individual horizon contributions are unisolated.",
+      "classification": "D \u2014 NOT IDENTIFIABLE FROM THIS EXPERIMENT",
+      "limitation": "Experiment tested compound single-notch vector, not single-index isolated components."
+    }
+  ],
+  "secondary_metric_validation": {
+    "diesel_energy_kwh": {
+      "status": "INDEPENDENTLY_RECONSTRUCTED",
+      "v3": 9222.15,
+      "v4g": 12399.98
+    },
+    "renewable_curtailment_kwh": {
+      "status": "INDEPENDENTLY_RECONSTRUCTED",
+      "v3": 3745.89,
+      "v4g": 10131.06
+    },
+    "battery_throughput_kwh": {
+      "status": "INDEPENDENTLY_RECONSTRUCTED",
+      "v3": 17495.27,
+      "v4g": 20019.28
+    },
+    "unmet_critical_load_kwh": {
+      "status": "INDEPENDENTLY_RECONSTRUCTED",
+      "v3": 0.0,
+      "v4g": 0.0
+    }
+  },
+  "hypothesis_assessment": {
+    "hypothesis": "V3's lower fuel use is primarily caused by discounting the t=13/h=14 horizon.",
+    "verdict": "E \u2014 NOT SUPPORTED",
+    "explanation": "The V4.G result does not support attribution of V3's lower fuel use to the isolated t=13/h=14 weight. V3 and V4.G assign virtually identical weight at t=13, while differing at the other 23 decision indices. Therefore the observed V4.G increase in diesel use cannot be uniquely attributed to the t=13 weight from this experiment."
+  },
+  "final_scientific_interpretation": "V4.G was a valid controlled objective-weight intervention, but it was not a pure h=14 isolation test relative to V3. The V4.G and V3 weights are essentially identical at t=13, while differing at 23 of 24 decision indices. V4.G nevertheless produced a directly observed increase in diesel fuel use, earlier/more extensive diesel commitment, and higher renewable curtailment under the controlled synthetic EMS environment. These findings establish downstream differences associated with the V4.G objective structure, but the contribution of any individual horizon \u2014 including h=14 \u2014 is not causally isolated by this experiment."
+}

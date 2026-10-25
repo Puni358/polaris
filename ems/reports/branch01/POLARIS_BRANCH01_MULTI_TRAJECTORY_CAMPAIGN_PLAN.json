@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "plan_type": "MULTI_TRAJECTORY_CAMPAIGN_PLAN",
+    "timestamp": "2026-09-21T11:11:00Z"
+  },
+  "identities": {
+    "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "control_id": "Stage81ForecastEngine",
+    "control_source_hash": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c"
+  },
+  "coverage": {
+    "total_candidates": 173,
+    "eligible_trajectories": 173,
+    "excluded_trajectories": 0,
+    "total_mpc_cycles": 4152,
+    "coverage_classification": "REPRESENTATIVE_TRAJECTORY_SET",
+    "annual_result_status": "REPRESENTATIVE_TRAJECTORY_SET"
+  },
+  "governance_status": {
+    "PRE_EXECUTION_GATE": "PASS",
+    "EXECUTION_AUTHORIZATION": "PENDING_EXPLICIT_USER_AUTHORIZATION"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "fixture_version": "H1.0",
+  "solar_SW_IN_W_m2": {
+    "provenance_class": "REAL_MEASURED",
+    "source": "SITES Nuolja Middle Station AWS",
+    "station": "Nuolja (68.36 N, 18.74 E)",
+    "units": "W/m^2"
+  },
+  "solar_PV_power_W": {
+    "provenance_class": "DERIVED_ENGINEERING_QUANTITY",
+    "formula": "min(SW_IN * 300 * 0.20 * 0.85, 60000 W)",
+    "units": "Watts (W)"
+  },
+  "wind_speed_proxy_m_s": {
+    "provenance_class": "CONDITIONALLY_ESTABLISHED_REGIONAL_PROXY",
+    "source": "SMHI Station 188790 Abisko Aut (10m)",
+    "distance_km": 4.1,
+    "units": "m/s"
+  },
+  "wind_power_generic_W": {
+    "provenance_class": "SYNTHETIC_ENGINEERING_SCENARIO",
+    "scenario_name": "POLAR_REFERENCE_TURBINE_SCENARIO",
+    "disclaimer": "NOT_NUOLJA_HARDWARE",
+    "rated_power_w": 60000.0,
+    "units": "Watts (W)"
+  },
+  "synthetic_load_W": {
+    "provenance_class": "SYNTHETIC",
+    "fixture_name": "SYNTHETIC_STATION_DEMAND",
+    "disclaimer": "SYNTHETIC_STATION_DEMAND != NULLOJA_MEASURED_DEMAND",
+    "range_w": [
+      15000.0,
+      45000.0
+    ],
+    "units": "Watts (W)"
+  }
+}

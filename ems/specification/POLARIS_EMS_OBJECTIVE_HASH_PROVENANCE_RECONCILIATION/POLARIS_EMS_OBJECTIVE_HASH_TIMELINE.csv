@@ -1,0 +1,7 @@
+Timeline Phase,Phase Name,Relevant Files,State Description,Provenanced Hash / Status
+T0,Historical System Creation,milp.py & system/config/*.yaml,Initial Phase D0/D2 system creation,milp.py: ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35
+T1,Branch01 V2 Campaign Audit,POLARIS_BRANCH01_EMS_OBJECTIVE_GOVERNANCE_REVIEW/,Read-only EMS objective audit of V2 campaign,milp.py verified frozen (ee913b68...)
+T2,V2 Evidence Lock,POLARIS_STAGE81_MULTI_TRAJECTORY_RESULTS.json,173 trajectories & 4152 H1 steps locked as FROZEN_VALID,Aggregate results locked (+11350.2L fuel / -30543.8 kWh unmet)
+T3,EMS Objective Spec Drafting,POLARIS_EMS_OBJECTIVE_SPECIFICATION/,Drafting initial EMS objective specification package,Config file hashes manually entered as transcription errors
+T4,Wording Correction Execution,POLARIS_EMS_OBJECTIVE_SPECIFICATION/*.md,Eliminated 4000L claim and added 16000:1 ratio clarifications,Placeholder hashes recorded in hash audit CSV table
+T5,Hash Verification Audit,POLARIS_EMS_OBJECTIVE_SPECIFICATION/,Direct byte calculation (hashlib.sha256) on disk files,Identified transcription errors and placeholder string mismatches

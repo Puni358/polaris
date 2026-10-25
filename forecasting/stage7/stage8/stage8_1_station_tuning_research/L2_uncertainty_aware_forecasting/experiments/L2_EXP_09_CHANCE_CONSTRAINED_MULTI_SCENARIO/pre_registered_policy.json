@@ -1,0 +1,102 @@
+{
+  "experiment_id": "L2-EXP-09",
+  "title": "Two-Stage Finite-Scenario Stochastic GAP19 MILP Energy Optimization",
+  "status": "PRE_REGISTERED_LOCKED",
+  "pre_registration_timestamp": "2026-10-04T12:15:00Z",
+  "governance_classification": "RESEARCH_ONLY",
+  "held_out_year": 2024,
+  "frozen_preconditions": {
+    "candidate_f_model_sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10_sha256": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50_sha256": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90_sha256": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024_sha256": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "conformal_q_hat_w_m2": 9.8962,
+    "origin_count": 173,
+    "expected_normal_origins": 123,
+    "expected_emergency_origins": 50
+  },
+  "formulation": {
+    "type": "TWO_STAGE_FINITE_SCENARIO_STOCHASTIC_MILP",
+    "solver": "highspy",
+    "solver_mode": "NATIVE_LEXICOGRAPHIC_MULTI_OBJECTIVE",
+    "num_scenarios": 3,
+    "scenarios": [
+      {
+        "index": 0,
+        "name": "conservative_low_solar",
+        "description": "Calibrated q10 CQR lower envelope: max(0, q10_raw - q_hat)",
+        "probability_weight": 0.25
+      },
+      {
+        "index": 1,
+        "name": "central_solar",
+        "description": "Candidate F point forecast (central expectation)",
+        "probability_weight": 0.50
+      },
+      {
+        "index": 2,
+        "name": "optimistic_high_solar",
+        "description": "Calibrated q90 CQR upper envelope with research boundary: max(lower, min(max(1.25*cs, F), q90_raw + q_hat))",
+        "probability_weight": 0.25
+      }
+    ],
+    "weight_rationale": "Symmetric, non-informative weighting representing the 80% conformal coverage interval [q10, q90] with 50% central mass and 25% tail allocations. Derived exclusively from pre-2024 calibration evidence. Zero 2024 parameter tuning.",
+    "physical_envelope_status": "SIMULATED_RESEARCH_ASSUMPTION (Upper bound U = max(1.25*cs_ghi, F) is not production authorized)",
+    "first_stage_non_anticipative_variables": [
+      "u_diesel[t]: binary diesel commitment (shared across scenarios)",
+      "v_start[t]: binary diesel startup (shared across scenarios)",
+      "p_diesel[t]: continuous diesel generation power (shared across scenarios)",
+      "u_chg[t]: binary battery charge mode (shared across scenarios)",
+      "u_dis[t]: binary battery discharge mode (shared across scenarios)",
+      "p_dis[t]: continuous battery discharge power (shared across scenarios)",
+      "p_wind_used[t]: continuous wind generation power dispatched (shared across scenarios)",
+      "p_chg_plan[t]: continuous planned battery charging power ceiling (shared across scenarios)"
+    ],
+    "second_stage_recourse_variables": [
+      "p_sol_used[t, s]: scenario-dependent solar power utilized",
+      "p_curt_sol[t, s]: scenario-dependent solar power curtailed",
+      "p_curt_wind[t, s]: scenario-dependent wind power curtailed",
+      "p_chg[t, s]: scenario-dependent realized battery charge (0 <= p_chg[t, s] <= p_chg_plan[t])",
+      "p_served[t, s]: scenario-dependent load served",
+      "p_unmet[t, s]: scenario-dependent total demand deficit",
+      "P_unmet_crit[t, s]: scenario-dependent critical demand deficit",
+      "E_next[t, s]: scenario-dependent battery energy state transition",
+      "s_J2[t, s]: scenario-dependent governed reserve shortfall"
+    ],
+    "lexicographic_objective_hierarchy": [
+      {
+        "level": 1,
+        "highs_priority": 1,
+        "name": "J1_expected_critical_deficit_wh",
+        "definition": "sum_s pi_s sum_t P_unmet_crit[t, s] * dt"
+      },
+      {
+        "level": 2,
+        "highs_priority": 2,
+        "name": "J2_expected_reserve_shortfall_wh",
+        "definition": "sum_s pi_s sum_t s_J2[t, s]"
+      },
+      {
+        "level": 3,
+        "highs_priority": 3,
+        "name": "J3_first_stage_diesel_fuel_liters",
+        "definition": "sum_t (marg_fuel * p_diesel[t] + base_fuel * u_diesel[t] + startup_fuel * v_start[t]) * dt"
+      },
+      {
+        "level": 4,
+        "highs_priority": 4,
+        "name": "J4_expected_renewable_curtailment_wh",
+        "definition": "sum_s pi_s sum_t (p_curt_sol[t, s] + p_curt_wind[t, s]) * dt"
+      }
+    ]
+  },
+  "five_arm_comparison_ladder": {
+    "arm_a": "Candidate F point forecast control (frozen production GAP19)",
+    "arm_b": "Static q10 conservative lower bound (L2-EXP-07)",
+    "arm_c": "Pre-registered adaptive risk-budget rule (L2-EXP-08)",
+    "arm_d": "Two-stage multi-scenario stochastic MILP optimizer (NEW)",
+    "arm_e": "Perfect-foresight actual solar diagnostic benchmark"
+  }
+}

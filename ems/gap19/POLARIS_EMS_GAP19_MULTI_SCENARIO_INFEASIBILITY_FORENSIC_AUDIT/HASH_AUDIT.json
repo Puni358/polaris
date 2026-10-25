@@ -1,0 +1,23 @@
+{
+  "protected_sources": {
+    "system/runtime/runner.py": "86aee0b51ba169458aa4cd8bbf678120b43d284144998d9c81e37f5fcaad5efc",
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "system/schemas/station_state.py": "f2cb385efdb2fdc95b681c765642660f1e0d06125c545b7464a8ac4a83e9185f",
+    "system/schemas/dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b"
+  },
+  "artifacts": {
+    "CYCLE_STATUS_TERMINOLOGY_AUDIT.md": "05c3f9716de32758ecf188e6d49e3cb0967011997ae22a516a6afd9a5cb653e2",
+    "FINAL_INFEASIBILITY_FORENSIC_VERDICT.md": "5a53dbb3ceb6788898e11287b71c77d54a0d36f301113a33d0ce2125b173c8e1",
+    "GOVERNANCE_GAP_REGISTER.md": "f751deef7aa412270ade03655078115ca9823c7b1901e28fd47aa8bfb217ebbe",
+    "HARD_RELIABILITY_SEMANTICS_AUDIT.md": "cd1e31b5acbf1d2ad69a2d024b0a3e4631460d25c6632e4d5cd46f5beab8da8b",
+    "INFEASIBILITY_ROOT_CAUSE_AUDIT.md": "1049298437287cce708d40f52192aa4b5ffaa748db0e45ed149fe6f33baeec22",
+    "J2_SLACK_BOUND_AUDIT.md": "1d8ffa5aeff7f0d6e6e7c1bf5a33c7ad01559d87d30d7578ae93f9bd37e2d3df",
+    "PHYSICAL_CONSTRAINT_REPORTING_AUDIT.md": "afc10818f0a40506cf8db21bccf31ddcce437fa38643db56c2fa07665e6adbb8",
+    "README.md": "972ff9b62a5cfa0c21897c02dcbadbb43f89efc3a84e71bae1c1723fc0b431af",
+    "RUNTIME_INFEASIBILITY_HANDLING_AUDIT.md": "84cadfe0411d453b1c339be643440d2322e04ab5e7cfec3a89f1c00ab94c7b04",
+    "SOURCE_INTEGRITY_AUDIT.md": "94576db838c43b0edd5339cd9738d5ea0695d28a1637aaf393c442986f291a9e"
+  }
+}

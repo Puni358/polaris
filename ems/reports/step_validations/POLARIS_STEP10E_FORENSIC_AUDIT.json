@@ -1,0 +1,44 @@
+{
+  "audit_version": "1.0.0",
+  "audit_type": "POST_EXECUTION_STEP10E_FORENSIC_AUDIT",
+  "timestamp": "2026-09-20T07:56:23.596886+00:00",
+  "audit_execution_scope": {
+    "milp_solves_during_audit": 0,
+    "simulator_steps_during_audit": 0
+  },
+  "inspected_artifact_hashes": {
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "milp_optimizer_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "stage81_prediction_csv_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "treatment_raw_csv_sha256": "3d514b6ef45b63dcafaf7077497142c240e9cdd8a76cb37c295973ea16805546",
+    "treatment_manifest_json_sha256": "61dafd11a2a185472a38d453c271c167edd7b49d16e3673fb600c6414b8511c3",
+    "comparison_json_sha256": "8a6b7a6e7c542baa7e84867b1e7b9eaa61223f84036c66793f04aa5eb5f78aae",
+    "treatment_script_sha256": "487328f6c624b848a341140b61c22b74eceabba67b316b15c841d0191b15a41c",
+    "control_script_sha256": "d8c52721cbcaab6934fa38d905da4f586d915763d80e18cc8216b719251d3cb2"
+  },
+  "verification_matrix": {
+    "A_stage81_artifact_sha256_match": "PASS",
+    "B_fixture_csv_sha256_match": "PASS",
+    "C_milp_optimizer_sha256_match": "PASS",
+    "D_24_treatment_mpc_cycles": "PASS",
+    "E_stage81_ml_forecast_injected": "PASS",
+    "F_clear_sky_fallback_disabled": "PASS",
+    "G_all_milp_solves_optimal": "PASS",
+    "H_forecast_vector_differentiation": "PASS",
+    "I_future_truth_firewall": "PASS",
+    "J_same_initial_state": "PASS",
+    "K_same_ground_truth": "PASS",
+    "L_zero_source_modifications": "PASS"
+  },
+  "experimental_results_summary": {
+    "origin_timestamp": "2024-06-01T00:00:00Z",
+    "treatment_diesel_fuel_liters": 121.463,
+    "control_diesel_fuel_liters": 125.461,
+    "paired_diesel_fuel_difference_liters": -3.997,
+    "paired_diesel_fuel_difference_percent": -3.19,
+    "paired_solar_utilization_difference_kwh": -58.786,
+    "paired_battery_charge_difference_kwh": -11.726,
+    "paired_battery_discharge_difference_kwh": 43.049
+  },
+  "STEP10E_RESULT": "VALID_PAIRED_EXPERIMENT"
+}

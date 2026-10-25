@@ -1,0 +1,34 @@
+{
+  "checkpoint_name": "STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT",
+  "governance_status": "OFFICIAL_PROJECT_STATE_CHECKPOINT",
+  "official_closure_verdict": "NO VERIFIED CAUSAL CLOUD-EVOLUTION OBSERVATION SOURCE FOR THE LOCKED 2024 BENCHMARK",
+  "source_artifact": "STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.md",
+  "cloud_evolution_routes_closed": true,
+  "experiments_authorized": false,
+  "odd_accessed": false,
+  "operational_champion": {
+    "name": "Stage 8.1 37-feature HGB",
+    "num_features": 37,
+    "odd_daytime_mae_w_m2": 36.188657,
+    "odd_daytime_nmae_pct": 28.0688,
+    "odd_daytime_rmse_w_m2": 64.219495,
+    "odd_daytime_bias_w_m2": 1.439399
+  },
+  "governance_boundaries": {
+    "cloud_evolution_physics_unimportant": false,
+    "all_sky_imaging_universally_impossible": false,
+    "satellite_cloud_evolution_universally_impossible": false,
+    "scope_of_closure": "Applies strictly to POLARIS locked 2024 benchmark (68.362°N) and real-time causal cutoff (t_pub <= t0 = 00:00 UTC)",
+    "future_work_restriction": "Future research must not re-propose these same cloud-evolution observational routes without materially new empirical evidence satisfying real-time causality and 100% benchmark coverage."
+  },
+  "closed_routes": [
+    "Abisko/Nuolja All-Sky Cameras (SITES Phenocam / SGO EMCCD)",
+    "LEO Polar Orbiter Sequences (MetOp-A/B/C, VIIRS)",
+    "GEO SEVIRI IR Growth Trends (EUMETSAT MSG SEVIRI)",
+    "Kiruna Ceilometer Base Sequence (SMHI ESNQ)",
+    "Ground Radiometer SW_IN Evolution Proxies"
+  ],
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "stage8_1_predictions_modified": false
+}

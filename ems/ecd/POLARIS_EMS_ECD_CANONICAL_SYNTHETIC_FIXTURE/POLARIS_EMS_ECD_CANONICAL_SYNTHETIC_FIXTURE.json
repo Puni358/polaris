@@ -1,0 +1,167 @@
+{
+  "fixture_metadata": {
+    "fixture_id": "ECD_CANONICAL_SYNTHETIC_FIXTURE_V1",
+    "fixture_version": "1.0.0",
+    "purpose": "CONTROLLED_ECD_LOGIC_VALIDATION",
+    "data_classification": "SYNTHETIC_ENGINEERING_TEST_DATA",
+    "station_meaning": "NONE",
+    "real_station_validation_status": "NOT_ESTABLISHED",
+    "determinism_class": "BYTE_FOR_BYTE_REPRODUCIBLE",
+    "generation_seed": null
+  },
+  "governing_parameters": {
+    "T_required_hours": 72.0,
+    "T_required_status": "SYNTHETIC_ENGINEERING_TEST_VALUE_PRESERVED_UNCHANGED",
+    "T_test_hours": 2.0,
+    "T_test_status": "SYNTHETIC_ECD_LOGIC_VALIDATION_ONLY",
+    "critical_load_w": 30000.0,
+    "critical_load_status": "SYNTHETIC_ENGINEERING_TEST_PARAMETER",
+    "zero_renewable_stress_scenario": true,
+    "tie_resource_preference": "NONE"
+  },
+  "component_parameters": {
+    "battery": {
+      "capacity_wh": 200000.0,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "discharge_efficiency": 0.92,
+      "max_discharge_power_w": 50000.0
+    },
+    "diesel": {
+      "base_fuel_consumption_l_per_h": 5.0,
+      "marginal_fuel_consumption_l_per_wh": 0.00025,
+      "min_power_w": 10000.0,
+      "max_power_w": 100000.0,
+      "physical_startup_fuel_l": 0.0,
+      "fuel_consumption_rate_30kW_l_per_h": 12.5
+    }
+  },
+  "test_cases": [
+    {
+      "case_id": "CASE_1",
+      "case_name": "NORMAL",
+      "predeclared_inputs": {
+        "soc_pct": 80.0,
+        "fuel_remaining_liters": 50.0,
+        "critical_load_w": 30000.0,
+        "T_test_hours": 2.0
+      },
+      "analytical_outputs": {
+        "stored_energy_wh": 160000.0,
+        "min_energy_wh": 40000.0,
+        "usable_ac_energy_wh": 110400.0,
+        "T_battery_hours": 3.68,
+        "T_diesel_hours": 4.0,
+        "M_battery_hours": 1.68,
+        "M_diesel_hours": 2.0,
+        "equality_error_hours": 0.32,
+        "expected_mode": "NORMAL",
+        "preserved_resource": "N/A",
+        "limiting_resource": "N/A"
+      },
+      "provenance_class": "SYNTHETIC_ENGINEERING_TEST_DATA",
+      "validation_status": "ANALYTICALLY_VERIFIED"
+    },
+    {
+      "case_id": "CASE_2",
+      "case_name": "BATTERY_LIMITED_EMERGENCY",
+      "predeclared_inputs": {
+        "soc_pct": 30.0,
+        "fuel_remaining_liters": 50.0,
+        "critical_load_w": 30000.0,
+        "T_test_hours": 2.0
+      },
+      "analytical_outputs": {
+        "stored_energy_wh": 60000.0,
+        "min_energy_wh": 40000.0,
+        "usable_ac_energy_wh": 18400.0,
+        "T_battery_hours": 0.6133333333333333,
+        "T_diesel_hours": 4.0,
+        "M_battery_hours": -1.3866666666666667,
+        "M_diesel_hours": 2.0,
+        "equality_error_hours": 3.3866666666666667,
+        "expected_mode": "EMERGENCY",
+        "preserved_resource": "DIESEL",
+        "limiting_resource": "BATTERY"
+      },
+      "provenance_class": "SYNTHETIC_ENGINEERING_TEST_DATA",
+      "validation_status": "ANALYTICALLY_VERIFIED"
+    },
+    {
+      "case_id": "CASE_3",
+      "case_name": "DIESEL_LIMITED_EMERGENCY",
+      "predeclared_inputs": {
+        "soc_pct": 80.0,
+        "fuel_remaining_liters": 12.5,
+        "critical_load_w": 30000.0,
+        "T_test_hours": 2.0
+      },
+      "analytical_outputs": {
+        "stored_energy_wh": 160000.0,
+        "min_energy_wh": 40000.0,
+        "usable_ac_energy_wh": 110400.0,
+        "T_battery_hours": 3.68,
+        "T_diesel_hours": 1.0,
+        "M_battery_hours": 1.68,
+        "M_diesel_hours": -1.0,
+        "equality_error_hours": 2.68,
+        "expected_mode": "EMERGENCY",
+        "preserved_resource": "BATTERY",
+        "limiting_resource": "DIESEL"
+      },
+      "provenance_class": "SYNTHETIC_ENGINEERING_TEST_DATA",
+      "validation_status": "ANALYTICALLY_VERIFIED"
+    },
+    {
+      "case_id": "CASE_4",
+      "case_name": "BOTH_FAIL_EMERGENCY",
+      "predeclared_inputs": {
+        "soc_pct": 30.0,
+        "fuel_remaining_liters": 12.5,
+        "critical_load_w": 30000.0,
+        "T_test_hours": 2.0
+      },
+      "analytical_outputs": {
+        "stored_energy_wh": 60000.0,
+        "min_energy_wh": 40000.0,
+        "usable_ac_energy_wh": 18400.0,
+        "T_battery_hours": 0.6133333333333333,
+        "T_diesel_hours": 1.0,
+        "M_battery_hours": -1.3866666666666667,
+        "M_diesel_hours": -1.0,
+        "equality_error_hours": 0.3866666666666667,
+        "expected_mode": "EMERGENCY",
+        "preserved_resource": "DIESEL",
+        "limiting_resource": "BATTERY"
+      },
+      "provenance_class": "SYNTHETIC_ENGINEERING_TEST_DATA",
+      "validation_status": "ANALYTICALLY_VERIFIED"
+    },
+    {
+      "case_id": "CASE_5",
+      "case_name": "EQUAL_MARGIN_TIE",
+      "predeclared_inputs": {
+        "soc_pct": 80.0,
+        "fuel_remaining_liters": 46.0,
+        "critical_load_w": 30000.0,
+        "T_test_hours": 2.0
+      },
+      "analytical_outputs": {
+        "stored_energy_wh": 160000.0,
+        "min_energy_wh": 40000.0,
+        "usable_ac_energy_wh": 110400.0,
+        "T_battery_hours": 3.68,
+        "T_diesel_hours": 3.68,
+        "M_battery_hours": 1.68,
+        "M_diesel_hours": 1.68,
+        "equality_error_hours": 0.0,
+        "equality_tolerance_hours": 1e-06,
+        "expected_mode": "NORMAL",
+        "preserved_resource": "TIE / BOTH",
+        "limiting_resource": "TIE / BOTH"
+      },
+      "provenance_class": "SYNTHETIC_ENGINEERING_TEST_DATA",
+      "validation_status": "ANALYTICALLY_VERIFIED"
+    }
+  ]
+}

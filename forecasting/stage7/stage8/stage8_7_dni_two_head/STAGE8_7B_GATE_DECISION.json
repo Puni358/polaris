@@ -1,0 +1,35 @@
+{
+  "stage": "8.7B",
+  "title": "Stage 8.7B Direct/Diffuse Two-Head Target Architecture EVEN CV Gate Evaluation",
+  "timestamp_utc": "2026-09-12 16:58:55 UTC",
+  "gate_decision": "REJECTED",
+  "even_cv_results": {
+    "control_mae_w_m2": 37.620054,
+    "candidate_mae_w_m2": 49.445841,
+    "delta_mae_w_m2": 11.825787,
+    "control_nmae_pct": 37.9745,
+    "candidate_nmae_pct": 46.8266,
+    "control_rmse_w_m2": 60.160645,
+    "candidate_rmse_w_m2": 81.330841,
+    "control_bias_w_m2": 4.218739,
+    "candidate_bias_w_m2": -21.989163,
+    "folds_improved": 0,
+    "max_fold_degradation_w_m2": 28.022026
+  },
+  "gates": {
+    "g1_delta_mae_le_minus_0_50": false,
+    "g2_at_least_4_folds_improve": false,
+    "g3_worst_fold_degradation_le_0_50": false,
+    "g4_nmae_and_rmse_le_control": false,
+    "g5_100pct_causality": true,
+    "g6_exact_control_reproduction": true
+  },
+  "odd_firewall_status": {
+    "odd_evaluated": false,
+    "odd_target_reads": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "odd_tuning": 0
+  },
+  "champion_status": "STAGE_8_1_UNTOUCHED"
+}

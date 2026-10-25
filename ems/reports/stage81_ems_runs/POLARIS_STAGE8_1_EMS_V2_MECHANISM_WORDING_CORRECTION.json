@@ -1,0 +1,82 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V2_MECHANISM_WORDING_CORRECTION_MANIFEST",
+  "governance_status": "DOCUMENTATION_ONLY_SCIENTIFIC_INTERPRETATION_LOCKED",
+  "audit_reference": "POLARIS_STAGE8_1_EMS_V2_POST_EXECUTION_FORENSIC_AUDIT.md (Classification B)",
+  "timestamp_utc": "2026-09-19T16:20:00+05:30",
+  "immutable_evidence_verified": {
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION_RAW.csv": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION.json": "97a1dec8b6773851586cf43571ac2c0737ecfdcf0973009271dbb8102ea16536",
+    "POLARIS_STAGE8_1_EMS_V2_MECHANISM_ANALYSIS.csv": "7af2b56b34ede00366542d1581394c9ad141952983b5528caae527b272ca927b",
+    "POLARIS_STAGE8_1_EMS_V2_MECHANISM_ANALYSIS.json": "9b7867d69e7e0e41611fc76826b3a4c6f57e438c1e9ba25e3cde22987e8d00aa"
+  },
+  "core_scientific_boundary": {
+    "original_problematic_wording": "V2 established exactly why the extra diesel was created.",
+    "corrected_approved_wording": "V2 provides timestep-level evidence identifying observed forecast-to-dispatch-to-storage/diesel pathways associated with the aggregate diesel difference. The experiment does not isolate the causal contribution of every individual pathway or forecast horizon.",
+    "governing_principle": "OBSERVED_TEMPORAL_PATHWAY != UNIQUELY_ISOLATED_CAUSAL_MECHANISM"
+  },
+  "mechanism_classifications": {
+    "M1_diesel_commitment": "B — STRONGLY SUPPORTED (fewer startups 178 vs 346, longer commitment 400 vs 346 steps, higher power 33.79 kW vs 10.0 kW)",
+    "M2_battery_dispatch": "A — DIRECTLY ESTABLISHED FOR THE OBSERVED TEMPORAL PATHWAY (SOC divergence precedes diesel divergence)",
+    "M3_renewable_curtailment": "A — DIRECTLY ESTABLISHED AT THE OBSERVED DISPATCH/EVENT LEVEL (curtailment during minimum-output commitment)",
+    "M4_soc_positioning": "A — DIRECTLY ESTABLISHED FOR THE OBSERVED TEMPORAL PATHWAY (early SOC positioning persists)",
+    "M5_forecast_shape": "B — STRONGLY SUPPORTED, NOT INDIVIDUALLY ISOLATED (multi-horizon vector shape differences drive k=1 decision divergence)",
+    "M6_multi_pathway": "B — STRONGLY SUPPORTED (sequential forecast -> SOC -> curtailment -> diesel commitment chain)",
+    "M7_other_mechanisms": "E — NOT IDENTIFIABLE FROM THE AVAILABLE EVIDENCE"
+  },
+  "wording_corrections": [
+    {
+      "id": "CORRECTION_01_M1_DIESEL_COMMITMENT",
+      "affected_mechanism": "M1_diesel_commitment",
+      "original_problematic_wording": "Treatment induces additional diesel commitment and startup events.",
+      "corrected_approved_wording": "Treatment exhibited fewer diesel startup events (178 vs 346) but longer diesel-on duration (400 vs 346 timesteps) and higher average diesel power (33.79 kW vs 10.0 kW) across diesel-active timesteps.",
+      "reason_for_correction": "Raw CSV telemetry proves Treatment had 178 startups vs Control's 346 startups. Claiming Treatment induced additional startups was factually incorrect.",
+      "evidence_classification": "B — STRONGLY SUPPORTED"
+    },
+    {
+      "id": "CORRECTION_02_M2_BATTERY_DISPATCH",
+      "affected_mechanism": "M2_battery_dispatch",
+      "original_problematic_wording": "The battery definitively caused the diesel increase.",
+      "corrected_approved_wording": "The preserved timestep telemetry directly shows early divergence in battery dispatch and SOC trajectories that precedes later diesel divergence. The observed forecast/optimization difference is associated with the subsequent battery/SOC pathway.",
+      "reason_for_correction": "Removes unproven causal assertion while locking the directly established temporal ordering.",
+      "evidence_classification": "A — DIRECTLY ESTABLISHED FOR THE OBSERVED TEMPORAL PATHWAY"
+    },
+    {
+      "id": "CORRECTION_03_M3_RENEWABLE_CURTAILMENT",
+      "affected_mechanism": "M3_renewable_curtailment",
+      "original_problematic_wording": "Stage8.1 directly caused all curtailment.",
+      "corrected_approved_wording": "The telemetry shows renewable curtailment occurring during periods in which diesel commitment/minimum-output constraints limited renewable absorption. This provides evidence for a downstream pathway connecting forecast-dependent dispatch to renewable curtailment.",
+      "reason_for_correction": "Qualifies curtailment attribution to active minimum-output physical constraints during generator commitment.",
+      "evidence_classification": "A — DIRECTLY ESTABLISHED AT THE OBSERVED DISPATCH/EVENT LEVEL"
+    },
+    {
+      "id": "CORRECTION_04_M5_FORECAST_SHAPE",
+      "affected_mechanism": "M5_forecast_shape",
+      "original_problematic_wording": "h=5..12 was proven to cause the diesel increase.",
+      "corrected_approved_wording": "The treatment and control forecast vectors differed in their multi-horizon shape before the H1 forecast divergence occurred, and the optimizer/dispatch trajectories subsequently diverged. This strongly supports involvement of forecast-horizon shape, but the individual causal contribution of specific horizons was not isolated by this experiment.",
+      "reason_for_correction": "V2 did not independently manipulate individual horizons. Multi-horizon involvement is strongly supported, but isolated horizon causality is un-isolated.",
+      "evidence_classification": "B — STRONGLY SUPPORTED, NOT INDIVIDUALLY ISOLATED"
+    },
+    {
+      "id": "CORRECTION_05_DIESEL_EFFICIENCY",
+      "affected_topic": "diesel_fuel_vs_energy_consistency",
+      "original_problematic_wording": "Treatment has higher fuel efficiency than Control.",
+      "corrected_approved_wording": "The differing implied kWh/L ratios (0.74 kWh/L for Control vs 2.10 kWh/L for Treatment) arise from the documented nonlinear/penalty-based fuel-consumption model F(P) = 5.0 + 0.00025*P + 6.0*I_startup and the different diesel operating regimes observed in control and treatment; they should not be interpreted as a conventional constant fuel efficiency.",
+      "reason_for_correction": "Clarifies that implied kWh/L ratios stem from startup/idle penalty dominance in Control (346 short 1h runs) vs high-power continuous runs in Treatment (400 steps at 33.79 kW).",
+      "evidence_classification": "A — FULLY EXPLAINED BY DOCUMENTED MODEL SEMANTICS"
+    },
+    {
+      "id": "CORRECTION_06_HETEROGENEITY_ARITHMETIC",
+      "affected_topic": "heterogeneity_subgroup_vs_population",
+      "original_problematic_wording": "Positive group mean +21.64 L; Negative group mean -13.06 L.",
+      "corrected_approved_wording": "Positive origins (N=95) exhibit a subgroup mean paired difference of +36.0633 L/origin (contributing +19.8035 L to overall population mean); Negative origins (N=77) exhibit a subgroup mean paired difference of -21.4230 L/origin (contributing -9.5351 L to overall population mean). The overall population mean paired difference across all 173 origins is +10.2684 L/origin.",
+      "reason_for_correction": "Reconciles subgroup means (+36.06 L / -21.42 L) with population-weighted contributions (+19.80 L / -9.54 L) to eliminate arithmetic ambiguity.",
+      "evidence_classification": "A — FULLY EXPLAINED BY DOCUMENTED MODEL SEMANTICS"
+    }
+  ],
+  "confirmations": {
+    "numerical_evidence_unchanged": true,
+    "raw_v2_evidence_unchanged": true,
+    "source_code_unchanged": true,
+    "no_execution_performed": true
+  }
+}

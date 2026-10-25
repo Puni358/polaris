@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "gate_type": "MULTI_TRAJECTORY_PRE_EXECUTION_GATE",
+    "timestamp": "2026-09-21T11:11:00Z"
+  },
+  "checklist_verification": {
+    "branch01_model_identity": "PASS",
+    "branch01_model_sha": "PASS",
+    "control_forecast_identity": "PASS",
+    "control_source_hash": "PASS",
+    "trajectory_source": "PASS",
+    "trajectory_coverage": "PASS",
+    "initial_state_availability": "PASS",
+    "same_truth_design": "PASS",
+    "causal_forecast_design": "PASS",
+    "truth_firewall": "PASS",
+    "optimizer_identity": "PASS",
+    "dispatch_plan_identity": "PASS",
+    "digital_twin_identity": "PASS",
+    "source_immutability": "PASS",
+    "no_retraining": "PASS",
+    "no_tuning": "PASS",
+    "no_synthetic_generation": "PASS",
+    "isolated_output_directory": "PASS"
+  },
+  "governance_assertions": {
+    "PRE_EXECUTION_GATE": "PASS",
+    "MODEL_IDENTITY_GATE": "PASS",
+    "CONTROL_IDENTITY_GATE": "PASS",
+    "TRAJECTORY_COVERAGE_GATE": "PASS",
+    "TRUTH_FIREWALL_GATE": "PASS",
+    "IMMUTABILITY_GATE": "PASS",
+    "TOTAL_ELIGIBLE_TRAJECTORIES": 173,
+    "TOTAL_ELIGIBLE_MPC_CYCLES": 4152,
+    "ANNUAL_RESULT_STATUS": "REPRESENTATIVE_TRAJECTORY_SET",
+    "EXECUTION_AUTHORIZATION": "PENDING_EXPLICIT_USER_AUTHORIZATION"
+  }
+}

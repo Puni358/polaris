@@ -1,0 +1,4 @@
+split_name,start_timestamp,end_timestamp,total_hours,split_percentage,timezone,purpose,freeze_status
+TRAIN,2024-01-01T00:00:00Z,2024-08-31T23:00:00Z,5856,66.67,UTC,Model parameter estimation & baseline fitting,MUTABLE_DURING_TRAINING
+VALIDATION,2024-09-01T00:00:00Z,2024-10-31T23:00:00Z,1464,16.67,UTC,"Hyperparameter tuning, model selection, early stopping",MUTABLE_DURING_TUNING
+TEST,2024-11-01T00:00:00Z,2024-12-31T23:00:00Z,1464,16.66,UTC,Final out-of-sample benchmark & independent replay evaluation,STRICTLY_FROZEN_UNTIL_SELECTION_COMPLETE

@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "audit_type": "POSTCAMPAIGN_ENERGY_FORENSIC_AUDIT",
+    "timestamp": "2026-09-21T12:30:00Z",
+    "auditor": "Antigravity Read-Only Forensic Energy Auditor"
+  },
+  "governance_assertions": {
+    "ENERGY_ACCOUNTING": "FAIL",
+    "BATTERY_ACCOUNTING": "FAIL",
+    "UNIT_CONVERSION": "PASS",
+    "HIDDEN_ENERGY_SOURCE": "FOUND",
+    "AGGREGATE_RECONCILIATION": "FAIL",
+    "ZERO_TREATMENT_DIESEL_RESULT": "NOT_VERIFIED",
+    "INITIAL_STATE_CONSISTENCY": "PASS",
+    "DISCREPANCY_REASON": "UNFILLED_DEMAND_FORECAST_IN_BRANCH01_ENGINE",
+    "NEXT_GOVERNED_STEP": "BRANCH01_FORECASTBUNDLE_CONTRACT_REMEDIATION"
+  },
+  "energy_reconciliation_kwh": {
+    "total_load_served": 149472.0,
+    "control_total_input": 150743.201,
+    "control_unexplained_residual": 0.0,
+    "treatment_total_input": 3143.495,
+    "treatment_unexplained_residual": -146328.505
+  }
+}

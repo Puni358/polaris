@@ -1,0 +1,294 @@
+{
+  "document_id": "POLARIS_MASTER_GOVERNANCE_DEPENDENCY_REVIEW",
+  "date_utc": "2026-09-18",
+  "review_status": "COMPLETE",
+  "overall_program_governance_state": "SYSTEM_ARCHITECTURE_VALIDATED_SCIENTIFIC_BRANCHES_DATA_BLOCKED",
+  "reviewed_tracks": [
+    "SOLAR_FORECASTING_TRACK",
+    "WIND_FORECASTING_TRACK",
+    "DEMAND_FORECASTING_TRACK",
+    "SYSTEM_ARCHITECTURE_AND_CONTRACTS",
+    "FAULT_GOVERNANCE_AND_ROBUSTNESS",
+    "REAL_ENERGY_DATA_ACCESS"
+  ],
+  "current_states": {
+    "solar_forecasting": "FROZEN_CHAMPION_STAGE8_1_HGB_MAE_36.19_WM2",
+    "wind_forecasting_speed": "ESTABLISHED_ABISKO_10M_PROXY_A2_ARX_MAE_2.04_MS",
+    "wind_forecasting_generation": "NOT_ESTABLISHED_NUOLJA_ASSET_UNESTABLISHED",
+    "demand_forecasting": "DATA_BLOCKED_ACTUALLY_RECEIVED_NO",
+    "system_architecture": "SYSTEM_ARCHITECTURE_VALIDATED",
+    "stage8_1_ems_connection": "NOT_AUTHORIZED_CONTRACT_RESOLUTION_PENDING",
+    "sih_demonstrator_readiness": "READY_FOR_SYNTHETIC_DEMONSTRATOR"
+  },
+  "dependency_graph": [
+    {
+      "code": "A",
+      "branch_name": "Solar Scientific Evidence",
+      "current_status": "FROZEN",
+      "evidence_basis": "Stage 8.1 baseline freeze (ODD MAE 36.19 W/m2, nMAE 28.07%)",
+      "frozen_or_active": "FROZEN",
+      "blocker": "None for Abisko solar proxy",
+      "required_unlock_evidence": "Resolved for SMHI Abisko SW_IN",
+      "synthetic_data_allowed": false,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "B",
+      "branch_name": "ForecastEngine Implementation",
+      "current_status": "READY_FOR_IMPLEMENTATION_AUTHORIZATION",
+      "evidence_basis": "ForecastEngine base interface & baseline classes in system/forecasting/",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "Governance adapter authorization missing",
+      "required_unlock_evidence": "Authorized Stage81ForecastEngine contract",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "C",
+      "branch_name": "ForecastBundle v1.0 Schema",
+      "current_status": "FROZEN",
+      "evidence_basis": "system/schemas/forecast_bundle.py v1.0.0",
+      "frozen_or_active": "FROZEN",
+      "blocker": "Governance interval semantics definition",
+      "required_unlock_evidence": "Authorized point-only bound representation policy",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "D",
+      "branch_name": "EMS / Optimizer Integration",
+      "current_status": "SYSTEM_ARCHITECTURE_VALIDATED",
+      "evidence_basis": "D1-D7, D4-C1, D5 checkpoints (system/optimization/)",
+      "frozen_or_active": "FROZEN",
+      "blocker": "Real-data pipeline connection",
+      "required_unlock_evidence": "Real-data adapter authorization",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "E",
+      "branch_name": "Measured Real-Data Qualification",
+      "current_status": "DATA_BLOCKED",
+      "evidence_basis": "POLARIS_REAL_ENERGY_DATA_RECONNAISSANCE.md & D-A1.5 Gate",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "Restricted custodian data access",
+      "required_unlock_evidence": "Received continuous measured station telemetry series",
+      "synthetic_data_allowed": false,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "F",
+      "branch_name": "Wind-Speed Forecasting",
+      "current_status": "ESTABLISHED",
+      "evidence_basis": "A2 AR-X (POLARIS_WIND_A2_MODEL_DEVELOPMENT_AND_TRAINING.md, MAE 2.04 m/s)",
+      "frozen_or_active": "FROZEN",
+      "blocker": "Nuolja direct wind sensors missing",
+      "required_unlock_evidence": "Direct Nuolja AWS wind speed observations",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "G",
+      "branch_name": "Wind-Speed -> Wind-Power Mapping",
+      "current_status": "NOT_ESTABLISHED",
+      "evidence_basis": "A3.4 & A3.5 reports (Ross Island = ESTABLISHED_REF)",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "NUOLJA_WIND_ASSET_STATUS = NOT_ESTABLISHED",
+      "required_unlock_evidence": "Authorized Nuolja turbine specification & power curve",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "H",
+      "branch_name": "Wind-Generation Forecasting",
+      "current_status": "NOT_ESTABLISHED",
+      "evidence_basis": "A3.3 disposition & A3.5 feasibility reports",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "Blocked by Branch G",
+      "required_unlock_evidence": "Validated turbine power curve & generation telemetry",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "I",
+      "branch_name": "Electrical-Demand Forecasting",
+      "current_status": "DATA_BLOCKED",
+      "evidence_basis": "Demand A1 & D-A1.5 Gate (DEMAND_A2 = NOT_READY)",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "Access pending / delivery failed",
+      "required_unlock_evidence": "Received measured station load time series",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "J",
+      "branch_name": "Real-Data Validation",
+      "current_status": "DATA_BLOCKED",
+      "evidence_basis": "Stage 8.1 (Solar valid), Wind/Demand (Blocked)",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "Inaccessible station meter series",
+      "required_unlock_evidence": "Continuous 1-year station meter dataset",
+      "synthetic_data_allowed": false,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "K",
+      "branch_name": "Synthetic-Data Engineering/Testing",
+      "current_status": "ESTABLISHED",
+      "evidence_basis": "System integration test suite & D4-C1 fault harness",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "None",
+      "required_unlock_evidence": "Fully unlocked for SIH engineering demo",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "L",
+      "branch_name": "Stage 8.1 / Forecasting Research Firewall",
+      "current_status": "FROZEN",
+      "evidence_basis": "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md",
+      "frozen_or_active": "FROZEN",
+      "blocker": "Governance authorization gate",
+      "required_unlock_evidence": "Formal contract resolution decision",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    },
+    {
+      "code": "M",
+      "branch_name": "Final Integrated POLARIS Demonstration",
+      "current_status": "READY_FOR_SYNTHETIC_DEMO",
+      "evidence_basis": "Full system integration codebase (system/runtime/)",
+      "frozen_or_active": "ACTIVE",
+      "blocker": "Real station data (For empirical demo)",
+      "required_unlock_evidence": "Synthetic demo unlocked; real demo blocked",
+      "synthetic_data_allowed": true,
+      "synthetic_real_world_validity": false
+    }
+  ],
+  "frozen_items": [
+    "Stage 8.1 Solar Champion (37-feature HGB, ODD MAE 36.19 W/m2, nMAE 28.07%)",
+    "Information Probe Freeze (P1 non-linear tree interaction required, T4 dropped)",
+    "A2 AR-X Wind Speed Champion (Abisko 10m proxy, MAE 2.04 m/s)",
+    "Phase A3.3 Wind Research Disposition & Gap Analysis",
+    "Phase A3.4 Ross Island Antarctic Wind-Energy Evidence Qualification",
+    "Phase A3.5 Antarctic Wind->Power Reference / Transfer Feasibility",
+    "Phase Demand A1 Target and Data Qualification",
+    "Phase D-A1.5 Demand Data Access Status and Gate",
+    "ForecastBundle Schema v1.0.0 (system/schemas/forecast_bundle.py)",
+    "D4-C1 Failure Containment & Fault Governance",
+    "D5 Sensitivity Study Checkpoint (Prototype forecast path)"
+  ],
+  "blocked_items": [
+    {
+      "item": "Nuolja Wind Asset Identity",
+      "status": "NOT_ESTABLISHED",
+      "blocker": "Zero turbine specs in evidence reviewed (NOT_ESTABLISHED ≠ PROVEN_ABSENT)"
+    },
+    {
+      "item": "Nuolja Wind-to-Power Mapping",
+      "status": "NOT_ESTABLISHED",
+      "blocker": "Nuolja turbine asset & direct wind measurements unestablished"
+    },
+    {
+      "item": "Wind Generation Forecasting",
+      "status": "NOT_ESTABLISHED",
+      "blocker": "Blocked by Nuolja wind power mapping"
+    },
+    {
+      "item": "Measured Electrical Demand Data",
+      "status": "DATA_BLOCKED",
+      "blocker": "Inaccessible custodian data (SANAP, IPF, ACEP pending; AADC 550 5.7.133 failed)"
+    },
+    {
+      "item": "Demand A2 Forecasting",
+      "status": "NOT_READY",
+      "blocker": "Zero measured station demand received (ACTUALLY_RECEIVED = NO)"
+    },
+    {
+      "item": "Stage 8.1 EMS Connection",
+      "status": "NOT_AUTHORIZED",
+      "blocker": "Contract resolution pending governance authorization"
+    },
+    {
+      "item": "Real-Data Integrated EMS Validation",
+      "status": "DATA_BLOCKED",
+      "blocker": "Missing continuous station meter telemetry"
+    }
+  ],
+  "conditional_items": [
+    "Abisko 10m wind speed as regional proxy for Nuolja (309.8m altitude offset unscaled)",
+    "Ross Island Enercon E-33 factory power curve P(v) as polar reference asset",
+    "Antarctic cross-site transfer methodology (engineering principles, density scaling)",
+    "Conceptual reference methodology for future Nuolja scenario studies",
+    "Synthetic station load profiles for deterministic EMS MILP testing"
+  ],
+  "synthetic_allowed_items": [
+    "End-to-end software pipeline execution",
+    "ForecastBundle v1.0 schema contract validation",
+    "MILP EnergyOptimizer cost minimization & dispatch",
+    "MPC receding-horizon closed-loop simulation",
+    "D4-C1 fault-containment testing",
+    "Digital Twin simulator replay & hardware-in-the-loop testing",
+    "SIH UI / interactive dashboard demonstration",
+    "Scenario sensitivity testing (varying PV/battery sizes)"
+  ],
+  "synthetic_prohibited_claims": [
+    "Empirical solar forecasting accuracy claims (requires SMHI ODD ground truth)",
+    "Empirical wind forecasting accuracy claims (requires SMHI 10m ground truth)",
+    "Empirical demand forecasting accuracy claims (requires measured station telemetry)",
+    "Real-world station energy savings claims (requires real station telemetry)",
+    "Nuolja real-world turbine generation claims (requires real turbine asset)"
+  ],
+  "unlock_evidence": {
+    "nuolja_wind_measurements": "1-year hourly 10m wind speed series from Mount Nuolja",
+    "nuolja_wind_asset_identity": "Official station operator datasheet establishing turbine model, P_rated, D, h_hub",
+    "nuolja_wind_power_mapping": "Authorized turbine factory power curve P(v) + boundary layer shear exponent alpha",
+    "wind_generation_forecasting": "Validated turbine power curve model + A2 AR-X wind speed forecast",
+    "measured_station_electrical_demand": "Continuous 1-year hourly measured active electrical demand series (kW) from polar station",
+    "demand_a2_forecasting": "Qualified continuous measured demand series + governance authorization for Demand A2",
+    "real_data_validation": "Paired measured solar, wind, demand, and storage time-series for a single station",
+    "integrated_real_data_ems_evaluation": "Real-data ForecastBundle provider + authorized real-data adapter"
+  },
+  "currently_unlocked_work": [
+    "Full system pipeline integration (ForecastEngine baseline -> ForecastBundle -> Optimizer -> DispatchPlan -> DigitalTwin)",
+    "SIH interactive demonstrator UI & visualization dashboard development",
+    "Stage81ForecastEngine wrapper architecture specification",
+    "Deterministic scenario simulation (varying PV/battery/synthetic load)",
+    "D4-C1 fault-tolerance benchmarking & runtime resilience verification"
+  ],
+  "currently_blocked_work": [
+    "Empirical Demand Forecasting (Demand A2)",
+    "Empirical Wind Generation Forecasting for Mount Nuolja",
+    "Real-Data Integrated EMS Evaluation on a single operational station dataset",
+    "Real-World Fuel Savings Quantification for Scott Base or SANAE IV"
+  ],
+  "do_not_start": [
+    "DO NOT train new forecasting models without pre-registered governance authorization",
+    "DO NOT fabricate, synthesize, or guess missing Nuolja wind turbine parameters",
+    "DO NOT substitute synthetic load profiles as empirical demand ground truth",
+    "DO NOT resend failed AADC email requests (aadcwebqueries@aad.gov.au)",
+    "DO NOT modify frozen contract files (ForecastBundle schema v1.0, StationState, Stage 8.1 freeze, D5 checkpoint)",
+    "DO NOT claim real-world empirical performance based on synthetic simulation runs"
+  ],
+  "artifact_references": [
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md",
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md",
+    "POLARIS_SYSTEM_D4C1_FAILURE_CONTAINMENT_CHECKPOINT.md",
+    "POLARIS_DEMAND_A1_TARGET_AND_DATA_QUALIFICATION.md",
+    "POLARIS_DEMAND_DATA_ACCESS_STATUS_AND_GATE.md",
+    "POLARIS_REAL_ENERGY_DATA_ACCESS_REQUEST.md",
+    "POLARIS_WIND_A1_6_SITE_TRANSFER_QUALIFICATION.md",
+    "POLARIS_WIND_A2_MODEL_DEVELOPMENT_AND_TRAINING.md",
+    "POLARIS_WIND_A3_SCIENTIFIC_EVIDENCE_REVIEW.md",
+    "POLARIS_WIND_A3_RESEARCH_DISPOSITION.md",
+    "POLARIS_WIND_A3_4_ANTARCTIC_WIND_ENERGY_EVIDENCE_QUALIFICATION.md",
+    "POLARIS_WIND_A3_5_WIND_POWER_TRANSFER_FEASIBILITY.md"
+  ],
+  "governance_conclusion": {
+    "scientifically_established": "Solar forecasting at Abisko proxy (Stage 8.1 HGB, MAE 36.19 W/m2); Wind speed forecasting at Abisko proxy (A2 AR-X, MAE 2.04 m/s); Ross Island Antarctic wind reference asset identity (Enercon E-33, 990 kW) & factory power curve.",
+    "implementation_ready": "Full POLARIS system architecture (ForecastEngine -> ForecastBundle -> EnergyOptimizer -> DispatchPlan -> DigitalTwin); MILP microgrid optimization, MPC closed-loop control, and D4-C1 fault containment.",
+    "frozen_items_summary": "Stage 8.1 Solar Champion, Information Probe freeze, A2 AR-X Wind Champion, Phase A3.3 Wind Disposition, Phase A3.4 Ross Island Evidence, Phase A3.5 Wind Transfer Feasibility, D4-C1 Fault Governance, D5 Sensitivity Checkpoint.",
+    "blocked_items_summary": "Demand forecasting (Demand A2) due to inaccessible station meter data; Nuolja wind generation forecasting due to NUOLJA_WIND_ASSET_STATUS = NOT_ESTABLISHED.",
+    "synthetic_development_boundary": "Synthetic engineering work can proceed 100% unlocked for SIH UI demonstration, system integration, and fault testing WITHOUT pretending to resolve current real-data scientific gaps or changing frozen empirical conclusions."
+  }
+}

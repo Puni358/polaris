@@ -1,0 +1,12 @@
+{
+  "experiment_id": "EXP-PLANNER-CF-EBR-FULL-REALIZED-LOWER-BOUND-20261008",
+  "title": "POLARIS \u2014 Certified Formulation G: Full Realized-EBR Lower Bound",
+  "governance_status": "APPROVED",
+  "role": "Execution only",
+  "verdict": "CERTIFIED LOWER BOUND",
+  "mathematical_proof": "The actual PC-SW realized trajectory x_real is feasible in Formulation G. Therefore: LB_G <= objective_G(x_real) = PC-SW realized fuel.",
+  "ebr_source": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/CAMPAIGN_V12_615_20261006/PC_HOURLY_TELEMETRY.csv",
+  "circularity_basis": "CC verified that ebr_target_wh depends only on causal solar forecast, deterministic wind forecast, and deterministic demand forecast; does not depend on optimizer decisions or realized dispatch.",
+  "terminal_statement": "Completely removed. No terminal target, no 100 kWh or 140 kWh target, no terminal slack.",
+  "timestamp_iso": "2026-10-08T03:40:06.582887+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "A": {
+    "Candidate_S": {
+      "delta_cf_pp": 0.6406211452200665,
+      "gate1_pass": true,
+      "delta_prop_pp": 0.8226812573526416,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    },
+    "Candidate_SW": {
+      "delta_cf_pp": 0.28228714022053225,
+      "gate1_pass": true,
+      "delta_prop_pp": -0.5814900035924779,
+      "gate2_pass": false,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": false
+    },
+    "Candidate_SL": {
+      "delta_cf_pp": 0.6393378539388692,
+      "gate1_pass": true,
+      "delta_prop_pp": 1.1564840938301018,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    },
+    "Candidate_SWL": {
+      "delta_cf_pp": 0.7407917192318365,
+      "gate1_pass": true,
+      "delta_prop_pp": 1.391137097380863,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    }
+  },
+  "B": {
+    "Candidate_S": {
+      "delta_cf_pp": 0.5953347525932173,
+      "gate1_pass": true,
+      "delta_prop_pp": 1.753701053273673,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    },
+    "Candidate_SW": {
+      "delta_cf_pp": 0.29544864381834657,
+      "gate1_pass": true,
+      "delta_prop_pp": 1.321971303280094,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    },
+    "Candidate_SL": {
+      "delta_cf_pp": 0.6362227245117253,
+      "gate1_pass": true,
+      "delta_prop_pp": 1.8335217677425248,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    },
+    "Candidate_SWL": {
+      "delta_cf_pp": 0.6833907461919466,
+      "gate1_pass": true,
+      "delta_prop_pp": 1.9097672424162226,
+      "gate2_pass": true,
+      "min_soc_pct": 20.0,
+      "soc_violations": 0,
+      "gate3_pass": true,
+      "all_gates_pass": true
+    }
+  }
+}

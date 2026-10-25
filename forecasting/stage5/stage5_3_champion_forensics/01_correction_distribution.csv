@@ -1,0 +1,2 @@
+count,mean_correction_W_m2,std_correction_W_m2,median_correction_W_m2,min_correction_W_m2,max_correction_W_m2,q25_correction_W_m2,q75_correction_W_m2,iqr_correction_W_m2,mean_abs_correction_W_m2,pct_positive_correction,pct_negative_correction,pct_zero_correction
+2883,3.890983037024591,21.023425077137027,0.6585618017962842,-157.57776796682944,92.60510483860452,0.0,14.655086661034764,14.655086661034764,12.970056029796382,51.89039195282692,24.97398543184183,23.135622615331254

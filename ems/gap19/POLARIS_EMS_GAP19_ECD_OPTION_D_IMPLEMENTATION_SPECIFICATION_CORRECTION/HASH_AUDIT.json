@@ -1,0 +1,26 @@
+{
+  "package_name": "POLARIS_EMS_GAP19_ECD_OPTION_D_IMPLEMENTATION_SPECIFICATION_CORRECTION",
+  "timestamp": "2026-09-26T19:08:30Z",
+  "protected_sources_sha256": {
+    "system/runtime/runner.py": "86aee0b51ba169458aa4cd8bbf678120b43d284144998d9c81e37f5fcaad5efc",
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "system/schemas/station_state.py": "f2cb385efdb2fdc95b681c765642660f1e0d06125c545b7464a8ac4a83e9185f",
+    "system/schemas/dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b",
+    "system/control/ecd.py": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23"
+  },
+  "artifact_hashes_sha256": {
+    "AUTHORITY_ESCALATION_CORRECTION.md": "b98bf679d2d2dda5f75d6471b83e70680715786d8b69c979c1b593336f9b6270",
+    "OPTION_D_HORIZON_CORRECTION.md": "7bd1a013936fd631053f1f122d9a98c400ffd3e8586beabef89d0a3226e130d1",
+    "UNKNOWN_INVALID_CORRECTION.md": "be5249d0c899d9a4c2e5340e667644015087ad14345c44d8172994f6a28f28e1",
+    "CORRECTION_REGISTER.md": "efdc5c4b01cde449391e54597133960c1fa8c0fe4e14d3db583b942c8dedb839",
+    "SOURCE_INTEGRITY_AUDIT.md": "1e629ded165c7f5dc61b131c17dd27b0ac8fc3d1ad7fd802c5e3b0fda1cf49d6",
+    "MILP_INFEASIBILITY_CORRECTION.md": "ed96a773aa4ae42147a8f6dae17c6909503f559f3a7f1d9dcc43647f3b18c095",
+    "FINAL_CORRECTION_VERDICT.md": "e5b22c25b9b2a4fa868a84b4bae50b6cb9db2ef4df9698a6df915bfbec532a42",
+    "IMPLEMENTATION_READINESS_CORRECTION.md": "400570882fad229e0fad74df369d977d819368c8b40feb6f0b87e96e0df0a3a8",
+    "EMERGENCY_RETURN_CORRECTION.md": "92db9e0828d099c470636e6ca8e38230f9eff772e0afe9f465ff30ded811b746",
+    "SCHEMA_DELTA_CORRECTION.md": "ba4d0f53dc3ae9f054c852b7e0a706ae88ff3209fb9a5d5114678e4f208b0c2c"
+  }
+}

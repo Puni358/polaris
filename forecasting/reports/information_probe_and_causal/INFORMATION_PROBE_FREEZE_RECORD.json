@@ -1,0 +1,25 @@
+{
+  "experiment_name": "POLARIS_INFORMATION_PROBE",
+  "freeze_timestamp_utc": "2026-09-16T04:57:41Z",
+  "preregistration_version": "v1.0",
+  "preregistration_file": "newhope/POLARIS_INFORMATION_PROBE_PREREGISTRATION.md",
+  "preregistration_sha256": "f414b176bd0dec6a6abd4551df625120e99d095223595bf56b1295b2669a5f4d",
+  "canonical_fold_assignment_file": "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv",
+  "canonical_fold_assignment_sha256": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+  "even_origins_count": 174,
+  "fold_sizes": {
+    "fold_1": 35,
+    "fold_2": 35,
+    "fold_3": 35,
+    "fold_4": 35,
+    "fold_5": 34
+  },
+  "governance_rules": {
+    "odd_data_access": "PROHIBITED",
+    "t4_status": "DROPPED / UNAVAILABLE",
+    "active_targets": ["T1", "T2", "T3"],
+    "hit_criterion": "At least 2 of 4 targets individually satisfy ΔR² >= 0.03 AND bootstrap 95% CI excludes zero. (With T4 unavailable, 2-of-4 formal hit cannot be satisfied using T1-T3 alone; formal hit CANNOT be declared on 2 of 3).",
+    "power_floor": "N_eligible >= 60 required for Section 9 inferential decision rules"
+  },
+  "status": "FROZEN_BEFORE_TARGET_COMPUTATION"
+}

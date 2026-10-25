@@ -1,0 +1,8 @@
+{
+  "cache_key": "5b5429786fa95a3be000fc7b",
+  "content_sha256": "dd2ef4008a4063b800d4deb05761e7fd421fafc5a81055fc225e114c702967cd",
+  "detail": "forecast_reference_time not found",
+  "forecast_start": "2024-01-22T00:00:00+00:00",
+  "payload": null,
+  "retrieval_status": "FAILED_MISSING_VAR"
+}

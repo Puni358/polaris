@@ -1,0 +1,88 @@
+{
+  "experiment_id": "EXP-STAGE4-REALIZATION-CONSISTENCY-2025",
+  "audit_id": "POST-STAGE4-REALIZATION-CAUSAL-GOVERNANCE-AUDIT",
+  "date_utc": "2026-10-06",
+  "method": "Read-only causal and forensic inspection of experimental telemetry, code, and schemas",
+  "governing_preregistration": {
+    "md_path": "experiments/EXP_STAGE4_REALIZATION_CONSISTENCY_PREREGISTRATION.md",
+    "md_sha256": "1e9077d4bb3f3828f7040a9fbd39a31e46308c547ce648a80c7579099124cf0b",
+    "json_path": "experiments/EXP_STAGE4_REALIZATION_CONSISTENCY_PREREGISTRATION.json",
+    "json_sha256": "076279c227be7c8f866e90226adc719042c3ad7f9977161e5dad4b006a14bb8b"
+  },
+  "authoritative_results": {
+    "arm_a": {
+      "semantics": "CURRENT (load-first surplus charging)",
+      "winner": "Candidate_S",
+      "winner_diesel_saving_pct": 23.113551272708992,
+      "winner_diesel_saving_l": 1409.21,
+      "candidate_sw_status": "SAFETY_FAILURE (Gate 2 Proportional Reliability Drop -0.5815 pp)",
+      "control_b_fuel_l": 6096.90,
+      "control_b_rp_pct": 83.84995137907113
+    },
+    "arm_b": {
+      "semantics": "PLAN-CONSISTENT DIAGNOSTIC (critical-first, planned charge prioritized, residual to non-critical)",
+      "winner": "Candidate_SW",
+      "winner_diesel_saving_pct": 23.769088266292407,
+      "winner_diesel_saving_l": 1351.33,
+      "candidate_sw_status": "SAFETY_QUALIFIED (Gate 2 Proportional Reliability +1.3220 pp)",
+      "control_b_fuel_l": 5685.23,
+      "control_b_rp_pct": 78.65546345739993
+    }
+  },
+  "empirical_classification": "SAFETY-CHANGING",
+  "governance_audit_classification": "POLICY-DEPENDENT / GOVERNANCE BLOCK",
+  "causal_interpretation": {
+    "core_finding": "Arm B does NOT merely correct an isolated battery-charge mismatch; it imposes an unapproved operational policy that brown-outs non-critical loads to prioritize battery charging.",
+    "priority_hierarchy_arm_a": "Total Load (Critical + Non-Critical) > Battery Charging > Curtailment",
+    "priority_hierarchy_arm_b": "Critical Load > Battery Charging > Flexible Load > Non-Critical Load > Curtailment",
+    "planning_model_structural_cause": "The MILP objective prices critical unmet load (J1) and reserve shortfall (J2), but leaves non-critical load unpriced (0 penalty). Non-critical load is shed by construction (Layer B p_served + unmet_crit = p_crit). The planned charge exists because the planning model ignored non-critical load."
+  },
+  "why_control_changes_substantially": {
+    "rp_drop_pp": -5.1944879216712,
+    "unmet_load_increase_kwh": 2557.43956,
+    "diesel_fuel_decrease_l": -411.6734999999995,
+    "hour0_rp_drop_pp": -33.96976281211495,
+    "hour0_rp_a_pct": 100.0,
+    "hour0_rp_b_pct": 66.03023718788505,
+    "mechanism": "Control B has large unconditional 6-hour lookahead EBR targets, planning mean 36.7 kW battery charge at hour 0. Arm B forces this charge into the battery, shedding 6.1 kW of customer load at hour 0 and 2,557 kWh across the campaign."
+  },
+  "why_candidate_sw_changes_fail_to_pass": {
+    "absolute_load_service_improved": false,
+    "sw_unmet_load_increase_kwh": 1532.801,
+    "sw_rp_drop_pp": -3.29102661479862,
+    "sw_rp_a_pct": 83.26846137547865,
+    "sw_rp_b_pct": 79.97743476068003,
+    "gate2_margin_a_pp": -0.58149000359248,
+    "gate2_margin_b_pp": 1.3219713032801,
+    "mechanism": "Candidate SW did NOT improve load service under Arm B (it shed 1,533 kWh more load). It passed Gate 2 solely because Control B degraded by 5.19 pp, while Candidate SW degraded by only 3.29 pp due to having lower planned charging at hour 0 from wind crediting."
+  },
+  "third_formulation_feasibility": {
+    "defensible_unique_formulation_exists": false,
+    "reason": "Choosing between serving non-critical customer loads and charging battery reserves during energy deficit is fundamentally a Microgrid Operating Policy decision, not an algorithmic bug fix. An executor cannot resolve an economic trade-off that the planning model refused to price."
+  },
+  "governance_verdict": {
+    "candidate_sw_declared_winner": false,
+    "candidate_s_declared_winner": false,
+    "production_promotion_authorized": false,
+    "policy_blocker_summary": "Promoting SW based on Arm B would deploy an algorithm whose apparent safety depends on degrading microgrid customer service by 1,532 kWh. Promoting S based on Arm A deploys an algorithm whose evaluation deviates from its own planned charging. Formal governance policy determination is required."
+  },
+  "required_next_steps": {
+    "option_1_customer_first": "Formally mandate that customer service strictly precedes battery charging (Arm A). Candidate S is confirmed winner (23.11%), SW is permanently disqualified.",
+    "option_2_coordinated_demand_response": "Formally authorize planned non-critical load shedding, but PRICE non-critical load in the MILP objective (value of lost load V_LL). Require a new preregistered campaign."
+  },
+  "verified_artifact_hashes": {
+    "telemetry_csv": "2ccc80687baadeeb2bca05b151b17c9349a21126d76e9fecb71f1cba870a20d9",
+    "results_csv": "87849c7cb882d9cfc21a17759a6abf8043050d47811768daae177250e05f5eb5",
+    "comparison_md": "9bda9e9992ce332649a1cc1bc12906ac41727b616591f1696a6f5561b7f9621a",
+    "comparison_json": "b1120b1ba179c80050c9e07a7235123c67db7537fc874329bfc0f86f0616a9b3",
+    "safety_report_md": "e166924410ffd4cb361205fa91cd525f8dc66145602a1fb226e337591bb9b38e",
+    "safety_report_json": "144bf2742f2643e9de7a2cec4a458613a0491df44f2423c3f9be81d20e1644c8",
+    "statistical_report_md": "3cbdf2eec8a037c5556648e2d6220f3be5155fbeb9e019c430195ddb41e85736",
+    "statistical_report_json": "eb786a9099315a4cb7484ebf3f896894692e03a118a9862662f5b797ba1c2d83",
+    "execution_audit_md": "7aa0e85ee15e7acfad7760de998028a07dd190ef88e21ddf3c74887a1923d4b1",
+    "execution_audit_json": "328de18f46bdc88e9bab8d2cfe5120bc8114791377814792d23f34cbe1ede898",
+    "manifest_json": "12099a9503764fd7be36cf4080649721d4ce8186afa2cef11e08f9233bb3126e",
+    "audit_report_md": "experiments/POST_STAGE4_REALIZATION_CAUSAL_GOVERNANCE_AUDIT.md",
+    "audit_report_md_sha256": "16cac67c4eb7e98f479ad49f2b29ac2cd9deace423419d476ab366a1fd470491"
+  }
+}

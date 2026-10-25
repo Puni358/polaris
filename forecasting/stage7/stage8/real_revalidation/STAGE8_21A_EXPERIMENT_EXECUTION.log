@@ -1,0 +1,4 @@
+[15:38:18] === STAGE 8.21A GOVERNED EXPERIMENT EXECUTION ===
+[15:38:18] Loading Stage 8.1 Baseline Data...
+[15:38:18] Loaded base dataset with 8328 rows.
+[15:38:18] Locked 37 Baseline Control Features: ['origin_index', 'forecast_start', 'horizon_hour', 'forecast_reference_time', 'u700'] ... (8 total)

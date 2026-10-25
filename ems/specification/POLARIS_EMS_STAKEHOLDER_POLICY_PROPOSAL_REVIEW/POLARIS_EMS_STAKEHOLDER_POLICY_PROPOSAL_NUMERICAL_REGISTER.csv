@@ -1,0 +1,21 @@
+decision_id,proposed_value,unit,time_scope,what_it_controls,evidence_supporting_it,evidence_not_supporting_it,station_data_required,engineering_validation_required,human_authorization_required,status
+DECISION_02,5,minutes,per shedding/restoration event,Restoration dwell time before re-shedding same load to prevent chattering,None (qualitative operational practice),No station switching relay speed data in specs,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_03,100,% energy served,continuous in normal/degraded modes,Minimum critical load service level target,Qualitative goal to power loads reliably,No 100% numerical SLA specified in specs,YES,YES,YES,PROVISIONAL_TARGET
+DECISION_04,0,kWh,continuous in normal/degraded modes,Maximum acceptable unmet critical load target,"Rejection of $10,000/kWh penalty as policy",No 0 kWh hard constraint in milp.py,YES,YES,YES,PROVISIONAL_TARGET
+DECISION_04,15,minutes,per outage event,Continuous outage governance review trigger,None,No 15-minute outage review rule in specs,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_04,2,kWh / 30 days,rolling 30-day window,Cumulative unmet critical load governance review trigger,None,No 2 kWh cumulative review rule in specs,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_05,0 / 5,seconds,per transfer event,CRITICAL load max continuous interruption / transfer gap,None,optimizer.yaml uses dt = 1.0 hour step size,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_05,30,minutes,per interruption event,ESSENTIAL load max continuous interruption,None,No 30-min interruption limit in optimizer.yaml,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_05,480 (8h),minutes,per interruption event,DEFERRABLE load max continuous interruption,None,No 8-hour interruption limit in optimizer.yaml,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_05,1440 (24h),minutes,per interruption event,INTERRUPTIBLE load max continuous interruption,None,No 24-hour interruption limit in optimizer.yaml,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_08,30,days,resupply cycle / winter baseline,Emergency fuel reserve sizing for CRITICAL+ESSENTIAL loads,None,No 30-day fuel reserve specified in specs,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_09,50–70,% served load,monthly rolling during polar-day,Renewable energy utilization target,Qualitative goal 'maximize renewable integration',No numerical 50-70% target in specs,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_11,35,% SOC,continuous during normal mode,Emergency Battery Reserve (EBR) floor,battery.yaml has soc_min = 0.20 cell protection,35% EBR operational reserve unestablished in battery.yaml,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_11,45,% SOC,precautionary mode,Elevated Emergency Battery Reserve floor ahead of storms,None,No 45% precautionary SOC floor in battery.yaml,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_12,35,% SOC,end of optimization horizon,Minimum terminal SOC floor under normal conditions,milp.py has no terminal SOC constraint,35% min terminal SOC unestablished in milp.py,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_12,55–65,% SOC,end of optimization horizon,Precautionary terminal SOC target ahead of storms,milp.py has no terminal SOC constraint,55-65% terminal target unestablished in milp.py,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_13,15–25,% adjustment,per re-optimization horizon,Solar forecast derate in shoulder seasons,Qualitative goal to mitigate solar uncertainty,No 15-25% solar derate in milp.py,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_13,20–30,% adjustment,per re-optimization horizon,Wind forecast derate,Qualitative goal to mitigate forecast uncertainty,No 20-30% wind derate in milp.py,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_13,+10,% adjustment,per re-optimization horizon,Demand forecast margin,Qualitative goal to protect load,No +10% demand margin in milp.py,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_13,1–6,hours,receding horizon interval,Rolling re-optimization frequency,MPC concept documented in specs,No 1-6h interval enforced in milp.py,YES,YES,YES,PROVISIONAL_ASSUMPTION
+DECISION_16,72,hours,per emergency deviation event,Emergency governance deviation reporting window,None,No 72-hour reporting window in project specs,NO,NO,YES,PROVISIONAL_ASSUMPTION

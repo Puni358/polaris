@@ -1,0 +1,25 @@
+audit_document,10_DISPATCHPLAN_REPORTING_REQUIREMENTS
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# DISPATCHPLAN REPORTING REQUIREMENTS (OI-7 RESOLUTION)
+# ============================================================
+
+field_name,data_type,units,description,current_schema_status,required_additive_status
+stage1_achieved_objective,float,Wh,Achieved Stage 1 critical load unmet energy,ABSENT (Single composite objective_value present),REQUIRED ADDITIVE FIELD
+stage2_achieved_objective,float,Wh,Achieved Stage 2 EBR and terminal reserve shortfall,ABSENT,REQUIRED ADDITIVE FIELD
+stage3_achieved_objective,float,Liters (L),Achieved Stage 3 fuel consumption in Liters,ABSENT,REQUIRED ADDITIVE FIELD
+stage4_achieved_objective,float,Wh,Achieved Stage 4 avoidable renewable curtailment,ABSENT,REQUIRED ADDITIVE FIELD
+stage_optimum_values,List[float],vaires,Vector of optimal objective values [J1* J2* J3* J4*],ABSENT,REQUIRED ADDITIVE FIELD
+lexicographic_tolerances_applied,List[float],varies,Vector of locking tolerances applied [epsilon_1 epsilon_2 epsilon_3 epsilon_4],ABSENT,REQUIRED ADDITIVE FIELD
+solver_status,str,unitless,Detailed multi-stage solver execution status,PARTIAL (constraint_status string present),REQUIRED ENHANCEMENT
+feasibility_status,str,unitless,Governed feasibility mode status (NORMAL DEGRADED INFEASIBLE),ABSENT,REQUIRED ADDITIVE FIELD
+fuel_consumption_liters,float,Liters (L),Total fuel consumed over 24-hour horizon,ABSENT,REQUIRED ADDITIVE FIELD
+critical_served_energy_wh,float,Wh,Total critical load energy served,ABSENT (load_served is aggregate),REQUIRED ADDITIVE FIELD
+critical_unmet_energy_wh,float,Wh,Total critical load energy unmet,ABSENT (unmet_load is aggregate),REQUIRED ADDITIVE FIELD
+reserve_shortfall_wh,float,Wh,Total emergency battery reserve shortfall energy,ABSENT,REQUIRED ADDITIVE FIELD
+terminal_soc_pct,float,%,Battery SOC percentage at horizon end t=24,ABSENT (battery_soc array present),REQUIRED ADDITIVE FIELD
+renewable_curtailment_wh,float,Wh,Total renewable curtailment energy over horizon,ABSENT (renewable_curtailment power array present),REQUIRED ADDITIVE FIELD

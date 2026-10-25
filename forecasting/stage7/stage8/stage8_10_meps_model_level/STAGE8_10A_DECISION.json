@@ -1,0 +1,62 @@
+{
+  "stage": "STAGE 8.10A TRUE MEPS MODEL-LEVEL CLOUD CONDENSATE FEASIBILITY & NOVELTY AUDIT",
+  "audit_type": "FINAL FORENSIC EVIDENCE & CLAIM AUDIT",
+  "timestamp": "2026-09-12T17:50:00Z",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+  "champion_frozen_odd_metrics": {
+    "mae_w_m2": 36.188657,
+    "nmae_pct": 28.0688,
+    "rmse_w_m2": 54.912301
+  },
+  "audit_decision": "CONDITIONAL",
+  "decision_semantics": "CONDITIONAL refers to the existence of an alternative D-1 00Z model-level archive that is causally available (347/347 origins) but operationally misaligned with the locked Stage 8.1 lead-time protocol (+25h..+48h vs +7h..+30h).",
+  "stage8_10b_justified": false,
+  "final_scientific_conclusion": "True MEPS model-level cloud condensate was not demonstrated to be usable for a Stage 8.10B experiment under the locked POLARIS causal-availability and lead-time protocol because the intended D-1 18Z model-level archive has 0/347 empirical coverage. The alternative D-1 00Z archive is available but changes the information set through a materially longer forecast lead time and therefore does not constitute a clean continuation of the locked benchmark.",
+  "gate_evaluations": [
+    {
+      "dimension": "Data Discovery & GRIB Parameters",
+      "status": "PASS",
+      "details": "Verified 65-level hybrid parameters: mass_fraction_of_cloud_condensed_water_in_air_ml (q_l), mass_fraction_of_cloud_ice_in_air_ml (q_i), ap(k), b(k)."
+    },
+    {
+      "dimension": "Baseline 18Z Operational Causality",
+      "status": "FAIL",
+      "details": "0 / 347 origins available in MET Norway THREDDS archive for 18Z meps_det_ml files."
+    },
+    {
+      "dimension": "Alternative 00Z Archive Availability",
+      "status": "CONDITIONAL",
+      "details": "347 / 347 origins available for 00Z meps_det_ml, but requires lead times +25h..+48h (+18h lead penalty)."
+    },
+    {
+      "dimension": "Vertical Coordinate Reconstruction",
+      "status": "PASS",
+      "details": "Successfully formulated p(k) = ap(k) + b(k) * p_sfc Arakawa hybrid pressure reconstruction."
+    },
+    {
+      "dimension": "Surface Pressure Truncation",
+      "status": "PASS",
+      "details": "Sub-surface levels (p(k) > p_sfc ~928 hPa at Nuolja 702m ASL) physically masked."
+    },
+    {
+      "dimension": "Information Novelty Boundaries",
+      "status": "UNTESTED ROUTE",
+      "details": "Vertical profile shape represents potentially novel information, but remains untested due to 18Z archive unavailability."
+    },
+    {
+      "dimension": "Computational Burden",
+      "status": "CONDITIONAL",
+      "details": "16,656 expected step files with >1.46 TB estimated theoretical storage volume."
+    }
+  ],
+  "firewall_integrity_verification": {
+    "stage8_1_champion_unchanged": true,
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "model_training": false,
+    "cross_validation": false,
+    "hyperparameter_tuning": false,
+    "master_handoff_modified": false
+  }
+}

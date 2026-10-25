@@ -1,0 +1,58 @@
+{
+  "diagnostic_metadata": {
+    "campaign_id": "forecast_vs_optimizer_cycle_diagnostic_20260930",
+    "timestamp": "2026-09-30T23:53:00Z",
+    "trajectory": "polaris_2024_annual_365d_8784h",
+    "lead_investigator": "POLARIS Research & Governance Execution Agent",
+    "governance_mode": "RESEARCH_ONLY",
+    "status": "COMPLETED",
+    "final_classification": "OPTIMIZER_LIMITATION_DOMINANT"
+  },
+  "experiments": [
+    {
+      "experiment_id": "EXP_CONTROL_C0",
+      "name": "Current POLARIS Control",
+      "forecast_type": "EXISTING_POLARIS_FORECAST",
+      "objective_type": "STANDARD_SYNTHETIC_PROXY",
+      "degradation_penalty_per_kWh": 0.05,
+      "efficiency": 0.8464,
+      "target_efc": 4.04
+    },
+    {
+      "experiment_id": "EXP_A_CYCLE_ENABLED",
+      "name": "Cycle-Enabled Optimizer",
+      "forecast_type": "EXISTING_POLARIS_FORECAST",
+      "objective_type": "ZERO_DEGRADATION_RESEARCH_OBJECTIVE",
+      "degradation_penalty_per_kWh": 0.0,
+      "efficiency": 0.8464,
+      "target_efc_range": "40-60 EFC"
+    },
+    {
+      "experiment_id": "EXP_B_CONTROLLED_50EFC",
+      "name": "Controlled ~50 EFC Dispatch",
+      "forecast_type": "EXISTING_POLARIS_FORECAST",
+      "objective_type": "EXPLICIT_50EFC_RESEARCH_CONSTRAINT",
+      "degradation_penalty_per_kWh": 0.0,
+      "efficiency": 1.0,
+      "target_efc": 49.25
+    },
+    {
+      "experiment_id": "EXP_C_REACTIVE_HYBRID",
+      "name": "Reactive Hybrid Replay",
+      "forecast_type": "REACTIVE_RULE_BASED",
+      "objective_type": "REACTIVE_THRESHOLD_DISPATCH",
+      "degradation_penalty_per_kWh": 0.0,
+      "efficiency": 0.8464,
+      "target_efc": 49.59
+    },
+    {
+      "experiment_id": "EXP_D_PERFECT_FORECAST",
+      "name": "Perfect Forecast Diagnostic",
+      "forecast_type": "PERFECT_FUTURE_GROUND_TRUTH",
+      "objective_type": "ZERO_DEGRADATION_RESEARCH_OBJECTIVE",
+      "degradation_penalty_per_kWh": 0.0,
+      "efficiency": 1.0,
+      "target_efc": 49.59
+    }
+  ]
+}

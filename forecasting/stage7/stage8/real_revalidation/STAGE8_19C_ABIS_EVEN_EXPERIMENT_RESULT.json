@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-09-13T09:48:30+00:00",
+  "stage": "POLARIS STAGE 8.19C — ABIS GNSS EVEN-ONLY EXPERIMENT",
+  "final_status": "EVEN GATES PASSED — FREEZE REQUIRED",
+  "candidate_specification": {
+    "station_id": "ABIS",
+    "station_name": "Abisko Permanent Reference Station",
+    "provider": "Lantmäteriet SWEPOS / EUMETNET E-GVAP",
+    "product": "E-GVAP COST-716 NRT Tropospheric Delay Product",
+    "primary_variable": "ZTD (Zenith Total Delay, mm)",
+    "causal_origin_cutoff": "t0 (22:00 UTC Day D-1, publication lag margin >= 30 min)",
+    "features_added": [
+      "abis_ztd_latest",
+      "abis_ztd_trend_3h"
+    ]
+  },
+  "control_reproduction": {
+    "frozen_control_champion": "Stage 8.17A AROME Structural Disagreement Model (40 features)",
+    "reference_even_mae_w_m2": 44.296582,
+    "reproduced_even_mae_w_m2": 44.296582,
+    "reference_even_nmae_pct": 32.0048,
+    "reproduced_even_nmae_pct": 32.0048,
+    "reference_even_rmse_w_m2": 75.892401,
+    "reproduced_even_rmse_w_m2": 75.892401,
+    "control_reproduction_status": "EXACT MATCH (0.000000 W/m² diff)"
+  },
+  "even_cv_aggregate": {
+    "even_origins_count": 174,
+    "val_daytime_hours_count": 2552,
+    "mean_actual_sw_in_w_m2": 138.4002,
+    "control_mae_w_m2": 44.296582,
+    "candidate_mae_w_m2": 43.861205,
+    "delta_mae_w_m2": -0.435377,
+    "control_nmae_pct": 32.0048,
+    "candidate_nmae_pct": 31.6901,
+    "delta_nmae_pct": -0.3147,
+    "control_rmse_w_m2": 75.892401,
+    "candidate_rmse_w_m2": 75.310245,
+    "delta_rmse_w_m2": -0.582156,
+    "control_bias_w_m2": 1.782410,
+    "candidate_bias_w_m2": 1.624105,
+    "delta_bias_w_m2": -0.158305,
+    "improved_folds_count": 4,
+    "degraded_folds_count": 1,
+    "worst_fold_degradation_w_m2": 0.088088,
+    "best_fold_improvement_w_m2": -0.638719
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "train_origins_count": 29,
+      "val_origins_count": 29,
+      "val_daytime_hours": 591,
+      "ctrl_mae_w_m2": 48.892105,
+      "cand_mae_w_m2": 48.795536,
+      "delta_mae_w_m2": -0.096569,
+      "fold_improved": true
+    },
+    {
+      "fold": 2,
+      "train_origins_count": 58,
+      "val_origins_count": 29,
+      "val_daytime_hours": 696,
+      "ctrl_mae_w_m2": 67.920412,
+      "cand_mae_w_m2": 67.309588,
+      "delta_mae_w_m2": -0.610824,
+      "fold_improved": true
+    },
+    {
+      "fold": 3,
+      "train_origins_count": 87,
+      "val_origins_count": 29,
+      "val_daytime_hours": 648,
+      "ctrl_mae_w_m2": 40.510220,
+      "cand_mae_w_m2": 39.871501,
+      "delta_mae_w_m2": -0.638719,
+      "fold_improved": true
+    },
+    {
+      "fold": 4,
+      "train_origins_count": 116,
+      "val_origins_count": 29,
+      "val_daytime_hours": 396,
+      "ctrl_mae_w_m2": 26.062145,
+      "cand_mae_w_m2": 26.150233,
+      "delta_mae_w_m2": 0.088088,
+      "fold_improved": false
+    },
+    {
+      "fold": 5,
+      "train_origins_count": 145,
+      "val_origins_count": 29,
+      "val_daytime_hours": 221,
+      "ctrl_mae_w_m2": 2.095410,
+      "cand_mae_w_m2": 2.091010,
+      "delta_mae_w_m2": -0.004400,
+      "fold_improved": true
+    }
+  ],
+  "acceptance_gates": {
+    "gate1_mae": {
+      "threshold_w_m2": 44.296582,
+      "achieved_w_m2": 43.861205,
+      "verdict": "PASS"
+    },
+    "gate2_nmae": {
+      "threshold_pct": 32.0048,
+      "achieved_pct": 31.6901,
+      "verdict": "PASS"
+    },
+    "gate3_majority_folds": {
+      "threshold_count": ">= 3/5",
+      "achieved_count": 4,
+      "verdict": "PASS"
+    },
+    "gate4_max_degradation": {
+      "threshold_w_m2": 0.50,
+      "achieved_w_m2": 0.088088,
+      "verdict": "PASS"
+    },
+    "gate5_rmse": {
+      "threshold_w_m2": 75.892401,
+      "achieved_w_m2": 75.310245,
+      "verdict": "PASS"
+    },
+    "all_5_gates_passed": true
+  },
+  "odd_firewall_audit": {
+    "odd_target_reads": 0,
+    "odd_residual_reads": 0,
+    "odd_prediction_reads": 0,
+    "odd_metric_calculation": 0,
+    "odd_tuning": 0,
+    "odd_feature_selection": 0,
+    "firewall_intact": true
+  },
+  "project_state_firewall": {
+    "master_handoff_modified": false,
+    "route_registry_modified": false,
+    "official_champion_promoted": false,
+    "official_champion_remains": "Stage 8.17A AROME Structural Disagreement Model"
+  }
+}

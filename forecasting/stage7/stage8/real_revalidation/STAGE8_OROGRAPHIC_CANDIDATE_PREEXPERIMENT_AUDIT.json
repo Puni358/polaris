@@ -1,0 +1,75 @@
+{
+  "timestamp_utc": "2026-09-13T16:46:15Z",
+  "audit_title": "POLARIS Stage 8 Orographic Candidate Pre-Experiment Scientific Audit",
+  "governance_starting_point": "STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.md",
+  "operational_champion": "Stage 8.1 37-feature HGB champion (ODD daytime nMAE 28.0688%)",
+  "governance_firewall": {
+    "even_experiment_executed": false,
+    "odd_targets_accessed": false,
+    "champion_changed": false,
+    "master_handoff_changed": false,
+    "route_registry_changed": false
+  },
+  "section_1_orographic_flow_regime_audit": {
+    "scandes_barrier_orientation_deg": 200.0,
+    "terrain_normal_inflow_axis_deg": 290.0,
+    "physical_defensibility": "Defensible. 290 deg aligns with regional Scandes barrier-normal axis AND local Tornetrask valley inflow funnel.",
+    "meps_wind_level": "700 hPa (~3000m a.s.l.), representing synoptic cross-barrier steering layer above boundary layer friction.",
+    "u_perp_formula": "U_perp = -0.9397 * u700 + 0.3420 * v700",
+    "brunt_vaisala_n_layer": "P_sfc to 700 hPa (~341m to 3000m a.s.l.)",
+    "virtual_temperature_included": true,
+    "mountain_height_h_m": 828,
+    "mountain_height_definition": "Effective mountain relief (Nuolja summit 1169m - Tornetrask valley 341m)",
+    "froude_formula": "Fr = U_perp / (N * h)",
+    "single_scalar_fr_assessment": "Physically sound for linear barrier at Abisko; combined with U_perp to preserve velocity magnitude.",
+    "moist_froude_status": "Kept as secondary research variant; dry Fr and U_perp pre-registered to prevent overfitting.",
+    "novelty_vs_stage8_1": "Genuinely novel physical representation: flow relative to mountain barrier, distinct from raw Cartesian u700/v700."
+  },
+  "section_2_orographic_uplift_audit": {
+    "operator_formula": "w_kin = U_perp * grad(z_terrain)",
+    "scientific_nomenclature": "Kinematic Orographic Forced Ascent Proxy (NOT actual vertical velocity)",
+    "physical_interpretation": "Rate of forced upward deflection along Nuolja mountain slope",
+    "verdict": "Valid kinematic slope-flow proxy; renamed to w_kin to preserve scientific rigor"
+  },
+  "section_3_inter_run_cloud_evolution_audit": {
+    "run_issuance_A": "D-1 12:00 UTC (pub ~15:30 UTC)",
+    "run_issuance_B": "D-1 18:00 UTC (pub ~21:30 UTC)",
+    "t0": "D-0 00:00 UTC",
+    "causal_availability_verdict": "D-0 00:00 UTC run is published at 02:30 UTC (past t0) and FAILS CAUSALITY. Only (18z - 12z) difference is causally valid before t0.",
+    "novelty_vs_stage8_5": "Overlaps with Stage 8.5 forecast revisions, which demonstrated that inter-run deltas are mostly cycle noise.",
+    "classification": "B. USEFUL BUT MOSTLY REPACKAGED EXISTING INFORMATION"
+  },
+  "section_4_classification_summary": [
+    {
+      "candidate": "Barrier-Normal Wind U_perp & Mountain Froude Number Fr",
+      "causal_status": "PASS (100% causal)",
+      "novelty_vs_stage8_1": "GENUINELY NOVEL (Flow-relative-to-barrier representation)",
+      "classification": "A. GENUINELY NOVEL + CAUSAL + BENCHMARK FEASIBLE"
+    },
+    {
+      "candidate": "Kinematic Orographic Uplift Proxy w_kin",
+      "causal_status": "PASS (100% causal)",
+      "novelty_vs_stage8_1": "GENUINELY NOVEL (Forced slope ascent proxy)",
+      "classification": "A. GENUINELY NOVEL + CAUSAL + BENCHMARK FEASIBLE"
+    },
+    {
+      "candidate": "Causal Inter-Run LWP Tendency (18z - 12z)",
+      "causal_status": "PASS",
+      "novelty_vs_stage8_1": "REPACKAGED (Overlaps Stage 8.5 forecast revisions)",
+      "classification": "B. USEFUL BUT MOSTLY REPACKAGED EXISTING INFORMATION"
+    },
+    {
+      "candidate": "Non-Causal Inter-Run LWP Tendency (00z - 18z)",
+      "causal_status": "FAIL (pub 02:30 > t0 00:00)",
+      "novelty_vs_stage8_1": "N/A",
+      "classification": "C. NOVEL BUT CAUSALLY INFEASIBLE"
+    }
+  ],
+  "recommended_candidate_for_experiment": {
+    "candidate_package": "OROGRAPHIC FLOW REGIME (U_perp and Fr)",
+    "feature_1": "U_perp = -0.9397 * u700 + 0.3420 * v700",
+    "feature_2": "Fr = U_perp / (N * h)",
+    "preexperiment_audit_status": "PASSED SCIENTIFIC AUDIT — READY FOR EXPERIMENT PRE-REGISTRATION SPECIFICATION",
+    "even_experiment_authorized": false
+  }
+}

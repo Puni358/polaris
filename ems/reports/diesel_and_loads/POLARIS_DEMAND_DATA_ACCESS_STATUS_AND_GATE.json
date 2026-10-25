@@ -1,0 +1,190 @@
+{
+  "document_id": "POLARIS_DEMAND_DATA_ACCESS_STATUS_AND_GATE",
+  "date_utc": "2026-09-18",
+  "track": "PATH_A_DEMAND_FORECASTING",
+  "phase": "PHASE_D_A1_5_DEMAND_DATA_ACCESS_GATE",
+  "task_type": "BOUNDED_DATA_ACCESS_STATUS_AND_NEXT_ACTION_QUALIFICATION",
+  "authorization_status": "AUTHORIZED_D_A1_5_ACCESS_PASS_ONLY",
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "DEMAND_TRACK_STATUS": "D_A1_5_GATE_COMPLETED",
+    "DEMAND_TARGET_STATUS": "NOT_ESTABLISHED",
+    "DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "STATE_DECISION": "STATE_C_ROUTES_UNRESOLVED_OR_FAILED_NO_MEASURED_DATASET_RECEIVED",
+    "ACTUALLY_RECEIVED": false,
+    "DEMAND_A2_AUTHORIZATION": "NOT_AUTHORIZED",
+    "DEMAND_A2_STATUS": "NOT_READY",
+    "SYNTHETIC_FIXTURE_STATUS": "PRESERVED_FOR_TESTING_ONLY",
+    "NEXT_GOVERNED_STEP": "DEMAND_DATA_REMAINS_BLOCKED"
+  },
+  "authoritative_a1_baseline": {
+    "DEMAND_TARGET_STATUS": "NOT_ESTABLISHED",
+    "DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "baseline_wording": "No suitable open-access continuous high-resolution measured station-demand series was established during the bounded qualification.",
+    "preferred_target_variable": "Continuous measured active electrical power demand P_load (W or kW)",
+    "preferred_resolution": "delta_t <= 1 hour",
+    "non_equivalent_metrics": [
+      "Monthly/annual energy consumption totals (kWh)",
+      "Generator fuel usage (L/h)",
+      "Generator runtime hours",
+      "Renewable PV/Wind generation (kW)",
+      "Installed capacity (kW)",
+      "Peak load summary statistics"
+    ]
+  },
+  "candidate_datasets_matrix": [
+    {
+      "dataset_identity": "AADC_ANTARCTIC_STATION_ENERGY",
+      "custodian": "Australian Antarctic Division (AAD)",
+      "station_site": "Mawson, Davis, Casey, Macquarie Island (Antarctica)",
+      "measurement_type": "Electricity Consumption & Fuel Usage",
+      "measurement_units": "Monthly kWh / Fuel Liters",
+      "temporal_resolution": "Monthly (Archived) / 1-hour Logger (Restricted)",
+      "time_coverage": "1993-2016",
+      "measured_vs_proxy": "MEASURED_AGGREGATED",
+      "raw_vs_aggregated": "AGGREGATED",
+      "access_status": "DELIVERY_FAILED",
+      "scientific_status": "INSUFFICIENT",
+      "actually_received": false,
+      "notes": "Recipient 550 5.7.133 error. Monthly public totals far too coarse for 1h MPC; restricted logger inaccessible."
+    },
+    {
+      "dataset_identity": "SANAE_IV_STATION_ELECTRICAL_LOAD",
+      "custodian": "South African National Antarctic Programme (SANAP)",
+      "station_site": "SANAE IV Station (Dronning Maud Land, Antarctica)",
+      "measurement_type": "Active Electrical Load (P_load)",
+      "measurement_units": "kilowatts (kW)",
+      "temporal_resolution": "1-hour operational logging",
+      "time_coverage": "Multi-year operational logging",
+      "measured_vs_proxy": "MEASURED_DIRECT_TARGET",
+      "raw_vs_aggregated": "RAW",
+      "access_status": "RESTRICTED",
+      "scientific_status": "CONDITIONALLY_ESTABLISHED",
+      "actually_received": false,
+      "notes": "Documented in literature (~72 kW base, ~150 kW peak). Raw time series restricted; request dispatched."
+    },
+    {
+      "dataset_identity": "PRINCESS_ELISABETH_MICROGRID_LOAD",
+      "custodian": "International Polar Foundation (IPF)",
+      "station_site": "Princess Elisabeth Antarctica Station (Utsteinen)",
+      "measurement_type": "Microgrid Load Prioritization Telemetry",
+      "measurement_units": "kilowatts (kW)",
+      "temporal_resolution": "Sub-hourly / 1-hour microgrid logging",
+      "time_coverage": "Multi-year operational grid profile",
+      "measured_vs_proxy": "MEASURED_DIRECT_TARGET",
+      "raw_vs_aggregated": "RAW",
+      "access_status": "RESTRICTED",
+      "scientific_status": "CONDITIONALLY_ESTABLISHED",
+      "actually_received": false,
+      "notes": "Zero-emission smart microgrid profile. Raw data restricted; request dispatched."
+    },
+    {
+      "dataset_identity": "ACEP_ARCTIC_REMOTE_MICROGRID_DEMAND",
+      "custodian": "Alaska Center for Energy and Power (ACEP / UAF)",
+      "station_site": "Kotzebue, Cordova, Wales, St. Mary's (Alaska, Arctic)",
+      "measurement_type": "Remote Community Electrical Demand (P_load)",
+      "measurement_units": "kilowatts (kW)",
+      "temporal_resolution": "1-hour continuous time series",
+      "time_coverage": "Multi-year community load profiles",
+      "measured_vs_proxy": "MEASURED_PROXY",
+      "raw_vs_aggregated": "RAW",
+      "access_status": "RESTRICTED",
+      "scientific_status": "CONDITIONALLY_ESTABLISHED",
+      "actually_received": false,
+      "notes": "Arctic remote community load profile proxy. Subject to utility NDAs; request dispatched."
+    },
+    {
+      "dataset_identity": "OPENEI_KAGGLE_REMOTE_LOAD_PROXIES",
+      "custodian": "OpenEI / NREL / Kaggle Community",
+      "station_site": "Generic Anonymized Remote Grids",
+      "measurement_type": "Normalized Load Profiles",
+      "measurement_units": "Unitless / Normalized",
+      "temporal_resolution": "1-hour",
+      "time_coverage": "Synthetic/Standardized 1-year",
+      "measured_vs_proxy": "ANONYMIZED_PROXY",
+      "raw_vs_aggregated": "AGGREGATED",
+      "access_status": "OPEN",
+      "scientific_status": "INSUFFICIENT",
+      "actually_received": true,
+      "notes": "Generic proxies. Unsuitable as empirical polar research station demand target."
+    },
+    {
+      "dataset_identity": "LOCAL_POLARIS_DEMO_SCENARIO_FIXTURES",
+      "custodian": "POLARIS Project Codebase",
+      "station_site": "Synthetic Polar Benchmark Station",
+      "measurement_type": "Synthetic Active Electrical Demand",
+      "measurement_units": "Watts (W)",
+      "temporal_resolution": "1-hour",
+      "time_coverage": "168-hour / 24-hour scenarios",
+      "measured_vs_proxy": "SYNTHETIC",
+      "raw_vs_aggregated": "SYNTHETIC_GENERATED",
+      "access_status": "OPEN",
+      "scientific_status": "INSUFFICIENT",
+      "actually_received": true,
+      "notes": "Preserved for system regression and EMS testing. Prohibited as empirical target ground truth."
+    }
+  ],
+  "access_routes_audit": [
+    {
+      "custodian": "Australian Antarctic Division (AAD)",
+      "attempted_contact": "aadcwebqueries@aad.gov.au",
+      "route_status": "DELIVERY_FAILED",
+      "error_code": "550 5.7.133",
+      "data_access_decision": "NOT_RECEIVED_NOT_REVIEWED",
+      "scientific_interpretation": "NONE (Recipient-side mail server restriction; NOT a scientific rejection)",
+      "retry_authorized": false
+    },
+    {
+      "custodian": "SANAP (South Africa)",
+      "attempted_contact": "antarcticlegacy@sun.ac.za",
+      "route_status": "DISPATCHED_AWAITING_CUSTODIAN_RESPONSE",
+      "data_access_decision": "NOT_RECEIVED",
+      "scientific_interpretation": "REQUEST_PENDING",
+      "retry_authorized": false
+    },
+    {
+      "custodian": "International Polar Foundation (IPF)",
+      "attempted_contact": "info@polarfoundation.org",
+      "route_status": "DISPATCHED_AWAITING_CUSTODIAN_RESPONSE",
+      "data_access_decision": "NOT_RECEIVED",
+      "scientific_interpretation": "REQUEST_PENDING",
+      "retry_authorized": false
+    },
+    {
+      "custodian": "ACEP / UAF (Alaska)",
+      "attempted_contact": "ACEP.info@alaska.edu",
+      "route_status": "DISPATCHED_AWAITING_CUSTODIAN_RESPONSE",
+      "data_access_decision": "NOT_RECEIVED",
+      "scientific_interpretation": "REQUEST_PENDING",
+      "retry_authorized": false
+    }
+  ],
+  "demand_a2_gate": {
+    "DEMAND_A2_AUTHORIZATION": "NOT_AUTHORIZED",
+    "DEMAND_A2_STATUS": "NOT_READY",
+    "gate_prerequisites_satisfied": false,
+    "prerequisite_gap": "Zero measured continuous high-resolution station demand series received locally (ACTUALLY_RECEIVED = NO)."
+  },
+  "synthetic_data_firewall": {
+    "synthetic_fixtures_preserved": true,
+    "relabeling_as_measured_prohibited": true,
+    "use_as_empirical_ground_truth_prohibited": true
+  },
+  "governance_firewall_verification": {
+    "DEMAND_MODELING": "NOT_AUTHORIZED",
+    "DEMAND_FORECASTING": "NOT_AUTHORIZED",
+    "FEATURE_ENGINEERING_FOR_DEMAND": "NOT_AUTHORIZED",
+    "MODEL_TRAINING": "NOT_AUTHORIZED",
+    "MODEL_SELECTION": "NOT_AUTHORIZED",
+    "MODEL_EVALUATION": "NOT_AUTHORIZED",
+    "NEW_DEMAND_EXPERIMENTS": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_MODIFICATION": "NOT_AUTHORIZED",
+    "FORECASTENGINE_MODIFICATION": "NOT_AUTHORIZED",
+    "STATIONSTATE_MODIFICATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "MPC_INTEGRATION": "NOT_AUTHORIZED",
+    "DIGITAL_TWIN_MODIFICATION": "NOT_AUTHORIZED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED",
+    "FROZEN_TRACKS_INTACT": true
+  }
+}

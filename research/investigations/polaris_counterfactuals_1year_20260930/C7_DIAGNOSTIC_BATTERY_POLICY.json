@@ -1,0 +1,13 @@
+{
+  "experiment_id": "C7_DIAGNOSTIC_BATTERY_POLICY",
+  "description": "Diagnostic battery policy encouraging reserve discharge",
+  "status": "PASS",
+  "diesel_fuel_l": 77022.5981,
+  "delta_fuel_vs_c0_l": -16443.0283,
+  "delta_fuel_vs_c0_pct": -17.59,
+  "diesel_energy_kwh": 165770.3923,
+  "renewable_curtailment_kwh": 21460.4,
+  "battery_discharge_kwh": 9917.5253,
+  "battery_cycles": 49.5876,
+  "unmet_load_kwh": 0.0
+}

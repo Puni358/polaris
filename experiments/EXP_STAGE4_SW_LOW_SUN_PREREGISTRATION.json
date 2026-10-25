@@ -1,0 +1,209 @@
+{
+  "experiment_id": "EXP-STAGE4-SW-LOW-SUN-2025-HOLDOUT",
+  "design_version": "STAGE4-PREREG-v1.0",
+  "date_utc": "2026-10-05",
+  "governance_status": "PREREGISTRATION FROZEN — NOT IMPLEMENTED — NOT EXECUTED",
+  "markdown_companion": {
+    "path": "experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.md",
+    "sha256": "9cb2d5459894be8add07a3bd01595f40ab2485c2a18510765c4d8f0264fe4e46"
+  },
+  "governing_documents": {
+    "design": "experiments/STAGE4_SW_SAFE_EFFICIENCY_RESEARCH_DESIGN.md",
+    "holdout_governance_md": {"path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.md", "sha256": "22e67a16a90ef90fa88b248614a83d853511a33619548272535e05615314d7a7"},
+    "holdout_governance_json": {"path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.json", "sha256": "f96fd97c812f44e88455c966c500a3874a99f07b8ae94744759d0fac6b461bf7"}
+  },
+  "hypothesis": {
+    "H0": "Reserve protection does not explain the night loss; loss equally present in S-L and SW-L",
+    "H1": "Renewable credit degrades reliability across the day regardless of protection (SW-L fails proportional, S-L passes, wind contrast negative)",
+    "H2": "Loss arises from removing stored-energy protection at low sun (SW-L passes proportional gate)"
+  },
+  "arms": {
+    "control_b": {"renewable_credit": "none", "low_sun_protection": null, "role": "safety and fuel reference; re-executed on 2025"},
+    "S": {"renewable_credit": "solar", "low_sun_protection": false, "role": "reference; identity S-L(OFF) == S"},
+    "SW": {"renewable_credit": "solar+wind", "low_sun_protection": false, "role": "reference; identity SW-L(OFF) == SW"},
+    "S-L": {"renewable_credit": "solar", "low_sun_protection": true, "role": "efficiency reference"},
+    "SW-L": {"renewable_credit": "solar+wind", "low_sun_protection": true, "role": "final candidate"}
+  },
+  "equations": {
+    "notation": {
+      "origin_day_hour_t": "0..23",
+      "horizon_window": "k in {t..min(t+5,23)}",
+      "eta": 0.92,
+      "delta_t_h": 1,
+      "c_k": "min(11600 W, D_forecast[k])",
+      "s_k": "bundle.solar_generation.point[k] (W)",
+      "w_k": "bundle.wind_generation.point[k] (W)",
+      "L_k": "1[e_k < 15 deg]",
+      "e_k": "solar elevation at horizon step k, pvlib 0.16.1, Etc/GMT-1, not corrected"
+    },
+    "E_B": "(1/eta) * sum_k c_k * dt",
+    "E_S": "(1/eta) * sum_k max(0, c_k - s_k) * dt",
+    "E_SW": "(1/eta) * sum_k max(0, c_k - s_k - w_k) * dt",
+    "E_SL": "(1/eta) * sum_k max(0, c_k - (1 - L_k) * s_k) * dt",
+    "E_SWL": "(1/eta) * sum_k max(0, c_k - (1 - L_k) * (s_k + w_k)) * dt",
+    "horizon_edge": "E_stage2[23] = max(E_arm[23], E_term), E_term = 100000 Wh (all arms)",
+    "structural_properties": [
+      "L_k = 1 everywhere => E_SL = E_SWL = E_B",
+      "L_k = 0 everywhere => E_SL = E_S and E_SWL = E_SW",
+      "E_SW <= E_SWL <= E_B and E_S <= E_SL <= E_B pointwise",
+      "per-hour replacement, no additive or max(EBR, R) combination"
+    ]
+  },
+  "low_sun_rule": {
+    "threshold_deg": 15,
+    "comparison": "strict: L_k = 1 iff e_k < 15",
+    "status": "existing research regime convention; NOT a physical constant; NOT governance-authorized; frozen, must not be tuned after holdout inspection",
+    "source_convention": "Low_0_15 / Mid_15_30 / High_gt_30 bin in CROSS_YEAR_ERROR_STABILITY_AUDIT.md and EXP_CONFORMAL_TRAJECTORY_OFFLINE/run_offline_validation.py line 119"
+  },
+  "holdout_2025": {
+    "population_rule": "every 00:00 UTC forecast_start from 2025-05-01 through 2025-08-31 inclusive",
+    "expected_origins": 123,
+    "expected_origin_hours": 2952,
+    "exclusion_allowed": "incomplete required inputs only",
+    "exclusion_forbidden": ["route", "solar_elevation", "low_sun_hours", "candidate_behaviour", "forecast_performance", "reliability", "diesel_consumption"],
+    "route_status": "diagnostic only; population label NORMAL is an initial-state setting; router step-0 2025 = EMERGENCY 123, NORMAL 0",
+    "input_completeness": {"result": "PASS", "origins_available": 123, "origins_missing": 0, "nan_rows": 0},
+    "superseded_design_text": "design section 14.2 'NORMAL-route origins' superseded by calendar rule",
+    "candidate_results_inspected": false
+  },
+  "nwp_provenance": {
+    "chain": "SAME CAUSAL FORECAST CHAIN (governance resolution section 1)",
+    "source_api": "https://previous-runs-api.open-meteo.com/v1/forecast",
+    "model": "metno_seamless",
+    "variables": ["cloud_cover_previous_day1", "temperature_2m_previous_day1", "relative_humidity_2m_previous_day1", "precipitation_previous_day1", "surface_pressure_previous_day1", "wind_speed_10m_previous_day1"],
+    "imputation": "none",
+    "pass_rule": "all 24 horizons non-null for all six variables",
+    "horizon_convention": "horizon 1 at forecast_start hour (verified)",
+    "generator_2024_locked": {"path": "clear_sky/audit_clean_nwp_windows.py", "sha256": "c8f1a2204af1703296e32658e5d8890e2bd7f876d554a2b1a5ee46f1bc50ad21"},
+    "generator_2025_replica": {"path": "clear_sky/audit_clean_nwp_windows_2025.py", "sha256": "5d38d1c4976bffd53a114b652e610d299a713a0bd62e14031a9b661150ce724c"},
+    "nwp_2024_campaign": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv", "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"},
+    "nwp_2025_holdout": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv", "sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5"},
+    "nwp_2025_manifest": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2025_MANIFEST.json", "sha256": "534ed055d632950c474e4a38ff11b4b31f16955e6dff5968b7acabd31edf14cf"},
+    "origin_source_difference": "2024 locked benchmark CSV vs 2025 SITES-timeline-derived; same 00:00 UTC convention",
+    "label_inconsistency": "Stage 8.1 freeze label 'NWP (clean, audit-only)' classified as documentation label error; freeze not altered",
+    "release_time_caveat": "previous_day1 release-time semantics not verified by repository; identical for both years; no real-time operational availability claim"
+  },
+  "solar_elevation": {
+    "module": "clear_sky/compute_clearsky_2025.py",
+    "sha256": "3ac68ee705e9a9ec68044687c5df79100082d9ab172d09baac70dde6be00ed54",
+    "library": "pvlib 0.16.1 Location.get_solarposition ['elevation']",
+    "latitude_deg": 68.362074,
+    "longitude_deg": 18.738752,
+    "elevation_argument": "not supplied (pvlib default)",
+    "atmospheric_assumptions": "none supplied",
+    "timezone": "naive timestamp localized with Etc/GMT-1",
+    "timestamp_source": "timestamp column of causal NWP file for each horizon hour",
+    "causality": "depends only on timestamp and fixed location",
+    "equivalence": {"matrix_2025_rows": 8736, "matrix_2024_rows": 8328, "max_abs_diff_deg": 0.0, "alternative_tz_UTC_max_abs_diff_deg": 5.532684},
+    "timestamp_offset_caveat": "elevation at timestamp T is the true elevation at UTC instant T-1h; not corrected; must be reported with every result"
+  },
+  "safety_gates": {
+    "gate_1_critical_first": "R_CF(candidate) - R_CF(Control B) >= 0.00 pp, aggregate over 123 origins / 2952 hours",
+    "gate_2_proportional": "R_P(candidate) - R_P(Control B) >= 0.00 pp, aggregate over 123 origins / 2952 hours",
+    "gate_3_soc": "zero realized SOC below 20.00% in any hour of any origin",
+    "control_b_reference": "Control B re-executed on the 2025 origins under identical machinery",
+    "reliability_formulas": {
+      "critical_first": "sum_t min(d_crit,t, served_t) / sum_t d_crit,t",
+      "proportional": "sum_t served_t * d_crit,t / d_real,t / sum_t d_crit,t",
+      "d_crit": "min(11600 W, d_real)"
+    },
+    "precedence": "safety precedes efficiency; any safety failure rejects regardless of fuel"
+  },
+  "diesel_gate": {
+    "applies_to": ["S-L", "SW-L"],
+    "evaluated_only_if": "all safety gates pass",
+    "paired_difference": "delta_o = Fuel_ControlB(o) - Fuel_candidate(o), litres",
+    "test_1": "two-sided Wilcoxon signed-rank, p < 0.05, Holm across the two candidate diesel tests",
+    "test_2": "BCa 95% bootstrap CI of mean paired saving, lower bound strictly > 0 L/origin",
+    "bootstrap": {"resamples": 10000, "seed": 42, "resampling_unit": "origin", "generator": "numpy.random.default_rng(42)"}
+  },
+  "target_40_percent": {
+    "definition": "(Fuel_ControlB - Fuel_SW-L) / Fuel_ControlB >= 0.40 over 123 origins",
+    "is_safety_gate": false,
+    "is_diesel_gate": false,
+    "reported_only": true
+  },
+  "primary_endpoints": [
+    "safety gates 1-3 and diesel gate for SW-L vs Control B (decision candidate)",
+    "safety gates 1-3 and diesel gate for S-L vs Control B (efficiency reference)"
+  ],
+  "factorial_contrasts": {
+    "C1_wind_effect_without_protection": "SW - S",
+    "C2_protection_effect_solar_plus_wind": "SW-L - SW",
+    "C3_protection_effect_solar_only": "S-L - S",
+    "C4_interaction_primary_mechanism_diagnostic": "(SW-L - SW) - (S-L - S) = (SW-L - S-L) - (SW - S)",
+    "primary_outcome_C4": "per-origin proportional critical reliability (pp)",
+    "secondary_outcomes": ["per-origin fuel (L)", "per-origin critical-first reliability (pp)", "total unmet (kWh)", "curtailment (kWh)"],
+    "inference": "origin-paired BCa 95% CI; descriptive; does not gate advancement",
+    "substitution_allowed": false
+  },
+  "statistics": {
+    "pairing": "origin-paired",
+    "ordering": "origin index ascending before analysis",
+    "diesel_test": "two-sided Wilcoxon signed-rank, Holm across S-L and SW-L diesel tests",
+    "bootstrap": "BCa, 95%, 10000 origin resamples, seed 42",
+    "accounting": "proportional critical and critical-first, both reported",
+    "post_hoc_choices": "forbidden",
+    "permitted_subgroups": ["night stratum (L_k = 1 hours)", "router-mode stratum"]
+  },
+  "leakage_controls": [
+    "2024 = discovery/context only; no Stage 4 arm executed on 2024",
+    "2025 = confirmatory holdout; no 2025 candidate outcome inspected before the frozen analysis",
+    "actual solar firewalled from forecast generation",
+    "realized wind simulator-only, never in a plan",
+    "realized demand used only in executor and post-hoc accounting",
+    "no post-hoc tuning of 15 deg, E_term = 100000 Wh, tau = 0.055 W, eta, SOC bounds, diesel model, or solver tolerances",
+    "no candidate-specific post-processing except the frozen tau residue rule applied identically to all arms",
+    "identical execution machinery across arms",
+    "production files unchanged"
+  ],
+  "implementation_boundary": {
+    "permitted_research_only": ["Stage 4 adapter", "Stage 4 unit tests", "Stage 4 runner", "Stage 4 campaign artifacts"],
+    "forbidden": ["production code changes", "edits to S/SW preregistration", "edits to numerical-boundary addendum", "edits to frozen S/SW campaign artifacts", "edits to governance resolution"],
+    "startup_hash_guards": {
+      "gap19_solver": {"path": "system/optimization/implementations/gap19_highs_native.py", "sha256": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737"},
+      "dispatch_plan": {"path": "system/schemas/dispatch_plan.py", "sha256": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b"},
+      "causal_nwp_forecaster": {"path": "system/forecasting/implementations/causal_nwp_physics.py", "sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710"},
+      "s_sw_adapter": {"path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/candidate_s_sw_adapter.py", "sha256": "a3ba73ad32ed2be20c0f197689081abf64402da41205a674fe76a15767e40de4"},
+      "s_sw_preregistration_md": {"path": "experiments/EXP_CANDIDATE_S_SW_PREREGISTRATION.md", "sha256": "1f018b1aba2651950b8cd5474ee9ea4dd2c6db6e9d9a584b1a5791eb59e80be5"},
+      "s_sw_preregistration_json": {"path": "experiments/EXP_CANDIDATE_S_SW_PREREGISTRATION.json", "sha256": "3607876afea7cea169887faa3b92c7a21142e9fbc5bd38ac93a6b72351342ba4"},
+      "numerical_boundary_addendum_md": {"path": "experiments/EXP_CANDIDATE_S_SW_PREREGISTRATION_ADDENDUM_NUMERICAL_BOUNDARY.md", "sha256": "228474e1100d4ce4a1c1470198125d699ddd3d9c0bf1f91678f4373f8e1d0054"},
+      "numerical_boundary_addendum_json": {"path": "experiments/EXP_CANDIDATE_S_SW_PREREGISTRATION_ADDENDUM_NUMERICAL_BOUNDARY.json", "sha256": "94c6f623a35628bd5f4efab40557c8fa99395fdf81b4c6c665ab0af968d7bfdd"},
+      "solar_elevation_module": {"path": "clear_sky/compute_clearsky_2025.py", "sha256": "3ac68ee705e9a9ec68044687c5df79100082d9ab172d09baac70dde6be00ed54"},
+      "nwp_2025": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv", "sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5"},
+      "nwp_2025_manifest": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2025_MANIFEST.json", "sha256": "534ed055d632950c474e4a38ff11b4b31f16955e6dff5968b7acabd31edf14cf"}
+    }
+  },
+  "advancement_criteria": [
+    "SW-L passes all three safety gates on 2025",
+    "SW-L diesel gate passes",
+    "C2 protection effect reported with CI",
+    "wind contrast (SW-L - S-L) on proportional reliability non-negative or CI includes zero",
+    "second confirmatory holdout (2026 prospective or further preregistered split) reproduces safety result"
+  ],
+  "failure_criteria": [
+    "delta R_CF < 0.00 pp",
+    "delta R_P < 0.00 pp",
+    "any realized SOC < 20.00%",
+    "diesel gate not met, even if safety passes (reported, not advanced)",
+    "any unresolved simultaneous charge/discharge violation at tau = 0.055 W, or optimizer infeasibility",
+    "fewer than 123 complete origins, or any unreported arm-hour"
+  ],
+  "known_caveats": [
+    "synthetic demand, realized wind, and wind baseline; no physical generalization",
+    "previous_day1 release-time semantics not verified; no real-time availability claim",
+    "one-hour solar-elevation offset frozen and uncorrected",
+    "15 deg is a research convention, not a physical or governance constant",
+    "origin-source difference between 2024 and 2025",
+    "Stage 3 mechanism is inferred; only the 2x2 factorial identifies the effects, and only on 2025",
+    "population label NORMAL is an initial-state setting; all 2025 origins EMERGENCY at step 0",
+    "Control B on 2025 must be re-executed (no archived 2025 Control B)",
+    "Holm applied across the two diesel tests (clarification of design section 12 family of six)",
+    "design supersessions: section 14.2 NORMAL-route wording replaced by calendar rule; S and SW re-executed on 2025"
+  ],
+  "candidate_results_2025_inspected": false,
+  "existing_sw_artifacts_modified": false,
+  "production_files_modified": false,
+  "experiments_executed": 0,
+  "subagents_used": 0
+}

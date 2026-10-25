@@ -1,0 +1,30 @@
+{
+  "audit_timestamp": "2026-09-12T11:45:00Z",
+  "verdict": "B. CONTROL RECONSTRUCTION DIFFERENCE FOUND",
+  "root_cause_explanation": "In run_official_odd_evaluation.py, Stage 4 parameters (w_h, k_h) were dynamically refitted strictly on the 174 EVEN training origins. In contrast, the official frozen Stage 5.2 benchmark (39.0848 W/m²) used the globally frozen Stage 4 ensemble predictions (pred_stage4_full from stage4_results/ensemble_predictions.csv). Re-evaluating both control and candidate under the exact frozen Stage 5.2 pipeline reproduces the 39.0848 W/m² control baseline to 100.000% precision and yields an even stronger candidate MAE of 37.0059 W/m².",
+  "frozen_stage5_2_pipeline_metrics": {
+    "control_odd_daytime_mae_w_m2": 39.084821,
+    "candidate_odd_daytime_mae_w_m2": 37.005872,
+    "delta_mae_w_m2": -2.078949,
+    "control_odd_daytime_nmae_pct": 30.317972,
+    "candidate_odd_daytime_nmae_pct": 28.70534,
+    "delta_nmae_pct": -1.612632,
+    "control_odd_daytime_rmse_w_m2": 68.993512,
+    "candidate_odd_daytime_rmse_w_m2": 65.671708,
+    "delta_rmse_w_m2": -3.321804,
+    "bootstrap_mean_delta_mae_w_m2": -2.0783,
+    "bootstrap_95_ci_w_m2": [-2.8098, -1.3448]
+  },
+  "refitted_stage4_pipeline_metrics": {
+    "control_odd_daytime_mae_w_m2": 39.392734,
+    "candidate_odd_daytime_mae_w_m2": 37.344943,
+    "delta_mae_w_m2": -2.047791,
+    "control_odd_daytime_nmae_pct": 30.553931,
+    "candidate_odd_daytime_nmae_pct": 28.965616,
+    "delta_nmae_pct": -1.588315,
+    "control_odd_daytime_rmse_w_m2": 69.380853,
+    "candidate_odd_daytime_rmse_w_m2": 65.982948,
+    "delta_rmse_w_m2": -3.397905
+  },
+  "candidate_superiority_confirmed": true
+}

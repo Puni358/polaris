@@ -1,0 +1,22 @@
+{
+  "total_candidate_fuel_l": 8672.624099999999,
+  "baseline_pc_sw_fuel_l": 8729.2446,
+  "fuel_delta_l": -56.6205000000009,
+  "fuel_delta_pct": -0.648630008603504,
+  "diesel_on_hours": 554,
+  "diesel_starts": 333,
+  "diesel_energy_kwh": 23610.4982,
+  "critical_unmet_wh": 279056.32999999996,
+  "total_unmet_wh": 982478.27,
+  "r_cf_pct": 99.18507519741145,
+  "r_p_pct": 97.81161685801035,
+  "min_soc_pct": 20.0,
+  "soc_violations": 0,
+  "curtailment_kwh": 12484.740399999999,
+  "battery_charging_kwh": 25340.59582,
+  "battery_discharging_kwh": 17403.08797,
+  "fuel_inventory_violations": 0,
+  "total_triggers": 149,
+  "total_recapture_energy_kwh": 743.68404,
+  "final_verdict": "FAIL \u2014 SEMANTIC/IDENTITY CHECK"
+}

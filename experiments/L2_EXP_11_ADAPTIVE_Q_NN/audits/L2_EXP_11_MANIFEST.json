@@ -1,0 +1,32 @@
+{
+  "experiment_id": "L2-EXP-11",
+  "created_at": "2026-10-04T11:14:51.478221+00:00",
+  "inputs": {
+    "policy_json": "4d5d98e3b1102582e1eb96ccb29fb2fb46b8e2fc2248fafc2da1f390aeec3b8b",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "exact_38_feature_matrix_2020_2023": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "historical_residual_dataset_2020_2023": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+  },
+  "deliverables": {
+    "pre_registration_json": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/pre_registration.json",
+    "pre_registration_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/PRE_REGISTRATION.md",
+    "runner_script": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/run_l2_exp_11.py",
+    "results_json": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_RESULTS.json",
+    "results_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_RESULTS.md",
+    "origin_metrics_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_ORIGIN_METRICS.csv",
+    "adaptive_q_trajectories_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_ADAPTIVE_Q_TRAJECTORIES.csv",
+    "calibration_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_CALIBRATION.csv",
+    "mechanism_forensics_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_MECHANISM_FORENSICS.csv",
+    "tradeoff_analysis_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_TRADEOFF_ANALYSIS.csv",
+    "feature_availability_audit_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/audits/L2_EXP_11_FEATURE_AVAILABILITY_AUDIT.md",
+    "non_anticipativity_audit_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/audits/L2_EXP_11_NON_ANTICIPATIVITY_AUDIT.csv",
+    "replay_accounting_audit_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/audits/L2_EXP_11_REPLAY_ACCOUNTING_AUDIT.md",
+    "execution_audit_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/audits/L2_EXP_11_EXECUTION_AUDIT.md",
+    "manifest_json": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_11_ADAPTIVE_Q_NN/audits/L2_EXP_11_MANIFEST.json"
+  }
+}

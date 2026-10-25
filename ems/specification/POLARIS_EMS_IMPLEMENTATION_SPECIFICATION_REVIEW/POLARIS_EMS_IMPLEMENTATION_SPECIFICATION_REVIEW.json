@@ -1,0 +1,54 @@
+{
+  "review_metadata": {
+    "review_version": "1.0.0",
+    "review_title": "POLARIS EMS Implementation Specification Governance Review Report",
+    "target_package": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION/",
+    "review_date": "2026-09-22",
+    "review_type": "READ_ONLY_GOVERNANCE_REVIEW_GATE",
+    "overall_decision": "CORRECTIONS_REQUIRED"
+  },
+  "governance_status_flags": {
+    "STAKEHOLDER_POLICY": "APPROVED",
+    "OBJECTIVE_SPECIFICATION": "REVIEW_PASSED",
+    "IMPLEMENTATION_SPECIFICATION_PACKAGE": "COMPLETE_PENDING_REVIEW",
+    "IMPLEMENTATION_SPECIFICATION_REVIEW": "CORRECTIONS_REQUIRED",
+    "IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "EMS_CODE_MODIFICATION": "NO",
+    "MILP_EXECUTION": "NO",
+    "MPC_EXECUTION": "NO",
+    "EMS_EXECUTION": "NO",
+    "V2_RERUN": "NO",
+    "MODEL_TRAINING": "NO",
+    "MODEL_INFERENCE": "NO",
+    "NEXT_GOVERNED_STEP": "IMPLEMENTATION_SPECIFICATION_CORRECTION"
+  },
+  "item_audit_reconciliation": {
+    "total_items_audited": 22,
+    "implementation_specified": 3,
+    "implementation_deferred": 8,
+    "station_data_required": 5,
+    "engineering_validation_required": 0,
+    "numerical_calibration_required": 2,
+    "governance_clarification_required": 4,
+    "not_yet_specifiable": 0
+  },
+  "findings_summary": {
+    "total_findings": 7,
+    "major_unresolved_alternatives": 3,
+    "technical_formulation_incomplete": 1,
+    "disguised_policy_inference": 1,
+    "minor_classification_correction": 1,
+    "terminology_ambiguity": 1
+  },
+  "on_disk_hash_sidecar_verification": {
+    "csv_path": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION/POLARIS_EMS_IMPLEMENTATION_HASH_AUDIT.csv",
+    "csv_actual_sha256": "cc88775a01678a0fbf418daf9c5a2427d2b870f5a4d3cbbea7a797eaeba46177",
+    "sidecar_referenced_sha256": "cc88775a01678a0fbf418daf9c5a2427d2b870f5a4d3cbbea7a797eaeba46177",
+    "sidecar_file_sha256": "572c5383e5ade0cf5bd75341274ba8f8006418340e68fe264bff240276ebc95e",
+    "sidecar_match": "PASS"
+  },
+  "test_contracts_status": {
+    "total_test_contracts_defined": 25,
+    "test_execution_status": "NOT_AUTHORIZED"
+  }
+}

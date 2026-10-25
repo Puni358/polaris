@@ -1,0 +1,11 @@
+# Modular Battery Storage Configuration
+status_label: "PROTOTYPE_ASSUMPTION"
+capacity_wh: 200000.0  # 200 kWh
+min_soc_pct: 20.0       # 20% min SOC
+max_soc_pct: 95.0       # 95% max SOC
+charge_efficiency: 0.92  # 92% efficiency
+discharge_efficiency: 0.92
+max_charge_power_w: 50000.0    # 50 kW
+max_discharge_power_w: 50000.0 # 50 kW
+initial_soc_pct: 50.0   # 50% initial SOC
+deg_penalty_per_wh: 0.00005 # Cycling penalty

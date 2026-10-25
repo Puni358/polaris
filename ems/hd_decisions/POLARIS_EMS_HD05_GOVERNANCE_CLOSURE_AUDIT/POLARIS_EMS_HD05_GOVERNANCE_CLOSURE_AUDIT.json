@@ -1,0 +1,75 @@
+{
+  "audit_name": "POLARIS EMS HD-05 Governance Closure & Consistency Audit",
+  "timestamp": "2026-09-23T04:17:00Z",
+  "governance_status": "CLOSED",
+  "closed_decisions": {
+    "HD-05A": {
+      "name": "Degradation Placement",
+      "status": "CLOSED",
+      "decision": "Stage 3 — Resource Management"
+    },
+    "HD-05B": {
+      "name": "Normal Operation Tradeoff",
+      "status": "CLOSED",
+      "decision": "POLARIS may spend extra diesel to reduce unnecessary battery cycling during normal mode"
+    },
+    "HD-05C": {
+      "name": "Emergency Operation Priority",
+      "status": "CLOSED",
+      "decision": "Battery degradation is subordinate to critical service and emergency resilience"
+    },
+    "HD-05D": {
+      "name": "Stage-3 Mathematical Structure",
+      "status": "CLOSED",
+      "decision": "Lexicographic subobjectives: Stage 3a min fuel -> F*; Stage 3b min battery cycling s.t. fuel <= (1+alpha)F*"
+    },
+    "HD-05D-epsilon": {
+      "name": "Tolerance Representation",
+      "status": "CLOSED",
+      "decision": "RELATIVE tolerance (1+alpha)F*"
+    },
+    "HD-05D-alpha": {
+      "name": "Numerical Alpha Selection",
+      "status": "CLOSED",
+      "decision": "alpha = 0.05 (F_diesel <= 1.05 F*)"
+    }
+  },
+  "implementation_separation": {
+    "c_deg": {
+      "value": 0.00005,
+      "units": "$/Wh",
+      "status": "IMPLEMENTATION_ONLY / PROTOTYPE_ASSUMPTION",
+      "note": "Not a policy value; uncalibrated regularizer in battery.yaml & milp.py"
+    },
+    "fuel_price": {
+      "value": 2.50,
+      "units": "$/L",
+      "status": "IMPLEMENTATION_ONLY / PROTOTYPE_ASSUMPTION",
+      "note": "Not a policy value; default simulation parameter in diesel.yaml"
+    }
+  },
+  "concept_disambiguation": {
+    "F_star": "Stage-3a minimum fuel solution for 24h MPC horizon",
+    "alpha_tolerance": "5% relative allowance above F* (1.05 F*) during normal operation",
+    "emergency_fuel_reserve": "Dedicated volume reserved for critical load survival during grid outages",
+    "seasonal_fuel_budget": "Resupply-cycle fuel allocation (Decision 08)",
+    "T_required": "Operational survival window until resupply (HD-03)"
+  },
+  "classifications": {
+    "HD05_GOVERNANCE_STATUS": "CLOSED",
+    "HD05A_STATUS": "CLOSED",
+    "HD05B_STATUS": "CLOSED",
+    "HD05C_STATUS": "CLOSED",
+    "HD05D_STATUS": "CLOSED",
+    "HD05D_EPSILON_REPRESENTATION": "RELATIVE",
+    "HD05D_ALPHA": 0.05,
+    "HD05_POLICY_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05_DOCUMENTATION_CONSISTENCY": "CONFLICTS_FOUND"
+  },
+  "final_verdict": {
+    "HD05_GOVERNANCE_STATUS": "REVIEW_PENDING",
+    "HD05_POLICY_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  }
+}

@@ -1,0 +1,24 @@
+# POLARIS Timestamp Reconciliation Artifact Inventory
+# Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+# Generated: 2026-10-20
+#
+# This inventory records the authoritative source files, check scripts, reports,
+# and datasets establishing the fixed UTC+1 (Etc/GMT-1) time-alignment convention,
+# SITES period-ending 10-minute aggregation, and solar geometry calculations.
+
+SHA-256 Digest                                                   File Path                                                            Description / Role
+----------------------------------------------------------------  -------------------------------------------------------------------  -----------------------------------------------------------------
+08d60a1f73c8aba5e3fd49d59d2147f3f8ba20a1035e78917a32f59cf5efe8e7  experiments/exp_three_arm_2024/TIMESTAMP_VERIFICATION.md            Executive summary of timestamp verification and M9 approval
+1e749ee4fba3ed9977f4285acecf17088854d3a6da28a611e18389a103279f71  experiments/exp_three_arm_2024/reports/source_prep/d7/D7_VERIFICATION_REPORT.md  Full authoritative D7 timestamp and solar-geometry audit report
+f65aa905d00b2418e762fa9337b2fc7174ca6b88157a336e6d6d90ef8951d2ca  experiments/exp_three_arm_2024/reports/source_prep/d7/d7_checks.py   Read-only Python script checking aggregation, linkage, solar geom
+334c9cd51bf7da23f62eea111b731a1a27974e2a1d537ed9ef25a4fc014e71d1  experiments/exp_three_arm_2024/reports/source_prep/d7/d7_extra.py    Supplementary check routines for SITES weather/solar data
+82e15cf9abd4b2fe6781d2a14f16c138ce494e8e66be25b4d4cb033b7b3b7d6e  experiments/exp_three_arm_2024/reports/source_prep/d7/d7_geom.py     Solar elevation and NOAA solar position geometry calculations
+669cf79d17a6ff3cb7ec41b1c2f75e674054fe765a9929fec00c39e51adabbd9  experiments/exp_three_arm_2024/reports/source_prep/d7/d7_out.txt     Captured terminal output of d7_checks.py execution
+b9f488a545904a7103399c79f4726aba6478b64374c031055a6a338435cc02d7  experiments/exp_three_arm_2024/reports/source_prep/PROTOCOL_ADDENDUM_D7a.md  Protocol addendum defining D7a Location-wrapper correction
+c7b7379795cad706e93e7c3bcee8cab94edf58c7d2628b7ffcdd1c0adb66f452  experiments/exp_three_arm_2024/reports/D7A_REVIEW.md                 Design review of D7a timestamp handling
+3a649a6ff9f227b5a1819f6cf577d896c6bc1488274a86ccdaaafc29a109c145  clear_sky/compute_clearsky.py                                        Clearsky generator with TIMEZONE = 'Etc/GMT-1' localization
+c8f1a2204af1703296e32658e5d8890e2bd7f876d554a2b1a5ee46f1bc50ad21  clear_sky/audit_clean_nwp_windows.py                                 Open-Meteo previous-runs fetcher with &timezone=Etc/GMT-1
+14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710  system/forecasting/implementations/causal_nwp_physics.py             Forecaster with known NUOLJA_TZ = 'UTC' geometry defect
+80b721a16a79dab828eb1aa02755d22c34acc35b5f48ad0d1beb5b9ab237052d  data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_5var.csv                  Approved 2024 hourly SITES observations (mean HH:00..HH:50)
+8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16  data/POLARIS_v0_1_future_weather_forecasts_2024.csv                  Approved 2024 weather forecast matrix (fs=00:00, h=1..24)
+596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a  data/POLARIS_v0_1_clearsky_decomposition.csv                         Approved 2024 clear-sky decomposition (pvlib Etc/GMT-1)

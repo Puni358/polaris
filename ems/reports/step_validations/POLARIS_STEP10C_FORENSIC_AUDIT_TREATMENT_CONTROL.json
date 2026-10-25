@@ -1,0 +1,62 @@
+{
+  "audit_version": "1.0.0",
+  "audit_type": "READ_ONLY_STEP10C_FORENSIC_AUDIT",
+  "timestamp": "2026-09-20T12:15:00Z",
+  "inspected_files": {
+    "POLARIS_HYBRID_FIXTURE_H1_0/fixture.csv": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_RAW.csv": "27a2f6b260dc759526f4c3feb2e329d32a802945d85cefc9159219d2870ac81b",
+    "POLARIS_HYBRID_H1_0_CONTROL_RAW.csv": "ae51359b145f92f8b24169aef1f70b701de56b06cbab77aca4ca5f1df8c5a1a8",
+    "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION.json": "c5ce9864b83c5d0972082b67a80ed2c17cd7593a29c4d1e9c79451dcae0e3276",
+    "POLARIS_HYBRID_H1_0_CONTROL.json": "dc8b7dc89576732a4d5d1a5c5b09a7f031809e848207f145a3b531b0c6ba52de",
+    "POLARIS_HYBRID_H1_0_TREATMENT_CONTROL_COMPARISON.json": "449a14ebf73f57acb689df93ea72db2176fcc2dab183428871d1785a4e0bb56e",
+    "scripts/execute_step10b_validation.py": "14e20dcf06c50c2171fbc0338e3cffaf9652ac3b8ae5b68579250c8d4c00d080",
+    "scripts/execute_step10c_control.py": "f89fd44dfea9a4f29bbf91e5004022b4f949f2dddf259ecd7e43631cdb11abff"
+  },
+  "audit_findings": {
+    "1_exact_treatment_identity": {
+      "stated_policy_label": "POLARIS_STAGE8_1_EMS_V4G",
+      "executed_optimizer": "LocalMILPEnergyOptimizer",
+      "v4g_single_horizon_mode_enabled": false,
+      "custom_weight_vector_active": false,
+      "horizon_discount_factor_gamma": 1.0,
+      "discrepancy_reported": "The label POLARIS_STAGE8_1_EMS_V4G was recorded as metadata, but the executed optimizer configuration in execute_step10b_validation.py was standard unweighted LocalMILPEnergyOptimizer (gamma=1.0) without v4g_single_horizon_mode flags."
+    },
+    "2_forecast_difference": {
+      "result": "IDENTICAL",
+      "detail": "Stage81ForecastEngine in Step 10B treatment and LocalBaselineForecastEngine in Step 10C control evaluated identical fallback formulas (cs_ghi * 0.75) because no external stage81_sw_in_forecast array was supplied in runtime_context by H10RuntimeAdapter. Wind and demand were identically derived via LocalBaselineForecastEngine in both runs."
+    },
+    "3_dispatch_comparison": {
+      "24_cycle_identity": true,
+      "max_diesel_power_difference_w": 0.0,
+      "max_battery_charge_difference_w": 0.0,
+      "max_battery_discharge_difference_w": 0.0,
+      "max_soc_difference_pct": 0.0,
+      "objective_value_difference": 0.0
+    },
+    "4_mechanism_classification": "B",
+    "5_same_truth_pairing": {
+      "initial_station_state_sha256": "3e38d4f5e3046d642c26b56a84e9e0130b0bfddea24be37640b90a4fd2c55fbd",
+      "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+      "same_origin_timestamp": "2024-01-01T00:00:00Z",
+      "same_trajectory_window": "2024-01-01T00:00:00Z to 2024-01-01T23:00:00Z",
+      "future_truth_firewall": "PASS",
+      "treatment_raw_telemetry_untouched": true
+    },
+    "6_solver_verification": {
+      "solver_backend": "scipy.optimize.milp (HiGHS)",
+      "treatment_optimal_solves": "24/24",
+      "control_optimal_solves": "24/24",
+      "fallback_solver_triggered": false,
+      "solver_configuration_difference": false
+    },
+    "7_metric_reconciliation": {
+      "treatment_diesel_fuel_liters": 195.500,
+      "control_diesel_fuel_liters": 195.500,
+      "paired_diesel_fuel_difference_liters": 0.000,
+      "exact_unrounded_equality": true
+    },
+    "8_scientific_interpretation": "Did this experiment demonstrate that the Stage8.1 forecasting model improved EMS optimization? NO. Because the H1.0 adapter path did not pass a precomputed Stage8.1 ML forecast array into runtime_context, Stage81ForecastEngine defaulted to the exact same diurnal clear-sky persistence fallback as LocalBaselineForecastEngine. As a result, both treatment and control received 100% identical forecast inputs and produced 100% identical dispatch decisions (195.500 L fuel). While closed-loop MPC execution, Same-Truth Firewall, and MILP solver correctness were successfully validated, this specific paired trajectory did not evaluate forecast sensitivity or demonstrate an operational fuel improvement from Stage8.1."
+  },
+  "STEP10C_FORENSIC_RESULT": "B"
+}

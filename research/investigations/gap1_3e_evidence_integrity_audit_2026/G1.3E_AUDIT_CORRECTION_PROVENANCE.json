@@ -1,0 +1,358 @@
+{
+  "correction_metadata": {
+    "task": "POLARIS G1.3-E Audit Correction and Provenance Hardening",
+    "timestamp": "2026-09-27T21:30:00Z",
+    "before_snapshot_file": "G1.3E_AUDIT_CORRECTION_BASELINE_HASHES.json",
+    "git_commit": "UNKNOWN",
+    "protected_files_checked": 63,
+    "hash_mismatches_detected": 0
+  },
+  "verification_status": {
+    "production_modifications": 0,
+    "governance_modifications": 0,
+    "canonical_fixture_modifications": 0,
+    "frozen_campaign_modifications": 0,
+    "original_research_artifacts_modified": 0,
+    "protected_hashes_unchanged": true,
+    "g1.3e_human_decision_locked": true,
+    "zero_numerical_thresholds_invented": true,
+    "final_evidence_boundary": "C. Evidence Insufficient \u2014 Additional Empirical Research Required",
+    "implementation_authorized": false,
+    "production_lock": "ACTIVE",
+    "timestamp_provenance_status": "RECORDED_BUT_RUNTIME_ORIGIN_UNVERIFIED",
+    "osha_loto_interlock_governance": true,
+    "osha_telemetry_freshness_rule": false,
+    "16_timestamp_provenance_limitation_explicit": true,
+    "source_hash_manifest_semantics": "CURRENT_STATE_HASH_SNAPSHOT",
+    "pre_post_protected_file_proof": "G1.3E_AUDIT_CORRECTION_BASELINE_HASHES.json (63 protected files, 0 mismatches)"
+  },
+  "audit_artifacts_created_or_updated": [
+    "G1.3E_AUDIT_CORRECTION_REPORT.md",
+    "G1.3E_AUTHORITY_RECLASSIFICATION_REGISTER.md",
+    "G1.3E_SOURCE_VERIFICATION_REGISTER.md",
+    "G1.3E_SYNTHETIC_VS_REAL_EVIDENCE_REGISTER.md",
+    "G1.3E_FINAL_EVIDENCE_BOUNDARY_V2.md",
+    "G1.3E_NUMERICAL_CLAIM_REGISTER.md",
+    "G1.3E_EVIDENCE_INTEGRITY_AUDIT.md",
+    "G1.3E_EVIDENCE_INTEGRITY_AUDIT.json",
+    "G1.3E_AUDIT_CORRECTION_PROVENANCE.json",
+    "SOURCE_HASH_MANIFEST.json"
+  ],
+  "post_execution_hash_comparison": {
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_STATE_MACHINE.md": {
+      "sha256_before": "4aa3b4e7f213f2bfa449384b2686ec69758f6a1422172954bb3cdf6531adc864",
+      "sha256_after": "4aa3b4e7f213f2bfa449384b2686ec69758f6a1422172954bb3cdf6531adc864",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_CANDIDATE_MATRIX.md": {
+      "sha256_before": "95d7d4c33a310e4a0b0d4030c08745e71cac7fdb5e66cbe9347a55d8436584a0",
+      "sha256_after": "95d7d4c33a310e4a0b0d4030c08745e71cac7fdb5e66cbe9347a55d8436584a0",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_CORRECTED_TEST_PLAN.md": {
+      "sha256_before": "eb5db2bdba82b6072bb88c2d527253dfe3d4563644f29bc5bd8a57fa3dac7721",
+      "sha256_after": "eb5db2bdba82b6072bb88c2d527253dfe3d4563644f29bc5bd8a57fa3dac7721",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_CORRECTION_PROVENANCE.json": {
+      "sha256_before": "38a096a1a5dac2e5b5daa54fe65e49d3586dd6d88a49164bcdcb4c2575d52b17",
+      "sha256_after": "38a096a1a5dac2e5b5daa54fe65e49d3586dd6d88a49164bcdcb4c2575d52b17",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_FORMAL_STATE_MACHINE.md": {
+      "sha256_before": "17966d1051fd08b54185d53db748c1aa30e8bfc0e7273aadeba281cc5583e3da",
+      "sha256_after": "17966d1051fd08b54185d53db748c1aa30e8bfc0e7273aadeba281cc5583e3da",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GAP_AUDIT.json": {
+      "sha256_before": "e123215b2c40f152b5575f9e913e4424b1b76223884c81ff0fedf17798b06296",
+      "sha256_after": "e123215b2c40f152b5575f9e913e4424b1b76223884c81ff0fedf17798b06296",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GAP_AUDIT.md": {
+      "sha256_before": "1c0a50e5aaa937fce47e2c0897adf998a3a9084df2c273e6ceab7ee128051159",
+      "sha256_after": "1c0a50e5aaa937fce47e2c0897adf998a3a9084df2c273e6ceab7ee128051159",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GAP_AUDIT_PROVENANCE.json": {
+      "sha256_before": "30acd2538887283abbf6d5a4c5d14de10e73c9e47630d4c7c8adf676b6717bab",
+      "sha256_after": "30acd2538887283abbf6d5a4c5d14de10e73c9e47630d4c7c8adf676b6717bab",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GAP_DEPENDENCY_GRAPH.md": {
+      "sha256_before": "2ccc704ddd0e1ecc260fdaaef335f4b4a3befff7cc4f4f1b1974ad1f75ade391",
+      "sha256_after": "2ccc704ddd0e1ecc260fdaaef335f4b4a3befff7cc4f4f1b1974ad1f75ade391",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GAP_TRACEABILITY.md": {
+      "sha256_before": "dc1f9d40dd9fb0da3f01a5e7c5821059de8e4b376106f66a02351e35b3a97888",
+      "sha256_after": "dc1f9d40dd9fb0da3f01a5e7c5821059de8e4b376106f66a02351e35b3a97888",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GOVERNANCE.json": {
+      "sha256_before": "c33f498614a3cb1baadaa74c1486733129d37c528e0610d4ccb268f9989f2ede",
+      "sha256_after": "c33f498614a3cb1baadaa74c1486733129d37c528e0610d4ccb268f9989f2ede",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GOVERNANCE_DECISION_RECORD.md": {
+      "sha256_before": "325e6c30edfff127ba8d4aa7def6595ecc050124d5ead918a8f32e6501e60a2c",
+      "sha256_after": "325e6c30edfff127ba8d4aa7def6595ecc050124d5ead918a8f32e6501e60a2c",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GOVERNANCE_GAP_REGISTER.md": {
+      "sha256_before": "4c2356120924514b1df76641bd409ade5fcaeaaa1662a49fef47c85e73582772",
+      "sha256_after": "4c2356120924514b1df76641bd409ade5fcaeaaa1662a49fef47c85e73582772",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_GOVERNANCE_RESEARCH.md": {
+      "sha256_before": "f7f2957715959112ae7d085e876372fb337de59e386f6c213eb6bb6316a04967",
+      "sha256_after": "f7f2957715959112ae7d085e876372fb337de59e386f6c213eb6bb6316a04967",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_HUMAN_DECISION_BRIEF.md": {
+      "sha256_before": "b19addc35e8050b06a36fa8b96f2b8a953ff8cbf061deecf0fd5376e68f449e5",
+      "sha256_after": "b19addc35e8050b06a36fa8b96f2b8a953ff8cbf061deecf0fd5376e68f449e5",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_HUMAN_DECISION_BRIEF_V2.md": {
+      "sha256_before": "2dbf52738676aa7049367ed80a026c505c96b86d720954ebd626f08f9bcb9332",
+      "sha256_after": "2dbf52738676aa7049367ed80a026c505c96b86d720954ebd626f08f9bcb9332",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_IMPLEMENTATION_SPEC.json": {
+      "sha256_before": "71ad669c0e94f49f09000fa5814c21adc8a91dea83e523db828183162a47caf3",
+      "sha256_after": "71ad669c0e94f49f09000fa5814c21adc8a91dea83e523db828183162a47caf3",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_IMPLEMENTATION_SPEC.md": {
+      "sha256_before": "e604c83d2859b9084e7b7a692aacbb14c9d63206b3f5c4199e0b57ccb2066eda",
+      "sha256_after": "e604c83d2859b9084e7b7a692aacbb14c9d63206b3f5c4199e0b57ccb2066eda",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_MATH_RECONCILIATION.json": {
+      "sha256_before": "3d2f4bece157876e48e401c7a8f917980d5cffece835b94d4461153cdc1aec80",
+      "sha256_after": "3d2f4bece157876e48e401c7a8f917980d5cffece835b94d4461153cdc1aec80",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_MATH_RECONCILIATION.md": {
+      "sha256_before": "a312d79403c37f58e57e862d5c37732f8293e09717de05868d570e42a61f3e7a",
+      "sha256_after": "a312d79403c37f58e57e862d5c37732f8293e09717de05868d570e42a61f3e7a",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_RESERVE_SEMANTICS.md": {
+      "sha256_before": "e644756bf1b40ca6c5a4609ed02755f5bec68fe3f12923b56080f432f02ca48e",
+      "sha256_after": "e644756bf1b40ca6c5a4609ed02755f5bec68fe3f12923b56080f432f02ca48e",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/EMERGENCY_TRIGGER_TEST_PLAN.md": {
+      "sha256_before": "63bbfe904c1d1889fac90e4948ce4727714f9e1944ee559bc99a346916bb10fc",
+      "sha256_after": "63bbfe904c1d1889fac90e4948ce4727714f9e1944ee559bc99a346916bb10fc",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_CONTRADICTION_REGISTER.md": {
+      "sha256_before": "49e7d76c4b9947684ef7e1be8eba825c0d6c599363a30aef8862b37c4c75f94f",
+      "sha256_after": "49e7d76c4b9947684ef7e1be8eba825c0d6c599363a30aef8862b37c4c75f94f",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FINAL_AUDIT_PROVENANCE.json": {
+      "sha256_before": "0365a18fce93608af6a89cfdae78111f208b55fc616d867bfd01a54d5a5bad59",
+      "sha256_after": "0365a18fce93608af6a89cfdae78111f208b55fc616d867bfd01a54d5a5bad59",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FINAL_CONTRADICTION_REGISTER.md": {
+      "sha256_before": "faface7477f699396d6c03621108f4402ad0ba410ebefa3cd83b6601a2617125",
+      "sha256_after": "faface7477f699396d6c03621108f4402ad0ba410ebefa3cd83b6601a2617125",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FINAL_GOVERNANCE_FORMALIZATION.json": {
+      "sha256_before": "77e153b95089bc59d1a4499ce54e6d95280debaa903530d4c1214c1da46c47e0",
+      "sha256_after": "77e153b95089bc59d1a4499ce54e6d95280debaa903530d4c1214c1da46c47e0",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FINAL_GOVERNANCE_FORMALIZATION.md": {
+      "sha256_before": "2383633a405274f98b16348c54778e4ce8e07cef1a2759fccd5c926173464337",
+      "sha256_after": "2383633a405274f98b16348c54778e4ce8e07cef1a2759fccd5c926173464337",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FINAL_IMPLEMENTATION_PREREQUISITES.md": {
+      "sha256_before": "6402414e1f275945fe11d2c3722ebd5c25b9d6d172aa1ad5f7d469c7692da12e",
+      "sha256_after": "6402414e1f275945fe11d2c3722ebd5c25b9d6d172aa1ad5f7d469c7692da12e",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FORMALIZATION_PROVENANCE.json": {
+      "sha256_before": "fdc0e5f6b11a2c3b46804d96823789341b3d477dc7df70ed2a355c5fe389767e",
+      "sha256_after": "fdc0e5f6b11a2c3b46804d96823789341b3d477dc7df70ed2a355c5fe389767e",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FORMAL_SEMANTICS_AUDIT.json": {
+      "sha256_before": "d7cd1b664ac5ca3eb32879f0b1d7a9240cc2b5f3ed59ea83f76a147e73e93848",
+      "sha256_after": "d7cd1b664ac5ca3eb32879f0b1d7a9240cc2b5f3ed59ea83f76a147e73e93848",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_FORMAL_SEMANTICS_AUDIT.md": {
+      "sha256_before": "8b0a57d4e7c52c6f60705b94ea0ff8dfc74ed8371e4daac20bead9fc0c44361e",
+      "sha256_after": "8b0a57d4e7c52c6f60705b94ea0ff8dfc74ed8371e4daac20bead9fc0c44361e",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_G1.3E_RESEARCH_REQUIREMENTS.md": {
+      "sha256_before": "4543508b80fb28f744586d728d85ba6be1c9a1f3e14e6577c0780ca69d321cd5",
+      "sha256_after": "4543508b80fb28f744586d728d85ba6be1c9a1f3e14e6577c0780ca69d321cd5",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_G1.3E_TELEMETRY_FRESHNESS_SPEC.md": {
+      "sha256_before": "e716996b185b0c914ee3554a33d5875ccd89b886d849b11c7071f13087a68307",
+      "sha256_after": "e716996b185b0c914ee3554a33d5875ccd89b886d849b11c7071f13087a68307",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_G1_G6_FINAL_TRACEABILITY.md": {
+      "sha256_before": "bccc4b987e4605f753df9c8fb7b57947ce91e710302cc20d96032e34cbb7524c",
+      "sha256_after": "bccc4b987e4605f753df9c8fb7b57947ce91e710302cc20d96032e34cbb7524c",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_G1_G6_TRACEABILITY.md": {
+      "sha256_before": "7601f4b7085751839d6ce5f9658b394005854d4909511e71b025e29bba5313b9",
+      "sha256_after": "7601f4b7085751839d6ce5f9658b394005854d4909511e71b025e29bba5313b9",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_GENERATOR_CREDIBILITY_RESEARCH.json": {
+      "sha256_before": "cff37e5aa7c13ac1fd9ec6ced30b0a7e252d100b07fa227d44f339a054c8a3f0",
+      "sha256_after": "cff37e5aa7c13ac1fd9ec6ced30b0a7e252d100b07fa227d44f339a054c8a3f0",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_GENERATOR_CREDIBILITY_RESEARCH.md": {
+      "sha256_before": "e9c2d20a32d294b2bcdd162e0008a5617dee41377157fca8b64d49989124dc21",
+      "sha256_after": "e9c2d20a32d294b2bcdd162e0008a5617dee41377157fca8b64d49989124dc21",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_GENERATOR_INPUT_INVENTORY.md": {
+      "sha256_before": "aa6cc29351c29149bc5beaa0107aca88d2ad28bedcb8089ce58e2015af025fe2",
+      "sha256_after": "aa6cc29351c29149bc5beaa0107aca88d2ad28bedcb8089ce58e2015af025fe2",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_GENERATOR_MODEL_COMPARISON.md": {
+      "sha256_before": "bac2f11959d32754bd2c9fbab6200e406c9b0445a60242594b6e7216935dd0d3",
+      "sha256_after": "bac2f11959d32754bd2c9fbab6200e406c9b0445a60242594b6e7216935dd0d3",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_HUMAN_DECISION_BRIEF.md": {
+      "sha256_before": "ea1a128e7b1f33d4da0079ff94d99dda92edfd22485255a7ea12f3bfdf0e215b",
+      "sha256_after": "ea1a128e7b1f33d4da0079ff94d99dda92edfd22485255a7ea12f3bfdf0e215b",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_HUMAN_DECISION_GAPS.md": {
+      "sha256_before": "45a6a0185689ab7e5161f2c24b9d3a5a54df7b388fd3f0894e77757b009655fd",
+      "sha256_after": "45a6a0185689ab7e5161f2c24b9d3a5a54df7b388fd3f0894e77757b009655fd",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_REQUIRED_INPUTS_AND_STATE.md": {
+      "sha256_before": "c0be9f53d115c5dceb10b9a88ea2fba5631e4bb898bdddf5ff502bd9c9944174",
+      "sha256_after": "c0be9f53d115c5dceb10b9a88ea2fba5631e4bb898bdddf5ff502bd9c9944174",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_RESEARCH_PROVENANCE.json": {
+      "sha256_before": "18a470434f42e671c2ca22f23c19cbdf268caf1bf6e53a67ae7b237a41a34147",
+      "sha256_after": "18a470434f42e671c2ca22f23c19cbdf268caf1bf6e53a67ae7b237a41a34147",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/GAP1_TRACEABILITY.md": {
+      "sha256_before": "885807291eeef9d2a5f384b8f58f22aeb8e209805bebbe46a6575ef2152b0f40",
+      "sha256_after": "885807291eeef9d2a5f384b8f58f22aeb8e209805bebbe46a6575ef2152b0f40",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/RESEARCH_PROVENANCE.json": {
+      "sha256_before": "b4a9bedb2acb272338d32b7abe0648c00d46977c98d8762c1de8670656ea56b9",
+      "sha256_after": "b4a9bedb2acb272338d32b7abe0648c00d46977c98d8762c1de8670656ea56b9",
+      "unchanged": true
+    },
+    "investigations/emergency_trigger_governance_2026/SOURCE_HASH_MANIFEST.json": {
+      "sha256_before": "5a2519548dc968f2e0d5784efa623e6164f798a7063ae7cdcf15d17f7f924dda",
+      "sha256_after": "5a2519548dc968f2e0d5784efa623e6164f798a7063ae7cdcf15d17f7f924dda",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_EVIDENCE_MATRIX.md": {
+      "sha256_before": "97fc1d5cf49b41c641881ffaf0c18bc822b3f29bc42e52d617912529eca18430",
+      "sha256_after": "97fc1d5cf49b41c641881ffaf0c18bc822b3f29bc42e52d617912529eca18430",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_FAILURE_MODE_ANALYSIS.md": {
+      "sha256_before": "7edc227c13f02a0bed04d9d94cb9de30d2b5b9e69ba336076d6d51261d2e7e52",
+      "sha256_after": "7edc227c13f02a0bed04d9d94cb9de30d2b5b9e69ba336076d6d51261d2e7e52",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_MEASUREMENT_BY_MEASUREMENT_ANALYSIS.md": {
+      "sha256_before": "6bce34fb37829a983ff2cbb63d129b749841056dff70a1df1972f1be9755970c",
+      "sha256_after": "6bce34fb37829a983ff2cbb63d129b749841056dff70a1df1972f1be9755970c",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_RESEARCH_GAPS.md": {
+      "sha256_before": "cb4bda8d84ea08ac2cb2a88bc7ac53fc9e16a09e87fdca0d65c1d9253a423786",
+      "sha256_after": "cb4bda8d84ea08ac2cb2a88bc7ac53fc9e16a09e87fdca0d65c1d9253a423786",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_RESEARCH_PROVENANCE.json": {
+      "sha256_before": "8b05607ae76b29607190c2cb190cf3cec3b6e190151e120db234c3b9fc1de32c",
+      "sha256_after": "8b05607ae76b29607190c2cb190cf3cec3b6e190151e120db234c3b9fc1de32c",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_RESOURCE_SPECIFIC_RULE_FRAMEWORK.md": {
+      "sha256_before": "2da37b19ce8967098f9b9b18c98c74549618bd29fd7853b09e26dba251a258cd",
+      "sha256_after": "2da37b19ce8967098f9b9b18c98c74549618bd29fd7853b09e26dba251a258cd",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_TELEMETRY_FRESHNESS_RESEARCH.json": {
+      "sha256_before": "a1520c74e9d719f955c842a6d7c7f5ec6a39bd6bba5584b3f4b2f3007229747c",
+      "sha256_after": "a1520c74e9d719f955c842a6d7c7f5ec6a39bd6bba5584b3f4b2f3007229747c",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_TELEMETRY_FRESHNESS_RESEARCH.md": {
+      "sha256_before": "6aad08625b72c6024c59d468104fa8e55fa6e187eb33296bff8eb98673283c4b",
+      "sha256_after": "6aad08625b72c6024c59d468104fa8e55fa6e187eb33296bff8eb98673283c4b",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/G1.3E_THRESHOLD_ALTERNATIVES.md": {
+      "sha256_before": "9288167dbe9c9091d018b9fd78888f0777d11208cb921b544631fd7fb8904a14",
+      "sha256_after": "9288167dbe9c9091d018b9fd78888f0777d11208cb921b544631fd7fb8904a14",
+      "unchanged": true
+    },
+    "investigations/gap1_3e_telemetry_freshness_research_2026/SOURCE_HASH_MANIFEST.json": {
+      "sha256_before": "306fdb24f50c010cb9ca97b6b5eb132433ae1a4969c21f07bd594495ffe2b616",
+      "sha256_after": "306fdb24f50c010cb9ca97b6b5eb132433ae1a4969c21f07bd594495ffe2b616",
+      "unchanged": true
+    },
+    "system/control/ecd.py": {
+      "sha256_before": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+      "sha256_after": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+      "unchanged": true
+    },
+    "system/control/router.py": {
+      "sha256_before": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+      "sha256_after": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+      "unchanged": true
+    },
+    "system/optimization/implementations/gap19_highs_native.py": {
+      "sha256_before": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+      "sha256_after": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+      "unchanged": true
+    },
+    "system/optimization/implementations/option_d.py": {
+      "sha256_before": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+      "sha256_after": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+      "unchanged": true
+    },
+    "system/optimization/implementations/reactive_hybrid_a2.py": {
+      "sha256_before": "7afa7dbd2ffbc3347f0208df8af459476ead4c6b316e5bf5c76cd943b7dc1f54",
+      "sha256_after": "7afa7dbd2ffbc3347f0208df8af459476ead4c6b316e5bf5c76cd943b7dc1f54",
+      "unchanged": true
+    },
+    "system/runtime/runner.py": {
+      "sha256_before": "723635dad0b8e06ac579088252e2eab7959e1f2ef2cdf6eba59e5fa0dfacdf32",
+      "sha256_after": "723635dad0b8e06ac579088252e2eab7959e1f2ef2cdf6eba59e5fa0dfacdf32",
+      "unchanged": true
+    },
+    "system/simulation/simulator.py": {
+      "sha256_before": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+      "sha256_after": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+      "unchanged": true
+    }
+  }
+}

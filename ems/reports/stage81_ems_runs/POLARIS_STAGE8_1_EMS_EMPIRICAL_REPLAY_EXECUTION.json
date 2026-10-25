@@ -1,0 +1,162 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION_MANIFEST",
+  "governance_status": "GOVERNANCE_DECISION_A_VERIFIED_EXECUTED",
+  "experiment_status": "EXPERIMENT_EXECUTED_COMPLETE",
+  "experiment_date_utc": "2026-09-19",
+  "timestamp_iso": "2026-09-19T13:57:45+05:30",
+  "treatment_artifact": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+  "treatment_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+  "control_engine": "system/forecasting/implementations/baseline.py (LocalBaselineForecastEngine)",
+  "expected_origins": 173,
+  "final_eligible_origins": 173,
+  "ineligible_origins": [],
+  "ineligibility_reasons": [],
+  "treatment_runs_completed": 173,
+  "control_runs_completed": 173,
+  "paired_runs_completed": 173,
+  "pairing_integrity": "VERIFIED_100_PERCENT_PAIRED_EXACT_MATCH",
+  "initial_state_identity_status": "VERIFIED_IDENTICAL_ACROSS_ALL_PAIRS",
+  "realized_trajectory_identity_status": "VERIFIED_IDENTICAL_ACROSS_ALL_PAIRS",
+  "future_truth_firewall": "ESTABLISHED_VERIFIED_ISOLATED",
+  "primary_endpoint": {
+    "metric": "total_diesel_fuel_liters",
+    "control_total": 4671.0,
+    "treatment_total": 6447.44,
+    "mean_paired_difference": 10.2684,
+    "median_paired_difference": 5.66,
+    "wilcoxon_test": {
+      "statistic": 5351.5,
+      "p_value": 0.0013565577035714814,
+      "zero_method": "wilcox",
+      "alternative": "two-sided"
+    },
+    "bootstrap_analysis": {
+      "resampling_unit": "COMPLETE_24H_ELIGIBLE_ORIGIN",
+      "iterations": 10000,
+      "random_seed": 42,
+      "bootstrap_mean_estimate": 10.2935,
+      "percentile_95_ci_lower": 5.4795,
+      "percentile_95_ci_upper": 15.2113
+    }
+  },
+  "secondary_endpoints": {
+    "diesel_energy_kwh": {
+      "control_total": 3460.0,
+      "treatment_total": 13517.38,
+      "control_mean": 20.0,
+      "treatment_mean": 78.1351,
+      "mean_paired_difference": 58.1351,
+      "median_paired_difference": 42.95
+    },
+    "renewable_energy_used_kwh": {
+      "control_total": 158002.63,
+      "treatment_total": 144256.45,
+      "control_mean": 913.31,
+      "treatment_mean": 833.8523,
+      "mean_paired_difference": -79.4577,
+      "median_paired_difference": -63.2
+    },
+    "renewable_curtailment_kwh": {
+      "control_total": 30686.74,
+      "treatment_total": 9852.06,
+      "control_mean": 177.38,
+      "treatment_mean": 56.9483,
+      "mean_paired_difference": -120.4317,
+      "median_paired_difference": -116.15
+    },
+    "renewable_curtailment_pct": {
+      "control_total": 2812.98,
+      "treatment_total": 1062.15,
+      "control_mean": 16.26,
+      "treatment_mean": 6.1396,
+      "mean_paired_difference": -10.1204,
+      "median_paired_difference": -9.57
+    },
+    "renewable_utilization_pct": {
+      "control_total": 14487.02,
+      "treatment_total": 16237.85,
+      "control_mean": 83.74,
+      "treatment_mean": 93.8604,
+      "mean_paired_difference": 10.1204,
+      "median_paired_difference": 9.57
+    },
+    "battery_throughput_kwh": {
+      "control_total": 31226.5,
+      "treatment_total": 20041.68,
+      "control_mean": 180.5,
+      "treatment_mean": 115.8479,
+      "mean_paired_difference": -64.6521,
+      "median_paired_difference": -64.23
+    },
+    "battery_equivalent_cycles": {
+      "control_total": 156.13,
+      "treatment_total": 100.21,
+      "control_mean": 0.9025,
+      "treatment_mean": 0.5792,
+      "mean_paired_difference": -0.3233,
+      "median_paired_difference": -0.3211
+    },
+    "unmet_critical_load_kwh": {
+      "control_total": 0.0,
+      "treatment_total": 0.0,
+      "control_mean": 0.0,
+      "treatment_mean": 0.0,
+      "mean_paired_difference": 0.0,
+      "median_paired_difference": 0.0
+    },
+    "system_reliability_pct": {
+      "control_total": 17300.0,
+      "treatment_total": 17300.0,
+      "control_mean": 100.0,
+      "treatment_mean": 100.0,
+      "mean_paired_difference": 0.0,
+      "median_paired_difference": 0.0
+    },
+    "constraint_violations_count": {
+      "control_total": 0.0,
+      "treatment_total": 0.0,
+      "control_mean": 0.0,
+      "treatment_mean": 0.0,
+      "mean_paired_difference": 0.0,
+      "median_paired_difference": 0.0
+    }
+  },
+  "forecast_error_summary": {
+    "treatment_mae_mean": 25.1281,
+    "control_mae_mean": 174.2477,
+    "treatment_rmse_mean": 40.5049,
+    "control_rmse_mean": 236.8191,
+    "treatment_bias_mean": 0.9995,
+    "control_bias_mean": 164.305
+  },
+  "pre_registered_association": {
+    "description": "Spearman rank correlation between origin-level difference in signed mean solar forecast error (X) and origin-level difference in total diesel fuel liters (Y)",
+    "X_definition": "treatment_signed_mean_error - control_signed_mean_error",
+    "Y_definition": "treatment_diesel_fuel_liters - control_diesel_fuel_liters",
+    "N": 173,
+    "spearman_rho": -0.9198,
+    "p_value": 2.283046250976508e-71,
+    "ties_handling": "scipy_rankdata_average"
+  },
+  "constraint_violations": {
+    "control_total": 0,
+    "treatment_total": 0
+  },
+  "execution_failures": {
+    "failed_origins": [],
+    "total_failures": 0
+  },
+  "raw_evidence_status": {
+    "csv_filename": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv",
+    "sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+    "total_records": 173
+  },
+  "reproducibility_status": "DETERMINISTIC_REPRODUCIBLE",
+  "final_experiment_classification": "A \u2014 VALID COMPLETED EXECUTION",
+  "scientific_interpretation": "Empirical Stage8.1 solar forecasts replayed through the frozen POLARIS EMS under the controlled POLARIS synthetic station environment resulted in an average paired diesel fuel consumption difference of +10.27 Liters per 24h origin compared to the control forecast baseline. The 95% bootstrap confidence interval for the mean paired fuel difference is [+5.48 L, +15.21 L] (Wilcoxon p = 1.3566e-03). The pre-registered forecast-error to EMS fuel outcome association yielded a Spearman rho of -0.9198 (p = 2.2830e-71).",
+  "limitations": [
+    "Empirical Stage8.1 solar forecasts replayed through the frozen POLARIS EMS under the controlled POLARIS synthetic station environment.",
+    "Station demand (35 kW) and wind generation are synthetic demonstration scenarios; real station demand is DATA BLOCKED.",
+    "This experiment measures operational differences within a controlled synthetic microgrid twin and does not constitute real field validation at Nuolja station."
+  ]
+}

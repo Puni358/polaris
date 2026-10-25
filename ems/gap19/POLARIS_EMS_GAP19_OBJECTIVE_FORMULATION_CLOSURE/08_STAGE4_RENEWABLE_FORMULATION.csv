@@ -1,0 +1,16 @@
+audit_document,08_STAGE4_RENEWABLE_FORMULATION
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# STAGE 4: RENEWABLE UTILIZATION FORMULATION & ANALYSIS
+# ============================================================
+
+aspect,current_implementation_fact,governed_target_specification,mathematical_representation,classification_status
+Objective Metric,Soft penalty c_curt * (p_curt_sol + p_curt_wind) * dt ($0.001/Wh),Minimization of avoidable renewable curtailment energy (Wh),min J4 = sum_{t=0}^{H-1} (p_curt_sol(t) + p_curt_wind(t)) * dt,RESOLVED_BY_EXISTING_GOVERNANCE
+Avoidable vs Necessary Curtailment,All curtailment penalized equally in current objective,Avoidable curtailment minimized; necessary curtailment permitted without penalty,p_curt_avoidable(t) = p_curt_total(t) - p_curt_necessary(t),RESOLVED_BY_EXISTING_GOVERNANCE
+Renewable Percentage Target,None in current MILP,No arbitrary percentage target authorized (e.g. 80% renewable floor prohibited),Avoidable curtailment minimization subject to Stage 1-3 bounds,RESOLVED_BY_EXISTING_GOVERNANCE
+Utilization Reporting Metric,Reported as renewable_curtailment array in DispatchPlan,Renewable utilization fraction % reported for operational auditability,Utilization % = sum(p_sol_used + p_wind_used)/sum(P_solar_gen + P_wind_gen) * 100,REPORTING METRIC
+Solar & Wind Decomposition,Separate variables p_curt_sol and p_curt_wind in current MILP,Preserve solar and wind curtailment decomposition in decision variables,p_curt_total(t) = p_curt_sol(t) + p_curt_wind(t),RESOLVED_BY_EXISTING_GOVERNANCE

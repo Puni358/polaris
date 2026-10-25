@@ -1,0 +1,295 @@
+{
+  "freeze_name": "FINAL_STAGE8_1_FORECASTING_FREEZE",
+  "status": "GOVERNANCE_DOCUMENTATION_FREEZE_ONLY_NO_NEW_EXPERIMENTS",
+  "selected_candidate": "corrected Stage 8.1 37-feature pipeline (2025 feature semantics corrected for terrain + u700/v700)",
+  "generated_at_utc": "2026-10-03T00:00:00Z",
+  "note": "This document records paths/hashes/configuration as they existed at freeze time. No model, feature, training procedure, or production EMS/optimizer code was modified to produce this freeze.",
+
+  "pipeline_chain_2025": {
+    "1_raw_sites_data": {
+      "path": "data/raw_2025_sites_download/SITES_MET_ANS_NMS_20250101-20251231_L2_SH.csv",
+      "sha256": "90b298ce6f80658a1e8b8e3eb53e1e827405a3cb02840dfac4220bd3e5df1ab2",
+      "source": "SITES (data.fieldsites.se), Nuolja Middle Station, 10-min resolution, 52560 rows",
+      "manifest": "data/POLARIS_v0_1_SITES_Nuolja_2025_ACQUISITION_MANIFEST.json (sha256 54cd12df78fc17c251adccaec02ee475b910e34ab5978423d4c359875f41cc02)"
+    },
+    "2_hourly_preprocessing": {
+      "hourly_multivariate": {
+        "path": "data/POLARIS_v0_1_SITES_Nuolja_2025_hourly_multivariate.csv",
+        "sha256": "dc62ecd0da3b98eb9e19704259c919f210819a43a531e540c347b5f99fdd6318",
+        "rows": 8760
+      },
+      "hourly_sw_in": {
+        "path": "data/POLARIS_v0_1_SITES_Nuolja_2025_hourly_SW_IN.csv",
+        "sha256": "d457facdbeb57b9c582b623c524c0f50717306ca083ab93028f1bd700d1e7a2e",
+        "rows": 8760
+      },
+      "method": "LOCKED 2024 convention: group raw 10-min rows HH:00..HH:50 -> hourly label HH:00, arithmetic mean (NaN-skip); PRECIP summed.",
+      "verified_against_2024_pipeline": true
+    },
+    "3_clearsky": {
+      "path": "data/POLARIS_v0_1_SITES_Nuolja_2025_clearsky_decomposition.csv",
+      "sha256": "f5f5e2c4c076c3c3eb40071b9954189bedd02f49654b8de9ad02e74ab4585336",
+      "rows": 8760,
+      "method": "pvlib Location.get_clearsky(model='ineichen'), same lat/lon/tz as 2024 (68.362074N, 18.738752E, Etc/GMT-1)",
+      "columns": ["TIMESTAMP", "actual_SW_IN", "clearsky_ghi", "solar_elevation", "solar_zenith", "kt"]
+    },
+    "4_nwp": {
+      "path": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+      "sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+      "rows": 8760,
+      "origins": 365,
+      "method": "metno_seamless day-ahead previous_day1 variables via Open-Meteo previous-runs API; audit_clean method (0% synthetic imputation) -- 365/365 origins PASS (vs 347/365 in 2024, 2025 benefits from fuller archive backfill)",
+      "coverage_report": "data/POLARIS_v0_1_nwp_coverage_pass_fail_2025.csv (sha256 c6d7136dc9c28d77571cef5ff65f6ea29fb0c8ac4d688a913d1a957fc5cb5ea4)"
+    },
+    "5_stage3b_chronos2": {
+      "path": "stage3/stage3b_2025/stage3b_cloud_nwp_predictions_2025.csv",
+      "sha256": "0a5263e6ea89c2a9f520041d9122ec72a196cc3975b37def8dd7a41803df6465",
+      "rows": 8736,
+      "origins": 364,
+      "origin_range": "2025-01-02 to 2025-12-31 (2025-01-01 excluded -- see known_limitations)",
+      "model": {
+        "id": "amazon/chronos-2",
+        "frozen": true,
+        "retrained": false,
+        "checkpoint_snapshot_sha256_model_safetensors": "ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42"
+      },
+      "covariates": ["solar_elevation", "solar_zenith", "clearsky_ghi", "fc_cloud_cover"]
+    },
+    "6_stage4_ensemble": {
+      "predictions_path": "stage4/stage4_results_2025/ensemble_predictions.csv",
+      "predictions_sha256": "c4ef9b264bd263cb69af1ef3b833ad883c6f586d158017399d214f4a6dbe4af7",
+      "parameters_path": "stage4/stage4_results_2025/ensemble_parameters.json",
+      "parameters_sha256": "31900c20006e278fa404da2062d4f3f0a93403e6b50ad02aa21773f049acbccc",
+      "rows": 8736,
+      "train_test_split": "182 EVEN / 182 ODD (positional, i%2 on sorted origins)",
+      "algorithm": "horizon-adaptive cloud-damped clearsky ensemble: w*chronos + (1-w)*physics(clearsky_ghi, cloud_frac, k), per-horizon Nelder-Mead fit on EVEN train only"
+    },
+    "7_corrected_terrain": {
+      "2025_path": "data/POLARIS_v0_1_SITES_Nuolja_2025_terrain_features.csv",
+      "2025_sha256": "6ec8d815c26b9f2472b569c71ff90c98ee88a7b31bbee94a90731c8562f51dc3",
+      "2024_corrected_path": "stage7/stage8/stage8_1_corrected_2025/nuolja_terrain_features_2024_CORRECTED.csv",
+      "2024_corrected_sha256": "ee7f4dc839865846083970e1c2d47c57fec81600e14ad408fd62384f10e8b01b",
+      "rows_2025": 8760,
+      "rows_2024_corrected": 8784,
+      "features": ["terrain_horizon_elevation_deg", "terrain_elevation_margin_deg", "terrain_solar_obstruction_flag", "clearsky_ghi_terrain_adjusted"],
+      "method": "single aligned pvlib solar-position call -> round(azimuth)%360 lookup into the static DEM-derived 360-point horizon profile (reused unmodified)",
+      "dem_reused_unmodified": {
+        "path": "stage7/stage7_5_terrain_horizon/Copernicus_DSM_COG_10_N68_00_E018_00_DEM.tif",
+        "sha256": "3598e552b56d3febdd92173cafcad8cc1ff4891d46125462cd961994357548a1"
+      },
+      "horizon_profile_reused_unmodified": {
+        "path": "stage7/stage7_5_terrain_horizon/nuolja_horizon_profile_360deg.csv",
+        "sha256": "0f0dde047c84715b8d325fe66728fd32da12e59b82d86e99dcb261796394c0f3"
+      },
+      "correction_vs_historical_2024": {
+        "defect": "historical artifact's solar_azimuth column shifted -1 row vs its own TIMESTAMP",
+        "quantified_impact": "99.8% of hours shifted (mean 2.69 deg, max 10.27 deg); 234 daytime hours with flipped terrain_solar_obstruction_flag, mean ~167 W/m2 swing in clearsky_ghi_terrain_adjusted when flipped"
+      }
+    },
+    "8_corrected_u700_v700": {
+      "2025_path": "stage7/stage8/stage8_1_700hpa_wind_2025/stage8_1_wind700_features_2025.csv",
+      "2025_sha256": "f786430727a38585c8353e50cb7affc1c6c967aab9b3504028537d16ba22bdeb",
+      "2024_corrected_path": "stage7/stage8/stage8_1_corrected_2025/stage8_1_wind700_features_2024_CORRECTED.csv",
+      "2024_corrected_sha256": "0b6ad84cba7050272400b853cec47435c9ebd6501dac7a5abee00fe5e938eecc",
+      "origins_2025": 365,
+      "origins_2024_corrected": 347,
+      "source": "MET Norway meps25epsarchive (meps_det_pl), day-ahead D-1 18Z run, via thredds.met.no OPeNDAP ASCII",
+      "coverage": "horizon_hour 1-19 = genuine hourly (lead+6h..+24h from the 18Z run); horizon_hour 20-24 = documented NaN gap (archive is 3-hourly beyond lead+24h -- structural property, not fabricated)",
+      "correction_vs_historical_2024": [
+        {
+          "defect": "off-by-one horizon_hour: historical horizon_hour=1 == forecast_start+1h vs the rest of the pipeline's +0h convention",
+          "fix": "time slice shifted from [7:1:30] to [6:1:24] so horizon_hour=1 == forecast_start+0h"
+        },
+        {
+          "defect": "hourly/3-hourly resolution cliff: historical script silently relabeled 3-hourly archive values (lead+27h..+42h) as sequential hourly horizon_hour 19-24",
+          "fix": "horizon_hour 20-24 reported as honest NaN; model retrained WITH this real missing-value pattern (native HistGradientBoostingRegressor support)"
+        }
+      ]
+    },
+    "9_lwp_iwp": {
+      "2025_path": "stage6/stage6_6_lwp_iwp_2025/lwp_iwp_extracted_features_2025.csv",
+      "2025_sha256": "4c8019a03658ca32ec330b7ee7b8b69de9a3959d3cf74065d54ab1a07b16ade8",
+      "2024_historical_path_reused_unchanged": "stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+      "2024_historical_sha256": "da6585c3a584f742d4e78f2d5ac5323479a765bcf74bb8b6da31cf1336f600a8",
+      "origins_2025": 364,
+      "method": "surface-aware trapezoidal vertical integration over 13 pressure levels, same-day 00Z MEPS run, unchanged formula from the historical 2024 script",
+      "audit_finding": "historical artifact's 'valid_time' STRING column was mislabeled +1h, but the actual lwp_latest/iwp_latest VALUES used by the model merge were already correctly aligned (confirmed via live re-extraction, diff ~1e-7, floating-point noise only). CONCLUSION: no correction was needed for the feature values themselves; the 2024 file is reused unchanged on the 2024 side."
+    },
+    "10_causal_context_features": {
+      "note": "Computed inline (not a separate saved file) inside build_corrected_feature_matrix.py, 14 features (ctx_std_3h/6h/12h/24h, ctx_abs_change_1h/3h/6h, ctx_max_diff_6h, ctx_mean_diff_6h, ctx_slope_6h, ctx_kt_std_6h, ctx_last_obs, ctx_mean_24h, ctx_max_24h), from the 24h window strictly BEFORE each origin, using the hourly SITES SW_IN series and clear-sky kt. Formula unchanged from the historical 2024 pipeline; verified source-column-compatible for 2025 (SW_IN column name match)."
+    },
+    "11_corrected_37feature_matrix": {
+      "2024_path": "stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2024_CORRECTED.csv",
+      "2024_sha256": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+      "2024_rows": 8328,
+      "2024_origins": 347,
+      "2025_path": "stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2025_CORRECTED.csv",
+      "2025_sha256": "9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087",
+      "2025_rows": 8736,
+      "2025_origins": 364,
+      "unchanged_feature_count": 31,
+      "corrected_feature_families": ["terrain (4 features)", "u700/v700 (2 features)"],
+      "builder_script": "stage7/stage8/stage8_1_corrected_2025/build_corrected_feature_matrix.py"
+    },
+    "12_corrected_stage8_1_hgb_model": {
+      "candidate_37feature_path": "stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_candidate_37feature_model.joblib",
+      "candidate_37feature_sha256": "64ea4abada78a257f9ad053f1d869dddb983160490e06d1528954fd2205009ce",
+      "control_35feature_path": "stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_control_35feature_model.joblib",
+      "control_35feature_sha256": "00783c858c0c08b36c2ea25b7a00edeee373e869535b485feb0314f9c21f4a67",
+      "USE_THIS_ARTIFACT_GOING_FORWARD": "stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_candidate_37feature_model.joblib",
+      "roundtrip_verified": true,
+      "trained_on": "2024 EVEN origins only (174 origins, daytime rows, n=2885)",
+      "trained_on_2025_data": false
+    },
+    "13_24h_forecast_2025_blind": {
+      "predictions_path": "stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_predictions.csv",
+      "predictions_sha256": "65e0a0acf2d7196bfa557b319419f0c340b63f1d01d69d5b20c93217742e9500",
+      "rows": 8736,
+      "origins": 364,
+      "generated_by": "single vectorized model.predict() call over the full corrected 2025 feature matrix -- no retraining",
+      "day_night_gate": "causal (solar_elevation<=0 OR clearsky_ghi==0); does not read actual_SW_IN for any decision"
+    },
+    "14_evaluation": {
+      "2024_odd_results": "stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_official_odd_results_2024.json (sha256 6a01d8e92fd9f9cb176d81411a82e4cc8656a9991805cdfcd794b0a8866f90a7)",
+      "2025_blind_results": "stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_results.json (sha256 69c533932336e4e75f7ca5d18abb06c9aa21feaaa26726826d19402e16d78fb6)",
+      "2025_blind_horizon_metrics": "stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_horizon_metrics.csv (sha256 9ac105bb542cf571511fce8e8574a7da081d359080a3767737f0f306660facf3)",
+      "branch01_2025_blind_results_for_reference_no_comparison_made": "stage7/stage8/stage8_1_corrected_2025/branch01_candidateA_2025_blind_results.json (sha256 3ffcdd92483b2a1219c2f34adfabeec408bfe3b2eb62f35e3cb8a39fa5876318)"
+    }
+  },
+
+  "feature_contract": {
+    "base_28_features": [
+      "horizon_hour", "month", "hour", "solar_elevation", "solar_zenith", "clearsky_ghi",
+      "fc_cloud_cover", "fc_temperature_2m", "fc_relative_humidity_2m", "cloud_frac",
+      "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold", "disagreement_fold",
+      "ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h",
+      "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h",
+      "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h",
+      "ctx_kt_std_6h", "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h"
+    ],
+    "stage66_31_features": "base_28 + [lwp_latest, iwp_latest, lwp_x_cloud]",
+    "stage75_35_features": "stage66_31 + [terrain_horizon_elevation_deg, terrain_elevation_margin_deg, terrain_solar_obstruction_flag, clearsky_ghi_terrain_adjusted]",
+    "candidate_37_features_ORDERED": [
+      "horizon_hour", "month", "hour", "solar_elevation", "solar_zenith", "clearsky_ghi",
+      "fc_cloud_cover", "fc_temperature_2m", "fc_relative_humidity_2m", "cloud_frac",
+      "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold", "disagreement_fold",
+      "ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h",
+      "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h",
+      "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h",
+      "ctx_kt_std_6h", "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h",
+      "lwp_latest", "iwp_latest", "lwp_x_cloud",
+      "terrain_horizon_elevation_deg", "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag", "clearsky_ghi_terrain_adjusted",
+      "u700", "v700"
+    ],
+    "target": "actual_SW_IN - pred_stage4_fold (residual-on-Stage4), fit on daytime rows only",
+    "night_handling": "prediction forced to 0.0 when is_night_causal (solar_elevation<=0 OR clearsky_ghi==0); model not applied to these rows at all",
+    "actual_SW_IN_never_a_model_input": true
+  },
+
+  "model_configuration": {
+    "estimator": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "wrapper_for_candidate": "none (single multi-row regressor on residual target, unlike Branch01's MultiOutputRegressor)",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42,
+    "tuned": false,
+    "retrained_beyond_original_pipeline": false,
+    "missing_value_handling": "native (sklearn HGBT); trained WITH the real u700/v700 NaN pattern present in both EVEN-train and ODD-eval, unlike the historical model which never saw real NaN for this feature"
+  },
+
+  "training_split_procedure": {
+    "split_type": "positional EVEN/ODD on sorted origins (i % 2)",
+    "total_2024_origins": 347,
+    "even_train_origins": 174,
+    "odd_eval_origins": 173,
+    "train_rows_daytime": 2885,
+    "eval_rows_daytime": 2883,
+    "eval_rows_night": 1269,
+    "tuning_performed": false,
+    "2025_data_used_in_training": false
+  },
+
+  "metrics_2024_corrected_odd": {
+    "stage8_1_candidate_37feature": {
+      "daytime_mae_w_m2": 36.203997, "daytime_rmse_w_m2": 64.575152,
+      "daytime_bias_w_m2": 0.960484, "daytime_nmae_pct": 28.0807, "night_mae_w_m2": 0.0
+    },
+    "stage7_5_control_35feature": {
+      "daytime_mae_w_m2": 36.361637, "daytime_rmse_w_m2": 64.810409,
+      "daytime_bias_w_m2": 2.104996, "daytime_nmae_pct": 28.2029, "night_mae_w_m2": 0.0
+    },
+    "delta_candidate_minus_control": {
+      "delta_mae_w_m2": -0.157639, "delta_nmae_pp": -0.1223,
+      "delta_rmse_w_m2": -0.235257, "delta_bias_w_m2": -1.144512
+    },
+    "note": "historical (buggy-terrain/wind) 2024 ODD candidate MAE=36.1887/nMAE=28.07% shown in prior steps for context ONLY -- not a valid baseline, uses uncorrected inputs"
+  },
+
+  "metrics_2025_blind": {
+    "stage8_1_corrected_candidate": {
+      "overall": {"n": 8736, "mae_w_m2": 24.617160, "rmse_w_m2": 54.549191, "bias_w_m2": 2.792074, "nmae_pct": 28.2478},
+      "daytime_actual_gt_0": {"n": 5978, "mae_w_m2": 35.974491, "rmse_w_m2": 65.942692, "bias_w_m2": 4.080221, "nmae_pct": 28.2478}
+    },
+    "nmae_definition": "mae / mean(actual) * 100",
+    "per_horizon_csv": "stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_horizon_metrics.csv"
+  },
+
+  "branch01_2025_blind_for_reference_no_comparison_declared": {
+    "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "run_id": "RUN_BRANCH01_CANDIDATE_A_HGB",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "overall": {"n": 8736, "mae_w_m2": 38.475609, "rmse_w_m2": 74.372507, "bias_w_m2": -1.975993, "nmae_pct": 44.1502},
+    "daytime_actual_gt_0": {"n": 5978, "mae_w_m2": 55.345380, "rmse_w_m2": 89.886694, "bias_w_m2": -3.768905, "nmae_pct": 43.4582},
+    "row_set_identical_to_stage8_1": true
+  },
+
+  "known_limitations": [
+    {
+      "id": "2025_jan1_missing_boundary",
+      "description": "2025 coverage is 8736/8760 hours; 2025-01-01 (24 hours) is excluded from the entire Stage 3b-and-later chain because Chronos-2's 24h context window would require 2024-12-31 data, which is out of scope for this 2025-only rebuild. This is NOT introduced by any correction step -- it is a structural property of building 2025 in isolation from 2024.",
+      "affected_stages": ["Stage 3b", "Stage 4", "corrected terrain/wind feature matrices", "2025 blind evaluation"]
+    },
+    {
+      "id": "branch01_h1_convention",
+      "description": "Branch01's sw_in_lag_0h feature is the actual SW_IN observed AT the forecast origin (known at forecast time, not future data). Under this repo's horizon_hour=1 == forecast_start+0h convention, that is numerically the same timestamp as the h=1 target. This is architectural to Branch01 (a nowcast-anchored persistence feature), not a leak, but means Branch01's H1 metric is not a pure blind-ahead test in the same sense H2-H24 are. Flagged for any future comparison; no correction applied since Branch01 is frozen and not in scope to modify.",
+      "affected_stages": ["Branch01 2025 blind evaluation, horizon_hour=1 only"]
+    },
+    {
+      "id": "u700_v700_documented_gap",
+      "description": "horizon_hour 20-24 (~21% of wind-feature rows, both 2024-corrected and 2025) are genuine NaN -- the MEPS pressure-level archive is hourly only through lead+24h, then 3-hourly. The corrected model was trained with this real missing-value pattern (not previously the case historically) and uses sklearn's native missing-value handling.",
+      "affected_stages": ["u700/v700 dependency", "corrected 37-feature matrix", "corrected model training and inference"]
+    },
+    {
+      "id": "day_night_gate_methodology_choice",
+      "description": "The historical 2024 training procedure gated night-forcing using is_daytime (actual_SW_IN>0), which technically consults the target for row selection (not as a model feature). For the 2025 blind run, this was switched to a purely causal gate (is_night_causal: solar_elevation<=0 OR clearsky_ghi==0) so that no target information is used anywhere in the blind inference path. The two gates disagree on 1,532/8,736 2025 rows (17.5%), all twilight-glow hours with small positive actual values (median 0.40 W/m2, max 43.6 W/m2); both variants were computed and reported for transparency.",
+      "affected_stages": ["2025 blind evaluation only; 2024 training procedure is unchanged from historical"]
+    },
+    {
+      "id": "lwp_iwp_valid_time_label_only",
+      "description": "The historical 2024 LWP/IWP artifact's 'valid_time' display column is mislabeled +1h, but the actual lwp_latest/iwp_latest feature VALUES used by the model merge are correctly aligned (verified by live re-extraction, diff ~1e-7). No correction was needed or applied to the feature values; noted here only so this cosmetic discrepancy is not mistaken for an uncorrected bug.",
+      "affected_stages": ["LWP/IWP dependency, informational only"]
+    }
+  ],
+
+  "historical_artifact_preservation": {
+    "status": "PRESERVED_UNTOUCHED_HISTORICAL_REFERENCE_ONLY",
+    "do_not_use_for_new_inference": true,
+    "artifacts": [
+      {"path": "stage7/stage8/stage8_1_700hpa_wind/model_artifact/stage8_1_candidate_37feature_model.joblib", "sha256": "c8009ffbc653afdef39b47a9d304b45414c547dae1ab0f94acd3dcce3df2416d"},
+      {"path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv", "sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707"},
+      {"path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_results.json", "sha256": "d8e746aba4d53953b050500b24bb02929233ad97f58b6865cdee00ecdd702228"},
+      {"path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv", "sha256": "e7b304186eef6c7e6135ba7a9aa9d20a4d2f32eeb9b65085ef8e10e34ea0b541"},
+      {"path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_extracted_features.csv", "sha256": "aa6ce29f3acec6345b82e11b7182ba0fe4110f7c044486f56f2fd5b179b49b08"},
+      {"path": "stage7/stage7_5_terrain_horizon/nuolja_terrain_features_2024.csv", "sha256": "0a29c9c03815cc90faf3540dbd199b430ae292c8c2b327c02062a17732b7d689"},
+      {"path": "stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv", "sha256": "da6585c3a584f742d4e78f2d5ac5323479a765bcf74bb8b6da31cf1336f600a8", "note": "confirmed compatible, not buggy -- see known_limitations.lwp_iwp_valid_time_label_only"}
+    ],
+    "verification_performed_at_freeze_time": "all hashes/mtimes re-confirmed identical to when first measured in this investigation"
+  },
+
+  "production_code_touched": false,
+  "ems_optimizer_code_touched": false,
+  "new_experiments_run_for_this_freeze": false
+}

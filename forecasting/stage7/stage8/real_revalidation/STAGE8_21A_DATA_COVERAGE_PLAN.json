@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-09-13T10:02:55.977525+00:00",
+  "domain_lock": {
+    "spatial_window": "47x47 MEPS grid points",
+    "solar_elevation_min_deg": 5.0,
+    "relevant_tuple_count": 3285,
+    "covered_tuple_count": 3262,
+    "coverage_pct": 99.3,
+    "outside_window_count": 23,
+    "outside_window_handling": "Deterministic fallback to station column 1D vertical path value"
+  },
+  "opendap_extraction_plan": {
+    "meps_run_used": "D-1 18:00 UTC",
+    "thredds_dataset": "meps25epsarchive/YYYY/MM/DD/meps_det_pl_YYYYMMDDT18Z.ncml",
+    "spatial_subset_bounds": "[736:783, 462:509] (47x47 box centered at y=760, x=486)",
+    "pressure_levels": 13,
+    "variables": [
+      "mass_fraction_of_cloud_condensed_water_in_air_pl",
+      "mass_fraction_of_cloud_ice_in_air_pl",
+      "air_temperature_pl",
+      "specific_humidity_pl"
+    ],
+    "total_payload_gb": 3.56
+  }
+}

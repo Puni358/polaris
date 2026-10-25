@@ -1,0 +1,73 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "phase": "TRAINING_SPECIFICATION",
+  "authorization": "READ_ONLY_SPECIFICATION_ONLY",
+  "model_training_authorization": "NOT_GRANTED",
+  "target_specification": {
+    "site": "Nuolja",
+    "target_variable": "SW_IN",
+    "target_units": "W/m^2",
+    "frequency": "1h",
+    "horizon_steps": 24,
+    "target_vector_format": "Y(t) = [SW_IN(t+1)...SW_IN(t+24)]",
+    "exclusion_rule": "t+0 excluded"
+  },
+  "source_dataset": {
+    "filename": "(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv",
+    "raw_observations_n_observations": 8832,
+    "supported_origins_n_supported_origins": 8784,
+    "time_range": "2024-01-01T00:00:00Z to 2024-12-31T23:00:00Z",
+    "timezone": "UTC"
+  },
+  "origin_specification": {
+    "lookback_hours": 24,
+    "target_hours": 24,
+    "n_supported_origins": 8784,
+    "derivation_method": "N_observations - 48 = 8832 - 48 = 8784"
+  },
+  "feature_contract": {
+    "feature_count": 18,
+    "ordered_feature_list": [
+      "sw_in_lag_0h", "sw_in_lag_1h", "sw_in_lag_2h", "sw_in_lag_3h",
+      "sw_in_lag_6h", "sw_in_lag_12h", "sw_in_lag_23h", "sw_in_mean_24h",
+      "sw_in_std_24h", "sw_in_max_24h", "sw_in_min_24h", "solar_elevation",
+      "solar_zenith", "sin_hour", "cos_hour", "sin_doy", "cos_doy",
+      "clearsky_sw_in_origin"
+    ],
+    "causality_rule": "information_available_time <= forecast_origin"
+  },
+  "split_contract": {
+    "train_range": "2024-01-01T00:00:00Z to 2024-08-31T23:00:00Z",
+    "val_range": "2024-09-01T00:00:00Z to 2024-10-31T23:00:00Z",
+    "test_range": "2024-11-01T00:00:00Z to 2024-12-31T23:00:00Z",
+    "embargo_hours": 24
+  },
+  "preprocessing_contract": {
+    "scaler_type": "StandardScaler",
+    "fit_scope": "TRAIN_SPLIT_ONLY"
+  },
+  "model_architecture": {
+    "architecture_status": "AUTHORIZED_MULTIPLE_CANDIDATES",
+    "architecture_selection": "REQUIRES_GOVERNANCE_DECISION",
+    "authorized_candidates": [
+      "MultiOutputRegressor(HistGradientBoostingRegressor)",
+      "MultiOutputRegressor(Ridge)"
+    ]
+  },
+  "reproducibility_governance": {
+    "manifest_schema": "MODEL_RUN_MANIFEST_SCHEMA.json",
+    "checklist": "34-item TRAINING_REPRODUCIBILITY_CHECKLIST.md",
+    "replay_tolerance": {
+      "atol": 1e-5,
+      "rtol": 1e-5
+    }
+  },
+  "firewalls": {
+    "STAGE8_1_MODIFIED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "EMS_MODIFIED": "NO",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO"
+  },
+  "next_governed_step": "TRAINING_SPECIFICATION_GOVERNANCE_REVIEW"
+}

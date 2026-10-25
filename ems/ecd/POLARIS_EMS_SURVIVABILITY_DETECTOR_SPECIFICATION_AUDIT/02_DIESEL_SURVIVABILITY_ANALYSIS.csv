@@ -1,0 +1,22 @@
+audit_document,02_DIESEL_SURVIVABILITY_ANALYSIS
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,REPRODUCIBLE_CODE_AUDIT
+execution_performed,READ_ONLY
+
+# ============================================================
+# DIESEL SURVIVABILITY FORMULATION & REPOSITORY EVIDENCE
+# ============================================================
+
+parameter_aspect,symbol_formula,repository_source_file,prototype_value_or_expression,units,audited_status_and_gaps
+Fuel Remaining,F_remaining(t),system/schemas/station_state.py,ABSENT in StationState schema,Liters (L),MISSING DATA: Fuel tank level missing from StationState
+Base Fuel Consumption Rate,F_base,system/config/diesel.yaml,base_fuel_consumption_l_per_h = 5.0,L/h,VERIFIED FACT: Generator idle fuel consumption rate
+Marginal Fuel Rate,F_marg,system/config/diesel.yaml,marginal_fuel_consumption_l_per_wh = 0.00025,L/Wh,VERIFIED FACT: 0.25 L/kWh marginal fuel rate
+Startup Fuel Consumption,F_start = startup_cost / fuel_cost_per_l,system/config/diesel.yaml,15.00 / 2.50 = 6.0,Liters (L),DERIVABLE FACT: 6.0 Liters per generator startup
+Min Generator Power,P_diesel_min,system/config/diesel.yaml,min_power_w = 10000.0,W,VERIFIED FACT: 10 kW minimum continuous output when active
+Max Generator Power,P_diesel_max,system/config/diesel.yaml,max_power_w = 100000.0,W,VERIFIED FACT: 100 kW maximum rated electrical output
+Min Continuous Up-Time,min_up_time_hours,system/config/diesel.yaml,min_up_time_hours = 2,hours,VERIFIED FACT: 2-hour minimum continuous run constraint
+Required Diesel Generation,P_gen_req(k) = max(P_diesel_min D_critical(k)),system/optimization/implementations/milp.py,p_diesel bound vs u_diesel,W,DERIVABLE FACT: Must run at or above P_diesel_min
+Step Fuel Consumption,F_step(k) = (F_base * u_diesel(k) + F_marg * P_gen_req(k)) * dt,system/optimization/implementations/milp.py,(5.0*u + 0.00025*p) * dt,Liters (L),VERIFIED FACT: Exact step fuel consumption formula
+Cumulative Fuel Required,F_required(N) = sum_{k=1..N} F_step(k) + F_start * v_start,system/optimization/implementations/milp.py,N/A,Liters (L),DERIVABLE FORMULA: Causal forward fuel required sum
+Diesel Forward Endurance,T_fuel = max{N | F_required(N) <= F_remaining and D_crit(k) <= P_diesel_max},N/A,Forward diesel endurance horizon N (hours),hours,DERIVABLE FORMULA: Causal diesel endurance

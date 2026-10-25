@@ -1,0 +1,92 @@
+{
+  "manifest_id": "POLARIS_HYBRID_PROVENANCE_MATRIX_MANIFEST",
+  "task_type": "HYBRID_INPUT_PROVENANCE_MATRIX",
+  "governance_date_utc": "2026-09-20T11:02:00Z",
+  "provenance_categories_defined": [
+    "REAL_MEASURED",
+    "REAL_MEASUREMENT_PROXY",
+    "SYNTHETIC",
+    "ENGINEERING_ASSUMPTION",
+    "DERIVED_ENGINEERING_QUANTITY"
+  ],
+  "provenance_matrix": [
+    {
+      "input_name": "Nuolja Solar Irradiance",
+      "variable_name": "SW_IN",
+      "source_facility": "SITES Nuolja Middle Station AWS (Arctic Sweden, 68.36 N, 18.74 E)",
+      "provenance_class": "REAL_MEASURED",
+      "measurement_status": "Real physical solar shortwave irradiance observation",
+      "station_specific": true,
+      "units": "W/m^2",
+      "temporal_resolution": "1-hour interval",
+      "source_file_reference": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+      "allowed_use": "Solar forecasting and solar generation availability input only (NOT electrical generation)",
+      "prohibited_use": "Do not label as measured electrical generation or station demand"
+    },
+    {
+      "input_name": "Abisko Wind Speed",
+      "variable_name": "wind_speed_10m",
+      "source_facility": "SMHI Station 188790 (Abisko Aut, 392.2 m a.s.l.)",
+      "provenance_class": "CONDITIONALLY_ESTABLISHED_REGIONAL_PROXY",
+      "measurement_status": "Real meteorological observation at regional weather station",
+      "station_specific": false,
+      "spatial_separation_km": 4.1,
+      "altitude_difference_m": 310.0,
+      "units": "m/s",
+      "temporal_resolution": "1-hour interval",
+      "source_file_reference": "research/wind_a2/smhi_188790_ws_full.csv",
+      "allowed_use": "Proxy wind-speed input for controlled hybrid engineering scenarios",
+      "prohibited_use": "Do not label as Nuolja measured wind speed or direct summit measurement"
+    },
+    {
+      "input_name": "Station Electrical Demand",
+      "variable_name": "P_load",
+      "source_facility": "POLARIS Synthetic Load Profile Generator (Deterministic Baseline)",
+      "provenance_class": "SYNTHETIC",
+      "measurement_status": "DATA_BLOCKED",
+      "station_specific": false,
+      "units": "Watts (W)",
+      "temporal_resolution": "1-hour interval",
+      "source_file_reference": "POLARIS_HYBRID_FIXTURE_SPECIFICATION.json (Fixture H1.0)",
+      "allowed_use": "Controlled engineering and digital-twin validation only",
+      "prohibited_use": "Do not label as measured Nuolja demand or real station load"
+    },
+    {
+      "input_name": "Wind Generation",
+      "variable_name": "P_wind",
+      "source_facility": "POLAR_REFERENCE_TURBINE_SCENARIO (Generic IEC 61400-12 60 kW Reference Curve)",
+      "provenance_class": "SYNTHETIC_ENGINEERING_SCENARIO",
+      "measurement_status": "NUOLJA_GENERATION_NOT_ESTABLISHED",
+      "station_specific": false,
+      "units": "Watts (W)",
+      "temporal_resolution": "1-hour interval",
+      "source_file_reference": "POLARIS_HYBRID_FIXTURE_SPECIFICATION.json (Generic Reference Turbine)",
+      "allowed_use": "Controlled engineering scenario only if explicitly authorized",
+      "prohibited_use": "Do not label as Nuolja turbine hardware or measured generation"
+    },
+    {
+      "input_name": "Solar-to-PV Mapping (D3)",
+      "variable_name": "P_solar",
+      "source_facility": "P_raw = SW_IN * 300m^2 * 0.20 * 0.85; P_solar = min(P_raw, 60000 W)",
+      "provenance_class": "ENGINEERING_MAPPING",
+      "measurement_status": "Engineering model assumption",
+      "station_specific": false,
+      "units": "Watts (W)",
+      "temporal_resolution": "1-hour interval",
+      "source_file_reference": "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D3_PV_MAPPING.json",
+      "allowed_use": "Synthetic PV array conversion model for simulation inputs",
+      "prohibited_use": "Do not claim empirical station-specific PV array validation"
+    }
+  ],
+  "governance_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED"
+  }
+}

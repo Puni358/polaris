@@ -1,0 +1,17 @@
+audit_document,04_BATTERY_DEGRADATION_ANALYSIS
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# BATTERY DEGRADATION OBJECTIVE PLACEMENT ANALYSIS
+# ============================================================
+
+aspect,current_implementation_fact,governed_target_specification,impact_on_ab_equivalence,classification_status
+Current Location in Code,Scalar penalty term c_deg * (p_chg + p_dis) * dt in milp.py,Unassigned in governed 4-stage lexicographic hierarchy,Ad-hoc scalar penalty distorts lexicographic stage isolation,CURRENT_IMPLEMENTATION_FACT
+Existing Governance Authorization,No stakeholder policy decision authorizes degradation placement,Stakeholder policy must explicitly assign degradation stage,Placement decision required before implementing either A or B,GOVERNANCE_BLOCKER
+Option Candidate — Stage 3 Placement,N/A,Include degradation cost in Stage 3 (Operating Costs & Fuel),Identical formulation in A and B (adds degradation cost to Stage 3 objective),GOVERNANCE_DECISION_REQUIRED
+Option Candidate — Stage 4 Placement,N/A,Include degradation penalty in Stage 4 (Renewable & System Loss Minimization),Identical formulation in A and B (adds degradation penalty to Stage 4 objective),GOVERNANCE_DECISION_REQUIRED
+Option Candidate — Hard Constraint,N/A,Limit daily throughput via hard constraint sum(p_chg + p_dis)*dt <= Max_Throughput,Identical feasibility region in both A and B,GOVERNANCE_DECISION_REQUIRED
+Final Governance Status,BATTERY_DEGRADATION_STAGE = GOVERNANCE_BLOCKER,Requires formal stakeholder placement decision,Equivalence holds under any assignment provided placement is identical in A and B,GOVERNANCE_BLOCKER

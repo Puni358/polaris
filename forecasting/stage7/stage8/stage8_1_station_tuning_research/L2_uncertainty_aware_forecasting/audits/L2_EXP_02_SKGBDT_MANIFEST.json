@@ -1,0 +1,42 @@
+{
+  "experiment_id": "L2-EXP-02-SKGBDT",
+  "title": "Native sklearn HistGradientBoosting Quantile Uncertainty Model",
+  "status": "NO-GO",
+  "timestamp_utc": "2026-10-04T05:20:56.621460+00:00",
+  "verified_hashes": {
+    "historical_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "exact_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "frozen_candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+  },
+  "runtime_environment": {
+    "python_executable": "/home/punith-bs/01polaris (Copy)/.venv/bin/python",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "scikit_learn_version": "1.9.0",
+    "numpy_version": "2.5.2",
+    "pandas_version": "3.0.5"
+  },
+  "pre_registered_hyperparameters": {
+    "loss": "quantile",
+    "learning_rate": 0.05,
+    "max_iter": 300,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 30,
+    "l2_regularization": 1.0,
+    "max_bins": 255,
+    "early_stopping": false,
+    "random_state": 42
+  },
+  "feature_sequence_count": 38,
+  "row_counts": {
+    "total_rows": 26011,
+    "train_daytime_rows": 8137,
+    "validation_daytime_rows": 4069,
+    "blind_daytime_rows": 3673
+  },
+  "bootstrap_configuration": {
+    "n_boot": 2000,
+    "seed": 42,
+    "method": "percentile"
+  }
+}

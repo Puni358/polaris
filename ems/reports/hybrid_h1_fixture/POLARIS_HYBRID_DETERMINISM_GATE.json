@@ -1,0 +1,62 @@
+{
+  "manifest_id": "POLARIS_HYBRID_DETERMINISM_GATE_MANIFEST",
+  "task_type": "HYBRID_FIXTURE_SPECIFICATION_AND_DETERMINISM_GATE",
+  "audit_timestamp_utc": "2026-09-20T11:02:00Z",
+  "gate_qualification_status": "PASSED",
+  "execution_authorized": false,
+  "static_verification_audit": {
+    "frozen_solar_source": {
+      "file": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+      "status": "VERIFIED_INTACT"
+    },
+    "frozen_wind_source": {
+      "file": "research/wind_a2/smhi_188790_ws_full.csv",
+      "status": "VERIFIED_INTACT"
+    },
+    "frozen_stage8_1_predictions": {
+      "file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "hash": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "status": "VERIFIED_INTACT"
+    },
+    "frozen_v3_execution_raw": {
+      "file": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv",
+      "hash": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+      "status": "VERIFIED_INTACT"
+    },
+    "frozen_v4g_execution_raw": {
+      "file": "POLARIS_STAGE8_1_EMS_V4G_EXECUTION_RAW.csv",
+      "hash": "61389d23a307dcb1bbc5ea90f9bf43843b52d88f66d5ff1d03bb1dea55199788",
+      "status": "VERIFIED_INTACT"
+    },
+    "frozen_ofat_execution_raw": {
+      "file": "POLARIS_23_HORIZON_OFAT_EXECUTION_RAW.csv",
+      "hash": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "status": "VERIFIED_INTACT"
+    }
+  },
+  "schema_contract_verification": {
+    "ForecastBundle_v1_0": "UNALTERED",
+    "StationState_v1_0": "UNALTERED",
+    "DispatchPlan_v1_0": "UNALTERED",
+    "EMS_Optimizer_Contract": "UNALTERED",
+    "DigitalTwin_Simulator_Contract": "UNALTERED"
+  },
+  "determinism_protocol": {
+    "formula": "SHA256(Solar_Window_Hash + Wind_Proxy_Hash + Synthetic_Demand_Hash + Wind_Scenario_Hash + Config_Hash)",
+    "reproducibility_guarantee": "100% deterministic fixture fingerprinting"
+  },
+  "step8_final_classification": "A — HYBRID FIXTURE FULLY SPECIFIED AND DETERMINISM-READY",
+  "mandatory_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "HYBRID_BRANCH": "DESIGN AUTHORIZED / EXECUTION NOT AUTHORIZED",
+    "STEP8_FINAL_CLASSIFICATION": "A — HYBRID FIXTURE FULLY SPECIFIED AND DETERMINISM-READY"
+  }
+}

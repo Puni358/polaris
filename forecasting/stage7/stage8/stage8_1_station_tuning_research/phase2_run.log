@@ -1,0 +1,24 @@
+================================================================================
+PHASE 2 -- candidates C (horizon-specific), D (residual correction), E (HP search)
+Train: 2024 EVEN. Validate/tune: 2024 ODD. Blind: 2025 (never touched).
+================================================================================
+2024 matrix hash: aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43
+2025 matrix hash: 9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087
+2024: 347 origins (174 EVEN / 173 ODD)
+2025: 364 origins (blind, untouched)
+
+A (frozen control)  ODD: {'n': 2883, 'mae': 36.204, 'rmse': 64.5752, 'bias': 0.9605, 'nmae_pct': 28.0807}  BLIND25: {'n': 5978, 'mae': 35.9745, 'rmse': 65.9427, 'bias': 4.0802, 'nmae_pct': 28.2478}
+C (horizon-specific) ODD: {'n': 2883, 'mae': 36.204, 'rmse': 64.6672, 'bias': 1.1823, 'nmae_pct': 28.0807}  BLIND25: {'n': 5978, 'mae': 36.3793, 'rmse': 66.8019, 'bias': 5.1031, 'nmae_pct': 28.5657}
+D (residual-correction) ODD: {'n': 2883, 'mae': 35.5313, 'rmse': 63.515, 'bias': -3.3436, 'nmae_pct': 27.5589}  BLIND25: {'n': 5978, 'mae': 36.0656, 'rmse': 66.6733, 'bias': 1.1394, 'nmae_pct': 28.3193}
+
+Candidate E: hyperparameter grid size = 144 (selecting by 2024 ODD MAE)
+E (best HP): {'max_depth': 5, 'min_samples_leaf': 50, 'l2_regularization': 30.0, 'learning_rate': 0.2}
+E ODD: {'n': 2883, 'mae': 34.6337, 'rmse': 61.6846, 'bias': 2.1199, 'nmae_pct': 26.8627}  BLIND25: {'n': 5978, 'mae': 35.7928, 'rmse': 65.2354, 'bias': 5.3735, 'nmae_pct': 28.1051}
+
+Bootstrap MAE diff vs control (blind 2025, 2000 resamples over origins):
+  C_horizon_specific: {'mean_diff': 0.4037, 'ci95_lo': -0.0311, 'ci95_hi': 0.8515, 'n_boot': 2000}
+  D_residual_correction: {'mean_diff': 0.0916, 'ci95_lo': -0.4885, 'ci95_hi': 0.6596, 'n_boot': 2000}
+  E_hyperparameter_search: {'mean_diff': -0.1848, 'ci95_lo': -0.6638, 'ci95_hi': 0.294, 'n_boot': 2000}
+
+Results written to /home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/CANDIDATE_RESULTS.json
+PHASE 2 COMPLETE. Frozen artifact and matrices untouched (read-only inputs).

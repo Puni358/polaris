@@ -1,0 +1,721 @@
+{
+  "audit_id": "POLARIS_SYSTEM_D5_POST_EXECUTION_EVIDENCE_AUDIT_20260917",
+  "timestamp": "2026-09-17T08:35:00+05:30",
+  "governance_state": {
+    "D4": "CLOSED",
+    "D5_CONTRACT": "FROZEN",
+    "D5_IMPLEMENTATION": "COMPLETE",
+    "D5_IMPLEMENTATION_REVIEW": "PASSED",
+    "D5_EXECUTION": "COMPLETED_ATTEMPTED_AS_AUTHORIZED",
+    "D6": "NOT_INITIATED"
+  },
+  "preflight_audit": [
+    {
+      "check": "PF-1 D4 = CLOSED",
+      "status": "VERIFIED",
+      "evidence": "D4 closeout checkpoint verified and untouched."
+    },
+    {
+      "check": "PF-2 D5 Contract = FROZEN",
+      "status": "VERIFIED",
+      "evidence": "Contract SHA256 hashes match authoritative values 100%."
+    },
+    {
+      "check": "PF-3 D5 Implementation = COMPLETE",
+      "status": "VERIFIED",
+      "evidence": "Implementation inventory verified in system/robustness/."
+    },
+    {
+      "check": "PF-4 D5 Implementation Review = PASSED",
+      "status": "VERIFIED",
+      "evidence": "POLARIS_SYSTEM_D5_IMPLEMENTATION_REVIEW_CHECKPOINT verified."
+    },
+    {
+      "check": "PF-5 Authorized scenario registry verified",
+      "status": "VERIFIED",
+      "evidence": "D5ScenarioRegistry matches frozen specifications S1-S6."
+    },
+    {
+      "check": "PF-6 Protected artifact integrity verified",
+      "status": "VERIFIED",
+      "evidence": "Zero modifications in system/schemas, system/optimization, system/simulation, system/evaluation."
+    },
+    {
+      "check": "PF-7 Required result directories available",
+      "status": "VERIFIED",
+      "evidence": "D5_RESULTS/ subdirectories D5-1..D5-6 present with raw, summary, provenance, logs."
+    },
+    {
+      "check": "PF-8 Required data available",
+      "status": "VERIFIED",
+      "evidence": "demo_scenario.json (48 steps) and synthetic_168h_endurance_scenario.json (168 steps) available."
+    },
+    {
+      "check": "PF-9 Control/perturbed pairing infrastructure available",
+      "status": "VERIFIED",
+      "evidence": "D5Runner.run_paired_d5_experiment verified."
+    },
+    {
+      "check": "PF-10 No accidental execution-state contamination",
+      "status": "VERIFIED",
+      "evidence": "Fresh StationState created per run with zero shared mutable state."
+    },
+    {
+      "check": "PF-11 Execution manifest established",
+      "status": "VERIFIED",
+      "evidence": "d5_execution_manifest.json created and hash recorded prior to runs."
+    },
+    {
+      "check": "PF-12 Frozen hashes verified",
+      "status": "VERIFIED",
+      "evidence": "All 4 governance hashes match recorded SHA256 values."
+    },
+    {
+      "check": "PF-13 Two-world causal firewall verified",
+      "status": "VERIFIED",
+      "evidence": "Source inspection confirms ForecastPerturber operates on baseline bundle without actuals access."
+    },
+    {
+      "check": "PF-14 No result-dependent stopping rule active",
+      "status": "VERIFIED",
+      "evidence": "All 6 gates executed in predefined sequence regardless of interim metrics."
+    },
+    {
+      "check": "PF-15 No post-hoc experimental changes permitted",
+      "status": "VERIFIED",
+      "evidence": "Execution manifest remained immutable across all runs."
+    }
+  ],
+  "execution_manifest_audit": {
+    "manifest_id": "POLARIS_SYSTEM_D5_EXECUTION_MANIFEST_20260917",
+    "recorded_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "pre_insert_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "disk_file_hash": "c4b52743dc8a87fce3702b7418497e5d759674df78f4cf04a9bea3f7e48e72dd",
+    "manifest_hash_semantics": "CANONICAL_PRE_INSERTION_SHA256",
+    "hash_provenance_status": "VERIFIED_VALID",
+    "manifest_table": [
+      {
+        "gate": "D5-1",
+        "scenario": "S1",
+        "solar": 0.7,
+        "wind": 1.0,
+        "demand": 1.0,
+        "n": 24,
+        "order": 1,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-2",
+        "scenario": "S2",
+        "solar": 1.3,
+        "wind": 1.0,
+        "demand": 1.0,
+        "n": 24,
+        "order": 2,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-3",
+        "scenario": "S3",
+        "solar": 1.0,
+        "wind": 0.7,
+        "demand": 1.0,
+        "n": 24,
+        "order": 3,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-4",
+        "scenario": "S4",
+        "solar": 1.0,
+        "wind": 1.0,
+        "demand": 1.2,
+        "n": 24,
+        "order": 4,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-5",
+        "scenario": "S5",
+        "solar": 1.3,
+        "wind": 1.3,
+        "demand": 0.8,
+        "n": 24,
+        "order": 5,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-6",
+        "scenario": "S6",
+        "solar": 1.15,
+        "wind": 1.15,
+        "demand": 1.0,
+        "n": 168,
+        "order": 6,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      }
+    ]
+  },
+  "governance_hashes_verification": {
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.md": {
+      "expected": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "actual": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.json": {
+      "expected": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "actual": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md": {
+      "expected": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "actual": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.json": {
+      "expected": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df",
+      "actual": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df",
+      "status": "VERIFIED"
+    }
+  },
+  "pair_integrity_audit": [
+    {
+      "gate": "D5-1",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-2",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-3",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-4",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-5",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-6",
+      "control_actual_id": "synthetic_168h_endurance_scenario.json",
+      "perturbed_actual_id": "synthetic_168h_endurance_scenario.json",
+      "control_actual_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+      "perturbed_actual_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+      "trajectory_match": "VERIFIED_EQUAL",
+      "control_initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+      "perturbed_initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+      "initial_state_match": "VERIFIED_EQUAL",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    }
+  ],
+  "metric_reconciliation_audit": [
+    {
+      "gate": "D5-1",
+      "metric": "LSF (%)",
+      "raw_evidence": "Ctrl: 100.0 | Pert: 100.0",
+      "existing_checkpoint": "Ctrl: 100.0 | Pert: 100.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Unmet Load (Wh)",
+      "raw_evidence": "Ctrl: 0.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 0.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Diesel Fuel (L)",
+      "raw_evidence": "Ctrl: 85.9172 | Pert: 88.0679",
+      "existing_checkpoint": "Ctrl: 85.9172 | Pert: 88.0679",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Diesel Hours (h)",
+      "raw_evidence": "Ctrl: 5.0 | Pert: 4.0",
+      "existing_checkpoint": "Ctrl: 5.0 | Pert: 4.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Curtailment (Wh)",
+      "raw_evidence": "Ctrl: 147334.09 | Pert: 57224.07",
+      "existing_checkpoint": "Ctrl: 147334.09 | Pert: 57224.07",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Renewable Utilization (%)",
+      "raw_evidence": "Ctrl: 84.8217 | Pert: 93.4786",
+      "existing_checkpoint": "Ctrl: 84.8217 | Pert: 93.4786",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Min SOC (%)",
+      "raw_evidence": "Ctrl: 20.0 | Pert: 20.0",
+      "existing_checkpoint": "Ctrl: 20.0 | Pert: 20.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Max SOC (%)",
+      "raw_evidence": "Ctrl: 70.43 | Pert: 88.03",
+      "existing_checkpoint": "Ctrl: 70.43 | Pert: 88.03",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "SOC Boundary Contacts",
+      "raw_evidence": "Ctrl: 1 | Pert: 1",
+      "existing_checkpoint": "Ctrl: 1 | Pert: 1",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-1",
+      "metric": "Physical Violations",
+      "raw_evidence": "Ctrl: 0 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 0 | Pert: 0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "LSF (%)",
+      "raw_evidence": "Ctrl: 100.0 | Pert: 100.0",
+      "existing_checkpoint": "Ctrl: 100.0 | Pert: 100.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Unmet Load (Wh)",
+      "raw_evidence": "Ctrl: 0.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 0.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Diesel Fuel (L)",
+      "raw_evidence": "Ctrl: 85.9172 | Pert: 44.0162",
+      "existing_checkpoint": "Ctrl: 85.9172 | Pert: 44.0162",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Diesel Hours (h)",
+      "raw_evidence": "Ctrl: 5.0 | Pert: 2.0",
+      "existing_checkpoint": "Ctrl: 5.0 | Pert: 2.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Curtailment (Wh)",
+      "raw_evidence": "Ctrl: 147334.09 | Pert: 165293.65",
+      "existing_checkpoint": "Ctrl: 147334.09 | Pert: 165293.65",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Renewable Utilization (%)",
+      "raw_evidence": "Ctrl: 84.8217 | Pert: 84.4633",
+      "existing_checkpoint": "Ctrl: 84.8217 | Pert: 84.4633",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Min SOC (%)",
+      "raw_evidence": "Ctrl: 20.0 | Pert: 20.0",
+      "existing_checkpoint": "Ctrl: 20.0 | Pert: 20.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Max SOC (%)",
+      "raw_evidence": "Ctrl: 70.43 | Pert: 83.3",
+      "existing_checkpoint": "Ctrl: 70.43 | Pert: 83.3",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "SOC Boundary Contacts",
+      "raw_evidence": "Ctrl: 1 | Pert: 3",
+      "existing_checkpoint": "Ctrl: 1 | Pert: 3",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-2",
+      "metric": "Physical Violations",
+      "raw_evidence": "Ctrl: 0 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 0 | Pert: 0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "LSF (%)",
+      "raw_evidence": "Ctrl: 100.0 | Pert: 100.0",
+      "existing_checkpoint": "Ctrl: 100.0 | Pert: 100.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Unmet Load (Wh)",
+      "raw_evidence": "Ctrl: 0.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 0.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Diesel Fuel (L)",
+      "raw_evidence": "Ctrl: 85.9172 | Pert: 131.9612",
+      "existing_checkpoint": "Ctrl: 85.9172 | Pert: 131.9612",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Diesel Hours (h)",
+      "raw_evidence": "Ctrl: 5.0 | Pert: 7.0",
+      "existing_checkpoint": "Ctrl: 5.0 | Pert: 7.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Curtailment (Wh)",
+      "raw_evidence": "Ctrl: 147334.09 | Pert: 13130.94",
+      "existing_checkpoint": "Ctrl: 147334.09 | Pert: 13130.94",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Renewable Utilization (%)",
+      "raw_evidence": "Ctrl: 84.8217 | Pert: 98.3006",
+      "existing_checkpoint": "Ctrl: 84.8217 | Pert: 98.3006",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Min SOC (%)",
+      "raw_evidence": "Ctrl: 20.0 | Pert: 20.79",
+      "existing_checkpoint": "Ctrl: 20.0 | Pert: 20.79",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Max SOC (%)",
+      "raw_evidence": "Ctrl: 70.43 | Pert: 93.1",
+      "existing_checkpoint": "Ctrl: 70.43 | Pert: 93.1",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "SOC Boundary Contacts",
+      "raw_evidence": "Ctrl: 1 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 1 | Pert: 0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-3",
+      "metric": "Physical Violations",
+      "raw_evidence": "Ctrl: 0 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 0 | Pert: 0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "LSF (%)",
+      "raw_evidence": "Ctrl: 100.0 | Pert: 100.0",
+      "existing_checkpoint": "Ctrl: 100.0 | Pert: 100.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Unmet Load (Wh)",
+      "raw_evidence": "Ctrl: 0.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 0.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Diesel Fuel (L)",
+      "raw_evidence": "Ctrl: 85.9172 | Pert: 135.7237",
+      "existing_checkpoint": "Ctrl: 85.9172 | Pert: 135.7237",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Diesel Hours (h)",
+      "raw_evidence": "Ctrl: 5.0 | Pert: 8.0",
+      "existing_checkpoint": "Ctrl: 5.0 | Pert: 8.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Curtailment (Wh)",
+      "raw_evidence": "Ctrl: 147334.09 | Pert: 25188.4",
+      "existing_checkpoint": "Ctrl: 147334.09 | Pert: 25188.4",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Renewable Utilization (%)",
+      "raw_evidence": "Ctrl: 84.8217 | Pert: 97.4051",
+      "existing_checkpoint": "Ctrl: 84.8217 | Pert: 97.4051",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Min SOC (%)",
+      "raw_evidence": "Ctrl: 20.0 | Pert: 20.0",
+      "existing_checkpoint": "Ctrl: 20.0 | Pert: 20.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Max SOC (%)",
+      "raw_evidence": "Ctrl: 70.43 | Pert: 86.29",
+      "existing_checkpoint": "Ctrl: 70.43 | Pert: 86.29",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "SOC Boundary Contacts",
+      "raw_evidence": "Ctrl: 1 | Pert: 1",
+      "existing_checkpoint": "Ctrl: 1 | Pert: 1",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-4",
+      "metric": "Physical Violations",
+      "raw_evidence": "Ctrl: 0 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 0 | Pert: 0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "LSF (%)",
+      "raw_evidence": "Ctrl: 100.0 | Pert: 100.0",
+      "existing_checkpoint": "Ctrl: 100.0 | Pert: 100.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Unmet Load (Wh)",
+      "raw_evidence": "Ctrl: 0.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 0.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Diesel Fuel (L)",
+      "raw_evidence": "Ctrl: 85.9172 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 85.9172 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Diesel Hours (h)",
+      "raw_evidence": "Ctrl: 5.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 5.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Curtailment (Wh)",
+      "raw_evidence": "Ctrl: 147334.09 | Pert: 483469.39",
+      "existing_checkpoint": "Ctrl: 147334.09 | Pert: 483469.39",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Renewable Utilization (%)",
+      "raw_evidence": "Ctrl: 84.8217 | Pert: 61.6869",
+      "existing_checkpoint": "Ctrl: 84.8217 | Pert: 61.6869",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Min SOC (%)",
+      "raw_evidence": "Ctrl: 20.0 | Pert: 20.0",
+      "existing_checkpoint": "Ctrl: 20.0 | Pert: 20.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Max SOC (%)",
+      "raw_evidence": "Ctrl: 70.43 | Pert: 75.46",
+      "existing_checkpoint": "Ctrl: 70.43 | Pert: 75.46",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "SOC Boundary Contacts",
+      "raw_evidence": "Ctrl: 1 | Pert: 2",
+      "existing_checkpoint": "Ctrl: 1 | Pert: 2",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-5",
+      "metric": "Physical Violations",
+      "raw_evidence": "Ctrl: 0 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 0 | Pert: 0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "LSF (%)",
+      "raw_evidence": "Ctrl: 100.0 | Pert: 100.0",
+      "existing_checkpoint": "Ctrl: 100.0 | Pert: 100.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Unmet Load (Wh)",
+      "raw_evidence": "Ctrl: 0.0 | Pert: 0.0",
+      "existing_checkpoint": "Ctrl: 0.0 | Pert: 0.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Diesel Fuel (L)",
+      "raw_evidence": "Ctrl: 241.4846 | Pert: 144.8206",
+      "existing_checkpoint": "Ctrl: 241.4846 | Pert: 144.8206",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Diesel Hours (h)",
+      "raw_evidence": "Ctrl: 13.0 | Pert: 9.0",
+      "existing_checkpoint": "Ctrl: 13.0 | Pert: 9.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Curtailment (Wh)",
+      "raw_evidence": "Ctrl: 1574534.69 | Pert: 2265890.04",
+      "existing_checkpoint": "Ctrl: 1574534.69 | Pert: 2265890.04",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Renewable Utilization (%)",
+      "raw_evidence": "Ctrl: 77.0367 | Pert: 71.2642",
+      "existing_checkpoint": "Ctrl: 77.0367 | Pert: 71.2642",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Min SOC (%)",
+      "raw_evidence": "Ctrl: 20.0 | Pert: 20.0",
+      "existing_checkpoint": "Ctrl: 20.0 | Pert: 20.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Max SOC (%)",
+      "raw_evidence": "Ctrl: 94.85 | Pert: 95.0",
+      "existing_checkpoint": "Ctrl: 94.85 | Pert: 95.0",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "SOC Boundary Contacts",
+      "raw_evidence": "Ctrl: 9 | Pert: 11",
+      "existing_checkpoint": "Ctrl: 9 | Pert: 11",
+      "audit_result": "MATCH"
+    },
+    {
+      "gate": "D5-6",
+      "metric": "Physical Violations",
+      "raw_evidence": "Ctrl: 0 | Pert: 0",
+      "existing_checkpoint": "Ctrl: 0 | Pert: 0",
+      "audit_result": "MATCH"
+    }
+  ],
+  "two_world_causal_firewall_audit": {
+    "status": "VERIFIED",
+    "evidence": "Source code inspection confirms ForecastPerturber operates strictly on baseline ForecastBundle without access to future ground truth actuals."
+  },
+  "d5_6_loop_semantics_audit": {
+    "status": "VERIFIED",
+    "iterations_completed_control": 168,
+    "iterations_completed_perturbed": 168,
+    "receding_horizon_h1_only": true
+  },
+  "rerun_audit": {
+    "reruns_count": 0,
+    "status": "NO_RERUNS_PERFORMED"
+  },
+  "discrepancy_inventory": [],
+  "final_evidence_decision": {
+    "evidence_integrity": "PASS",
+    "d5_results_checkpoint_status": "READY_FOR_SCIENTIFIC_REVIEW",
+    "d6_status": "NOT_INITIATED"
+  }
+}

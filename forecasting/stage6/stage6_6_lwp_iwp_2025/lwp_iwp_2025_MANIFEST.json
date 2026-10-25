@@ -1,0 +1,45 @@
+{
+  "output_file": "/home/punith-bs/01polaris (Copy)/stage6/stage6_6_lwp_iwp_2025/lwp_iwp_extracted_features_2025.csv",
+  "sha256": "4c8019a03658ca32ec330b7ee7b8b69de9a3959d3cf74065d54ab1a07b16ade8",
+  "row_count": 8736,
+  "unique_origins": 364,
+  "columns": [
+    "origin_index",
+    "forecast_start",
+    "horizon_hour",
+    "valid_time",
+    "forecast_reference_time",
+    "surface_air_pressure_hpa",
+    "lwp_latest",
+    "iwp_latest",
+    "meps_run_id"
+  ],
+  "input_hashes": {
+    "stage4_predictions_2025": "c4ef9b264bd263cb69af1ef3b833ad883c6f586d158017399d214f4a6dbe4af7"
+  },
+  "source": "MET Norway meps25epsarchive (meps_det_sfc + meps_det_pl, same-day 00Z run), via thredds.met.no OPeNDAP ASCII",
+  "method": "surface-aware trapezoidal vertical integration, unchanged from stage6/stage6_6_lwp_iwp/run_stage6_6.py (2024, LOCKED)",
+  "station_grid_cell": {
+    "y": 760,
+    "x": 486,
+    "reused_from_2024": true
+  },
+  "defect_found_in_2024_artifact_and_fixed_here": {
+    "defect": "off_by_one_horizon_hour",
+    "detail": "2024's horizon_hour=1 == forecast_start+1h; downstream merges join purely on (forecast_start, horizon_hour) against sources that use horizon_hour=1 == forecast_start+0h.",
+    "evidence": "independently confirmed: 2024 row (forecast_start=2024-01-20, horizon_hour=1) has valid_time=2024-01-20 01:00:00, not 00:00:00.",
+    "action": "fixed in this 2025 build; 2024 file left unmodified"
+  },
+  "causal_design_note": "Same-day 00Z run is used (reference_time == forecast_start), identical to the 2024 method -- not changed here. At horizon_hour=1 this makes reference_time == valid_time exactly (zero lead), a pre-existing property of the 2024 design, not something this script altered.",
+  "validation": {
+    "364 Origins Present": "PASS",
+    "24 Horizons / Origin": "PASS",
+    "Total Row Count": "PASS",
+    "No Duplicate Rows": "PASS",
+    "No NaN/Inf Values": "PASS",
+    "Physical Ranges": "PASS",
+    "Surface Pressure Bound": "PASS",
+    "Horizon/valid_time alignment (fix vs 2024 off-by-one)": "PASS",
+    "Schema matches 2024": "PASS"
+  }
+}

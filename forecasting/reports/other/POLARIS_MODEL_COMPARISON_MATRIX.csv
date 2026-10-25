@@ -1,0 +1,21 @@
+stage,model_id,family,architecture,features,nmae,mae,status,odd_run
+Stage 0,Persistence_24h,Naive Baseline,Rule-based Persistence (y_t = y_{t-24h}),1,43.77%,55.05 W/m2,REJECTED_BASELINE,False
+Stage 0,Seasonal_Naive_24h,Naive Baseline,Rule-based Seasonal Naive,1,44.20%,55.59 W/m2,REJECTED_BASELINE,False
+Stage 0,Chronos2_ZeroShot_Raw,Foundation Model (Transformer),Chronos-2 Small (T5-based autoregressive FM),1,42.94%,54.01 W/m2,REJECTED_BASELINE,False
+Stage 0,Chronos2_Multivariate,Foundation Model (Transformer),Chronos-2 Small (with GHI + ClearSky covariates),3,43.17%,54.30 W/m2,REJECTED_BASELINE,False
+Stage 0,TimesFM3_ZeroShot,Foundation Model (Transformer),TimesFM 3.0 (Google Patch-decoder FM),1,68.52%,86.17 W/m2,REJECTED_BASELINE,False
+Stage 0,Moirai2_ZeroShot,Foundation Model (Transformer),Moirai 2.0 (Salesforce Patch-based FM),1,84.73%,106.56 W/m2,REJECTED_BASELINE,False
+Stage 3A,Solar_Geometry_Baseline,GBDT (LightGBM/HGB),Gradient Boosted Trees (Solar angles + Solis GHI),4,48.20%,62.10 W/m2,SUPERSEDED,False
+Stage 3B,Cloud_NWP_Baseline,GBDT (LightGBM/HGB),GBDT (Solar + MEPS 2D LWP/IWP/CloudFrac),10,36.20%,46.65 W/m2,SUPERSEDED,False
+Stage 3C,Full_NWP_Baseline,GBDT (LightGBM/HGB),GBDT (Solar + Full single-level MEPS meteorology),22,41.55%,53.55 W/m2,SUPERSEDED,False
+Stage 4.1,Cloud_Regime_Corrected,GBDT + Affine Residual,Stage 3B GBDT + Regime-binned residual corrector,14,33.50%,43.15 W/m2,SUPERSEDED,False
+Stage 4.3,Ensemble_Hybrid,GBDT + Ridge Dynamic Ensemble,"Dynamic blend of Stage 3B, 3C, and Affine Residuals",26,32.98%,42.51 W/m2,HISTORICAL_CHAMPION,False
+Stage 6.2,Satellite_Thermal_IR,GBDT,Stage 4 Champion + SEVIRI 10.8µm IR Brightness Temp,28,33.15%,42.72 W/m2,REJECTED_BY_EVEN_GATES,False
+Stage 6.4,Deterministic_MEPS_Revisions,GBDT,Stage 4 Champion + Delta LWP/IWP inter-run drift,30,33.25%,42.85 W/m2,REJECTED_BY_EVEN_GATES,False
+Stage 7.5,Terrain_Horizon_360,GBDT (HGB),Direct HGB + 360-deg DEM Horizon Profile + Vsky,34,28.32%,36.52 W/m2,HISTORICAL_CHAMPION,True
+Stage 8.1,Stage8.1_700hPa_Wind_Control,GBDT (HistGradientBoostingRegressor),"Direct HGB + MEPS 700hPa Steering Wind (u700, v700)",37,28.07%,36.19 W/m2,FROZEN_OPERATIONAL_CHAMPION,True
+Stage 8.17A,Real_AROME_Structural_Disagreement,GBDT (HGB),Stage 8.1 + Real AROME-Arctic vector disagreement,40,28.25%,36.43 W/m2,REJECTED_BY_REAL_DATA_REVALIDATION,True
+Stage 8.19,ABIS_GNSS_ZTD_Model,GBDT (HGB),Stage 8.17A + ABIS ZTD latest & 3h trend,42,28.30%,36.49 W/m2,INVALIDATED_HISTORICAL_CLAIM,True
+Stage 8.24,Faithful_Scandes_Orographic_Flow,GBDT (HGB),Stage 8.1 + Scandes barrier-normal wind + Mountain Froude,39,27.32% (EVEN),37.81 W/m2 (EVEN),REJECTED_BY_EVEN_GATES,False
+Stage 8.25,Real_SWEPOS_GNSS_Delay_PWV,GBDT (HGB),Stage 8.1 + Real SWEPOS ZTD/PWV features,39,,,CLOSED_FEASIBILITY_UNAVAILABLE,False
+Stage 11/12,Local_Spatial_3x3_Candidate,GBDT + Spatial CNN,Pre-Registered 3x3 Horizon-Conditional Spatial Model,38,39.15%,50.47 W/m2,REJECTED_BY_EVEN_GATES,False

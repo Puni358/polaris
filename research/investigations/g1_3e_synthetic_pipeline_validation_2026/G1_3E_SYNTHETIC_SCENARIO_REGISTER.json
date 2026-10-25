@@ -1,0 +1,99 @@
+{
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "empirical_status": "NON_EMPIRICAL",
+  "scenarios": [
+    {
+      "scenario_id": "S0",
+      "name": "Baseline / Normal Operating Scenario",
+      "scenario_file": "system/data/scenarios/synthetic_s0_baseline.json",
+      "data_origin": "SYNTHETIC",
+      "empirical_status": "NOT_EMPIRICAL",
+      "governance_status": "NON_AUTHORITATIVE",
+      "purpose": "PIPELINE_VALIDATION",
+      "duration_hours": 48,
+      "parameters": {
+        "demand_profile_w": 35000.0,
+        "solar_peak_w_m2": 494.0,
+        "wind_generation_w": 30000.0,
+        "telemetry_hold_hours": 0
+      },
+      "parameter_classifications": {
+        "demand_profile_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "solar_peak_w_m2": "SYNTHETIC_SCENARIO_PARAMETER",
+        "wind_generation_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "telemetry_hold_hours": "SYNTHETIC_SCENARIO_PARAMETER",
+        "battery_capacity_kwh": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION"
+      }
+    },
+    {
+      "scenario_id": "S1",
+      "name": "Renewable Degradation Scenario",
+      "scenario_file": "system/data/scenarios/synthetic_s1_renewable_degradation.json",
+      "data_origin": "SYNTHETIC",
+      "empirical_status": "NOT_EMPIRICAL",
+      "governance_status": "NON_AUTHORITATIVE",
+      "purpose": "PIPELINE_VALIDATION",
+      "duration_hours": 48,
+      "parameters": {
+        "demand_profile_w": 40000.0,
+        "solar_peak_w_m2": 98.8,
+        "wind_generation_w": 9000.0,
+        "telemetry_hold_hours": 0
+      },
+      "parameter_classifications": {
+        "demand_profile_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "solar_peak_w_m2": "SYNTHETIC_SCENARIO_PARAMETER",
+        "wind_generation_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "telemetry_hold_hours": "SYNTHETIC_SCENARIO_PARAMETER",
+        "battery_capacity_kwh": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION"
+      }
+    },
+    {
+      "scenario_id": "S2",
+      "name": "Telemetry Degradation Scenario",
+      "scenario_file": "system/data/scenarios/synthetic_s2_telemetry_degradation.json",
+      "data_origin": "SYNTHETIC",
+      "empirical_status": "NOT_EMPIRICAL",
+      "governance_status": "NON_AUTHORITATIVE",
+      "purpose": "PIPELINE_VALIDATION",
+      "duration_hours": 48,
+      "parameters": {
+        "demand_profile_w": 35000.0,
+        "solar_peak_w_m2": 494.0,
+        "wind_generation_w": 30000.0,
+        "telemetry_hold_hours": 4
+      },
+      "parameter_classifications": {
+        "demand_profile_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "solar_peak_w_m2": "SYNTHETIC_SCENARIO_PARAMETER",
+        "wind_generation_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "telemetry_hold_hours": "SYNTHETIC_SCENARIO_PARAMETER",
+        "battery_capacity_kwh": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION"
+      }
+    },
+    {
+      "scenario_id": "S3",
+      "name": "Combined Severe Stress Scenario",
+      "scenario_file": "system/data/scenarios/synthetic_s3_combined_stress.json",
+      "data_origin": "SYNTHETIC",
+      "empirical_status": "NOT_EMPIRICAL",
+      "governance_status": "NON_AUTHORITATIVE",
+      "purpose": "PIPELINE_VALIDATION",
+      "duration_hours": 48,
+      "parameters": {
+        "demand_profile_w": 45000.0,
+        "solar_peak_w_m2": 0.0,
+        "wind_generation_w": 3000.0,
+        "telemetry_hold_hours": 4
+      },
+      "parameter_classifications": {
+        "demand_profile_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "solar_peak_w_m2": "SYNTHETIC_SCENARIO_PARAMETER",
+        "wind_generation_w": "SYNTHETIC_SCENARIO_PARAMETER",
+        "telemetry_hold_hours": "SYNTHETIC_SCENARIO_PARAMETER",
+        "battery_capacity_kwh": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION"
+      }
+    }
+  ]
+}

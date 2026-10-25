@@ -1,0 +1,154 @@
+{
+  "package_label": "POLARIS_EMS_GAP19_STAGE81_EXPERIMENT_HUMAN_GOVERNANCE_DECISION_PACKAGE",
+  "status": "AWAITING_HUMAN_DECISION",
+  "resolution_attempt_result": {
+    "performed": true,
+    "method": "search_existing_governance_and_station_evidence_only_no_invented_values",
+    "outcome": "HARD_STOP",
+    "blockers_resolved": [],
+    "blockers_unresolved": [
+      "SD-07",
+      "SD-08",
+      "DEC-TR-03",
+      "DEC-RES-03",
+      "SD-13",
+      "EXPERIMENT_EXECUTION_AUTHORIZATION"
+    ],
+    "fallback_or_test_value_used": false,
+    "experiment_executed": false,
+    "evidence_reviewed": [
+      "POLARIS_EMS_GAP19_TARGET_STATION_EVIDENCE_RECOVERY/FINAL_EVIDENCE_RECOVERY_VERDICT.md",
+      "POLARIS_EMS_GAP19_TARGET_STATION_EVIDENCE_RECOVERY/BATTERY_BESS_RECOVERY.md",
+      "investigations/battery_physical_evidence_acquisition_20260930/BATTERY_PHYSICAL_EVIDENCE_ACQUISITION_REPORT.md",
+      "investigations/battery_degradation_model_validation_20260930/BATTERY_DEGRADATION_MODEL_VALIDATION_CHECKPOINT.md",
+      "POLARIS_EMS_GAP19_EBR_TERMINAL_RESERVE_GOVERNANCE/FINAL_GOVERNANCE_DECISION_STATUS.md",
+      "POLARIS_EMS_POLICY_DEFINITION_RESOLUTION/POLARIS_EMS_POLICY_DEFINITION_RESOLUTION.md",
+      "POLARIS_EMS_POLICY_DEFINITION_RESOLUTION/POLARIS_EMS_POLICY_DEFINITION_GOVERNANCE_STATUS.md"
+    ],
+    "note": "BATTERY_BESS = NOT_ESTABLISHED and STATION_MEASURED_DATA_RECEIVED = NO per FINAL_EVIDENCE_RECOVERY_VERDICT.md's own HARD_STOP. No vendor datasheet, degradation curve, named sign-off authority, or execution authorization exists anywhere in the repository. These blockers cannot be closed without a new human stakeholder decision/data submission that does not currently exist in any record."
+  },
+  "current_status": {
+    "stage8_1_forecasting": "FROZEN_VALIDATED",
+    "stage8_1_runtime_integration": "VERIFIED",
+    "demand_critical_gap": "RESOLVED",
+    "terminal_target_wh": "POLICY_STRUCTURE_DECIDED_NUMERICS_AND_FORMULATION_PENDING",
+    "experiment_execution": "NOT_AUTHORIZED",
+    "simulation_execution": "NOT_AUTHORIZED",
+    "milp_execution": "NOT_AUTHORIZED"
+  },
+  "terminal_reserve_policy_decisions": {
+    "note": "Structural/policy decisions made by the human stakeholder. No numerical values, formulas, look-ahead duration, recalculation frequency, floor interaction, or uncertainty model are decided here.",
+    "dynamic": true,
+    "basis": "future_demand_and_renewable_availability",
+    "includes_uncertainty_risk_component": true,
+    "enforcement_mechanism": "secondary_lexicographic_J2_objective",
+    "is_hard_constraint": false,
+    "shortfall_explicitly_reported": true,
+    "station_defined_minimum_reserve_floor_exists": true,
+    "alters_or_triggers_emergency_mode": false,
+    "may_incur_operating_cost_via_J2": true,
+    "information_basis": "optimization_time_only_no_hindsight_no_future_actuals",
+    "uncertainty_source_model": "TECHNICAL_VALIDATION_REQUIRED"
+  },
+  "open_items": {
+    "governance_decision_required": [
+      { "id": "DEC-TR-03", "question": "What physical quantity and unit defines Terminal Reserve?" },
+      { "id": "DEC-RES-03", "question": "What specific numerical values are authorized?" }
+    ],
+    "technical_validation_required": [
+      "formula_mathematical_definition_of_dynamic_reserve",
+      "look_ahead_duration",
+      "recalculation_frequency",
+      "minimum_floor_interaction_with_dynamic_target",
+      "uncertainty_source_model"
+    ]
+  },
+  "existing_options_reference": {
+    "source_document": "POLARIS_EMS_GAP19_EBR_TERMINAL_RESERVE_GOVERNANCE/DECISION_OPTIONS_MATRIX.md",
+    "note": "Listed for reference only. No option is ranked, scored, selected, or recommended by this template. The policy decisions above narrow the structural space (dynamic, risk-aware, J2 objective) but do not select a specific option.",
+    "candidate_terminal_reserve_formulations": [
+      { "id": "TR-A", "description": "Fixed Terminal SOC Target (e.g. Z% SOC)" },
+      { "id": "TR-B", "description": "Fixed Terminal Energy Target (E_terminal >= E_initial)" },
+      { "id": "TR-C", "description": "Dynamic Terminal Reserve derived from forecast horizon boundary condition" },
+      { "id": "TR-D", "description": "Dynamic Terminal Reserve derived from future critical load survivability" },
+      { "id": "TR-E", "description": "Zero separate terminal reserve (eliminate s_terminal, rely on s_EBR[23])" }
+    ],
+    "provisional_unauthorized_values": [
+      { "value": "35% minimum terminal SOC", "governance_status": "PROVISIONAL_ENGINEERING_VALUE - NOT_STAKEHOLDER_AUTHORIZED" },
+      { "value": "55-65% precautionary terminal SOC", "governance_status": "PROVISIONAL_ENGINEERING_VALUE - NOT_STAKEHOLDER_AUTHORIZED" },
+      { "value": "160000 Wh (test-script terminal_target_wh)", "governance_status": "NEW_TEST_HARNESS_VALUE - NOT_ESTABLISHED" },
+      { "value": "terminal_reserve_model=INITIAL_STATE", "governance_status": "TEST_SMOKE_TEST_WORKAROUND_ONLY - NOT_GOVERNANCE_AUTHORIZED" }
+    ]
+  },
+  "required_validation": {
+    "tension_reference": "T-02 (POLARIS_EMS_POLICY_DEFINITION_RESOLUTION.md)",
+    "station_data_required": [
+      { "id": "SD-07", "description": "Battery vendor true technical minimum SOC (confirm/revise 20%)" },
+      { "id": "SD-08", "description": "Battery degradation curves" }
+    ],
+    "technical_validation_required": [
+      "uncertainty_source_model",
+      "formula_mathematical_definition_of_dynamic_reserve",
+      "look_ahead_duration",
+      "recalculation_frequency",
+      "minimum_floor_interaction_with_dynamic_target"
+    ]
+  },
+  "experiment_scope": {
+    "description": "Run the same physical station scenario and the same GAP19 MILP formulation under baseline forecast engine vs. frozen Stage 8.1 forecast engine, comparing outcomes with all other configuration (including the eventually-authorized terminal reserve formulation and numbers) held identical between arms.",
+    "outcome_hypothesis_claimed": false,
+    "authorized": false
+  },
+  "decisions": [
+    {
+      "decision_id": "TERMINAL-RESERVE-POLICY-STRUCTURE",
+      "question": "Terminal Reserve structural policy (dynamic basis, uncertainty inclusion, enforcement mechanism, shortfall reporting, floor existence, emergency-mode interaction, cost treatment, information basis)",
+      "status": "DECIDED",
+      "decision": "Dynamic; based on future demand + renewable availability; includes uncertainty/risk component; enforced via secondary lexicographic J2 objective (not a hard constraint); shortfall explicitly reported; station-defined minimum reserve floor exists; does not alter/trigger Emergency Mode; may incur operating cost through J2; uses only information available at optimization time (no hindsight/future actuals).",
+      "rationale": "",
+      "authorized_value_or_model": "NOT_APPLICABLE_STRUCTURE_ONLY_NUMERICS_PENDING",
+      "execution_authorization": "NOT_AUTHORIZED",
+      "approver_signoff": "",
+      "date": ""
+    },
+    {
+      "decision_id": "DEC-TR-03",
+      "question": "What physical quantity and unit defines Terminal Reserve?",
+      "status": "OPEN",
+      "decision": "",
+      "rationale": "",
+      "authorized_value_or_model": "",
+      "execution_authorization": "",
+      "approver_signoff": "",
+      "date": ""
+    },
+    {
+      "decision_id": "DEC-RES-03",
+      "question": "What specific numerical values/formula are authorized? (formula, look-ahead, recalculation frequency, floor interaction, and uncertainty model are TECHNICAL_VALIDATION_REQUIRED, not decided here)",
+      "status": "OPEN",
+      "decision": "",
+      "rationale": "",
+      "authorized_value_or_model": "",
+      "execution_authorization": "",
+      "approver_signoff": "",
+      "date": ""
+    },
+    {
+      "decision_id": "EXPERIMENT-EXECUTION-AUTHORIZATION",
+      "question": "Is EXPERIMENT_EXECUTION / SIMULATION_EXECUTION / MILP_EXECUTION explicitly authorized for this specific Stage 8.1-vs-baseline research simulation?",
+      "status": "OPEN",
+      "decision": "",
+      "rationale": "",
+      "authorized_value_or_model": "",
+      "execution_authorization": "",
+      "approver_signoff": "",
+      "date": ""
+    }
+  ],
+  "blockers_remaining": [
+    "DEC-TR-03 (terminal reserve unit) unresolved",
+    "DEC-RES-03 (numerical value/model) unresolved; gated on SD-07, SD-08, and technical validation of formula/look-ahead/recalculation-frequency/floor-interaction/uncertainty-model",
+    "No explicit execution authorization recorded for this research simulation",
+    "No individual/body with confirmed sign-off authority (roles CONCEPTUALLY_RESOLVED only; named individuals STATION_SPECIFIC_VALIDATION_REQUIRED per SD-13)"
+  ]
+}

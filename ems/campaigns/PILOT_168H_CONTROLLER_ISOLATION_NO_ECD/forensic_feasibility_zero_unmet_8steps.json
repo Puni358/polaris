@@ -1,0 +1,290 @@
+{
+  "42": {
+    "step": 42,
+    "timestamp": "2024-06-02T18:00:00Z",
+    "soc_before_pct": 76.59,
+    "fuel_before_l": 72.7069,
+    "total_demand_24h_wh": 872337.8400000001,
+    "total_renewable_avail_24h_wh": 495994.68,
+    "max_usable_battery_energy_wh": 113180.0,
+    "max_diesel_energy_wh_approx": 242356.33333333334,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "45": {
+    "step": 45,
+    "timestamp": "2024-06-02T21:00:00Z",
+    "soc_before_pct": 83.02,
+    "fuel_before_l": 48.9714,
+    "total_demand_24h_wh": 787189.68,
+    "total_renewable_avail_24h_wh": 529918.9199999999,
+    "max_usable_battery_energy_wh": 126040.0,
+    "max_diesel_energy_wh_approx": 163238.00000000003,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "91": {
+    "step": 91,
+    "timestamp": "2024-06-04T19:00:00Z",
+    "soc_before_pct": 71.65,
+    "fuel_before_l": 48.9714,
+    "total_demand_24h_wh": 869540.64,
+    "total_renewable_avail_24h_wh": 570111.96,
+    "max_usable_battery_energy_wh": 103300.0,
+    "max_diesel_energy_wh_approx": 163238.00000000003,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "114": {
+    "step": 114,
+    "timestamp": "2024-06-05T18:00:00Z",
+    "soc_before_pct": 64.7,
+    "fuel_before_l": 31.0542,
+    "total_demand_24h_wh": 845915.76,
+    "total_renewable_avail_24h_wh": 425787.14,
+    "max_usable_battery_energy_wh": 89400.0,
+    "max_diesel_energy_wh_approx": 103514.0,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "115": {
+    "step": 115,
+    "timestamp": "2024-06-05T19:00:00Z",
+    "soc_before_pct": 64.7,
+    "fuel_before_l": 31.0542,
+    "total_demand_24h_wh": 877398.0,
+    "total_renewable_avail_24h_wh": 518282.04000000004,
+    "max_usable_battery_energy_wh": 89400.0,
+    "max_diesel_energy_wh_approx": 103514.0,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "162": {
+    "step": 162,
+    "timestamp": "2024-06-07T18:00:00Z",
+    "soc_before_pct": 80.89,
+    "fuel_before_l": 11.5807,
+    "total_demand_24h_wh": 856373.52,
+    "total_renewable_avail_24h_wh": 634447.3200000001,
+    "max_usable_battery_energy_wh": 121780.0,
+    "max_diesel_energy_wh_approx": 38602.333333333336,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "163": {
+    "step": 163,
+    "timestamp": "2024-06-07T19:00:00Z",
+    "soc_before_pct": 76.02,
+    "fuel_before_l": 11.5807,
+    "total_demand_24h_wh": 874532.1599999999,
+    "total_renewable_avail_24h_wh": 578391.72,
+    "max_usable_battery_energy_wh": 112040.0,
+    "max_diesel_energy_wh_approx": 38602.333333333336,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  },
+  "164": {
+    "step": 164,
+    "timestamp": "2024-06-07T20:00:00Z",
+    "soc_before_pct": 76.02,
+    "fuel_before_l": 11.5807,
+    "total_demand_24h_wh": 846293.28,
+    "total_renewable_avail_24h_wh": 574407.96,
+    "max_usable_battery_energy_wh": 112040.0,
+    "max_diesel_energy_wh_approx": 38602.333333333336,
+    "solver_status": 2,
+    "solver_success": false,
+    "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "feasible": false,
+    "infeasibility_relaxation_probe": {
+      "fuel": {
+        "feasible": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+      },
+      "battery_energy": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "battery_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      },
+      "diesel_power": {
+        "feasible": false,
+        "status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+      }
+    }
+  }
+}

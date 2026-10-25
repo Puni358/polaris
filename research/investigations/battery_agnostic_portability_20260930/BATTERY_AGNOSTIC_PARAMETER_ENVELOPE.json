@@ -1,0 +1,57 @@
+{
+  "phase_id": "battery_agnostic_portability_20260930",
+  "parameter_envelope": {
+    "nominal_energy_capacity_kWh": {
+      "lower": 100.0,
+      "reference": 200.0,
+      "upper": 400.0,
+      "source_classification": "ENGINEERING_SCENARIO_ENVELOPE",
+      "safety_relevance": "NON_SAFETY_PERFORMANCE"
+    },
+    "max_charge_discharge_power_kW": {
+      "lower": 25.0,
+      "reference": 50.0,
+      "upper": 100.0,
+      "source_classification": "ENGINEERING_SCENARIO_ENVELOPE",
+      "safety_relevance": "SAFETY_CRITICAL_HARDWARE_LIMIT"
+    },
+    "round_trip_efficiency": {
+      "lower": 0.8100,
+      "reference": 0.8464,
+      "upper": 0.9025,
+      "source_classification": "LITERATURE_DERIVED_ENVELOPE",
+      "safety_relevance": "NON_SAFETY_PERFORMANCE"
+    },
+    "minimum_soc_pct": {
+      "lower": 10.0,
+      "reference": 20.0,
+      "upper": 30.0,
+      "source_classification": "SAFETY_CRITICAL_HARDWARE_LIMIT",
+      "safety_relevance": "SAFETY_CRITICAL_HARDWARE_LIMIT"
+    },
+    "maximum_soc_pct": {
+      "lower": 80.0,
+      "reference": 95.0,
+      "upper": 100.0,
+      "source_classification": "SAFETY_CRITICAL_HARDWARE_LIMIT",
+      "safety_relevance": "SAFETY_CRITICAL_HARDWARE_LIMIT"
+    }
+  },
+  "classification_of_sources": [
+    {
+      "parameter": "200 kWh / 50 kW Reference Fixture",
+      "classification": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+      "target_hardware_fact": false
+    },
+    {
+      "parameter": "81% - 90.25% Efficiency Range",
+      "classification": "LITERATURE_DERIVED",
+      "target_hardware_fact": false
+    },
+    {
+      "parameter": "20% SOC Min Limit",
+      "classification": "SAFETY_CRITICAL_HARDWARE_LIMIT",
+      "target_hardware_fact": false
+    }
+  ]
+}

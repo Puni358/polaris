@@ -1,0 +1,86 @@
+{
+  "candidate_successor_v2": {
+    "n": 2883,
+    "mae": 38.7742,
+    "rmse": 67.8343,
+    "bias": 1.6601,
+    "nmae_pct": 30.0742
+  },
+  "clean_stage4_baseline_control": {
+    "n": 2883,
+    "mae": 43.4295,
+    "rmse": 74.8622,
+    "bias": -2.3544,
+    "nmae_pct": 33.685
+  },
+  "historical_stage8_1_control": {
+    "n": 2883,
+    "mae": 36.204,
+    "rmse": 64.5752,
+    "bias": 0.9605,
+    "nmae_pct": 28.0807
+  },
+  "delta_vs_clean_stage4": {
+    "delta_mae": -4.6553,
+    "delta_rmse": -7.0279,
+    "delta_bias": 4.0145,
+    "bootstrap_mae_diff": {
+      "mean_diff": -4.6508,
+      "ci95_lo": -6.4217,
+      "ci95_hi": -2.9018,
+      "n_boot": 2000,
+      "method": "corrected_row_duplication_per_draw_count"
+    }
+  },
+  "delta_vs_historical_stage8_1": {
+    "delta_mae": 2.5702,
+    "delta_rmse": 3.2591,
+    "delta_bias": 0.6996,
+    "bootstrap_mae_diff": {
+      "mean_diff": 2.5688,
+      "ci95_lo": 1.7194,
+      "ci95_hi": 3.4472,
+      "n_boot": 2000,
+      "method": "corrected_row_duplication_per_draw_count"
+    }
+  },
+  "high_elevation_subset": {
+    "n_rows": 487,
+    "candidate_successor_v2": {
+      "n": 487,
+      "mae": 99.5363,
+      "rmse": 127.9867,
+      "bias": -2.4469,
+      "nmae_pct": 26.2751
+    },
+    "clean_stage4_control": {
+      "n": 487,
+      "mae": 112.3425,
+      "rmse": 141.183,
+      "bias": 2.0237,
+      "nmae_pct": 29.6555
+    },
+    "historical_stage8_1_control": {
+      "n": 487,
+      "mae": 95.2124,
+      "rmse": 122.7946,
+      "bias": -1.5797,
+      "nmae_pct": 25.1336
+    },
+    "bootstrap_mae_diff_vs_hist81": {
+      "mean_diff": 4.3618,
+      "ci95_lo": 0.7284,
+      "ci95_hi": 7.8988,
+      "n_boot": 2000,
+      "method": "corrected_row_duplication_per_draw_count"
+    }
+  },
+  "historical_reference_candidate_f": {
+    "note": "From CANDIDATE_F_REPORT.md / CANDIDATE_F_RESULTS.json (ODD 2024 validation)",
+    "mae": 35.4438,
+    "rmse": 63.3192,
+    "bias": 0.7505,
+    "nmae_pct": 27.4911,
+    "delta_mae_vs_control": -0.7602
+  }
+}

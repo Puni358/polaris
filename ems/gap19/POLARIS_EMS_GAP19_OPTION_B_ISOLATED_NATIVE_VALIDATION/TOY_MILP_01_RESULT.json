@@ -1,0 +1,20 @@
+{
+  "test_id": "TOY_MILP_01",
+  "solver_name": "highspy",
+  "highspy_version": "1.15.1",
+  "blend_multi_objectives": false,
+  "status": "HighsStatus.kOk",
+  "model_status": "HighsModelStatus.kOptimal",
+  "solution_vector": [5.0, 5.0],
+  "objective_values": {
+    "J1_reported": -5.0,
+    "J1_recalculated": -5.0,
+    "J2_reported": -5.0,
+    "J2_recalculated": -5.0
+  },
+  "priorities": {
+    "J1": 1,
+    "J2": 2
+  },
+  "analytical_match": true
+}

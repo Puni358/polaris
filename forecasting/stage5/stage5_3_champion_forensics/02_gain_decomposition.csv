@@ -1,0 +1,2 @@
+total_daytime_hours,total_mae_reduction_W_m2,median_paired_gain_W_m2,pct_rows_improved,pct_rows_worsened,pct_rows_unchanged,top_1pct_gain_contrib_pct,top_5pct_gain_contrib_pct,top_10pct_gain_contrib_pct,top_25pct_gain_contrib_pct,mean_gain_improved_rows,mean_loss_worsened_rows
+2883,3.96048831970063,0.0,45.33472077696843,31.529656607700314,23.135622615331254,23.812197598955677,73.0431143551243,112.14026383655418,179.43459828862507,17.578484459381926,-12.713961895176306

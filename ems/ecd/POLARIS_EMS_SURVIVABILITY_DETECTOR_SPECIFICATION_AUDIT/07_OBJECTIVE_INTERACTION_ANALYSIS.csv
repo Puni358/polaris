@@ -1,0 +1,17 @@
+audit_document,07_OBJECTIVE_INTERACTION_ANALYSIS
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# DETECTOR VS OPTIMIZER OBJECTIVE STAGE INTERACTION ANALYSIS
+# ============================================================
+
+component_stage,responsible_entity,decision_authority,input_dependencies,output_effect,circular_feedback_prevention_rule
+Pre-Solve Assessment,Emergency Mode Detector,Exogenous Detector,Initial StationState & Causal Forecasts,EmergencyAssessment (operating_mode limiting_resource),Detector executes STRICTLY BEFORE optimizer solve; takes initial state S(t0) only
+Stage 1: Critical Reliability,Lexicographic MILP Optimizer,Hard Constraint / Stage 1,Demand critical tier vector,Guarantees p_unmet_critical = 0 under all operating modes,Unconditional; active in both NORMAL and EMERGENCY modes
+Stage 2: EBR & Reserve,Lexicographic MILP Optimizer,Stage 2 Objective,s_EBR slack & E_EBR_target,Under NORMAL mode: preserves EBR target. Under EMERGENCY: protects limiting resource per Policy E3,EBR target or stage priority adjusted exogenous to solve based on detector mode
+Stage 3: Fuel Conservation,Lexicographic MILP Optimizer,Stage 3 Objective,Generator fuel curve & runtime,Under NORMAL: minimizes fuel. Under EMERGENCY (Battery Weak): permits diesel run to protect battery,Optimizer receives fixed operating_mode parameter; does not self-declare mode
+Stage 4: Renewable Utilization,Lexicographic MILP Optimizer,Stage 4 Objective,Solar/wind forecasts,Minimizes avoidable curtailment subject to Stage 1-3 bounds,Lowest priority; operates within bounds established by higher stages
+Feedback Loop Elimination Rule,Detector -> Optimizer (One-way exogenous parameter passing),Detector determines mode BEFORE solve; Optimizer NEVER feeds DispatchPlan back into same-step detector,Mode parameter is READ-ONLY inside optimizer solve; prevents cyclic feedback oscillation,PREVENTED_BY_EXOGENOUS_PIPELINE

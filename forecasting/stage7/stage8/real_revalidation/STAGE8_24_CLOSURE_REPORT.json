@@ -1,0 +1,42 @@
+{
+  "stage": "8.24",
+  "experiment_id": "POLARIS_STAGE8_24_GOVERNED_EXPERIMENT",
+  "experiment_name": "Orographic Flow Regime Expansion",
+  "candidate_features": [
+    "ctx_u_perp",
+    "ctx_mountain_froude"
+  ],
+  "num_features_control": 37,
+  "num_features_candidate": 39,
+  "protocol": "5-fold forward-chaining EVEN-only validation",
+  "num_even_origins": 173,
+  "metrics": {
+    "control_mae_w_m2": 37.6308,
+    "candidate_mae_w_m2": 38.0280,
+    "delta_mae_w_m2": 0.3972,
+    "control_nmae_pct": 29.2146,
+    "candidate_nmae_pct": 29.5228,
+    "delta_nmae_pct": 0.3082,
+    "control_rmse_w_m2": 60.0974,
+    "candidate_rmse_w_m2": 60.4400,
+    "delta_rmse_w_m2": 0.3426,
+    "improving_folds": "1/5",
+    "worst_fold_degradation_w_m2": 1.1857
+  },
+  "gate_audit": {
+    "G1_mae_margin": "FAIL",
+    "G2_fold_consistency": "FAIL",
+    "G3_worst_fold_tolerance": "FAIL",
+    "G4_nmae_rmse_non_degradation": "FAIL",
+    "G5_causal_integrity": "PASS",
+    "G6_control_reproduction": "PASS"
+  },
+  "verdict": "REJECTED_ON_EVEN",
+  "odd_accessed": false,
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "scientific_conclusion": "The barrier-normal wind (ctx_u_perp) and mountain Froude number (ctx_mountain_froude) representation did not provide robust incremental predictive value beyond the existing Stage 8.1 37-feature set under the locked EVEN protocol. This does not imply that mountain-flow physics or orographic effects do not exist, but rather that these particular scalar surface-to-700hPa flow representations do not improve the benchmark model.",
+  "research_space_reduction": "Deliberately moving away from already-tested generic meteorological state representations (surface obs, NWP 3D condensate, NWP spread, orographic flow scalar features) toward genuinely independent cloud-evolution information (e.g. satellite NRT cloud motion/displacement)."
+}

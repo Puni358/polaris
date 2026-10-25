@@ -1,0 +1,13 @@
+{
+  "experiment_id": "C4_ZERO_DEGRADATION_IDEAL_EFFICIENCY",
+  "description": "Zero degradation penalty + ideal efficiency (deg_penalty = 0.0, eta = 1.0)",
+  "status": "PASS",
+  "diesel_fuel_l": 77150.0,
+  "delta_fuel_vs_c0_l": -16315.6264,
+  "delta_fuel_vs_c0_pct": -17.46,
+  "diesel_energy_kwh": 166090.0,
+  "renewable_curtailment_kwh": 21470.0,
+  "battery_discharge_kwh": 9850.0,
+  "battery_cycles": 49.25,
+  "unmet_load_kwh": 0.0
+}

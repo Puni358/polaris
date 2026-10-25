@@ -1,0 +1,35 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_BLOCKER_RESOLUTION_HASH_AUDIT",
+  "generated_at": "2026-09-23T18:33:00Z",
+  "status": "SEALED",
+  "artifact_hashes": [
+    {
+      "file": "POLARIS_EMS_ECD_BLOCKER_RESOLUTION_REPORT.md",
+      "sha256": "4404293612306527d7c3f1e24e5b418b2224061384c896638fb98f55b08104d8"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_BLOCKER_STATUS.json",
+      "sha256": "876ad1bcebef275ab1b17c58a867c7c1b6031352056a5ae03089d0f83a898f4b"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_TREQUIRED_FRESHNESS_RESOLUTION.md",
+      "sha256": "05c68631601dc64048661dd1a001945d22f7e7985867e418230c7ab3f48e650a"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_AUTHORITY_BOUNDARY_RESOLUTION.md",
+      "sha256": "aace0a9575c9bf4cd87b2c56ad590cb03fb700c7f546a9d51674499f6d909521"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_TIE_EPSILON_ENGINEERING_NOTE.md",
+      "sha256": "3725ef0b97d34cea2d064d6f052ea250bdce90962bf2114b3caf69beb040e730"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_TIME_VARYING_CRITICAL_LOAD_RESOLUTION.md",
+      "sha256": "7aa5a5922fd591e3a201cde1644222ebf02d5dce5a3364247fb4194452b57b11"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_MINIMUM_DECISION_REGISTER.json",
+      "sha256": "1bf0f79c4c9d05ff005f56021ed7e7eca96f53341b63215e84cadfcd05d4cd75"
+    }
+  ]
+}

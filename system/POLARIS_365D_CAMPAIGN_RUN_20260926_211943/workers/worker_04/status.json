@@ -1,0 +1,9 @@
+{
+  "cell_id": "cell_4",
+  "worker_id": "worker_04",
+  "current_cycle": 23,
+  "target_cycle": 24,
+  "progress_pct": 100.0,
+  "status": "RUNNING",
+  "cumulative_fuel_l": 293.99
+}

@@ -1,0 +1,32 @@
+{
+  "manifest_version": "1.0",
+  "stage": "STAGE 8.8B CLOUD RADIATIVE-PATH GEOMETRY FORECASTING EXPERIMENT",
+  "execution_timestamp_utc": "2026-09-12T17:24:21.557115+00:00",
+  "script": "run_stage8_8b_forecasting.py",
+  "inputs_used": [
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_clearsky_decomposition.csv",
+    "/home/punith-bs/01polaris (Copy)/stage4/stage4_results/ensemble_predictions.csv",
+    "/home/punith-bs/01polaris (Copy)/stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage7_5_terrain_horizon/nuolja_terrain_features_2024.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_extracted_features.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/stage8_8b_cloud_geometry_features.csv"
+  ],
+  "outputs_generated": [
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_EXPERIMENT_REPORT.md",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_DECISION.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_FOLD_RESULTS.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_PREDICTION_SUMMARY.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_CONTROL_REPRODUCTION.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_FEATURE_MANIFEST.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8B_PROVENANCE_MANIFEST.json"
+  ],
+  "firewall_verification": {
+    "odd_target_reads": 0,
+    "odd_predictions_generated": 0,
+    "stage8_1_champion_modified": false,
+    "master_handoff_modified": false,
+    "historical_stage_artifacts_modified": false
+  }
+}

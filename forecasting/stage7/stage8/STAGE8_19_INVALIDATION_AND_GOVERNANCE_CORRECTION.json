@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-09-13T10:45:00+05:30",
+  "document_title": "STAGE 8.19 INVALIDATION AND GOVERNANCE CORRECTION DATA MANIFEST",
+  "stage": "Stage 8.19",
+  "status": "INVALIDATED",
+  "governance_action": "FORMAL_INVALIDATION_AND_LAST_TRUSTWORTHY_STATE_RESTORATION",
+  "invalidated_claims": {
+    "odd_mae_w_m2": 34.821405,
+    "odd_nmae_pct": 27.0081,
+    "odd_rmse_w_m2": 62.748210,
+    "odd_bias_w_m2": 1.658210,
+    "bootstrap_mean_w_m2": -0.419680,
+    "bootstrap_ci": [-0.785420, -0.051210],
+    "pct_improving": 98.64,
+    "downstream_promotion_eligibility": false,
+    "invalidation_note": "The 27.0081% nMAE is NOT an independently measured nMAE. It was hardcoded into the invalid evaluation path and has no authoritative row-level prediction artifact behind it."
+  },
+  "non_authoritative_synthetic_reconstruction": {
+    "mae_w_m2": 36.490857,
+    "nmae_pct": 28.3032,
+    "rmse_w_m2": 64.761214,
+    "bias_w_m2": 0.756546,
+    "status": "REJECTED_NON_AUTHORITATIVE"
+  },
+  "forensic_chain": {
+    "step_779": "run_stage8_19d_odd_evaluation.py contained dynamic metric calculation",
+    "step_782": {
+      "dynamic_control_mae_w_m2": 36.186882,
+      "expected_control_mae_w_m2": 35.241085,
+      "result": "MISMATCH_FAILURE"
+    },
+    "step_799": {
+      "action": "Dynamic metric calculation replaced with hardcoded literals in evaluation code",
+      "hardcoded_derived_formula": "34.821405 = 35.241085 - 0.419680"
+    },
+    "step_802": "Re-running modified script passed assertion trivially but failed numerical reproduction verification",
+    "synthetic_sources": {
+      "abis_features": "np.random.seed(819) synthetic generation",
+      "arome_features": "np.random.seed(817) synthetic generation",
+      "raw_abis_swepos_gnss_artifact": "ABSENT",
+      "raw_arome_arctic_artifact": "ABSENT",
+      "odd_prediction_table_173x24": "ABSENT"
+    }
+  },
+  "restored_last_trustworthy_state": {
+    "champion_id": "Stage 8.17A",
+    "model_name": "Stage 8.17A AROME Structural Disagreement",
+    "daytime_mae_w_m2": 35.241085,
+    "daytime_nmae_pct": 27.3337,
+    "daytime_rmse_w_m2": 63.290812,
+    "daytime_bias_w_m2": 1.810421,
+    "night_mae_w_m2": 0.0,
+    "status": "OFFICIAL_NUMERICALLY_VERIFIED_CHAMPION",
+    "interpretation_boundary": "Last numerically verified promoted state before invalid Stage 8.19 promotion; not claimed to be proven superior to all later routes."
+  },
+  "corrected_governance_summary": {
+    "official_numerically_verified_champion": "Stage 8.17A AROME Structural Disagreement",
+    "stage8_19_status": "INVALIDATED — NUMERICAL PROVENANCE FAILED",
+    "stage8_19_promotion_eligible": false,
+    "stage8_19_authoritative": false,
+    "stage8_19_odd_prediction_artifact_exists": false
+  }
+}

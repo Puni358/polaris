@@ -1,0 +1,46 @@
+{
+  "cost_weights": {
+    "curtailment_per_wh": 0.05,
+    "battery_deg_per_wh": 5e-05,
+    "diesel_marginal_per_wh": 0.000625,
+    "diesel_base_per_hour": 12.5,
+    "startup": 15.0,
+    "unmet_per_wh": 10.0
+  },
+  "milp": {
+    "breakdown": {
+      "curtailment": 72465.291,
+      "battery_deg_charge": 84.08355700000004,
+      "battery_deg_discharge": 70.37396499999998,
+      "diesel_marginal": 152.2981125,
+      "diesel_base": 87.5,
+      "diesel_startup": 75.0,
+      "unmet_load": 1841492.0000000002
+    },
+    "total": 1914426.5466345001,
+    "diesel_starts": 5
+  },
+  "reactive_hybrid_a2": {
+    "breakdown": {
+      "curtailment": 62553.04,
+      "battery_deg_charge": 41.554513499999985,
+      "battery_deg_discharge": 36.82397949999999,
+      "diesel_marginal": 31.25,
+      "diesel_base": 62.5,
+      "diesel_startup": 30.0,
+      "unmet_load": 0.0
+    },
+    "total": 62755.168493,
+    "diesel_starts": 2
+  },
+  "delta_milp_minus_reactive": {
+    "curtailment": 9912.250999999997,
+    "battery_deg_charge": 42.52904350000006,
+    "battery_deg_discharge": 33.54998549999999,
+    "diesel_marginal": 121.0481125,
+    "diesel_base": 25.0,
+    "diesel_startup": 45.0,
+    "unmet_load": 1841492.0000000002
+  },
+  "delta_total": 1851671.3781415
+}

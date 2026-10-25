@@ -1,0 +1,41 @@
+{
+  "gate_id": "GATE-02",
+  "subject": "MILP_INFEASIBILITY_OPERATIONAL_RESPONSE",
+  "status": "GOVERNANCE_DECISION_REQUIRED",
+  "selected_operational_option": "F",
+  "timestamp": "2026-09-27T00:23:55Z",
+  "blockers": [
+    {
+      "blocker_id": "G02-B01",
+      "category": "PHYSICAL_FALLBACK",
+      "title": "Undefined Physical Microgrid Fallback Policy",
+      "description": "No authorized operational policy defines exact microgrid hardware setpoints when automatic MILP optimization returns infeasibility.",
+      "mitigation_required": "Governance must define whether microgrid holds last setpoint, falls back to local hardware governors, or shedding non-critical load.",
+      "status": "OPEN"
+    },
+    {
+      "blocker_id": "G02-B02",
+      "category": "CONSTRAINT_RELAXATION",
+      "title": "Un-Governed Constraint Relaxation Hierarchy",
+      "description": "If constraint relaxation (Option C) is desired, no policy exists specifying relaxation order, maximum penalty bounds, or soft vs hard boundaries.",
+      "mitigation_required": "Formal governance authorization of constraint priority sequence and maximum violation limits.",
+      "status": "OPEN"
+    },
+    {
+      "blocker_id": "G02-B03",
+      "category": "OPERATOR_INTERFACE",
+      "title": "Unimplemented Operator Manual Takeover Interface",
+      "description": "Option E (Operator Intervention) cannot be executed because no operator API, manual override UI, or authority transfer interlock exists in POLARIS.",
+      "mitigation_required": "Specification and buildout of operator control interface and audit logging system.",
+      "status": "OPEN"
+    },
+    {
+      "blocker_id": "G02-B04",
+      "category": "RUNTIME_INTERFACE",
+      "title": "Runner Pre-Existing State Advancement Conflict",
+      "description": "Runner currently sets state_advanced=True and commits zero dispatch on OPTIMIZATION_INFEASIBLE, violating the frozen MILP_INFEASIBILITY_STATE_ADVANCEMENT = MUST_NOT_OCCUR policy.",
+      "mitigation_required": "Authorized code modification to runner.py to halt state advancement upon MILP infeasibility after governance policy selection.",
+      "status": "OPEN"
+    }
+  ]
+}

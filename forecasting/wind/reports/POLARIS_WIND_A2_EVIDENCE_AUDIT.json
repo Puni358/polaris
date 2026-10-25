@@ -1,0 +1,97 @@
+{
+  "governance": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "A2_EVIDENCE_AUDIT",
+    "authorization": "EVIDENCE_AUDIT_ONLY",
+    "date_utc": "2026-09-18T04:08:00Z"
+  },
+  "machine_readable_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "A2_WIND_POWER_TARGET": "NOT_AUTHORIZED",
+    "A2_WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "A2_AUDIT_STATUS": "VERIFIED_WITH_LIMITATIONS",
+    "A2_RESEARCH_CHAMPION_STATUS": "VERIFIED"
+  },
+  "audit_findings_summary": {
+    "script_revision_audit": {
+      "status": "PASS",
+      "execution_script": "research/wind_a2/run_a2_wind_speed_experiments.py",
+      "reproducibility": "Fully reproducible using fixed seed 42 and provided script",
+      "result_dependent_modifications": "NONE (modifications were confined to parser/join technical bugfixes)"
+    },
+    "dataset_provenance_audit": {
+      "status": "PASS",
+      "raw_target_file": "research/wind_a2/smhi_188790_ws_full.csv",
+      "target_variable": "10m Height Measured Wind Speed (m/s)",
+      "station_id": "188790 (Abisko Aut)",
+      "custodian": "Polarforskningssekretariatet / SMHI",
+      "empirical_status": "MEASURED"
+    },
+    "forecast_origin_and_split_audit": {
+      "status": "PASS_WITH_MINOR_METADATA_DISCREPANCY",
+      "total_origins": 342,
+      "train_split": "Origins 0 to 218 (219 actual origins, 5,265 rows)",
+      "validation_split": "Origins 219 to 279 (61 origins, 1,464 rows)",
+      "test_split": "Origins 280 to 341 (62 origins, 1,488 rows)",
+      "metadata_discrepancy": "JSON text description noted 224 nominal train origins vs 219 actual valid origins. Held-out test split (62 origins, 1,488 instances) was 100% exact."
+    },
+    "causality_and_leakage_audit": {
+      "status": "PASS",
+      "finding": "Zero future target leakage detected. Target lags, rolling stats, and NWP covariates were constructed strictly at or before forecast origin t0."
+    },
+    "nwp_baseline_audit": {
+      "status": "NWP_BASELINE_SEMANTICS_ERROR_AND_VALID_BUT_POOR",
+      "raw_nwp_mae_ms": 18.8024,
+      "raw_nwp_bias_ms": 18.7913,
+      "finding": "Raw NWP grid forecast (fc_wind_speed_10m) exhibits severe systematic overestimation bias (+18.79 m/s) because grid cell covers high-altitude mountain terrain (1,000-1,500m) rather than valley floor anemometer calibration."
+    },
+    "champion_verification_audit": {
+      "status": "VERIFIED",
+      "champion_model": "Candidate 3: Autoregressive Ridge Regression (AR-X)",
+      "verified_test_mae_ms": 2.0364,
+      "verified_test_rmse_ms": 2.7136,
+      "verified_test_bias_ms": -0.2793,
+      "verified_test_nmae_pct": 38.07,
+      "verified_improvement_over_persistence_pct": 30.58,
+      "verified_improvement_over_nwp_pct": 89.17,
+      "finding": "AR-X model produced the lowest verified held-out test MAE among all evaluated candidates."
+    }
+  },
+  "limitation_statements": [
+    "Metrics represent performance on the empirical Abisko 10m Measured Wind Speed Target (m/s) and are not direct measurements at Mount Nuolja.",
+    "Altitude offset (310m) remains unscaled (ALTITUDE_TRANSFER_METHOD = NOT_ESTABLISHED).",
+    "Target is wind speed (m/s) only; wind power generation (W) was not evaluated.",
+    "A2 Research Champion is designated for research purposes outside POLARIS production runtime."
+  ],
+  "firewall_compliance": {
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "FROZEN_SCHEMAS_MODIFIED": "NO",
+    "D5_HISTORICAL_RESULTS_MODIFIED": "NO",
+    "SOLAR_RESEARCH_ARTIFACTS_MODIFIED": "NO",
+    "HISTORICAL_A2_RESULTS_OVERWRITTEN": "NO",
+    "NEW_MODEL_CREATED": "NO",
+    "NEW_SCIENTIFIC_EXPERIMENT": "NO",
+    "WIND_POWER_FORECASTING_EXECUTED": "NO",
+    "NUOLJA_WIND_RECONSTRUCTION_EXECUTED": "NO",
+    "UNAUTHORIZED_ALTITUDE_SCALING": "NO",
+    "FORECASTBUNDLE_INTEGRATION": "NO",
+    "EMS_INTEGRATION": "NO"
+  }
+}

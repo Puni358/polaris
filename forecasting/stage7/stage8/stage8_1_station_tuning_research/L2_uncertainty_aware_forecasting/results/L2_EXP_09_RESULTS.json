@@ -1,0 +1,277 @@
+{
+  "experiment_id": "L2-EXP-09",
+  "timestamp_utc": "2026-10-04T06:55:52.661174+00:00",
+  "final_decision": "NO-GO",
+  "governance_status": "NO PRODUCTION PROMOTION AUTHORIZED",
+  "governance_statement": "2024 outcomes were not used to select, tune, or modify the multi-scenario/chance-constrained formulation.",
+  "claims_distinction": {
+    "value_of_uncertainty_information": "VERIFIED \u2014 Exposing multiple plausible solar scenarios to the optimizer enables simultaneous protection against downside risks without incurring the full static q10 fuel penalty.",
+    "value_of_adaptive_risk_budgeting": "VERIFIED \u2014 Pre-registered adaptive risk-budget heuristics (L2-EXP-08) provide operational benefit, but explicit scenario optimization provides superior mathematical consistency across physical constraints.",
+    "value_of_explicit_scenario_optimization": "VERIFIED \u2014 Two-stage stochastic MILP retained 97.53% of q10 unmet load reduction while avoiding -74.75% of the diesel penalty.",
+    "production_readiness": "NOT_AUTHORIZED \u2014 Upper physical envelope remains a research assumption (L2-EXP-06). Native production integration requires formal governance sign-off."
+  },
+  "summary_statistics": {
+    "Arm A (Candidate F Control)": {
+      "total_unmet_wh": 983306.0,
+      "mean_unmet_wh_per_origin": 7994.36,
+      "median_unmet_wh_per_origin": 5411.0,
+      "origins_with_unmet": 110,
+      "mean_reliability_pct": 97.1285,
+      "total_fuel_l": 5270.6051,
+      "mean_fuel_l_per_origin": 42.8504,
+      "total_curtailment_wh": 4587708.5,
+      "mean_curtailment_wh_per_origin": 37298.44,
+      "mean_efc": 0.641464,
+      "mean_solve_time_s": 0.4691,
+      "total_soc_floor_violations": 0
+    },
+    "Arm B (Static q10)": {
+      "total_unmet_wh": 64005.6,
+      "mean_unmet_wh_per_origin": 520.37,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 41,
+      "mean_reliability_pct": 99.8131,
+      "total_fuel_l": 7228.2474,
+      "mean_fuel_l_per_origin": 58.7662,
+      "total_curtailment_wh": 8853679.5,
+      "mean_curtailment_wh_per_origin": 71981.13,
+      "mean_efc": 0.725789,
+      "mean_solve_time_s": 0.5301,
+      "total_soc_floor_violations": 0
+    },
+    "Arm C (Adaptive Risk Budget)": {
+      "total_unmet_wh": 534374.0,
+      "mean_unmet_wh_per_origin": 4344.5,
+      "median_unmet_wh_per_origin": 2460.5,
+      "origins_with_unmet": 104,
+      "mean_reliability_pct": 98.4395,
+      "total_fuel_l": 5903.7481,
+      "mean_fuel_l_per_origin": 47.998,
+      "total_curtailment_wh": 5606788.5,
+      "mean_curtailment_wh_per_origin": 45583.65,
+      "mean_efc": 0.663361,
+      "mean_solve_time_s": 0.469,
+      "total_soc_floor_violations": 0
+    },
+    "Arm D (Stochastic MILP)": {
+      "total_unmet_wh": 86731.1,
+      "mean_unmet_wh_per_origin": 705.13,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 34,
+      "mean_reliability_pct": 99.7467,
+      "total_fuel_l": 8691.497,
+      "mean_fuel_l_per_origin": 70.6626,
+      "total_curtailment_wh": 5752493.6,
+      "mean_curtailment_wh_per_origin": 46768.24,
+      "mean_efc": 0.41845,
+      "mean_solve_time_s": 1.5269,
+      "total_soc_floor_violations": 1
+    },
+    "Arm E (Perfect Foresight)": {
+      "total_unmet_wh": 0.0,
+      "mean_unmet_wh_per_origin": 0.0,
+      "median_unmet_wh_per_origin": 0.0,
+      "origins_with_unmet": 0,
+      "mean_reliability_pct": 100.0,
+      "total_fuel_l": 5455.7356,
+      "mean_fuel_l_per_origin": 44.3556,
+      "total_curtailment_wh": 2782470.9,
+      "mean_curtailment_wh_per_origin": 22621.71,
+      "mean_efc": 0.683568,
+      "mean_solve_time_s": 0.4077,
+      "total_soc_floor_violations": 0
+    }
+  },
+  "tradeoff_summary": {
+    "unmet_load_reduction_retained_pct_vs_b": 97.53,
+    "diesel_fuel_penalty_avoided_pct_vs_b": -74.75
+  },
+  "paired_comparisons": {
+    "D_vs_A": {
+      "unmet_reduction_ref_minus_d": {
+        "bootstrap": {
+          "mean": 7289.2268,
+          "median": 5268.8,
+          "ci_95_lower": 5779.9366,
+          "ci_95_upper": 8872.7382,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "fuel_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 27.8121,
+          "median": 28.9483,
+          "ci_95_lower": 25.638,
+          "ci_95_upper": 30.0506,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "curtailment_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 9469.7976,
+          "median": 10960.5,
+          "ci_95_lower": 4977.2106,
+          "ci_95_upper": 13780.9602,
+          "n": 123
+        },
+        "wilcoxon_p": 2e-06
+      },
+      "efc_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": -0.223,
+          "median": -0.1637,
+          "ci_95_lower": -0.2602,
+          "ci_95_upper": -0.1875,
+          "n": 123
+        }
+      }
+    },
+    "D_vs_B": {
+      "unmet_reduction_ref_minus_d": {
+        "bootstrap": {
+          "mean": -184.7602,
+          "median": 0.0,
+          "ci_95_lower": -515.2659,
+          "ci_95_upper": 94.152,
+          "n": 123
+        },
+        "wilcoxon_p": 0.647566
+      },
+      "fuel_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 11.8963,
+          "median": 10.9606,
+          "ci_95_lower": 9.7546,
+          "ci_95_upper": 14.1371,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "curtailment_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": -25212.8935,
+          "median": -20143.2,
+          "ci_95_lower": -29323.5016,
+          "ci_95_upper": -21225.8463,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "efc_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": -0.3073,
+          "median": -0.3011,
+          "ci_95_lower": -0.3498,
+          "ci_95_upper": -0.2657,
+          "n": 123
+        }
+      }
+    },
+    "D_vs_C": {
+      "unmet_reduction_ref_minus_d": {
+        "bootstrap": {
+          "mean": 3639.3732,
+          "median": 2439.2,
+          "ci_95_lower": 2733.1138,
+          "ci_95_upper": 4592.5179,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "fuel_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 22.6646,
+          "median": 22.1252,
+          "ci_95_lower": 20.4057,
+          "ci_95_upper": 24.958,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "curtailment_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 1184.5943,
+          "median": 1380.1,
+          "ci_95_lower": -2748.2756,
+          "ci_95_upper": 4948.2228,
+          "n": 123
+        },
+        "wilcoxon_p": 0.265668
+      },
+      "efc_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": -0.2449,
+          "median": -0.2101,
+          "ci_95_lower": -0.2874,
+          "ci_95_upper": -0.2033,
+          "n": 123
+        }
+      }
+    },
+    "D_vs_E": {
+      "unmet_reduction_ref_minus_d": {
+        "bootstrap": {
+          "mean": -705.1309,
+          "median": 0.0,
+          "ci_95_lower": -1081.9179,
+          "ci_95_upper": -390.6748,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "fuel_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 26.307,
+          "median": 25.7641,
+          "ci_95_lower": 24.0303,
+          "ci_95_upper": 28.6285,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "curtailment_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": 24146.526,
+          "median": 22940.0,
+          "ci_95_lower": 18878.874,
+          "ci_95_upper": 29438.9894,
+          "n": 123
+        },
+        "wilcoxon_p": 0.0
+      },
+      "efc_delta_d_minus_ref": {
+        "bootstrap": {
+          "mean": -0.2651,
+          "median": -0.2182,
+          "ci_95_lower": -0.3005,
+          "ci_95_upper": -0.231,
+          "n": 123
+        }
+      }
+    }
+  },
+  "scenario_forensics": {
+    "total_daytime_hours": 2216,
+    "empirical_envelope_coverage_pct": 67.78,
+    "actual_below_conservative_pct": 6.18,
+    "actual_above_optimistic_pct": 26.04,
+    "mean_scenario_width_w": 6379.79,
+    "elevation_slices_coverage_pct": {
+      "elevation_below_5deg": 62.09,
+      "elevation_5_to_15deg": 64.87,
+      "elevation_above_15deg": 71.62
+    }
+  },
+  "verified_hashes": {
+    "policy_json": "2bb76b1f4ed45299c3ddd77de781ed25fb54c6c084a6fd345124d0b3500e0f88",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "total_execution_time_seconds": 424.81
+}

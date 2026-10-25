@@ -1,0 +1,4 @@
+meps_run_cycle,issuance_time_t_ref,forecast_horizon_hours,lead_time_range,thredds_2024_archive_origins,causal_status,operational_alignment,causality_classification
+D-1 18Z Run (meps_det_ml),t0 - 6.0h,H1 to H24 (t0 + 0h to t0 + 23h),+7h to +30h,0 / 347 (0.0%),Physically & Operationally Causal,Locked POLARIS Baseline Origin,FAIL (Not Archived on MET Norway THREDDS for 18Z)
+D-1 00Z Run (meps_det_ml),t0 - 24.0h,H1 to H24 (t0 + 0h to t0 + 23h),+25h to +48h,347 / 347 (100.0%),Operationally Causal (Issued 24h prior),18h Lead Lag Penalty vs 18Z Control,CONDITIONAL (100% Available but 24h Lead Lag)
+D-0 00Z Run (meps_det_ml),t0 + 0.0h,H1 to H24 (t0 + 0h to t0 + 23h),+1h to +24h,347 / 347 (100.0%),Operationally Non-Causal at t0,Published at t0 + 3.25h,OPERATIONALLY NON-CAUSAL (Unusable for H1-H3)

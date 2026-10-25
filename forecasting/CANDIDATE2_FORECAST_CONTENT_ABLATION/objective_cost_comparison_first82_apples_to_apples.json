@@ -1,0 +1,61 @@
+{
+  "note": "The frozen-forecast MILP run (Candidate 2) terminated at step 82/168 with an OPTIMIZATION_RUNTIME_FAILURE fault (see run_metadata.json / milp_frozen_forecast_full_result.json). The companion file objective_cost_comparison_three_way.json compares the frozen run's 82 completed steps against the REAL-forecast MILP and Reactive baseline totals over their FULL 168 steps, which is not an apples-to-apples window. This file recomputes the same fixed cost-weight formula for all three controllers restricted to the identical first 82 steps (same scenario, same initial state, same configs, same fixed weights) so the comparison is valid.",
+  "steps_compared": 82,
+  "cost_weights": {
+    "curtailment_per_wh": 0.05,
+    "battery_deg_per_wh": 0.00005,
+    "diesel_marginal_per_wh": 0.000625,
+    "diesel_base_per_hour": 12.5,
+    "startup": 15.0,
+    "unmet_per_wh": 10.0
+  },
+  "reactive_hybrid_a2": {
+    "breakdown": {
+      "curtailment": 29602.787,
+      "battery_deg_charge": 23.309306500000005,
+      "battery_deg_discharge": 15.588996000000003,
+      "diesel_marginal": 18.75,
+      "diesel_base": 37.5,
+      "diesel_startup": 15.0,
+      "unmet_load": 0.0
+    },
+    "total": 29712.935302500002,
+    "diesel_starts": 1
+  },
+  "milp_real_forecast": {
+    "breakdown": {
+      "curtailment": 39216.502499999995,
+      "battery_deg_charge": 43.080510000000004,
+      "battery_deg_discharge": 36.912355,
+      "diesel_marginal": 90.071325,
+      "diesel_base": 37.5,
+      "diesel_startup": 30.0,
+      "unmet_load": 471170.80000000005
+    },
+    "total": 510624.86669000005,
+    "diesel_starts": 2
+  },
+  "milp_frozen_forecast": {
+    "breakdown": {
+      "curtailment": 42122.467000000004,
+      "battery_deg_charge": 37.183428000000006,
+      "battery_deg_discharge": 29.2612995,
+      "diesel_marginal": 55.371537499999995,
+      "diesel_base": 25.0,
+      "diesel_startup": 15.0,
+      "unmet_load": 1958355.0000000002
+    },
+    "total": 2000639.2832650002,
+    "diesel_starts": 1
+  },
+  "delta_frozen_minus_real_milp": {
+    "curtailment": 2905.9645000000085,
+    "battery_deg_charge": -5.897081999999998,
+    "battery_deg_discharge": -7.6510555,
+    "diesel_marginal": -34.699787500000006,
+    "diesel_base": -12.5,
+    "diesel_startup": -15.0,
+    "unmet_load": 1487184.2
+  },
+  "delta_total_frozen_minus_real_milp": 1490014.4165750002
+}

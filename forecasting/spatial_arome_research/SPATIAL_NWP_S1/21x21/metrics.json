@@ -1,0 +1,94 @@
+{
+  "footprint": "21x21",
+  "size": 21,
+  "param_count": 16033,
+  "elapsed_time_sec": 534.2,
+  "agg_mae": 33.251522,
+  "agg_ctrl_mae": 26.35631,
+  "delta_mae": 6.895212,
+  "agg_nmae": 37.3144,
+  "ctrl_nmae": 29.6088,
+  "agg_rmse": 65.646173,
+  "ctrl_rmse": 55.884041,
+  "agg_bias": -6.642579,
+  "folds_improved": 0,
+  "max_degradation": 8.195488,
+  "gates": {
+    "g1_delta_mae_le_m0_50": {
+      "pass": false,
+      "value": 6.895212
+    },
+    "g2_folds_ge_4": {
+      "pass": false,
+      "value": 0
+    },
+    "g3_max_degrad_le_0_50": {
+      "pass": false,
+      "value": 8.195488
+    },
+    "g4_nmae_rmse_le_ctrl": {
+      "pass": false,
+      "nmae_cand": 37.3144,
+      "nmae_ctrl": 29.6088
+    },
+    "g5_causal_compliance": {
+      "pass": true
+    },
+    "g6_control_reproduction": {
+      "pass": true
+    }
+  },
+  "all_gates_pass": false,
+  "fold_details": [
+    {
+      "fold": 1,
+      "cand_mae": 36.102566,
+      "ctrl_mae": 27.968117,
+      "delta_mae": 8.134449,
+      "cand_nmae": 41.3916,
+      "cand_rmse": 71.527284,
+      "cand_bias": -13.209031,
+      "fold_improved": false
+    },
+    {
+      "fold": 2,
+      "cand_mae": 30.231234,
+      "ctrl_mae": 23.429627,
+      "delta_mae": 6.801607,
+      "cand_nmae": 38.0747,
+      "cand_rmse": 61.577211,
+      "cand_bias": -2.20698,
+      "fold_improved": false
+    },
+    {
+      "fold": 3,
+      "cand_mae": 32.112915,
+      "ctrl_mae": 26.954325,
+      "delta_mae": 5.15859,
+      "cand_nmae": 39.5284,
+      "cand_rmse": 65.644149,
+      "cand_bias": -3.746682,
+      "fold_improved": false
+    },
+    {
+      "fold": 4,
+      "cand_mae": 36.928421,
+      "ctrl_mae": 28.732933,
+      "delta_mae": 8.195488,
+      "cand_nmae": 34.6589,
+      "cand_rmse": 70.376117,
+      "cand_bias": -9.684975,
+      "fold_improved": false
+    },
+    {
+      "fold": 5,
+      "cand_mae": 30.882473,
+      "ctrl_mae": 24.696549,
+      "delta_mae": 6.185924,
+      "cand_nmae": 32.9182,
+      "cand_rmse": 59.106102,
+      "cand_bias": -4.365228,
+      "fold_improved": false
+    }
+  ]
+}

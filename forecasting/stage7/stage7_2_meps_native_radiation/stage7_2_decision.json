@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-09-12T07:43:43.089749+00:00",
+  "stage": "POLARIS Stage 7.2 MEPS Native Radiation Experiment",
+  "frozen_champion": "Stage 6.6 LWP/IWP",
+  "e0_control_mae_w_m2": 38.280605223027905,
+  "experiment_decisions": {
+    "E0": "CONTROL_REPRODUCED",
+    "E1": "REJECTED",
+    "E2": "REJECTED",
+    "E3": "REJECTED",
+    "E4": "REJECTED"
+  },
+  "passed_candidates": [],
+  "final_stage_decision": "STAGE 7.2 = NO IMPROVEMENT (STAGE 6.6 REMAINS CHAMPION)",
+  "odd_test_set_locked": true,
+  "odd_accessed": false
+}

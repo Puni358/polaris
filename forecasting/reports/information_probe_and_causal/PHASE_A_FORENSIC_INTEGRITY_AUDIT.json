@@ -1,0 +1,35 @@
+{
+  "audit_name": "PHASE_A_FORENSIC_INTEGRITY_AUDIT",
+  "timestamp_utc": "2026-09-16T05:20:44Z",
+  "overall_verdict": "PASS — Scientifically safe to interpret",
+  "checks": {
+    "1_results_json_md_numerical_agreement": "PASS",
+    "2_oof_predictions_sha256_match": "PASS",
+    "3_eligible_origin_count_verifications": "PASS",
+    "4_canonical_fold_assignment_integrity": "PASS",
+    "5_odd_firewall_verification": "PASS",
+    "6_target_definitions_direct_verification": "PASS",
+    "7_bootstrap_implementation_verification": "PASS",
+    "8_permutation_implementation_verification": "PASS",
+    "9_p0_p1_oof_comparability": "PASS",
+    "10_target_leakage_audit": "PASS",
+    "11_p1_matrix_dimensionality_verification": "PASS",
+    "12_probe_models_compliance": "PASS",
+    "13_controlled_scientific_language_verification": "PASS",
+    "14_governance_status_verification": "PASS",
+    "15_artifact_provenance_and_hashes_verification": "PASS",
+    "16_no_rerun_of_scientific_experiment": "PASS",
+    "17_strict_prohibitions_compliance": "PASS"
+  },
+  "artifact_hashes": {
+    "INFORMATION_PROBE_RESULTS.json": "ba801e50fbf583f5ec951b08d7cb61d61574c33a92017eb7a10ce96150f5e467",
+    "INFORMATION_PROBE_RESULTS.md": "0fcd68e7ec8334bdce8aa2bdcf46a5bdeef34ec6bfece6e44b8296eb4c0222f7",
+    "INFORMATION_PROBE_OOF_PREDICTIONS.csv": "3652f298268e3e41393aa2ae79b6943dac826745e997403309bbb74d3937cce5",
+    "INFORMATION_PROBE_ELIGIBLE_EVEN_ORIGINS.csv": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e",
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+    "INFORMATION_PROBE_FREEZE_RECORD.json": "9afb1fac3e51207b6e5d7ff5a46b31e7c06ccff96bfbce10c20a1ea3022b75eb",
+    "INFORMATION_PROBE_FREEZE_RECORD.md": "62f5813b137bc7df1d834fad214b35b46d04bc3dbd751005405382f78bb9733c",
+    "T4_RECONSTRUCTION_BLOCKER.md": "f32d398d249f7b311efcdca373dfd720b0808cbf916fa9c8bf2ddba4250269f8"
+  },
+  "scientific_finding_wording": "Phase A provides strong evidence that the frozen Stage8.1 causal state contains nonlinear predictive information about future H7–H12 transmission statistics beyond deterministic solar/seasonal information. This is inconsistent with M1 (information absent) for the tested targets. Phase A does not by itself distinguish representation limitations from point-prediction/loss limitations or unresolved event timing; these remain hypotheses for subsequent diagnostic testing."
+}

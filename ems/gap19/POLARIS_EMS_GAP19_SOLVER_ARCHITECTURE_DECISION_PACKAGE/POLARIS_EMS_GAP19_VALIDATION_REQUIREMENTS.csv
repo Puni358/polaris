@@ -1,0 +1,16 @@
+TEST_ID,TEST_NAME,PURPOSE,APPLICABLE_OPTIONS,EXECUTION_STATUS
+GAP19-TEST-01,Lexicographic Priority Preservation Test,Verify Stage 1 > Stage 2 > Stage 3 > Stage 4 without compromise,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-02,Stage 1 Hard Reliability Test,Verify zero unserved critical load under feasible generator capacity,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-03,Stage 2 Reserve Shortfall Test,Verify EBR energy shortfall minimization under peak load events,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-04,Stage 3 Fuel Conservation Test,Verify liters-based fuel minimization subject to Stage 1 & 2 locks,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-05,Stage 4 Curtailment Minimization Test,"Verify renewable utilization maximization subject to Stage 1, 2 & 3 locks",ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-06,Stage Lock Correctness Test,Verify linear inequality lock constraint bounds J_k(x) <= J_k* + eps_k,OPTION_A,NOT_EXECUTED
+GAP19-TEST-07,Numerical Tolerance Sensitivity Test,Evaluate optimality boundary degradation across varying eps values,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-08,Solver Failure Handling Test,Verify failure detection and recording behavior,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-09,Deterministic Replay Test,Verify deterministic replay within authorized numerical and structural replay tolerances,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-10,Checkpoint/Restart Test,Verify state restoration and execution continuity mid-horizon,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-11,Schema Compatibility Test,Verify additive schema extensions maintain backward compatibility,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-12,Truth Firewall Verification Test,Verify telemetry data firewall integrity between Digital Twin and EMS,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-13,DispatchPlan Correctness Test,Verify output plan physical feasibility against station constraints,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-14,Digital Twin Isolation Test,Verify zero side-effects on simulator state during solver execution,ALL_OPTIONS,NOT_EXECUTED
+GAP19-TEST-15,Rollback Mechanism Test,Verify seamless reversion to frozen Version 1.0.0 optimizer baseline,ALL_OPTIONS,NOT_EXECUTED

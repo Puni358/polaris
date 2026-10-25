@@ -1,0 +1,151 @@
+{
+  "project": "POLARIS",
+  "project_context": "Smart India Hackathon (SIH)",
+  "access_path": "PATH_A_FORMAL_RESTRICTED_DATA_ACCESS",
+  "attempt_scope": "ONE_BOUNDED_FORMAL_ACCESS_ATTEMPT",
+  "timestamp": "2026-09-17T18:38:59Z",
+  "status": "REQUEST_PREPARED_AWAITING_HUMAN_APPROVAL",
+  "current_next_action": "HUMAN REVIEW AND, IF APPROVED, ONE BOUNDED FORMAL ACCESS ATTEMPT",
+  "primary_data_requirement": {
+    "dataset_type": "MEASURED STATION-LEVEL ELECTRICAL DEMAND / LOAD TIME SERIES",
+    "station_site_identifier": "Explicit name and location of station or microgrid facility",
+    "demand_field": "Measured active power demand or energy consumption per interval",
+    "timestamp_format": "ISO 8601 or unambiguous UTC date-time timestamps",
+    "preferred_temporal_resolution": "Hourly or finer (<= 1-hour interval preferred)",
+    "units": "Explicit physical units (kW, W, or kWh per interval)",
+    "temporal_coverage": "Longest continuous historical period available",
+    "quality_flags": "Missing-data markers or quality flags, if available",
+    "data_provenance": "Metering instrumentation or measurement method summary, if available",
+    "terms_governing_use": "Terms governing SIH project use, analysis, publication, citation, redistribution, and storage"
+  },
+  "optional_data_requirements": [
+    "Solar PV power generation (kW / W)",
+    "Wind turbine power generation (kW / W)",
+    "Battery system State of Charge (SOC % / kWh)",
+    "Battery power / stored-energy measurements (kW)",
+    "Diesel generator operating status (on/off)",
+    "Diesel generator electrical output (kW)",
+    "Diesel generator operating hours / fuel rate",
+    "Station ambient weather observations (ambient temp, wind speed, SW_in)"
+  ],
+  "target_custodians": [
+    {
+      "target_id": 1,
+      "institution": "Australian Antarctic Division (AAD)",
+      "facility_scope": "Casey, Davis, Mawson, Macquarie Island",
+      "attempted_contact": "aadcwebqueries@aad.gov.au",
+      "delivery_status": "DELIVERY FAILED — EXTERNAL SENDER RESTRICTION (550 5.7.133)",
+      "data_access_decision": "NOT RECEIVED / NOT REVIEWED",
+      "scientific_interpretation": "NONE (bounced by mail server before substantive review)",
+      "retry_authorized": false
+    },
+    {
+      "target_id": 2,
+      "institution": "South African National Antarctic Programme (SANAP) / SANAE IV Custodian",
+      "facility_scope": "SANAE IV Station, Dronning Maud Land, Antarctica",
+      "attempted_contact": "antarcticlegacy@sun.ac.za",
+      "delivery_status": "DISPATCHED — AWAITING RESPONSE"
+    },
+    {
+      "target_id": 3,
+      "institution": "International Polar Foundation (IPF) / Princess Elisabeth Antarctica Custodian",
+      "facility_scope": "Princess Elisabeth Antarctica Station",
+      "attempted_contact": "info@polarfoundation.org",
+      "delivery_status": "DISPATCHED — AWAITING RESPONSE"
+    },
+    {
+      "target_id": 4,
+      "institution": "Alaska Center for Energy and Power (ACEP) / University of Alaska Fairbanks",
+      "facility_scope": "Kotzebue, Cordova, Wales, St. Mary's Arctic Microgrids",
+      "attempted_contact": "ACEP.info@alaska.edu",
+      "delivery_status": "DISPATCHED — AWAITING RESPONSE"
+    }
+  ],
+  "aadc_delivery_audit_event": {
+    "attempted_recipient": "aadcwebqueries@aad.gov.au",
+    "delivery_status": "DELIVERY FAILED — EXTERNAL SENDER RESTRICTION",
+    "error_code": "550 5.7.133",
+    "bounce_reason": "Recipient distribution group restricts external senders; group only accepts messages from internal organization or allowed-senders list",
+    "data_access_decision": "NOT RECEIVED / NOT REVIEWED",
+    "scientific_interpretation": "NONE — rejected by recipient-side sender restrictions before substantive review",
+    "retry_rule": "NOT AUTHORIZED / DO NOT REPEAT"
+  },
+  "draft_request": {
+    "subject": "Data Access Request — Measured Station Electrical-Demand Data for POLARIS Smart India Hackathon Project",
+    "to": "[TARGET CUSTODIAN]",
+    "project_positioning": "A Smart India Hackathon (SIH) project developing an AI-driven predictive energy-management system for polar research stations.",
+    "purpose_statements": [
+      "Provide a realistic electrical demand baseline for offline Model Predictive Control (MPC) dispatch simulations",
+      "Evaluate predictive demand forecasting and load-following EMS performance under empirical polar station load dynamics",
+      "Support SIH project reporting, system demonstration, and technical documentation strictly in accordance with custodian guidelines"
+    ],
+    "scope_limitations": "Strictly historical measured data for offline algorithm evaluation. No physical station access, live control, or real-time grid connectivity requested.",
+    "requester_information": {
+      "team_institution": "University of Visvesvaraya College of Engineering + Team_Side_Quest",
+      "team_member_requester_name": "Punith B S",
+      "mentor_faculty_contact": "N/A",
+      "email": "sihteamsidequest@gmail.com",
+      "phone": "N/A",
+      "sih_team_problem_statement_details": "Smart India Hackathon (SIH) project — POLARIS: an AI-driven predictive energy-management system designed for polar research stations. The system forecasts energy demand and renewable generation using historical, weather, and station data, and uses these forecasts to optimize renewable generation, battery storage, diesel generation, and flexible loads while maintaining reliable energy service under polar operating constraints."
+    }
+  },
+  "data_suitability_questions": [
+    {"id": "A", "question": "Is measured electrical demand/load available?"},
+    {"id": "B", "question": "Is it station-level or building/facility-level?"},
+    {"id": "C", "question": "What is the temporal resolution?"},
+    {"id": "D", "question": "What is the timestamp convention and timezone?"},
+    {"id": "E", "question": "What are the units?"},
+    {"id": "F", "question": "What historical date range is available?"},
+    {"id": "G", "question": "Is the series continuous?"},
+    {"id": "H", "question": "What percentage or nature of missing data exists?"},
+    {"id": "I", "question": "Are quality flags or maintenance/outage markers available?"},
+    {"id": "J", "question": "Is the measurement gross demand, net demand, generation, grid import/export, or another quantity?"},
+    {"id": "K", "question": "Is the measurement directly metered or derived?"},
+    {"id": "L", "question": "Are there known aggregation or preprocessing steps?"},
+    {"id": "M", "question": "What access/licensing restrictions apply?"},
+    {"id": "N", "question": "Can the data be used for a Smart India Hackathon (SIH) project?"},
+    {"id": "O", "question": "Can derived results be reported in an SIH project presentation, report, or demonstration?"}
+  ],
+  "integration_boundary": {
+    "adapter_implemented": false,
+    "architecture_modified": false,
+    "target_pipeline": "REAL DATASET -> REAL-DATA ADAPTER / PROVIDER -> EXISTING POLARIS DATA INTERFACES -> ForecastEngine -> ForecastBundle v1.0 -> FROZEN EMS/MPC/MILP -> DispatchPlan v1.0 -> DigitalTwin -> Evaluation",
+    "contract_preservation_rule": "The frozen MILP formulation, MPC loop, StationState, ForecastBundle, DispatchPlan, DigitalTwin, and D4-C1 fault containment semantics MUST NOT be modified to accommodate a dataset. Integration must occur entirely upstream via an authorized adapter."
+  },
+  "current_project_state": {
+    "stage8_1_forecasting_research": "FROZEN",
+    "stage8_1_champion_model": "FROZEN / NOT CONNECTED / NOT AUTHORIZED",
+    "d5_sensitivity_study": "CLOSED / UNTOUCHED / NOT RERUN",
+    "system_integration": "VALIDATED",
+    "real_data_access": "RESTRICTED / NOT YET GRANTED",
+    "synthetic_fixtures": "PRESERVED",
+    "real_data_adapter": "NOT IMPLEMENTED / NOT AUTHORIZED",
+    "hybrid_scenario": "NOT AUTHORIZED"
+  },
+  "human_authorization": {
+    "package_status": "EXECUTED BY HUMAN DISPATCH / AUDIT MONITORING IN PROGRESS",
+    "external_contact_performed": true,
+    "data_acquisition_performed": false,
+    "submission_requirement": "Dispatched by human approval. AADC route bounced (550 5.7.133); SANAP, IPF, ACEP pending."
+  },
+  "stopping_condition": {
+    "scope": "ONE BOUNDED FORMAL ACCESS ATTEMPT",
+    "success_rule": "If usable high-resolution demand data is obtained, propose future separate task for adapter design and integration.",
+    "bounded_stop_rule": "If remaining custodians deny access, fail to respond, attach impractical conditions, or cannot provide usable high-resolution demand data, Path A is closed and project may separately consider hybrid scenario option."
+  },
+  "final_status": {
+    "path_a": "FORMAL RESTRICTED-DATA ACCESS — BOUNDED ATTEMPT IN PROGRESS",
+    "aadc_access_route": "DELIVERY FAILED — EXTERNAL SENDER RESTRICTION (550 5.7.133)",
+    "aadc_data_access_decision": "NOT RECEIVED / NOT REVIEWED",
+    "other_access_requests": "DISPATCHED / PENDING RESPONSE",
+    "scientific_interpretation": "NONE — REJECTED BY RECIPIENT-SIDE SENDER RESTRICTIONS BEFORE SUBSTANTIVE REVIEW",
+    "retry_to_same_group": "NOT AUTHORIZED / DO NOT REPEAT",
+    "real_data_access": "RESTRICTED / NOT YET GRANTED",
+    "adapter": "NOT IMPLEMENTED / NOT AUTHORIZED",
+    "stage8_1": "FROZEN / NOT CONNECTED / NOT AUTHORIZED",
+    "d5": "CLOSED / UNTOUCHED / NOT RERUN",
+    "hybrid_scenario": "NOT AUTHORIZED",
+    "synthetic_fixtures": "PRESERVED",
+    "current_next_action": "WAIT FOR RESPONSES FROM OTHER ALREADY-SENT ACCESS REQUESTS / HUMAN DECISION IF FURTHER ACCESS ACTION IS REQUIRED"
+  }
+}

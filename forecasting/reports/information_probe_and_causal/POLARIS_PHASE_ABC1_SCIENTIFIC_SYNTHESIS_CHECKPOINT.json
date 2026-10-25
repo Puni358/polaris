@@ -1,0 +1,144 @@
+{
+  "checkpoint_name": "POLARIS_PHASE_ABC1_SCIENTIFIC_SYNTHESIS_CHECKPOINT",
+  "timestamp_utc": "2026-09-16 00:43:17+0000",
+  "purpose": "Consolidated scientific synthesis of audited Phase A, Phase B, and Phase C-1 findings",
+  "governance_status": {
+    "phase_a": "COMPLETE_AND_FORENSICALLY_AUDITED",
+    "phase_b": "COMPLETE_AND_FORENSICALLY_AUDITED",
+    "phase_c1": "COMPLETE_AND_FORENSICALLY_AUDITED",
+    "b3_procedural_status": "PROCEDURALLY_COMPROMISED_EXPLORATORY_ONLY",
+    "t4_status": "DROPPED_UNAVAILABLE",
+    "section_9_decision_rule": "ORIGINAL_2_OF_4_RULE_UNCHANGED",
+    "odd_firewall": "SEALED_0_ROWS_ACCESSED",
+    "phase_c2_authorization": "NOT_AUTHORIZED"
+  },
+  "phase_a_summary": {
+    "total_even_origins": 174,
+    "eligible_even_origins": 104,
+    "daytime_hours_evaluated": 604,
+    "p0_feature_count": 22,
+    "p1_feature_count": 147,
+    "gbdt_aggregate_targets": {
+      "T1_volatility": {
+        "delta_R2": 0.309826,
+        "bootstrap_95ci": [
+          0.0506,
+          0.5886
+        ]
+      },
+      "T2_max_transition": {
+        "delta_R2": 0.305179,
+        "bootstrap_95ci": [
+          0.047,
+          0.5837
+        ]
+      },
+      "T3_mean_kt": {
+        "delta_R2": 0.598801,
+        "bootstrap_95ci": [
+          0.3639,
+          0.8421
+        ]
+      }
+    },
+    "established_m1_finding": "M1 (information absent) is inconsistent with the tested aggregate targets. The frozen Stage8.1 causal state contains nonlinear predictive information about the tested future H7-H12 transmission statistics beyond P0."
+  },
+  "phase_b_summary": {
+    "b1_rank": {
+      "mean_normalized_rank": 0.4459,
+      "mean_raw_rank": 2.2219
+    },
+    "b2_pinball_loss": {
+      "champion_q05_loss": 0.105774,
+      "neighbour_median_q05_loss": 0.126686,
+      "difference": 0.020912,
+      "win_rate_pct": 42.88,
+      "p_value": 1e-06,
+      "dependence_caveat": "The reported p < 0.0001 treats all 604 hourly observations as independent, without accounting for origin-level clustering."
+    },
+    "b3_procedural_limitation": "B3 combined threshold was NOT demonstrably frozen before computation. B3 is procedurally compromised and remains exploratory only."
+  },
+  "phase_c1_summary": {
+    "initial_execution": "INVALID_HISTORICAL_ONLY (canonical fold indexing loop mismatch range(5) vs 1..5)",
+    "corrected_execution": "VALID_AUTHORITATIVE (scratch/run_phase_c1_horizon_diagnostic_corrected.py)",
+    "parent_eligible_origins": 104,
+    "aggregate_valid_target_cells": 609,
+    "gbdt_hourly_targets": {
+      "H7": {
+        "N_h": 89,
+        "delta_R2": 0.5146,
+        "bootstrap_95ci": [
+          0.2639,
+          0.7858
+        ],
+        "permutation_p": 0.001
+      },
+      "H8": {
+        "N_h": 104,
+        "delta_R2": 0.5317,
+        "bootstrap_95ci": [
+          0.3024,
+          0.774
+        ],
+        "permutation_p": 0.001
+      },
+      "H9": {
+        "N_h": 104,
+        "delta_R2": 0.7013,
+        "bootstrap_95ci": [
+          0.4795,
+          0.9302
+        ],
+        "permutation_p": 0.001
+      },
+      "H10": {
+        "N_h": 104,
+        "delta_R2": 0.4718,
+        "bootstrap_95ci": [
+          0.2216,
+          0.7408
+        ],
+        "permutation_p": 0.001
+      },
+      "H11": {
+        "N_h": 104,
+        "delta_R2": 0.6373,
+        "bootstrap_95ci": [
+          0.3904,
+          0.8996
+        ],
+        "permutation_p": 0.001
+      },
+      "H12": {
+        "N_h": 104,
+        "delta_R2": 0.3037,
+        "bootstrap_95ci": [
+          0.0276,
+          0.585
+        ],
+        "permutation_p": 0.001
+      }
+    },
+    "controlled_finding": "Across all six H7-H12 horizons, the specified GBDT probe extracted positive incremental out-of-fold predictive information from P1 relative to P0."
+  },
+  "evidence_classification": {
+    "A_demonstrated": [
+      "P1 contains substantial nonlinear predictive information about aggregate targets T1-T3 (Phase A).",
+      "M1 (information absent) is inconsistent with tested aggregate targets (Phase A) and individual hourly transmission targets k(t+h) (Phase C-1).",
+      "The champion point forecasts have a mean normalized rank of 0.4459 within tested five-neighbour ensembles (Phase B).",
+      "Champion q=.5 pinball loss (0.1058) is lower than crude 5-neighbour empirical median loss (0.1267) (Phase B).",
+      "GBDT probes achieve positive out-of-fold incremental predictive power (\u0394R\u00b2 from +0.3037 to +0.7013) for individual hourly targets k(t+7) to k(t+12) relative to P0 (Phase C-1)."
+    ],
+    "B_supported_consistent_with": [
+      "Phase B diagnostics are consistent with conditional-median/hedging behavior.",
+      "The Ridge vs GBDT contrast is consistent with nonlinear information structure, but does not establish inherent physical nonlinearity."
+    ],
+    "C_not_established": [
+      "Stage8.1 representation limitation (M2 is not established by C-1 due to model-class, loss, and capacity confounders).",
+      "M3 point-loss / uncertainty limitation (not established by C-1).",
+      "Event-timing uncertainty as a sole mechanism (not established by C-1).",
+      "Any unique mechanism explaining Stage8.1 hourly point forecast error.",
+      "Any ODD performance implication."
+    ]
+  }
+}

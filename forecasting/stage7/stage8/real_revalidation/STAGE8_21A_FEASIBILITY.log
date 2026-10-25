@@ -1,0 +1,39 @@
+[15:16:51] [1/10] Inspecting MEPS archive
+[15:16:52] MEPS Archive Check PASSED: Found datasets ['meps_det_pl', 'meps_det_ml', 'meps_det_sfc', 'meps_det_hl']
+[15:16:52] [2/10] Verifying variables
+[15:16:52]   - Variable mass_fraction_of_cloud_condensed_water_in_air_pl: AVAILABLE (kg/kg)
+[15:16:52]   - Variable mass_fraction_of_cloud_ice_in_air_pl: AVAILABLE (kg/kg)
+[15:16:52]   - Variable pressure: AVAILABLE (13 levels: 50 to 1000 hPa)
+[15:16:52]   - Variable surface_air_pressure: AVAILABLE (Pa)
+[15:16:52] [3/10] Verifying causal availability
+[15:16:52] Causal Availability: 347/347 origins (8328/8328 tuples, 100.0%)
+[15:16:52] [4/10] Mapping Nuolja grid
+[15:16:52] Nuolja Grid: y=760, x=486 (Lat=68.362074, Lon=18.738752, Res=2.5 km)
+[15:16:52] [5/10] Auditing spatial coverage
+[15:16:52] Spatial Coverage Audit:
+[15:16:52]   - Ray displacement at Zenith 80° (h=5km): 28.36 km (12 grid cells)
+[15:16:52]   - Ray displacement at Zenith 85° (h=5km): 57.15 km (23 grid cells)
+[15:16:52]   - Proposed MEPS Neighborhood: 25x25 grid window (62.5 km extent)
+[15:16:52]   - Coverage Assessment: PASSED (Covers 100% of solar slant path)
+[15:16:52] [6/10] Auditing vertical structure
+[15:16:52] Vertical Structure Audit: 13 pressure levels (50 to 1000 hPa)
+[15:16:52]   - Masking below surface pressure (Nuolja P_sfc = 908.6 hPa): Truncates levels 925 & 1000 hPa.
+[15:16:52] [7/10] Auditing solar-ray geometry
+[15:16:52] Solar Geometry Distinction Audit:
+[15:16:52]   - Stage 7.5 Existing Operator: 1D horizon obstruction elevation angle (checks if mountain blocks direct sun).
+[15:16:52]   - Stage 8.21A Proposed Operator: 3D spatial ray tracing through MEPS cloud volume along solar vector (dx, dy, dz).
+[15:16:52]   - Novelty Assessment: GENUINELY NEW 3D SPATIAL HYDROMETEOR OPERATOR.
+[15:16:52] [8/10] Auditing hydrometeor optical proxy
+[15:16:52] Hydrometeor Optical Attenuation Proxy Audit:
+[15:16:52]   - Directly Observed: q_l (liquid water content kg/kg), q_i (ice water content kg/kg)
+[15:16:52]   - Parameterized Proxy: beta_ext = (3 * rho_air / (2 * rho_w * r_e)) * q_l
+[15:16:52]   - Parameterization Assumption: Effective radii r_e,liquid = 10 µm, r_e,ice = 30 µm
+[15:16:52]   - Proxy Assessment: PHYSICALLY DEFENSIBLE PARAMETERIZED PROXY (CONDITIONAL on fixed r_e).
+[15:16:52] [9/10] Estimating computational feasibility
+[15:16:52] Computational Feasibility:
+[15:16:52]   - Raw Payload per Origin: ~1.5 MB
+[15:16:52]   - Total Payload across 347 Origins: ~535.5 MB (0.50 GB)
+[15:16:52]   - Extraction Method: Server-side OPeNDAP .ascii / .nc subsetting with local caching.
+[15:16:52]   - Tractability: HIGHLY FEASIBLE (< 15 min batch download).
+[15:16:52] [10/10] Writing final feasibility decision
+[15:16:52] Saved Feasibility JSON to /home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.json

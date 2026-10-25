@@ -1,0 +1,41 @@
+{
+  "experiment_name": "Stage 6.5 Snow/Cloud Interaction",
+  "control_architecture": "Stage 5.2 Architecture A (GBDT Residual Corrector)",
+  "decision": "REJECT",
+  "odd_status": "ODD UNTOUCHED",
+  "control_even_cv_mae": 39.423597558976034,
+  "candidate_even_cv_mae": 39.72685282681549,
+  "delta_mae_w_m2": 0.3032552678394538,
+  "bootstrap_mean_delta": 0.30524489090765555,
+  "bootstrap_95_ci": [
+    -0.02873138394599656,
+    0.6618219220271413
+  ],
+  "predeclared_gates": {
+    "gate1_min_improvement_0_20": {
+      "value": 0.3032552678394538,
+      "pass": false
+    },
+    "gate2_min_4_folds_improved": {
+      "value": 1,
+      "pass": false
+    },
+    "gate3_max_degradation_0_15": {
+      "value": 0.6335992588154475,
+      "pass": false
+    },
+    "gate4_nmae_under_41_46": {
+      "value": 42.633113097340576,
+      "pass": false
+    },
+    "gate5_rmse_under_62_83": {
+      "value": 63.018982903017026,
+      "pass": false
+    }
+  },
+  "candidate_features_added": [
+    "D_SNOW_t0",
+    "snow_x_cloud",
+    "snow_x_cloud_x_solar"
+  ]
+}

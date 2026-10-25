@@ -1,0 +1,67 @@
+{
+  "audit_version": "1.0.0",
+  "timestamp": "2026-09-20T11:57:00Z",
+  "step": "STEP10B_HYBRID_COUNTERFACTUAL_FEASIBILITY_AUDIT",
+  "objective": "Read-only methodological feasibility audit of a same-H1.0 same-truth control counterfactual for future experiments",
+  "same_environment_control_feasible": true,
+  "control_definition_proposal": {
+    "CONTROL_POLICY_ID": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+    "CONTROL_FORECAST_SOURCE": "LocalBaselineForecastEngine / LocalRuleBasedEnergyOptimizer",
+    "CONTROL_PROVENANCE": "ENGINEERING_BASELINE_SCENARIO",
+    "CONTROL_OPTIMIZER_CONFIGURATION": "Rule-based load-following heuristic or baseline persistence forecast with MILP",
+    "CONTROL_SIMULATOR_CONFIGURATION": "Identical DigitalTwinSimulator physics and physical constraints"
+  },
+  "same_truth_preservation_verification": {
+    "same_fixture": true,
+    "same_trajectory_window": "2024-01-01T00:00:00Z to 2024-01-01T23:00:00Z (Row 0..23)",
+    "same_initial_state": "SOC 50.0%, Energy 100,000 Wh at t0",
+    "same_solar_truth": "Nuolja SW_IN 2024",
+    "same_wind_truth": "SMHI Abisko 188790 proxy",
+    "same_demand_truth": "H1.0 synthetic station load (15-45 kW)",
+    "same_physical_constraints": true,
+    "same_truth_firewall": true
+  },
+  "predeclared_future_endpoints": {
+    "primary_endpoint": "PAIRED_DIESEL_FUEL_DIFFERENCE_L = Treatment Fuel (L) - Control Fuel (L)",
+    "secondary_endpoints": [
+      "PAIRED_DIESEL_ENERGY_DIFFERENCE_KWH",
+      "PAIRED_RENEWABLE_UTILIZATION_DIFFERENCE_KWH",
+      "PAIRED_CURTAILMENT_DIFFERENCE_KWH",
+      "PAIRED_BATTERY_THROUGHPUT_DIFFERENCE_KWH",
+      "PAIRED_UNMET_LOAD_DIFFERENCE_KWH"
+    ],
+    "calculation_status": "NOT_CALCULATED (Control trajectory not executed in Step 10B)"
+  },
+  "three_questions_clarification": {
+    "question_1_observed_diesel": {
+      "question": "How much diesel did this H1.0 trajectory consume?",
+      "status": "OBSERVED_DIRECTLY",
+      "answer": "195.500 L"
+    },
+    "question_2_diesel_saved_versus_control": {
+      "question": "How much diesel did H1.0 save versus a same-truth control?",
+      "status": "NOT_CALCULATED",
+      "reason": "No control trajectory was executed in Step 10B."
+    },
+    "question_3_real_station_savings": {
+      "question": "How much diesel would POLARIS save at a real polar station?",
+      "status": "NOT_ESTABLISHED",
+      "reason": "Real measured station electrical demand and Nuolja wind-generation data remain unestablished."
+    }
+  },
+  "future_experiment_requirements": {
+    "future_control_solves_required": 24,
+    "future_simulator_steps_required": 24,
+    "reference_treatment_trajectory": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_RAW.csv (Untouched)"
+  },
+  "mandatory_status": {
+    "SAME_TRUTH_CONTROL_FEASIBLE": "YES",
+    "CONTROL_POLICY": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+    "FUTURE_CONTROL_SOLVES_REQUIRED": 24,
+    "CONTROL_EXECUTED": "NO",
+    "DIESEL_SAVING_CALCULATED": "NO",
+    "MILP_SOLVES_DURING_AUDIT": 0,
+    "SIMULATOR_STEPS_DURING_AUDIT": 0,
+    "FINAL_COUNTERFACTUAL_CLASSIFICATION": "A \u2014 VALID SAME-ENVIRONMENT CONTROL FEASIBLE"
+  }
+}

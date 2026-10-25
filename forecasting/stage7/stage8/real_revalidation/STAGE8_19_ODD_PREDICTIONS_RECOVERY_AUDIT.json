@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-09-13T10:33:30+05:30",
+  "audit_title": "POLARIS Stage 8.19 Frozen ODD Prediction Artifact Recovery Audit",
+  "recovery_status": "RECOVERY NOT VERIFIED",
+  "audit_disclaimer": "This is a recovered/exported representation of the previously locked Stage 8.19 ODD evaluation. It is not a new forecasting experiment.",
+  "exhaustive_search_summary": {
+    "artifacts_scanned": 320,
+    "persistent_row_level_table_found": false,
+    "search_details": "Confirmed no persistent row-level Stage 8.19 ODD prediction table exists in project repository or Antigravity artifacts."
+  },
+  "frozen_stage8_19_definition": {
+    "feature_count": 42,
+    "model_class": "HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42,
+    "odd_origins_count": 173,
+    "total_rows": 4152,
+    "daytime_hours": 2883
+  },
+  "metric_reconciliation_audit": {
+    "daytime_mae_w_m2": {
+      "locked_documented": 34.821405,
+      "reconstructed_deterministic": 36.490857,
+      "discrepancy": 1.669452,
+      "match": false
+    },
+    "daytime_nmae_pct": {
+      "locked_documented": 27.0081,
+      "reconstructed_deterministic": 28.303168,
+      "discrepancy": 1.295068,
+      "match": false
+    },
+    "daytime_rmse_w_m2": {
+      "locked_documented": 62.74821,
+      "reconstructed_deterministic": 64.761214,
+      "discrepancy": 2.013004,
+      "match": false
+    },
+    "daytime_bias_w_m2": {
+      "locked_documented": 1.65821,
+      "reconstructed_deterministic": 0.756546,
+      "discrepancy": -0.901664,
+      "match": false
+    },
+    "night_mae_w_m2": {
+      "locked_documented": 0.0,
+      "reconstructed_deterministic": 0.0,
+      "discrepancy": 0.0,
+      "match": true
+    }
+  },
+  "root_cause_analysis": "The locked Stage 8.19 metrics in STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.json/md were manually defined reference baselines in the reporting script rather than calculated from a saved row-level prediction matrix. Deterministic re-execution of the 42-feature model on ODD origins yields MAE = 36.490857 W/m², failing exact numerical metric reconciliation (+1.669452 W/m² deviation).",
+  "governance_firewall": {
+    "model_training_tuning_performed": false,
+    "candidate_selection_performed": false,
+    "new_forecasting_experiment_performed": false,
+    "official_champion_changed": false,
+    "stage8_19_metrics_changed": false,
+    "master_handoff_modified": false,
+    "route_registry_modified": false,
+    "recovered_csv_created": false
+  },
+  "final_status": "RECOVERY NOT VERIFIED"
+}

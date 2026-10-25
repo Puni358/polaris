@@ -1,0 +1,164 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_MODEL_DEVELOPMENT_AUTHORIZATION",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A2_5_WIND_MODEL_DEVELOPMENT_PROTOCOL_FREEZE_GATE",
+    "task_type": "PRE_EXECUTION_RESEARCH_GOVERNANCE_EXPERIMENT_DESIGN_FREEZE",
+    "authorization_status": "AUTHORIZED_PHASE_A2_5_PROTOCOL_FREEZE_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A2_5_PROTOCOL_FROZEN",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "A2_CHAMPION_STATUS": "VERIFIED",
+    "A2_AUDIT_STATUS": "VERIFIED_WITH_LIMITATIONS",
+    "RESEARCH_PROTOCOL_STATUS": "COMPLETE_AND_READY_FOR_EXECUTION_AUTHORIZATION",
+    "WIND_MODEL_TRAINING": "NOT_YET_AUTHORIZED",
+    "WIND_MODEL_INFERENCE": "NOT_YET_AUTHORIZED",
+    "WIND_MODEL_SELECTION": "NOT_YET_AUTHORIZED",
+    "WIND_FORECAST_EXPERIMENT": "NOT_YET_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "WIND_GENERATION_MAPPING": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "PROTOCOL_FREEZE_ONLY",
+    "NEXT_GOVERNED_STEP": "WIND_MODEL_DEVELOPMENT_EXECUTION_AUTHORIZATION"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_MODEL_ARTIFACT_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXPERIMENT_EXECUTED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "MODEL_SELECTION_EXECUTED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "PROTOCOL_FREEZE_ONLY"
+  },
+  "authoritative_target_definition": {
+    "target_variable": "WIND_SPEED",
+    "target_units": "m/s",
+    "reference_height": "10m",
+    "temporal_resolution": "1h",
+    "station_id": "188790",
+    "station_name": "SMHI Abisko Aut",
+    "latitude": 68.3538,
+    "longitude": 18.8164,
+    "elevation_masl": 392.2,
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "direct_nuolja_measurement": "NOT_ESTABLISHED",
+    "altitude_transfer_method": "NOT_ESTABLISHED",
+    "forecast_horizon_hours": 24,
+    "time_step_hours": 1,
+    "historical_lookback_hours": 24
+  },
+  "data_provenance": {
+    "target_file": "research/wind_a2/smhi_188790_ws_full.csv",
+    "auxiliary_direction_file": "research/wind_a2/smhi_188790_wd_full.csv",
+    "nwp_forecast_file": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "sites_ground_met_file": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+    "custodian": "SMHI / Polarforskningssekretariatet",
+    "parameter_code": "4",
+    "parameter_name": "Vindhastighet",
+    "temporal_coverage": "2024-01-01 00:00:00 UTC to 2024-12-31 23:00:00 UTC",
+    "total_valid_observations": 8690,
+    "missing_values": 0
+  },
+  "temporal_splits": {
+    "train": {
+      "period": "2024-01-20 to 2024-08-31",
+      "valid_origins": 219,
+      "horizon_instances": 5265,
+      "role": "Model fitting, feature scaling, coefficient training"
+    },
+    "validation": {
+      "period": "2024-09-01 to 2024-10-31",
+      "valid_origins": 61,
+      "horizon_instances": 1464,
+      "role": "Hyperparameter tuning, early stopping"
+    },
+    "test": {
+      "period": "2024-11-01 to 2024-12-31",
+      "valid_origins": 62,
+      "horizon_instances": 1488,
+      "role": "Strictly held-out final candidate evaluation"
+    }
+  },
+  "reference_baselines": {
+    "baseline_1": "Naive Persistence (last_obs_t0)",
+    "baseline_2": "Diurnal Climate Persistence (train_hourly_mean)",
+    "baseline_3": "Raw NWP Forecast (fc_wind_speed_10m)",
+    "frozen_comparator": "Frozen A2 AR-X Champion (Ridge alpha=10.0, Test MAE = 2.0364 m/s)"
+  },
+  "candidate_model_families": [
+    {
+      "candidate_id": "CAND-01",
+      "name": "GBDT-Direct Multi-Horizon",
+      "mechanism": "Non-linear feature interaction and threshold-based regime splitting per horizon step",
+      "model_class": "HistGradientBoostingRegressor",
+      "max_configurations": 4
+    },
+    {
+      "candidate_id": "CAND-02",
+      "name": "GBDT-Residual Bias Correction",
+      "mechanism": "NWP residual error prediction to remove systematic high-altitude grid overestimation bias",
+      "model_class": "HistGradientBoostingRegressor predicting NWP error residuals",
+      "max_configurations": 4
+    },
+    {
+      "candidate_id": "CAND-03",
+      "name": "AR-ElasticNet Regularized Model",
+      "mechanism": "Joint L1/L2 regularization for feature selection and sparsity control across NWP covariates",
+      "model_class": "ElasticNet",
+      "max_configurations": 4
+    },
+    {
+      "candidate_id": "CAND-04",
+      "name": "Foundation-ZeroShot Model",
+      "mechanism": "Zero-shot foundation model evaluation (EXCLUDED in A2.7 due to missing local offline weights)",
+      "model_class": "Excluded from execution protocol",
+      "max_configurations": 0,
+      "status": "EXCLUDED_FROM_EXECUTION_PROTOCOL"
+    }
+  ],
+  "experiment_matrix": {
+    "total_max_execution_runs": 16,
+    "experiments": [
+      {"exp_id": "EXP-01", "family": "Reference Baselines", "max_runs": 3},
+      {"exp_id": "EXP-02", "family": "Frozen A2 AR-X Comparator", "max_runs": 1},
+      {"exp_id": "EXP-03", "family": "GBDT-Direct Multi-Horizon", "max_runs": 4},
+      {"exp_id": "EXP-04", "family": "GBDT-Residual Bias Correction", "max_runs": 4},
+      {"exp_id": "EXP-05", "family": "AR-ElasticNet Regularized Model", "max_runs": 4},
+      {"exp_id": "EXP-06", "family": "Foundation-ZeroShot Model", "max_runs": 0, "status": "EXCLUDED_FROM_EXECUTION_PROTOCOL"}
+    ]
+  },
+  "metrics_specification": {
+    "primary_metric": "MAE (m/s)",
+    "secondary_metrics": ["RMSE (m/s)", "Bias (m/s)", "nMAE (%)", "nRMSE (%)"],
+    "horizon_breakdown": [1, 2, 3, 4, 5, 6, 12, 18, 24]
+  },
+  "champion_selection_rules": {
+    "benchmark_bar_mae_ms": 2.0364,
+    "required_improvement_pct": 2.0,
+    "target_mae_threshold_ms": 1.9957,
+    "leakage_verification_required": true,
+    "non_negativity_clipping_required": true
+  }
+}

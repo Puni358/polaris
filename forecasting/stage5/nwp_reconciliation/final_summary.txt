@@ -1,0 +1,57 @@
+POLARIS STAGE 5 — LOCAL NWP DATA RECONCILIATION SUMMARY
+================================================================================
+Date: 2026-09-10
+Status: COMPLETED (LOCAL-ONLY SCIENTIFIC VALIDATION)
+
+## 1. CURRENT NWP LINEAGE
+The POLARIS benchmark NWP dataset (POLARIS_v0_1_future_weather_forecasts_2024.csv) was built using Open-Meteo's previous-runs-api querying the metno_seamless model with _previous_day1 hourly variables for Nuolja Middle Station (68.362074°N, 18.738752°E).
+
+## 2. CSV/API RECONCILIATION
+- Comparison between existing CSV and live Open-Meteo metno_seamless:
+  * Max Absolute Difference: 0.000000
+  * Result: 100% EXACT REPRODUCTION. The existing CSV perfectly matches current live Open-Meteo metno_seamless output across all evaluated variables and sampled dates.
+
+## 3. SEAMLESS VS PURE MET NORDIC
+- Open-Meteo model identifier for pure MET Nordic: metno_nordic.
+- Comparison between metno_seamless and metno_nordic at Nuolja:
+  * Max Absolute Difference: 0.000000
+  * Result: 100% IDENTICAL. At Nuolja coordinates (68.362074°N, 18.738752°E), Open-Meteo's metno_seamless and metno_nordic return identical data values for cloud cover, temperature, RH, precipitation, surface pressure, and wind speed across all sampled dates.
+
+## 4. WIND DIRECTION
+- wind_direction_10m_previous_day1 API Audit:
+  * API Acceptance: YES (accepted and returned without errors).
+  * Availability Statistic: 8,337 / 8,784 valid hours in 2024 (94.91% availability), matching 100% of available wind_speed_10m_previous_day1 hours (remaining 447 hours are missing in raw Open-Meteo archive for both variables).
+  * Value Range: 0.0° to 360.0° (standard meteorological convention: direction from which wind blows).
+  * Timing Semantics: Perfectly aligned hour-by-hour with wind_speed_10m_previous_day1.
+
+## 5. ISSUANCE SEMANTICS
+- PAPER-SAFE FORMULATION: "The selected previous-day forecast is causally available before t0; exact model-run reference timestamps are not exposed through the Open-Meteo point API."
+- Established: The selected previous-day forecast is causally available before t0; zero forward-day data leakage.
+- Information gap: Open-Meteo point API returns time series indexed by valid time, but does NOT expose the explicit NetCDF forecast_reference_time metadata (run initialization timestamp).
+
+## 6. SPATIAL CELL VALIDITY & GRID RESOLUTION
+- Spatial variations become apparent at approximately the native model-grid scale, consistent with nominal MET Nordic/MEPS resolution (~2.5 km); coordinate separation alone does not prove independent grid-cell identity.
+- Open-Meteo queries high-resolution DEM elevation (varying from 675m at peak down to 341m over lake) while interpolating atmospheric variables across adjacent 2.5 km NWP grid centers.
+- Scientific Caveat: Smooth continuous variations in point API calls across 100-500m steps represent interpolation, not independent grid cells.
+
+## 7. THREDDS REQUIREMENT
+- Direct MET Norway THREDDS access (thredds.met.no) is accessible.
+- THREDDS provides raw 2D NetCDF grids with explicit forecast_reference_time and 2.5 km X,Y projection arrays.
+- However, for extracting candidate spatial features (wind vector components U,V, spatial cloud gradients), Open-Meteo spatial point extraction provides a practical, terrain-aware candidate input set.
+
+## 8. CAUSALITY & SPATIAL HYPOTHESIS
+- No evidence of future-day observational leakage. The selected previous-day forecast is causally available before t0.
+- Spatial atmospheric inputs (wind vector components U,V, spatial cloud gradients Delta C) represent a candidate input feature set to test whether spatial cloud advection improves forecast residuals beyond Stage 5.2. Predictive improvement is a hypothesis to be evaluated in Stage 5.4, not a demonstrated fact.
+
+## 9. RECOMMENDATION
+RECOMMENDATION: GO — Stage 5.4 spatial-NWP experiment is scientifically justified.
+
+## 10. NEXT EXPERIMENT SPECIFICATION
+If proceeding to Stage 5.4 spatial NWP feature extraction experiment:
+1. Extract 10m wind direction (wind_direction_10m_previous_day1) to compute orthogonal wind vector components:
+   - U_10m = -w_speed * sin(w_dir * pi / 180) (East-West wind component)
+   - V_10m = -w_speed * cos(w_dir * pi / 180) (North-South wind component)
+2. Extract cardinal neighbor grid points (North, South, East, West at ~2.5 km spatial offset: Delta lat = ±0.025°, Delta lon = ±0.06°) using cell_selection=nearest.
+3. Compute directional spatial cloud cover gradients (Delta C_EW, Delta C_NS) and upwind cloud advection indicators (U * Delta C_EW + V * Delta C_NS).
+4. Evaluate feature contributions strictly within Stage 5 protocol without altering frozen benchmark predictions or Stage 5.2 champion.
+================================================================================

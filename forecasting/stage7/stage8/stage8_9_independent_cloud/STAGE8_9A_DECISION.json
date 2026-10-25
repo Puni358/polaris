@@ -1,0 +1,56 @@
+{
+  "stage": "STAGE 8.9A INDEPENDENT CLOUD-STATE / CLOUD-MOTION SCIENTIFIC FEASIBILITY AUDIT",
+  "audit_type": "FORENSIC EVIDENCE & CLAIM AUDIT",
+  "timestamp": "2026-09-12T17:42:00Z",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+  "champion_frozen_odd_metrics": {
+    "mae_w_m2": 36.188657,
+    "nmae_pct": 28.0688,
+    "rmse_w_m2": 54.912301
+  },
+  "audit_decision": "FAIL_CONFIRMED",
+  "safe_scientific_conclusion": "Stage 8.9A did not identify a verified independent cloud-state/cloud-motion data source that simultaneously met the required causal-availability, empirical-coverage, spatial-representativeness, and information-novelty criteria.",
+  "gate_evaluations": [
+    {
+      "candidate_source": "NASA VIIRS Cloud Properties (CLDPROP_L2)",
+      "classification": "OPERATIONALLY NON-CAUSAL",
+      "primary_killing_constraint": "Operational Dissemination Latency (t_pub = t_0 + 3..8h) & Polar Night Optical Masking (Usable coverage = 64.8%)"
+    },
+    {
+      "candidate_source": "Meteosat SEVIRI / MTG FCI Imagery",
+      "classification": "NOT FEASIBLE",
+      "primary_killing_constraint": "Viewing Geometry Boundary (Theoretical VZA = 76.54° at 68.36°N, parallax shift > 20.9 km)"
+    },
+    {
+      "candidate_source": "Nuolja / Abisko Ground All-Sky Imager",
+      "classification": "NOT FEASIBLE",
+      "primary_killing_constraint": "Data Non-Existence (No continuous calibrated 2024 camera archive at SITES Nuolja NMS)"
+    },
+    {
+      "candidate_source": "Kiruna Airport Ceilometer / METAR (ESNQ)",
+      "classification": "NOT FEASIBLE",
+      "primary_killing_constraint": "Spatial Separation & Barrier Mismatch (88.4 km distance across Scandes mountain ridge)"
+    },
+    {
+      "candidate_source": "Satellite Cloud Motion Vectors / Optical Flow",
+      "classification": "OPERATIONALLY NON-CAUSAL",
+      "primary_killing_constraint": "Operational Dissemination Latency, Orbital Gap Irregularity & Non-Stationary Mountain Dynamics"
+    },
+    {
+      "candidate_source": "Model-Level MEPS Cloud Profile",
+      "classification": "SEPARATE ROUTE — NOT EVALUATED IN STAGE 8.9A",
+      "primary_killing_constraint": "Excluded from Stage 8.9A scope by explicit project mandate; reserved for separate model-level route"
+    }
+  ],
+  "firewall_integrity_verification": {
+    "stage8_1_champion_unchanged": true,
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "model_training": false,
+    "cross_validation": false,
+    "hyperparameter_tuning": false,
+    "meps_model_level_separated": true,
+    "evidence_correction_manifest_created": true
+  }
+}

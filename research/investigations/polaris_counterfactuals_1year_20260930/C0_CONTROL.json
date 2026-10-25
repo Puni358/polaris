@@ -1,0 +1,14 @@
+{
+  "experiment_id": "C0_CONTROL",
+  "description": "Standard frozen POLARIS control configuration",
+  "status": "PASS",
+  "diesel_fuel_l": 93465.6264,
+  "diesel_energy_kwh": 210502.5055,
+  "renewable_used_kwh": 315057.1,
+  "renewable_curtailment_kwh": 66192.5,
+  "battery_discharge_kwh": 808.7974,
+  "battery_cycles": 4.044,
+  "min_soc_pct": 20.0,
+  "max_soc_pct": 38.04,
+  "unmet_load_kwh": 0.0
+}

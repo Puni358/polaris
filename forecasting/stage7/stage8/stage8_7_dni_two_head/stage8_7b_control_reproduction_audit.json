@@ -1,0 +1,6 @@
+{
+  "control_reproduction_target_mae_w_m2": 37.620054,
+  "actual_reproduced_control_mae_w_m2": 37.620054,
+  "reproduction_exact_match": true,
+  "tolerance": 0.001
+}

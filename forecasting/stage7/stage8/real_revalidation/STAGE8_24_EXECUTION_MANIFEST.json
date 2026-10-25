@@ -1,0 +1,30 @@
+{
+  "timestamp_utc": "2026-09-13T16:50:30Z",
+  "experiment_id": "POLARIS_STAGE8_24_GOVERNED_EXPERIMENT",
+  "route_id": "STAGE8.24",
+  "route_name": "Orographic Flow Regime Expansion (ctx_u_perp + ctx_mountain_froude)",
+  "spec_file": "STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.md",
+  "control_feature_count": 37,
+  "candidate_feature_count": 39,
+  "added_features": [
+    "ctx_u_perp",
+    "ctx_mountain_froude"
+  ],
+  "even_origins_count": 173,
+  "even_control_mae": 37.6308,
+  "even_candidate_mae": 38.0280,
+  "even_delta_mae": 0.3972,
+  "improving_folds": 1,
+  "worst_fold_degradation": 1.1857,
+  "gates_evaluated": {
+    "G1_MAE_Margin": "FAIL (+0.3972 W/m2)",
+    "G2_Fold_Consistency": "FAIL (1/5 folds)",
+    "G3_Worst_Fold_Tolerance": "FAIL (+1.1857 W/m2)",
+    "G4_nMAE_RMSE": "FAIL",
+    "G5_Causal_Integrity": "PASS",
+    "G6_Control_Reproduction": "PASS (37.6308 W/m2)"
+  },
+  "odd_access_executed": false,
+  "final_verdict": "REJECTED_ON_EVEN",
+  "operational_champion_status": "UNCHANGED (Stage 8.1 37-feature HGB champion preserved)"
+}

@@ -1,0 +1,19 @@
+test_id,scope,status,description
+TEST_TIMESTAMP_CANONICALIZATION,TIMESTAMP_CONTRACT,PASS,Verifies all UTC timestamp string variants resolve to YYYY-MM-DDTHH:MM:SSZ
+TEST_TIMESTAMP_LOOKUP_SUCCESS,FEATURE_LOOKUP,PASS,Verifies canonical state timestamp matches observation map key
+TEST_TIMESTAMP_LOOKUP_FAILURE_FAILS_CLOSED,FAIL_CLOSED,PASS,Verifies unresolvable timestamp raises ModelGovernanceError
+TEST_NO_ZERO_FEATURE_FALLBACK,FEATURE_INTEGRITY,PASS,Verifies zero feature vector fallback logic is completely absent
+TEST_FEATURE_VECTOR_CAUSALITY,CAUSALITY,PASS,Verifies 18-element feature vector is constructed causally at origin t
+TEST_FEATURE_VECTOR_DIMENSION,FEATURE_INTEGRITY,PASS,Verifies exact 18-element feature vector shape
+TEST_MODEL_IDENTITY,GOVERNANCE,PASS,Verifies frozen Branch01 HGB model SHA-256
+TEST_BRANCH01_MODEL_INTERFACE,INTERFACE,PASS,Verifies compatibility with ForecastEngine base class
+TEST_FORECASTBUNDLE_VALIDITY,SCHEMA,PASS,Verifies ForecastBundle schema 1.0.0 compliance
+TEST_DEMAND_INHERITANCE,NON_SOLAR_INHERITANCE,PASS,Verifies Control demand equals Treatment demand (100% vector identity)
+TEST_WIND_INHERITANCE,NON_SOLAR_INHERITANCE,PASS,Verifies Control wind equals Treatment wind (100% vector identity)
+TEST_DEMAND_NOT_REGENERATED,NON_SOLAR_INHERITANCE,PASS,Verifies Treatment does not independently regenerate demand
+TEST_WIND_NOT_REGENERATED,NON_SOLAR_INHERITANCE,PASS,Verifies Treatment does not independently regenerate wind
+TEST_NO_FUTURE_TRUTH,CAUSALITY,PASS,Verifies zero future truth leakage into forecasting
+TEST_SOLAR_ONLY_INTERVENTION,ISOLATION,PASS,Verifies solar forecast is the single experimental variable
+TEST_OPTIMIZER_UNCHANGED,GOVERNANCE,PASS,Verifies frozen MILP optimizer SHA-256
+TEST_SIMULATOR_UNCHANGED,GOVERNANCE,PASS,Verifies frozen Digital Twin simulator SHA-256
+TEST_STAGE81_UNCHANGED,GOVERNANCE,PASS,Verifies frozen Stage8.1 control adapter SHA-256

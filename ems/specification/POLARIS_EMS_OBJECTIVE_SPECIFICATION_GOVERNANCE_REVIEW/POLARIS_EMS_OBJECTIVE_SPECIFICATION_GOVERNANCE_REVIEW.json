@@ -1,0 +1,39 @@
+{
+  "governance_review_status": {
+    "overall_review": "PASS",
+    "stakeholder_policy": "HUMAN_APPROVED",
+    "d1_d16_policy_traceability": "PASS",
+    "d15_authority_check": "PASS",
+    "lexicographic_objective": "PASS",
+    "stage1_critical_reliability": "PASS",
+    "stage2_ebr": "PASS",
+    "stage3_fuel": "PASS",
+    "stage4_renewable": "PASS",
+    "load_tier_policy": "PASS",
+    "forecast_uncertainty": "PASS",
+    "infeasibility_policy": "PASS",
+    "physical_constraints": "PASS",
+    "unit_dimension_check": "PASS",
+    "parameter_firewall": "PASS",
+    "implementation_gap_audit": "PASS",
+    "implementation_authorization": "NOT_GRANTED",
+    "provenance": "PASS",
+    "hash_integrity": "PASS",
+    "protected_artifact_integrity": "PASS",
+    "execution_firewall": "PASS",
+    "next_governed_step": "IMPLEMENTATION_SPECIFICATION_AND_ARCHITECTURE_REVIEW"
+  },
+  "v2_artifact_hashes": {
+    "POLARIS_EMS_OBJECTIVE_SPECIFICATION_V2.md": "19402967bbd4a759db91bcb3f2f9b2859b041e30bc2e029e8b02db50c9528339",
+    "POLARIS_EMS_OBJECTIVE_SPECIFICATION_V2.json": "1094fbff92c95ad1edea7190b40dbd3f81340461833515e319df586472a16de3"
+  },
+  "protected_artifact_hashes": {
+    "optimizer.yaml": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8",
+    "battery.yaml": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel.yaml": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "loads.yaml": "ab6943d72f2054b001274de5a3fe229c9987eb31fb11be0422f33754fd5f3cad",
+    "solar_pv.yaml": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "station.yaml": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42",
+    "milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35"
+  }
+}

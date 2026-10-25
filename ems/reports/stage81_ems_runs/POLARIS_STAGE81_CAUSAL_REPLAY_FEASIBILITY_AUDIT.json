@@ -1,0 +1,205 @@
+{
+  "audit_version": "1.0.0",
+  "audit_title": "POLARIS Stage 8.1 Causal Rolling-Forecast Reproduction Audit",
+  "timestamp": "2026-09-21T00:51:54.482254+00:00",
+  "CAUSAL_STAGE81_ROLLING_REPLAY": "C",
+  "CANDIDATE_A_AUTHORIZATION": "NOT_GRANTED",
+  "final_classification": "C = CAUSAL_REPLAY_NOT_REPRODUCIBLE_FROM_FROZEN_ARTIFACTS",
+  "frozen_input_hashes": {
+    "prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "feature_matrix_sha256": "e7b304186eef6c7e6135ba7a9aa9d20a4d2f32eeb9b65085ef8e10e34ea0b541",
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "run_official_odd_evaluation_sha256": "c1c99c60b43f00ce1845a68ca166783a30d2ac9dc986bc01a7947381165a3f41",
+    "run_stage8_1_sha256": "51e256a6bacc0aa8861fcdf93f889edc23591915fb68945a9e0d9facb63feb31"
+  },
+  "model_state_audit": {
+    "fitted_model_artifact_exists_on_disk": false,
+    "model_files_found": [],
+    "model_architecture": "HistGradientBoostingRegressor(loss='absolute_error', max_depth=4, min_samples_leaf=30, l2_regularization=10.0, random_state=42)",
+    "model_lifecycle": "Instantiated in RAM, fitted on 174 EVEN origins, evaluated on 173 ODD origins, predictions saved to CSV, model discarded from memory without saving binary."
+  },
+  "feature_availability_audit": {
+    "total_features": 37,
+    "origins_in_feature_matrix": 347,
+    "origin_timestamps_spacing": "48 hours (ODD test predictions) / 24 hours (feature matrix origins at 00:00 UTC only)",
+    "non_0000_utc_origin_features_exist": false,
+    "missing_data_sources_for_hourly_origins": [
+      "POLARIS_v0_1_future_weather_forecasts_2024.csv (00:00 UTC origins only)",
+      "lwp_iwp_extracted_features.csv (00:00 UTC origins only)",
+      "stage8_1_extracted_features.csv (u700/v700 00:00 UTC origins only)",
+      "ensemble_predictions.csv (Stage 4 baseline 00:00 UTC origins only)"
+    ]
+  },
+  "feature_causality_table": [
+    {
+      "feature": "horizon_hour",
+      "source": "Computed",
+      "causal": true,
+      "notes": "Integer horizon hour 1..24"
+    },
+    {
+      "feature": "month",
+      "source": "Computed",
+      "causal": true,
+      "notes": "Calendar month at target time"
+    },
+    {
+      "feature": "hour",
+      "source": "Computed",
+      "causal": true,
+      "notes": "Clock hour 0..23 at target time"
+    },
+    {
+      "feature": "solar_elevation",
+      "source": "Astronomical Formula",
+      "causal": true,
+      "notes": "Deterministic solar position"
+    },
+    {
+      "feature": "solar_zenith",
+      "source": "Astronomical Formula",
+      "causal": true,
+      "notes": "Deterministic solar position"
+    },
+    {
+      "feature": "clearsky_ghi",
+      "source": "ClearSky Decomposition",
+      "causal": true,
+      "notes": "Deterministic clear-sky model"
+    },
+    {
+      "feature": "fc_cloud_cover",
+      "source": "MEPS NWP Data Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in frozen NWP table"
+    },
+    {
+      "feature": "fc_temperature_2m",
+      "source": "MEPS NWP Data Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in frozen NWP table"
+    },
+    {
+      "feature": "fc_relative_humidity_2m",
+      "source": "MEPS NWP Data Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in frozen NWP table"
+    },
+    {
+      "feature": "cloud_frac",
+      "source": "fc_cloud_cover / 100",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins"
+    },
+    {
+      "feature": "pred_stage3b_cloud_nwp",
+      "source": "Stage 3B Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in frozen Stage 3B table"
+    },
+    {
+      "feature": "phys_pred_fold",
+      "source": "Stage 4 Physics Formula",
+      "causal": false,
+      "notes": "Depends on fc_cloud_cover and Stage 4 params"
+    },
+    {
+      "feature": "pred_stage4_fold",
+      "source": "Stage 4 Ensemble Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in Stage 4 ensemble table"
+    },
+    {
+      "feature": "disagreement_fold",
+      "source": "|pred_stage3b - phys_pred|",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins"
+    },
+    {
+      "feature": "ctx_* (14 lag features)",
+      "source": "SITES Nuolja History",
+      "causal": true,
+      "notes": "Computable from observed SW_IN history up to t_k"
+    },
+    {
+      "feature": "lwp_latest / iwp_latest",
+      "source": "Stage 6.6 Satellite Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in frozen Stage 6.6 table"
+    },
+    {
+      "feature": "lwp_x_cloud",
+      "source": "lwp_latest * cloud_frac",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins"
+    },
+    {
+      "feature": "terrain_* (4 features)",
+      "source": "Stage 7.5 Horizon Spec",
+      "causal": true,
+      "notes": "Deterministic static terrain obstruction"
+    },
+    {
+      "feature": "u700 / v700",
+      "source": "MEPS 700 hPa Wind Table",
+      "causal": false,
+      "notes": "UNAVAILABLE for non-00:00 UTC origins in stage8_1_extracted_features.csv"
+    }
+  ],
+  "question_answers": {
+    "1_model_definition_location": "stage7/stage8/stage8_1_700hpa_wind/run_official_odd_evaluation.py (lines 217-235) and run_stage8_1.py (lines 411-427). Model class: sklearn.ensemble.HistGradientBoostingRegressor(loss='absolute_error', max_depth=4, min_samples_leaf=30, l2_regularization=10.0, random_state=42).",
+    "2_model_state_location": "NONE. No serialized fitted model artifact (.pkl / .joblib) exists on disk.",
+    "3_can_fitted_model_be_loaded": "NO. Loading a pre-fitted model binary is impossible because no model artifact was saved.",
+    "4_exact_37_features": [
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold",
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h",
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "clearsky_ghi_terrain_adjusted",
+      "u700",
+      "v700"
+    ],
+    "5_causal_vs_noncausal_features": "Astronomical and observation lag features are causal. However, NWP weather forecasts, Stage 6.6 satellite features, and Stage 8.1 700hpa steering wind features are ONLY present for 00:00 UTC origins in frozen data tables. They are MISSING for all non-00:00 UTC origins (01:00..23:00 UTC).",
+    "6_prediction_row_meaning": "One row represents predicted daytime surface downwelling shortwave radiation SW_IN (W/m^2) for target timestamp t_k + h (h in 1..24) given forecast origin t_k.",
+    "7_why_origins_48h_apart": "Because predictions in stage8_1_official_odd_predictions.csv were evaluated on 173 held-out ODD origins (which occur every 48 hours in the 2024 EVEN/ODD split).",
+    "8_can_model_be_evaluated_at_arbitrary_origin": "NO. Input feature rows for non-00:00 UTC origins do not exist in frozen NWP, satellite, 700hpa wind, or Stage 4 prediction tables.",
+    "9_can_complete_24h_forecast_be_generated_at_every_mpc_origin": "NO. Neither frozen prediction files nor frozen feature tables contain data for hourly MPC steps k=1..23.",
+    "10_would_doing_so_require_retraining": "YES. Creating a model operating on different origin intervals or without missing features would require retraining, which is STRICTLY PROHIBITED.",
+    "11_would_doing_so_require_synthetic_filling_or_leakage": "YES. Without retraining, generating 24h lookahead at k >= 1 would require synthetic filling, zero-padding, or future-origin prediction leakage\u2014all strictly prohibited.",
+    "12_is_exact_causal_model_replay_possible": "NO.",
+    "13_procedure_if_yes": "N/A",
+    "14_missing_capability_or_artifact": "1) Missing serialized model checkpoint file (.pkl/.joblib). 2) Missing hourly feature inputs (NWP, satellite LWP/IWP, 700hPa wind, Stage 4 baseline) for non-00:00 UTC origins.",
+    "15_classification": "C = CAUSAL_REPLAY_NOT_REPRODUCIBLE_FROM_FROZEN_ARTIFACTS",
+    "16_candidate_a_authorization": "NOT_GRANTED"
+  }
+}

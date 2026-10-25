@@ -1,0 +1,57 @@
+candidate_id,candidate_name,subgroup_dimension,regime_label,sample_size_N,n_covered,simultaneous_coverage,pointwise_coverage,small_sample_flag
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),year,2020,366,342,0.9344,0.9741,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),year,2021,365,326,0.8932,0.949,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),year,2022,365,331,0.9068,0.9574,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),year,2023,273,236,0.8645,0.9391,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),season_2023,DJF,59,59,1.0,1.0,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),season_2023,MAM,92,83,0.9022,0.9724,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),season_2023,JJA,92,66,0.7174,0.852,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),season_2023,SON,30,28,0.9333,0.9846,True
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),cloud_regime_2023,Clear,38,34,0.8947,0.9251,True
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),cloud_regime_2023,Partial,125,109,0.872,0.9569,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),cloud_regime_2023,Overcast,110,93,0.8455,0.9238,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),elevation_regime_2023,Low_0_15,103,102,0.9903,0.9963,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),elevation_regime_2023,Mid_15_30,96,82,0.8542,0.9295,False
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),elevation_regime_2023,High_gt_30,74,52,0.7027,0.8721,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),year,2020,366,340,0.929,0.9748,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),year,2021,365,320,0.8767,0.9515,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),year,2022,365,331,0.9068,0.9652,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),year,2023,273,223,0.8168,0.9296,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),season_2023,DJF,59,59,1.0,1.0,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),season_2023,MAM,92,78,0.8478,0.9582,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),season_2023,JJA,92,67,0.7283,0.8821,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),season_2023,SON,30,19,0.6333,0.8487,True
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),cloud_regime_2023,Clear,38,35,0.9211,0.9636,True
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),cloud_regime_2023,Partial,125,107,0.856,0.9643,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),cloud_regime_2023,Overcast,110,81,0.7364,0.8783,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),elevation_regime_2023,Low_0_15,103,90,0.8738,0.9492,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),elevation_regime_2023,Mid_15_30,96,79,0.8229,0.9191,False
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),elevation_regime_2023,High_gt_30,74,54,0.7297,0.9158,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),year,2020,366,346,0.9454,0.9788,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),year,2021,365,326,0.8932,0.9572,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),year,2022,365,331,0.9068,0.9684,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),year,2023,273,231,0.8462,0.9332,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),season_2023,DJF,59,59,1.0,1.0,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),season_2023,MAM,92,83,0.9022,0.9682,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),season_2023,JJA,92,68,0.7391,0.8888,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),season_2023,SON,30,21,0.7,0.8308,True
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),cloud_regime_2023,Clear,38,35,0.9211,0.9656,True
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),cloud_regime_2023,Partial,125,113,0.904,0.9742,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),cloud_regime_2023,Overcast,110,83,0.7545,0.8755,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),elevation_regime_2023,Low_0_15,103,93,0.9029,0.9462,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),elevation_regime_2023,Mid_15_30,96,81,0.8438,0.9207,False
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),elevation_regime_2023,High_gt_30,74,57,0.7703,0.9314,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),year,2020,366,330,0.9016,0.9729,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),year,2021,365,321,0.8795,0.9629,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),year,2022,365,323,0.8849,0.9644,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),year,2023,273,235,0.8608,0.9498,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),season_2023,DJF,59,58,0.9831,0.9883,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),season_2023,MAM,92,82,0.8913,0.9557,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),season_2023,JJA,92,71,0.7717,0.9189,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),season_2023,SON,30,24,0.8,0.9513,True
+D_static_q10_benchmark,Static q10 Benchmark (L2),cloud_regime_2023,Clear,38,35,0.9211,0.9818,True
+D_static_q10_benchmark,Static q10 Benchmark (L2),cloud_regime_2023,Partial,125,110,0.88,0.9631,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),cloud_regime_2023,Overcast,110,90,0.8182,0.9238,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),elevation_regime_2023,Low_0_15,103,96,0.932,0.9746,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),elevation_regime_2023,Mid_15_30,96,78,0.8125,0.9279,False
+D_static_q10_benchmark,Static q10 Benchmark (L2),elevation_regime_2023,High_gt_30,74,61,0.8243,0.9439,False

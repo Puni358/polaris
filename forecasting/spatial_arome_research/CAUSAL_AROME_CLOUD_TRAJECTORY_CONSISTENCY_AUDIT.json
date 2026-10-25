@@ -1,0 +1,106 @@
+{
+  "timestamp_utc": "2026-09-14T12:55:06.071205+00:00",
+  "document_title": "POLARIS AROME CAUSAL CLOUD TRAJECTORY CONSISTENCY AUDIT",
+  "governance_audit": {
+    "even_origins_count": 173,
+    "odd_firewall": {
+      "odd_origins_accessed": false,
+      "odd_tensors_loaded": false,
+      "odd_predictions_generated": false,
+      "odd_metrics_evaluated": false,
+      "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+    },
+    "no_model_training": true,
+    "no_odd_access": true,
+    "network_fetches": 0,
+    "diagnostic_only": true
+  },
+  "whole_field_baseline_comparison": {
+    "mean_ncc_persistence": 0.5206,
+    "mean_ncc_estimated_translation": 0.5058,
+    "mean_ncc_10m_wind": 0.4259,
+    "mean_ncc_700hpa_wind": 0.2818,
+    "mean_ncc_random_null1": 0.1449,
+    "mean_ncc_rotated_wind_null2": 0.2551,
+    "beats_persistence": false,
+    "beats_null_controls": true
+  },
+  "station_centered_neighborhood_comparison": {
+    "mean_station_error_persistence": 0.1255,
+    "mean_station_error_translation": 0.1265,
+    "mean_station_error_w700": 0.15,
+    "mean_station_error_null1": 0.1579
+  },
+  "horizon_stratified_breakdown": [
+    {
+      "horizon_group": "H1\u2013H3",
+      "sample_size": 519,
+      "ncc_persistence": 0.5414,
+      "ncc_translation": 0.5414,
+      "ncc_w700": 0.3106,
+      "ncc_null1": 0.1607,
+      "beats_persistence": true
+    },
+    {
+      "horizon_group": "H4\u2013H6",
+      "sample_size": 519,
+      "ncc_persistence": 0.5212,
+      "ncc_translation": 0.5006,
+      "ncc_w700": 0.271,
+      "ncc_null1": 0.1394,
+      "beats_persistence": false
+    },
+    {
+      "horizon_group": "H7\u2013H12",
+      "sample_size": 1038,
+      "ncc_persistence": 0.5265,
+      "ncc_translation": 0.512,
+      "ncc_w700": 0.2729,
+      "ncc_null1": 0.1392,
+      "beats_persistence": false
+    },
+    {
+      "horizon_group": "H13\u2013H18",
+      "sample_size": 1038,
+      "ncc_persistence": 0.5049,
+      "ncc_translation": 0.489,
+      "ncc_w700": 0.2784,
+      "ncc_null1": 0.1415,
+      "beats_persistence": false
+    },
+    {
+      "horizon_group": "H19\u2013H23",
+      "sample_size": 865,
+      "ncc_persistence": 0.5194,
+      "ncc_translation": 0.5003,
+      "ncc_w700": 0.2857,
+      "ncc_null1": 0.1499,
+      "beats_persistence": false
+    }
+  ],
+  "incoming_cloud_trajectory_classification": {
+    "total_tracked_trajectories": 677,
+    "reached_station": 240,
+    "missed_station": 182,
+    "dissipated": 255,
+    "reached_station_pct": 35.45,
+    "dissipated_pct": 37.67
+  },
+  "control_sw_in_error_associations": {
+    "translation_error_vs_sw_error_rho": 0.1434,
+    "translation_error_p_val": 1.5783965196330944e-11,
+    "w700_error_vs_sw_error_rho": 0.081,
+    "w700_error_p_val": 0.00014664368186499547,
+    "persistence_error_vs_sw_error_rho": 0.1503,
+    "persistence_error_p_val": 1.543721214060404e-12
+  },
+  "final_classification": {
+    "classification_code": "B \u2014 PARTIAL / HORIZON-LIMITED SIGNAL",
+    "recommendation": "PROCEED ONLY WITH HORIZON-CONDITIONAL PHYSICS-GUIDED REPRESENTATION"
+  },
+  "cryptographic_hashes": {
+    "control_predictions_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "audit_script_sha256": "01586ae79b5e5fcea719157df55fd595072598cff340994c050b5c450646fe70",
+    "audit_json_sha256": "4453cc46430811ac6d60f65fb70445a23f83b7e0a4f856f6453e9fc403d3bee9"
+  }
+}

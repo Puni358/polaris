@@ -1,0 +1,139 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_DEMAND_A1_TARGET_AND_DATA_QUALIFICATION",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_DEMAND_FORECASTING",
+    "phase": "PHASE_A1_TARGET_AND_DATA_QUALIFICATION",
+    "task_type": "CONTROLLED_DEMAND_FORECASTING_RESEARCH_PREPARATION",
+    "authorization_status": "AUTHORIZED_PHASE_A1_QUALIFICATION_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "DEMAND_TRACK_STATUS": "A1_QUALIFICATION_COMPLETED",
+    "DEMAND_TARGET_STATUS": "NOT_ESTABLISHED",
+    "DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "LOCAL_REPOSITORY_DEMAND_DATA": "ABSENT",
+    "OPEN_ACCESS_HIGH_RES_DEMAND_DATA": "ABSENT",
+    "RESTRICTED_DATA_REQUEST_STATUS": "PENDING_CUSTODIAN_RESPONSE",
+    "NEXT_GOVERNED_STEP": "DEMAND_DATA_ACCESS",
+    "NEXT_STEP_RATIONALE": "No suitable open-access continuous high-resolution measured station-demand series was established during the bounded qualification. Formal access requests to SANAP (SANAE IV), IPF (Princess Elisabeth), and ACEP (Arctic Microgrids) are dispatched and pending response. Track is DATA_BLOCKED pending custodian access resolution or human governance decision."
+  },
+  "target_definition_audit": {
+    "preferred_target_variable": "Station-level electrical active demand / load (P_load)",
+    "preferred_units": "Watts (W) or kilowatts (kW)",
+    "preferred_resolution": "1-hour discrete sampling (delta_t = 1h)",
+    "target_distinctions": {
+      "electrical_demand_vs_energy": "Monthly kWh consumption does NOT establish hourly electrical demand (P_load).",
+      "electrical_demand_vs_fuel": "Generator fuel consumption (L/h) does NOT establish electrical demand without documented conversion.",
+      "electrical_demand_vs_generation": "Renewable PV/Wind generation does NOT equal station electrical load.",
+      "electrical_demand_vs_meteorology": "Solar irradiance (SW_IN) and wind speed (v_wind) are weather drivers, NOT electrical demand."
+    }
+  },
+  "candidate_datasets_qualification": [
+    {
+      "dataset_id": "LOCAL_SITES_NUOLJA_SW_IN",
+      "source": "SITES Nuolja Station (Abisko, Sweden)",
+      "measurement_type": "Shortwave Solar Irradiance (SW_IN, W/m^2)",
+      "measured_vs_proxy_classification": "MEASURED_METEOROLOGICAL",
+      "site_relationship": "NOT_RELEVANT_FOR_DEMAND",
+      "temporal_resolution": "1-hour (2024, 8784 records)",
+      "access_status": "OPEN",
+      "scientific_sufficiency": "INSUFFICIENT",
+      "notes": "Meteorological driver for solar PV, NOT station electrical demand."
+    },
+    {
+      "dataset_id": "AADC_ANTARCTIC_MONTHLY_USAGE",
+      "source": "Australian Antarctic Data Centre (Mawson, Davis, Casey)",
+      "measurement_type": "Monthly Total Electricity (kWh) & Fuel (L)",
+      "measured_vs_proxy_classification": "AGGREGATED_MEASURED",
+      "site_relationship": "CONDITIONALLY_RELEVANT_PROXY",
+      "temporal_resolution": "Monthly totals (1993-2016)",
+      "access_status": "ACCESS_FAILED",
+      "scientific_sufficiency": "INSUFFICIENT",
+      "notes": "Monthly aggregation is far too coarse for hourly MPC forecasting. High-res logger inquiry bounced (550 5.7.133)."
+    },
+    {
+      "dataset_id": "SANAE_IV_STATION_LOAD",
+      "source": "South African National Antarctic Programme (SANAE IV, Antarctica)",
+      "measurement_type": "Station Active Electrical Load (kW)",
+      "measured_vs_proxy_classification": "MEASURED_DIRECT_TARGET",
+      "site_relationship": "DIRECT_TARGET",
+      "temporal_resolution": "1-hour operational logging (documented in research)",
+      "access_status": "ACCESS_REQUEST_PENDING",
+      "scientific_sufficiency": "CONDITIONALLY_ESTABLISHED",
+      "notes": "Documented in literature (~72 kW base, ~150 kW peak). Raw time series is restricted; formal access request pending."
+    },
+    {
+      "dataset_id": "PRINCESS_ELISABETH_MICROGRID",
+      "source": "International Polar Foundation (East Antarctica)",
+      "measurement_type": "Microgrid Load Prioritization Telemetry (kW)",
+      "measured_vs_proxy_classification": "MEASURED_DIRECT_TARGET",
+      "site_relationship": "DIRECT_TARGET",
+      "temporal_resolution": "Sub-hourly / 1-hour microgrid logging",
+      "access_status": "ACCESS_REQUEST_PENDING",
+      "scientific_sufficiency": "CONDITIONALLY_ESTABLISHED",
+      "notes": "Zero-emission polar station microgrid. Raw data restricted; formal access request pending."
+    },
+    {
+      "dataset_id": "ACEP_ARCTIC_MICROGRIDS",
+      "source": "Alaska Center for Energy and Power (Kotzebue, Cordova, Alaska)",
+      "measurement_type": "Hourly Village Electrical Demand (kW)",
+      "measured_vs_proxy_classification": "MEASURED_PROXY",
+      "site_relationship": "CONDITIONALLY_RELEVANT_PROXY",
+      "temporal_resolution": "1-hour multi-year time series",
+      "access_status": "ACCESS_REQUEST_PENDING",
+      "scientific_sufficiency": "CONDITIONALLY_ESTABLISHED",
+      "notes": "Arctic remote community load profile proxy. Subject to utility NDAs; formal access request pending."
+    },
+    {
+      "dataset_id": "OPENEI_KAGGLE_REMOTE_LOADS",
+      "source": "OpenEI / Kaggle Remote Microgrid Databases",
+      "measurement_type": "Normalized Hourly Load Profiles",
+      "measured_vs_proxy_classification": "ANONYMIZED_PROXY",
+      "site_relationship": "NOT_RELEVANT",
+      "temporal_resolution": "1-hour normalized profiles",
+      "access_status": "OPEN",
+      "scientific_sufficiency": "INSUFFICIENT",
+      "notes": "Generic/synthetic proxies. Unsuitable as empirical polar research station demand target."
+    },
+    {
+      "dataset_id": "LOCAL_DEMO_SCENARIO_FIXTURES",
+      "source": "POLARIS Local System Fixtures (system/fixtures/)",
+      "measurement_type": "Synthetic Station Load Curves (W)",
+      "measured_vs_proxy_classification": "SYNTHETIC",
+      "site_relationship": "NOT_RELEVANT",
+      "temporal_resolution": "1-hour (168h / 24h endurance scenarios)",
+      "access_status": "OPEN",
+      "scientific_sufficiency": "INSUFFICIENT",
+      "notes": "Preserved for system regression and EMS testing. Prohibited as empirical target data."
+    }
+  ],
+  "polaris_compatibility_audit": {
+    "theoretical_horizon": "H = 24 hours",
+    "theoretical_step": "delta_t = 1 hour",
+    "theoretical_history": "W_hist = 24 hours",
+    "schema_compatibility": "Compatible with StationState.last_observed_demand and ForecastBundle.demand (in Watts)",
+    "implementation_status": "ZERO_CODE_OR_SCHEMA_MODIFICATION_EXECUTED"
+  },
+  "firewall_state": {
+    "AUTHORIZED_BOUNDARIES": [
+      "Phase A1 read-only demand target and data qualification",
+      "Inspection of existing reconnaissance and access request artifacts",
+      "Classification of local and external candidate dataset sufficiency and accessibility"
+    ],
+    "NOT_AUTHORIZED_BOUNDARIES": [
+      "Demand model training, evaluation, or benchmarking",
+      "Demand forecast generation or inference",
+      "Demand feature matrix assembly or hyperparameter tuning",
+      "Substitution of synthetic, proxy, or monthly data as empirical target",
+      "Modification of ForecastBundle, ForecastEngine, StationState, EMS, MPC, or Digital Twin",
+      "Modification of frozen wind track or wind track artifacts",
+      "Demand adapter implementation or downstream system integration"
+    ],
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "WIND_TRACK_MODIFIED": "NO"
+  }
+}

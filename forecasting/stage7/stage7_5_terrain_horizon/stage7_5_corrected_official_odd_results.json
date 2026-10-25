@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-09-12T09:03:18.332551+00:00",
+  "stage": "STAGE 7.5 TERRAIN / HORIZON FORECASTING EXPERIMENT",
+  "evaluation": "CORRECTED_OFFICIAL_ODD_EVALUATION",
+  "status": "STAGE_7_5_NEW_OFFICIAL_OPERATIONAL_CHAMPION",
+  "final_decision": "STAGE 7.5 NEW OFFICIAL OPERATIONAL CHAMPION",
+  "total_odd_origins": 173,
+  "total_odd_hours": 4152,
+  "daytime_odd_hours": 2883,
+  "night_odd_hours": 1269,
+  "actual_mean_daytime_sw_in_w_m2": 128.92852809573438,
+  "stage6_6_control": {
+    "daytime_mae_w_m2": 37.005888163693996,
+    "daytime_nmae_pct": 28.70263758554329,
+    "daytime_rmse_w_m2": 65.67170202687893,
+    "daytime_bias_w_m2": 1.1449645672880848,
+    "night_mae_w_m2": 0.0
+  },
+  "stage7_5_candidate": {
+    "daytime_mae_w_m2": 36.61357053359644,
+    "daytime_nmae_pct": 28.398346800647147,
+    "daytime_rmse_w_m2": 65.34706383340425,
+    "daytime_bias_w_m2": 1.307777739340869,
+    "night_mae_w_m2": 0.0
+  },
+  "deltas": {
+    "delta_mae_w_m2": -0.3923176300975584,
+    "delta_nmae_pp": -0.3042907848961427,
+    "delta_rmse_w_m2": -0.3246381934746836,
+    "delta_bias_w_m2": 0.16281317205278412
+  },
+  "bootstrap": {
+    "n_resamples": 10000,
+    "seed": 42,
+    "mean_delta_mae_w_m2": -0.3970633498035917,
+    "ci_95_lower_w_m2": -0.7915210320953202,
+    "ci_95_upper_w_m2": 0.0019411527075625511,
+    "fraction_delta_mae_lt_0": 0.9743
+  },
+  "governance_audit": {
+    "control_artifact_used": "globally frozen ensemble_predictions.csv (pred_ensemble)",
+    "stage4_refit_executed": false,
+    "odd_target_accessed": true,
+    "odd_predictions_generated": true,
+    "odd_metrics_evaluated": true,
+    "odd_used_for_tuning": false,
+    "odd_used_for_feature_selection": false,
+    "odd_used_for_hyperparameter_tuning": false,
+    "candidate_modified_after_even_cv": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "note": "DIAGNOSTIC-ONLY objective copy with w_t *= (1 - 1e-9*t); NOT written back to production milp.py.",
+  "tie_break_epsilon": 1e-09,
+  "solve_time_ms": 343315.5034419906,
+  "status": 0,
+  "success": true,
+  "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "objective": 31132.143441371816,
+  "mip_gap": 9.993479388808291e-05,
+  "mip_node_count": 608659,
+  "mip_dual_bound": 31129.032257033512,
+  "raw_hour0": {
+    "p_chg": 32223.120000000003,
+    "p_dis": -0.0,
+    "u_chg": 1.0,
+    "u_dis": 0.0
+  },
+  "comparison_vs_diagnostic_1": {
+    "diag1_solve_time_ms": 385104.0960859973,
+    "diag4_solve_time_ms": 343315.5034419906,
+    "diag1_mip_node_count": 681909,
+    "diag4_mip_node_count": 608659
+  }
+}

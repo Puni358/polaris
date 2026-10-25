@@ -1,0 +1,13 @@
+{
+  "fingerprint": "8c0f5a7ea60712401a0cf24eccad1a7cadab0b02c5ba42820cc5b0677c1b08d2",
+  "variables": 409,
+  "constraints": 313,
+  "binary_variables": 96,
+  "continuous_variables": 313,
+  "objectives": [
+    "J1",
+    "J2",
+    "J3",
+    "J4"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-13T06:54:00+00:00",
+  "stage": "POLARIS STAGE 8.14C \u2014 EUMETSAT NWC SAF PPS CMIC AUDIT",
+  "status": "COMPLETED \u2014 FEASIBILITY AUDIT ONLY",
+  "candidate": "EUMETSAT NWC SAF PPS Cloud Microphysics (CMIC)",
+  "official_champion": {
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "final_classification": "CONDITIONAL",
+  "2024_archive_status": "CONDITIONAL / INCOMPLETE OPEN ARCHIVE",
+  "empirical_nuolja_coverage": "210 / 347 origins (60.5%)",
+  "causal_availability": "CONDITIONALLY VERIFIED (t_pub <= t0 for NRT feed; historical HTTP timestamps unverified)",
+  "information_novelty": "GENUINELY NOVEL (Radiative COT vs MEPS scalar cloud_frac)",
+  "residual_phenotype_relevance": "HIGH (Addresses cloud optical attenuation & missed clearing)",
+  "forecasting_experiment_authorized": false,
+  "feasibility_gates": {
+    "G1_exact_product_spec": "PASS",
+    "G2_2024_archive_verified": "FAIL (Incomplete open HTTP archive on thredds.met.no)",
+    "G3_empirical_nuolja_coverage": "FAIL (Capped at 60.5% usable origins)",
+    "G4_publication_causality": "CONDITIONAL (NRT nowcast ~30-60 min; historical HTTP timestamps unverified)",
+    "G5_spatial_representativeness": "PASS (1.0 km pixel grid over Nuolja; theta_s < 45\u00b0)",
+    "G6_variable_quality": "PASS (Valid daylight optical retrievals)",
+    "G7_polar_night_behavior": "FAIL (Optical COT/CER return fill values for SZA > 84\u00b0)",
+    "G8_information_novelty": "PASS (COT is genuinely novel relative to Stage 8.1 37 features)",
+    "G9_meps_model_independence": "CONDITIONAL (Auxiliary NWP profile required for RT inversion)",
+    "G10_reproducible_operational_pathway": "CONDITIONAL (Requires operational NRT receiving feed)",
+    "G11_residual_phenotype_relevance": "PASS (High match with cloud optical attenuation phenotype)",
+    "G12_usable_origins_for_cv": "FAIL (210 usable origins is insufficient for 347-origin benchmark)"
+  },
+  "blocking_factors": [
+    "2024 open HTTP archive for L2 CMIC swaths over Lapland is incomplete on public THREDDS endpoints",
+    "Optical solar channel retrievals (COT, CER) return fill values during polar night (SZA > 84\u00b0)",
+    "Empirical usable coverage is bounded at 60.5% (210 / 347 origins)"
+  ],
+  "governance_audit": {
+    "odd_target_accessed": false,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "model_training_executed": false,
+    "cross_validation_executed": false,
+    "hyperparameter_tuning_executed": false,
+    "champion_modified": false,
+    "master_handoff_modified": false
+  }
+}

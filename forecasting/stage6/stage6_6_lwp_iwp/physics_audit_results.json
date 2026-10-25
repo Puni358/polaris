@@ -1,0 +1,71 @@
+{
+  "surface_pressure_variable": {
+    "variable_name": "surface_air_pressure",
+    "standard_name": "surface_air_pressure",
+    "long_name": "Surface Air Pressure",
+    "units": "Pa",
+    "dimensions": "(time, height0, y, x)",
+    "missing_value": "1.0e30f",
+    "nuolja_y_x": [
+      760,
+      486
+    ],
+    "nuolja_lat_lon": [
+      68.355701,
+      18.763666
+    ],
+    "surface_pressure_range_hpa": [
+      932.03,
+      957.15
+    ],
+    "surface_pressure_mean_hpa": 947.95
+  },
+  "vertical_domain": {
+    "p_levels_hpa": [
+      50,
+      100,
+      150,
+      200,
+      250,
+      300,
+      400,
+      500,
+      700,
+      800,
+      850,
+      925,
+      1000
+    ],
+    "subterranean_levels": {
+      "1000_hpa": "ALWAYS subterranean at Nuolja (p_sfc <= 952.2 hPa). ql and qi are 0.0 or fill, but naive trapezoid adds 75 hPa layer mass.",
+      "925_hpa": "Subterranean when p_sfc < 925 hPa (e.g. low pressure systems). Truncation/interpolation required.",
+      "850_hpa": "ALWAYS atmospheric above surface at Nuolja (p_sfc > 850 hPa)."
+    }
+  },
+  "integration_method": {
+    "physical_basis": "Hydrostatic balance dm = dp / g",
+    "nature": "Discrete numerical trapezoidal approximation (NOT physically exact)",
+    "surface_truncation_rule": "Integrate from p_top (50 hPa) down to p_sfc. Linearly interpolate q at p_sfc from nearest levels if p_sfc lies between discrete pressure levels. Zero weight to p > p_sfc."
+  },
+  "comparison_metrics": {
+    "max_lwp_naive_gm2": 111.341,
+    "max_lwp_sa_gm2": 111.3301,
+    "max_lwp_diff_gm2": 0.0175,
+    "max_iwp_naive_gm2": 20.3681,
+    "max_iwp_sa_gm2": 20.3681,
+    "max_iwp_diff_gm2": 0.0592
+  },
+  "recommendation": "CONDITIONAL GO",
+  "gating_conditions": [
+    "Feature extraction MUST use surface-aware integration (surface_air_pressure from sfc product).",
+    "No full extraction until integration pipeline incorporates surface pressure boundary truncation.",
+    "Minimal candidate feature set: lwp_latest, iwp_latest, lwp_x_cloud (cloud_water_total dropped due to linear redundancy)."
+  ],
+  "explicit_confirmations": {
+    "even_cv_ran": false,
+    "odd_accessed": false,
+    "full_extraction_launched": false,
+    "stage_5_2_modified": false,
+    "models_trained": false
+  }
+}

@@ -1,0 +1,11 @@
+Source ID,File Path,Section / Location,Source Type,SHA-256 Hash,Claim Supported,Governance Interpretation
+SRC-OPT-01,system/optimization/implementations/milp.py,Lines 1-378,IMPLEMENTATION_EVIDENCE,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,Frozen SciPy HiGHS LocalMILPEnergyOptimizer implementation,CURRENT_FROZEN_IMPLEMENTATION
+SRC-CFG-01,system/config/battery.yaml,Lines 1-12,IMPLEMENTATION_EVIDENCE,eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216,Modular battery storage configuration,PROTOTYPE_ASSUMPTION
+SRC-CFG-02,system/config/diesel.yaml,Lines 1-10,IMPLEMENTATION_EVIDENCE,421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3,Modular diesel generator configuration,PROTOTYPE_ASSUMPTION
+SRC-CFG-03,system/config/loads.yaml,Lines 1-17,IMPLEMENTATION_EVIDENCE,ab6943d72f2054b001274de5a3fe229c9987eb31fb11be0422f33754fd5f3cad,Electrical loads configuration & unmet penalty,PROTOTYPE_ASSUMPTION
+SRC-CFG-04,system/config/optimizer.yaml,Lines 1-10,IMPLEMENTATION_EVIDENCE,bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8,Energy optimizer weight configuration,PROTOTYPE_ASSUMPTION
+SRC-CFG-05,system/config/station.yaml,Lines 1-16,IMPLEMENTATION_EVIDENCE,e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42,Nuolja prototype station configuration,PROTOTYPE_ASSUMPTION
+SRC-CFG-06,system/config/solar_pv.yaml,Lines 1-7,IMPLEMENTATION_EVIDENCE,611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e,Solar PV array physical parameters,PROTOTYPE_ASSUMPTION
+SRC-DOC-01,POLARIS_MASTER_HANDOFF.md,"Sections 1, 2, 58",AUTHORITATIVE_REQUIREMENT_SOURCE,d83d2b8e92e291cc33d648e4b7da964ec6840ee78372f8c98ce1bed06be8b3ed,Master project handoff containing qualitative EMS goals,QUALITATIVELY_SPECIFIED
+SRC-DOC-02,POLARIS_LOCAL_SYSTEM_ARCHITECTURE.md,"Sections 1, 5, 6, 11",AUTHORITATIVE_REQUIREMENT_SOURCE,99df5aa2557afaf28b3b4a7419df8bec522e3934162151f346a3b404c49b756b,Local system architecture specification (Phase D0),EXPLICITLY_SPECIFIED
+SRC-EV-01,POLARIS_STAGE81_MULTI_TRAJECTORY_RESULTS.json,Root object,EXPERIMENTAL_EVIDENCE,7e36243745c7783726aede0660a43090c7782fd00a14cefccecb1f5c204111a0,Authoritative V2 173-trajectory campaign result dataset,FROZEN_EXPERIMENTAL_EVIDENCE

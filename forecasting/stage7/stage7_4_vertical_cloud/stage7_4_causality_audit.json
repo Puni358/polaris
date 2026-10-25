@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-09-12T08:01:50.578297+00:00",
+  "total_origins_audited": 347,
+  "causal_rule": "forecast_reference_time < t0 (strictly enforced)",
+  "meps_run_selected": "D-1 18:00 UTC deterministic run",
+  "causality_pass_rate_pct": 100.0,
+  "future_observations_used": false,
+  "odd_accessed": false,
+  "causality_status": "PASS"
+}

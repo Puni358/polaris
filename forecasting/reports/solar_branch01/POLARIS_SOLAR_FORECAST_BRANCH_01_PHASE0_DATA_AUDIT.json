@@ -1,0 +1,53 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "phase": "PHASE_0",
+  "authorization": "READ_ONLY_RECONNAISSANCE",
+  "audit_timestamp": "2026-09-21T06:35:05Z",
+  "stage8_1_boundary_verification": {
+    "prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "feature_matrix_sha256": "e7b304186eef6c7e6135ba7a9aa9d20a4d2f32eeb9b65085ef8e10e34ea0b541",
+    "boundary_preserved": true,
+    "stage8_1_modified": false,
+    "stage8_1_retrained": false
+  },
+  "phase0_answers": {
+    "q1_data_sources": "Nuolja SITES 2024 5-var hourly CSV (8784h), Clear-sky GHI & terrain decomposition CSV (8784h), AROME 21x21 NWP cache.",
+    "q2_max_coverage": "2024-01-01T00:00:00Z to 2024-12-31T23:00:00Z (8,784 hours, 100% complete).",
+    "q3_hourly_resolution": "1.0 hour timestep.",
+    "q4_nwp_forecast_data": "MEPS/AROME 21x21 spatial grid for 700hPa wind, cloud cover, 2m temp, 2m RH, LWP, IWP.",
+    "q5_nwp_issue_times": "00:00 UTC daily for 347 origins.",
+    "q6_nwp_lead_times": "1 to 24 hours.",
+    "q7_nwp_causal_validity": "CONDITIONAL (Valid at MPC origin t iff t_issue <= t).",
+    "q8_satellite_data": "EUMETSAT CMIC cloud microphysics product.",
+    "q9_satellite_resolution": "15-minute / 3km spatial.",
+    "q10_causal_features": "Lookback statistics (mean, std, slope, diff over 1h-24h), astronomical clear-sky GHI, terrain obstruction, calendar variables, and NWP features with t_issue <= t.",
+    "q11_rejected_features": "Future observations, future-origin NWP predictions, satellite frames without issue-time provenance, zero-padded/interpolated future vectors.",
+    "q12_missing_resources": "Hourly intra-day NWP issue runs (06:00, 12:00, 18:00 UTC) in 2024 archive.",
+    "q13_feasible_architectures": "1) Causal Baseline Engine (Persistence/Clear-sky k_t), 2) Causal Ridge/HistGradientBoosting/XGBoost, 3) Causal PyTorch Multi-Head Neural Net.",
+    "q14_recommended_split": "Chronological: Train (Jan-Aug 2024, 60%), Validation (Sep-Oct 2024, 20%), Final Test (Nov-Dec 2024, 20%).",
+    "q15_reproducibility_requirements": "Complete 34-item immutable package, serialized model (.joblib/.pt), SHA-256 hashes, 4 JSON manifests, ENVIRONMENT.json, REPRODUCTION_INSTRUCTIONS.md, independent replay verification.",
+    "q16_24h_rolling_forecast_causal": "YES (CONDITIONAL: Feasible for clear-sky, ARX, and NWP models using lead-time shifted issue runs).",
+    "q17_blockers": "Sparse NWP issue times (00:00 UTC only) requiring lead-time adjustment for intra-day origins.",
+    "q18_supports_phase1": "YES (PASS / CONDITIONAL).",
+    "q19_unverified_assumptions": "Forecast skill degradation when using 00:00 UTC NWP forecasts for late intra-day origins (t=18:00 UTC)."
+  },
+  "final_status_block": {
+    "NEW_FORECASTING_BRANCH": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "STAGE8_1_MODIFIED": "NO",
+    "STAGE8_1_RETRAINED": "NO",
+    "STAGE8_1_REPLACED": "NO",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO",
+    "EMS_MODIFIED": "NO",
+    "EMS_EXECUTED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "CANDIDATE_A_EXECUTED": "NO",
+    "DATA_CAUSALITY": "PASS",
+    "NWP_CAUSAL_AVAILABILITY": "CONDITIONAL",
+    "FEATURE_PIPELINE_FEASIBILITY": "PASS",
+    "24H_ROLLING_FORECAST_FEASIBILITY": "CONDITIONAL",
+    "MODEL_REPRODUCIBILITY_REQUIREMENT": "ESTABLISHED",
+    "PHASE0_STATUS": "PASS",
+    "NEXT_GOVERNED_STEP": "PHASE0_GOVERNANCE_REVIEW"
+  }
+}

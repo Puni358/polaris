@@ -1,0 +1,22 @@
+{
+  "S1": {
+    "description": "R_CF_candidate >= R_CF_control",
+    "candidate_r_cf": 99.18284395149988,
+    "control_r_cf": 99.15894817073172,
+    "delta_pp": 0.023895780768157238,
+    "pass": true
+  },
+  "S2": {
+    "description": "R_P_candidate >= R_P_control",
+    "candidate_r_p": 97.81483101762032,
+    "control_r_p": 97.79634721184915,
+    "delta_pp": 0.018483805771168704,
+    "pass": true
+  },
+  "S3": {
+    "description": "zero realized SOC violations below 20.0%",
+    "violations_count": 0,
+    "pass": true
+  },
+  "all_gates_pass": true
+}

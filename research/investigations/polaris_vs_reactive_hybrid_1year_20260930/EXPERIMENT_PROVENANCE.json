@@ -1,0 +1,44 @@
+{
+  "benchmark_id": "polaris_vs_reactive_hybrid_1year_20260930",
+  "execution_timestamp": "2026-09-30T21:10:56Z",
+  "annual_campaign_id": "polaris_2024_annual_365d_8784h",
+  "total_timesteps": 8784,
+  "timestep_duration_hours": 1.0,
+  "runtime_environment": {
+    "os": "Linux 6.6+ x86_64",
+    "python_version": "3.10.12",
+    "milp_solver": "scipy.optimize.milp (HiGHS C++ engine)",
+    "execution_mode": "CLOSED_LOOP_MPC_PARALLEL_WORKER_SUITE"
+  },
+  "governance": {
+    "g1_3e_policy": "LOCKED",
+    "evidence_boundary": "C",
+    "freshness_rules_count": 0,
+    "evd02_status": "FROZEN_BLOCKER",
+    "data_origin": "SYNTHETIC_EXPERIMENTAL_TRAJECTORY",
+    "empirical_status": "NOT_EMPIRICAL"
+  },
+  "trajectory_hashes": {
+    "input_trajectory_file": "system/data/scenarios/synthetic_365d_2024_annual_trajectory.json",
+    "trajectory_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configuration_hashes": {
+      "battery_yaml_sha256": "7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
+      "diesel_yaml_sha256": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b",
+      "solar_pv_yaml_sha256": "3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d"
+    }
+  },
+  "controllers_provenance": {
+    "polaris_closed_loop_mpc": {
+      "runner": "system/runtime/runner.py",
+      "forecast_engine": "system/forecasting/implementations/baseline.py",
+      "optimizer": "system/optimization/implementations/milp.py",
+      "simulator": "system/simulation/simulator.py",
+      "evaluator": "system/evaluation/evaluator.py"
+    },
+    "reactive_hybrid_baseline": {
+      "class": "ReactiveHybridBaseline",
+      "spec_file": "investigations/polaris_vs_reactive_hybrid_1year_20260930/REACTIVE_HYBRID_BASELINE_SPEC.md",
+      "lookahead_window_hours": 0
+    }
+  }
+}

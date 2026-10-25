@@ -1,0 +1,36 @@
+{
+  "audit_name": "POLARIS EMS HD-05D-epsilon Hash Audit",
+  "timestamp": "2026-09-23T04:06:00Z",
+  "audited_files": [
+    {
+      "path": "system/config/optimizer.yaml",
+      "purpose": "Optimizer configuration defining solver_tolerance (1e-5)",
+      "key_lines": {
+        "solver_tolerance": "Line 9: 1e-5"
+      }
+    },
+    {
+      "path": "system/config/diesel.yaml",
+      "purpose": "Diesel generator parameters and prototype fuel cost",
+      "key_lines": {
+        "status_label": "Line 2: PROTOTYPE_ASSUMPTION",
+        "fuel_cost_per_l": "Line 7: 2.50"
+      }
+    },
+    {
+      "path": "system/config/battery.yaml",
+      "purpose": "Battery parameters and prototype degradation penalty",
+      "key_lines": {
+        "deg_penalty_per_wh": "Line 11: 0.00005"
+      }
+    },
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "purpose": "MILP implementation containing single composite scalar objective",
+      "key_lines": {
+        "objective_assembly": "Lines 107-115: scalar linear penalty terms"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

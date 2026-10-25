@@ -1,0 +1,185 @@
+{
+  "experiment": "Phase 1 Terrain-Obstruction Solar Correction",
+  "population": "11 approved origins (264 receding-horizon control cycles)",
+  "isolation_and_reproduction_gates": {
+    "gate1_p0_reproduction": {
+      "status": "PASS",
+      "max_abs_diff_cols": {
+        "diesel_fuel": 0.0,
+        "diesel_power": 0.0,
+        "critical_served_first": 0.0,
+        "critical_served_prop": 1.8189894035458565e-12,
+        "served_load": 0.0,
+        "unmet_load": 0.0,
+        "battery_charge": 0.0,
+        "battery_discharge": 0.0,
+        "soc_after": 0.0,
+        "curtailment": 0.0
+      }
+    },
+    "gate2_unobstructed_hours_exact_equality": {
+      "status": "PASS",
+      "max_irr_diff_unobs_w_m2": 0.0,
+      "max_gen_diff_unobs_w": 0.0
+    },
+    "gate3_non_solar_channels_invariance": {
+      "status": "PASS",
+      "note": "Cloud, wind, demand, battery, EBR, terminal target, priority weights, diesel limits untouched."
+    },
+    "gate4_fail_closed_missing_or_nan": {
+      "status": "PASS",
+      "missing_keys_count": 0,
+      "nan_keys_count": 0
+    },
+    "gate5_causal_availability": {
+      "status": "PASS",
+      "note": "Static DEM + astronomical ephemeris 2025, verified causally precomputed."
+    }
+  },
+  "metrics": {
+    "control_p0": {
+      "total_fuel_l": 784.408,
+      "diesel_energy_kwh": 2157.6339000000003,
+      "diesel_on_hours": 49,
+      "startup_count": 32,
+      "critical_unmet_wh": 18882.469999999998,
+      "noncritical_unmet_wh": 58636.17,
+      "total_unmet_wh": 77518.64,
+      "critical_reliability_s1_pct": 99.38340941745037,
+      "proportional_reliability_s2_pct": 98.0503467715939,
+      "s1_delta_pp": -0.08510514629048771,
+      "s2_delta_pp": -0.03420106701378245,
+      "s1_pass": false,
+      "s2_pass": false,
+      "soc_violations_s3": 0,
+      "s3_pass": true,
+      "min_soc_pct": 20.0,
+      "curtailment_wh": 882591.88,
+      "battery_charge_energy_kwh": 2177.2095,
+      "battery_discharge_energy_kwh": 1603.3707899999997,
+      "battery_throughput_kwh": 3780.58029,
+      "efc": 8.01685395,
+      "forecast_error_all_hours": {
+        "mae": 89.74045517803029,
+        "rmse": 138.39940006397617,
+        "bias": -60.69623675378789,
+        "count": 264
+      },
+      "forecast_error_terrain_obstructed": {
+        "mae": 35.99033105405405,
+        "rmse": 56.464989278283504,
+        "bias": -10.046168945945947,
+        "count": 74
+      },
+      "forecast_error_unobstructed": {
+        "mae": 110.67471404736841,
+        "rmse": 159.28832131835222,
+        "bias": -80.42310526842105,
+        "count": 190
+      }
+    },
+    "candidate": {
+      "total_fuel_l": 798.8926,
+      "diesel_energy_kwh": 2215.5706099999998,
+      "diesel_on_hours": 49,
+      "startup_count": 34,
+      "critical_unmet_wh": 5303.209999999999,
+      "noncritical_unmet_wh": 28389.769999999997,
+      "total_unmet_wh": 33692.979999999996,
+      "critical_reliability_s1_pct": 99.8268283045977,
+      "proportional_reliability_s2_pct": 99.14654216356898,
+      "s1_delta_pp": 0.3583137408568433,
+      "s2_delta_pp": 1.0619943249613044,
+      "s1_pass": true,
+      "s2_pass": true,
+      "soc_violations_s3": 0,
+      "s3_pass": true,
+      "min_soc_pct": 20.0,
+      "curtailment_wh": 907093.81,
+      "battery_charge_energy_kwh": 2269.3462400000003,
+      "battery_discharge_energy_kwh": 1705.89842,
+      "battery_throughput_kwh": 3975.2446600000003,
+      "efc": 8.529492099999999,
+      "forecast_error_all_hours": {
+        "mae": 92.26409913257577,
+        "rmse": 139.37657385431362,
+        "bias": -70.4921079659091,
+        "count": 264
+      },
+      "forecast_error_terrain_obstructed": {
+        "mae": 44.99360137837837,
+        "rmse": 64.47215793316185,
+        "bias": -44.99360137837837,
+        "count": 74
+      },
+      "forecast_error_unobstructed": {
+        "mae": 110.67471404736841,
+        "rmse": 159.28832131835222,
+        "bias": -80.42310526842105,
+        "count": 190
+      }
+    },
+    "deltas_candidate_minus_control": {
+      "fuel_delta_l": 14.4846,
+      "fuel_delta_pct": 1.8465645429419384,
+      "diesel_energy_delta_kwh": 57.93670999999949,
+      "diesel_energy_delta_pct": 2.6851965015936896,
+      "diesel_on_hours_delta": 0,
+      "startup_count_delta": 2,
+      "curtailment_delta_wh": 24501.93000000005,
+      "total_unmet_delta_wh": -43825.66,
+      "s1_delta_pp_vs_p0": 0.443418887147331,
+      "s2_delta_pp_vs_p0": 1.0961953919750869
+    }
+  },
+  "forecast_error_comparison": {
+    "terrain_obstructed_hours": {
+      "count": 74,
+      "control_mae_w_m2": 35.99033105405405,
+      "candidate_mae_w_m2": 44.99360137837837,
+      "mae_improvement_w_m2": -9.003270324324319,
+      "control_rmse_w_m2": 56.464989278283504,
+      "candidate_rmse_w_m2": 64.47215793316185,
+      "rmse_improvement_w_m2": -8.007168654878349,
+      "control_bias_w_m2": -10.046168945945947,
+      "candidate_bias_w_m2": -44.99360137837837
+    },
+    "all_hours": {
+      "count": 264,
+      "control_mae_w_m2": 89.74045517803029,
+      "candidate_mae_w_m2": 92.26409913257577,
+      "mae_improvement_w_m2": -2.523643954545477,
+      "control_rmse_w_m2": 138.39940006397617,
+      "candidate_rmse_w_m2": 139.37657385431362,
+      "control_bias_w_m2": -60.69623675378789,
+      "candidate_bias_w_m2": -70.4921079659091
+    }
+  },
+  "safety_gates": {
+    "s1_critical_reliability": {
+      "gate": "S1 delta vs PC-Control >= 0.0 pp",
+      "candidate_value_pct": 99.8268283045977,
+      "delta_vs_control_pp": 0.3583137408568433,
+      "pass": true
+    },
+    "s2_secondary_reliability": {
+      "gate": "S2 delta vs PC-Control >= 0.0 pp",
+      "candidate_value_pct": 99.14654216356898,
+      "delta_vs_control_pp": 1.0619943249613044,
+      "pass": true
+    },
+    "s3_soc_floor": {
+      "gate": "0 violations with SOC < 20%",
+      "candidate_violations": 0,
+      "candidate_min_soc_pct": 20.0,
+      "pass": true
+    },
+    "all_safety_pass": true
+  },
+  "final_verdict": "PASS / SAFE-BUT-FUEL-WORSE",
+  "verdict_rationale": "All safety gates passed, forecast error improved substantially on obstructed hours, but fuel increased by +14.4846 L (+1.85%).",
+  "output_hashes": {
+    "PHASE1_TERRAIN_P0_HOURLY_TELEMETRY.csv": "72dc6790cd19d877281f6ea12939572ee3667e8097ee4b7627a9a9ecbf62a579",
+    "PHASE1_TERRAIN_CANDIDATE_HOURLY_TELEMETRY.csv": "c95cf7cba6e723e513884e85549a5c6590a639f48284efb32429f212cca783b9"
+  }
+}

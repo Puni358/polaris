@@ -1,0 +1,28 @@
+{
+  "implementation_authorization_status": {
+    "review_gate": "POLARIS_EMS_IMPLEMENTATION_AUTHORIZATION_READINESS_REVIEW",
+    "timestamp": "2026-09-22T06:40:30+05:30",
+    "stakeholder_policy": "APPROVED",
+    "objective_specification": "REVIEW_PASSED",
+    "implementation_specification": "REVIEW_PASSED",
+    "implementation_authorization_readiness": "READY_FOR_HUMAN_AUTHORIZATION",
+    "implementation_authorization": "NOT_GRANTED",
+    "next_governed_step": "HUMAN_GOVERNANCE_IMPLEMENTATION_AUTHORIZATION_DECISION",
+    "execution_flags": {
+      "ems_code_modification": false,
+      "milp_modification": false,
+      "configuration_modification": false,
+      "model_modification": false,
+      "model_training": false,
+      "model_inference": false,
+      "milp_execution": false,
+      "mpc_execution": false,
+      "ems_execution": false,
+      "digital_twin_execution": false,
+      "v2_rerun": false,
+      "new_ems_experiment": false
+    },
+    "candidate_authorized_scope": ["GAP_05", "GAP_11", "GAP_20"],
+    "excluded_items_count": 19
+  }
+}

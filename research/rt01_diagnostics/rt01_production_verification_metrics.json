@@ -1,0 +1,78 @@
+{
+  "total_unmet_wh": {
+    "baseline": 14974.110400000005,
+    "modified": 0.0
+  },
+  "unmet_step_119": {
+    "baseline": 8919.430400000005,
+    "modified": 0.0
+  },
+  "unmet_step_120": {
+    "baseline": 5105.84,
+    "modified": 0.0
+  },
+  "unmet_step_121": {
+    "baseline": 948.8400000000001,
+    "modified": 0.0
+  },
+  "system_reliability_pct": {
+    "baseline": 99.73,
+    "modified": 100.0
+  },
+  "diesel_fuel_consumed_l": {
+    "baseline": 100.0,
+    "modified": 81.7166
+  },
+  "final_fuel_remaining_l": {
+    "baseline": 0.0,
+    "modified": 18.2834
+  },
+  "battery_soc_range_pct": {
+    "baseline": [
+      20.0,
+      95.0
+    ],
+    "modified": [
+      20.0,
+      95.0
+    ]
+  },
+  "battery_energy_range_wh": {
+    "baseline": [
+      40000.0,
+      190000.0
+    ],
+    "modified": [
+      40000.0,
+      190000.0
+    ]
+  },
+  "renewable_utilization_pct": {
+    "baseline": 79.98,
+    "modified": 79.98
+  },
+  "total_curtailment_wh": {
+    "baseline": 1422889.7469565219,
+    "modified": 1372678.2813043478
+  },
+  "max_bus_bar_error_w": {
+    "baseline": 9203.63,
+    "modified": 0.0
+  },
+  "normal_mode_step_count": {
+    "baseline": 32,
+    "modified": 32
+  },
+  "emergency_mode_step_count": {
+    "baseline": 136,
+    "modified": 136
+  },
+  "first_step_emergency": {
+    "baseline": 1,
+    "modified": 1
+  },
+  "fuel_exhaustion_step": {
+    "baseline": 65,
+    "modified": null
+  }
+}

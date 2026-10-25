@@ -1,0 +1,781 @@
+/* POLARIS Industrial SCADA Control Room Theme Stylesheet */
+:root {
+  --bg-space: #0B0F19;
+  --bg-panel: #1E293B;
+  --border-grid: #334155;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  
+  --green: #10B981;
+  --cyan: #06B6D4;
+  --amber: #F59E0B;
+  --crimson: #EF4444;
+  --purple: #A855F7;
+  
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-space);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+/* PERSISTENT TOP STATUS BAR */
+.top-status-bar {
+  height: 38px;
+  background-color: #0F172A;
+  border-bottom: 1px solid var(--border-grid);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 0.8rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 1px;
+}
+
+.brand-subtitle {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.status-items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-item .label {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+}
+
+.status-item .val {
+  font-weight: 500;
+}
+
+.status-item .val.mono {
+  font-family: var(--font-mono);
+}
+
+.status-item .val.active-green {
+  color: var(--green);
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-offline {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.badge-synthetic {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--amber);
+  border: 1px solid var(--amber);
+}
+
+.badge-info {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: var(--cyan);
+}
+
+.badge-normal {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--green);
+}
+
+/* MAIN LAYOUT */
+.main-layout {
+  display: flex;
+  height: calc(100vh - 38px);
+}
+
+/* LEFT NAVIGATION */
+.left-nav {
+  width: 220px;
+  background-color: #0F172A;
+  border-right: 1px solid var(--border-grid);
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-section-title {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  padding: 6px 8px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--bg-panel);
+  color: var(--text-main);
+  border-color: var(--border-grid);
+}
+
+.nav-btn.active {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.nav-btn.active .nav-num {
+  color: var(--cyan);
+}
+
+.nav-footer-box {
+  margin-top: auto;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-grid);
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+
+.nav-footer-box .box-title {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  margin-bottom: 4px;
+}
+
+.nav-footer-box .box-text {
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.text-blocked {
+  color: var(--crimson);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.text-proxy {
+  color: var(--amber);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.text-cyan {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+}
+
+/* CONTENT SURFACE */
+.content-surface {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: var(--bg-space);
+}
+
+.screen-panel {
+  display: none;
+}
+
+.screen-panel.active {
+  display: block;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-grid);
+  padding-bottom: 8px;
+}
+
+.screen-header h2 {
+  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+.provenance-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--amber);
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--amber);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+/* TELEMETRY RIBBON */
+.telemetry-ribbon {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.card {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-grid);
+  padding: 10px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-label {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.card-val {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card-val.cyan { color: var(--cyan); }
+.card-val.green { color: var(--green); }
+.card-val.amber { color: var(--amber); }
+.card-val.crimson { color: var(--crimson); }
+
+.card-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* SCADA PANELS & GRID */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.scada-panel {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-grid);
+  border-radius: 2px;
+  padding: 12px;
+}
+
+.panel-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-grid);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* DATA TABLES */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.data-table th, .data-table td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.data-table th {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.data-table td.mono {
+  font-family: var(--font-mono);
+}
+
+.data-table td.green { color: var(--green); }
+.data-table td.cyan { color: var(--cyan); }
+.data-table td.amber { color: var(--amber); }
+
+.table-scroll-container {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* ENERGY FLOW DIAGRAM */
+.energy-flow-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.node-box {
+  background-color: #0F172A;
+  border: 1px solid var(--border-grid);
+  padding: 10px 16px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.node-solar { border-color: var(--cyan); }
+.node-diesel { border-color: var(--amber); }
+.node-battery { border-color: var(--green); }
+.node-load { border-color: var(--amber); }
+
+.node-icon { font-size: 1.2rem; }
+.node-title { font-size: 0.7rem; font-family: var(--font-mono); color: var(--text-muted); }
+.node-val { font-size: 1rem; font-family: var(--font-mono); font-weight: 700; }
+.node-prov { font-size: 0.65rem; color: var(--text-dim); }
+
+.busbar-line {
+  width: 100%;
+  height: 24px;
+  background-color: var(--cyan);
+  color: #000;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.bus-branch-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.flow-arrow {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* SCADA DIAGRAM CONTAINER */
+.scada-diagram-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.scada-busbar {
+  background-color: #0F172A;
+  border: 2px solid var(--cyan);
+  padding: 12px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.busbar-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--cyan);
+  display: block;
+}
+
+.busbar-sub {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.feeder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.feeder-card {
+  background-color: #0F172A;
+  border: 1px solid var(--border-grid);
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.feeder-title {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.feeder-status {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.status-online { color: var(--cyan); }
+.status-active { color: var(--amber); }
+.status-load { color: var(--amber); }
+
+.feeder-val {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.feeder-meta {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+
+/* BATTERY GAUGE */
+.battery-gauge-panel {
+  background-color: #0F172A;
+  border: 1px solid var(--border-grid);
+  padding: 12px;
+  border-radius: 2px;
+}
+
+.gauge-title {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.gauge-bar-outer {
+  width: 100%;
+  height: 20px;
+  background-color: var(--bg-space);
+  border: 1px solid var(--border-grid);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.gauge-bar-inner {
+  height: 100%;
+  background-color: var(--green);
+  color: #000;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-limits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  margin-top: 4px;
+}
+
+/* FIREWALL BOX */
+.firewall-box {
+  background-color: #0F172A;
+  border: 1px solid var(--amber);
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* MPC LOOP VISUAL */
+.mpc-loop-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+}
+
+.mpc-step {
+  background-color: #0F172A;
+  border: 1px solid var(--border-grid);
+  padding: 6px 16px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  width: 80%;
+  text-align: center;
+}
+
+.mpc-step.active {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.mpc-arrow {
+  color: var(--text-dim);
+}
+
+/* SCENARIO CARDS */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.scenario-card {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-grid);
+  padding: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.scenario-card:hover {
+  border-color: var(--cyan);
+}
+
+.scenario-card.active {
+  border-color: var(--cyan);
+  background-color: rgba(6, 182, 212, 0.1);
+}
+
+.scen-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.scen-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.scen-status {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.status-pass { color: var(--green); }
+
+.action-btn {
+  background-color: var(--cyan);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.action-btn:hover {
+  background-color: #22d3ee;
+}
+
+/* SVG TREND CHARTS & HMI COMPONENT REFINEMENTS */
+.svg-chart-container {
+  width: 100%;
+  height: 220px;
+  background-color: #0F172A;
+  border: 1px solid var(--border-grid);
+  border-radius: 2px;
+  padding: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-chart-container svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  margin-top: 6px;
+  justify-content: flex-end;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color-box {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+/* INDUSTRIAL HMI ALARM CONSOLE */
+.hmi-alarm-panel {
+  background-color: #0F172A;
+  border: 1px solid var(--border-grid);
+  border-radius: 2px;
+  padding: 12px;
+}
+
+.alarm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.alarm-table th {
+  color: var(--text-dim);
+  text-align: left;
+  border-bottom: 1px solid var(--border-grid);
+  padding: 6px 8px;
+  font-size: 0.65rem;
+}
+
+.alarm-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+.alarm-severity-critical {
+  color: var(--crimson);
+  font-weight: 700;
+}
+
+.alarm-severity-warning {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.alarm-severity-info {
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.alarm-status-active {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--crimson);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.alarm-status-cleared {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--green);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+/* TECHNICAL SPECIFICATION & PROVENANCE BADGES */
+.badge-proxy {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.badge-blocked {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--crimson);
+  border: 1px solid var(--crimson);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.badge-synthetic {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.sub-disclaimer {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  margin-top: 4px;
+}
+

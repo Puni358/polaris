@@ -1,0 +1,23 @@
+audit_document,POLARIS_OPTION_B_COMPATIBILITY
+audit_phase,GAP19_HIGHS_NATIVE_FEASIBILITY_CHECK
+audit_date,2026-09-22
+generation_mode,EVIDENCE_BASED_TECHNICAL_AUDIT
+execution_performed,READ_ONLY
+
+# ============================================================
+# POLARIS OPTION B (NATIVE HIGHS MULTI-OBJECTIVE) COMPATIBILITY MATRIX
+# ============================================================
+
+dimension,item,evidence_classification,finding_details,polaris_impact_and_status
+API Access,scipy.optimize.milp() public interface,VERIFIED FACT,scipy.optimize.milp() exposes only a single linear objective vector (c). Does not accept multi-objective lists or priority specifications.,Option B cannot be implemented via standard public scipy.optimize.milp() interface without SciPy wrapper modification.
+API Access,scipy.optimize._highspy._core internal API,VERIFIED FACT,Bundled _core module exposes _Highs class with addLinearObjective() getNumLinearObjectives() getLinearObjective() clearLinearObjectives() and HighsLinearObjective struct.,Option B is technically accessible without standalone highspy installation via private scipy internal C++ wrapper if internal API stability risk is accepted.
+API Access,standalone highspy PyPI package,VERIFIED FACT,highspy package is NOT installed in the POLARIS python environment.,Requires installation of highspy package if standard public Python bindings to HiGHS are required for Option B.
+HiGHS Engine,Lexicographic multi-objective support,DOCUMENTED CAPABILITY,HiGHS 1.12.0 supports lexicographic multi-objective optimization for LP and MILP problems via sequential/hierarchical solve engine.,Native solver capability exists in bundled engine. QP restriction mentioned in HiGHS docs does not apply to POLARIS (pure MILP).
+HiGHS Engine,Blending configuration (blend_multi_objectives),VERIFIED FACT,HiGHS OptionsManager confirms blend_multi_objectives boolean option exists and defaults to True (weighted sum blending).,Lexicographic multi-objective behavior strictly requires setting blend_multi_objectives=False.
+MILP Structure,Variables and Constraints Transferability,VERIFIED FACT,POLARIS MILP problem structure (360 decision variables 12 constraint families) transfers directly to HiGHS without constraint alteration.,Feasibility problem and variable bounds are identical for both Option A and Option B.
+Objective Governance,Stage 1 Reliability Objective,VERIFIED FACT,Stage 1 (critical load reliability / load shedding penalty) is fully defined in POLARIS mathematical formulation.,Transferable to HighsLinearObjective with priority=0 (highest priority).
+Objective Governance,Stage 2 Emergency Battery Reserve (EBR),GOVERNANCE BLOCKER,Stage 2 EBR / terminal reserve objective formulation is absent from current POLARIS MILP code.,Missing formulation issue affects BOTH Option A and Option B equally; requires governance/formulation resolution.
+Objective Governance,Stage 3 Diesel/Fuel Consumption,VERIFIED FACT,Fuel consumption minimization objective is present in current POLARIS MILP code.,Transferable to HighsLinearObjective with priority=2.
+Objective Governance,Stage 4 Renewable Utilization / Curtailment,VERIFIED FACT,Renewable curtailment penalty objective is present in current POLARIS MILP code.,Transferable to HighsLinearObjective with priority=3.
+Objective Governance,Battery Degradation Objective Placement,GOVERNANCE BLOCKER,Placement of battery degradation penalty across priority stages is unresolved in POLARIS specification.,Governance decision required before configuring priority levels in native HiGHS or sequential MILP.
+Verification,Empirical Solver Equivalence,NOT YET VERIFIED,No A-vs-B empirical solver run or numerical output comparison has been performed.,Equivalence remains mathematically established in principle but empirically unverified on actual POLARIS data.

@@ -1,0 +1,21 @@
+{
+  "decision_id": "TREQ-001",
+  "status": "FINAL_SELECTED",
+  "human_decisions": {
+    "Q1_semantics": "A (PROTECTED_CRITICAL_SERVICE_SURVIVABILITY_DURATION)",
+    "Q2_configuration": "C (HYBRID)",
+    "Q3_override_authority": "C (AUTOMATED_MFA_CRYPTOGRAPHIC_AUTHORITY_GATE)",
+    "Q4_fuel_resupply_relationship": "B (INDIRECTLY_COUPLED)",
+    "Q5_baseline_horizon": "6 HOURS"
+  },
+  "additional_governance_directions": {
+    "override_scope": "GOVERNED_OPERATIONAL_CIRCUMSTANCES",
+    "override_expiry": "REVERT_TO_BASELINE_PLUS_ALERT",
+    "override_range": "BOUNDED_NORMAL_PLUS_EMERGENCY_EXCEPTION",
+    "baseline": "6 HOURS",
+    "prototype_72h": "SYNTHETIC_ONLY",
+    "implementation": "NOT_IMPLEMENTED",
+    "execution": "NOT_EXECUTED",
+    "station_empirical_validation": "NOT_ESTABLISHED"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "manifest_version": "1.0.0",
+  "experiment": "POLARIS_FORECAST_ERROR_CROSS_YEAR_CONDITIONAL_STABILITY_AUDIT",
+  "created_at": "2026-10-05T07:28:00+05:30",
+  "dataset": {
+    "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+    "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+  },
+  "workspace": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/cross_year_error_stability",
+  "status": "STATE-CONDITIONING-SUPPORTED",
+  "artifacts": [
+    {
+      "filename": "CAUSAL_STATE_INVENTORY.csv",
+      "bytes": 3232,
+      "sha256": "3ee01726bdecbdf3c66145f82929d0b01d65b3411dd37674d911e488d9549f13",
+      "description": "Audit classification of 22 dataset columns into causal classes A, B, and C."
+    },
+    {
+      "filename": "CAUSAL_STATE_INVENTORY.md",
+      "bytes": 8678,
+      "sha256": "5d7fd619e51b95b47375d1213565f49c9bea23e4423374101bbd21b8e93f9f3a",
+      "description": "Comprehensive documentation of causal classifications and telemetry latency notes."
+    },
+    {
+      "filename": "YEARLY_ERROR_DISTRIBUTIONS.csv",
+      "bytes": 1070,
+      "sha256": "4089cdd834c93ea890b3a163ece053704186806f849634fc6f06bceb302561b2",
+      "description": "Yearly moments, quantiles (q05..q99), run lengths, and cumulative error distributions (2020-2023)."
+    },
+    {
+      "filename": "STATE_CONDITIONED_ERROR_SUMMARY.csv",
+      "bytes": 10247,
+      "sha256": "95e53bdd1e0f315f1d1a44adfd22015c0cbdbe43c79b1c8030518b91e8177b1f",
+      "description": "Conditional error distributions partitioned by solar elevation, cloud fraction, clearness index, cs-ghi, and season."
+    },
+    {
+      "filename": "CROSS_YEAR_STABILITY_MATRIX.csv",
+      "bytes": 2890,
+      "sha256": "39bc18bd0a6a71d425e6fcbbc84aa7bf8812d0c65fe28894235001ae1824c9f9",
+      "description": "Cross-year stability metrics (spreads, scale ratios, pairwise Wasserstein distances) across regimes."
+    },
+    {
+      "filename": "LEAVE_ONE_YEAR_OUT_TRANSFER.csv",
+      "bytes": 11226,
+      "sha256": "09b412b2a38d3a7e71561d15497ddd5a10dededefa060770dddbd6469ab1d939",
+      "description": "Leave-one-year-out cross-validation transfer evaluation for 2020, 2021, 2022, and 2023."
+    },
+    {
+      "filename": "TEMPORAL_DEPENDENCE_CONDITIONAL.csv",
+      "bytes": 2386,
+      "sha256": "5fd673dd573389689fe2e08748bcca4ce9d7a2dbd7ee924e4c7a63da6fa2913d",
+      "description": "Raw and post-AR(1) innovation autocorrelation structure within conditioned regimes."
+    },
+    {
+      "filename": "MULTI_YEAR_CALIBRATION_DIAGNOSTIC.csv",
+      "bytes": 818,
+      "sha256": "d073a964f180ec65e9ca3f89cc6d7cc8e2a327f3a703ac6480f1930440c8b4ea",
+      "description": "Diagnostic comparing single-year (2022) vs pooled multi-year (2020-2022) calibration evaluated on blind 2023."
+    },
+    {
+      "filename": "CROSS_YEAR_ERROR_STABILITY_RESULTS.json",
+      "bytes": 44748,
+      "sha256": "56ff181f6a286f833951807c997e99ce00a58876bd1e9ef2d753e80d411daa97",
+      "description": "Machine-readable comprehensive results package for the stability audit."
+    },
+    {
+      "filename": "CROSS_YEAR_ERROR_STABILITY_AUDIT.md",
+      "bytes": 25879,
+      "sha256": "bcaef4e1b1a6e21a18d265de506cd0649fd41c989bd4662e7d54906e42151d29",
+      "description": "Full research audit report synthesizing methodology, findings, and formal status block."
+    },
+    {
+      "filename": "EXECUTION_AUDIT.md",
+      "bytes": 4070,
+      "sha256": "b3310d1ca4973648a832483879c16888ee2c51e7e1f018a098faacae4baeac34",
+      "description": "Execution audit logging environment, dataset hashes, and boundary enforcement."
+    }
+  ]
+}

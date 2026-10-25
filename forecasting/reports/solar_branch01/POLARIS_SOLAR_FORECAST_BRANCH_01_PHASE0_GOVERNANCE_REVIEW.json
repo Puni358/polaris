@@ -1,0 +1,156 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "phase": "PHASE_0_GOVERNANCE_REVIEW",
+  "authorization": "PHASE_0_GOVERNANCE_REVIEW_ONLY",
+  "review_timestamp": "2026-09-21T06:41:00Z",
+  "phase0_artifact_hashes": {
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_PHASE0_DATA_AUDIT.md": {
+      "status": "EXISTS",
+      "sha256": "da3e5d6e82cac010741327a2799ac4385bd758f123e34e3bb5c383efc44bef41",
+      "size_bytes": 6471
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_PHASE0_DATA_AUDIT.json": {
+      "status": "EXISTS",
+      "sha256": "499a3d9998c9c8f0e6e2a997d7e818ed7ab7a0930132cc9892cab7b8cfe53748",
+      "size_bytes": 3425
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_DATA_COVERAGE.csv": {
+      "status": "EXISTS",
+      "sha256": "7f6cd888754e916415f932b249ebbca78d555b6280367fa7820c2c72ac7bf660",
+      "size_bytes": 1223
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_FEATURE_SOURCE_AUDIT.csv": {
+      "status": "EXISTS",
+      "sha256": "77c61d0ad2e0f27c4e7d4c36b238cdd49aded0f71960f15d5ee53b51d6ef2adc",
+      "size_bytes": 1244
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_NWP_AVAILABILITY.csv": {
+      "status": "EXISTS",
+      "sha256": "a8cbde0f932b1fcd1ef25b06d7c0fb99e1bb158d0006699d59f0a0eaf5cf721d",
+      "size_bytes": 678
+    }
+  },
+  "primary_governance_answer": "YES (CONDITIONALLY AUTHORIZED). The Phase 0 evidence establishes that POLARIS can define a NEW causal solar forecasting branch (POLARIS_SOLAR_FORECAST_BRANCH_01) capable of producing a complete 24-hour forecast at every intended hourly MPC origin using strictly causal information. Because NWP issue runs in the 2024 archive occur once daily at 00:00 UTC, intra-day origins (t > 00:00) must select the 00:00 UTC issue run with lead-time adjustment H_effective = H + (t - t_issue). This conditional dependency is bounded and ready to be specified in Phase 1.",
+  "gate_matrix": [
+    {
+      "gate": "TARGET_DATA",
+      "evidence": "Nuolja 2024 hourly SW_IN (8784h, 100% complete, 0 missing, UTC)",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Proceed to Phase 1 Target Specification"
+    },
+    {
+      "gate": "HOURLY_ORIGIN_SUPPORT",
+      "evidence": "Continuous 8784 hourly target timestamps throughout 2024",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Specify hourly origin structure in Phase 1"
+    },
+    {
+      "gate": "FEATURE_CAUSALITY",
+      "evidence": "Lookback windows (1h-24h), astronomical clear-sky, and calendar features strictly causal at t",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Freeze causal feature definitions in Phase 1"
+    },
+    {
+      "gate": "NWP_ISSUE_TIME",
+      "evidence": "AROME 21x21 NWP issue runs available only at 00:00 UTC daily",
+      "status": "CONDITIONAL",
+      "blocker": "Sparse 00:00 UTC NWP issue frequency for non-00:00 UTC origins",
+      "required_action": "Phase 1 must define deterministic NWP selection rule (t_issue <= t)"
+    },
+    {
+      "gate": "NWP_RUN_SELECTION",
+      "evidence": "Latest available issue run t_issue <= t is deterministically selectable",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Specify deterministic selection rule in Phase 1"
+    },
+    {
+      "gate": "NWP_LEAD_COVERAGE",
+      "evidence": "NWP forecasts issued at 00:00 UTC cover H1..H24; intra-day origins require H_effective = H + (t - t_issue)",
+      "status": "CONDITIONAL",
+      "blocker": "Higher lead times (up to 42h) required for late afternoon origins (t=18:00 UTC)",
+      "required_action": "Evaluate NWP lead-time degradation in Phase 1 specification"
+    },
+    {
+      "gate": "24H_CAUSAL_HORIZON",
+      "evidence": "Complete H1..H24 horizon constructible causally via lookback, astronomical, and lead-shifted NWP",
+      "status": "CONDITIONAL",
+      "blocker": "NWP lead-time shifting required for intra-day origins",
+      "required_action": "Formally specify multi-horizon causal structure in Phase 1"
+    },
+    {
+      "gate": "FUTURE_TRUTH_FIREWALL",
+      "evidence": "All proposed inputs satisfy timestamp_available <= t; zero future truth used",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Enforce strict fail-closed truth firewall in Phase 1"
+    },
+    {
+      "gate": "DATA_PROVENANCE",
+      "evidence": "Authoritative local source files (Nuolja SITES, Clearsky, AROME) verified with SHA-256",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Maintain complete dataset manifest in Phase 1"
+    },
+    {
+      "gate": "STAGE8_1_SEPARATION",
+      "evidence": "Stage 8.1 boundary confirmed frozen and immutable; Branch 01 is independent",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Use distinct Branch 01 naming and artifact IDs"
+    },
+    {
+      "gate": "REPRODUCIBILITY_REQUIREMENT",
+      "evidence": "34-item reproducibility package and independent replay gate established",
+      "status": "ESTABLISHED",
+      "blocker": "None",
+      "required_action": "Enforce 20-point governance rule for future training runs"
+    },
+    {
+      "gate": "PHASE0_EVIDENCE_COMPLETENESS",
+      "evidence": "All 5 Phase 0 audit artifacts created with complete 19-question responses and hashes",
+      "status": "PASS",
+      "blocker": "None",
+      "required_action": "Archive Phase 0 artifacts and proceed to Phase 1"
+    }
+  ],
+  "explicit_conditions": [
+    "Phase 1 specification must explicitly bound the NWP lead-time adjustment rule H_effective = H + (t - t_issue) for intra-day origins.",
+    "Phase 1 must define fail-closed handling if NWP issue run t_issue > t or if required lookback features are missing.",
+    "Stage 8.1 remains strictly frozen and isolated; Branch 01 must use independent model, dataset, and feature manifest IDs.",
+    "Replay deterministic tolerance for future model training is TO BE DETERMINED AT MODEL REPRODUCIBILITY GATE based on model serialization format."
+  ],
+  "governance_decision": "B",
+  "decision_meaning": "PHASE 1 SPECIFICATION CONDITIONALLY AUTHORIZED",
+  "final_status_block": {
+    "BRANCH_ID": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "PHASE0_RECONNAISSANCE": "COMPLETE",
+    "PHASE0_GOVERNANCE_REVIEW": "COMPLETE",
+    "STAGE8_1_MODIFIED": "NO",
+    "STAGE8_1_RETRAINED": "NO",
+    "STAGE8_1_REPLACED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "CANDIDATE_A_EXECUTED": "NO",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO",
+    "EMS_MODIFIED": "NO",
+    "EMS_EXECUTED": "NO",
+    "TARGET_DATA": "PASS",
+    "HOURLY_ORIGIN_SUPPORT": "PASS",
+    "FEATURE_CAUSALITY": "PASS",
+    "NWP_ISSUE_TIME_CAUSALITY": "CONDITIONAL",
+    "NWP_RUN_SELECTION": "PASS",
+    "NWP_LEAD_COVERAGE": "CONDITIONAL",
+    "24H_CAUSAL_HORIZON": "CONDITIONAL",
+    "FUTURE_TRUTH_FIREWALL": "PASS",
+    "DATA_PROVENANCE": "PASS",
+    "STAGE8_1_SEPARATION": "PASS",
+    "REPRODUCIBILITY_REQUIREMENT": "ESTABLISHED",
+    "PHASE0_EVIDENCE_COMPLETENESS": "PASS",
+    "GOVERNANCE_DECISION": "B",
+    "NEXT_GOVERNED_STEP": "PHASE1_BRANCH_SPECIFICATION"
+  }
+}

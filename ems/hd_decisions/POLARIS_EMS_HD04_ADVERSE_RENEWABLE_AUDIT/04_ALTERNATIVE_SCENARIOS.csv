@@ -1,0 +1,7 @@
+Scenario_ID,Scenario_Name,Technically_Possible,Causally_Valid,Existing_Governance,Requires_New_Data,Requires_New_Policy
+SCEN_ZERO,Zero Renewable Baseline (P=0),YES,YES,ENGINEERING_ONLY,NO,YES
+SCEN_DERAT,Fixed Percentage Derating (e.g. 50% P),YES,YES,NOT_AUTHORIZED,NO,YES
+SCEN_QUANT,Forecast Lower Quantile (lower vector),YES,YES,PROVISIONAL,NO,YES
+SCEN_CONF,Confidence-Bound Scenario (P - k*sigma),YES,YES,NOT_AUTHORIZED,NO,YES
+SCEN_WEATH,Weather-Driven Adverse Scenario,YES,YES,NOT_AUTHORIZED,YES,YES
+SCEN_TRIP,Total Renewable Trip / Outage,YES,YES,NOT_AUTHORIZED,NO,YES

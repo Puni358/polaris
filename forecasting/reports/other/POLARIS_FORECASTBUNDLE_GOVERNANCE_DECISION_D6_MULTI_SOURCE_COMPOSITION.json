@@ -1,0 +1,115 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE RESEARCH GOVERNANCE DECISION RECORD D6 - MULTI-SOURCE FORECAST COMPOSITION (LOCKED)",
+  "timestamp": "2026-09-17T20:33:00Z",
+  "authoritative_inputs": [
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D5_DEMAND_SOURCE.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D4_DEFERRED_WIND.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D4_WIND_SOURCE.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D3_PV_MAPPING.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D1_D2.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_RESEARCH_GOVERNANCE_PACKAGE.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "system/schemas/forecast_bundle.py",
+    "system/forecasting/implementations/baseline.py"
+  ],
+  "governance_decision_d6": {
+    "name": "Multi-Source Forecast Composition",
+    "status": "GOVERNANCE_DECISION_RECORDED_PARTIAL_CAPABILITY",
+    "d6_composition_status": "INTERFACE_STRUCTURE_ESTABLISHED_COMPLETE_COMPOSITION_NOT_ESTABLISHED",
+    "d6_solar_source_status": "AUTHORIZED_STAGE8_1_CAPABILITY",
+    "d6_wind_source_status": "DEFERRED_FUTURE_CAPABILITY_NOT_AUTHORIZED",
+    "d6_demand_source_status": "DEFERRED_FUTURE_CAPABILITY_NOT_AUTHORIZED",
+    "d6_missing_source_semantics": "NOT_ESTABLISHED",
+    "statement": "The ForecastBundle v1.0 multi-source interface structure is established, but complete multi-source forecast composition is NOT currently established because only the solar forecasting capability is authorized, while wind and demand remain deferred and the contract does not establish missing-source semantics."
+  },
+  "architecture_vs_capability_distinction": {
+    "architectural_interface": "ForecastBundle v1.0 multi-source interface structure = ESTABLISHED.",
+    "research_capability_coverage": {
+      "solar": "AUTHORIZED STAGE8_1 CAPABILITY",
+      "wind": "DEFERRED FUTURE CAPABILITY (NOT AUTHORIZED)",
+      "demand": "DEFERRED FUTURE CAPABILITY (NOT AUTHORIZED)"
+    },
+    "complete_multi_source_composition": "NOT ESTABLISHED",
+    "missing_source_semantics": "NOT ESTABLISHED"
+  },
+  "multi_source_composition_evidence": {
+    "schema_file": "system/schemas/forecast_bundle.py",
+    "construction_behavior": "ForecastBundle.__init__() requires all 4 fields (solar_irradiance, solar_generation, wind_generation, demand) as non-null TimeseriesForecast objects.",
+    "prototype_file": "system/forecasting/implementations/baseline.py",
+    "prototype_behavior": "LocalBaselineForecastEngine composes all streams inside predict(), marked explicitly PROTOTYPE_UNVALIDATED."
+  },
+  "partial_capability_state_assessment": {
+    "solar": "AUTHORIZED STAGE8.1 CAPABILITY (D3 PV mapping authorized)",
+    "wind": "DEFERRED FUTURE CAPABILITY (D4 not authorized)",
+    "demand": "DEFERRED FUTURE CAPABILITY (D5 not authorized)"
+  },
+  "missing_source_semantics": {
+    "status": "NOT_ESTABLISHED",
+    "details": "ForecastBundle schema v1.0 defines no null representation, no missing-source flags, no partial bundle schemas, and no fallback rules."
+  },
+  "d3_solar_authorization_boundary": {
+    "d3_scope": "Authorizes _irradiance_to_power_w() mapping from SW_IN to solar_generation ONLY.",
+    "firewall": "D3 does NOT authorize complete ForecastBundle composition when wind and demand sources remain deferred."
+  },
+  "scientific_claim_limitations": "Records composition governance and capability states only. Does not claim multi-source forecasting accuracy, dispatch reliability under partial capabilities, or operational readiness.",
+  "d6_frozen_contract_assessment": {
+    "d6_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "reasoning": "ForecastBundle schema v1.0 mandates all 4 fields at construction. Whether a schema extension for missing sources is required depends on whole-system contract resolution (D7)."
+  },
+  "remaining_governance_decisions": {
+    "D1_LOWER_UPPER_SEMANTICS": "DECISION_RECORDED",
+    "D2_POINT_ONLY_REPRESENTATION": "DECISION_RECORDED",
+    "D3_PV_MAPPING": "DECISION_RECORDED",
+    "D4_WIND_SOURCE": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "D5_DEMAND_SOURCE": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "D6_MULTI_SOURCE_COMPOSITION": "GOVERNANCE_DECISION_RECORDED_PARTIAL_CAPABILITY",
+    "D7_FINAL_FROZEN_CONTRACT_CHANGE_REQUIRED": "NOT_ESTABLISHED"
+  },
+  "implementation_status": "NOT_AUTHORIZED",
+  "historical_artifact_protection": {
+    "d5_decision_record_modified": false,
+    "d4_deferred_wind_modified": false,
+    "d4_wind_source_modified": false,
+    "d3_decision_record_modified": false,
+    "d1_d2_decision_record_modified": false,
+    "interval_semantics_audit_modified": false,
+    "point_semantics_check_modified": false,
+    "research_governance_package_modified": false,
+    "contract_resolution_modified": false,
+    "compatibility_audit_modified": false,
+    "source_code_modified": false
+  },
+  "final_control_state": {
+    "d1": "DECISION_RECORDED",
+    "d2": "DECISION_RECORDED",
+    "d3": "DECISION_RECORDED",
+    "d4": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "d5": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "d6_status": "GOVERNANCE_DECISION_RECORDED_PARTIAL_CAPABILITY",
+    "d6_composition_status": "INTERFACE_STRUCTURE_ESTABLISHED_COMPLETE_COMPOSITION_NOT_ESTABLISHED",
+    "d6_solar_source_status": "AUTHORIZED_STAGE8_1_CAPABILITY",
+    "d6_wind_source_status": "DEFERRED_FUTURE_CAPABILITY_NOT_AUTHORIZED",
+    "d6_demand_source_status": "DEFERRED_FUTURE_CAPABILITY_NOT_AUTHORIZED",
+    "d6_missing_source_semantics": "NOT_ESTABLISHED",
+    "d6_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "d7_final_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "D6_LOCKED_D7_FINAL_CONTRACT_ASSESSMENT_PENDING",
+    "implementation_status": "NOT_AUTHORIZED",
+    "lock_status": "D6_LOCKED"
+  },
+  "file_modification_audit": {
+    "files_modified": [
+      "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D6_MULTI_SOURCE_COMPOSITION.md",
+      "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D6_MULTI_SOURCE_COMPOSITION.json"
+    ],
+    "source_code_modified": false,
+    "schema_modified": false,
+    "historical_d1_d5_artifacts_modified": false,
+    "experiment_executed": false,
+    "model_inference_executed": false,
+    "data_acquisition_executed": false,
+    "implementation_status": "NOT_AUTHORIZED",
+    "lock_status": "D6_LOCKED"
+  }
+}

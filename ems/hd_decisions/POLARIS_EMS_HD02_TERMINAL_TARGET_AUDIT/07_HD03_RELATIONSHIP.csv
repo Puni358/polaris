@@ -1,0 +1,4 @@
+Concept_Name,Scope,Time_Horizon,Function_in_POLARIS,Equivalence_Status
+E_terminal_target,MPC Solver Boundary Condition,t = H (24h boundary),Prevents end-of-horizon battery depletion in rolling loop,INDEPENDENT
+T_required,Exogenous Operational Survival Horizon,Multi-day (until resupply),Evaluated by Emergency Detector to set operating mode,INDEPENDENT
+Equivalence_Check,H = N = T_required,N/A,NOT AUTHORIZED — Conflates solver boundary with mission survival,ARCHITECTURALLY_INVALID

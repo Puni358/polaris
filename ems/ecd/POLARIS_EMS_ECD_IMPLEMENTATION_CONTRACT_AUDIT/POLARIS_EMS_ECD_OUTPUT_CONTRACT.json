@@ -1,0 +1,108 @@
+{
+  "contract_name": "POLARIS_EMS_ECD_OUTPUT_CONTRACT",
+  "version": "1.0.0",
+  "status": "CLOSED_FOR_REVIEW",
+  "schema_name": "EmergencyAssessment",
+  "outputs": [
+    {
+      "field": "operating_mode",
+      "type": "Enum",
+      "units": "none",
+      "allowed_values": ["NORMAL", "EMERGENCY", "UNKNOWN_INVALID"],
+      "meaning": "System operational classification based on survivability margins against T_required",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller / DispatchEngine",
+      "status": "CLOSED"
+    },
+    {
+      "field": "battery_endurance_hours",
+      "type": "float",
+      "units": "hours",
+      "allowed_values": ">= 0.0",
+      "meaning": "Calculated AC-delivered time endurance of stored battery energy under critical load",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller, Telemetry, UI",
+      "status": "CLOSED"
+    },
+    {
+      "field": "diesel_endurance_hours",
+      "type": "float",
+      "units": "hours",
+      "allowed_values": ">= 0.0",
+      "meaning": "Calculated time endurance of diesel generator under critical load and fuel remaining",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller, Telemetry, UI",
+      "status": "CLOSED"
+    },
+    {
+      "field": "battery_margin_hours",
+      "type": "float",
+      "units": "hours",
+      "allowed_values": "real number",
+      "meaning": "Surplus or deficit hours: battery_endurance_hours - T_required",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller, Telemetry",
+      "status": "CLOSED"
+    },
+    {
+      "field": "diesel_margin_hours",
+      "type": "float",
+      "units": "hours",
+      "allowed_values": "real number",
+      "meaning": "Surplus or deficit hours: diesel_endurance_hours - T_required",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller, Telemetry",
+      "status": "CLOSED"
+    },
+    {
+      "field": "preserved_resource",
+      "type": "Enum",
+      "units": "none",
+      "allowed_values": ["BATTERY", "DIESEL", "BOTH", "NONE"],
+      "meaning": "Resource with larger survivability margin (E3 semantics)",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller (E3 Emergency Policy)",
+      "status": "CLOSED"
+    },
+    {
+      "field": "limiting_resource",
+      "type": "Enum",
+      "units": "none",
+      "allowed_values": ["BATTERY", "DIESEL", "BOTH", "NONE"],
+      "meaning": "Resource with smaller survivability margin",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller, Alert System",
+      "status": "CLOSED"
+    },
+    {
+      "field": "tie_status",
+      "type": "boolean",
+      "units": "boolean",
+      "allowed_values": [true, false],
+      "meaning": "True when battery_margin and diesel_margin are equal within floating-point tolerance",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller",
+      "status": "CLOSED"
+    },
+    {
+      "field": "validity_status",
+      "type": "Enum",
+      "units": "none",
+      "allowed_values": ["VALID", "MISSING_T_REQUIRED", "EXPIRED_T_REQUIRED", "UNAUTHORIZED_T_REQUIRED", "INVALID_TELEMETRY"],
+      "meaning": "Input integrity and freshness assessment state",
+      "producer": "ECD",
+      "consumer": "EMS_MPC_Controller, Fail-Closed Handler",
+      "status": "CLOSED"
+    },
+    {
+      "field": "failure_reason",
+      "type": "string",
+      "units": "text",
+      "allowed_values": "string or null",
+      "meaning": "Detailed error message when validity_status != VALID",
+      "producer": "ECD",
+      "consumer": "Telemetry, Logging",
+      "status": "CLOSED"
+    }
+  ]
+}

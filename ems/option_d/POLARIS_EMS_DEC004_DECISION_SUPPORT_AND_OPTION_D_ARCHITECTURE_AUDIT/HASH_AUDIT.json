@@ -1,0 +1,60 @@
+{
+  "audit_name": "POLARIS_EMS_DEC004_DECISION_SUPPORT_AND_OPTION_D_ARCHITECTURE_HASH_AUDIT",
+  "generated_at": "2026-09-23T22:39:20Z",
+  "status": "SEALED",
+  "package_path": "POLARIS_EMS_DEC004_DECISION_SUPPORT_AND_OPTION_D_ARCHITECTURE_AUDIT",
+  "artifact_hashes": [
+    {
+      "file": "README.md",
+      "sha256": "d1c72be2f8e034a46e6555063739d1062aecd811aa8ebe0d3e9afb241e41a644"
+    },
+    {
+      "file": "DEC004_NEUTRAL_DECISION_SUPPORT.md",
+      "sha256": "d4ff53a9eec160c93626fa97401c168bc809ceaae3c9bad22bb9ec82b720ab09"
+    },
+    {
+      "file": "OPTION_COMPARISON_MATRIX.md",
+      "sha256": "9626c3173f31b3550e092d581fd8e793e3b987c0bc072a86927d3154a1b7818f"
+    },
+    {
+      "file": "SCENARIO_ANALYSIS.md",
+      "sha256": "ac02fd07f3cda05edaff1a9404443cda638fbc30fdb8ef5dfb4ecbba4ea2bc65"
+    },
+    {
+      "file": "OPTION_D_ARCHITECTURE_COMPATIBILITY.md",
+      "sha256": "ee68a59174784755fff2a1ccb19244835e848edb393edec50ae4aa77f9ea3c22"
+    },
+    {
+      "file": "OPTION_D_MILP_COMPATIBILITY_AUDIT.md",
+      "sha256": "df71a1602af98aa775c74e9eb36733861b477907e6458fdac2f39a1b37b68d6f"
+    },
+    {
+      "file": "OPTION_D_SCHEMA_IMPACT_AUDIT.md",
+      "sha256": "4e2b1c5e5595bcd00ccf525a442efdb2f421e393c50b7ce1cf263e394c219a0f"
+    },
+    {
+      "file": "OPTION_D_RECOVERY_AUDIT.md",
+      "sha256": "741d2a55097462e6502858ba2ba4643d940c763187b328facb4693778a8ef2c2"
+    },
+    {
+      "file": "OPTION_D_OPERATOR_ESCALATION_AUDIT.md",
+      "sha256": "1f5856f8bd6c31a3720cef363570ace57ef123c4b2f0f7d2770e6c0ec4527db0"
+    },
+    {
+      "file": "IMPLEMENTATION_IMPACT_MATRIX.md",
+      "sha256": "6e98865d3db55a2cb1912ed05381e626305b810add8c3625be0475688ac05282"
+    },
+    {
+      "file": "GOVERNANCE_VS_ENGINEERING_REGISTER.md",
+      "sha256": "4b5e8823ea740379deb2e5774a7956a61dce9e4a6fb9162d2ee81edebd69babd"
+    },
+    {
+      "file": "FUTURE_TEST_MATRIX.md",
+      "sha256": "369672f9d0f2fc188f3e9c2c593d268894dda7ba500cf102a7139b92019e60ec"
+    },
+    {
+      "file": "DEC004_DECISION_FORM_UPDATE.md",
+      "sha256": "4aeb0118125cebc271e5595460ac38f0d3f4b8e4851268605cb75211a4a15dd9"
+    }
+  ]
+}

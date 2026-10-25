@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "title": "Causal NWP + Physics vs. Baseline Closed-Loop Diesel Reduction Experiment",
+  "status": "PRE_REGISTERED_AMENDED_READY_FOR_EXECUTION",
+  "created_at": "2026-10-04T18:58:00Z",
+  "updated_at": "2026-10-04T19:17:00Z",
+  "protocol": "HOURLY_RECEDING_HORIZON_CLOSED_LOOP",
+  "timestep_hours": 1.0,
+  "horizon_hours": 24,
+  "research_question": {
+    "primary": "Does adding causally available MEPS NWP cloud information to the solar forecast reduce realized diesel consumption relative to a causal no-weather-information baseline under identical closed-loop conditions?",
+    "null_hypothesis_H0": "Median paired difference in diesel fuel consumption (Baseline - Candidate) <= 0 L",
+    "alternative_hypothesis_H1": "Median paired difference in diesel fuel consumption (Baseline - Candidate) > 0 L"
+  },
+  "arms": {
+    "ARM_A_BASELINE": {
+      "label": "Causal No-Weather-Information Baseline",
+      "forecaster_class": "LocalBaselineForecastEngine",
+      "forecaster_module": "system/forecasting/implementations/baseline.py",
+      "forecaster_sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+      "solar_information": "Fixed diurnal sinusoidal clear-sky persistence curve (no weather forecast)",
+      "wind_information": "Local baseline persistence model",
+      "demand_information": "Local baseline persistence model",
+      "causality": "STRICTLY_CAUSAL_ZERO_LOOKAHEAD_WEATHER"
+    },
+    "ARM_B_CANDIDATE": {
+      "label": "Candidate (Causal NWP + Physics)",
+      "forecaster_class": "CausalNwpPhysicsForecastEngine",
+      "forecaster_module": "system/forecasting/implementations/causal_nwp_physics.py",
+      "forecaster_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+      "solar_information": "MET Norway MEPS 18Z causal cloud trajectory + PVLIB Ineichen clear-sky physics",
+      "wind_information": "Local baseline persistence model (IDENTICAL to Arm A)",
+      "demand_information": "Local baseline persistence model (IDENTICAL to Arm A)",
+      "causality": "STRICTLY_CAUSAL_MEPS_18Z_PREVIOUS_DAY"
+    },
+    "ARM_C_DIAGNOSTIC": {
+      "label": "NONCAUSAL PERFECT-FORESIGHT DIAGNOSTIC",
+      "forecaster_class": "NoncausalPerfectForesightForecastEngine",
+      "solar_information": "Actual future SITES SW_IN realization over 24h horizon",
+      "wind_information": "Local baseline persistence model (IDENTICAL to Arm A)",
+      "demand_information": "Local baseline persistence model (IDENTICAL to Arm A)",
+      "causality": "STRICTLY_NONCAUSAL_PERFECT_FORESIGHT_DIAGNOSTIC_ONLY"
+    }
+  },
+  "initial_state": {
+    "battery_capacity_wh": 200000.0,
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 100000.0,
+    "min_soc_pct": 20.0,
+    "max_soc_pct": 95.0,
+    "diesel_running": false,
+    "diesel_hours_running": 0.0,
+    "initial_fuel_liters": 100.0,
+    "operating_mode": "NORMAL"
+  },
+  "governed_parameters": {
+    "critical_load_baseline_power_w": 11600.0,
+    "governed_critical_load_source": "system/config/loads.yaml:5",
+    "critical_demand_rule": "critical_demand[t] = min(critical_load.baseline_power_w, forecasted_total_demand[t])",
+    "canonical_worker_source": "system/orchestration/worker.py:244",
+    "ceiling_interpretation": "GOVERNED_NOMINAL_CRITICAL_CEILING_NOT_DEMAND_FLOOR",
+    "terminal_target_wh": 100000.0,
+    "terminal_target_wh_label": "SIMULATED_RESEARCH_ASSUMPTION — NOT PRODUCTION GOVERNANCE",
+    "eta_chg": 0.92,
+    "eta_dis": 0.92,
+    "max_charge_power_w": 50000.0,
+    "max_discharge_power_w": 50000.0,
+    "min_diesel_power_w": 10000.0,
+    "max_diesel_power_w": 100000.0,
+    "base_fuel_consumption_l_per_h": 5.0,
+    "marginal_fuel_consumption_l_per_wh": 0.00025,
+    "pv_array_area_m2": 300.0,
+    "pv_panel_efficiency": 0.20,
+    "pv_performance_ratio": 0.85,
+    "pv_max_inverter_power_w": 60000.0
+  },
+  "research_adapter": {
+    "module": "system/research/research_critical_demand_adapter.py",
+    "class": "AdaptedClosedLoopRunner",
+    "sha256": "c9aab75bfebf7fc24454ae959173a7892139b70eedafd8680a6c0ea6a3cef640",
+    "scope": "RESEARCH_ONLY",
+    "rationale": "Reproduces pre-existing canonical worker clipping semantics while leaving production GAP19 unchanged"
+  },
+  "causal_availability_lineage": {
+    "dataset_path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "meps_run_initialization": "18:00 UTC Day D-1",
+    "dissemination_availability": "20:15-20:30 UTC Day D-1",
+    "issuance_origin": "23:00 UTC Day D-1 (00:00 CET Day D)",
+    "target_hours": "Day D 00:00 UTC to 23:00 UTC (+6h to +29h lead times)",
+    "intraday_multi_day_stitching": "REJECTED_UNPROVEN_CAUSAL_PROVENANCE"
+  },
+  "dataset": {
+    "path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16",
+    "total_rows": 8328,
+    "start_timestamp": "2024-01-20 00:00:00",
+    "end_timestamp": "2024-12-31 23:00:00",
+    "missing_hours": 0
+  },
+  "evaluation_window": {
+    "primary_season": "SUMMER_SOLAR_ACTIVE_SEASON_2024",
+    "start_origin": "2024-05-01T00:00:00Z",
+    "end_origin": "2024-08-31T23:00:00Z",
+    "total_days": 123,
+    "total_hours": 2952,
+    "missing_timestamps": 0,
+    "selection_rationale": "High-solar active season at Nuolja (68.36°N) avoiding Arctic polar night where solar irradiance is zero across all arms."
+  },
+  "code_provenance_hashes": {
+    "gap19_optimizer": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "router": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+    "realization_executor": "c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b",
+    "closed_loop_runner": "62cb1607a8dfa63edd804142f167916c1cc11bef30d49ae380d236efad03daa4",
+    "critical_demand_adapter": "c9aab75bfebf7fc24454ae959173a7892139b70eedafd8680a6c0ea6a3cef640",
+    "battery_config": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel_config": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "solar_pv_config": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "loads_config": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+    "optimizer_config": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8"
+  },
+  "metrics": {
+    "primary": "total_diesel_fuel_consumed_liters",
+    "secondary": [
+      "diesel_on_hours",
+      "diesel_startup_events",
+      "unmet_critical_load_wh",
+      "reliability_percent",
+      "total_curtailment_wh",
+      "battery_throughput_wh",
+      "equivalent_full_cycles_efc",
+      "minimum_soc_pct",
+      "soc_floor_violations_count",
+      "optimizer_failures_count"
+    ]
+  },
+  "statistical_testing": {
+    "methodology": "PAIRED_ORIGIN_NONPARAMETRIC",
+    "paired_tests": [
+      "Wilcoxon signed-rank test on paired per-origin diesel fuel delta",
+      "Bootstrap 95% confidence interval (10,000 resamples, seed=42) on mean and median delta",
+      "Directional count: win / loss / tie"
+    ]
+  },
+  "reliability_gate": {
+    "unmet_load_degradation_allowed_wh": 0.0,
+    "soc_floor_violations_allowed": 0,
+    "optimizer_infeasibilities_allowed": 0
+  }
+}

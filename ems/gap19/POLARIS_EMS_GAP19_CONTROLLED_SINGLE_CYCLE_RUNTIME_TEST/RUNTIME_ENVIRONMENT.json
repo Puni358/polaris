@@ -1,0 +1,10 @@
+{
+  "python": "3.12.3",
+  "scipy": "1.18.1",
+  "numpy": "2.5.2",
+  "highspy": "1.15.1",
+  "scipy_bundled_highs": "1.12.0",
+  "highspy_native_highs": "1.15.1",
+  "platform": "linux",
+  "architecture": "x86_64"
+}

@@ -1,0 +1,4 @@
+subset,lag,p_same_sign,null_baseline
+All Daytime,1,0.7439958231813435,0.5
+High Solar (>15 deg),1,0.7639616055846422,0.5
+Hard Error (>150 W/m²),1,0.9023809523809524,0.5

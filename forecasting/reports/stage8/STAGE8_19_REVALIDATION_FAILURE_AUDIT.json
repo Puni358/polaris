@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-13T10:49:28+05:30",
+  "document_title": "STAGE 8.19 REVALIDATION FAILURE AUDIT MANIFEST",
+  "final_verdict": "STAGE8.19 REVALIDATION = NOT VERIFIED",
+  "outcome_classification": "OUTCOME_C_REPRODUCTION_OR_PROVENANCE_FAILURE",
+  "failure_reasons": {
+    "reason_1_provenance_failure": {
+      "status": "STOP_CONDITION_TRIGGERED",
+      "details": "Real ABIS/SWEPOS GNSS ZTD observations and real AROME-Arctic forecast swaths are ABSENT from project workspace. Synthetic fallbacks rejected per protocol."
+    },
+    "reason_2_control_reproduction_failure": {
+      "status": "STOP_CONDITION_TRIGGERED",
+      "dynamic_executable_control_mae_w_m2": 36.186882,
+      "expected_reference_control_mae_w_m2": 35.241085,
+      "delta_w_m2": 0.945797,
+      "details": "Executable control pipeline produced 36.186882 W/m2 vs expected Stage 8.17A reference 35.241085 W/m2. Evaluator hardcoding rejected per protocol."
+    }
+  },
+  "governance_compliance": {
+    "synthetic_abis_used": false,
+    "synthetic_arome_used": false,
+    "metric_hardcoding_executed": false,
+    "master_handoff_mutated": false,
+    "route_registry_mutated": false,
+    "active_operational_champion": "Stage 8.17A AROME Structural Disagreement"
+  }
+}

@@ -1,15 +1,15 @@
 """
 POLARIS -- N6 Multi-Origin Harness: Production-Adapter Interface Mapping
 =============================================================================
-Resolves `N6_CONSOLIDATED_READINESS_REMEDIATION_REPORT.md` blocker 2 /
-`N6_FINAL_PRE_EXECUTION_READINESS_REPORT.md` Workstream 2: documents, and
+Resolves `forecasting/n6/reports/N6_CONSOLIDATED_READINESS_REMEDIATION_REPORT.md` blocker 2 /
+`forecasting/n6/reports/N6_FINAL_PRE_EXECUTION_READINESS_REPORT.md` Workstream 2: documents, and
 provides translation-only adapter classes for, the EXACT interface gap
 between `harness.py`'s four structural `typing.Protocol` contracts
 (`ForecastProviderProtocol` / `DispatchOptimizerProtocol` /
 `SimulationStepperProtocol` / `SafetyEvaluatorProtocol`) and the real
 production classes those Protocols are modeled on, as confirmed by direct
 read of the one existing real single-origin integration,
-`stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/
+`forecasting/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/
 run_n6_closed_loop_simulation.py`, this pass.
 
 GOVERNANCE STATUS: NON-PRODUCTION / NOT EXECUTED / NO NEW EXECUTION PATH
@@ -45,7 +45,7 @@ GOVERNANCE STATUS: NON-PRODUCTION / NOT EXECUTED / NO NEW EXECUTION PATH
 
 WHY THIS MODULE EXISTS (what it resolves, and what it deliberately does NOT)
 -------------------------------------------------------------------------------
-`N6_CONSOLIDATED_READINESS_REMEDIATION_REPORT.md` blocker 2 asked: "what are
+`forecasting/n6/reports/N6_CONSOLIDATED_READINESS_REMEDIATION_REPORT.md` blocker 2 asked: "what are
 the exact interfaces and compatibility requirements for real N6, GAP19/router,
 simulator and safety-evaluator adapters?" Direct re-read of
 `run_n6_closed_loop_simulation.py` this pass (the ONLY existing real
@@ -221,7 +221,7 @@ __all__ = [
 class IntegrationAssumption:
     """
     One documented, NOT-YET-RESOLVED assumption this adapter layer makes or
-    exposes, which `N6_FINAL_PRE_EXECUTION_READINESS_REPORT.md` Workstream 2
+    exposes, which `forecasting/n6/reports/N6_FINAL_PRE_EXECUTION_READINESS_REPORT.md` Workstream 2
     requires be explicitly identified as "still requiring an authorized
     smoke test" before any real object is ever wired through these adapters.
     """
@@ -236,7 +236,7 @@ INTEGRATION_ASSUMPTIONS_REQUIRING_REVIEW: List[IntegrationAssumption] = [
     IntegrationAssumption(
         id="IA-1",
         assumption=(
-            "DECIDED AND IMPLEMENTED THIS PASS (N6_IA1_IA2_REMEDIATION_REPORT.md Section 1): the "
+            "DECIDED AND IMPLEMENTED THIS PASS (forecasting/n6/reports/N6_IA1_IA2_REMEDIATION_REPORT.md Section 1): the "
             "owner decided the production-representative N6-vs-baseline comparison must use "
             "RECEDING-HORIZON control (re-forecast/re-route/re-optimize fresh every simulated "
             "step), matching `worker.py`'s Cell B loop and `runner.py`'s live runtime structurally, "
@@ -269,7 +269,7 @@ INTEGRATION_ASSUMPTIONS_REQUIRING_REVIEW: List[IntegrationAssumption] = [
     IntegrationAssumption(
         id="IA-2",
         assumption=(
-            "DECIDED AND IMPLEMENTED THIS PASS (N6_IA1_IA2_REMEDIATION_REPORT.md Section 2): the "
+            "DECIDED AND IMPLEMENTED THIS PASS (forecasting/n6/reports/N6_IA1_IA2_REMEDIATION_REPORT.md Section 2): the "
             "owner decided to extend `harness.py` with a fifth `RouterProtocol` and an explicit "
             "`route` (+ `route_history`) field on `OriginRunResult`, rather than keep "
             "`EMSControlRouter.evaluate_and_route`'s decision folded silently into "
@@ -296,7 +296,7 @@ INTEGRATION_ASSUMPTIONS_REQUIRING_REVIEW: List[IntegrationAssumption] = [
             "Each origin's `initial_state` (battery SOC, diesel state, fuel remaining) would be "
             "supplied by the caller from an already-cited source per origin, exactly as "
             "`build_multi_origin_campaign_config`'s existing `initial_battery_soc_wh_by_origin` "
-            "parameter already requires (DIESEL_COMPARISON_PREREQUISITE_PLAN.md Table row 5) -- "
+            "parameter already requires (ems/reports/diesel_and_loads/DIESEL_COMPARISON_PREREQUISITE_PLAN.md Table row 5) -- "
             "this adapter layer invents no initial condition for any origin."
         ),
         why_unresolved=(
@@ -359,7 +359,7 @@ def resolve_authoritative_initial_state(
     Raises `AuthoritativeInitialStateUnavailableError` (never returns a
     zero-filled/guessed dict) when `origin` is not present, naming the
     missing artifact in the message so a caller/operator knows exactly what
-    evidence is missing (see `N6_IA1_IA2_REMEDIATION_REPORT.md` Section 5 /
+    evidence is missing (see `forecasting/n6/reports/N6_IA1_IA2_REMEDIATION_REPORT.md` Section 5 /
     Blocker B for the current, still-open status of this gap: as of this
     pass, NO caller anywhere in this repository supplies a non-empty
     `authoritative_initial_states_by_origin` for any real origin -- this
@@ -371,7 +371,7 @@ def resolve_authoritative_initial_state(
         raise AuthoritativeInitialStateUnavailableError(
             f"Fail-closed: no authoritative initial StationState evidence exists for origin "
             f"'{origin}'. This repository contains no per-origin initial-state artifact (IA-3) -- "
-            "see N6_IA1_IA2_REMEDIATION_REPORT.md Section 5 / Blocker B. Supplying a zero-filled, "
+            "see forecasting/n6/reports/N6_IA1_IA2_REMEDIATION_REPORT.md Section 5 / Blocker B. Supplying a zero-filled, "
             "guessed, or default StationState here would violate the directive's fail-closed "
             "requirement; the caller must supply a real, cited initial StationState record for "
             f"origin '{origin}' (battery SOC, diesel fuel remaining, demand/irradiance/wind "

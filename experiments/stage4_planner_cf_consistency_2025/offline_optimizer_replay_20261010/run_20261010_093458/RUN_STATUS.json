@@ -1,0 +1,17 @@
+{
+  "run_id": "run_20261010_093458",
+  "status": "FAILED",
+  "durability_status": "GUARANTEED",
+  "durability_warnings": [],
+  "durability": {
+    "directory_sync_guaranteed": true,
+    "status": "GUARANTEED",
+    "warnings_count": 0,
+    "warnings": []
+  },
+  "timestamp_utc": "2026-10-10T10:59:43.571011+00:00",
+  "origins_total": 240,
+  "origins_completed": 240,
+  "failure_reason": "Final artifacts failed publication validation.",
+  "exception_type": "RuntimeError"
+}

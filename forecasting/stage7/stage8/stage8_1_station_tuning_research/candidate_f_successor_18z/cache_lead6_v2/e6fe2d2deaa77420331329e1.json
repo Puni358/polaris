@@ -1,0 +1,20 @@
+{
+  "cache_key": "e6fe2d2deaa77420331329e1",
+  "content_sha256": "bb7672fa56a7ad26859cc5bdd4f9fb7d9b91e1c0d9d8c2afb7be31002559257c",
+  "detail": "validated (v2 lead-6)",
+  "forecast_start": "2025-02-05T00:00:00+00:00",
+  "payload": {
+    "forecast_reference_time_utc": "2025-02-04T18:00:00+00:00",
+    "per_horizon": [
+      {
+        "horizon_hour": 1,
+        "iwp_mass_fraction": 5.5879354e-09,
+        "lead_hour": 6,
+        "lwp_mass_fraction": 1.013279e-06,
+        "valid_time_utc": "2025-02-05T00:00:00+00:00"
+      }
+    ],
+    "pressure_hpa": 700.0
+  },
+  "retrieval_status": "OK"
+}

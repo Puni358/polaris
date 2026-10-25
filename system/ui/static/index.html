@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLARIS — Local Industrial SCADA HMI</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- PERSISTENT TOP STATUS BAR -->
+  <header class="top-status-bar">
+    <div class="brand">
+      <span class="brand-title">POLARIS</span>
+      <span class="brand-subtitle">PREDICTIVE EMS HMI v1.0</span>
+    </div>
+    <div class="status-items">
+      <div class="status-item">
+        <span class="label">STATION:</span>
+        <span class="val highlight">Nuolja Research Station (Synthetic Digital Twin)</span>
+      </div>
+      <div class="status-item">
+        <span class="badge badge-offline">LOCAL RUNTIME (OFFLINE)</span>
+      </div>
+      <div class="status-item">
+        <span class="badge badge-synthetic">SYNTHETIC DEMONSTRATION</span>
+      </div>
+      <div class="status-item">
+        <span class="label">CONTROL:</span>
+        <span class="val active-green" id="hmi-control-status">CLOSED-LOOP MPC ACTIVE</span>
+      </div>
+      <div class="status-item">
+        <span class="label">TIMESTAMP:</span>
+        <span class="val mono" id="hmi-timestamp">2024-06-01T12:00:00Z</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <!-- PERSISTENT LEFT NAVIGATION PANEL -->
+    <nav class="left-nav">
+      <div class="nav-section-title">CONTROL ROOM SCREENS</div>
+      <button class="nav-btn active" data-screen="screen-overview">
+        <span class="nav-num">01</span> SYSTEM OVERVIEW
+      </button>
+      <button class="nav-btn" data-screen="screen-single-line">
+        <span class="nav-num">02</span> ENERGY FLOW (SINGLE-LINE)
+      </button>
+      <button class="nav-btn" data-screen="screen-forecast">
+        <span class="nav-num">03</span> 24H FORECAST HORIZON
+      </button>
+      <button class="nav-btn" data-screen="screen-optimization">
+        <span class="nav-num">04</span> OPTIMIZATION & MPC
+      </button>
+      <button class="nav-btn" data-screen="screen-digital-twin">
+        <span class="nav-num">05</span> DIGITAL TWIN SIMULATOR
+      </button>
+      <button class="nav-btn" data-screen="screen-scenarios">
+        <span class="nav-num">06</span> STRESS SCENARIOS
+      </button>
+      <button class="nav-btn" data-screen="screen-alarms">
+        <span class="nav-num">07</span> ALARMS & GOVERNANCE
+      </button>
+      <button class="nav-btn" data-screen="screen-analytics">
+        <span class="nav-num">08</span> ANALYTICS & REPORTS
+      </button>
+
+      <div class="nav-footer-box">
+        <div class="box-title">ENGINEERING FIREWALL</div>
+        <div class="box-text">Real Station Demand: <span class="text-blocked">DATA BLOCKED</span></div>
+        <div class="box-text">Nuolja Wind Specs: <span class="text-blocked">NOT ESTABLISHED</span></div>
+        <div class="box-text">Solver Engine: <span class="text-cyan">SciPy MILP / HiGHS</span></div>
+      </div>
+    </nav>
+
+    <!-- CONTENT DISPLAY SURFACE -->
+    <main class="content-surface">
+
+      <!-- SCREEN 1: SYSTEM OVERVIEW -->
+      <section id="screen-overview" class="screen-panel active">
+        <div class="screen-header">
+          <h2>01 — SYSTEM OVERVIEW & TELEMETRY RIBBON</h2>
+          <span class="provenance-tag">OFFLINE PILOT REPLAY — SYNTHETIC DIGITAL TWIN (NO LIVE N6 SAVINGS CLAIMED)</span>
+        </div>
+
+        <div class="telemetry-ribbon">
+          <div class="card">
+            <span class="card-label">SYNTHETIC STATION LOAD</span>
+            <span class="card-val amber" id="overview-load">51.0 kW</span>
+            <span class="card-sub">Synthetic Demand Input</span>
+          </div>
+          <div class="card">
+            <span class="card-label">SOLAR PV GENERATION</span>
+            <span class="card-val cyan" id="overview-solar">30.5 kW</span>
+            <span class="card-sub">SW_IN PV Formula</span>
+          </div>
+          <div class="card">
+            <span class="card-label">DIESEL GENERATOR POWER</span>
+            <span class="card-val amber" id="overview-diesel">25.0 kW</span>
+            <span class="card-sub">GenSet Output</span>
+          </div>
+          <div class="card">
+            <span class="card-label">BATTERY STORAGE SOC</span>
+            <span class="card-val green" id="overview-soc">44.8 %</span>
+            <span class="card-sub" id="overview-soc-sub">89.6 kWh / 200 kWh</span>
+          </div>
+          <div class="card">
+            <span class="card-label">RENEWABLE UTILIZATION</span>
+            <span class="card-val green" id="overview-ren-pct">84.82 %</span>
+            <span class="card-sub">823.35 kWh Captured</span>
+          </div>
+          <div class="card">
+            <span class="card-label">UNMET CRITICAL LOAD</span>
+            <span class="card-val green" id="overview-unmet">0.0 kWh</span>
+            <span class="card-sub">Scoped 24h S1 Trajectory</span>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Overview Flow Diagram Panel -->
+          <div class="scada-panel">
+            <div class="panel-header">MICROGRID ENERGY FLOW & POWER BUS</div>
+            <div class="energy-flow-visual">
+              <div class="sources-row">
+                <div class="node-box node-solar">
+                  <span class="node-icon">☀️</span>
+                  <span class="node-title">SOLAR PV ARRAY</span>
+                  <span class="node-val cyan" id="flow-node-solar">30.5 kW</span>
+                  <span class="node-prov">Stage 8.1 SW_IN Map</span>
+                </div>
+                <div class="node-box node-wind">
+                  <span class="node-icon">🌬️</span>
+                  <span class="node-title">WIND SPEED PROXY</span>
+                  <span class="node-val cyan" id="flow-node-wind">6.2 m/s</span>
+                  <span class="node-prov">Abisko 10m Regional Proxy (m/s)</span>
+                </div>
+              </div>
+
+              <div class="flow-arrow arrow-down">↓</div>
+              <div class="busbar-line">MICROGRID AC / ENERGY BUS</div>
+              <div class="flow-arrow arrow-down">↓</div>
+
+              <div class="bus-branch-row">
+                <div class="node-box node-diesel">
+                  <span class="node-icon">⚙️</span>
+                  <span class="node-title">DIESEL GENSET</span>
+                  <span class="node-val amber" id="flow-node-diesel">25.0 kW</span>
+                  <span class="node-prov">Synthetic Scenario Parameter</span>
+                </div>
+                <div class="node-box node-battery">
+                  <span class="node-icon">🔋</span>
+                  <span class="node-title">BATTERY BESS</span>
+                  <span class="node-val green" id="flow-node-battery">4.5 kW (CHG)</span>
+                  <span class="node-prov">Synthetic Scenario Parameter</span>
+                </div>
+                <div class="node-box node-load">
+                  <span class="node-icon">🏢</span>
+                  <span class="node-title">SYNTHETIC LOAD</span>
+                  <span class="node-val amber" id="flow-node-load">51.0 kW</span>
+                  <span class="node-prov">Synthetic Demand Scenario</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview Trends & KPIs Panel -->
+          <div class="scada-panel">
+            <div class="panel-header">24H POWER DISPATCH TREND & METRICS</div>
+            <div class="chart-container" id="overview-chart-container">
+              <svg id="overview-trend-svg" viewBox="0 0 500 160" preserveAspectRatio="none">
+                <!-- SVG Power Stack Chart rendered by JS -->
+              </svg>
+            </div>
+            <table class="data-table" style="margin-top: 10px;">
+              <tr>
+                <td>Executed MPC Steps:</td>
+                <td class="mono green">24 / 24 Steps</td>
+              </tr>
+              <tr>
+                <td>Total Diesel Fuel Consumed:</td>
+                <td class="mono amber" id="overview-diesel-fuel">—</td>
+              </tr>
+              <tr>
+                <td>Total Diesel Energy Output:</td>
+                <td class="mono amber" id="overview-diesel-energy">—</td>
+              </tr>
+              <tr>
+                <td>Total Renewable Energy Used:</td>
+                <td class="mono green" id="overview-ren-used">—</td>
+              </tr>
+              <tr>
+                <td>Total Renewable Curtailment:</td>
+                <td class="mono amber" id="overview-ren-curt">—</td>
+              </tr>
+              <tr>
+                <td>Battery Throughput:</td>
+                <td class="mono green" id="overview-bat-throughput">—</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: SCADA SINGLE-LINE DIAGRAM -->
+      <section id="screen-single-line" class="screen-panel">
+        <div class="screen-header">
+          <h2>02 — ELECTRICAL SINGLE-LINE SCADA DIAGRAM</h2>
+          <span class="provenance-tag">SCADA ENERGY BUS REPRESENTATION</span>
+        </div>
+
+        <div class="scada-panel">
+          <div class="panel-header">MICROGRID AC / ENERGY BUS (SINGLE-LINE SCADA TOPOLOGY)</div>
+          <div class="scada-diagram-container">
+            <!-- AC BUSBAR LINE -->
+            <div class="scada-busbar">
+              <span class="busbar-label">MICROGRID AC / ENERGY BUS</span>
+              <span class="busbar-sub">Electrical voltage/phase configuration: NOT EXPOSED BY RUNTIME</span>
+            </div>
+
+            <!-- FEEDERS -->
+            <div class="feeder-grid">
+              <div class="feeder-card">
+                <div class="feeder-title">PV INVERTER FEEDER</div>
+                <div class="feeder-status status-online">ONLINE</div>
+                <div class="feeder-val cyan" id="sl-pv-val">30.5 kW</div>
+                <div class="feeder-meta">Synthetic Scenario Parameter: Cap 60 kW</div>
+              </div>
+              <div class="feeder-card">
+                <div class="feeder-title">DIESEL GENSET FEEDER</div>
+                <div class="feeder-status status-active">ACTIVE</div>
+                <div class="feeder-val amber" id="sl-diesel-val">25.0 kW</div>
+                <div class="feeder-meta">Synthetic Scenario Parameter: Rating 100 kW</div>
+              </div>
+              <div class="feeder-card">
+                <div class="feeder-title">BESS INVERTER FEEDER</div>
+                <div class="feeder-status status-online" id="sl-bess-status">CHARGING</div>
+                <div class="feeder-val green" id="sl-bess-val">+4.5 kW</div>
+                <div class="feeder-meta">Synthetic Scenario Parameter: Cap 200 kWh</div>
+              </div>
+              <div class="feeder-card">
+                <div class="feeder-title">SYNTHETIC DEMAND FEEDER</div>
+                <div class="feeder-status status-load">SYNTHETIC DEMAND</div>
+                <div class="feeder-val amber" id="sl-load-val">51.0 kW</div>
+                <div class="feeder-meta">Synthetic Scenario Load Input</div>
+              </div>
+            </div>
+
+            <!-- BATTERY GAUGE -->
+            <div class="battery-gauge-panel">
+              <div class="gauge-title">BESS STATE OF CHARGE (SOC) GAUGE</div>
+              <div class="gauge-bar-outer">
+                <div class="gauge-bar-inner" id="sl-soc-bar" style="width: 44.8%;">44.8%</div>
+              </div>
+              <div class="gauge-limits">
+                <span>MIN SOC LIMIT: 20.0%</span>
+                <span>NOMINAL: 50.0%</span>
+                <span>MAX SOC LIMIT: 95.0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: 24H FORECAST HORIZON -->
+      <section id="screen-forecast" class="screen-panel">
+        <div class="screen-header">
+          <h2>03 — 24H FORECAST HORIZON (STAGE 8.1 SOLAR)</h2>
+          <span class="provenance-tag">STAGE 8.1 CHAMPION FORECAST ENGINE</span>
+        </div>
+
+        <div class="grid-2col">
+          <div class="scada-panel">
+            <div class="panel-header">STAGE 8.1 MODEL PROVENANCE & CONTEXT</div>
+            <table class="data-table">
+              <tr>
+                <td>Engine Identifier:</td>
+                <td class="mono cyan">Stage81ForecastEngine (s81_solar)</td>
+              </tr>
+              <tr>
+                <td>Model Architecture:</td>
+                <td class="mono">37-Feature HistGradientBoosting Regressor</td>
+              </tr>
+              <tr>
+                <td>Forecast Horizon:</td>
+                <td class="mono">H = 24 Hours (Point-Only Degenerate Bounds)</td>
+              </tr>
+              <tr>
+                <td>Interval Semantics:</td>
+                <td class="mono green">POINT-ONLY: lower = point = upper; NO STATISTICAL COVERAGE CLAIM</td>
+              </tr>
+              <tr>
+                <td>Execution-Run MAE:</td>
+                <td class="mono cyan" id="screen03-execution-mae">—</td>
+              </tr>
+              <tr>
+                <td>Frozen Stage 8.1 OOD Benchmark:</td>
+                <td class="mono green">36.188657 W/m² (Canonical 347-Window Test Set)</td>
+              </tr>
+              <tr>
+                <td>PV Conversion Mapping:</td>
+                <td class="mono">SW_IN × 300 m² × 0.20 × 0.85 (Cap: 60 kW)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="scada-panel">
+            <div class="panel-header">PROVENANCE FIREWALL DECLARATIONS</div>
+            <div class="firewall-box">
+              <p><strong>☀️ SOLAR IRRADIANCE:</strong> Stage 8.1 frozen 37-feature model on SITES Nuolja real solar data.</p>
+              <p><strong>🌬️ WIND SPEED:</strong> <span class="text-proxy">CONDITIONAL REGIONAL PROXY</span> (Abisko 10m wind speed). Site-specific Nuolja turbine specs NOT ESTABLISHED.</p>
+              <p><strong>⚡ DEMAND:</strong> <span class="text-blocked">SYNTHETIC DEMONSTRATION LOAD</span>. Real station demand data is DATA BLOCKED.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 24H TREND VISUALIZATION -->
+        <div class="scada-panel" style="margin-top: 15px;">
+          <div class="panel-header">24-HOUR FORECAST TREND CHART (H = 1 to 24)</div>
+          <div class="chart-container" id="forecast-chart-container">
+            <svg id="forecast-trend-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
+              <!-- SVG Forecast Chart rendered by JS -->
+            </svg>
+          </div>
+        </div>
+
+        <div class="scada-panel" style="margin-top: 15px;">
+          <div class="panel-header">24-HOUR FORECASTED TELEMETRY MATRIX</div>
+          <div class="sub-disclaimer" style="margin-bottom: 8px;">SYNTHETIC DEMONSTRATION / CONDITIONAL REGIONAL PROXY (ABISKO 10m) — NOT MEASURED NUOLJA GENERATION</div>
+          <div class="table-scroll-container">
+            <table class="data-table" id="forecast-table">
+              <thead>
+                <tr>
+                  <th>Horizon Step</th>
+                  <th>Timestamp</th>
+                  <th>Solar Irradiance (W/m²)</th>
+                  <th>Solar Gen Forecast (W)</th>
+                  <th>Synthetic Wind Power (W)</th>
+                  <th>Synthetic Demand (W)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: OPTIMIZATION & MPC -->
+      <section id="screen-optimization" class="screen-panel">
+        <div class="screen-header">
+          <h2>04 — SCIPY MILP OPTIMIZATION & DISPATCH PLAN</h2>
+          <span class="provenance-tag">RECEDING HORIZON MATHEMATICAL PROGRAMMING</span>
+        </div>
+
+        <div class="grid-2col">
+          <div class="scada-panel">
+            <div class="panel-header">OPTIMIZER ENGINE STATUS & METRICS</div>
+            <table class="data-table">
+              <tr>
+                <td>Solver Engine:</td>
+                <td class="mono cyan">SciPy MILP (scipy.optimize.milp / HiGHS Engine)</td>
+              </tr>
+              <tr>
+                <td>MPC Cycle Index:</td>
+                <td class="mono green" id="opt-mpc-cycle">k = 1 / H = 24 (Receding Horizon)</td>
+              </tr>
+              <tr>
+                <td>Constraint Status:</td>
+                <td class="mono green" id="opt-status">OPTIMAL</td>
+              </tr>
+              <tr>
+                <td>Objective Value:</td>
+                <td class="mono cyan" id="opt-objective">DispatchPlan.objective_value</td>
+              </tr>
+              <tr>
+                <td>Optimizer Solve Time:</td>
+                <td class="mono" id="opt-solve-time">DispatchPlan.solve_time_ms</td>
+              </tr>
+              <tr>
+                <td>H1 Dispatch Decision:</td>
+                <td class="mono active-green">H1 Action Extracted & Executed to Twin</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="scada-panel">
+            <div class="panel-header">CLOSED-LOOP MPC CONTROL FLOW (HERO VIEW)</div>
+            <div class="mpc-loop-visual">
+              <div class="mpc-step">1. ForecastBundle (H=24)</div>
+              <div class="mpc-arrow">↓</div>
+              <div class="mpc-step">2. SciPy MILP Solve (HiGHS)</div>
+              <div class="mpc-arrow">↓</div>
+              <div class="mpc-step">3. DispatchPlan v1.0.0</div>
+              <div class="mpc-arrow">↓</div>
+              <div class="mpc-step active">4. H1 Action Execution</div>
+              <div class="mpc-arrow">↓</div>
+              <div class="mpc-step">5. Digital Twin State Update</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scada-panel" style="margin-top: 15px;">
+          <div class="panel-header">DISPATCHPLAN v1.0.0 (24-STEP DISPATCH MATRIX & PLANNED SOC TRAJECTORY)</div>
+          <div class="table-scroll-container">
+            <table class="data-table" id="dispatch-table">
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Timestamp</th>
+                  <th>Solar Used (W)</th>
+                  <th>Solar Curtailed (W)</th>
+                  <th>Batt Charge (W)</th>
+                  <th>Batt Discharge (W)</th>
+                  <th>Diesel Power (W)</th>
+                  <th>Planned Batt SOC (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 5: DIGITAL TWIN SIMULATION -->
+      <section id="screen-digital-twin" class="screen-panel">
+        <div class="screen-header">
+          <h2>05 — DIGITAL TWIN SIMULATOR & TRAJECTORY PROGRESSION</h2>
+          <span class="provenance-tag">CLOSED-LOOP STATE ADVANCEMENT</span>
+        </div>
+
+        <div class="grid-2col">
+          <div class="scada-panel">
+            <div class="panel-header">SIMULATOR STATE MONITOR</div>
+            <table class="data-table">
+              <tr>
+                <td>Simulator Mode:</td>
+                <td class="mono green">Closed-Loop MPC Digital Twin</td>
+              </tr>
+              <tr>
+                <td>Initial Battery SOC (t0):</td>
+                <td class="mono">50.0 % (100.0 kWh)</td>
+              </tr>
+              <tr>
+                <td>Current Battery SOC (t_k):</td>
+                <td class="mono green" id="dt-current-soc">44.8 % (89.6 kWh)</td>
+              </tr>
+              <tr>
+                <td>Diesel Generator Runtime:</td>
+                <td class="mono amber" id="dt-diesel-hours">8.0 Hours</td>
+              </tr>
+              <tr>
+                <td>Ground Truth Alignment:</td>
+                <td class="mono green">Strict Temporal Causality (No Future Truth Leakage)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="scada-panel">
+            <div class="panel-header">BATTERY SOC TRAJECTORY GRAPH (24 STEPS)</div>
+            <div class="chart-container" id="soc-chart-container">
+              <svg id="digital-twin-soc-svg" viewBox="0 0 500 140" preserveAspectRatio="none">
+                <!-- SVG SOC Chart rendered by JS -->
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 6: STRESS SCENARIOS -->
+      <section id="screen-scenarios" class="screen-panel">
+        <div class="screen-header">
+          <h2>06 — SYNTHETIC STRESS SCENARIO CONTROL</h2>
+          <span class="provenance-tag">AUTHORIZED SYNTHETIC SCENARIOS ONLY</span>
+        </div>
+
+        <div class="scenario-grid">
+          <div class="scenario-card active" data-scenario="demo_scenario.json">
+            <div class="scen-title">S1 — NORMAL OPERATION</div>
+            <div class="scen-desc">Nominal synthetic solar irradiance, wind speed, and station electrical load.</div>
+            <div class="scen-status status-pass">PASS (EXECUTED)</div>
+          </div>
+          <div class="scenario-card" data-scenario="renewable_stress_scenario.json">
+            <div class="scen-title">S2 — LOW SOLAR</div>
+            <div class="scen-desc">Low solar availability (0.10x irradiance scaling) to test generator backup.</div>
+            <div class="scen-status status-pass">PASS (EXECUTED)</div>
+          </div>
+          <div class="scenario-card" data-scenario="demand_stress_scenario.json">
+            <div class="scen-title">S4 — HIGH DEMAND PEAK</div>
+            <div class="scen-desc">Electrical demand scaled up by 1.80x to stress diesel and battery reserves.</div>
+            <div class="scen-status status-pass">PASS (EXECUTED)</div>
+          </div>
+          <div class="scenario-card" data-scenario="renewable_stress_scenario.json">
+            <div class="scen-title">S5 — HIGH RENEWABLE / CURTAILMENT</div>
+            <div class="scen-desc">Excess renewable generation (2.00x scaling) to test curtailment & storage.</div>
+            <div class="scen-status status-pass">PASS (EXECUTED)</div>
+          </div>
+          <div class="scenario-card" data-scenario="battery_stress_scenario.json">
+            <div class="scen-title">S6 — BATTERY CONSTRAINED</div>
+            <div class="scen-desc">Initial battery SOC starting at 15% low boundary limit.</div>
+            <div class="scen-status status-pass">PASS (EXECUTED)</div>
+          </div>
+          <div class="scenario-card" data-scenario="governed_infeasibility">
+            <div class="scen-title">S7 — GOVERNED INFEASIBILITY</div>
+            <div class="scen-desc">Zero resource capacity under high load triggering D4-C1 zero-dispatch containment.</div>
+            <div class="scen-status status-pass">PASS (PREVIOUSLY VERIFIED)</div>
+          </div>
+        </div>
+
+        <div class="scada-panel" style="margin-top: 20px;">
+          <div class="panel-header">EXECUTE LOCAL SCENARIO PIPELINE</div>
+          <p style="color: #94A3B8; font-size: 0.82rem; margin-bottom: 8px;">Authorized/represented synthetic scenarios: S1, S2, S4, S5, and S6; S7 represents previously verified D4-C1 fault containment. S3 and S8 were not executed in this UI demonstration.</p>
+          <button id="btn-run-scenario" class="action-btn">RUN SELECTED SCENARIO PIPELINE</button>
+        </div>
+      </section>
+
+      <!-- SCREEN 7: ALARMS & GOVERNANCE -->
+      <section id="screen-alarms" class="screen-panel">
+        <div class="screen-header">
+          <h2>07 — ALARMS & D4-C1 FAULT GOVERNANCE</h2>
+          <span class="provenance-tag">GOVERNED DEGRADED FAULT CONTAINMENT</span>
+        </div>
+
+        <div class="grid-2col">
+          <div class="scada-panel">
+            <div class="panel-header">D4-C1 FAULT GOVERNANCE RULES</div>
+            <table class="data-table">
+              <tr>
+                <td>MILP Infeasibility State:</td>
+                <td class="mono amber">GOVERNED_DEGRADED (Zero Dispatch)</td>
+              </tr>
+              <tr>
+                <td>Infeasibility Cost Penalty:</td>
+                <td class="mono crimson">objective_value = 1e9</td>
+              </tr>
+              <tr>
+                <td>Ungoverned Fallbacks:</td>
+                <td class="mono green">DISABLED (Zero Rule Fallback)</td>
+              </tr>
+              <tr>
+                <td>Automatic Relaxations:</td>
+                <td class="mono green">DISABLED (Zero Automatic Relaxation)</td>
+              </tr>
+              <tr>
+                <td>S7 Fault Test Status:</td>
+                <td class="mono green">S7 — PASS (Previously Verified D4-C1 Fault Testing)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="scada-panel">
+            <div class="panel-header">SYSTEM ALARM & EVENT LOG</div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Severity</th>
+                  <th>Subsystem</th>
+                  <th>Event Message</th>
+                </tr>
+              </thead>
+              <tbody id="alarm-log-body">
+                <tr>
+                  <td class="mono">2024-06-01T00:00:00Z</td>
+                  <td><span class="badge badge-info">INFO</span></td>
+                  <td>PolarisLocalRunner</td>
+                  <td>Pipeline initialized successfully in local presentation mode.</td>
+                </tr>
+                <tr>
+                  <td class="mono">2024-06-01T12:00:00Z</td>
+                  <td><span class="badge badge-normal">NOMINAL</span></td>
+                  <td>EnergyOptimizer</td>
+                  <td>SciPy MILP solver returned OPTIMAL (0 constraint violations).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 8: ANALYTICS & REPORTS -->
+      <section id="screen-analytics" class="screen-panel">
+        <div class="screen-header">
+          <h2>08 — EMS PERFORMANCE ANALYTICS & REPORTS</h2>
+          <span class="provenance-tag">POST-HOC METRICS & EVIDENCE DISCLOSURES</span>
+        </div>
+
+        <div class="grid-2col">
+          <div class="scada-panel">
+            <div class="panel-header">EMS PERFORMANCE SUMMARY (OFFLINE ARTIFACT REPLAY)</div>
+            <table class="data-table">
+              <tr>
+                <td>Physical Diesel Fuel Burned:</td>
+                <td class="mono amber" id="rep-diesel-fuel">—</td>
+              </tr>
+              <tr>
+                <td>Economic Fuel Equivalent (Starts Surcharge):</td>
+                <td class="mono amber" id="rep-economic-fuel">—</td>
+              </tr>
+              <tr>
+                <td>Total Diesel Energy Output:</td>
+                <td class="mono amber" id="rep-diesel-energy">—</td>
+              </tr>
+              <tr>
+                <td>Total Renewable Energy Used:</td>
+                <td class="mono green" id="rep-ren-used">—</td>
+              </tr>
+              <tr>
+                <td>Total Renewable Curtailment:</td>
+                <td class="mono amber" id="rep-ren-curt">—</td>
+              </tr>
+              <tr>
+                <td>Renewable Utilization Rate:</td>
+                <td class="mono green" id="rep-ren-util">—</td>
+              </tr>
+              <tr>
+                <td>Battery Throughput:</td>
+                <td class="mono green" id="rep-bat-throughput">—</td>
+              </tr>
+              <tr>
+                <td>Critical Unmet Demand (E_unmet,crit):</td>
+                <td class="mono green" id="rep-unmet-critical">—</td>
+              </tr>
+              <tr>
+                <td>Total System Reliability:</td>
+                <td class="mono green" id="rep-total-reliability">—</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="scada-panel">
+            <div class="panel-header">FORECASTING METRICS & GOVERNANCE CONTEXT</div>
+            <table class="data-table">
+              <tr>
+                <td>Active Forecast Engine Identity:</td>
+                <td class="mono cyan" id="rep-engine-identity">LocalBaselineForecastEngine (Artifact Fallback)</td>
+              </tr>
+              <tr>
+                <td>Execution-Run Irradiance MAE:</td>
+                <td class="mono cyan" id="rep-execution-mae">—</td>
+              </tr>
+              <tr>
+                <td>Frozen Stage 8.1 OOD Benchmark Reference MAE:</td>
+                <td class="mono green" id="rep-frozen-mae">36.188657 W/m² (Canonical Frozen 347-Window Reference Set)</td>
+              </tr>
+              <tr>
+                <td>Operational Winner Status:</td>
+                <td class="mono amber" id="rep-winner-status">null (Zero Models Promoted)</td>
+              </tr>
+              <tr>
+                <td>Data Provenance Classification:</td>
+                <td class="mono" id="rep-provenance">OFFLINE_PILOT_ARTIFACT_REPLAY</td>
+              </tr>
+              <tr>
+                <td>Evaluation Context Note:</td>
+                <td class="mono">OFFLINE PILOT REPLAY ONLY — Separates physical fuel from economic startup surcharges and critical unmet load from total reliability. Zero live N6 operational claims.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

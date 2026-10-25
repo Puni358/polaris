@@ -1,0 +1,23 @@
+{
+  "test_id": "TOY_MILP_02",
+  "solver_name": "highspy",
+  "highspy_version": "1.15.1",
+  "lexicographic_run": {
+    "blend_multi_objectives": false,
+    "status": "HighsStatus.kOk",
+    "model_status": "HighsModelStatus.kOptimal",
+    "solution_vector": [10.0, 0.0],
+    "objective_values": {
+      "J1_reported": -10.0,
+      "J2_reported": 0.0
+    }
+  },
+  "blended_run": {
+    "blend_multi_objectives": true,
+    "status": "HighsStatus.kOk",
+    "model_status": "HighsModelStatus.kOptimal",
+    "solution_vector": [1.0, 3.0],
+    "blended_score": -31.0
+  },
+  "discrimination_passed": true
+}

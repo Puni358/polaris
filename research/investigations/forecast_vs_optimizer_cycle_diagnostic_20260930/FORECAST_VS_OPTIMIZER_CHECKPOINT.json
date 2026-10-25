@@ -1,0 +1,29 @@
+{
+  "checkpoint_metadata": {
+    "campaign_id": "forecast_vs_optimizer_cycle_diagnostic_20260930",
+    "timestamp": "2026-09-30T23:53:00Z",
+    "status": "COMPLETED",
+    "classification": "OPTIMIZER_LIMITATION_DOMINANT"
+  },
+  "diagnostic_results_summary": {
+    "c0_polaris_fuel_L": 93465.63,
+    "exp_b_controlled_50efc_fuel_L": 77150.00,
+    "exp_c_reactive_hybrid_fuel_L": 77022.60,
+    "exp_d_perfect_forecast_fuel_L": 77022.60,
+    "diesel_gap_recovered_L": 16315.63,
+    "diesel_gap_recovered_pct": 99.22,
+    "residual_forecast_gap_L": 127.40
+  },
+  "governance_assertions": {
+    "research_only": true,
+    "production_code_changed": false,
+    "production_parameters_changed": false,
+    "production_objective_changed": false,
+    "production_forecast_changed": false,
+    "production_governance_changed": false,
+    "production_promotion_authorized": false,
+    "target_battery_identity": "NOT_ESTABLISHED",
+    "target_specific_degradation_model": "NOT_IDENTIFIABLE",
+    "economic_degradation_cost": "NOT_IDENTIFIABLE"
+  }
+}

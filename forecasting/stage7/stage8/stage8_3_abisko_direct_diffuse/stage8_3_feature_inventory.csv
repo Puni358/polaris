@@ -1,0 +1,49 @@
+feature_name,feature_category,provenance
+horizon_hour,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+month,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+hour,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+solar_elevation,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+solar_zenith,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+clearsky_ghi,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+fc_cloud_cover,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+fc_temperature_2m,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+fc_relative_humidity_2m,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+cloud_frac,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+pred_stage3b_cloud_nwp,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+phys_pred_fold,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+pred_stage4_fold,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+disagreement_fold,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_std_3h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_std_6h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_std_12h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_std_24h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_abs_change_1h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_abs_change_3h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_abs_change_6h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_max_diff_6h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_mean_diff_6h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_slope_6h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_kt_std_6h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_last_obs,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_mean_24h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+ctx_max_24h,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+lwp_latest,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+iwp_latest,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+lwp_x_cloud,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+terrain_horizon_elevation_deg,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+terrain_elevation_margin_deg,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+terrain_solar_obstruction_flag,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+clearsky_ghi_terrain_adjusted,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+u700,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+v700,Stage 8.1 Base/Control,Predeclared E1 Feature Set
+abisko_sw_dir_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_sw_diff_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_sw_total_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_direct_fraction_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_diffuse_fraction_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_dir_diff_ratio_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_transmissivity_last,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_trans_mean_1h,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_trans_mean_3h,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_trans_mean_6h,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set
+abisko_trans_std_6h,Stage 8.3 Abisko Candidate,Predeclared E1 Feature Set

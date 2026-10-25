@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-09-13T09:12:49+00:00",
+  "stage": "POLARIS STAGE 8.17A GOVERNANCE AUDIT",
+  "governance_verdict": "STAGE 8.17A GOVERNANCE: NOT PROVEN",
+  "verdict_reason": "No standalone, timestamped STAGE8_17A_AROME_CANDIDATE_FREEZE.md / .json artifact was written to the filesystem prior to ODD target access during pipeline execution.",
+  "official_operational_champion": "Stage 8.16B-2 Stage 8.1 + Phi_inconsist Model",
+  "official_champion_daytime_nmae_pct": 27.7111,
+  "stage8_17a_status": "ODD RESULT — GOVERNANCE REVIEW REQUIRED",
+  "stage8_17a_unvalidated_odd_nmae_pct": 27.3337,
+  "stage8_17a_unvalidated_odd_mae_w_m2": 35.241085,
+  "audit_findings": {
+    "even_cv_development": "PASSED (EVEN MAE 44.296582 W/m2 vs Control 44.718895 W/m2)",
+    "predefined_gates": "PASSED (All 5 gates passed programmatically in script)",
+    "candidate_freeze_artifact": "MISSING (No separate candidate freeze artifact on disk)",
+    "odd_firewall": "PASSED (0 ODD tuning, 0 ODD feature selection)",
+    "causality_verification": "PASSED (173/173 origins pass T_pub <= t0)",
+    "protocol_equivalence": "PASSED (Identical globally frozen Stage 4 parameters, 173 ODD origins, daytime mask)"
+  },
+  "governance_mandated_actions": [
+    "DO NOT claim Stage 8.17A as official operational champion",
+    "Mark Stage 8.17A ODD result as 'ODD RESULT — GOVERNANCE REVIEW REQUIRED'",
+    "PRESERVE all existing Stage 8.17A artifacts intact",
+    "KEEP Stage 8.16B-2 (27.7111% nMAE) as official operational champion until governance chain is repaired",
+    "POLARIS_MASTER_HANDOFF.md and route registry left UNTOUCHED"
+  ]
+}

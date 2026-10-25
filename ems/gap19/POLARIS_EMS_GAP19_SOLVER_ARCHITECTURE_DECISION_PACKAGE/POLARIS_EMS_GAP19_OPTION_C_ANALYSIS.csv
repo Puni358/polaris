@@ -1,0 +1,10 @@
+TOPIC,FACTUAL_FINDING,CLASSIFICATION,EVIDENCE_SOURCE
+Status Classification,Option C is classified as ENGINEERING_RISK_ONLY. It is NOT governance-rejected.,DOCUMENTED_FACT,GAP19 Correction Review Finding 4
+Required Coefficient Derivation,Penalty weights must be derived from the bounded numerical ranges of individual objective terms and solver tolerances,ENGINEERING_INFERENCE,Penalty Optimization Theory
+Numerical Scale Separation Risk,Large scale separation can create numerical-conditioning and priority-leakage risks,STATIC_TECHNICAL_FINDING,Numerical Sensitivity Analysis
+Illustrative Values Warning,"Example coefficients (10^12, 10^8, 10^4, 1) are ILLUSTRATIVE_ONLY and are UNAUTHORIZED production values",DOCUMENTED_FACT,GAP19 Decision Package Governance Mandate
+Solver Conditioning Concerns,"Large penalty weight ratios degrade MILP constraint matrix condition number, creating numerical instability risks",STATIC_TECHNICAL_FINDING,HiGHS Solver Technical Reference
+Tolerance Interactions,Large penalty weights cause small constraint violations to produce large penalty spikes relative to feasibility tolerances,STATIC_TECHNICAL_FINDING,Numerical Precision Register
+Integer/Continuous Scaling,"Disparate physical units (kWh, liters, SOC fractions) require objective normalization before weighting",ENGINEERING_INFERENCE,Dimensional Consistency Review
+Risk of Priority Leakage,Lower-priority stage accumulation can pollute higher-priority stage boundaries if scale separation is insufficient,STATIC_TECHNICAL_FINDING,Lexicographic Penalty Theory
+Reproducibility Implications,Deterministic replay within authorized numerical and structural replay tolerances,GOVERNANCE_REQUIREMENT,Reproducibility Register

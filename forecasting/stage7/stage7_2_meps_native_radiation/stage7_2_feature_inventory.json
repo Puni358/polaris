@@ -1,0 +1,88 @@
+{
+  "stage7_2_feature_sets": {
+    "E0": {
+      "name": "Frozen Stage 6.6 Control",
+      "feature_count": 31,
+      "features": [
+        "horizon_hour",
+        "month",
+        "hour",
+        "solar_elevation",
+        "solar_zenith",
+        "clearsky_ghi",
+        "fc_cloud_cover",
+        "fc_temperature_2m",
+        "fc_relative_humidity_2m",
+        "cloud_frac",
+        "pred_stage3b_cloud_nwp",
+        "phys_pred_fold",
+        "pred_stage4_fold",
+        "disagreement_fold",
+        "ctx_std_3h",
+        "ctx_std_6h",
+        "ctx_std_12h",
+        "ctx_std_24h",
+        "ctx_abs_change_1h",
+        "ctx_abs_change_3h",
+        "ctx_abs_change_6h",
+        "ctx_max_diff_6h",
+        "ctx_mean_diff_6h",
+        "ctx_slope_6h",
+        "ctx_kt_std_6h",
+        "ctx_last_obs",
+        "ctx_mean_24h",
+        "ctx_max_24h",
+        "lwp_latest",
+        "iwp_latest",
+        "lwp_x_cloud"
+      ]
+    },
+    "E1": {
+      "name": "Native MEPS Instantaneous GHI Candidate",
+      "feature_count": 32,
+      "new_features": [
+        "meps_sw_instant"
+      ],
+      "feature_description": {
+        "meps_sw_instant": "Instantaneous surface downwelling shortwave radiation flux (W/m2) from MEPS deterministic forecast at valid time H"
+      }
+    },
+    "E2": {
+      "name": "Hourly MEPS Accumulated-SW Derivative Candidate",
+      "feature_count": 32,
+      "new_features": [
+        "meps_sw_hourly_derived"
+      ],
+      "feature_description": {
+        "meps_sw_hourly_derived": "Hourly mean surface shortwave flux (W/m2) derived from MEPS accumulated shortwave field via [acc(H_k) - acc(H_{k-1})] / 3600"
+      }
+    },
+    "E3": {
+      "name": "MEPS Radiation-Scheme Feature Set Candidate",
+      "feature_count": 35,
+      "new_features": [
+        "meps_sw_instant",
+        "meps_sw_hourly_derived",
+        "meps_net_sw_hourly_derived",
+        "meps_clearsky_net_sw_hourly_derived"
+      ],
+      "feature_description": {
+        "meps_sw_instant": "Instantaneous surface GHI downwelling flux (W/m2)",
+        "meps_sw_hourly_derived": "Hourly derived surface GHI downwelling flux (W/m2)",
+        "meps_net_sw_hourly_derived": "Hourly derived surface Net shortwave flux (W/m2)",
+        "meps_clearsky_net_sw_hourly_derived": "Hourly derived clear-sky Net shortwave flux (W/m2)"
+      }
+    },
+    "E4": {
+      "name": "Direct Normal Irradiance (DNI) Candidate",
+      "feature_count": 33,
+      "new_features": [
+        "meps_sw_hourly_derived",
+        "meps_dni_hourly_derived"
+      ],
+      "feature_description": {
+        "meps_dni_hourly_derived": "Hourly derived Direct Normal Irradiance (W/m2) with nocturnal sentinel code (9.96921e+36) masked to 0.0"
+      }
+    }
+  }
+}

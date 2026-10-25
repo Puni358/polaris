@@ -1,0 +1,38 @@
+{
+  "timestamp_utc": "2026-09-13T10:02:55.977525+00:00",
+  "feature_set_name": "Stage8.21A 3D Solar Slant-Path Compact Feature Set",
+  "vertical_coordinate_reconstruction": "F4 Hypsometric upward height integration dz = (R_d * T_v / g_0) * ln(p1/p2) from P_sfc",
+  "microphysics_assumptions": {
+    "r_e_liquid": "10.0 \u00b5m (PARAMETERIZED ASSUMPTION)",
+    "r_e_ice": "30.0 \u00b5m (PARAMETERIZED ASSUMPTION)",
+    "rho_water": "1000.0 kg/m\u00b3",
+    "rho_ice": "917.0 kg/m\u00b3"
+  },
+  "candidate_features": [
+    {
+      "feature_name": "slant_path_optical_depth_proxy",
+      "units": "dimensionless",
+      "formula": "tau_slant = integral( beta_ext_liq + beta_ext_ice ) ds",
+      "physical_meaning": "Integrated 3D solar line-of-sight cloud extinction optical thickness"
+    },
+    {
+      "feature_name": "slant_path_direct_transmittance",
+      "units": "dimensionless (0.0 to 1.0)",
+      "formula": "T_dir = exp( -tau_slant )",
+      "physical_meaning": "Direct-beam solar transmittance proxy along 3D ray path"
+    },
+    {
+      "feature_name": "slant_path_liquid_water_path",
+      "units": "kg/m\u00b2",
+      "formula": "SLWP = integral( rho_air * q_l ) ds",
+      "physical_meaning": "Integrated 3D slant-path cloud liquid water content"
+    },
+    {
+      "feature_name": "slant_path_ice_water_path",
+      "units": "kg/m\u00b2",
+      "formula": "SIWP = integral( rho_air * q_i ) ds",
+      "physical_meaning": "Integrated 3D slant-path cloud ice water content"
+    }
+  ],
+  "physics_qualification": "PARAMETERIZED DIRECT-BEAM EXTINCTION PROXY \u2014 NOT FULL SW_IN RADIATIVE TRANSFER"
+}

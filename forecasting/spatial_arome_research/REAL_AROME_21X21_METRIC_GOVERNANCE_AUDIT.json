@@ -1,0 +1,140 @@
+{
+  "timestamp_utc": "2026-09-14T10:34:59.761427+00:00",
+  "document_title": "POLARIS 21\u00d721 REAL-AROME METRIC & GOVERNANCE AUDIT REPORT",
+  "audit_statements": [
+    "No candidate retraining was performed during this audit.",
+    "No ODD data were accessed.",
+    "No rerun of AROME extraction was performed.",
+    "Evaluated strictly using pre-existing prediction artifact CSVs."
+  ],
+  "metric_discrepancy_explanation": {
+    "problem": "Previous report evaluated candidate using 24-hour total MAE-based nMAE (19.8865% control, 24.2978% candidate), which included 1,936 night forced-zero hours and was not directly comparable to the official POLARIS daytime benchmark.",
+    "official_benchmark_definition": "Primary POLARIS nMAE = daytime MAE / fixed daytime mean actual SW_IN (128.9284 W/m\u00b2) * 100",
+    "previous_nmae_label": "NON-OFFICIAL / 24-HOUR-DERIVED nMAE \u2014 DO NOT COMPARE WITH POLARIS CHAMPION"
+  },
+  "fixed_daytime_normalizer_W_m2": 128.9284,
+  "polaris_champion_reference": {
+    "MAE_daytime_W_m2": 36.188657,
+    "nMAE_daytime_pct": 28.0688,
+    "RMSE_daytime_W_m2": 64.219495,
+    "bias_daytime_W_m2": 1.439399,
+    "normalizer_W_m2": 128.9284
+  },
+  "recomputed_control_metrics": {
+    "daytime_MAE_W_m2": 47.451469,
+    "daytime_nMAE_pct": 36.8045,
+    "daytime_RMSE_W_m2": 74.376601,
+    "daytime_bias_W_m2": -8.863007,
+    "total_24h_MAE_W_m2": 25.639318,
+    "total_24h_RMSE_W_m2": 54.369219,
+    "total_24h_bias_W_m2": -5.043934,
+    "night_MAE_W_m2": 0.672516,
+    "non_official_24h_nmae_pct": 19.8865
+  },
+  "recomputed_candidate_metrics": {
+    "daytime_MAE_W_m2": 58.107798,
+    "daytime_nMAE_pct": 45.0698,
+    "daytime_RMSE_W_m2": 85.254312,
+    "daytime_bias_W_m2": -5.155466,
+    "total_24h_MAE_W_m2": 31.3268,
+    "total_24h_RMSE_W_m2": 62.311886,
+    "total_24h_bias_W_m2": -3.06515,
+    "night_MAE_W_m2": 0.672516,
+    "non_official_24h_nmae_pct": 24.2978
+  },
+  "candidate_vs_control_deltas": {
+    "delta_daytime_MAE_W_m2": 10.656329,
+    "delta_daytime_nMAE_pp": 8.2653,
+    "delta_daytime_RMSE_W_m2": 10.87771,
+    "delta_daytime_bias_W_m2": 3.707541,
+    "delta_total_24h_MAE_W_m2": 5.687482,
+    "delta_total_24h_RMSE_W_m2": 7.942667,
+    "delta_total_24h_bias_W_m2": 1.978784
+  },
+  "per_fold_daytime_metrics": [
+    {
+      "fold": 1,
+      "ctrl_daytime_mae_wm2": 51.357263,
+      "cand_daytime_mae_wm2": 73.179676,
+      "delta_daytime_mae_wm2": 21.822413,
+      "improved": false,
+      "daytime_row_count": 443
+    },
+    {
+      "fold": 2,
+      "ctrl_daytime_mae_wm2": 40.240493,
+      "cand_daytime_mae_wm2": 52.609044,
+      "delta_daytime_mae_wm2": 12.368551,
+      "improved": false,
+      "daytime_row_count": 444
+    },
+    {
+      "fold": 3,
+      "ctrl_daytime_mae_wm2": 48.35121,
+      "cand_daytime_mae_wm2": 58.1203,
+      "delta_daytime_mae_wm2": 9.76909,
+      "improved": false,
+      "daytime_row_count": 446
+    },
+    {
+      "fold": 4,
+      "ctrl_daytime_mae_wm2": 52.923952,
+      "cand_daytime_mae_wm2": 54.025159,
+      "delta_daytime_mae_wm2": 1.101207,
+      "improved": false,
+      "daytime_row_count": 442
+    },
+    {
+      "fold": 5,
+      "ctrl_daytime_mae_wm2": 44.393157,
+      "cand_daytime_mae_wm2": 52.582981,
+      "delta_daytime_mae_wm2": 8.189824,
+      "improved": false,
+      "daytime_row_count": 441
+    }
+  ],
+  "promotion_gates_assessment": {
+    "G1_delta_daytime_mae_threshold": {
+      "value_wm2": 10.656329,
+      "target_wm2": -0.5,
+      "pass": false
+    },
+    "G2_folds_improved": {
+      "value": 0,
+      "target": 4,
+      "pass": false
+    },
+    "G3_max_fold_degradation": {
+      "value_wm2": 21.822413,
+      "target_wm2": 0.5,
+      "pass": false
+    },
+    "G4_nmae_and_rmse_non_degradation": {
+      "cand_daytime_nmae_pct": 45.0698,
+      "ctrl_daytime_nmae_pct": 36.8045,
+      "cand_daytime_rmse_wm2": 85.254312,
+      "ctrl_daytime_rmse_wm2": 74.376601,
+      "pass": false
+    },
+    "G5_parser_and_causal_compliance": {
+      "pass": true
+    },
+    "G6_control_reproduction": {
+      "pass": true
+    },
+    "ALL_EVEN_GATES_PASS": false
+  },
+  "odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "prediction_artifact_hashes": {
+    "control_predictions_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "candidate_predictions_csv_sha256": "72b54fa89c7daf2d2d23b68cf7aa7c0ffa15b6882e6d451cea24cf1dc627b94b",
+    "audit_json_sha256": "bd395662db9dc4ac74a46d83b99ed05c8d80aa1d1f26140cbeb8ede7c06104d5"
+  },
+  "final_verdict": "21\u00d721 REAL-AROME \u2014 VALID EVEN RESULT \u2014 REJECTED"
+}

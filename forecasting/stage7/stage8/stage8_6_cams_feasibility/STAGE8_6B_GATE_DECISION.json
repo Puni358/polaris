@@ -1,0 +1,5 @@
+{
+  "final_decision": "REJECTED",
+  "all_gates_pass": false,
+  "decision_rationale": "Evaluated all 6 predeclared gates on 174 EVEN origins."
+}

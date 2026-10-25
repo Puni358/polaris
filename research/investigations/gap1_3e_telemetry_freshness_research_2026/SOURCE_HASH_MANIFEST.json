@@ -1,0 +1,37 @@
+{
+  "system/optimization/implementations/gap19_highs_native.py": {
+    "expected": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "actual": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "match": true
+  },
+  "system/optimization/implementations/option_d.py": {
+    "expected": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+    "actual": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+    "match": true
+  },
+  "system/control/ecd.py": {
+    "expected": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+    "actual": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+    "match": true
+  },
+  "system/control/router.py": {
+    "expected": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+    "actual": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+    "match": true
+  },
+  "system/simulation/simulator.py": {
+    "expected": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "actual": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "match": true
+  },
+  "system/runtime/runner.py": {
+    "expected": "723635dad0b8e06ac579088252e2eab7959e1f2ef2cdf6eba59e5fa0dfacdf32",
+    "actual": "723635dad0b8e06ac579088252e2eab7959e1f2ef2cdf6eba59e5fa0dfacdf32",
+    "match": true
+  },
+  "system/optimization/implementations/reactive_hybrid_a2.py": {
+    "expected": "7afa7dbd2ffbc3347f0208df8af459476ead4c6b316e5bf5c76cd943b7dc1f54",
+    "actual": "7afa7dbd2ffbc3347f0208df8af459476ead4c6b316e5bf5c76cd943b7dc1f54",
+    "match": true
+  }
+}

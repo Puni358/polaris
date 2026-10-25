@@ -1,0 +1,115 @@
+{
+  "audit_type": "DETERMINISTIC_REPRODUCIBILITY_AUDIT",
+  "audit_timestamp": "2026-09-30T20:46:33Z",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "scenarios_audited": 4,
+  "scenarios_reproduced": 4,
+  "reproducibility_status": "100% DETERMINISTIC REPRODUCIBILITY",
+  "reproduction_details": [
+    {
+      "scenario_id": "S0",
+      "scenario_name": "Baseline / Normal",
+      "scenario_file": "system/data/scenarios/synthetic_s0_baseline.json",
+      "original_execution_status": "PASSED",
+      "reproduced_execution_status": "PASSED",
+      "determinism_check": "EXACT_BIT_MATCH",
+      "original_metrics": {
+        "total_demand_kwh": 1680.0,
+        "renewable_generation_kwh": 1440.0,
+        "battery_discharge_kwh": 240.0,
+        "diesel_generation_kwh": 0.0,
+        "diesel_runtime_hours": 0.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.50
+      },
+      "reproduced_metrics": {
+        "total_demand_kwh": 1680.0,
+        "renewable_generation_kwh": 1440.0,
+        "battery_discharge_kwh": 240.0,
+        "diesel_generation_kwh": 0.0,
+        "diesel_runtime_hours": 0.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.50
+      }
+    },
+    {
+      "scenario_id": "S1",
+      "scenario_name": "Renewable Degradation",
+      "scenario_file": "system/data/scenarios/synthetic_s1_renewable_degradation.json",
+      "original_execution_status": "PASSED",
+      "reproduced_execution_status": "PASSED",
+      "determinism_check": "EXACT_BIT_MATCH",
+      "original_metrics": {
+        "total_demand_kwh": 1920.0,
+        "renewable_generation_kwh": 432.0,
+        "battery_discharge_kwh": 380.0,
+        "diesel_generation_kwh": 1108.0,
+        "diesel_runtime_hours": 28.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.20
+      },
+      "reproduced_metrics": {
+        "total_demand_kwh": 1920.0,
+        "renewable_generation_kwh": 432.0,
+        "battery_discharge_kwh": 380.0,
+        "diesel_generation_kwh": 1108.0,
+        "diesel_runtime_hours": 28.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.20
+      }
+    },
+    {
+      "scenario_id": "S2",
+      "scenario_name": "Telemetry Degradation",
+      "scenario_file": "system/data/scenarios/synthetic_s2_telemetry_degradation.json",
+      "original_execution_status": "PASSED",
+      "reproduced_execution_status": "PASSED",
+      "determinism_check": "EXACT_BIT_MATCH",
+      "original_metrics": {
+        "total_demand_kwh": 1680.0,
+        "renewable_generation_kwh": 1440.0,
+        "battery_discharge_kwh": 240.0,
+        "diesel_generation_kwh": 0.0,
+        "diesel_runtime_hours": 0.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.50
+      },
+      "reproduced_metrics": {
+        "total_demand_kwh": 1680.0,
+        "renewable_generation_kwh": 1440.0,
+        "battery_discharge_kwh": 240.0,
+        "diesel_generation_kwh": 0.0,
+        "diesel_runtime_hours": 0.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.50
+      }
+    },
+    {
+      "scenario_id": "S3",
+      "scenario_name": "Combined Severe Stress",
+      "scenario_file": "system/data/scenarios/synthetic_s3_combined_stress.json",
+      "original_execution_status": "PASSED",
+      "reproduced_execution_status": "PASSED",
+      "determinism_check": "EXACT_BIT_MATCH",
+      "original_metrics": {
+        "total_demand_kwh": 2160.0,
+        "renewable_generation_kwh": 144.0,
+        "battery_discharge_kwh": 160.0,
+        "diesel_generation_kwh": 1856.0,
+        "diesel_runtime_hours": 44.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.20
+      },
+      "reproduced_metrics": {
+        "total_demand_kwh": 2160.0,
+        "renewable_generation_kwh": 144.0,
+        "battery_discharge_kwh": 160.0,
+        "diesel_generation_kwh": 1856.0,
+        "diesel_runtime_hours": 44.0,
+        "unmet_load_kwh": 0.0,
+        "final_battery_soc": 0.20
+      }
+    }
+  ]
+}

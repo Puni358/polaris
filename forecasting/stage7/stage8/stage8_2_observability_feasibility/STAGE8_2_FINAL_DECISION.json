@@ -1,0 +1,73 @@
+{
+  "stage": "STAGE 8.2 FINAL FORENSIC VERIFICATION (CORRECTED)",
+  "status": "EVIDENCE_CLASSIFICATION_CORRECTION_COMPLETE",
+  "governance": {
+    "champion_preserved": "Stage 8.1 U700+V700 Steering Wind Model",
+    "champion_modified": false,
+    "experiment_run": false,
+    "cv_run": false,
+    "odd_target_access": "NO",
+    "odd_predictions": "NO",
+    "odd_metrics": "NO",
+    "odd_tuning": "NO",
+    "integrity_check": "PASS"
+  },
+  "champion_metrics": {
+    "model": "Stage 8.1 U700+V700 Steering Wind Model",
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495
+  },
+  "corrected_evidence_classifications": {
+    "viirs": {
+      "classification": "CONDITIONAL",
+      "evidence_type": "THEORETICAL / GEOMETRICALLY INFERRED",
+      "theoretical_sunlit_origins": "284/347",
+      "theoretical_usable_rate_pct": 81.8,
+      "empirical_file_level_coverage": "NOT ESTABLISHED",
+      "operational_causality": "CONDITIONAL (3-8h DAAC latency)",
+      "stage_6_2_reconciliation": "Stage 6.2 empirically found 2 VIIRS files in MET Norway archive. Stage 8.2 identified ~42 passes/day theoretical availability in NASA DAAC. File-level extraction of 347 DAAC granules remains to be executed."
+    },
+    "nwc_saf_pps": {
+      "classification": "CONDITIONAL",
+      "evidence_type": "THEORETICAL / INFERRED",
+      "theoretical_accessible_origins": "210/347",
+      "theoretical_usable_rate_pct": 60.5,
+      "empirical_file_level_coverage": "NOT ESTABLISHED",
+      "operational_causality": "CONDITIONAL (Restricted bulk archive / polar night)"
+    },
+    "abisko": {
+      "dataset_existence": "VERIFIED",
+      "evidence_type": "FILE-LEVEL VERIFIED",
+      "dataset_file": "data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv",
+      "inspected_variables": [
+        "SW_IN_DIR",
+        "SW_IN_DIFF",
+        "SW_IN",
+        "TA",
+        "RH"
+      ],
+      "benchmark_protocol_causality": "VERIFIED (t_obs <= t0)",
+      "operational_telemetry_causality": "CONDITIONAL (depends on telemetry latency)",
+      "representativeness": "EXTERNAL NEARBY OBSERVATION (3.23 km away, 287 m lower elevation). Transferability to Nuolja is an empirical hypothesis to be tested."
+    },
+    "cams": {
+      "classification": "CONDITIONAL",
+      "evidence_type": "ARCHIVE-VERIFIED PRODUCT / UNENUMERATED",
+      "spatial_resolution": "0.4\u00b0 x 0.4\u00b0 (~40 km x 15 km)",
+      "limitation": "Coarse spatial grid; Lapland background AOD is baseline-clean"
+    }
+  },
+  "answers_to_corrected_decision_questions": {
+    "Q1_viirs_81_8pct_real": "NO \u2014 284/347 is a theoretical/geometric calculation (sunlit origins), not an empirical file-level count.",
+    "Q2_viirs_81_8pct_meaning": "Theoretical estimate of sunlit benchmark-origin opportunity under constellation orbit geometry (SNPP + NOAA20 + NOAA21) and SZA <= 84\u00b0.",
+    "Q3_viirs_stage6_2_discrepancy": "Stage 6.2 empirically queried MET Norway's archive (mostly AVHRR, 2 VIIRS). Stage 8.2 estimated broader physical coverage in NASA DAAC. True file-level difference is NOT yet fully enumerated.",
+    "Q4_viirs_causal_usable": "CONDITIONAL. Physical acquisition t_acq <= t0 holds theoretically, but standard science L2 files have 3-8h archiving latency.",
+    "Q5_nwc_saf_210_real": "NO \u2014 210/347 is an inferred/theoretical estimate, not an empirical file-level count.",
+    "Q6_abisko_2024_available": "YES \u2014 The exact 2024 SITES ANS dataset is present in data/ and its direct/diffuse variables were directly inspected.",
+    "Q7_abisko_causal": "VERIFIED under benchmark protocol (t_obs <= t0); CONDITIONAL if assuming real-time operational telemetry.",
+    "Q8_abisko_defensible": "Potentially YES as an external predictor for regional transmissivity; transferability to Nuolja is an empirical hypothesis.",
+    "Q9_strongest_verified_source": "Abisko SITES ANS direct/diffuse shortwave radiation (FILE-LEVEL VERIFIED in data/).",
+    "Q10_best_next_experiment": "STAGE 8.3 \u2014 ABISKO OBSERVED DIRECT/DIFFUSE TRANSMISSIVITY EXPERIMENT (Subject to corrected causal interpretation)."
+  }
+}

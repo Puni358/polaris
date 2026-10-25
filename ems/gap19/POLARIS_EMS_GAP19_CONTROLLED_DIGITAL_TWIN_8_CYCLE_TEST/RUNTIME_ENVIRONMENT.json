@@ -1,0 +1,11 @@
+{
+  "test_id": "GAP19_CONTROLLED_DIGITAL_TWIN_8_CYCLE_TEST",
+  "execution_timestamp": "2026-09-25T00:49:33Z",
+  "test_classification": "PRODUCTION_COMPONENTS_WITH_SYNTHETIC_STATE_TRANSITION",
+  "state_propagation": "SYNTHETIC_STATE_TRANSITION",
+  "digital_twin_usage": "EXECUTED",
+  "python_version": "3.12.3",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "highs_version": "native_cpp",
+  "numpy_version": "2.5.2"
+}

@@ -1,0 +1,199 @@
+{
+  "manifest_id": "POLARIS_STEP6_PUBLIC_REAL_DATA_DISCOVERY_AUDIT_MANIFEST",
+  "task_type": "PUBLIC_REAL_DATA_REPOSITORY_QUALIFICATION",
+  "audit_timestamp_utc": "2026-09-20T10:57:00Z",
+  "execution_boundaries": {
+    "frozen_evidence_modified": false,
+    "milp_solves_executed": 0,
+    "experiment_rerun": false,
+    "new_modeling": false,
+    "new_tuning": false,
+    "architecture_modified": false,
+    "synthetic_data_generated": false,
+    "contact_email_dispatched": false,
+    "external_file_downloaded": false
+  },
+  "current_governance_state": {
+    "REAL_DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "UNQUALIFIED_PUBLIC_DATA_FOUND": false,
+    "QUALIFYING_PUBLIC_DATA_FOUND": false
+  },
+  "repositories_investigated": [
+    {
+      "repository_id": "REPO_01_IPF",
+      "name": "Princess Elisabeth Antarctica / International Polar Foundation (IPF)",
+      "urls_audited": [
+        "https://www.polarfoundation.org",
+        "https://www.antarcticstation.org",
+        "https://opendata.swiss"
+      ],
+      "search_terms_used": [
+        "Princess Elisabeth",
+        "electrical load",
+        "active power",
+        "microgrid telemetry",
+        "power demand",
+        "electricity consumption",
+        "battery",
+        "SCADA"
+      ],
+      "findings": "Technical microgrid system documentation exists (APMS PLC design, 54 kW wind, 72.5 kWp PV, 192 battery cells). However, raw downloadable time-series telemetry of electrical load P_load (kW) is NOT publicly published on open data portals for operational security reasons.",
+      "classification_summary": "METADATA_PUBLICATION_ONLY"
+    },
+    {
+      "repository_id": "REPO_02_PANGAEA",
+      "name": "PANGAEA Data Publisher for Earth & Environmental Science (AWI)",
+      "urls_audited": [
+        "https://pangaea.de"
+      ],
+      "search_terms_used": [
+        "Neumayer",
+        "surface energy balance",
+        "power",
+        "electricity",
+        "generator",
+        "fuel",
+        "load",
+        "station power"
+      ],
+      "findings": "PANGAEA hosts extensive meteorological, glaciological, and Surface Energy Balance (SEB) datasets for Neumayer Station III. Terms like 'energy' refer exclusively to thermodynamic heat flux (W/m^2) at the snow surface. Zero operational station electrical power, generator load, or electrical demand time series exist on PANGAEA.",
+      "classification_summary": "RELEVANT_STATION_DATA_NOT_ELECTRICAL_DEMAND"
+    },
+    {
+      "repository_id": "REPO_03_NPDC",
+      "name": "Norwegian Polar Data Centre (NPDC)",
+      "urls_audited": [
+        "https://data.npolar.no/dataset"
+      ],
+      "search_terms_used": [
+        "Troll",
+        "station energy",
+        "electrical power",
+        "electrical load",
+        "power consumption",
+        "microgrid",
+        "generator",
+        "telemetry"
+      ],
+      "findings": "NPDC hosts automatic weather station (AWS) meteorology for Troll Station and IPY deep radar traverse datasets. Terms like 'power' refer to scientific instrument specs (12V 55Ah gel battery powering radar electronics). Zero station electrical load, generator dispatch, or power grid telemetry datasets exist on NPDC.",
+      "classification_summary": "RELEVANT_STATION_DATA_NOT_ELECTRICAL_DEMAND"
+    }
+  ],
+  "candidate_datasets_matrix": [
+    {
+      "candidate_id": "CAND_01_IPF_SPECS",
+      "repository": "Princess Elisabeth / IPF Portal",
+      "dataset_name": "Princess Elisabeth Microgrid APMS System Architecture & Specs",
+      "station": "Princess Elisabeth Antarctica",
+      "measurement": "Smart Microgrid PLC Control Architecture & Capacity Specs",
+      "is_measured": false,
+      "is_electrical": true,
+      "units": "kW, kWp",
+      "resolution": "Static Equipment Specifications",
+      "coverage": "Operational Static Design Specs",
+      "is_public": true,
+      "licence": "IPF Public Web Documentation",
+      "classification": "E — METADATA / PUBLICATION ONLY",
+      "evidence_summary": "Equipment design specs and publication figures only; zero downloadable continuous load CSV/NC telemetry."
+    },
+    {
+      "candidate_id": "CAND_02_OPENDATA_SWISS_PEA",
+      "repository": "opendata.swiss / Swiss Federal Open Data",
+      "dataset_name": "Princess Elisabeth Solar Irradiance Observations",
+      "station": "Princess Elisabeth Antarctica",
+      "measurement": "Solar Shortwave Irradiance SW_in",
+      "is_measured": true,
+      "is_electrical": false,
+      "units": "W/m^2",
+      "resolution": "1-hour",
+      "coverage": "Multi-month",
+      "is_public": true,
+      "licence": "Open Data License",
+      "classification": "C — RELEVANT REAL STATION DATA BUT NOT ELECTRICAL DEMAND",
+      "evidence_summary": "Solar irradiance observations in W/m^2, NOT station active electrical demand."
+    },
+    {
+      "candidate_id": "CAND_03_PANGAEA_NEUMAYER_SEB",
+      "repository": "PANGAEA (AWI)",
+      "dataset_name": "Neumayer Station III Surface Energy Balance (Jakobs et al.)",
+      "station": "Neumayer Station III",
+      "measurement": "Radiative & Turbulent Heat Fluxes (Surface Energy Balance)",
+      "is_measured": true,
+      "is_electrical": false,
+      "units": "W/m^2",
+      "resolution": "1-hour / 3-hour",
+      "coverage": "2010-2018 Multi-year",
+      "is_public": true,
+      "licence": "CC-BY 4.0 (PANGAEA DOI)",
+      "classification": "C — RELEVANT REAL STATION DATA BUT NOT ELECTRICAL DEMAND",
+      "evidence_summary": "Snow surface thermodynamic heat flux (W/m^2), NOT electrical power demand."
+    },
+    {
+      "candidate_id": "CAND_04_PANGAEA_NEUMAYER_MET",
+      "repository": "PANGAEA (AWI) / BSRN",
+      "dataset_name": "Neumayer Station III Synoptical Meteorology & BSRN Radiation",
+      "station": "Neumayer Station III",
+      "measurement": "Air Temp, RH, 10m Wind Speed, Pressure, GHI/Direct Radiation",
+      "is_measured": true,
+      "is_electrical": false,
+      "units": "deg C, %, m/s, hPa, W/m^2",
+      "resolution": "1-minute to 1-hour",
+      "coverage": "1981-Present Continuous",
+      "is_public": true,
+      "licence": "CC-BY 4.0 (PANGAEA DOI)",
+      "classification": "C — RELEVANT REAL STATION DATA BUT NOT ELECTRICAL DEMAND",
+      "evidence_summary": "Atmospheric meteorological observations; zero station electrical power variables."
+    },
+    {
+      "candidate_id": "CAND_05_NPDC_TROLL_AWS",
+      "repository": "Norwegian Polar Data Centre (NPDC)",
+      "dataset_name": "Troll Research Station Automatic Weather Station (AWS) Data",
+      "station": "Troll Research Station",
+      "measurement": "Surface Meteorology (Air Temp, Wind Speed, RH, SW_in)",
+      "is_measured": true,
+      "is_electrical": false,
+      "units": "deg C, m/s, %, W/m^2",
+      "resolution": "1-hour / 10-minute",
+      "coverage": "Multi-year Continuous",
+      "is_public": true,
+      "licence": "CC-BY 4.0",
+      "classification": "C — RELEVANT REAL STATION DATA BUT NOT ELECTRICAL DEMAND",
+      "evidence_summary": "Meteorological atmospheric data; zero electrical demand telemetry."
+    },
+    {
+      "candidate_id": "CAND_06_NPDC_RADAR_TRAVERSE",
+      "repository": "Norwegian Polar Data Centre (NPDC)",
+      "dataset_name": "3 MHz Deep Radar Measurements South Pole - Troll Station",
+      "station": "Troll Station / Traverse",
+      "measurement": "Deep Radar Ice Thickness & Internal Layers (12V Battery Spec)",
+      "is_measured": true,
+      "is_electrical": false,
+      "units": "dB, meters, Volts",
+      "resolution": "Spatial Profile",
+      "coverage": "IPY 2008-2009",
+      "is_public": true,
+      "licence": "CC-BY 4.0",
+      "classification": "F — NOT RELEVANT",
+      "evidence_summary": "Geophysical ice thickness traverse; instrument battery spec is NOT station electrical load."
+    }
+  ],
+  "top_candidate_detailed_evaluations": [],
+  "candidate_register_created": false,
+  "acquisition_manifest_created": false,
+  "downloaded_files_count": 0,
+  "step6_final_decision": "D — NO QUALIFYING PUBLIC ELECTRICAL DATA FOUND",
+  "mandatory_safety_governance_status": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "UNQUALIFIED_PUBLIC_DATA_FOUND": "NO",
+    "QUALIFYING_PUBLIC_DATA_FOUND": "NO",
+    "STEP6_FINAL_CLASSIFICATION": "D — NO QUALIFYING PUBLIC ELECTRICAL DATA FOUND"
+  }
+}

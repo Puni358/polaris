@@ -1,0 +1,66 @@
+{
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "decisions": [
+    {
+      "decision_id": "HD-001",
+      "parameter_name": "deg_penalty_per_wh",
+      "source_file": "system/config/battery.yaml",
+      "category": "RESEARCH_OBJECTIVE_CHOICE",
+      "mandatory_safety": false,
+      "value": 0.00005,
+      "units": "$/Wh",
+      "effect": "Suppresses battery charging/discharging in 24h MILP lookahead; increases annual diesel fuel consumption."
+    },
+    {
+      "decision_id": "HD-002",
+      "parameter_name": "min_power_w",
+      "source_file": "system/config/diesel.yaml",
+      "category": "PHYSICAL_GENERATOR_SPEC",
+      "mandatory_safety": true,
+      "value": 10000.0,
+      "units": "W",
+      "effect": "Enforces minimum 10 kW diesel generation when active; forces renewable curtailment when generation exceeds net load."
+    },
+    {
+      "decision_id": "HD-003",
+      "parameter_name": "base_fuel_consumption_l_per_h",
+      "source_file": "system/config/diesel.yaml",
+      "category": "PHYSICAL_GENERATOR_SPEC",
+      "mandatory_safety": true,
+      "value": 5.0,
+      "units": "L/h",
+      "effect": "Incurs fixed 5.0 L/h idle fuel penalty whenever diesel generator is running."
+    },
+    {
+      "decision_id": "HD-004",
+      "parameter_name": "min_soc_pct",
+      "source_file": "system/config/battery.yaml",
+      "category": "PHYSICAL_BATTERY_CONSTRAINT",
+      "mandatory_safety": true,
+      "value": 20.0,
+      "units": "%",
+      "effect": "Sets hard lower bound on battery SOC to protect battery health; limits usable energy to 150 kWh."
+    },
+    {
+      "decision_id": "HD-005",
+      "parameter_name": "renewable_curtailment_penalty",
+      "source_file": "system/config/optimizer.yaml",
+      "category": "RESEARCH_OBJECTIVE_CHOICE",
+      "mandatory_safety": false,
+      "value": 0.05,
+      "units": "$/Wh",
+      "effect": "Penalizes renewable curtailment in MILP objective."
+    },
+    {
+      "decision_id": "HD-006",
+      "parameter_name": "horizon_discount_factor_gamma",
+      "source_file": "system/config/optimizer.yaml",
+      "category": "RESEARCH_OBJECTIVE_CHOICE",
+      "mandatory_safety": false,
+      "value": 1.0,
+      "units": "scalar",
+      "effect": "Weights all 24 horizon hours equally (unweighted MPC mode)."
+    }
+  ]
+}

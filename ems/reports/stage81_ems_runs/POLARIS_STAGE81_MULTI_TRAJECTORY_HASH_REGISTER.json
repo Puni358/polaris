@@ -1,0 +1,8 @@
+{
+  "eligibility_manifest_json_sha256": "0f84e3e3fc324cf1bdacad9051bcb2b4effdab4e0de4ba7ac199f337b09a906d",
+  "results_csv_sha256": "14234bc9a61ce3f9ee18f031f3075e0defa6fe0bd7fa335b66a377ea268b9db8",
+  "results_json_sha256": "7e36243745c7783726aede0660a43090c7782fd00a14cefccecb1f5c204111a0",
+  "aggregate_report_json_sha256": "bc93773b9cb34be9a20b562b9d1047a053bd4553a5b39d2020b9042a0c8ec992",
+  "aggregate_report_md_sha256": "d2b6f00e8db9f4270c03a100336023a5eef3e84f23009fabe61948bf7367d178",
+  "provenance_manifest_json_sha256": "36a5351fd0fecc51dd1751f0e4d149190853cf8813c5330f4e32fda1c8fd1f4a"
+}

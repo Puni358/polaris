@@ -1,0 +1,40 @@
+{
+  "audit_name": "POLARIS EMS HD-05D-alpha Relative Extra-Fuel Tolerance Evidence Audit",
+  "timestamp": "2026-09-23T04:13:00Z",
+  "governance_scope": {
+    "decision_id": "HD-05D-alpha",
+    "topic": "Numerical Relative Extra-Fuel Tolerance for Stage-3 Lexicographic Formulation",
+    "status": "GOVERNANCE_DECISION_REQUIRED"
+  },
+  "closed_decisions": {
+    "HD-05A": "Stage 3 — Resource Management",
+    "HD-05B": "Extra diesel allowed during NORMAL operation to reduce battery cycling",
+    "HD-05C": "Battery degradation subordinate to critical service during EMERGENCY",
+    "HD-05D_structure": "Stage 3a: min fuel -> F*; Stage 3b: min cycling s.t. fuel <= (1 + alpha) F*",
+    "representation": "RELATIVE (CLOSED)"
+  },
+  "audit_findings": {
+    "numerical_alpha_exists": false,
+    "alpha_derivable_from_repo": false,
+    "qualitative_vs_quantitative": "HD-05B grants qualitative permission; quantitative alpha is GOVERNANCE_DECISION_REQUIRED",
+    "zero_fuel_edge_case": "On days when F* = 0, (1 + alpha) * 0 = 0; forces zero extra diesel consumption",
+    "seasonal_fuel_budget_status": "Structure approved (D08); numerical volume is STATION_DATA_REQUIRED / NOT_AUTHORIZED",
+    "survival_window_status": "T_required unresolved; cannot constrain alpha",
+    "historical_runs_status": "Prototype scalar objective runs do not authorize lexicographic alpha"
+  },
+  "classifications": {
+    "HD05D_ALPHA_EVIDENCE": "NOT_ESTABLISHED",
+    "HD05D_ALPHA_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD05D_ALPHA_POLICY_BASIS": "GOVERNANCE_REQUIRED",
+    "HD05D_ALPHA_OPERATIONAL_BASIS": "ABSENT",
+    "HD05D_ALPHA_DERIVATION": "NOT_POSSIBLE_WITH_CURRENT_EVIDENCE",
+    "HD05D_ALPHA_ZERO_FUEL_EDGE_CASE": "PRESENT",
+    "HD05D_ALPHA_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_ALPHA_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "final_verdict": {
+    "HD05D_ALPHA_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_ALPHA_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_ALPHA_NUMERICAL_VALUE": "GOVERNANCE_DECISION_REQUIRED"
+  }
+}

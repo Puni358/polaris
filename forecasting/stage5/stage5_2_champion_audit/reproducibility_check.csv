@@ -1,0 +1,2 @@
+stage4_expected_mae,stage4_actual_mae,stage4_diff,arch_a_expected_mae,arch_a_actual_mae,arch_a_diff,delta_mae_expected,delta_mae_actual,exact_reproduction_pass
+43.4508,43.450807884206704,7.884206702613028e-06,39.0848,39.08482066524715,2.0665247149054267e-05,-4.366,-4.365987218959553,True

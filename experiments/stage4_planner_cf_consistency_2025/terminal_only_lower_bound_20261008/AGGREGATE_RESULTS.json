@@ -1,0 +1,63 @@
+{
+  "verdict": "PASS",
+  "base_certified_lower_bound_l": 1397.8482963577756,
+  "new_lower_bound_sum_L_valid": 3196.1170653812223,
+  "new_lower_bound_sum_L_tight": 3196.1170653812223,
+  "absolute_difference_l": 1798.2687690234468,
+  "percentage_difference_pct": 128.64548847746957,
+  "pc_sw_reference_l": 8729.2446,
+  "target_40_pct_l": 6118.1827,
+  "gap_to_40_pct_target_l": 2922.065634618778,
+  "gap_to_pc_sw_reference_l": 5533.127534618778,
+  "n_origins": 123,
+  "count_certified_tight": 123,
+  "count_blocked": 0,
+  "blocked_origins": [],
+  "s_term_statistics": {
+    "min_wh": 0.0,
+    "max_wh": 0.0,
+    "mean_wh": 0.0,
+    "median_wh": 0.0
+  },
+  "solve_wall_time_total_s": 16.074886322021484,
+  "validation_results": {
+    "check1_ge_base_bound": {
+      "description": "New bound >= 1,397.8483 L",
+      "value": 3196.1170653812223,
+      "threshold": 1397.8482963577756,
+      "pass": true
+    },
+    "check2_le_pc_sw_aggregate": {
+      "description": "New aggregate bound <= 8,729.2446 L",
+      "value": 3196.1170653812223,
+      "threshold": 8729.2446,
+      "pass": true
+    },
+    "check3_origin_le_pc_sw": {
+      "description": "No origin-level bound exceeds its corresponding PC-SW realized fuel",
+      "exceedances": [],
+      "pass": true
+    },
+    "check4_same_population_data": {
+      "description": "All 123 origins use the same population/input data",
+      "population_hash": "7c81256f12630a2ef2e30ccfa5a7edf697f7a1717ca8c90df60440c61def9c35",
+      "input_hash": "dcabbfa272adeb6e9592e07d3d02decb689ec52b2e0097e43c4e0e9962cf19f1",
+      "pass": true
+    },
+    "check5_no_ebr_constraint": {
+      "description": "No EBR constraint exists",
+      "ebr_found": false,
+      "pass": true
+    },
+    "check6_relaxations_preserved": {
+      "description": "No other lower-bound relaxation was accidentally changed",
+      "diff_keys": [],
+      "pass": true
+    },
+    "check7_solver_settings_unchanged": {
+      "description": "Solver settings unchanged",
+      "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b",
+      "pass": true
+    }
+  }
+}

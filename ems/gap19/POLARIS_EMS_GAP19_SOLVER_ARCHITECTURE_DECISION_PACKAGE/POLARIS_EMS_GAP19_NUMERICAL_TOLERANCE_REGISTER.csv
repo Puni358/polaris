@@ -1,0 +1,11 @@
+PARAMETER_ID,DESCRIPTION,CANDIDATE_VALUE_OR_STATUS,GOVERNANCE_STATUS,VALIDATION_REQUIREMENT
+eps_1,Stage 1 Lock Constraint Tolerance (Critical Reliability),NUMERICAL_CALIBRATION_REQUIRED,UNAUTHORIZED,REQUIRES_VALIDATION
+eps_2,Stage 2 Lock Constraint Tolerance (Reserve Shortfall),NUMERICAL_CALIBRATION_REQUIRED,UNAUTHORIZED,REQUIRES_VALIDATION
+eps_3,Stage 3 Lock Constraint Tolerance (Fuel Conservation),NUMERICAL_CALIBRATION_REQUIRED,UNAUTHORIZED,REQUIRES_VALIDATION
+feasibility_tol,MILP Primal Feasibility Tolerance,1e-6 (HiGHS Default),CURRENT_DEFAULT,Verify against stage lock constraint boundaries
+integrality_tol,MILP Integrality Tolerance,1e-6 (HiGHS Default),CURRENT_DEFAULT,Verify discrete generator state constraints
+optimality_tol,MILP Dual Optimality Tolerance,1e-6 (HiGHS Default),CURRENT_DEFAULT,Verify objective stage optimality criteria
+w1_illustrative,Stage 1 Illustrative Penalty Weight,10^12 (ILLUSTRATIVE_ONLY),UNAUTHORIZED,Option C Numerical Safety Analysis
+w2_illustrative,Stage 2 Illustrative Penalty Weight,10^8 (ILLUSTRATIVE_ONLY),UNAUTHORIZED,Option C Numerical Safety Analysis
+w3_illustrative,Stage 3 Illustrative Penalty Weight,10^4 (ILLUSTRATIVE_ONLY),UNAUTHORIZED,Option C Numerical Safety Analysis
+w4_illustrative,Stage 4 Illustrative Penalty Weight,1.0 (ILLUSTRATIVE_ONLY),UNAUTHORIZED,Option C Numerical Safety Analysis

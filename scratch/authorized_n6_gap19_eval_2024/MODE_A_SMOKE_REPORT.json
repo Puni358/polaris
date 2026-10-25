@@ -1,0 +1,35 @@
+{
+  "origin": "2024-06-01T00:00:00Z",
+  "fixture_index": 3648,
+  "n6": {
+    "status": "OPTIMAL",
+    "error": null,
+    "route": "NORMAL",
+    "solve_time_s": 0.266,
+    "objective": 38.1971,
+    "diesel_fuel_burned_l": 36.1971,
+    "diesel_run_hours": 3,
+    "unmet_load_wh": 88800.0,
+    "solar_used_wh": 228158.58,
+    "solar_curtailed_wh": 40472.22,
+    "min_soc_pct": 45.28,
+    "max_soc_pct": 95.0,
+    "final_soc_pct": 95.0,
+    "completed_steps": 24
+  },
+  "baseline": {
+    "status": "OPTIMAL",
+    "error": null,
+    "route": "NORMAL",
+    "solve_time_s": 0.585,
+    "objective": 29.7419,
+    "diesel_fuel_burned_l": 27.7419,
+    "diesel_run_hours": 2,
+    "unmet_load_wh": 88800.0,
+    "min_soc_pct": 57.83,
+    "max_soc_pct": 95.0,
+    "final_soc_pct": 95.0,
+    "completed_steps": 24
+  },
+  "delta_fuel_l": 8.4552
+}

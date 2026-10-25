@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "audit_phase": "G1.3-E RESOURCE-SPECIFIC EMPIRICAL EXPERIMENTATION",
+  "configuration_register": {
+    "global_parameters": {
+      "survivability_horizon_hours": 6.0,
+      "critical_load_kW": 11.6,
+      "critical_load_energy_kWh": 69.60,
+      "battery_capacity_kWh": 200.0,
+      "battery_min_soc": 0.20,
+      "battery_efficiency": 0.92,
+      "random_seed": 20260930,
+      "reproducibility_status": "REPRODUCIBLE_DESIGNS_BLOCKED_EXECUTION"
+    },
+    "synthetic_assumptions_register": [
+      {
+        "assumption_id": "SYN_ASSUMP_01",
+        "parameter_name": "Generator Nameplate Capacity",
+        "value": "100.0 kW",
+        "provenance": "SYNTHETIC_ASSUMPTION",
+        "nuolja_fact": false
+      },
+      {
+        "assumption_id": "SYN_ASSUMP_02",
+        "parameter_name": "Nominal BSFC",
+        "value": "0.25 L/kWh",
+        "provenance": "SYNTHETIC_ASSUMPTION",
+        "nuolja_fact": false
+      },
+      {
+        "assumption_id": "SYN_ASSUMP_03",
+        "parameter_name": "Block Heater Thermal Loss Rate",
+        "value": "2.0 °C/h at -40°C ambient",
+        "provenance": "SYNTHETIC_ASSUMPTION",
+        "nuolja_fact": false
+      },
+      {
+        "assumption_id": "SYN_ASSUMP_04",
+        "parameter_name": "Day-Tank Capacity",
+        "value": "500.0 Liters",
+        "provenance": "SYNTHETIC_ASSUMPTION",
+        "nuolja_fact": false
+      },
+      {
+        "assumption_id": "SYN_ASSUMP_05",
+        "parameter_name": "Day-Tank Leak Rate Scenario",
+        "value": "5.0 %/min",
+        "provenance": "SYNTHETIC_ASSUMPTION",
+        "nuolja_fact": false
+      },
+      {
+        "assumption_id": "SYN_ASSUMP_06",
+        "parameter_name": "Intake Filter Clogging Derate Rate",
+        "value": "1.0 kW / 10 min",
+        "provenance": "SYNTHETIC_ASSUMPTION",
+        "nuolja_fact": false
+      }
+    ],
+    "delay_injection_schedules": {
+      "class_1_1_delay_schedule_sec": [0, 1, 5, 10, 30, 60, 300, 900, 1800, 3600],
+      "class_1_2_delay_schedule_sec": [0, 5, 10, 30, 60, 120, 300, 600, 1800],
+      "class_1_3_delay_schedule_sec": [0, 60, 300, 600, 1800, 3600, 7200],
+      "class_1_4_delay_schedule_sec": [0, 60, 300, 900, 1800, 3600, 10800, 21600],
+      "class_1_5_delay_schedule_sec": [0, 10, 30, 60, 300, 900, 1800, 3600],
+      "class_1_6_delay_schedule_sec": [0, 300, 900, 3600, 7200, 14400, 28800],
+      "class_1_7_delay_schedule_sec": [0, 1, 5, 10, 30, 60, 300, 600],
+      "class_1_8_delay_schedule_sec": [0, 1, 5, 10, 30, 60]
+    }
+  }
+}

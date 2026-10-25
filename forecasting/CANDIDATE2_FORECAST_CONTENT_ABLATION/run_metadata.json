@@ -1,0 +1,106 @@
+{
+  "protocol": "CANDIDATE2_FORECAST_CONTENT_ABLATION",
+  "runner": "run_candidate2_checkpointed.py",
+  "generated_at_utc": "2026-10-02T04:55:54Z",
+  "scenario_file": "synthetic_168h_endurance_scenario.json",
+  "steps": 168,
+  "ecd_router_optiond_bypassed": true,
+  "forecast_engine": "baseline",
+  "frozen_forecast_definition": {
+    "fields_frozen": [
+      "solar_irradiance",
+      "solar_generation",
+      "wind_generation",
+      "demand"
+    ],
+    "method": "indices_1_23_repeat_index_0_value",
+    "index_0_preserved": true
+  },
+  "config_sha256": {
+    "station": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42",
+    "battery": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "solar_pv": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "loads": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+    "optimizer": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8",
+    "scenario": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8"
+  },
+  "code_sha256": {
+    "milp.py": "3f136ae7201204f425cc895e8a8ee6e41801b7609228ddee60363ac35047d1be",
+    "simulator.py": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "baseline_forecast.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+    "forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "evaluator.py": "79af472d52aab4b63180aaccac044ee48c9893f257c4f6988ccff7da1cec8729",
+    "dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b",
+    "run_candidate2_frozen_forecast_ablation.py": "a6fca66ede1e14197ab30f62c4efda76ef3602c50b11f55171254509e12f6283",
+    "run_candidate2_checkpointed.py": "5b50476f7830b9aef9243a2ede3f880373bbf326eca79db68601a957caddc2b9"
+  },
+  "output_sha256": {
+    "milp_frozen_forecast_full_result.json": "ff4c96200ac13c16ec056fd4e4792bb71d7e2939e85164be9b2ec5df40a927cd",
+    "objective_cost_comparison_three_way.json": "5c9883dbb926ebef5497b01c0170b6f6dd24d31f402a9f13cc22684d9d3812e7"
+  },
+  "initial_state_fingerprint": {
+    "timestamp": "2024-06-01T00:00:00Z",
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 100000.0,
+    "diesel_running": false,
+    "diesel_hours_running": 0.0,
+    "last_observed_solar_irradiance": 0.0,
+    "last_observed_demand": 24550.41,
+    "last_observed_wind_generation": 30600.04,
+    "operating_mode": "NORMAL",
+    "diesel_fuel_remaining_liters": 100.0
+  },
+  "python_version": "3.12.3",
+  "existing_candidate1_sources": {
+    "milp_real_forecast": "/home/punith-bs/01polaris (Copy)/FINAL_168H_FORECAST_VS_REACTIVE_PROTOCOL/milp_full_result.json",
+    "reactive_baseline": "/home/punith-bs/01polaris (Copy)/FINAL_168H_FORECAST_VS_REACTIVE_PROTOCOL/reactive_hybrid_a2_full_result.json"
+  },
+  "milp_frozen_forecast": {
+    "requested_steps": 168,
+    "completed_steps": 168,
+    "faults": [],
+    "fuel_overshoot_events": []
+  },
+  "summary_stats": {
+    "milp_frozen_forecast": {
+      "total_diesel_fuel_liters": 38.15,
+      "total_diesel_energy_kwh": 88.59,
+      "total_renewable_energy_used_kwh": 5161.64,
+      "total_renewable_curtailment_kwh": 1695.11,
+      "renewable_utilization_pct": 75.28,
+      "renewable_curtailment_pct": 24.72,
+      "battery_throughput_kwh": 1194.17,
+      "battery_equivalent_cycles": 5.9708,
+      "unmet_critical_load_kwh": 473.2,
+      "system_reliability_pct": 91.49,
+      "constraint_violations_count": 0
+    },
+    "milp_real_forecast": {
+      "total_diesel_fuel_liters": 125.92,
+      "total_diesel_energy_kwh": 243.68,
+      "total_renewable_energy_used_kwh": 5407.44,
+      "total_renewable_curtailment_kwh": 1449.31,
+      "renewable_utilization_pct": 78.86,
+      "renewable_curtailment_pct": 21.14,
+      "battery_throughput_kwh": 1407.48,
+      "battery_equivalent_cycles": 7.0374,
+      "unmet_critical_load_kwh": 184.15,
+      "system_reliability_pct": 96.69,
+      "constraint_violations_count": 0
+    },
+    "reactive_hybrid_a2": {
+      "total_diesel_fuel_liters": 49.5,
+      "total_diesel_energy_kwh": 50.0,
+      "total_renewable_energy_used_kwh": 5605.69,
+      "total_renewable_curtailment_kwh": 1251.06,
+      "renewable_utilization_pct": 81.75,
+      "renewable_curtailment_pct": 18.25,
+      "battery_throughput_kwh": 736.48,
+      "battery_equivalent_cycles": 3.6824,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_violations_count": 0
+    }
+  }
+}

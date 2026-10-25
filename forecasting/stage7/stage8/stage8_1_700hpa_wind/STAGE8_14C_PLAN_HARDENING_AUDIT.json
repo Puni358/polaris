@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-09-13T06:58:00+00:00",
+  "stage": "POLARIS STAGE 8.14C \u2014 BLOCKER PLAN SCIENTIFIC HARDENING AUDIT",
+  "status": "COMPLETED \u2014 HARDENING AUDIT VERIFIED",
+  "plan_classification": "PLAN_VALID_WITH_CORRECTIONS",
+  "champion_state": {
+    "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "ctth_dependency_audit": {
+    "variables_audited": [
+      "ctth_press",
+      "ctth_temp",
+      "ctth_alti"
+    ],
+    "upstream_inputs": "RTOV inversion mapping 10.8um/13.4um thermal radiances against ECMWF/MEPS vertical T/RH forecast profiles",
+    "classification": "NWP_DERIVED & REDUNDANT",
+    "stage8_8_reconciliation": "Complete overlap with Stage 8.8 MEPS vertical cloud geometry (which was REJECTED)",
+    "scientific_verdict": "REJECTED AS OPTICAL FALLBACK. CTTH is strongly NWP-derived and re-introduces rejected Stage 8.8 cloud geometry. It CANNOT legitimately serve as a fallback for novel optical transmissivity (COT)."
+  },
+  "non_optical_variable_audit": {
+    "primary_thermal_observation": "cma (Cloud Mask - Thermal IR Mode)",
+    "classification": "OBSERVED / RETRIEVED (Thermal IR 11um / 12um)",
+    "polar_night_status": "AVAILABLE 24/7/365",
+    "scientific_verdict": "VALID THERMAL FALLBACK. Observed binary cloud presence/absence grid that operates in darkness without NWP profile dependency."
+  },
+  "missingness_semantics": {
+    "model_type": "6-State Discrete Missingness & Retrieval Model",
+    "states": [
+      "VALID_OPTICAL",
+      "POLAR_NIGHT",
+      "LOW_SUN_INVALID",
+      "NO_GRANULE",
+      "QUALITY_REJECTED",
+      "CAUSALITY_REJECTED"
+    ],
+    "zero_imputation_rule": "PROHIBITED FOR COT/CER. Zero COT physically implies clear sky, which is false during cloudy polar night. Polar night MUST be represented via explicit binary indicators and dual-branch features."
+  },
+  "coverage_gate_review": {
+    "v1_threshold": ">=90% overall usable origins",
+    "scientific_flaw": "Polar night (SZA > 84\u00b0) covers 57/347 origins (16.4%). Daylight optical COT can NEVER exceed 83.6% (290/347 origins) across a full-year benchmark.",
+    "hardened_thresholds": {
+      "daylight_origin_optical_gate": ">=90% usable optical retrievals within the 290 Daylight Origins (SZA <= 84\u00b0)",
+      "benchmark_completeness_gate": "100% of 347 origins must receive an auditable state classification via dual-branch architecture without dropping origins"
+    }
+  },
+  "required_corrections": [
+    "Remove ctth_temp/ctth_press as a fallback for novel optical information; replace with observed thermal cloud mask (cma).",
+    "Prohibit zero-imputation of COT/CER during polar night (SZA > 84\u00b0); use explicit polar_night indicator flags and dual-branch features.",
+    "Replace unachievable >=90% overall optical coverage gate with Daylight Origin Optical Coverage Gate (>=90% of daylight origins) and 347-Origin Dual-Branch Benchmark Gate.",
+    "Publish STAGE8_14C_CMIC_BLOCKER_RESOLUTION_PLAN_V2.md containing hardened scientific specifications."
+  ],
+  "governance_check": {
+    "odd_target_accessed": false,
+    "odd_predictions_generated": 0,
+    "model_training_executed": false,
+    "cross_validation_executed": false,
+    "hyperparameter_tuning_executed": false,
+    "champion_modified": false,
+    "master_handoff_modified": false,
+    "forecasting_experiment_authorized": false
+  }
+}

@@ -1,0 +1,11 @@
+interface_component,current_state,required_contract,compatibility_status,remediation_notes
+Model Artifact,Joblib Serialized MultiOutputRegressor,Immutable File SHA-256,PASS,None
+Input Feature Matrix,18 Exact Features in Fixed Order,Causal Runtime Feature Matrix,PASS,None
+Forecast Target,SW_IN (W/m^2),24h Solar Irradiance Vector,PASS,None
+Engineering Solar Mapping,"P_solar = min(SW_IN * 51.0, 60kW)",PV Power (W) Conversion,PASS,None
+ForecastBundle Schema,Version 1.0.0 (W/m^2 and W),TimeseriesForecast (24h),PASS,Schema 1.0.0 fully compatible
+ForecastEngine Interface,"predict(station_state, context)",Returns ForecastBundle,PASS,Branch01ForecastEngine adapter defined
+Fail-Closed Runtime Guard,Raises ModelGovernanceError,FORECAST_STATUS = INVALID,PASS,Invalid forecast flags set on missing input
+Digital Twin Truth Firewall,100% Isolated,Zero Future Actuals Access,PASS,Truth firewall strictly preserved
+Stage 8.1 Legacy Code,s81_solar.py (SHA d76249bb...),100% Untouched Separation,PASS,Stage 8.1 isolated
+EnergyOptimizer MILP,scipy.optimize.milp (HiGHS),Zero Mathematical Modification,PASS,Optimizer untouched

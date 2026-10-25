@@ -1,0 +1,18 @@
+audit_document,09_HUMAN_DECISION_REGISTER
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# DEFINITIVE HUMAN DECISION REGISTER
+# ============================================================
+
+decision_id,decision_title,why_required,current_status,existing_evidence,possible_options,implementation_blocking_status
+HD-01,Authorize Numerical EBR Target (E_EBR_target),Required for Stage 2 objective evaluation,UNAUTHORIZED,Policy specifies EBR as resilience target; numerical Wh value missing,A: Fixed Wh target B: Dynamic % of capacity C: Seasonal curve,BLOCKING FOR IMPLEMENTATION
+HD-02,Authorize Numerical Terminal Target (E_terminal_target),Required for Stage 2 terminal SOC constraint/shortfall,UNAUTHORIZED,Current code uses free terminal state E(H) >= E_min,A: Target E(H) = initial E(0) B: Dynamic terminal Wh reserve C: Min SOC,BLOCKING FOR IMPLEMENTATION
+HD-03,Authorize Required Survival Window (T_required),Required for Emergency Mode Detector margin calculation,UNAUTHORIZED,ForecastBundle horizon is H=24h; resupply schedule absent,A: Fixed 24h window B: Dynamic resupply arrival time T_resupply C: 48h storm window,BLOCKING FOR IMPLEMENTATION
+HD-04,Authorize Detector Adverse Renewable Assumption,Required for detector forward endurance calculation,UNAUTHORIZED,Causal boundary requires explicit policy on future solar/wind,A: Zero renewable baseline (P_sol=0 P_wind=0) B: Lower-bound forecast quantile,BLOCKING FOR IMPLEMENTATION
+HD-05,Assign Battery Degradation Stage & Suppression,Required to position degradation in objective hierarchy,UNAUTHORIZED,c_deg = $0.00005/Wh in current scalar objective; unplaced in policy,A: Stage 3 operating cost B: Stage 4 system loss C: Hard throughput cap; c_deg=0 in EMERGENCY,BLOCKING FOR IMPLEMENTATION
+HD-06,Authorize Fuel Tank Capacity & Reserve Limits,Required for diesel survivability and tank lower bound,UNAUTHORIZED,diesel.yaml specifies consumption rates; fuel_remaining_l missing from schema,A: Tank capacity = 1000L Reserve = 100L B: Station-specific fuel spec,BLOCKING FOR IMPLEMENTATION
+HD-07,Select Solver Architecture (Option A vs Option B),Required to begin EMS implementation phase,UNSOLVED,Gap19 decision package completed; neutral evidence provided,Option A (Sequential SciPy MILP) vs Option B (Native HiGHS Multi-Objective),BLOCKING FOR IMPLEMENTATION

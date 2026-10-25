@@ -1,0 +1,154 @@
+{
+  "stage": "STAGE 8 \u2014 ENEV METAR CORRECTION & IMPLEMENTATION VALIDATION",
+  "timestamp": "2026-09-13T19:37:00Z",
+  "audit_type": "PARSER CORRECTION & FEATURE ENCODING VALIDATION",
+  "ready_for_governed_even_rerun": true,
+  "corrections_implemented": [
+    "Strict exact 23:50 UTC timestamp matching enforced for all 347 origins. Zero earlier reports (23:20 or 22:50 UTC) substituted.",
+    "Explicit missing handling: 18 absent 23:50 UTC origins flagged as MISSING_EXACT_2350 and forward-filled from previous valid 23:50 UTC report.",
+    "Whitespace stripped from raw_skyc1 (handling VV trailing spaces).",
+    "Explicit parsing for sensor cloud code ///: origin 2024-10-22 00:00:00 (2024-10-21 23:50 UTC report with rain -RA and skyl1=3000ft) encoded as enev_cloud_cover_okta = 6.0 and enev_cloud_base_m = 914.4m."
+  ],
+  "timestamp_breakdown": {
+    "total_benchmark_origins": 347,
+    "exact_2350_utc_present": 329,
+    "exact_2350_utc_present_pct": 94.81,
+    "exact_2350_utc_missing": 18,
+    "exact_2350_utc_missing_pct": 5.19,
+    "substitute_timestamp_reports_used": 0
+  },
+  "parser_validation_summary": {
+    "unparsed_count": 0,
+    "silent_clear_fallbacks_remaining": 0,
+    "parse_code_counts": {
+      "EXPLICIT_CLEAR": 106,
+      "LAYER_FEW": 89,
+      "LAYER_BKN": 68,
+      "LAYER_SCT": 39,
+      "FORWARD_FILLED_FROM_PREV_2350": 18,
+      "LAYER_VV": 16,
+      "LAYER_OVC": 10,
+      "SENSOR_CLOUD_SLASHES": 1
+    }
+  },
+  "nonstandard_code_resolution": [
+    {
+      "forecast_start": "2024-10-22 00:00:00+00:00",
+      "report_timestamp": "2024-10-21 23:50:00+00:00",
+      "raw_skyc1": "///",
+      "raw_skyl1_ft": 3000.0,
+      "raw_wxcodes": "-RA",
+      "corrected_okta": 6.0,
+      "corrected_base_m": 914.4,
+      "resolution": "Parsed /// with 3000ft height as active rain cloud layer (6.0 oktas, 914.4m base). Zero silent clear defaults remaining."
+    }
+  ],
+  "odd_firewall_status": {
+    "odd_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false,
+    "firewall_intact": true
+  },
+  "sample_encoded_features": [
+    {
+      "forecast_start": "2024-01-20 00:00:00",
+      "target_2350_utc": "2024-01-19 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "EXPLICIT_CLEAR",
+      "raw_skyc1": "M",
+      "raw_skyl1": null,
+      "enev_cloud_cover_okta": 0.0,
+      "enev_cloud_base_m": 5000.0
+    },
+    {
+      "forecast_start": "2024-01-21 00:00:00",
+      "target_2350_utc": "2024-01-20 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "EXPLICIT_CLEAR",
+      "raw_skyc1": "M",
+      "raw_skyl1": null,
+      "enev_cloud_cover_okta": 0.0,
+      "enev_cloud_base_m": 5000.0
+    },
+    {
+      "forecast_start": "2024-01-22 00:00:00",
+      "target_2350_utc": "2024-01-21 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_BKN",
+      "raw_skyc1": "BKN",
+      "raw_skyl1": 2400.0,
+      "enev_cloud_cover_okta": 6.0,
+      "enev_cloud_base_m": 731.52
+    },
+    {
+      "forecast_start": "2024-01-23 00:00:00",
+      "target_2350_utc": "2024-01-22 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_VV",
+      "raw_skyc1": "VV",
+      "raw_skyl1": 700.0,
+      "enev_cloud_cover_okta": 8.0,
+      "enev_cloud_base_m": 213.36
+    },
+    {
+      "forecast_start": "2024-01-24 00:00:00",
+      "target_2350_utc": "2024-01-23 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_BKN",
+      "raw_skyc1": "BKN",
+      "raw_skyl1": 3700.0,
+      "enev_cloud_cover_okta": 6.0,
+      "enev_cloud_base_m": 1127.76
+    },
+    {
+      "forecast_start": "2024-01-25 00:00:00",
+      "target_2350_utc": "2024-01-24 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "EXPLICIT_CLEAR",
+      "raw_skyc1": "M",
+      "raw_skyl1": null,
+      "enev_cloud_cover_okta": 0.0,
+      "enev_cloud_base_m": 5000.0
+    },
+    {
+      "forecast_start": "2024-01-26 00:00:00",
+      "target_2350_utc": "2024-01-25 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_SCT",
+      "raw_skyc1": "SCT",
+      "raw_skyl1": 4000.0,
+      "enev_cloud_cover_okta": 3.5,
+      "enev_cloud_base_m": 1219.2
+    },
+    {
+      "forecast_start": "2024-01-27 00:00:00",
+      "target_2350_utc": "2024-01-26 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_SCT",
+      "raw_skyc1": "SCT",
+      "raw_skyl1": 200.0,
+      "enev_cloud_cover_okta": 3.5,
+      "enev_cloud_base_m": 60.96
+    },
+    {
+      "forecast_start": "2024-01-28 00:00:00",
+      "target_2350_utc": "2024-01-27 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_FEW",
+      "raw_skyc1": "FEW",
+      "raw_skyl1": 2900.0,
+      "enev_cloud_cover_okta": 1.5,
+      "enev_cloud_base_m": 883.9200000000001
+    },
+    {
+      "forecast_start": "2024-01-29 00:00:00",
+      "target_2350_utc": "2024-01-28 23:50:00+00:00",
+      "status": "EXACT_2350_PRESENT",
+      "parse_code": "LAYER_BKN",
+      "raw_skyc1": "BKN",
+      "raw_skyl1": 3400.0,
+      "enev_cloud_cover_okta": 6.0,
+      "enev_cloud_base_m": 1036.3200000000002
+    }
+  ]
+}

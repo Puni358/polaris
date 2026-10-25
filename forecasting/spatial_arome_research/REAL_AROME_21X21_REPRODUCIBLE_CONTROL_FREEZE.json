@@ -1,0 +1,138 @@
+{
+  "timestamp_utc": "2026-09-14T10:12:47.002931+00:00",
+  "document_title": "POLARIS REAL-AROME 21\u00d721 REPRODUCIBLE CONTROL FREEZE CONTRACT",
+  "historical_reference_retired": {
+    "MAE_W_m2": 26.3668,
+    "nMAE_pct": 20.4507,
+    "RMSE_W_m2": 55.2513,
+    "bias_W_m2": -0.1291,
+    "status": "NON-REPRODUCIBLE / RETIRED AS AN EXACT G6 REFERENCE",
+    "reason": "Original Phase-10 model weights and row-level predictions were not persisted to the repository."
+  },
+  "new_frozen_reproducible_control": {
+    "dataset_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+    "split": "EVEN forecast origins only (173 origins)",
+    "cross_validation": "GroupKFold, n_splits=5, grouped strictly by origin_id",
+    "feature_inventory_count": 37,
+    "feature_list": [
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h",
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "clearsky_ghi_terrain_adjusted",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "u700",
+      "v700",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold"
+    ],
+    "model_specification": {
+      "estimator": "sklearn.ensemble.HistGradientBoostingRegressor",
+      "hyperparameters": {
+        "loss": "absolute_error",
+        "max_depth": 4,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0,
+        "random_state": 42
+      }
+    },
+    "causal_night_zero_rule": "prediction = 0.0 where solar_elevation <= 0.0 OR clearsky_ghi <= 1e-6",
+    "metrics": {
+      "MAE_24h_W_m2": 25.639318,
+      "nMAE_24h_pct": 19.8865,
+      "RMSE_24h_W_m2": 54.369219,
+      "bias_24h_W_m2": -5.043934,
+      "daytime_MAE_W_m2": 47.451469,
+      "night_MAE_W_m2": 0.672516,
+      "n_total_rows": 4152,
+      "n_daytime_rows": 2216,
+      "n_night_rows": 1936,
+      "fixed_normalizer_W_m2": 128.9284,
+      "fold_metrics": [
+        {
+          "fold": 1,
+          "n_origins": 35,
+          "mae_wm2": 27.358628
+        },
+        {
+          "fold": 2,
+          "n_origins": 35,
+          "mae_wm2": 21.591261
+        },
+        {
+          "fold": 3,
+          "n_origins": 35,
+          "mae_wm2": 25.950014
+        },
+        {
+          "fold": 4,
+          "n_origins": 34,
+          "mae_wm2": 29.003698
+        },
+        {
+          "fold": 5,
+          "n_origins": 34,
+          "mae_wm2": 24.352342
+        }
+      ],
+      "aggregate_oof_mae_W_m2": 25.651189
+    }
+  },
+  "independent_reproducibility_check": {
+    "csv_row_count": 4152,
+    "unique_even_origins": 173,
+    "horizons_per_origin": 24,
+    "odd_origins_found": 0,
+    "duplicate_tuples": 0,
+    "nan_predictions": 0,
+    "recomputed_MAE_W_m2": 25.639318,
+    "recomputed_nMAE_pct": 19.8865,
+    "recomputed_RMSE_W_m2": 54.369219,
+    "recomputed_bias_W_m2": -5.043934,
+    "recomputed_daytime_MAE_W_m2": 47.451469,
+    "recomputed_night_MAE_W_m2": 0.672516,
+    "mae_diff_vs_memory": 0.0,
+    "exact_match": true
+  },
+  "odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "candidate_neural_training_performed": false,
+  "governance_statement": "The historical 26.3668 W/m\u00b2 Phase-10 control reference is retired from exact reproducibility claims because no authoritative model/prediction artifact survives. This new control is the reproducible benchmark for the pending 21\u00d721 real-AROME candidate experiment.",
+  "cryptographic_hashes": {
+    "predictions_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "control_script_sha256": "dfa69828303342d65c38f10ef890b6328541eca343cfd9d689033430e45a72a7",
+    "freeze_json_sha256": "a3c56ed184874e284e3b1d934c38317bfad6b41207e737779b0978074f502b06"
+  }
+}

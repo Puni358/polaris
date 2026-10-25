@@ -1,0 +1,5 @@
+# Immutable source inputs (repo-relative). Hashed from copies staged from the device on 2026-10-11.
+f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473  data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv
+80b721a16a79dab828eb1aa02755d22c34acc35b5f48ad0d1beb5b9ab237052d  data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_5var.csv
+8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16  data/POLARIS_v0_1_future_weather_forecasts_2024.csv
+596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a  data/POLARIS_v0_1_clearsky_decomposition.csv

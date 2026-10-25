@@ -1,0 +1,24 @@
+{
+  "fixture_directory": "POLARIS_EMS_ECD_CANONICAL_SYNTHETIC_FIXTURE",
+  "verification_timestamp": "2026-09-23T18:14:10Z",
+  "fixture_version": "1.0.0",
+  "total_fixture_artifacts": 8,
+  "artifact_sha256_digests": {
+    "POLARIS_EMS_ECD_CANONICAL_SYNTHETIC_FIXTURE.json": "126110495c4274eecf4f47df2ff2fe4fbba106134d7e9587c561d9f2044edfb0",
+    "POLARIS_EMS_ECD_FIXTURE_CALCULATION_MANIFEST.json": "ea2cf30341cd91497928cb0e1d505087c1c77117ed381fc4f4148ff5ff3be7e0",
+    "POLARIS_EMS_ECD_FIXTURE_GENERATION_AND_AUDIT_REPORT.md": "76dd1c19ee228a732a5e19cf93306765bc2265531a79ca67bf8d84cc57621ee1",
+    "POLARIS_EMS_ECD_FIXTURE_PROVENANCE_MANIFEST.json": "c4e61ee2cc03f63d1a44b2dbadd9a1c0e7f536794203a01adeaad8e7622f6cb8",
+    "POLARIS_EMS_ECD_PROTOTYPE_FIXTURE_SPECIFICATION.md": "20ac48f8043cfef3314094679c84d3140f2d824307247b034637489ee14d40ac",
+    "POLARIS_EMS_ECD_PROTOTYPE_PROVENANCE_MATRIX.md": "c8ec7625b0a6d039077329dfbd07dc9ed968529abd83cbcb34e69c60af02d8a8",
+    "POLARIS_EMS_ECD_TEST_CASE_MATRIX.md": "74517dba6abcc8e1d021fba21dc34b4540d04a7a74462db90d929411b9a6ccbf"
+  },
+  "integrity_verification": {
+    "protected_runtime_files_modified": false,
+    "protected_schemas_modified": false,
+    "protected_configs_modified": false,
+    "protected_solvers_modified": false,
+    "ecd_runs_executed": false,
+    "simulations_executed": false,
+    "read_only_audit_status": "VERIFIED_PASSED"
+  }
+}

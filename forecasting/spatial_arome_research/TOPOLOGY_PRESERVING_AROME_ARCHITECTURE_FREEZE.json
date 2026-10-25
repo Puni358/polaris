@@ -1,0 +1,92 @@
+{
+  "timestamp_utc": "2026-09-14T12:07:05.361063+00:00",
+  "document_title": "POLARIS TOPOLOGY-PRESERVING AROME ARCHITECTURE FREEZE CONTRACT",
+  "scientific_hypothesis": "Useful spatial topology exists in AROME, but the previous CNN \u2192 AdaptiveAvgPool \u2192 GRU representation may discard location- and direction-dependent information needed for irradiance forecasting.",
+  "scientific_statement": "Global average pooling removes explicit spatial position from the pooled representation and can make the representation insensitive to where spatial activations occur, potentially discarding location- and direction-dependent information.",
+  "previous_failed_architecture": {
+    "name": "SpatialTemporalCNNGRU",
+    "trainable_parameters": 16033,
+    "pooling": "AdaptiveAvgPool2d((1,1))",
+    "daytime_mae_wm2": 58.107798,
+    "delta_daytime_mae_wm2": 10.656329
+  },
+  "new_frozen_architecture": {
+    "name": "TopologyPreservingSpatialTemporalCNNGRU",
+    "trainable_parameters": 48273,
+    "spatial_encoder_layers": [
+      "Conv2d(11, 16, k3, p1) -> BatchNorm2d(16) -> ReLU",
+      "Conv2d(16, 32, k3, p1) -> BatchNorm2d(32) -> ReLU",
+      "Conv2d(32, 32, k3, p1) -> BatchNorm2d(32) -> ReLU"
+    ],
+    "spatial_readout_layers": [
+      "Center Vector: [10, 10] -> dim 32",
+      "3x3 Local Neighborhood: [9:12, 9:12] -> Conv2d(32, 16, k3, p0) -> BatchNorm2d(16) -> ReLU -> dim 16",
+      "7x7 Local Neighborhood: [7:14, 7:14] -> Conv2d(32, 16, k5, p0) -> Conv2d(16, 16, k3, p0) -> dim 16",
+      "Concatenated Spatial Representation per Horizon: dim 64"
+    ],
+    "temporal_encoder": "GRU(input_size=64, hidden_size=32, batch_first=True)",
+    "context_branch": "Linear(38, 32) -> ReLU (broadcasted across 24 horizons)",
+    "prediction_head": "Linear(64, 32) -> ReLU -> Dropout(0.2) -> Linear(32, 1)"
+  },
+  "cache_inventory_audit": {
+    "cache_files_found": 173,
+    "even_origins_available": 173,
+    "even_origins_required": 173,
+    "invalid_or_missing_caches": 0,
+    "network_fetches_performed": 0,
+    "cache_provenance_verified": true
+  },
+  "sanity_test": {
+    "old_adaptive_avg_pool_difference": 0.0,
+    "new_topology_preserving_difference": 0.689553,
+    "sanity_test_passed": true
+  },
+  "programmatic_checks": {
+    "1_input_shape_exact_B_24_11_21_21": true,
+    "2_real_arome_tensors_loaded": true,
+    "3_station_anchor_at_10_10": true,
+    "4_no_adaptive_avg_pool": true,
+    "5_spatial_topology_explicit_after_encoder": true,
+    "6_center_location_explicitly_represented": true,
+    "7_nbr3x3_retains_spatial_arrangement": true,
+    "8_nbr7x7_retains_spatial_arrangement": true,
+    "9_temporal_sequence_length_24_preserved": true,
+    "10_output_shape_B_24": true,
+    "11_context_variables_count_38": true,
+    "12_no_diagnostic_statistics_entered_model": true,
+    "13_no_future_actuals_entered_inputs": true,
+    "14_causal_night_masking_specified": true,
+    "15_odd_firewall_intact": true,
+    "16_even_groupkfold_split_5_folds": true,
+    "17_exact_parameter_count": 48273,
+    "18_forward_pass_succeeded": true,
+    "19_backward_pass_succeeded": true,
+    "20_no_nan_or_inf_in_outputs_or_grads": true
+  },
+  "frozen_training_protocol": {
+    "even_origins_count": 173,
+    "cross_validation": "GroupKFold by forecast_origin (n_splits=5)",
+    "spatial_scaling": "Per-channel Z-score fit on training fold, clip [-5, +5]",
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 8,
+    "max_epochs": 300,
+    "early_stopping_patience": 20,
+    "seed": 42,
+    "loss_function": "Daytime MAE / L1Loss with causal night zero mask"
+  },
+  "odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "training_performed": false,
+  "audit_verdict": "ARCHITECTURE FROZEN & AUDITED \u2014 READY FOR CONTROLLED SINGLE EVEN TRAINING EXPERIMENT",
+  "cryptographic_hashes": {
+    "freeze_script_sha256": "b425cfaa59155b0c65f3d4ec13769de61826b584ea59b10866a58ac87c9eecd4",
+    "freeze_json_sha256": "363aaab5635b6e67437ddd592bfeb280bedd15b4cfde61bf86bf1def6c629335"
+  }
+}

@@ -1,0 +1,13 @@
+PARAMETER_ID,STAGE_OR_TYPE,UNITS,FORMULATION_OR_VALUE,JUSTIFICATION_AND_CLASSIFICATION,GOVERNANCE_STATUS
+eps_1,Stage 1 Lock,kWh,J1(x) <= J1* + eps_1,Absolute energy tolerance for critical load lock constraint. Prevents floating-point infeasibility in Pass 2.,PROVISIONAL / NOT AUTHORIZED FOR PRODUCTION
+eps_2,Stage 2 Lock,kWh,J2(x) <= J2* + eps_2,Absolute energy tolerance for EBR reserve shortfall lock constraint. Prevents infeasibility in Pass 3.,PROVISIONAL / NOT AUTHORIZED FOR PRODUCTION
+eps_3,Stage 3 Lock,Liters,J3(x) <= J3* + eps_3,Absolute fuel volume tolerance for diesel fuel lock constraint. Prevents infeasibility in Pass 4.,PROVISIONAL / NOT AUTHORIZED FOR PRODUCTION
+feasibility_tol,Solver Primal,Dimensionless,1e-6,HiGHS default primal feasibility tolerance for linear constraint satisfaction.,CURRENT_DEFAULT
+integrality_tol,Solver Integer,Dimensionless,1e-6,HiGHS default integrality tolerance for discrete generator state variables.,CURRENT_DEFAULT
+optimality_tol,Solver Dual,Dimensionless,1e-6,HiGHS default dual optimality tolerance for simplex/interior-point convergence.,CURRENT_DEFAULT
+replay_tol_abs,Replay Abs,Physical,1e-5,Authorized numerical replay tolerance for decision vector comparisons.,GOVERNANCE_REQUIREMENT
+replay_tol_rel,Replay Relative,Dimensionless,1e-5,Authorized relative replay tolerance for diagnostic objective metadata.,GOVERNANCE_REQUIREMENT
+w1_illustrative,Option C Weight,Dimensionless,10^12,Illustrative penalty weight for Stage 1 in scalar objective. Not authorized.,ILLUSTRATIVE_ONLY / UNAUTHORIZED
+w2_illustrative,Option C Weight,Dimensionless,10^8,Illustrative penalty weight for Stage 2 in scalar objective. Not authorized.,ILLUSTRATIVE_ONLY / UNAUTHORIZED
+w3_illustrative,Option C Weight,Dimensionless,10^4,Illustrative penalty weight for Stage 3 in scalar objective. Not authorized.,ILLUSTRATIVE_ONLY / UNAUTHORIZED
+w4_illustrative,Option C Weight,Dimensionless,1.0,Illustrative penalty weight for Stage 4 in scalar objective. Not authorized.,ILLUSTRATIVE_ONLY / UNAUTHORIZED

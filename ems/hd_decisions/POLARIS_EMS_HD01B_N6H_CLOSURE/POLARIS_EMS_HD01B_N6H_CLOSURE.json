@@ -1,0 +1,47 @@
+{
+  "closure_package_name": "POLARIS EMS HD-01B N=6h Governance Closure Package",
+  "timestamp": "2026-09-23T05:11:00Z",
+  "governance_scope": {
+    "decision_id": "HD-01B",
+    "topic": "EBR Resilience Interval N",
+    "status": "CLOSED"
+  },
+  "closed_parameters": {
+    "HD01A_EBR_DEFINITION": "CRITICAL_LOAD_BASED_DYNAMIC",
+    "HD01B_INTERVAL_TYPE": "FIXED_SEPARATELY_GOVERNED",
+    "HD01B_N": "6 HOURS",
+    "HD01B_N_BASIS": "STAKEHOLDER_POLICY_DECISION",
+    "HD01B_N_EMPIRICAL_DERIVATION": "NOT_ESTABLISHED",
+    "HD01B_STATUS": "CLOSED",
+    "HD01B_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD01B_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "authoritative_formula": "E_EBR_target(t) = sum_{k=t+1}^{t+6h} D_critical(k) * dt / eta_dis",
+  "semantic_separations": {
+    "N_vs_H": "N=6h is distinct from MPC horizon H=24h",
+    "N_vs_T_required": "N=6h is distinct from operational survival window T_required",
+    "N_vs_emergency_detector": "Emergency survivability remains external Emergency Mode Detector responsibility",
+    "N_basis": "N=6h is a stakeholder policy decision, not an empirical derivation"
+  },
+  "consistency_results": {
+    "HD01A_compatibility": "FULLY_COMPATIBLE",
+    "HD02_terminal_target_compatibility": "FULLY_COMPATIBLE",
+    "HD03_T_required_independence": "CONFIRMED_INDEPENDENT",
+    "MPC_horizon_independence": "CONFIRMED_INDEPENDENT",
+    "emergency_detector_separation": "CONFIRMED_SEPARATE",
+    "historical_artifact_handling": "PRESERVED_AS_HISTORICAL_EVIDENCE",
+    "stale_current_reference_count": 0
+  },
+  "current_states": {
+    "CURRENT_GOVERNANCE_STATE": "CLOSED_FOR_N_PARAMETER",
+    "IMPLEMENTATION_STATE": "NOT_AUTHORIZED"
+  },
+  "final_verdict": {
+    "HD01B_STATUS": "CLOSED",
+    "HD01B_N": "6 HOURS",
+    "HD01B_BASIS": "STAKEHOLDER_POLICY_DECISION",
+    "HD01B_DERIVATION": "NOT_ESTABLISHED",
+    "HD01B_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD01B_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "phase_id": "target_battery_identity_acquisition_20260930",
+  "starting_facts": {
+    "previous_campaigns": "FROZEN",
+    "degradation_model_validation": "PARTIALLY_VALIDATED_RESEARCH_MODEL",
+    "economic_degradation_cost": "NOT_IDENTIFIABLE",
+    "production_promotion": "NOT_AUTHORIZED"
+  },
+  "target_system_identity": {
+    "system_name": "SITES Nuolja Middle Station",
+    "location": "Mount Nuolja, Abisko Scientific Research Station, Sweden",
+    "operator": "Swedish Infrastructure for Ecosystem Science (SITES) / Swedish Polar Research Secretariat",
+    "primary_function": "Meteorological and Ecosystem Research Station",
+    "physical_bess_installed": false,
+    "bess_installation_notes": "SITES Nuolja is a meteorological monitoring station providing ground-truth weather data (SW_IN, temperature, wind). It does not operate a physical 200 kWh battery energy storage system."
+  },
+  "identity_decision_chain": {
+    "target_system": "SITES Nuolja Meteorological Field Station",
+    "documented_battery_equipment": "NONE_PHYSICAL (Synthetic Fixture Proxy)",
+    "manufacturer": "UNKNOWN",
+    "model_product_number": "UNKNOWN",
+    "chemistry": "UNKNOWN",
+    "configuration": "SYNTHETIC_FIXTURE_200kWh_50kW"
+  },
+  "identity_confidence_classification": {
+    "manufacturer_confidence": "UNKNOWN",
+    "model_confidence": "UNKNOWN",
+    "chemistry_confidence": "UNKNOWN",
+    "identity_status": "NOT_ESTABLISHED"
+  },
+  "synthetic_fixture_protection": {
+    "fixture_id": "POLARIS_MINIMUM_SYNTHETIC_ENGINEERING_FIXTURE_V1",
+    "real_nuolja_data": false,
+    "capacity_kWh": 200.0,
+    "power_kW": 50.0,
+    "classification": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+    "promoted_to_target_spec": false
+  },
+  "final_identity_gate": {
+    "target_battery_identity": "NOT_ESTABLISHED",
+    "target_specific_evidence": "INSUFFICIENT"
+  }
+}

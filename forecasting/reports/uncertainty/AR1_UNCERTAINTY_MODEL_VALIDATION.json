@@ -1,0 +1,178 @@
+{
+  "audit_metadata": {
+    "timestamp": "2026-10-05T07:20:00+05:30",
+    "station": "ANS_NMS (Mount Nuolja, Sweden)",
+    "target_variable": "e_t = prediction - actual [W/m^2]",
+    "provenance": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+    "train_val_samples": 10188,
+    "blind_2023_samples": 3129
+  },
+  "ar1_model_fit": {
+    "phi": 0.6358,
+    "phi_se": 0.0077,
+    "phi_95_ci": [
+      0.6207,
+      0.651
+    ],
+    "c_intercept": 12.5664,
+    "c_se": 0.8962,
+    "c_95_ci": [
+      10.8099,
+      14.3229
+    ],
+    "mu_unconditional": 34.5088,
+    "mu_se": 2.3931,
+    "mu_95_ci": [
+      29.8183,
+      39.1992
+    ],
+    "residual_variance": 7710.63,
+    "residual_std": 87.81,
+    "residual_acf_lags_1_to_10": [
+      -0.0132,
+      0.0114,
+      0.0443,
+      -0.0062,
+      -0.0061,
+      -0.0419,
+      -0.0114,
+      -0.0352,
+      -0.0168,
+      -0.001
+    ],
+    "residual_pacf_lags_1_to_10": [
+      -0.0132,
+      0.0112,
+      0.0446,
+      -0.0052,
+      -0.0073,
+      -0.044,
+      -0.012,
+      -0.0341,
+      -0.0137,
+      -0.0001
+    ],
+    "ljung_box": {
+      "5": {
+        "Q": 23.91,
+        "df": 4,
+        "p_value": 8.333671439197943e-05
+      },
+      "10": {
+        "Q": 58.68,
+        "df": 9,
+        "p_value": 2.408940158460382e-09
+      }
+    },
+    "normality_diagnostics": {
+      "skewness": 0.2941,
+      "excess_kurtosis": 3.0655,
+      "jarque_bera_stat": 4136.11,
+      "jarque_bera_p_value": 0.0
+    }
+  },
+  "alternatives_comparison": {
+    "AR1": {
+      "train_aic": 91188.2,
+      "train_bic": 91202.7,
+      "blind_mae": 58.96,
+      "blind_rmse": 85.81
+    },
+    "AR2": {
+      "train_aic": 91187.2,
+      "train_bic": 91208.9,
+      "blind_mae": 58.93,
+      "blind_rmse": 85.76
+    },
+    "AR1_ClearSky_WLS": {
+      "train_aic": 91243.7,
+      "train_bic": 91258.2,
+      "blind_mae": 59.01,
+      "blind_rmse": 86.26
+    },
+    "Persistence": {
+      "train_aic": null,
+      "train_bic": null,
+      "blind_mae": 65.25,
+      "blind_rmse": 95.65
+    }
+  },
+  "clear_sky_heteroskedasticity": {
+    "scaling_parameters": {
+      "sigma_0": 25.82,
+      "gamma": 0.1417
+    },
+    "quintile_breakdown": [
+      {
+        "bin": "(-0.0009, 156.438]",
+        "mean_clearsky": 77.2,
+        "unscaled_std": 29.6,
+        "scaled_std": 0.772
+      },
+      {
+        "bin": "(156.438, 272.24]",
+        "mean_clearsky": 213.4,
+        "unscaled_std": 55.19,
+        "scaled_std": 0.974
+      },
+      {
+        "bin": "(272.24, 408.411]",
+        "mean_clearsky": 338.3,
+        "unscaled_std": 91.16,
+        "scaled_std": 1.213
+      },
+      {
+        "bin": "(408.411, 553.47]",
+        "mean_clearsky": 479.9,
+        "unscaled_std": 110.28,
+        "scaled_std": 1.194
+      },
+      {
+        "bin": "(553.47, 716.664]",
+        "mean_clearsky": 635.7,
+        "unscaled_std": 116.3,
+        "scaled_std": 0.996
+      }
+    ],
+    "correlation_unscaled_with_clearsky": 0.3536,
+    "correlation_scaled_with_clearsky": 0.0349,
+    "variance_ratio_quintile5_to_1": 15.44
+  },
+  "conditional_trajectory_validation": {
+    "train_val_calibrated_z_for_90pct": 1.15,
+    "blind_2023_simultaneous_coverage_gaussian_z128": 0.8681,
+    "blind_2023_simultaneous_coverage_calibrated": 0.8498,
+    "blind_2023_subgroups": {
+      "by_season": {
+        "DJF": 1.0,
+        "JJA": 0.7826,
+        "MAM": 0.8913,
+        "SON": 0.6333
+      },
+      "by_cloud_regime": {
+        "Clear": 0.9143,
+        "Overcast": 0.8654,
+        "Partial": 0.8209
+      },
+      "by_elevation_regime": {
+        "Low": 0.7857,
+        "Mid": 0.8214,
+        "Night": 0.9841
+      }
+    },
+    "year_by_year_coverage": {
+      "2020": 0.9262,
+      "2021": 0.874,
+      "2022": 0.9014,
+      "2023": 0.8498
+    }
+  },
+  "critical_comparison_summary": {
+    "static_q10_benchmark_simult_cov": 0.9011,
+    "global_prefix_q90_simult_cov": 0.6777,
+    "season_conditioned_q90_simult_cov": 0.63,
+    "cloud_conditioned_q90_simult_cov": 0.6777,
+    "ar1_dynamic_clear_sky_calibrated_simult_cov": 0.8498
+  },
+  "verdict": "AR1-LIKE-BUT-INCOMPLETE"
+}

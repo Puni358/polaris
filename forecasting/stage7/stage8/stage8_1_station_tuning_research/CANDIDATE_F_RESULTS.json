@@ -1,0 +1,86 @@
+{
+  "input_hashes": {
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "matrix_2025": "9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087",
+    "frozen_model": "64ea4abada78a257f9ad053f1d869dddb983160490e06d1528954fd2205009ce"
+  },
+  "additive_feature": "elevation_x_cloud_frac",
+  "feature_count": {
+    "control": 37,
+    "candidate_f": 38
+  },
+  "hyperparameters": {
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "control_frozen_stage81": {
+    "odd_2024_validation": {
+      "n": 2883,
+      "mae": 36.204,
+      "rmse": 64.5752,
+      "bias": 0.9605,
+      "nmae_pct": 28.0807
+    },
+    "blind_2025": {
+      "n": 5978,
+      "mae": 35.9745,
+      "rmse": 65.9427,
+      "bias": 4.0802,
+      "nmae_pct": 28.2478
+    }
+  },
+  "candidate_F": {
+    "odd_2024_validation": {
+      "n": 2883,
+      "mae": 35.4438,
+      "rmse": 63.3192,
+      "bias": 0.7505,
+      "nmae_pct": 27.4911
+    },
+    "blind_2025": {
+      "n": 5978,
+      "mae": 35.4948,
+      "rmse": 65.1662,
+      "bias": 3.6959,
+      "nmae_pct": 27.8712
+    }
+  },
+  "candidate_f_model_artifact_sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+  "bootstrap_mae_diff_vs_control_blind2025": {
+    "mean_diff": -0.4792,
+    "ci95_lo": -0.7307,
+    "ci95_hi": -0.2338,
+    "n_boot": 2000
+  },
+  "high_elevation_subset_blind2025": {
+    "n": 978,
+    "control": {
+      "n": 978,
+      "mae": 100.925,
+      "rmse": 129.9378,
+      "bias": 13.7469,
+      "nmae_pct": 25.7694
+    },
+    "candidate_F": {
+      "n": 978,
+      "mae": 98.6785,
+      "rmse": 127.8196,
+      "bias": 12.7406,
+      "nmae_pct": 25.1958
+    }
+  },
+  "bootstrap_mae_diff_high_elevation_blind2025": {
+    "mean_diff": -2.238,
+    "ci95_lo": -3.3816,
+    "ci95_hi": -1.1483,
+    "n_boot": 2000
+  },
+  "decision": {
+    "ci_includes_zero": false,
+    "promoted": true,
+    "rule": "Promote only if bootstrap 95% CI for (candidate-control) blind MAE excludes zero AND the point estimate favors the candidate (negative = lower MAE). If CI includes zero, do NOT promote, per instruction."
+  }
+}

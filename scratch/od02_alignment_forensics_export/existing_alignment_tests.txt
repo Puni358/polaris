@@ -1,0 +1,132 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: EXISTING ALIGNMENT TESTS & FIXTURES
+Sources:
+  1. `system/tests/test_n6_multi_origin_harness_adapters.py` (lines 1414-1553)
+  2. `system/tests/test_n6_receding_horizon_adapters.py` (lines 1255-1410)
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+--------------------------------------------------------------------------------
+1. VERBATIM SOURCE EXCERPTS: test_n6_multi_origin_harness_adapters.py
+--------------------------------------------------------------------------------
+Lines 1414-1478:
+1414: class TestOD02Alignment(unittest.TestCase):
+1415:     """
+1416:     Tests verifying the alignment of the 24-horizon N6 ForecastBundle under
+1417:     Decision OD-02:
+1418:       - Rows 1..23 of raw solar irradiance and generation mapped to dispatch steps 0..22.
+1419:       - Dispatch step 23 injected with 0.0 W/m^2 (0.0 W) fallback.
+1420:       - Timestamps advanced by 1 hour (from [t0..t23] to [t1..t24]).
+1421:       - Demand, critical demand, and EBR reserve targets remain unshifted.
+1422:       - Idempotent: calling _align_n6_bundle_od02 multiple times is a no-op.
+1423:     """
+1424: 
+1425:     def test_45_align_n6_bundle_od02_shifts_solar_and_injects_fallback(self):
+1426:         raw_solar_irr = [float(i * 10.0) for i in range(24)]
+1427:         raw_solar_gen = [float(i * 100.0) for i in range(24)]
+1428:         raw_demand = [float(5000.0 + i) for i in range(24)]
+1429:         raw_crit_demand = [1000.0] * 24
+1430:         raw_ebr = [float(15000.0 + i * 10) for i in range(24)]
+1431:         raw_ts = [f"2024-01-01T{i:02d}:00:00Z" for i in range(24)]
+1432: 
+1433:         class _CustomBundle:
+1434:             def __init__(self):
+1435:                 self.solar_irradiance = _FakeTimeseries(list(raw_solar_irr))
+1436:                 self.solar_generation = _FakeTimeseries(list(raw_solar_gen))
+1437:                 self.demand = _FakeTimeseries(list(raw_demand))
+1438:                 self.demand_critical = _FakeTimeseries(list(raw_crit_demand))
+1439:                 self.timestamps = list(raw_ts)
+1440:                 self.metadata = {
+1441:                     "ebr_target_wh": list(raw_ebr),
+1442:                     "SOLAR_FORECAST_SOURCE": "CANDIDATE_N6_25ADD_15KT_SPECIALIST",
+1443:                 }
+1444: 
+1445:         bundle = _CustomBundle()
+1446:         aligned = _align_n6_bundle_od02(bundle)
+1447: 
+1448:         # 1. Solar irradiance: steps 0..22 take raw rows 1..23
+1449:         self.assertEqual(aligned.solar_irradiance.point[:23], raw_solar_irr[1:])
+1450:         self.assertEqual(aligned.solar_irradiance.point[0], 10.0)
+1451:         self.assertEqual(aligned.solar_irradiance.point[22], 230.0)
+1452:         # Step 23 takes 0.0 fallback
+1453:         self.assertEqual(aligned.solar_irradiance.point[23], 0.0)
+1454: 
+1455:         # 2. Solar generation: steps 0..22 take raw rows 1..23; step 23 takes 0.0
+1456:         self.assertEqual(aligned.solar_generation.point[:23], raw_solar_gen[1:])
+1457:         self.assertEqual(aligned.solar_generation.point[0], 100.0)
+1458:         self.assertEqual(aligned.solar_generation.point[22], 2300.0)
+1459:         self.assertEqual(aligned.solar_generation.point[23], 0.0)
+1460: 
+1461:         # 3. Demand and critical demand must NOT be shifted
+1462:         self.assertEqual(aligned.demand.point, raw_demand)
+1463:         self.assertEqual(aligned.demand_critical.point, raw_crit_demand)
+1464: 
+1465:         # 4. EBR reserve floor must NOT be shifted
+1466:         self.assertEqual(aligned.metadata["ebr_target_wh"], raw_ebr)
+1467: 
+1468:         # 5. Timestamps advanced from [t0..t23] to [t1..t24]
+1469:         self.assertEqual(aligned.timestamps[0], "2024-01-01T01:00:00Z")
+1470:         self.assertEqual(aligned.timestamps[22], "2024-01-01T23:00:00Z")
+1471:         self.assertEqual(aligned.timestamps[23], "2024-01-02T00:00:00Z")
+1472: 
+1473:         # 6. Metadata provenance
+1474:         self.assertTrue(aligned.metadata.get("od02_time_aligned"))
+1475: 
+1476:         # 7. Idempotency: re-aligning returns identical bundle without double-shifting
+1477:         re_aligned = _align_n6_bundle_od02(aligned)
+1478:         self.assertEqual(re_aligned.solar_irradiance.point, aligned.solar_irradiance.point)
+
+Lines 1545-1553:
+1545:     def test_47_fail_closed_on_non_24_element_solar_timeseries(self):
+1546:         """OD-02 alignment fails closed if solar forecast is not 24 elements."""
+1547:         bundle = _FakeForecastBundle()
+1548:         bundle.solar_irradiance = _FakeTimeseries([100.0] * 12)  # only 12 elements
+1549:         with self.assertRaises(ValueError) as ctx:
+1550:             _align_n6_bundle_od02(bundle)
+1551:         self.assertIn("OD-02 alignment requires 24-step forecast", str(ctx.exception))
+
+--------------------------------------------------------------------------------
+2. VERBATIM SOURCE EXCERPTS: test_n6_receding_horizon_adapters.py
+--------------------------------------------------------------------------------
+Lines 1255-1310:
+1255: class TestN6RecedingHorizonOD02Alignment(unittest.TestCase):
+1256:     def test_od02_receding_horizon_forecast_adapter_shifts_solar(self):
+1257:         """
+1258:         N6RecedingHorizonForecastAdapter.predict:
+1259:           - Forecast row 1 becomes step view solar irradiance for hour 0 (the immediate next hour).
+1260:           - Attached _real_bundle_ref has solar rows 1..23 mapped to 0..22 and step 23 has 0.0 fallback.
+1261:           - Demand and EBR reserve targets remain unshifted.
+1262:         """
+1263:         origin = "rh-od02"
+1264:         raw_solar = [float(10.0 * i) for i in range(24)]  # [0, 10, 20, ..., 230]
+1265:         raw_demand = [4500.0 + i * 10 for i in range(24)]
+1266:         raw_ebr = [15000.0] * 24
+...
+1294:         # Call predict for step 0
+1295:         view = adapter.predict(origin, 0, {"state": state_dict})
+1296: 
+1297:         # Step view at hour 0 sees raw row 1 (10.0 W/m^2)
+1298:         self.assertEqual(view["solar_irradiance_point"], 10.0)
+1299:         # Demand and EBR in step view remain unshifted
+1300:         self.assertEqual(view["demand_point"], raw_demand[0])
+1301:         self.assertEqual(view["ebr_target_wh"], raw_ebr)
+1302: 
+1303:         # Attached _real_bundle_ref is aligned for 24 hours
+1304:         bundle_ref = view["_real_bundle_ref"]
+1305:         self.assertEqual(bundle_ref.solar_irradiance.point[0], 10.0)
+1306:         self.assertEqual(bundle_ref.solar_irradiance.point[22], 230.0)
+1307:         self.assertEqual(bundle_ref.solar_irradiance.point[23], 0.0)  # Step 23 OD-02 fallback
+1308:         self.assertEqual(bundle_ref.demand.point, raw_demand)
+1309:         self.assertEqual(bundle_ref.metadata["ebr_target_wh"], raw_ebr)
+1310:         self.assertTrue(bundle_ref.metadata["od02_time_aligned"])
+
+--------------------------------------------------------------------------------
+3. TEST DESIGN SUMMARY
+--------------------------------------------------------------------------------
+These tests demonstrate that:
+1. The one-hour shift and terminal zero fallback are explicitly tested requirements
+   with dedicated unit and integration assertions.
+2. The tests strictly enforce that demand and EBR remain unshifted while solar is shifted.
+3. The tests verify that the adapter rejects any input whose length is not exactly 24.
+4. The tests confirm that the single-shot adapter and receding-horizon adapter both
+   feed the OD-02 aligned bundle to the GAP19 solver.

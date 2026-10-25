@@ -1,0 +1,4 @@
+CAPABILITY_LAYER,COMPONENT_OR_API,SUPPORTED_SEMANTICS,LIMITATIONS,STATUS
+HIGH_LEVEL_SOLVER_CAPABILITY,HiGHS C++ Engine,"Single-objective MILP, Linear constraints, Multi-objective priority (C++)",Native multi-objective C++ API not mapped into Scipy python interface,VERIFIED_SUPPORTED_IN_ENGINE
+CURRENT_PYTHON_API_CAPABILITY,scipy.optimize.milp 1.18.1,"Single 1D cost vector c, LinearConstraint, Bounds, Integrality",Does NOT expose native lexicographic/multi-objective priority parameters,NOT_EXPOSED_BY_CURRENT_API
+CURRENT_POLARIS_IMPLEMENTATION,LocalMILPEnergyOptimizer (milp.py),Single composite scalar weighted cost sum,No multi-pass solver orchestration layer present,FROZEN_SINGLE_PASS_FACT

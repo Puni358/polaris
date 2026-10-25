@@ -1,0 +1,50 @@
+{
+  "classification": "CERTIFIED BUT NO MATERIAL TIGHTENING",
+  "all_gates_pass": true,
+  "formulation_h_lower_bound_sum_L": 2408.617478075119,
+  "formulation_g_lower_bound_sum_L": 2403.307794303548,
+  "tightening_h_minus_g_l": 5.3096837715711445,
+  "tightening_h_over_g_pct": 0.22093232436379762,
+  "pc_sw_realized_reference_l": 8729.2446,
+  "target_40_pct_l": 6118.1827,
+  "remaining_gap_h_to_40_pct_target_l": 3709.5652219248814,
+  "remaining_gap_h_to_pc_sw_reference_l": 6320.627121924881,
+  "target_40_pct_status": "BELOW 6,118.1827 L \u2192 40% still not ruled out",
+  "n_origins": 123,
+  "count_certified_tight": 123,
+  "count_blocked": 0,
+  "count_origins_h_gt_g": 7,
+  "count_origins_h_eq_g": 116,
+  "tightened_origin_ids": [
+    5,
+    6,
+    21,
+    44,
+    64,
+    86,
+    105
+  ],
+  "max_origin_tightening_l": 1.7882368834999829,
+  "min_origin_tightening_l": -1.3287149158713873e-12,
+  "min_positive_tightening_l": 0.14004707500007374,
+  "origin_exceedances_over_actual_count": 0,
+  "origin_violations_h_lt_g_count": 0,
+  "s_ebr_statistics": {
+    "min_wh": 0.0,
+    "max_wh": 0.0,
+    "mean_wh": 0.0,
+    "median_wh": 0.0,
+    "sum_wh": 0.0
+  },
+  "gates": {
+    "gate_all_optimal": true,
+    "gate_feasibility": true,
+    "gate_ebr_satisfied": true,
+    "gate_diesel_min_satisfied": true,
+    "gate_no_terminal": true,
+    "gate_origin_le_pc_sw": true,
+    "gate_h_ge_g": true,
+    "gate_tight_count": true
+  },
+  "solve_wall_time_s": 17.19129967689514
+}

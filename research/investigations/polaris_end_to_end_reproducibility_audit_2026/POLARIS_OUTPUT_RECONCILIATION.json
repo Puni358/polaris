@@ -1,0 +1,100 @@
+{
+  "audit_type": "NUMERICAL_ENERGY_RECONCILIATION",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "energy_conservation_equation": "E_demand = E_renewable_used + E_battery_discharge_net + E_diesel - E_battery_charge - E_curtailment",
+  "reconciliations": [
+    {
+      "scenario_id": "S0",
+      "demand_kwh": 1680.0,
+      "renewable_used_kwh": 1440.0,
+      "battery_discharge_kwh": 240.0,
+      "diesel_kwh": 0.0,
+      "curtailment_kwh": 0.0,
+      "accounted_sum_kwh": 1680.0,
+      "discrepancy_kwh": 0.0,
+      "reconciliation_status": "EXACT_RECONCILED",
+      "battery_accounting": {
+        "initial_soc_pct": 50.0,
+        "ending_soc_pct": 50.0,
+        "net_energy_change_kwh": 0.0,
+        "status": "BALANCED_DIURNAL_CYCLE"
+      },
+      "diesel_accounting": {
+        "generation_kwh": 0.0,
+        "fuel_liters": 0.0,
+        "runtime_hours": 0.0,
+        "status": "ZERO_DISPATCH"
+      }
+    },
+    {
+      "scenario_id": "S1",
+      "demand_kwh": 1920.0,
+      "renewable_used_kwh": 432.0,
+      "battery_discharge_kwh": 380.0,
+      "diesel_kwh": 1108.0,
+      "curtailment_kwh": 0.0,
+      "accounted_sum_kwh": 1920.0,
+      "discrepancy_kwh": 0.0,
+      "reconciliation_status": "EXACT_RECONCILED",
+      "battery_accounting": {
+        "initial_soc_pct": 50.0,
+        "ending_soc_pct": 20.0,
+        "net_energy_change_kwh": -60.0,
+        "status": "HARD_MINIMUM_SOC_CONSTRAINT_BOUND_REACHED"
+      },
+      "diesel_accounting": {
+        "generation_kwh": 1108.0,
+        "fuel_liters": 417.0,
+        "runtime_hours": 28.0,
+        "status": "DISPATCHED_TO_COVER_RENEWABLE_DEFICIT"
+      }
+    },
+    {
+      "scenario_id": "S2",
+      "demand_kwh": 1680.0,
+      "renewable_used_kwh": 1440.0,
+      "battery_discharge_kwh": 240.0,
+      "diesel_kwh": 0.0,
+      "curtailment_kwh": 0.0,
+      "accounted_sum_kwh": 1680.0,
+      "discrepancy_kwh": 0.0,
+      "reconciliation_status": "EXACT_RECONCILED",
+      "battery_accounting": {
+        "initial_soc_pct": 50.0,
+        "ending_soc_pct": 50.0,
+        "net_energy_change_kwh": 0.0,
+        "status": "BALANCED_DIURNAL_CYCLE"
+      },
+      "diesel_accounting": {
+        "generation_kwh": 0.0,
+        "fuel_liters": 0.0,
+        "runtime_hours": 0.0,
+        "status": "ZERO_DISPATCH"
+      }
+    },
+    {
+      "scenario_id": "S3",
+      "demand_kwh": 2160.0,
+      "renewable_used_kwh": 144.0,
+      "battery_discharge_kwh": 160.0,
+      "diesel_kwh": 1856.0,
+      "curtailment_kwh": 0.0,
+      "accounted_sum_kwh": 2160.0,
+      "discrepancy_kwh": 0.0,
+      "reconciliation_status": "EXACT_RECONCILED",
+      "battery_accounting": {
+        "initial_soc_pct": 50.0,
+        "ending_soc_pct": 20.0,
+        "net_energy_change_kwh": -60.0,
+        "status": "HARD_MINIMUM_SOC_CONSTRAINT_BOUND_REACHED"
+      },
+      "diesel_accounting": {
+        "generation_kwh": 1856.0,
+        "fuel_liters": 664.0,
+        "runtime_hours": 44.0,
+        "status": "SUSTAINED_DISPATCH_UNDER_COMPOUND_STRESS"
+      }
+    }
+  ]
+}

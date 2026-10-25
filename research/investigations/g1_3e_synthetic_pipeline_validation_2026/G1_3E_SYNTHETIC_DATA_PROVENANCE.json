@@ -1,0 +1,91 @@
+{
+  "governance_firewall": "STRICT",
+  "empirical_status": "NOT_EMPIRICAL",
+  "governance_status": "NON_AUTHORITATIVE",
+  "records": [
+    {
+      "scenario_id": "S0",
+      "data_origin": "SYNTHETIC",
+      "generation_method": "Deterministic mathematical time-series modeling",
+      "generation_timestamp": "2026-09-30T20:27:04Z",
+      "input_assumptions": [
+        "Nominal diurnal solar irradiance curve",
+        "Constant wind speed & turbine generation curve",
+        "Constant base industrial/community load profile",
+        "Battery SOC initialized at 50%"
+      ],
+      "synthetic_parameters": [
+        "solar_peak_w_m2: 494.0",
+        "wind_gen_w: 30000.0",
+        "demand_w: 35000.0",
+        "telemetry_hold_h: 0"
+      ],
+      "random_seed": "NOT_APPLICABLE",
+      "source_data": "NONE",
+      "empirical_status": "NOT_EMPIRICAL"
+    },
+    {
+      "scenario_id": "S1",
+      "data_origin": "SYNTHETIC",
+      "generation_method": "Deterministic multiplicative scaling of solar/wind vectors",
+      "generation_timestamp": "2026-09-30T20:27:04Z",
+      "input_assumptions": [
+        "Cloud cover reducing solar irradiance by 80%",
+        "Lull in wind speeds reducing wind generation by 70%",
+        "Elevated site demand",
+        "Battery SOC initialized at 50%"
+      ],
+      "synthetic_parameters": [
+        "solar_peak_w_m2: 98.8",
+        "wind_gen_w: 9000.0",
+        "demand_w: 40000.0",
+        "telemetry_hold_h: 0"
+      ],
+      "random_seed": "NOT_APPLICABLE",
+      "source_data": "NONE",
+      "empirical_status": "NOT_EMPIRICAL"
+    },
+    {
+      "scenario_id": "S2",
+      "data_origin": "SYNTHETIC",
+      "generation_method": "Deterministic zero-order hold state propagation",
+      "generation_timestamp": "2026-09-30T20:27:04Z",
+      "input_assumptions": [
+        "4-hour telemetry hold at step 10",
+        "Nominal physical solar/wind conditions",
+        "Battery SOC initialized at 50%"
+      ],
+      "synthetic_parameters": [
+        "solar_peak_w_m2: 494.0",
+        "wind_gen_w: 30000.0",
+        "demand_w: 35000.0",
+        "telemetry_hold_h: 4"
+      ],
+      "random_seed": "NOT_APPLICABLE",
+      "source_data": "NONE",
+      "empirical_status": "NOT_EMPIRICAL"
+    },
+    {
+      "scenario_id": "S3",
+      "data_origin": "SYNTHETIC",
+      "generation_method": "Deterministic extreme stress vector synthesis",
+      "generation_timestamp": "2026-09-30T20:27:04Z",
+      "input_assumptions": [
+        "Complete solar outage",
+        "90% wind drop",
+        "Severe high demand profile",
+        "4-hour telemetry hold propagation",
+        "Battery SOC initialized at 50%"
+      ],
+      "synthetic_parameters": [
+        "solar_peak_w_m2: 0.0",
+        "wind_gen_w: 3000.0",
+        "demand_w: 45000.0",
+        "telemetry_hold_h: 4"
+      ],
+      "random_seed": "NOT_APPLICABLE",
+      "source_data": "NONE",
+      "empirical_status": "NOT_EMPIRICAL"
+    }
+  ]
+}

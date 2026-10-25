@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-09-12T07:54:22.878645+00:00",
+  "stage": "STAGE 7.3 \u2014 CLEAR-SKY INDEX (k_t) TARGET REFORMULATION",
+  "experiment_type": "Model/Target Reformulation (No New Data)",
+  "control_reproduction": {
+    "expected_e0_mae": 38.2806,
+    "actual_e0_mae": 38.280605,
+    "expected_e0_nmae": 40.39,
+    "actual_e0_nmae": 40.3918,
+    "expected_e0_rmse": 60.7509,
+    "actual_e0_rmse": 60.750856,
+    "reproduction_status": "EXACT_REPRODUCTION_VERIFIED"
+  },
+  "candidate_results": {
+    "e1_mae_w_m2": 36.382758,
+    "delta_mae_w_m2": -1.897847,
+    "e1_nmae_pct": 40.4596,
+    "e1_rmse_w_m2": 58.821243,
+    "e1_bias_w_m2": 4.785813,
+    "folds_improved": 3,
+    "max_fold_degradation_w_m2": 1.701954
+  },
+  "gates": {
+    "gate1_mae": {
+      "threshold_w_m2": 38.0806,
+      "actual_w_m2": 36.382758,
+      "pass": true
+    },
+    "gate2_folds": {
+      "required_folds": 4,
+      "actual_folds": 3,
+      "pass": false
+    },
+    "gate3_max_degradation": {
+      "threshold_w_m2": 0.15,
+      "actual_w_m2": 1.701954,
+      "pass": false
+    },
+    "gate4_nmae": {
+      "threshold_pct": 40.3918,
+      "actual_pct": 40.4596,
+      "pass": false
+    },
+    "gate5_rmse": {
+      "threshold_w_m2": 60.750856,
+      "actual_w_m2": 58.821243,
+      "pass": true
+    }
+  },
+  "all_gates_passed": false,
+  "final_decision": "STAGE 7.3 = NO IMPROVEMENT",
+  "official_champion": "Stage 6.6 LWP/IWP Champion (FROZEN)",
+  "odd_accessed": false
+}

@@ -1,0 +1,339 @@
+#!/usr/bin/env python3
+"""
+Scenario 2 ("Pragmatic Operator"): EBR reserve policy ON, governed by a 10 kWh
+reserve deadband (hysteresis) so the optimizer does not commit the diesel
+generator's 10 kW floor to chase shortfalls smaller than the deadband.
+
+Clean policy-only comparison: base physics matches the audited annual script
+(run_n6_rhc_annual_checkpointed.py) exactly -- K_pv=51.0, strict 20-95% SOC
+floor/ceiling, 0.92/0.92 round-trip efficiency, no diesel throttle cap, no
+ramp limit, no cold-derating, no snow de-rate, no inverter clipping. Those
+realism features were pulled back out so Scenario 2 vs Scenario 3 differ in
+exactly one thing: the reserve_deadband_wh parameter.
+
+Checkpointed + progress-logged (same pattern as
+run_n6_rhc_annual_instrumented.py): periodic ETA logging to stdout, and a
+resumable checkpoint file derived from output_csv's name so a kill/restart
+doesn't lose completed hours. Checkpoint is removed on clean completion.
+
+Output: scratch/ui_dashboard_scenario2.csv
+"""
+import os
+import sys
+import json
+import logging
+import pandas as pd
+import numpy as np
+import time
+from datetime import datetime
+
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
+try:
+    from system.forecasting.implementations.n6_solar import N6SolarForecastEngine
+    from system.optimization.implementations.gap19_highs_native import GAP19HighsNativeOptimizer
+    from system.evaluation.n6_multi_origin_harness.adapters import _align_n6_bundle_od02
+    from system.schemas.station_state import StationState
+    from system.schemas.forecast_bundle import TimeseriesForecast
+except ImportError as e:
+    print(f"[FAIL] Import error: {e}")
+    sys.exit(1)
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+log = logging.getLogger(__name__)
+
+def get_diurnal_w(hour: int) -> float:
+    if 0 <= hour <= 5:
+        return 18000.0
+    elif hour == 6:
+        return 22000.0
+    elif hour == 7:
+        return 30000.0
+    elif hour == 8:
+        return 38000.0  # Morning Peak
+    elif 9 <= hour <= 17:
+        return 32000.0  # Day Sustained
+    elif hour == 18:
+        return 36000.0
+    elif hour == 19:
+        return 42000.0  # Evening Peak
+    elif 20 <= hour <= 21:
+        return 30000.0
+    else:
+        return 22000.0
+
+def get_seasonal_multiplier(month: int) -> float:
+    if month in [11, 12, 1, 2]:
+        return 1.20
+    elif month in [5, 6, 7, 8]:
+        return 0.85
+    else:
+        return 1.00
+
+def get_industrial_demand_w(dt: pd.Timestamp) -> float:
+    return float(min(max(get_diurnal_w(dt.hour) * get_seasonal_multiplier(dt.month), 15000.0), 45000.0))
+
+def build_timeseries(values, unit="W"):
+    return TimeseriesForecast(point=values, lower=values, upper=values, unit=unit)
+
+def run_continuous_rhc(reserve_deadband_wh, output_csv, label, ebr_mode="n6_conformal"):
+    """
+    ebr_mode:
+      "n6_conformal" -- wire in the N6 model's real conformal EBR target each
+        step (Scenario 2/3 behavior).
+      "off" -- force ebr_target_wh=0.0 explicitly every step. NOT the same as
+        omitting the key: omitting it lets gap19_highs_native.py silently fall
+        back to its own internal default (critical-load-window-based) reserve
+        target (~98 kWh for a 15kW/6h window), which is still a real buffer.
+        Explicit 0.0 is what "EBR completely off" actually requires (Scenario 4).
+    """
+    checkpoint_file = output_csv.rsplit(".", 1)[0] + "_checkpoint.json"
+    root_log_file = "scenario2_instrumented.log"
+    dashboard_json_file = "dashboard/public/data/scenario2.json"
+
+    log.info("=" * 70)
+    log.info(f"Loading Hourly Matrix and Actuals... [{label}]")
+    df_mat = pd.read_parquet("scratch/hourly_rolling_candidate_matrix.parquet")
+    df_mat["forecast_start"] = pd.to_datetime(df_mat["forecast_start"], utc=True)
+
+    truth_df = pd.read_csv("data/POLARIS_v0_1_clearsky_decomposition.csv")
+    truth_df['TIMESTAMP'] = pd.to_datetime(truth_df['TIMESTAMP'], utc=True)
+    truth_df = truth_df.set_index('TIMESTAMP')
+
+    origins = sorted(df_mat["forecast_start"].drop_duplicates().tolist())
+
+    n6_engine = N6SolarForecastEngine()
+    optimizer = GAP19HighsNativeOptimizer()
+
+    # SYSTEM PHYSICAL CONSTANTS (system/config/*.yaml) -- matches annual script
+    BATT_CAPACITY_WH = 200_000.0
+    BATT_MIN_WH = BATT_CAPACITY_WH * 0.20   # 40,000 Wh hard floor
+    BATT_MAX_WH = BATT_CAPACITY_WH * 0.95   # 190,000 Wh ceiling
+    CHARGE_EFF = 0.92
+    DISCHARGE_EFF = 0.92
+
+    K_PV_W_PER_WM2 = 300.0 * 0.20 * 0.85  # 51.0 W per (W/m^2)
+    FUEL_COST_PER_L = 2.50
+
+    config = {
+        "operating_mode": "NORMAL",
+        "battery": {"capacity_wh": BATT_CAPACITY_WH, "min_soc_pct": 20.0, "max_soc_pct": 95.0},
+        "diesel": {"min_power_w": 10_000.0, "max_power_w": 100_000.0},
+        "terminal_reserve_model": "INITIAL_STATE",
+        "optimizer": {"timestep_hours": 1.0},
+    }
+    if reserve_deadband_wh > 0.0:
+        config["reserve_deadband_wh"] = reserve_deadband_wh
+
+    # Default (fresh-start) state
+    start_idx = 0
+    dashboard_data = []
+    total_diesel_liters = 0.0
+    diesel_run_hours = 0
+    diesel_start_events = 0
+    prev_diesel_w = 0.0
+    current_battery_wh = BATT_CAPACITY_WH * 0.50
+
+    # Resume from checkpoint if one exists for this scenario
+    if os.path.exists(checkpoint_file):
+        try:
+            with open(checkpoint_file, "r") as f:
+                ckpt = json.load(f)
+            start_idx = ckpt["last_idx"] + 1
+            dashboard_data = ckpt["dashboard_data"]
+            total_diesel_liters = ckpt["total_diesel_liters"]
+            diesel_run_hours = ckpt["diesel_run_hours"]
+            diesel_start_events = ckpt["diesel_start_events"]
+            prev_diesel_w = ckpt["prev_diesel_w"]
+            current_battery_wh = ckpt["current_battery_wh"]
+            log.info(f"[RESUME] Checkpoint found -- resuming from step {start_idx}/{len(origins)} [{label}]")
+        except Exception as e:
+            log.warning(f"[WARN] Failed to load checkpoint ({e}); starting fresh. [{label}]")
+
+    # Initialize live root log
+    if start_idx == 0:
+        with open(root_log_file, "w") as f_log:
+            f_log.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Solved Step 0/{len(origins)} (0.0%) | Initialized Scenario 2 Instrumented Pass\n")
+            f_log.flush()
+    else:
+        with open(root_log_file, "a") as f_log:
+            f_log.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Resumed Scenario 2 Instrumented Pass from step {start_idx}/{len(origins)}\n")
+            f_log.flush()
+
+    log.info(f"Starting Continuous RHC Loop across {len(origins)} hours (from step {start_idx}) [{label}]...")
+    start_time = time.time()
+
+    for i in range(start_idx, len(origins)):
+        orig_dt = origins[i]
+
+        origin_rows = df_mat[df_mat["forecast_start"] == orig_dt].sort_values("horizon_hour").reset_index(drop=True)
+        features_df = origin_rows.drop(columns=["actual_SW_IN", "residual_target"], errors="ignore")
+        features_df["elevation_x_transition_cloud"] = 0.0
+        features_df = features_df.ffill().bfill().fillna(0.0)
+
+        current_soc_pct = (current_battery_wh / BATT_CAPACITY_WH) * 100.0
+
+        station_state = StationState(
+            timestamp=orig_dt.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            battery_soc_pct=current_soc_pct,
+            battery_energy_wh=current_battery_wh,
+            diesel_running=(prev_diesel_w > 0),
+            diesel_hours_running=0.0,
+            last_observed_solar_irradiance=0.0,
+            last_observed_demand=30_000.0,
+            last_observed_wind_generation=15_000.0,
+            operating_mode="NORMAL"
+        )
+
+        raw_bundle = n6_engine.predict(station_state, {"n6_feature_matrix": features_df})
+        aligned_bundle = _align_n6_bundle_od02(raw_bundle)
+
+        demand_w = [get_industrial_demand_w(orig_dt + pd.Timedelta(hours=h)) for h in range(24)]
+        wind_w = [15_000.0 + 10_000.0 * np.sin(h * np.pi / 6.0) for h in range(24)]
+        aligned_bundle.demand = build_timeseries(demand_w, "W")
+        aligned_bundle.wind_generation = build_timeseries(wind_w, "W")
+        aligned_bundle.demand_critical = build_timeseries([15_000.0] * 24, "W")
+
+        if ebr_mode == "off":
+            # Explicit zero, not omission -- omission falls back to the solver's
+            # own internal critical-load-window default reserve (still nonzero).
+            config["ebr_target_wh"] = 0.0
+        elif "ebr_target_wh" in aligned_bundle.metadata:
+            config["ebr_target_wh"] = aligned_bundle.metadata["ebr_target_wh"]
+
+        plan = optimizer.optimize(forecast_bundle=aligned_bundle, station_state=station_state, config=config)
+
+        planned_diesel_w = plan.diesel_power[0] if hasattr(plan, 'diesel_power') else 0.0
+        actual_diesel_w = planned_diesel_w  # no throttle cap, no ramp limit
+        step0_diesel_kw = actual_diesel_w / 1000.0
+
+        fuel_l = 0.0
+        if actual_diesel_w > 0:
+            diesel_run_hours += 1
+            if prev_diesel_w <= 0.0:
+                diesel_start_events += 1
+            fuel_l = 5.0 + (actual_diesel_w * 0.00025)
+            total_diesel_liters += fuel_l
+        prev_diesel_w = actual_diesel_w
+
+        actual_ghi = truth_df.loc[orig_dt, 'actual_SW_IN'] if orig_dt in truth_df.index else 0.0
+        actual_solar_w = max(0.0, actual_ghi * K_PV_W_PER_WM2)
+        actual_demand_w = demand_w[0]
+        actual_wind_w = wind_w[0]
+
+        net_surplus_w = actual_solar_w + actual_wind_w + actual_diesel_w - actual_demand_w
+
+        if net_surplus_w >= 0:
+            current_battery_wh = min(BATT_MAX_WH, current_battery_wh + net_surplus_w * CHARGE_EFF)
+        else:
+            current_battery_wh = max(BATT_MIN_WH, current_battery_wh - (-net_surplus_w) / DISCHARGE_EFF)
+
+        current_battery_wh = max(BATT_MIN_WH, min(BATT_MAX_WH, current_battery_wh))
+        current_soc_pct_clamped = (current_battery_wh / BATT_CAPACITY_WH) * 100.0
+
+        forecast_ghi = aligned_bundle.solar_irradiance.point[0]
+        forecast_horizon = [round(float(v), 2) for v in aligned_bundle.solar_irradiance.point]
+
+        # Extract ebr_target_wh applied to J2
+        ebr_cfg = config.get("ebr_target_wh", 0.0)
+        if isinstance(ebr_cfg, (list, tuple)):
+            ebr_target_wh = round(float(ebr_cfg[0]), 2)
+        else:
+            ebr_target_wh = round(float(ebr_cfg), 2)
+
+        # Extract planned diesel output from solver
+        planned_diesel_kw = round(float(planned_diesel_w) / 1000.0, 2)
+
+        # Evaluate binding constraints / bounds (critical slacks at or near 0)
+        binding_constraints = []
+        if (hasattr(plan, "battery_soc") and plan.battery_soc[0] <= 20.05) or current_soc_pct_clamped <= 20.05:
+            binding_constraints.append("battery_floor_20")
+        if (hasattr(plan, "battery_soc") and plan.battery_soc[0] >= 94.95) or current_soc_pct_clamped >= 94.95:
+            binding_constraints.append("battery_ceiling_95")
+        if (hasattr(plan, "unmet_noncritical_load") and plan.unmet_noncritical_load[0] > 0.01) or (hasattr(plan, "unmet_load") and plan.unmet_load[0] > 0.01):
+            binding_constraints.append("J1b_shed_active")
+        if 0.0 < planned_diesel_kw <= 10.05:
+            binding_constraints.append("diesel_min_10kw")
+        if planned_diesel_kw >= 99.95:
+            binding_constraints.append("diesel_max_100kw")
+        if hasattr(plan, "reserve_shortfall") and plan.reserve_shortfall[0] > 0.01:
+            binding_constraints.append("reserve_shortfall_active")
+
+        dashboard_data.append({
+            "timestamp": orig_dt.isoformat(),
+            "actual_ghi": round(actual_ghi, 2),
+            "n6_forecast_ghi": round(forecast_ghi, 2),
+            "battery_soc_pct": round(current_soc_pct_clamped, 2),
+            "diesel_kw": round(step0_diesel_kw, 2),
+            "battery_net_kw": round(net_surplus_w / 1000.0, 2),
+            "diesel_fuel_cost": round(fuel_l * FUEL_COST_PER_L, 3),
+            "demand_w": round(actual_demand_w, 2),
+            "forecast_horizon": forecast_horizon,
+            "ebr_target_wh": ebr_target_wh,
+            "planned_diesel_kw": planned_diesel_kw,
+            "binding_constraints": binding_constraints,
+        })
+
+        # Progress + checkpoint every 100 steps (and on step 1 & final step)
+        if (i + 1) == 1 or (i + 1) % 100 == 0 or (i + 1) == len(origins):
+            elapsed = time.time() - start_time
+            steps_done = (i + 1) - start_idx
+            avg_s_per_step = elapsed / max(1, steps_done)
+            remaining = len(origins) - (i + 1)
+            eta_min = remaining * avg_s_per_step / 60.0
+            now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            progress_line = (
+                f"[{now_str}] Solved Step {i+1}/{len(origins)} ({(i+1)/len(origins)*100:5.1f}%) | "
+                f"SOC:{current_soc_pct_clamped:5.1f}% | Diesel:{step0_diesel_kw:5.1f}kW | "
+                f"Total:{total_diesel_liters:,.1f}L | RunHrs:{diesel_run_hours:,} | "
+                f"{avg_s_per_step:.2f}s/step | ETA:{eta_min:5.1f}min"
+            )
+            log.info(progress_line)
+            with open(root_log_file, "a") as f_log:
+                f_log.write(progress_line + "\n")
+                f_log.flush()
+
+            with open(checkpoint_file, "w") as f:
+                json.dump({
+                    "last_idx": i,
+                    "dashboard_data": dashboard_data,
+                    "total_diesel_liters": total_diesel_liters,
+                    "diesel_run_hours": diesel_run_hours,
+                    "diesel_start_events": diesel_start_events,
+                    "prev_diesel_w": prev_diesel_w,
+                    "current_battery_wh": current_battery_wh,
+                }, f)
+
+            # Route intermediate output directly to dashboard JSON
+            tmp_json = dashboard_json_file + ".tmp"
+            with open(tmp_json, "w") as f_json:
+                json.dump(dashboard_data, f_json)
+            os.replace(tmp_json, dashboard_json_file)
+
+    ui_df = pd.DataFrame(dashboard_data)
+    ui_df.to_csv(output_csv, index=False)
+
+    with open(dashboard_json_file, "w") as f_json:
+        json.dump(dashboard_data, f_json)
+
+    completion_line = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] COMPLETED Scenario 2 Instrumented Pass ({len(origins)} steps) in {time.time() - start_time:.1f}s | Total Fuel: {total_diesel_liters:,.2f} L"
+    with open(root_log_file, "a") as f_log:
+        f_log.write(completion_line + "\n")
+        f_log.flush()
+
+    log.info("=" * 60)
+    log.info(f"SUCCESS! [{label}] completed in {time.time() - start_time:.1f} seconds.")
+    log.info(f"Total diesel consumed:        {total_diesel_liters:,.2f} L")
+    log.info(f"Diesel run hours:             {diesel_run_hours:,} / {len(origins):,}")
+    log.info(f"Diesel start/stop events:     {diesel_start_events:,}")
+    log.info(f"Diesel fuel cost (@2.50/L):   {total_diesel_liters * FUEL_COST_PER_L:,.2f}")
+    log.info(f"Data ready at: {output_csv} and {dashboard_json_file}")
+    log.info("=" * 60)
+
+    if os.path.exists(checkpoint_file):
+        os.remove(checkpoint_file)
+
+if __name__ == "__main__":
+    run_continuous_rhc(reserve_deadband_wh=10_000.0, output_csv="scratch/ui_dashboard_scenario2.csv", label="Scenario 2: EBR + 10kWh deadband")

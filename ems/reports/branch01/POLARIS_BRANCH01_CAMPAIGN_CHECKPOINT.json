@@ -1,0 +1,15 @@
+{
+  "campaign_id": "POLARIS_BRANCH01_MULTI_TRAJECTORY_EMS_CAMPAIGN",
+  "completed_trajectories": 173,
+  "total_trajectories": 173,
+  "completed_h1_steps": 4152,
+  "total_h1_steps": 4152,
+  "latest_trajectory_id": "TRAJ_20241210",
+  "cumulative_ctrl_diesel_kwh": 52802.079,
+  "cumulative_tmt_diesel_kwh": 0.0,
+  "cumulative_diesel_diff_kwh": -52802.079,
+  "cumulative_ctrl_fuel_litres": 15274.94,
+  "cumulative_tmt_fuel_litres": 0.0,
+  "cumulative_fuel_diff_litres": -15274.94,
+  "timestamp": "2026-09-21T06:53:56Z"
+}

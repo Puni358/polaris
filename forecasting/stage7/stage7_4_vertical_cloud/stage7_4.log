@@ -1,0 +1,395 @@
+[2026-09-12 13:37:23,413] INFO: 
+================================================================================
+[2026-09-12 13:37:23,413] INFO: [STAGE 7.4] AUTHORIZED — VERTICAL CLOUD STRUCTURE FEATURE EXTRACTION
+[2026-09-12 13:37:23,413] INFO: [STAGE 7.4] Origins: 347 | Horizons: 24 | Total expected rows: 8328
+[2026-09-12 13:37:23,413] INFO: [STAGE 7.4] Extraction workers: 4 | Live progress reporting: ENABLED
+[2026-09-12 13:37:23,413] INFO: ================================================================================
+[2026-09-12 13:37:34,612] INFO: [STAGE 7.4] Extraction: 1/347 origins complete (0.3%) | Rows: 24 | Runtime: 00:00:11 | Avg/origin: 11.2s | ETA: 00:16:08
+[2026-09-12 13:39:05,262] INFO: 
+================================================================================
+[2026-09-12 13:39:05,262] INFO: [STAGE 7.4] AUTHORIZED — VERTICAL CLOUD STRUCTURE FEATURE EXTRACTION
+[2026-09-12 13:39:05,262] INFO: [STAGE 7.4] Origins: 347 | Horizons: 24 | Total expected rows: 8328
+[2026-09-12 13:39:05,262] INFO: [STAGE 7.4] Extraction workers: 16 | Live progress reporting: ENABLED
+[2026-09-12 13:39:05,262] INFO: ================================================================================
+[2026-09-12 13:39:16,032] INFO: [STAGE 7.4] Extraction: 2/347 origins complete (0.6%) | Rows: 48 | Runtime: 00:00:10 | Avg/origin: 10.8s | ETA: 00:03:52
+[2026-09-12 13:39:21,494] INFO: [STAGE 7.4] Extraction: 3/347 origins complete (0.9%) | Rows: 72 | Runtime: 00:00:16 | Avg/origin: 8.1s | ETA: 00:02:54
+[2026-09-12 13:39:22,018] INFO: [STAGE 7.4] Extraction: 4/347 origins complete (1.2%) | Rows: 96 | Runtime: 00:00:16 | Avg/origin: 5.6s | ETA: 00:01:59
+[2026-09-12 13:39:33,240] INFO: [STAGE 7.4] Extraction: 5/347 origins complete (1.4%) | Rows: 120 | Runtime: 00:00:27 | Avg/origin: 7.0s | ETA: 00:02:29
+[2026-09-12 13:39:44,037] INFO: [STAGE 7.4] Extraction: 6/347 origins complete (1.7%) | Rows: 144 | Runtime: 00:00:38 | Avg/origin: 7.8s | ETA: 00:02:45
+[2026-09-12 13:39:45,847] INFO: [STAGE 7.4] Extraction: 7/347 origins complete (2.0%) | Rows: 168 | Runtime: 00:00:40 | Avg/origin: 6.8s | ETA: 00:02:23
+[2026-09-12 13:39:45,948] INFO: [STAGE 7.4] Extraction: 8/347 origins complete (2.3%) | Rows: 192 | Runtime: 00:00:40 | Avg/origin: 5.8s | ETA: 00:02:03
+[2026-09-12 13:39:46,850] INFO: [STAGE 7.4] Extraction: 9/347 origins complete (2.6%) | Rows: 216 | Runtime: 00:00:41 | Avg/origin: 5.2s | ETA: 00:01:49
+[2026-09-12 13:39:46,983] INFO: [STAGE 7.4] Extraction: 10/347 origins complete (2.9%) | Rows: 240 | Runtime: 00:00:41 | Avg/origin: 4.6s | ETA: 00:01:37
+[2026-09-12 13:39:47,767] INFO: [STAGE 7.4] Extraction: 11/347 origins complete (3.2%) | Rows: 264 | Runtime: 00:00:42 | Avg/origin: 4.3s | ETA: 00:01:29
+[2026-09-12 13:39:48,581] INFO: [STAGE 7.4] Extraction: 12/347 origins complete (3.5%) | Rows: 288 | Runtime: 00:00:43 | Avg/origin: 3.9s | ETA: 00:01:22
+[2026-09-12 13:39:48,604] INFO: [STAGE 7.4] Extraction: 13/347 origins complete (3.7%) | Rows: 312 | Runtime: 00:00:43 | Avg/origin: 3.6s | ETA: 00:01:15
+[2026-09-12 13:39:48,783] INFO: [STAGE 7.4] Extraction: 14/347 origins complete (4.0%) | Rows: 336 | Runtime: 00:00:43 | Avg/origin: 3.3s | ETA: 00:01:09
+[2026-09-12 13:39:49,638] INFO: [STAGE 7.4] Extraction: 15/347 origins complete (4.3%) | Rows: 360 | Runtime: 00:00:44 | Avg/origin: 3.2s | ETA: 00:01:05
+[2026-09-12 13:39:50,325] INFO: [STAGE 7.4] Extraction: 16/347 origins complete (4.6%) | Rows: 384 | Runtime: 00:00:45 | Avg/origin: 3.0s | ETA: 00:01:02
+[2026-09-12 13:39:52,204] INFO: [STAGE 7.4] Extraction: 17/347 origins complete (4.9%) | Rows: 408 | Runtime: 00:00:46 | Avg/origin: 2.9s | ETA: 00:01:00
+[2026-09-12 13:40:01,022] INFO: [STAGE 7.4] Extraction: 18/347 origins complete (5.2%) | Rows: 432 | Runtime: 00:00:55 | Avg/origin: 3.3s | ETA: 00:01:07
+[2026-09-12 13:40:10,938] INFO: [STAGE 7.4] Extraction: 19/347 origins complete (5.5%) | Rows: 456 | Runtime: 00:01:05 | Avg/origin: 3.6s | ETA: 00:01:14
+[2026-09-12 13:40:11,018] INFO: [STAGE 7.4] Extraction: 20/347 origins complete (5.8%) | Rows: 480 | Runtime: 00:01:05 | Avg/origin: 3.5s | ETA: 00:01:10
+[2026-09-12 13:40:22,031] INFO: [STAGE 7.4] Extraction: 21/347 origins complete (6.1%) | Rows: 504 | Runtime: 00:01:16 | Avg/origin: 3.8s | ETA: 00:01:18
+[2026-09-12 13:40:28,947] INFO: [STAGE 7.4] Extraction: 22/347 origins complete (6.3%) | Rows: 528 | Runtime: 00:01:23 | Avg/origin: 4.0s | ETA: 00:01:20
+[2026-09-12 13:40:29,017] INFO: [STAGE 7.4] Extraction: 23/347 origins complete (6.6%) | Rows: 552 | Runtime: 00:01:23 | Avg/origin: 3.8s | ETA: 00:01:17
+[2026-09-12 13:40:30,138] INFO: [STAGE 7.4] Extraction: 24/347 origins complete (6.9%) | Rows: 576 | Runtime: 00:01:24 | Avg/origin: 3.7s | ETA: 00:01:14
+[2026-09-12 13:40:32,533] INFO: [STAGE 7.4] Extraction: 25/347 origins complete (7.2%) | Rows: 600 | Runtime: 00:01:27 | Avg/origin: 3.6s | ETA: 00:01:13
+[2026-09-12 13:40:34,582] INFO: [STAGE 7.4] Extraction: 26/347 origins complete (7.5%) | Rows: 624 | Runtime: 00:01:29 | Avg/origin: 3.6s | ETA: 00:01:11
+[2026-09-12 13:40:34,891] INFO: [STAGE 7.4] Extraction: 27/347 origins complete (7.8%) | Rows: 648 | Runtime: 00:01:29 | Avg/origin: 3.4s | ETA: 00:01:08
+[2026-09-12 13:40:38,297] INFO: [STAGE 7.4] Extraction: 28/347 origins complete (8.1%) | Rows: 672 | Runtime: 00:01:33 | Avg/origin: 3.4s | ETA: 00:01:08
+[2026-09-12 13:40:38,310] INFO: [STAGE 7.4] Extraction: 29/347 origins complete (8.4%) | Rows: 696 | Runtime: 00:01:33 | Avg/origin: 3.3s | ETA: 00:01:06
+[2026-09-12 13:40:38,895] INFO: [STAGE 7.4] Extraction: 30/347 origins complete (8.6%) | Rows: 720 | Runtime: 00:01:33 | Avg/origin: 3.2s | ETA: 00:01:03
+[2026-09-12 13:40:39,223] INFO: [STAGE 7.4] Extraction: 31/347 origins complete (8.9%) | Rows: 744 | Runtime: 00:01:33 | Avg/origin: 3.1s | ETA: 00:01:01
+[2026-09-12 13:40:39,971] INFO: [STAGE 7.4] Extraction: 32/347 origins complete (9.2%) | Rows: 768 | Runtime: 00:01:34 | Avg/origin: 3.1s | ETA: 00:01:00
+[2026-09-12 13:40:40,220] INFO: [STAGE 7.4] Extraction: 33/347 origins complete (9.5%) | Rows: 792 | Runtime: 00:01:34 | Avg/origin: 3.0s | ETA: 00:00:58
+[2026-09-12 13:40:40,242] INFO: [STAGE 7.4] Extraction: 34/347 origins complete (9.8%) | Rows: 816 | Runtime: 00:01:34 | Avg/origin: 2.9s | ETA: 00:00:56
+[2026-09-12 13:40:52,046] INFO: [STAGE 7.4] Extraction: 35/347 origins complete (10.1%) | Rows: 840 | Runtime: 00:01:46 | Avg/origin: 3.1s | ETA: 00:01:01
+[2026-09-12 13:41:00,773] INFO: [STAGE 7.4] Extraction: 36/347 origins complete (10.4%) | Rows: 864 | Runtime: 00:01:55 | Avg/origin: 3.3s | ETA: 00:01:04
+[2026-09-12 13:41:09,790] INFO: [STAGE 7.4] Extraction: 37/347 origins complete (10.7%) | Rows: 888 | Runtime: 00:02:04 | Avg/origin: 3.5s | ETA: 00:01:07
+[2026-09-12 13:41:17,513] INFO: [STAGE 7.4] Extraction: 38/347 origins complete (11.0%) | Rows: 912 | Runtime: 00:02:12 | Avg/origin: 3.6s | ETA: 00:01:09
+[2026-09-12 13:41:20,055] INFO: [STAGE 7.4] Extraction: 39/347 origins complete (11.2%) | Rows: 936 | Runtime: 00:02:14 | Avg/origin: 3.5s | ETA: 00:01:08
+[2026-09-12 13:41:20,067] INFO: [STAGE 7.4] Extraction: 40/347 origins complete (11.5%) | Rows: 960 | Runtime: 00:02:14 | Avg/origin: 3.5s | ETA: 00:01:06
+[2026-09-12 13:41:20,226] INFO: [STAGE 7.4] Extraction: 41/347 origins complete (11.8%) | Rows: 984 | Runtime: 00:02:14 | Avg/origin: 3.4s | ETA: 00:01:04
+[2026-09-12 13:41:21,660] INFO: [STAGE 7.4] Extraction: 42/347 origins complete (12.1%) | Rows: 1008 | Runtime: 00:02:16 | Avg/origin: 3.3s | ETA: 00:01:03
+[2026-09-12 13:41:22,184] INFO: [STAGE 7.4] Extraction: 43/347 origins complete (12.4%) | Rows: 1032 | Runtime: 00:02:16 | Avg/origin: 3.3s | ETA: 00:01:01
+[2026-09-12 13:41:23,352] INFO: [STAGE 7.4] Extraction: 44/347 origins complete (12.7%) | Rows: 1056 | Runtime: 00:02:18 | Avg/origin: 3.2s | ETA: 00:01:00
+[2026-09-12 13:41:23,997] INFO: [STAGE 7.4] Extraction: 45/347 origins complete (13.0%) | Rows: 1080 | Runtime: 00:02:18 | Avg/origin: 3.2s | ETA: 00:00:59
+[2026-09-12 13:41:24,693] INFO: [STAGE 7.4] Extraction: 46/347 origins complete (13.3%) | Rows: 1104 | Runtime: 00:02:19 | Avg/origin: 3.1s | ETA: 00:00:58
+[2026-09-12 13:41:26,326] INFO: [STAGE 7.4] Extraction: 47/347 origins complete (13.5%) | Rows: 1128 | Runtime: 00:02:21 | Avg/origin: 3.1s | ETA: 00:00:57
+[2026-09-12 13:41:27,575] INFO: [STAGE 7.4] Extraction: 48/347 origins complete (13.8%) | Rows: 1152 | Runtime: 00:02:22 | Avg/origin: 3.0s | ETA: 00:00:56
+[2026-09-12 13:41:29,545] INFO: [STAGE 7.4] Extraction: 49/347 origins complete (14.1%) | Rows: 1176 | Runtime: 00:02:24 | Avg/origin: 3.0s | ETA: 00:00:55
+[2026-09-12 13:41:29,590] INFO: [STAGE 7.4] Extraction: 50/347 origins complete (14.4%) | Rows: 1200 | Runtime: 00:02:24 | Avg/origin: 2.9s | ETA: 00:00:54
+[2026-09-12 13:41:38,919] INFO: [STAGE 7.4] Extraction: 51/347 origins complete (14.7%) | Rows: 1224 | Runtime: 00:02:33 | Avg/origin: 3.1s | ETA: 00:00:56
+[2026-09-12 13:41:51,804] INFO: [STAGE 7.4] Extraction: 52/347 origins complete (15.0%) | Rows: 1248 | Runtime: 00:02:46 | Avg/origin: 3.3s | ETA: 00:01:00
+[2026-09-12 13:41:54,254] INFO: [STAGE 7.4] Extraction: 53/347 origins complete (15.3%) | Rows: 1272 | Runtime: 00:02:48 | Avg/origin: 3.2s | ETA: 00:00:59
+[2026-09-12 13:42:05,018] INFO: [STAGE 7.4] Extraction: 54/347 origins complete (15.6%) | Rows: 1296 | Runtime: 00:02:59 | Avg/origin: 3.4s | ETA: 00:01:02
+[2026-09-12 13:42:05,659] INFO: [STAGE 7.4] Extraction: 55/347 origins complete (15.9%) | Rows: 1320 | Runtime: 00:03:00 | Avg/origin: 3.3s | ETA: 00:01:00
+[2026-09-12 13:42:07,237] INFO: [STAGE 7.4] Extraction: 56/347 origins complete (16.1%) | Rows: 1344 | Runtime: 00:03:01 | Avg/origin: 3.3s | ETA: 00:01:00
+[2026-09-12 13:42:08,157] INFO: [STAGE 7.4] Extraction: 57/347 origins complete (16.4%) | Rows: 1368 | Runtime: 00:03:02 | Avg/origin: 3.3s | ETA: 00:00:59
+[2026-09-12 13:42:08,258] INFO: [STAGE 7.4] Extraction: 58/347 origins complete (16.7%) | Rows: 1392 | Runtime: 00:03:02 | Avg/origin: 3.2s | ETA: 00:00:57
+[2026-09-12 13:42:08,704] INFO: [STAGE 7.4] Extraction: 59/347 origins complete (17.0%) | Rows: 1416 | Runtime: 00:03:03 | Avg/origin: 3.2s | ETA: 00:00:56
+[2026-09-12 13:42:09,021] INFO: [STAGE 7.4] Extraction: 60/347 origins complete (17.3%) | Rows: 1440 | Runtime: 00:03:03 | Avg/origin: 3.1s | ETA: 00:00:55
+[2026-09-12 13:42:10,240] INFO: [STAGE 7.4] Extraction: 61/347 origins complete (17.6%) | Rows: 1464 | Runtime: 00:03:04 | Avg/origin: 3.1s | ETA: 00:00:55
+[2026-09-12 13:42:11,550] INFO: [STAGE 7.4] Extraction: 62/347 origins complete (17.9%) | Rows: 1488 | Runtime: 00:03:06 | Avg/origin: 3.1s | ETA: 00:00:54
+[2026-09-12 13:42:11,673] INFO: [STAGE 7.4] Extraction: 63/347 origins complete (18.2%) | Rows: 1512 | Runtime: 00:03:06 | Avg/origin: 3.0s | ETA: 00:00:53
+[2026-09-12 13:42:11,997] INFO: [STAGE 7.4] Extraction: 64/347 origins complete (18.4%) | Rows: 1536 | Runtime: 00:03:06 | Avg/origin: 3.0s | ETA: 00:00:52
+[2026-09-12 13:42:12,328] INFO: [STAGE 7.4] Extraction: 65/347 origins complete (18.7%) | Rows: 1560 | Runtime: 00:03:07 | Avg/origin: 2.9s | ETA: 00:00:51
+[2026-09-12 13:42:18,493] INFO: [STAGE 7.4] Extraction: 66/347 origins complete (19.0%) | Rows: 1584 | Runtime: 00:03:13 | Avg/origin: 3.0s | ETA: 00:00:52
+[2026-09-12 13:42:19,220] INFO: [STAGE 7.4] Extraction: 67/347 origins complete (19.3%) | Rows: 1608 | Runtime: 00:03:13 | Avg/origin: 2.9s | ETA: 00:00:51
+[2026-09-12 13:42:25,345] INFO: [STAGE 7.4] Extraction: 68/347 origins complete (19.6%) | Rows: 1632 | Runtime: 00:03:20 | Avg/origin: 3.0s | ETA: 00:00:52
+[2026-09-12 13:42:36,854] INFO: [STAGE 7.4] Extraction: 69/347 origins complete (19.9%) | Rows: 1656 | Runtime: 00:03:31 | Avg/origin: 3.1s | ETA: 00:00:54
+[2026-09-12 13:42:49,398] INFO: [STAGE 7.4] Extraction: 70/347 origins complete (20.2%) | Rows: 1680 | Runtime: 00:03:44 | Avg/origin: 3.2s | ETA: 00:00:56
+[2026-09-12 13:42:54,422] INFO: [STAGE 7.4] Extraction: 71/347 origins complete (20.5%) | Rows: 1704 | Runtime: 00:03:49 | Avg/origin: 3.3s | ETA: 00:00:56
+[2026-09-12 13:42:54,439] INFO: [STAGE 7.4] Extraction: 72/347 origins complete (20.7%) | Rows: 1728 | Runtime: 00:03:49 | Avg/origin: 3.2s | ETA: 00:00:55
+[2026-09-12 13:42:54,896] INFO: [STAGE 7.4] Extraction: 73/347 origins complete (21.0%) | Rows: 1752 | Runtime: 00:03:49 | Avg/origin: 3.2s | ETA: 00:00:54
+[2026-09-12 13:42:56,901] INFO: [STAGE 7.4] Extraction: 74/347 origins complete (21.3%) | Rows: 1776 | Runtime: 00:03:51 | Avg/origin: 3.2s | ETA: 00:00:54
+[2026-09-12 13:42:57,353] INFO: [STAGE 7.4] Extraction: 75/347 origins complete (21.6%) | Rows: 1800 | Runtime: 00:03:52 | Avg/origin: 3.1s | ETA: 00:00:53
+[2026-09-12 13:42:57,919] INFO: [STAGE 7.4] Extraction: 76/347 origins complete (21.9%) | Rows: 1824 | Runtime: 00:03:52 | Avg/origin: 3.1s | ETA: 00:00:52
+[2026-09-12 13:42:58,371] INFO: [STAGE 7.4] Extraction: 77/347 origins complete (22.2%) | Rows: 1848 | Runtime: 00:03:53 | Avg/origin: 3.1s | ETA: 00:00:51
+[2026-09-12 13:42:58,667] INFO: [STAGE 7.4] Extraction: 78/347 origins complete (22.5%) | Rows: 1872 | Runtime: 00:03:53 | Avg/origin: 3.0s | ETA: 00:00:50
+[2026-09-12 13:42:58,977] INFO: [STAGE 7.4] Extraction: 79/347 origins complete (22.8%) | Rows: 1896 | Runtime: 00:03:53 | Avg/origin: 3.0s | ETA: 00:00:50
+[2026-09-12 13:43:00,059] INFO: [STAGE 7.4] Extraction: 80/347 origins complete (23.1%) | Rows: 1920 | Runtime: 00:03:54 | Avg/origin: 3.0s | ETA: 00:00:49
+[2026-09-12 13:43:02,439] INFO: [STAGE 7.4] Extraction: 81/347 origins complete (23.3%) | Rows: 1944 | Runtime: 00:03:57 | Avg/origin: 3.0s | ETA: 00:00:49
+[2026-09-12 13:43:04,856] INFO: [STAGE 7.4] Extraction: 82/347 origins complete (23.6%) | Rows: 1968 | Runtime: 00:03:59 | Avg/origin: 3.0s | ETA: 00:00:48
+[2026-09-12 13:43:08,245] INFO: [STAGE 7.4] Extraction: 83/347 origins complete (23.9%) | Rows: 1992 | Runtime: 00:04:02 | Avg/origin: 3.0s | ETA: 00:00:48
+[2026-09-12 13:43:17,417] INFO: [STAGE 7.4] Extraction: 84/347 origins complete (24.2%) | Rows: 2016 | Runtime: 00:04:12 | Avg/origin: 3.0s | ETA: 00:00:49
+[2026-09-12 13:43:25,847] INFO: [STAGE 7.4] Extraction: 85/347 origins complete (24.5%) | Rows: 2040 | Runtime: 00:04:20 | Avg/origin: 3.1s | ETA: 00:00:50
+[2026-09-12 13:43:40,420] INFO: [STAGE 7.4] Extraction: 86/347 origins complete (24.8%) | Rows: 2064 | Runtime: 00:04:35 | Avg/origin: 3.2s | ETA: 00:00:52
+[2026-09-12 13:43:41,820] INFO: [STAGE 7.4] Extraction: 87/347 origins complete (25.1%) | Rows: 2088 | Runtime: 00:04:36 | Avg/origin: 3.2s | ETA: 00:00:52
+[2026-09-12 13:43:44,380] INFO: [STAGE 7.4] Extraction: 88/347 origins complete (25.4%) | Rows: 2112 | Runtime: 00:04:39 | Avg/origin: 3.2s | ETA: 00:00:51
+[2026-09-12 13:43:46,028] INFO: [STAGE 7.4] Extraction: 89/347 origins complete (25.6%) | Rows: 2136 | Runtime: 00:04:40 | Avg/origin: 3.2s | ETA: 00:00:51
+[2026-09-12 13:43:49,988] INFO: [STAGE 7.4] Extraction: 90/347 origins complete (25.9%) | Rows: 2160 | Runtime: 00:04:44 | Avg/origin: 3.2s | ETA: 00:00:51
+[2026-09-12 13:43:52,700] INFO: [STAGE 7.4] Extraction: 91/347 origins complete (26.2%) | Rows: 2184 | Runtime: 00:04:47 | Avg/origin: 3.2s | ETA: 00:00:51
+[2026-09-12 13:43:53,097] INFO: [STAGE 7.4] Extraction: 92/347 origins complete (26.5%) | Rows: 2208 | Runtime: 00:04:47 | Avg/origin: 3.2s | ETA: 00:00:50
+[2026-09-12 13:43:53,732] INFO: [STAGE 7.4] Extraction: 93/347 origins complete (26.8%) | Rows: 2232 | Runtime: 00:04:48 | Avg/origin: 3.1s | ETA: 00:00:49
+[2026-09-12 13:43:54,166] INFO: [STAGE 7.4] Extraction: 94/347 origins complete (27.1%) | Rows: 2256 | Runtime: 00:04:48 | Avg/origin: 3.1s | ETA: 00:00:49
+[2026-09-12 13:43:54,825] INFO: [STAGE 7.4] Extraction: 95/347 origins complete (27.4%) | Rows: 2280 | Runtime: 00:04:49 | Avg/origin: 3.1s | ETA: 00:00:48
+[2026-09-12 13:43:56,030] INFO: [STAGE 7.4] Extraction: 96/347 origins complete (27.7%) | Rows: 2304 | Runtime: 00:04:50 | Avg/origin: 3.1s | ETA: 00:00:48
+[2026-09-12 13:43:57,187] INFO: [STAGE 7.4] Extraction: 97/347 origins complete (28.0%) | Rows: 2328 | Runtime: 00:04:51 | Avg/origin: 3.0s | ETA: 00:00:47
+[2026-09-12 13:43:57,307] INFO: [STAGE 7.4] Extraction: 98/347 origins complete (28.2%) | Rows: 2352 | Runtime: 00:04:52 | Avg/origin: 3.0s | ETA: 00:00:46
+[2026-09-12 13:43:57,994] INFO: [STAGE 7.4] Extraction: 99/347 origins complete (28.5%) | Rows: 2376 | Runtime: 00:04:52 | Avg/origin: 3.0s | ETA: 00:00:46
+[2026-09-12 13:44:01,926] INFO: [STAGE 7.4] Extraction: 100/347 origins complete (28.8%) | Rows: 2400 | Runtime: 00:04:56 | Avg/origin: 3.0s | ETA: 00:00:46
+[2026-09-12 13:44:10,992] INFO: [STAGE 7.4] Extraction: 101/347 origins complete (29.1%) | Rows: 2424 | Runtime: 00:05:05 | Avg/origin: 3.1s | ETA: 00:00:47
+[2026-09-12 13:44:24,562] INFO: [STAGE 7.4] Extraction: 102/347 origins complete (29.4%) | Rows: 2448 | Runtime: 00:05:19 | Avg/origin: 3.2s | ETA: 00:00:48
+[2026-09-12 13:44:40,417] INFO: [STAGE 7.4] Extraction: 103/347 origins complete (29.7%) | Rows: 2472 | Runtime: 00:05:35 | Avg/origin: 3.3s | ETA: 00:00:50
+[2026-09-12 13:44:43,167] INFO: [STAGE 7.4] Extraction: 104/347 origins complete (30.0%) | Rows: 2496 | Runtime: 00:05:37 | Avg/origin: 3.3s | ETA: 00:00:49
+[2026-09-12 13:44:45,141] INFO: [STAGE 7.4] Extraction: 105/347 origins complete (30.3%) | Rows: 2520 | Runtime: 00:05:39 | Avg/origin: 3.3s | ETA: 00:00:49
+[2026-09-12 13:44:46,047] INFO: [STAGE 7.4] Extraction: 106/347 origins complete (30.5%) | Rows: 2544 | Runtime: 00:05:40 | Avg/origin: 3.2s | ETA: 00:00:48
+[2026-09-12 13:44:50,113] INFO: [STAGE 7.4] Extraction: 107/347 origins complete (30.8%) | Rows: 2568 | Runtime: 00:05:44 | Avg/origin: 3.3s | ETA: 00:00:48
+[2026-09-12 13:44:54,622] INFO: [STAGE 7.4] Extraction: 108/347 origins complete (31.1%) | Rows: 2592 | Runtime: 00:05:49 | Avg/origin: 3.3s | ETA: 00:00:48
+[2026-09-12 13:44:56,869] INFO: [STAGE 7.4] Extraction: 109/347 origins complete (31.4%) | Rows: 2616 | Runtime: 00:05:51 | Avg/origin: 3.3s | ETA: 00:00:48
+[2026-09-12 13:44:56,894] INFO: [STAGE 7.4] Extraction: 110/347 origins complete (31.7%) | Rows: 2640 | Runtime: 00:05:51 | Avg/origin: 3.2s | ETA: 00:00:47
+[2026-09-12 13:45:00,548] INFO: [STAGE 7.4] Extraction: 111/347 origins complete (32.0%) | Rows: 2664 | Runtime: 00:05:55 | Avg/origin: 3.2s | ETA: 00:00:47
+[2026-09-12 13:45:00,706] INFO: [STAGE 7.4] Extraction: 112/347 origins complete (32.3%) | Rows: 2688 | Runtime: 00:05:55 | Avg/origin: 3.2s | ETA: 00:00:47
+[2026-09-12 13:45:00,950] INFO: [STAGE 7.4] Extraction: 113/347 origins complete (32.6%) | Rows: 2712 | Runtime: 00:05:55 | Avg/origin: 3.2s | ETA: 00:00:46
+[2026-09-12 13:45:01,416] INFO: [STAGE 7.4] Extraction: 114/347 origins complete (32.9%) | Rows: 2736 | Runtime: 00:05:56 | Avg/origin: 3.2s | ETA: 00:00:45
+[2026-09-12 13:45:04,252] INFO: [STAGE 7.4] Extraction: 115/347 origins complete (33.1%) | Rows: 2760 | Runtime: 00:05:58 | Avg/origin: 3.1s | ETA: 00:00:45
+[2026-09-12 13:45:04,283] INFO: [STAGE 7.4] Extraction: 116/347 origins complete (33.4%) | Rows: 2784 | Runtime: 00:05:59 | Avg/origin: 3.1s | ETA: 00:00:45
+[2026-09-12 13:45:07,112] INFO: [STAGE 7.4] Extraction: 117/347 origins complete (33.7%) | Rows: 2808 | Runtime: 00:06:01 | Avg/origin: 3.1s | ETA: 00:00:44
+[2026-09-12 13:45:23,176] INFO: [STAGE 7.4] Extraction: 118/347 origins complete (34.0%) | Rows: 2832 | Runtime: 00:06:17 | Avg/origin: 3.2s | ETA: 00:00:46
+[2026-09-12 13:45:29,799] INFO: [STAGE 7.4] Extraction: 119/347 origins complete (34.3%) | Rows: 2856 | Runtime: 00:06:24 | Avg/origin: 3.3s | ETA: 00:00:46
+[2026-09-12 13:45:31,016] INFO: [STAGE 7.4] Extraction: 120/347 origins complete (34.6%) | Rows: 2880 | Runtime: 00:06:25 | Avg/origin: 3.2s | ETA: 00:00:45
+[2026-09-12 13:45:36,924] INFO: [STAGE 7.4] Extraction: 121/347 origins complete (34.9%) | Rows: 2904 | Runtime: 00:06:31 | Avg/origin: 3.3s | ETA: 00:00:46
+[2026-09-12 13:45:42,093] INFO: [STAGE 7.4] Extraction: 122/347 origins complete (35.2%) | Rows: 2928 | Runtime: 00:06:36 | Avg/origin: 3.3s | ETA: 00:00:46
+[2026-09-12 13:45:42,121] INFO: [STAGE 7.4] Extraction: 123/347 origins complete (35.4%) | Rows: 2952 | Runtime: 00:06:36 | Avg/origin: 3.3s | ETA: 00:00:45
+[2026-09-12 13:45:43,207] INFO: [STAGE 7.4] Extraction: 124/347 origins complete (35.7%) | Rows: 2976 | Runtime: 00:06:37 | Avg/origin: 3.2s | ETA: 00:00:45
+[2026-09-12 13:45:44,887] INFO: [STAGE 7.4] Extraction: 125/347 origins complete (36.0%) | Rows: 3000 | Runtime: 00:06:39 | Avg/origin: 3.2s | ETA: 00:00:44
+[2026-09-12 13:45:46,501] INFO: [STAGE 7.4] Extraction: 126/347 origins complete (36.3%) | Rows: 3024 | Runtime: 00:06:41 | Avg/origin: 3.2s | ETA: 00:00:44
+[2026-09-12 13:45:46,529] INFO: [STAGE 7.4] Extraction: 127/347 origins complete (36.6%) | Rows: 3048 | Runtime: 00:06:41 | Avg/origin: 3.2s | ETA: 00:00:43
+[2026-09-12 13:45:46,969] INFO: [STAGE 7.4] Extraction: 128/347 origins complete (36.9%) | Rows: 3072 | Runtime: 00:06:41 | Avg/origin: 3.2s | ETA: 00:00:43
+[2026-09-12 13:45:47,163] INFO: [STAGE 7.4] Extraction: 129/347 origins complete (37.2%) | Rows: 3096 | Runtime: 00:06:41 | Avg/origin: 3.1s | ETA: 00:00:42
+[2026-09-12 13:45:47,448] INFO: [STAGE 7.4] Extraction: 130/347 origins complete (37.5%) | Rows: 3120 | Runtime: 00:06:42 | Avg/origin: 3.1s | ETA: 00:00:42
+[2026-09-12 13:45:50,951] INFO: [STAGE 7.4] Extraction: 131/347 origins complete (37.8%) | Rows: 3144 | Runtime: 00:06:45 | Avg/origin: 3.1s | ETA: 00:00:42
+[2026-09-12 13:45:55,483] INFO: [STAGE 7.4] Extraction: 132/347 origins complete (38.0%) | Rows: 3168 | Runtime: 00:06:50 | Avg/origin: 3.1s | ETA: 00:00:42
+[2026-09-12 13:46:02,140] INFO: [STAGE 7.4] Extraction: 133/347 origins complete (38.3%) | Rows: 3192 | Runtime: 00:06:56 | Avg/origin: 3.2s | ETA: 00:00:42
+[2026-09-12 13:46:04,139] INFO: [STAGE 7.4] Extraction: 134/347 origins complete (38.6%) | Rows: 3216 | Runtime: 00:06:58 | Avg/origin: 3.1s | ETA: 00:00:41
+[2026-09-12 13:46:14,314] INFO: [STAGE 7.4] Extraction: 135/347 origins complete (38.9%) | Rows: 3240 | Runtime: 00:07:09 | Avg/origin: 3.2s | ETA: 00:00:42
+[2026-09-12 13:46:26,800] INFO: [STAGE 7.4] Extraction: 136/347 origins complete (39.2%) | Rows: 3264 | Runtime: 00:07:21 | Avg/origin: 3.3s | ETA: 00:00:43
+[2026-09-12 13:46:26,983] INFO: [STAGE 7.4] Extraction: 137/347 origins complete (39.5%) | Rows: 3288 | Runtime: 00:07:21 | Avg/origin: 3.2s | ETA: 00:00:42
+[2026-09-12 13:46:28,510] INFO: [STAGE 7.4] Extraction: 138/347 origins complete (39.8%) | Rows: 3312 | Runtime: 00:07:23 | Avg/origin: 3.2s | ETA: 00:00:42
+[2026-09-12 13:46:33,200] INFO: [STAGE 7.4] Extraction: 139/347 origins complete (40.1%) | Rows: 3336 | Runtime: 00:07:27 | Avg/origin: 3.2s | ETA: 00:00:42
+[2026-09-12 13:46:34,401] INFO: [STAGE 7.4] Extraction: 140/347 origins complete (40.3%) | Rows: 3360 | Runtime: 00:07:29 | Avg/origin: 3.2s | ETA: 00:00:41
+[2026-09-12 13:46:36,878] INFO: [STAGE 7.4] Extraction: 141/347 origins complete (40.6%) | Rows: 3384 | Runtime: 00:07:31 | Avg/origin: 3.2s | ETA: 00:00:41
+[2026-09-12 13:46:38,311] INFO: [STAGE 7.4] Extraction: 142/347 origins complete (40.9%) | Rows: 3408 | Runtime: 00:07:33 | Avg/origin: 3.2s | ETA: 00:00:41
+[2026-09-12 13:46:40,100] INFO: [STAGE 7.4] Extraction: 143/347 origins complete (41.2%) | Rows: 3432 | Runtime: 00:07:34 | Avg/origin: 3.2s | ETA: 00:00:40
+[2026-09-12 13:46:41,515] INFO: [STAGE 7.4] Extraction: 144/347 origins complete (41.5%) | Rows: 3456 | Runtime: 00:07:36 | Avg/origin: 3.2s | ETA: 00:00:40
+[2026-09-12 13:46:42,783] INFO: [STAGE 7.4] Extraction: 145/347 origins complete (41.8%) | Rows: 3480 | Runtime: 00:07:37 | Avg/origin: 3.2s | ETA: 00:00:40
+[2026-09-12 13:46:44,077] INFO: [STAGE 7.4] Extraction: 146/347 origins complete (42.1%) | Rows: 3504 | Runtime: 00:07:38 | Avg/origin: 3.2s | ETA: 00:00:39
+[2026-09-12 13:46:44,393] INFO: [STAGE 7.4] Extraction: 147/347 origins complete (42.4%) | Rows: 3528 | Runtime: 00:07:39 | Avg/origin: 3.1s | ETA: 00:00:39
+[2026-09-12 13:46:45,679] INFO: [STAGE 7.4] Extraction: 148/347 origins complete (42.7%) | Rows: 3552 | Runtime: 00:07:40 | Avg/origin: 3.1s | ETA: 00:00:38
+[2026-09-12 13:46:54,556] INFO: [STAGE 7.4] Extraction: 149/347 origins complete (42.9%) | Rows: 3576 | Runtime: 00:07:49 | Avg/origin: 3.2s | ETA: 00:00:39
+[2026-09-12 13:46:56,711] INFO: [STAGE 7.4] Extraction: 150/347 origins complete (43.2%) | Rows: 3600 | Runtime: 00:07:51 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:05,770] INFO: [STAGE 7.4] Extraction: 151/347 origins complete (43.5%) | Rows: 3624 | Runtime: 00:08:00 | Avg/origin: 3.2s | ETA: 00:00:39
+[2026-09-12 13:47:07,708] INFO: [STAGE 7.4] Extraction: 152/347 origins complete (43.8%) | Rows: 3648 | Runtime: 00:08:02 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:11,593] INFO: [STAGE 7.4] Extraction: 153/347 origins complete (44.1%) | Rows: 3672 | Runtime: 00:08:06 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:12,972] INFO: [STAGE 7.4] Extraction: 154/347 origins complete (44.4%) | Rows: 3696 | Runtime: 00:08:07 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:22,773] INFO: [STAGE 7.4] Extraction: 155/347 origins complete (44.7%) | Rows: 3720 | Runtime: 00:08:17 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:22,954] INFO: [STAGE 7.4] Extraction: 156/347 origins complete (45.0%) | Rows: 3744 | Runtime: 00:08:17 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:26,494] INFO: [STAGE 7.4] Extraction: 157/347 origins complete (45.2%) | Rows: 3768 | Runtime: 00:08:21 | Avg/origin: 3.2s | ETA: 00:00:38
+[2026-09-12 13:47:28,484] INFO: [STAGE 7.4] Extraction: 158/347 origins complete (45.5%) | Rows: 3792 | Runtime: 00:08:23 | Avg/origin: 3.2s | ETA: 00:00:37
+[2026-09-12 13:47:31,087] INFO: [STAGE 7.4] Extraction: 159/347 origins complete (45.8%) | Rows: 3816 | Runtime: 00:08:25 | Avg/origin: 3.2s | ETA: 00:00:37
+[2026-09-12 13:47:33,012] INFO: [STAGE 7.4] Extraction: 160/347 origins complete (46.1%) | Rows: 3840 | Runtime: 00:08:27 | Avg/origin: 3.2s | ETA: 00:00:37
+[2026-09-12 13:47:34,639] INFO: [STAGE 7.4] Extraction: 161/347 origins complete (46.4%) | Rows: 3864 | Runtime: 00:08:29 | Avg/origin: 3.2s | ETA: 00:00:37
+[2026-09-12 13:47:34,678] INFO: [STAGE 7.4] Extraction: 162/347 origins complete (46.7%) | Rows: 3888 | Runtime: 00:08:29 | Avg/origin: 3.2s | ETA: 00:00:36
+[2026-09-12 13:47:35,602] INFO: [STAGE 7.4] Extraction: 163/347 origins complete (47.0%) | Rows: 3912 | Runtime: 00:08:30 | Avg/origin: 3.2s | ETA: 00:00:36
+[2026-09-12 13:47:35,918] INFO: [STAGE 7.4] Extraction: 164/347 origins complete (47.3%) | Rows: 3936 | Runtime: 00:08:30 | Avg/origin: 3.1s | ETA: 00:00:35
+[2026-09-12 13:47:48,163] INFO: [STAGE 7.4] Extraction: 165/347 origins complete (47.6%) | Rows: 3960 | Runtime: 00:08:42 | Avg/origin: 3.2s | ETA: 00:00:36
+[2026-09-12 13:47:48,472] INFO: [STAGE 7.4] Extraction: 166/347 origins complete (47.8%) | Rows: 3984 | Runtime: 00:08:43 | Avg/origin: 3.2s | ETA: 00:00:35
+[2026-09-12 13:47:49,965] INFO: [STAGE 7.4] Extraction: 167/347 origins complete (48.1%) | Rows: 4008 | Runtime: 00:08:44 | Avg/origin: 3.2s | ETA: 00:00:35
+[2026-09-12 13:47:58,333] INFO: [STAGE 7.4] Extraction: 168/347 origins complete (48.4%) | Rows: 4032 | Runtime: 00:08:53 | Avg/origin: 3.2s | ETA: 00:00:35
+[2026-09-12 13:47:58,453] INFO: [STAGE 7.4] Extraction: 169/347 origins complete (48.7%) | Rows: 4056 | Runtime: 00:08:53 | Avg/origin: 3.2s | ETA: 00:00:35
+[2026-09-12 13:48:04,462] INFO: [STAGE 7.4] Extraction: 170/347 origins complete (49.0%) | Rows: 4080 | Runtime: 00:08:59 | Avg/origin: 3.2s | ETA: 00:00:35
+[2026-09-12 13:48:06,838] INFO: [STAGE 7.4] Extraction: 171/347 origins complete (49.3%) | Rows: 4104 | Runtime: 00:09:01 | Avg/origin: 3.2s | ETA: 00:00:35
+[2026-09-12 13:48:12,390] INFO: [STAGE 7.4] Extraction: 172/347 origins complete (49.6%) | Rows: 4128 | Runtime: 00:09:07 | Avg/origin: 3.2s | ETA: 00:00:34
+[2026-09-12 13:48:17,510] INFO: [STAGE 7.4] Extraction: 173/347 origins complete (49.9%) | Rows: 4152 | Runtime: 00:09:12 | Avg/origin: 3.2s | ETA: 00:00:34
+[2026-09-12 13:48:21,766] INFO: [STAGE 7.4] Extraction: 174/347 origins complete (50.1%) | Rows: 4176 | Runtime: 00:09:16 | Avg/origin: 3.2s | ETA: 00:00:34
+[2026-09-12 13:48:22,132] INFO: [STAGE 7.4] Extraction: 175/347 origins complete (50.4%) | Rows: 4200 | Runtime: 00:09:16 | Avg/origin: 3.2s | ETA: 00:00:34
+[2026-09-12 13:48:24,893] INFO: [STAGE 7.4] Extraction: 176/347 origins complete (50.7%) | Rows: 4224 | Runtime: 00:09:19 | Avg/origin: 3.2s | ETA: 00:00:34
+[2026-09-12 13:48:24,933] INFO: [STAGE 7.4] Extraction: 177/347 origins complete (51.0%) | Rows: 4248 | Runtime: 00:09:19 | Avg/origin: 3.2s | ETA: 00:00:33
+[2026-09-12 13:48:31,379] INFO: [STAGE 7.4] Extraction: 178/347 origins complete (51.3%) | Rows: 4272 | Runtime: 00:09:26 | Avg/origin: 3.2s | ETA: 00:00:33
+[2026-09-12 13:48:33,733] INFO: [STAGE 7.4] Extraction: 179/347 origins complete (51.6%) | Rows: 4296 | Runtime: 00:09:28 | Avg/origin: 3.2s | ETA: 00:00:33
+[2026-09-12 13:48:35,436] INFO: [STAGE 7.4] Extraction: 180/347 origins complete (51.9%) | Rows: 4320 | Runtime: 00:09:30 | Avg/origin: 3.2s | ETA: 00:00:33
+[2026-09-12 13:48:45,680] INFO: [STAGE 7.4] Extraction: 181/347 origins complete (52.2%) | Rows: 4344 | Runtime: 00:09:40 | Avg/origin: 3.2s | ETA: 00:00:33
+[2026-09-12 13:48:46,605] INFO: [STAGE 7.4] Extraction: 182/347 origins complete (52.4%) | Rows: 4368 | Runtime: 00:09:41 | Avg/origin: 3.2s | ETA: 00:00:33
+[2026-09-12 13:48:49,176] INFO: [STAGE 7.4] Extraction: 183/347 origins complete (52.7%) | Rows: 4392 | Runtime: 00:09:43 | Avg/origin: 3.2s | ETA: 00:00:32
+[2026-09-12 13:49:01,515] INFO: [STAGE 7.4] Extraction: 184/347 origins complete (53.0%) | Rows: 4416 | Runtime: 00:09:56 | Avg/origin: 3.3s | ETA: 00:00:33
+[2026-09-12 13:49:01,598] INFO: [STAGE 7.4] Extraction: 185/347 origins complete (53.3%) | Rows: 4440 | Runtime: 00:09:56 | Avg/origin: 3.2s | ETA: 00:00:32
+[2026-09-12 13:49:06,651] INFO: [STAGE 7.4] Extraction: 186/347 origins complete (53.6%) | Rows: 4464 | Runtime: 00:10:01 | Avg/origin: 3.3s | ETA: 00:00:32
+[2026-09-12 13:49:11,151] INFO: [STAGE 7.4] Extraction: 187/347 origins complete (53.9%) | Rows: 4488 | Runtime: 00:10:05 | Avg/origin: 3.3s | ETA: 00:00:32
+[2026-09-12 13:49:16,087] INFO: [STAGE 7.4] Extraction: 188/347 origins complete (54.2%) | Rows: 4512 | Runtime: 00:10:10 | Avg/origin: 3.3s | ETA: 00:00:32
+[2026-09-12 13:49:16,278] INFO: [STAGE 7.4] Extraction: 189/347 origins complete (54.5%) | Rows: 4536 | Runtime: 00:10:11 | Avg/origin: 3.3s | ETA: 00:00:32
+[2026-09-12 13:49:20,399] INFO: [STAGE 7.4] Extraction: 190/347 origins complete (54.8%) | Rows: 4560 | Runtime: 00:10:15 | Avg/origin: 3.3s | ETA: 00:00:31
+[2026-09-12 13:49:21,368] INFO: [STAGE 7.4] Extraction: 191/347 origins complete (55.0%) | Rows: 4584 | Runtime: 00:10:16 | Avg/origin: 3.2s | ETA: 00:00:31
+[2026-09-12 13:49:21,415] INFO: [STAGE 7.4] Extraction: 192/347 origins complete (55.3%) | Rows: 4608 | Runtime: 00:10:16 | Avg/origin: 3.2s | ETA: 00:00:31
+[2026-09-12 13:49:21,870] INFO: [STAGE 7.4] Extraction: 193/347 origins complete (55.6%) | Rows: 4632 | Runtime: 00:10:16 | Avg/origin: 3.2s | ETA: 00:00:30
+[2026-09-12 13:49:26,247] INFO: [STAGE 7.4] Extraction: 194/347 origins complete (55.9%) | Rows: 4656 | Runtime: 00:10:20 | Avg/origin: 3.2s | ETA: 00:00:30
+[2026-09-12 13:49:31,921] INFO: [STAGE 7.4] Extraction: 195/347 origins complete (56.2%) | Rows: 4680 | Runtime: 00:10:26 | Avg/origin: 3.2s | ETA: 00:00:30
+[2026-09-12 13:49:35,280] INFO: [STAGE 7.4] Extraction: 196/347 origins complete (56.5%) | Rows: 4704 | Runtime: 00:10:30 | Avg/origin: 3.2s | ETA: 00:00:30
+[2026-09-12 13:49:36,776] INFO: [STAGE 7.4] Extraction: 197/347 origins complete (56.8%) | Rows: 4728 | Runtime: 00:10:31 | Avg/origin: 3.2s | ETA: 00:00:30
+[2026-09-12 13:49:40,729] INFO: [STAGE 7.4] Extraction: 198/347 origins complete (57.1%) | Rows: 4752 | Runtime: 00:10:35 | Avg/origin: 3.2s | ETA: 00:00:30
+[2026-09-12 13:49:48,792] INFO: [STAGE 7.4] Extraction: 199/347 origins complete (57.3%) | Rows: 4776 | Runtime: 00:10:43 | Avg/origin: 3.3s | ETA: 00:00:30
+[2026-09-12 13:49:49,812] INFO: [STAGE 7.4] Extraction: 200/347 origins complete (57.6%) | Rows: 4800 | Runtime: 00:10:44 | Avg/origin: 3.2s | ETA: 00:00:29
+[2026-09-12 13:49:50,678] INFO: [STAGE 7.4] Extraction: 201/347 origins complete (57.9%) | Rows: 4824 | Runtime: 00:10:45 | Avg/origin: 3.2s | ETA: 00:00:29
+[2026-09-12 13:49:51,749] INFO: [STAGE 7.4] Extraction: 202/347 origins complete (58.2%) | Rows: 4848 | Runtime: 00:10:46 | Avg/origin: 3.2s | ETA: 00:00:29
+[2026-09-12 13:49:58,093] INFO: [STAGE 7.4] Extraction: 203/347 origins complete (58.5%) | Rows: 4872 | Runtime: 00:10:52 | Avg/origin: 3.2s | ETA: 00:00:29
+[2026-09-12 13:50:01,073] INFO: [STAGE 7.4] Extraction: 204/347 origins complete (58.8%) | Rows: 4896 | Runtime: 00:10:55 | Avg/origin: 3.2s | ETA: 00:00:28
+[2026-09-12 13:50:04,449] INFO: [STAGE 7.4] Extraction: 205/347 origins complete (59.1%) | Rows: 4920 | Runtime: 00:10:59 | Avg/origin: 3.2s | ETA: 00:00:28
+[2026-09-12 13:50:06,961] INFO: [STAGE 7.4] Extraction: 206/347 origins complete (59.4%) | Rows: 4944 | Runtime: 00:11:01 | Avg/origin: 3.2s | ETA: 00:00:28
+[2026-09-12 13:50:07,604] INFO: [STAGE 7.4] Extraction: 207/347 origins complete (59.7%) | Rows: 4968 | Runtime: 00:11:02 | Avg/origin: 3.2s | ETA: 00:00:28
+[2026-09-12 13:50:12,143] INFO: [STAGE 7.4] Extraction: 208/347 origins complete (59.9%) | Rows: 4992 | Runtime: 00:11:06 | Avg/origin: 3.2s | ETA: 00:00:27
+[2026-09-12 13:50:15,282] INFO: [STAGE 7.4] Extraction: 209/347 origins complete (60.2%) | Rows: 5016 | Runtime: 00:11:10 | Avg/origin: 3.2s | ETA: 00:00:27
+[2026-09-12 13:50:15,356] INFO: [STAGE 7.4] Extraction: 210/347 origins complete (60.5%) | Rows: 5040 | Runtime: 00:11:10 | Avg/origin: 3.2s | ETA: 00:00:27
+[2026-09-12 13:50:15,650] INFO: [STAGE 7.4] Extraction: 211/347 origins complete (60.8%) | Rows: 5064 | Runtime: 00:11:10 | Avg/origin: 3.2s | ETA: 00:00:27
+[2026-09-12 13:50:17,715] INFO: [STAGE 7.4] Extraction: 212/347 origins complete (61.1%) | Rows: 5088 | Runtime: 00:11:12 | Avg/origin: 3.2s | ETA: 00:00:26
+[2026-09-12 13:50:23,403] INFO: [STAGE 7.4] Extraction: 213/347 origins complete (61.4%) | Rows: 5112 | Runtime: 00:11:18 | Avg/origin: 3.2s | ETA: 00:00:26
+[2026-09-12 13:50:26,812] INFO: [STAGE 7.4] Extraction: 214/347 origins complete (61.7%) | Rows: 5136 | Runtime: 00:11:21 | Avg/origin: 3.2s | ETA: 00:00:26
+[2026-09-12 13:50:29,197] INFO: [STAGE 7.4] Extraction: 215/347 origins complete (62.0%) | Rows: 5160 | Runtime: 00:11:23 | Avg/origin: 3.2s | ETA: 00:00:26
+[2026-09-12 13:50:33,206] INFO: [STAGE 7.4] Extraction: 216/347 origins complete (62.2%) | Rows: 5184 | Runtime: 00:11:27 | Avg/origin: 3.2s | ETA: 00:00:26
+[2026-09-12 13:50:37,844] INFO: [STAGE 7.4] Extraction: 217/347 origins complete (62.5%) | Rows: 5208 | Runtime: 00:11:32 | Avg/origin: 3.2s | ETA: 00:00:26
+[2026-09-12 13:50:43,026] INFO: [STAGE 7.4] Extraction: 218/347 origins complete (62.8%) | Rows: 5232 | Runtime: 00:11:37 | Avg/origin: 3.2s | ETA: 00:00:25
+[2026-09-12 13:50:46,647] INFO: [STAGE 7.4] Extraction: 219/347 origins complete (63.1%) | Rows: 5256 | Runtime: 00:11:41 | Avg/origin: 3.2s | ETA: 00:00:25
+[2026-09-12 13:50:46,699] INFO: [STAGE 7.4] Extraction: 220/347 origins complete (63.4%) | Rows: 5280 | Runtime: 00:11:41 | Avg/origin: 3.2s | ETA: 00:00:25
+[2026-09-12 13:50:48,462] INFO: [STAGE 7.4] Extraction: 221/347 origins complete (63.7%) | Rows: 5304 | Runtime: 00:11:43 | Avg/origin: 3.2s | ETA: 00:00:25
+[2026-09-12 13:50:48,957] INFO: [STAGE 7.4] Extraction: 222/347 origins complete (64.0%) | Rows: 5328 | Runtime: 00:11:43 | Avg/origin: 3.2s | ETA: 00:00:24
+[2026-09-12 13:50:50,872] INFO: [STAGE 7.4] Extraction: 223/347 origins complete (64.3%) | Rows: 5352 | Runtime: 00:11:45 | Avg/origin: 3.2s | ETA: 00:00:24
+[2026-09-12 13:50:52,406] INFO: [STAGE 7.4] Extraction: 224/347 origins complete (64.6%) | Rows: 5376 | Runtime: 00:11:47 | Avg/origin: 3.2s | ETA: 00:00:24
+[2026-09-12 13:50:55,286] INFO: [STAGE 7.4] Extraction: 225/347 origins complete (64.8%) | Rows: 5400 | Runtime: 00:11:50 | Avg/origin: 3.2s | ETA: 00:00:24
+[2026-09-12 13:50:56,084] INFO: [STAGE 7.4] Extraction: 226/347 origins complete (65.1%) | Rows: 5424 | Runtime: 00:11:50 | Avg/origin: 3.2s | ETA: 00:00:23
+[2026-09-12 13:50:56,307] INFO: [STAGE 7.4] Extraction: 227/347 origins complete (65.4%) | Rows: 5448 | Runtime: 00:11:51 | Avg/origin: 3.1s | ETA: 00:00:23
+[2026-09-12 13:50:57,365] INFO: [STAGE 7.4] Extraction: 228/347 origins complete (65.7%) | Rows: 5472 | Runtime: 00:11:52 | Avg/origin: 3.1s | ETA: 00:00:23
+[2026-09-12 13:51:05,847] INFO: [STAGE 7.4] Extraction: 229/347 origins complete (66.0%) | Rows: 5496 | Runtime: 00:12:00 | Avg/origin: 3.2s | ETA: 00:00:23
+[2026-09-12 13:51:07,980] INFO: [STAGE 7.4] Extraction: 230/347 origins complete (66.3%) | Rows: 5520 | Runtime: 00:12:02 | Avg/origin: 3.2s | ETA: 00:00:23
+[2026-09-12 13:51:10,651] INFO: [STAGE 7.4] Extraction: 231/347 origins complete (66.6%) | Rows: 5544 | Runtime: 00:12:05 | Avg/origin: 3.2s | ETA: 00:00:22
+[2026-09-12 13:51:12,094] INFO: [STAGE 7.4] Extraction: 232/347 origins complete (66.9%) | Rows: 5568 | Runtime: 00:12:06 | Avg/origin: 3.1s | ETA: 00:00:22
+[2026-09-12 13:51:19,751] INFO: [STAGE 7.4] Extraction: 233/347 origins complete (67.1%) | Rows: 5592 | Runtime: 00:12:14 | Avg/origin: 3.2s | ETA: 00:00:22
+[2026-09-12 13:51:25,623] INFO: [STAGE 7.4] Extraction: 234/347 origins complete (67.4%) | Rows: 5616 | Runtime: 00:12:20 | Avg/origin: 3.2s | ETA: 00:00:22
+[2026-09-12 13:51:28,079] INFO: [STAGE 7.4] Extraction: 235/347 origins complete (67.7%) | Rows: 5640 | Runtime: 00:12:22 | Avg/origin: 3.2s | ETA: 00:00:22
+[2026-09-12 13:51:29,715] INFO: [STAGE 7.4] Extraction: 236/347 origins complete (68.0%) | Rows: 5664 | Runtime: 00:12:24 | Avg/origin: 3.2s | ETA: 00:00:21
+[2026-09-12 13:51:30,648] INFO: [STAGE 7.4] Extraction: 237/347 origins complete (68.3%) | Rows: 5688 | Runtime: 00:12:25 | Avg/origin: 3.2s | ETA: 00:00:21
+[2026-09-12 13:51:31,141] INFO: [STAGE 7.4] Extraction: 238/347 origins complete (68.6%) | Rows: 5712 | Runtime: 00:12:25 | Avg/origin: 3.1s | ETA: 00:00:21
+[2026-09-12 13:51:32,183] INFO: [STAGE 7.4] Extraction: 239/347 origins complete (68.9%) | Rows: 5736 | Runtime: 00:12:26 | Avg/origin: 3.1s | ETA: 00:00:21
+[2026-09-12 13:51:34,327] INFO: [STAGE 7.4] Extraction: 240/347 origins complete (69.2%) | Rows: 5760 | Runtime: 00:12:29 | Avg/origin: 3.1s | ETA: 00:00:20
+[2026-09-12 13:51:34,413] INFO: [STAGE 7.4] Extraction: 241/347 origins complete (69.5%) | Rows: 5784 | Runtime: 00:12:29 | Avg/origin: 3.1s | ETA: 00:00:20
+[2026-09-12 13:51:35,445] INFO: [STAGE 7.4] Extraction: 242/347 origins complete (69.7%) | Rows: 5808 | Runtime: 00:12:30 | Avg/origin: 3.1s | ETA: 00:00:20
+[2026-09-12 13:51:40,095] INFO: [STAGE 7.4] Extraction: 243/347 origins complete (70.0%) | Rows: 5832 | Runtime: 00:12:34 | Avg/origin: 3.1s | ETA: 00:00:20
+[2026-09-12 13:51:50,450] INFO: [STAGE 7.4] Extraction: 244/347 origins complete (70.3%) | Rows: 5856 | Runtime: 00:12:45 | Avg/origin: 3.1s | ETA: 00:00:20
+[2026-09-12 13:51:50,941] INFO: [STAGE 7.4] Extraction: 245/347 origins complete (70.6%) | Rows: 5880 | Runtime: 00:12:45 | Avg/origin: 3.1s | ETA: 00:00:20
+[2026-09-12 13:51:51,034] INFO: [STAGE 7.4] Extraction: 246/347 origins complete (70.9%) | Rows: 5904 | Runtime: 00:12:45 | Avg/origin: 3.1s | ETA: 00:00:19
+[2026-09-12 13:51:54,824] INFO: [STAGE 7.4] Extraction: 247/347 origins complete (71.2%) | Rows: 5928 | Runtime: 00:12:49 | Avg/origin: 3.1s | ETA: 00:00:19
+[2026-09-12 13:51:59,493] INFO: [STAGE 7.4] Extraction: 248/347 origins complete (71.5%) | Rows: 5952 | Runtime: 00:12:54 | Avg/origin: 3.1s | ETA: 00:00:19
+[2026-09-12 13:52:02,940] INFO: [STAGE 7.4] Extraction: 249/347 origins complete (71.8%) | Rows: 5976 | Runtime: 00:12:57 | Avg/origin: 3.1s | ETA: 00:00:19
+[2026-09-12 13:52:06,717] INFO: [STAGE 7.4] Extraction: 250/347 origins complete (72.0%) | Rows: 6000 | Runtime: 00:13:01 | Avg/origin: 3.1s | ETA: 00:00:19
+[2026-09-12 13:52:11,859] INFO: [STAGE 7.4] Extraction: 251/347 origins complete (72.3%) | Rows: 6024 | Runtime: 00:13:06 | Avg/origin: 3.1s | ETA: 00:00:18
+[2026-09-12 13:52:15,288] INFO: [STAGE 7.4] Extraction: 252/347 origins complete (72.6%) | Rows: 6048 | Runtime: 00:13:10 | Avg/origin: 3.1s | ETA: 00:00:18
+[2026-09-12 13:52:15,569] INFO: [STAGE 7.4] Extraction: 253/347 origins complete (72.9%) | Rows: 6072 | Runtime: 00:13:10 | Avg/origin: 3.1s | ETA: 00:00:18
+[2026-09-12 13:52:18,620] INFO: [STAGE 7.4] Extraction: 254/347 origins complete (73.2%) | Rows: 6096 | Runtime: 00:13:13 | Avg/origin: 3.1s | ETA: 00:00:18
+[2026-09-12 13:52:19,926] INFO: [STAGE 7.4] Extraction: 255/347 origins complete (73.5%) | Rows: 6120 | Runtime: 00:13:14 | Avg/origin: 3.1s | ETA: 00:00:17
+[2026-09-12 13:52:20,331] INFO: [STAGE 7.4] Extraction: 256/347 origins complete (73.8%) | Rows: 6144 | Runtime: 00:13:15 | Avg/origin: 3.1s | ETA: 00:00:17
+[2026-09-12 13:52:29,368] INFO: [STAGE 7.4] Extraction: 257/347 origins complete (74.1%) | Rows: 6168 | Runtime: 00:13:24 | Avg/origin: 3.1s | ETA: 00:00:17
+[2026-09-12 13:52:32,813] INFO: [STAGE 7.4] Extraction: 258/347 origins complete (74.4%) | Rows: 6192 | Runtime: 00:13:27 | Avg/origin: 3.1s | ETA: 00:00:17
+[2026-09-12 13:52:38,149] INFO: [STAGE 7.4] Extraction: 259/347 origins complete (74.6%) | Rows: 6216 | Runtime: 00:13:32 | Avg/origin: 3.2s | ETA: 00:00:17
+[2026-09-12 13:52:38,531] INFO: [STAGE 7.4] Extraction: 260/347 origins complete (74.9%) | Rows: 6240 | Runtime: 00:13:33 | Avg/origin: 3.1s | ETA: 00:00:17
+[2026-09-12 13:52:42,493] INFO: [STAGE 7.4] Extraction: 261/347 origins complete (75.2%) | Rows: 6264 | Runtime: 00:13:37 | Avg/origin: 3.1s | ETA: 00:00:16
+[2026-09-12 13:52:43,808] INFO: [STAGE 7.4] Extraction: 262/347 origins complete (75.5%) | Rows: 6288 | Runtime: 00:13:38 | Avg/origin: 3.1s | ETA: 00:00:16
+[2026-09-12 13:52:46,010] INFO: [STAGE 7.4] Extraction: 263/347 origins complete (75.8%) | Rows: 6312 | Runtime: 00:13:40 | Avg/origin: 3.1s | ETA: 00:00:16
+[2026-09-12 13:52:48,928] INFO: [STAGE 7.4] Extraction: 264/347 origins complete (76.1%) | Rows: 6336 | Runtime: 00:13:43 | Avg/origin: 3.1s | ETA: 00:00:16
+[2026-09-12 13:52:58,436] INFO: [STAGE 7.4] Extraction: 265/347 origins complete (76.4%) | Rows: 6360 | Runtime: 00:13:53 | Avg/origin: 3.2s | ETA: 00:00:16
+[2026-09-12 13:53:00,894] INFO: [STAGE 7.4] Extraction: 266/347 origins complete (76.7%) | Rows: 6384 | Runtime: 00:13:55 | Avg/origin: 3.2s | ETA: 00:00:15
+[2026-09-12 13:53:01,604] INFO: [STAGE 7.4] Extraction: 267/347 origins complete (76.9%) | Rows: 6408 | Runtime: 00:13:56 | Avg/origin: 3.1s | ETA: 00:00:15
+[2026-09-12 13:53:01,893] INFO: [STAGE 7.4] Extraction: 268/347 origins complete (77.2%) | Rows: 6432 | Runtime: 00:13:56 | Avg/origin: 3.1s | ETA: 00:00:15
+[2026-09-12 13:53:02,987] INFO: [STAGE 7.4] Extraction: 269/347 origins complete (77.5%) | Rows: 6456 | Runtime: 00:13:57 | Avg/origin: 3.1s | ETA: 00:00:15
+[2026-09-12 13:53:04,097] INFO: [STAGE 7.4] Extraction: 270/347 origins complete (77.8%) | Rows: 6480 | Runtime: 00:13:58 | Avg/origin: 3.1s | ETA: 00:00:15
+[2026-09-12 13:53:06,567] INFO: [STAGE 7.4] Extraction: 271/347 origins complete (78.1%) | Rows: 6504 | Runtime: 00:14:01 | Avg/origin: 3.1s | ETA: 00:00:14
+[2026-09-12 13:53:07,198] INFO: [STAGE 7.4] Extraction: 272/347 origins complete (78.4%) | Rows: 6528 | Runtime: 00:14:01 | Avg/origin: 3.1s | ETA: 00:00:14
+[2026-09-12 13:53:08,175] INFO: [STAGE 7.4] Extraction: 273/347 origins complete (78.7%) | Rows: 6552 | Runtime: 00:14:02 | Avg/origin: 3.1s | ETA: 00:00:14
+[2026-09-12 13:53:17,054] INFO: [STAGE 7.4] Extraction: 274/347 origins complete (79.0%) | Rows: 6576 | Runtime: 00:14:11 | Avg/origin: 3.1s | ETA: 00:00:14
+[2026-09-12 13:53:24,130] INFO: [STAGE 7.4] Extraction: 275/347 origins complete (79.3%) | Rows: 6600 | Runtime: 00:14:18 | Avg/origin: 3.1s | ETA: 00:00:14
+[2026-09-12 13:53:25,056] INFO: [STAGE 7.4] Extraction: 276/347 origins complete (79.5%) | Rows: 6624 | Runtime: 00:14:19 | Avg/origin: 3.1s | ETA: 00:00:13
+[2026-09-12 13:53:26,978] INFO: [STAGE 7.4] Extraction: 277/347 origins complete (79.8%) | Rows: 6648 | Runtime: 00:14:21 | Avg/origin: 3.1s | ETA: 00:00:13
+[2026-09-12 13:53:28,999] INFO: [STAGE 7.4] Extraction: 278/347 origins complete (80.1%) | Rows: 6672 | Runtime: 00:14:23 | Avg/origin: 3.1s | ETA: 00:00:13
+[2026-09-12 13:53:31,437] INFO: [STAGE 7.4] Extraction: 279/347 origins complete (80.4%) | Rows: 6696 | Runtime: 00:14:26 | Avg/origin: 3.1s | ETA: 00:00:13
+[2026-09-12 13:53:31,669] INFO: [STAGE 7.4] Extraction: 280/347 origins complete (80.7%) | Rows: 6720 | Runtime: 00:14:26 | Avg/origin: 3.1s | ETA: 00:00:13
+[2026-09-12 13:53:38,342] INFO: [STAGE 7.4] Extraction: 281/347 origins complete (81.0%) | Rows: 6744 | Runtime: 00:14:33 | Avg/origin: 3.1s | ETA: 00:00:12
+[2026-09-12 13:53:41,165] INFO: [STAGE 7.4] Extraction: 282/347 origins complete (81.3%) | Rows: 6768 | Runtime: 00:14:35 | Avg/origin: 3.1s | ETA: 00:00:12
+[2026-09-12 13:53:44,121] INFO: [STAGE 7.4] Extraction: 283/347 origins complete (81.6%) | Rows: 6792 | Runtime: 00:14:38 | Avg/origin: 3.1s | ETA: 00:00:12
+[2026-09-12 13:53:45,620] INFO: [STAGE 7.4] Extraction: 284/347 origins complete (81.8%) | Rows: 6816 | Runtime: 00:14:40 | Avg/origin: 3.1s | ETA: 00:00:12
+[2026-09-12 13:53:47,631] INFO: [STAGE 7.4] Extraction: 285/347 origins complete (82.1%) | Rows: 6840 | Runtime: 00:14:42 | Avg/origin: 3.1s | ETA: 00:00:12
+[2026-09-12 13:53:47,971] INFO: [STAGE 7.4] Extraction: 286/347 origins complete (82.4%) | Rows: 6864 | Runtime: 00:14:42 | Avg/origin: 3.1s | ETA: 00:00:11
+[2026-09-12 13:53:48,288] INFO: [STAGE 7.4] Extraction: 287/347 origins complete (82.7%) | Rows: 6888 | Runtime: 00:14:43 | Avg/origin: 3.1s | ETA: 00:00:11
+[2026-09-12 13:53:50,968] INFO: [STAGE 7.4] Extraction: 288/347 origins complete (83.0%) | Rows: 6912 | Runtime: 00:14:45 | Avg/origin: 3.1s | ETA: 00:00:11
+[2026-09-12 13:53:53,739] INFO: [STAGE 7.4] Extraction: 289/347 origins complete (83.3%) | Rows: 6936 | Runtime: 00:14:48 | Avg/origin: 3.1s | ETA: 00:00:11
+[2026-09-12 13:54:04,946] INFO: [STAGE 7.4] Extraction: 290/347 origins complete (83.6%) | Rows: 6960 | Runtime: 00:14:59 | Avg/origin: 3.1s | ETA: 00:00:11
+[2026-09-12 13:54:06,165] INFO: [STAGE 7.4] Extraction: 291/347 origins complete (83.9%) | Rows: 6984 | Runtime: 00:15:00 | Avg/origin: 3.1s | ETA: 00:00:10
+[2026-09-12 13:54:10,032] INFO: [STAGE 7.4] Extraction: 292/347 origins complete (84.1%) | Rows: 7008 | Runtime: 00:15:04 | Avg/origin: 3.1s | ETA: 00:00:10
+[2026-09-12 13:54:12,598] INFO: [STAGE 7.4] Extraction: 293/347 origins complete (84.4%) | Rows: 7032 | Runtime: 00:15:07 | Avg/origin: 3.1s | ETA: 00:00:10
+[2026-09-12 13:54:12,807] INFO: [STAGE 7.4] Extraction: 294/347 origins complete (84.7%) | Rows: 7056 | Runtime: 00:15:07 | Avg/origin: 3.1s | ETA: 00:00:10
+[2026-09-12 13:54:15,653] INFO: [STAGE 7.4] Extraction: 295/347 origins complete (85.0%) | Rows: 7080 | Runtime: 00:15:10 | Avg/origin: 3.1s | ETA: 00:00:10
+[2026-09-12 13:54:17,054] INFO: [STAGE 7.4] Extraction: 296/347 origins complete (85.3%) | Rows: 7104 | Runtime: 00:15:11 | Avg/origin: 3.1s | ETA: 00:00:09
+[2026-09-12 13:54:22,846] INFO: [STAGE 7.4] Extraction: 297/347 origins complete (85.6%) | Rows: 7128 | Runtime: 00:15:17 | Avg/origin: 3.1s | ETA: 00:00:09
+[2026-09-12 13:54:27,256] INFO: [STAGE 7.4] Extraction: 298/347 origins complete (85.9%) | Rows: 7152 | Runtime: 00:15:21 | Avg/origin: 3.1s | ETA: 00:00:09
+[2026-09-12 13:54:27,364] INFO: [STAGE 7.4] Extraction: 299/347 origins complete (86.2%) | Rows: 7176 | Runtime: 00:15:22 | Avg/origin: 3.1s | ETA: 00:00:09
+[2026-09-12 13:54:27,726] INFO: [STAGE 7.4] Extraction: 300/347 origins complete (86.5%) | Rows: 7200 | Runtime: 00:15:22 | Avg/origin: 3.1s | ETA: 00:00:09
+[2026-09-12 13:54:29,861] INFO: [STAGE 7.4] Extraction: 301/347 origins complete (86.7%) | Rows: 7224 | Runtime: 00:15:24 | Avg/origin: 3.1s | ETA: 00:00:08
+[2026-09-12 13:54:31,274] INFO: [STAGE 7.4] Extraction: 302/347 origins complete (87.0%) | Rows: 7248 | Runtime: 00:15:26 | Avg/origin: 3.1s | ETA: 00:00:08
+[2026-09-12 13:54:33,058] INFO: [STAGE 7.4] Extraction: 303/347 origins complete (87.3%) | Rows: 7272 | Runtime: 00:15:27 | Avg/origin: 3.1s | ETA: 00:00:08
+[2026-09-12 13:54:36,282] INFO: [STAGE 7.4] Extraction: 304/347 origins complete (87.6%) | Rows: 7296 | Runtime: 00:15:31 | Avg/origin: 3.1s | ETA: 00:00:08
+[2026-09-12 13:54:38,265] INFO: [STAGE 7.4] Extraction: 305/347 origins complete (87.9%) | Rows: 7320 | Runtime: 00:15:33 | Avg/origin: 3.1s | ETA: 00:00:08
+[2026-09-12 13:54:40,684] INFO: [STAGE 7.4] Extraction: 306/347 origins complete (88.2%) | Rows: 7344 | Runtime: 00:15:35 | Avg/origin: 3.1s | ETA: 00:00:07
+[2026-09-12 13:54:54,358] INFO: [STAGE 7.4] Extraction: 307/347 origins complete (88.5%) | Rows: 7368 | Runtime: 00:15:49 | Avg/origin: 3.1s | ETA: 00:00:07
+[2026-09-12 13:54:56,277] INFO: [STAGE 7.4] Extraction: 308/347 origins complete (88.8%) | Rows: 7392 | Runtime: 00:15:51 | Avg/origin: 3.1s | ETA: 00:00:07
+[2026-09-12 13:55:00,885] INFO: [STAGE 7.4] Extraction: 309/347 origins complete (89.0%) | Rows: 7416 | Runtime: 00:15:55 | Avg/origin: 3.1s | ETA: 00:00:07
+[2026-09-12 13:55:01,851] INFO: [STAGE 7.4] Extraction: 310/347 origins complete (89.3%) | Rows: 7440 | Runtime: 00:15:56 | Avg/origin: 3.1s | ETA: 00:00:07
+[2026-09-12 13:55:03,047] INFO: [STAGE 7.4] Extraction: 311/347 origins complete (89.6%) | Rows: 7464 | Runtime: 00:15:57 | Avg/origin: 3.1s | ETA: 00:00:06
+[2026-09-12 13:55:03,854] INFO: [STAGE 7.4] Extraction: 312/347 origins complete (89.9%) | Rows: 7488 | Runtime: 00:15:58 | Avg/origin: 3.1s | ETA: 00:00:06
+[2026-09-12 13:55:06,015] INFO: [STAGE 7.4] Extraction: 313/347 origins complete (90.2%) | Rows: 7512 | Runtime: 00:16:00 | Avg/origin: 3.1s | ETA: 00:00:06
+[2026-09-12 13:55:07,855] INFO: [STAGE 7.4] Extraction: 314/347 origins complete (90.5%) | Rows: 7536 | Runtime: 00:16:02 | Avg/origin: 3.1s | ETA: 00:00:06
+[2026-09-12 13:55:09,630] INFO: [STAGE 7.4] Extraction: 315/347 origins complete (90.8%) | Rows: 7560 | Runtime: 00:16:04 | Avg/origin: 3.1s | ETA: 00:00:06
+[2026-09-12 13:55:12,127] INFO: [STAGE 7.4] Extraction: 316/347 origins complete (91.1%) | Rows: 7584 | Runtime: 00:16:06 | Avg/origin: 3.1s | ETA: 00:00:05
+[2026-09-12 13:55:13,343] INFO: [STAGE 7.4] Extraction: 317/347 origins complete (91.4%) | Rows: 7608 | Runtime: 00:16:08 | Avg/origin: 3.1s | ETA: 00:00:05
+[2026-09-12 13:55:15,971] INFO: [STAGE 7.4] Extraction: 318/347 origins complete (91.6%) | Rows: 7632 | Runtime: 00:16:10 | Avg/origin: 3.1s | ETA: 00:00:05
+[2026-09-12 13:55:16,702] INFO: [STAGE 7.4] Extraction: 319/347 origins complete (91.9%) | Rows: 7656 | Runtime: 00:16:11 | Avg/origin: 3.1s | ETA: 00:00:05
+[2026-09-12 13:55:16,840] INFO: [STAGE 7.4] Extraction: 320/347 origins complete (92.2%) | Rows: 7680 | Runtime: 00:16:11 | Avg/origin: 3.0s | ETA: 00:00:05
+[2026-09-12 13:55:21,181] INFO: [STAGE 7.4] Extraction: 321/347 origins complete (92.5%) | Rows: 7704 | Runtime: 00:16:15 | Avg/origin: 3.0s | ETA: 00:00:04
+[2026-09-12 13:55:28,733] INFO: [STAGE 7.4] Extraction: 322/347 origins complete (92.8%) | Rows: 7728 | Runtime: 00:16:23 | Avg/origin: 3.1s | ETA: 00:00:04
+[2026-09-12 13:55:35,950] INFO: [STAGE 7.4] Extraction: 323/347 origins complete (93.1%) | Rows: 7752 | Runtime: 00:16:30 | Avg/origin: 3.1s | ETA: 00:00:04
+[2026-09-12 13:55:37,152] INFO: [STAGE 7.4] Extraction: 324/347 origins complete (93.4%) | Rows: 7776 | Runtime: 00:16:31 | Avg/origin: 3.1s | ETA: 00:00:04
+[2026-09-12 13:55:37,601] INFO: [STAGE 7.4] Extraction: 325/347 origins complete (93.7%) | Rows: 7800 | Runtime: 00:16:32 | Avg/origin: 3.1s | ETA: 00:00:04
+[2026-09-12 13:55:38,699] INFO: [STAGE 7.4] Extraction: 326/347 origins complete (93.9%) | Rows: 7824 | Runtime: 00:16:33 | Avg/origin: 3.1s | ETA: 00:00:04
+[2026-09-12 13:55:41,486] INFO: [STAGE 7.4] Extraction: 327/347 origins complete (94.2%) | Rows: 7848 | Runtime: 00:16:36 | Avg/origin: 3.1s | ETA: 00:00:03
+[2026-09-12 13:55:42,924] INFO: [STAGE 7.4] Extraction: 328/347 origins complete (94.5%) | Rows: 7872 | Runtime: 00:16:37 | Avg/origin: 3.1s | ETA: 00:00:03
+[2026-09-12 13:55:48,869] INFO: [STAGE 7.4] Extraction: 329/347 origins complete (94.8%) | Rows: 7896 | Runtime: 00:16:43 | Avg/origin: 3.1s | ETA: 00:00:03
+[2026-09-12 13:55:49,208] INFO: [STAGE 7.4] Extraction: 330/347 origins complete (95.1%) | Rows: 7920 | Runtime: 00:16:43 | Avg/origin: 3.1s | ETA: 00:00:03
+[2026-09-12 13:55:51,108] INFO: [STAGE 7.4] Extraction: 331/347 origins complete (95.4%) | Rows: 7944 | Runtime: 00:16:45 | Avg/origin: 3.0s | ETA: 00:00:03
+[2026-09-12 13:55:53,161] INFO: [STAGE 7.4] Extraction: 332/347 origins complete (95.7%) | Rows: 7968 | Runtime: 00:16:47 | Avg/origin: 3.0s | ETA: 00:00:02
+[2026-09-12 13:55:54,154] INFO: [STAGE 7.4] Extraction: 333/347 origins complete (96.0%) | Rows: 7992 | Runtime: 00:16:48 | Avg/origin: 3.0s | ETA: 00:00:02
+[2026-09-12 13:55:58,923] INFO: [STAGE 7.4] Extraction: 334/347 origins complete (96.3%) | Rows: 8016 | Runtime: 00:16:53 | Avg/origin: 3.0s | ETA: 00:00:02
+[2026-09-12 13:55:59,070] INFO: [STAGE 7.4] Extraction: 335/347 origins complete (96.5%) | Rows: 8040 | Runtime: 00:16:53 | Avg/origin: 3.0s | ETA: 00:00:02
+[2026-09-12 13:56:00,056] INFO: [STAGE 7.4] Extraction: 336/347 origins complete (96.8%) | Rows: 8064 | Runtime: 00:16:54 | Avg/origin: 3.0s | ETA: 00:00:02
+[2026-09-12 13:56:02,283] INFO: [STAGE 7.4] Extraction: 337/347 origins complete (97.1%) | Rows: 8088 | Runtime: 00:16:57 | Avg/origin: 3.0s | ETA: 00:00:01
+[2026-09-12 13:56:07,725] INFO: [STAGE 7.4] Extraction: 338/347 origins complete (97.4%) | Rows: 8112 | Runtime: 00:17:02 | Avg/origin: 3.0s | ETA: 00:00:01
+[2026-09-12 13:56:12,067] INFO: [STAGE 7.4] Extraction: 339/347 origins complete (97.7%) | Rows: 8136 | Runtime: 00:17:06 | Avg/origin: 3.0s | ETA: 00:00:01
+[2026-09-12 13:56:14,167] INFO: [STAGE 7.4] Extraction: 340/347 origins complete (98.0%) | Rows: 8160 | Runtime: 00:17:08 | Avg/origin: 3.0s | ETA: 00:00:01
+[2026-09-12 13:56:16,399] INFO: [STAGE 7.4] Extraction: 341/347 origins complete (98.3%) | Rows: 8184 | Runtime: 00:17:11 | Avg/origin: 3.0s | ETA: 00:00:01
+[2026-09-12 13:56:19,673] INFO: [STAGE 7.4] Extraction: 342/347 origins complete (98.6%) | Rows: 8208 | Runtime: 00:17:14 | Avg/origin: 3.0s | ETA: 00:00:00
+[2026-09-12 13:56:22,603] INFO: [STAGE 7.4] Extraction: 343/347 origins complete (98.8%) | Rows: 8232 | Runtime: 00:17:17 | Avg/origin: 3.0s | ETA: 00:00:00
+[2026-09-12 13:56:22,737] INFO: [STAGE 7.4] Extraction: 344/347 origins complete (99.1%) | Rows: 8256 | Runtime: 00:17:17 | Avg/origin: 3.0s | ETA: 00:00:00
+[2026-09-12 13:56:31,809] INFO: [STAGE 7.4] Extraction: 345/347 origins complete (99.4%) | Rows: 8280 | Runtime: 00:17:26 | Avg/origin: 3.0s | ETA: 00:00:00
+[2026-09-12 13:56:33,059] INFO: [STAGE 7.4] Extraction: 346/347 origins complete (99.7%) | Rows: 8304 | Runtime: 00:17:27 | Avg/origin: 3.0s | ETA: 00:00:00
+[2026-09-12 13:56:34,007] INFO: [STAGE 7.4] Extraction: 347/347 origins complete (100.0%) | Rows: 8328 | Runtime: 00:17:28 | Avg/origin: 3.0s | ETA: 00:00:00
+[2026-09-12 13:56:34,030] INFO: 
+[STAGE 7.4] Extraction SUCCESSFUL: 347/347 origins extracted (8328 rows).
+[2026-09-12 13:56:34,034] INFO: 
+================================================================================
+[2026-09-12 13:56:34,034] INFO: [STAGE 7.4] 5-FOLD FORWARD-CHAINING EVEN CV & ACCEPTANCE GATE AUDIT
+[2026-09-12 13:56:34,035] INFO: ================================================================================
+[2026-09-12 13:56:34,794] INFO: [STAGE 7.4] Fold 1/5 starting...
+[2026-09-12 13:56:37,113] INFO: [STAGE 7.4] Fold 1/5 complete | Control MAE: 49.8174 W/m² | Candidate MAE: 49.7676 W/m² | Delta: -0.0498 W/m²
+[2026-09-12 13:56:37,113] INFO: [STAGE 7.4] Fold 2/5 starting...
+[2026-09-12 13:56:40,988] INFO: [STAGE 7.4] Fold 2/5 complete | Control MAE: 71.0775 W/m² | Candidate MAE: 70.6161 W/m² | Delta: -0.4613 W/m²
+[2026-09-12 13:56:40,988] INFO: [STAGE 7.4] Fold 3/5 starting...
+[2026-09-12 13:56:44,907] INFO: [STAGE 7.4] Fold 3/5 complete | Control MAE: 41.2620 W/m² | Candidate MAE: 40.7479 W/m² | Delta: -0.5140 W/m²
+[2026-09-12 13:56:44,907] INFO: [STAGE 7.4] Fold 4/5 starting...
+[2026-09-12 13:56:48,909] INFO: [STAGE 7.4] Fold 4/5 complete | Control MAE: 26.8042 W/m² | Candidate MAE: 27.8453 W/m² | Delta: +1.0411 W/m²
+[2026-09-12 13:56:48,910] INFO: [STAGE 7.4] Fold 5/5 starting...
+[2026-09-12 13:56:53,067] INFO: [STAGE 7.4] Fold 5/5 complete | Control MAE: 2.4420 W/m² | Candidate MAE: 2.4577 W/m² | Delta: +0.0157 W/m²
+[2026-09-12 13:56:53,070] INFO: 
+============================================================
+[2026-09-12 13:56:53,070] INFO: [STAGE 7.4] EVEN CV RESULTS & LOCKED GATES AUDIT
+[2026-09-12 13:56:53,070] INFO: ============================================================
+[2026-09-12 13:56:53,070] INFO: Control MAE:      38.2806 W/m² (Expected: 38.2806 W/m²)
+[2026-09-12 13:56:53,070] INFO: Candidate MAE:    38.2869 W/m²
+[2026-09-12 13:56:53,070] INFO: Delta MAE:        +0.0063 W/m²
+[2026-09-12 13:56:53,070] INFO: Candidate nMAE:   40.65% (Control: 40.39%)
+[2026-09-12 13:56:53,070] INFO: Candidate RMSE:   61.2295 W/m² (Control: 60.7509 W/m²)
+[2026-09-12 13:56:53,070] INFO: Candidate Bias:   +2.3216 W/m² (Control: +2.4191 W/m²)
+[2026-09-12 13:56:53,070] INFO: ------------------------------------------------------------
+[2026-09-12 13:56:53,070] INFO: Gate 1 (MAE <= 38.0806 W/m²):      FAIL (38.2869 W/m²)
+[2026-09-12 13:56:53,071] INFO: Gate 2 (Improve >= 4/5 Folds):     FAIL (3/5 folds)
+[2026-09-12 13:56:53,071] INFO: Gate 3 (Max Degrad <= +0.15 W/m²): FAIL (+1.0411 W/m²)
+[2026-09-12 13:56:53,071] INFO: Gate 4 (nMAE <= 40.39%):          FAIL (40.65%)
+[2026-09-12 13:56:53,071] INFO: Gate 5 (RMSE <= 60.7509 W/m²):    FAIL (61.2295 W/m²)
+[2026-09-12 13:56:53,071] INFO: ============================================================
+[2026-09-12 13:56:53,071] INFO: 
+FINAL DECISION: STAGE 7.4 REJECTED — Stage 6.6 remains champion.
+[2026-09-12 13:56:53,071] INFO: ODD TEST SET: 100% UNTOUCHED & LOCKED

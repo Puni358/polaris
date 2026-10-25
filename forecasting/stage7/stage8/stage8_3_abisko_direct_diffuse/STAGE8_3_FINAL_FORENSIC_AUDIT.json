@@ -1,0 +1,81 @@
+{
+  "stage": "STAGE 8.3 FINAL FORENSIC AUDIT",
+  "audit_date": "2026-09-12",
+  "audits": {
+    "1_exact_control_reproduction": {
+      "pass": true,
+      "control_mae_w_m2": 35.069059,
+      "control_nmae_pct": 35.8331,
+      "control_rmse_w_m2": 56.691085
+    },
+    "2_exact_candidate_metrics": {
+      "pass": true,
+      "candidate_mae_w_m2": 35.696286,
+      "candidate_nmae_pct": 36.8364,
+      "candidate_rmse_w_m2": 57.206395,
+      "delta_mae_w_m2": 0.627227,
+      "delta_nmae_pp": 1.0033,
+      "delta_rmse_w_m2": 0.515310
+    },
+    "3_exact_gate_calculations": {
+      "pass": true,
+      "gate_1_mae": "FAIL",
+      "gate_2_folds": "FAIL",
+      "gate_3_degradation": "FAIL",
+      "gate_4_nmae": "FAIL",
+      "gate_5_rmse": "FAIL",
+      "overall_gate_outcome": "REJECTED"
+    },
+    "4_forward_chaining_even_split": {
+      "pass": true,
+      "num_even_origins": 174,
+      "num_folds": 5
+    },
+    "5_causal_timestamp_handling": {
+      "pass": true,
+      "causal_pass": true,
+      "rule": "observation_timestamp <= t0"
+    },
+    "6_no_future_abisko_obs": {
+      "pass": true,
+      "future_observations_used": false
+    },
+    "7_no_odd_target_access": {
+      "pass": true,
+      "odd_target_access": "NO"
+    },
+    "8_no_odd_predictions": {
+      "pass": true,
+      "odd_predictions": "NO"
+    },
+    "9_no_odd_metrics": {
+      "pass": true,
+      "odd_metrics": "NO"
+    },
+    "10_no_hyperparameter_tuning": {
+      "pass": true,
+      "odd_tuning": "NO",
+      "model_parameters_modified": false
+    },
+    "11_no_result_shopping": {
+      "pass": true,
+      "predeclared_candidate_only": true
+    },
+    "12_champion_unchanged": {
+      "pass": true,
+      "champion_modified": false,
+      "current_champion": "Stage 8.1 U700+V700 Steering Wind Model"
+    },
+    "13_artifacts_present_and_consistent": {
+      "pass": true,
+      "all_artifacts_verified": true
+    }
+  },
+  "flags": {
+    "odd_target_access": "NO",
+    "odd_predictions": "NO",
+    "odd_metrics": "NO",
+    "odd_tuning": "NO"
+  },
+  "forensic_audit_pass": true
+}

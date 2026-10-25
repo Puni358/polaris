@@ -1,0 +1,14 @@
+POLARIS STAGE 5.3 — DECISION GATE EVALUATION
+================================================================================
+Status: FINAL / FROZEN
+Selected Gate: DECISION C — Structure remains statistically detectable in specific high-flux regimes, but does NOT appear operationally exploitable using available surface and 1D NWP inputs without new physical observation sources.
+
+Quantitative Evidence & Methodological Audit Supporting DECISION C:
+1. Re-evaluation of Residual Autocorrelation: While residual autocorrelation remains detectable (lag-1 ACF = 0.284 / 0.622), prior causal out-of-sample evaluations did not establish that this residual structure is operationally exploitable at forecast issuance time t0.
+2. Diminishing Returns & Representation Limits: Stage 5.2 Architecture A successfully extracted the available signal from 24h ground context, PVLIB solar geometry, and 1D NWP cloud cover. Attempting another GBDT stacker on the same 28 features carries high risk of redundant modeling and overfitting.
+3. Hard-Error Persistence: 158 of Stage 4's 210 hard error hours (>150 W/m²) remained above 150 W/m² after Arch A correction, and Arch A has 180 total daytime hard error hours (>150 W/m²). This residual error is consistent with practical limits associated with 1D NWP spatial-temporal cloud representation.
+4. Non-Uniform Gain Concentration: The top 5% of improved daytime hours account for 73.0% of net MAE reduction, demonstrating that corrections are localized to specific high-flux atmospheric states.
+
+Conclusion:
+Stage 5.4 GBDT stacking on existing features is NOT justified. Upstream irradiance forecasting is locked at Stage 5.2 Champion (39.0848 W/m² Daytime MAE / 30.32% Daytime nMAE), and POLARIS Stage 5.3 is FINAL / FROZEN.
+================================================================================

@@ -1,0 +1,10 @@
+{
+  "experiment_id": "EXP-PLANNER-CF-EBR-FULL-REALIZED-H-LOWER-BOUND-20261008",
+  "title": "POLARIS \u2014 Certified Formulation H: Full Realized-EBR + Diesel Minimum Lower Bound",
+  "governance_classification": "CERTIFIED BUT NO MATERIAL TIGHTENING",
+  "target_40_pct_status": "BELOW 6,118.1827 L \u2192 40% still not ruled out",
+  "mathematical_proof": "Formulation H enforces the verified PC-SW diesel minimum power constraint d[t] >= 10000 * y[t]. Since the realized trajectory x_real satisfies this constraint strictly, LB_G <= LB_H <= objective_H(x_real) <= PC-SW realized fuel.",
+  "diesel_min_w": 10000.0,
+  "validity_requirement_status": "PASSED (min positive diesel power = 10,000 W; 0 violations)",
+  "timestamp_iso": "2026-10-08T03:56:04.846305+00:00"
+}

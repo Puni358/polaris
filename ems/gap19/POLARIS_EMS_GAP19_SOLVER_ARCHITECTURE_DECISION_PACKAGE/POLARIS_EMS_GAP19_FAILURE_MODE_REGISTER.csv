@@ -1,0 +1,11 @@
+FAILURE_ID,FAILURE_DESCRIPTION,DETECTION_MECHANISM,REQUIRED_RESPONSE,GOVERNANCE_STATUS
+FM-01,Stage 1 Infeasible (Critical load exceeds system capacity),SciPy solver status 2 / infeasible return code,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-02,Stage 2 Infeasible (EBR shortfall constraint conflict),SciPy solver status 2 / infeasible return code,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-03,Stage 3 Infeasible (Fuel constraint conflict),SciPy solver status 2 / infeasible return code,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-04,Stage 4 Infeasible (Curtailment constraint conflict),SciPy solver status 2 / infeasible return code,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-05,Solver Timeout (Execution time exceeds MPC step limit),Timer interrupt / solver options timeout limit,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-06,Numerical Instability (Primal/Dual tolerance breakdown),HiGHS warning code / NaN in solution vector,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-07,Objective-Lock Failure (Lock constraint renders next stage infeasible),Stage k infeasible following Stage k-1 lock insertion,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-08,Dependency Failure (External binding import error in Option B),Python ImportError / ModuleNotFoundError,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-09,Schema Validation Failure (Field missing or type mismatch),Pydantic / Schema ValidationError,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED
+FM-10,Partial Stage Completion (Interruption between Stage 2 and 3),MPC cycle status audit check,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,RESPONSE_POLICY_REQUIRED

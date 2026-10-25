@@ -1,0 +1,30 @@
+{
+  "stage": "STAGE 8.11A LWP/IWP FEATURE SEMANTICS AUDIT",
+  "timestamp": "2026-09-12T17:59:00Z",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+  "champion_frozen_odd_metrics": {
+    "mae_w_m2": 36.188657,
+    "nmae_pct": 28.0688,
+    "rmse_w_m2": 64.219495
+  },
+  "classification": "OPTION_B",
+  "audit_decision": "STAGE_8_11_ROUTE_NOT_NOVEL",
+  "stage8_11b_justified": false,
+  "classification_explanation": "Option B: lwp_latest and iwp_latest are independently computed from the MEPS forecast profile valid at t0 + h for each horizon H1..H24. The name 'lwp_latest' is a historical naming artifact, but the feature values dynamically vary across horizons (typically 15-22 unique values per 24 horizons).",
+  "decision_logic_reason": "The proposed Stage 8.11 route (per-horizon MEPS cloud-microphysics trajectories) is ALREADY PRESENT in the existing Stage 6.6 feature set incorporated in the Stage 8.1 champion. Executing Stage 8.11B would duplicate existing feature information.",
+  "inspected_code_files": [
+    "stage6/stage6_6_lwp_iwp/run_stage6_6.py (lines 217-262)",
+    "stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+    "stage7/stage8/stage8_1_700hpa_wind/run_stage8_1.py"
+  ],
+  "firewall_integrity_verification": {
+    "stage8_1_champion_unchanged": true,
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "model_training": false,
+    "cross_validation": false,
+    "hyperparameter_tuning": false,
+    "master_handoff_modified": false
+  }
+}

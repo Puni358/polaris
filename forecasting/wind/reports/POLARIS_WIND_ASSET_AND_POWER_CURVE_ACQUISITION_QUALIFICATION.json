@@ -1,0 +1,127 @@
+{
+  "qualification_metadata": {
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "WIND_ASSET_AND_POWER_CURVE_ACQUISITION_QUALIFICATION",
+    "timestamp_utc": "2026-09-18T06:14:50Z",
+    "investigation_type": "EVIDENCE_ACQUISITION_AND_QUALIFICATION_AUDIT",
+    "evaluator": "POLARIS_GOVERNANCE_AGENT"
+  },
+  "governance_and_machine_states": {
+    "PATH_A_SELECTION": "SELECTED",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "A2_RESEARCH_CHAMPION_STATUS": "VERIFIED",
+    "A2_AUDIT_STATUS": "VERIFIED_WITH_LIMITATIONS",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "WIND_ASSET_IDENTITY_STATUS": "NOT_ESTABLISHED",
+    "TURBINE_SPECIFICATION_STATUS": "NOT_ESTABLISHED",
+    "HUB_HEIGHT_STATUS": "NOT_ESTABLISHED",
+    "POWER_CURVE_STATUS": "NOT_ESTABLISHED",
+    "MEASURED_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "GENERIC_PHYSICAL_MAPPING": "CONDITIONALLY_ESTABLISHED",
+    "SITE_SPECIFIC_NUOLJA_MAPPING": "NOT_ESTABLISHED",
+    "WIND_SPEED_TO_POWER_MAPPING": "NOT_ESTABLISHED",
+    "WIND_GENERATION_REPRESENTATION": "NOT_ESTABLISHED",
+    "MAPPING_DESIGN_EVIDENCE": "CONDITIONAL",
+    "MAPPING_IMPLEMENTATION_EVIDENCE": "INSUFFICIENT",
+    "EXTERNAL_EVIDENCE_REQUIRED": "YES",
+    "EXTERNAL_EVIDENCE_STATUS": "NOT_ESTABLISHED",
+    "WIND_GENERATION_MAPPING_DECISION": "C",
+    "WIND_POWER_MAPPING_IMPLEMENTATION_READINESS": "NOT_READY"
+  },
+  "non_authorization_states": {
+    "A2_WIND_POWER_TARGET": "NOT_AUTHORIZED",
+    "WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "WIND_POWER_MAPPING_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_FORECASTING_MODEL": "NO",
+    "NEW_A2_EXPERIMENT": "NO",
+    "NEW_WIND_POWER_MODEL": "NO",
+    "NEW_EMS_EXPERIMENT": "NO",
+    "PRODUCTION_MODIFICATION": "NO",
+    "FROZEN_CONTRACT_CHANGE": "NO"
+  },
+  "local_repository_evidence_audit": {
+    "sites_nuolja_multivariate_csv": {
+      "path": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+      "measured_variables": ["TA", "RH", "SW_IN", "TS_-0.01m", "PRECIP", "D_SNOW"],
+      "wind_speed_present": false,
+      "wind_power_present": false,
+      "turbine_asset_info_present": false
+    },
+    "sites_met_ans_nms_csv": {
+      "path": "data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv",
+      "title": "Meteorological from Nuolja Middle Station, North-Western Sweden",
+      "custodian": "Abisko Scientific Research Station / Swedish Polar Research Secretariat",
+      "location": "Mount Nuolja (702 m a.s.l.)",
+      "measured_variables": ["TA", "RH", "SW_IN", "TS", "P", "D_SNOW"],
+      "wind_speed_measured": false,
+      "wind_power_measured": false,
+      "turbine_specifications": false
+    },
+    "smhi_abisko_target_csv": {
+      "path": "research/wind_a2/smhi_188790_ws_full.csv",
+      "station": "SMHI Abisko Aut 188790 (392.2 m a.s.l.)",
+      "variable": "10 m hourly wind speed (m/s)",
+      "electrical_generation_data": false
+    }
+  },
+  "bounded_external_sources_consulted": [
+    {
+      "organization": "Swedish Polar Research Secretariat (Polarforskningssekretariatet)",
+      "document_title": "Abisko Scientific Research Station (ANS) Infrastructure & Station Overview",
+      "url_reference": "https://polar.se/en/research-in-the-arctic/abisko-scientific-research-station/",
+      "findings": "ANS operates environmental and climate monitoring networks in Abisko and Mount Nuolja. No commercial wind turbine or wind-generation asset was established in the bounded local-repository and authoritative-source search.",
+      "applicability": "Authoritative infrastructure verification",
+      "limitations": "Confirms that no wind generation asset was established in the bounded search."
+    },
+    {
+      "organization": "SITES (Swedish Infrastructure for Ecosystem Science)",
+      "document_title": "SITES Nuolja Meteorological Station Metadata & Landing Page",
+      "url_reference": "https://data.fieldsites.se/",
+      "findings": "AWS located at 702m a.s.l. measures air temp, humidity, shortwave radiation, soil temp, precipitation, snow depth. Wind power generation is not measured.",
+      "applicability": "Authoritative station parameter verification",
+      "limitations": "Dataset contains no wind speed or turbine generation fields."
+    }
+  ],
+  "missing_evidence_summary": [
+    "Authoritative wind turbine asset identity for Nuolja (no commercial wind turbine asset was established in the bounded search).",
+    "Turbine manufacturer, model, rated electrical capacity, rotor diameter, and hub height.",
+    "Authoritative turbine power curve P(v) or empirical wind-to-power relationship.",
+    "Measured wind power generation telemetry (P_actual in W or kW).",
+    "Vertical wind profile shear exponent alpha or surface roughness z_0 for Mount Nuolja terrain."
+  ],
+  "minimum_next_prerequisites": [
+    "Governance specification and authorization of a synthetic benchmark reference turbine (e.g., IEC class small wind turbine or micro-turbine spec) for POLARIS simulation purposes.",
+    "Formulation of a turbine power curve P(v) model operating on authorized reference turbine specifications.",
+    "Decision on whether to add wind_speed (m/s) representation to ForecastBundle or enforce P(v) conversion."
+  ],
+  "firewall_verifications": {
+    "STAGE8_1": "UNCHANGED",
+    "A1": "UNCHANGED",
+    "A1_5": "UNCHANGED",
+    "A1_6": "UNCHANGED",
+    "A2": "UNCHANGED",
+    "A2_MODEL_ARTIFACT": "UNCHANGED",
+    "A2_RESULTS": "UNCHANGED",
+    "A2_EVIDENCE_AUDIT": "UNCHANGED",
+    "A2_INTEGRATION_READINESS_ASSESSMENT": "UNCHANGED",
+    "D1_D7": "UNCHANGED",
+    "FORECASTBUNDLE": "UNCHANGED",
+    "FORECASTENGINE": "UNCHANGED",
+    "STATIONSTATE": "UNCHANGED",
+    "DISPATCHPLAN": "UNCHANGED",
+    "EMS": "UNCHANGED",
+    "MPC": "UNCHANGED",
+    "DIGITAL_TWIN": "UNCHANGED",
+    "D5_HISTORICAL_RESULTS": "UNCHANGED",
+    "FROZEN_SCHEMAS": "UNCHANGED"
+  }
+}

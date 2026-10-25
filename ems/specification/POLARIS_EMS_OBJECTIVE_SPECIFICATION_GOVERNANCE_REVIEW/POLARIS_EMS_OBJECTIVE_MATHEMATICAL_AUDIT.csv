@@ -1,0 +1,6 @@
+FORMULA_ID,EXPRESSION,DOMAIN,UNITS,DIMENSIONAL_CHECK,STATUS
+MATH-AUD-01,min J1 = sum(p_unmet_critical(t) * dt),Power * Time,Wh,PASS,VERIFIED_ACCURATE
+MATH-AUD-02,"min J2 = sum(max(0, E_EBR_target(t) - E_reserve_avail(t))) + max(0, E_terminal_target - E(H))",ENERGY DOMAIN,Wh,PASS (Canonical Energy Domain),VERIFIED_ACCURATE
+MATH-AUD-03,min J3 = sum((F_base * u_diesel(t) + F_marg * p_diesel(t)) * dt + Startup_Fuel * v_start(t)),Volume,Liters,PASS,VERIFIED_ACCURATE
+MATH-AUD-04,min J4 = sum(p_curt_avoidable(t) * dt),Power * Time,Wh,PASS,VERIFIED_ACCURATE
+MATH-AUD-05,E(t) = C_bat * (SOC(t) / 100%),Energy vs State,Wh vs %,PASS,VERIFIED_ACCURATE

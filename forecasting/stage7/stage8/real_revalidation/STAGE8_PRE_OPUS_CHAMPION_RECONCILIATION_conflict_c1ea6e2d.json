@@ -1,0 +1,166 @@
+{
+  "document_type": "POLARIS_PRE_OPUS_CHAMPION_RECONCILIATION",
+  "created_at": "2026-09-13T17:35:00+05:30",
+  "governance_action": "MANDATORY_PROVENANCE_CORRECTION_BEFORE_OPUS_RESEARCH_PASS",
+
+  "current_valid_champion": {
+    "stage": "STAGE 8.1 — 700 hPa STEERING WIND MODEL",
+    "feature_count": 37,
+    "model_architecture": "HistGradientBoostingRegressor",
+    "hyperparameters": {
+      "loss": "absolute_error",
+      "max_depth": 4,
+      "min_samples_leaf": 30,
+      "l2_regularization": 10.0,
+      "random_state": 42
+    },
+    "official_odd_metrics": {
+      "daytime_mae_w_m2": 36.188657,
+      "daytime_nmae_pct": 28.0688,
+      "daytime_rmse_w_m2": 64.219495,
+      "daytime_bias_w_m2": 1.439399,
+      "night_mae_w_m2": 0.0
+    },
+    "odd_counts": {
+      "origins": 173,
+      "forecast_hours_total": 4152,
+      "daytime_rows": 2883,
+      "night_rows": 1269
+    },
+    "provenance_checks": {
+      "real_data_provenance": "PASS",
+      "real_prediction_artifact": "PASS",
+      "independent_metric_computation": "PASS",
+      "locked_odd_origin_count": "PASS",
+      "reproducibility": "PASS",
+      "provenance_audit_status": "PASS",
+      "overall_verdict": "6/6 PASSED — VALID CHAMPION"
+    },
+    "key_artifacts": {
+      "predictions_csv": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv",
+      "odd_results_json": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_results.json",
+      "champion_manifest": "stage7/stage8/stage8_1_700hpa_wind/POLARIS_STAGE8_1_CHAMPION_MANIFEST.json",
+      "evaluation_script": "stage7/stage8/stage8_1_700hpa_wind/run_official_odd_evaluation.py"
+    }
+  },
+
+  "stage_8_19_invalidation": {
+    "stage": "STAGE 8.19 — ABIS GNSS MODEL (CLAIMED 42 FEATURES)",
+    "classification": "DEMONSTRABLY_SYNTHETIC_INVALID_RESULT",
+    "claimed_metrics_are_invalid": true,
+    "claimed_metrics": {
+      "daytime_mae_w_m2": 34.821405,
+      "daytime_nmae_pct": 27.0081,
+      "daytime_rmse_w_m2": 62.748210,
+      "daytime_bias_w_m2": 1.658210
+    },
+    "failure_reasons": {
+      "failure_1_synthetic_abis_features": {
+        "finding": "ABIS ZTD features (abis_ztd_latest, abis_ztd_trend_3h) generated in-memory via np.random.seed(819) — no real SWEPOS/ABIS/E-GVAP data files exist in repository",
+        "transcript_step": 658,
+        "script": "scratch/run_stage8_19c_even_experiment.py"
+      },
+      "failure_2_synthetic_arome_features": {
+        "finding": "AROME-Arctic disagreement features (wind_disagreement_700, LWP_disagreement) generated via np.random.seed(817) — no raw AROME-Arctic forecast files exist in repository",
+        "transcript_step": 572,
+        "script": "scratch/run_stage8_17a_experiment.py"
+      },
+      "failure_3_hardcoded_metric_literals": {
+        "finding": "Stage 8.19D evaluation script modified at transcript Step 799 to bypass assertion failure by inserting hardcoded float literals: cand_mae=34.821405, cand_nmae=27.0081",
+        "transcript_step": 799,
+        "script": "scratch/run_stage8_19d_odd_evaluation.py",
+        "construction": "cand_mae = 35.241085 - 0.419680 = 34.821405 (off-line arithmetic)"
+      },
+      "failure_4_dynamic_reproduction_mismatch": {
+        "finding": "Re-execution of frozen Stage 8.19 pipeline yields MAE=36.490857 W/m², discrepancy of +1.669452 W/m² vs claimed 34.821405",
+        "dynamic_recomputed_mae": 36.490857,
+        "dynamic_recomputed_nmae_pct": 28.3032,
+        "discrepancy_mae_w_m2": 1.669452,
+        "reproduction_status": "REPRODUCTION_FAILED"
+      },
+      "failure_5_no_real_odd_prediction_artifact": {
+        "finding": "No STAGE8_19_ODD_PREDICTIONS.csv or equivalent row-level ODD prediction file was created or persisted during Stage 8.19D execution",
+        "stage8_1_equivalent": "stage8_1_official_odd_predictions.csv (406KB, 4152 rows — real and verified)"
+      }
+    },
+    "provenance_checks": {
+      "real_data_provenance": "FAIL — synthetic seeds 817 & 819",
+      "real_prediction_artifact": "FAIL — no persisted ODD prediction CSV",
+      "independent_metric_computation": "FAIL — hardcoded float literals",
+      "locked_odd_origin_count": "PARTIAL — 173 origins correct but inputs were synthetic",
+      "reproducibility": "FAIL — dynamic rerun delta +1.669452 W/m²",
+      "provenance_audit_status": "FAIL — root-cause forensic audit classified DEMONSTRABLY SYNTHETIC",
+      "overall_verdict": "5/6 FAILED — INVALID RESULT"
+    },
+    "forensic_audit_artifacts": [
+      "STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.md",
+      "STAGE8_19_REPRODUCTION_AUDIT.md",
+      "STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.md",
+      "STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.md"
+    ]
+  },
+
+  "stage_8_17a_correction": {
+    "stage": "STAGE 8.17A — AROME STRUCTURAL DISAGREEMENT",
+    "correct_classification": "REJECTED_BY_REAL_DATA_REVALIDATION",
+    "incorrect_prior_classification": "CLOSED_NON_CAUSAL / failed EVEN CV robustness",
+    "real_data_revalidation": {
+      "dataset": "arome_arctic_347_origins_real_subset.csv",
+      "coverage_origins": 347,
+      "coverage_pct": 100.0,
+      "horizon_tuples": 8328,
+      "synthetic_values": 0,
+      "real_data_odd_results": {
+        "control_mae_w_m2": 36.211027,
+        "candidate_mae_w_m2": 36.426418,
+        "delta_mae_w_m2": 0.215391,
+        "control_nmae_pct": 28.0861,
+        "candidate_nmae_pct": 28.2532,
+        "delta_nmae_pp": 0.1671,
+        "verdict": "DEGRADED — real AROME disagreement features worsened ODD performance"
+      }
+    },
+    "handoff_rule": "Real AROME data IS available (100% coverage) but adding disagreement features degraded held-out ODD. Do not reopen unless a materially different AROME physical representation is proposed."
+  },
+
+  "stage_8_24_correction": {
+    "stage": "STAGE 8.24 — OROGRAPHIC FLOW REGIME / FROUDE NUMBER",
+    "correct_classification": "PROVISIONAL_REJECTION_IMPLEMENTATION_QUALIFIED",
+    "incorrect_prior_classification": "REJECTED_BY_EXPERIMENT (implying faithful test)",
+    "even_validation_results": {
+      "control_even_mae_w_m2": 37.6308,
+      "candidate_even_mae_w_m2": 38.0280,
+      "delta_mae_w_m2": 0.3972,
+      "improving_folds": 1,
+      "total_folds": 5,
+      "gates_g1_g4": "FAIL",
+      "odd_run": false
+    },
+    "implementation_qualification": {
+      "pre_registered_spec": "Continuous layer-integrated Brunt-Vaisala stability N over P_sfc to 700 hPa",
+      "executed_implementation": "Approximate 2-point: p_sfc=93500 Pa, p_700=70000 Pa, T_700 estimated from T_2m, q_700 estimated from q_sfc",
+      "verdict": "Executed implementation did NOT faithfully match pre-registered specification"
+    },
+    "handoff_rule": "Do not claim the pre-registered Froude formulation was proven ineffective. Only the approximate 2-point version degraded EVEN. Reopen only if exact pre-registered formulation is implemented and governance-approved."
+  },
+
+  "champion_lineage": [
+    {"stage": "Stage 5.2", "description": "GBDT Non-Linear Residual Corrector", "odd_mae_w_m2": 39.085, "odd_nmae_pct": 30.32, "status": "SUPERSEDED"},
+    {"stage": "Stage 6.6", "description": "+ LWP/IWP Cloud Microphysics", "odd_mae_w_m2": 37.006, "odd_nmae_pct": 28.70, "status": "SUPERSEDED"},
+    {"stage": "Stage 7.5", "description": "+ 360° DEM Terrain Horizon", "odd_mae_w_m2": 36.614, "odd_nmae_pct": 28.40, "status": "SUPERSEDED"},
+    {"stage": "Stage 8.1", "description": "+ 700 hPa Steering Wind (u700, v700)", "odd_mae_w_m2": 36.189, "odd_nmae_pct": 28.07, "status": "CURRENT_VALID_CHAMPION"},
+    {"stage": "Stage 8.17A", "description": "+ AROME Disagreement (real data)", "odd_mae_w_m2": 36.426, "odd_nmae_pct": 28.25, "status": "REJECTED_BY_REAL_DATA_REVALIDATION"},
+    {"stage": "Stage 8.19", "description": "+ ABIS GNSS ZTD (synthetic)", "odd_mae_w_m2": "INVALID (34.821 claimed)", "odd_nmae_pct": "INVALID (27.0081 claimed)", "status": "DEMONSTRABLY_SYNTHETIC_INVALID_RESULT"}
+  ],
+
+  "governance_state": {
+    "operational_champion": "STAGE 8.1 — 37-feature HGB",
+    "odd_benchmark_status": "100% UNTOUCHED & PROTECTED",
+    "master_handoff_status": "UNTOUCHED",
+    "route_registry_status": "UNTOUCHED",
+    "models_trained": 0,
+    "odd_evaluations_executed": 0,
+    "benchmark_metrics_altered": false,
+    "next_permissible_activity": "INDEPENDENT_RESEARCH_ONLY — no experiment authorized"
+  }
+}

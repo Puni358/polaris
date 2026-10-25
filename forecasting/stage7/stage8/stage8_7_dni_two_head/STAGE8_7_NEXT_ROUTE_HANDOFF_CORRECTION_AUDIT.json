@@ -1,0 +1,82 @@
+{
+  "audit_type": "STAGE8_7_NEXT_ROUTE_HANDOFF_CORRECTION_AUDIT",
+  "timestamp_utc": "2026-09-12T22:36:15Z",
+  "numeric-results-preserved": true,
+  "odd-firewall-preserved": true,
+  "master-handoff-modified": false,
+  "files_inspected": [
+    "stage7/stage7_1_meps_radiation/meps_radiation_verification_report.md",
+    "stage7/stage7_2_meps_native_radiation/stage7_2_report.md",
+    "stage7/stage7_3_kt_reformulation/stage7_3_report.md",
+    "stage7/stage7_4_vertical_cloud/stage7_4_forecasting_report.md",
+    "stage7/stage7_5_terrain_horizon/stage7_5_forecasting_report.md",
+    "stage7/stage8/stage8_0_meps_model_level_feasibility/STAGE8_0_FEASIBILITY_REPORT.md",
+    "stage7/stage8/stage8_1_700hpa_wind/stage8_1_report.md",
+    "stage7/stage8/stage8_2_observability_feasibility/STAGE8_2_OBSERVABILITY_FEASIBILITY_REPORT.md",
+    "stage7/stage8/stage8_3_abisko_direct_diffuse/STAGE8_3_REPORT.md",
+    "stage7/stage8/STAGE8_3_AND_8_4_AUDIT_REPORT.md",
+    "stage7/stage8/stage8_4_viirs_feasibility/STAGE8_4_VIIRS_FEASIBILITY_REPORT.md",
+    "stage7/stage8/stage8_5_meps_spatial_cloud_feasibility/STAGE8_5_MEPS_SPATIAL_CLOUD_EXPERIMENT_REPORT.md",
+    "stage7/stage8/stage8_6_cams_feasibility/STAGE8_6B_CAMS_EXPERIMENT_REPORT.md",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7B_EXPERIMENT_REPORT.md"
+  ],
+  "corrections_made": [
+    {
+      "location": "Section D (Stage 7/8 History Table)",
+      "correction": "Reconciled route titles and descriptions for Stage 8.4 (VIIRS feasibility/coverage/latency), Stage 8.5 (MEPS spatial cloud advection), Stage 8.6 (CAMS AOD550 + TCWV), and Stage 8.7 (Causal MEPS DNI-anchored Direct/Diffuse Two-Head Architecture) against underlying stage artifacts."
+    },
+    {
+      "location": "Section B (Scientific Interpretation)",
+      "correction": "Removed claim of mathematical superiority of Stage 8.1 and L1 non-subadditivity generalization. Replaced with strictly empirical statement that recombined two-head components degraded relative to Stage 8.1 control on EVEN CV."
+    },
+    {
+      "location": "Section C (DNI Mechanism Claim)",
+      "correction": "Removed claim that DNI forecast phase/magnitude noise uniquely caused degradation. Replaced with empirical statement of 100% causal availability and added explicit hypothesis framing for potential unverified contributors."
+    },
+    {
+      "location": "Section D (Architectural Scope)",
+      "correction": "Added precise distinction between Stage 7.2 (DNI as scalar feature) and Stage 8.7 (DNI as target decomposition physical anchor) and clarified explicit boundary of conclusions."
+    },
+    {
+      "location": "Section G (Historical Handoff Corrections)",
+      "correction": "Added explicit section documenting the scope and rationale of handoff corrections without altering underlying experimental evidence."
+    }
+  ],
+  "historical_artifacts_preserved": [
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7A_FEASIBILITY_REPORT.md",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7A_FEASIBILITY_DECISION.json",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7A_GOVERNANCE_REVIEW.md",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7A_GOVERNANCE_DECISION.json",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7A_PROXY_APPROVAL.md",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7A_PROXY_APPROVAL.json",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7B_EXPERIMENT_REPORT.md",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7B_GATE_DECISION.json",
+    "stage7/stage8/stage8_7_dni_two_head/stage8_7b_fold_results.csv",
+    "stage7/stage8/stage8_7_dni_two_head/stage8_7b_even_cv_summary.csv",
+    "stage7/stage8/stage8_7_dni_two_head/stage8_7b_control_reproduction_audit.json",
+    "stage7/stage8/stage8_7_dni_two_head/stage8_7b_causality_audit.json",
+    "stage7/stage8/stage8_7_dni_two_head/stage8_7b_leakage_audit.json",
+    "stage7/stage8/stage8_7_dni_two_head/stage8_7b_reproducibility_manifest.json",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7_FINAL_CLOSURE.md",
+    "stage7/stage8/stage8_7_dni_two_head/STAGE8_7_FINAL_DECISION.json"
+  ],
+  "preserved_numerical_values": {
+    "stage8_7b_control_mae_w_m2": 37.620054,
+    "stage8_7b_candidate_mae_w_m2": 49.445841,
+    "stage8_7b_delta_mae_w_m2": 11.825787,
+    "stage8_7b_folds_improved": "0/5",
+    "stage8_7b_worst_degradation_w_m2": 28.022026,
+    "stage8_7b_control_nmae_pct": 37.97,
+    "stage8_7b_candidate_nmae_pct": 46.83,
+    "stage8_7b_control_rmse_w_m2": 60.16,
+    "stage8_7b_candidate_rmse_w_m2": 81.33,
+    "odd_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "odd_tuning": 0,
+    "champion_stage": "Stage 8.1 U700/V700 Steering Wind",
+    "official_odd_mae_w_m2": 36.188657,
+    "official_odd_nmae_pct": 28.0688,
+    "official_odd_rmse_w_m2": 54.912301
+  }
+}

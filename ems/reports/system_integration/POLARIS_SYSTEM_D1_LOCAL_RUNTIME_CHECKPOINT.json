@@ -1,0 +1,71 @@
+{
+  "checkpoint_id": "POLARIS_SYSTEM_D1_LOCAL_RUNTIME_CHECKPOINT",
+  "phase": "D1 Engineering Hardening Gate & Claim Hygiene Correction",
+  "title": "Local Offline End-to-End System Skeleton Hardening and Claim Hygiene",
+  "timestamp": "2026-09-16T08:15:00Z",
+  "status": "COMPLETED",
+  "hardening_gate_status": "PASS",
+  "claim_hygiene": {
+    "boundary_statement": "Research validation and operational prototype validation are separate. The frozen research artifacts establish only the claims documented by their respective research protocols. D1 demonstrates that a local ForecastEngine/ForecastBundle/runtime pipeline can execute offline and pass engineering integrity tests. D1 does not establish real-world forecasting or EMS performance.",
+    "demo_metrics_disclaimer": "These metrics validate implementation/runtime behavior on the synthetic smoke-test scenario; they do not constitute empirical validation of POLARIS EMS performance under real station conditions.",
+    "forecasting_status": "PROTOTYPE / UNVALIDATED OPERATIONAL FORECASTER",
+    "research_transfer_disclaimer": "Operational H1-H24 forecasting performance has not been established by D1. The D1 forecaster does not inherit scientific research validation."
+  },
+  "governance": {
+    "research_branch": "CLOSED (ABC2 FROZEN)",
+    "odd_data_status": "SEALED (0 rows accessed)",
+    "historical_artifacts_status": "UNTOUCHED",
+    "network_requirement": "100% OFFLINE LOCAL RUNTIME"
+  },
+  "physical_accounting": {
+    "bus_bar_power_balance": "P_solar_used + P_wind_used + P_dis + P_diesel == P_served + P_chg",
+    "demand_deficit_balance": "P_demand == P_served + P_unmet",
+    "renewable_available_decomposition": "P_solar + P_wind == P_solar_used + P_wind_used + P_curtailment",
+    "unmet_load_definition": "Demand deficit (P_demand - P_served), not an energy source."
+  },
+  "battery_model": {
+    "discrete_transition_equation": "E[t+1] = E[t] + (eta_chg * P_chg - P_dis / eta_dis) * dt",
+    "power_units": "Watts (W)",
+    "energy_units": "Watt-hours (Wh)",
+    "timestep_duration_hours": 1.0,
+    "capacity_wh": 200000.0,
+    "soc_bounds": [20.0, 95.0],
+    "charge_efficiency": 0.92,
+    "discharge_efficiency": 0.92
+  },
+  "verification_results": {
+    "test_suite": "system/tests/test_offline_runtime.py",
+    "total_tests": 9,
+    "passed_tests": 9,
+    "failed_tests": 0,
+    "network_isolation_verified": true,
+    "counterfactual_causality_verified": true,
+    "energy_balance_conserved": true,
+    "analytical_battery_transition_verified": true,
+    "battery_soc_bounds_enforced": true,
+    "dispatch_physical_limits_verified": true,
+    "schema_validation_and_horizon_verified": true,
+    "deterministic_reproducibility_verified": true,
+    "research_firewall_verified": true
+  },
+  "cli_commands": [
+    "polaris run",
+    "polaris forecast",
+    "polaris optimize",
+    "polaris simulate",
+    "polaris evaluate"
+  ],
+  "sample_run_metrics": {
+    "run_id": "polaris_run_d1_offline_2024-06-01T00:00:00Z",
+    "data_mode": "DEMO / SMOKE-TEST SCENARIO (PROTOTYPE ASSUMPTIONS)",
+    "disclaimer": "Synthetic scenario only — not operational performance validation.",
+    "solar_irradiance_mae_w_m2": 42.3054,
+    "demand_mae_w": 4761.3635,
+    "renewable_utilization_pct": 89.2,
+    "renewable_curtailment_pct": 10.8,
+    "unmet_critical_load_kwh": 0.0,
+    "system_reliability_pct": 100.0,
+    "constraint_violations_count": 0
+  },
+  "next_recommended_phase": "D2 (Local Receding-Horizon Mathematical Optimization / MILP Energy Optimizer)"
+}

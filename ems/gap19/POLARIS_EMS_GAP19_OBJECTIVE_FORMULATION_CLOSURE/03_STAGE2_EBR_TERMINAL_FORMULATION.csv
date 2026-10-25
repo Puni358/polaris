@@ -1,0 +1,17 @@
+audit_document,03_STAGE2_EBR_TERMINAL_FORMULATION
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# STAGE 2: EBR AND TERMINAL RESERVE FORMULATION & ANALYSIS
+# ============================================================
+
+aspect,current_implementation_fact,governed_target_specification,mathematical_representation,classification_status
+Objective Metric,Absent from current MILP objective (zero reserve/terminal terms),Minimization of EBR shortfall energy + terminal reserve shortfall energy (Wh),min J2 = sum_{t=0}^{H-1} max(0 E_EBR_target(t) - E_reserve_avail(t)) + max(0 E_terminal_target - E(H)),RESOLVED_BY_EXISTING_GOVERNANCE
+Target Values,Implicit 20% min_soc_pct physical bound (no policy target),Symbolic E_EBR_target(t) and E_terminal_target (numerical values governed separately),E_EBR_target(t) in Wh and E_terminal_target in Wh (symbolic),GOVERNANCE_DECISION_REQUIRED
+Reserve State Definition,E_reserve_avail absent; battery energy E(t) bounded by min_e_wh,Available reserve energy above physical minimum: E(t) - E_min,E_reserve_avail(t) = E(t) - E_min where E_min = C_bat * min_soc_pct / 100,RESOLVED_BY_EXISTING_GOVERNANCE
+Terminal Condition,Free terminal energy state E(H) >= E_min,Terminal energy target E_terminal_target at horizon end t=H,E(H) >= E_terminal_target (or shortfall penalized in J2),RESOLVED_BY_EXISTING_GOVERNANCE
+Coupling Analysis,N/A (neither term present in current code),EBR at t=H and terminal reserve at t=H are mathematically coupled via E(H),Terminal shortfall and t=H EBR shortfall overlap if E_terminal_target incorporates EBR buffer,ENGINEERING_DEFINITION_REQUIRED
+MILP Linearization,N/A,Linearized using non-negative slack variables s_EBR(t) >= 0 and s_term >= 0,s_EBR(t) >= E_EBR_target(t) - E_reserve_avail(t); s_term >= E_terminal_target - E(H); min J2 = sum s_EBR(t) + s_term,ENGINEERING_DEFINITION_REQUIRED

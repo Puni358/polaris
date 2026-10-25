@@ -1,0 +1,28 @@
+{
+  "manifest_version": "1.0",
+  "created_timestamp_iso": "2026-10-08 03:15:06 UTC",
+  "total_runtime_s": 25.05886197090149,
+  "experiment_verdict": "BLOCKED",
+  "hashes": {
+    "population_hash": "7c81256f12630a2ef2e30ccfa5a7edf697f7a1717ca8c90df60440c61def9c35",
+    "input_hash": "dcabbfa272adeb6e9592e07d3d02decb689ec52b2e0097e43c4e0e9962cf19f1",
+    "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b",
+    "forecast_input_file_hash": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+    "causal_nwp_physics_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "base_configuration_hash": "e4ef245e7f99c6056be067939c1f325a727c0feaa3894cb657944121d207b829",
+    "ebr_terminal_s0_configuration_hash": "c48a22c67ea7cde451ff02b4e9325076aa88bdc451067783f1921e721b1853ca"
+  },
+  "artifact_file_hashes": {
+    "EXPERIMENT_DEFINITION.json": "f3e9208d878762a82aae860a4d8e1174886c500e77884471532bca239770ee48",
+    "FORMULATION_CONFIG.json": "154ae4565a6e3ad9279d694293a326bfc04bdcb1cf295ca6b204138a0120f622",
+    "POPULATION_INPUT_MANIFEST.json": "b142b9495cbda05796035eef10c7a6365b0acaae5b637b3417f365d8c7b04cc8",
+    "FORECAST_INPUT_MANIFEST.json": "3ab7ace5c70036d62948d6cfb1bb1d39b4c92409431e1435177d9e461452ddc5",
+    "SOLVER_SETTINGS.json": "bf28367c9edfd12b7eac0db8323106e691c8e93997309fe595d303bc41f490a9",
+    "PER_ORIGIN_RESULTS.json": "687f2777370717f64f91a5d158a47ad0348b364446e8adb1b6ee83c73ef7dd16",
+    "PER_ORIGIN_RESULTS.csv": "2d7d5772a7c44bbeae0b5f38198c262e1988242a9cc78e3628f8c85d165d22fc",
+    "AGGREGATE_RESULTS.json": "b88d223f97de3719091af430e39e3c86620473f3d5343d2289c5a4b27b2c3754",
+    "INDEPENDENT_CHECKS_SUMMARY.json": "8a249a4e3226250781f0fb1cf6343879cccafe541b01e94119826483c78a0157",
+    "FINAL_REPORT.md": "76b8cde34db33baef7ecbff6856c1d2eea11351b5391242ab73b35b132c9eeab",
+    "global_lower_bound_ebr_terminal_s0_research.py": "02c266345ba05abeaf327136f34181791b6e4968a46627793c023469d928ddcb"
+  }
+}

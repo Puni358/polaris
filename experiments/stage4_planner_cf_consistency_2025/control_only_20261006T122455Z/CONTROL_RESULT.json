@@ -1,0 +1,57 @@
+{
+  "timestamp": "20261006T122455Z",
+  "arm": "PC-Control",
+  "origins_attempted": 123,
+  "rows": 2952,
+  "optimizer_or_step_failure": null,
+  "status": "CONTROL_COMPLETE",
+  "rows_expected": 2952,
+  "origins_completed": 123,
+  "F_c_total_fuel_L": 10382.3094,
+  "mean_fuel_per_origin_L": 84.40901951219513,
+  "min_origin_fuel_L": 44.6836,
+  "max_origin_fuel_L": 100.00019999999999,
+  "critical_first_reliability_pct": 97.49755744206149,
+  "proportional_reliability_pct": 95.82564638958713,
+  "total_unmet_critical_Wh": 856916.4099999999,
+  "soc_floor_violations_below_20pct": 0,
+  "min_soc_pct": 57.83,
+  "optimizer_failures": 0,
+  "gates": {
+    "G4": {
+      "PASS": true
+    },
+    "G6": {
+      "PASS": true
+    },
+    "G7": {
+      "PASS": true
+    },
+    "G9": {
+      "PASS": true
+    },
+    "G10": {
+      "PASS": true
+    },
+    "G11": {
+      "PASS": true
+    }
+  },
+  "control_integrity_gates_PASS": true,
+  "lower_bound_gate": {
+    "L_certified_L": 1397.8482963577756,
+    "threshold_L_over_0p60": 2329.747160596293,
+    "F_c_L": 10382.3094,
+    "verdict": "40% target NOT ruled out by certified lower bound",
+    "note": "NG7 triggers iff L > 0.60 F_c (strict); equality is not a trigger"
+  },
+  "hashes": {
+    "control_hourly_csv_sha256": "7ce8111fe63568aad4ef64760f9b0cd20d136ab8905798d0d203029ff3d618d1",
+    "driver_sha256": "5c2888b6d24e9e20a51171f3e667ffb46b700832e0b2193c1ba8e1aa35690640",
+    "runner_sha256": "ea9400bfa11734cd6ab8427c0b6c8b872fedf73811f3cd66e38d6023ed370726",
+    "planner_sha256": "b479550e5eabcc7d745b874eee92f15b3e07d63740d20ab82e42081b64d0215a",
+    "executor_sha256": "c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b"
+  },
+  "protected_pre": [],
+  "protected_post": []
+}

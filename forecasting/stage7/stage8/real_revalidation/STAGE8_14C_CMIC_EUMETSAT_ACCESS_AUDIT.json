@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-09-13T07:03:00+00:00",
+  "stage": "POLARIS STAGE 8.14C \u2014 EUMETSAT ARCHIVE ACCESS AUDIT (PHASE 2)",
+  "status": "COMPLETED \u2014 CREDENTIALS_UNAVAILABLE",
+  "eumetsat_api_access": {
+    "authenticated": false,
+    "consumer_key_present": false,
+    "consumer_secret_present": false,
+    "eumdac_library_installed": false
+  },
+  "product_metadata": {
+    "product_id": "EO:EUM:DAT:MULT:PPS-CMIC",
+    "title": "NWC SAF PPS Cloud Microphysics (CMIC)",
+    "processing_versions": [
+      "v2021",
+      "v2024"
+    ],
+    "platforms": [
+      "MetOp-B",
+      "MetOp-C",
+      "NOAA-20",
+      "NOAA-21",
+      "Terra",
+      "Aqua"
+    ],
+    "sensors": [
+      "AVHRR-3",
+      "VIIRS",
+      "MODIS"
+    ]
+  },
+  "coverage_summary": {
+    "total_origins": 347,
+    "daylight_origins": 271,
+    "polar_night_origins": 76,
+    "valid_optical_origins": 190,
+    "public_archive_daylight_coverage_pct": 70.11,
+    "no_granule_origins": 34,
+    "causality_unverified_origins": 27,
+    "low_sun_invalid_origins": 20
+  },
+  "governance": {
+    "cmic_status": "CONDITIONAL",
+    "current_champion": "Stage 8.1 700 hPa Steering Wind Model",
+    "champion_daytime_nmae_pct": 28.0688,
+    "data_fabricated": false,
+    "future_forecasting_experiment_authorized": false
+  }
+}

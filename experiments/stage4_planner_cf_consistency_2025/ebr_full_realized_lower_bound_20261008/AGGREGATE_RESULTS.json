@@ -1,0 +1,40 @@
+{
+  "verdict": "CERTIFIED LOWER BOUND",
+  "all_gates_pass": true,
+  "formulation_g_lower_bound_sum_L_valid": 2403.307794303548,
+  "formulation_g_lower_bound_sum_L_tight": 2403.307794303548,
+  "base_certified_lower_bound_l": 1397.8483,
+  "terminal_only_lower_bound_l": 3196.1171,
+  "previous_ebr_terminal_s0_diagnostic_l": 4885.1972,
+  "pc_sw_realized_reference_l": 8729.2446,
+  "control_fuel_reference_l": 10196.9712,
+  "target_40_pct_l": 6118.1827,
+  "increase_over_base_certified_l": 1005.4594943035477,
+  "increase_over_base_certified_pct": 71.92908517351614,
+  "increase_over_terminal_only_l": -792.8093056964522,
+  "remaining_gap_to_40_pct_target_l": 3714.8749056964525,
+  "remaining_gap_to_pc_sw_reference_l": 6325.936805696452,
+  "n_origins": 123,
+  "count_certified_tight": 123,
+  "count_blocked": 0,
+  "origins_with_s_ebr_positive": 0,
+  "s_ebr_statistics": {
+    "min_wh": 0.0,
+    "max_wh": 0.0,
+    "mean_wh": 0.0,
+    "median_wh": 0.0,
+    "sum_wh": 0.0
+  },
+  "independent_ebr_reconstruction_max_diff_wh": 7.275957614183426e-12,
+  "max_lower_bound_vs_pc_sw_violation_l": 0.0,
+  "origin_exceedances_count": 0,
+  "gates": {
+    "gate_all_optimal": true,
+    "gate_feasibility": true,
+    "gate_ebr_satisfied": true,
+    "gate_no_terminal": true,
+    "gate_origin_le_pc_sw": true,
+    "gate_tight_count": true
+  },
+  "solve_wall_time_s": 17.669656991958618
+}

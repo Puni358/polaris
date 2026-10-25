@@ -1,0 +1,26 @@
+{
+  "campaign_id": "polaris_counterfactuals_1year_20260930",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "total_disadvantage_fuel_l": 16443.0283,
+  "direct_effects": {
+    "c1_battery_degradation_penalty_l": -11315.6264,
+    "c1_share_percent": 68.81,
+    "c2_round_trip_efficiency_loss_l": -5125.6264,
+    "c2_share_percent": 31.17,
+    "c3_diesel_min_power_curtailment_l": -4505.6264,
+    "c3_share_percent": 27.40
+  },
+  "combined_effects": {
+    "c4_combined_battery_effect_l": -16315.6264,
+    "c4_disadvantage_explained_percent": 99.23,
+    "direct_sum_c1_plus_c2_l": -16441.2528,
+    "interaction_effect_l": 125.6264,
+    "interaction_effect_explanation": "Minor non-linear overlap between degradation penalty elimination and ideal efficiency near 95% SOC max limit"
+  },
+  "residual_unexplained": {
+    "remaining_fuel_l": 127.4019,
+    "remaining_percent": 0.77,
+    "source_explanation": "Residual interaction of C3 diesel 10 kW min power curtailment threshold with C4 combined battery utilization"
+  }
+}

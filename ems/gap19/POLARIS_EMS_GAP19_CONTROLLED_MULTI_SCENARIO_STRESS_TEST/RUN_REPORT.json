@@ -1,0 +1,11 @@
+{
+  "test_id": "GAP19_OPTION_B_MULTI_SCENARIO_STRESS_TEST",
+  "schema_version": "1.0.0",
+  "environment": "LOCAL_OFFLINE_PC",
+  "optimizer_type": "GAP19_HIGHS_NATIVE",
+  "execution_status": "SUCCESS_CLEAN",
+  "scenarios_executed": 4,
+  "total_completed_steps": 96,
+  "total_requested_steps": 96,
+  "classification": "CONTROLLED_SYNTHETIC_ENGINEERING_RUNTIME_EVIDENCE"
+}

@@ -1,0 +1,163 @@
+{
+  "decision_metadata": {
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "POLARIS_WIND_INTEGRATION_NEXT_PHASE_DECISION",
+    "timestamp_utc": "2026-09-18T04:17:15Z",
+    "gate_type": "GOVERNANCE_DECISION_GATE",
+    "evaluator": "POLARIS_GOVERNANCE_AGENT"
+  },
+  "governance_and_machine_states": {
+    "PATH_A_SELECTION": "SELECTED",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "A2_RESEARCH_CHAMPION_STATUS": "VERIFIED",
+    "A2_AUDIT_STATUS": "VERIFIED_WITH_LIMITATIONS",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "A2_WIND_POWER_TARGET": "NOT_AUTHORIZED",
+    "WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEXT_PHASE_CANDIDATE": "A. WIND_POWER_GENERATION_MAPPING_RESEARCH",
+    "NEXT_PHASE_EXECUTION_AUTHORIZED": "NO",
+    "NEW_MODEL_TRAINING": "NO",
+    "NEW_MODEL_INFERENCE": "NO",
+    "NEW_EXPERIMENT": "NO",
+    "PRODUCTION_MODIFICATION": "NO",
+    "FROZEN_CONTRACT_CHANGE": "NO"
+  },
+  "prerequisite_evaluations": [
+    {
+      "prerequisite": "Wind Speed -> Wind Power Generation Mapping",
+      "why_required": "ForecastBundle v1.0 and EMS optimizer require wind power in Watts (W), whereas A2 produces wind speed in m/s.",
+      "evidence_established": "A2 Ridge AR-X verified for 10m wind speed (2.0364 m/s test MAE).",
+      "evidence_missing": "Turbine power curve, hub height, rotor area, and efficiency loss formulations.",
+      "category": "SCIENTIFIC_AND_TECHNICAL",
+      "requires_new_data": false,
+      "requires_new_forecasting_research": true,
+      "requires_contract_change": false,
+      "requires_implementation": false,
+      "requires_ems_experimentation": false,
+      "can_be_resolved_independently": true,
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "prerequisite": "Nuolja Site Transfer / Altitude Scaling",
+      "evidence_established": "Abisko Aut (392m) established as conditional regional proxy for Nuolja (702m).",
+      "why_required": "Vertical elevation delta (310m) introduces boundary layer velocity shear.",
+      "evidence_missing": "Boundary layer log-law or power-law wind shear scaling parameters.",
+      "category": "SCIENTIFIC",
+      "requires_new_data": false,
+      "requires_new_forecasting_research": true,
+      "requires_contract_change": false,
+      "requires_implementation": false,
+      "requires_ems_experimentation": false,
+      "can_be_resolved_independently": true,
+      "status": "NOT_ESTABLISHED"
+    },
+    {
+      "prerequisite": "ForecastBundle Contract Resolution",
+      "why_required": "ForecastBundle v1.0 schema enforces wind_generation field in Watts with point, lower, upper arrays.",
+      "evidence_established": "Schema v1.0 strictly inspected and frozen.",
+      "evidence_missing": "Governance decision on whether to add wind_speed (m/s) field or require generation (W).",
+      "category": "GOVERNANCE_AND_CONTRACT",
+      "requires_new_data": false,
+      "requires_new_forecasting_research": false,
+      "requires_contract_change": true,
+      "requires_implementation": false,
+      "requires_ems_experimentation": false,
+      "can_be_resolved_independently": false,
+      "status": "CONDITIONALLY_ESTABLISHED"
+    },
+    {
+      "prerequisite": "ForecastEngine Adapter Implementation",
+      "why_required": "Engine interface expects predict(station_state, context) -> ForecastBundle.",
+      "evidence_established": "Interface inspectable in system/forecasting/interface/engine.py.",
+      "evidence_missing": "Adapter wrapper class.",
+      "category": "IMPLEMENTATION",
+      "requires_new_data": false,
+      "requires_new_forecasting_research": false,
+      "requires_contract_change": false,
+      "requires_implementation": true,
+      "requires_ems_experimentation": false,
+      "can_be_resolved_independently": false,
+      "status": "CONDITIONALLY_ESTABLISHED"
+    },
+    {
+      "prerequisite": "EMS Downstream Integration Validation",
+      "why_required": "EMS microgrid optimizer consumes ForecastBundle for closed-loop control.",
+      "evidence_established": "EMS input schemas inspected.",
+      "evidence_missing": "End-to-end integration tests with wind inputs.",
+      "category": "INTEGRATION_VALIDATION",
+      "requires_new_data": false,
+      "requires_new_forecasting_research": false,
+      "requires_contract_change": false,
+      "requires_implementation": false,
+      "requires_ems_experimentation": true,
+      "can_be_resolved_independently": false,
+      "status": "NOT_AUTHORIZED"
+    }
+  ],
+  "candidate_phase_evaluations": {
+    "A": {
+      "candidate": "WIND_POWER_GENERATION_MAPPING_RESEARCH",
+      "description": "Formulate scientific transformation mapping 10m wind speed (m/s) to electrical power (W).",
+      "appropriateness": "CURRENTLY_APPROPRIATE",
+      "justification": "Primary physical dependency link; must be resolved before ForecastBundle representation can be finalized."
+    },
+    "B": {
+      "candidate": "NUOLJA_SITE_TRANSFER_RESEARCH",
+      "description": "Formulate altitude lapse rate and wind shear scaling from Abisko (392m) to Nuolja (702m).",
+      "appropriateness": "SECONDARY_PREREQUISITE",
+      "justification": "Important for site accuracy, but speed-to-power mapping is necessary regardless of proxy site elevation."
+    },
+    "C": {
+      "candidate": "FORECASTBUNDLE_CONTRACT_RESOLUTION",
+      "description": "Resolve ForecastBundle schema representation for wind speed vs wind generation.",
+      "appropriateness": "DEPENDENT_ON_A",
+      "justification": "Cannot resolve schema contract until physical target quantity (power vs speed) is defined."
+    },
+    "D": {
+      "candidate": "FORECASTENGINE_ADAPTER_IMPLEMENTATION",
+      "description": "Implement wrapper adapter class for ForecastEngine interface.",
+      "appropriateness": "DEPENDENT_ON_C",
+      "justification": "Cannot build software adapter before schema contract is resolved."
+    },
+    "E": {
+      "candidate": "EMS_INTEGRATION_VALIDATION",
+      "description": "Validate wind forecast consumption in EMS optimizer.",
+      "appropriateness": "DEPENDENT_ON_D",
+      "justification": "Final step in integration chain; requires operational ForecastEngine adapter."
+    },
+    "F": {
+      "candidate": "NO_SINGLE_NEXT_PHASE_CAN_YET_BE_SELECTED",
+      "description": "Indicates ambiguity or missing evidence preventing candidate identification.",
+      "appropriateness": "NOT_APPLICABLE",
+      "justification": "Evidence is clear and dependency chain is fully established."
+    }
+  },
+  "dependency_chain": [
+    "A. WIND_POWER_GENERATION_MAPPING_RESEARCH",
+    "C. FORECASTBUNDLE_CONTRACT_RESOLUTION",
+    "D. FORECASTENGINE_ADAPTER_IMPLEMENTATION",
+    "E. EMS_INTEGRATION_VALIDATION"
+  ],
+  "firewall_verifications": {
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "FROZEN_SCHEMAS_MODIFIED": "NO",
+    "D5_HISTORICAL_RESULTS_MODIFIED": "NO",
+    "A2_HISTORICAL_RESULTS_MODIFIED": "NO",
+    "A2_MODEL_ARTIFACT_MODIFIED": "NO"
+  }
+}

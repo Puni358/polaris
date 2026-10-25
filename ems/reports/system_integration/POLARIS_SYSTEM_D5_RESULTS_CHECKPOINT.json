@@ -1,0 +1,562 @@
+{
+  "checkpoint_id": "POLARIS_SYSTEM_D5_RESULTS_CHECKPOINT_20260917",
+  "timestamp": "2026-09-17T08:30:00+05:30",
+  "checkpoint_type": "EVIDENCE_RECORD_NOT_SCIENTIFIC_CONCLUSION",
+  "governance_state": {
+    "D4": "CLOSED",
+    "D5_CONTRACT": "FROZEN",
+    "D5_IMPLEMENTATION": "COMPLETE",
+    "D5_IMPLEMENTATION_REVIEW": "PASSED",
+    "D5_EXECUTION": "COMPLETED_ATTEMPTED_AS_AUTHORIZED",
+    "D6": "NOT_INITIATED"
+  },
+  "execution_manifest": {
+    "execution_manifest_id": "POLARIS_SYSTEM_D5_EXECUTION_MANIFEST_20260917",
+    "execution_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac"
+  },
+  "gate_execution_matrix": [
+    {
+      "gate": "D5-1",
+      "scenario": "S1",
+      "n_requested": 24,
+      "n_completed_control": 24,
+      "n_completed_perturbed": 24,
+      "control_status": "SUCCESS_CLEAN",
+      "perturbed_status": "SUCCESS_CLEAN",
+      "control_run_id": "RUN_D5-1_CONTROL",
+      "perturbed_run_id": "RUN_D5-1_PERTURBED",
+      "pair_id": "PAIR_D5-1_20260917"
+    },
+    {
+      "gate": "D5-2",
+      "scenario": "S2",
+      "n_requested": 24,
+      "n_completed_control": 24,
+      "n_completed_perturbed": 24,
+      "control_status": "SUCCESS_CLEAN",
+      "perturbed_status": "SUCCESS_CLEAN",
+      "control_run_id": "RUN_D5-2_CONTROL",
+      "perturbed_run_id": "RUN_D5-2_PERTURBED",
+      "pair_id": "PAIR_D5-2_20260917"
+    },
+    {
+      "gate": "D5-3",
+      "scenario": "S3",
+      "n_requested": 24,
+      "n_completed_control": 24,
+      "n_completed_perturbed": 24,
+      "control_status": "SUCCESS_CLEAN",
+      "perturbed_status": "SUCCESS_CLEAN",
+      "control_run_id": "RUN_D5-3_CONTROL",
+      "perturbed_run_id": "RUN_D5-3_PERTURBED",
+      "pair_id": "PAIR_D5-3_20260917"
+    },
+    {
+      "gate": "D5-4",
+      "scenario": "S4",
+      "n_requested": 24,
+      "n_completed_control": 24,
+      "n_completed_perturbed": 24,
+      "control_status": "SUCCESS_CLEAN",
+      "perturbed_status": "SUCCESS_CLEAN",
+      "control_run_id": "RUN_D5-4_CONTROL",
+      "perturbed_run_id": "RUN_D5-4_PERTURBED",
+      "pair_id": "PAIR_D5-4_20260917"
+    },
+    {
+      "gate": "D5-5",
+      "scenario": "S5",
+      "n_requested": 24,
+      "n_completed_control": 24,
+      "n_completed_perturbed": 24,
+      "control_status": "SUCCESS_CLEAN",
+      "perturbed_status": "SUCCESS_CLEAN",
+      "control_run_id": "RUN_D5-5_CONTROL",
+      "perturbed_run_id": "RUN_D5-5_PERTURBED",
+      "pair_id": "PAIR_D5-5_20260917"
+    },
+    {
+      "gate": "D5-6",
+      "scenario": "S6",
+      "n_requested": 168,
+      "n_completed_control": 168,
+      "n_completed_perturbed": 168,
+      "control_status": "SUCCESS_CLEAN",
+      "perturbed_status": "SUCCESS_CLEAN",
+      "control_run_id": "RUN_D5-6_CONTROL",
+      "perturbed_run_id": "RUN_D5-6_PERTURBED",
+      "pair_id": "PAIR_D5-6_20260917"
+    }
+  ],
+  "pair_integrity": [
+    {
+      "gate_id": "D5-1",
+      "pair_id": "PAIR_D5-1_20260917",
+      "control_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_hash_match": true,
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_hash_match": true,
+      "paired_identity_verified": true
+    },
+    {
+      "gate_id": "D5-2",
+      "pair_id": "PAIR_D5-2_20260917",
+      "control_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_hash_match": true,
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_hash_match": true,
+      "paired_identity_verified": true
+    },
+    {
+      "gate_id": "D5-3",
+      "pair_id": "PAIR_D5-3_20260917",
+      "control_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_hash_match": true,
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_hash_match": true,
+      "paired_identity_verified": true
+    },
+    {
+      "gate_id": "D5-4",
+      "pair_id": "PAIR_D5-4_20260917",
+      "control_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_hash_match": true,
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_hash_match": true,
+      "paired_identity_verified": true
+    },
+    {
+      "gate_id": "D5-5",
+      "pair_id": "PAIR_D5-5_20260917",
+      "control_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_hash_match": true,
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_hash_match": true,
+      "paired_identity_verified": true
+    },
+    {
+      "gate_id": "D5-6",
+      "pair_id": "PAIR_D5-6_20260917",
+      "control_actual_trajectory_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+      "perturbed_actual_trajectory_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+      "trajectory_hash_match": true,
+      "control_initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+      "perturbed_initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+      "initial_state_hash_match": true,
+      "paired_identity_verified": true
+    }
+  ],
+  "experimental_provenance": {
+    "d5_contract_hashes": {
+      "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.md": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.json": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.json": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df"
+    },
+    "optimizer_type": "MILP",
+    "execution_semantics": "Receding Horizon H1-Only MPC",
+    "failure_containment": "D4-C1"
+  },
+  "raw_evidence_inventory": [
+    {
+      "gate_id": "D5-1",
+      "raw_json": "D5_RESULTS/D5-1/raw/D5-1_paired_result.json",
+      "summary_json": "D5_RESULTS/D5-1/summary/D5-1_summary.json",
+      "provenance_json": "D5_RESULTS/D5-1/provenance/D5-1_provenance.json"
+    },
+    {
+      "gate_id": "D5-2",
+      "raw_json": "D5_RESULTS/D5-2/raw/D5-2_paired_result.json",
+      "summary_json": "D5_RESULTS/D5-2/summary/D5-2_summary.json",
+      "provenance_json": "D5_RESULTS/D5-2/provenance/D5-2_provenance.json"
+    },
+    {
+      "gate_id": "D5-3",
+      "raw_json": "D5_RESULTS/D5-3/raw/D5-3_paired_result.json",
+      "summary_json": "D5_RESULTS/D5-3/summary/D5-3_summary.json",
+      "provenance_json": "D5_RESULTS/D5-3/provenance/D5-3_provenance.json"
+    },
+    {
+      "gate_id": "D5-4",
+      "raw_json": "D5_RESULTS/D5-4/raw/D5-4_paired_result.json",
+      "summary_json": "D5_RESULTS/D5-4/summary/D5-4_summary.json",
+      "provenance_json": "D5_RESULTS/D5-4/provenance/D5-4_provenance.json"
+    },
+    {
+      "gate_id": "D5-5",
+      "raw_json": "D5_RESULTS/D5-5/raw/D5-5_paired_result.json",
+      "summary_json": "D5_RESULTS/D5-5/summary/D5-5_summary.json",
+      "provenance_json": "D5_RESULTS/D5-5/provenance/D5-5_provenance.json"
+    },
+    {
+      "gate_id": "D5-6",
+      "raw_json": "D5_RESULTS/D5-6/raw/D5-6_paired_result.json",
+      "summary_json": "D5_RESULTS/D5-6/summary/D5-6_summary.json",
+      "provenance_json": "D5_RESULTS/D5-6/provenance/D5-6_provenance.json"
+    }
+  ],
+  "summary_metrics": [
+    {
+      "gate_id": "D5-1",
+      "scenario_id": "S1",
+      "scenario_name": "Solar Underprediction Sensitivity",
+      "control": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 85.9172,
+        "diesel_operating_hours": 5.0,
+        "renewable_curtailment_wh": 147334.09,
+        "renewable_utilization_pct": 84.8217,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 70.43,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      },
+      "perturbed": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 88.0679,
+        "diesel_operating_hours": 4.0,
+        "renewable_curtailment_wh": 57224.07,
+        "renewable_utilization_pct": 93.4786,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 88.03,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      }
+    },
+    {
+      "gate_id": "D5-2",
+      "scenario_id": "S2",
+      "scenario_name": "Solar Overprediction Sensitivity",
+      "control": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 85.9172,
+        "diesel_operating_hours": 5.0,
+        "renewable_curtailment_wh": 147334.09,
+        "renewable_utilization_pct": 84.8217,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 70.43,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      },
+      "perturbed": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 44.0162,
+        "diesel_operating_hours": 2.0,
+        "renewable_curtailment_wh": 165293.65,
+        "renewable_utilization_pct": 84.4633,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 83.3,
+        "soc_boundary_contacts_count": 3,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      }
+    },
+    {
+      "gate_id": "D5-3",
+      "scenario_id": "S3",
+      "scenario_name": "Wind Underprediction Sensitivity",
+      "control": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 85.9172,
+        "diesel_operating_hours": 5.0,
+        "renewable_curtailment_wh": 147334.09,
+        "renewable_utilization_pct": 84.8217,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 70.43,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      },
+      "perturbed": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 131.9612,
+        "diesel_operating_hours": 7.0,
+        "renewable_curtailment_wh": 13130.94,
+        "renewable_utilization_pct": 98.3006,
+        "min_soc_pct": 20.79,
+        "max_soc_pct": 93.1,
+        "soc_boundary_contacts_count": 0,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      }
+    },
+    {
+      "gate_id": "D5-4",
+      "scenario_id": "S4",
+      "scenario_name": "Demand Overprediction Impact",
+      "control": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 85.9172,
+        "diesel_operating_hours": 5.0,
+        "renewable_curtailment_wh": 147334.09,
+        "renewable_utilization_pct": 84.8217,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 70.43,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      },
+      "perturbed": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 1182605.18,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 135.7237,
+        "diesel_operating_hours": 8.0,
+        "renewable_curtailment_wh": 25188.4,
+        "renewable_utilization_pct": 97.4051,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 86.29,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      }
+    },
+    {
+      "gate_id": "D5-5",
+      "scenario_id": "S5",
+      "scenario_name": "Compound Over-Optimistic Forecast Stress",
+      "control": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 985504.26,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 85.9172,
+        "diesel_operating_hours": 5.0,
+        "renewable_curtailment_wh": 147334.09,
+        "renewable_utilization_pct": 84.8217,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 70.43,
+        "soc_boundary_contacts_count": 1,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      },
+      "perturbed": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 788403.34,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 0.0,
+        "diesel_operating_hours": 0.0,
+        "renewable_curtailment_wh": 483469.39,
+        "renewable_utilization_pct": 61.6869,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 75.46,
+        "soc_boundary_contacts_count": 2,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      }
+    },
+    {
+      "gate_id": "D5-6",
+      "scenario_id": "S6",
+      "scenario_name": "168-Hour Persistent Error",
+      "control": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 5561078.31,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 241.4846,
+        "diesel_operating_hours": 13.0,
+        "renewable_curtailment_wh": 1574534.69,
+        "renewable_utilization_pct": 77.0367,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 94.85,
+        "soc_boundary_contacts_count": 9,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      },
+      "perturbed": {
+        "unmet_load_wh": 0.0,
+        "total_demand_wh": 5561078.31,
+        "load_served_fraction_pct": 100.0,
+        "meets_95_percent_lsf_threshold": true,
+        "diesel_fuel_liters": 144.8206,
+        "diesel_operating_hours": 9.0,
+        "renewable_curtailment_wh": 2265890.04,
+        "renewable_utilization_pct": 71.2642,
+        "min_soc_pct": 20.0,
+        "max_soc_pct": 95.0,
+        "soc_boundary_contacts_count": 11,
+        "physical_constraint_violations_count": 0,
+        "max_busbar_residual_w": 0.0
+      }
+    }
+  ],
+  "fault_accounting": [
+    {
+      "gate_id": "D5-1",
+      "control_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      },
+      "perturbed_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      }
+    },
+    {
+      "gate_id": "D5-2",
+      "control_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      },
+      "perturbed_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      }
+    },
+    {
+      "gate_id": "D5-3",
+      "control_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      },
+      "perturbed_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      }
+    },
+    {
+      "gate_id": "D5-4",
+      "control_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      },
+      "perturbed_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      }
+    },
+    {
+      "gate_id": "D5-5",
+      "control_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      },
+      "perturbed_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      }
+    },
+    {
+      "gate_id": "D5-6",
+      "control_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      },
+      "perturbed_faults": {
+        "execution_status": "SUCCESS_CLEAN",
+        "termination_reason": null,
+        "milp_infeasibility_events_count": 0,
+        "solver_runtime_failure_events_count": 0,
+        "governed_zero_dispatch_responses_count": 0,
+        "fault_events_count": 0,
+        "fault_events": [],
+        "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+      }
+    }
+  ],
+  "rerun_accounting": [],
+  "scientific_status_statement": "This checkpoint records the observed experimental evidence from the authorized D5-1 through D5-6 paired runs. Scientific interpretation and conclusions regarding system robustness require a separate human/scientific review."
+}

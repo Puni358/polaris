@@ -1,0 +1,52 @@
+{
+  "generated_at_utc": "2026-10-02T23:25:49.082299+00:00",
+  "purpose": "2025 blind evaluation of the frozen Branch01 Candidate A model, over the exact same 8,736 origin x horizon rows used by the corrected Stage 8.1 2025 blind evaluation. No retraining, no tuning, no feature/model modification. No comparison/winner declared.",
+  "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+  "run_id": "RUN_BRANCH01_CANDIDATE_A_HGB",
+  "hash_verification": {
+    "model_path": "/home/punith-bs/01polaris (Copy)/artifacts/model_runs/RUN_BRANCH01_CANDIDATE_A_HGB/model.joblib",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "model_hash_matches_frozen_constant": true,
+    "stage8_1_2025_matrix_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2025_CORRECTED.csv",
+    "stage8_1_2025_matrix_sha256": "9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087",
+    "stage8_1_2025_matrix_hash_matches_prior_step": true,
+    "sites_2025_sw_in_sha256": "d457facdbeb57b9c582b623c524c0f50717306ca083ab93028f1bd700d1e7a2e",
+    "clearsky_2025_sha256": "f5f5e2c4c076c3c3eb40071b9954189bedd02f49654b8de9ad02e74ab4585336"
+  },
+  "coverage": {
+    "rows": 8736,
+    "origins": 364,
+    "matches_stage8_1_row_set_exactly": true
+  },
+  "architecture_note": "Branch01 uses one 18-feature vector per ORIGIN (causal SW_IN lookback/lag/stats, astronomical position, clear-sky reference at origin) and its MultiOutputRegressor emits all 24 horizon predictions from that single vector -- no horizon-specific NWP input, unlike Stage 8.1's per-(origin,horizon) feature rows.",
+  "causality_note": "sw_in_lag_0h is the actual SW_IN observed AT the origin (known at forecast time, not future data). Under this repo's horizon_hour=1 == forecast_start+0h convention, this coincides numerically with the h=1 target timestamp -- an architectural property of Branch01 as a nowcast-anchored persistence model, not a future-data leak. No actual SW_IN value from AFTER an origin was used as a feature for that origin's predictions.",
+  "feature_count": 18,
+  "nmae_definition": "mae / mean(actual) * 100, identical to the corrected Stage 8.1 2025 evaluation",
+  "metrics": {
+    "overall": {
+      "n": 8736,
+      "mae": 38.475608937017356,
+      "rmse": 74.37250709035635,
+      "bias": -1.9759931237499215,
+      "nmae_pct": 44.150164437252215,
+      "mean_actual": 87.14714753033425
+    },
+    "daytime_actual_gt_0": {
+      "n": 5978,
+      "mae": 55.345379968374075,
+      "rmse": 89.88669356543365,
+      "bias": -3.7689050103584205,
+      "nmae_pct": 43.45817478043592,
+      "mean_actual": 127.35320856891937
+    }
+  },
+  "per_horizon_daytime_metrics_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/branch01_candidateA_2025_blind_horizon_metrics.csv",
+  "predictions_csv": {
+    "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/branch01_candidateA_2025_blind_predictions.csv",
+    "sha256": "8e5f49c575b7f539fdadcfa32ea786235212a28144dfd13a76ae146fc05df899"
+  },
+  "comparison_to_stage8_1_performed": false,
+  "winner_declared": false,
+  "retraining_or_tuning_performed": false,
+  "corrected_stage8_1_results_modified": false
+}

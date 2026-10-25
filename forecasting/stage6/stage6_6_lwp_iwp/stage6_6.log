@@ -1,0 +1,420 @@
+[2026-09-12 09:49:30,005] INFO: 
+================================================================================
+[2026-09-12 09:49:30,005] INFO: POLARIS STAGE 6.6 — LWP/IWP FEATURE EXTRACTION
+[2026-09-12 09:49:30,005] INFO: ================================================================================
+[2026-09-12 09:49:30,005] INFO: SMOKE TEST MODE ENABLED: Processing first 3 origins (3 origins).
+[2026-09-12 09:49:30,005] INFO: Total origins: 3 | Already Completed: 0 | Pending: 3
+[2026-09-12 09:49:30,008] INFO: [1/3] Extracting origin 2024-01-20 (Index #0)...
+[2026-09-12 09:50:00,982] INFO:   Progress: 1/3 (33.3%) | Horizons: 24 | Runtime: 00:00:30 | Avg: 31.0s | ETA: 00:01:01
+[2026-09-12 09:50:00,983] INFO: [2/3] Extracting origin 2024-01-21 (Index #1)...
+[2026-09-12 09:50:30,253] INFO:   Progress: 2/3 (66.7%) | Horizons: 48 | Runtime: 00:01:00 | Avg: 30.1s | ETA: 00:00:30
+[2026-09-12 09:50:30,253] INFO: [3/3] Extracting origin 2024-01-22 (Index #2)...
+[2026-09-12 09:50:59,345] INFO:   Progress: 3/3 (100.0%) | Horizons: 72 | Runtime: 00:01:29 | Avg: 29.8s | ETA: 00:00:00
+[2026-09-12 09:50:59,348] INFO: 
+EXTRACTION SUCCESSFUL: 3/3 origins extracted (72 rows).
+[2026-09-12 09:51:33,503] INFO: 
+================================================================================
+[2026-09-12 09:51:33,503] INFO: STARTING FULL STAGE 6.6 PIPELINE (EXTRACT -> AUDIT -> EVEN CV)
+[2026-09-12 09:51:33,503] INFO: ================================================================================
+[2026-09-12 09:51:33,503] INFO: 
+================================================================================
+[2026-09-12 09:51:33,503] INFO: POLARIS STAGE 6.6 — LWP/IWP FEATURE EXTRACTION
+[2026-09-12 09:51:33,503] INFO: ================================================================================
+[2026-09-12 09:51:33,503] INFO: Total origins: 347 | Already Completed: 3 | Pending: 344 | Workers: 2
+[2026-09-12 09:52:02,257] INFO:   [4/347] Progress: 1.2% | Horizons: 96 | Runtime: 00:00:28 | Avg/orig: 28.7s | ETA: 01:22:05
+[2026-09-12 09:52:04,017] INFO:   [5/347] Progress: 1.4% | Horizons: 120 | Runtime: 00:00:30 | Avg/orig: 15.2s | ETA: 00:43:26
+[2026-09-12 09:52:32,258] INFO:   [6/347] Progress: 1.7% | Horizons: 144 | Runtime: 00:00:58 | Avg/orig: 19.6s | ETA: 00:55:37
+[2026-09-12 09:52:33,461] INFO:   [7/347] Progress: 2.0% | Horizons: 168 | Runtime: 00:00:59 | Avg/orig: 15.0s | ETA: 00:42:26
+[2026-09-12 09:52:53,980] INFO:   [8/347] Progress: 2.3% | Horizons: 192 | Runtime: 00:01:20 | Avg/orig: 16.1s | ETA: 00:45:27
+[2026-09-12 09:53:02,659] INFO:   [9/347] Progress: 2.6% | Horizons: 216 | Runtime: 00:01:29 | Avg/orig: 14.9s | ETA: 00:41:50
+[2026-09-12 09:53:25,942] INFO:   [10/347] Progress: 2.9% | Horizons: 240 | Runtime: 00:01:52 | Avg/orig: 16.1s | ETA: 00:45:05
+[2026-09-12 09:53:32,034] INFO:   [11/347] Progress: 3.2% | Horizons: 264 | Runtime: 00:01:58 | Avg/orig: 14.8s | ETA: 00:41:28
+[2026-09-12 09:53:52,666] INFO:   [12/347] Progress: 3.5% | Horizons: 288 | Runtime: 00:02:19 | Avg/orig: 15.5s | ETA: 00:43:09
+[2026-09-12 09:53:59,911] INFO:   [13/347] Progress: 3.7% | Horizons: 312 | Runtime: 00:02:26 | Avg/orig: 14.6s | ETA: 00:40:44
+[2026-09-12 09:54:21,139] INFO:   [14/347] Progress: 4.0% | Horizons: 336 | Runtime: 00:02:47 | Avg/orig: 15.2s | ETA: 00:42:16
+[2026-09-12 09:54:26,777] INFO:   [15/347] Progress: 4.3% | Horizons: 360 | Runtime: 00:02:53 | Avg/orig: 14.4s | ETA: 00:39:56
+[2026-09-12 09:54:42,259] INFO:   [16/347] Progress: 4.6% | Horizons: 384 | Runtime: 00:03:08 | Avg/orig: 14.5s | ETA: 00:40:02
+[2026-09-12 09:54:53,879] INFO:   [17/347] Progress: 4.9% | Horizons: 408 | Runtime: 00:03:20 | Avg/orig: 14.3s | ETA: 00:39:21
+[2026-09-12 09:55:08,448] INFO:   [18/347] Progress: 5.2% | Horizons: 432 | Runtime: 00:03:34 | Avg/orig: 14.3s | ETA: 00:39:16
+[2026-09-12 09:55:22,107] INFO:   [19/347] Progress: 5.5% | Horizons: 456 | Runtime: 00:03:48 | Avg/orig: 14.3s | ETA: 00:39:02
+[2026-09-12 09:55:38,937] INFO:   [20/347] Progress: 5.8% | Horizons: 480 | Runtime: 00:04:05 | Avg/orig: 14.4s | ETA: 00:39:20
+[2026-09-12 09:55:50,254] INFO:   [21/347] Progress: 6.1% | Horizons: 504 | Runtime: 00:04:16 | Avg/orig: 14.3s | ETA: 00:38:44
+[2026-09-12 09:56:07,552] INFO:   [22/347] Progress: 6.3% | Horizons: 528 | Runtime: 00:04:34 | Avg/orig: 14.4s | ETA: 00:39:03
+[2026-09-12 09:56:18,744] INFO:   [23/347] Progress: 6.6% | Horizons: 552 | Runtime: 00:04:45 | Avg/orig: 14.3s | ETA: 00:38:30
+[2026-09-12 09:56:28,336] INFO:   [24/347] Progress: 6.9% | Horizons: 576 | Runtime: 00:04:54 | Avg/orig: 14.0s | ETA: 00:37:47
+[2026-09-12 09:56:48,510] INFO:   [25/347] Progress: 7.2% | Horizons: 600 | Runtime: 00:05:14 | Avg/orig: 14.3s | ETA: 00:38:25
+[2026-09-12 09:56:58,587] INFO:   [26/347] Progress: 7.5% | Horizons: 624 | Runtime: 00:05:25 | Avg/orig: 14.1s | ETA: 00:37:48
+[2026-09-12 09:57:18,229] INFO:   [27/347] Progress: 7.8% | Horizons: 648 | Runtime: 00:05:44 | Avg/orig: 14.4s | ETA: 00:38:17
+[2026-09-12 09:57:28,518] INFO:   [28/347] Progress: 8.1% | Horizons: 672 | Runtime: 00:05:54 | Avg/orig: 14.2s | ETA: 00:37:44
+[2026-09-12 09:57:48,663] INFO:   [29/347] Progress: 8.4% | Horizons: 696 | Runtime: 00:06:15 | Avg/orig: 14.4s | ETA: 00:38:14
+[2026-09-12 09:57:58,104] INFO:   [30/347] Progress: 8.6% | Horizons: 720 | Runtime: 00:06:24 | Avg/orig: 14.2s | ETA: 00:37:37
+[2026-09-12 09:58:18,413] INFO:   [31/347] Progress: 8.9% | Horizons: 744 | Runtime: 00:06:44 | Avg/orig: 14.5s | ETA: 00:38:04
+[2026-09-12 09:58:19,794] INFO:   [32/347] Progress: 9.2% | Horizons: 768 | Runtime: 00:06:46 | Avg/orig: 14.0s | ETA: 00:36:46
+[2026-09-12 09:58:48,552] INFO:   [33/347] Progress: 9.5% | Horizons: 792 | Runtime: 00:07:15 | Avg/orig: 14.5s | ETA: 00:37:56
+[2026-09-12 09:58:50,898] INFO:   [34/347] Progress: 9.8% | Horizons: 816 | Runtime: 00:07:17 | Avg/orig: 14.1s | ETA: 00:36:47
+[2026-09-12 09:59:17,791] INFO:   [35/347] Progress: 10.1% | Horizons: 840 | Runtime: 00:07:44 | Avg/orig: 14.5s | ETA: 00:37:43
+[2026-09-12 09:59:17,799] INFO:   [36/347] Progress: 10.4% | Horizons: 864 | Runtime: 00:07:44 | Avg/orig: 14.1s | ETA: 00:36:27
+[2026-09-12 09:59:46,862] INFO:   [37/347] Progress: 10.7% | Horizons: 888 | Runtime: 00:08:13 | Avg/orig: 14.5s | ETA: 00:37:28
+[2026-09-12 09:59:48,840] INFO:   [38/347] Progress: 11.0% | Horizons: 912 | Runtime: 00:08:15 | Avg/orig: 14.2s | ETA: 00:36:26
+[2026-09-12 10:00:27,185] INFO:   [39/347] Progress: 11.2% | Horizons: 936 | Runtime: 00:08:53 | Avg/orig: 14.8s | ETA: 00:38:02
+[2026-09-12 10:00:37,050] INFO:   [40/347] Progress: 11.5% | Horizons: 960 | Runtime: 00:09:03 | Avg/orig: 14.7s | ETA: 00:37:34
+[2026-09-12 10:00:53,310] INFO:   [41/347] Progress: 11.8% | Horizons: 984 | Runtime: 00:09:19 | Avg/orig: 14.7s | ETA: 00:37:33
+[2026-09-12 10:00:58,401] INFO:   [42/347] Progress: 12.1% | Horizons: 1008 | Runtime: 00:09:24 | Avg/orig: 14.5s | ETA: 00:36:48
+[2026-09-12 10:01:14,588] INFO:   [43/347] Progress: 12.4% | Horizons: 1032 | Runtime: 00:09:41 | Avg/orig: 14.5s | ETA: 00:36:48
+[2026-09-12 10:01:20,118] INFO:   [44/347] Progress: 12.7% | Horizons: 1056 | Runtime: 00:09:46 | Avg/orig: 14.3s | ETA: 00:36:07
+[2026-09-12 10:01:36,999] INFO:   [45/347] Progress: 13.0% | Horizons: 1080 | Runtime: 00:10:03 | Avg/orig: 14.4s | ETA: 00:36:09
+[2026-09-12 10:01:41,306] INFO:   [46/347] Progress: 13.3% | Horizons: 1104 | Runtime: 00:10:07 | Avg/orig: 14.1s | ETA: 00:35:27
+[2026-09-12 10:01:57,628] INFO:   [47/347] Progress: 13.5% | Horizons: 1128 | Runtime: 00:10:24 | Avg/orig: 14.2s | ETA: 00:35:27
+[2026-09-12 10:02:01,627] INFO:   [48/347] Progress: 13.8% | Horizons: 1152 | Runtime: 00:10:28 | Avg/orig: 14.0s | ETA: 00:34:46
+[2026-09-12 10:02:19,298] INFO:   [49/347] Progress: 14.1% | Horizons: 1176 | Runtime: 00:10:45 | Avg/orig: 14.0s | ETA: 00:34:51
+[2026-09-12 10:02:22,587] INFO:   [50/347] Progress: 14.4% | Horizons: 1200 | Runtime: 00:10:49 | Avg/orig: 13.8s | ETA: 00:34:10
+[2026-09-12 10:02:40,992] INFO:   [51/347] Progress: 14.7% | Horizons: 1224 | Runtime: 00:11:07 | Avg/orig: 13.9s | ETA: 00:34:17
+[2026-09-12 10:02:43,057] INFO:   [52/347] Progress: 15.0% | Horizons: 1248 | Runtime: 00:11:09 | Avg/orig: 13.7s | ETA: 00:33:35
+[2026-09-12 10:03:02,114] INFO:   [53/347] Progress: 15.3% | Horizons: 1272 | Runtime: 00:11:28 | Avg/orig: 13.8s | ETA: 00:33:44
+[2026-09-12 10:03:03,074] INFO:   [54/347] Progress: 15.6% | Horizons: 1296 | Runtime: 00:11:29 | Avg/orig: 13.5s | ETA: 00:33:00
+[2026-09-12 10:03:25,007] INFO:   [55/347] Progress: 15.9% | Horizons: 1320 | Runtime: 00:11:51 | Avg/orig: 13.7s | ETA: 00:33:17
+[2026-09-12 10:03:26,273] INFO:   [56/347] Progress: 16.1% | Horizons: 1344 | Runtime: 00:11:52 | Avg/orig: 13.4s | ETA: 00:32:36
+[2026-09-12 10:03:46,267] INFO:   [57/347] Progress: 16.4% | Horizons: 1368 | Runtime: 00:12:12 | Avg/orig: 13.6s | ETA: 00:32:47
+[2026-09-12 10:03:48,033] INFO:   [58/347] Progress: 16.7% | Horizons: 1392 | Runtime: 00:12:14 | Avg/orig: 13.4s | ETA: 00:32:09
+[2026-09-12 10:04:08,233] INFO:   [59/347] Progress: 17.0% | Horizons: 1416 | Runtime: 00:12:34 | Avg/orig: 13.5s | ETA: 00:32:20
+[2026-09-12 10:04:09,656] INFO:   [60/347] Progress: 17.3% | Horizons: 1440 | Runtime: 00:12:36 | Avg/orig: 13.3s | ETA: 00:31:43
+[2026-09-12 10:04:29,859] INFO:   [61/347] Progress: 17.6% | Horizons: 1464 | Runtime: 00:12:56 | Avg/orig: 13.4s | ETA: 00:31:54
+[2026-09-12 10:04:30,760] INFO:   [62/347] Progress: 17.9% | Horizons: 1488 | Runtime: 00:12:57 | Avg/orig: 13.2s | ETA: 00:31:17
+[2026-09-12 10:04:50,750] INFO:   [63/347] Progress: 18.2% | Horizons: 1512 | Runtime: 00:13:17 | Avg/orig: 13.3s | ETA: 00:31:26
+[2026-09-12 10:04:50,904] INFO:   [64/347] Progress: 18.4% | Horizons: 1536 | Runtime: 00:13:17 | Avg/orig: 13.1s | ETA: 00:30:49
+[2026-09-12 10:05:11,534] INFO:   [65/347] Progress: 18.7% | Horizons: 1560 | Runtime: 00:13:37 | Avg/orig: 13.2s | ETA: 00:31:00
+[2026-09-12 10:05:11,915] INFO:   [66/347] Progress: 19.0% | Horizons: 1584 | Runtime: 00:13:38 | Avg/orig: 13.0s | ETA: 00:30:25
+[2026-09-12 10:05:32,691] INFO:   [67/347] Progress: 19.3% | Horizons: 1608 | Runtime: 00:13:59 | Avg/orig: 13.1s | ETA: 00:30:35
+[2026-09-12 10:05:32,990] INFO:   [68/347] Progress: 19.6% | Horizons: 1632 | Runtime: 00:13:59 | Avg/orig: 12.9s | ETA: 00:30:01
+[2026-09-12 10:05:55,395] INFO:   [69/347] Progress: 19.9% | Horizons: 1656 | Runtime: 00:14:21 | Avg/orig: 13.1s | ETA: 00:30:15
+[2026-09-12 10:05:57,154] INFO:   [70/347] Progress: 20.2% | Horizons: 1680 | Runtime: 00:14:23 | Avg/orig: 12.9s | ETA: 00:29:45
+[2026-09-12 10:06:18,922] INFO:   [71/347] Progress: 20.5% | Horizons: 1704 | Runtime: 00:14:45 | Avg/orig: 13.0s | ETA: 00:29:56
+[2026-09-12 10:06:18,936] INFO:   [72/347] Progress: 20.7% | Horizons: 1728 | Runtime: 00:14:45 | Avg/orig: 12.8s | ETA: 00:29:24
+[2026-09-12 10:06:47,393] INFO:   [73/347] Progress: 21.0% | Horizons: 1752 | Runtime: 00:15:13 | Avg/orig: 13.1s | ETA: 00:29:48
+[2026-09-12 10:06:47,465] INFO:   [74/347] Progress: 21.3% | Horizons: 1776 | Runtime: 00:15:13 | Avg/orig: 12.9s | ETA: 00:29:17
+[2026-09-12 10:07:16,681] INFO:   [75/347] Progress: 21.6% | Horizons: 1800 | Runtime: 00:15:43 | Avg/orig: 13.1s | ETA: 00:29:41
+[2026-09-12 10:07:17,949] INFO:   [76/347] Progress: 21.9% | Horizons: 1824 | Runtime: 00:15:44 | Avg/orig: 12.9s | ETA: 00:29:12
+[2026-09-12 10:07:45,635] INFO:   [77/347] Progress: 22.2% | Horizons: 1848 | Runtime: 00:16:12 | Avg/orig: 13.1s | ETA: 00:29:33
+[2026-09-12 10:07:45,953] INFO:   [78/347] Progress: 22.5% | Horizons: 1872 | Runtime: 00:16:12 | Avg/orig: 13.0s | ETA: 00:29:03
+[2026-09-12 10:08:06,547] INFO:   [79/347] Progress: 22.8% | Horizons: 1896 | Runtime: 00:16:33 | Avg/orig: 13.1s | ETA: 00:29:10
+[2026-09-12 10:08:13,323] INFO:   [80/347] Progress: 23.1% | Horizons: 1920 | Runtime: 00:16:39 | Avg/orig: 13.0s | ETA: 00:28:53
+[2026-09-12 10:08:37,481] INFO:   [81/347] Progress: 23.3% | Horizons: 1944 | Runtime: 00:17:03 | Avg/orig: 13.1s | ETA: 00:29:05
+[2026-09-12 10:08:44,820] INFO:   [82/347] Progress: 23.6% | Horizons: 1968 | Runtime: 00:17:11 | Avg/orig: 13.1s | ETA: 00:28:49
+[2026-09-12 10:09:08,021] INFO:   [83/347] Progress: 23.9% | Horizons: 1992 | Runtime: 00:17:34 | Avg/orig: 13.2s | ETA: 00:28:59
+[2026-09-12 10:09:14,043] INFO:   [84/347] Progress: 24.2% | Horizons: 2016 | Runtime: 00:17:40 | Avg/orig: 13.1s | ETA: 00:28:41
+[2026-09-12 10:09:34,025] INFO:   [85/347] Progress: 24.5% | Horizons: 2040 | Runtime: 00:18:00 | Avg/orig: 13.2s | ETA: 00:28:46
+[2026-09-12 10:09:41,422] INFO:   [86/347] Progress: 24.8% | Horizons: 2064 | Runtime: 00:18:07 | Avg/orig: 13.1s | ETA: 00:28:30
+[2026-09-12 10:09:42,000] INFO:   [87/347] Progress: 25.1% | Horizons: 2088 | Runtime: 00:18:08 | Avg/orig: 13.0s | ETA: 00:28:04
+[2026-09-12 10:10:02,781] INFO:   [88/347] Progress: 25.4% | Horizons: 2112 | Runtime: 00:18:29 | Avg/orig: 13.0s | ETA: 00:28:09
+[2026-09-12 10:10:10,119] INFO:   [89/347] Progress: 25.6% | Horizons: 2136 | Runtime: 00:18:36 | Avg/orig: 13.0s | ETA: 00:27:54
+[2026-09-12 10:10:32,511] INFO:   [90/347] Progress: 25.9% | Horizons: 2160 | Runtime: 00:18:58 | Avg/orig: 13.1s | ETA: 00:28:02
+[2026-09-12 10:10:39,810] INFO:   [91/347] Progress: 26.2% | Horizons: 2184 | Runtime: 00:19:06 | Avg/orig: 13.0s | ETA: 00:27:47
+[2026-09-12 10:11:05,181] INFO:   [92/347] Progress: 26.5% | Horizons: 2208 | Runtime: 00:19:31 | Avg/orig: 13.2s | ETA: 00:27:58
+[2026-09-12 10:11:07,581] INFO:   [93/347] Progress: 26.8% | Horizons: 2232 | Runtime: 00:19:34 | Avg/orig: 13.0s | ETA: 00:27:36
+[2026-09-12 10:11:20,537] INFO:   [94/347] Progress: 27.1% | Horizons: 2256 | Runtime: 00:19:47 | Avg/orig: 13.0s | ETA: 00:27:30
+[2026-09-12 10:11:25,221] INFO:   [95/347] Progress: 27.4% | Horizons: 2280 | Runtime: 00:19:51 | Avg/orig: 13.0s | ETA: 00:27:12
+[2026-09-12 10:11:36,586] INFO:   [96/347] Progress: 27.7% | Horizons: 2304 | Runtime: 00:20:03 | Avg/orig: 12.9s | ETA: 00:27:03
+[2026-09-12 10:11:44,409] INFO:   [97/347] Progress: 28.0% | Horizons: 2328 | Runtime: 00:20:10 | Avg/orig: 12.9s | ETA: 00:26:50
+[2026-09-12 10:11:53,058] INFO:   [98/347] Progress: 28.2% | Horizons: 2352 | Runtime: 00:20:19 | Avg/orig: 12.8s | ETA: 00:26:38
+[2026-09-12 10:12:01,016] INFO:   [99/347] Progress: 28.5% | Horizons: 2376 | Runtime: 00:20:27 | Avg/orig: 12.8s | ETA: 00:26:25
+[2026-09-12 10:12:10,783] INFO:   [100/347] Progress: 28.8% | Horizons: 2400 | Runtime: 00:20:37 | Avg/orig: 12.8s | ETA: 00:26:15
+[2026-09-12 10:12:18,376] INFO:   [101/347] Progress: 29.1% | Horizons: 2424 | Runtime: 00:20:44 | Avg/orig: 12.7s | ETA: 00:26:02
+[2026-09-12 10:12:30,484] INFO:   [102/347] Progress: 29.4% | Horizons: 2448 | Runtime: 00:20:56 | Avg/orig: 12.7s | ETA: 00:25:55
+[2026-09-12 10:12:37,366] INFO:   [103/347] Progress: 29.7% | Horizons: 2472 | Runtime: 00:21:03 | Avg/orig: 12.6s | ETA: 00:25:41
+[2026-09-12 10:12:47,450] INFO:   [104/347] Progress: 30.0% | Horizons: 2496 | Runtime: 00:21:13 | Avg/orig: 12.6s | ETA: 00:25:32
+[2026-09-12 10:12:56,755] INFO:   [105/347] Progress: 30.3% | Horizons: 2520 | Runtime: 00:21:23 | Avg/orig: 12.6s | ETA: 00:25:22
+[2026-09-12 10:13:04,415] INFO:   [106/347] Progress: 30.5% | Horizons: 2544 | Runtime: 00:21:30 | Avg/orig: 12.5s | ETA: 00:25:10
+[2026-09-12 10:13:15,262] INFO:   [107/347] Progress: 30.8% | Horizons: 2568 | Runtime: 00:21:41 | Avg/orig: 12.5s | ETA: 00:25:01
+[2026-09-12 10:13:21,229] INFO:   [108/347] Progress: 31.1% | Horizons: 2592 | Runtime: 00:21:47 | Avg/orig: 12.5s | ETA: 00:24:48
+[2026-09-12 10:13:35,261] INFO:   [109/347] Progress: 31.4% | Horizons: 2616 | Runtime: 00:22:01 | Avg/orig: 12.5s | ETA: 00:24:43
+[2026-09-12 10:13:41,286] INFO:   [110/347] Progress: 31.7% | Horizons: 2640 | Runtime: 00:22:07 | Avg/orig: 12.4s | ETA: 00:24:30
+[2026-09-12 10:13:55,615] INFO:   [111/347] Progress: 32.0% | Horizons: 2664 | Runtime: 00:22:22 | Avg/orig: 12.4s | ETA: 00:24:26
+[2026-09-12 10:13:57,022] INFO:   [112/347] Progress: 32.3% | Horizons: 2688 | Runtime: 00:22:23 | Avg/orig: 12.3s | ETA: 00:24:08
+[2026-09-12 10:14:15,423] INFO:   [113/347] Progress: 32.6% | Horizons: 2712 | Runtime: 00:22:41 | Avg/orig: 12.4s | ETA: 00:24:08
+[2026-09-12 10:14:19,969] INFO:   [114/347] Progress: 32.9% | Horizons: 2736 | Runtime: 00:22:46 | Avg/orig: 12.3s | ETA: 00:23:54
+[2026-09-12 10:14:38,311] INFO:   [115/347] Progress: 33.1% | Horizons: 2760 | Runtime: 00:23:04 | Avg/orig: 12.4s | ETA: 00:23:54
+[2026-09-12 10:14:47,580] INFO:   [116/347] Progress: 33.4% | Horizons: 2784 | Runtime: 00:23:14 | Avg/orig: 12.3s | ETA: 00:23:44
+[2026-09-12 10:15:01,999] INFO:   [117/347] Progress: 33.7% | Horizons: 2808 | Runtime: 00:23:28 | Avg/orig: 12.4s | ETA: 00:23:40
+[2026-09-12 10:15:10,283] INFO:   [118/347] Progress: 34.0% | Horizons: 2832 | Runtime: 00:23:36 | Avg/orig: 12.3s | ETA: 00:23:30
+[2026-09-12 10:15:26,906] INFO:   [119/347] Progress: 34.3% | Horizons: 2856 | Runtime: 00:23:53 | Avg/orig: 12.4s | ETA: 00:23:28
+[2026-09-12 10:15:30,942] INFO:   [120/347] Progress: 34.6% | Horizons: 2880 | Runtime: 00:23:57 | Avg/orig: 12.3s | ETA: 00:23:14
+[2026-09-12 10:15:54,102] INFO:   [121/347] Progress: 34.9% | Horizons: 2904 | Runtime: 00:24:20 | Avg/orig: 12.4s | ETA: 00:23:18
+[2026-09-12 10:16:01,482] INFO:   [122/347] Progress: 35.2% | Horizons: 2928 | Runtime: 00:24:27 | Avg/orig: 12.3s | ETA: 00:23:07
+[2026-09-12 10:16:28,540] INFO:   [123/347] Progress: 35.4% | Horizons: 2952 | Runtime: 00:24:55 | Avg/orig: 12.5s | ETA: 00:23:15
+[2026-09-12 10:16:35,758] INFO:   [124/347] Progress: 35.7% | Horizons: 2976 | Runtime: 00:25:02 | Avg/orig: 12.4s | ETA: 00:23:04
+[2026-09-12 10:17:03,583] INFO:   [125/347] Progress: 36.0% | Horizons: 3000 | Runtime: 00:25:30 | Avg/orig: 12.5s | ETA: 00:23:12
+[2026-09-12 10:17:14,307] INFO:   [126/347] Progress: 36.3% | Horizons: 3024 | Runtime: 00:25:40 | Avg/orig: 12.5s | ETA: 00:23:04
+[2026-09-12 10:17:40,378] INFO:   [127/347] Progress: 36.6% | Horizons: 3048 | Runtime: 00:26:06 | Avg/orig: 12.6s | ETA: 00:23:09
+[2026-09-12 10:17:52,014] INFO:   [128/347] Progress: 36.9% | Horizons: 3072 | Runtime: 00:26:18 | Avg/orig: 12.6s | ETA: 00:23:02
+[2026-09-12 10:18:08,727] INFO:   [129/347] Progress: 37.2% | Horizons: 3096 | Runtime: 00:26:35 | Avg/orig: 12.7s | ETA: 00:22:59
+[2026-09-12 10:18:36,592] INFO:   [130/347] Progress: 37.5% | Horizons: 3120 | Runtime: 00:27:03 | Avg/orig: 12.8s | ETA: 00:23:06
+[2026-09-12 10:18:46,346] INFO:   [131/347] Progress: 37.8% | Horizons: 3144 | Runtime: 00:27:12 | Avg/orig: 12.8s | ETA: 00:22:57
+[2026-09-12 10:19:24,548] INFO:   [132/347] Progress: 38.0% | Horizons: 3168 | Runtime: 00:27:51 | Avg/orig: 13.0s | ETA: 00:23:12
+[2026-09-12 10:19:39,179] INFO:   [133/347] Progress: 38.3% | Horizons: 3192 | Runtime: 00:28:05 | Avg/orig: 13.0s | ETA: 00:23:07
+[2026-09-12 10:19:43,762] INFO:   [134/347] Progress: 38.6% | Horizons: 3216 | Runtime: 00:28:10 | Avg/orig: 12.9s | ETA: 00:22:54
+[2026-09-12 10:20:28,867] INFO:   [135/347] Progress: 38.9% | Horizons: 3240 | Runtime: 00:28:55 | Avg/orig: 13.1s | ETA: 00:23:13
+[2026-09-12 10:20:30,628] INFO:   [136/347] Progress: 39.2% | Horizons: 3264 | Runtime: 00:28:57 | Avg/orig: 13.1s | ETA: 00:22:57
+[2026-09-12 10:20:58,301] INFO:   [137/347] Progress: 39.5% | Horizons: 3288 | Runtime: 00:29:24 | Avg/orig: 13.2s | ETA: 00:23:02
+[2026-09-12 10:21:13,503] INFO:   [138/347] Progress: 39.8% | Horizons: 3312 | Runtime: 00:29:39 | Avg/orig: 13.2s | ETA: 00:22:57
+[2026-09-12 10:21:39,783] INFO:   [139/347] Progress: 40.1% | Horizons: 3336 | Runtime: 00:30:06 | Avg/orig: 13.3s | ETA: 00:23:01
+[2026-09-12 10:21:57,033] INFO:   [140/347] Progress: 40.3% | Horizons: 3360 | Runtime: 00:30:23 | Avg/orig: 13.3s | ETA: 00:22:57
+[2026-09-12 10:22:22,147] INFO:   [141/347] Progress: 40.6% | Horizons: 3384 | Runtime: 00:30:48 | Avg/orig: 13.4s | ETA: 00:22:59
+[2026-09-12 10:22:44,398] INFO:   [142/347] Progress: 40.9% | Horizons: 3408 | Runtime: 00:31:10 | Avg/orig: 13.5s | ETA: 00:22:59
+[2026-09-12 10:23:04,223] INFO:   [143/347] Progress: 41.2% | Horizons: 3432 | Runtime: 00:31:30 | Avg/orig: 13.5s | ETA: 00:22:57
+[2026-09-12 10:23:26,940] INFO:   [144/347] Progress: 41.5% | Horizons: 3456 | Runtime: 00:31:53 | Avg/orig: 13.6s | ETA: 00:22:57
+[2026-09-12 10:23:35,258] INFO:   [145/347] Progress: 41.8% | Horizons: 3480 | Runtime: 00:32:01 | Avg/orig: 13.5s | ETA: 00:22:46
+[2026-09-12 10:24:01,849] INFO:   [146/347] Progress: 42.1% | Horizons: 3504 | Runtime: 00:32:28 | Avg/orig: 13.6s | ETA: 00:22:49
+[2026-09-12 10:24:09,526] INFO:   [147/347] Progress: 42.4% | Horizons: 3528 | Runtime: 00:32:35 | Avg/orig: 13.6s | ETA: 00:22:38
+[2026-09-12 10:24:09,844] INFO:   [148/347] Progress: 42.7% | Horizons: 3552 | Runtime: 00:32:36 | Avg/orig: 13.5s | ETA: 00:22:22
+[2026-09-12 10:24:45,811] INFO:   [149/347] Progress: 42.9% | Horizons: 3576 | Runtime: 00:33:12 | Avg/orig: 13.6s | ETA: 00:22:30
+[2026-09-12 10:24:49,664] INFO:   [150/347] Progress: 43.2% | Horizons: 3600 | Runtime: 00:33:16 | Avg/orig: 13.6s | ETA: 00:22:17
+[2026-09-12 10:25:22,519] INFO:   [151/347] Progress: 43.5% | Horizons: 3624 | Runtime: 00:33:48 | Avg/orig: 13.7s | ETA: 00:22:23
+[2026-09-12 10:25:24,691] INFO:   [152/347] Progress: 43.8% | Horizons: 3648 | Runtime: 00:33:51 | Avg/orig: 13.6s | ETA: 00:22:09
+[2026-09-12 10:25:45,330] INFO:   [153/347] Progress: 44.1% | Horizons: 3672 | Runtime: 00:34:11 | Avg/orig: 13.7s | ETA: 00:22:06
+[2026-09-12 10:25:58,285] INFO:   [154/347] Progress: 44.4% | Horizons: 3696 | Runtime: 00:34:24 | Avg/orig: 13.7s | ETA: 00:21:59
+[2026-09-12 10:26:18,284] INFO:   [155/347] Progress: 44.7% | Horizons: 3720 | Runtime: 00:34:44 | Avg/orig: 13.7s | ETA: 00:21:56
+[2026-09-12 10:26:29,631] INFO:   [156/347] Progress: 45.0% | Horizons: 3744 | Runtime: 00:34:56 | Avg/orig: 13.7s | ETA: 00:21:48
+[2026-09-12 10:26:52,655] INFO:   [157/347] Progress: 45.2% | Horizons: 3768 | Runtime: 00:35:19 | Avg/orig: 13.8s | ETA: 00:21:47
+[2026-09-12 10:27:06,842] INFO:   [158/347] Progress: 45.5% | Horizons: 3792 | Runtime: 00:35:33 | Avg/orig: 13.8s | ETA: 00:21:40
+[2026-09-12 10:27:23,883] INFO:   [159/347] Progress: 45.8% | Horizons: 3816 | Runtime: 00:35:50 | Avg/orig: 13.8s | ETA: 00:21:35
+[2026-09-12 10:27:42,436] INFO:   [160/347] Progress: 46.1% | Horizons: 3840 | Runtime: 00:36:08 | Avg/orig: 13.8s | ETA: 00:21:31
+[2026-09-12 10:27:55,084] INFO:   [161/347] Progress: 46.4% | Horizons: 3864 | Runtime: 00:36:21 | Avg/orig: 13.8s | ETA: 00:21:24
+[2026-09-12 10:28:20,031] INFO:   [162/347] Progress: 46.7% | Horizons: 3888 | Runtime: 00:36:46 | Avg/orig: 13.9s | ETA: 00:21:23
+[2026-09-12 10:28:29,387] INFO:   [163/347] Progress: 47.0% | Horizons: 3912 | Runtime: 00:36:55 | Avg/orig: 13.8s | ETA: 00:21:14
+[2026-09-12 10:28:57,162] INFO:   [164/347] Progress: 47.3% | Horizons: 3936 | Runtime: 00:37:23 | Avg/orig: 13.9s | ETA: 00:21:15
+[2026-09-12 10:29:04,580] INFO:   [165/347] Progress: 47.6% | Horizons: 3960 | Runtime: 00:37:31 | Avg/orig: 13.9s | ETA: 00:21:04
+[2026-09-12 10:29:31,704] INFO:   [166/347] Progress: 47.8% | Horizons: 3984 | Runtime: 00:37:58 | Avg/orig: 14.0s | ETA: 00:21:04
+[2026-09-12 10:29:41,178] INFO:   [167/347] Progress: 48.1% | Horizons: 4008 | Runtime: 00:38:07 | Avg/orig: 13.9s | ETA: 00:20:55
+[2026-09-12 10:30:08,839] INFO:   [168/347] Progress: 48.4% | Horizons: 4032 | Runtime: 00:38:35 | Avg/orig: 14.0s | ETA: 00:20:55
+[2026-09-12 10:30:11,106] INFO:   [169/347] Progress: 48.7% | Horizons: 4056 | Runtime: 00:38:37 | Avg/orig: 14.0s | ETA: 00:20:42
+[2026-09-12 10:30:41,632] INFO:   [170/347] Progress: 49.0% | Horizons: 4080 | Runtime: 00:39:08 | Avg/orig: 14.1s | ETA: 00:20:44
+[2026-09-12 10:30:43,444] INFO:   [171/347] Progress: 49.3% | Horizons: 4104 | Runtime: 00:39:09 | Avg/orig: 14.0s | ETA: 00:20:30
+[2026-09-12 10:31:18,747] INFO:   [172/347] Progress: 49.6% | Horizons: 4128 | Runtime: 00:39:45 | Avg/orig: 14.1s | ETA: 00:20:34
+[2026-09-12 10:31:20,996] INFO:   [173/347] Progress: 49.9% | Horizons: 4152 | Runtime: 00:39:47 | Avg/orig: 14.0s | ETA: 00:20:21
+[2026-09-12 10:31:50,663] INFO:   [174/347] Progress: 50.1% | Horizons: 4176 | Runtime: 00:40:17 | Avg/orig: 14.1s | ETA: 00:20:22
+[2026-09-12 10:31:52,669] INFO:   [175/347] Progress: 50.4% | Horizons: 4200 | Runtime: 00:40:19 | Avg/orig: 14.1s | ETA: 00:20:09
+[2026-09-12 10:32:19,960] INFO:   [176/347] Progress: 50.7% | Horizons: 4224 | Runtime: 00:40:46 | Avg/orig: 14.1s | ETA: 00:20:09
+[2026-09-12 10:32:25,015] INFO:   [177/347] Progress: 51.0% | Horizons: 4248 | Runtime: 00:40:51 | Avg/orig: 14.1s | ETA: 00:19:57
+[2026-09-12 10:32:27,256] INFO:   [178/347] Progress: 51.3% | Horizons: 4272 | Runtime: 00:40:53 | Avg/orig: 14.0s | ETA: 00:19:44
+[2026-09-12 10:33:05,533] INFO:   [179/347] Progress: 51.6% | Horizons: 4296 | Runtime: 00:41:31 | Avg/orig: 14.2s | ETA: 00:19:49
+[2026-09-12 10:33:13,128] INFO:   [180/347] Progress: 51.9% | Horizons: 4320 | Runtime: 00:41:39 | Avg/orig: 14.1s | ETA: 00:19:39
+[2026-09-12 10:33:46,200] INFO:   [181/347] Progress: 52.2% | Horizons: 4344 | Runtime: 00:42:12 | Avg/orig: 14.2s | ETA: 00:19:40
+[2026-09-12 10:33:52,359] INFO:   [182/347] Progress: 52.4% | Horizons: 4368 | Runtime: 00:42:18 | Avg/orig: 14.2s | ETA: 00:19:30
+[2026-09-12 10:34:25,942] INFO:   [183/347] Progress: 52.7% | Horizons: 4392 | Runtime: 00:42:52 | Avg/orig: 14.3s | ETA: 00:19:31
+[2026-09-12 10:34:30,906] INFO:   [184/347] Progress: 53.0% | Horizons: 4416 | Runtime: 00:42:57 | Avg/orig: 14.2s | ETA: 00:19:20
+[2026-09-12 10:34:55,536] INFO:   [185/347] Progress: 53.3% | Horizons: 4440 | Runtime: 00:43:22 | Avg/orig: 14.3s | ETA: 00:19:18
+[2026-09-12 10:35:10,674] INFO:   [186/347] Progress: 53.6% | Horizons: 4464 | Runtime: 00:43:37 | Avg/orig: 14.3s | ETA: 00:19:11
+[2026-09-12 10:35:35,620] INFO:   [187/347] Progress: 53.9% | Horizons: 4488 | Runtime: 00:44:02 | Avg/orig: 14.4s | ETA: 00:19:08
+[2026-09-12 10:35:47,428] INFO:   [188/347] Progress: 54.2% | Horizons: 4512 | Runtime: 00:44:13 | Avg/orig: 14.3s | ETA: 00:19:00
+[2026-09-12 10:36:13,299] INFO:   [189/347] Progress: 54.5% | Horizons: 4536 | Runtime: 00:44:39 | Avg/orig: 14.4s | ETA: 00:18:58
+[2026-09-12 10:36:26,416] INFO:   [190/347] Progress: 54.8% | Horizons: 4560 | Runtime: 00:44:52 | Avg/orig: 14.4s | ETA: 00:18:50
+[2026-09-12 10:36:50,417] INFO:   [191/347] Progress: 55.0% | Horizons: 4584 | Runtime: 00:45:16 | Avg/orig: 14.5s | ETA: 00:18:47
+[2026-09-12 10:37:01,945] INFO:   [192/347] Progress: 55.3% | Horizons: 4608 | Runtime: 00:45:28 | Avg/orig: 14.4s | ETA: 00:18:38
+[2026-09-12 10:37:20,812] INFO:   [193/347] Progress: 55.6% | Horizons: 4632 | Runtime: 00:45:47 | Avg/orig: 14.5s | ETA: 00:18:33
+[2026-09-12 10:37:41,521] INFO:   [194/347] Progress: 55.9% | Horizons: 4656 | Runtime: 00:46:07 | Avg/orig: 14.5s | ETA: 00:18:28
+[2026-09-12 10:37:50,764] INFO:   [195/347] Progress: 56.2% | Horizons: 4680 | Runtime: 00:46:17 | Avg/orig: 14.5s | ETA: 00:18:19
+[2026-09-12 10:38:13,465] INFO:   [196/347] Progress: 56.5% | Horizons: 4704 | Runtime: 00:46:39 | Avg/orig: 14.5s | ETA: 00:18:15
+[2026-09-12 10:38:21,367] INFO:   [197/347] Progress: 56.8% | Horizons: 4728 | Runtime: 00:46:47 | Avg/orig: 14.5s | ETA: 00:18:05
+[2026-09-12 10:38:48,818] INFO:   [198/347] Progress: 57.1% | Horizons: 4752 | Runtime: 00:47:15 | Avg/orig: 14.5s | ETA: 00:18:03
+[2026-09-12 10:38:56,177] INFO:   [199/347] Progress: 57.3% | Horizons: 4776 | Runtime: 00:47:22 | Avg/orig: 14.5s | ETA: 00:17:53
+[2026-09-12 10:39:20,730] INFO:   [200/347] Progress: 57.6% | Horizons: 4800 | Runtime: 00:47:47 | Avg/orig: 14.6s | ETA: 00:17:49
+[2026-09-12 10:39:23,214] INFO:   [201/347] Progress: 57.9% | Horizons: 4824 | Runtime: 00:47:49 | Avg/orig: 14.5s | ETA: 00:17:38
+[2026-09-12 10:39:54,292] INFO:   [202/347] Progress: 58.2% | Horizons: 4848 | Runtime: 00:48:20 | Avg/orig: 14.6s | ETA: 00:17:36
+[2026-09-12 10:40:02,209] INFO:   [203/347] Progress: 58.5% | Horizons: 4872 | Runtime: 00:48:28 | Avg/orig: 14.5s | ETA: 00:17:27
+[2026-09-12 10:40:33,676] INFO:   [204/347] Progress: 58.8% | Horizons: 4896 | Runtime: 00:49:00 | Avg/orig: 14.6s | ETA: 00:17:25
+[2026-09-12 10:40:35,291] INFO:   [205/347] Progress: 59.1% | Horizons: 4920 | Runtime: 00:49:01 | Avg/orig: 14.6s | ETA: 00:17:13
+[2026-09-12 10:41:10,090] INFO:   [206/347] Progress: 59.4% | Horizons: 4944 | Runtime: 00:49:36 | Avg/orig: 14.7s | ETA: 00:17:13
+[2026-09-12 10:41:10,173] INFO:   [207/347] Progress: 59.7% | Horizons: 4968 | Runtime: 00:49:36 | Avg/orig: 14.6s | ETA: 00:17:01
+[2026-09-12 10:41:38,254] INFO:   [208/347] Progress: 59.9% | Horizons: 4992 | Runtime: 00:50:04 | Avg/orig: 14.7s | ETA: 00:16:58
+[2026-09-12 10:41:54,252] INFO:   [209/347] Progress: 60.2% | Horizons: 5016 | Runtime: 00:50:20 | Avg/orig: 14.7s | ETA: 00:16:51
+[2026-09-12 10:42:15,696] INFO:   [210/347] Progress: 60.5% | Horizons: 5040 | Runtime: 00:50:42 | Avg/orig: 14.7s | ETA: 00:16:46
+[2026-09-12 10:42:41,294] INFO:   [211/347] Progress: 60.8% | Horizons: 5064 | Runtime: 00:51:07 | Avg/orig: 14.7s | ETA: 00:16:42
+[2026-09-12 10:42:59,892] INFO:   [212/347] Progress: 61.1% | Horizons: 5088 | Runtime: 00:51:26 | Avg/orig: 14.8s | ETA: 00:16:36
+[2026-09-12 10:43:18,001] INFO:   [213/347] Progress: 61.4% | Horizons: 5112 | Runtime: 00:51:44 | Avg/orig: 14.8s | ETA: 00:16:30
+[2026-09-12 10:43:37,770] INFO:   [214/347] Progress: 61.7% | Horizons: 5136 | Runtime: 00:52:04 | Avg/orig: 14.8s | ETA: 00:16:24
+[2026-09-12 10:43:51,209] INFO:   [215/347] Progress: 62.0% | Horizons: 5160 | Runtime: 00:52:17 | Avg/orig: 14.8s | ETA: 00:16:16
+[2026-09-12 10:44:12,011] INFO:   [216/347] Progress: 62.2% | Horizons: 5184 | Runtime: 00:52:38 | Avg/orig: 14.8s | ETA: 00:16:11
+[2026-09-12 10:44:15,969] INFO:   [217/347] Progress: 62.5% | Horizons: 5208 | Runtime: 00:52:42 | Avg/orig: 14.8s | ETA: 00:16:00
+[2026-09-12 10:44:46,085] INFO:   [218/347] Progress: 62.8% | Horizons: 5232 | Runtime: 00:53:12 | Avg/orig: 14.8s | ETA: 00:15:57
+[2026-09-12 10:44:50,733] INFO:   [219/347] Progress: 63.1% | Horizons: 5256 | Runtime: 00:53:17 | Avg/orig: 14.8s | ETA: 00:15:47
+[2026-09-12 10:45:20,810] INFO:   [220/347] Progress: 63.4% | Horizons: 5280 | Runtime: 00:53:47 | Avg/orig: 14.9s | ETA: 00:15:44
+[2026-09-12 10:45:24,970] INFO:   [221/347] Progress: 63.7% | Horizons: 5304 | Runtime: 00:53:51 | Avg/orig: 14.8s | ETA: 00:15:33
+[2026-09-12 10:45:54,249] INFO:   [222/347] Progress: 64.0% | Horizons: 5328 | Runtime: 00:54:20 | Avg/orig: 14.9s | ETA: 00:15:30
+[2026-09-12 10:45:58,892] INFO:   [223/347] Progress: 64.3% | Horizons: 5352 | Runtime: 00:54:25 | Avg/orig: 14.8s | ETA: 00:15:20
+[2026-09-12 10:46:25,133] INFO:   [224/347] Progress: 64.6% | Horizons: 5376 | Runtime: 00:54:51 | Avg/orig: 14.9s | ETA: 00:15:15
+[2026-09-12 10:46:30,427] INFO:   [225/347] Progress: 64.8% | Horizons: 5400 | Runtime: 00:54:56 | Avg/orig: 14.9s | ETA: 00:15:05
+[2026-09-12 10:46:54,264] INFO:   [226/347] Progress: 65.1% | Horizons: 5424 | Runtime: 00:55:20 | Avg/orig: 14.9s | ETA: 00:15:00
+[2026-09-12 10:47:00,786] INFO:   [227/347] Progress: 65.4% | Horizons: 5448 | Runtime: 00:55:27 | Avg/orig: 14.9s | ETA: 00:14:51
+[2026-09-12 10:47:23,531] INFO:   [228/347] Progress: 65.7% | Horizons: 5472 | Runtime: 00:55:49 | Avg/orig: 14.9s | ETA: 00:14:45
+[2026-09-12 10:47:32,230] INFO:   [229/347] Progress: 66.0% | Horizons: 5496 | Runtime: 00:55:58 | Avg/orig: 14.9s | ETA: 00:14:36
+[2026-09-12 10:47:55,050] INFO:   [230/347] Progress: 66.3% | Horizons: 5520 | Runtime: 00:56:21 | Avg/orig: 14.9s | ETA: 00:14:31
+[2026-09-12 10:48:01,626] INFO:   [231/347] Progress: 66.6% | Horizons: 5544 | Runtime: 00:56:28 | Avg/orig: 14.9s | ETA: 00:14:21
+[2026-09-12 10:48:24,564] INFO:   [232/347] Progress: 66.9% | Horizons: 5568 | Runtime: 00:56:51 | Avg/orig: 14.9s | ETA: 00:14:16
+[2026-09-12 10:48:26,723] INFO:   [233/347] Progress: 67.1% | Horizons: 5592 | Runtime: 00:56:53 | Avg/orig: 14.8s | ETA: 00:14:05
+[2026-09-12 10:48:57,612] INFO:   [234/347] Progress: 67.4% | Horizons: 5616 | Runtime: 00:57:24 | Avg/orig: 14.9s | ETA: 00:14:02
+[2026-09-12 10:48:58,247] INFO:   [235/347] Progress: 67.7% | Horizons: 5640 | Runtime: 00:57:24 | Avg/orig: 14.8s | ETA: 00:13:51
+[2026-09-12 10:49:30,083] INFO:   [236/347] Progress: 68.0% | Horizons: 5664 | Runtime: 00:57:56 | Avg/orig: 14.9s | ETA: 00:13:48
+[2026-09-12 10:49:30,258] INFO:   [237/347] Progress: 68.3% | Horizons: 5688 | Runtime: 00:57:56 | Avg/orig: 14.9s | ETA: 00:13:37
+[2026-09-12 10:50:05,133] INFO:   [238/347] Progress: 68.6% | Horizons: 5712 | Runtime: 00:58:31 | Avg/orig: 14.9s | ETA: 00:13:34
+[2026-09-12 10:50:07,368] INFO:   [239/347] Progress: 68.9% | Horizons: 5736 | Runtime: 00:58:33 | Avg/orig: 14.9s | ETA: 00:13:24
+[2026-09-12 10:50:36,328] INFO:   [240/347] Progress: 69.2% | Horizons: 5760 | Runtime: 00:59:02 | Avg/orig: 14.9s | ETA: 00:13:19
+[2026-09-12 10:50:52,007] INFO:   [241/347] Progress: 69.5% | Horizons: 5784 | Runtime: 00:59:18 | Avg/orig: 15.0s | ETA: 00:13:12
+[2026-09-12 10:51:19,367] INFO:   [242/347] Progress: 69.7% | Horizons: 5808 | Runtime: 00:59:45 | Avg/orig: 15.0s | ETA: 00:13:07
+[2026-09-12 10:51:36,507] INFO:   [243/347] Progress: 70.0% | Horizons: 5832 | Runtime: 01:00:02 | Avg/orig: 15.0s | ETA: 00:13:00
+[2026-09-12 10:52:05,688] INFO:   [244/347] Progress: 70.3% | Horizons: 5856 | Runtime: 01:00:32 | Avg/orig: 15.1s | ETA: 00:12:56
+[2026-09-12 10:52:29,279] INFO:   [245/347] Progress: 70.6% | Horizons: 5880 | Runtime: 01:00:55 | Avg/orig: 15.1s | ETA: 00:12:50
+[2026-09-12 10:53:01,331] INFO:   [246/347] Progress: 70.9% | Horizons: 5904 | Runtime: 01:01:27 | Avg/orig: 15.2s | ETA: 00:12:46
+[2026-09-12 10:53:27,694] INFO:   [247/347] Progress: 71.2% | Horizons: 5928 | Runtime: 01:01:54 | Avg/orig: 15.2s | ETA: 00:12:41
+[2026-09-12 10:54:04,802] INFO:   [248/347] Progress: 71.5% | Horizons: 5952 | Runtime: 01:02:31 | Avg/orig: 15.3s | ETA: 00:12:37
+[2026-09-12 10:54:21,128] INFO:   [249/347] Progress: 71.8% | Horizons: 5976 | Runtime: 01:02:47 | Avg/orig: 15.3s | ETA: 00:12:30
+[2026-09-12 10:55:27,839] INFO:   [250/347] Progress: 72.0% | Horizons: 6000 | Runtime: 01:03:54 | Avg/orig: 15.5s | ETA: 00:12:32
+[2026-09-12 10:55:43,518] INFO:   [251/347] Progress: 72.3% | Horizons: 6024 | Runtime: 01:04:09 | Avg/orig: 15.5s | ETA: 00:12:25
+[2026-09-12 10:56:59,444] INFO:   [252/347] Progress: 72.6% | Horizons: 6048 | Runtime: 01:05:25 | Avg/orig: 15.8s | ETA: 00:12:28
+[2026-09-12 10:57:07,364] INFO:   [253/347] Progress: 72.9% | Horizons: 6072 | Runtime: 01:05:33 | Avg/orig: 15.7s | ETA: 00:12:19
+[2026-09-12 10:58:30,954] INFO:   [254/347] Progress: 73.2% | Horizons: 6096 | Runtime: 01:06:57 | Avg/orig: 16.0s | ETA: 00:12:24
+[2026-09-12 10:58:41,123] INFO:   [255/347] Progress: 73.5% | Horizons: 6120 | Runtime: 01:07:07 | Avg/orig: 16.0s | ETA: 00:12:15
+[2026-09-12 10:59:35,839] INFO:   [256/347] Progress: 73.8% | Horizons: 6144 | Runtime: 01:08:02 | Avg/orig: 16.1s | ETA: 00:12:14
+[2026-09-12 10:59:39,360] INFO:   [257/347] Progress: 74.1% | Horizons: 6168 | Runtime: 01:08:05 | Avg/orig: 16.1s | ETA: 00:12:03
+[2026-09-12 11:00:37,761] INFO:   [258/347] Progress: 74.4% | Horizons: 6192 | Runtime: 01:09:04 | Avg/orig: 16.3s | ETA: 00:12:03
+[2026-09-12 11:00:41,124] INFO:   [259/347] Progress: 74.6% | Horizons: 6216 | Runtime: 01:09:07 | Avg/orig: 16.2s | ETA: 00:11:52
+[2026-09-12 11:01:38,243] INFO:   [260/347] Progress: 74.9% | Horizons: 6240 | Runtime: 01:10:04 | Avg/orig: 16.4s | ETA: 00:11:51
+[2026-09-12 11:01:48,045] INFO:   [261/347] Progress: 75.2% | Horizons: 6264 | Runtime: 01:10:14 | Avg/orig: 16.3s | ETA: 00:11:42
+[2026-09-12 11:02:44,490] INFO:   [262/347] Progress: 75.5% | Horizons: 6288 | Runtime: 01:11:10 | Avg/orig: 16.5s | ETA: 00:11:40
+[2026-09-12 11:02:45,453] INFO:   [263/347] Progress: 75.8% | Horizons: 6312 | Runtime: 01:11:11 | Avg/orig: 16.4s | ETA: 00:11:30
+[2026-09-12 11:03:22,720] INFO:   [264/347] Progress: 76.1% | Horizons: 6336 | Runtime: 01:11:49 | Avg/orig: 16.5s | ETA: 00:11:25
+[2026-09-12 11:03:30,030] INFO:   [265/347] Progress: 76.4% | Horizons: 6360 | Runtime: 01:11:56 | Avg/orig: 16.5s | ETA: 00:11:15
+[2026-09-12 11:04:09,288] INFO:   [266/347] Progress: 76.7% | Horizons: 6384 | Runtime: 01:12:35 | Avg/orig: 16.6s | ETA: 00:11:10
+[2026-09-12 11:04:17,342] INFO:   [267/347] Progress: 76.9% | Horizons: 6408 | Runtime: 01:12:43 | Avg/orig: 16.5s | ETA: 00:11:01
+[2026-09-12 11:04:47,202] INFO:   [268/347] Progress: 77.2% | Horizons: 6432 | Runtime: 01:13:13 | Avg/orig: 16.6s | ETA: 00:10:54
+[2026-09-12 11:05:00,206] INFO:   [269/347] Progress: 77.5% | Horizons: 6456 | Runtime: 01:13:26 | Avg/orig: 16.6s | ETA: 00:10:46
+[2026-09-12 11:05:01,276] INFO:   [270/347] Progress: 77.8% | Horizons: 6480 | Runtime: 01:13:27 | Avg/orig: 16.5s | ETA: 00:10:35
+[2026-09-12 11:05:41,600] INFO:   [271/347] Progress: 78.1% | Horizons: 6504 | Runtime: 01:14:08 | Avg/orig: 16.6s | ETA: 00:10:30
+[2026-09-12 11:05:43,520] INFO:   [272/347] Progress: 78.4% | Horizons: 6528 | Runtime: 01:14:09 | Avg/orig: 16.5s | ETA: 00:10:20
+[2026-09-12 11:06:13,128] INFO:   [273/347] Progress: 78.7% | Horizons: 6552 | Runtime: 01:14:39 | Avg/orig: 16.6s | ETA: 00:10:13
+[2026-09-12 11:06:20,615] INFO:   [274/347] Progress: 79.0% | Horizons: 6576 | Runtime: 01:14:47 | Avg/orig: 16.6s | ETA: 00:10:04
+[2026-09-12 11:06:58,082] INFO:   [275/347] Progress: 79.3% | Horizons: 6600 | Runtime: 01:15:24 | Avg/orig: 16.6s | ETA: 00:09:58
+[2026-09-12 11:07:06,720] INFO:   [276/347] Progress: 79.5% | Horizons: 6624 | Runtime: 01:15:33 | Avg/orig: 16.6s | ETA: 00:09:49
+[2026-09-12 11:07:40,164] INFO:   [277/347] Progress: 79.8% | Horizons: 6648 | Runtime: 01:16:06 | Avg/orig: 16.7s | ETA: 00:09:43
+[2026-09-12 11:07:52,156] INFO:   [278/347] Progress: 80.1% | Horizons: 6672 | Runtime: 01:16:18 | Avg/orig: 16.6s | ETA: 00:09:34
+[2026-09-12 11:08:22,564] INFO:   [279/347] Progress: 80.4% | Horizons: 6696 | Runtime: 01:16:49 | Avg/orig: 16.7s | ETA: 00:09:27
+[2026-09-12 11:08:30,076] INFO:   [280/347] Progress: 80.7% | Horizons: 6720 | Runtime: 01:16:56 | Avg/orig: 16.7s | ETA: 00:09:18
+[2026-09-12 11:09:12,001] INFO:   [281/347] Progress: 81.0% | Horizons: 6744 | Runtime: 01:17:38 | Avg/orig: 16.8s | ETA: 00:09:12
+[2026-09-12 11:09:12,244] INFO:   [282/347] Progress: 81.3% | Horizons: 6768 | Runtime: 01:17:38 | Avg/orig: 16.7s | ETA: 00:09:02
+[2026-09-12 11:10:08,718] INFO:   [283/347] Progress: 81.6% | Horizons: 6792 | Runtime: 01:18:35 | Avg/orig: 16.8s | ETA: 00:08:58
+[2026-09-12 11:10:09,434] INFO:   [284/347] Progress: 81.8% | Horizons: 6816 | Runtime: 01:18:35 | Avg/orig: 16.8s | ETA: 00:08:48
+[2026-09-12 11:10:47,168] INFO:   [285/347] Progress: 82.1% | Horizons: 6840 | Runtime: 01:19:13 | Avg/orig: 16.9s | ETA: 00:08:42
+[2026-09-12 11:11:01,341] INFO:   [286/347] Progress: 82.4% | Horizons: 6864 | Runtime: 01:19:27 | Avg/orig: 16.8s | ETA: 00:08:33
+[2026-09-12 11:11:21,754] INFO:   [287/347] Progress: 82.7% | Horizons: 6888 | Runtime: 01:19:48 | Avg/orig: 16.9s | ETA: 00:08:25
+[2026-09-12 11:11:36,799] INFO:   [288/347] Progress: 83.0% | Horizons: 6912 | Runtime: 01:20:03 | Avg/orig: 16.9s | ETA: 00:08:17
+[2026-09-12 11:11:57,916] INFO:   [289/347] Progress: 83.3% | Horizons: 6936 | Runtime: 01:20:24 | Avg/orig: 16.9s | ETA: 00:08:09
+[2026-09-12 11:12:11,127] INFO:   [290/347] Progress: 83.6% | Horizons: 6960 | Runtime: 01:20:37 | Avg/orig: 16.9s | ETA: 00:08:00
+[2026-09-12 11:12:41,351] INFO:   [291/347] Progress: 83.9% | Horizons: 6984 | Runtime: 01:21:07 | Avg/orig: 16.9s | ETA: 00:07:53
+[2026-09-12 11:12:51,838] INFO:   [292/347] Progress: 84.1% | Horizons: 7008 | Runtime: 01:21:18 | Avg/orig: 16.9s | ETA: 00:07:44
+[2026-09-12 11:13:17,440] INFO:   [293/347] Progress: 84.4% | Horizons: 7032 | Runtime: 01:21:43 | Avg/orig: 16.9s | ETA: 00:07:36
+[2026-09-12 11:13:27,198] INFO:   [294/347] Progress: 84.7% | Horizons: 7056 | Runtime: 01:21:53 | Avg/orig: 16.9s | ETA: 00:07:27
+[2026-09-12 11:13:53,278] INFO:   [295/347] Progress: 85.0% | Horizons: 7080 | Runtime: 01:22:19 | Avg/orig: 16.9s | ETA: 00:07:19
+[2026-09-12 11:14:10,417] INFO:   [296/347] Progress: 85.3% | Horizons: 7104 | Runtime: 01:22:36 | Avg/orig: 16.9s | ETA: 00:07:11
+[2026-09-12 11:14:30,578] INFO:   [297/347] Progress: 85.6% | Horizons: 7128 | Runtime: 01:22:57 | Avg/orig: 16.9s | ETA: 00:07:03
+[2026-09-12 11:14:52,016] INFO:   [298/347] Progress: 85.9% | Horizons: 7152 | Runtime: 01:23:18 | Avg/orig: 16.9s | ETA: 00:06:55
+[2026-09-12 11:15:15,380] INFO:   [299/347] Progress: 86.2% | Horizons: 7176 | Runtime: 01:23:41 | Avg/orig: 17.0s | ETA: 00:06:47
+[2026-09-12 11:15:31,543] INFO:   [300/347] Progress: 86.5% | Horizons: 7200 | Runtime: 01:23:58 | Avg/orig: 17.0s | ETA: 00:06:38
+[2026-09-12 11:15:55,711] INFO:   [301/347] Progress: 86.7% | Horizons: 7224 | Runtime: 01:24:22 | Avg/orig: 17.0s | ETA: 00:06:30
+[2026-09-12 11:16:09,329] INFO:   [302/347] Progress: 87.0% | Horizons: 7248 | Runtime: 01:24:35 | Avg/orig: 17.0s | ETA: 00:06:21
+[2026-09-12 11:16:23,875] INFO:   [303/347] Progress: 87.3% | Horizons: 7272 | Runtime: 01:24:50 | Avg/orig: 17.0s | ETA: 00:06:13
+[2026-09-12 11:16:39,872] INFO:   [304/347] Progress: 87.6% | Horizons: 7296 | Runtime: 01:25:06 | Avg/orig: 17.0s | ETA: 00:06:04
+[2026-09-12 11:16:52,270] INFO:   [305/347] Progress: 87.9% | Horizons: 7320 | Runtime: 01:25:18 | Avg/orig: 16.9s | ETA: 00:05:55
+[2026-09-12 11:17:10,117] INFO:   [306/347] Progress: 88.2% | Horizons: 7344 | Runtime: 01:25:36 | Avg/orig: 17.0s | ETA: 00:05:47
+[2026-09-12 11:17:22,762] INFO:   [307/347] Progress: 88.5% | Horizons: 7368 | Runtime: 01:25:49 | Avg/orig: 16.9s | ETA: 00:05:38
+[2026-09-12 11:17:40,998] INFO:   [308/347] Progress: 88.8% | Horizons: 7392 | Runtime: 01:26:07 | Avg/orig: 16.9s | ETA: 00:05:30
+[2026-09-12 11:17:51,461] INFO:   [309/347] Progress: 89.0% | Horizons: 7416 | Runtime: 01:26:17 | Avg/orig: 16.9s | ETA: 00:05:21
+[2026-09-12 11:18:11,781] INFO:   [310/347] Progress: 89.3% | Horizons: 7440 | Runtime: 01:26:38 | Avg/orig: 16.9s | ETA: 00:05:13
+[2026-09-12 11:18:19,391] INFO:   [311/347] Progress: 89.6% | Horizons: 7464 | Runtime: 01:26:45 | Avg/orig: 16.9s | ETA: 00:05:04
+[2026-09-12 11:18:42,927] INFO:   [312/347] Progress: 89.9% | Horizons: 7488 | Runtime: 01:27:09 | Avg/orig: 16.9s | ETA: 00:04:56
+[2026-09-12 11:18:47,245] INFO:   [313/347] Progress: 90.2% | Horizons: 7512 | Runtime: 01:27:13 | Avg/orig: 16.9s | ETA: 00:04:47
+[2026-09-12 11:19:13,808] INFO:   [314/347] Progress: 90.5% | Horizons: 7536 | Runtime: 01:27:40 | Avg/orig: 16.9s | ETA: 00:04:39
+[2026-09-12 11:19:16,915] INFO:   [315/347] Progress: 90.8% | Horizons: 7560 | Runtime: 01:27:43 | Avg/orig: 16.9s | ETA: 00:04:29
+[2026-09-12 11:19:51,611] INFO:   [316/347] Progress: 91.1% | Horizons: 7584 | Runtime: 01:28:18 | Avg/orig: 16.9s | ETA: 00:04:22
+[2026-09-12 11:19:52,775] INFO:   [317/347] Progress: 91.4% | Horizons: 7608 | Runtime: 01:28:19 | Avg/orig: 16.9s | ETA: 00:04:13
+[2026-09-12 11:20:30,029] INFO:   [318/347] Progress: 91.6% | Horizons: 7632 | Runtime: 01:28:56 | Avg/orig: 16.9s | ETA: 00:04:05
+[2026-09-12 11:20:35,413] INFO:   [319/347] Progress: 91.9% | Horizons: 7656 | Runtime: 01:29:01 | Avg/orig: 16.9s | ETA: 00:03:56
+[2026-09-12 11:21:08,423] INFO:   [320/347] Progress: 92.2% | Horizons: 7680 | Runtime: 01:29:34 | Avg/orig: 17.0s | ETA: 00:03:48
+[2026-09-12 11:21:12,215] INFO:   [321/347] Progress: 92.5% | Horizons: 7704 | Runtime: 01:29:38 | Avg/orig: 16.9s | ETA: 00:03:39
+[2026-09-12 11:21:38,462] INFO:   [322/347] Progress: 92.8% | Horizons: 7728 | Runtime: 01:30:04 | Avg/orig: 16.9s | ETA: 00:03:31
+[2026-09-12 11:21:52,381] INFO:   [323/347] Progress: 93.1% | Horizons: 7752 | Runtime: 01:30:18 | Avg/orig: 16.9s | ETA: 00:03:23
+[2026-09-12 11:22:16,583] INFO:   [324/347] Progress: 93.4% | Horizons: 7776 | Runtime: 01:30:43 | Avg/orig: 17.0s | ETA: 00:03:15
+[2026-09-12 11:22:33,516] INFO:   [325/347] Progress: 93.7% | Horizons: 7800 | Runtime: 01:30:59 | Avg/orig: 17.0s | ETA: 00:03:06
+[2026-09-12 11:22:59,907] INFO:   [326/347] Progress: 93.9% | Horizons: 7824 | Runtime: 01:31:26 | Avg/orig: 17.0s | ETA: 00:02:58
+[2026-09-12 11:23:28,245] INFO:   [327/347] Progress: 94.2% | Horizons: 7848 | Runtime: 01:31:54 | Avg/orig: 17.0s | ETA: 00:02:50
+[2026-09-12 11:23:51,781] INFO:   [328/347] Progress: 94.5% | Horizons: 7872 | Runtime: 01:32:18 | Avg/orig: 17.0s | ETA: 00:02:41
+[2026-09-12 11:24:23,861] INFO:   [329/347] Progress: 94.8% | Horizons: 7896 | Runtime: 01:32:50 | Avg/orig: 17.1s | ETA: 00:02:33
+[2026-09-12 11:24:31,119] INFO:   [330/347] Progress: 95.1% | Horizons: 7920 | Runtime: 01:32:57 | Avg/orig: 17.1s | ETA: 00:02:24
+[2026-09-12 11:25:20,736] INFO:   [331/347] Progress: 95.4% | Horizons: 7944 | Runtime: 01:33:47 | Avg/orig: 17.2s | ETA: 00:02:17
+[2026-09-12 11:25:25,908] INFO:   [332/347] Progress: 95.7% | Horizons: 7968 | Runtime: 01:33:52 | Avg/orig: 17.1s | ETA: 00:02:08
+[2026-09-12 11:26:06,715] INFO:   [333/347] Progress: 96.0% | Horizons: 7992 | Runtime: 01:34:33 | Avg/orig: 17.2s | ETA: 00:02:00
+[2026-09-12 11:26:29,382] INFO:   [334/347] Progress: 96.3% | Horizons: 8016 | Runtime: 01:34:55 | Avg/orig: 17.2s | ETA: 00:01:51
+[2026-09-12 11:27:01,378] INFO:   [335/347] Progress: 96.5% | Horizons: 8040 | Runtime: 01:35:27 | Avg/orig: 17.3s | ETA: 00:01:43
+[2026-09-12 11:27:19,311] INFO:   [336/347] Progress: 96.8% | Horizons: 8064 | Runtime: 01:35:45 | Avg/orig: 17.3s | ETA: 00:01:34
+[2026-09-12 11:27:43,943] INFO:   [337/347] Progress: 97.1% | Horizons: 8088 | Runtime: 01:36:10 | Avg/orig: 17.3s | ETA: 00:01:26
+[2026-09-12 11:27:53,544] INFO:   [338/347] Progress: 97.4% | Horizons: 8112 | Runtime: 01:36:20 | Avg/orig: 17.3s | ETA: 00:01:17
+[2026-09-12 11:28:19,500] INFO:   [339/347] Progress: 97.7% | Horizons: 8136 | Runtime: 01:36:45 | Avg/orig: 17.3s | ETA: 00:01:09
+[2026-09-12 11:28:32,142] INFO:   [340/347] Progress: 98.0% | Horizons: 8160 | Runtime: 01:36:58 | Avg/orig: 17.3s | ETA: 00:01:00
+[2026-09-12 11:28:56,275] INFO:   [341/347] Progress: 98.3% | Horizons: 8184 | Runtime: 01:37:22 | Avg/orig: 17.3s | ETA: 00:00:51
+[2026-09-12 11:29:06,798] INFO:   [342/347] Progress: 98.6% | Horizons: 8208 | Runtime: 01:37:33 | Avg/orig: 17.3s | ETA: 00:00:43
+[2026-09-12 11:29:34,665] INFO:   [343/347] Progress: 98.8% | Horizons: 8232 | Runtime: 01:38:01 | Avg/orig: 17.3s | ETA: 00:00:34
+[2026-09-12 11:29:45,524] INFO:   [344/347] Progress: 99.1% | Horizons: 8256 | Runtime: 01:38:11 | Avg/orig: 17.3s | ETA: 00:00:25
+[2026-09-12 11:30:12,593] INFO:   [345/347] Progress: 99.4% | Horizons: 8280 | Runtime: 01:38:39 | Avg/orig: 17.3s | ETA: 00:00:17
+[2026-09-12 11:30:14,010] INFO:   [346/347] Progress: 99.7% | Horizons: 8304 | Runtime: 01:38:40 | Avg/orig: 17.3s | ETA: 00:00:08
+[2026-09-12 11:30:40,424] INFO:   [347/347] Progress: 100.0% | Horizons: 8328 | Runtime: 01:39:06 | Avg/orig: 17.3s | ETA: 00:00:00
+[2026-09-12 11:30:40,446] INFO: 
+EXTRACTION SUCCESSFUL: 347/347 origins extracted (8328 rows).
+[2026-09-12 11:30:40,448] INFO: 
+================================================================================
+[2026-09-12 11:30:40,448] INFO: POLARIS STAGE 6.6 — PRE-CV DATA INTEGRITY AUDIT
+[2026-09-12 11:30:40,448] INFO: ================================================================================
+[2026-09-12 11:30:40,457] INFO:   [✓ PASS] 347 Origins Present: Found 347 / 347 origins
+[2026-09-12 11:30:40,459] INFO:   [✓ PASS] 24 Horizons / Origin: Origins with 24 horizons: 347 / 347
+[2026-09-12 11:30:40,459] INFO:   [✓ PASS] Total Row Count: Total rows: 8328 / 8328
+[2026-09-12 11:30:40,460] INFO:   [✓ PASS] No Duplicate Rows: Duplicate rows found: 0
+[2026-09-12 11:30:40,462] INFO:   [✓ PASS] No NaN/Inf Values: NaNs: 0, Infs: 0
+[2026-09-12 11:30:40,463] INFO:   [✗ FAIL] Physical Ranges: LWP: [0.00, 1598.28] g/m², IWP: [0.00, 157.86] g/m², Ps: [891.8, 974.1] hPa
+[2026-09-12 11:30:40,463] INFO:   [✓ PASS] Surface Pressure Bound: Max surface pressure: 974.15 hPa (< 1000 hPa)
+[2026-09-12 11:30:40,463] INFO:   [✓ PASS] Stage 5.2 Champion Unchanged: Stage 4 predictions verified present
+[2026-09-12 11:30:40,464] INFO: 
+PRE-CV AUDIT OVERALL RESULT: FAIL
+[2026-09-12 11:30:40,464] ERROR: FATAL: Integrity audit failed! Stopping before CV.
+[2026-09-12 11:31:00,616] INFO: 
+================================================================================
+[2026-09-12 11:31:00,616] INFO: POLARIS STAGE 6.6 — PRE-CV DATA INTEGRITY AUDIT
+[2026-09-12 11:31:00,616] INFO: ================================================================================
+[2026-09-12 11:31:00,627] INFO:   [✓ PASS] 347 Origins Present: Found 347 / 347 origins
+[2026-09-12 11:31:00,628] INFO:   [✓ PASS] 24 Horizons / Origin: Origins with 24 horizons: 347 / 347
+[2026-09-12 11:31:00,628] INFO:   [✓ PASS] Total Row Count: Total rows: 8328 / 8328
+[2026-09-12 11:31:00,629] INFO:   [✓ PASS] No Duplicate Rows: Duplicate rows found: 0
+[2026-09-12 11:31:00,631] INFO:   [✓ PASS] No NaN/Inf Values: NaNs: 0, Infs: 0
+[2026-09-12 11:31:00,631] INFO:   [✓ PASS] Physical Ranges: LWP: [0.00, 1598.28] g/m², IWP: [0.00, 157.86] g/m², Ps: [891.8, 974.1] hPa
+[2026-09-12 11:31:00,631] INFO:   [✓ PASS] Surface Pressure Bound: Max surface pressure: 974.15 hPa (< 1000 hPa)
+[2026-09-12 11:31:00,632] INFO:   [✓ PASS] Stage 5.2 Champion Unchanged: Stage 4 predictions verified present
+[2026-09-12 11:31:00,634] INFO: 
+PRE-CV AUDIT OVERALL RESULT: PASS
+[2026-09-12 11:31:09,060] INFO: 
+================================================================================
+[2026-09-12 11:31:09,060] INFO: POLARIS STAGE 6.6 — 5-FOLD FORWARD-CHAINING EVEN CV & GATE EVALUATION
+[2026-09-12 11:31:09,060] INFO: ================================================================================
+[2026-09-12 11:31:29,598] INFO: 
+==================================================
+[2026-09-12 11:31:29,598] INFO: EVEN CV RESULTS & LOCKED GATES EVALUATION
+[2026-09-12 11:31:29,598] INFO: ==================================================
+[2026-09-12 11:31:29,598] INFO: Control MAE:      39.4236 W/m² (Expected: 39.4236 W/m²)
+[2026-09-12 11:31:29,598] INFO: Candidate MAE:    38.2806 W/m²
+[2026-09-12 11:31:29,598] INFO: Delta MAE:        -1.1430 W/m²
+[2026-09-12 11:31:29,598] INFO: Candidate nMAE:   40.39% (Control: 41.46%)
+[2026-09-12 11:31:29,598] INFO: Candidate RMSE:   60.7509 W/m² (Control: 62.8290 W/m²)
+[2026-09-12 11:31:29,598] INFO: --------------------------------------------------
+[2026-09-12 11:31:29,598] INFO: Gate 1 (MAE <= 39.2236 W/m²):      PASS (38.2806 W/m²)
+[2026-09-12 11:31:29,598] INFO: Gate 2 (Improve >= 4/5 Folds):     PASS (4/5 folds)
+[2026-09-12 11:31:29,598] INFO: Gate 3 (Max Degrad <= +0.15 W/m²): PASS (+0.0060 W/m²)
+[2026-09-12 11:31:29,599] INFO: Gate 4 (nMAE <= 41.46%):          PASS (40.39%)
+[2026-09-12 11:31:29,599] INFO: Gate 5 (RMSE <= 62.83 W/m²):      PASS (60.7509 W/m²)
+[2026-09-12 11:31:29,599] INFO: ==================================================
+[2026-09-12 11:31:29,599] INFO: 
+FINAL EXPERIMENT DECISION: EVEN GATES PASSED — ODD AUTHORIZATION REQUIRED

@@ -1,0 +1,29 @@
+feature,source,t0_relation,latest_timestamp,future_sw_in_dep,stage4_dep,causally_available
+horizon_hour,Forecast Calendar,Horizon index (1..24),t0,False,False,True
+month,Timestamp Index,Calendar month,t0,False,False,True
+hour,Timestamp Index,Calendar hour,t0,False,False,True
+solar_elevation,PVLIB Astronomical Engine,Deterministic solar position at t0+h,t0 (deterministic),False,False,True
+solar_zenith,PVLIB Astronomical Engine,Deterministic solar position at t0+h,t0 (deterministic),False,False,True
+clearsky_ghi,PVLIB Ineichen Model,Deterministic clear-sky flux at t0+h,t0 (deterministic),False,False,True
+fc_cloud_cover,MET Nordic Seamless Archive,"Issued <= t0, Valid at t0+h",<= t0 (issued),False,False,True
+fc_temperature_2m,MET Nordic Seamless Archive,"Issued <= t0, Valid at t0+h",<= t0 (issued),False,False,True
+fc_relative_humidity_2m,MET Nordic Seamless Archive,"Issued <= t0, Valid at t0+h",<= t0 (issued),False,False,True
+cloud_frac,MET Nordic Seamless Archive,Cloud cover fraction (fc_cloud_cover / 100),<= t0 (issued),False,False,True
+pred_stage3b_cloud_nwp,Chronos-3B Zero-Shot Model,Exogenous Chronos forecast issued at t0,t0,False,True,True
+phys_pred_fold,PVLIB Clear-Sky * NWP Extinction,Physical prediction using fold fit k_h,t0,False,True,True
+pred_stage4_fold,Stage 4 Horizon Ensemble,"Stage 4 base forecast using fold fit w_h, k_h",t0,False,True,True
+disagreement_fold,|Chronos - Physics|,Component disagreement at t0,t0,False,True,True
+ctx_std_3h,SITES Nuolja Observed SW_IN,"Std dev of obs SW_IN over [t0-3h, t0)",t0 - 10min,False,False,True
+ctx_std_6h,SITES Nuolja Observed SW_IN,"Std dev of obs SW_IN over [t0-6h, t0)",t0 - 10min,False,False,True
+ctx_std_12h,SITES Nuolja Observed SW_IN,"Std dev of obs SW_IN over [t0-12h, t0)",t0 - 10min,False,False,True
+ctx_std_24h,SITES Nuolja Observed SW_IN,"Std dev of obs SW_IN over [t0-24h, t0)",t0 - 10min,False,False,True
+ctx_abs_change_1h,SITES Nuolja Observed SW_IN,Absolute change in obs SW_IN over 1h,t0 - 10min,False,False,True
+ctx_abs_change_3h,SITES Nuolja Observed SW_IN,Absolute change in obs SW_IN over 3h,t0 - 10min,False,False,True
+ctx_abs_change_6h,SITES Nuolja Observed SW_IN,Absolute change in obs SW_IN over 6h,t0 - 10min,False,False,True
+ctx_max_diff_6h,SITES Nuolja Observed SW_IN,Max 1h step change in obs SW_IN in 6h,t0 - 10min,False,False,True
+ctx_mean_diff_6h,SITES Nuolja Observed SW_IN,Mean 1h step change in obs SW_IN in 6h,t0 - 10min,False,False,True
+ctx_slope_6h,SITES Nuolja Observed SW_IN,Linear trend slope of obs SW_IN in 6h,t0 - 10min,False,False,True
+ctx_kt_std_6h,SITES Nuolja Observed SW_IN,Std dev of clearness index in 6h,t0 - 10min,False,False,True
+ctx_last_obs,SITES Nuolja Observed SW_IN,Last observed SW_IN value before t0,t0 - 10min,False,False,True
+ctx_mean_24h,SITES Nuolja Observed SW_IN,"Mean obs SW_IN over [t0-24h, t0)",t0 - 10min,False,False,True
+ctx_max_24h,SITES Nuolja Observed SW_IN,"Max obs SW_IN over [t0-24h, t0)",t0 - 10min,False,False,True

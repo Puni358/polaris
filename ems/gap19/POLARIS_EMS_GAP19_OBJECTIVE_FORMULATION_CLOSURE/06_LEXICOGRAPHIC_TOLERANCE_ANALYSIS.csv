@@ -1,0 +1,17 @@
+audit_document,06_LEXICOGRAPHIC_TOLERANCE_ANALYSIS
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# LEXICOGRAPHIC TOLERANCE & EPSILON ANALYSIS (OI-3 RESOLUTION)
+# ============================================================
+
+stage_index,stage_name,objective_units,objective_locking_formula,absolute_vs_relative_semantics,highs_native_vs_sequential_scipy,governed_numerical_epsilon_status
+Stage 1,Critical Reliability,Wh,J1(x) <= J1* + epsilon_1,Absolute epsilon_1 = 0 Wh (exact zero critical unmet energy requirement),Highs: abs_tolerance=0.0; SciPy: c1^T x <= z1* + 0.0,RESOLVED_BY_EXISTING_GOVERNANCE (epsilon_1 = 0)
+Stage 2,EBR / Terminal Reserve,Wh,J2(x) <= J2* + epsilon_2,Absolute epsilon_2 [Wh] or Relative epsilon_2 [% of reserve],Highs: HighsLinearObjective.abs_tolerance; SciPy: c2^T x <= z2* + epsilon_2,GOVERNANCE_DECISION_REQUIRED (Numerical value)
+Stage 3,Fuel Conservation,Liters (L),J3(x) <= J3* + epsilon_3,Absolute epsilon_3 [L] (e.g. 0.001 L) or Relative epsilon_3 [% of fuel],Highs: HighsLinearObjective.abs_tolerance; SciPy: c3^T x <= z3* + epsilon_3,GOVERNANCE_DECISION_REQUIRED (Numerical value)
+Stage 4,Renewable Utilization,Wh,J4(x) <= J4* + epsilon_4,Absolute epsilon_4 [Wh] (lowest priority stage),Highs: HighsLinearObjective.abs_tolerance; SciPy: Final solve stage (no locking constraint needed),RESOLVED_BY_EXISTING_GOVERNANCE (Final stage)
+Solver Gap Interaction,N/A,N/A,MILP optimality gap (mip_rel_gap=1e-4) must be tighter than lexicographic epsilon_k,Highs solver tolerance eta=1e-5 must be aligned across A and B,ENGINEERING_DEFINITION_REQUIRED
+Equivalence Definition,N/A,N/A,A and B are equivalent if operational dispatch x* matches within max(epsilon_k eta),Numerical equivalence criterion defined; bitwise identity not claimed,ENGINEERING_DEFINITION_REQUIRED

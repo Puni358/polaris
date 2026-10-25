@@ -1,0 +1,51 @@
+{
+  "audit_metadata": {
+    "title": "POLARIS EMS HD-02 Terminal Energy Target & EBR Relationship Audit",
+    "date": "2026-09-22",
+    "mode": "READ-ONLY TECHNICAL AND GOVERNANCE AUDIT",
+    "package": "POLARIS_EMS_HD02_TERMINAL_TARGET_AUDIT"
+  },
+  "final_classifications": {
+    "HD02_RELATIONSHIP_STATUS": "DEFINED",
+    "TERMINAL_TARGET_DERIVATION_STATUS": "TECHNICALLY_VALID",
+    "TERMINAL_DOUBLE_COUNTING_RISK": "CONFIRMED",
+    "TERMINAL_CAUSALITY_STATUS": "CAUSALLY_VALID",
+    "HD02_NUMERICAL_POLICY_STATUS": "NOT_REQUIRED_IF_DERIVED",
+    "HD02_SCHEMA_STATUS": "ADDITIVE_EXTENSION_REQUIRED",
+    "HD02_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "milp_horizon_facts": {
+    "H": 24,
+    "terminal_state_variable": "E_next[23]",
+    "terminal_state_constrained": false,
+    "terminal_objective_cost": 0.0,
+    "end_of_horizon_depletion_incentive": true,
+    "depletion_min_e_wh": 40000.0
+  },
+  "battery_state_equations": {
+    "stored_energy_symbol": "E(t)",
+    "initial_energy_wh": "station_state.battery_energy_wh",
+    "efficiency_chg": 0.92,
+    "efficiency_dis": 0.92,
+    "min_tech_wh": 40000.0,
+    "max_tech_wh": 190000.0,
+    "transition_equation": "E[t+1] = E[t] + eta_chg * p_chg * dt - (p_dis / eta_dis) * dt"
+  },
+  "ebr_reconstruction": {
+    "formula": "E_EBR_target(t) = E_min_tech + sum_{k=t+1}^{t+N} D_critical(k) * dt / eta_dis",
+    "units": "Wh (Stored cell energy domain)",
+    "causal": true
+  },
+  "terminal_state_analysis": {
+    "E_terminal_target_definition": "E_EBR_target(H)",
+    "coherent_stage_2_term": "max(0, E_EBR_target(H) - E(H))",
+    "double_counting_with_sum_t_1_to_H": true,
+    "double_counting_risk": "CONFIRMED"
+  },
+  "objective_options": {
+    "Option_A": "min sum_{t=1}^H max(0, E_EBR(t) - E(t)) [Zero Double-Counting]",
+    "Option_B": "min sum_{t=1}^{H-1} max(0, E_EBR(t) - E(t)) + max(0, E_EBR(H) - E(H)) [Zero Double-Counting]",
+    "Option_C": "min sum_{t=1}^H max(0, E_EBR(t) - E(t)) + max(0, E_EBR(H) - E(H)) [Double-Weighted Penalty at t=H]",
+    "Option_D": "min sum_{t=1}^H max(0, E_EBR(t) - E(t)) s.t. E(H) >= E_EBR(H) [Hard Boundary Constraint]"
+  }
+}

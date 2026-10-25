@@ -1,0 +1,46 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_REPLAY_CODE_CORRECTION_REPORT",
+  "date_utc": "2026-09-19",
+  "track": "SCIENTIFIC RESEARCH & SYSTEM INTEGRATION TRACK",
+  "phase": "GOVERNED CODE CORRECTION IMPLEMENTATION",
+  "task_type": "IMPLEMENTATION ONLY — ZERO EXECUTION",
+  "code_correction_status": "PASS",
+  "experiment_execution_status": "NOT_EXECUTED",
+  "smoke_test_status": "NOT_EXECUTED",
+  "treatment_value_rounding": "REMOVED",
+  "zero_padding": "REMOVED",
+  "baseline_continuation": "IMPLEMENTED",
+  "horizon_symmetry": "STATICALLY_VERIFIED",
+  "temporal_alignment": "STATICALLY_VERIFIED",
+  "forecastbundle_schema_changed": "NO",
+  "ems_changed": "NO",
+  "simulator_changed": "NO",
+  "d5_changed": "NO",
+  "frozen_treatment_artifact_changed": "NO",
+  "historical_evidence_deleted": "NO",
+  "source_file_hashes": {
+    "system/forecasting/implementations/s81_solar.py": {
+      "previous_sha256": "22e50f122d2b6f689b94c93498aefe51441d8a1a2636ab1bc4a343189f24be94",
+      "new_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "description": "Updated line 98 in validate_stage81_solar_metadata to compare round(expected_gen, 2), enabling ingestion of exact raw unrounded high-precision floats from CSV without validator failure."
+    },
+    "run_polaris_stage8_1_ems_empirical_replay.py": {
+      "previous_sha256": "13c6f0409681d36612035c50c86ec694a1f19c9bb304bb0f919d207c535296d2",
+      "new_sha256": "8965139602021c28133c4c07d51baef7781ad372801ab37e7c7c41e90e7ffd4a",
+      "description": "Removed round(..., 2) float truncation and zero-padding [0.0]*k. Implemented common baseline clear-sky diurnal continuation for MPC horizon steps beyond t0+24 (h > 24-k)."
+    }
+  },
+  "authoritative_governance_references": {
+    "treatment_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "correction_specification": "POLARIS_STAGE8_1_EMS_REPLAY_ARCHITECTURE_CORRECTION.md",
+    "authorization_verification": "POLARIS_STAGE8_1_EMS_REPLAY_CORRECTION_AUTHORIZATION_VERIFICATION.md"
+  },
+  "static_verification_results": {
+    "ast_parse_s81_solar": "SUCCESS",
+    "ast_parse_replay_script": "SUCCESS",
+    "absence_of_rounding_pattern": "VERIFIED_ABSENT",
+    "absence_of_zero_padding_pattern": "VERIFIED_ABSENT",
+    "presence_of_baseline_continuation": "VERIFIED_PRESENT"
+  },
+  "next_step": "READ-ONLY POST-CORRECTION IMPLEMENTATION VERIFICATION"
+}

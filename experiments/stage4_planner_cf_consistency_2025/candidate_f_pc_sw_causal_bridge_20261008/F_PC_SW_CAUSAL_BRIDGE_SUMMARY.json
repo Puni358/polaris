@@ -1,0 +1,109 @@
+{
+  "title": "POLARIS Candidate-F to PC-SW Causal Forecast Bridge Forensics",
+  "date": "2026-10-08",
+  "status": "READ-ONLY forensic research. No production/model changes. No training. No EMS campaign. No AGY execution.",
+  "hash_verification": {
+    "repo_protected_hashes_mismatches": [],
+    "causal_nwp_physics_py_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "matches_governed_value": true,
+    "label": "VERIFIED"
+  },
+  "candidate_f_full_feature_list_37": [
+    "horizon_hour","month","hour","solar_elevation","solar_zenith","clearsky_ghi",
+    "fc_cloud_cover","fc_temperature_2m","fc_relative_humidity_2m","cloud_frac",
+    "pred_stage3b_cloud_nwp","phys_pred_fold","pred_stage4_fold","disagreement_fold",
+    "ctx_std_3h","ctx_std_6h","ctx_std_12h","ctx_std_24h",
+    "ctx_abs_change_1h","ctx_abs_change_3h","ctx_abs_change_6h",
+    "ctx_max_diff_6h","ctx_mean_diff_6h","ctx_slope_6h",
+    "ctx_kt_std_6h","ctx_last_obs","ctx_mean_24h","ctx_max_24h",
+    "lwp_latest","iwp_latest","lwp_x_cloud",
+    "terrain_horizon_elevation_deg","terrain_elevation_margin_deg",
+    "terrain_solar_obstruction_flag","clearsky_ghi_terrain_adjusted",
+    "u700","v700"
+  ],
+  "candidate_f_additional_feature": "elevation_x_cloud_frac",
+  "pc_sw_solar_pathway": {
+    "formula": "forecast_GHI = 0 if elevation<=0 or clearsky_GHI<=0 else max(0, clearsky_GHI*(1-cloud_fraction)); solar_generation = min(forecast_GHI*300*0.20*0.85, 60000)",
+    "inputs_used": ["fc_cloud_cover (-> cloud_fraction)", "solar_elevation (PVLIB)", "clearsky_ghi (PVLIB Ineichen)"],
+    "inputs_NOT_used": ["LWP/IWP", "terrain", "fc_temperature_2m", "fc_relative_humidity_2m", "ctx_* lagged context", "u700/v700", "Stage3b/4 ensemble predictions", "Stage4 k_h physics correction (explicitly disclaimed in module docstring)"],
+    "label": "VERIFIED (full source read of causal_nwp_physics.py)"
+  },
+  "lwp_iwp_timestamp_verification": {
+    "source": "MEPS D-1 18:00 UTC run, independently computed per horizon hour from profile data",
+    "issuance_before_t0": true,
+    "margin_hours_min": 6,
+    "derived_from_realized_observation": false,
+    "2025_file_confirmed_present": "stage6/stage6_6_lwp_iwp_2025/lwp_iwp_extracted_features_2025.csv",
+    "label": "VERIFIED"
+  },
+  "feature_bridge_classification": {
+    "A_already_shared": ["horizon/month/hour", "solar_elevation", "solar_zenith", "clearsky_ghi", "fc_cloud_cover/cloud_frac"],
+    "B_causally_available_unused": [
+      {"feature": "fc_temperature_2m, fc_relative_humidity_2m", "note": "already a column in the same weather CSV PC-SW loads; zero new data acquisition needed"},
+      {"feature": "lwp_latest, iwp_latest, lwp_x_cloud", "note": "2025 file confirmed present, same calendar range as PC-SW population"},
+      {"feature": "ctx_* lagged station context (14 features)", "note": "causally constructible from PC-SW's own existing closed-loop realized-trajectory state, not currently wired in"},
+      {"feature": "terrain_horizon_elevation_deg etc.", "note": "already tested in PC-SW/EMS context and found SAFE-BUT-FUEL-WORSE (phase1_terrain_correction_20261007) - effectively closed, not promising"}
+    ],
+    "C_integration_required_or_unknown": [
+      {"feature": "pred_stage3b_cloud_nwp, phys_pred_fold, pred_stage4_fold, disagreement_fold", "note": "plausibly causal Stage3b/4 model outputs; 2025/PC-SW-population alignment not independently verified in this pass"}
+    ],
+    "D_not_transferable": [
+      {"feature": "u700, v700", "note": "PC-SW's wind generation is an unrelated deterministic synthetic formula, not weather-derived at all; no entry point"}
+    ],
+    "label": "VERIFIED (data existence) / DIAGNOSTIC (classification)"
+  },
+  "temporal_alignment_check": {
+    "representative_origin": 2,
+    "pc_sw_t0": "2025-05-01T23:00:00Z",
+    "meps_source_shared_with_stage81": true,
+    "lwp_iwp_terrain_wind_2025_coverage_matches_pc_sw_population_window": true,
+    "temporal_mismatch_found": false,
+    "label": "VERIFIED"
+  },
+  "f_feature_importance": {
+    "aggregate_mechanism_known": true,
+    "aggregate_mechanism": "global bias correction, improves dispatch at 138/245 origins, worsens at remainder (CANDIDATE_F_PRE_TRAINING_AUDIT.md section 9)",
+    "per_feature_attribution_available": false,
+    "label": "UNKNOWN at per-feature level (reused finding, not newly computed)"
+  },
+  "question_a_vs_b": {
+    "question_a_does_f_improve_solar_prediction": "YES - VERIFIED, Stage 8.1 architecture specific",
+    "question_b_would_same_info_improve_pc_sw": "NOT ESTABLISHED - PC-SW's physics formula is structurally different (2-input deterministic law vs 38-feature GBDT); adding LWP/IWP would require a new physics formula, not a feature addition; not attempted in this pass",
+    "label": "DIAGNOSTIC / UNKNOWN"
+  },
+  "pc_sw_existing_forecast_error_reused": {
+    "wind_error_always_zero": true,
+    "wind_implication": "u700/v700 gap is moot regardless of transferability since PC-SW wind path ignores weather data entirely",
+    "solar_error_mildly_optimistic": true,
+    "no_significant_group_difference_saving_vs_cost_origins": true,
+    "caveat": "characterizes PC-SW's EXISTING cloud-fraction-only error; does not rule out a LWP-informed formula changing the diesel trajectory via a different mechanism",
+    "label": "VERIFIED (reused from EBR population forensics task)"
+  },
+  "repository_search_for_causal_sources": {
+    "meps_forecast_fields": "found - data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+    "lwp_iwp": "found - stage6/stage6_6_lwp_iwp_2025/",
+    "humidity_cloud_water": "found - fc_relative_humidity_2m in shared weather CSV",
+    "ensemble_spread": "partially found - disagreement_fold exists as Stage 8.1 feature, 2025/PC-SW alignment not independently verified",
+    "terrain": "found - data/POLARIS_v0_1_SITES_Nuolja_2025_terrain_features.csv - already tested, fuel-worse",
+    "other_unused_weather_fields": ["fc_precipitation", "fc_surface_pressure", "fc_wind_speed_10m"],
+    "external_data_introduced": false,
+    "label": "VERIFIED"
+  },
+  "future_research_specification": {
+    "proposed": true,
+    "executed": false,
+    "description": "New physical attenuation term in a research-diagnostic copy of causal_nwp_physics.py incorporating lwp_latest/iwp_latest as an optical-depth modifier to the existing clearsky*(1-cloud_fraction) formula",
+    "required_gates": ["temporal causality audit", "target-exclusion/leakage check", "2025 blind MAE/bias gate", "causal firewall check_causal_firewall() compliance"],
+    "functional_form_specified": false,
+    "label": "description only, per task instruction"
+  },
+  "final_f_value_assessment": {
+    "classification": "B",
+    "meaning": "No, F was not wasted, but only as a research/reference model; useful signal is legitimate and causally available for PC-SW's exact population/timing, but has not been shown to transfer into PC-SW's structurally different physics formula",
+    "stronger_than_prior_task": "identifies which specific F inputs (LWP/IWP, humidity, lagged context) are concretely causally available for PC-SW, not just that F itself is uncompromised"
+  },
+  "policy_experiment_executed": false,
+  "agy_execution_spec_provided": false,
+  "model_trained_or_modified": false,
+  "production_changed": false
+}

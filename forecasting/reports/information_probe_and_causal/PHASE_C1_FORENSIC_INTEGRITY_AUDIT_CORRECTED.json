@@ -1,0 +1,28 @@
+{
+  "audit_name": "POLARIS_PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED",
+  "timestamp_utc": "2026-09-16 00:36:46+0000",
+  "overall_verdict": "PASS \u2014 Forensic Integrity Verified",
+  "forensic_reconciliation_note": "Initial Phase C-1 execution invalidated due to canonical fold indexing defect; corrected execution authorized after forensic reconciliation.",
+  "checks": {
+    "canonical_fold_sha": "PASS \u2014 Canonical fold assignment SHA256 verified.",
+    "canonical_fold_labels": "PASS \u2014 Folds 1, 2, 3, 4, 5 explicitly evaluated.",
+    "no_fold_recomputation": "PASS \u2014 Zero fold assignments recomputed or rebalanced.",
+    "horizon_specific_population": "PASS \u2014 Option B population verified (N_7=89, N_8..N_12=104).",
+    "aggregate_valid_cells": "PASS \u2014 Exactly 609 aggregate valid target cells verified.",
+    "fold_sum_equality": "PASS \u2014 Sum of fold validation counts equals N_h for all horizons.",
+    "oof_coverage": "PASS \u2014 Every valid origin has exactly 1 P0 and 1 P1 OOF prediction (0 zero-filled placeholders).",
+    "training_validation_separation": "PASS \u2014 Training fold excludes validation fold origins for all Folds 1\u20135.",
+    "fold_internal_scaling": "PASS \u2014 StandardScaler fitted strictly on training folds.",
+    "model_specification": "PASS \u2014 Ridge alpha=1.0 and GBDT max_depth=3, n_est=200, lr=0.05, min_leaf=10, seed=42 verified.",
+    "bootstrap_unit": "PASS \u2014 10,000 paired origin-level bootstrap resamples. 0 degenerate resamples.",
+    "permutation_procedure": "PASS \u2014 1,000 within-month target permutations per horizon. Zero model refitting during permutation.",
+    "odd_firewall": "PASS \u2014 0 ODD rows accessed (100% sealed).",
+    "nwp_firewall": "PASS \u2014 No additional NWP data or external sources accessed.",
+    "interpretation_firewall": "PASS \u2014 Controlled scientific wording strictly enforced."
+  },
+  "artifact_hashes": {
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.json": "0e81f0051f04140b059c29e0ffef914d58404dd16259c4118eb0440e7ca52fb9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.md": "bd4efea996c8d436d60df543aeca5006960d148c085f6ec1bbb4f4c131689fb3",
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad"
+  }
+}

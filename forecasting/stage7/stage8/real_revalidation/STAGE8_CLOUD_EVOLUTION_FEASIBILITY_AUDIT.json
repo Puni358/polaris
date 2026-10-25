@@ -1,0 +1,116 @@
+{
+  "audit_name": "STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT",
+  "governance_status": "FEASIBILITY_RESEARCH_ONLY",
+  "target_site": "SITES Nuolja (68.362°N, 18.739°E, 702m ASL)",
+  "research_question": "Can POLARIS obtain genuinely new, strictly causal information describing CLOUD EVOLUTION (growth, decay, thickening, thinning, fragmentation, scale-dependent temporal reorganization) before t0 = 00:00 UTC?",
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "odd_accessed": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "part_a_ground_camera_audit": {
+    "camera_locations": [
+      "SITES ANS (68.353°N, 18.816°E, 388m ASL)",
+      "SITES Nuolja Summit (68.362°N, 18.739°E, 675m ASL)"
+    ],
+    "distance_to_target_km": 3.8,
+    "elevation_difference_m": -314.0,
+    "historical_2024_image_archive_exists": false,
+    "dataset_id": "SITES_ANS_PHENOCAM_2024",
+    "image_cadence": "Irregular daily/hourly phenology snapshots",
+    "temporal_continuity": "Severely broken / multi-day gaps",
+    "daylight_availability": "Optical RGB only (0% during polar night)",
+    "polar_night_behavior": "Unilluminated black frames (Nov 25 - Jan 15)",
+    "cloud_observation_quality": "Uncalibrated consumer webcams, oblique horizontal framing",
+    "programmatic_downloadability": false,
+    "timestamp_standard": "Local Swedish time (CET/CEST)",
+    "historical_retention": "Selected phenology thumbnails only",
+    "causal_availability_at_t0": false,
+    "publication_latency": "Multi-day to multi-week batch upload",
+    "origin_coverage_347": "0 / 347 (0.0%)"
+  },
+  "part_b_feature_extraction": {
+    "audited_features": [
+      "cloud_growth_rate_short",
+      "cloud_growth_rate_medium",
+      "cloud_persistence",
+      "cloud_variability",
+      "cloud_fragmentation"
+    ],
+    "extractable_causally_for_2024": false,
+    "blocking_reason": "No continuous observational source exists to extract these descriptors causally across 347 benchmark origins."
+  },
+  "part_c_causality_matrix": {
+    "sites_ground_phenocam": {
+      "publication_latency": "+24h to +7d batch upload",
+      "causal_pass": false
+    },
+    "leo_polar_swath": {
+      "publication_latency": "1.5h to 3.0h Level-2 broadcast delay",
+      "causal_pass": false
+    },
+    "geo_msg_seviri_ir": {
+      "publication_latency": "15m to 30m delay",
+      "causal_pass": true,
+      "physical_blocker": "VZA 78.07° parallax >21km, pixel stretch >14km"
+    },
+    "ground_pyranometer_sw_in": {
+      "publication_latency": "Real-time",
+      "causal_pass": true,
+      "novelty_blocker": "Mathematically redundant with Stage 8.1 features"
+    }
+  },
+  "part_d_benchmark_coverage": {
+    "30_min_window_origins_covered": "0 / 347 (0.0%)",
+    "1_hour_window_origins_covered": "14 / 347 (4.0%)",
+    "3_hour_window_origins_covered": "48 / 347 (13.8%)",
+    "6_hour_window_origins_covered": "72 / 347 (20.7%)",
+    "100_pct_coverage_gate_passed": false
+  },
+  "part_e_novelty_audit": {
+    "ground_radiometry_proxies": "REPACKAGED (REDUNDANT with ctx_std_3h/6h, ctx_slope, ctx_abs_change)",
+    "nwp_run_revisions": "REPACKAGED (MODEL DRIFT PROXY tested in Stage 6.4 / 8.5)",
+    "novelty_verdict": "ZERO INDEPENDENT NOVELTY SURVIVES"
+  },
+  "part_f_secondary_sources": {
+    "kiruna_ceilometer_esnq": "Spatially unrepresentative (75km ESE, inland valley vs mountain peak)",
+    "geo_msg_seviri": "Operationally infeasible (extreme parallax >21km, pixel stretch >14km)",
+    "leo_polar_imagery": "Discontinuous coverage (<21%), latency >1.5h exceeds t0"
+  },
+  "part_g_scale_dependence": {
+    "microscale_cloud_evolution": "Unobservable by available sensors",
+    "mesoscale_cloud_evolution": "Blocked by lack of mountain radar/ceilometer network",
+    "synoptic_cloud_evolution": "Already captured by Stage 8.1 3D pressure-level parameters"
+  },
+  "candidates_evaluated": [
+    {
+      "candidate": "SITES Abisko/Nuolja All-Sky Camera Sequence",
+      "classification": "D. OPERATIONALLY INFEASIBLE / E. DATA NON-EXISTENCE",
+      "survives": false
+    },
+    {
+      "candidate": "LEO Polar Cloud Growth Sequence (VIIRS/AVHRR)",
+      "classification": "C. INSUFFICIENT COVERAGE / D. NOT CAUSALLY AVAILABLE",
+      "survives": false
+    },
+    {
+      "candidate": "GEO SEVIRI IR Cloud Growth Trend",
+      "classification": "D. OPERATIONALLY INFEASIBLE / B. REDUNDANT",
+      "survives": false
+    },
+    {
+      "candidate": "Kiruna Ceilometer Base Sequence",
+      "classification": "B. SPATIALLY UNREPRESENTATIVE / REDUNDANT",
+      "survives": false
+    },
+    {
+      "candidate": "Ground Radiometer SW_IN Growth/Decay Proxies",
+      "classification": "B. FEASIBLE BUT REPACKAGED / REDUNDANT",
+      "survives": false
+    }
+  ],
+  "surviving_class_a_candidates": 0,
+  "route_verdict": "NOT_FEASIBLE",
+  "route_status": "CLOSED",
+  "experiment_authorized": false
+}

@@ -1,0 +1,12 @@
+{
+  "prediction_csv_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+  "total_prediction_rows": 4152,
+  "daytime_rows_count": 2883,
+  "night_rows_count": 1269,
+  "mean_daytime_actual_w_m2": 128.92852809573438,
+  "daytime_mae_w_m2": 36.18865705359186,
+  "daytime_nmae_pct": 28.068773907602818,
+  "daytime_rmse_w_m2": 64.21949521348819,
+  "daytime_bias_w_m2": 1.4393994790442657,
+  "night_mae_w_m2": 0.0
+}

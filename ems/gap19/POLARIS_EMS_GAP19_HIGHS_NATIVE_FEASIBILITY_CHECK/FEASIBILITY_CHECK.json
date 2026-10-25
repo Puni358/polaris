@@ -1,0 +1,65 @@
+{
+  "audit_metadata": {
+    "audit_phase": "GAP19_HIGHS_NATIVE_FEASIBILITY_CHECK",
+    "audit_date": "2026-09-22",
+    "generation_mode": "EVIDENCE_BASED_TECHNICAL_AUDIT",
+    "execution_performed": false,
+    "code_modified": false
+  },
+  "final_governed_classifications": {
+    "HIGHS_NATIVE_MILP_MULTI_OBJECTIVE": "CONFIRMED_BUT_QUALIFIED",
+    "POLARIS_OPTION_B_TECHNICAL_FEASIBILITY": "ESTABLISHED_WITH_VERSION_DEPENDENCY",
+    "MATHEMATICAL_TRANSFER": "UNCHANGED_WITH_DEFINED_CONDITIONS"
+  },
+  "verified_environment": {
+    "python_version": "3.12.3",
+    "scipy_version": "1.18.1",
+    "bundled_highs_version": "1.12.0",
+    "standalone_highspy_installed": false,
+    "scipy_public_milp_supports_multiobjective": false,
+    "scipy_internal_core_supports_multiobjective": true
+  },
+  "highs_multiobjective_api_evidence": {
+    "core_module": "scipy.optimize._highspy._core",
+    "class_name": "_Highs",
+    "exposed_methods": [
+      "addLinearObjective",
+      "clearLinearObjectives",
+      "getNumLinearObjectives",
+      "getLinearObjective"
+    ],
+    "struct_name": "HighsLinearObjective",
+    "exposed_struct_fields": [
+      "coefficients",
+      "weight",
+      "offset",
+      "abs_tolerance",
+      "rel_tolerance",
+      "priority"
+    ],
+    "blending_option_name": "blend_multi_objectives",
+    "blending_option_default": true,
+    "required_lexicographic_blending_setting": false
+  },
+  "evidence_classification_counts": {
+    "VERIFIED_FACT": 8,
+    "DOCUMENTED_CAPABILITY": 3,
+    "INFERENCE": 2,
+    "NOT_YET_VERIFIED": 2,
+    "GOVERNANCE_BLOCKER": 2
+  },
+  "unresolved_items": [
+    "exact native HiGHS MILP objective semantics must be mapped to POLARIS tolerance/priority requirements",
+    "Stage 2 EBR/terminal-reserve formulation is still a POLARIS governance/formulation issue for BOTH A and B",
+    "battery degradation objective placement remains unresolved",
+    "native HiGHS use would require an implementation path exposing the underlying _Highs API rather than scipy.optimize.milp()",
+    "standalone highspy installation has NOT been performed",
+    "no A-vs-B empirical equivalence test has been performed"
+  ],
+  "governance_guarantees": {
+    "option_selected": null,
+    "recommendation_made": false,
+    "implementation_readiness_claimed": false,
+    "empirical_benchmarks_run": false
+  }
+}

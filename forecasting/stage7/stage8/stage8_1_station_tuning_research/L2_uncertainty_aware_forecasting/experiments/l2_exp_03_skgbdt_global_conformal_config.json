@@ -1,0 +1,78 @@
+{
+  "experiment_id": "L2-EXP-03",
+  "experiment_title": "POLARIS L2 Frozen SKGBDT Global Conformal Calibration",
+  "created_at": "2026-10-04T10:59:00+05:30",
+  "station_target": {
+    "station_id": "ANS_NMS",
+    "station_name": "Mount Nuolja AWS",
+    "elevation_m": 702.0
+  },
+  "authoritative_inputs": {
+    "historical_residual_dataset": {
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "exact_38_feature_matrix": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+      "sha256": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde"
+    },
+    "exact_frozen_f_predictions": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_FROZEN_F_PREDICTIONS_2020_2023.csv",
+      "sha256": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0"
+    },
+    "frozen_candidate_f_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    },
+    "frozen_skgbdt_q10_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q10.joblib"
+    },
+    "frozen_skgbdt_q50_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q50.joblib"
+    },
+    "frozen_skgbdt_q90_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q90.joblib"
+    }
+  },
+  "temporal_splits": {
+    "train": {
+      "years": [2020, 2021],
+      "usage": "Frozen model training (NOT rerun)"
+    },
+    "calibration": {
+      "year": 2022,
+      "partition": "Daytime observations only (solar_elevation > 0.0)",
+      "usage": "Conformal adjustment q_hat estimation exclusively"
+    },
+    "blind_test": {
+      "range": "2023-01-01 to 2023-09-30",
+      "partition": "Daytime observations only (solar_elevation > 0.0)",
+      "usage": "Single-use untouched evaluation"
+    },
+    "quarantined": {
+      "year": 2024,
+      "usage": "STRICTLY FORBIDDEN / QUARANTINED"
+    }
+  },
+  "calibration_method": {
+    "type": "Global Split-Conformal / CQR",
+    "nominal_coverage": 0.80,
+    "alpha": 0.20,
+    "nonconformity_score": "r_i = max(q_low_ordered_i - y_i, y_i - q_high_ordered_i)",
+    "finite_sample_rank": "k = ceil((N + 1) * (1 - alpha))",
+    "quantile_rule": "q_hat = np.sort(r)[k - 1]"
+  },
+  "physical_bounding_governance": {
+    "lower_bound": 0.0,
+    "upper_bound_formula": "1.25 * clearsky_ghi",
+    "night_zeroing_elevation": 0.0,
+    "classification": "SIMULATED_RESEARCH_ASSUMPTION (Not production governance)"
+  },
+  "primary_gates": {
+    "P1_blind_picp": [0.76, 0.84],
+    "P2_validation_picp": [0.76, 0.84],
+    "P3_subslice_floor": 0.60,
+    "P4_physical_constraints": true,
+    "P5_f_point_forecast_invariance": 0.0
+  }
+}

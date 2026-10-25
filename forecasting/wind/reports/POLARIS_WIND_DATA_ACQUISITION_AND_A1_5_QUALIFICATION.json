@@ -1,0 +1,162 @@
+{
+  "governance": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A1_5_BOUNDED_DATA_ACQUISITION_AND_QUALIFICATION",
+    "authorization": "AUTHORIZED_PHASE_A1_5_ONLY",
+    "date_utc": "2026-09-18T03:46:00Z"
+  },
+  "machine_readable_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "AUTHORIZED_PHASE_A1_5",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "CONDITIONALLY_SUFFICIENT",
+    "WIND_MODEL_TRAINING": "NOT_AUTHORIZED",
+    "WIND_MODEL_INFERENCE": "NOT_AUTHORIZED",
+    "WIND_MODEL_SELECTION": "NOT_AUTHORIZED",
+    "WIND_FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_EXPERIMENT": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "A1_5_ONLY",
+    "A2_AUTHORIZATION": "NOT_AUTHORIZED_PENDING_A1_5_OUTCOME"
+  },
+  "acquisition_routes_investigated": [
+    {
+      "route_id": "ROUTE_1_LOCAL_REPOSITORY",
+      "priority": 1,
+      "source_name": "Local POLARIS Repository Workspace",
+      "access_method": "Local File Inspection",
+      "status": "COMPLETED_NO_MEASURED_WIND_AT_NUOLJA",
+      "data_obtained": "Metadata and existing datasets inspected. SITES Nuolja AWS lacks anemometer; ENEV METAR is offsite airport (~100km distant); NWP table is forecast output covariate only.",
+      "route_closed": true
+    },
+    {
+      "route_id": "ROUTE_2_SITES_NUOLJA_AWS_OPEN_DATA",
+      "priority": 2,
+      "source_name": "SITES Data Portal / Abisko Scientific Research Station (Nuolja AWS)",
+      "access_method": "API / Web Reconnaissance",
+      "status": "COMPLETED_NO_WIND_SENSORS_ON_NUOLJA_AWS",
+      "data_obtained": "Confirmed via SITES metadata and station records that Nuolja Middle Station AWS logs TA, RH, SW_IN, TS, PRECIP, D_SNOW only. No wind speed or direction sensors are installed on the Nuolja AWS mast.",
+      "route_closed": true
+    },
+    {
+      "route_id": "ROUTE_3_SMHI_ABISKO_AUT_OPEN_DATA",
+      "priority": 3,
+      "source_name": "SMHI Open Data API (Station 188790: Abisko Aut)",
+      "access_method": "REST API Download (CC BY 4.0 Open License)",
+      "status": "SUCCESSFULLY_ACQUIRED_AND_QUALIFIED",
+      "data_obtained": "Full empirical 1-hour wind speed (m/s) and wind direction (degrees) time-series at 10m height for full 2024 benchmark period. Station owned by Polarforskningssekretariatet (Swedish Polar Research Secretariat), located ~4.1 km ENE of Mount Nuolja at 392m a.s.l.",
+      "route_closed": true
+    },
+    {
+      "route_id": "ROUTE_4_RESTRICTED_POLAR_STATION_DATA",
+      "priority": 4,
+      "source_name": "SANAP SANAE IV / AADC Antarctic Station High-Res Load/Wind",
+      "access_method": "Institutional Data Access Request Review",
+      "status": "RESTRICTED_ACCESS",
+      "data_obtained": "Metadata only. High-resolution time-series require formal institutional research agreements. Route documented and paused.",
+      "route_closed": true
+    }
+  ],
+  "acquired_dataset_details": {
+    "dataset_id": "SMHI_ABISKO_AUT_188790_WIND_2024",
+    "source_custodian": "SMHI (Swedish Meteorological and Hydrological Institute) & Polarforskningssekretariatet",
+    "station_name": "Abisko Aut (Station ID: 188790)",
+    "geographic_location": "Abisko, Swedish Lapland (68.3538 N, 18.8164 E, 392.235m a.s.l.)",
+    "proximity_to_nuolja": "~4.1 km East-Northeast of Mount Nuolja AWS (68.3621 N, 18.7388 E, 702m a.s.l.)",
+    "variables_acquired": [
+      {
+        "variable_code": "Vindhastighet",
+        "parameter_id": 4,
+        "physical_meaning": "10m Height Measured Wind Speed",
+        "units": "m/s",
+        "measurement_height": "10.0m above ground",
+        "status": "EMPIRICAL_GROUND_TRUTH_MEASUREMENT"
+      },
+      {
+        "variable_code": "Vindriktning",
+        "parameter_id": 3,
+        "physical_meaning": "10m Height Measured Wind Direction",
+        "units": "degrees",
+        "measurement_height": "10.0m above ground",
+        "status": "EMPIRICAL_GROUND_TRUTH_MEASUREMENT"
+      }
+    ],
+    "temporal_coverage": {
+      "earliest_timestamp": "2024-01-01 00:00:00 UTC",
+      "latest_timestamp": "2024-12-31 23:00:00 UTC",
+      "nominal_sampling_interval": "1 hour",
+      "total_observations_2024": 8784,
+      "quality_code_summary": "100% Quality Controlled / Checked Archive (SMHI Codes G/Y)"
+    },
+    "licensing": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+  },
+  "target_qualification": {
+    "candidate_target_states": [
+      {
+        "target_name": "ground_wind_speed_10m_abisko",
+        "category": "measured_wind_speed",
+        "units": "m/s",
+        "status": "SUPPORTED",
+        "evidence": "Continuous hourly ground-truth 10m wind speed measurements acquired from SMHI Abisko Aut station for full 2024 benchmark period."
+      },
+      {
+        "target_name": "ground_wind_direction_10m_abisko",
+        "category": "measured_wind_direction",
+        "units": "degrees",
+        "status": "SUPPORTED",
+        "evidence": "Continuous hourly ground-truth 10m wind direction measurements acquired from SMHI Abisko Aut station for full 2024 benchmark period."
+      },
+      {
+        "target_name": "nuolja_ridge_wind_speed_scaled",
+        "category": "derived_wind_speed",
+        "units": "m/s",
+        "status": "CONDITIONALLY_SUPPORTED",
+        "evidence": "Abisko station (392m a.s.l.) requires boundary layer / altitude scaling (log-law or power-law) or spatial advection model to estimate Nuolja ridge top (702m a.s.l.) wind speed."
+      },
+      {
+        "target_name": "measured_wind_power_generation_w",
+        "category": "measured_wind_power",
+        "units": "W",
+        "status": "NOT_SUPPORTED",
+        "evidence": "Zero direct turbine electrical generation measurements exist. Wind generation target requires an authorized IEC 61400-12-1 turbine power curve conversion model P = f(v)."
+      }
+    ],
+    "final_target_status": "WIND_TARGET_STATUS = CONDITIONALLY_ESTABLISHED"
+  },
+  "data_sufficiency_assessment": {
+    "decision": "CONDITIONALLY_SUFFICIENT",
+    "status_code": "WIND_DATA_STATUS = CONDITIONALLY_SUFFICIENT",
+    "explanation": "Acquired SMHI Abisko Aut dataset provides empirical 1-hour wind speed and direction for full 2024 period, matching POLARIS 347 daily forecast origins and predictor tables. However, direct wind electrical generation (W) is not measured directly and requires a turbine power curve conversion model, and altitude scaling between Abisko (392m) and Nuolja (702m) must be formally specified.",
+    "conditionality_requirements": [
+      "Authorization of an explicit IEC 61400-12-1 wind turbine power curve model (P = f(v)) to convert wind speed (m/s) to ForecastBundle.wind_generation (W).",
+      "Formal specification of altitude boundary layer scaling or direct use of Abisko station as the microgrid base station target."
+    ]
+  },
+  "a2_readiness_assessment": {
+    "status": "A2_REQUIRES_RESOLUTION_OF_DOCUMENTED_LIMITATIONS",
+    "statement": "A2 requires resolution of the documented data limitations (turbine power curve model authorization and altitude scaling verification) before authorization.",
+    "prerequisites_for_future_a2": [
+      "Formal project governance authorization of wind turbine power curve conversion contract.",
+      "Pre-registration of canonical train/val/test fold splits for SMHI Abisko target.",
+      "Pre-registration of baseline models (Naive Persistence, Raw NWP) and evaluation metrics.",
+      "Explicit separate governance authorization issued for Phase A2."
+    ]
+  },
+  "firewall_compliance": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "EXPERIMENT_EXECUTED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "MODEL_SELECTION_EXECUTED": "NO",
+    "SYNTHETIC_SCENARIOS_MODIFIED": "NO",
+    "REAL_DATA_INTEGRATED": "NO",
+    "IMPLEMENTATION_STATUS": "A1_5_ONLY"
+  }
+}

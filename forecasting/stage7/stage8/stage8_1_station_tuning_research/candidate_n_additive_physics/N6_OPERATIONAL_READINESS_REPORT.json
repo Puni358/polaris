@@ -1,0 +1,214 @@
+{
+  "timestamp_utc": "2026-10-17T05:55:58.427640+00:00",
+  "task_summary": "POLARIS Candidate N6 Operational Data Availability & Execution Verification",
+  "governance_status": {
+    "winner": null,
+    "production_promotion": false,
+    "status": "CANDIDATE_N6_OPERATIONAL_INPUT_AVAILABILITY_DEMONSTRATED"
+  },
+  "protected_assets": {
+    "candidate_n6_model.joblib": {
+      "sha256": "b1b54c93e2dbefdcb562e4229394a2492b299b66426beaafead17f6777395197",
+      "verified": true
+    },
+    "candidate_n1_model.joblib": {
+      "sha256": "7265dabe6ea2c81bc38e724b41e0c02dd1e485cd124939b7249320b3f4abf9d7",
+      "verified": true
+    },
+    "CANDIDATE_N_MANIFEST.json": {
+      "sha256": "1666a6860706ab266eec7d7995b7ee31308d21263aa1112485e229b916be1031",
+      "verified": true
+    },
+    "ensemble_parameters.json": {
+      "sha256": "26cfbd19744a4a01719470d20808b5316af7262aed6c2cd84376d8987ce0abc0",
+      "verified": true
+    }
+  },
+  "meps_18z_arrival_evidence": [
+    {
+      "origin": "2024-01-20",
+      "season": "Winter Polar Night",
+      "run_init_utc": "2024-01-19T18:00:00+00:00",
+      "provider_creation_utc": "2024-01-19T20:08:28",
+      "decision_cutoff_utc": "2024-01-20T00:00:00+00:00",
+      "margin_hours": 3.86,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    },
+    {
+      "origin": "2024-03-20",
+      "season": "Spring Equinox",
+      "run_init_utc": "2024-03-19T18:00:00+00:00",
+      "provider_creation_utc": "2024-03-19T20:07:28",
+      "decision_cutoff_utc": "2024-03-20T00:00:00+00:00",
+      "margin_hours": 3.88,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    },
+    {
+      "origin": "2024-06-01",
+      "season": "Summer Daylight (Smoke Origin)",
+      "run_init_utc": "2024-05-31T18:00:00+00:00",
+      "provider_creation_utc": "2024-05-31T20:01:43",
+      "decision_cutoff_utc": "2024-06-01T00:00:00+00:00",
+      "margin_hours": 3.97,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    },
+    {
+      "origin": "2024-06-21",
+      "season": "Summer Solstice (Peak Sun)",
+      "run_init_utc": "2024-06-20T18:00:00+00:00",
+      "provider_creation_utc": "2024-06-20T20:01:51",
+      "decision_cutoff_utc": "2024-06-21T00:00:00+00:00",
+      "margin_hours": 3.97,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    },
+    {
+      "origin": "2024-09-22",
+      "season": "Autumn Equinox",
+      "run_init_utc": "2024-09-21T18:00:00+00:00",
+      "provider_creation_utc": "2024-09-21T20:02:21",
+      "decision_cutoff_utc": "2024-09-22T00:00:00+00:00",
+      "margin_hours": 3.96,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    },
+    {
+      "origin": "2025-02-15",
+      "season": "Winter 2025 Polar Transition",
+      "run_init_utc": "2025-02-14T18:00:00+00:00",
+      "provider_creation_utc": "2025-02-14T20:04:32",
+      "decision_cutoff_utc": "2025-02-15T00:00:00+00:00",
+      "margin_hours": 3.92,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    },
+    {
+      "origin": "2025-06-15",
+      "season": "Summer 2025 Solstice Window",
+      "run_init_utc": "2025-06-14T18:00:00+00:00",
+      "provider_creation_utc": "2025-06-14T20:00:03",
+      "decision_cutoff_utc": "2025-06-15T00:00:00+00:00",
+      "margin_hours": 4.0,
+      "cutoff_satisfied": true,
+      "horizons_count": 24,
+      "is_untruncated": true
+    }
+  ],
+  "truncation_resolution": {
+    "variable_u700": [
+      6.824872,
+      6.84733,
+      6.162237,
+      6.126766,
+      6.4349785,
+      6.2172832,
+      6.6101,
+      5.4869137,
+      5.0875034,
+      5.392296,
+      5.492571,
+      5.9121704,
+      6.964571,
+      8.111789,
+      8.644265,
+      8.311256,
+      7.9900875,
+      7.9499207,
+      7.800104,
+      6.786169,
+      6.9413586,
+      7.2872696,
+      7.2872667,
+      6.898525
+    ],
+    "variable_v700": [
+      7.576458,
+      7.78913,
+      8.216082,
+      8.140498,
+      8.406194,
+      8.579181,
+      8.305253,
+      7.5890865,
+      7.250659,
+      6.6475687,
+      6.590904,
+      6.743183,
+      6.0786858,
+      5.848981,
+      4.922682,
+      4.782346,
+      4.7058353,
+      4.73567,
+      5.341177,
+      5.9520245,
+      6.1513863,
+      6.3832474,
+      6.546714,
+      7.2236156
+    ],
+    "horizons_20_24_u700": [
+      6.786169,
+      6.9413586,
+      7.2872696,
+      7.2872667,
+      6.898525
+    ],
+    "horizons_20_24_v700": [
+      5.9520245,
+      6.1513863,
+      6.3832474,
+      6.546714,
+      7.2236156
+    ],
+    "imputation_used": false,
+    "physical_provenance": "MET Norway THREDDS meps_det_pl (leads 6..29)"
+  },
+  "live_operational_execution": {
+    "origin": "2024-06-01T00:00:00Z",
+    "feature_metadata": {
+      "origin_utc": "2024-06-01T00:00:00+00:00",
+      "shape": [
+        24,
+        36
+      ],
+      "total_nans": 0,
+      "u700_horizons_20_24": [
+        6.786169,
+        6.9413586,
+        7.2872696,
+        7.2872667,
+        6.898525
+      ],
+      "v700_horizons_20_24": [
+        5.9520245,
+        6.1513863,
+        6.3832474,
+        6.546714,
+        7.2236156
+      ],
+      "wind_provider_creation_utc": "2024-05-31T20:01:43",
+      "wind_provider_margin_seconds": 14297.0,
+      "wind_cutoff_satisfied": true,
+      "telemetry_source": "DYNAMIC_TELEMETRY"
+    },
+    "bundle_schema": "1.0.0",
+    "solar_point_mean_w": 10738.788333333332,
+    "solar_point_max_w": 29245.38,
+    "ebr_floor_wh": 15000.0,
+    "router_assessment": "NORMAL",
+    "gap19_status": "OPTIMAL",
+    "gap19_objective": 30.9701,
+    "next_battery_soc_pct": 68.42,
+    "execution_success": true
+  }
+}

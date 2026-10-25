@@ -1,0 +1,76 @@
+{
+  "G1_Determinism": {
+    "pass": true,
+    "max_diff_diesel_w": 0.0,
+    "max_diff_battery_charge_w": 0.0,
+    "max_diff_battery_discharge_w": 0.0,
+    "max_diff_soc_after_pct": 0.0,
+    "max_diff_unmet_load_w": 0.0
+  },
+  "G2_Accounting": {
+    "pass": true,
+    "unique_origins_a": 123,
+    "unique_origins_b": 123,
+    "total_rows": 29520,
+    "expected_rows": 29520
+  },
+  "G3_Optimizer_Status": {
+    "pass": true,
+    "non_optimal_count": 0
+  },
+  "G4_Route_Propagation": {
+    "pass": true,
+    "mismatches_count": 0
+  },
+  "G5_EMERGENCY_Rows": {
+    "pass": true,
+    "violations_count": 0
+  },
+  "G6_Busbar_Balance": {
+    "pass": true,
+    "max_busbar_balance_error_w": 0.0
+  },
+  "G7_SOC_Accounting": {
+    "pass": true,
+    "min_soc_pct": 20.0,
+    "max_soc_pct": 95.0,
+    "soc_floor_violations_count": 0
+  },
+  "G8_Fuel_Accounting": {
+    "pass": true,
+    "max_fuel_accounting_error_l": 5.000000000165983e-05,
+    "starvation_rows_count": 1,
+    "starvation_rows": [
+      {
+        "origin_id": 39,
+        "arm": "Candidate_SW",
+        "realization": "A",
+        "hour": 22,
+        "diesel_power": 0.0,
+        "diesel_fuel": 3.6293
+      }
+    ]
+  },
+  "G9_Reconciliation": {
+    "pass": true,
+    "missing_or_nan_fields": []
+  },
+  "G11_Hour0_Identity": {
+    "pass": true,
+    "max_h0_diff_diesel_w": 0.0,
+    "max_h0_diff_charge_plan_w": 0.0,
+    "max_h0_diff_discharge_plan_w": 0.0,
+    "max_h0_diff_served_plan_w": 0.0,
+    "max_h0_diff_unmet_plan_w": 0.0,
+    "max_h0_diff_flex_plan_w": 0.0,
+    "max_h0_diff_v_start": 0.0,
+    "max_h0_diff_j1": 0.0,
+    "max_h0_diff_j2": 0.0,
+    "max_h0_diff_j3": 0.0,
+    "max_h0_diff_j4": 0.0
+  },
+  "G10_Hash_Guards": {
+    "pass": true,
+    "verified_hashes_count": 18
+  }
+}

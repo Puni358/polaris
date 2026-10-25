@@ -1,0 +1,9 @@
+# Modular Diesel Generator Configuration
+status_label: "PROTOTYPE_ASSUMPTION"
+min_power_w: 10000.0   # 10 kW min generation when active
+max_power_w: 100000.0  # 100 kW max rating
+base_fuel_consumption_l_per_h: 5.0 # Idle fuel rate L/h
+marginal_fuel_consumption_l_per_wh: 0.00025 # 0.25 L per kWh
+fuel_cost_per_l: 2.50  # 2.50 currency units / L
+startup_cost: 15.0     # Startup penalty
+min_up_time_hours: 2   # Minimum continuous run hours

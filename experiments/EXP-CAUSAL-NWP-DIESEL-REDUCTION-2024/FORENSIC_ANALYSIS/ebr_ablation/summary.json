@@ -1,0 +1,404 @@
+{
+ "77": {
+  "frozen_B_reproduced": true,
+  "invariants": {
+   "input_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "terminal_floor_preserved_in_ablation": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-07-16T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 44598.98,
+    "plan_charge_t0_w": 40022.95,
+    "plan_discharge_t0_w": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 0.0,
+    "plan_discharge_t0_w": 4576.03
+   }
+  },
+  "base": {
+   "fuel_l": 74.3196,
+   "on_hours": 6,
+   "startups": 3,
+   "diesel_energy_wh": 177278.52,
+   "diesel_to_battery_wh_proxy": 129609.15,
+   "battery_charge_wh": 146901.84,
+   "battery_discharge_wh": 78014.56,
+   "efc": 0.5623,
+   "min_soc_pct": 62.56,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_h24": 75.18,
+   "unmet_wh": 33919.4,
+   "curtail_wh": 147055.66,
+   "curtail_same_hour_discharge_wh": 124579.13,
+   "step0_plan_diesel_w": 44598.98,
+   "step0_plan_charge_w": 40022.95,
+   "diesel_charge_steps_t0": 6,
+   "terminal_tight_steps": 10,
+   "reserve_tight_steps": 17
+  },
+  "ablated": {
+   "fuel_l": 16.9254,
+   "on_hours": 1,
+   "startups": 1,
+   "diesel_energy_wh": 47701.55,
+   "diesel_to_battery_wh_proxy": 32148.59,
+   "battery_charge_wh": 78278.79,
+   "battery_discharge_wh": 74118.7,
+   "efc": 0.381,
+   "min_soc_pct": 31.76,
+   "max_soc_pct": 51.26,
+   "terminal_soc_pct_h24": 45.73,
+   "unmet_wh": 52068.54,
+   "curtail_wh": 100355.02,
+   "curtail_same_hour_discharge_wh": 100355.02,
+   "step0_plan_diesel_w": 0.0,
+   "step0_plan_charge_w": 0.0,
+   "diesel_charge_steps_t0": 1,
+   "terminal_tight_steps": 19,
+   "reserve_tight_steps": 1
+  }
+ },
+ "56": {
+  "frozen_B_reproduced": true,
+  "invariants": {
+   "input_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "terminal_floor_preserved_in_ablation": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-06-25T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 44462.64,
+    "plan_charge_t0_w": 39862.64,
+    "plan_discharge_t0_w": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 0.0,
+    "plan_discharge_t0_w": 4600.0
+   }
+  },
+  "base": {
+   "fuel_l": 93.7559,
+   "on_hours": 7,
+   "startups": 4,
+   "diesel_energy_wh": 235023.71,
+   "diesel_to_battery_wh_proxy": 149228.06,
+   "battery_charge_wh": 149228.06,
+   "battery_discharge_wh": 63106.03,
+   "efc": 0.5308,
+   "min_soc_pct": 62.95,
+   "max_soc_pct": 92.22,
+   "terminal_soc_pct_h24": 84.35,
+   "unmet_wh": 61062.34,
+   "curtail_wh": 87994.98,
+   "curtail_same_hour_discharge_wh": 87994.98,
+   "step0_plan_diesel_w": 44462.64,
+   "step0_plan_charge_w": 39862.64,
+   "diesel_charge_steps_t0": 7,
+   "terminal_tight_steps": 12,
+   "reserve_tight_steps": 17
+  },
+  "ablated": {
+   "fuel_l": 61.5814,
+   "on_hours": 4,
+   "startups": 2,
+   "diesel_energy_wh": 166325.83,
+   "diesel_to_battery_wh_proxy": 123054.42,
+   "battery_charge_wh": 123054.42,
+   "battery_discharge_wh": 82633.59,
+   "efc": 0.5142,
+   "min_soc_pct": 28.09,
+   "max_soc_pct": 61.7,
+   "terminal_soc_pct_h24": 61.7,
+   "unmet_wh": 79922.57,
+   "curtail_wh": 83858.53,
+   "curtail_same_hour_discharge_wh": 80855.63,
+   "step0_plan_diesel_w": 0.0,
+   "step0_plan_charge_w": 0.0,
+   "diesel_charge_steps_t0": 4,
+   "terminal_tight_steps": 17,
+   "reserve_tight_steps": 3
+  }
+ },
+ "66": {
+  "frozen_B_reproduced": true,
+  "invariants": {
+   "input_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "terminal_floor_preserved_in_ablation": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-07-05T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 54592.86,
+    "plan_charge_t0_w": 50000.0,
+    "plan_discharge_t0_w": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 0.0,
+    "plan_discharge_t0_w": 4592.86
+   }
+  },
+  "base": {
+   "fuel_l": 80.7361,
+   "on_hours": 7,
+   "startups": 4,
+   "diesel_energy_wh": 182944.39,
+   "diesel_to_battery_wh_proxy": 120752.11,
+   "battery_charge_wh": 165482.16,
+   "battery_discharge_wh": 66461.87,
+   "efc": 0.5799,
+   "min_soc_pct": 57.83,
+   "max_soc_pct": 90.0,
+   "terminal_soc_pct_h24": 90.0,
+   "unmet_wh": 44634.32,
+   "curtail_wh": 37200.86,
+   "curtail_same_hour_discharge_wh": 37200.86,
+   "step0_plan_diesel_w": 54592.86,
+   "step0_plan_charge_w": 50000.0,
+   "diesel_charge_steps_t0": 7,
+   "terminal_tight_steps": 10,
+   "reserve_tight_steps": 13
+  },
+  "ablated": {
+   "fuel_l": 15.8504,
+   "on_hours": 1,
+   "startups": 1,
+   "diesel_energy_wh": 43401.45,
+   "diesel_to_battery_wh_proxy": 27970.11,
+   "battery_charge_wh": 81133.86,
+   "battery_discharge_wh": 61231.38,
+   "efc": 0.3559,
+   "min_soc_pct": 33.86,
+   "max_soc_pct": 58.32,
+   "terminal_soc_pct_h24": 54.04,
+   "unmet_wh": 82770.41,
+   "curtail_wh": 14911.82,
+   "curtail_same_hour_discharge_wh": 14911.82,
+   "step0_plan_diesel_w": 0.0,
+   "step0_plan_charge_w": 0.0,
+   "diesel_charge_steps_t0": 1,
+   "terminal_tight_steps": 16,
+   "reserve_tight_steps": 1
+  }
+ },
+ "23": {
+  "frozen_B_reproduced": true,
+  "invariants": {
+   "input_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "terminal_floor_preserved_in_ablation": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-05-23T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 43821.9,
+    "plan_charge_t0_w": 39223.94,
+    "plan_discharge_t0_w": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 0.0,
+    "plan_discharge_t0_w": 4597.96
+   }
+  },
+  "base": {
+   "fuel_l": 61.8951,
+   "on_hours": 4,
+   "startups": 4,
+   "diesel_energy_wh": 167579.89,
+   "diesel_to_battery_wh_proxy": 140200.22,
+   "battery_charge_wh": 161381.24,
+   "battery_discharge_wh": 95594.3,
+   "efc": 0.6424,
+   "min_soc_pct": 62.92,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_h24": 72.28,
+   "unmet_wh": 63431.92,
+   "curtail_wh": 181076.44,
+   "curtail_same_hour_discharge_wh": 158731.93,
+   "step0_plan_diesel_w": 43821.9,
+   "step0_plan_charge_w": 39223.94,
+   "diesel_charge_steps_t0": 4,
+   "terminal_tight_steps": 14,
+   "reserve_tight_steps": 17
+  },
+  "ablated": {
+   "fuel_l": 0.0,
+   "on_hours": 0,
+   "startups": 0,
+   "diesel_energy_wh": 0.0,
+   "diesel_to_battery_wh_proxy": 0.0,
+   "battery_charge_wh": 78430.42,
+   "battery_discharge_wh": 98605.92,
+   "efc": 0.4426,
+   "min_soc_pct": 22.62,
+   "max_soc_pct": 58.55,
+   "terminal_soc_pct_h24": 32.49,
+   "unmet_wh": 77261.53,
+   "curtail_wh": 113288.6,
+   "curtail_same_hour_discharge_wh": 113288.6,
+   "step0_plan_diesel_w": 0.0,
+   "step0_plan_charge_w": 0.0,
+   "diesel_charge_steps_t0": 0,
+   "terminal_tight_steps": 20,
+   "reserve_tight_steps": 6
+  }
+ },
+ "8": {
+  "frozen_B_reproduced": true,
+  "invariants": {
+   "input_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "terminal_floor_preserved_in_ablation": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-05-08T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 26400.37,
+    "plan_charge_t0_w": 21800.37,
+    "plan_discharge_t0_w": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 0.0,
+    "plan_discharge_t0_w": 4600.0
+   }
+  },
+  "base": {
+   "fuel_l": 38.3751,
+   "on_hours": 3,
+   "startups": 2,
+   "diesel_energy_wh": 93500.37,
+   "diesel_to_battery_wh_proxy": 60478.9,
+   "battery_charge_wh": 145896.76,
+   "battery_discharge_wh": 49147.53,
+   "efc": 0.4876,
+   "min_soc_pct": 57.14,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_h24": 90.4,
+   "unmet_wh": 54983.84,
+   "curtail_wh": 111847.82,
+   "curtail_same_hour_discharge_wh": 107804.36,
+   "step0_plan_diesel_w": 26400.37,
+   "step0_plan_charge_w": 21800.37,
+   "diesel_charge_steps_t0": 3,
+   "terminal_tight_steps": 20,
+   "reserve_tight_steps": 18
+  },
+  "ablated": {
+   "fuel_l": 0.0,
+   "on_hours": 0,
+   "startups": 0,
+   "diesel_energy_wh": 0.0,
+   "diesel_to_battery_wh_proxy": 0.0,
+   "battery_charge_wh": 131796.94,
+   "battery_discharge_wh": 88560.14,
+   "efc": 0.5509,
+   "min_soc_pct": 27.77,
+   "max_soc_pct": 85.97,
+   "terminal_soc_pct_h24": 62.5,
+   "unmet_wh": 57018.18,
+   "curtail_wh": 73894.22,
+   "curtail_same_hour_discharge_wh": 73894.22,
+   "step0_plan_diesel_w": 0.0,
+   "step0_plan_charge_w": 0.0,
+   "diesel_charge_steps_t0": 0,
+   "terminal_tight_steps": 20,
+   "reserve_tight_steps": 7
+  }
+ },
+ "30": {
+  "frozen_B_reproduced": true,
+  "invariants": {
+   "input_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "terminal_floor_preserved_in_ablation": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-05-30T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 24885.76,
+    "plan_charge_t0_w": 20285.76,
+    "plan_discharge_t0_w": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 0.0,
+    "plan_discharge_t0_w": 12100.0
+   }
+  },
+  "base": {
+   "fuel_l": 39.4323,
+   "on_hours": 4,
+   "startups": 2,
+   "diesel_energy_wh": 77729.31,
+   "diesel_to_battery_wh_proxy": 32856.77,
+   "battery_charge_wh": 140423.24,
+   "battery_discharge_wh": 69515.59,
+   "efc": 0.5248,
+   "min_soc_pct": 56.77,
+   "max_soc_pct": 90.88,
+   "terminal_soc_pct_h24": 76.81,
+   "unmet_wh": 62130.62,
+   "curtail_wh": 101625.86,
+   "curtail_same_hour_discharge_wh": 101625.86,
+   "step0_plan_diesel_w": 24885.76,
+   "step0_plan_charge_w": 20285.76,
+   "diesel_charge_steps_t0": 4,
+   "terminal_tight_steps": 3,
+   "reserve_tight_steps": 14
+  },
+  "ablated": {
+   "fuel_l": 0.0,
+   "on_hours": 0,
+   "startups": 0,
+   "diesel_energy_wh": 0.0,
+   "diesel_to_battery_wh_proxy": 0.0,
+   "battery_charge_wh": 146612.84,
+   "battery_discharge_wh": 106140.35,
+   "efc": 0.6319,
+   "min_soc_pct": 23.7,
+   "max_soc_pct": 91.14,
+   "terminal_soc_pct_h24": 59.76,
+   "unmet_wh": 66039.41,
+   "curtail_wh": 58240.5,
+   "curtail_same_hour_discharge_wh": 58240.5,
+   "step0_plan_diesel_w": 0.0,
+   "step0_plan_charge_w": 0.0,
+   "diesel_charge_steps_t0": 0,
+   "terminal_tight_steps": 9,
+   "reserve_tight_steps": 1
+  }
+ }
+}

@@ -1,0 +1,19 @@
+Source Identifier,File Path,Section / Location,SHA-256 Hash,Verification Status,Description / Role
+SRC-OPT-01,system/optimization/implementations/milp.py,Lines 1-378,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35,VERIFIED_FROZEN,Frozen SciPy HiGHS LocalMILPEnergyOptimizer implementation
+SRC-CFG-01,system/config/battery.yaml,Lines 1-12,e1df36d7a468d6d8db7b3f9b282caefc3f3fef6b8e3a241f9d5045a55bc81290,VERIFIED_FROZEN,Modular battery storage configuration (PROTOTYPE_ASSUMPTION)
+SRC-CFG-02,system/config/diesel.yaml,Lines 1-10,c0d38865c364fbfa27d098e94ca134df06fae0520268ec3b2df7e87178c1db20,VERIFIED_FROZEN,Modular diesel generator configuration (PROTOTYPE_ASSUMPTION)
+SRC-CFG-03,system/config/loads.yaml,Lines 1-17,7a3cb1d43a531eefc5e3f16d7a040bcf6696dbf59a68bc18b958eb76e108ab42,VERIFIED_FROZEN,Electrical loads configuration & unmet penalty (PROTOTYPE_ASSUMPTION)
+SRC-CFG-04,system/config/optimizer.yaml,Lines 1-10,48b48873ca9c1b3f7efb00350ec252277d13bcf3bc1025a5eefc46aeae0656cf,VERIFIED_FROZEN,Energy optimizer weight configuration (PROTOTYPE_ASSUMPTION)
+SRC-CFG-05,system/config/station.yaml,Lines 1-16,36d36eec89e900c14b73bcf35e9aa82a3560f4e3c9841ca360d00f40a1b63b46,VERIFIED_FROZEN,Nuolja prototype station configuration (PROTOTYPE_ASSUMPTION)
+SRC-CFG-06,system/config/solar_pv.yaml,Lines 1-7,a7d0137a2fc20a2e5ca5df5eb42845c48b264fb9bb1fbd4f29d20129cfdfd6ea,VERIFIED_FROZEN,Solar PV array physical parameters (PROTOTYPE_ASSUMPTION)
+SRC-DOC-01,POLARIS_MASTER_HANDOFF.md,"Sections 1, 2, 58",35415715fb38c35bd28ab8d8521a00aebfa0a7dcfd6e090c8dd82d6175b95ea2,VERIFIED_FROZEN,Master project handoff containing qualitative EMS goals
+SRC-DOC-02,POLARIS_LOCAL_SYSTEM_ARCHITECTURE.md,"Sections 1, 5, 6, 11",dfa32b21ff2e434f0c92f6ea5efdddd33d9c73e86c07a098007a166be92d4bd2,VERIFIED_FROZEN,Local system architecture specification (Phase D0)
+SRC-DOC-03,POLARIS_BRANCH01_EMS_OBJECTIVE_GOVERNANCE_REVIEW/POLARIS_BRANCH01_EMS_OBJECTIVE_GOVERNANCE_REVIEW.md,Lines 1-108,eef8eef314a51e51b14a2ffb38bc86ee73ed1469e3ea954cf5356ec39d520f32,VERIFIED_FROZEN,Previous Branch01 EMS objective governance audit artifact
+SRC-EV-01,POLARIS_STAGE81_MULTI_TRAJECTORY_RESULTS.json,Root object,686ad49aa892015efef984534f9a1286f9a0c7104b9015bdcaeb3ffad959d35a,VERIFIED_FROZEN,Authoritative V2 173-trajectory campaign result dataset
+ART-OUT-01,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_OBJECTIVE_SPECIFICATION.md,Lines 1-190,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Draft EMS Objective Specification Document
+ART-OUT-02,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_OBJECTIVE_SPECIFICATION.json,Root object,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Structured JSON representation of Draft EMS Objective Specification
+ART-OUT-03,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_REQUIREMENTS_MATRIX.csv,Lines 1-25,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Discovered requirements classification matrix (24 domains)
+ART-OUT-04,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_OBJECTIVE_GAP_REGISTER.csv,Lines 1-9,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Governance gap register highlighting missing numerical specifications
+ART-OUT-05,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_OBJECTIVE_DECISION_REGISTER.md,Lines 1-85,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Stakeholder decision register containing 15 explicit decision questions
+ART-OUT-06,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_GOVERNANCE_REVIEW.md,Lines 1-220,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Master EMS Objective Governance Review report
+ART-OUT-07,POLARIS_EMS_OBJECTIVE_SPECIFICATION/POLARIS_EMS_GOVERNANCE_REVIEW.json,Root object,DYNAMIC_GENERATION,GENERATED_READ_ONLY,Machine-readable governance review summary & status output

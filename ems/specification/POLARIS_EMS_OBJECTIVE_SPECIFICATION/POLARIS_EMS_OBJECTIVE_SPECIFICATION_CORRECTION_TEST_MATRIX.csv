@@ -1,0 +1,19 @@
+TEST_ID,TEST_NAME,TARGET_ELEMENT,EXPECTED_RESULT,ACTUAL_RESULT,STATUS,GOVERNANCE_IMPACT
+TEST_01,TEST_D15_AUTHORITY,Decision D15 Hierarchy Option,Authoritative agreement on Option A,Option A confirmed across Decision Sheet & Resolution,PASS,D15 authority reconciled
+TEST_02,TEST_STAGE2_NONTRIVIALITY,Stage 2 Reserve Objective,Objective term non-zero for active optimization,Stage 2 objective separated from hard EBR constraint,PASS,Eliminates mathematical tautology
+TEST_03,TEST_EBR_CONSTRAINT_OBJECTIVE_CONSISTENCY,Battery Reserve Layers,SOC_min_tech < SOC_EBR_floor < SOC_EBR(t),Strict layer separation verified,PASS,Protects cell protection floor vs reserve
+TEST_04,TEST_CURTAILMENT_DEFINITION,Curtailment Decomposition Math,Decomposition marked REQUIRES_IMPLEMENTATION_SPECIFICATION,Decomposition formula marked for implementation spec,PASS,Prevents unauthorized policy inference
+TEST_05,TEST_FUEL_RELIABILITY_FEASIBILITY,Fuel Exhaustion Infeasibility,Infeasibility response marked REQUIRES_GOVERNANCE_CLARIFICATION,Infeasibility policy marked for governance clarification,PASS,Prevents runtime emergency invention
+TEST_06,TEST_LOAD_SHEDDING_FORMULATION,Load Shedding Dwell & Restore,Restoration timing marked REQUIRES_IMPLEMENTATION_SPECIFICATION,Dwell time & restoration math marked for implementation spec,PASS,Keeps hardware timing in implementation spec
+TEST_07,TEST_FLEXIBLE_LOAD_ACCOUNTING,Deferrable Demand Busbar Balance,No double-counting of flexible load on busbar,"Demand defined as P_demand,E = P_base + P_flex",PASS,Corrects energy balance physics
+TEST_08,TEST_ENERGY_BALANCE,Busbar Power Balance,Generation + Discharge == Served + Charge + Curtailment,Power balance terms strictly verified,PASS,Ensures exact physical conservation
+TEST_09,TEST_POWER_ENERGY_UNITS,Unit Consistency (W vs Wh vs L),Explicit W to Wh conversion via dt=1.0h,All equations explicitly dimensioned,PASS,Eliminates unit confusion
+TEST_10,TEST_SUBHOURLY_BOUNDARY,Sub-hourly Interruption SLA,Sub-hour hardware gaps separated from hourly MILP,ATS/UPS times marked STATION_DATA_REQUIRED,PASS,Prevents false hourly MILP continuity claims
+TEST_11,TEST_FUEL_CURVE_CLASSIFICATION,Diesel Quadratic Model,Physical interface separate from MILP linearization,Quadratic form marked ENGINEERING_MODEL_INTERFACE,PASS,Avoids invalid MILP solver syntax assumptions
+TEST_12,TEST_SEASONAL_FUEL_BUDGET,Receding Horizon Fuel Budget,Budget accounting marked REQUIRES_IMPLEMENTATION_SPECIFICATION,Resupply cycle tracking marked for implementation spec,PASS,Aligns receding horizon with seasonal budget
+TEST_13,TEST_SOC_LAYER_SEPARATION,Storage Terminology,Explicit separation of 6 storage concepts,6 distinct storage parameters maintained,PASS,Prevents conflation of SOC parameters
+TEST_14,TEST_FORECAST_MARGIN_AUTHORIZATION,Forecast Uncertainty Derates,Derates marked NUMERICAL_CALIBRATION_REQUIRED,Marginal values marked provisional requiring empirical data,PASS,Prevents unauthorized margin policy values
+TEST_15,TEST_NUMERICAL_POLICY_CLASSIFICATION,Numerical Register Audit,0 unauthorized policy numbers,All numbers classified by type and authorization,PASS,Maintains numerical governance register
+TEST_16,TEST_IMPLEMENTATION_FREEZE,System Code & Config Freeze,Zero changes to system/ or prototype configs,System SHA-256 hashes 100% matched,PASS,Ensures strict read-only implementation freeze
+TEST_17,TEST_NO_UNAUTHORIZED_POLICY_INFERENCE,Policy Boundary Enforcement,0 unauthorized policy inferences,All unresolved math elements explicitly flagged,PASS,Enforces absolute policy boundary
+TEST_18,TEST_HASH_VERIFICATION,File SHA-256 Hash Audit,All file hashes calculated from actual bytes,Complete hash audit trail updated,PASS,Guarantees complete byte-accurate provenance

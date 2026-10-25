@@ -1,0 +1,1361 @@
+{
+  "scenario_id": "synthetic_168h_endurance_scenario",
+  "description": "Deterministic 168-hour synthetic engineering endurance test fixture for POLARIS Phase D4",
+  "status_label": "SYNTHETIC_ENGINEERING_TEST_DATA",
+  "provenance_metadata": {
+    "scenario_type": "synthetic",
+    "real_station_data": false,
+    "research_data_used": false,
+    "generation_method": "deterministic_physics_wave_model",
+    "generation_seed": 42,
+    "duration_hours": 168,
+    "timestep_hours": 1.0
+  },
+  "total_timesteps": 168,
+  "timesteps": [
+    {
+      "timestep_index": 0,
+      "timestamp": "2024-06-01T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 30600.04,
+      "actual_demand": 24550.41
+    },
+    {
+      "timestep_index": 1,
+      "timestamp": "2024-06-01T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 36652.58,
+      "actual_demand": 25357.66
+    },
+    {
+      "timestep_index": 2,
+      "timestamp": "2024-06-01T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 36983.81,
+      "actual_demand": 24881.02
+    },
+    {
+      "timestep_index": 3,
+      "timestamp": "2024-06-01T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 39957.83,
+      "actual_demand": 25243.27
+    },
+    {
+      "timestep_index": 4,
+      "timestamp": "2024-06-01T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 41668.36,
+      "actual_demand": 26342.02
+    },
+    {
+      "timestep_index": 5,
+      "timestamp": "2024-06-01T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 42753.14,
+      "actual_demand": 28525.48
+    },
+    {
+      "timestep_index": 6,
+      "timestamp": "2024-06-01T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 42021.19,
+      "actual_demand": 33312.9
+    },
+    {
+      "timestep_index": 7,
+      "timestamp": "2024-06-01T07:00:00Z",
+      "actual_SW_IN": 171.48,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 42578.72,
+      "actual_demand": 37008.19
+    },
+    {
+      "timestep_index": 8,
+      "timestamp": "2024-06-01T08:00:00Z",
+      "actual_SW_IN": 360.54,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 40917.03,
+      "actual_demand": 39185.49
+    },
+    {
+      "timestep_index": 9,
+      "timestamp": "2024-06-01T09:00:00Z",
+      "actual_SW_IN": 473.38,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 40532.11,
+      "actual_demand": 37904.72
+    },
+    {
+      "timestep_index": 10,
+      "timestamp": "2024-06-01T10:00:00Z",
+      "actual_SW_IN": 613.81,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 36989.83,
+      "actual_demand": 32774.19
+    },
+    {
+      "timestep_index": 11,
+      "timestamp": "2024-06-01T11:00:00Z",
+      "actual_SW_IN": 743.11,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 32051.2,
+      "actual_demand": 28455.06
+    },
+    {
+      "timestep_index": 12,
+      "timestamp": "2024-06-01T12:00:00Z",
+      "actual_SW_IN": 800.0,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 29224.08,
+      "actual_demand": 26791.92
+    },
+    {
+      "timestep_index": 13,
+      "timestamp": "2024-06-01T13:00:00Z",
+      "actual_SW_IN": 772.74,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 25752.69,
+      "actual_demand": 24457.51
+    },
+    {
+      "timestep_index": 14,
+      "timestamp": "2024-06-01T14:00:00Z",
+      "actual_SW_IN": 662.66,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 20472.7,
+      "actual_demand": 24724.01
+    },
+    {
+      "timestep_index": 15,
+      "timestamp": "2024-06-01T15:00:00Z",
+      "actual_SW_IN": 516.88,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 16506.31,
+      "actual_demand": 26184.23
+    },
+    {
+      "timestep_index": 16,
+      "timestamp": "2024-06-01T16:00:00Z",
+      "actual_SW_IN": 374.17,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 14936.37,
+      "actual_demand": 28636.54
+    },
+    {
+      "timestep_index": 17,
+      "timestamp": "2024-06-01T17:00:00Z",
+      "actual_SW_IN": 184.06,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 12647.51,
+      "actual_demand": 33151.7
+    },
+    {
+      "timestep_index": 18,
+      "timestamp": "2024-06-01T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 12936.52,
+      "actual_demand": 34932.24
+    },
+    {
+      "timestep_index": 19,
+      "timestamp": "2024-06-01T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 10925.87,
+      "actual_demand": 36758.91
+    },
+    {
+      "timestep_index": 20,
+      "timestamp": "2024-06-01T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 13432.32,
+      "actual_demand": 35703.86
+    },
+    {
+      "timestep_index": 21,
+      "timestamp": "2024-06-01T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 15591.43,
+      "actual_demand": 32830.37
+    },
+    {
+      "timestep_index": 22,
+      "timestamp": "2024-06-01T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 14313.25,
+      "actual_demand": 28526.74
+    },
+    {
+      "timestep_index": 23,
+      "timestamp": "2024-06-01T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 17439.06,
+      "actual_demand": 27509.84
+    },
+    {
+      "timestep_index": 24,
+      "timestamp": "2024-06-02T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 20508.71,
+      "actual_demand": 25311.23
+    },
+    {
+      "timestep_index": 25,
+      "timestamp": "2024-06-02T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 25591.61,
+      "actual_demand": 24921.96
+    },
+    {
+      "timestep_index": 26,
+      "timestamp": "2024-06-02T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 25415.6,
+      "actual_demand": 25159.92
+    },
+    {
+      "timestep_index": 27,
+      "timestamp": "2024-06-02T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 28873.88,
+      "actual_demand": 26028.2
+    },
+    {
+      "timestep_index": 28,
+      "timestamp": "2024-06-02T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 28957.27,
+      "actual_demand": 27037.33
+    },
+    {
+      "timestep_index": 29,
+      "timestamp": "2024-06-02T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 29294.07,
+      "actual_demand": 27441.19
+    },
+    {
+      "timestep_index": 30,
+      "timestamp": "2024-06-02T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 31514.59,
+      "actual_demand": 33285.42
+    },
+    {
+      "timestep_index": 31,
+      "timestamp": "2024-06-02T07:00:00Z",
+      "actual_SW_IN": 165.22,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 28530.88,
+      "actual_demand": 37460.46
+    },
+    {
+      "timestep_index": 32,
+      "timestamp": "2024-06-02T08:00:00Z",
+      "actual_SW_IN": 350.93,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 28894.08,
+      "actual_demand": 40942.16
+    },
+    {
+      "timestep_index": 33,
+      "timestamp": "2024-06-02T09:00:00Z",
+      "actual_SW_IN": 528.95,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 24640.32,
+      "actual_demand": 38138.71
+    },
+    {
+      "timestep_index": 34,
+      "timestamp": "2024-06-02T10:00:00Z",
+      "actual_SW_IN": 667.96,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 24011.82,
+      "actual_demand": 32235.39
+    },
+    {
+      "timestep_index": 35,
+      "timestamp": "2024-06-02T11:00:00Z",
+      "actual_SW_IN": 762.44,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 19209.99,
+      "actual_demand": 28220.51
+    },
+    {
+      "timestep_index": 36,
+      "timestamp": "2024-06-02T12:00:00Z",
+      "actual_SW_IN": 783.42,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 19315.26,
+      "actual_demand": 26820.21
+    },
+    {
+      "timestep_index": 37,
+      "timestamp": "2024-06-02T13:00:00Z",
+      "actual_SW_IN": 727.47,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 14295.65,
+      "actual_demand": 24723.17
+    },
+    {
+      "timestep_index": 38,
+      "timestamp": "2024-06-02T14:00:00Z",
+      "actual_SW_IN": 692.82,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 12846.02,
+      "actual_demand": 25161.31
+    },
+    {
+      "timestep_index": 39,
+      "timestamp": "2024-06-02T15:00:00Z",
+      "actual_SW_IN": 565.69,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 9352.6,
+      "actual_demand": 25933.96
+    },
+    {
+      "timestep_index": 40,
+      "timestamp": "2024-06-02T16:00:00Z",
+      "actual_SW_IN": 400.0,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 7284.5,
+      "actual_demand": 29453.43
+    },
+    {
+      "timestep_index": 41,
+      "timestamp": "2024-06-02T17:00:00Z",
+      "actual_SW_IN": 207.06,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 4130.91,
+      "actual_demand": 31926.7
+    },
+    {
+      "timestep_index": 42,
+      "timestamp": "2024-06-02T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 7721.2,
+      "actual_demand": 36347.41
+    },
+    {
+      "timestep_index": 43,
+      "timestamp": "2024-06-02T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 6012.34,
+      "actual_demand": 36115.85
+    },
+    {
+      "timestep_index": 44,
+      "timestamp": "2024-06-02T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 10217.15,
+      "actual_demand": 34761.27
+    },
+    {
+      "timestep_index": 45,
+      "timestamp": "2024-06-02T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 9134.71,
+      "actual_demand": 32799.57
+    },
+    {
+      "timestep_index": 46,
+      "timestamp": "2024-06-02T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 12442.66,
+      "actual_demand": 28846.39
+    },
+    {
+      "timestep_index": 47,
+      "timestamp": "2024-06-02T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 16523.17,
+      "actual_demand": 27368.89
+    },
+    {
+      "timestep_index": 48,
+      "timestamp": "2024-06-03T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 20097.19,
+      "actual_demand": 25078.94
+    },
+    {
+      "timestep_index": 49,
+      "timestamp": "2024-06-03T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 23870.21,
+      "actual_demand": 24627.69
+    },
+    {
+      "timestep_index": 50,
+      "timestamp": "2024-06-03T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 29284.36,
+      "actual_demand": 24913.38
+    },
+    {
+      "timestep_index": 51,
+      "timestamp": "2024-06-03T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 30381.71,
+      "actual_demand": 24681.95
+    },
+    {
+      "timestep_index": 52,
+      "timestamp": "2024-06-03T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 34876.19,
+      "actual_demand": 25502.48
+    },
+    {
+      "timestep_index": 53,
+      "timestamp": "2024-06-03T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 34704.38,
+      "actual_demand": 28609.16
+    },
+    {
+      "timestep_index": 54,
+      "timestamp": "2024-06-03T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 39121.68,
+      "actual_demand": 33420.53
+    },
+    {
+      "timestep_index": 55,
+      "timestamp": "2024-06-03T07:00:00Z",
+      "actual_SW_IN": 169.23,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 36679.76,
+      "actual_demand": 38035.18
+    },
+    {
+      "timestep_index": 56,
+      "timestamp": "2024-06-03T08:00:00Z",
+      "actual_SW_IN": 308.63,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 35656.93,
+      "actual_demand": 40871.03
+    },
+    {
+      "timestep_index": 57,
+      "timestamp": "2024-06-03T09:00:00Z",
+      "actual_SW_IN": 442.9,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 35670.66,
+      "actual_demand": 38266.51
+    },
+    {
+      "timestep_index": 58,
+      "timestamp": "2024-06-03T10:00:00Z",
+      "actual_SW_IN": 576.52,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 32576.79,
+      "actual_demand": 31895.6
+    },
+    {
+      "timestep_index": 59,
+      "timestamp": "2024-06-03T11:00:00Z",
+      "actual_SW_IN": 634.5,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 31099.19,
+      "actual_demand": 28285.03
+    },
+    {
+      "timestep_index": 60,
+      "timestamp": "2024-06-03T12:00:00Z",
+      "actual_SW_IN": 686.21,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 29443.46,
+      "actual_demand": 27036.83
+    },
+    {
+      "timestep_index": 61,
+      "timestamp": "2024-06-03T13:00:00Z",
+      "actual_SW_IN": 613.18,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 25677.07,
+      "actual_demand": 25044.47
+    },
+    {
+      "timestep_index": 62,
+      "timestamp": "2024-06-03T14:00:00Z",
+      "actual_SW_IN": 589.85,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 22565.53,
+      "actual_demand": 24944.84
+    },
+    {
+      "timestep_index": 63,
+      "timestamp": "2024-06-03T15:00:00Z",
+      "actual_SW_IN": 476.96,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 21151.99,
+      "actual_demand": 26185.37
+    },
+    {
+      "timestep_index": 64,
+      "timestamp": "2024-06-03T16:00:00Z",
+      "actual_SW_IN": 321.25,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 21613.08,
+      "actual_demand": 28782.44
+    },
+    {
+      "timestep_index": 65,
+      "timestamp": "2024-06-03T17:00:00Z",
+      "actual_SW_IN": 178.27,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 19270.87,
+      "actual_demand": 31379.57
+    },
+    {
+      "timestep_index": 66,
+      "timestamp": "2024-06-03T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 20339.3,
+      "actual_demand": 36527.96
+    },
+    {
+      "timestep_index": 67,
+      "timestamp": "2024-06-03T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 21118.02,
+      "actual_demand": 36332.62
+    },
+    {
+      "timestep_index": 68,
+      "timestamp": "2024-06-03T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 20077.37,
+      "actual_demand": 35392.04
+    },
+    {
+      "timestep_index": 69,
+      "timestamp": "2024-06-03T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 22921.5,
+      "actual_demand": 33248.99
+    },
+    {
+      "timestep_index": 70,
+      "timestamp": "2024-06-03T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 27272.34,
+      "actual_demand": 28805.85
+    },
+    {
+      "timestep_index": 71,
+      "timestamp": "2024-06-03T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 31065.49,
+      "actual_demand": 27614.87
+    },
+    {
+      "timestep_index": 72,
+      "timestamp": "2024-06-04T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 33373.63,
+      "actual_demand": 24309.94
+    },
+    {
+      "timestep_index": 73,
+      "timestamp": "2024-06-04T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 37581.54,
+      "actual_demand": 25162.62
+    },
+    {
+      "timestep_index": 74,
+      "timestamp": "2024-06-04T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 39627.96,
+      "actual_demand": 24151.51
+    },
+    {
+      "timestep_index": 75,
+      "timestamp": "2024-06-04T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 41094.68,
+      "actual_demand": 25938.0
+    },
+    {
+      "timestep_index": 76,
+      "timestamp": "2024-06-04T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 44716.13,
+      "actual_demand": 25202.47
+    },
+    {
+      "timestep_index": 77,
+      "timestamp": "2024-06-04T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 44251.52,
+      "actual_demand": 28697.38
+    },
+    {
+      "timestep_index": 78,
+      "timestamp": "2024-06-04T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 42474.74,
+      "actual_demand": 33481.83
+    },
+    {
+      "timestep_index": 79,
+      "timestamp": "2024-06-04T07:00:00Z",
+      "actual_SW_IN": 141.99,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 43595.79,
+      "actual_demand": 37935.99
+    },
+    {
+      "timestep_index": 80,
+      "timestamp": "2024-06-04T08:00:00Z",
+      "actual_SW_IN": 269.14,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 41905.34,
+      "actual_demand": 40045.57
+    },
+    {
+      "timestep_index": 81,
+      "timestamp": "2024-06-04T09:00:00Z",
+      "actual_SW_IN": 419.96,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 37959.17,
+      "actual_demand": 38129.65
+    },
+    {
+      "timestep_index": 82,
+      "timestamp": "2024-06-04T10:00:00Z",
+      "actual_SW_IN": 485.38,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 35654.05,
+      "actual_demand": 33045.12
+    },
+    {
+      "timestep_index": 83,
+      "timestamp": "2024-06-04T11:00:00Z",
+      "actual_SW_IN": 516.64,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 31801.77,
+      "actual_demand": 28854.71
+    },
+    {
+      "timestep_index": 84,
+      "timestamp": "2024-06-04T12:00:00Z",
+      "actual_SW_IN": 480.15,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 28583.14,
+      "actual_demand": 27065.41
+    },
+    {
+      "timestep_index": 85,
+      "timestamp": "2024-06-04T13:00:00Z",
+      "actual_SW_IN": 525.13,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 23227.44,
+      "actual_demand": 24792.17
+    },
+    {
+      "timestep_index": 86,
+      "timestamp": "2024-06-04T14:00:00Z",
+      "actual_SW_IN": 444.79,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 23048.19,
+      "actual_demand": 26326.15
+    },
+    {
+      "timestep_index": 87,
+      "timestamp": "2024-06-04T15:00:00Z",
+      "actual_SW_IN": 397.5,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 17580.42,
+      "actual_demand": 25943.78
+    },
+    {
+      "timestep_index": 88,
+      "timestamp": "2024-06-04T16:00:00Z",
+      "actual_SW_IN": 302.43,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 16291.2,
+      "actual_demand": 29119.53
+    },
+    {
+      "timestep_index": 89,
+      "timestamp": "2024-06-04T17:00:00Z",
+      "actual_SW_IN": 172.7,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 14195.5,
+      "actual_demand": 31294.03
+    },
+    {
+      "timestep_index": 90,
+      "timestamp": "2024-06-04T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 11697.52,
+      "actual_demand": 35916.74
+    },
+    {
+      "timestep_index": 91,
+      "timestamp": "2024-06-04T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 10809.42,
+      "actual_demand": 36230.86
+    },
+    {
+      "timestep_index": 92,
+      "timestamp": "2024-06-04T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 13085.22,
+      "actual_demand": 35134.66
+    },
+    {
+      "timestep_index": 93,
+      "timestamp": "2024-06-04T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 15090.47,
+      "actual_demand": 31685.56
+    },
+    {
+      "timestep_index": 94,
+      "timestamp": "2024-06-04T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 15240.78,
+      "actual_demand": 28872.89
+    },
+    {
+      "timestep_index": 95,
+      "timestamp": "2024-06-04T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 19979.54,
+      "actual_demand": 25808.62
+    },
+    {
+      "timestep_index": 96,
+      "timestamp": "2024-06-05T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 20356.72,
+      "actual_demand": 24007.44
+    },
+    {
+      "timestep_index": 97,
+      "timestamp": "2024-06-05T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 24481.87,
+      "actual_demand": 24528.17
+    },
+    {
+      "timestep_index": 98,
+      "timestamp": "2024-06-05T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 26635.81,
+      "actual_demand": 24892.56
+    },
+    {
+      "timestep_index": 99,
+      "timestamp": "2024-06-05T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 26836.51,
+      "actual_demand": 25998.77
+    },
+    {
+      "timestep_index": 100,
+      "timestamp": "2024-06-05T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 30262.35,
+      "actual_demand": 26711.44
+    },
+    {
+      "timestep_index": 101,
+      "timestamp": "2024-06-05T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 29522.81,
+      "actual_demand": 27601.84
+    },
+    {
+      "timestep_index": 102,
+      "timestamp": "2024-06-05T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 32600.74,
+      "actual_demand": 33293.5
+    },
+    {
+      "timestep_index": 103,
+      "timestamp": "2024-06-05T07:00:00Z",
+      "actual_SW_IN": 207.06,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 31872.46,
+      "actual_demand": 37117.38
+    },
+    {
+      "timestep_index": 104,
+      "timestamp": "2024-06-05T08:00:00Z",
+      "actual_SW_IN": 383.97,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 27188.8,
+      "actual_demand": 40560.24
+    },
+    {
+      "timestep_index": 105,
+      "timestamp": "2024-06-05T09:00:00Z",
+      "actual_SW_IN": 565.69,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 26219.9,
+      "actual_demand": 37938.59
+    },
+    {
+      "timestep_index": 106,
+      "timestamp": "2024-06-05T10:00:00Z",
+      "actual_SW_IN": 654.53,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 25583.47,
+      "actual_demand": 33430.95
+    },
+    {
+      "timestep_index": 107,
+      "timestamp": "2024-06-05T11:00:00Z",
+      "actual_SW_IN": 772.74,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 22006.86,
+      "actual_demand": 29113.81
+    },
+    {
+      "timestep_index": 108,
+      "timestamp": "2024-06-05T12:00:00Z",
+      "actual_SW_IN": 739.17,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 18446.26,
+      "actual_demand": 25732.87
+    },
+    {
+      "timestep_index": 109,
+      "timestamp": "2024-06-05T13:00:00Z",
+      "actual_SW_IN": 767.25,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 15502.24,
+      "actual_demand": 26093.99
+    },
+    {
+      "timestep_index": 110,
+      "timestamp": "2024-06-05T14:00:00Z",
+      "actual_SW_IN": 692.82,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 10431.16,
+      "actual_demand": 26139.17
+    },
+    {
+      "timestep_index": 111,
+      "timestamp": "2024-06-05T15:00:00Z",
+      "actual_SW_IN": 530.22,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 10405.39,
+      "actual_demand": 27345.47
+    },
+    {
+      "timestep_index": 112,
+      "timestamp": "2024-06-05T16:00:00Z",
+      "actual_SW_IN": 357.15,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 8393.33,
+      "actual_demand": 28816.79
+    },
+    {
+      "timestep_index": 113,
+      "timestamp": "2024-06-05T17:00:00Z",
+      "actual_SW_IN": 178.43,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 7310.0,
+      "actual_demand": 31733.58
+    },
+    {
+      "timestep_index": 114,
+      "timestamp": "2024-06-05T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 4777.33,
+      "actual_demand": 35246.49
+    },
+    {
+      "timestep_index": 115,
+      "timestamp": "2024-06-05T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 8649.84,
+      "actual_demand": 36558.25
+    },
+    {
+      "timestep_index": 116,
+      "timestamp": "2024-06-05T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 8028.06,
+      "actual_demand": 36552.26
+    },
+    {
+      "timestep_index": 117,
+      "timestamp": "2024-06-05T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 12614.81,
+      "actual_demand": 31509.05
+    },
+    {
+      "timestep_index": 118,
+      "timestamp": "2024-06-05T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 12643.36,
+      "actual_demand": 29820.9
+    },
+    {
+      "timestep_index": 119,
+      "timestamp": "2024-06-05T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 15896.55,
+      "actual_demand": 26493.15
+    },
+    {
+      "timestep_index": 120,
+      "timestamp": "2024-06-06T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 20504.71,
+      "actual_demand": 25212.77
+    },
+    {
+      "timestep_index": 121,
+      "timestamp": "2024-06-06T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 24606.38,
+      "actual_demand": 25157.44
+    },
+    {
+      "timestep_index": 122,
+      "timestamp": "2024-06-06T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 29519.99,
+      "actual_demand": 24040.56
+    },
+    {
+      "timestep_index": 123,
+      "timestamp": "2024-06-06T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 32051.5,
+      "actual_demand": 25671.42
+    },
+    {
+      "timestep_index": 124,
+      "timestamp": "2024-06-06T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 35205.47,
+      "actual_demand": 25770.69
+    },
+    {
+      "timestep_index": 125,
+      "timestamp": "2024-06-06T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 37077.36,
+      "actual_demand": 28007.35
+    },
+    {
+      "timestep_index": 126,
+      "timestamp": "2024-06-06T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 38892.06,
+      "actual_demand": 33140.77
+    },
+    {
+      "timestep_index": 127,
+      "timestamp": "2024-06-06T07:00:00Z",
+      "actual_SW_IN": 180.03,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 36964.88,
+      "actual_demand": 37514.01
+    },
+    {
+      "timestep_index": 128,
+      "timestamp": "2024-06-06T08:00:00Z",
+      "actual_SW_IN": 341.54,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 36310.3,
+      "actual_demand": 39254.58
+    },
+    {
+      "timestep_index": 129,
+      "timestamp": "2024-06-06T09:00:00Z",
+      "actual_SW_IN": 475.82,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 37541.43,
+      "actual_demand": 38051.91
+    },
+    {
+      "timestep_index": 130,
+      "timestamp": "2024-06-06T10:00:00Z",
+      "actual_SW_IN": 627.4,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 34277.21,
+      "actual_demand": 32303.64
+    },
+    {
+      "timestep_index": 131,
+      "timestamp": "2024-06-06T11:00:00Z",
+      "actual_SW_IN": 705.7,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 29406.5,
+      "actual_demand": 27924.81
+    },
+    {
+      "timestep_index": 132,
+      "timestamp": "2024-06-06T12:00:00Z",
+      "actual_SW_IN": 721.62,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 29069.94,
+      "actual_demand": 26377.91
+    },
+    {
+      "timestep_index": 133,
+      "timestamp": "2024-06-06T13:00:00Z",
+      "actual_SW_IN": 692.71,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 25835.22,
+      "actual_demand": 24793.27
+    },
+    {
+      "timestep_index": 134,
+      "timestamp": "2024-06-06T14:00:00Z",
+      "actual_SW_IN": 618.09,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 25175.63,
+      "actual_demand": 26156.47
+    },
+    {
+      "timestep_index": 135,
+      "timestamp": "2024-06-06T15:00:00Z",
+      "actual_SW_IN": 474.78,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 19803.65,
+      "actual_demand": 26659.19
+    },
+    {
+      "timestep_index": 136,
+      "timestamp": "2024-06-06T16:00:00Z",
+      "actual_SW_IN": 344.22,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 19260.77,
+      "actual_demand": 29533.03
+    },
+    {
+      "timestep_index": 137,
+      "timestamp": "2024-06-06T17:00:00Z",
+      "actual_SW_IN": 186.51,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 19760.75,
+      "actual_demand": 31727.67
+    },
+    {
+      "timestep_index": 138,
+      "timestamp": "2024-06-06T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 17092.89,
+      "actual_demand": 35079.65
+    },
+    {
+      "timestep_index": 139,
+      "timestamp": "2024-06-06T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 21122.19,
+      "actual_demand": 36145.66
+    },
+    {
+      "timestep_index": 140,
+      "timestamp": "2024-06-06T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 21741.44,
+      "actual_demand": 34978.83
+    },
+    {
+      "timestep_index": 141,
+      "timestamp": "2024-06-06T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 23383.12,
+      "actual_demand": 31766.34
+    },
+    {
+      "timestep_index": 142,
+      "timestamp": "2024-06-06T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 24158.24,
+      "actual_demand": 29397.76
+    },
+    {
+      "timestep_index": 143,
+      "timestamp": "2024-06-06T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 27662.57,
+      "actual_demand": 26474.32
+    },
+    {
+      "timestep_index": 144,
+      "timestamp": "2024-06-07T00:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 34331.86,
+      "actual_demand": 25036.27
+    },
+    {
+      "timestep_index": 145,
+      "timestamp": "2024-06-07T01:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 34703.49,
+      "actual_demand": 25700.93
+    },
+    {
+      "timestep_index": 146,
+      "timestamp": "2024-06-07T02:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 39841.72,
+      "actual_demand": 25372.34
+    },
+    {
+      "timestep_index": 147,
+      "timestamp": "2024-06-07T03:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 41465.09,
+      "actual_demand": 26132.64
+    },
+    {
+      "timestep_index": 148,
+      "timestamp": "2024-06-07T04:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 43323.62,
+      "actual_demand": 26480.8
+    },
+    {
+      "timestep_index": 149,
+      "timestamp": "2024-06-07T05:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 45193.66,
+      "actual_demand": 28442.7
+    },
+    {
+      "timestep_index": 150,
+      "timestamp": "2024-06-07T06:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 44969.81,
+      "actual_demand": 32650.61
+    },
+    {
+      "timestep_index": 151,
+      "timestamp": "2024-06-07T07:00:00Z",
+      "actual_SW_IN": 199.08,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 42206.67,
+      "actual_demand": 37972.55
+    },
+    {
+      "timestep_index": 152,
+      "timestamp": "2024-06-07T08:00:00Z",
+      "actual_SW_IN": 400.0,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 41655.85,
+      "actual_demand": 40253.5
+    },
+    {
+      "timestep_index": 153,
+      "timestamp": "2024-06-07T09:00:00Z",
+      "actual_SW_IN": 545.29,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 37452.07,
+      "actual_demand": 37268.73
+    },
+    {
+      "timestep_index": 154,
+      "timestamp": "2024-06-07T10:00:00Z",
+      "actual_SW_IN": 642.53,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 35349.75,
+      "actual_demand": 32782.04
+    },
+    {
+      "timestep_index": 155,
+      "timestamp": "2024-06-07T11:00:00Z",
+      "actual_SW_IN": 671.94,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 31462.11,
+      "actual_demand": 28738.88
+    },
+    {
+      "timestep_index": 156,
+      "timestamp": "2024-06-07T12:00:00Z",
+      "actual_SW_IN": 722.06,
+      "clearsky_ghi": 800.0,
+      "actual_wind_generation": 27006.92,
+      "actual_demand": 25883.7
+    },
+    {
+      "timestep_index": 157,
+      "timestamp": "2024-06-07T13:00:00Z",
+      "actual_SW_IN": 702.73,
+      "clearsky_ghi": 772.74,
+      "actual_wind_generation": 24597.5,
+      "actual_demand": 24779.53
+    },
+    {
+      "timestep_index": 158,
+      "timestamp": "2024-06-07T14:00:00Z",
+      "actual_SW_IN": 621.19,
+      "clearsky_ghi": 692.82,
+      "actual_wind_generation": 22934.5,
+      "actual_demand": 25732.58
+    },
+    {
+      "timestep_index": 159,
+      "timestamp": "2024-06-07T15:00:00Z",
+      "actual_SW_IN": 524.9,
+      "clearsky_ghi": 565.69,
+      "actual_wind_generation": 19529.24,
+      "actual_demand": 27159.47
+    },
+    {
+      "timestep_index": 160,
+      "timestamp": "2024-06-07T16:00:00Z",
+      "actual_SW_IN": 363.5,
+      "clearsky_ghi": 400.0,
+      "actual_wind_generation": 13500.63,
+      "actual_demand": 28599.7
+    },
+    {
+      "timestep_index": 161,
+      "timestamp": "2024-06-07T17:00:00Z",
+      "actual_SW_IN": 196.57,
+      "clearsky_ghi": 207.06,
+      "actual_wind_generation": 14993.39,
+      "actual_demand": 33185.25
+    },
+    {
+      "timestep_index": 162,
+      "timestamp": "2024-06-07T18:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 13490.06,
+      "actual_demand": 35682.23
+    },
+    {
+      "timestep_index": 163,
+      "timestamp": "2024-06-07T19:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 11154.41,
+      "actual_demand": 36438.84
+    },
+    {
+      "timestep_index": 164,
+      "timestamp": "2024-06-07T20:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 10988.42,
+      "actual_demand": 35262.22
+    },
+    {
+      "timestep_index": 165,
+      "timestamp": "2024-06-07T21:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 13837.29,
+      "actual_demand": 31608.46
+    },
+    {
+      "timestep_index": 166,
+      "timestamp": "2024-06-07T22:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 14695.36,
+      "actual_demand": 29140.34
+    },
+    {
+      "timestep_index": 167,
+      "timestamp": "2024-06-07T23:00:00Z",
+      "actual_SW_IN": 0.0,
+      "clearsky_ghi": 0.0,
+      "actual_wind_generation": 18171.21,
+      "actual_demand": 26752.81
+    }
+  ]
+}

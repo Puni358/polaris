@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "project": "POLARIS Energy Management System",
+    "subsystem": "Emergency Controller Dispatcher (ECD)",
+    "document": "EMERGENCY_TRIGGER_IMPLEMENTATION_SPEC",
+    "version": "1.0.0-governed",
+    "created_at": "2026-09-27T11:30:00Z",
+    "human_approval": true,
+    "production_modifications_permitted": false
+  },
+  "governance_decisions": {
+    "decision_1_critical_load_failure": {
+      "name": "CRITICAL_LOAD_FAILURE",
+      "type": "HARD_IMMEDIATE_TRIGGER",
+      "approved_rule": "Actual validated critical-load service failure (P_critical_served < P_critical_required) is an immediate Emergency trigger.",
+      "persistence_required": false
+    },
+    "decision_2_imminent_survivability_failure": {
+      "name": "IMMINENT_SURVIVABILITY_FAILURE",
+      "type": "DYNAMIC_PREEMPTIVE_TRIGGER",
+      "approved_rule": "Emergency may be entered before actual critical-load failure when total available controllable energy over 6 hours is insufficient (M_surv < 0).",
+      "static_threshold_permitted": false
+    },
+    "decision_3_reserve_deficit": {
+      "name": "RESERVE_DEFICIT",
+      "type": "NORMAL_MODE_STATE",
+      "approved_rule": "Reserve deficit alone NEVER triggers Emergency. E_reserve (75.65 kWh / 37.83% SOC) is a normal-mode reserve target.",
+      "state_assigned": "RESERVE_DEFICIT"
+    },
+    "decision_4_resource_loss": {
+      "name": "RESOURCE_LOSS",
+      "type": "RESOURCE_ADEQUACY_ASSESSMENT",
+      "approved_rule": "No arbitrary resource loss combination is an automatic Emergency trigger. Triggered ONLY if remaining resources cannot guarantee 6h critical load.",
+      "method": "DYNAMIC_RESOURCE_MARGIN"
+    },
+    "decision_5_emergency_exit": {
+      "name": "EMERGENCY_EXIT",
+      "type": "AUTOMATIC_RETURN_WITH_OPERATOR_OVERRIDE",
+      "approved_rule": "Automatic return to NORMAL permitted when emergency condition cleared, critical load served, survivability secure, and generation available.",
+      "operator_override_supported": true
+    }
+  },
+  "corrected_mathematics": {
+    "nominal_capacity_kwh": 200.0,
+    "physical_min_soc": 0.20,
+    "physical_max_soc": 0.95,
+    "critical_load_kw": 11.6,
+    "critical_autonomy_hours": 6.0,
+    "discharge_efficiency": 0.92,
+    "six_hour_stored_reserve_kwh": 75.652,
+    "six_hour_reserve_nominal_soc_percent": 37.826,
+    "decommissioned_j2_combined_soc_percent": 57.826,
+    "mandatory_rule": "57.83% MUST NOT be reused as Emergency threshold. 37.83% (75.65 kWh) is the Normal-mode reserve target."
+  },
+  "state_taxonomy": [
+    "NORMAL",
+    "RESERVE_DEFICIT",
+    "EMERGENCY",
+    "UNKNOWN_INVALID"
+  ],
+  "survivability_formula": {
+    "e_batt_usable": "max(0, (SOC - SOC_min) * C_nom * eta_dis)",
+    "e_gen_credible": "integral_0_to_6(sum_k(A_k * P_gen_max_k))",
+    "e_ren_credible": "integral_0_to_6(gamma_solar * P_solar + gamma_wind * P_wind)",
+    "e_critical_req": "P_critical * 6.0",
+    "m_surv": "e_batt_usable + e_gen_credible + e_ren_credible - e_critical_req",
+    "trigger_condition": "m_surv < 0.0"
+  },
+  "test_cases": [
+    {"id": "A", "name": "Normal above reserve", "expected_state": "NORMAL", "auto_opt": true, "operator_req": false},
+    {"id": "B", "name": "Normal below reserve", "expected_state": "RESERVE_DEFICIT", "auto_opt": true, "operator_req": false},
+    {"id": "C", "name": "Reserve deficit with successful recovery", "expected_state": "NORMAL", "auto_opt": true, "operator_req": false},
+    {"id": "D", "name": "Reserve deficit without survivability threat", "expected_state": "RESERVE_DEFICIT", "auto_opt": true, "operator_req": false},
+    {"id": "E", "name": "Validated critical-load failure", "expected_state": "EMERGENCY", "auto_opt": true, "operator_req": false},
+    {"id": "F", "name": "Imminent survivability failure before critical-load failure", "expected_state": "EMERGENCY", "auto_opt": true, "operator_req": false},
+    {"id": "G", "name": "Renewable loss while survivability remains secure", "expected_state": "NORMAL", "auto_opt": true, "operator_req": false},
+    {"id": "H", "name": "Diesel loss while battery/resources remain sufficient", "expected_state": "NORMAL", "auto_opt": true, "operator_req": false},
+    {"id": "I", "name": "Multiple resource loss causing survivability failure", "expected_state": "EMERGENCY", "auto_opt": true, "operator_req": false},
+    {"id": "J", "name": "Battery unavailable with sufficient remaining generation", "expected_state": "NORMAL", "auto_opt": true, "operator_req": false},
+    {"id": "K", "name": "Battery unavailable with insufficient remaining generation", "expected_state": "EMERGENCY", "auto_opt": true, "operator_req": false},
+    {"id": "L", "name": "UNKNOWN/INVALID telemetry", "expected_state": "UNKNOWN_INVALID", "auto_opt": false, "operator_req": true},
+    {"id": "M", "name": "Emergency exit after recovery", "expected_state": "NORMAL", "auto_opt": true, "operator_req": false},
+    {"id": "N", "name": "Emergency exit while recovery is insufficient", "expected_state": "EMERGENCY", "auto_opt": true, "operator_req": false},
+    {"id": "O", "name": "Operator override during automatic return", "expected_state": "EMERGENCY", "auto_opt": true, "operator_req": true}
+  ]
+}

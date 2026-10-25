@@ -1,0 +1,130 @@
+{
+  "timestamp_utc": "2026-09-13T15:22:29.532129+00:00",
+  "experiment_id": "POLARIS_STAGE8_24_FAITHFUL_OROGRAPHIC_GOVERNED_EXPERIMENT",
+  "route_id": "STAGE8.24",
+  "route_name": "Faithful Scandes Orographic Flow-Regime Expansion",
+  "candidate_features": [
+    "ctx_u_perp",
+    "ctx_mountain_froude"
+  ],
+  "control_baseline": {
+    "model": "Stage 8.1 37-feature HGB champion",
+    "even_control_mae": 37.5529,
+    "even_control_nmae_pct": 27.1324,
+    "even_control_rmse": 76.9839,
+    "even_control_bias": 5.6407
+  },
+  "candidate": {
+    "candidate_name": "Stage 8.24 Faithful Orographic (39 features)",
+    "even_candidate_mae": 37.8072,
+    "delta_mae": 0.2543,
+    "even_candidate_nmae_pct": 27.3161,
+    "delta_nmae_pct": 0.1837,
+    "even_candidate_rmse": 77.4707,
+    "delta_rmse": 0.4869,
+    "even_candidate_bias": 4.9987,
+    "improving_folds": 1,
+    "worst_fold_degradation": 0.7186,
+    "gates": {
+      "G1_MAE_Margin_(-0.50)": {
+        "value": 0.2543,
+        "pass": false
+      },
+      "G2_Fold_Consistency_(4/5)": {
+        "value": 1,
+        "pass": false
+      },
+      "G3_Worst_Fold_Tolerance_(+0.50)": {
+        "value": 0.7186,
+        "pass": false
+      },
+      "G4_nMAE_RMSE_NonDegradation": {
+        "pass": false
+      },
+      "G5_Causal_Integrity": {
+        "pass": true
+      },
+      "G6_Exact_Control_Reproduction": {
+        "value": 37.5529,
+        "pass": false
+      }
+    },
+    "OVERALL_GATES_PASS": false
+  },
+  "n2_floor_diagnostics": {
+    "total_sublayers_evaluated": 21694,
+    "sublayers_n2_floor_activations": 0,
+    "sublayers_n2_floor_pct": 0.0,
+    "unique_origins_total": 347,
+    "origins_affected_count": 0,
+    "origins_affected_pct": 0.0,
+    "n_layer_distribution": {
+      "mean": 0.010763413787178074,
+      "std": 0.00028495246790203173,
+      "min": 0.010067993422776741,
+      "p25": 0.010517711707910103,
+      "median": 0.010808075672633245,
+      "p75": 0.010976064074344071,
+      "max": 0.01145097005274683
+    }
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "daytime_n": 591,
+      "control_mae": 49.2812,
+      "cand_mae": 49.4249,
+      "delta_mae": 0.1438,
+      "control_nmae_pct": 29.5084,
+      "cand_nmae_pct": 29.5945,
+      "control_rmse": 81.3531,
+      "cand_rmse": 81.6733
+    },
+    {
+      "fold": 2,
+      "daytime_n": 696,
+      "control_mae": 70.7021,
+      "cand_mae": 70.5377,
+      "delta_mae": -0.1644,
+      "control_nmae_pct": 36.9894,
+      "cand_nmae_pct": 36.9034,
+      "control_rmse": 103.7542,
+      "cand_rmse": 103.7422
+    },
+    {
+      "fold": 3,
+      "daytime_n": 648,
+      "control_mae": 40.3225,
+      "cand_mae": 41.0411,
+      "delta_mae": 0.7186,
+      "control_nmae_pct": 28.1261,
+      "cand_nmae_pct": 28.6274,
+      "control_rmse": 67.2535,
+      "cand_rmse": 68.7168
+    },
+    {
+      "fold": 4,
+      "daytime_n": 396,
+      "control_mae": 25.6368,
+      "cand_mae": 26.1147,
+      "delta_mae": 0.478,
+      "control_nmae_pct": 36.5408,
+      "cand_nmae_pct": 37.222,
+      "control_rmse": 44.5792,
+      "cand_rmse": 45.5283
+    },
+    {
+      "fold": 5,
+      "daytime_n": 221,
+      "control_mae": 1.8218,
+      "cand_mae": 1.9173,
+      "delta_mae": 0.0955,
+      "control_nmae_pct": 50.6984,
+      "cand_nmae_pct": 53.3566,
+      "control_rmse": 3.5272,
+      "cand_rmse": 3.5132
+    }
+  ],
+  "ODD_RUN": false,
+  "FINAL_VERDICT": "REJECTED_BY_EVEN_GATES"
+}

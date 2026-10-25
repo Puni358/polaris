@@ -1,0 +1,9 @@
+[2026-09-12 16:57:19,143] INFO: [STAGE 8.3] Loading benchmark datasets...
+[2026-09-12 16:58:00,573] INFO: [STAGE 8.3] Loading benchmark datasets...
+[2026-09-12 16:58:01,076] INFO: [STAGE 8.3] Causality Audit Result: True (347/347 pass)
+[2026-09-12 16:58:02,162] INFO: [STAGE 8.3] Saved extracted features (8328 rows) to /home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_3_abisko_direct_diffuse/stage8_3_extracted_features.csv
+[2026-09-12 16:58:02,411] INFO: [STAGE 8.3] Fold 1/5 Complete | Control MAE: 41.7350 W/m² | Candidate MAE: 41.7350 W/m² | Delta: +0.0000 W/m²
+[2026-09-12 16:58:02,704] INFO: [STAGE 8.3] Fold 2/5 Complete | Control MAE: 66.4946 W/m² | Candidate MAE: 67.5855 W/m² | Delta: +1.0909 W/m²
+[2026-09-12 16:58:03,040] INFO: [STAGE 8.3] Fold 3/5 Complete | Control MAE: 39.2941 W/m² | Candidate MAE: 40.6288 W/m² | Delta: +1.3347 W/m²
+[2026-09-12 16:58:03,450] INFO: [STAGE 8.3] Fold 4/5 Complete | Control MAE: 25.8399 W/m² | Candidate MAE: 26.4557 W/m² | Delta: +0.6158 W/m²
+[2026-09-12 16:58:03,882] INFO: [STAGE 8.3] Fold 5/5 Complete | Control MAE: 1.9817 W/m² | Candidate MAE: 2.0765 W/m² | Delta: +0.0948 W/m²

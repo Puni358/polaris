@@ -1,0 +1,121 @@
+{
+  "phase": "S8.1-SIH-REVIEW",
+  "review_type": "Evidence Prioritization & SIH Demonstration Governance Review",
+  "final_governance_decision": "B = SIH DEMONSTRATION EVIDENCE SUFFICIENT WITH EXPLICIT LIMITATIONS",
+  "ui_ux_phase_gate": "UI_UX_PHASE = UNLOCKED",
+  "no_new_experiments_performed": true,
+  "executive_summary": {
+    "decision_reason": "POLARIS system engineering pipeline cleanly demonstrates closed-loop forecasting -> ForecastBundle -> MILP -> DispatchPlan -> DigitalTwin MPC execution on synthetic scenarios. Engineering demonstration is fully supported and offline, but requires explicit disclosure of material limitations (synthetic inputs, regional proxy wind, data-blocked real demand).",
+    "ui_ux_phase_authorization": "Authorizes separate presentation/UI layer consuming existing runtime output JSON artifacts without modifying any underlying POLARIS code, contracts, or logic."
+  },
+  "evidence_inventory": [
+    {
+      "item": "S1 24-Step Closed-Loop MPC Trajectory",
+      "category": "System Execution",
+      "classification": "PRIMARY DEMONSTRATION",
+      "context": "Authoritative evidence for closed-loop forecasting -> MILP -> Dispatch -> Digital Twin execution"
+    },
+    {
+      "item": "Stage 8.1 Solar Forecasting Engine Adapter",
+      "category": "Solar Forecasting",
+      "classification": "PRIMARY DEMONSTRATION",
+      "context": "Qualified Stage81ForecastEngine emitting 24h point-only ForecastBundle v1.0.0"
+    },
+    {
+      "item": "POLARIS 74-Test Full Regression Suite",
+      "category": "Engineering QA",
+      "classification": "SECONDARY SUPPORTING",
+      "context": "Verification evidence showing 74/74 PASSing regression across runtime, schemas, adapters, and D5"
+    },
+    {
+      "item": "Stage 8.1 Champion Model OOD Benchmark",
+      "category": "Solar Research",
+      "classification": "SECONDARY SUPPORTING",
+      "context": "Frozen scientific OOD benchmark: 36.188657 W/m2 MAE on canonical 347-window test set"
+    },
+    {
+      "item": "D4-C1 Fault Containment Governance (S7)",
+      "category": "Fault Governance",
+      "classification": "SECONDARY SUPPORTING",
+      "context": "S7 — PASS through previously verified D4-C1 fault-containment testing; not exercised during the S1 demonstration run"
+    },
+    {
+      "item": "D5 Forecast Error Sensitivity Matrix",
+      "category": "EMS Research",
+      "classification": "INTERNAL / GOVERNANCE",
+      "context": "Architectural precedent for EMS robustness under synthetic forecast error regimes"
+    },
+    {
+      "item": "Abisko 10m Wind Speed AR-X Model (A2/A3)",
+      "category": "Wind Research",
+      "classification": "INTERNAL / GOVERNANCE",
+      "context": "Regional proxy wind-speed evidence; site turbine generation NOT established"
+    },
+    {
+      "item": "Ross Island E-33 Turbine Reference",
+      "category": "Wind Reference",
+      "classification": "INTERNAL / GOVERNANCE",
+      "context": "Literature reference turbine; NOT a validated Nuolja station turbine asset"
+    },
+    {
+      "item": "Synthetic Scenarios S2, S4, S5, S6",
+      "category": "Stress Testing",
+      "classification": "SECONDARY SUPPORTING",
+      "context": "Multi-scenario stress validation (low solar, high demand, renewable excess, low SOC)"
+    },
+    {
+      "item": "Real Station EMS Fuel Savings Claims",
+      "category": "Operational",
+      "classification": "DO NOT PRESENT AS EVIDENCE",
+      "context": "Strictly DATA BLOCKED / NOT PERFORMED; real station empirical validation is prohibited"
+    },
+    {
+      "item": "Real Station Demand Forecasting Claims",
+      "category": "Demand Research",
+      "classification": "DO NOT PRESENT AS EVIDENCE",
+      "context": "Measured station demand is DATA BLOCKED; demand forecasting is NOT AUTHORIZED"
+    },
+    {
+      "item": "Site-Specific Nuolja Turbine Power Claims",
+      "category": "Wind Generation",
+      "classification": "DO NOT PRESENT AS EVIDENCE",
+      "context": "Turbine specs and site generation curve are NOT ESTABLISHED"
+    }
+  ],
+  "engineering_vs_scientific_validation": {
+    "engineering_demonstration": "Evidence that POLARIS software workflow executes correctly, offline, and deterministically across forecasting -> MILP -> Dispatch -> Simulator.",
+    "scientific_validation": "Evidence establishing real measured station performance, operational fuel savings, or validated deployment performance.",
+    "distinction_rule": "Successful synthetic execution proves engineering system readiness, but MUST NOT be presented as real-world station validation."
+  },
+  "prohibited_sih_claims": [
+    "Real-world polar station fuel savings or monetary cost reductions",
+    "Empirical station-level forecasting accuracy on real station microgrids",
+    "Real Nuolja wind-generation forecasting or validated turbine power performance",
+    "Real station demand forecasting capability (Demand data is DATA BLOCKED)",
+    "100% system reliability based on S1 synthetic run (Must state: '0 kWh unmet critical load during the executed 24-step S1 synthetic trajectory')",
+    "Equating or averaging execution-run solar MAE (42.3054 W/m2) with frozen Stage 8.1 OOD benchmark MAE (36.188657 W/m2)",
+    "Implying S7 fault containment was exercised live during the S1 runtime demonstration"
+  ],
+  "minimum_sih_demonstration_set": [
+    "Actual 24-step S1 closed-loop MPC execution trajectory (run_report.json, latest_forecast_bundle.json, latest_dispatch_plan.json)",
+    "Frozen Stage 8.1 champion model provenance (HistGradientBoosting, 37 features, 36.188657 W/m2 benchmark MAE)",
+    "D4-C1 governed zero-dispatch degraded state on infeasibility (objective_value = 1e9)",
+    "POLARIS 74/74 full regression test suite pass report",
+    "Explicit disclosure of material limitations (synthetic scenarios, regional wind proxy, synthetic demand)"
+  ],
+  "metric_wording_reference": {
+    "s1_unmet_load": "0 kWh unmet critical load during the executed 24-step S1 synthetic trajectory",
+    "s1_execution_run_mae": "Execution-run Stage8.1 solar irradiance MAE: 42.3054 W/m² (on the S1 synthetic trajectory)",
+    "frozen_benchmark_mae": "Frozen Stage8.1 OOD benchmark MAE: 36.188657 W/m² (on the canonical frozen test set)",
+    "s7_fault_evidence": "S7 — PASS through previously verified D4-C1 fault-containment testing; not exercised during the S1 demonstration run"
+  },
+  "ui_ux_transition_directive": {
+    "gate": "UI_UX_PHASE = UNLOCKED",
+    "scope": "Presentation and display layer ONLY",
+    "constraints": [
+      "Must consume existing runtime output JSON artifacts",
+      "MUST NOT alter underlying runner, CLI, schemas, optimizer, simulator, forecasting, or governance code",
+      "MUST preserve all scientific claim firewalls and metric disclosures"
+    ]
+  }
+}

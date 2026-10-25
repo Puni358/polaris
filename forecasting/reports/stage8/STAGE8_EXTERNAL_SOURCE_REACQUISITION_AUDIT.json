@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-09-13T11:10:00+05:30",
+  "document_title": "STAGE 8 EXTERNAL SOURCE REACQUISITION AUDIT",
+  "audit_type": "DATA_SOURCE_FORENSIC_AUDIT_ONLY",
+  "model_execution_performed": false,
+  "synthetic_data_generated": false,
+  "governance_modified": false,
+  "verified_baseline": {
+    "stage": "Stage 8.1",
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399
+  },
+  "source_categorization": {
+    "arome_arctic_2024_nwp": "4. SOURCE EXISTS BUT REQUIRED 2024 DATA UNAVAILABLE",
+    "stage8_17a_feature_code": "5. SOURCE NOT FOUND",
+    "abis_gnss_ztd_observations": "6. ACCESS REQUIRES USER CREDENTIALS/ACTION",
+    "abis_nrt_publication_timestamps": "4. SOURCE EXISTS BUT REQUIRED 2024 DATA UNAVAILABLE"
+  },
+  "reacquisition_answers": {
+    "q1_arome_2024_reacquired": false,
+    "q2_arome_source_identified": true,
+    "q3_stage8_17a_formulas_recovered": false,
+    "q4_abis_2024_reacquired": false,
+    "q5_abis_publication_timestamps_established": false,
+    "q6_stage8_19_causal_features_reconstructed": false,
+    "q7_genuinely_reconstructable_route": "NONE (NEITHER ROUTE IS RECONSTRUCTABLE)",
+    "q8_required_additional_access": [
+      "Lantmateriet SWEPOS / E-GVAP institutional user credentials",
+      "Custom MET Norway archival extraction request for 2024 AROME-Arctic 1-hourly netCDF grids",
+      "Historical code artifact containing wind_disagreement_700 and LWP_disagreement definitions"
+    ]
+  }
+}

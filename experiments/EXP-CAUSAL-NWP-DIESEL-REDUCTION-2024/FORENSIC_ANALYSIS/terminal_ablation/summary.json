@@ -1,0 +1,374 @@
+{
+ "77": {
+  "frozen_B_reproduced": true,
+  "base": {
+   "fuel_l": 74.3196,
+   "on_hours": 6,
+   "startups": 3,
+   "throughput_wh": 224916.4,
+   "efc": 0.5623,
+   "min_soc_pct": 62.56,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_realized_h24": 75.18,
+   "unmet_wh": 33919.4,
+   "curtail_wh": 147055.66,
+   "curtail_same_hour_discharge_wh": 124579.13,
+   "diesel_charge_steps_t0": 6,
+   "diesel_charge_planned_wh_t0": 143046.29,
+   "step0_plan_diesel_w": 44598.98,
+   "step0_plan_charge_w": 40022.95,
+   "step0_terminal_margin_wh": 0.0
+  },
+  "ablated": {
+   "fuel_l": 46.1752,
+   "on_hours": 4,
+   "startups": 3,
+   "throughput_wh": 192431.34,
+   "efc": 0.4811,
+   "min_soc_pct": 60.06,
+   "max_soc_pct": 92.98,
+   "terminal_soc_pct_realized_h24": 69.38,
+   "unmet_wh": 37091.81,
+   "curtail_wh": 91910.09,
+   "curtail_same_hour_discharge_wh": 91910.09,
+   "diesel_charge_steps_t0": 4,
+   "diesel_charge_planned_wh_t0": 84513.11,
+   "step0_plan_diesel_w": 44598.98,
+   "step0_plan_charge_w": 40022.95,
+   "step0_terminal_margin_wh": 8071.3
+  },
+  "invariants": {
+   "non_terminal_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 1,
+   "target_ts": "2024-07-16T01:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 22042.13,
+    "plan_charge_t0_w": 20281.79,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 10786.18,
+    "plan_charge_t0_w": 9025.84,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 20611.3
+   }
+  }
+ },
+ "56": {
+  "frozen_B_reproduced": true,
+  "base": {
+   "fuel_l": 93.7559,
+   "on_hours": 7,
+   "startups": 4,
+   "throughput_wh": 212334.09,
+   "efc": 0.5308,
+   "min_soc_pct": 62.95,
+   "max_soc_pct": 92.22,
+   "terminal_soc_pct_realized_h24": 84.35,
+   "unmet_wh": 61062.34,
+   "curtail_wh": 87994.98,
+   "curtail_same_hour_discharge_wh": 87994.98,
+   "diesel_charge_steps_t0": 7,
+   "diesel_charge_planned_wh_t0": 186493.58,
+   "step0_plan_diesel_w": 44462.64,
+   "step0_plan_charge_w": 39862.64,
+   "step0_terminal_margin_wh": 0.0
+  },
+  "ablated": {
+   "fuel_l": 80.7906,
+   "on_hours": 5,
+   "startups": 5,
+   "throughput_wh": 260232.95,
+   "efc": 0.6506,
+   "min_soc_pct": 65.11,
+   "max_soc_pct": 88.74,
+   "terminal_soc_pct_realized_h24": 84.35,
+   "unmet_wh": 75716.49,
+   "curtail_wh": 86803.5,
+   "curtail_same_hour_discharge_wh": 86803.5,
+   "diesel_charge_steps_t0": 5,
+   "diesel_charge_planned_wh_t0": 186502.48,
+   "step0_plan_diesel_w": 54600.0,
+   "step0_plan_charge_w": 50000.0,
+   "step0_terminal_margin_wh": 7431.3
+  },
+  "invariants": {
+   "non_terminal_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-06-25T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 44462.64,
+    "plan_charge_t0_w": 39862.64,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 54600.0,
+    "plan_charge_t0_w": 50000.0,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 7431.3
+   }
+  }
+ },
+ "66": {
+  "frozen_B_reproduced": true,
+  "base": {
+   "fuel_l": 80.7361,
+   "on_hours": 7,
+   "startups": 4,
+   "throughput_wh": 231944.03,
+   "efc": 0.5799,
+   "min_soc_pct": 57.83,
+   "max_soc_pct": 90.0,
+   "terminal_soc_pct_realized_h24": 90.0,
+   "unmet_wh": 44634.32,
+   "curtail_wh": 37200.86,
+   "curtail_same_hour_discharge_wh": 37200.86,
+   "diesel_charge_steps_t0": 7,
+   "diesel_charge_planned_wh_t0": 145425.27,
+   "step0_plan_diesel_w": 54592.86,
+   "step0_plan_charge_w": 50000.0,
+   "step0_terminal_margin_wh": 0.0
+  },
+  "ablated": {
+   "fuel_l": 73.905,
+   "on_hours": 8,
+   "startups": 4,
+   "throughput_wh": 164040.74,
+   "efc": 0.4101,
+   "min_soc_pct": 55.2,
+   "max_soc_pct": 89.56,
+   "terminal_soc_pct_realized_h24": 84.66,
+   "unmet_wh": 47377.95,
+   "curtail_wh": 8914.21,
+   "curtail_same_hour_discharge_wh": 8914.21,
+   "diesel_charge_steps_t0": 8,
+   "diesel_charge_planned_wh_t0": 96296.93,
+   "step0_plan_diesel_w": 21606.09,
+   "step0_plan_charge_w": 17013.23,
+   "step0_terminal_margin_wh": 75051.3
+  },
+  "invariants": {
+   "non_terminal_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-07-05T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 54592.86,
+    "plan_charge_t0_w": 50000.0,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 21606.09,
+    "plan_charge_t0_w": 17013.23,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 75051.3
+   }
+  }
+ },
+ "23": {
+  "frozen_B_reproduced": true,
+  "base": {
+   "fuel_l": 61.8951,
+   "on_hours": 4,
+   "startups": 4,
+   "throughput_wh": 256975.54,
+   "efc": 0.6424,
+   "min_soc_pct": 62.92,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_realized_h24": 72.28,
+   "unmet_wh": 63431.92,
+   "curtail_wh": 181076.44,
+   "curtail_same_hour_discharge_wh": 158731.93,
+   "diesel_charge_steps_t0": 4,
+   "diesel_charge_planned_wh_t0": 141213.7,
+   "step0_plan_diesel_w": 43821.9,
+   "step0_plan_charge_w": 39223.94,
+   "step0_terminal_margin_wh": 0.0
+  },
+  "ablated": {
+   "fuel_l": 72.5641,
+   "on_hours": 5,
+   "startups": 3,
+   "throughput_wh": 245053.36,
+   "efc": 0.6126,
+   "min_soc_pct": 68.06,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_realized_h24": 72.28,
+   "unmet_wh": 56676.9,
+   "curtail_wh": 197989.66,
+   "curtail_same_hour_discharge_wh": 159124.75,
+   "diesel_charge_steps_t0": 5,
+   "diesel_charge_planned_wh_t0": 157079.53,
+   "step0_plan_diesel_w": 49899.89,
+   "step0_plan_charge_w": 45301.93,
+   "step0_terminal_margin_wh": 20691.3
+  },
+  "invariants": {
+   "non_terminal_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 0,
+   "target_ts": "2024-05-23T00:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 43821.9,
+    "plan_charge_t0_w": 39223.94,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 0.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 49899.89,
+    "plan_charge_t0_w": 45301.93,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 20691.3
+   }
+  }
+ },
+ "8": {
+  "frozen_B_reproduced": true,
+  "base": {
+   "fuel_l": 38.3751,
+   "on_hours": 3,
+   "startups": 2,
+   "throughput_wh": 195044.29,
+   "efc": 0.4876,
+   "min_soc_pct": 57.14,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_realized_h24": 90.4,
+   "unmet_wh": 54983.84,
+   "curtail_wh": 111847.82,
+   "curtail_same_hour_discharge_wh": 107804.36,
+   "diesel_charge_steps_t0": 3,
+   "diesel_charge_planned_wh_t0": 79200.37,
+   "step0_plan_diesel_w": 26400.37,
+   "step0_plan_charge_w": 21800.37,
+   "step0_terminal_margin_wh": 0.0
+  },
+  "ablated": {
+   "fuel_l": 19.1001,
+   "on_hours": 2,
+   "startups": 1,
+   "throughput_wh": 158539.15,
+   "efc": 0.3963,
+   "min_soc_pct": 57.14,
+   "max_soc_pct": 95.0,
+   "terminal_soc_pct_realized_h24": 66.48,
+   "unmet_wh": 61378.7,
+   "curtail_wh": 111847.82,
+   "curtail_same_hour_discharge_wh": 107804.36,
+   "diesel_charge_steps_t0": 2,
+   "diesel_charge_planned_wh_t0": 29200.37,
+   "step0_plan_diesel_w": 26400.37,
+   "step0_plan_charge_w": 21800.37,
+   "step0_terminal_margin_wh": 57011.3
+  },
+  "invariants": {
+   "non_terminal_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 3,
+   "target_ts": "2024-05-08T03:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 3975.92,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 13740.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 3859.75,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 100831.3
+   }
+  }
+ },
+ "30": {
+  "frozen_B_reproduced": true,
+  "base": {
+   "fuel_l": 39.4323,
+   "on_hours": 4,
+   "startups": 2,
+   "throughput_wh": 209938.83,
+   "efc": 0.5248,
+   "min_soc_pct": 56.77,
+   "max_soc_pct": 90.88,
+   "terminal_soc_pct_realized_h24": 76.81,
+   "unmet_wh": 62130.62,
+   "curtail_wh": 101625.86,
+   "curtail_same_hour_discharge_wh": 101625.86,
+   "diesel_charge_steps_t0": 4,
+   "diesel_charge_planned_wh_t0": 52571.4,
+   "step0_plan_diesel_w": 24885.76,
+   "step0_plan_charge_w": 20285.76,
+   "step0_terminal_margin_wh": 1160.0
+  },
+  "ablated": {
+   "fuel_l": 39.4323,
+   "on_hours": 4,
+   "startups": 2,
+   "throughput_wh": 209938.83,
+   "efc": 0.5248,
+   "min_soc_pct": 56.77,
+   "max_soc_pct": 90.88,
+   "terminal_soc_pct_realized_h24": 76.81,
+   "unmet_wh": 62130.62,
+   "curtail_wh": 101625.86,
+   "curtail_same_hour_discharge_wh": 101625.86,
+   "diesel_charge_steps_t0": 4,
+   "diesel_charge_planned_wh_t0": 52571.4,
+   "step0_plan_diesel_w": 24885.76,
+   "step0_plan_charge_w": 20285.76,
+   "step0_terminal_margin_wh": 88551.3
+  },
+  "invariants": {
+   "non_terminal_mismatches": [],
+   "n_mismatch": 0,
+   "initial_state_identical": true,
+   "steps": true
+  },
+  "first_divergence": {
+   "step": 2,
+   "target_ts": "2024-05-30T02:00:00Z",
+   "same_state": true,
+   "base": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 493.47,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 16000.0
+   },
+   "ablated": {
+    "plan_diesel_t0_w": 0.0,
+    "plan_charge_t0_w": 1588.88,
+    "plan_discharge_t0_w": 0.0,
+    "terminal_margin_t23_wh": 103391.3
+   }
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE RESEARCH GOVERNANCE DECISION RECORD D4 - DEFERRED WIND CAPABILITY",
+  "timestamp": "2026-09-17T20:16:10Z",
+  "authoritative_inputs": [
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D4_WIND_SOURCE.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D3_PV_MAPPING.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D1_D2.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_RESEARCH_GOVERNANCE_PACKAGE.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "system/schemas/forecast_bundle.py"
+  ],
+  "current_research_capability_state": {
+    "solar_forecasting": "Developed, evaluated, and frozen as Stage8.1 champion",
+    "wind_forecasting": "Not yet developed, evaluated, or selected",
+    "demand_forecasting": "Not yet governed (pending D5)",
+    "prototype_wind_generator": "Evaluated as PROTOTYPE_UNVALIDATED_NOT_AUTHORIZED"
+  },
+  "governance_decision_d4": {
+    "name": "Wind Forecasting - Deferred Future Capability",
+    "status": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "d4_wind_source": "FUTURE_WIND_FORECASTING_CAPABILITY_NOT_YET_DEVELOPED_OR_AUTHORIZED",
+    "current_wind_forecast_authorization": "NOT_AUTHORIZED",
+    "future_wind_research_status": "DEFERRED_FUTURE_CAPABILITY",
+    "existing_technical_wind_source": "PROTOTYPE_UNVALIDATED_NOT_AUTHORIZED",
+    "statement": "POLARIS shall not currently designate the existing prototype wind mechanism as the authoritative wind-generation forecasting source. Wind forecasting shall remain a deferred future research and engineering capability."
+  },
+  "reason_for_deferral": [
+    "Strict scientific provenance; technical availability of prototype does not equal scientific model development.",
+    "POLARIS does not claim forecasting capabilities that have not undergone model training, feature selection, and validation.",
+    "Polar wind forecasting requires dedicated meteorological data, power curve modeling, and validation separate from solar irradiance."
+  ],
+  "forecastbundle_implication": {
+    "field_integrity": "wind_generation field remains architecturally defined and intact in schema v1.0.",
+    "schema_modified": false,
+    "capability_status_note": "Absence of authorized wind source is a capability status fact, not a schema defect."
+  },
+  "future_wind_forecasting_boundary": [
+    "Wind dataset acquisition & quality audit",
+    "Feature engineering & resolution alignment",
+    "Model training & benchmark evaluation",
+    "Turbine power conversion model authorization",
+    "Champion selection & freeze",
+    "ForecastBundle integration authorization"
+  ],
+  "relationship_to_d1_d2_d3": {
+    "d1_d2": "If a future wind model is authorized, D1 uncertainty bound semantics and D2 point-only degenerate representation apply.",
+    "d3": "D3 PV mapping authorization does not authorize or validate wind persistence. D3 and D4 remain strictly decoupled."
+  },
+  "d4_frozen_contract_assessment": {
+    "d4_frozen_contract_change_required": "NO",
+    "reasoning": "ForecastBundle schema v1.0 retains wind_generation field. Deferring the source does not require a structural schema modification."
+  },
+  "architectural_consequence": {
+    "current_state": "Stage8.1 solar forecast mapped to solar_generation; wind field architecturally intact but unpopulated by an authorized source.",
+    "future_intent": "Multi-source composition combining solar, wind, and demand forecasts into ForecastBundle."
+  },
+  "scientific_claim_limitations": "Records capability status and governance only. Does not claim wind forecasting skill, power curve validation, or EMS optimization superiority.",
+  "remaining_governance_decisions": {
+    "D1_LOWER_UPPER_SEMANTICS": "DECISION_RECORDED",
+    "D2_POINT_ONLY_REPRESENTATION": "DECISION_RECORDED",
+    "D3_PV_MAPPING": "DECISION_RECORDED",
+    "D4_WIND_SOURCE": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "D5_DEMAND_SOURCE": "NOT_ESTABLISHED",
+    "D6_MULTI_SOURCE_COMPOSITION": "NOT_ESTABLISHED",
+    "D7_FINAL_FROZEN_CONTRACT_CHANGE_REQUIRED": "NOT_ESTABLISHED"
+  },
+  "implementation_status": "NOT_AUTHORIZED",
+  "historical_artifact_protection": {
+    "d4_wind_source_record_modified": false,
+    "d3_decision_record_modified": false,
+    "d1_d2_decision_record_modified": false,
+    "interval_semantics_audit_modified": false,
+    "point_semantics_check_modified": false,
+    "research_governance_package_modified": false,
+    "contract_resolution_modified": false,
+    "compatibility_audit_modified": false,
+    "source_code_modified": false
+  },
+  "final_control_state": {
+    "d4_status": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "d4_wind_source": "FUTURE_WIND_FORECASTING_CAPABILITY_NOT_YET_DEVELOPED_OR_AUTHORIZED",
+    "current_wind_forecast_authorization": "NOT_AUTHORIZED",
+    "future_wind_research_status": "DEFERRED_FUTURE_CAPABILITY",
+    "existing_technical_wind_source": "PROTOTYPE_UNVALIDATED_NOT_AUTHORIZED",
+    "d4_frozen_contract_change_required": "NO",
+    "d5_demand_source": "NOT_ESTABLISHED",
+    "d6_multi_source_composition": "NOT_ESTABLISHED",
+    "d7_final_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "D4_DEFERRED_REMAINING_DECISIONS_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "evaluation_name": "cloud_to_pv_power_evaluation_20261010",
+  "timestamp_utc": "2026-10-10T04:15:07.364415+00:00",
+  "execution_duration_seconds": 0.91,
+  "readiness_status": "PASS (WITH PROXY-ONLY QUALIFICATION)",
+  "evaluation_type": "PROXY-ONLY PHYSICAL MAPPING ANALYSIS",
+  "decision": "IMPROVED",
+  "governance_note": "Actual measured PV power is absent from the POLARIS dataset. This evaluation reflects a proxy mapping of ground-truth GHI through the authorized D3 PV transformation.",
+  "input_artifacts": {
+    "training_dataset_csv": {
+      "path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+      "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"
+    },
+    "validation_dataset_csv": {
+      "path": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+      "sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5"
+    },
+    "solar_pv_config_yaml": {
+      "path": "system/config/solar_pv.yaml",
+      "sha256": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e"
+    },
+    "causal_physics_implementation": {
+      "path": "system/forecasting/implementations/causal_nwp_physics.py",
+      "sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710"
+    }
+  },
+  "pv_model_parameters": {
+    "model_reference": "D3 engineering PV transformation (system/config/solar_pv.yaml)",
+    "array_area_m2": 300.0,
+    "panel_efficiency": 0.2,
+    "performance_ratio": 0.85,
+    "composite_multiplier_w_per_wm2": 51.0,
+    "inverter_capacity_limit_w": 60000.0,
+    "night_handling": "identically 0.0 W when solar_elevation <= 0 or clearsky_ghi <= 0"
+  },
+  "sample_counts": {
+    "raw_validation_origins_2025": 365,
+    "raw_validation_rows_2025": 8760,
+    "blind_origins_excluded": 123,
+    "blind_rows_excluded": 2952,
+    "blind_period": "2025-05-01 to 2025-08-31",
+    "blind_outcomes_accessed": false,
+    "evaluated_non_blind_origins": 242,
+    "evaluated_non_blind_hours": 5808,
+    "evaluated_daylight_hours": 1873
+  },
+  "physical_bounds": {
+    "pv_baseline_min_w": 0.0,
+    "pv_baseline_max_w": 30715.089006895527,
+    "pv_candidate_min_w": 0.0,
+    "pv_candidate_max_w": 31306.428253330356,
+    "pv_proxy_actual_min_w": 0.0,
+    "pv_proxy_actual_max_w": 31868.200017,
+    "baseline_negative_violations": 0,
+    "candidate_negative_violations": 0,
+    "baseline_capacity_exceedances": 0,
+    "candidate_capacity_exceedances": 0,
+    "night_baseline_nonzero_violations": 0,
+    "night_candidate_nonzero_violations": 0,
+    "all_physical_bounds_passed": true
+  },
+  "metrics_summary": {
+    "daylight_hours": {
+      "sample_hours": 1873,
+      "baseline": {
+        "mae_w": 4355.828282540451,
+        "mae_kw": 4.355828282540451,
+        "rmse_w": 6644.719213167953,
+        "rmse_kw": 6.644719213167953,
+        "bias_w": -3945.9588145341036,
+        "bias_kw": -3.9459588145341034
+      },
+      "candidate": {
+        "mae_w": 3036.6382406402454,
+        "mae_kw": 3.0366382406402455,
+        "rmse_w": 4790.05378436577,
+        "rmse_kw": 4.79005378436577,
+        "bias_w": -1557.0418061964742,
+        "bias_kw": -1.5570418061964741
+      },
+      "delta_mae_w": -1319.1900419002059,
+      "delta_mae_kw": -1.3191900419002058,
+      "relative_mae_reduction_percent": 30.285630110533518,
+      "delta_mae_w_ci_95": [
+        -1814.296273752178,
+        -798.1243791259866
+      ],
+      "delta_mae_kw_ci_95": [
+        -1.814296273752178,
+        -0.7981243791259865
+      ]
+    },
+    "all_hours": {
+      "sample_hours": 5808,
+      "baseline": {
+        "mae_w": 1427.695017543434,
+        "mae_kw": 1.427695017543434,
+        "rmse_w": 3774.943807995014,
+        "rmse_kw": 3.774943807995014,
+        "bias_w": -1295.517759696346,
+        "bias_kw": -1.295517759696346
+      },
+      "candidate": {
+        "mae_w": 1002.274399692352,
+        "mae_kw": 1.002274399692352,
+        "rmse_w": 2722.3182514494383,
+        "rmse_kw": 2.722318251449438,
+        "bias_w": -525.1249297004125,
+        "bias_kw": -0.5251249297004125
+      },
+      "delta_mae_w": -425.42061785108206,
+      "delta_mae_kw": -0.42542061785108204,
+      "relative_mae_reduction_percent": 29.797723787191106,
+      "delta_mae_w_ci_95": [
+        -675.5504663830551,
+        -213.7769698715073
+      ],
+      "delta_mae_kw_ci_95": [
+        -0.675550466383055,
+        -0.2137769698715073
+      ]
+    }
+  },
+  "bootstrap_parameters": {
+    "method": "Calendar-gap-aware segment-stratified stationary bootstrap",
+    "reference": "Politis & Romano (1994)",
+    "mean_block_length_days": 10.0,
+    "replicates": 2000,
+    "seed": 20261010,
+    "confidence_interval": "Percentile 95%"
+  }
+}

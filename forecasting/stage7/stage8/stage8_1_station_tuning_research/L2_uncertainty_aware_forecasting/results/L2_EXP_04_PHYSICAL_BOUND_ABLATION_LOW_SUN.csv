@@ -1,0 +1,12 @@
+metric,value,unit
+sample_count,1410.0,rows
+mean_actual_irradiance,61.548508581560284,W/m²
+variant_A_picp,86.38297872340426,%
+variant_B_picp,60.0,%
+variant_C_picp,79.9290780141844,%
+variant_B_mean_bound,117.70893847517729,W/m²
+variant_C_mean_bound,139.70144335106383,W/m²
+variant_B_upper_clipped_pct,51.205673758865245,%
+variant_C_upper_clipped_pct,22.198581560283685,%
+variant_B_actual_gt_bound_pct,31.27659574468085,%
+variant_C_actual_gt_bound_pct,10.070921985815604,%

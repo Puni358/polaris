@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-13T09:14:37+00:00",
+  "stage": "POLARIS STAGE 8.17A GOVERNANCE REPAIR FEASIBILITY AUDIT",
+  "repair_verdict": "STAGE 8.17A GOVERNANCE REPAIR: POSSIBLE",
+  "forensic_finding": "The candidate was 100% computationally frozen and uniquely determined in memory before ODD target access. Missing paper-trail freeze artifact is repairable using pre-ODD evidence alone.",
+  "active_operational_champion": "Stage 8.16B-2 Stage 8.1 + Phi_inconsist Model",
+  "active_champion_daytime_nmae_pct": 27.7111,
+  "pre_odd_evidence_summary": {
+    "control_even_mae_w_m2": 44.718895,
+    "candidate_even_mae_w_m2": 44.296582,
+    "delta_even_mae_w_m2": -0.422313,
+    "control_even_nmae_pct": 32.3099,
+    "candidate_even_nmae_pct": 32.0048,
+    "delta_even_nmae_pct": -0.3051,
+    "control_even_rmse_w_m2": 76.443487,
+    "candidate_even_rmse_w_m2": 75.892401,
+    "delta_even_rmse_w_m2": -0.551086,
+    "improved_folds_count": 3,
+    "worst_fold_degradation_w_m2": 0.115316,
+    "all_5_gates_passed": true
+  },
+  "reconstructed_artifacts_created": [
+    "STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.md",
+    "STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.json"
+  ],
+  "governance_recommendation": "The pre-ODD computational freeze is fully proven. The locked ODD evaluation (Daytime MAE 35.241085 W/m2, nMAE 27.3337%) is governance-valid and may be accepted as a locked validation."
+}

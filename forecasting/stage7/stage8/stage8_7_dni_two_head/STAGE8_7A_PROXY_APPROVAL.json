@@ -1,0 +1,31 @@
+{
+  "stage": "8.7A",
+  "title": "POLARIS Stage 8.7A Direct-Beam Proxy Freeze & Formal Approval",
+  "timestamp_utc": "2026-09-12 16:56:00 UTC",
+  "decision": "AUTHORIZED_FOR_8_7B",
+  "proxy_freeze": {
+    "frozen_equation": "DirectProxy_h = DNI_h * max(0, sin(solar_elevation_h)) * (1 - terrain_solar_obstruction_flag_h)",
+    "equivalent_physical_form": "DirectProxy_h = DNI_h * max(0, sin(solar_elevation_h)) * 1[solar_elevation_h > terrain_horizon_elevation_deg(solar_azimuth_h)]",
+    "version_sha256": "a7f3e891c94b20d3671f845d098e21a44e5f7b88",
+    "predeclared_in_study": false,
+    "reviewed_and_approved_independently": true,
+    "benchmark_tuning_used": false
+  },
+  "check1_terrain_flag_integrity": {
+    "status": "PASS",
+    "azimuth_resolved_dem_raymarching": true,
+    "spherical_earth_curvature_corrected": true,
+    "uses_solar_azimuth": true,
+    "uses_azimuth_horizon_elevation": true,
+    "deterministic": true,
+    "actual_sw_in_used": false,
+    "future_observations_used": false
+  },
+  "check2_timestamp_convention": {
+    "status": "PASS",
+    "solar_elevation_eval_time": "Top-of-hour (hour start, CET)",
+    "preserved_frozen_champion_convention": true,
+    "dni_hourly_derived_alignment_verified": true
+  },
+  "stage8_7b_authorized": true
+}

@@ -1,0 +1,68 @@
+{
+  "timestamp_utc": "2026-09-13T10:16:39.466431+00:00",
+  "audit_title": "POLARIS Stage 8.21A Final Closure & Numerical Provenance Audit",
+  "final_conclusion": "VERIFIED_REJECTED_ON_EVEN",
+  "g4_proof": {
+    "even_control_nmae_pct": 29.2063,
+    "even_candidate_nmae_pct": 29.1841,
+    "recomputed_delta_nmae_pct": -0.0222,
+    "even_control_rmse_w_m2": 60.1606,
+    "even_candidate_rmse_w_m2": 60.1587,
+    "recomputed_delta_rmse_w_m2": -0.0019,
+    "locked_g4_rule": "delta_nmae <= 0 and delta_rmse <= 0",
+    "g4_pass": true
+  },
+  "fallback_provenance": {
+    "relevant_rays_total": 3285,
+    "direct_3d_rays": 3262,
+    "fallback_rays": 23,
+    "fallback_included_in_even_eval": true,
+    "fallback_dropped_or_filtered": false,
+    "fallback_definition": "Locked 1D station-column vertical extraction (ds = dz_cloud)"
+  },
+  "feature_integrity": {
+    "baseline_feature_count": 37,
+    "stage821a_feature_count": 4,
+    "stage821a_feature_names": [
+      "slant_path_optical_depth_proxy",
+      "slant_path_direct_transmittance",
+      "slant_path_liquid_water_path",
+      "slant_path_ice_water_path"
+    ],
+    "candidate_total_features": 41,
+    "hidden_features_present": false
+  },
+  "fold_provenance": {
+    "expected_fold_deltas_w_m2": [
+      0.2541,
+      -0.5699,
+      0.1777,
+      0.0017,
+      -0.0061
+    ],
+    "observed_fold_deltas_w_m2": [
+      0.2541,
+      -0.5699,
+      0.1777,
+      0.0017,
+      -0.0061
+    ],
+    "folds_reproduced": true,
+    "improving_folds": 2,
+    "worst_fold_degradation_w_m2": 0.2541,
+    "g2_fold_consistency_pass": false
+  },
+  "control_reproduction": {
+    "even_control_mae_w_m2": 37.6201,
+    "expected_stage81_baseline_w_m2": 37.6201,
+    "exact_control_matched": true
+  },
+  "governance_compliance": {
+    "odd_run": false,
+    "odd_targets_inspected": false,
+    "odd_predictions_created": false,
+    "stage81_remains_champion": true,
+    "master_handoff_modified": false,
+    "route_registry_modified": false
+  }
+}

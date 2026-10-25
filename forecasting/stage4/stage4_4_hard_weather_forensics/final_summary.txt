@@ -1,0 +1,49 @@
+
+================================================================================
+POLARIS OPTIMIZATION #4: HARD-WEATHER FORENSICS & PREDICTABILITY REPORT
+================================================================================
+
+1. REPRODUCIBILITY CHECK
+------------------------
+Stage 4 Official Test Predictions Reproduced: YES
+Test Daytime MAE:  43.4508 W/m² (Exact match with reference 43.45 W/m²)
+Test Daytime nMAE: 33.70% (Exact match with reference 33.70%)
+Test Daytime RMSE: 74.8530 W/m² (Exact match with reference 74.85 W/m²)
+Test Daytime Bias: -1.9716 W/m² (Exact match with reference -1.97 W/m²)
+Test Night MAE:    0.3242 W/m² (Exact match with reference 0.32 W/m²)
+
+2. ERROR-TAIL & THRESHOLD ANALYSIS (>150 W/m² HARD REGIME)
+---------------------------------------------------------
+Even Train Origins (Daytime Hours = 2885):
+- >50 W/m²:   815 hours (28.25%), Contributes 79.95% of total abs error
+- >100 W/m²:  407 hours (14.11%), Contributes 55.70% of total abs error
+- >150 W/m²:  210 hours (7.28%), Contributes 35.65% of total abs error
+- >200 W/m²:  92 hours (3.19%), Contributes 18.65% of total abs error
+
+Odd Test Origins (Daytime Hours = 2883):
+- >150 W/m²:  210 hours (7.28%), Contributes 35.85% of total abs error
+
+3. HARD-WEATHER CHARACTERISTICS
+-------------------------------
+Hard cases (>150 W/m²) occur under high clear-sky GHI potential (mean clearsky_ghi = 548.0 W/m² vs 180.9 W/m² for non-hard cases), high solar elevation, and high model disagreement (|Chronos - Physics| = 125.3 W/m² vs 59.2 W/m²).
+However, hard cases span across multiple NWP cloud regimes (56.7% in Overcast, 19.1% in Broken, 9.1% in Scattered, 9.5% in Few, 5.7% in Clear), showing that NWP cloud cover alone is a weak indicator of hard errors.
+
+4. FORECAST-TIME PREDICTABILITY & CROSS-VALIDATION
+---------------------------------------------------
+- Target Base Rate: 7.28% of daytime hours are hard (>150 W/m²).
+- Out-of-fold CV ROC-AUC: Logistic Regression = 0.9044, Shallow Decision Tree = 0.8622.
+- Out-of-fold CV PR-AUC:  Logistic Regression = 0.3485, Shallow Decision Tree = 0.2340 (Base Rate = 0.0728).
+- Held-out Test ROC-AUC:  Logistic Regression = 0.9081, PR-AUC = 0.3725.
+
+SCIENTIFIC CONCLUSION:
+----------------------
+Option 3: Little/no evidence; hard errors are likely dominated by irreducible cloud variability.
+
+While features like clear-sky GHI and model disagreement correlate with error magnitude (since absolute errors are naturally bounded by clear-sky potential), they CANNOT reliably predict WHICH specific hours will experience catastrophic cloud mismatch vs passing clear spells before the actual weather occurs.
+Under forward-chaining cross-validation, hard-case classification achieves only moderate PR-AUC (~0.35), providing low precision (<35%) for actionable switching or gating.
+
+ANSWER TO CORE QUESTION:
+------------------------
+"Is there enough forecast-time signal to justify building a hard-weather specialist / mixture-of-experts model?"
+
+NO. The forecast-time information is insufficient to predict the >150 W/m² hard-weather error regime prior to seeing the actual observation. Attempting to deploy a hard-weather specialist or mixture-of-experts based on forecast-time features will introduce false-positive regime switches that degrade performance on easy/normal hours.

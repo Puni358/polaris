@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "project": "POLARIS Energy Management System",
+    "document": "GAP1_FORMAL_SEMANTICS_AUDIT",
+    "version": "1.0.0-formalized",
+    "date": "2026-09-27",
+    "decisions_status": "PROVISIONAL_HUMAN_INPUTS"
+  },
+  "provisional_decisions_formalized": {
+    "g1_generator_availability": {
+      "selected": "1D — Operational + dispatchable + validated telemetry",
+      "formula": "A_cred_k(t) = Indicator(V_telemetry=VALID and OpStatus=OPERATIONAL and DispStatus=DISPATCHABLE)",
+      "rules": ["configured != operational", "running != dispatchable", "rated != available", "available != fuel-sufficient"]
+    },
+    "g2_fuel_sufficiency": {
+      "selected": "2C + 2D",
+      "formula": "E_fuel_credit = E_fuel_usable if V_fuel=VALID and E_fuel_usable >= Required else 0.0",
+      "safeguard": "UNKNOWN_INVALID != EMERGENCY. Fuel uncertainty sets generator credit to 0.0, does not auto-trigger Emergency."
+    },
+    "g3_startup": {
+      "selected": "B + D",
+      "formula": "P_gen_credible(t) = 0.0 for t < t_startup else P_credible(t) if StartReady=VALID else 0.0 for all t",
+      "rules": ["OFF generator counts only after validated startup delay", "Requires explicit start-readiness evidence"]
+    },
+    "g4_unknown_generator_health": {
+      "selected": "4D",
+      "rule": "Unknown health sets generator credit to 0.0 kWh. Evaluates remaining verified resources. Does NOT auto-trigger Emergency."
+    },
+    "g5_time_varying_generator_energy": {
+      "selected": "5E — TIME-VARYING",
+      "formula": "E_gen_credible = integral_0_to_H(P_gen_credible(t)) dt",
+      "dynamic_factors": ["startup transient", "fuel depletion limit", "minimum load limit (10 kW)", "operating availability"]
+    },
+    "g6_evidence_threshold": {
+      "selected": "6E",
+      "rule": "Every required evidence field must be validated before generator energy credit. No silent substitution of defaults or nameplate values."
+    }
+  },
+  "audit_results_summary": {
+    "audit_1_g1_x_g2": "PASSED. Operational + Dispatchable with Unknown Fuel yields 0.0 safety credit.",
+    "audit_2_g2_x_g5": "PASSED. Fuel depletion bounds upper limit of time-varying power integral.",
+    "audit_3_g3_x_g5": "PASSED. Startup delay introduces zero-power step function for t < t_startup.",
+    "audit_4_g4_x_g6": "PASSED. Unknown health sets generator credit = 0; Emergency triggered only if net M_surv < 0.",
+    "audit_5_g1_x_g3": "UNDERSPECIFIED. Ambiguity in whether 'dispatchable' permits start-ready OFF generators.",
+    "audit_6_g5_x_horizon": "PASSED. Integrates over 6h horizon up to fuel exhaustion.",
+    "audit_7_g5_x_critical_load": "PASSED. Generator credit must be bounded by net critical energy requirement (69.60 kWh).",
+    "audit_8_time_varying_validity": "PASSED. Mid-horizon telemetry failure drops subsequent power integral to 0.0 at t_fail.",
+    "audit_9_telemetry_freshness": "UNDERSPECIFIED. Freshness threshold max age requires explicit parameter assignment.",
+    "audit_10_unknown_invalid_boundary": "PASSED. Four-level taxonomy separates Credit=0, Telemetry=UNKNOWN, State=UNKNOWN_INVALID, State=EMERGENCY.",
+    "audit_11_codebase_feasibility": "PARTIALLY FEASIBLE. StationState has diesel_running; missing fault/health and startup delay parameters.",
+    "audit_12_dimensional_check": "PASSED. All terms in M_surv evaluate strictly to bus-delivered kWh.",
+    "audit_13_synthetic_vs_real": "PASSED. Architectural principles separated from synthetic 100 kW benchmark parameters.",
+    "audit_14_contradiction_audit": "PASSED. Zero hard mathematical contradictions found.",
+    "audit_15_governance_status": "PROVISIONAL. System is consistent but underspecified on 4 technical items."
+  }
+}

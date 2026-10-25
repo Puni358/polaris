@@ -1,0 +1,16 @@
+audit_document,05_TEMPORAL_WEIGHTING_ANALYSIS
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# TEMPORAL WEIGHTING ANALYSIS (OI-6 RESOLUTION)
+# ============================================================
+
+aspect,current_implementation_fact,governed_target_specification,mathematical_representation,classification_status
+Default Horizon Weighting,Discount factor w_t = gamma^t (default gamma=1.0) in milp.py,Uniform timestep weighting w_t = 1.0 for all t in horizon H=24,w_t = 1.0 for all t in {0 ... 23},RESOLVED_BY_EXISTING_GOVERNANCE
+Unmet Load Weighting,p_unmet is explicitly unweighted in milp.py (c[base+9] = unmet_penalty_per_wh * dt),Stage 1 critical unmet energy is unweighted physical sum over horizon,sum_{t=0}^{23} p_unmet_critical(t) * dt,RESOLVED_BY_EXISTING_GOVERNANCE
+Custom Weight Vectors,Supports custom_weight_vector V4.G single-horizon mode and Class F (gamma=0.95),Not authorized by stakeholder policy (policy requires physical energy/fuel sums),No time-decay discount factor unless authorized by human governance,RESOLVED_BY_EXISTING_GOVERNANCE
+Timestep Duration dt,dt = 1.0 hour configured in optimizer config,dt = 1.0 hour (3600 seconds) uniform interval,dt = 1.0 h,RESOLVED_BY_EXISTING_GOVERNANCE
+Governance Status,Temporal weighting is uniform w_t = 1.0; discounting was a prototype exploration fact,Governed target is strict physical sum without time discounting,w_t = 1.0 for all objective terms across all 4 stages,RESOLVED_BY_EXISTING_GOVERNANCE

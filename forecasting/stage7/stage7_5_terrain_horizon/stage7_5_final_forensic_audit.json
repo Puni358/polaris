@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-09-12T08:54:00+00:00",
+  "stage": "STAGE 7.5 TERRAIN / HORIZON FORECASTING EXPERIMENT",
+  "audit_type": "FINAL_READ_ONLY_FORENSIC_AUDIT",
+  "baseline_reproduction": {
+    "expected_control_mae_w_m2": 38.280605,
+    "actual_control_mae_w_m2": 38.280605,
+    "control_nmae_pct": 40.3918,
+    "control_rmse_w_m2": 60.750856,
+    "reproduction_pass": true
+  },
+  "feature_set_integrity": {
+    "control_features_count": 31,
+    "candidate_terrain_features": [
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "clearsky_ghi_terrain_adjusted"
+    ],
+    "total_candidate_features_count": 35,
+    "extra_features_detected": false,
+    "target_derived_features_detected": false,
+    "future_observations_detected": false,
+    "feature_set_integrity_pass": true
+  },
+  "causality_audit": {
+    "dem_source": "Copernicus DEM 30m GLO-30 DSM",
+    "station_coordinates": "68.362074N, 18.738752E",
+    "horizon_profile_azimuths": 360,
+    "max_horizon_distance_km": 25.0,
+    "solar_geometry_source": "Deterministic astronomical solar position (pvlib)",
+    "future_sw_in_actuals_used": false,
+    "empirical_shading_fitting": false,
+    "causality_pass": true
+  },
+  "forward_chaining_integrity": {
+    "even_origins_count": 174,
+    "folds_count": 5,
+    "training_strictly_precedes_validation": true,
+    "validation_target_leakage": false,
+    "global_target_preprocessing": false,
+    "forward_chaining_pass": true
+  },
+  "tuning_and_shopping_audit": {
+    "hyperparameter_search_performed": false,
+    "feature_selection_after_cv": false,
+    "terrain_threshold_tuning": false,
+    "post_hoc_calibration": false,
+    "gate_modification": false,
+    "candidate_modification_after_cv": false,
+    "no_tuning_pass": true
+  },
+  "gate_recomputation": {
+    "gate1_mae": {
+      "threshold_w_m2": 38.0806,
+      "actual_w_m2": 37.835137,
+      "pass": true
+    },
+    "gate2_folds": {
+      "required_folds": 4,
+      "actual_improved_folds": 5,
+      "pass": true
+    },
+    "gate3_degradation": {
+      "threshold_w_m2": 0.15,
+      "degraded_folds_count": 0,
+      "max_degradation_w_m2": 0.0,
+      "worst_improvement_w_m2": -0.236883,
+      "worst_improvement_fold": 2,
+      "pass": true
+    },
+    "gate4_nmae": {
+      "threshold_pct": 40.3918,
+      "actual_pct": 38.5174,
+      "pass": true
+    },
+    "gate5_rmse": {
+      "threshold_w_m2": 60.750856,
+      "actual_w_m2": 60.307218,
+      "pass": true
+    },
+    "all_gates_pass": true
+  },
+  "numerical_reconciliation": {
+    "delta_mae_w_m2": -0.4454679999999982,
+    "delta_nmae_pp": -1.8744000000000014,
+    "delta_rmse_w_m2": -0.443638,
+    "fold_deltas_w_m2": [
+      -0.784593,
+      -0.236883,
+      -0.241935,
+      -0.68989,
+      -0.274038
+    ],
+    "reconciliation_pass": true
+  },
+  "odd_governance": {
+    "odd_feature_accessed": true,
+    "odd_target_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false,
+    "governance_statement": "ODD target, prediction, metric, and tuning access remained locked."
+  },
+  "diagnostics_governance": {
+    "diagnostics_used_for_tuning": false,
+    "diagnostics_used_for_feature_selection": false,
+    "diagnostics_used_post_hoc_only": true
+  },
+  "final_status": "STAGE_7_5_CANDIDATE_ACCEPTED",
+  "final_decision": "STAGE 7.5 EVEN-CV PASS \u2014 Candidate frozen pending explicit authorization for official ODD evaluation.",
+  "champion_status": "Stage 6.6 LWP/IWP Model (CURRENT OFFICIAL OPERATIONAL CHAMPION)"
+}

@@ -1,0 +1,79 @@
+{
+  "audit_type": "REPORT_TRACEABILITY_MATRIX",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "traceability_mappings": [
+    {
+      "report_metric": "total_diesel_energy_kwh",
+      "source_variable": "total_diesel_energy_wh / 1000.0",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 147,
+      "mathematical_definition": "Sum of first-step H1 diesel power decision d_pow[0] across all closed-loop timesteps in Wh, divided by 1000",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "total_diesel_fuel_liters",
+      "source_variable": "total_fuel_l",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 146,
+      "mathematical_definition": "Sum over active timesteps of (base_fuel_l_h + d * marg_fuel_l_wh + startup_fuel_l)",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "total_renewable_energy_used_kwh",
+      "source_variable": "total_renewables_used_wh / 1000.0",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 148,
+      "mathematical_definition": "Sum of first-step H1 solar used (s_used[0]) and wind used (w_used[0]) in Wh, divided by 1000",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "renewable_utilization_pct",
+      "source_variable": "(total_renewables_used_wh / total_renewables_avail_wh) * 100.0",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 139,
+      "mathematical_definition": "Ratio of dispatched renewable energy to available (used + curtailed) renewable energy expressed as percentage",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "battery_throughput_kwh",
+      "source_variable": "total_battery_dis_wh / 1000.0",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 152,
+      "mathematical_definition": "Sum of first-step H1 battery discharge decisions (b_dis[0]) in Wh, divided by 1000",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "unmet_critical_load_kwh",
+      "source_variable": "total_unmet_wh / 1000.0",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 154,
+      "mathematical_definition": "Sum of unserved demand decisions (unmet[0]) across closed-loop timesteps in Wh, divided by 1000",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "system_reliability_pct",
+      "source_variable": "((total_demand_wh - total_unmet_wh) / total_demand_wh) * 100.0",
+      "module_file": "system/evaluation/evaluator.py",
+      "function_name": "EvaluationEngine.evaluate_ems_performance",
+      "line_number": 142,
+      "mathematical_definition": "Percentage of total demand successfully served without unserved load deficit",
+      "traceability_status": "DIRECT_TRACEABLE"
+    },
+    {
+      "report_metric": "battery_soc_pct",
+      "source_variable": "current_state.battery_soc_pct",
+      "module_file": "system/simulation/simulator.py",
+      "function_name": "DigitalTwinSimulator.step",
+      "line_number": 51,
+      "mathematical_definition": "(current_battery_energy_wh / capacity_wh) * 100.0",
+      "traceability_status": "DIRECT_TRACEABLE"
+    }
+  ]
+}

@@ -1,0 +1,1052 @@
+{
+  "timestamp_utc": "2026-09-14T13:14:16.815291+00:00",
+  "document_title": "POLARIS FINAL CORRECTED LOCAL SPATIAL STATE INFORMATION AUDIT v2",
+  "governance_audit": {
+    "even_origins_count": 173,
+    "odd_firewall": {
+      "odd_origins_accessed": false,
+      "odd_tensors_loaded": false,
+      "odd_predictions_generated": false,
+      "odd_metrics_evaluated": false,
+      "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+    },
+    "no_model_training": true,
+    "no_odd_access": true,
+    "network_fetches": 0,
+    "diagnostic_only": true
+  },
+  "provenance": {
+    "control_preds_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "final_script_sha256": "315bfffc22a2a7c5a051ff893ecae990453492cea19da2d1b5565eaa2d9c1072"
+  },
+  "separation_of_claims": {
+    "claim_a_local_spatial_info": "VALIDATED \u2014 Local station-neighborhood (3x3) cloud state contains modest, statistically significant incremental information (Delta R^2 ranging from +0.0078 to +0.0740 across individually FDR-supported horizons, and +0.0037 to +0.0140 across grouped regimes; all-horizon range +0.0001 to +0.0740) about future station cloud state beyond single-pixel station persistence.",
+    "claim_b_sw_in_forecasting_gain": "NOT ESTABLISHED \u2014 Diagnostic associations with control SW_IN error DO NOT EQUAL forecasting gain. No forecasting model has been trained, and no forecast improvement has been demonstrated."
+  },
+  "nested_model_results": {
+    "H1": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.744882,
+        "L2": 0.744965,
+        "L3": 0.747434,
+        "L4": 0.747434,
+        "L5": 0.747434
+      },
+      "delta_r2": {
+        "L2_inc": 8.3e-05,
+        "L3_inc": 0.002469,
+        "L4_inc": 0.0,
+        "L5_inc": 0.0
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.8145251065414373,
+        "L3_vs_L2": 0.44169280193913185,
+        "L4_vs_L3": 1.0,
+        "L5_vs_L4": 0.9999998485791146
+      },
+      "fdr_p_val": 0.8145251065414373,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H2": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.621646,
+        "L2": 0.635369,
+        "L3": 0.635711,
+        "L4": 0.651188,
+        "L5": 0.657593
+      },
+      "delta_r2": {
+        "L2_inc": 0.013724,
+        "L3_inc": 0.000342,
+        "L4_inc": 0.015477,
+        "L5_inc": 0.006404
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.01233269213275039,
+        "L3_vs_L2": 0.9242746737365568,
+        "L4_vs_L3": 0.027228473014032306,
+        "L5_vs_L4": 0.08081539909573408
+      },
+      "fdr_p_val": 0.0283651919053259,
+      "evidence_status": "SUPPORTED"
+    },
+    "H3": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.659872,
+        "L2": 0.665295,
+        "L3": 0.678345,
+        "L4": 0.686337,
+        "L5": 0.686471
+      },
+      "delta_r2": {
+        "L2_inc": 0.005423,
+        "L3_inc": 0.01305,
+        "L4_inc": 0.007993,
+        "L5_inc": 0.000134
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.09883637164563441,
+        "L3_vs_L2": 0.035415179734241284,
+        "L4_vs_L3": 0.12387851118807235,
+        "L5_vs_L4": 0.7911319126152874
+      },
+      "fdr_p_val": 0.1337197969323289,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H4": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.654013,
+        "L2": 0.659646,
+        "L3": 0.66769,
+        "L4": 0.672883,
+        "L5": 0.672994
+      },
+      "delta_r2": {
+        "L2_inc": 0.005633,
+        "L3_inc": 0.008045,
+        "L4_inc": 0.005192,
+        "L5_inc": 0.000112
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.09530695422303617,
+        "L3_vs_L2": 0.13408353276296558,
+        "L4_vs_L3": 0.2706156286756157,
+        "L5_vs_L4": 0.8125814539627555
+      },
+      "fdr_p_val": 0.1337197969323289,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H5": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.732217,
+        "L2": 0.742636,
+        "L3": 0.743793,
+        "L4": 0.746979,
+        "L5": 0.747149
+      },
+      "delta_r2": {
+        "L2_inc": 0.010419,
+        "L3_inc": 0.001157,
+        "L4_inc": 0.003186,
+        "L5_inc": 0.000169
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.009497722562822478,
+        "L3_vs_L2": 0.6848095138208145,
+        "L4_vs_L3": 0.3539424581131141,
+        "L5_vs_L4": 0.7399645902227489
+      },
+      "fdr_p_val": 0.024271957660546333,
+      "evidence_status": "SUPPORTED"
+    },
+    "H6": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.581001,
+        "L2": 0.600791,
+        "L3": 0.605618,
+        "L4": 0.612001,
+        "L5": 0.612692
+      },
+      "delta_r2": {
+        "L2_inc": 0.019789,
+        "L3_inc": 0.004828,
+        "L4_inc": 0.006383,
+        "L5_inc": 0.00069
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.004187003909137019,
+        "L3_vs_L2": 0.3598583657293663,
+        "L4_vs_L3": 0.25812039716837726,
+        "L5_vs_L4": 0.5883098756050578
+      },
+      "fdr_p_val": 0.016050181651691905,
+      "evidence_status": "SUPPORTED"
+    },
+    "H7": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.708096,
+        "L2": 0.712438,
+        "L3": 0.720688,
+        "L4": 0.731781,
+        "L5": 0.743479
+      },
+      "delta_r2": {
+        "L2_inc": 0.004342,
+        "L3_inc": 0.00825,
+        "L4_inc": 0.011093,
+        "L5_inc": 0.011699
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.11099141110136729,
+        "L3_vs_L2": 0.08670546944081957,
+        "L4_vs_L3": 0.03461209247837434,
+        "L5_vs_L4": 0.006758380882023148
+      },
+      "fdr_p_val": 0.14182235862952486,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H8": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.746981,
+        "L2": 0.769261,
+        "L3": 0.770419,
+        "L4": 0.775492,
+        "L5": 0.77554
+      },
+      "delta_r2": {
+        "L2_inc": 0.02228,
+        "L3_inc": 0.001158,
+        "L4_inc": 0.005073,
+        "L5_inc": 4.8e-05
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 7.725636249658317e-05,
+        "L3_vs_L2": 0.6553150523482832,
+        "L4_vs_L3": 0.15652220059482613,
+        "L5_vs_L4": 0.8517491942103181
+      },
+      "fdr_p_val": 0.0008884481687107064,
+      "evidence_status": "SUPPORTED"
+    },
+    "H9": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.731946,
+        "L2": 0.739108,
+        "L3": 0.743348,
+        "L4": 0.745147,
+        "L5": 0.745264
+      },
+      "delta_r2": {
+        "L2_inc": 0.007161,
+        "L3_inc": 0.00424,
+        "L4_inc": 0.001799,
+        "L5_inc": 0.000116
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.03215703656972978,
+        "L3_vs_L2": 0.2524980499986503,
+        "L4_vs_L3": 0.5576860022172244,
+        "L5_vs_L4": 0.783936350251008
+      },
+      "fdr_p_val": 0.05282941722169892,
+      "evidence_status": "BORDERLINE"
+    },
+    "H10": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.585662,
+        "L2": 0.604263,
+        "L3": 0.604678,
+        "L4": 0.607792,
+        "L5": 0.610139
+      },
+      "delta_r2": {
+        "L2_inc": 0.018601,
+        "L3_inc": 0.000416,
+        "L4_inc": 0.003113,
+        "L5_inc": 0.002347
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.005266491931330066,
+        "L3_vs_L2": 0.9154882414587013,
+        "L4_vs_L3": 0.5187811885791995,
+        "L5_vs_L4": 0.32038464478195056
+      },
+      "fdr_p_val": 0.017304187774370216,
+      "evidence_status": "SUPPORTED"
+    },
+    "H11": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.727994,
+        "L2": 0.728455,
+        "L3": 0.738619,
+        "L4": 0.746252,
+        "L5": 0.746332
+      },
+      "delta_r2": {
+        "L2_inc": 0.000462,
+        "L3_inc": 0.010164,
+        "L4_inc": 0.007632,
+        "L5_inc": 8.1e-05
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.591601947959061,
+        "L3_vs_L2": 0.0405738685981454,
+        "L4_vs_L3": 0.08546524944371862,
+        "L5_vs_L4": 0.8191070421524413
+      },
+      "fdr_p_val": 0.6184929455935637,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H12": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.657987,
+        "L2": 0.65952,
+        "L3": 0.663446,
+        "L4": 0.672682,
+        "L5": 0.673713
+      },
+      "delta_r2": {
+        "L2_inc": 0.001532,
+        "L3_inc": 0.003927,
+        "L4_inc": 0.009236,
+        "L5_inc": 0.001031
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.3829657547014317,
+        "L3_vs_L2": 0.37741890492519703,
+        "L4_vs_L3": 0.0992994821438177,
+        "L5_vs_L4": 0.4713372746451584
+      },
+      "fdr_p_val": 0.44041061790664643,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H13": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.637134,
+        "L2": 0.664043,
+        "L3": 0.67574,
+        "L4": 0.690593,
+        "L5": 0.690752
+      },
+      "delta_r2": {
+        "L2_inc": 0.026909,
+        "L3_inc": 0.011697,
+        "L4_inc": 0.014853,
+        "L5_inc": 0.000158
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.0003015993384061551,
+        "L3_vs_L2": 0.05095889505308822,
+        "L4_vs_L3": 0.020410005574782883,
+        "L5_vs_L4": 0.7716222875266473
+      },
+      "fdr_p_val": 0.0017341961958353919,
+      "evidence_status": "SUPPORTED"
+    },
+    "H14": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.750836,
+        "L2": 0.751841,
+        "L3": 0.76198,
+        "L4": 0.765902,
+        "L5": 0.767245
+      },
+      "delta_r2": {
+        "L2_inc": 0.001005,
+        "L3_inc": 0.010139,
+        "L4_inc": 0.003922,
+        "L5_inc": 0.001343
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.40783907212704096,
+        "L3_vs_L2": 0.0300740760689168,
+        "L4_vs_L3": 0.25182785835164845,
+        "L5_vs_L4": 0.3306593248403918
+      },
+      "fdr_p_val": 0.4466808885200925,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H15": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.605255,
+        "L2": 0.616352,
+        "L3": 0.620486,
+        "L4": 0.623617,
+        "L5": 0.626014
+      },
+      "delta_r2": {
+        "L2_inc": 0.011097,
+        "L3_inc": 0.004134,
+        "L4_inc": 0.003132,
+        "L5_inc": 0.002396
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.02791252860391821,
+        "L3_vs_L2": 0.40254010883181923,
+        "L4_vs_L3": 0.5027283546934904,
+        "L5_vs_L4": 0.30534227065255864
+      },
+      "fdr_p_val": 0.05282941722169892,
+      "evidence_status": "BORDERLINE"
+    },
+    "H16": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.667711,
+        "L2": 0.670976,
+        "L3": 0.671999,
+        "L4": 0.688514,
+        "L5": 0.68854
+      },
+      "delta_r2": {
+        "L2_inc": 0.003266,
+        "L3_inc": 0.001022,
+        "L4_inc": 0.016515,
+        "L5_inc": 2.6e-05
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.1957176222089967,
+        "L3_vs_L2": 0.7700203444109982,
+        "L4_vs_L3": 0.013731575647548474,
+        "L5_vs_L4": 0.9064118452070431
+      },
+      "fdr_p_val": 0.23692133214773284,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    "H17": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.643768,
+        "L2": 0.717736,
+        "L3": 0.724409,
+        "L4": 0.727607,
+        "L5": 0.727664
+      },
+      "delta_r2": {
+        "L2_inc": 0.073968,
+        "L3_inc": 0.006673,
+        "L4_inc": 0.003198,
+        "L5_inc": 5.7e-05
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 3.3622798604619194e-10,
+        "L3_vs_L2": 0.1340315948358878,
+        "L4_vs_L3": 0.3795301404705048,
+        "L5_vs_L4": 0.853050663883707
+      },
+      "fdr_p_val": 7.733243679062415e-09,
+      "evidence_status": "SUPPORTED"
+    },
+    "H18": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.756482,
+        "L2": 0.761327,
+        "L3": 0.762387,
+        "L4": 0.764256,
+        "L5": 0.765715
+      },
+      "delta_r2": {
+        "L2_inc": 0.004845,
+        "L3_inc": 0.00106,
+        "L4_inc": 0.001869,
+        "L5_inc": 0.001459
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.0649332929325754,
+        "L3_vs_L2": 0.6880650860287756,
+        "L4_vs_L3": 0.5191664757971716,
+        "L5_vs_L4": 0.31222889086260475
+      },
+      "fdr_p_val": 0.09956438249661562,
+      "evidence_status": "BORDERLINE"
+    },
+    "H19": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.682491,
+        "L2": 0.708831,
+        "L3": 0.708964,
+        "L4": 0.708973,
+        "L5": 0.709205
+      },
+      "delta_r2": {
+        "L2_inc": 0.02634,
+        "L3_inc": 0.000133,
+        "L4_inc": 8e-06,
+        "L5_inc": 0.000233
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.00012742985505837244,
+        "L3_vs_L2": 0.9623766736127363,
+        "L4_vs_L3": 0.9975925989338069,
+        "L5_vs_L4": 0.7167980307732909
+      },
+      "fdr_p_val": 0.0009769622221141889,
+      "evidence_status": "SUPPORTED"
+    },
+    "H20": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.703395,
+        "L2": 0.721,
+        "L3": 0.729791,
+        "L4": 0.736906,
+        "L5": 0.738687
+      },
+      "delta_r2": {
+        "L2_inc": 0.017604,
+        "L3_inc": 0.008791,
+        "L4_inc": 0.007115,
+        "L5_inc": 0.001782
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.0012797963797629647,
+        "L3_vs_L2": 0.06792034022494454,
+        "L4_vs_L3": 0.10918198178208048,
+        "L5_vs_L4": 0.2904061277658089
+      },
+      "fdr_p_val": 0.005887063346909638,
+      "evidence_status": "SUPPORTED"
+    },
+    "H21": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.596762,
+        "L2": 0.607758,
+        "L3": 0.61667,
+        "L4": 0.621681,
+        "L5": 0.621699
+      },
+      "delta_r2": {
+        "L2_inc": 0.010996,
+        "L3_inc": 0.008912,
+        "L4_inc": 0.005011,
+        "L5_inc": 1.8e-05
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.030400817377702605,
+        "L3_vs_L2": 0.14507438584442153,
+        "L4_vs_L3": 0.3355135367145516,
+        "L5_vs_L4": 0.9302778441357237
+      },
+      "fdr_p_val": 0.05282941722169892,
+      "evidence_status": "BORDERLINE"
+    },
+    "H22": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.741163,
+        "L2": 0.748957,
+        "L3": 0.751481,
+        "L4": 0.759194,
+        "L5": 0.76047
+      },
+      "delta_r2": {
+        "L2_inc": 0.007793,
+        "L3_inc": 0.002525,
+        "L4_inc": 0.007713,
+        "L5_inc": 0.001276
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.02282430491024995,
+        "L3_vs_L2": 0.42780671015289995,
+        "L4_vs_L3": 0.07303459781200067,
+        "L5_vs_L4": 0.34987820679240456
+      },
+      "fdr_p_val": 0.047723546630522626,
+      "evidence_status": "SUPPORTED"
+    },
+    "H23": {
+      "n_samples": 173,
+      "raw_r2": {
+        "L1": 0.73439,
+        "L2": 0.745387,
+        "L3": 0.756535,
+        "L4": 0.757335,
+        "L5": 0.758667
+      },
+      "delta_r2": {
+        "L2_inc": 0.010997,
+        "L3_inc": 0.011148,
+        "L4_inc": 0.0008,
+        "L5_inc": 0.001331
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.007424595409806072,
+        "L3_vs_L2": 0.02326301379388854,
+        "L4_vs_L3": 0.7609636026379939,
+        "L5_vs_L4": 0.3415007298757713
+      },
+      "fdr_p_val": 0.021345711803192457,
+      "evidence_status": "SUPPORTED"
+    },
+    "H1\u2013H3": {
+      "n_samples": 519,
+      "raw_r2": {
+        "L1": 0.67564,
+        "L2": 0.679387,
+        "L3": 0.68156,
+        "L4": 0.682791,
+        "L5": 0.684002
+      },
+      "delta_r2": {
+        "L2_inc": 0.003747,
+        "L3_inc": 0.002174,
+        "L4_inc": 0.001231,
+        "L5_inc": 0.001212
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 0.01439371969460397,
+        "L3_vs_L2": 0.17406544305585853,
+        "L4_vs_L3": 0.3711508276838327,
+        "L5_vs_L4": 0.16220623554595018
+      },
+      "fdr_p_val": 0.01439371969460397,
+      "evidence_status": "SUPPORTED"
+    },
+    "H4\u2013H6": {
+      "n_samples": 519,
+      "raw_r2": {
+        "L1": 0.654595,
+        "L2": 0.665149,
+        "L3": 0.666566,
+        "L4": 0.668486,
+        "L5": 0.668714
+      },
+      "delta_r2": {
+        "L2_inc": 0.010554,
+        "L3_inc": 0.001416,
+        "L4_inc": 0.001921,
+        "L5_inc": 0.000228
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 6.341936094436496e-05,
+        "L3_vs_L2": 0.33642618448391176,
+        "L4_vs_L3": 0.2279190791718429,
+        "L5_vs_L4": 0.5531218188201769
+      },
+      "fdr_p_val": 7.927420118045619e-05,
+      "evidence_status": "SUPPORTED"
+    },
+    "H7\u2013H12": {
+      "n_samples": 1038,
+      "raw_r2": {
+        "L1": 0.691087,
+        "L2": 0.696957,
+        "L3": 0.698056,
+        "L4": 0.69844,
+        "L5": 0.699437
+      },
+      "delta_r2": {
+        "L2_inc": 0.00587,
+        "L3_inc": 0.001099,
+        "L4_inc": 0.000384,
+        "L5_inc": 0.000997
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 8.386816132475664e-06,
+        "L3_vs_L2": 0.15313005749218045,
+        "L4_vs_L3": 0.5191916796147784,
+        "L5_vs_L4": 0.06481778359024305
+      },
+      "fdr_p_val": 1.3978026887459441e-05,
+      "evidence_status": "SUPPORTED"
+    },
+    "H13\u2013H18": {
+      "n_samples": 1038,
+      "raw_r2": {
+        "L1": 0.674218,
+        "L2": 0.687729,
+        "L3": 0.688608,
+        "L4": 0.68922,
+        "L5": 0.689327
+      },
+      "delta_r2": {
+        "L2_inc": 0.01351,
+        "L3_inc": 0.000879,
+        "L4_inc": 0.000612,
+        "L5_inc": 0.000106
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 3.60713683984355e-11,
+        "L3_vs_L2": 0.23311335243985776,
+        "L4_vs_L3": 0.362507279431457,
+        "L5_vs_L4": 0.5525942332945875
+      },
+      "fdr_p_val": 1.803568419921775e-10,
+      "evidence_status": "SUPPORTED"
+    },
+    "H19\u2013H23": {
+      "n_samples": 865,
+      "raw_r2": {
+        "L1": 0.689359,
+        "L2": 0.703386,
+        "L3": 0.705868,
+        "L4": 0.707428,
+        "L5": 0.70758
+      },
+      "delta_r2": {
+        "L2_inc": 0.014027,
+        "L3_inc": 0.002481,
+        "L4_inc": 0.00156,
+        "L5_inc": 0.000152
+      },
+      "f_test_p_values": {
+        "L2_vs_L1": 2.8036286195441564e-10,
+        "L3_vs_L2": 0.026994756574859658,
+        "L4_vs_L3": 0.10208307431570136,
+        "L5_vs_L4": 0.504378553278898
+      },
+      "fdr_p_val": 7.009071548860391e-10,
+      "evidence_status": "SUPPORTED"
+    }
+  },
+  "horizon_decision_table": [
+    {
+      "horizon": "H1",
+      "sample_size": 173,
+      "raw_r2_l1": 0.744882,
+      "delta_r2_l2": 8.3e-05,
+      "raw_p_val": 0.8145251065414373,
+      "fdr_p_val": 0.8145251065414373,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H2",
+      "sample_size": 173,
+      "raw_r2_l1": 0.621646,
+      "delta_r2_l2": 0.013724,
+      "raw_p_val": 0.01233269213275039,
+      "fdr_p_val": 0.0283651919053259,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H3",
+      "sample_size": 173,
+      "raw_r2_l1": 0.659872,
+      "delta_r2_l2": 0.005423,
+      "raw_p_val": 0.09883637164563441,
+      "fdr_p_val": 0.1337197969323289,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H4",
+      "sample_size": 173,
+      "raw_r2_l1": 0.654013,
+      "delta_r2_l2": 0.005633,
+      "raw_p_val": 0.09530695422303617,
+      "fdr_p_val": 0.1337197969323289,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H5",
+      "sample_size": 173,
+      "raw_r2_l1": 0.732217,
+      "delta_r2_l2": 0.010419,
+      "raw_p_val": 0.009497722562822478,
+      "fdr_p_val": 0.024271957660546333,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H6",
+      "sample_size": 173,
+      "raw_r2_l1": 0.581001,
+      "delta_r2_l2": 0.019789,
+      "raw_p_val": 0.004187003909137019,
+      "fdr_p_val": 0.016050181651691905,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H7",
+      "sample_size": 173,
+      "raw_r2_l1": 0.708096,
+      "delta_r2_l2": 0.004342,
+      "raw_p_val": 0.11099141110136729,
+      "fdr_p_val": 0.14182235862952486,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H8",
+      "sample_size": 173,
+      "raw_r2_l1": 0.746981,
+      "delta_r2_l2": 0.02228,
+      "raw_p_val": 7.725636249658317e-05,
+      "fdr_p_val": 0.0008884481687107064,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H9",
+      "sample_size": 173,
+      "raw_r2_l1": 0.731946,
+      "delta_r2_l2": 0.007161,
+      "raw_p_val": 0.03215703656972978,
+      "fdr_p_val": 0.05282941722169892,
+      "evidence_status": "BORDERLINE"
+    },
+    {
+      "horizon": "H10",
+      "sample_size": 173,
+      "raw_r2_l1": 0.585662,
+      "delta_r2_l2": 0.018601,
+      "raw_p_val": 0.005266491931330066,
+      "fdr_p_val": 0.017304187774370216,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H11",
+      "sample_size": 173,
+      "raw_r2_l1": 0.727994,
+      "delta_r2_l2": 0.000462,
+      "raw_p_val": 0.591601947959061,
+      "fdr_p_val": 0.6184929455935637,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H12",
+      "sample_size": 173,
+      "raw_r2_l1": 0.657987,
+      "delta_r2_l2": 0.001532,
+      "raw_p_val": 0.3829657547014317,
+      "fdr_p_val": 0.44041061790664643,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H13",
+      "sample_size": 173,
+      "raw_r2_l1": 0.637134,
+      "delta_r2_l2": 0.026909,
+      "raw_p_val": 0.0003015993384061551,
+      "fdr_p_val": 0.0017341961958353919,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H14",
+      "sample_size": 173,
+      "raw_r2_l1": 0.750836,
+      "delta_r2_l2": 0.001005,
+      "raw_p_val": 0.40783907212704096,
+      "fdr_p_val": 0.4466808885200925,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H15",
+      "sample_size": 173,
+      "raw_r2_l1": 0.605255,
+      "delta_r2_l2": 0.011097,
+      "raw_p_val": 0.02791252860391821,
+      "fdr_p_val": 0.05282941722169892,
+      "evidence_status": "BORDERLINE"
+    },
+    {
+      "horizon": "H16",
+      "sample_size": 173,
+      "raw_r2_l1": 0.667711,
+      "delta_r2_l2": 0.003266,
+      "raw_p_val": 0.1957176222089967,
+      "fdr_p_val": 0.23692133214773284,
+      "evidence_status": "NOT SUPPORTED"
+    },
+    {
+      "horizon": "H17",
+      "sample_size": 173,
+      "raw_r2_l1": 0.643768,
+      "delta_r2_l2": 0.073968,
+      "raw_p_val": 3.3622798604619194e-10,
+      "fdr_p_val": 7.733243679062415e-09,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H18",
+      "sample_size": 173,
+      "raw_r2_l1": 0.756482,
+      "delta_r2_l2": 0.004845,
+      "raw_p_val": 0.0649332929325754,
+      "fdr_p_val": 0.09956438249661562,
+      "evidence_status": "BORDERLINE"
+    },
+    {
+      "horizon": "H19",
+      "sample_size": 173,
+      "raw_r2_l1": 0.682491,
+      "delta_r2_l2": 0.02634,
+      "raw_p_val": 0.00012742985505837244,
+      "fdr_p_val": 0.0009769622221141889,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H20",
+      "sample_size": 173,
+      "raw_r2_l1": 0.703395,
+      "delta_r2_l2": 0.017604,
+      "raw_p_val": 0.0012797963797629647,
+      "fdr_p_val": 0.005887063346909638,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H21",
+      "sample_size": 173,
+      "raw_r2_l1": 0.596762,
+      "delta_r2_l2": 0.010996,
+      "raw_p_val": 0.030400817377702605,
+      "fdr_p_val": 0.05282941722169892,
+      "evidence_status": "BORDERLINE"
+    },
+    {
+      "horizon": "H22",
+      "sample_size": 173,
+      "raw_r2_l1": 0.741163,
+      "delta_r2_l2": 0.007793,
+      "raw_p_val": 0.02282430491024995,
+      "fdr_p_val": 0.047723546630522626,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H23",
+      "sample_size": 173,
+      "raw_r2_l1": 0.73439,
+      "delta_r2_l2": 0.010997,
+      "raw_p_val": 0.007424595409806072,
+      "fdr_p_val": 0.021345711803192457,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H1\u2013H3",
+      "sample_size": 519,
+      "raw_r2_l1": 0.67564,
+      "delta_r2_l2": 0.003747,
+      "raw_p_val": 0.01439371969460397,
+      "fdr_p_val": 0.01439371969460397,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H4\u2013H6",
+      "sample_size": 519,
+      "raw_r2_l1": 0.654595,
+      "delta_r2_l2": 0.010554,
+      "raw_p_val": 6.341936094436496e-05,
+      "fdr_p_val": 7.927420118045619e-05,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H7\u2013H12",
+      "sample_size": 1038,
+      "raw_r2_l1": 0.691087,
+      "delta_r2_l2": 0.00587,
+      "raw_p_val": 8.386816132475664e-06,
+      "fdr_p_val": 1.3978026887459441e-05,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H13\u2013H18",
+      "sample_size": 1038,
+      "raw_r2_l1": 0.674218,
+      "delta_r2_l2": 0.01351,
+      "raw_p_val": 3.60713683984355e-11,
+      "fdr_p_val": 1.803568419921775e-10,
+      "evidence_status": "SUPPORTED"
+    },
+    {
+      "horizon": "H19\u2013H23",
+      "sample_size": 865,
+      "raw_r2_l1": 0.689359,
+      "delta_r2_l2": 0.014027,
+      "raw_p_val": 2.8036286195441564e-10,
+      "fdr_p_val": 7.009071548860391e-10,
+      "evidence_status": "SUPPORTED"
+    }
+  ],
+  "origin_level_small_sample_audit": {
+    "num_origins": 173,
+    "sample_size_per_origin": "N=23 step pairs per origin forecast",
+    "small_sample_acknowledgement": "A separate regression is fitted per origin using N=23 lead-1 pairs. Origin-level Delta R^2 describes the distribution of origin-specific local effects, whereas the pooled regression describes uncertainty in the global effect.",
+    "origin_l2_inc_r2_median": 0.026182,
+    "origin_l2_inc_r2_iqr": [
+      0.004652,
+      0.08449
+    ],
+    "origin_l2_inc_r2_bootstrap_95ci": [
+      0.018182,
+      0.031602
+    ],
+    "fraction_origins_positive_inc_r2": 0.9595,
+    "origin_spearman_pcorr_median": 0.1577,
+    "origin_spearman_pcorr_iqr": [
+      -0.0359,
+      0.3079
+    ],
+    "origin_spearman_pcorr_bootstrap_95ci": [
+      0.0812,
+      0.2102
+    ],
+    "fraction_origins_positive_pcorr": 0.703
+  },
+  "null_controls_audit": {
+    "real_3x3_mean_spearman_pcorr": 0.1895,
+    "null1_origin_permuted_pcorr": -0.0115,
+    "null2_unrelated_field_pcorr": 0.0012,
+    "null3_random_patch_location_pcorr": 0.1749,
+    "difference_real_minus_null3": 0.0146,
+    "null3_difference_bootstrap_95ci": [
+      -0.0388,
+      0.0644
+    ],
+    "null3_classification": "INCONCLUSIVE \u2014 Difference between station 3x3 (0.1895) and random patch pixel [3,3] (0.1749) is small (+0.0146) and 95% CI spans zero.",
+    "null1_classification": "STRONG ASSOCIATIVE NULL REJECTION \u2014 Origin-permuted null yields near-zero partial correlation (-0.0115), supporting origin-specific association and rejecting the simple origin-permuted null."
+  },
+  "sw_in_error_fdr_audit": {
+    "sample_size_causal_daytime_rows": 2216,
+    "claim_b_disclaimer": "CRITICAL GOVERNANCE SEPARATION: Association with control forecast error DOES NOT EQUAL demonstrated forecasting gain. No forecasting improvement has yet been established.",
+    "descriptor_associations": {
+      "21x21 Spatial Heterogeneity (Std)": {
+        "spearman_rho_raw": 0.1771,
+        "double_residual_spearman_rho": 0.1396,
+        "double_residual_p_value_raw": 4.165926573516852e-11,
+        "bh_adjusted_p_value": 1.2497779720550556e-10,
+        "is_significant_fdr_05": true
+      },
+      "21x21 Spatial Gradient": {
+        "spearman_rho_raw": 0.1873,
+        "double_residual_spearman_rho": 0.1493,
+        "double_residual_p_value_raw": 1.6353595382911528e-12,
+        "bh_adjusted_p_value": 9.812157229746917e-12,
+        "is_significant_fdr_05": true
+      },
+      "3x3 Local Mean": {
+        "spearman_rho_raw": -0.0833,
+        "double_residual_spearman_rho": 0.0171,
+        "double_residual_p_value_raw": 0.42082905044719027,
+        "bh_adjusted_p_value": 0.6736369332610995,
+        "is_significant_fdr_05": false
+      },
+      "3x3 Local Contrast": {
+        "spearman_rho_raw": 0.0007,
+        "double_residual_spearman_rho": 0.0113,
+        "double_residual_p_value_raw": 0.5952620683904617,
+        "bh_adjusted_p_value": 0.6736369332610995,
+        "is_significant_fdr_05": false
+      },
+      "d1 Center Change": {
+        "spearman_rho_raw": 0.015,
+        "double_residual_spearman_rho": 0.0095,
+        "double_residual_p_value_raw": 0.6543190777891842,
+        "bh_adjusted_p_value": 0.6736369332610995,
+        "is_significant_fdr_05": false
+      },
+      "Structural Correlation": {
+        "spearman_rho_raw": -0.0002,
+        "double_residual_spearman_rho": -0.009,
+        "double_residual_p_value_raw": 0.6736369332610995,
+        "bh_adjusted_p_value": 0.6736369332610995,
+        "is_significant_fdr_05": false
+      }
+    }
+  },
+  "final_decision": {
+    "classification_code": "B \u2014 PARTIAL / HORIZON-CONDITIONAL INFORMATION",
+    "recommendation": "PROCEED TO A SINGLE PRE-REGISTERED HORIZON-CONDITIONAL LOCAL-SPATIAL REPRESENTATION EXPERIMENT",
+    "justified_horizon_regime": "Local 3x3 spatial state shows horizon-dependent incremental information, with strongest individually supported evidence at the listed FDR-supported horizons (H2, H5, H6, H8, H10, H13, H17, H19, H20, H22, H23) and additional grouped-regime evidence (H4\u2013H6, H7\u2013H12, H13\u2013H18, H19\u2013H23)."
+  },
+  "level_3_5_incremental_variance_reconciliation": {
+    "reconciliation_statement": "Level 2 (3x3 mean) provides the clearest recurring incremental contribution across horizons (Delta R^2 up to +0.0740 at H17). Levels 3\u20135 (heterogeneity, temporal change, structural change) show smaller but occasionally non-negligible individual increments (e.g., H2 L4 +0.0155, H2 L5 +0.0064, H3 L3 +0.0131, H3 L4 +0.0080, H4 L3 +0.0080, H4 L4 +0.0052) that are not consistently supported across horizons or in grouped FDR tests (p > 0.05 for L3\u2013L5 grouped F-tests) and do not justify separate experimentation."
+  },
+  "h24_audit": {
+    "status": "EXPLICITLY EXCLUDED FROM PREDICTOR REGRESSION ORIGINS",
+    "explanation": "The 24-step forecast window (H1\u2013H24) yields 23 1-step ahead state transitions (H1->H2, H2->H3, ..., H23->H24). Predicting 1-step ahead state for H24 requires S_cloud(t+1) at t+1=H25, which lies outside the 24-step forecast horizon window. H24 is evaluated as the target state for predictor H23, but cannot serve as a predictor origin for H25. Thus, the final grouped transition regime is H19\u2013H23 (covering 5 step transitions ending at H24)."
+  }
+}

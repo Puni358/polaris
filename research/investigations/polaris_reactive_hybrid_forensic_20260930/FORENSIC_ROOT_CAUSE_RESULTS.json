@@ -1,0 +1,42 @@
+{
+  "investigation_id": "polaris_reactive_hybrid_forensic_20260930",
+  "execution_timestamp": "2026-09-30T21:51:22Z",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "data_origin": "SYNTHETIC_EXPERIMENTAL_TRAJECTORY",
+  "empirical_status": "NOT_EMPIRICAL",
+  "primary_question": "Why does POLARIS consume +16,443.03 L/year more diesel fuel than Reactive Hybrid Baseline?",
+  "annual_totals_reconciliation": {
+    "polaris_fuel_l": 93465.6264,
+    "reactive_fuel_l": 77022.5981,
+    "fuel_difference_l": 16443.0283,
+    "fuel_difference_percent": 21.35,
+    "polaris_diesel_kwh": 210502.5055,
+    "reactive_diesel_kwh": 165770.3923,
+    "diesel_kwh_difference": 44732.1132,
+    "polaris_curtailment_kwh": 66192.5,
+    "reactive_curtailment_kwh": 21460.4,
+    "curtailment_kwh_difference": 44732.1,
+    "identity_delta_kwh": 0.0132
+  },
+  "causal_confirmation": {
+    "identity_confirmed": true,
+    "primary_cause_category": "BATTERY_DEGRADATION_PENALTY_AND_EFFICIENCY_SUPPRESSION",
+    "polaris_battery_discharge_kwh": 808.8,
+    "reactive_battery_discharge_kwh": 9917.5253,
+    "battery_discharge_deficit_kwh": -9108.7253,
+    "polaris_hours_at_min_soc": 8302,
+    "polaris_percent_time_at_min_soc": 94.51
+  },
+  "soc_57_83_investigation": {
+    "claim_verified": false,
+    "actual_meaning": "ECD 6-hour operational survivability reference target (115,652 Wh)",
+    "active_milp_lower_bound": "40,000 Wh (20.0%)",
+    "discrepancy_explanation": "Documentation artifact conflating upstream ECD survivability reference target with active MILP optimizer constraint"
+  },
+  "safety_and_governance_firewall": {
+    "protected_artifacts_modified": false,
+    "production_governance_modified": false,
+    "freshness_rules_created": 0
+  }
+}

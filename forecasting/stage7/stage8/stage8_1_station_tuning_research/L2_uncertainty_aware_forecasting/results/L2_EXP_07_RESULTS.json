@@ -1,0 +1,134 @@
+{
+  "experiment_id": "L2-EXP-07",
+  "title": "POLARIS L2 / GAP19 Uncertainty-Interface Research Experiment",
+  "governance_decision": "PROMISING",
+  "status": "VALID_COMPLETED_RESEARCH_EXPERIMENT",
+  "governance_statement": "This experiment is research-only. The physical envelope is a SIMULATED_RESEARCH_ASSUMPTION and has no production authority. No production GAP19, Stage8.1, F, SKGBDT, or CQR artifact was modified.",
+  "execution_timestamp_utc": "2026-10-04T06:08:52.865576+00:00",
+  "elapsed_seconds": 175.4,
+  "verified_hashes": {
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "origins_summary": {
+    "total_evaluated_origins": 173,
+    "common_normal_origins": 123,
+    "route_mismatches": 0,
+    "total_timesteps": 4152,
+    "daytime_timesteps": 2216
+  },
+  "interval_performance": {
+    "nominal_target": 0.8,
+    "observed_daytime_coverage": 0.6381,
+    "below_lower_rate": 0.0618,
+    "above_upper_rate": 0.3001,
+    "under_physical_bound_rate": 0.8921,
+    "mean_interval_width_sw_in": 121.95,
+    "mean_interval_width_power_w": 6219.34
+  },
+  "primary_endpoints": {
+    "realized_critical_unmet_energy_wh": {
+      "arm_a_mean": 7994.36,
+      "arm_a_total": 983306.0,
+      "arm_b_mean": 528.67,
+      "arm_b_total": 65026.9,
+      "paired_delta_mean_a_minus_b": 7465.6837,
+      "paired_delta_median_a_minus_b": 5265.0,
+      "bootstrap_95_ci": [
+        6059.6691,
+        8973.3195
+      ],
+      "wilcoxon_p_value": 8.74847894344336e-20,
+      "n_improved_b_better": 110,
+      "n_worsened_b_worse": 0,
+      "n_tied": 13,
+      "relative_reduction_pct": 93.39
+    },
+    "origins_with_critical_unmet": {
+      "arm_a_count": 110,
+      "arm_b_count": 41,
+      "delta_count": 69
+    },
+    "soc_floor_violations": {
+      "arm_a_total": 0,
+      "arm_b_total": 0,
+      "delta": 0
+    },
+    "system_reliability_pct": {
+      "arm_a_mean": 97.1285,
+      "arm_b_mean": 99.8101,
+      "paired_delta_mean_b_minus_a": 2.6816,
+      "bootstrap_95_ci": [
+        2.1766,
+        3.2232
+      ]
+    }
+  },
+  "secondary_endpoints": {
+    "diesel_fuel_liters": {
+      "arm_a_mean": 42.8504,
+      "arm_a_total": 5270.61,
+      "arm_b_mean": 59.2118,
+      "arm_b_total": 7283.05,
+      "paired_delta_mean_a_minus_b": -16.3613,
+      "bootstrap_95_ci": [
+        -18.2566,
+        -14.4881
+      ],
+      "wilcoxon_p_value": 1.8686821759772635e-19,
+      "n_improved": 0,
+      "n_worsened": 108,
+      "n_tied": 15,
+      "relative_increase_pct": 38.18
+    },
+    "diesel_on_hours": {
+      "arm_a_mean": 2.57,
+      "arm_b_mean": 3.35,
+      "paired_delta_mean": -0.7805,
+      "bootstrap_95_ci": [
+        -0.8943,
+        -0.6748
+      ]
+    },
+    "diesel_startups": {
+      "arm_a_mean": 1.33,
+      "arm_b_mean": 1.78,
+      "paired_delta_mean": -0.4472,
+      "bootstrap_95_ci": [
+        -0.5528,
+        -0.3496
+      ]
+    },
+    "curtailment_wh": {
+      "arm_a_mean": 37298.44,
+      "arm_a_total": 4587708.5,
+      "arm_b_mean": 71952.33,
+      "arm_b_total": 8850136.3,
+      "paired_delta_mean_a_minus_b": -34653.8846,
+      "bootstrap_95_ci": [
+        -38158.8715,
+        -31295.9732
+      ],
+      "wilcoxon_p_value": 9.239952282714919e-22
+    },
+    "battery_efc": {
+      "arm_a_mean": 0.6415,
+      "arm_b_mean": 0.7296,
+      "paired_delta_mean": -0.0882,
+      "bootstrap_95_ci": [
+        -0.1085,
+        -0.0686
+      ]
+    },
+    "solve_time_s": {
+      "arm_a_mean": 0.4714,
+      "arm_b_mean": 0.5164,
+      "arm_a_max": 14.2961,
+      "arm_b_max": 13.4985
+    }
+  }
+}

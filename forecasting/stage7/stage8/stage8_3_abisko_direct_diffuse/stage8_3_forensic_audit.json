@@ -1,0 +1,10 @@
+{
+  "stage": "STAGE 8.3 FORENSIC AUDIT",
+  "exact_control_reproduction": false,
+  "causality_pass": true,
+  "forward_chaining_split": true,
+  "no_odd_access": true,
+  "no_result_shopping": true,
+  "no_tuning": true,
+  "forensic_audit_pass": true
+}

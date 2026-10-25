@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-09-13T10:38:35+05:30",
+  "audit_title": "POLARIS Stage 8.19 Exact Reproduction Run and Row-Level Prediction Export Audit",
+  "final_reproduction_status": "REPRODUCTION FAILED",
+  "csv_export_details": {
+    "csv_filepath": "stage7/stage8/STAGE8_19_ODD_PREDICTIONS_REPRODUCED.csv",
+    "total_rows": 4152,
+    "odd_origins_count": 173,
+    "horizons_per_origin": 24,
+    "daytime_hours_count": 2883,
+    "nighttime_hours_count": 1269,
+    "sha256_hash": "89add5f26d1d42610ee90200e7c453c5507ecce0f88bd31fcc3e97b02ed8ebc3",
+    "authoritative_status": "NON-AUTHORITATIVE (Reproduction Failed)"
+  },
+  "source_data_forensic_summary": {
+    "base_meteorological_inputs": "ACTUAL (SITES Nuolja 2024, Clearsky decomposition, Open-Meteo MEPS NWP, Stage 6.6, Stage 7.5, Stage 8.1)",
+    "arome_input_status": "SYNTHETIC (Generated in-memory via np.random.seed(817) perturbations; zero raw AROME files in repository)",
+    "abis_input_status": "SYNTHETIC (Generated in-memory via np.random.seed(819) seasonal sine curve + normal noise; zero raw ABIS files in repository)"
+  },
+  "metric_reconciliation": {
+    "daytime_mae_w_m2": {
+      "historical_documented": 34.821405,
+      "reproduced_dynamic": 36.490857,
+      "discrepancy": 1.669452,
+      "match": false
+    },
+    "daytime_nmae_pct": {
+      "historical_documented": 27.0081,
+      "reproduced_dynamic": 28.3032,
+      "discrepancy": 1.2951,
+      "match": false
+    },
+    "daytime_rmse_w_m2": {
+      "historical_documented": 62.74821,
+      "reproduced_dynamic": 64.761214,
+      "discrepancy": 2.013004,
+      "match": false
+    },
+    "daytime_bias_w_m2": {
+      "historical_documented": 1.65821,
+      "reproduced_dynamic": 0.756546,
+      "discrepancy": -0.901664,
+      "match": false
+    },
+    "night_mae_w_m2": {
+      "historical_documented": 0.0,
+      "reproduced_dynamic": 0.0,
+      "discrepancy": 0.0,
+      "match": true
+    }
+  },
+  "root_cause_explanation": "Historical Stage 8.19D evaluation report hardcoded reference target metrics (cand_mae = 34.821405) rather than computing prediction metrics dynamically from a saved prediction matrix. Dynamically re-executing the 42-feature model pipeline yields MAE = 36.490857 W/m².",
+  "governance_firewall": {
+    "candidate_selection_performed": false,
+    "model_improvement_performed": false,
+    "hyperparameter_tuning_performed": false,
+    "official_champion_changed": false,
+    "master_handoff_modified": false,
+    "route_registry_modified": false,
+    "official_champion_status": "UNCHANGED (Stage 8.19 ABIS GNSS Model remains official champion)"
+  }
+}

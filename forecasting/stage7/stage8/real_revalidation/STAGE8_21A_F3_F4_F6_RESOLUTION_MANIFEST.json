@@ -1,0 +1,31 @@
+{
+  "timestamp_utc": "2026-09-13T09:52:00Z",
+  "audit_title": "POLARIS Stage 8.21A F3/F4/F6 Feasibility Resolution Audit Manifest",
+  "route": "STAGE8.21A — 3D SOLAR SLANT-PATH HYDROMETEOR GEOMETRY",
+  "final_classification": "B. CONDITIONAL FEASIBILITY — SPECIFIC DATA/PHYSICS GAP MUST BE RESOLVED",
+  "gate_resolution_matrix": {
+    "F3_SPATIAL_GEOMETRY": "CONDITIONAL",
+    "F4_VERTICAL_COORDINATE": "PASS",
+    "F6_OPTICAL_PROXY": "CONDITIONAL",
+    "COMPUTATIONAL_FEASIBILITY": "PASS"
+  },
+  "governance": {
+    "EXPERIMENT_RUN": false,
+    "MODEL_TRAINING": false,
+    "ODD_ACCESS": false,
+    "ODD_PREDICTIONS_CREATED": false,
+    "CHAMPION_CHANGED": false,
+    "MASTER_HANDOFF_CHANGED": false,
+    "ROUTE_REGISTRY_CHANGED": false
+  },
+  "artifacts_created": [
+    "STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.md",
+    "STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.json",
+    "STAGE8_21A_F3_SPATIAL_GEOMETRY_REPORT.md",
+    "STAGE8_21A_F4_VERTICAL_COORDINATE_REPORT.md",
+    "STAGE8_21A_F6_OPTICAL_PROXY_REPORT.md",
+    "STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.md",
+    "STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.json",
+    "run_stage8_21a_f3_f4_f6_resolution_audit.py"
+  ]
+}

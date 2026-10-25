@@ -1,0 +1,60 @@
+{
+  "register_name": "POLARIS_EMS_OPTION_D_GOVERNANCE_DECISION_REGISTER",
+  "version": "2.0.0",
+  "audit_date": "2026-09-23",
+  "status": "HUMAN_GOVERNANCE_DEFINITION_CONSOLIDATED",
+  "dec004_status": {
+    "decision_id": "DEC-004",
+    "decision_title": "Operational response to ECD UNKNOWN_INVALID",
+    "final_selection": "UNDECIDED",
+    "available_options": [
+      "OPTION_A: HOLD_LAST_VALID_DISPATCH",
+      "OPTION_B: ZERO_DISPATCH",
+      "OPTION_C: OPERATOR_INTERVENTION",
+      "OPTION_D: PROTECTED_CRITICAL_LOAD_FALLBACK"
+    ]
+  },
+  "option_d_sub_decisions": {
+    "D1_dynamic_critical_load_requirement": {
+      "human_decision": "Option D1-C (Dynamic Critical-Load Requirement)",
+      "status": "CONSOLIDATED",
+      "governance_rule": "Dynamic P_critical(t) for fixed protected equipment defined by station policy."
+    },
+    "D2_battery_behavior_under_option_d": {
+      "human_decision": "Restricted Critical Discharge Only",
+      "status": "CONSOLIDATED",
+      "governance_rule": "Battery discharge permitted solely to supply dynamic critical load when generation is insufficient."
+    },
+    "D3_zero_renewable_and_diesel_unavailable": {
+      "human_decision": "Continued Critical Battery Support",
+      "status": "CONSOLIDATED",
+      "governance_rule": "Battery continues supporting protected critical systems while awaiting operator resolution."
+    },
+    "D4_critical_load_shortfall_shedding": {
+      "human_decision": "Proportional Minimum Viable Level Allocation",
+      "status": "CONSOLIDATED",
+      "governance_rule": "Proportionally allocate power across minimum viable levels without dynamic category priority."
+    },
+    "D5_option_d_max_duration_and_escalation": {
+      "human_decision": "Hybrid Boundary Escalation",
+      "status": "CONSOLIDATED",
+      "governance_rule": "Mandatory operator escalation occurs on time boundary OR resource boundary, whichever is first."
+    },
+    "D6_diesel_minimum_excess_disposition": {
+      "human_decision": "Unavoidable Diesel Excess Disposition",
+      "status": "CONSOLIDATED",
+      "governance_rule": "Charge battery with excess output up to allowable limit; curtail remaining excess."
+    }
+  },
+  "audit_results": {
+    "internal_consistency": "PASS",
+    "contradictions_found": 0,
+    "numerical_firewall_status": "SEALED",
+    "prohibited_behaviors_registered": 10,
+    "open_parameters_registered": 28
+  },
+  "authorization": {
+    "implementation_authorization": "NOT_GRANTED",
+    "execution_authorization": "NOT_GRANTED"
+  }
+}

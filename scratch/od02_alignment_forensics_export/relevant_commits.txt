@@ -1,0 +1,53 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: RELEVANT COMMITS & FILE INTEGRITY REGISTRY
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+1. REPOSITORY COMMIT LOG AVAILABILITY STATUS
+--------------------------------------------------------------------------------
+Working Directory: /home/punith-bs/01polaris (Copy)
+Git Remote URL:    https://github.com/Puni358/models.git
+Current Branch:    master (uncommitted HEAD)
+
+Command Execution Output:
+  $ git log
+  fatal: your current branch 'master' does not have any commits yet
+
+Status:
+  The current workspace is an uncommitted repository copy with an empty Git ref
+  database (.git/refs/heads and .git/refs/tags are empty; 0 commits in .git/objects).
+  Consequently, Git commit SHAs, commit messages, and commit-level diffs cannot
+  be directly queried from the Git database on this machine.
+
+2. REGISTER-RATIFIED ARTIFACT AND SOURCE INTEGRITY HASHES
+--------------------------------------------------------------------------------
+In accordance with POLARIS governance protocols, all passes track changes via
+strict SHA-256 integrity digests rather than mutable Git commit hashes.
+
+Current Evaluated File Hashes (verified 2026-10-20):
+
+File Path                                                         SHA-256 Digest
+----------------------------------------------------------------  ----------------------------------------------------------------
+system/evaluation/n6_multi_origin_harness/adapters.py             9d279b7f0c5d33c0aff1d70fd72a4345efd8580157eecfcc5228171608994004
+system/forecasting/implementations/n6_solar.py                    25c20c4944e1ab43ba5bd507baa238f2df83fc4403aa198688dd82619e665af2
+system/optimization/implementations/gap19_highs_native.py         fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737
+system/evaluation/n6_multi_origin_harness/realized_loader.py      e7ed94a0c0dd002e43264a6268a79e4017a7717b859f22e4ba8e71c9a9535055
+POLARIS_HYBRID_FIXTURE_H1_0/fixture.csv                           762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023
+POLARIS_MASTER_DECISION_REGISTER.md (Pass 23, v1.9.13)            e6d8726d493c9aa02c00a61a91be98ab2014375f786bdaf9f8cff073e4864437
+
+3. HISTORICAL COMMIT & SCRIPT HASHES REFERENCED IN PRIOR AUDITS
+--------------------------------------------------------------------------------
+From D7 Verification Audit (M9 / 2026-10-11):
+
+Component                          Referenced Digest
+---------------------------------  ----------------------------------------------------------------
+causal_nwp_physics.py              14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710
+compute_clearsky.py                3a649a6ff9f227b5a1819f6cf577d896c6bc1488274a86ccdaaafc29a109c145
+audit_clean_nwp_windows.py         c8f1a2204af1703296e32658e5d8890e2bd7f876d554a2b1a5ee46f1bc50ad21
+stage4_low_sun_adapter.py          3427da6a7b1d7763f8fa655e541cd2a344aeefdd33379137c6311501799395d0
+SITES raw meteorological file      f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473
+SITES hourly 5-variable file       80b721a16a79dab828eb1aa02755d22c34acc35b5f48ad0d1beb5b9ab237052d
+SITES future weather forecast 2024 8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16
+Clear-sky decomposition file       596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a
+d7_checks.py                       f65aa905d00b2418e762fa9337b2fc7174ca6b88157a336e6d6d90ef8951d2ca
+d7_out.txt                         669cf79d17a6ff3cb7ec41b1c2f75e674054fe765a9929fec00c39e51adabbd9

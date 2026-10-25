@@ -1,0 +1,130 @@
+{
+  "checkpoint_schema_version": "1.0.0",
+  "checkpoint_timestamp_utc": "2026-10-03T08:15:32Z",
+  "status": "RESEARCH_ONLY_IMPLEMENTATION_AND_SMOKE_TEST_COMPLETE",
+  "human_execution_authorization": "NOT_GRANTED",
+  "production_wired": false,
+  "broad_simulation_run": false,
+  "note": "Point-in-time record only. No code, config, or model was modified to produce this checkpoint. Does not authorize any future experiment.",
+
+  "control": {
+    "description": "Frozen, unmodified GAP19 Option-B MILP and its supporting production infrastructure. None of these files were edited.",
+    "files": [
+      {"path": "system/optimization/implementations/gap19_highs_native.py", "role": "frozen_control_milp", "sha256": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737"},
+      {"path": "system/optimization/implementations/option_d.py", "role": "frozen_option_d_fallback", "sha256": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12"},
+      {"path": "system/control/ecd.py", "role": "frozen_emergency_control_decision", "sha256": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23"},
+      {"path": "system/orchestration/worker.py", "role": "production_orchestration_gate02", "sha256": "829a06556e7085858ec816ac7d0d1e8dbc99c8c41e3da0cde4e453566fbc0323"},
+      {"path": "system/runtime/runner.py", "role": "production_runtime_dispatch", "sha256": "6d1671b6efbf6ac1f422e26a039bb0dae158cb99c2075ea5680d062f8dc53b10"},
+      {"path": "system/orchestration/manifest.py", "role": "protected_file_integrity_manifest", "sha256": "7b7756932a01dbc904ee780c3e0e30f8eab36952bbea6c75610c12c927d8bb35"},
+      {"path": "system/config/loads.yaml", "role": "production_loads_config", "sha256": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467"},
+      {"path": "system/tests/test_gap19_j2_option_b.py", "role": "pre_existing_gap19_unit_tests_unmodified", "sha256": "7f84b6d45e70c12049d7d074c5d0701466e9a5ceb90b318441750f65aef00a52"}
+    ]
+  },
+
+  "research_v2": {
+    "description": "Files created or modified to implement the v2 Essential-tier extension. The only files touched during this work.",
+    "isolated_from_production": true,
+    "isolation_verification": "repo-wide grep for 'GAP19HighsNativeOptimizerMILPV2Research' and 'gap19_highs_native_milp_v2_research' matches only the two files listed as created below",
+    "files": [
+      {
+        "path": "system/optimization/implementations/gap19_highs_native_milp_v2_research.py",
+        "status": "created",
+        "lines": 535,
+        "role": "isolated_research_only_optimizer",
+        "class_name": "GAP19HighsNativeOptimizerMILPV2Research",
+        "sha256": "5e24ecc17abe4104746425b2fb96c0594473a3bbdf43201fc50a60c98835e6c0"
+      },
+      {
+        "path": "system/tests/test_gap19_milp_v2_research.py",
+        "status": "created",
+        "lines": 249,
+        "role": "focused_unit_tests",
+        "sha256": "89fc0bbabf30fcf1398ef24718194998023d86f418106d15cc66880177c82a3b"
+      },
+      {
+        "path": "system/schemas/dispatch_plan.py",
+        "status": "modified_additive_only",
+        "lines": 156,
+        "role": "shared_dispatch_plan_schema",
+        "change": "added two optional keyword-only fields (load_served_essential, unmet_essential), default None, omitted from to_dict() when unset; backward-compatible",
+        "sha256": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b"
+      }
+    ],
+    "rev3_design_elements_implemented": [
+      "essential_demand[t] = min(max_power_w, max(0, demand[t]-critical_demand[t])) clipping",
+      "p_served_essential[t], P_unmet_essential[t] decision variables (N=456 total, vars 408-455)",
+      "bus-bar balance amended to sink p_served_essential",
+      "demand-side balance amended to 3-way split p_served+p_served_essential+p_unmet=demand",
+      "new Essential-tier balance constraint p_served_essential+P_unmet_essential=essential_demand",
+      "P_unmet_essential folded into existing J4 at identical 1.0*dt coefficient, no new stage"
+    ],
+    "rev3_items_explicitly_not_implemented": [
+      "infeasibility -> OptionD routing (withdrawn; V2 mirrors GAP19 fail-closed behavior exactly)",
+      "deferrable_loads scheduling semantics (duration/window) - out of scope"
+    ]
+  },
+
+  "simulated_assumptions": [
+    {
+      "assumption": "curtailable_loads (secondary_heating) assigned to Tier 2 (Essential/Flexible)",
+      "label": "SIMULATED_RESEARCH_ASSUMPTION",
+      "basis": "no governance document states which tier curtailable_loads belongs to; TIER2_MAPPING_COMPARISON.md and REV3_UNRESOLVED_ITEMS_AUDIT.md item 2 leave this open and surface counter-evidence (deferrable_loads priority:2 field with no curtailable_loads counterpart)"
+    },
+    {
+      "assumption": "flat (time-invariant) hourly essential_demand[t] profile",
+      "basis": "curtailable_loads schema has no time-of-day field; only non-inventive choice"
+    },
+    {
+      "assumption": "Essential tier max_power_w sourced from config[\"loads\"][\"curtailable_loads\"][0], defaulting to schema's 5000.0W if absent",
+      "basis": "not a governed input"
+    }
+  ],
+
+  "known_limitations": [
+    "infeasibility -> OptionD routing remains unresolved per REV3_UNRESOLVED_ITEMS_AUDIT.md item 1; real fallback lives in worker.py (Gate-02 relaxed re-solve -> BLOCKED_INFEASIBLE halt), whose relaxation mechanism (allow_flexible_load_relaxation) is a pre-existing defect in the frozen control, not introduced or fixed by V2",
+    "deferrable_loads scheduling semantics not modeled; out of scope for v2",
+    "Tier 2 vs Tier 3 mapping for curtailable_loads remains genuinely open; new counter-evidence (priority:2 field) not yet resolved by governance",
+    "MILP tie-breaking / solver-path degeneracy observed in smoke-test scenarios 3 and 5: GAP19 and V2 can select different but equally-optimal hour-by-hour dispatch schedules under ties, without affecting any objective value or audited invariant",
+    "no broad simulation has been run; 347-origin experiment explicitly not executed",
+    "solve times in this sandboxed environment are slow for harder MIP instances (~140s observed), an environment characteristic not a defect"
+  ],
+
+  "focused_test_result": {
+    "command": "pytest system/tests/test_gap19_milp_v2_research.py system/tests/test_gap19_j2_option_b.py",
+    "result": "24 passed in 1517.93s (0:25:17)",
+    "v2_tests_passed": 10,
+    "v2_tests_total": 10,
+    "gap19_control_tests_passed": 14,
+    "gap19_control_tests_total": 14
+  },
+
+  "smoke_test_result": {
+    "scenarios_total": 6,
+    "scenarios_passed": 6,
+    "scenarios": [
+      {"id": 1, "name": "critical_only_demand", "result": "PASS", "note": "essential_demand=0 everywhere; V2 structurally inert, identical to GAP19"},
+      {"id": 2, "name": "sufficient_renewable", "result": "PASS", "note": "demonstrates Rev.3 double-counting fix; GAP19 unmet_load=4000 despite available energy, V2 unmet_load=0"},
+      {"id": 3, "name": "insufficient_renewable", "result": "PASS", "note": "essential never served across all 24h due to fuel-cost (J3) priority over J4; J1-J3 bit-identical, J4 diverges by exactly 96000 (=4000x24x1.0dt); schedule-degeneracy finding present"},
+      {"id": 4, "name": "essential_vs_battery_charging", "result": "PASS", "note": "essential served 100% of all 24 hours; GAP19 charge rate exceeds V2's by exactly 4000W at every hour"},
+      {"id": 5, "name": "reserve_requires_charging", "result": "PASS", "note": "essential_demand=0 by construction; all four J1-J4 objective values bit-identical between GAP19 and V2; schedule-degeneracy finding present"},
+      {"id": 6, "name": "infeasible_fail_closed", "result": "PASS", "note": "inverted SOC bounds reproduce genuine HiGHS infeasibility; both return identical OPTIMIZATION_INFEASIBLE zero-dispatch plans; V2 confirmed not to invoke OptionDFallbackSolver"}
+    ],
+    "schedule_degeneracy_finding": {
+      "observed_in_scenarios": [3, 5],
+      "description": "specific hour-by-hour diesel/battery dispatch schedule differs between GAP19 and V2 while J1-J4 objective values remain bit-identical (scenario 5: all four stages identical; scenario 3: J1-J3 identical, J4 diverges only by the expected essential-tier term)",
+      "attributed_cause": "MILP branch-and-bound tie-breaking sensitivity to variable count (456 vs 408), inherent to the frozen diesel unit-commitment formulation under degenerate ties",
+      "classification": "not a behavior change to GAP19; does not affect any audited invariant"
+    }
+  },
+
+  "terminal_reserve_and_lexicographic_structure": {
+    "terminal_reserve_unchanged": true,
+    "ebr_6h_lookahead_unchanged": true,
+    "pointwise_max_reserve_envelope_unchanged": true,
+    "four_stage_lexicographic_structure_unchanged": true,
+    "objective_priorities": {"J1": 4, "J2": 3, "J3": 2, "J4": 1},
+    "blend_multi_objectives": false,
+    "fail_closed_infeasibility_behavior_preserved": true,
+    "option_d_reuse_implemented": false
+  }
+}

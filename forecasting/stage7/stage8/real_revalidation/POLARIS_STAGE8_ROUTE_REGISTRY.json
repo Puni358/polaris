@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-09-13T09:57:30+00:00",
+  "registry_name": "POLARIS STAGE 8 ROUTE REGISTRY",
+  "active_operational_champion": {
+    "champion_id": "Stage 8.19",
+    "model_name": "Stage 8.19 ABIS GNSS Model",
+    "daytime_nmae_pct": 27.0081,
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_rmse_w_m2": 62.748210,
+    "daytime_bias_w_m2": 1.658210,
+    "night_mae_w_m2": 0.0,
+    "total_features": 42,
+    "status": "FROZEN_OPERATIONAL_CHAMPION"
+  },
+  "closed_routes": [
+    {
+      "stage": "Stage 8.0 / 8.10",
+      "route_name": "MEPS Model-Level Vertical Profiles (65 Levels)",
+      "status": "REJECTED — DUPLICATE / MODEL-DERIVED",
+      "reason": "MEPS vertical condensate profiles are NWP model outputs, not independent observations."
+    },
+    {
+      "stage": "Stage 8.3",
+      "route_name": "Abisko Ground Radiation (Direct/Diffuse SW_IN)",
+      "status": "REJECTED — PERFORMANCE DEGRADATION",
+      "reason": "Evaluated in 5-fold CV (+0.63 W/m2 MAE degradation). Valley floor radiation does not transfer summit cloud attenuation."
+    },
+    {
+      "stage": "Stage 8.4 / 8.14B",
+      "route_name": "NASA VIIRS Science Level-2 (CLDPROP_L2_VIIRS)",
+      "status": "BLOCKED — OPERATIONALLY NON-CAUSAL",
+      "reason": "Publication latency 3-8h (T_pub > t0); polar night optical fill values."
+    },
+    {
+      "stage": "Stage 8.5",
+      "route_name": "MEPS Spatial Cloud Advection",
+      "status": "REJECTED — PERFORMANCE DEGRADATION",
+      "reason": "Evaluated in CV (+0.38 pp nMAE degradation). Mountain condensation/evaporation breaks 2D advection assumptions."
+    },
+    {
+      "stage": "Stage 8.6",
+      "route_name": "CAMS Solar Radiation & Cloud Parameters",
+      "status": "REJECTED — REANALYSIS LATENCY & NWP DERIVED",
+      "reason": "Multi-day dissemination latency; derived from NWP reanalysis."
+    },
+    {
+      "stage": "Stage 8.8",
+      "route_name": "MEPS Vertical Cloud Geometry (CTTH / Cloud Base)",
+      "status": "REJECTED — REDUNDANT WITH STAGE 8.1",
+      "reason": "NWP cloud geometry features failed to add value over 700 hPa steering wind features."
+    },
+    {
+      "stage": "Stage 8.9A",
+      "route_name": "Independent Cloud-State Audit",
+      "status": "REJECTED — FAIL_CONFIRMED",
+      "reason": "No independent causal cloud-state source identified."
+    },
+    {
+      "stage": "Stage 8.12",
+      "route_name": "MEPS Ensemble Uncertainty Spread",
+      "status": "UNAPPROVED",
+      "reason": "Pending formal experiment."
+    },
+    {
+      "stage": "Stage 8.14A",
+      "route_name": "Residual Error Forensics",
+      "status": "COMPLETED",
+      "reason": "Identified high cloud-state error variance during non-overcast transitions."
+    },
+    {
+      "stage": "Stage 8.14C",
+      "route_name": "EUMETSAT SEVIRI CMIC Access Audit",
+      "status": "REJECTED — INSUFFICIENT COVERAGE & PARALLAX",
+      "reason": "70.11% daytime coverage fails >= 90% gate; 76.54 deg zenith angle creates 20.9 km parallax displacement."
+    },
+    {
+      "stage": "Stage 8.15A",
+      "route_name": "Local Upwind Cloud Feasibility Audit",
+      "status": "FEASIBILITY COMPLETED — CLOSED",
+      "reason": "Audited local upwind stations and remote sensing. No viable external source met all causal, spatial, and coverage gates."
+    },
+    {
+      "stage": "Stage 8.16A",
+      "route_name": "Causal NWP Uncertainty Feasibility Audit",
+      "status": "FEASIBILITY COMPLETED",
+      "reason": "Audited 10 uncertainty signals across 6 families."
+    },
+    {
+      "stage": "Stage 8.16B-1",
+      "route_name": "Causal LWP Ensemble Spread (sigma_LWP)",
+      "status": "REJECTED — FAILED ACCEPTANCE GATES",
+      "reason": "Failed Gate 3 (2/5 folds) and Gate 4 (+1.3385 W/m2 worst fold degradation)."
+    },
+    {
+      "stage": "Stage 8.16B-2",
+      "route_name": "MEPS Cloud Physical Self-Consistency (phi_inconsist)",
+      "status": "HISTORICAL PRESERVED CHAMPION",
+      "reason": "Passed all 5 EVEN gates and 12 promotion criteria (Daytime nMAE = 27.7111%, MAE = 35.727549 W/m2). Replaced by Stage 8.17A."
+    },
+    {
+      "stage": "Stage 8.17A",
+      "route_name": "AROME-Arctic / MEPS Structural Disagreement Model",
+      "status": "HISTORICAL PRESERVED CHAMPION",
+      "reason": "Passed all 5 EVEN gates and 10 promotion criteria (Daytime nMAE = 27.3337%, MAE = 35.241085 W/m2). Replaced by Stage 8.19."
+    },
+    {
+      "stage": "Stage 8.19",
+      "route_name": "SWEPOS Abisko (ABIS) GNSS Tropospheric Delay Model",
+      "status": "PROMOTED / NEW OFFICIAL CHAMPION",
+      "reason": "Evaluated abis_ztd_latest and abis_ztd_trend_3h. Passed Stage 8.19B feasibility, all 5 Stage 8.19C EVEN acceptance gates, pre-ODD freeze STAGE8_19C_ABIS_CANDIDATE_FREEZE, Stage 8.19D locked ODD evaluation, Stage 8.19E governance checks, and Stage 8.19 timestamp audit (t0 = 00:00 UTC Day D, T_pub <= t0 - 30m). Second Governance Lock enforced. PROMOTED AS NEW OFFICIAL OPERATIONAL CHAMPION (Daytime nMAE = 27.0081%, MAE = 34.821405 W/m2, Delta nMAE = -0.3256 pp, Delta MAE = -0.419680 W/m2, 95% Bootstrap CI [-0.785420, -0.051210] W/m2, 98.64% improving)."
+    },
+    {
+      "stage": "Stage 8.20A",
+      "route_name": "Independent Observation Discovery & Evidence Audit",
+      "status": "CLOSED — DOCUMENTATION CORRECTIONS REQUIRED",
+      "reason": "Investigated 14 observational systems across 6 domains. Audited 22 claims (21 verified, 1 partially verified). Zero candidate-ready sources; zero routes reopened."
+    },
+    {
+      "stage": "Stage 8.20B",
+      "route_name": "Final Project State & Governance Checkpoint",
+      "status": "PROJECT_STATE_LOCKED",
+      "reason": "Established durable project-state lock. Official champion remains Stage 8.19 ABIS GNSS Model (42 features, Daytime nMAE = 27.0081%, MAE = 34.821405 W/m2). No experiment authorized."
+    },
+    {
+      "stage": "Stage 8.24",
+      "route_name": "Faithful Scandes Orographic Flow-Regime Expansion (ctx_u_perp + ctx_mountain_froude)",
+      "status": "REJECTED_BY_EVEN_GATES — CLOSED",
+      "reason": "Evaluated faithful layer-integrated N_layer (Psfc -> 700 hPa) + U_perp representation across 173 EVEN origins. Failed Gates G1-G4 (Delta MAE = +0.2543 W/m2, 1/5 folds improving, worst fold = +0.7186 W/m2). 0/21,694 sublayer N2 floor activations. ODD benchmark 100% untouched."
+    }
+  ]
+}

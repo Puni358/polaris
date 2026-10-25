@@ -1,0 +1,194 @@
+{
+  "authorization_version": "1.0.0",
+  "timestamp": "2026-09-20T11:26:00Z",
+  "step": "STEP_10B",
+  "objective": "Formal pre-execution governance authorization gate for H1.0 hybrid runtime validation",
+  "governance_baseline": {
+    "STAGE8_1_FORECAST_RESEARCH": "FROZEN",
+    "V3_REFERENCE": "FROZEN",
+    "OFAT": "COMPLETED / FROZEN RESEARCH",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_ESTABLISHED",
+    "REAL_STATION_DEMAND": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "HYBRID_BRANCH": "DESIGN AUTHORIZED",
+    "H1.0_FIXTURE": "FROZEN",
+    "STEP_10A": "PASS"
+  },
+  "experiment_specification": {
+    "experiment_type": "SINGLE_TRAJECTORY_END_TO_END_ENGINEERING_VALIDATION",
+    "statistical_design": "NOT_APPLICABLE",
+    "control_arm": "NONE",
+    "treatment_arm": "NONE",
+    "policy_comparison": "NONE",
+    "hypothesis_test": "NONE",
+    "multiple_comparisons": "NONE",
+    "result_dependent_stopping": "PROHIBITED"
+  },
+  "fixture_specification": {
+    "canonical_fixture_directory": "POLARIS_HYBRID_FIXTURE_H1_0/",
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "total_records": 8784,
+    "expected_hash": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "fixture_integrity": "PASS"
+  },
+  "trajectory_selection": {
+    "selection_rule": "FIRST_VALID_COMPLETE_24_HOUR_WINDOW",
+    "start_row_index": 0,
+    "end_row_index": 23,
+    "total_timesteps": 24,
+    "origin_timestamp": "2024-01-01T00:00:00Z",
+    "end_timestamp": "2024-01-01T23:00:00Z",
+    "horizon_hours": 24
+  },
+  "initial_state": {
+    "timestamp": "2024-01-01T00:00:00Z",
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 100000.0,
+    "diesel_running": false,
+    "diesel_hours_running": 0.0,
+    "last_observed_solar_irradiance": 0.0,
+    "last_observed_demand": 21600.0,
+    "last_observed_wind_generation": 0.0,
+    "serialized_json": {
+      "timestamp": "2024-01-01T00:00:00Z",
+      "battery_soc_pct": 50.0,
+      "battery_energy_wh": 100000.0,
+      "diesel_running": false,
+      "diesel_hours_running": 0.0,
+      "last_observed_solar_irradiance": 0.0,
+      "last_observed_demand": 21600.0,
+      "last_observed_wind_generation": 0.0
+    },
+    "sha256": "3e38d4f5e3046d642c26b56a84e9e0130b0bfddea24be37640b90a4fd2c55fbd"
+  },
+  "predeclared_output_artifacts": {
+    "raw_telemetry_csv": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_RAW.csv",
+    "execution_manifest_json": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION.json",
+    "execution_report_md": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION.md",
+    "provenance_manifest_json": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_PROVENANCE.json",
+    "hashes_manifest_json": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_HASHES.json"
+  },
+  "gate_evaluations": {
+    "G01_h10_fixture_hash_match": {
+      "status": "PASS",
+      "message": "Fixture CSV SHA-256 verified (762297aae21c0cb9...)."
+    },
+    "G02_h10_config_match": {
+      "status": "PASS",
+      "message": "H1.0 config SHA-256 verified (b60ca342f23179ca...)."
+    },
+    "G03_h10_provenance_match": {
+      "status": "PASS",
+      "message": "H1.0 provenance manifest SHA-256 verified (ed505b118ee774a6...)."
+    },
+    "G04_h10_determinism_verification": {
+      "status": "PASS",
+      "message": "Step 9 determinism verification PASS confirmed."
+    },
+    "G05_step10a_audit_pass": {
+      "status": "PASS",
+      "message": "Step 10A classification verified as A (Statically Verified)."
+    },
+    "G06_forecast_bundle_unchanged": {
+      "status": "PASS",
+      "message": "ForecastBundle schema hash verified (899aaa48272fd446...)."
+    },
+    "G07_station_state_unchanged": {
+      "status": "PASS",
+      "message": "StationState schema hash verified (b6e78e8292bbba40...)."
+    },
+    "G08_dispatch_plan_unchanged": {
+      "status": "PASS",
+      "message": "DispatchPlan schema hash verified (cbf80578a0b4fa28...)."
+    },
+    "G09_optimizer_unchanged": {
+      "status": "PASS",
+      "message": "MILP EnergyOptimizer hash verified (ee913b68b736602e...)."
+    },
+    "G10_simulator_unchanged": {
+      "status": "PASS",
+      "message": "DigitalTwinSimulator hash verified (7217dc2b03448021...)."
+    },
+    "G11_truth_firewall_pass": {
+      "status": "PASS",
+      "message": "Future-truth firewall order verified statically in runner.py."
+    },
+    "G12_no_future_truth_leakage": {
+      "status": "PASS",
+      "message": "Zero future actual values exposed to ForecastEngine or EnergyOptimizer."
+    },
+    "G13_trajectory_selection_frozen": {
+      "status": "PASS",
+      "message": "Preselected trajectory frozen: 2024-01-01T00:00:00Z to 2024-01-01T23:00:00Z (Index 0..23)."
+    },
+    "G14_initial_state_frozen": {
+      "status": "PASS",
+      "message": "Initial StationState frozen at 2024-01-01T00:00:00Z (SOC 50%, SHA 3e38d4f5e3046d64...)."
+    },
+    "G15_forecast_policy_frozen": {
+      "status": "PASS",
+      "message": "Stage8.1 solar adapter D3 mapping + Wind ARX proxy + generic turbine scenario frozen."
+    },
+    "G16_telemetry_requirements_satisfied": {
+      "status": "PASS",
+      "message": "24-step MPC trajectory telemetry collector configured to output complete execution details."
+    },
+    "G17_solver_runtime_config_frozen": {
+      "status": "PASS",
+      "message": "SCIPY_OPTIMIZE_MILP_HIGHS: The frozen LocalMILPEnergyOptimizer directly invokes scipy.optimize.milp, which uses the HiGHS MILP engine. No CBC path or solver fallback exists in the verified H1.0 execution path."
+    },
+    "G18_thermal_governance_ready": {
+      "status": "PASS",
+      "message": "Hardware baseline recorded (Load 1.16, Mem 7.8GB, Swap 4.2GB). Thermal limit 80 C active."
+    },
+    "G19_output_paths_clear": {
+      "status": "PASS",
+      "message": "Predeclared output file paths checked; zero frozen research evidence affected."
+    },
+    "G20_no_control_arm": {
+      "status": "PASS",
+      "message": "Single trajectory validation only. CONTROL_ARM = NONE, TREATMENT_ARM = NONE."
+    },
+    "G21_no_result_dependent_stopping": {
+      "status": "PASS",
+      "message": "Fixed 24-step horizon. Result-dependent stopping strictly prohibited."
+    },
+    "G22_no_pilot_smoke_test": {
+      "status": "PASS",
+      "message": "Zero execution executed during Step 10B. MILP_SOLVES = 0, SIMULATOR_STEPS = 0."
+    },
+    "G23_execution_scope_one_trajectory": {
+      "status": "PASS",
+      "message": "Scope restricted to exactly ONE 24-hour engineering trajectory (24 MPC cycles)."
+    },
+    "G24_claim_boundary_accepted": {
+      "status": "PASS",
+      "message": "Strict claim boundary accepted (controlled hybrid engineering trajectory validation only)."
+    }
+  },
+  "gate_summary": {
+    "total_gates": 24,
+    "passed_gates": 24,
+    "failed_gates": 0
+  },
+  "mandatory_status": {
+    "H1.0_FIXTURE_HASH": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "H1.0_FIXTURE_INTEGRITY": "PASS",
+    "STEP10A_STATUS": "PASS",
+    "FORECASTBUNDLE_INTEGRITY": "PASS",
+    "STATIONSTATE_INTEGRITY": "PASS",
+    "DISPATCHPLAN_INTEGRITY": "PASS",
+    "OPTIMIZER_INTEGRITY": "PASS",
+    "SIMULATOR_INTEGRITY": "PASS",
+    "TRUTH_FIREWALL": "PASS",
+    "PROVENANCE_INTEGRITY": "PASS",
+    "TRAJECTORY_SELECTION": "FROZEN",
+    "INITIAL_STATE": "FROZEN",
+    "TELEMETRY_READY": "PASS",
+    "THERMAL_GOVERNANCE": "READY",
+    "MILP_SOLVES_DURING_AUTHORIZATION": 0,
+    "SIMULATOR_STEPS_DURING_AUTHORIZATION": 0,
+    "FINAL_EXECUTION_AUTHORIZATION": "AUTHORIZED",
+    "RUNTIME_EXECUTION": "AUTHORIZED_FOR_ONE_TRAJECTORY_ONLY"
+  }
+}

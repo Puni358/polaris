@@ -1,0 +1,45 @@
+{
+  "campaign_id": "polaris_counterfactuals_1year_20260930",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "classifications": [
+    {
+      "parameter": "deg_penalty_per_wh",
+      "value": 0.00005,
+      "source": "system/config/battery.yaml",
+      "classification": "RESEARCH_TUNABLE_OBJECTIVE",
+      "safety_mandated": false,
+      "eligibility_for_research_optimization": true,
+      "modeled_fuel_impact_l": -11315.63
+    },
+    {
+      "parameter": "charge_efficiency / discharge_efficiency",
+      "value": "0.92 / 0.92 (0.8464 round-trip)",
+      "source": "system/config/battery.yaml",
+      "classification": "PHYSICAL_PARAMETER",
+      "safety_mandated": true,
+      "eligibility_for_research_optimization": false,
+      "modeled_fuel_impact_l": -5125.63,
+      "policy_note": "Physical hardware efficiency cannot be changed in production, but MILP objective handling can be tuned."
+    },
+    {
+      "parameter": "min_power_w",
+      "value": 10000.0,
+      "source": "system/config/diesel.yaml",
+      "classification": "SAFETY_MANDATED",
+      "safety_mandated": true,
+      "eligibility_for_research_optimization": false,
+      "modeled_fuel_impact_l": -4505.63,
+      "policy_note": "Generator OEM minimum run limit required for engine thermal and lubrication safety. NOT eligible for production removal."
+    },
+    {
+      "parameter": "renewable_curtailment_penalty",
+      "value": 0.05,
+      "source": "system/config/optimizer.yaml",
+      "classification": "RESEARCH_TUNABLE_OBJECTIVE",
+      "safety_mandated": false,
+      "eligibility_for_research_optimization": true,
+      "modeled_fuel_impact_l": 0.0
+    }
+  ]
+}

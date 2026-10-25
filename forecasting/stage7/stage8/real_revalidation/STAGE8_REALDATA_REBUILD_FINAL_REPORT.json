@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-09-13T14:08:50+05:30",
+  "report_title": "POLARIS Stage 8 Real-Data Rebuild Final Report",
+  "data_policy": "REAL_ONLY",
+  "stage8_1_verified_baseline": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "phase_results": {
+    "phase_0_workspace": "CREATED (stage7/stage8/real_revalidation/)",
+    "phase_1_arome_acquisition": "AROME_REAL_DATA_ACQUISITION_FAILED",
+    "phase_2_validation": "STOPPED",
+    "phase_3_features": "STOPPED",
+    "phase_4_freeze": "STOPPED",
+    "phase_5_control": "STOPPED",
+    "phase_6_execution": "STOPPED"
+  },
+  "arome_acquisition_audit": {
+    "server": "https://thredds.met.no/thredds/catalog/aromearcticarchive/2024/",
+    "single_file_size_gb": 53.67,
+    "total_volume_terabytes": 18.6,
+    "opendap_dodsC_status": "FAILED ([Errno -68] NetCDF: I/O failure)",
+    "ncss_status": "FAILED (HTTP 503 Service Unavailable)",
+    "substitution_prohibited": true
+  },
+  "final_reconstruction_status": "NOT RECONSTRUCTABLE → STOP",
+  "governance_firewall": {
+    "synthetic_arome_generated": false,
+    "synthetic_abis_generated": false,
+    "seeds_817_819_used": false,
+    "hardcoded_metrics_used": false,
+    "master_handoff_modified": false,
+    "route_registry_modified": false
+  }
+}

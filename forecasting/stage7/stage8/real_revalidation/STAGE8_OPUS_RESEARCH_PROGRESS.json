@@ -1,0 +1,50 @@
+{
+  "research_name": "STAGE8_OPUS_FINAL_ADVERSARIAL_RESEARCH",
+  "research_status": "IN_PROGRESS",
+  "current_phase": "PHASE_3_GNSS_ATMOSPHERIC_COLUMN",
+  "last_updated": "2026-09-13T18:24:00+05:30",
+  "phases_completed": ["PHASE_0_PROJECT_RECONCILIATION", "PHASE_1_INFORMATION_MAP", "PHASE_2_RADAR_INVESTIGATION"],
+  "phases_remaining": ["PHASE_3_GNSS", "PHASE_4_INDEPENDENT_OBSERVATIONS", "PHASE_5_ADVERSARIAL_TEST", "PHASE_6_FINAL_RANKING"],
+  "current_best_candidate": {
+    "name": "GNSS Integrated Water Vapor from SWEPOS/E-GVAP",
+    "class": "CONDITIONAL_B",
+    "reason": "Real data availability at Abisko/Kiruna unverified; physical hypothesis untested"
+  },
+  "radar_investigation": {
+    "sweden_composite": {
+      "class": "C",
+      "reason": "Wrong physical quantity (hydrometeor reflectivity, not cloud optics), partially redundant with MEPS assimilation",
+      "2024_data": true,
+      "cadence_minutes": 5,
+      "latency_minutes": 1,
+      "nuolja_coverage": "UNKNOWN — terrain blockage concern"
+    },
+    "kiruna_individual": {
+      "class": "D",
+      "reason": "No 2024 historical archive in public API",
+      "2024_data": false
+    },
+    "lulea_individual": {
+      "class": "D",
+      "reason": "No 2024 historical archive, too far from Nuolja",
+      "2024_data": false
+    }
+  },
+  "routes_eliminated_this_session": [
+    "KIRUNA_INDIVIDUAL_RADAR",
+    "LULEA_INDIVIDUAL_RADAR",
+    "SWEDEN_COMPOSITE_RADAR_downgraded_to_C"
+  ],
+  "key_evidence": [
+    "Sweden composite has complete 2024 archive at 5-min cadence with ~1-min latency",
+    "Kiruna/Lulea individual radar qcvol has NO 2024 data in public API",
+    "Radar measures hydrometeors (>100um) not cloud droplets (1-20um)",
+    "MEPS assimilates radar data — partial redundancy",
+    "Stage 8.1 information gap is cloud optical depth, not precipitation detection"
+  ],
+  "experiments_performed": false,
+  "odd_access_performed": false,
+  "champion_modified": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false
+}

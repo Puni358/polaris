@@ -1,0 +1,229 @@
+{
+  "timestamp_utc": "2026-09-13T11:00:49.548570+00:00",
+  "experiment_id": "POLARIS_STAGE8_23_GOVERNED_EXPERIMENT",
+  "control_baseline": {
+    "model": "Stage8.1 37-feature HGB champion",
+    "even_control_mae": 37.6201,
+    "even_control_nmae_pct": 29.2063,
+    "even_control_rmse": 60.1606
+  },
+  "candidates_eval": {
+    "Candidate_A": {
+      "candidate_name": "Candidate A (LOCAL_STATE)",
+      "mean_mae": 37.4891,
+      "delta_mae": -0.131,
+      "mean_nmae_pct": 29.1046,
+      "delta_nmae_pct": -0.1017,
+      "mean_rmse": 60.056,
+      "delta_rmse": -0.1046,
+      "improving_folds": 2,
+      "worst_fold_degradation": 0.6208,
+      "gates": {
+        "G1_MAE_Margin_(-0.50)": {
+          "required": "delta_mae <= -0.50",
+          "value": -0.131,
+          "pass": false
+        },
+        "G2_Fold_Consistency_(4/5)": {
+          "required": "improving_folds >= 4",
+          "value": 2,
+          "pass": false
+        },
+        "G3_Worst_Fold_Tolerance_(+0.50)": {
+          "required": "worst_fold <= +0.50",
+          "value": 0.6208,
+          "pass": false
+        },
+        "G4_nMAE_RMSE_NonDegradation": {
+          "required": "nmae <= ctrl AND rmse <= ctrl",
+          "pass": true
+        },
+        "G5_Causal_Integrity": {
+          "required": "100% causal",
+          "pass": true
+        },
+        "G6_Exact_Control_Reproduction": {
+          "required": "control MAE == 37.6201",
+          "pass": true
+        }
+      },
+      "OVERALL_GATES_PASS": false
+    },
+    "Candidate_B": {
+      "candidate_name": "Candidate B (MOUNTAIN_VALLEY_CONTRAST)",
+      "mean_mae": 37.8235,
+      "delta_mae": 0.2035,
+      "mean_nmae_pct": 29.3642,
+      "delta_nmae_pct": 0.158,
+      "mean_rmse": 60.3566,
+      "delta_rmse": 0.196,
+      "improving_folds": 2,
+      "worst_fold_degradation": 0.7938,
+      "gates": {
+        "G1_MAE_Margin_(-0.50)": {
+          "required": "delta_mae <= -0.50",
+          "value": 0.2035,
+          "pass": false
+        },
+        "G2_Fold_Consistency_(4/5)": {
+          "required": "improving_folds >= 4",
+          "value": 2,
+          "pass": false
+        },
+        "G3_Worst_Fold_Tolerance_(+0.50)": {
+          "required": "worst_fold <= +0.50",
+          "value": 0.7938,
+          "pass": false
+        },
+        "G4_nMAE_RMSE_NonDegradation": {
+          "required": "nmae <= ctrl AND rmse <= ctrl",
+          "pass": false
+        },
+        "G5_Causal_Integrity": {
+          "required": "100% causal",
+          "pass": true
+        },
+        "G6_Exact_Control_Reproduction": {
+          "required": "control MAE == 37.6201",
+          "pass": true
+        }
+      },
+      "OVERALL_GATES_PASS": false
+    },
+    "Candidate_C": {
+      "candidate_name": "Candidate C (COMBINED)",
+      "mean_mae": 37.7859,
+      "delta_mae": 0.1659,
+      "mean_nmae_pct": 29.335,
+      "delta_nmae_pct": 0.1288,
+      "mean_rmse": 60.4381,
+      "delta_rmse": 0.2774,
+      "improving_folds": 2,
+      "worst_fold_degradation": 0.9242,
+      "gates": {
+        "G1_MAE_Margin_(-0.50)": {
+          "required": "delta_mae <= -0.50",
+          "value": 0.1659,
+          "pass": false
+        },
+        "G2_Fold_Consistency_(4/5)": {
+          "required": "improving_folds >= 4",
+          "value": 2,
+          "pass": false
+        },
+        "G3_Worst_Fold_Tolerance_(+0.50)": {
+          "required": "worst_fold <= +0.50",
+          "value": 0.9242,
+          "pass": false
+        },
+        "G4_nMAE_RMSE_NonDegradation": {
+          "required": "nmae <= ctrl AND rmse <= ctrl",
+          "pass": false
+        },
+        "G5_Causal_Integrity": {
+          "required": "100% causal",
+          "pass": true
+        },
+        "G6_Exact_Control_Reproduction": {
+          "required": "control MAE == 37.6201",
+          "pass": true
+        }
+      },
+      "OVERALL_GATES_PASS": false
+    }
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "control_mae": 49.3114,
+      "cand_A_mae": 49.5079,
+      "cand_A_delta": 0.1965,
+      "cand_B_mae": 49.5323,
+      "cand_B_delta": 0.2209,
+      "cand_C_mae": 49.8,
+      "cand_C_delta": 0.4886,
+      "control_nmae": 29.5265,
+      "cand_A_nmae": 29.6441,
+      "cand_B_nmae": 29.6588,
+      "cand_C_nmae": 29.8191,
+      "control_rmse": 81.355,
+      "cand_A_rmse": 81.5744,
+      "cand_B_rmse": 81.5929,
+      "cand_C_rmse": 81.9379
+    },
+    {
+      "fold": 2,
+      "control_mae": 70.5688,
+      "cand_A_mae": 68.6986,
+      "cand_A_delta": -1.8702,
+      "cand_B_mae": 70.1946,
+      "cand_B_delta": -0.3742,
+      "cand_C_mae": 69.5452,
+      "cand_C_delta": -1.0236,
+      "control_nmae": 36.9196,
+      "cand_A_nmae": 35.9412,
+      "cand_B_nmae": 36.7239,
+      "cand_C_nmae": 36.3841,
+      "control_rmse": 103.7439,
+      "cand_A_rmse": 101.1568,
+      "cand_B_rmse": 103.2206,
+      "cand_C_rmse": 101.9855
+    },
+    {
+      "fold": 3,
+      "control_mae": 40.3456,
+      "cand_A_mae": 40.9664,
+      "cand_A_delta": 0.6208,
+      "cand_B_mae": 40.738,
+      "cand_B_delta": 0.3924,
+      "cand_C_mae": 41.2698,
+      "cand_C_delta": 0.9242,
+      "control_nmae": 28.1423,
+      "cand_A_nmae": 28.5753,
+      "cand_B_nmae": 28.416,
+      "cand_C_nmae": 28.7869,
+      "control_rmse": 67.2567,
+      "cand_A_rmse": 69.4119,
+      "cand_B_rmse": 67.4843,
+      "cand_C_rmse": 69.5392
+    },
+    {
+      "fold": 4,
+      "control_mae": 25.7704,
+      "cand_A_mae": 26.1943,
+      "cand_A_delta": 0.4238,
+      "cand_B_mae": 26.5642,
+      "cand_B_delta": 0.7938,
+      "cand_C_mae": 26.264,
+      "cand_C_delta": 0.4936,
+      "control_nmae": 36.7313,
+      "cand_A_nmae": 37.3354,
+      "cand_B_nmae": 37.8627,
+      "cand_C_nmae": 37.4349,
+      "control_rmse": 44.6132,
+      "cand_A_rmse": 44.3786,
+      "cand_B_rmse": 45.7224,
+      "cand_C_rmse": 44.9021
+    },
+    {
+      "fold": 5,
+      "control_mae": 2.1041,
+      "cand_A_mae": 2.0783,
+      "cand_A_delta": -0.0258,
+      "cand_B_mae": 2.0884,
+      "cand_B_delta": -0.0156,
+      "cand_C_mae": 2.0505,
+      "cand_C_delta": -0.0536,
+      "control_nmae": 58.5528,
+      "cand_A_nmae": 57.8357,
+      "cand_B_nmae": 58.1179,
+      "cand_C_nmae": 57.0623,
+      "control_rmse": 3.8345,
+      "cand_A_rmse": 3.7584,
+      "cand_B_rmse": 3.7629,
+      "cand_C_rmse": 3.8257
+    }
+  ],
+  "ODD_RUN": false,
+  "FINAL_VERDICT": "REJECTED_ON_EVEN"
+}

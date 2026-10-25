@@ -1,0 +1,40 @@
+{
+  "note": "CORRECTION: the task asked for hour 0 residuals, but the actual violation in the original 168h run occurred at horizon index 8, not 0. Hour-0 is reported separately in DIAGNOSTIC_2_constraint_residuals.json (clean: u_chg=1.0, u_dis=0.0 exactly). This file supplements it with the residuals at the ACTUAL failing index (8), computed from the raw_all_24h array already saved in DIAGNOSTIC_1_exact_solve.json -- no re-solve performed.",
+  "index": 8,
+  "raw_values": {
+    "p_chg": 0.03909330784517806,
+    "p_dis": 45942.93909330785,
+    "u_chg": 7.818661568181895e-07,
+    "u_dis": 0.9999992181338432
+  },
+  "constraint_5_charge_bound": {
+    "expr": "p_chg - max_p_chg*u_chg <= 0",
+    "lhs": 4.268585485078802e-12,
+    "rhs": 0.0,
+    "slack_rhs_minus_lhs": -4.268585485078802e-12,
+    "satisfied": true
+  },
+  "constraint_6_discharge_bound": {
+    "expr": "p_dis - max_p_dis*u_dis <= 0",
+    "lhs": -4057.0218133843155,
+    "rhs": 0.0,
+    "slack_rhs_minus_lhs": 4057.0218133843155,
+    "satisfied": true
+  },
+  "constraint_7_exclusivity": {
+    "expr": "u_chg + u_dis <= 1",
+    "lhs": 1.0,
+    "rhs": 1.0,
+    "slack_rhs_minus_lhs": 0.0,
+    "satisfied": true
+  },
+  "u_chg_integrality_residual_from_0": 7.818661568181895e-07,
+  "u_dis_integrality_residual_from_1": -7.818661568181895e-07,
+  "hypothesis_A_check": {
+    "max_p_chg_times_u_chg_raw": 0.039093307840909475,
+    "actual_p_chg_raw": 0.03909330784517806,
+    "rounded_2dp_p_chg": 0.04,
+    "matches_reported_0.04": true
+  },
+  "conclusion": "All three MILP constraints (5,6,7) ARE satisfied by the raw solution at index 8, within standard floating-point/solver tolerance. The schema-level exclusivity failure is NOT a violation of the MILP model itself -- it is the DispatchPlan schemas stricter absolute 1e-3W threshold catching a physically tiny (0.039W) but nonzero p_chg that the MILP model permits because u_chg=1e-6 (not exactly 0) is within HiGHSs own integrality tolerance."
+}

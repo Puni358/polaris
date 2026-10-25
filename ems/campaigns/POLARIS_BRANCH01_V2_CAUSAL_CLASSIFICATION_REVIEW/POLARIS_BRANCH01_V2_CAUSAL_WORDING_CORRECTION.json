@@ -1,0 +1,42 @@
+{
+  "audit_name": "POLARIS_BRANCH01_V2_CAUSAL_WORDING_CORRECTION",
+  "audit_mode": "READ_ONLY_GOVERNANCE_CORRECTION",
+  "timestamp": "2026-09-21T19:49:14Z",
+  "wording_corrections": [
+    {
+      "correction_id": "CORRECTION_OPERATIONAL_DRIVER",
+      "target_claim": "Forecast Accuracy vs Operational Causality",
+      "previous_wording": "Branch01's greater forecast accuracy caused the observed increase in diesel and reduction in unmet load.",
+      "corrected_wording": "Changing the solar forecast from control to treatment altered the optimizer's input sequence. Faced with lower predicted solar availability, the MILP optimizer dispatched diesel generation to avoid the high unmet load penalty ($10,000/kWh), reducing unmet load by 30,543.753 kWh at the cost of +11,350.179 L of additional fuel. Operational dispatch was driven by lower forecast solar magnitudes colliding with the MILP objective penalty structure, rather than forecast accuracy per se.",
+      "governance_rationale": "An inaccurate zero forecast would produce the exact same diesel dispatch as an accurate forecast predicting solar deficit. The physical cause of dispatch is input magnitude colliding with objective weights."
+    },
+    {
+      "correction_id": "CORRECTION_MILP_OPTIMALITY",
+      "target_claim": "MILP Consistency",
+      "previous_wording": "This behavior is mathematically optimal under the frozen MILP objective.",
+      "corrected_wording": "The observed dispatch is consistent with the frozen MILP objective and constraints given the forecast inputs available to the optimizer at each MPC origin.",
+      "governance_rationale": "Avoids implying global POLARIS optimality, optimal fuel consumption, optimal reliability, or real-world optimality under future realized truth."
+    },
+    {
+      "correction_id": "CORRECTION_CLOUDY_DEFICIT",
+      "target_claim": "Cloudy/Attenuated Mechanism",
+      "previous_wording": "Branch01 accurately predicts solar deficits during cloudy/attenuated periods.",
+      "corrected_wording": "Branch01 predicts lower solar irradiance during low-irradiance regimes (MAE 96.033 W vs Control MAE 11,863.765 W). However, atmospheric cloud cover / attenuation was not explicitly isolated as a distinct regime in the forensic error artifacts.",
+      "governance_rationale": "Regime table classifies by irradiance magnitude (NIGHT_ZERO, LOW_IRRADIANCE, MODERATE_HIGH_IRRADIANCE) without dedicated cloudiness index variables."
+    },
+    {
+      "correction_id": "CORRECTION_BRANCH01_PESSIMISM",
+      "target_claim": "Branch01 Bias Direction",
+      "previous_wording": "Branch01 is systematically pessimistic.",
+      "corrected_wording": "Branch01 exhibits near-zero overall bias (+17.234 W at H1), with slight positive bias in night (+67.178 W) and low irradiance (+90.299 W) regimes, and slight negative bias (-33.348 W) in moderate/high irradiance regimes. Branch01 is not systematically pessimistic.",
+      "governance_rationale": "Empirical bias values do not support systematic pessimism."
+    },
+    {
+      "correction_id": "CORRECTION_ANNUALIZATION",
+      "target_claim": "Annualization Scaling",
+      "previous_wording": "Annualized fuel claims or annual station-specific projections.",
+      "corrected_wording": "ANNUAL_RESULT_STATUS = REPRESENTATIVE_TRAJECTORY_SET. NUOLJA_STATION_SPECIFIC_ANNUAL_SAVING = NOT_ESTABLISHED. No annualization scaling (x365) or real-Nuolja annual fuel claim is authorized.",
+      "governance_rationale": "Campaign is conducted over 173 representative trajectories (4,152 H1 steps). Extrapolation is governed as NOT_ESTABLISHED."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "experiment_id": "L2-EXP-08",
+  "title": "POLARIS L2-EXP-08 \u2014 Pre-Registered Adaptive Risk-Budget EMS Interface",
+  "status": "PROMISING",
+  "timestamp_utc": "2026-10-04T06:26:39.519459+00:00",
+  "runtime_environment": {
+    "python_executable": "/home/punith-bs/01polaris (Copy)/.venv/bin/python",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "scikit_learn_version": "1.6.0"
+  },
+  "pre_registered_policy_hash": "1a5da66efa73aba1a5cbe45e41573aba2cd7089a1cd866838440cc5615c73c96",
+  "verified_hashes": {
+    "policy_json": "1a5da66efa73aba1a5cbe45e41573aba2cd7089a1cd866838440cc5615c73c96",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "results_json": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_08_RESULTS.json",
+  "origin_metrics_csv": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_08_ORIGIN_METRICS.csv",
+  "hourly_metrics_csv": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_08_HOURLY_METRICS.csv",
+  "mechanism_forensics_csv": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_08_MECHANISM_FORENSICS.csv",
+  "policy_application_csv": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_08_POLICY_APPLICATION.csv",
+  "governance_statement": "2024 outcomes were not used to select or modify the adaptive risk policy. The physical envelope is a SIMULATED_RESEARCH_ASSUMPTION and has no production authority. No production GAP19, Stage8.1, F, SKGBDT, or CQR artifact was modified."
+}

@@ -1,0 +1,8 @@
+{
+  "test_id": "GAP19_CONTROLLED_8_CYCLE_MPC_TEST",
+  "sha256_hashes": {
+    "test_runner_script": "8a09bc3532c5ddae6b70129f12dfcdb61cbdf6e5792ea7945d8aa13b7dfa2db7",
+    "optimizer_implementation": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "summary_manifest": "c4d081f21ebaa7d4a654ec998394fe9b9ee3f06cb7b11d9d93dfa996f0144f84"
+  }
+}

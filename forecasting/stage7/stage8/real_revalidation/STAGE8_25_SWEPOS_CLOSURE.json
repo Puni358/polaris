@@ -1,0 +1,9 @@
+{
+  "stage": "STAGE8.25",
+  "route_name": "Real SWEPOS GNSS Tropospheric Delay / PWV at ABIS",
+  "timestamp": "2026-09-13T21:36:54.299386+05:30",
+  "verdict": "CLOSED_FEASIBILITY_UNAVAILABLE",
+  "operational_champion": "Stage 8.1 37-feature HGB Model",
+  "odd_status": "100% UNTOUCHED",
+  "next_phase": "ERROR FORENSICS + COMPLEMENTARY MODEL / ENSEMBLE RESEARCH"
+}

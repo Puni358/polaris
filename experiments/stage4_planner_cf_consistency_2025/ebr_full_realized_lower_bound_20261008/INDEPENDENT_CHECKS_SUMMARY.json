@@ -1,0 +1,10 @@
+{
+  "busbar_residual_max_all_origins_w": 2.1336745703592896e-08,
+  "battery_residual_max_all_origins_wh": 4.627509042620659e-09,
+  "ebr_residual_max_all_origins_wh": 4.3655745685100555e-11,
+  "max_ebr_reconstruction_error_wh": 7.275957614183426e-12,
+  "all_origins_zero_unmet": true,
+  "all_origins_no_unmet_vars": true,
+  "all_origins_no_terminal_row": true,
+  "all_origins_recompute_ok": true
+}

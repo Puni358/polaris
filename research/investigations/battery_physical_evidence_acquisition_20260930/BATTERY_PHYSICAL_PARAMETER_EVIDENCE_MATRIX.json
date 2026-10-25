@@ -1,0 +1,162 @@
+{
+  "phase_id": "battery_physical_evidence_acquisition_20260930",
+  "parameter_matrix": [
+    {
+      "parameter": "Battery Chemistry",
+      "required": true,
+      "evidence_available": false,
+      "evidence_tier": "NONE",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "UNVERIFIED",
+      "notes": "Synthetic fixture specifies 200 kWh capacity; cell chemistry (LFP, NMC, Ni-Cd) is not documented."
+    },
+    {
+      "parameter": "Nominal Capacity",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_A_TARGET_SYSTEM",
+      "directly_measured": false,
+      "target_battery_specific": true,
+      "status": "INDIRECTLY_SUPPORTED",
+      "notes": "Fixed at 200.0 kWh in synthetic engineering fixture."
+    },
+    {
+      "parameter": "Usable Capacity",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_A_TARGET_SYSTEM",
+      "directly_measured": false,
+      "target_battery_specific": true,
+      "status": "INDIRECTLY_SUPPORTED",
+      "notes": "SOC bounds 20.0% to 95.0% yield 150.0 kWh usable capacity."
+    },
+    {
+      "parameter": "Round-Trip Efficiency",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Current 0.8464 (eta_chg=0.92, eta_dis=0.92) is synthetic assumption. Peer literature indicates 85-94% for LFP/NMC."
+    },
+    {
+      "parameter": "Charge Efficiency",
+      "required": true,
+      "evidence_available": false,
+      "evidence_tier": "NONE",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "UNVERIFIED",
+      "notes": "0.92 is synthetic assumption; no measured charge efficiency curve."
+    },
+    {
+      "parameter": "Discharge Efficiency",
+      "required": true,
+      "evidence_available": false,
+      "evidence_tier": "NONE",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "UNVERIFIED",
+      "notes": "0.92 is synthetic assumption; no measured discharge efficiency curve."
+    },
+    {
+      "parameter": "Cycle Life (EFC)",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Wang 2011 & NREL BLAST indicate 3,000-6,000 EFC at 80% EOL for LFP cells."
+    },
+    {
+      "parameter": "Capacity Fade Model",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Semi-empirical power-law / Arrhenius formulation Q_loss = M * Ah^z * exp(-Ea/RT)."
+    },
+    {
+      "parameter": "DoD Dependence",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Schmalstieg 2014 & BLAST model non-linear DoD stress function f(DoD) ~ DoD^1.5."
+    },
+    {
+      "parameter": "Temperature Dependence",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Arrhenius rate dependency. Extreme cold (<0C) increases lithium plating unless heated."
+    },
+    {
+      "parameter": "C-rate Dependence",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Power scaling factor C_rate^0.55 in Wang 2011. In POLARIS (50 kW max power / 200 kWh = 0.25C max), C-rate stress is low."
+    },
+    {
+      "parameter": "Calendar Aging",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Time ^ 0.5 SEI growth kinetics dependent on SOC and Temperature."
+    },
+    {
+      "parameter": "SOC-Window Dependence",
+      "required": false,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "High average SOC (>80%) accelerates calendar degradation."
+    },
+    {
+      "parameter": "End-of-Life Criterion",
+      "required": true,
+      "evidence_available": true,
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MODEL_STRUCTURAL_ONLY",
+      "notes": "Standard industry benchmark: 80% remaining capacity (20% capacity fade)."
+    },
+    {
+      "parameter": "Replacement Cost ($/kWh)",
+      "required": true,
+      "evidence_available": false,
+      "evidence_tier": "NONE",
+      "directly_measured": false,
+      "target_battery_specific": false,
+      "status": "MISSING",
+      "notes": "No target-specific stack replacement cost or logistics transport cost documented for Nuolja."
+    }
+  ],
+  "matrix_summary": {
+    "directly_supported_count": 0,
+    "indirectly_supported_count": 2,
+    "model_structural_only_count": 9,
+    "unverified_count": 3,
+    "missing_count": 1
+  }
+}

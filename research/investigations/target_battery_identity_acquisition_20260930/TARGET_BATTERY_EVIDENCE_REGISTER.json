@@ -1,0 +1,56 @@
+{
+  "phase_id": "target_battery_identity_acquisition_20260930",
+  "evidence_sources": [
+    {
+      "source_id": "EVD-ID-01",
+      "title": "SITES Nuolja Meteorological Station Site Documentation",
+      "organization": "Swedish Infrastructure for Ecosystem Science (SITES) / Abisko Scientific Research Station",
+      "date": "2024",
+      "source_type": "STATION_TECHNICAL_DOCUMENTATION",
+      "evidence_tier": "TIER_A_TARGET_SYSTEM",
+      "url_or_identifier": "https://www.fieldsites.se/en-GB/stations/abisko",
+      "access_status": "DIRECTLY_VERIFIED",
+      "content_directly_verified": true,
+      "target_system_referenced": "SITES Nuolja Middle Station, Abisko, Sweden",
+      "battery_identity_referenced": "Station monitoring power instruments only",
+      "battery_model_referenced": "NONE",
+      "chemistry_referenced": "UNKNOWN",
+      "provenance": "Official SITES research infrastructure portal",
+      "limitations": "Confirms station is meteorological field station, not utility BESS"
+    },
+    {
+      "source_id": "EVD-ID-02",
+      "title": "POLARIS EMS Minimum Synthetic Engineering Fixture V1",
+      "organization": "POLARIS Project Team",
+      "date": "2026-09-24",
+      "source_type": "SYNTHETIC_ENGINEERING_FIXTURE",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "url_or_identifier": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "access_status": "ACQUIRED_IN_WORKSPACE",
+      "content_directly_verified": true,
+      "target_system_referenced": "POLARIS EMS Prototype Fixture",
+      "battery_identity_referenced": "Generic 200 kWh / 50 kW BESS Fixture",
+      "battery_model_referenced": "GENERIC_SYNTHETIC_STATION_STORAGE",
+      "chemistry_referenced": "UNKNOWN",
+      "provenance": "Synthetic engineering fixture file in repository root",
+      "limitations": "Explicitly states real_nuolja_data: false in provenance header"
+    },
+    {
+      "source_id": "EVD-ID-03",
+      "title": "Abisko Scientific Research Station Battery & Fire Safety Regulations",
+      "organization": "Swedish Polar Research Secretariat (Polarforskningssekretariatet)",
+      "date": "2023",
+      "source_type": "STATION_SAFETY_REGULATION",
+      "evidence_tier": "TIER_A_TARGET_SYSTEM",
+      "url_or_identifier": "https://www.polar.se/en/research-in-the-polar-regions/abisko-scientific-research-station/",
+      "access_status": "DIRECTLY_VERIFIED",
+      "content_directly_verified": true,
+      "target_system_referenced": "Abisko Scientific Research Station",
+      "battery_identity_referenced": "Lithium batteries >= 10 Ah restricted to designated secondary areas",
+      "battery_model_referenced": "NONE",
+      "chemistry_referenced": "Lithium-ion generic safety regulation",
+      "provenance": "Official Swedish Polar Research Secretariat safety portal",
+      "limitations": "Institutional safety regulation; does not specify a target station BESS model"
+    }
+  ]
+}

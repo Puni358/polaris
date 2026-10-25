@@ -1,0 +1,16 @@
+feature_name,latest_info_timestamp_relative,feature_time_<=_origin_time,number_of_violations
+res_0h,origin_ts (0h),True,0
+res_1h,origin_ts (0h),True,0
+res_2h,origin_ts (0h),True,0
+res_3h,origin_ts (0h),True,0
+res_6h,origin_ts (0h),True,0
+res_12h,origin_ts (0h),True,0
+res_24h,origin_ts (0h),True,0
+res_mean_2h,origin_ts (0h),True,0
+res_mean_3h,origin_ts (0h),True,0
+res_mean_6h,origin_ts (0h),True,0
+res_mean_12h,origin_ts (0h),True,0
+res_ewma_6h,origin_ts (0h),True,0
+res_std_12h,origin_ts (0h),True,0
+res_sign_pos_frac_6h,origin_ts (0h),True,0
+res_abs_mean_6h,origin_ts (0h),True,0

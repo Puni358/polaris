@@ -1,0 +1,134 @@
+{
+  "audit_metadata": {
+    "audit_phase": "SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT",
+    "audit_date": "2026-09-22",
+    "generation_mode": "GOVERNED_FORMULATION_SPECIFICATION",
+    "execution_performed": false,
+    "code_modified": false
+  },
+  "final_governed_classifications": {
+    "SURVIVABILITY_METHOD_STATUS": "READY_FOR_FORMALIZATION",
+    "EMERGENCY_DETECTOR_STATUS": "REQUIRES_DATA",
+    "OBJECTIVE_CLOSURE_STATUS": "PARTIALLY_CLOSED",
+    "IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "repository_evidence_summary": {
+    "station_state_schema": "system/schemas/station_state.py",
+    "forecast_bundle_schema": "system/schemas/forecast_bundle.py",
+    "dispatch_plan_schema": "system/schemas/dispatch_plan.py",
+    "milp_optimizer": "system/optimization/implementations/milp.py",
+    "digital_twin_simulator": "system/simulation/simulator.py",
+    "battery_config": "system/config/battery.yaml",
+    "diesel_config": "system/config/diesel.yaml",
+    "loads_config": "system/config/loads.yaml",
+    "verified_battery_capacity_wh": 200000.0,
+    "verified_min_soc_pct": 20.0,
+    "verified_discharge_efficiency": 0.92,
+    "verified_max_discharge_power_w": 50000.0,
+    "verified_diesel_base_fuel_l_h": 5.0,
+    "verified_diesel_marginal_fuel_l_wh": 0.00025,
+    "verified_diesel_min_power_w": 10000.0,
+    "verified_diesel_max_power_w": 100000.0
+  },
+  "battery_survivability_formulation": {
+    "usable_cell_energy_wh": "max(0, E(t) - E_min)",
+    "usable_bus_energy_wh": "(E(t) - E_min) * 0.92",
+    "forward_endurance_formula": "T_batt = max{ N | sum_{k=1..N} D_critical(k)*dt / 0.92 <= E(t) - E_min and D_crit(k) <= 50000 }"
+  },
+  "diesel_survivability_formulation": {
+    "step_fuel_consumption_l": "(5.0 * u_diesel + 0.00025 * P_gen) * dt",
+    "startup_fuel_consumption_l": 6.0,
+    "forward_endurance_formula": "T_fuel = max{ N | F_required(N) <= F_remaining and D_crit(k) <= 100000 }"
+  },
+  "survival_window_and_adverse_renewables": {
+    "common_survival_window_required": true,
+    "recommended_window": "T_required = T_resupply (defaulting to H=24h forecast horizon)",
+    "adverse_renewable_baseline": "Zero Renewable Baseline (P_solar=0, P_wind=0) recommended for worst-case emergency detector",
+    "causality_boundary": "STRICTLY_CAUSAL_NO_HIDDEN_FUTURE_ACTUALS"
+  },
+  "survivability_margins_and_limiting_resource": {
+    "battery_margin_hours": "M_batt = T_batt - T_required",
+    "diesel_margin_hours": "M_fuel = T_fuel - T_required",
+    "battery_ratio": "R_batt = T_batt / T_required",
+    "diesel_ratio": "R_fuel = T_fuel / T_required",
+    "policy_e3_limiting_resource_rule": "Limiting Resource = argmin(R_batt, R_fuel)"
+  },
+  "emergency_detector_interface_summary": {
+    "operating_modes": [
+      "NORMAL",
+      "EMERGENCY_BATTERY_WEAK",
+      "EMERGENCY_DIESEL_WEAK",
+      "EMERGENCY_CRITICAL_DEFICIT"
+    ],
+    "limiting_resources": [
+      "BATTERY",
+      "DIESEL",
+      "NEITHER",
+      "BOTH"
+    ],
+    "schema_placement": "NEW_SCHEMA_OR_STATIONSTATE_EXTENSION"
+  },
+  "objective_interaction_summary": {
+    "pre_solve_detector": "Evaluates state and causal forecasts exogenous to MPC solve",
+    "stage_1_reliability": "Enforces p_unmet_critical = 0 unconditionally",
+    "stage_2_resilience": "Protects limiting resource identified by detector",
+    "circular_loop_prevention": "Detector runs strictly before solve; mode parameter is read-only inside optimizer"
+  },
+  "battery_degradation_summary": {
+    "normal_mode": "Degradation penalty active to protect battery lifetime",
+    "emergency_mode": "Degradation penalty dynamically suppressed (c_deg = 0.0)",
+    "reliability_protection": "Critical load shedding never allowed for degradation cost"
+  },
+  "human_decision_register_summary": [
+    {
+      "id": "HD-01",
+      "title": "Authorize Numerical EBR Target (E_EBR_target)",
+      "status": "UNAUTHORIZED",
+      "blocking": true
+    },
+    {
+      "id": "HD-02",
+      "title": "Authorize Numerical Terminal Target (E_terminal_target)",
+      "status": "UNAUTHORIZED",
+      "blocking": true
+    },
+    {
+      "id": "HD-03",
+      "title": "Authorize Required Survival Window (T_required)",
+      "status": "UNAUTHORIZED",
+      "blocking": true
+    },
+    {
+      "id": "HD-04",
+      "title": "Authorize Detector Adverse Renewable Assumption",
+      "status": "UNAUTHORIZED",
+      "blocking": true
+    },
+    {
+      "id": "HD-05",
+      "title": "Assign Battery Degradation Stage & Suppression",
+      "status": "UNAUTHORIZED",
+      "blocking": true
+    },
+    {
+      "id": "HD-06",
+      "title": "Authorize Fuel Tank Capacity & Reserve Limits",
+      "status": "UNAUTHORIZED",
+      "blocking": true
+    },
+    {
+      "id": "HD-07",
+      "title": "Select Solver Architecture (Option A vs Option B)",
+      "status": "UNSOLVED",
+      "blocking": true
+    }
+  ],
+  "final_audit_responses": {
+    "already_decided": "Critical reliability priority, EBR as resilience target, exogenous detector, Policy E3 limiting resource rule, emergency degradation priority",
+    "technically_derivable": "Usable battery bus energy, forward battery endurance T_batt, diesel step fuel consumption, forward diesel endurance T_fuel, survival ratios R_batt and R_fuel",
+    "requires_human_authorization": "HD-01 through HD-07 parameter values and solver selection",
+    "missing_data": "fuel_remaining_l in StationState schema, D_critical demand tier in ForecastBundle schema, T_resupply schedule",
+    "ready_to_formalize_final_objective": "YES for mathematical equations; NO for numerical execution until human decisions HD-01..HD-07 authorized",
+    "implementation_authorization_status": "NOT_GRANTED"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "audit_type": "STAGE 8.13 EVIDENCE CORRECTION AUDIT (HARDENED PASS)",
+  "timestamp": "2026-09-13T01:10:00Z",
+  "corrections": [
+    {
+      "topic": "SEVIRI Viewing Geometry & Optical Product Boundaries",
+      "ai_claim": "GPT claimed SEVIRI MSG covers Scandinavia with high quality, and initial audit claimed NWC SAF explicitly disables optical retrievals north of 65N.",
+      "hardened_correction": "Sub-satellite geometry (0°N, 0°E vs 68.36°N, 18.74°E) yields a calculated Satellite Viewing Zenith Angle VZA ≈ 76.54° at Nuolja, inducing calculated geometric pixel enlargement (>12.9 km N-S footprint) and horizontal parallax shifts (>20.9 km for 5 km cloud tops). High VZA (>75°) causes severe geometric foreshortening and degraded optical retrieval quality at polar latitudes. Solar optical channels (COT/CER) are unavailable during polar night (SZA > 84°), though thermal IR and cloud phase remain available year-round.",
+      "provenance_files": [
+        "stage7/stage8/stage8_9_independent_cloud/STAGE8_9A_FEASIBILITY_REPORT.md",
+        "stage7/stage8/stage8_9_independent_cloud/STAGE8_9A_DECISION.json"
+      ]
+    },
+    {
+      "topic": "Satellite Cloud Motion Vectors & Stage 8.5 Scope",
+      "ai_claim": "Initial audit claimed Stage 8.5 physically invalidated satellite cloud-motion vectors.",
+      "hardened_correction": "Stage 8.5 tested MEPS spatial cloud/advection features across a 9-grid neighborhood and rejected their predictive augmentation under the EVEN-CV protocol. This rejection applies specifically to the tested MEPS spatial advection features and cannot by itself be generalized to prove all satellite cloud-motion methods are physically invalid. Existing POLARIS evidence does not establish a sufficiently novel, causally available, and operationally representative satellite cloud-motion route for the current benchmark.",
+      "provenance_files": [
+        "POLARIS_MASTER_HANDOFF.md (Stage 8.5 summary)",
+        "stage7/stage8/stage8_9_independent_cloud/STAGE8_9A_INFORMATION_NOVELTY.md"
+      ]
+    },
+    {
+      "topic": "Polar Orbiter VIIRS/MODIS Information Distinction",
+      "ai_claim": "Initial audit implied satellite cloud information is entirely unavailable during polar night.",
+      "hardened_correction": "Stage 8.4 verified 225/347 usable origins (64.84% empirical coverage) for Suomi-NPP and NOAA-20 VIIRS L2 cloud products. Physical acquisition causality (t_acq <= t0) is satisfied for 346/347 origins, but standard science L2 products suffer a 3-13h publication latency (t_pub > t0). Solar optical products (COT/CER) are unavailable during polar night (SZA > 84°), but thermal IR brightness temperatures and cloud phase remain available year-round.",
+      "provenance_files": [
+        "POLARIS_MASTER_HANDOFF.md (Stage 8.4 summary)",
+        "stage7/stage8/stage8_4_viirs_feasibility/STAGE8_4_VERIFICATION.md"
+      ]
+    },
+    {
+      "topic": "Satellite ML Cloud Nowcasting",
+      "ai_claim": "Initial audit stated as universal fact that satellite ML nowcasters only work for H1-H3 or necessarily degrade below NWP at H4-H24.",
+      "hardened_correction": "Available candidate ML cloud-nowcasting products were not verified to provide a causally available, 2024-reconstructable operational product covering the full H1-H24 benchmark horizon at Nuolja.",
+      "provenance_files": [
+        "STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.md"
+      ]
+    }
+  ]
+}

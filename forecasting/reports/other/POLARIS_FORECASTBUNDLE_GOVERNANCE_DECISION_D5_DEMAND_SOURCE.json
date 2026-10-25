@@ -1,0 +1,98 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE RESEARCH GOVERNANCE DECISION RECORD D5 - DEMAND FORECAST SOURCE",
+  "timestamp": "2026-09-17T20:20:05Z",
+  "authoritative_inputs": [
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D4_DEFERRED_WIND.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D4_WIND_SOURCE.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D3_PV_MAPPING.md/json",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D1_D2.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_RESEARCH_GOVERNANCE_PACKAGE.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "system/schemas/forecast_bundle.py",
+    "system/forecasting/implementations/baseline.py"
+  ],
+  "governance_decision_d5": {
+    "name": "Demand Forecast Source - Deferred Future Capability",
+    "status": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "d5_demand_source": "FUTURE_DEMAND_FORECASTING_CAPABILITY_NOT_YET_DEVELOPED_OR_AUTHORIZED",
+    "current_demand_forecast_authorization": "NOT_AUTHORIZED",
+    "future_demand_research_status": "DEFERRED_FUTURE_CAPABILITY",
+    "existing_technical_demand_source": "PROTOTYPE_UNVALIDATED_NOT_AUTHORIZED",
+    "statement": "POLARIS shall not currently designate the existing prototype demand mechanism as the authoritative demand-forecast source. Demand forecasting shall remain a deferred future research and engineering capability."
+  },
+  "current_demand_source_evidence": {
+    "file_path": "system/forecasting/implementations/baseline.py",
+    "function_class": "LocalBaselineForecastEngine.predict()",
+    "input_quantity_unit": "station_state.last_observed_demand (W)",
+    "output_quantity_unit": "demand_pts (W)",
+    "forecasting_mechanism": "Persistence of last observed demand with cosine diurnal wave: max(10000.0, last_obs_demand + 3000.0 * cos(h * pi / 12))",
+    "temporal_resolution": "Hourly (24 steps)",
+    "category": "Prototype persistence heuristic with diurnal cosine peak simulation",
+    "empirical_validation": "None. Has never undergone empirical training or benchmarking on station load data.",
+    "authorization_status": "PROTOTYPE_UNVALIDATED_NOT_AUTHORIZED"
+  },
+  "architecture_vs_capability": {
+    "architectural_structure": "INTACT. ForecastBundle schema v1.0 defines required demand field in W.",
+    "technical_prototype": "PRESENT (UNVALIDATED). LocalBaselineForecastEngine generates synthetic cosine persistence curve.",
+    "research_capability": "DEFERRED. Dedicated, validated demand forecasting model not yet developed.",
+    "governance_authorization": "NOT AUTHORIZED. Baseline prototype not authorized as an integration source."
+  },
+  "reason_for_deferral": [
+    "Strict scientific provenance; prototype heuristic does not constitute a trained demand forecasting model.",
+    "High-resolution measured polar station electrical demand data access is restricted (REAL DATA ACCESS RESTRICTED).",
+    "Demand forecasting depends on building physics, occupant schedules, and heating loads distinct from solar irradiance."
+  ],
+  "d5_frozen_contract_assessment": {
+    "d5_frozen_contract_change_required": "NO",
+    "reasoning": "ForecastBundle schema v1.0 retains demand field. Deferring the demand forecast source does not require a structural schema modification."
+  },
+  "scientific_claim_limitations": "Records capability status and governance only. Does not claim demand forecasting skill, load availability, or EMS optimization validity under real demand.",
+  "remaining_governance_decisions": {
+    "D1_LOWER_UPPER_SEMANTICS": "DECISION_RECORDED",
+    "D2_POINT_ONLY_REPRESENTATION": "DECISION_RECORDED",
+    "D3_PV_MAPPING": "DECISION_RECORDED",
+    "D4_WIND_SOURCE": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "D5_DEMAND_SOURCE": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "D6_MULTI_SOURCE_COMPOSITION": "NOT_ESTABLISHED",
+    "D7_FINAL_FROZEN_CONTRACT_CHANGE_REQUIRED": "NOT_ESTABLISHED"
+  },
+  "implementation_status": "NOT_AUTHORIZED",
+  "historical_artifact_protection": {
+    "d4_deferred_wind_modified": false,
+    "d4_wind_source_modified": false,
+    "d3_decision_record_modified": false,
+    "d1_d2_decision_record_modified": false,
+    "interval_semantics_audit_modified": false,
+    "point_semantics_check_modified": false,
+    "research_governance_package_modified": false,
+    "contract_resolution_modified": false,
+    "compatibility_audit_modified": false,
+    "source_code_modified": false
+  },
+  "final_control_state": {
+    "d5_status": "GOVERNANCE_DECISION_RECORDED_DEFERRED",
+    "d5_demand_source": "FUTURE_DEMAND_FORECASTING_CAPABILITY_NOT_YET_DEVELOPED_OR_AUTHORIZED",
+    "current_demand_forecast_authorization": "NOT_AUTHORIZED",
+    "future_demand_research_status": "DEFERRED_FUTURE_CAPABILITY",
+    "existing_technical_demand_source": "PROTOTYPE_UNVALIDATED_NOT_AUTHORIZED",
+    "d5_frozen_contract_change_required": "NO",
+    "d6_multi_source_composition": "NOT_ESTABLISHED",
+    "d7_final_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "D5_DEFERRED_REMAINING_DECISIONS_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  },
+  "file_modification_audit": {
+    "files_created": [
+      "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D5_DEMAND_SOURCE.md",
+      "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D5_DEMAND_SOURCE.json"
+    ],
+    "source_code_modified": false,
+    "schema_modified": false,
+    "historical_control_artifacts_modified": false,
+    "experiment_executed": false,
+    "model_inference_executed": false,
+    "data_acquisition_executed": false,
+    "implementation_status": "NOT_AUTHORIZED"
+  }
+}

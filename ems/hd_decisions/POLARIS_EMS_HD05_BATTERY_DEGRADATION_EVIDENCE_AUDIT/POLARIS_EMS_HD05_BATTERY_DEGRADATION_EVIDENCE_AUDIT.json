@@ -1,0 +1,40 @@
+{
+  "audit_metadata": {
+    "title": "POLARIS EMS HD-05 Battery Degradation Evidence Audit",
+    "date": "2026-09-22",
+    "mode": "READ-ONLY EVIDENCE AUDIT",
+    "package": "POLARIS_EMS_HD05_BATTERY_DEGRADATION_EVIDENCE_AUDIT"
+  },
+  "final_classifications": {
+    "HD05_CURRENT_MODEL_STATUS": "ENGINEERING_THROUGHPUT_PROXY",
+    "HD05_CDEG_STATUS": "UNCALIBRATED_MONETARY_PENALTY",
+    "HD05_PHYSICAL_AGING_CALIBRATION": "NOT_ESTABLISHED",
+    "HD05_THROUGHPUT_PROXY_STATUS": "CURRENTLY_IMPLEMENTED",
+    "HD05_UNIT_COMPATIBILITY_WITH_FUEL": "CONVERSION_REQUIRED",
+    "HD05_NORMAL_MODE_COMPATIBILITY": "STAGE3_COMPATIBLE",
+    "HD05_EMERGENCY_MODE_COMPATIBILITY": "OVERRIDE_REQUIRED",
+    "HD05_STAGE3_PLACEMENT": "STAGE3_RESOURCE_MANAGEMENT",
+    "HD05_NUMERICAL_TRADEOFF_STATUS": "GOVERNANCE_DECISION_REQUIRED",
+    "HD05_SCHEMA_STATUS": "ADDITIVE_EXTENSION_REQUIRED",
+    "HD05_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "implementation_facts": {
+    "c_deg_value": 0.00005,
+    "c_deg_units": "$/Wh ($0.05/kWh)",
+    "c_deg_source_file": "system/config/battery.yaml",
+    "c_deg_source_line": 11,
+    "formulation": "c_deg * dt * w_t * (p_chg + p_dis)",
+    "battery_capacity_wh": 200000.0,
+    "technical_min_soc_pct": 20.0,
+    "discharge_efficiency": 0.92,
+    "charge_efficiency": 0.92
+  },
+  "verdict_summary": {
+    "meaning_of_degradation": "Linear energy throughput penalty acting as an optimization regularizer to prevent micro-cycling.",
+    "is_physical_aging_model": false,
+    "c_deg_function": "Assigns a static monetary penalty ($0.05/kWh) per unit of charge and discharge energy throughput.",
+    "scientific_support_for_hd05": "Can support Option A (throughput proxy in Stage 3) with unit conversion; cannot support physical aging physics without new data.",
+    "missing_evidence": "Battery chemistry, cycle-life degradation curves, DoD non-linearity, temperature aging, battery replacement cost, SOH telemetry."
+  }
+}

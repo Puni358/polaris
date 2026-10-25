@@ -1,0 +1,45 @@
+{
+  "package_metadata": {
+    "title": "POLARIS GAP19 Solver Architecture Decision Package",
+    "phase": "NEUTRAL_GOVERNANCE_DECISION_PREPARATION_PHASE",
+    "correction_pass": "EVIDENCE_HARDENING_CORRECTION_PASS",
+    "created_at": "2026-09-22T19:15:00Z",
+    "governance_status": "REQUIRES_HUMAN_DECISION"
+  },
+  "governance_state": {
+    "STAKEHOLDER_POLICY": "HUMAN_APPROVED",
+    "OBJECTIVE_SPECIFICATION_GOVERNANCE": "PASS",
+    "IMPLEMENTATION_ARCHITECTURE_REVIEW": "PASS",
+    "GAP19_SOLVER_ARCHITECTURE": "REQUIRES_GOVERNANCE_DECISION",
+    "IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "CODE_MODIFICATION": "NOT_AUTHORIZED",
+    "EMS_EXECUTION": "NOT_AUTHORIZED"
+  },
+  "candidate_architectures": {
+    "OPTION_A": {
+      "name": "Sequential MILP Lexicographic Orchestration",
+      "status": "TECHNICALLY_FEASIBLE",
+      "solver_calls_per_cycle": "4 (ARCHITECTURAL_PROPOSAL)",
+      "dependency_changes": false
+    },
+    "OPTION_B": {
+      "name": "Solver-Native Lexicographic / Multi-Objective Architecture",
+      "status": "EXTERNAL_SOLVER_DEPENDENCY_REQUIRED",
+      "solver_calls_per_cycle": "1 (ARCHITECTURAL_PROPOSAL)",
+      "dependency_changes": true
+    },
+    "OPTION_C": {
+      "name": "Penalty-Encoded Scalar Objective",
+      "status": "ENGINEERING_RISK_ONLY",
+      "solver_calls_per_cycle": "1 (ARCHITECTURAL_PROPOSAL)",
+      "dependency_changes": false
+    }
+  },
+  "human_decision_form": {
+    "decision_question": "Which solver architecture should POLARIS authorize for implementation of the approved four-stage lexicographic EMS objective?",
+    "human_decision": "PENDING_HUMAN_DECISION",
+    "decision_date": null,
+    "decision_authority": null,
+    "rationale": null
+  }
+}

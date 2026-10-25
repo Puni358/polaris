@@ -1,0 +1,6 @@
+Candidate_Concept,Mathematical_Formulation,Technical_Validity,Operational_Meaning,Redundancy_Risk,Schema_Impact
+A. Final-Horizon EBR Instance,E_terminal_target = E_EBR_target(H),TECHNICALLY_VALID,Protects reserve required for post-horizon window H+1..H+N,Redundant if sum_t includes t=H,ADDITIVE_EXTENSION_REQUIRED
+B. Distinct Temporal Requirement,E_terminal_target = static scalar,TECHNICALLY_VALID,Sets arbitrary end-of-horizon SOC floor,Conflicts with dynamic load-based EBR,NO_CHANGE
+C. Derived with Extra Logic,E_terminal_target = E_EBR_target(H) + buffer,TECHNICALLY_VALID,Adds extra buffer on top of post-horizon EBR,Requires extra policy parameter,ADDITIVE_EXTENSION_REQUIRED
+D. Redundant with Rolling EBR,N/A (Remove terminal term),TECHNICALLY_VALID,Rolling sum sum_t=1..H already covers t=H,Zero redundancy,ADDITIVE_EXTENSION_REQUIRED
+E. Independent Horizon Boundary,E_terminal_target = separate constraint,TECHNICALLY_VALID,Hard or soft boundary constraint at t=H,Prevents end-of-horizon depletion,ADDITIVE_EXTENSION_REQUIRED

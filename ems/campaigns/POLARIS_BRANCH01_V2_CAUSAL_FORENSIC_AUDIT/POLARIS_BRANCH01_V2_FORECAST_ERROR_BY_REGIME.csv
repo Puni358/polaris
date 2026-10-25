@@ -1,0 +1,4 @@
+regime,n_samples,mean_control_solar_w,mean_treatment_solar_w,mean_actual_solar_w,control_mae_w,treatment_mae_w,control_rmse_w,treatment_rmse_w,control_bias_w,treatment_bias_w
+NIGHT_ZERO,1270,3433.93,67.178,0.0,3433.93,67.178,7170.713,68.346,3433.93,67.178
+LOW_IRRADIANCE,666,11873.583,148.264,57.965,11863.765,96.033,16642.665,185.172,11815.619,90.299
+MODERATE_HIGH_IRRADIANCE,2216,18718.303,8502.836,8536.184,11559.646,1446.77,14523.937,2328.508,10182.119,-33.348

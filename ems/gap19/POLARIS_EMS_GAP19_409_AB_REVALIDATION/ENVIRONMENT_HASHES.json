@@ -1,0 +1,7 @@
+{
+  "python_version": "3.12.3",
+  "scipy_version": "1.18.1",
+  "highspy_version": "1.15.1",
+  "native_highs_version": "1.15.1",
+  "environment_hash": "188ed949973cd0111f54a891b8d1259e9474d9f1687c7e15af579e92c022b2f6"
+}

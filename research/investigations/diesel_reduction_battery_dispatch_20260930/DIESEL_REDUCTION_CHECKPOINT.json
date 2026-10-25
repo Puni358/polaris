@@ -1,0 +1,34 @@
+{
+  "checkpoint_metadata": {
+    "campaign_id": "diesel_reduction_battery_dispatch_20260930",
+    "timestamp": "2026-09-30T23:35:00Z",
+    "status": "COMPLETED",
+    "classification": "DIESEL_REDUCTION_CONDITIONALLY_DEMONSTRATED"
+  },
+  "benchmark_summary": {
+    "c0_polaris_fuel_L": 93465.63,
+    "reactive_hybrid_fuel_L": 77022.60,
+    "fuel_disadvantage_L": 16443.03,
+    "max_achievable_reduction_L": 16315.63,
+    "c4_counterfactual_fuel_L": 77150.00
+  },
+  "causal_breakdown_pct": {
+    "degradation_penalty": 68.81,
+    "efficiency_losses": 31.17,
+    "diesel_min_power": 0.77,
+    "interaction_offset": -0.75
+  },
+  "governance": {
+    "sensitivity_campaign": "FROZEN",
+    "physical_evidence_acquisition": "COMPLETE_FOR_CURRENT_SCOPE",
+    "degradation_model_validation": "PARTIALLY_VALIDATED_RESEARCH_MODEL",
+    "target_battery_identity": "NOT_ESTABLISHED",
+    "target_specific_evidence": "INSUFFICIENT",
+    "battery_agnostic_portability": "DEMONSTRATED",
+    "diesel_reduction_research": "DIESEL_REDUCTION_CONDITIONALLY_DEMONSTRATED",
+    "economic_degradation_cost": "NOT_IDENTIFIABLE",
+    "production_code_changed": false,
+    "production_parameters_changed": false,
+    "production_promotion_authorized": false
+  }
+}

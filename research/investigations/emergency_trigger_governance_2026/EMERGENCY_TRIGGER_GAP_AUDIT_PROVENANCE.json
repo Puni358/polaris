@@ -1,0 +1,33 @@
+{
+  "provenance_metadata": {
+    "project": "POLARIS Energy Management System",
+    "pass": "EMERGENCY_TRIGGER_GOVERNANCE_GAP_AUDIT",
+    "timestamp": "2026-09-27T11:44:00Z",
+    "workspace": "/home/punith-bs/01polaris (Copy)",
+    "investigation_folder": "investigations/emergency_trigger_governance_2026"
+  },
+  "verification_status": {
+    "human_governance_decisions": "UNCHANGED",
+    "gap_audit": "COMPLETE",
+    "production_modifications": 0,
+    "ecd_modifications": 0,
+    "optimizer_modifications": 0,
+    "battery_configuration_modifications": 0,
+    "campaign_modifications": 0
+  },
+  "audit_artifacts_generated": [
+    "EMERGENCY_TRIGGER_GAP_AUDIT.md",
+    "EMERGENCY_TRIGGER_GAP_AUDIT.json",
+    "EMERGENCY_TRIGGER_HUMAN_DECISION_BRIEF_V2.md",
+    "EMERGENCY_TRIGGER_GAP_DEPENDENCY_GRAPH.md",
+    "EMERGENCY_TRIGGER_GAP_TRACEABILITY.md",
+    "EMERGENCY_TRIGGER_GAP_AUDIT_PROVENANCE.json"
+  ],
+  "gap_audit_summary": {
+    "total_gaps_audited": 5,
+    "human_governance_decisions_required": 4,
+    "engineering_assumptions_flagged": 3,
+    "implementation_details_classified": 2,
+    "traceability_mappings_verified": 11
+  }
+}

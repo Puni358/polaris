@@ -1,0 +1,34 @@
+{
+  "phase_id": "battery_physical_evidence_acquisition_20260930",
+  "evidence_gap_classification": {
+    "known_parameters": [
+      "Nominal capacity rating (200.0 kWh from synthetic fixture)",
+      "Max charge/discharge power limit (50.0 kW from synthetic fixture)",
+      "SOC operating range (20.0% to 95.0%)",
+      "Semi-empirical degradation equation structures (Wang / Schmalstieg LFP/NMC formulations)"
+    ],
+    "partially_known_parameters": [
+      "Round-trip efficiency (84.64% synthetic assumption; literature range 85%-94%)",
+      "Cycle-life bounds (3,000-6,000 EFC at 80% EOL from generic LFP literature)",
+      "DoD stress exponent (f(DoD) ~ DoD^1.5 from generic LFP/NMC literature)"
+    ],
+    "unknown_parameters": [
+      "Target battery cell manufacturer and model name",
+      "Target battery cell chemistry (LFP vs NMC vs Ni-Cd)",
+      "Target station BMS telemetry logs",
+      "Sub-zero thermal enclosure heating penalty & ambient cell operating temperature profile",
+      "Measured battery stack replacement cost ($/kWh) including polar logistics"
+    ],
+    "required_next_measurements": [
+      "Acquire official battery manufacturer datasheet or nameplate snapshot from target site",
+      "Extract 1-minute BMS telemetry (cell voltage, current, temperature, SOC)",
+      "Obtain procurement/logistics invoice for battery stack replacement cost ($/kWh)"
+    ],
+    "unnecessary_measurements": [
+      "Destructive laboratory cell cycling testing (Tier C literature is sufficient for model structure)",
+      "High C-rate stress testing >1C (POLARIS operating range is <= 0.25C)"
+    ]
+  },
+  "overall_gap_status": "PARTIAL_EVIDENCE_GAP_IDENTIFIED",
+  "production_readiness": "BLOCKED_PENDING_TIER_A_B_EVIDENCE"
+}

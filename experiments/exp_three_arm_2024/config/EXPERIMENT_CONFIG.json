@@ -1,0 +1,335 @@
+{
+  "_comment": "EXP-THREE-ARM-2024 experiment configuration. Every null field is an UNRESOLVED execution-critical setting. The runner and calibration refuse to run while any required decision or method entry lacks a passing status (preflight.PASSING_STATUSES: APPROVED = explicit project-lead approval; APPROVED BY EXISTING AUTHORITY and RESOLVED BY DELEGATED TECHNICAL AUTHORITY must name their authority) or any required field is null. Statuses mirror DECISIONS_LOG.md. No status here signs AUTHORIZATION_RECORD.json.",
+  "experiment_id": "EXP-THREE-ARM-2024",
+  "config_version": "frozen-2026-10-11f",
+  "frozen": true,
+  "decisions": {
+    "D1": {
+      "subject": "Evaluation set 2024-05-01..08-31 (123 origins), prior use acknowledged",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "PROTOCOL.md §2, row 'Prior use' (verbatim): 'Not pristine. The same 123 origins were the evaluation set for EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024 and EXP-CANDIDATE-S-SW-DIESEL-REDUCTION-2024, and the existing γ=0.25 was fitted on all of 2024, including May–Aug ... It is eligible as a non-blind development/validation set, not as a fresh holdout'. Decision: the 123 origins 2024-05-01..2024-08-31 are the evaluation set, explicitly NOT a fresh holdout; calibration window 2024 origins <= 2024-04-29 or >= 2024-09-02 with 2024-04-30 and 2024-09-01 excluded (evaluation and calibration_window blocks below; enforced by runner evaluation_origins and calibrate_arm_c window checks). Prior use is disclosed in PREREGISTRATION.md and must be stated with every result. The 2025 window stays quarantined and unused.",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "D2": {
+      "subject": "S4 total unmet-energy non-regression gate",
+      "status": "APPROVED",
+      "evidence": "M6 cmsg_017TpQv3UrTPMkzn658LmXvX811eenQyWHcEa6oV6mYRX3 (2026-10-11T03:16:59Z, Puni, confirmed project lead): 'Record this as the final D2 decision only after checking that the definition is compatible with the existing data schema and experiment protocol.' Checked: PROTOCOL.md §5 S4 is the same rule; hourly telemetry has unmet_load (executor unmet_load_w), origin_id, hour."
+    },
+    "D3": {
+      "subject": "Rule D OFF in all arms",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "PROTOCOL.md §4 'Rule D off (see D3)' and §9 item 3 recommendation 'keep it off for all arms'. Enforced: runner ARM_CONFIGS rule_d False for all five arms; preflight.check_arms fails on any Rule D; config arms rule_d false; budget rule_d_subarm_included false; test_rule_d_off_everywhere passes. The optional A+RuleD sub-arm is not adopted.",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "D4": {
+      "subject": "Primary fuel metric (unadjusted realized litres; saving = control - arm). Secondary SoC-parity analysis is tracked separately in gates.soc_parity_secondary",
+      "status": "APPROVED",
+      "evidence": "M6 cmsg_017TpQv3UrTPMkzn658LmXvX811eenQyWHcEa6oV6mYRX3 (2026-10-11T03:16:59Z, Puni, confirmed project lead): proposed primary metric matches PROTOCOL.md §7 ('Primary fuel = unadjusted (as historically preregistered)'); recorded as the frozen primary metric. M7 cmsg_017TpQv3UrTPMkzn658LmXvX79mGjYAvoUtydgZmnsGAz9 (2026-10-11T03:44:33Z, Puni, project lead): PROTOCOL §7 formula written out exactly; per-origin vs aggregate application compared (reports/DECISION_RESOLUTION_M7_2026-10-11.md §3); per-origin recommended, awaiting approval. Formula not amended. M8 cmsg_017TpQv3UrTPMkzn658LmXvXFnD828pU5nJWdGmJaPDLWY (2026-10-11T04:07:50Z, Puni, project lead): primary unadjusted and the SoC-parity adjustment as secondary re-approved; per-origin recommended but not finalized; PROTOCOL §7 text and aggregation semantics documented verbatim (reports/DECISION_FOLLOWUP_M8_2026-10-11.md §3). Formula not changed."
+    },
+    "D5": {
+      "subject": "Arm C calibration method, bins, alpha, quantile and merge rules",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "Values are those stated in PROTOCOL.md §4 (alpha 0.10, elevation bins 0-5/5-15/15-30/>30 deg, cloud bins <0.2/0.2-0.8/>0.8, minimum 20 origin-days, gamma grid 0.10-1.00 step 0.01, daylight-MAE objective) plus A1-A6 and A8 (arm_c_method). They rest on the PROTOCOL.md §4 text and this delegated decision. The two supporting citations (CLOUD_TO_GHI_EXPERIMENT_PROTOCOL.md:19-21 and :27, in a 2025 campaign folder) remain UNVERIFIED and were not opened; they are recorded as unverified provenance, not as evidence. No value was changed and none was tuned on outcomes.",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "D6": {
+      "subject": "Strict S4 block-bootstrap condition; E1 bootstrap choice",
+      "status": "APPROVED",
+      "evidence": "M8 cmsg_017TpQv3UrTPMkzn658LmXvXFnD828pU5nJWdGmJaPDLWY (2026-10-11T04:07:50Z, Puni, project lead): 'I approve D6 seed 42, stationary bootstrap with 10-day mean blocks, and 10,000 resamples. I approve the two-sided 95% interval, using the 97.5th-percentile upper endpoint for strict S4. Preserve ΔU = arm − control and the upper-bound ≤ 0 criterion.' Earlier: M6 (strict S4 adopted, reported separately; E1 keeps the iid BCa) and M7 (seed 42 as the project lead's decision). Sign convention verified in gates_three_arm.py (per_origin_delta_unmet: arm - ref; s4_strict: PASS iff upper <= 0)."
+    },
+    "D7": {
+      "subject": "Timestamp convention (fixed UTC+1) and verification review",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "Fixed UTC+1 (Etc/GMT-1) labels, no DST, no global timestamp conversion; true UTC = label - 1 h. Evidence: TIMESTAMP_VERIFICATION.md and reports/D7_VERIFICATION_REPORT.md (SITES header, request and localization code, geometry checks on non-evaluation months only); timestamp_guards.run_all_guards; tests test_reserve_provider_matches_2024_decomposition, test_timestamp_and_origin_alignment, test_corrected_solar_equals_legacy_shifted_one_hour. The correction is narrow: LabelCorrectedLocation shifts only the instants given to pvlib in the forecaster of A_FIX and C; the reserve elevation (SolarElevationProvider(None)), cloud lookup, wind, demand, executor and timestamps are unchanged.",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "D7a": {
+      "subject": "Arm A-Fix design (pvlib-input correction only)",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "Eight provisions re-checked against the current runner, gates and tests: reports/D7A_REVIEW_M9_2026-10-11.md (supersedes the stale reports/D7A_REVIEW.md, which is kept). Depends on D10a, resolved first: C's result label follows PROTOCOL_ADDENDUM_D7a_AMENDMENT_1.md. A-Fix stays DIAGNOSTIC — NOT PROMOTION-ELIGIBLE.",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "D8": {
+      "subject": "Package code (L1 lookup, runner, calibration) approval",
+      "status": "APPROVED",
+      "evidence": "Targeted code review (unchanged in substance from M9): one optimize() call site, budget charged before the inner optimizer, fail-closed preflight before any data load, protected-date guards, no 2025 paths, calibration reader never parses evaluation-window values. Device-venv run performed and passed on the corrected package (condition_met). Approved directly by the project lead -- not under the M9 delegation (cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4), whose recorded scope is limited to decisions before any calibration or evaluation run; an evaluation run (results/run_20261011T075716Z/) has since occurred. This resolves D8's stated condition only -- it does not establish scientific validity of any experimental result, does not resolve D11-PUB, and does not authorize execution, calibration, or the package freeze.",
+      "condition": "The full package test suite must pass in the device venv: from the repo root, .venv/bin/python -I -m pytest -p no:cacheprovider -v -rA experiments/exp_three_arm_2024/tests (use the repo's own venv interpreter). Its complete output, with interpreter and package versions, is saved under experiments/exp_three_arm_2024/reports/ and its SHA-256 recorded here. Only then may the status become RESOLVED BY DELEGATED TECHNICAL AUTHORITY. A sandbox pass does not satisfy this condition.",
+      "condition_met": "Device-venv run of the corrected package (telemetry fix + single-use authorization guard, post run_20261011T075716Z incident): '.venv/bin/python -I -m pytest -p no:cacheprovider -v -rA experiments/exp_three_arm_2024/tests', Python 3.12.3, pytest 9.1.1, interpreter /home/punith-bs/01polaris (Copy)/.venv/bin/python; 396 collected, 396 PASSED, 0 FAILED, 0 ERROR; summary '396 passed, 36 warnings in 34.15s'. Output file reports/DEVICE_VENV_TESTS_POST_INCIDENT_CORRECTION_2026-10-11.txt, SHA-256 04c5f745d532f314aaecf7d1b173f2edfbd8b56acc946e182e793b52c73344bb. Prior (pre-incident) evidence retained unchanged in reports/DEVICE_VENV_TESTS.txt."
+    },
+    "D10": {
+      "subject": "E1 Holm comparison family",
+      "status": "APPROVED",
+      "evidence": "M7 cmsg_017TpQv3UrTPMkzn658LmXvX79mGjYAvoUtydgZmnsGAz9 (2026-10-11T03:44:33Z, Puni, project lead): 'Preserve the existing confirmatory Holm family {A, C}; keep A-Fix diagnostic only. Do not amend D7a unless you find a protocol conflict that requires escalation.' Identical to PROTOCOL.md §7 ('Holm over decision-bearing comparisons: A vs Control, C vs Control') and consistent with PROTOCOL_ADDENDUM_D7a.md §1 (A-Fix diagnostic). D7a not amended. Superseded proposal: M6 {A, A_FIX, C} (not adopted). M8 cmsg_017TpQv3UrTPMkzn658LmXvXFnD828pU5nJWdGmJaPDLWY (2026-10-11T04:07:50Z, Puni, project lead) item 1: family {A, C} recorded, A-Fix diagnostic only, 'subject to resolving the wording conflict'. The conflict is tracked separately as D10a, which blocks execution; D10's family decision itself is not downgraded."
+    },
+    "D10a": {
+      "subject": "Classification of Arm C: PROTOCOL.md §7 'Research-only candidate: C passing S1–S4 + E1' and 'Diagnostic: B, any classification of unmet hours' vs PROTOCOL_ADDENDUM_D7a.md §1 result label 'C | corrected (see §4) | DIAGNOSTIC'",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "PROTOCOL.md §7 'Classes' (verbatim): 'Diagnostic: B, any classification of unmet hours. Research-only candidate: C passing S1–S4 + E1. Promotion-eligible: nothing from this experiment.' and §7 row B: 'Any 40% claim needs a non-diagnostic arm passing all gates'. The D7a §1 cell 'C | corrected (see §4) | DIAGNOSTIC' contradicts the first and makes the second unsatisfiable. Amendment adopted: C's result label becomes 'RESEARCH-ONLY CANDIDATE — NOT PROMOTION-ELIGIBLE' (PROTOCOL_ADDENDUM_D7a_AMENDMENT_1.md; reports/source_prep/ unchanged). Unchanged: family {A, C} (D10), A-Fix diagnostic, B noncausal diagnostic, nothing promotion-eligible, C-vs-A-Fix the calibration-only diagnostic comparison. Proposal history: reports/PROPOSED_AMENDMENT_D7a-1.md (M8).",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "D11": {
+      "subject": "Data-use rights for internal, non-commercial research use of the package inputs in this experiment (calibration and evaluation). Publication, redistribution and competition use are tracked separately as D11-PUB.",
+      "status": "APPROVED BY EXISTING AUTHORITY",
+      "evidence": "reports/evidence/D11_DATA_RIGHTS_EVIDENCE_2026-10-11.md. Product: Open-Meteo Previous Runs API, model metno_seamless (MET Norway Nordic, ECMWF-blended), endpoint previous-runs-api.open-meteo.com/v1/forecast (clear_sky/audit_clean_nwp_windows.py and clear_sky/build_future_weather_dataset.py, both writing the weather file). Open-Meteo terms page, read 2026-10-11 through a fetch tool that returns a summary, not verbatim text: free API for non-commercial use only; API data provided under CC BY 4.0. SITES file header: CC BY 4.0, cite SITES and acknowledge POLARIN. Gaps: terms as of the original download date not archived; download date not established (device file mtime 2026-09-09T15:47:45Z is only the latest possible date); licence page returned no content; no verbatim snapshot of the terms; MET Norway's own terms not checked.",
+      "authority": "Project-lead attestation in M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni): 'The project lead states that they have the necessary data rights.' Recorded as stated; CC did not verify it legally.",
+      "restrictions": "Attribution required in any output: Open-Meteo (CC BY 4.0), MET Norway as model source, SITES/POLARIN. No redistribution of raw or derived API data, no publication and no competition demonstration until D11-PUB is resolved."
+    },
+    "D11-PUB": {
+      "subject": "Publication, redistribution of derived data, and competition demonstration of results that use the Open-Meteo-derived forecast file",
+      "status": "BLOCKED — EVIDENCE REQUIRED",
+      "evidence": "Open-Meteo's terms (2026-10-11 summary) restrict the free API to non-commercial use, list 'promotional activities' as commercial, list public research at public institutions as non-commercial, and do not address competitions. Whether the original download and a competition demonstration count as non-commercial is not established. Needed: either the project lead's written statement that the use is non-commercial in the Creative Commons sense together with an archived copy of the terms, or a commercial Open-Meteo licence/subscription record covering the download. Not part of preflight; it does not block calibration or execution.",
+      "owner": "project lead"
+    },
+    "BUD": {
+      "subject": "Solve ceiling",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "evidence": "M5 2026-10-11T02:23:58Z: project lead provisionally approved a maximum of 14,760. Verified M9: 5 arms x 123 origins x 24 steps x 1 optimize() = 14,760 (run_three_arm_2024.py --audit-budget; test_budget_audit_reconciles_with_ceiling); per-arm ceiling 2,952; retries 0; workers 1; repeat check and Rule D sub-arm excluded; the budget is charged before the inner optimizer and a breach stops the run (test_budget_is_charged_before_the_inner_optimizer). No increase.",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    }
+  },
+  "evaluation": {
+    "first_origin": "2024-05-01 00:00:00",
+    "last_origin": "2024-08-31 00:00:00",
+    "expected_origins": 123,
+    "steps_per_origin": 24,
+    "t0_offset_hours": -1,
+    "label_timezone": "Etc/GMT-1"
+  },
+  "calibration_window": {
+    "last_origin_before_evaluation": "2024-04-29 00:00:00",
+    "first_origin_after_evaluation": "2024-09-02 00:00:00",
+    "excluded_buffer_origins": [
+      "2024-04-30 00:00:00",
+      "2024-09-01 00:00:00"
+    ]
+  },
+  "arm_c_method": {
+    "_comment": "All entries RESOLVED BY DELEGATED TECHNICAL AUTHORITY in M9 (2026-10-11): values unchanged from M8. 'basis' says whether a value is stated by PROTOCOL.md §4 or is a delegated clarification (A1-A6, A8). Citations to the 2025-folder protocol stay UNVERIFIED provenance. Fitted before any evaluation-window outcome is seen.",
+    "gamma_grid": {
+      "start": 0.1,
+      "stop": 1.0,
+      "step": 0.01,
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "PROTOCOL.md §4 (stated)"
+    },
+    "gamma_objective": {
+      "value": "daylight_MAE_W_m2",
+      "daylight_rule": "elevation>0 and clearsky_ghi>0",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "daylight_rule_ref": "A8",
+      "daylight_rule_note": "PROTOCOL.md says 'daylight MAE' without a definition; elevation>0 and clearsky_ghi>0 is the A8 clarification (delegated, M9). The same rule is used by lower_bound() at run time.",
+      "citation_status": "UNVERIFIED: PROTOCOL.md §4 cites CLOUD_TO_GHI_EXPERIMENT_PROTOCOL.md:19-21 (2025 campaign folder, not opened)",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "PROTOCOL.md §4 'daylight MAE' (stated); daylight rule = A8 clarification"
+    },
+    "gamma_tie_rule": {
+      "value": "largest_gamma",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "ref": "A6",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "A6 clarification (PROTOCOL silent)"
+    },
+    "alpha": {
+      "value": 0.1,
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "PROTOCOL.md §4 (stated as proposed; adopted)"
+    },
+    "quantile_method": {
+      "value": "split_conformal_lower",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "ref": "A1",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "A1 clarification of PROTOCOL 'split-conformal ... empirical α-quantile'"
+    },
+    "residual_space": {
+      "value": "ghi_w_m2",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "ref": "A5",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "A5 clarification of PROTOCOL 'r = actual − point'"
+    },
+    "elevation_bin_edges_deg": {
+      "value": [
+        0.0,
+        5.0,
+        15.0,
+        30.0,
+        90.0
+      ],
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "PROTOCOL.md §4 (stated)"
+    },
+    "cloud_bin_edges_fraction": {
+      "value": [
+        0.0,
+        0.2,
+        0.8,
+        1.0
+      ],
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "PROTOCOL.md §4 (stated)"
+    },
+    "bin_boundary_rule": {
+      "value": {
+        "elevation": "right_closed",
+        "cloud": "closed_middle"
+      },
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "ref": "A2",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "A2 clarification of PROTOCOL '<0.2, 0.2–0.8, >0.8' and '0–5°, 5–15°, 15–30°, >30°'"
+    },
+    "min_origin_days_per_bin": {
+      "value": 20,
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "citation_status": "UNVERIFIED: PROTOCOL.md §4 cites CLOUD_TO_GHI_EXPERIMENT_PROTOCOL.md:27 (2025 campaign folder, not opened)",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "PROTOCOL.md §4 (stated)"
+    },
+    "insufficient_bin_policy": {
+      "value": "merge_single_neighbour_else_lower",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "ref": "A3",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "A3 clarification of PROTOCOL 'merge into the neighbouring elevation bin'",
+      "limitation": "Sparse >30° bin (A3): from pvlib geometry alone (no observations), only 19 of 222 calibration origin-days reach >30° (max 36.3°), against 122 of 123 evaluation days (max 45.0°). With the 20 origin-day minimum, every >30° cell has at most 19 origin-days, so it necessarily pools with the 15–30° cell of the same cloud class. High-sun evaluation hours therefore use a quantile estimated mostly from 15–30° calibration hours: a transfer risk, not a validated calibration. Required diagnostics (implemented M9): per-bin in-sample coverage and own-cell counts in the calibration artifact (calibrate_arm_c.quantile_table) and per-bin evaluation-window coverage after the run (gates_three_arm.arm_c_evaluation_coverage). Adequate high-sun calibration coverage is NOT claimed."
+    },
+    "origin_day_definition": {
+      "value": "distinct forecast_start (00:00) origins with >= 1 daylight hour in the bin",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "ref": "A4",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization.",
+      "basis": "A4 clarification of PROTOCOL 'origin-days'"
+    }
+  },
+  "arms": {
+    "PC-Control": {
+      "rule_d": false,
+      "causal": true
+    },
+    "A": {
+      "rule_d": false,
+      "causal": true
+    },
+    "A_FIX": {
+      "rule_d": false,
+      "causal": true
+    },
+    "B": {
+      "rule_d": false,
+      "causal": false
+    },
+    "C": {
+      "rule_d": false,
+      "causal": true
+    }
+  },
+  "gates": {
+    "S1_S2_S3": "RECORDED",
+    "E1_test": "two-sided paired Wilcoxon, Holm-adjusted p < 0.05, AND BCa 95% lower bound > 0 L/origin (10,000 resamples, default_rng(42))",
+    "E1_holm_family": [
+      "A",
+      "C"
+    ],
+    "S4": "ADOPTED",
+    "S4_strict": "ADOPTED",
+    "S4_strict_bootstrap_seed": 42,
+    "primary_fuel_metric": "unadjusted",
+    "S4_strict_interval": "two_sided_95_upper",
+    "S4_strict_mean_block_days": {
+      "value": 10,
+      "status": "APPROVED",
+      "evidence": "M6; PROTOCOL.md §5/§7; origins are consecutive days (runner evaluation_origins)"
+    },
+    "S4_strict_resamples": {
+      "value": 10000,
+      "status": "APPROVED",
+      "evidence": "M6; PROTOCOL.md §5"
+    },
+    "_comment": "null = unresolved. S4/S4_strict: 'ADOPTED'/'NOT_ADOPTED' (D2/D6). E1_holm_family: list (D10 APPROVED, M7/M8). primary_fuel_metric fixed 'unadjusted' (D4 APPROVED). S4_strict_interval: 'two_sided_95_upper' (D6 APPROVED, M8). soc_parity_secondary: per-origin application (delegated, M9), secondary only.",
+    "soc_parity_secondary": {
+      "protocol_text_verbatim": "SoC-parity-adjusted fuel = fuel + max(0, E_end,ctrl − E_end,arm)·(1/0.92)·f, with f ∈ {0.30, 0.75} L/kWh, the diesel's best/worst marginal efficiency from `diesel.yaml` (5 L/h base + 0.25 L/kWh at 100 kW and 10 kW)  [PROTOCOL.md §7, row 'SoC']",
+      "protocol_aggregation_semantics": "NOT STATED. The protocol text has no origin index and no summation; it does not say whether fuel and E_end are per origin or totals.",
+      "application": "per_origin",
+      "per_origin_form": "Σ_o [fuel_arm,o + max(0, E_end,ctrl,o − E_end,arm,o)·(1/0.92)·f]",
+      "aggregate_form_alternative": "Σ_o fuel_arm,o + max(0, Σ_o E_end,ctrl,o − Σ_o E_end,arm,o)·(1/0.92)·f  (considered, not adopted; not implemented)",
+      "application_record": "Delegated clarification of how the unchanged PROTOCOL §7 formula is applied (M9, 2026-10-11, before any evaluation run). Not part of the original preregistered text. Reasons: each origin is an independent 24 h episode that restarts at 50% SoC (make_initial_state), so an end-of-day energy deficit cannot be repaid by another origin's surplus; per-origin pairing matches the per-origin E1 deltas; per-origin penalty >= aggregate penalty, so it is the more cautious reading.",
+      "limitations": "Secondary, reported only, never decision-bearing. Asymmetric: max(0, ·) gives no credit when an arm ends higher, so per-origin summation also penalizes day-to-day noise and is biased against arms. f brackets the diesel's marginal efficiency (0.30 and 0.75 L/kWh), both reported; no single adjusted value is chosen. The aggregate reading would give a smaller or equal penalty. Daily resets mean the adjustment does not represent multi-day operation.",
+      "f_values_l_per_kwh": [
+        0.3,
+        0.75
+      ],
+      "f_source": "diesel.yaml: 5 L/h base + 0.25 L/kWh -> 0.30 L/kWh at 100 kW, 0.75 L/kWh at 10 kW",
+      "E_end": "e_after_wh after hour 23 of each origin",
+      "role": "secondary, reported only, never decision-bearing",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "E1_holm_family_note": "D10 APPROVED (M7/M8): {A, C} vs PC-Control, as PROTOCOL.md §7. A_FIX and B are reported as diagnostics only and never enter the family. C is a research-only candidate (D10a, M9). M6 proposal {A, A_FIX, C} not adopted.",
+    "S4_strict_interval_record": {
+      "value": "two_sided_95_upper",
+      "percentile": 97.5,
+      "status": "APPROVED",
+      "evidence": "M8 (project lead)",
+      "sign_convention": "delta U per origin = U_arm - U_ctrl (Wh); PASS iff 97.5th percentile of bootstrap means <= 0"
+    }
+  },
+  "budget": {
+    "unit": "PlannerCFV1Optimizer.optimize() calls (one highspy.Highs.run() each)",
+    "per_arm_ceiling": 2952,
+    "total_ceiling": 14760,
+    "repeat_check_included": false,
+    "rule_d_subarm_included": false,
+    "retries": 0,
+    "workers": 1
+  },
+  "paths": {
+    "weather": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "sites_hourly": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_5var.csv",
+    "calibration_artifact": "experiments/exp_three_arm_2024/calibration/ARM_C_CALIBRATION.json",
+    "authorization_record": "experiments/exp_three_arm_2024/AUTHORIZATION_RECORD.json",
+    "package_manifest": "experiments/exp_three_arm_2024/PACKAGE_MANIFEST.sha256",
+    "results_root": "experiments/exp_three_arm_2024/results"
+  },
+  "expected_sha256": {
+    "frozen_code": {
+      "system/forecasting/implementations/causal_nwp_physics.py": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+      "system/forecasting/implementations/baseline.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+      "system/forecasting/interface/base.py": "30a2cca7fd10e78422c904a6e589b50a35f8874c896c84750f8ffd7e55ebfa41",
+      "experiments/stage4_sw_low_sun_2025_holdout/stage4_low_sun_adapter.py": "3427da6a7b1d7763f8fa655e541cd2a344aeefdd33379137c6311501799395d0",
+      "experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py": "a8dd9fc7d84e3d2344ba4f99ba1b1cd0ec2165a83d8f7af438b69f8178815093",
+      "experiments/candidate_s_sw_campaign_2024/research_numerical_extractor.py": "95b2f3b53609a6e420a18692b4b0e3927cb47841d9e1200cce04677094a5950e",
+      "experiments/stage4_planner_cf_consistency_2025/planner_cf_statistics.py": "1153bd61749352847423a381ddaa0b9ed1d8724a96730675d2773bcbf21f7bb9",
+      "experiments/stage4_planner_cf_consistency_2025/planned_execution_telemetry.py": "bb6dd4bb0c2415a650bd1ed6809fa5627cb193e85aed7fa3b5f9a552147bd3c8",
+      "system/simulation/research_realization_executor.py": "c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b",
+      "system/control/router.py": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+      "system/control/ecd.py": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+      "system/research/route_mode_propagation.py": "80456f8776925860ad20c407ec92f3ac78dbd387f4863ea48dc1917490e89376",
+      "system/research/research_critical_demand_adapter.py": "0601e57c0a0f5f6cb37f463b9d6a35ed23ffa29a6501d2f46902e356c82a6b85",
+      "system/research/closed_loop_causal_nwp_runner.py": "ef7bbd33ef3d216513b33c535b3ed345a60a412e1f5c90f035237434da047265",
+      "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+      "system/optimization/interface/base.py": "d21e2a9e76fbd287bd3e6337c7aad7532c153b7e7df9f71511eea40151adb705",
+      "system/schemas/dispatch_plan.py": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b",
+      "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+      "system/schemas/station_state.py": "e763439a6ddecbbadb9287f99258e595ab7f23f0eb9a7377f5a54beb7661df88"
+    },
+    "inputs": {
+      "data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv": "f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473",
+      "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_5var.csv": "80b721a16a79dab828eb1aa02755d22c34acc35b5f48ad0d1beb5b9ab237052d",
+      "data/POLARIS_v0_1_future_weather_forecasts_2024.csv": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16",
+      "data/POLARIS_v0_1_clearsky_decomposition.csv": "596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a"
+    },
+    "configuration": {
+      "system/config/battery.yaml": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+      "system/config/diesel.yaml": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+      "system/config/solar_pv.yaml": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+      "system/config/loads.yaml": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+      "experiments/run_diesel_reduction_campaign.py": "0be61c4ce9a66d1b103be5dbdb86e1b23a688b745568464d416ef0ca994392aa"
+    }
+  },
+  "frozen_record": "Frozen 2026-10-11 by CC (technical PM, M9 delegation; follow-up message cmsg_017TpQv3UrTPMkzn658LmXvX9LP4GbwMUWDt2Wm5yLAtDn) after D8's condition was met. The PACKAGE_MANIFEST.sha256 hash is recorded in PREREGISTRATION.md §9 and HANDOVER.md. Freezing authorizes nothing: calibration and execution each still need the project lead's separate signature."
+}

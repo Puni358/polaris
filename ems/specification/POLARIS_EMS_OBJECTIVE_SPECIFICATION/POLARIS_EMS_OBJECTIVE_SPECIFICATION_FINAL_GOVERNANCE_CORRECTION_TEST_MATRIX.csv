@@ -1,0 +1,23 @@
+TEST_ID,TEST_NAME,TARGET_ELEMENT,EXPECTED_RESULT,ACTUAL_RESULT,STATUS,GOVERNANCE_IMPACT
+TEST_01,TEST_01_D15_REMAINS_PASS,Decision D15 Status,D15_RECONCILIATION = PASS preserved,Option A confirmed across decision sheet & resolution,PASS,Hierarchy authority preserved
+TEST_02,TEST_02_FIVE_LOAD_TIERS_PRESERVED,Stakeholder Load Tiers,"5 Disjoint Tiers (L_C, L_E, L_D, L_I, L_N)",5 distinct policy tiers established,PASS,Protects policy load structure
+TEST_03,TEST_03_DEFERRABLE_NOT_COLLAPSED_INTO_ESSENTIAL,Deferrable Load Status,Deferrable load L_D distinct from Essential load L_E,Deferrable load kept separate from essential load,PASS,Prevents load tier conflation
+TEST_04,TEST_04_INTERRUPTIBLE_NOT_COLLAPSED_INTO_NONCRITICAL,Interruptible Load Status,Interruptible load L_I distinct from Noncritical load L_N,Interruptible load kept separate from noncritical load,PASS,Prevents load tier conflation
+TEST_05,TEST_05_LOAD_TIER_FORMULATION_REMAINS_UNRESOLVED,Load Tier Mechanics,LOAD_TIER_FORMULATION = REQUIRES_IMPLEMENTATION_SPECIFICATION,Tier mechanics marked for implementation spec,PASS,Prevents unauthorized tier math
+TEST_06,TEST_06_STATION_LOAD_MAPPING_REMAINS_DATA_REQUIRED,Circuit Load Inventory,STATION_LOAD_MAPPING = STATION_DATA_REQUIRED,Circuit inventory marked data required,PASS,Ensures empirical validation
+TEST_07,TEST_07_STAGE1_ZERO_SLA_NORMAL_TARGET,Stage 1 SLA Normal Target,STAGE1_ZERO_SLA = NORMAL_GOVERNED_TARGET,Z1* = 0 Wh established as normal target,PASS,Protects critical load SLA
+TEST_08,TEST_08_STAGE1_PHYSICAL_INFEASIBILITY_DISTINGUISHED,Stage 1 Physical Infeasibility,Z1* > 0 flags physical infeasibility,Z1* > 0 distinguished from normal target,PASS,Clarifies feasibility physics
+TEST_09,TEST_09_NO_CRITICAL_LOAD_FUEL_TRADEOFF_AUTHORIZED,D14 Reliability Dominance,Critical load never sacrificed to save fuel,D14 absolute reliability priority enforced,PASS,Protects Critical SLA
+TEST_10,TEST_10_EMERGENCY_MODE_ENTRY_NOT_PREMATURELY_AUTHORIZED,Emergency Mode Entry,EMERGENCY_MODE_ENTRY = REQUIRES_IMPLEMENTATION_SPECIFICATION_AND_GOVERNANCE_MAPPING,Mode entry marked for implementation/governance mapping,PASS,Prevents premature mode entry math
+TEST_11,TEST_11_EMERGENCY_RESPONSE_REQUIRES_IMPLEMENTATION_MAPPING,Emergency Notification,EMERGENCY_NOTIFICATION_WORKFLOW = REQUIRES_IMPLEMENTATION_SPECIFICATION_AND_GOVERNANCE_MAPPING,Notification workflow marked for governance mapping,PASS,Prevents unauthorized workflow math
+TEST_12,TEST_12_STAGE2_SEMANTICS_PRESERVED,Stage 2 Objective Semantics,STAGE2_OBJECTIVE_SEMANTICS = TARGET_SHORTFALL_MINIMIZATION,Stage 2 shortfall semantics preserved,PASS,Ensures mathematical precision
+TEST_13,TEST_13_D8_BOUNDARY_PRESERVED,D8 Fuel Budget Status,Physical inventory separate from budget policy,D8 fuel boundary preserved,PASS,Ensures physical feasibility
+TEST_14,TEST_14_D10_BOUNDARY_PRESERVED,D10 Curtailment Status,D10_CURTAILMENT_DECOMPOSITION = CONCEPTUAL_DECOMPOSITION_ONLY,D10 conceptual boundary preserved,PASS,Protects policy boundary
+TEST_15,TEST_15_NO_POLICY_REOPENING,Policy Decision Freeze,0 changes to D1-D16 stakeholder choices,All 16 policy choices preserved unchanged,PASS,Enforces policy freeze
+TEST_16,TEST_16_NO_UNAUTHORIZED_NUMERICAL_POLICY,Numerical Register Audit,0 unauthorized numerical policy values,All provisional values explicitly classified,PASS,Maintains numerical governance
+TEST_17,TEST_17_HASH_MANIFEST_FINAL_BYTES_VERIFIED,Cryptographic Manifest,HASH_AUDIT_MANIFEST = VERIFIED,Manifest verified over final bytes,PASS,Guarantees byte-accurate audit
+TEST_18,TEST_18_HASH_SELF_REFERENCE_NOT_CIRCULAR,Audit Self-Hash Status,HASH_AUDIT_SELF_HASH = SIDE_CAR_VERIFIED,Non-circular sidecar hash verified,PASS,Eliminates circular self-hash
+TEST_19,TEST_19_CURRENT_EMS_FROZEN,Software System Freeze,Zero edits to system/ or prototype configs,System SHA-256 hashes 100% verified,PASS,Enforces software freeze
+TEST_20,TEST_20_NO_CODE_MODIFICATION,Code Modification Audit,0 lines of software code edited,Code modification status = NO,PASS,Ensures read-only audit
+TEST_21,TEST_21_NO_EXECUTION,Runtime Execution Audit,"Zero models trained, zero solvers executed",Execution status = NO for all runtimes,PASS,Guarantees zero execution
+TEST_22,TEST_22_NEXT_GATE_OBJECTIVE_REVIEW_ONLY,Governance Gate Alignment,NEXT_GOVERNED_STEP = EMS_OBJECTIVE_SPECIFICATION_REVIEW,Gate aligned strictly to single review step,PASS,Enforces governance sequence

@@ -1,0 +1,6 @@
+issue_time_utc,forecast_horizons,supported_mpc_origins,lead_time_range_hours,causal_validity,notes
+00:00,H1 to H24,00:00 UTC,1 to 24,PASS,Direct alignment between NWP issue run and MPC origin 00:00
+00:00,H1 to H24,06:00 UTC,7 to 30,PASS (With lead time shift),Uses 00:00 issue run with 6h elapsed latency
+00:00,H1 to H24,12:00 UTC,13 to 36,PASS (With lead time shift),Uses 00:00 issue run with 12h elapsed latency
+00:00,H1 to H24,18:00 UTC,19 to 42,PASS (With lead time shift),Uses 00:00 issue run with 18h elapsed latency
+"Intra-day (06:00, 12:00, 18:00)",H1 to H24,"06:00, 12:00, 18:00 UTC",1 to 24,NOT_ESTABLISHED,2024 archive lacks intra-day NWP issue files for AROME 21x21

@@ -1,0 +1,3 @@
+timestamp,cpu_count,mem_total_gb,mem_avail_gb,disk_free_gb,thermal_status,sleep_inhibition_status
+2026-09-26T21:42:07Z,4,7.5,2.83,240.18,"{'SEN2': 42.05, 'acpitz': 27.8, 'TCPU': 65.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 66.0}",ACTIVE
+2026-09-26T21:42:08Z,4,7.5,2.83,240.18,"{'SEN2': 42.05, 'acpitz': 27.8, 'TCPU': 41.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 41.0}",ACTIVE

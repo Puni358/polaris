@@ -1,0 +1,11 @@
+TEST_ID,TEST_NAME,TARGET_REQUIREMENT,INPUTS,EXPECTED_BEHAVIOR,PASS_CRITERIA,REQUIRED_EVIDENCE,LEVEL
+TST-01,Policy Traceability Test,Decisions D01-D16,Specification & Decision Sheet,100% decision mapping,Zero unmapped decisions,Traceability matrix,LEVEL_1
+TST-02,Lexicographic Priority Test,Stage 1-4 Priority Dominance,Synthetic stress profiles,Stage 1 never sacrificed for Stage 3 fuel,J1* strictly preserved,Multi-pass solver log,LEVEL_3
+TST-03,Critical Hard Constraint Test,Decision 04 Zero Unmet Load,High demand profiles,p_unmet_critical = 0,Zero unmet load in Stage 1,DispatchPlan output vector,LEVEL_3
+TST-04,EBR Shortfall Energy Test,Decision 11 EBR Target,Depleted battery profiles,J2 minimizes Wh shortfall above tech min,Correct Stage 2 Wh shortfall term,Stage 2 objective value,LEVEL_3
+TST-05,Terminal Energy Target Test,Decision 12 Terminal Target,End of horizon battery state,E(H) >= E_terminal_target,Terminal energy bound satisfied,Battery state trace,LEVEL_3
+TST-06,Fuel Liters Objective Test,Decision 07 Fuel Volume Min,Diesel dispatch profiles,J3 minimizes actual fuel volume in Liters,Physical Liters output match,Fuel consumption audit,LEVEL_3
+TST-07,Curtailment Classification Test,Decision 09 & 10 Curtailment,High PV/Wind generation profiles,Necessary curtailment excluded from Stage 4,p_curt_avoidable correctly isolated,Curtailment audit,LEVEL_3
+TST-08,Five-Tier Load Balance Test,Decision 05 Load Tiers,5-tier demand profiles,Correct power balance across all 5 tiers,Zero energy imbalance,Bus bar balance error < 1e-5,LEVEL_3
+TST-09,Truth Firewall Test,Truth Firewall Requirement,Digital Twin state & future actuals,Zero leak of future actuals to optimizer,Input provenance audit pass,Controller input audit,LEVEL_4
+TST-10,Determinism & Replay Test,MPC Loop Determinism,Identical forecast & state inputs,Identical dispatch outputs across runs,Bitwise identical DispatchPlan,Hash comparison log,LEVEL_4

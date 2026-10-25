@@ -1,0 +1,11 @@
+{
+  "solver_settings": {
+    "solver": "HiGHS (highspy)",
+    "threads": 1,
+    "output_flag": false,
+    "mip_rel_gap": 1e-09,
+    "time_limit_s": 60.0,
+    "gap_limit_l_absolute": 0.01
+  },
+  "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b"
+}

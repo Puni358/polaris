@@ -1,0 +1,3 @@
+variable_name,meps_product,standard_name,units,reference_convention,fill_sentinel_value,temporal_resolution,spatial_resolution,forecast_run_used,origin_coverage_count,origin_coverage_pct,forecast_hour_coverage_count,forecast_hour_coverage_pct,missing_count,sentinel_count_clear_sky,invalid_count,causality_pass
+cloud_base_altitude,meps_det_sfc,cloud_base_altitude,m,Height above sea level (m),9.96921e36,1-hour,"2.5 km grid cell (Nuolja Y=760, X=486)",D-1 18Z deterministic,347,100.0,8328,100.0,0,1782,0,True
+cloud_top_altitude,meps_det_sfc,cloud_top_altitude,m,Height above sea level (m),9.96921e36,1-hour,"2.5 km grid cell (Nuolja Y=760, X=486)",D-1 18Z deterministic,347,100.0,8328,100.0,0,1782,0,True

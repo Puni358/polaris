@@ -1,0 +1,2 @@
+experiment,even_origins_count,odd_origins_count,odd_status,ctrl_cv_mae,cand_cv_mae,delta_cv_mae,ctrl_cv_nmae,cand_cv_nmae,ctrl_cv_rmse,cand_cv_rmse,gate1_pass,gate2_pass,gate3_pass,gate4_pass,gate5_pass,overall_decision
+Stage 6.5 Snow/Cloud Interaction,174,173,100% UNTOUCHED,39.423597558976034,39.72685282681549,0.3032552678394538,41.459399220861634,42.633113097340576,62.829010740048616,63.018982903017026,False,False,False,False,False,REJECT

@@ -1,0 +1,4 @@
+Horizon_Mechanism,Without_Terminal_Target,With_Rolling_EBR_Sum_t=1..H,With_Separate_Terminal_Term,Recommended_Boundary_Structure
+End_of_Horizon_Depletion,Battery depleted to 20% at t=H,E(H) protected by t=H term in sum,E(H) protected by terminal term,Rolling sum t=1..H OR explicit t=H separation
+Inter_Horizon_Continuity,Poor (starts next cycle depleted),Good (starts next cycle at E_EBR(H)),Good (starts next cycle at E_EBR(H)),E_terminal_target = E_EBR_target(H)
+MPC_Cycle_Shift,t+1 cycle sees depleted E(1),t+1 cycle sees sufficient initial E(0),t+1 cycle sees sufficient initial E(0),Seamless rolling re-optimization

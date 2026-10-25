@@ -1,0 +1,145 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_A3_MODEL_DEVELOPMENT_AND_TRAINING",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A3_WIND_MODEL_DEVELOPMENT_EXECUTION",
+    "task_type": "CONTROLLED_WIND_FORECASTING_RESEARCH_EXECUTION",
+    "authorization_status": "AUTHORIZED_PHASE_A3_EXECUTION_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A3_EXECUTION_COMPLETED",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "CHAMPION_STATUS": "A2_RESEARCH_CHAMPION_RETAINED",
+    "TOTAL_EXECUTED_RUNS": 16,
+    "GLOBAL_RUN_CEILING": 16,
+    "EXP_01_STATUS": "COMPLETED_3_RUNS",
+    "EXP_02_STATUS": "COMPLETED_1_RUN",
+    "EXP_03_STATUS": "COMPLETED_4_RUNS",
+    "EXP_04_STATUS": "COMPLETED_4_RUNS",
+    "EXP_05_STATUS": "COMPLETED_4_RUNS",
+    "EXP_06_STATUS": "EXCLUDED_0_RUNS",
+    "WIND_MODEL_TRAINING": "EXECUTED_A3_ONLY",
+    "WIND_MODEL_INFERENCE": "EXECUTED_A3_ONLY",
+    "WIND_MODEL_SELECTION": "COMPLETED_PREDEF_RULE_APPLIED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "A3_RESEARCH_COMPLETED",
+    "NEXT_GOVERNED_STEP": "EXTERNAL_SCIENTIFIC_REVIEW_AND_GOVERNANCE_CLOSEOUT"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_5_MODIFIED": "NO",
+    "A2_6_MODIFIED": "NO",
+    "A2_7_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "EXTERNAL_PACKAGES_INSTALLED": "NO",
+    "WEIGHTS_DOWNLOADED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "A3_RESEARCH_COMPLETED"
+  },
+  "authoritative_target_definition": {
+    "target_variable": "WIND_SPEED",
+    "target_units": "m/s",
+    "reference_height": "10m",
+    "temporal_resolution": "1h",
+    "station_id": "188790",
+    "station_name": "SMHI Abisko Aut",
+    "latitude": 68.3538,
+    "longitude": 18.8164,
+    "elevation_masl": 392.2,
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "direct_nuolja_measurement": "NOT_ESTABLISHED",
+    "altitude_transfer_method": "NOT_AUTHORIZED",
+    "forecast_horizon_hours": 24,
+    "time_step_hours": 1,
+    "historical_lookback_hours": 24
+  },
+  "data_summary": {
+    "train_period": "2024-01-20 to 2024-08-31 (219 origins, 5265 instances)",
+    "validation_period": "2024-09-01 to 2024-10-31 (61 origins, 1464 instances)",
+    "test_period": "2024-11-01 to 2024-12-31 (62 origins, 1488 instances)",
+    "test_mean_target_ms": 5.3486
+  },
+  "executed_experiments_summary": {
+    "EXP-01": {
+      "name": "Reference Baselines",
+      "runs_executed": 3,
+      "test_mae_persistence": 2.9334,
+      "test_mae_diurnal": 2.9302,
+      "test_mae_raw_nwp": 18.8024
+    },
+    "EXP-02": {
+      "name": "Frozen A2 AR-X Comparator",
+      "runs_executed": 1,
+      "test_mae": 2.0364,
+      "test_rmse": 2.7136,
+      "test_bias": -0.2793
+    },
+    "EXP-03": {
+      "name": "GBDT Direct Multi-Horizon",
+      "runs_executed": 4,
+      "best_config": {"lr": 0.05, "depth": 3, "leaf": 25, "iter": 80},
+      "val_mae": 1.9346,
+      "test_mae": 2.2317,
+      "test_rmse": 2.9581
+    },
+    "EXP-04": {
+      "name": "NWP Residual Bias-Correction GBDT",
+      "runs_executed": 4,
+      "best_config": {"lr": 0.05, "depth": 5, "leaf": 15, "iter": 100},
+      "val_mae": 2.7946,
+      "test_mae": 4.1413,
+      "test_rmse": 6.3436
+    },
+    "EXP-05": {
+      "name": "AR-ElasticNet Regularized Model",
+      "runs_executed": 4,
+      "best_config": {"alpha": 0.1, "l1_ratio": 0.5},
+      "val_mae": 1.8420,
+      "test_mae": 2.0081,
+      "test_rmse": 2.6988
+    },
+    "EXP-06": {
+      "name": "Foundation Model Zero-Shot",
+      "runs_executed": 0,
+      "status": "EXCLUDED_FROM_EXECUTION_PROTOCOL"
+    }
+  },
+  "champion_selection_decision": {
+    "selected_champion": "Autoregressive Ridge AR-X (Frozen A2 Comparator)",
+    "champion_status": "A2_RESEARCH_CHAMPION_RETAINED",
+    "frozen_arx_test_mae_ms": 2.0364,
+    "best_new_candidate_test_mae_ms": 2.0081,
+    "improvement_achieved_pct": 1.39,
+    "threshold_required_pct": 2.0,
+    "threshold_required_mae_ms": 1.9957,
+    "decision_rationale": "New candidate (AR-ElasticNet, 2.0081 m/s MAE) achieved +1.39% improvement over frozen AR-X comparator (2.0364 m/s MAE), which is below the pre-registered 2.0% required margin. Per pre-registered selection rule, frozen A2 AR-X champion is retained."
+  },
+  "reproducibility_manifest": {
+    "execution_script": "research/wind_a3/run_a3_wind_speed_experiments.py",
+    "results_json": "research/wind_a3/a3_wind_research_results.json",
+    "random_seed": 42,
+    "environment": "Python 3.12 (.venv)",
+    "total_executed_runs": 16,
+    "global_ceiling": 16
+  }
+}

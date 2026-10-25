@@ -1,0 +1,89 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE RESEARCH GOVERNANCE DECISION RECORD D3",
+  "timestamp": "2026-09-17T20:07:10Z",
+  "authoritative_inputs": [
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D1_D2.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_RESEARCH_GOVERNANCE_PACKAGE.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "system/forecasting/implementations/baseline.py",
+    "system/schemas/forecast_bundle.py"
+  ],
+  "governance_decision_d3": {
+    "name": "SW_IN -> Solar Generation Mapping Authorization",
+    "status": "DECISION_RECORDED",
+    "value": "AUTHORIZED_EXISTING_IRRADIANCE_TO_POWER_REPRESENTATION",
+    "statement": "For Stage8.1 integration, the project SHALL use the existing _irradiance_to_power_w() representation mapping as the authorized SW_IN -> solar-generation mapping."
+  },
+  "existing_mapping_evidence": {
+    "file_path": "system/forecasting/implementations/baseline.py",
+    "function_name": "_irradiance_to_power_w",
+    "input_quantity_unit": "irradiance_w_m2 (W/m^2)",
+    "output_quantity_unit": "power_w (W)",
+    "mathematical_formula": "min(irradiance_w_m2 * array_area_m2 * panel_efficiency * performance_ratio, max_inverter_power_w)",
+    "default_parameters": {
+      "array_area_m2": 300.0,
+      "panel_efficiency": 0.20,
+      "performance_ratio": 0.85,
+      "max_inverter_power_w": 60000.0
+    },
+    "limitations": "Linear conversion up to 60 kW inverter saturation cap. Does not model cell temperature dynamics or zenith incidence angles."
+  },
+  "units_and_semantics": {
+    "stage8_1_target": "SW_IN (Solar Irradiance W/m^2)",
+    "forecastbundle_field": "solar_generation (W)",
+    "transformation_type": "Engineering PV representation mapping (not a scalar unit alias)"
+  },
+  "stage8_1_scientific_boundary": {
+    "stage8_1_target_modified": false,
+    "stage8_1_model_modified": false,
+    "scientific_status": "FROZEN / CLOSED"
+  },
+  "relationship_to_d1_d2": {
+    "d1_uncertainty_bounds": "FORECAST_UNCERTAINTY_BOUNDS_WITHOUT_CLAIMED_STATISTICAL_COVERAGE",
+    "d2_point_only_representation": "AUTHORIZED_DEGENERATE_POINT_REPRESENTATION",
+    "integration_rule": "Stage8.1 point irradiance forecast mapped to point solar generation array; D2 governs lower=point=upper degenerate bounds."
+  },
+  "scientific_claim_limitations": "Authorizes engineering representation mapping only. Does not establish empirical PV validation, station yield accuracy, or EMS performance improvement.",
+  "d3_frozen_contract_assessment": {
+    "d3_frozen_contract_change_required": "NO",
+    "reasoning": "Output of _irradiance_to_power_w() produces non-negative floats in W matching ForecastBundle solar_generation requirements without schema modification."
+  },
+  "engineering_consequence_assessment": [
+    "Future Stage8.1 forecast adapter wrapper may invoke _irradiance_to_power_w() for solar_generation.point.",
+    "Preserves both solar_irradiance (W/m^2) and solar_generation (W) in ForecastBundle.",
+    "EMS continues receiving ForecastBundle objects without direct coupling to raw Stage8.1 outputs."
+  ],
+  "remaining_governance_decisions": {
+    "D1_LOWER_UPPER_SEMANTICS": "DECISION_RECORDED",
+    "D2_POINT_ONLY_REPRESENTATION": "DECISION_RECORDED",
+    "D3_PV_MAPPING": "DECISION_RECORDED",
+    "D4_WIND_SOURCE": "NOT_ESTABLISHED",
+    "D5_DEMAND_SOURCE": "NOT_ESTABLISHED",
+    "D6_MULTI_SOURCE_COMPOSITION": "NOT_ESTABLISHED",
+    "D7_FINAL_FROZEN_CONTRACT_CHANGE_REQUIRED": "NOT_ESTABLISHED"
+  },
+  "implementation_status": "NOT_AUTHORIZED",
+  "historical_artifact_protection": {
+    "d1_d2_decision_record_modified": false,
+    "interval_semantics_audit_modified": false,
+    "point_semantics_check_modified": false,
+    "research_governance_package_modified": false,
+    "contract_resolution_modified": false,
+    "compatibility_audit_modified": false,
+    "source_code_modified": false
+  },
+  "final_control_state": {
+    "d3_status": "DECISION_RECORDED",
+    "d3_pv_mapping": "AUTHORIZED_EXISTING_IRRADIANCE_TO_POWER_REPRESENTATION",
+    "d3_frozen_contract_change_required": "NO",
+    "stage8_1_target_modified": false,
+    "stage8_1_model_modified": false,
+    "d4_wind_source": "NOT_ESTABLISHED",
+    "d5_demand_source": "NOT_ESTABLISHED",
+    "d6_multi_source_composition": "NOT_ESTABLISHED",
+    "d7_final_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "D3_RECORDED_REMAINING_DECISIONS_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  }
+}

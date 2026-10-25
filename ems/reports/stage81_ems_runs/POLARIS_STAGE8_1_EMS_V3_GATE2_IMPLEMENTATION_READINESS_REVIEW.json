@@ -1,0 +1,148 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V3_GATE2_IMPLEMENTATION_READINESS_REVIEW_MANIFEST",
+  "governance_status": "V3_GATE2_IMPLEMENTATION_READINESS_REVIEW_COMPLETE",
+  "status_flags": {
+    "V3_DESIGN_STATUS": "DESIGN_ONLY",
+    "V3_GATE2_STATUS": "REVIEW_COMPLETE",
+    "V3_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "V3_EXECUTION": "NOT_AUTHORIZED",
+    "V2_MODIFICATION": "NO",
+    "V2_RERUN": "NO",
+    "V1_MODIFICATION": "NO",
+    "FORECAST_MODIFICATION": "NO",
+    "EMS_MODIFICATION": "NO",
+    "OPTIMIZER_MODIFICATION": "NO",
+    "SIMULATOR_MODIFICATION": "NO",
+    "RAW_EVIDENCE_MODIFICATION": "NO",
+    "CANDIDATE_SELECTION": "NOT_PERFORMED",
+    "CANDIDATE_RANKING": "NOT_PERFORMED"
+  },
+  "timestamp_utc": "2026-09-19T16:27:00+05:30",
+  "frozen_baseline_provenance": {
+    "V1": "ACCEPTED_AND_FROZEN",
+    "V2": "VALID_AND_COMPLETED",
+    "V2_raw_evidence_hash": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+    "V2_primary_result": {
+      "control_total_fuel_l": 4671.0,
+      "treatment_total_fuel_l": 6447.44,
+      "mean_paired_difference_l": 10.2684,
+      "wilcoxon_p_value": 0.0013565577,
+      "bootstrap_95_ci_l": [5.4795, 15.2113]
+    },
+    "V2_forensic_audit": "POLARIS_STAGE8_1_EMS_V2_POST_EXECUTION_FORENSIC_AUDIT.md (Classification B)",
+    "V2_wording_correction": "POLARIS_STAGE8_1_EMS_V2_MECHANISM_WORDING_CORRECTION.md (Locked)",
+    "V3_design_provenance": "POLARIS_STAGE8_1_EMS_V3_ENGINEERING_INTERVENTION_DESIGN.md (Locked)"
+  },
+  "auditable_summary_table": [
+    {
+      "candidate": "Class A — Forecast-Aware SOC Reserve / Terminal-State Policy",
+      "classification": "A — IMPLEMENTATION-READY",
+      "mechanism_target": "M2 (Battery Dispatch), M4 (SOC Positioning)",
+      "exact_intervention_boundary_established": "milp.py: Dynamic SOC floor constraint added to MILP model",
+      "parameters_predeclared": "soc_reserve_dynamic_factor (scalar constant)",
+      "uncertainty_dependency": "None (Uses point forecast variance profile)",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Single constraint addition in milp.py)",
+      "prerequisites": "None"
+    },
+    {
+      "candidate": "Class B — Forecast-Uncertainty-Aware Battery Dispatch Constraints",
+      "classification": "B — CONDITIONALLY IMPLEMENTATION-READY",
+      "mechanism_target": "M2 (Battery Dispatch), M5 (Forecast Shape)",
+      "exact_intervention_boundary_established": "milp.py: Horizon-specific battery discharge power cap",
+      "parameters_predeclared": "max_discharge_fraction_per_horizon (vector)",
+      "uncertainty_dependency": "Unresolved (Stage8.1 lower=point=upper format lacks statistical uncertainty)",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Single constraint addition in milp.py)",
+      "prerequisites": "Pre-declaration of explicit uncertainty rule or fixed morning window cap prior to Gate 3"
+    },
+    {
+      "candidate": "Class C — Diesel Commitment Hysteresis / Minimum-Runtime Logic",
+      "classification": "A — IMPLEMENTATION-READY",
+      "mechanism_target": "M1 (Diesel Commitment), M3 (Renewable Curtailment)",
+      "exact_intervention_boundary_established": "milp.py: Objective penalty for rapid commitment state transitions",
+      "parameters_predeclared": "min_offline_hours_penalty (scalar cost weight)",
+      "uncertainty_dependency": "None",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Single penalty term in milp.py objective)",
+      "prerequisites": "None"
+    },
+    {
+      "candidate": "Class D — Renewable-Absorption-Aware Diesel Commitment Logic",
+      "classification": "A — IMPLEMENTATION-READY",
+      "mechanism_target": "M1 (Diesel Commitment), M3 (Renewable Curtailment)",
+      "exact_intervention_boundary_established": "milp.py: Daytime renewable curtailment penalty in MILP objective",
+      "parameters_predeclared": "daytime_curtailment_penalty_weight (scalar weight)",
+      "uncertainty_dependency": "None",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Single objective term in milp.py)",
+      "prerequisites": "None"
+    },
+    {
+      "candidate": "Class E — Robust MPC / Conservative Treatment of Forecast Uncertainty",
+      "classification": "B — CONDITIONALLY IMPLEMENTATION-READY",
+      "mechanism_target": "M2 (Battery Dispatch), M5 (Forecast Shape), M6 (Multi-Pathway)",
+      "exact_intervention_boundary_established": "milp.py + External Quantile Model: Quantile-constrained MILP formulation",
+      "parameters_predeclared": "solar_forecast_conservatism_quantile (quantile scalar)",
+      "uncertainty_dependency": "Critical Unresolved Dependency (ForecastBundle lower=point=upper degenerate format)",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Decoupled quantile model + milp.py)",
+      "prerequisites": "Formal development and pre-validation of an external probabilistic solar uncertainty model prior to Gate 3"
+    },
+    {
+      "candidate": "Class F — Horizon-Weighted MPC Objective or Constraint Treatment",
+      "classification": "A — IMPLEMENTATION-READY",
+      "mechanism_target": "M5 (Forecast Shape), M6 (Multi-Pathway)",
+      "exact_intervention_boundary_established": "milp.py: Objective decay factor gamma^t applied to future horizon cost terms",
+      "parameters_predeclared": "horizon_discount_factor_gamma (scalar decay factor)",
+      "uncertainty_dependency": "None (Treats horizon weighting as predeclared factor)",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Objective weighting modification in milp.py)",
+      "prerequisites": "None"
+    },
+    {
+      "candidate": "Class G — Combined Battery-SOC + Diesel Commitment Policy",
+      "classification": "A — IMPLEMENTATION-READY",
+      "mechanism_target": "M1 (Diesel Commitment), M2 (Battery Dispatch), M3 (Curtailment), M4 (SOC Positioning)",
+      "exact_intervention_boundary_established": "milp.py: Coupled constraint linking minimum SOC floor to diesel commitment state",
+      "parameters_predeclared": "joint_reserve_coupling_coefficient (scalar coupling coefficient)",
+      "uncertainty_dependency": "None",
+      "telemetry_ready": "Yes (37 V2 telemetry fields complete)",
+      "v2_comparable": "Yes (173 paired origins)",
+      "isolation_auditable": "Yes (Single coupled constraint module in milp.py)",
+      "prerequisites": "None"
+    }
+  ],
+  "source_inspection_boundary": {
+    "target_source_file": "system/optimization/implementations/milp.py",
+    "target_class": "LocalMILPEnergyOptimizer",
+    "target_method": "optimize(self, forecast_bundle, current_state, station_configs)",
+    "unchanged_files": [
+      "system/forecasting/implementations/s81_solar.py",
+      "system/forecasting/implementations/baseline.py",
+      "system/simulation/simulator.py",
+      "system/evaluation/evaluator.py",
+      "system/schemas/forecast_bundle.py",
+      "system/schemas/station_state.py",
+      "system/schemas/dispatch_plan.py",
+      "system/telemetry/v2_logger.py",
+      "system/runtime/runner.py"
+    ]
+  },
+  "remaining_governance_gates": [
+    "GATE_2: Formal Implementation Authorization Review (COMPLETED BY THIS ARTIFACT)",
+    "GATE_3: Static Source-Level Implementation Audit",
+    "GATE_4: V2-Equivalence / Non-Intervention Verification",
+    "GATE_5: Bounded Mechanical Validation (No scientific outcome evaluation)",
+    "GATE_6: Formal V3 Execution Authorization",
+    "GATE_7: V3 Empirical Replay Execution",
+    "GATE_8: Post-Execution Forensic Audit",
+    "GATE_9: Mechanism & Outcome Reconciliation Analysis"
+  ]
+}

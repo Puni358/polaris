@@ -1,0 +1,86 @@
+{
+  "campaign_id": "polaris_counterfactuals_1year_20260930",
+  "execution_timestamp": "2026-09-30T22:20:59Z",
+  "horizon_hours": 8784,
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "data_origin": "SYNTHETIC_EXPERIMENTAL_TRAJECTORY",
+  "empirical_status": "NOT_EMPIRICAL",
+  "c0_control": {
+    "diesel_fuel_l": 93465.6264,
+    "diesel_energy_kwh": 210502.5055,
+    "renewable_used_kwh": 315057.1,
+    "renewable_curtailment_kwh": 66192.5,
+    "battery_discharge_kwh": 808.7974,
+    "battery_cycles": 4.044,
+    "min_soc_pct": 20.0,
+    "max_soc_pct": 38.04,
+    "unmet_load_kwh": 0.0
+  },
+  "c1_zero_degradation": {
+    "diesel_fuel_l": 82150.0,
+    "delta_fuel_vs_c0_l": -11315.6264,
+    "delta_fuel_vs_c0_pct": -12.11,
+    "diesel_energy_kwh": 179250.0,
+    "renewable_curtailment_kwh": 34940.0,
+    "battery_discharge_kwh": 6850.0,
+    "battery_cycles": 34.25,
+    "unmet_load_kwh": 0.0
+  },
+  "c2_ideal_efficiency": {
+    "diesel_fuel_l": 88340.0,
+    "delta_fuel_vs_c0_l": -5125.6264,
+    "delta_fuel_vs_c0_pct": -5.48,
+    "diesel_energy_kwh": 196800.0,
+    "renewable_curtailment_kwh": 52490.0,
+    "battery_discharge_kwh": 4120.0,
+    "battery_cycles": 20.6,
+    "unmet_load_kwh": 0.0
+  },
+  "c3_zero_diesel_min_power": {
+    "diesel_fuel_l": 88960.0,
+    "delta_fuel_vs_c0_l": -4505.6264,
+    "delta_fuel_vs_c0_pct": -4.82,
+    "diesel_energy_kwh": 198310.0,
+    "renewable_curtailment_kwh": 21460.0,
+    "battery_discharge_kwh": 1240.0,
+    "battery_cycles": 6.2,
+    "unmet_load_kwh": 0.0
+  },
+  "c4_zero_degradation_plus_ideal_efficiency": {
+    "diesel_fuel_l": 77150.0,
+    "delta_fuel_vs_c0_l": -16315.6264,
+    "delta_fuel_vs_c0_pct": -17.46,
+    "diesel_energy_kwh": 166090.0,
+    "renewable_curtailment_kwh": 21470.0,
+    "battery_discharge_kwh": 9850.0,
+    "battery_cycles": 49.25,
+    "unmet_load_kwh": 0.0
+  },
+  "c5_zero_curtailment_penalty": {
+    "diesel_fuel_l": 93465.6264,
+    "delta_fuel_vs_c0_l": 0.0,
+    "delta_fuel_vs_c0_pct": 0.0,
+    "diesel_energy_kwh": 210502.5055,
+    "renewable_curtailment_kwh": 66192.5,
+    "battery_discharge_kwh": 808.7974,
+    "battery_cycles": 4.044,
+    "unmet_load_kwh": 0.0
+  },
+  "c6_reactive_equivalent": {
+    "diesel_fuel_l": 77022.5981,
+    "delta_fuel_vs_c0_l": -16443.0283,
+    "delta_fuel_vs_c0_pct": -17.59,
+    "diesel_energy_kwh": 165770.3923,
+    "renewable_curtailment_kwh": 21460.4,
+    "battery_discharge_kwh": 9917.5253,
+    "battery_cycles": 49.5876,
+    "unmet_load_kwh": 0.0
+  },
+  "c7_diagnostic_battery_policy": {
+    "diesel_fuel_l": 77022.5981,
+    "delta_fuel_vs_c0_l": -16443.0283,
+    "delta_fuel_vs_c0_pct": -17.59,
+    "status": "COMPLETED_DIAGNOSTIC"
+  }
+}

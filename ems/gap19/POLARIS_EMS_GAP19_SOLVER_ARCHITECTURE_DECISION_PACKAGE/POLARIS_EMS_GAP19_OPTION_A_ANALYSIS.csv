@@ -1,0 +1,17 @@
+QUESTION_ID,TOPIC,FACTUAL_FINDING,CLASSIFICATION,EVIDENCE_SOURCE
+A1,Number of solver invocations,4 solver calls per MPC cycle (Stage 1 -> Stage 2 -> Stage 3 -> Stage 4),ARCHITECTURAL_PROPOSAL,Mathematical Specification V2 Section 4
+A2,Stage 1 objective construction,Minimizes unserved critical demand energy shortfall E_crit_shortfall(t),DOCUMENTED_FACT,EMS Objective Specification V2 Section 4.1
+A3,Stage 1 optimum capture,Captures scalar optimal objective value J1* upon solver termination,STATIC_TECHNICAL_FINDING,milp.py solver result object interface
+A4,Stage 1 lock constraint,Constructs linear inequality constraint J1(x) <= J1* + eps1,ARCHITECTURAL_PROPOSAL,Option A Design Blueprint
+A5,Stage 2 solve,Minimizes EBR reserve shortfall E_EBR_shortfall(t) subject to Stage 1 lock constraint,ARCHITECTURAL_PROPOSAL,Option A Design Blueprint
+A6,Stage 2 optimum capture,Captures scalar optimal objective value J2* upon Stage 2 termination,STATIC_TECHNICAL_FINDING,milp.py solver result object interface
+A7,Stage 2 lock constraint,Constructs linear inequality constraint J2(x) <= J2* + eps2,ARCHITECTURAL_PROPOSAL,Option A Design Blueprint
+A8,Stage 3 solve,Minimizes diesel fuel consumption V_diesel(t) subject to Stage 1 and Stage 2 lock constraints,ARCHITECTURAL_PROPOSAL,Option A Design Blueprint
+A9,Stage 3 optimum capture,Captures scalar optimal objective value J3* upon Stage 3 termination,STATIC_TECHNICAL_FINDING,milp.py solver result object interface
+A10,Stage 4 solve,"Minimizes avoidable renewable curtailment E_curtail_avoidable(t) subject to Stage 1, Stage 2, and Stage 3 lock constraints",ARCHITECTURAL_PROPOSAL,Option A Design Blueprint
+A11,Final DispatchPlan production,Extracts optimal decision vector x* from Stage 4 solve to construct DispatchPlan,ARCHITECTURAL_PROPOSAL,Option A Design Blueprint
+A12,Solver failure handling,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION,GOVERNANCE_REQUIREMENT,Failure Mode Register
+A13,Intermediate objective persistence,"Records intermediate values (J1*, J2*, J3*, J4*) in DispatchPlan diagnostic metadata",ARCHITECTURAL_PROPOSAL,DispatchPlan Schema Extension Specification
+A14,Provenance recording,"Logs stage status, iteration counts, and objective values in execution provenance manifest",ARCHITECTURAL_PROPOSAL,Provenance Specification
+A15,Reproducibility preservation,Deterministic replay within authorized numerical and structural replay tolerances,GOVERNANCE_REQUIREMENT,Reproducibility Register
+A16,Rollback procedure,Restore previously authorized optimizer implementation without external environment changes,ARCHITECTURAL_PROPOSAL,Rollback Register

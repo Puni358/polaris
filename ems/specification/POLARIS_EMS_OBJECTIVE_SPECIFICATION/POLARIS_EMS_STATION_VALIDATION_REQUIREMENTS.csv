@@ -1,0 +1,14 @@
+REQUIREMENT_ID,VALIDATION_CATEGORY,PARAMETER_OR_DATA_ITEM,DESCRIPTION,REQUIRED_BEFORE_IMPLEMENTATION,RESPONSIBLE_ROLE_OR_ENTITY,GOVERNANCE_STATUS
+STATION_VAL_01,Electrical Architecture,Circuit-Level Load Inventory,"Mapping of individual station equipment/circuits into Critical, Essential, and Interruptible tiers",YES,Station Electrical Engineer,STATION_DATA_REQUIRED
+STATION_VAL_02,Backup Hardware,ATS Transfer Gap Measurement,Empirical switching time measurement for Automatic Transfer Switches across station circuits,YES,Station Operations Lead,STATION_DATA_REQUIRED
+STATION_VAL_03,Backup Hardware,UPS Hold-Up Duration,Measured hold-up time under full load for local critical circuit UPS systems,YES,Station Electrical Engineer,STATION_DATA_REQUIRED
+STATION_VAL_04,Generator Hardware,Fuel Consumption Bench Test Curves,Calibrated fuel consumption curves (L/h vs kW and temperature) for diesel generator,YES,Generator Technician / OEM,STATION_DATA_REQUIRED
+STATION_VAL_05,Fuel Logistics,Fuel Storage Capacity & Schedule,"Station fuel tank storage volume, delivery schedules, and winter transport constraints",YES,Station Logistics Manager,STATION_DATA_REQUIRED
+STATION_VAL_06,Station Load,Critical + Essential Load Profile,Empirical average winter/polar-night load profile (kWh/day),YES,Station Operations Lead,STATION_DATA_REQUIRED
+STATION_VAL_07,Battery Hardware,Vendor Technical Min SOC,True technical minimum SOC limit to prevent cell degradation (confirm or revise 20%),YES,BESS Vendor / Battery Engineer,STATION_DATA_REQUIRED
+STATION_VAL_08,Battery Hardware,Battery Degradation Curves,Degradation cost ($/Wh) vs Depth of Discharge and temperature,YES,Battery Engineer,STATION_DATA_REQUIRED
+STATION_VAL_09,Forecasting,Solar Forecast Error Statistics,"Historical solar irradiance forecast error distributions (RMSE, bias, quantiles)",YES,Lead Data Scientist / Forecaster,STATION_DATA_REQUIRED
+STATION_VAL_10,Forecasting,Wind Forecast Error Statistics,Historical wind speed forecast error distributions,YES,Lead Data Scientist / Forecaster,STATION_DATA_REQUIRED
+STATION_VAL_11,Forecasting,Demand Forecast Error Statistics,Historical station load demand forecast error distributions,YES,Lead Data Scientist / Forecaster,STATION_DATA_REQUIRED
+STATION_VAL_12,Emergency Ops,Emergency Triggers & Protocols,Station operational triggers and logging protocols for declared emergency modes,YES,Station Operations Manager,STATION_DATA_REQUIRED
+STATION_VAL_13,Governance,Governance Role Assignment,"Named personnel assigned to Technical, Mission/Ops, and Policy approval tiers",YES,Executive Governance Board,STATION_DATA_REQUIRED

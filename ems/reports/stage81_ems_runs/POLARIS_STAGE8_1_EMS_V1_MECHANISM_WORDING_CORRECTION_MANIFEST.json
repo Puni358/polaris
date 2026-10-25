@@ -1,0 +1,28 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST",
+  "correction_type": "DOCUMENTATION_ONLY_WORDING_PRECISION_CORRECTION",
+  "v1_execution_status": "ACCEPTED_AND_FROZEN",
+  "v1_mechanism_status": "AGGREGATE_ASSOCIATION_ONLY",
+  "v1_causal_mechanism": "NOT_ESTABLISHED",
+  "v1_result_modified": "NO",
+  "v1_rerun": "NO",
+  "v2_status": "DESIGNED_NOT_EXECUTED",
+  "v2_execution_authorized": "NO",
+  "next_research_target": "IDENTIFY_TIMESTEP_LEVEL_MECHANISM_OF_DIESEL_INCREASE",
+  "files_modified": [
+    "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.md",
+    "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.json",
+    "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.md",
+    "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.json",
+    "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.md",
+    "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.json"
+  ],
+  "exact_wording_categories_corrected": [
+    "Removed overclaimed causal assertions (e.g. 'Control refused diesel commitment', 'Treatment committed diesel')",
+    "Downgraded process language to reflect aggregate observable outcomes vs unobserved timestep telemetry",
+    "Clarified distinction between observed downstream outcome differences and exploratory associations",
+    "Added explicit section 'WHAT V1 ESTABLISHES ABOUT THE DIESEL INCREASE'",
+    "Added explicit section 'NEXT STEP \u2014 WHY DID DIESEL USE INCREASE?' (V2 Handoff)"
+  ],
+  "runtime_experiment_artifacts_changed": "NONE_NO_CODE_OR_DATA_CHANGED"
+}

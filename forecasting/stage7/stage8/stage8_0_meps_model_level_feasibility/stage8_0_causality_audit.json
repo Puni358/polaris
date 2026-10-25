@@ -1,0 +1,14 @@
+{
+  "benchmark_origin_count": 347,
+  "causal_policy": "forecast_reference_time < t0 (D-1 18Z or D-1 00Z)",
+  "dissemination_latency": "3 hours documented for MEPS deterministic products",
+  "sfc_18z_coverage": "347/347 (100.0%)",
+  "pl_18z_coverage": "347/347 (100.0%)",
+  "ml_18z_coverage": "0/347 (0.0%) \u2014 NOT ARCHIVED BY MET NORWAY FOR 18Z",
+  "ml_00z_coverage": "347/347 (100.0%) \u2014 ARCHIVED AT 00Z ONLY (Requires H25-H48 lead time lag)",
+  "causality_verdict": {
+    "sfc_vars": "PASS \u2014 100% causally usable at D-1 18Z",
+    "pl_vars": "PASS \u2014 100% causally usable at D-1 18Z",
+    "ml_vars": "FAIL (for D-1 18Z) / CONDITIONAL (requires 24h old D-1 00Z run with +18h additional lead lag)"
+  }
+}

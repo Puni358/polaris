@@ -1,0 +1,44 @@
+{
+  "demo_run_id": "polaris_demo_clean_run_20260930",
+  "execution_timestamp": "2026-09-30T20:53:58Z",
+  "runtime_environment": {
+    "os": "Linux 6.6+ x86_64",
+    "python_version": "3.10.12",
+    "solver": "scipy.optimize.milp (HiGHS C++ backend)",
+    "execution_mode": "100% OFFLINE LOCAL DISK"
+  },
+  "governance": {
+    "g1_3e_policy": "LOCKED",
+    "evidence_boundary": "C",
+    "data_origin": "SYNTHETIC",
+    "empirical_status": "NOT_EMPIRICAL",
+    "freshness_rules_count": 0,
+    "evd02_status": "FROZEN_BLOCKER"
+  },
+  "scenarios_provenance": [
+    {
+      "scenario_id": "S0",
+      "file": "system/data/scenarios/synthetic_s0_baseline.json",
+      "random_seed": "NOT_APPLICABLE",
+      "generation_method": "Deterministic mathematical time-series contract"
+    },
+    {
+      "scenario_id": "S1",
+      "file": "system/data/scenarios/synthetic_s1_renewable_degradation.json",
+      "random_seed": "NOT_APPLICABLE",
+      "generation_method": "Deterministic multiplicative scaling contract"
+    },
+    {
+      "scenario_id": "S2",
+      "file": "system/data/scenarios/synthetic_s2_telemetry_degradation.json",
+      "random_seed": "NOT_APPLICABLE",
+      "generation_method": "Deterministic zero-order hold state propagation contract"
+    },
+    {
+      "scenario_id": "S3",
+      "file": "system/data/scenarios/synthetic_s3_combined_stress.json",
+      "random_seed": "NOT_APPLICABLE",
+      "generation_method": "Deterministic extreme stress vector synthesis contract"
+    }
+  ]
+}

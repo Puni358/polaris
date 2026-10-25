@@ -1,0 +1,39 @@
+{
+  "experiment_id": "L2-EXP-02",
+  "title": "POLARIS L2 Quantile GBDT Uncertainty Model",
+  "status": "BLOCKED",
+  "blocker_reason": "ENVIRONMENT_LIMITATION_MISSING_LIGHTGBM",
+  "timestamp_utc": "2026-10-04T05:12:37.980002+00:00",
+  "runtime_environment": {
+    "python_executable": "/home/punith-bs/01polaris (Copy)/.venv/bin/python",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "installed_packages": {
+      "scipy": "1.18.1",
+      "sklearn": "1.9.0",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "joblib": "1.6.0"
+    }
+  },
+  "governance_rule_enforced": "Section 5: If LightGBM is not available in the existing scientific runtime: DO NOT install arbitrary packages. STOP with BLOCKED and report the environment limitation. Do not silently switch to another implementation.",
+  "authoritative_inputs_verified": {
+    "historical_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "exact_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "frozen_candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+  },
+  "feature_sequence_verified": true,
+  "feature_count": 38,
+  "model_parameters_pre_registered": {
+    "objective": "quantile",
+    "num_leaves": 31,
+    "learning_rate": 0.03,
+    "n_estimators": 500,
+    "min_child_samples": 30,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_alpha": 0.0,
+    "reg_lambda": 1.0,
+    "random_state": 42
+  }
+}

@@ -1,0 +1,6 @@
+Artifact_Path,Artifact_Type,Section_Reference,Governance_Concept,Authorization_Classification,Notes
+SURVIVABILITY_SPECIFICATION_AUDIT.md,Audit Report,Section 5.2,Zero Renewable Baseline (P_solar=0 P_wind=0),ENGINEERING_ONLY,Proposed conservative worst-case baseline; requires human authorization
+SURVIVABILITY_SPECIFICATION_AUDIT.md,Audit Report,Section 5.2,Conservative Quantile Forecast (lower bound),NOT_AUTHORIZED,Proposed alternative using lower uncertainty bound from ForecastBundle
+POLARIS_EMS_D1_D16_TRACEABILITY.csv,Governance Matrix,D11/D14,Renewable Forecast Representation,AUTHORIZED,Normal MPC uses causal forecast bundle
+POLARIS_MASTER_HANDOFF.md,Governance Master,Section 4.2,Emergency Mode Survivability,NOT_ESTABLISHED,No explicit adverse renewable assumption specified in master handoff
+POLARIS_EMS_HD01_EBR_DEFINITION_AUDIT.md,Audit Report,Section 2,Exogenous Emergency Detector,AUTHORIZED,Detector evaluates survivability exogenously prior to MPC solve

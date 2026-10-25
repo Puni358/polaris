@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-09-13T10:02:55.977525+00:00",
+  "experiment_title": "POLARIS Stage 8.21A 3D Solar Slant-Path Hydrometeor Geometry Experiment Specification",
+  "route_identifier": "STAGE8.21A",
+  "status": "FROZEN EXPERIMENT SPECIFICATION \u2014 READY FOR IMPLEMENTATION",
+  "locked_scope": {
+    "spatial_window": "47x47 MEPS grid points (57.5 km cardinal radius, 81.32 km corner radius)",
+    "solar_elevation_domain": "solar_elevation >= 5.0 degrees (solar_zenith <= 85.0 degrees)",
+    "predeclared_coverage_threshold": ">= 99.0%",
+    "empirically_verified_coverage": "99.30% (3,262 / 3,285 relevant solar-ray tuples)",
+    "outside_window_handling": "Deterministic 1D station-grid column vertical fallback without benchmark denominator alteration or error-based filtering",
+    "low_sun_domain_handling": "0\u00b0 < elev < 5\u00b0 outside feature domain; elev <= 0\u00b0 causally forced to 0.0 W/m\u00b2"
+  },
+  "baseline_champion": {
+    "baseline_route": "Stage8.1",
+    "model_architecture": "HistGradientBoostingRegressor (37 features)",
+    "odd_control_metrics": {
+      "mae_w_m2": 36.188657,
+      "nmae_pct": 28.0688,
+      "rmse_w_m2": 64.219495,
+      "bias_w_m2": 1.439399
+    }
+  },
+  "split_protocol": {
+    "training_even_origins": "173 even-indexed origins (Folds 1-5 cross-validation)",
+    "testing_odd_origins": "174 odd-indexed origins (Locked ODD evaluation)"
+  },
+  "acceptance_gates": {
+    "G1_MAE_Improvement": "Candidate EVEN/ODD MAE must improve over Stage8.1 control",
+    "G2_Fold_Consistency": ">= 4 / 5 EVEN forward-chaining folds must improve",
+    "G3_Worst_Fold_Tolerance": "Worst fold degradation within locked tolerance",
+    "G4_nMAE_RMSE_NonDegradation": "nMAE and RMSE must not degrade vs control",
+    "G5_Causal_Integrity": "100% causal lead time compliance (t_init <= t0)",
+    "G6_Exact_Control_Reproduction": "Baseline Stage8.1 MAE 36.188657 W/m\u00b2 reproduced exactly prior to candidate fit"
+  },
+  "governance": {
+    "EXPERIMENT_RUN": false,
+    "MODEL_TRAINING": false,
+    "ODD_ACCESS": false,
+    "ODD_PREDICTIONS": false,
+    "ODD_METRICS": false,
+    "CHAMPION_CHANGED": false,
+    "MASTER_HANDOFF_CHANGED": false,
+    "ROUTE_REGISTRY_CHANGED": false
+  }
+}

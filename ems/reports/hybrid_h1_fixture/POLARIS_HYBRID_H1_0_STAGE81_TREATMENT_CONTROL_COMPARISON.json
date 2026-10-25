@@ -1,0 +1,42 @@
+{
+  "comparison_version": "1.0.0",
+  "comparison_type": "STAGE8_1_ML_FORECAST_SAME_TRUTH_PAIRED_COUNTERFACTUAL",
+  "timestamp": "2026-09-20T07:55:46.077138+00:00",
+  "trajectory_origin_timestamp": "2024-06-01T00:00:00Z",
+  "treatment_reference": {
+    "execution_id": "polaris_stage81_h10_treatment_20240601T000000Z",
+    "policy_id": "POLARIS_STAGE8_1_H10_ML_FORECAST_TREATMENT",
+    "forecast_source": "FROZEN_STAGE8_1_OOD_PREDICTION_ARTIFACT",
+    "observed_diesel_fuel_liters": 121.463,
+    "raw_telemetry_csv": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv"
+  },
+  "control_reference": {
+    "execution_id": "polaris_stage81_h10_control_20240601T000000Z",
+    "policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+    "forecast_source": "LOCAL_BASELINE_CLEARKEY_PERSISTENCE",
+    "observed_diesel_fuel_liters": 125.461
+  },
+  "same_environment_verification": {
+    "same_fixture": true,
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "same_origin_timestamp": "2024-06-01T00:00:00Z",
+    "same_initial_state": true,
+    "initial_state_sha256": "e5883089fd82ea51d8fcbd66f0864569452eb857720bcfb5c4d8b13d787cdcd7",
+    "same_hidden_truth": true,
+    "same_simulator": true,
+    "same_truth_firewall": true
+  },
+  "paired_differences": {
+    "PAIRED_DIESEL_FUEL_DIFFERENCE_L": -3.997,
+    "PAIRED_DIESEL_FUEL_DIFFERENCE_PERCENT": -3.19,
+    "PAIRED_DIESEL_ENERGY_DIFFERENCE_KWH": 4.011,
+    "PAIRED_SOLAR_UTILIZATION_DIFFERENCE_KWH": -58.786,
+    "PAIRED_WIND_UTILIZATION_DIFFERENCE_KWH": 0.0,
+    "PAIRED_RENEWABLE_CURTAILMENT_DIFFERENCE_KWH": 0.0,
+    "PAIRED_BATTERY_CHARGE_DIFFERENCE_KWH": -11.726,
+    "PAIRED_BATTERY_DISCHARGE_DIFFERENCE_KWH": 43.049,
+    "PAIRED_UNMET_LOAD_DIFFERENCE_KWH": 0.0
+  },
+  "interpretation": "Under the controlled H1.0 hybrid engineering environment for origin 2024-06-01T00:00:00Z, the Stage 8.1 ML forecast treatment policy used 3.997 L less diesel than the same-truth baseline control over the 24-hour trajectory.",
+  "claim_boundary": "Paired operational difference under the controlled H1.0 hybrid engineering environment ONLY. Not real-world Nuolja savings or production validation."
+}

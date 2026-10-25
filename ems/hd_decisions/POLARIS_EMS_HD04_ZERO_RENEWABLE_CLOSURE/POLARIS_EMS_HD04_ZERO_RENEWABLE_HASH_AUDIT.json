@@ -1,0 +1,22 @@
+{
+  "audit_name": "POLARIS EMS HD-04 Option A Zero-Renewable Closure Hash Audit",
+  "timestamp": "2026-09-23T06:46:00Z",
+  "audited_files": [
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "purpose": "MILP solver implementation using point forecasts for solar and wind",
+      "key_lines": {
+        "solar_forecast": "Line 68: solar_gen = forecast_bundle.solar_generation.point",
+        "wind_forecast": "Line 69: wind_gen = forecast_bundle.wind_generation.point"
+      }
+    },
+    {
+      "path": "POLARIS_EMS_HD04_ADVERSE_RENEWABLE_GOVERNANCE_AUDIT/POLARIS_EMS_HD04_ADVERSE_RENEWABLE_GOVERNANCE_AUDIT.md",
+      "purpose": "Prior HD-04 governance audit evaluating Option A proposal",
+      "key_lines": {
+        "proposed_wording": "Option A formal policy statement"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

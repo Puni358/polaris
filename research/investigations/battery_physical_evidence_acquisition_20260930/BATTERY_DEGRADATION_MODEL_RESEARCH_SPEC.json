@@ -1,0 +1,39 @@
+{
+  "spec_id": "BATTERY_DEGRADATION_MODEL_RESEARCH_SPEC_V1",
+  "status": "RESEARCH_ONLY_CANDIDATE_MODEL",
+  "production_promotion": "NOT_AUTHORIZED",
+  "model_scope": {
+    "chemistry_target": "LFP_GENERIC_STATIONARY",
+    "reference_capacity_kWh": 200.0,
+    "max_power_kW": 50.0,
+    "soc_window": [0.20, 0.95]
+  },
+  "physical_degradation_formulation": {
+    "total_capacity_loss_fraction": "Q_loss = Q_cycle + Q_calendar",
+    "cycle_aging_model": {
+      "type": "Throughput_and_DoD_power_law",
+      "equation": "Q_cycle = M_cycle * (EFC)^0.55 * (DoD)^1.5 * exp(-Ea / (R * T_kelvin))",
+      "parameters": {
+        "M_cycle": 0.0032,
+        "efc_exponent": 0.55,
+        "dod_exponent": 1.50,
+        "Ea_kJ_per_mol": 31.7,
+        "R_J_per_mol_K": 8.314
+      }
+    },
+    "calendar_aging_model": {
+      "type": "Square_root_time_Arrhenius",
+      "equation": "Q_calendar = M_cal * (time_days)^0.5 * exp(k_soc * (SOC - 0.5)) * exp(-Ea_cal / (R * T_kelvin))",
+      "parameters": {
+        "M_cal": 0.0015,
+        "time_exponent": 0.50,
+        "k_soc": 0.85,
+        "Ea_cal_kJ_per_mol": 24.5
+      }
+    }
+  },
+  "economic_cost_mapping": {
+    "status": "NOT_IDENTIFIABLE_RESEARCH_PROXY_ONLY",
+    "notes": "Physical capacity fade (Q_loss) cannot be mapped to an empirical $/kWh penalty without target site stack replacement invoice and polar transport cost data."
+  }
+}

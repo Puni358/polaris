@@ -1,0 +1,18 @@
+audit_document,03_SURVIVAL_WINDOW_ANALYSIS
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# REQUIRED SURVIVAL WINDOW & HORIZON ANALYSIS
+# ============================================================
+
+window_concept,definition_formula,repository_data_status,governance_status,human_decision_requirement
+Forecast Horizon,H = 24 hours (24 timesteps of dt=1h),VERIFIED FACT: Present in ForecastBundle and MILP,Fixed 24h rolling MPC optimization window,RESOLVED_BY_EXISTING_GOVERNANCE
+Next Resupply Arrival Time,T_resupply (hours until fuel delivery),MISSING DATA: Absent from ForecastBundle and StationState,Resupply arrival time not specified in current policy,GOVERNANCE_DECISION_REQUIRED
+Mission Horizon,T_mission (total station operational mission window),MISSING DATA: Absent from schema metadata,Not defined in stakeholder policy,GOVERNANCE_DECISION_REQUIRED
+Battery Recovery Horizon,T_recovery (hours until solar/wind recharges battery),DERIVABLE: Hours until cumulative renewables exceed load,Not formally designated as survival window,ENGINEERING_DEFINITION_REQUIRED
+Common Survival Window,T_required = common target survival window (hours),SUPPORTED CONCEPT: Requires single T_required for both resources,Policy E3 requires common window to compare margins,GOVERNANCE_DECISION_REQUIRED
+Resource-Specific Windows,T_required_batt vs T_required_fuel,UNSUPPORTED CONCEPT: Split windows prevent direct margin comparison,Using split windows invalidates direct E3 margin comparison,PROHIBITED_BY_MATHEMATICAL_LOGIC
+Final Recommendation,T_required = T_resupply (or H=24h default if resupply unknown),Repository supports H=24h; T_resupply requires schema addition,Human governance must authorize T_required definition,GOVERNANCE_DECISION_REQUIRED

@@ -1,0 +1,11 @@
+,signed_error_corr_vs_HGB37,abs_error_corr_vs_HGB37,overall_win_rate_vs_HGB37,win_rate_during_HGB_worst10pct_events
+Chronos-2 Small Multivariate,0.719,0.7026,0.3472,0.4394
+Chronos-2 Small Raw,0.7195,0.7032,0.3597,0.4291
+Dynamic Ensemble Hybrid,0.9079,0.8861,0.4142,0.436
+HistGradientBoostingRegressor 37-feature,1.0,1.0,0.0,0.0
+HistGradientBoostingRegressor 40-feature,0.9834,0.9775,0.3621,0.5225
+HistGradientBoostingRegressor 42-feature,0.9862,0.9813,0.3684,0.519
+Kt Persistence 24h,0.6907,0.695,0.2848,0.3806
+LightGBM 22-feature,0.7261,0.7196,0.3507,0.3979
+Moirai 2.0,0.4249,0.5158,0.2178,0.4014
+TimesFM 3.0,0.5024,0.5474,0.2608,0.3979

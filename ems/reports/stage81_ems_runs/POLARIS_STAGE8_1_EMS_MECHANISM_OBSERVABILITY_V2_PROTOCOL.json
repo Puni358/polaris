@@ -1,0 +1,146 @@
+{
+  "protocol_id": "STAGE8.1_EMS_MECHANISM_OBSERVABILITY_REPLAY_V2",
+  "protocol_type": "DESIGN_ONLY_FUTURE_OBSERVABILITY_REPLAY_PROTOCOL",
+  "protocol_hardening_status": "A \u2014 V2 PROTOCOL HARDENED AND READY FOR FUTURE AUTHORIZATION",
+  "execution_authorization_status": "EXECUTION_NOT_AUTHORIZED_DESIGN_ONLY",
+  "v2_engineering_status": "LOCKED",
+  "scientific_objective": "Capture complete timestep-level EMS decision and state telemetry to observe the operational mechanism chain without altering V1 experimental dynamics.",
+  "non_objectives": [
+    "No model retraining or recalibration",
+    "No EMS optimization policy or constraint modifications",
+    "No algorithm or solver tuning",
+    "No performance improvement interventions"
+  ],
+  "provenance_and_implementation_hashes": {
+    "control_engine_path": "system/forecasting/implementations/baseline.py",
+    "control_engine_sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+    "control_engine_identity": "LocalBaselineForecastEngine",
+    "control_provenance": "ESTABLISHED",
+    "s81_engine_path": "system/forecasting/implementations/s81_solar.py",
+    "s81_engine_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "s81_engine_identity": "Stage81ForecastEngine",
+    "ems_optimizer_path": "system/optimization/implementations/milp.py",
+    "ems_optimizer_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+    "ems_provenance": "ESTABLISHED",
+    "optimizer_provenance": "ESTABLISHED",
+    "simulator_path": "system/simulation/simulator.py",
+    "simulator_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "simulator_provenance": "ESTABLISHED",
+    "evaluator_path": "system/evaluation/evaluator.py",
+    "evaluator_sha256": "79af472d52aab4b63180aaccac044ee48c9893f257c4f6988ccff7da1cec8729",
+    "forecast_bundle_schema_path": "system/schemas/forecast_bundle.py",
+    "forecast_bundle_schema_sha256": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "station_state_schema_path": "system/schemas/station_state.py",
+    "station_state_schema_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+    "dispatch_plan_schema_path": "system/schemas/dispatch_plan.py",
+    "dispatch_plan_schema_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+    "solver_identity": "HiGHS MILP Solver v1.7+",
+    "solver_provenance": "ESTABLISHED",
+    "treatment_artifact_path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "treatment_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "v1_reproducibility_equivalence_gates": {
+    "v2_control_equivalence_to_v1": "REQUIRED",
+    "v2_treatment_equivalence_to_v1": "REQUIRED",
+    "v2_initial_state_equivalence": "REQUIRED",
+    "v2_realized_trajectory_equivalence": "REQUIRED",
+    "v2_forecast_input_equivalence": "REQUIRED",
+    "v2_ems_configuration_equivalence": "REQUIRED",
+    "v2_optimizer_equivalence": "REQUIRED",
+    "v2_simulator_equivalence": "REQUIRED",
+    "v2_solver_equivalence": "REQUIRED"
+  },
+  "timestep_telemetry_semantics": {
+    "definition": "For every paired origin and every MPC timestep k, telemetry records the state, forecast inputs, optimizer decisions, physical action, and resulting state transition associated with that timestep.",
+    "categories": {
+      "A_forecast_horizon_data": "Complete 24-step forecast vector available to the optimizer at MPC timestep k.",
+      "B_h1_decision_data": "First-horizon forecast value and first-horizon decision actually executed at timestep k.",
+      "C_state_before_action": "StationState entering the MPC decision at timestep k.",
+      "D_action": "DispatchPlan / H1 physical action selected by optimizer at timestep k.",
+      "E_state_after_action": "DigitalTwin state resulting from execution of that action at timestep k.",
+      "F_cumulative_state": "Running fuel, energy, SOC, and throughput after timestep k."
+    }
+  },
+  "hardened_telemetry_schema": {
+    "identity": [
+      "origin_id",
+      "origin_timestamp",
+      "mpc_timestep_idx",
+      "timestamp"
+    ],
+    "forecast_input": [
+      "treatment_forecast_vector_24",
+      "control_forecast_vector_24",
+      "actual_solar_truth",
+      "treatment_h1_forecast",
+      "control_h1_forecast",
+      "treatment_forecast_error_h1",
+      "control_forecast_error_h1",
+      "forecast_difference_h1"
+    ],
+    "state_before_action": [
+      "soc_before",
+      "diesel_state_before",
+      "cumulative_diesel_fuel_before",
+      "cumulative_diesel_energy_before"
+    ],
+    "optimizer": [
+      "optimizer_status",
+      "objective_value",
+      "diesel_commitment",
+      "startup_event",
+      "shutdown_event",
+      "battery_charge_decision",
+      "battery_discharge_decision",
+      "reserve_status",
+      "constraint_status"
+    ],
+    "executed_action": [
+      "h1_diesel_power",
+      "h1_battery_charge_power",
+      "h1_battery_discharge_power",
+      "h1_renewable_dispatch",
+      "h1_renewable_curtailment",
+      "h1_served_load",
+      "h1_unmet_load"
+    ],
+    "state_after_action": [
+      "soc_after",
+      "diesel_state_after",
+      "cumulative_diesel_fuel_after",
+      "cumulative_diesel_energy_after",
+      "cumulative_battery_throughput_after"
+    ]
+  },
+  "future_mechanism_analysis_plan": {
+    "temporal_sequence_testing": "forecast difference -> MPC decision divergence -> executed diesel decision -> battery/SOC response -> renewable utilization/curtailment -> cumulative fuel outcome",
+    "group_partition_analysis": "Group P (95 origins, Delta > 0) vs Group N (77 origins, Delta < 0)",
+    "representative_case_preselection_rule": "Deterministic selection by median fuel delta within Group P and Group N prior to trajectory inspection",
+    "classification_schema": [
+      "A \u2014 DIRECTLY OBSERVED",
+      "B \u2014 STRONGLY SUPPORTED",
+      "C \u2014 EXPLORATORY ASSOCIATION",
+      "D \u2014 HYPOTHESIS NOT ESTABLISHED",
+      "E \u2014 NOT IDENTIFIABLE"
+    ]
+  },
+  "scientific_claim_boundary": "Future V2 observability protocol is designed solely to record telemetry without modifying microgrid parameters or model forecasts. No causal claims are permissible prior to protocol execution under a future authorized experiment gate.",
+  "final_integrity_checks": {
+    "CONTROL_IMPLEMENTATION_PROVENANCE": "ESTABLISHED",
+    "EMS_PROVENANCE": "ESTABLISHED",
+    "OPTIMIZER_PROVENANCE": "ESTABLISHED",
+    "SIMULATOR_PROVENANCE": "ESTABLISHED",
+    "SOLVER_PROVENANCE": "ESTABLISHED",
+    "TIMESTEP_TELEMETRY_SEMANTICS": "HARDENED",
+    "V1_EQUIVALENCE_REQUIREMENTS": "HARDENED",
+    "V2_EXECUTION_AUTHORIZATION": "NOT_AUTHORIZED",
+    "V2_IMPLEMENTED": "NO",
+    "V2_EXECUTED": "NO",
+    "V1_RERUN": "NO",
+    "V1_RESULT_CHANGED": "NO",
+    "EMS_CHANGED": "NO",
+    "OPTIMIZER_CHANGED": "NO",
+    "SIMULATOR_CHANGED": "NO",
+    "MODEL_CHANGED": "NO"
+  }
+}

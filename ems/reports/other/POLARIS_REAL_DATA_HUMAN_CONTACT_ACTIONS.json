@@ -1,0 +1,119 @@
+{
+  "package_id": "POLARIS_REAL_DATA_HUMAN_CONTACT_ACTIONS_PACKAGE",
+  "package_type": "HUMAN_AUTHORIZED_DATA_ACCESS_REQUEST_DEFINITIONS",
+  "created_timestamp_utc": "2026-09-20T10:30:00Z",
+  "disclaimer": "DO NOT SEND ANYTHING AUTOMATICALLY. THIS PACKAGE IS FOR HUMAN REVIEW AND MANUAL AUTHORIZED DISPATCH ONLY.",
+  "human_contact_actions": [
+    {
+      "organization": "British Antarctic Survey (BAS) / UK Polar Data Centre (UK PDC)",
+      "official_contact_route": "https://data.bas.ac.uk (Web Form) / data@bas.ac.uk",
+      "facility": "Rothera Research Station / Halley VI Research Station (Antarctica)",
+      "data_requested": "Measured station-level active electrical demand time series",
+      "exact_variables": [
+        "Active Electrical Load P_load (kW or W)",
+        "Interval Timestamps (UTC ISO 8601)",
+        "Optional: Generator electrical output (kW)",
+        "Optional: Renewable generation (kW)"
+      ],
+      "requested_temporal_resolution": "1-hour interval (or sub-hourly <= 1h)",
+      "requested_period": "Longest continuous historical period available (multi-month or multi-year)",
+      "scientific_purpose": "Offline evaluation of AI-driven Model Predictive Control (MPC) dispatch algorithms under empirical polar station load dynamics for Smart India Hackathon (SIH) research project POLARIS.",
+      "provenance_requirements": "Metering instrumentation metadata, physical units, timestamp timezone specification, data quality flags, and missing data markers.",
+      "accompanying_evidence_required": "Official custodian dataset documentation, license/usage agreement terms, metering methodology summary."
+    },
+    {
+      "organization": "Alfred Wegener Institute (AWI) / PANGAEA Data Publisher",
+      "official_contact_route": "https://www.pangaea.de (Data Request Portal) / info@pangaea.de / station-manager@awi.de",
+      "facility": "Neumayer Station III (Dronning Maud Land, Antarctica)",
+      "data_requested": "Measured station-level active electrical demand and wind-diesel microgrid load time series",
+      "exact_variables": [
+        "Active Electrical Load P_load (kW or W)",
+        "Interval Timestamps (UTC ISO 8601)",
+        "Optional: Wind turbine generation (kW)",
+        "Optional: Diesel generator status and power (kW)"
+      ],
+      "requested_temporal_resolution": "1-hour interval (or sub-hourly <= 1h)",
+      "requested_period": "Longest continuous historical period available (multi-month or multi-year)",
+      "scientific_purpose": "Offline validation of predictive energy management system (EMS) dispatch models under real polar microgrid demand patterns for SIH research project POLARIS.",
+      "provenance_requirements": "Meter location, sensor specifications, unit declaration (kW), UTC timestamps, and explicit data quality indicators.",
+      "accompanying_evidence_required": "PANGAEA DOI / dataset citation metadata, custodian terms of use, data collection methodology."
+    },
+    {
+      "organization": "Norwegian Polar Institute (NPI) / Norwegian Polar Data Centre",
+      "official_contact_route": "https://data.npolar.no (Data Request Portal) / data@npolar.no",
+      "facility": "Troll Research Station (Jutulsessen, Antarctica)",
+      "data_requested": "Measured station electrical demand and smart microgrid load profile time series",
+      "exact_variables": [
+        "Active Electrical Load P_load (kW or W)",
+        "Interval Timestamps (UTC ISO 8601)",
+        "Optional: Solar PV power output (kW)",
+        "Optional: Battery storage SOC (%)"
+      ],
+      "requested_temporal_resolution": "1-hour interval (or sub-hourly <= 1h)",
+      "requested_period": "Longest continuous historical period available",
+      "scientific_purpose": "Offline receding-horizon MPC optimization benchmark using empirical station electrical load data for SIH research project POLARIS.",
+      "provenance_requirements": "Measurement methodology, physical units, timezone specification, missing data flags.",
+      "accompanying_evidence_required": "Norwegian Polar Data Centre dataset license agreement and official usage terms."
+    },
+    {
+      "organization": "Australian Antarctic Division (AAD) / Australian Antarctic Data Centre (AADC)",
+      "official_contact_route": "https://data.aad.gov.au/contact (Web Contact Form) / https://data.aad.gov.au/aadc/portal/",
+      "facility": "Casey, Davis, Mawson, Macquarie Island Stations (Antarctica)",
+      "data_requested": "High-resolution logger electrical load time series (beyond public monthly totals)",
+      "exact_variables": [
+        "Active Electrical Load P_load (kW or W)",
+        "Interval Timestamps (UTC ISO 8601)"
+      ],
+      "requested_temporal_resolution": "1-hour interval (or sub-hourly <= 1h)",
+      "requested_period": "1993-2016 historical logger archives",
+      "scientific_purpose": "Offline microgrid dispatch algorithm evaluation using high-resolution station telemetry for SIH project POLARIS.",
+      "provenance_requirements": "Logger metadata, unit confirmation, missing data documentation.",
+      "accompanying_evidence_required": "AADC dataset metadata record and terms of use for academic research."
+    },
+    {
+      "organization": "South African National Antarctic Programme (SANAP) / DFFE",
+      "official_contact_route": "https://polar.sanap.ac.za (Portal Request Form) / NRF-SAEON Data Office",
+      "facility": "SANAE IV Station (Dronning Maud Land, Antarctica)",
+      "data_requested": "Historical 1-hour active electrical demand telemetry",
+      "exact_variables": [
+        "Active Electrical Load P_load (kW or W)",
+        "Interval Timestamps (UTC ISO 8601)"
+      ],
+      "requested_temporal_resolution": "1-hour continuous interval",
+      "requested_period": "Multi-year operational logging horizon",
+      "scientific_purpose": "Offline EMS load-following and microgrid dispatch benchmark for SIH research project POLARIS.",
+      "provenance_requirements": "Instrumentation metadata, units (kW), quality control flags.",
+      "accompanying_evidence_required": "SANAP / DFFE data sharing authorization document."
+    },
+    {
+      "organization": "International Polar Foundation (IPF) / BELSPO",
+      "official_contact_route": "https://www.polarfoundation.org / https://www.antarcticstation.org (Portal Form)",
+      "facility": "Princess Elisabeth Antarctica Station",
+      "data_requested": "Zero-emission microgrid active load telemetry time series",
+      "exact_variables": [
+        "Active Microgrid Electrical Load P_load (kW or W)",
+        "Interval Timestamps (UTC ISO 8601)"
+      ],
+      "requested_temporal_resolution": "1-hour or sub-hourly interval",
+      "requested_period": "Multi-year operational profile",
+      "scientific_purpose": "Evaluating offline predictive microgrid controller dispatch on zero-emission polar station load profiles for SIH project POLARIS.",
+      "provenance_requirements": "Metering point description, units (kW), timestamp timezone.",
+      "accompanying_evidence_required": "IPF / BELSPO research data agreement."
+    },
+    {
+      "organization": "Alaska Center for Energy and Power (ACEP / UAF)",
+      "official_contact_route": "https://data.acep.uaf.edu (Data Portal Form) / energyalaska.uaf.edu",
+      "facility": "Kotzebue, Cordova, Wales Arctic Remote Microgrids",
+      "data_requested": "Remote community active electrical demand time series",
+      "exact_variables": [
+        "Community Electrical Demand P_load (kW)",
+        "Interval Timestamps (UTC ISO 8601)"
+      ],
+      "requested_temporal_resolution": "1-hour continuous interval",
+      "requested_period": "Multi-year continuous time series",
+      "scientific_purpose": "Offline benchmark evaluation of predictive energy management systems on remote polar/sub-polar microgrid load profiles for SIH project POLARIS.",
+      "provenance_requirements": "Utility metering metadata, units (kW), quality markers.",
+      "accompanying_evidence_required": "ACEP / UAF data access agreement and attribution requirements."
+    }
+  ]
+}

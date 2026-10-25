@@ -1,0 +1,29 @@
+{
+  "experiment_id": "EXP-PLANNER-CF-EBR-FULL-REALIZED-I-LOWER-BOUND-20261008",
+  "title": "POLARIS \u2014 Certified Formulation I: Fuel-Inventory Lower-Bound Tightening",
+  "governance_classification": "CERTIFIED BUT NO MATERIAL TIGHTENING",
+  "target_40_pct_status": "40% STILL NOT RULED OUT",
+  "mathematical_proof": "Formulation I adds telescoping rolling fuel state F[t+1] = F[t] - 5*y[t] - 0.00025*d[t] >= 0 with F[0] = 100 L. Since PC-SW realized cumulative fuel never exceeds 100 L, x_real remains admissible, preserving LB_H <= LB_I <= objective_I(x_real) <= PC-SW realized fuel.",
+  "fuel_inventory_initial_l": 100.0,
+  "pre_execution_findings": {
+    "pc_sw_rows": 2952,
+    "n_origins": 123,
+    "max_realized_fuel_l": 100.0,
+    "origins_reach_exactly_100_l": 9,
+    "origins_reach_100_list": [
+      16,
+      33,
+      39,
+      49,
+      60,
+      62,
+      99,
+      111,
+      112
+    ],
+    "origins_exceed_99_l_persisted": 14,
+    "origins_exceed_88_l_persisted": 48,
+    "min_pos_diesel_w": 10000.0
+  },
+  "timestamp_iso": "2026-10-08T05:14:06.172599+00:00"
+}

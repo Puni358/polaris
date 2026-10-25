@@ -1,0 +1,7 @@
+Decision_SubID,Decision_Title,Status,Evidence_Summary,Open_Human_Decision,Implementation_Impact
+HD-02A,Conceptual Distinction,OPEN,E_terminal_target is the t=H instance of rolling EBR,Decide if terminal target is distinct or identical to EBR(H),Determines Stage 2 boundary math
+HD-02B,EBR Derivation Linkage,OPEN,Deriving E_term = E_EBR(H) is mathematically valid & clean,Approve E_terminal_target = E_EBR_target(H),Eliminates standalone terminal policy knob
+HD-02C,Explicit Objective Term,OPEN,Sum t=1..H already covers t=H; separate term double-counts,Select Option A (Sum t=1..H) or Option B (Split t=1..H-1 + Term),Prevents Stage 2 double-counting bug
+HD-02D,Independent Policy Parameter,OPEN,Separate terminal scalar duplicates EBR,Approve DERIVABLE classification over static scalar,Prevents competing reserve targets
+HD-02E,Boundary Constraint vs Objective,OPEN,Soft objective preserves lexicographic flexibility,Select soft objective vs hard boundary constraint,Avoids solver infeasibility
+HD-02F,Double-Counting Mitigation,OPEN,Confirmed double-counting if sum t=1..H + term combined,Approve formulation Option A or B,Ensures mathematically clean Stage 2 solve

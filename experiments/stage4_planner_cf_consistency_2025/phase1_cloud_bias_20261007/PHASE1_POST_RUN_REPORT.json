@@ -1,0 +1,122 @@
+{
+  "experiment": "Evening-independent cloud-fraction bias correction \u2014 Phase 1",
+  "subset": "11 approved origins (264 solves)",
+  "p0_reproduction": {
+    "status": "PASS",
+    "max_abs_diff_col": {
+      "diesel_fuel": 0.0,
+      "diesel_power": 0.0,
+      "critical_served_first": 0.0,
+      "critical_served_prop": 1.8189894035458565e-12,
+      "served_load": 0.0,
+      "unmet_load": 0.0,
+      "battery_charge": 0.0,
+      "battery_discharge": 0.0,
+      "soc_after": 0.0,
+      "curtailment": 0.0
+    }
+  },
+  "telemetry": {
+    "P0_PC-SW_v1.2": {
+      "total_fuel_L": 784.408,
+      "diesel_on_hours": 49,
+      "diesel_starts": 32,
+      "diesel_energy_kwh": 2157.6339000000003,
+      "battery_charge_hours": 92,
+      "r_cf_pct": 99.38340941745037,
+      "r_p_pct": 98.0503467715939,
+      "s1_delta_pp": -0.08510514629048771,
+      "s1_pass": false,
+      "s2_delta_pp": -0.03420106701378245,
+      "s2_pass": false,
+      "soc_violations": 0,
+      "s3_pass": true,
+      "min_soc_pct": 20.0,
+      "critical_unmet_wh": 18882.469999999998,
+      "noncritical_unmet_wh": 58636.17,
+      "total_unmet_wh": 77518.64,
+      "curtailment_wh": 882591.88,
+      "ebr_binding_count": 1,
+      "ebr_binding_split_ge50": 1,
+      "ebr_binding_split_lt50": 0,
+      "terminal_binding_count": 238
+    },
+    "C1_k_0.70": {
+      "total_fuel_L": 594.8631,
+      "diesel_on_hours": 40,
+      "diesel_starts": 22,
+      "diesel_energy_kwh": 1579.4532799999997,
+      "battery_charge_hours": 107,
+      "r_cf_pct": 98.07656903082548,
+      "r_p_pct": 95.01008659520693,
+      "s1_delta_pp": -1.391945532915372,
+      "s1_pass": false,
+      "s2_delta_pp": -3.074461243400748,
+      "s2_pass": false,
+      "soc_violations": 0,
+      "s3_pass": true,
+      "min_soc_pct": 20.0,
+      "critical_unmet_wh": 58903.149999999994,
+      "noncritical_unmet_wh": 131835.19,
+      "total_unmet_wh": 190738.34,
+      "curtailment_wh": 374513.43000000005,
+      "ebr_binding_count": 1,
+      "ebr_binding_split_ge50": 1,
+      "ebr_binding_split_lt50": 0,
+      "terminal_binding_count": 215
+    },
+    "C2_k_0.46": {
+      "total_fuel_L": 522.9167,
+      "diesel_on_hours": 32,
+      "diesel_starts": 19,
+      "diesel_energy_kwh": 1451.66599,
+      "battery_charge_hours": 114,
+      "r_cf_pct": 95.24075398380356,
+      "r_p_pct": 91.25633838562159,
+      "s1_delta_pp": -4.227760579937296,
+      "s1_pass": false,
+      "s2_delta_pp": -6.828209452986087,
+      "s2_pass": false,
+      "soc_violations": 0,
+      "s3_pass": true,
+      "min_soc_pct": 20.0,
+      "critical_unmet_wh": 145747.15000000002,
+      "noncritical_unmet_wh": 187206.70999999996,
+      "total_unmet_wh": 332953.86,
+      "curtailment_wh": 216383.28999999998,
+      "ebr_binding_count": 2,
+      "ebr_binding_split_ge50": 1,
+      "ebr_binding_split_lt50": 1,
+      "terminal_binding_count": 205
+    }
+  },
+  "deltas_vs_P0": {
+    "C1_k_0.70": {
+      "fuel_delta_L": -189.54489999999998,
+      "fuel_delta_pct": -24.1640702287585,
+      "diesel_energy_delta_kwh": -578.1806200000005,
+      "diesel_energy_delta_pct": -26.796975149491324,
+      "diesel_on_hours_delta": -9,
+      "diesel_starts_delta": -10,
+      "is_interesting": false,
+      "mechanism_classification": "Disqualified by safety gate violation."
+    },
+    "C2_k_0.46": {
+      "fuel_delta_L": -261.4913,
+      "fuel_delta_pct": -33.33613374672365,
+      "diesel_energy_delta_kwh": -705.9679100000003,
+      "diesel_energy_delta_pct": -32.71954106764823,
+      "diesel_on_hours_delta": -17,
+      "diesel_starts_delta": -13,
+      "is_interesting": false,
+      "mechanism_classification": "Disqualified by safety gate violation."
+    }
+  },
+  "output_hashes": {
+    "PHASE1_P0_HOURLY_TELEMETRY.csv": "80c2b12e173b6bb35f38d9344f37ed1dca0e5be67ce7d48ea64ebb65f7de8438",
+    "PHASE1_C1_HOURLY_TELEMETRY.csv": "b0c1f767de5b0279953ee6c4575f09408f9e1eb0e1b2fd9f209939fddeeaf786",
+    "PHASE1_C2_HOURLY_TELEMETRY.csv": "6e3fe27bf05939297752efaf978f6a33ff31ce7588b472b4c6c2eeff359d9292"
+  },
+  "phase2_population_testing_justified": false,
+  "final_recommendation": "Phase 2 population testing IS NOT JUSTIFIED. Neither candidate satisfies all gate and genuine energy reduction criteria."
+}

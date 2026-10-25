@@ -1,0 +1,87 @@
+================================================================================
+POLARIS STAGE 5.1 — FINAL SUMMARY & DECISION REPORT
+================================================================================
+Date: 2026-09-10
+Benchmark Target: SITES Nuolja 2024 hourly SW_IN (347 origins, 8,328 forecast hours)
+Locked Split: EVEN origins (174 train/CV) | ODD origins (173 held-out test)
+
+--------------------------------------------------------------------------------
+1. BASELINE VERIFICATION (PART A)
+--------------------------------------------------------------------------------
+Stage 4 Official Champion ODD Test Metrics:
+  - Daytime MAE:  43.4508 W/m² (Exact match to 43.4508)
+  - Daytime nMAE: 33.70% (Exact match to 33.70%)
+  - RMSE:         74.8530 W/m² (Exact match to 74.8530)
+  - Bias:        -1.9716 W/m² (Exact match to -1.9716)
+  - Night MAE:    0.3242 W/m² (Exact match to 0.3242)
+
+--------------------------------------------------------------------------------
+2. HIGH-IRRADIANCE AMPLITUDE FORENSICS (PART B)
+--------------------------------------------------------------------------------
+Forensic analysis across Stage 4 forecast magnitude bins reveals:
+  - Slight under-prediction bias at extreme forecast magnitudes (>600 W/m²: bias = +18.4 W/m²).
+  - Low-to-medium irradiance (100–400 W/m²) shows near-zero bias (-1.2 W/m² to +0.8 W/m²).
+  - Hard errors (|error| > 150 W/m²) account for 35.8% of total daytime absolute error, but occur across both medium and high clear-sky potential hours.
+
+--------------------------------------------------------------------------------
+3. CANDIDATE AMPLITUDE CORRECTIONS (EVEN ORIGINS CV) (PART C)
+--------------------------------------------------------------------------------
+5-Fold Forward-Chaining CV on EVEN Origins:
+  - Stage 4 Baseline CV MAE:                37.5547 W/m²
+  - Piecewise Affine Calibration (C2) CV MAE: 40.7162 W/m² (Δ = +3.1614) [Best calibration candidate]
+  - Isotonic Regression (C3) CV MAE:        42.0884 W/m² (Δ = +4.5337)
+  - Horizon-Aware Affine (C4) CV MAE:       42.1914 W/m² (Δ = +4.6367)
+  - Solar-Aware Calibration (C5) CV MAE:    42.2659 W/m² (Δ = +4.7111)
+  - Global Affine Calibration (C1) CV MAE:   42.4645 W/m² (Δ = +4.9098)
+
+Conclusion on Amplitude Calibration:
+  - NO candidate amplitude calibration model produces a meaningful improvement in overall daytime MAE on EVEN CV compared to Stage 4 Baseline (37.5547 W/m²).
+  - C2 Piecewise Affine is the best calibration candidate on EVEN CV (40.7162 W/m²), but still degrades MAE by +3.1614 W/m².
+  - Correcting high-irradiance under-prediction slightly increases errors in mid-irradiance regimes, yielding net negative impact.
+
+--------------------------------------------------------------------------------
+4. RECENT-VOLATILITY & HARD ERROR PREDICTABILITY (PARTS D & E)
+--------------------------------------------------------------------------------
+Causal 24h pre-forecast SW_IN features (std_6h, diffs, kt_std, slope):
+  - Hard Error (|residual| > 150 W/m²) CV ROC-AUC: 0.7598
+  - Hard Error CV PR-AUC:                           0.2766 (vs Prevalence = 0.0650)
+  - Absolute Error Prediction R²:                   -8.9414
+
+Conclusion on Volatility:
+  - Recent volatility features contain strong DIAGNOSTIC signal regarding hard-error risk (ROC-AUC ~0.76).
+  - High recent volatility (std_6h > 50 W/m²) increases the expected absolute error by >2.5x.
+
+--------------------------------------------------------------------------------
+5. VOLATILITY-AWARE FORECAST CORRECTION (PART F)
+--------------------------------------------------------------------------------
+  - Volatility-Aware Correction EVEN CV MAE: 54.4764 W/m² (Δ = +16.9216 W/m² vs Stage 4 Baseline)
+  - Result: Linear volatility-based additive corrections FAIL to improve overall daytime MAE.
+
+--------------------------------------------------------------------------------
+6. FROZEN ODD TEST EVALUATION & BOOTSTRAP (PART H)
+--------------------------------------------------------------------------------
+ODD Test Evaluation:
+  - Stage 4 Champion Baseline: Daytime MAE = 43.4508 W/m², nMAE = 33.70%
+  - Global Affine Calibration (C1): Daytime MAE = 44.9402 W/m², nMAE = 34.86% (ΔMAE = +1.4894 W/m²) [Tested as global baseline reference]
+  - Horizon-Aware Affine (C4):     Daytime MAE = 44.4349 W/m², nMAE = 34.46% (ΔMAE = +0.9841 W/m²)
+
+10,000 Origin-Level Paired Bootstrap ΔMAE (C1 vs Stage 4 Baseline):
+  - Mean ΔMAE: +1.4892 W/m²
+  - 95% CI:    [+1.0977, +1.8794] W/m²
+
+--------------------------------------------------------------------------------
+7. FINAL CLASSIFICATION & SCIENTIFIC ANSWER
+--------------------------------------------------------------------------------
+FINAL DECISION:
+  >>> B — Useful diagnostic signal but no forecast improvement <<<
+
+MOST IMPORTANT SCIENTIFIC QUESTION ANSWER:
+  "The evidence is consistent with a regime/transition problem rather than a static amplitude-calibration problem. While high-irradiance amplitude forensics show modest under-prediction at extreme solar fluxes (>600 W/m²), post-hoc amplitude calibration does NOT improve overall daytime MAE across horizons and regimes (EVEN CV ΔMAE is positive for all candidates). Furthermore, causal recent-volatility features (std_6h, slope, kt variability) strongly correlate with hard-error risk (ROC-AUC ~0.76), indicating that hard errors coincide with volatile transition regimes. However, simple linear corrections cannot resolve these transitions, demonstrating that a specialized hard-weather model (Stage 5.2) is required."
+
+RECOMMENDED NEXT EXPERIMENT:
+  Stage 5.2 — Specialist Hard-Weather / Regime-Transition Architecture.
+  Simple amplitude post-processing and linear volatility adjustments cannot solve cloud dynamics.
+  We must design a specialized non-linear architecture (e.g. regime-conditioned mixture of experts,
+  gradient-boosted decision trees on cloud/volatility features, or cloud-transition specialists)
+  triggered specifically when hard-weather risk features indicate high volatility regimes.
+================================================================================

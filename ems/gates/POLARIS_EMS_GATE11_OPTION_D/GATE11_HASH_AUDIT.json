@@ -1,0 +1,16 @@
+{
+  "gate": "GATE-11",
+  "timestamp": "2026-09-27T02:03:42Z",
+  "option_d_sha256": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+  "source_modifications": 0,
+  "artifacts": {
+    "GATE11_D1_D6_RESULTS.md": "cf2d836eb811d0f68db39df1bca4f47ced6c7f0e4895cffd7f8bef6fc2b473f3",
+    "GATE11_D1_D6_SPEC.md": "ae305019c3a1491573b7289df4a5ce05ee12aa182f5f514ae57480b59ab55eb4",
+    "GATE11_FUEL_AUDIT.md": "06f8fd20cbbd3013532ddfa05ca4eab8d682365fd682cd2c47d03b10d8133515",
+    "GATE11_OPTION_D_AUDIT.md": "c36de7a93b14e85e7c472a516df0253d1add0b557df96d875c40bdfafc1d9cf7",
+    "GATE11_RESOURCE_ALLOCATION_AUDIT.md": "7c14aa8771e302a69ad780cb19e742af0f1825a0445ba8dea4b8ed5857b2a513",
+    "GATE11_RESULTS.md": "7b58daa4046c3214450a5abb3df947e5d1a519fcaaaa893ade904312eef50cc8",
+    "GATE11_STATUS.md": "58129dc13478be2a749f16f1dfc419fb3c5ca369056059cbf53c43c750322db9",
+    "GATE11_TRUTH_FIREWALL_AUDIT.md": "89c4be0dc7c30ca98d6cca7cf28bb402cfda67edb03ed92867cdb9b9cc5c8acc"
+  }
+}

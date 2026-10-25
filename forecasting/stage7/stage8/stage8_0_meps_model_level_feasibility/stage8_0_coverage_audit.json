@@ -1,0 +1,12 @@
+{
+  "benchmark_total_origins": 347,
+  "sfc_18z_origins_found": 347,
+  "pl_18z_origins_found": 347,
+  "ml_18z_origins_found": 0,
+  "ml_00z_origins_found": 347,
+  "missing_origins_sfc": 0,
+  "missing_origins_pl": 0,
+  "missing_origins_ml_18z": 347,
+  "missing_origins_ml_00z": 0,
+  "imputation_required": false
+}

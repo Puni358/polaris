@@ -1,0 +1,34 @@
+audit_document,04_SCIPY_API_CAPABILITY_AUDIT
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,"system/optimization/implementations/milp.py, scipy.optimize.milp documentation"
+generation_mode,READ_ONLY_STATIC_CODE_ANALYSIS_AND_API_DOCUMENTATION_REVIEW
+execution_performed,FALSE
+
+# ============================================================
+# SCIPY.OPTIMIZE.MILP API — CAPABILITY AUDIT
+# ============================================================
+
+# Source: scipy.optimize.milp documentation (SciPy >= 1.7.0)
+# Function signature: scipy.optimize.milp(c, constraints=None, integrality=None, bounds=None, options=None)
+
+capability_item,scipy_api_supports,evidence_basis,notes
+Single scalar objective vector (c),YES,"API requires c as 1D array-like of shape (n,). Directly maps to HiGHS single objective.","This is the current POLARIS usage."
+Multiple objective vectors (c as 2D matrix),NO,"API accepts only 1D c. No multi-objective or vector-valued c parameter exists in scipy.optimize.milp.","Confirmed by API signature. Multiple objectives are not natively expressible."
+Linear equality constraints,YES,"LinearConstraint(A, lb, ub) with lb==ub encodes equality. Used in POLARIS constraints C1-C4 C8 C12.","Current usage confirmed."
+Linear inequality constraints,YES,"LinearConstraint(A, lb, ub) with lb=-inf or ub=+inf encodes one-sided inequalities. Used in POLARIS constraints C5-C7 C9-C11.","Current usage confirmed."
+Binary/integer variables,YES,"integrality parameter: 0=continuous 1=integer. Binary enforced by [0,1] bounds. Used for u_chg u_dis u_diesel v_start.","Current usage confirmed."
+Objective function priority levels,NO,"No priority_levels parameter exists in scipy.optimize.milp. API has no concept of lexicographic stages.","Confirmed by API inspection."
+Objective function weighting (weighted-sum),YES,"Achieved by constructing c vector with appropriate relative magnitudes. Current POLARIS approach.","Implicit: penalty magnitudes encode relative priority."
+Accessing HiGHS-specific options,PARTIAL,"options dict is passed to HiGHS solver. Documented options: disp presolve node_limit time_limit mip_max_nodes mip_rel_gap mip_abs_gap. Multi-objective HiGHS options (if any) are NOT exposed through scipy API.","Key finding: even if HiGHS natively supports multi-objective features in its own API, those features are NOT accessible via scipy.optimize.milp."
+Accessing HiGHS multi-objective API directly,NOT_VIA_SCIPY,"scipy.optimize.milp is a wrapper that calls HiGHS C++ solver. The wrapper translates c/constraints/bounds into a HiGHS model with a single linear objective. HiGHS-specific multi-objective configuration (e.g. model.passLpColCost calls or multi-objective setters) is not exposed.","This is the critical scipy API capability boundary."
+Returning intermediate objective values (per stage),NO,"res object from scipy.optimize.milp contains: x (solution) fun (scalar objective value) status message. No per-stage objective breakdown is returned.","res.fun is a single scalar."
+Solver identity,HIGHS_VIA_SCIPY,"scipy.optimize.milp internally calls HiGHS C++ solver. The Python layer is the scipy wrapper. The solver is HiGHS but accessed through scipy's restricted interface.","milp.py line 282: res = milp(c=c, integrality=integrality, bounds=bounds, constraints=constraints)"
+
+# ============================================================
+# SUMMARY: SCIPY API CAPABILITY BOUNDARY
+# ============================================================
+summary_line_1,"scipy.optimize.milp exposes a single-objective MILP interface to HiGHS."
+summary_line_2,"Multi-objective features of HiGHS (if any exist in the native C++ API) are NOT accessible through scipy.optimize.milp."
+summary_line_3,"This is an API-layer limitation, not a mathematical limitation of the underlying solver."
+summary_line_4,"Option A (sequential MILP objective-locking) is implementable within the scipy API by making multiple successive calls to scipy.optimize.milp."
+summary_line_5,"Option B (native HiGHS multi-objective) CANNOT be implemented via scipy.optimize.milp — it would require using a different Python binding to HiGHS (e.g. highspy)."

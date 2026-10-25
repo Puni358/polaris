@@ -1,0 +1,6 @@
+{
+  "horizon_hours": 24,
+  "timestep_hours": 1.0,
+  "critical_demand_hash": "9cbf6ee425bf99e12aa1dcd8785bf7f4b5d0519f7e2c47f2b48ab28cff9b113e",
+  "regimes_hash": "71d3bc5be699b6a2bf19455ecef40bfcb0bb5da0dc0739eb27312246f7dbdfa4"
+}

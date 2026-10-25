@@ -1,0 +1,45 @@
+{
+  "closure_package_name": "POLARIS EMS HD-04 Option A Zero-Renewable Emergency Survivability Baseline Governance Closure Package",
+  "timestamp": "2026-09-23T06:46:00Z",
+  "governance_scope": {
+    "decision_id": "HD-04",
+    "topic": "Emergency Mode Detector Adverse Renewable Assumption",
+    "status": "CLOSED"
+  },
+  "closed_decisions": {
+    "HD04_STATUS": "CLOSED",
+    "HD04_DECISION": "OPTION_A_ZERO_RENEWABLE",
+    "HD04_SOLAR_SCENARIO": 0,
+    "HD04_WIND_SCENARIO": 0,
+    "HD04_SCENARIO_ROLE": "DETECTOR_LOCAL_SURVIVABILITY_STRESS_SCENARIO",
+    "HD04_NORMAL_MPC_FORECAST": "UNCHANGED",
+    "HD04_POLICY_BASIS": "STAKEHOLDER_POLICY_DECISION",
+    "HD04_EMPIRICAL_DERIVATION": "NOT_ESTABLISHED",
+    "HD04_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD04_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "exact_policy_text": "The Emergency Mode Detector shall evaluate station fuel and battery survivability through T_required assuming zero future renewable generation (P_solar = 0, P_wind = 0) as a detector-local stress scenario. Normal MPC optimization shall continue using standard causal forecasts without modification.",
+  "consistency_checks": {
+    "HD01A_compatibility": "FULLY_COMPATIBLE",
+    "HD01B_N6h_compatibility": "FULLY_COMPATIBLE",
+    "HD02_compatibility": "FULLY_COMPATIBLE",
+    "HD03_T_required_independence": "FULLY_COMPATIBLE",
+    "HD05_compatibility": "FULLY_COMPATIBLE",
+    "E3_compatibility": "FULLY_COMPATIBLE",
+    "normal_MPC_forecast_separation": "100% CLEAN",
+    "forecast_semantic_contamination": "NONE",
+    "historical_artifact_preservation": "PRESERVED",
+    "unauthorized_numerical_parameters_introduced": "NONE",
+    "stale_active_governance_references": 0
+  },
+  "current_states": {
+    "CURRENT_GOVERNANCE_STATE": "HD04_CLOSED",
+    "IMPLEMENTATION_STATE": "NOT_AUTHORIZED"
+  },
+  "final_verdict": {
+    "HD04_STATUS": "CLOSED",
+    "HD04_DECISION": "OPTION_A_ZERO_RENEWABLE",
+    "HD04_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD04_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  }
+}

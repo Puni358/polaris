@@ -1,0 +1,29 @@
+{
+  "execution_id": "polaris_h10_control_20240101_000000Z",
+  "control_policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+  "fixture_version": "H1.0",
+  "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+  "initial_state_sha256": "3e38d4f5e3046d642c26b56a84e9e0130b0bfddea24be37640b90a4fd2c55fbd",
+  "variables": {
+    "solar_SW_IN_W_m2": {
+      "provenance_class": "REAL_MEASURED",
+      "source": "SITES Nuolja AWS 2024"
+    },
+    "solar_PV_power_W": {
+      "provenance_class": "DERIVED_ENGINEERING_QUANTITY",
+      "formula": "min(SW_IN * 51, 60kW)"
+    },
+    "wind_speed_proxy_m_s": {
+      "provenance_class": "REAL_MEASUREMENT_PROXY",
+      "source": "SMHI Abisko Aut station 188790 10m"
+    },
+    "wind_power_generic_W": {
+      "provenance_class": "SYNTHETIC_ENGINEERING_SCENARIO",
+      "disclaimer": "POLAR_REFERENCE_TURBINE_SCENARIO (NOT_NUOLJA_HARDWARE)"
+    },
+    "synthetic_load_W": {
+      "provenance_class": "SYNTHETIC",
+      "disclaimer": "SYNTHETIC_STATION_DEMAND != NULLOJA_MEASURED_DEMAND"
+    }
+  }
+}

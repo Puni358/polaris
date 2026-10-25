@@ -1,0 +1,69 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION_FORENSIC_AUDIT",
+  "audit_date_utc": "2026-09-19",
+  "audit_type": "STRICT_READ_ONLY_POST_EXECUTION_FORENSIC_AUDIT",
+  "authoritative_protocol_artifacts": [
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXPERIMENT_AUTHORIZATION.md",
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXPERIMENT_AUTHORIZATION.json",
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_AUTHORIZATION_VERIFICATION.md",
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_AUTHORIZATION_VERIFICATION.json"
+  ],
+  "audited_execution_artifacts": [
+    "run_polaris_stage8_1_ems_empirical_replay.py",
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.md",
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.json",
+    "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv"
+  ],
+  "treatment_value_integrity": {
+    "treatment_value_exactness": "FAIL",
+    "finding": "Execution script applied round(float(r['y_pred']), 2) at line 141, truncating high-precision empirical predictions to 2 decimal places instead of passing exact raw CSV floats.",
+    "cause": "Stage81ForecastEngine.validate_stage81_solar_metadata enforces a strict 1e-4 tolerance on D3 PV transformation that fails if unrounded floats are passed due to internal 2-decimal rounding of solar_gen_pts."
+  },
+  "horizon_semantics": {
+    "treatment_horizon_behavior": "SHRINKING_HORIZON_WITH_ZERO_PADDING",
+    "control_horizon_behavior": "FULL_24H_DIURNAL_FORECAST_AT_EVERY_STEP",
+    "horizon_semantics_match": "NO",
+    "finding": "Treatment MPC loop sliced single 24-step prediction vector (o_rows[step_k:]) and zero-padded trailing hours (up to 23 trailing zeros at step 23), whereas Control generated a fresh full 24-hour forecast at every step."
+  },
+  "protocol_semantics_audit": {
+    "question_A": "The frozen empirical artifact was intended to provide a single 24-hour forecast issued at origin t0 for the 24-hour replay horizon.",
+    "question_B": "Intermediate MPC timesteps in a 24-hour receding horizon simulation require 24-hour forecasts starting at t_k, which are not present in the origin-level CSV.",
+    "question_C": "The frozen prediction artifact contains predictions ONLY for origin t0 and does NOT contain sub-origin predictions for t0+k.",
+    "question_D": "Zero-padding (0.0 W/m2) does NOT represent an authorized Stage8.1 model prediction.",
+    "question_E": "Zero-padding and shrinking the forecast horizon for Treatment while giving Control a full 24h forecast introduces a massive structural confound favoring Control."
+  },
+  "pairing_integrity": {
+    "initial_state_match": "VERIFIED_IDENTICAL",
+    "realized_trajectory_match": "VERIFIED_IDENTICAL",
+    "optimizer_simulator_match": "VERIFIED_IDENTICAL"
+  },
+  "future_truth_firewall": {
+    "status": "VERIFIED",
+    "finding": "Future ground truth (y_true) was fetched after optimization and passed strictly to simulator/evaluator."
+  },
+  "raw_evidence_audit": {
+    "status": "INCOMPLETE_STEP_LEVEL_LOGGING",
+    "finding": "RAW.csv preserves origin-level summary endpoints but does NOT preserve step-level injected forecast arrays or step-level dispatch plans."
+  },
+  "result_validity": {
+    "status": "INVALID_UNDER_FROZEN_PROTOCOL",
+    "finding": "The reported fuel difference (+5.91 L/origin, p=1.86e-3) is confounded by the zero-padding shrinking-horizon defect in Treatment MPC execution."
+  },
+  "reproducibility_audit": {
+    "bootstrap_seed_provenance": "VERIFIED (Seed=42 for bootstrap resampling)",
+    "full_experiment_reproducibility_claim": "MISLABELED — Seed=42 applies strictly to bootstrap resampling, not full physical MPC replay determinism."
+  },
+  "protocol_hash_audit": {
+    "status": "MISLABELED",
+    "finding": "PROTOCOL_HASH field reported treatment prediction artifact SHA-256 (a4d288f9...) instead of protocol document hash."
+  },
+  "identified_deviations": [
+    "DEVIATION_1: 2-decimal rounding of empirical treatment prediction values (round(float(r['y_pred']), 2)).",
+    "DEVIATION_2: Slicing and zero-padding treatment forecast horizon (o_rows[step_k:] + zero-padding) in MPC loop.",
+    "DEVIATION_3: Asymmetric horizon semantics between Treatment (shrinking/zero-padded) and Control (full 24h diurnal).",
+    "DEVIATION_4: Protocol hash field mislabeled with dataset SHA-256.",
+    "DEVIATION_5: Seed=42 mischaracterized as full experiment determinism proof."
+  ],
+  "final_governance_classification": "B — EXECUTION COMPLETED BUT HAS GOVERNED/RELEVANT DEVIATIONS REQUIRING CORRECTION BEFORE SCIENTIFIC INTERPRETATION",
+  "next_governed_step": "Submit formal correction plan to align MPC replay horizon architecture with frozen Stage8.1 prediction artifact structure before executing a valid replay."
+}

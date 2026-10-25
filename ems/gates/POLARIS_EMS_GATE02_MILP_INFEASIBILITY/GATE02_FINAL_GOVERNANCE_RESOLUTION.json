@@ -1,0 +1,20 @@
+{
+  "gate_id": "GATE-02",
+  "subject": "MILP_INFEASIBILITY_OPERATIONAL_RESPONSE",
+  "decision_timestamp": "2026-09-27T00:55:00Z",
+  "human_decision": "OPTION_C_GOVERNED_CONSTRAINT_RELAXATION",
+  "previous_automated_selection": "F_REMAIN_UNRESOLVED",
+  "previous_selection_status": "NOT_A_HUMAN_DECISION_SUPERSEDED",
+  "critical_load": "HARD_NEVER_RELAX",
+  "noncritical_load_constraints": "GOVERNED_RELAXATION_ALLOWED",
+  "relaxation_hierarchy": "DEFINED_ONLY_WHERE_GOVERNED",
+  "operator_notification": "REQUIRED",
+  "milp_infeasible_equals_emergency": "NO",
+  "milp_infeasible_equals_unknown_invalid": "NO",
+  "state_advancement_before_valid_dispatch": "NO",
+  "digital_twin_advancement_on_infeasible": "NO",
+  "fuel_advancement_on_infeasible": "NO",
+  "soc_advancement_on_infeasible": "NO",
+  "fault_label_decision": "L1",
+  "gate02_status": "GOVERNANCE_DECISION_REQUIRED_UNTIL_RELAXATION_HIERARCHY_IS_SUFFICIENTLY_DEFINED"
+}

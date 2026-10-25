@@ -1,0 +1,1402 @@
+[
+  {
+    "forecast_start":"2020-01-01",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-01T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-01T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/01\/meps_subset_2_5km_20200101T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/01\/meps_subset_2_5km_20200101T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-02",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-02T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-02T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/02\/meps_subset_2_5km_20200102T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/02\/meps_subset_2_5km_20200102T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-03",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-03T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-03T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/03\/meps_subset_2_5km_20200103T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/03\/meps_subset_2_5km_20200103T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-04",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-04T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-04T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/04\/meps_subset_2_5km_20200104T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/04\/meps_subset_2_5km_20200104T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-05",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-05T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-05T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/05\/meps_subset_2_5km_20200105T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/05\/meps_subset_2_5km_20200105T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-06",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-06T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-06T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/06\/meps_subset_2_5km_20200106T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/06\/meps_subset_2_5km_20200106T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-07",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-07T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-07T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/07\/meps_subset_2_5km_20200107T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/07\/meps_subset_2_5km_20200107T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-08",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-08T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-08T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/08\/meps_subset_2_5km_20200108T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/08\/meps_subset_2_5km_20200108T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-09",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-09T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-09T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/09\/meps_subset_2_5km_20200109T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/09\/meps_subset_2_5km_20200109T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-10",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-10T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-10T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/10\/meps_subset_2_5km_20200110T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/10\/meps_subset_2_5km_20200110T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-11",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-11T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-11T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/11\/meps_subset_2_5km_20200111T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/11\/meps_subset_2_5km_20200111T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-12",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-12T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-12T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/12\/meps_subset_2_5km_20200112T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/12\/meps_subset_2_5km_20200112T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-13",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-13T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-13T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/13\/meps_subset_2_5km_20200113T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/13\/meps_subset_2_5km_20200113T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-14",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-14T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-14T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/14\/meps_subset_2_5km_20200114T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/14\/meps_subset_2_5km_20200114T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-15",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-15T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-15T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/15\/meps_subset_2_5km_20200115T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/15\/meps_subset_2_5km_20200115T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-16",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-16T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-16T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/16\/meps_subset_2_5km_20200116T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/16\/meps_subset_2_5km_20200116T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-17",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-17T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-17T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/17\/meps_subset_2_5km_20200117T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/17\/meps_subset_2_5km_20200117T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-18",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-18T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-18T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/18\/meps_subset_2_5km_20200118T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/18\/meps_subset_2_5km_20200118T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-19",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-19T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-19T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/19\/meps_subset_2_5km_20200119T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/19\/meps_subset_2_5km_20200119T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-20",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-20T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-20T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/20\/meps_subset_2_5km_20200120T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/20\/meps_subset_2_5km_20200120T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-21",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-21T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-21T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/21\/meps_subset_2_5km_20200121T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/21\/meps_subset_2_5km_20200121T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-22",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-22T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-22T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/22\/meps_subset_2_5km_20200122T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/22\/meps_subset_2_5km_20200122T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-23",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-23T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-23T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/23\/meps_subset_2_5km_20200123T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/23\/meps_subset_2_5km_20200123T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-24",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-24T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-24T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/24\/meps_subset_2_5km_20200124T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/24\/meps_subset_2_5km_20200124T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-25",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-25T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-25T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/25\/meps_subset_2_5km_20200125T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/25\/meps_subset_2_5km_20200125T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-26",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-26T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-26T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/26\/meps_subset_2_5km_20200126T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/26\/meps_subset_2_5km_20200126T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-27",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-27T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-27T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/27\/meps_subset_2_5km_20200127T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/27\/meps_subset_2_5km_20200127T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-28",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-28T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-28T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/28\/meps_subset_2_5km_20200128T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/28\/meps_subset_2_5km_20200128T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-29",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-29T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-29T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/29\/meps_subset_2_5km_20200129T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/29\/meps_subset_2_5km_20200129T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-30",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-30T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-30T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/30\/meps_subset_2_5km_20200130T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/30\/meps_subset_2_5km_20200130T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-01-31",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-31T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-01-31T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/31\/meps_subset_2_5km_20200131T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/01\/31\/meps_subset_2_5km_20200131T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-02-01",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-01T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-01T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/01\/meps_subset_2_5km_20200201T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/01\/meps_subset_2_5km_20200201T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-02-02",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-02T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-02T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/02\/meps_subset_2_5km_20200202T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/02\/meps_subset_2_5km_20200202T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-02-03",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-03T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-03T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/03\/meps_subset_2_5km_20200203T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/03\/meps_subset_2_5km_20200203T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_subset_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-02-04",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-04T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-02-04T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/04\/meps_det_2_5km_20200204T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/02\/04\/meps_subset_2_5km_20200204T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2020-06-07",
+    "orig_status":"FAILED_00Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-06-07T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2020-06-07T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2020\/06\/07\/meps_det_2_5km_20200607T18Z.nc",
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 00Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2022-01-16",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2022-01-16T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2022-01-16T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2022\/01\/16\/meps_det_2_5km_20220116T18Z.nc",
+    "alt_00z_url":null,
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2022-01-22",
+    "orig_status":"FAILED_00Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2022-01-22T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2022-01-22T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2022\/01\/22\/meps_det_2_5km_20220122T18Z.nc",
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 00Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-09-21",
+    "orig_status":"FAILED_00Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-21T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-21T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/21\/meps_det_2_5km_20230921T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/21\/meps_det_2_5km_20230921T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 00Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-22",
+    "orig_status":"FAILED_00Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-22T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-22T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/22\/meps_det_2_5km_20230922T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/22\/meps_det_2_5km_20230922T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 00Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-23",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-23T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-23T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/23\/meps_det_2_5km_20230923T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/23\/meps_det_2_5km_20230923T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-24",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-24T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-24T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/24\/meps_det_2_5km_20230924T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/24\/meps_det_2_5km_20230924T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-25",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-25T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-25T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/25\/meps_det_2_5km_20230925T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/25\/meps_det_2_5km_20230925T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-26",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-26T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-26T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/26\/meps_det_2_5km_20230926T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/26\/meps_det_2_5km_20230926T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-27",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-27T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-27T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/27\/meps_det_2_5km_20230927T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/27\/meps_det_2_5km_20230927T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-28",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-28T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-28T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/28\/meps_det_2_5km_20230928T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/28\/meps_det_2_5km_20230928T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-29",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-29T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-29T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/29\/meps_det_2_5km_20230929T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/29\/meps_det_2_5km_20230929T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-09-30",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-30T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-09-30T00Z.nc",
+    "alt_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/30\/meps_det_2_5km_20230930T18Z.nc",
+    "alt_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/2023\/09\/30\/meps_det_2_5km_20230930T00Z.nc",
+    "recovery_status":"RECOVERABLE",
+    "reason":"Found alternate 18Z source file (meps_det_2_5km_{date_nodash}T{hour:02d}Z.nc)"
+  },
+  {
+    "forecast_start":"2023-10-01",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-01T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-01T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-02",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-02T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-02T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-03",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-03T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-03T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-04",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-04T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-04T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-05",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-05T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-05T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-06",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-06T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-06T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-07",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-07T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-07T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-08",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-08T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-08T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-09",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-09T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-09T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-10",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-10T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-10T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-11",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-11T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-11T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-12",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-12T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-12T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-13",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-13T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-13T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-14",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-14T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-14T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-15",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-15T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-15T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-16",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-16T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-16T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-17",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-17T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-17T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-18",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-18T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-18T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-19",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-19T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-19T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-20",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-20T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-20T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-21",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-21T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-21T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-22",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-22T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-22T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-23",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-23T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-23T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-24",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-24T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-24T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-25",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-25T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-25T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-26",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-26T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-26T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-27",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-27T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-27T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-28",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-28T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-28T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-29",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-29T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-29T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-10-30",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-30T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-30T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-10-31",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-31T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-10-31T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-01",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-01T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-01T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-11-02",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-02T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-02T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-03",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-03T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-03T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-04",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-04T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-04T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-05",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-05T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-05T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-06",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-06T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-06T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-11-07",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-07T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-07T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-08",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-08T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-08T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-09",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-09T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-09T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-10",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-10T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-10T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-11",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-11T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-11T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-12",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-12T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-12T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-13",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-13T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-13T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-14",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-14T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-14T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-15",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-15T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-15T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-16",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-16T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-16T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-17",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-17T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-17T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-11-18",
+    "orig_status":"FAILED_18Z_HTTP_500",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-18T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-18T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"NEEDS_RETRY",
+    "reason":"Upstream HTTP 500 transient server error"
+  },
+  {
+    "forecast_start":"2023-11-19",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-19T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-19T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-20",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-20T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-20T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-21",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-21T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-21T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-22",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-22T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-22T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-23",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-23T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-23T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-24",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-24T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-24T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-25",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-25T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-25T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-26",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-26T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-26T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-27",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-27T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-27T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-28",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-28T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-28T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-29",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-29T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-29T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-11-30",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-30T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-11-30T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-01",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-01T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-01T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-02",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-02T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-02T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-03",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-03T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-03T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-04",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-04T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-04T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-05",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-05T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-05T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-06",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-06T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-06T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-07",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-07T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-07T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-08",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-08T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-08T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-09",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-09T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-09T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-10",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-10T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-10T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-11",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-11T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-11T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-12",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-12T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-12T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-13",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-13T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-13T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-14",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-14T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-14T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-15",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-15T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-15T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-16",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-16T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-16T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-17",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-17T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-17T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-18",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-18T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-18T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-19",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-19T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-19T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-20",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-20T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-20T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-21",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-21T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-21T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-22",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-22T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-22T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-23",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-23T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-23T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-24",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-24T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-24T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-25",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-25T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-25T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-26",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-26T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-26T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-27",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-27T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-27T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-28",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-28T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-28T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-29",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-29T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-29T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-30",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-30T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-30T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  },
+  {
+    "forecast_start":"2023-12-31",
+    "orig_status":"FAILED_18Z_HTTP_404",
+    "orig_18z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-31T18Z.nc",
+    "orig_00z_url":"https:\/\/thredds.met.no\/thredds\/dodsC\/meps25epsarchive\/...\/2023-12-31T00Z.nc",
+    "alt_18z_url":null,
+    "alt_00z_url":null,
+    "recovery_status":"UNRECOVERABLE",
+    "reason":"No deterministic\/subset 18Z forecast file in THREDDS archive"
+  }
+]

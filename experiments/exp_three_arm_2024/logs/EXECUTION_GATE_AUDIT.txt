@@ -1,0 +1,29 @@
+EXP-THREE-ARM-2024 execution-gate audit, 2026-10-11T05:40:07Z. Read-only: preflight.py check functions and calibrate_arm_c.load_artifact called directly, plus the frozen test tests/test_input_integrity_2024.py. No runner, no solver, no forecast, no calibration.
+Run in the CC sandbox repo replica (hash-verified by [hashes]).
+
+D1    RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D2    APPROVED                                      authority=no evidence=yes
+D3    RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D4    APPROVED                                      authority=no evidence=yes
+D5    RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D6    APPROVED                                      authority=no evidence=yes
+D7    RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D7a   RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D8    RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D10   APPROVED                                      authority=no evidence=yes
+D10a  RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+D11   APPROVED BY EXISTING AUTHORITY                authority=yes evidence=yes
+BUD   RESOLVED BY DELEGATED TECHNICAL AUTHORITY     authority=yes evidence=yes
+frozen True budget {'per_arm_ceiling': 2952, 'total_ceiling': 14760, 'retries': 0, 'repeat_check_included': False, 'rule_d_subarm_included': False} expected_origins 123
+[decisions] PASS
+[gates] PASS
+[arm_c_method] PASS
+[hashes] PASS
+[package_manifest] PASS
+[preregistration] PASS
+[output] PASS
+[calibration(load_artifact)] PASS
+[authorization(execution)] ["execution decision is None, not 'APPROVE'", 'execution is unsigned (signer_name empty)', "execution signer_role is None, not 'project lead'", "execution signed_at_utc missing or not ISO-8601 UTC ('...Z')", 'execution package_manifest_sha256 does not match the current manifest', 'execution experiment_config_sha256 does not match the current config', 'execution calibration_artifact_sha256 does not match the calibration artifact', 'execution solve_ceiling does not equal the configured total ceiling']
+artifact sha 65732ccc134f609f2c61a2a22ba4cb17a7e5408b21ac08e76cca22269228dab1
+..                                                                       [100%]
+2 passed in 39.11s

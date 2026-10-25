@@ -1,0 +1,60 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_REPLAY_ARCHITECTURE_CORRECTION",
+  "date_utc": "2026-09-19",
+  "track": "SCIENTIFIC RESEARCH & SYSTEM INTEGRATION TRACK",
+  "phase": "REPLAY ARCHITECTURE CORRECTION & GOVERNANCE LOCK",
+  "task_type": "READ-ONLY REPLAY ARCHITECTURE CORRECTION & SPECIFICATION LOCK",
+  "correction_decision": "B",
+  "current_experiment_status": "INVALID_UNDER_FROZEN_PROTOCOL",
+  "execution_allowed_during_this_task": false,
+  "implementation_files_modified": false,
+  "existing_evidence_preserved": true,
+  "authoritative_checksums": {
+    "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+    "system/forecasting/implementations/s81_solar.py": "22e50f122d2b6f689b94c93498aefe51441d8a1a2636ab1bc4a343189f24be94",
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/runtime/runner.py": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69"
+  },
+  "question_A_origin_semantics": {
+    "finding": "One Stage8.1 origin represents a single 24-hour forecast issued at origin t0 for target horizons h=1..24. Origins are spaced 48 hours apart (odd days) and do not contain sub-origin forecasts for t0+k."
+  },
+  "question_B_mpc_step_semantics": {
+    "finding": "In receding-horizon MPC, Treatment and Control must receive symmetric 24-step forecast horizons. For hours beyond origin horizon t0+24 (h > 24-k), Treatment must be extended using the baseline diurnal forecast, avoiding zero-padding."
+  },
+  "question_C_artifact_sufficiency": {
+    "finding": "The frozen dataset is 100% sufficient for paired origin-level replay provided forecast extension beyond t0+24 uses symmetric clear-sky baseline persistence rather than artificial zero-padding."
+  },
+  "question_D_symmetry_definition": {
+    "finding": "Treatment and Control must differ ONLY in the solar forecast channel for hours where Stage8.1 predictions exist (h <= 24-k). For hours beyond origin horizon (h > 24-k), both arms use identical baseline diurnal solar forecasts."
+  },
+  "question_E_treatment_precision": {
+    "finding": "Treatment y_pred must be injected as exact raw floats from CSV without 2-decimal rounding. Stage81ForecastEngine validation check on line 98 must compare round(expected_gen, 2) to eliminate validator tolerance mismatch."
+  },
+  "question_F_pairing_and_firewall": {
+    "finding": "CONTROL_INITIAL_STATE_ID == TREATMENT_INITIAL_STATE_ID and CONTROL_REALIZED_TRAJECTORY_ID == TREATMENT_REALIZED_TRAJECTORY_ID must be verified for all 173 origins. Ground truth remains isolated behind firewall."
+  },
+  "question_G_contamination_status": {
+    "finding": "Previous execution artifacts remain preserved as historical evidence. Zero execution was conducted during this correction task."
+  },
+  "question_H_correction_classification": {
+    "correction_decision": "B — CODE CORRECTION REQUIRED, CONTRACT-PRESERVING",
+    "contract_change_required": false,
+    "governance_reauthorization_required": false
+  },
+  "required_code_changes": [
+    {
+      "file": "system/forecasting/implementations/s81_solar.py",
+      "location": "line 98 in validate_stage81_solar_metadata",
+      "change": "Compare expected_gen rounded to 2 decimal places: abs(gen_p - round(expected_gen, 2)) > 1e-4",
+      "rationale": "Allows Stage81ForecastEngine to ingest exact unrounded high-precision floats from CSV without validator failure."
+    },
+    {
+      "file": "run_polaris_stage8_1_ems_empirical_replay.py",
+      "location": "Treatment MPC forecast construction loop",
+      "change": "Inject exact raw floats (float(r['y_pred'])) without round(..., 2). For horizon hours beyond t0+24 (h > 24-k), fill with baseline diurnal clear-sky forecast instead of zero-padding [0.0]*k.",
+      "rationale": "Eliminates value truncation and zero-padding shrinking-horizon asymmetry between Treatment and Control."
+    }
+  ],
+  "next_step": "SUBMIT_REPLAY_ARCHITECTURE_CORRECTION_AND_PROCEED_TO_GOVERNED_EXECUTION_HARNESS_UPDATE"
+}

@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-09-12T08:50:46.289383+00:00",
+  "stage": "STAGE 7.5 TERRAIN / HORIZON FORECASTING EXPERIMENT",
+  "status": "STAGE_7_5_CANDIDATE_ACCEPTED",
+  "control_reproduction": {
+    "expected_e0_mae": 38.2806,
+    "actual_e0_mae": 38.280605,
+    "reproduction_pass": true
+  },
+  "candidate_results": {
+    "e1_mae_w_m2": 37.835137,
+    "delta_mae_w_m2": -0.445468,
+    "e1_nmae_pct": 38.5174,
+    "delta_nmae_pct": -1.8744,
+    "e1_rmse_w_m2": 60.307218,
+    "delta_rmse_w_m2": -0.443637,
+    "e1_bias_w_m2": 2.950526,
+    "folds_improved": 5,
+    "max_fold_degradation_w_m2": -0.236883
+  },
+  "gates": {
+    "gate1_mae": {
+      "threshold_w_m2": 38.0806,
+      "actual_w_m2": 37.835137,
+      "pass": true
+    },
+    "gate2_folds": {
+      "required_folds": 4,
+      "actual_folds": 5,
+      "pass": true
+    },
+    "gate3_max_degrad": {
+      "threshold_w_m2": 0.15,
+      "actual_w_m2": -0.236883,
+      "pass": true
+    },
+    "gate4_nmae": {
+      "threshold_pct": 40.39,
+      "actual_pct": 38.52,
+      "pass": true
+    },
+    "gate5_rmse": {
+      "threshold_w_m2": 60.7509,
+      "actual_w_m2": 60.3072,
+      "pass": true
+    }
+  },
+  "all_gates_pass": true,
+  "final_decision": "STAGE 7.5 EVEN-CV PASS \u2014 ODD evaluation requires explicit authorization.",
+  "odd_access_classification": {
+    "odd_target_accessed": false,
+    "odd_feature_accessed": true,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false
+  }
+}

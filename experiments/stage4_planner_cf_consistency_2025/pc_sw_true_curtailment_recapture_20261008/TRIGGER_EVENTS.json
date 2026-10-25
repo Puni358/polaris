@@ -1,0 +1,5826 @@
+{
+  "total_trigger_events": 149,
+  "retrospective_147_overlap_analysis": {
+    "historical_147_events_count": 147,
+    "baseline_fuel_in_147_events_l": 2619.3851,
+    "triggers_in_147_events_count": 146,
+    "triggers_outside_147_events_count": 3,
+    "recapture_power_in_147_events_wh": 738704.08,
+    "recapture_power_outside_147_events_wh": 4979.96,
+    "total_campaign_recapture_energy_wh": 743684.04,
+    "total_marginal_fuel_saved_l": 185.92101000000002
+  },
+  "events": [
+    {
+      "origin_id": 1,
+      "hour": 9,
+      "timestamp": "2025-05-01T09:00:00Z",
+      "original_diesel": 54902.98,
+      "native_curtailment": 6065.23,
+      "recapture_delta": 6065.23,
+      "final_diesel": 48837.75,
+      "original_SOC": 94.54,
+      "candidate_SOC": 94.54,
+      "original_E_next": 189079.63,
+      "candidate_E_next": 189079.63,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 6065.23,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 54902.98,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143079.63,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 52.0701,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 2,
+      "hour": 9,
+      "timestamp": "2025-05-02T09:00:00Z",
+      "original_diesel": 51465.06,
+      "native_curtailment": 5901.51,
+      "recapture_delta": 5901.51,
+      "final_diesel": 45563.549999999996,
+      "original_SOC": 94.55,
+      "candidate_SOC": 94.55,
+      "original_E_next": 189108.35,
+      "candidate_E_next": 189108.35,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5901.51,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 51465.06,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143108.35,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 49.1402,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 3,
+      "hour": 2,
+      "timestamp": "2025-05-03T02:00:00Z",
+      "original_diesel": 30733.6,
+      "native_curtailment": 1484.91,
+      "recapture_delta": 1484.91,
+      "final_diesel": 29248.69,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 21753.64,
+      "candidate_charge": 21753.64,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1484.91,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 30733.6,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 169986.65,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 66.0678,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 3,
+      "hour": 10,
+      "timestamp": "2025-05-03T10:00:00Z",
+      "original_diesel": 62305.98,
+      "native_curtailment": 27724.16,
+      "recapture_delta": 27724.16,
+      "final_diesel": 34581.82000000001,
+      "original_SOC": 78.78,
+      "candidate_SOC": 78.78,
+      "original_E_next": 157565.89,
+      "candidate_E_next": 157565.89,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 27724.16,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62305.98,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 111565.89,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 53.7556,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 4,
+      "hour": 23,
+      "timestamp": "2025-05-04T23:00:00Z",
+      "original_diesel": 58888.09,
+      "native_curtailment": 1436.52,
+      "recapture_delta": 1436.52,
+      "final_diesel": 57451.57,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 43953.67,
+      "candidate_charge": 43953.67,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1436.52,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58888.09,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 149562.62,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 67.3342,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 5,
+      "hour": 1,
+      "timestamp": "2025-05-05T01:00:00Z",
+      "original_diesel": 59367.98,
+      "native_curtailment": 2557.76,
+      "recapture_delta": 2557.76,
+      "final_diesel": 56810.22,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 48072.42,
+      "candidate_charge": 48072.42,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2557.76,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59367.98,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 145773.37,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.8378,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 6,
+      "hour": 20,
+      "timestamp": "2025-05-06T20:00:00Z",
+      "original_diesel": 29461.5,
+      "native_curtailment": 520.51,
+      "recapture_delta": 520.51,
+      "final_diesel": 28940.99,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 12733.59,
+      "candidate_charge": 12733.59,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 520.51,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 29461.5,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 178285.1,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 76.2126,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 7,
+      "hour": 2,
+      "timestamp": "2025-05-07T02:00:00Z",
+      "original_diesel": 59165.73,
+      "native_curtailment": 1723.75,
+      "recapture_delta": 1723.75,
+      "final_diesel": 57441.98,
+      "original_SOC": 60.94,
+      "candidate_SOC": 60.94,
+      "original_E_next": 121876.81,
+      "candidate_E_next": 121876.81,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1723.75,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59165.73,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 75876.81,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 9,
+      "hour": 6,
+      "timestamp": "2025-05-09T06:00:00Z",
+      "original_diesel": 56016.62,
+      "native_curtailment": 6065.38,
+      "recapture_delta": 6065.38,
+      "final_diesel": 49951.240000000005,
+      "original_SOC": 85.3,
+      "candidate_SOC": 85.3,
+      "original_E_next": 170606.99,
+      "candidate_E_next": 170606.99,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 6065.38,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56016.62,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 124606.99,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 68.3665,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 9,
+      "hour": 8,
+      "timestamp": "2025-05-09T08:00:00Z",
+      "original_diesel": 49426.8,
+      "native_curtailment": 20067.73,
+      "recapture_delta": 20067.73,
+      "final_diesel": 29359.070000000003,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 35698.89,
+      "candidate_charge": 35698.89,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 20067.73,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 49426.8,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 157157.02,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 50.8787,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 10,
+      "hour": 6,
+      "timestamp": "2025-05-10T06:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 9688.54,
+      "recapture_delta": 9688.54,
+      "final_diesel": 51209.24,
+      "original_SOC": 84.57,
+      "candidate_SOC": 84.57,
+      "original_E_next": 169144.28,
+      "candidate_E_next": 169144.28,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 9688.54,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 123144.28,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 68.6431,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 10,
+      "hour": 9,
+      "timestamp": "2025-05-10T09:00:00Z",
+      "original_diesel": 56264.03,
+      "native_curtailment": 18421.03,
+      "recapture_delta": 18421.03,
+      "final_diesel": 37843.0,
+      "original_SOC": 94.95,
+      "candidate_SOC": 94.95,
+      "original_E_next": 189891.44,
+      "candidate_E_next": 189891.44,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 18421.03,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56264.03,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143891.44,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 50.8408,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 11,
+      "hour": 22,
+      "timestamp": "2025-05-11T22:00:00Z",
+      "original_diesel": 67825.99,
+      "native_curtailment": 2014.35,
+      "recapture_delta": 2014.35,
+      "final_diesel": 65811.64,
+      "original_SOC": 80.05,
+      "candidate_SOC": 80.05,
+      "original_E_next": 160106.83,
+      "candidate_E_next": 160106.83,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2014.35,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 67825.99,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 114106.83,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 92.2756,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 12,
+      "hour": 0,
+      "timestamp": "2025-05-12T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 43.91,
+      "recapture_delta": 43.91,
+      "final_diesel": 60853.869999999995,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 43.91,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 14,
+      "hour": 0,
+      "timestamp": "2025-05-14T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 76.47,
+      "recapture_delta": 76.47,
+      "final_diesel": 60821.31,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 76.47,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 14,
+      "hour": 23,
+      "timestamp": "2025-05-14T23:00:00Z",
+      "original_diesel": 66295.56,
+      "native_curtailment": 2848.72,
+      "recapture_delta": 2848.72,
+      "final_diesel": 63446.84,
+      "original_SOC": 69.42,
+      "candidate_SOC": 69.42,
+      "original_E_next": 138842.79,
+      "candidate_E_next": 138842.79,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2848.72,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 66295.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 92842.79,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 47.0554,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 16,
+      "hour": 0,
+      "timestamp": "2025-05-16T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 111.56,
+      "recapture_delta": 111.56,
+      "final_diesel": 60786.22,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 111.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 16,
+      "hour": 20,
+      "timestamp": "2025-05-16T20:00:00Z",
+      "original_diesel": 66465.77,
+      "native_curtailment": 676.4,
+      "recapture_delta": 676.4,
+      "final_diesel": 65789.37000000001,
+      "original_SOC": 72.82,
+      "candidate_SOC": 72.82,
+      "original_E_next": 145632.58,
+      "candidate_E_next": 145632.58,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 676.4,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 66465.77,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 99632.58,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 40.8839,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 16,
+      "hour": 22,
+      "timestamp": "2025-05-16T22:00:00Z",
+      "original_diesel": 16686.4,
+      "native_curtailment": 2200.42,
+      "recapture_delta": 2200.42,
+      "final_diesel": 14485.980000000001,
+      "original_SOC": 74.11,
+      "candidate_SOC": 74.11,
+      "original_E_next": 148218.28,
+      "candidate_E_next": 148218.28,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 1139.59,
+      "candidate_discharge": 1139.59,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2200.42,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 16686.4,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 149456.96,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 9.1716,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 19,
+      "hour": 22,
+      "timestamp": "2025-05-19T22:00:00Z",
+      "original_diesel": 67825.99,
+      "native_curtailment": 2199.79,
+      "recapture_delta": 2199.79,
+      "final_diesel": 65626.20000000001,
+      "original_SOC": 75.16,
+      "candidate_SOC": 75.16,
+      "original_E_next": 150317.5,
+      "candidate_E_next": 150317.5,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2199.79,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 67825.99,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 104317.5,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 67.9117,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 19,
+      "hour": 23,
+      "timestamp": "2025-05-19T23:00:00Z",
+      "original_diesel": 58215.39,
+      "native_curtailment": 1743.33,
+      "recapture_delta": 1743.33,
+      "final_diesel": 56472.06,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 43133.15,
+      "candidate_charge": 43133.15,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1743.33,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58215.39,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 150317.5,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.5051,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 22,
+      "hour": 22,
+      "timestamp": "2025-05-22T22:00:00Z",
+      "original_diesel": 10000.0,
+      "native_curtailment": 2361.0,
+      "recapture_delta": 2361.0,
+      "final_diesel": 7639.0,
+      "original_SOC": 66.36,
+      "candidate_SOC": 66.36,
+      "original_E_next": 132714.38,
+      "candidate_E_next": 132714.38,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 7825.99,
+      "candidate_discharge": 7825.99,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2361.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 10000.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 141220.89,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 72.0956,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 24,
+      "hour": 7,
+      "timestamp": "2025-05-24T07:00:00Z",
+      "original_diesel": 32261.09,
+      "native_curtailment": 8317.18,
+      "recapture_delta": 8317.18,
+      "final_diesel": 23943.91,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 44247.43,
+      "candidate_charge": 44247.43,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 8317.18,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 32261.09,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 149292.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 55.6447,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 24,
+      "hour": 22,
+      "timestamp": "2025-05-24T22:00:00Z",
+      "original_diesel": 17825.99,
+      "native_curtailment": 2539.78,
+      "recapture_delta": 2539.78,
+      "final_diesel": 15286.210000000001,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 294.38,
+      "candidate_charge": 294.38,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2539.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 17825.99,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 189729.17,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 16.5848,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 25,
+      "hour": 20,
+      "timestamp": "2025-05-25T20:00:00Z",
+      "original_diesel": 65291.48,
+      "native_curtailment": 168.51,
+      "recapture_delta": 168.51,
+      "final_diesel": 65122.97,
+      "original_SOC": 85.79,
+      "candidate_SOC": 85.79,
+      "original_E_next": 171572.56,
+      "candidate_E_next": 171572.56,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 168.51,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 65291.48,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 125572.56,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 86.3772,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 25,
+      "hour": 22,
+      "timestamp": "2025-05-25T22:00:00Z",
+      "original_diesel": 29917.56,
+      "native_curtailment": 1674.82,
+      "recapture_delta": 1674.82,
+      "final_diesel": 28242.74,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 12800.18,
+      "candidate_charge": 12800.18,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1674.82,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 29917.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 178223.83,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 54.1417,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 26,
+      "hour": 23,
+      "timestamp": "2025-05-26T23:00:00Z",
+      "original_diesel": 63800.9,
+      "native_curtailment": 424.57,
+      "recapture_delta": 424.57,
+      "final_diesel": 63376.33,
+      "original_SOC": 94.51,
+      "candidate_SOC": 94.51,
+      "original_E_next": 189019.23,
+      "candidate_E_next": 189019.23,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 424.57,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 63800.9,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143019.23,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.6273,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 27,
+      "hour": 1,
+      "timestamp": "2025-05-27T01:00:00Z",
+      "original_diesel": 60932.72,
+      "native_curtailment": 2746.68,
+      "recapture_delta": 2746.68,
+      "final_diesel": 58186.04,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 49757.52,
+      "candidate_charge": 49757.52,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2746.68,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60932.72,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 144223.08,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 80.2832,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 27,
+      "hour": 7,
+      "timestamp": "2025-05-27T07:00:00Z",
+      "original_diesel": 58164.6,
+      "native_curtailment": 11364.39,
+      "recapture_delta": 11364.39,
+      "final_diesel": 46800.21,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 49099.88,
+      "candidate_charge": 49099.88,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 11364.39,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58164.6,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 144828.11,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 60.7367,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 28,
+      "hour": 22,
+      "timestamp": "2025-05-28T22:00:00Z",
+      "original_diesel": 33840.47,
+      "native_curtailment": 1268.63,
+      "recapture_delta": 1268.63,
+      "final_diesel": 32571.84,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 16820.64,
+      "candidate_charge": 16820.64,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1268.63,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 33840.47,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 174525.01,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 31.9549,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 29,
+      "hour": 0,
+      "timestamp": "2025-05-29T00:00:00Z",
+      "original_diesel": 10000.0,
+      "native_curtailment": 161.06,
+      "recapture_delta": 161.06,
+      "final_diesel": 9838.94,
+      "original_SOC": 49.51,
+      "candidate_SOC": 49.51,
+      "original_E_next": 99024.15,
+      "candidate_E_next": 99024.15,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 897.78,
+      "candidate_discharge": 897.78,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 161.06,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 10000.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 31,
+      "hour": 7,
+      "timestamp": "2025-05-31T07:00:00Z",
+      "original_diesel": 34767.47,
+      "native_curtailment": 4231.9,
+      "recapture_delta": 4231.9,
+      "final_diesel": 30535.57,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 22146.15,
+      "candidate_charge": 22146.15,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 4231.9,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 34767.47,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 169625.54,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 49.4849,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 31,
+      "hour": 11,
+      "timestamp": "2025-05-31T11:00:00Z",
+      "original_diesel": 49710.36,
+      "native_curtailment": 12650.47,
+      "recapture_delta": 12650.47,
+      "final_diesel": 37059.89,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 46826.79,
+      "candidate_charge": 46826.79,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12000.0,
+      "candidate_served": 12000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 12650.47,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 49710.36,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146919.35,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 36.851,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 32,
+      "hour": 7,
+      "timestamp": "2025-06-01T07:00:00Z",
+      "original_diesel": 58237.32,
+      "native_curtailment": 4045.54,
+      "recapture_delta": 4045.54,
+      "final_diesel": 54191.78,
+      "original_SOC": 67.27,
+      "candidate_SOC": 67.27,
+      "original_E_next": 134532.82,
+      "candidate_E_next": 134532.82,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 4045.54,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58237.32,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 88532.82,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 80.571,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 32,
+      "hour": 21,
+      "timestamp": "2025-06-01T21:00:00Z",
+      "original_diesel": 66940.46,
+      "native_curtailment": 783.51,
+      "recapture_delta": 783.51,
+      "final_diesel": 66156.95000000001,
+      "original_SOC": 76.56,
+      "candidate_SOC": 76.56,
+      "original_E_next": 153119.59,
+      "candidate_E_next": 153119.59,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 783.51,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 66940.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 107119.59,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 51.8576,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 33,
+      "hour": 0,
+      "timestamp": "2025-06-02T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 126.16,
+      "recapture_delta": 126.16,
+      "final_diesel": 60771.619999999995,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 126.16,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 33,
+      "hour": 22,
+      "timestamp": "2025-06-02T22:00:00Z",
+      "original_diesel": 17133.6,
+      "native_curtailment": 2353.5,
+      "recapture_delta": 2353.5,
+      "final_diesel": 14780.099999999999,
+      "original_SOC": 50.36,
+      "candidate_SOC": 50.36,
+      "original_E_next": 100718.08,
+      "candidate_E_next": 100718.08,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 690.86,
+      "candidate_discharge": 690.86,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2353.5,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 17133.6,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 101469.01,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 9.2834,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 34,
+      "hour": 22,
+      "timestamp": "2025-06-03T22:00:00Z",
+      "original_diesel": 65472.65,
+      "native_curtailment": 235.49,
+      "recapture_delta": 235.49,
+      "final_diesel": 65237.16,
+      "original_SOC": 79.68,
+      "candidate_SOC": 79.68,
+      "original_E_next": 159359.65,
+      "candidate_E_next": 159359.65,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 235.49,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 65472.65,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 113359.65,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 68.4503,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 35,
+      "hour": 6,
+      "timestamp": "2025-06-04T06:00:00Z",
+      "original_diesel": 46404.17,
+      "native_curtailment": 3782.48,
+      "recapture_delta": 3782.48,
+      "final_diesel": 42621.689999999995,
+      "original_SOC": 70.49,
+      "candidate_SOC": 70.49,
+      "original_E_next": 140986.22,
+      "candidate_E_next": 140986.22,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3782.48,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 46404.17,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 94986.22,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 82.3842,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 35,
+      "hour": 23,
+      "timestamp": "2025-06-04T23:00:00Z",
+      "original_diesel": 63313.09,
+      "native_curtailment": 185.42,
+      "recapture_delta": 185.42,
+      "final_diesel": 63127.67,
+      "original_SOC": 73.08,
+      "candidate_SOC": 73.08,
+      "original_E_next": 146160.41,
+      "candidate_E_next": 146160.41,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 185.42,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 63313.09,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100160.41,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 66.7288,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 36,
+      "hour": 0,
+      "timestamp": "2025-06-05T00:00:00Z",
+      "original_diesel": 60729.99,
+      "native_curtailment": 29.79,
+      "recapture_delta": 29.79,
+      "final_diesel": 60700.2,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 29.79,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60729.99,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 36,
+      "hour": 8,
+      "timestamp": "2025-06-05T08:00:00Z",
+      "original_diesel": 57622.38,
+      "native_curtailment": 7982.33,
+      "recapture_delta": 7982.33,
+      "final_diesel": 49640.049999999996,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 43930.52,
+      "candidate_charge": 43930.52,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 7982.33,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 57622.38,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 149583.92,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 51.1367,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 36,
+      "hour": 22,
+      "timestamp": "2025-06-05T22:00:00Z",
+      "original_diesel": 12553.6,
+      "native_curtailment": 2456.11,
+      "recapture_delta": 2456.11,
+      "final_diesel": 10097.49,
+      "original_SOC": 43.87,
+      "candidate_SOC": 43.87,
+      "original_E_next": 87748.45,
+      "candidate_E_next": 87748.45,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 5252.5,
+      "candidate_discharge": 5252.5,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2456.11,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 12553.6,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 93457.69,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 8.1384,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 37,
+      "hour": 23,
+      "timestamp": "2025-06-06T23:00:00Z",
+      "original_diesel": 64530.9,
+      "native_curtailment": 1497.38,
+      "recapture_delta": 1497.38,
+      "final_diesel": 63033.520000000004,
+      "original_SOC": 67.93,
+      "candidate_SOC": 67.93,
+      "original_E_next": 135864.9,
+      "candidate_E_next": 135864.9,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1497.38,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 64530.9,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 89864.9,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 38,
+      "hour": 8,
+      "timestamp": "2025-06-07T08:00:00Z",
+      "original_diesel": 55763.24,
+      "native_curtailment": 14264.61,
+      "recapture_delta": 14264.61,
+      "final_diesel": 41498.63,
+      "original_SOC": 59.52,
+      "candidate_SOC": 59.52,
+      "original_E_next": 119045.2,
+      "candidate_E_next": 119045.2,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 14264.61,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 55763.24,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 73045.2,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 38,
+      "hour": 9,
+      "timestamp": "2025-06-07T09:00:00Z",
+      "original_diesel": 63276.46,
+      "native_curtailment": 32077.91,
+      "recapture_delta": 32077.91,
+      "final_diesel": 31198.55,
+      "original_SOC": 82.52,
+      "candidate_SOC": 82.52,
+      "original_E_next": 165045.2,
+      "candidate_E_next": 165045.2,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 32077.91,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 63276.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 119045.2,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 84.6253,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 38,
+      "hour": 10,
+      "timestamp": "2025-06-07T10:00:00Z",
+      "original_diesel": 37991.18,
+      "native_curtailment": 21390.28,
+      "recapture_delta": 21390.28,
+      "final_diesel": 16600.9,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 27124.78,
+      "candidate_charge": 27124.78,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 21390.28,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 37991.18,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 165045.2,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 71.8257,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 39,
+      "hour": 1,
+      "timestamp": "2025-06-08T01:00:00Z",
+      "original_diesel": 61295.56,
+      "native_curtailment": 2769.65,
+      "recapture_delta": 2769.65,
+      "final_diesel": 58525.909999999996,
+      "original_SOC": 83.05,
+      "candidate_SOC": 83.05,
+      "original_E_next": 166097.53,
+      "candidate_E_next": 166097.53,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2769.65,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 61295.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 120097.53,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 86.8521,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 39,
+      "hour": 6,
+      "timestamp": "2025-06-08T06:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 2641.62,
+      "recapture_delta": 2641.62,
+      "final_diesel": 58256.159999999996,
+      "original_SOC": 87.34,
+      "candidate_SOC": 87.34,
+      "original_E_next": 174677.19,
+      "candidate_E_next": 174677.19,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2641.62,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 128677.19,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 67.2206,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 41,
+      "hour": 0,
+      "timestamp": "2025-06-10T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 242.68,
+      "recapture_delta": 242.68,
+      "final_diesel": 60655.1,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 242.68,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 41,
+      "hour": 8,
+      "timestamp": "2025-06-10T08:00:00Z",
+      "original_diesel": 50298.26,
+      "native_curtailment": 9916.42,
+      "recapture_delta": 9916.42,
+      "final_diesel": 40381.840000000004,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 38770.76,
+      "candidate_charge": 38770.76,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 9916.42,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 50298.26,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 154330.9,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 50.7865,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 41,
+      "hour": 19,
+      "timestamp": "2025-06-10T19:00:00Z",
+      "original_diesel": 12458.4,
+      "native_curtailment": 1310.07,
+      "recapture_delta": 1310.07,
+      "final_diesel": 11148.33,
+      "original_SOC": 73.27,
+      "candidate_SOC": 73.27,
+      "original_E_next": 146548.36,
+      "candidate_E_next": 146548.36,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 1474.61,
+      "candidate_discharge": 1474.61,
+      "original_served": 16500.0,
+      "candidate_served": 16500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1310.07,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 12458.4,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 148151.2,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 8.1146,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 43,
+      "hour": 1,
+      "timestamp": "2025-06-12T01:00:00Z",
+      "original_diesel": 59522.84,
+      "native_curtailment": 1845.18,
+      "recapture_delta": 1845.18,
+      "final_diesel": 57677.659999999996,
+      "original_SOC": 91.01,
+      "candidate_SOC": 91.01,
+      "original_E_next": 182011.75,
+      "candidate_E_next": 182011.75,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1845.18,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59522.84,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 136011.75,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 82.7392,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 43,
+      "hour": 7,
+      "timestamp": "2025-06-12T07:00:00Z",
+      "original_diesel": 32236.96,
+      "native_curtailment": 19633.85,
+      "recapture_delta": 19633.85,
+      "final_diesel": 12603.11,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 21424.83,
+      "candidate_charge": 21424.83,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 19633.85,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 32236.96,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 170289.16,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 53.1973,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 44,
+      "hour": 5,
+      "timestamp": "2025-06-13T05:00:00Z",
+      "original_diesel": 50289.81,
+      "native_curtailment": 4773.61,
+      "recapture_delta": 4773.61,
+      "final_diesel": 45516.2,
+      "original_SOC": 55.7,
+      "candidate_SOC": 55.7,
+      "original_E_next": 111408.68,
+      "candidate_E_next": 111408.68,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 15000.0,
+      "candidate_served": 15000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 4773.61,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 50289.81,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 65408.68,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 44,
+      "hour": 6,
+      "timestamp": "2025-06-13T06:00:00Z",
+      "original_diesel": 43254.39,
+      "native_curtailment": 2467.0,
+      "recapture_delta": 2467.0,
+      "final_diesel": 40787.39,
+      "original_SOC": 78.7,
+      "candidate_SOC": 78.7,
+      "original_E_next": 157408.68,
+      "candidate_E_next": 157408.68,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2467.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 43254.39,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 111408.68,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 83.6209,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 44,
+      "hour": 18,
+      "timestamp": "2025-06-13T18:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 2334.37,
+      "recapture_delta": 2334.37,
+      "final_diesel": 58563.409999999996,
+      "original_SOC": 87.04,
+      "candidate_SOC": 87.04,
+      "original_E_next": 174084.12,
+      "candidate_E_next": 174084.12,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 15776.46,
+      "candidate_served": 15776.46,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2334.37,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 128084.12,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 56.4563,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 45,
+      "hour": 0,
+      "timestamp": "2025-06-14T00:00:00Z",
+      "original_diesel": 60847.29,
+      "native_curtailment": 311.68,
+      "recapture_delta": 311.68,
+      "final_diesel": 60535.61,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 311.68,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60847.29,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 45,
+      "hour": 1,
+      "timestamp": "2025-06-14T01:00:00Z",
+      "original_diesel": 58752.92,
+      "native_curtailment": 2670.64,
+      "recapture_delta": 2670.64,
+      "final_diesel": 56082.28,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 47826.09,
+      "candidate_charge": 47826.09,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2670.64,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58752.92,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.8661,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 45,
+      "hour": 10,
+      "timestamp": "2025-06-14T10:00:00Z",
+      "original_diesel": 56786.69,
+      "native_curtailment": 11988.72,
+      "recapture_delta": 11988.72,
+      "final_diesel": 44797.97,
+      "original_SOC": 90.76,
+      "candidate_SOC": 90.76,
+      "original_E_next": 181513.52,
+      "candidate_E_next": 181513.52,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 11988.72,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56786.69,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 135513.52,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.9935,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 47,
+      "hour": 8,
+      "timestamp": "2025-06-16T08:00:00Z",
+      "original_diesel": 59913.62,
+      "native_curtailment": 25793.84,
+      "recapture_delta": 25793.84,
+      "final_diesel": 34119.78,
+      "original_SOC": 64.02,
+      "candidate_SOC": 64.02,
+      "original_E_next": 128041.44,
+      "candidate_E_next": 128041.44,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 25793.84,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59913.62,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 82041.44,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 47,
+      "hour": 9,
+      "timestamp": "2025-06-16T09:00:00Z",
+      "original_diesel": 61191.07,
+      "native_curtailment": 25201.92,
+      "recapture_delta": 25201.92,
+      "final_diesel": 35989.15,
+      "original_SOC": 87.02,
+      "candidate_SOC": 87.02,
+      "original_E_next": 174041.44,
+      "candidate_E_next": 174041.44,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 25201.92,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 61191.07,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 128041.44,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 86.4701,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 48,
+      "hour": 9,
+      "timestamp": "2025-06-17T09:00:00Z",
+      "original_diesel": 56540.93,
+      "native_curtailment": 1436.13,
+      "recapture_delta": 1436.13,
+      "final_diesel": 55104.8,
+      "original_SOC": 94.06,
+      "candidate_SOC": 94.06,
+      "original_E_next": 188116.75,
+      "candidate_E_next": 188116.75,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1436.13,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56540.93,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 142116.75,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 48.9942,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 49,
+      "hour": 8,
+      "timestamp": "2025-06-18T08:00:00Z",
+      "original_diesel": 49808.42,
+      "native_curtailment": 5501.07,
+      "recapture_delta": 5501.07,
+      "final_diesel": 44307.35,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 37417.77,
+      "candidate_charge": 37417.77,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5501.07,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 49808.42,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 155575.65,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 49.3454,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 50,
+      "hour": 8,
+      "timestamp": "2025-06-19T08:00:00Z",
+      "original_diesel": 59968.4,
+      "native_curtailment": 6133.72,
+      "recapture_delta": 6133.72,
+      "final_diesel": 53834.68,
+      "original_SOC": 93.4,
+      "candidate_SOC": 93.4,
+      "original_E_next": 186791.47,
+      "candidate_E_next": 186791.47,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 6133.72,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59968.4,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 140791.47,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 54.4784,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 50,
+      "hour": 22,
+      "timestamp": "2025-06-19T22:00:00Z",
+      "original_diesel": 28738.27,
+      "native_curtailment": 601.76,
+      "recapture_delta": 601.76,
+      "final_diesel": 28136.510000000002,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 13089.92,
+      "candidate_charge": 13089.92,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 601.76,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 28738.27,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 177957.27,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 16.9777,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 51,
+      "hour": 20,
+      "timestamp": "2025-06-20T20:00:00Z",
+      "original_diesel": 65460.56,
+      "native_curtailment": 848.53,
+      "recapture_delta": 848.53,
+      "final_diesel": 64612.03,
+      "original_SOC": 75.07,
+      "candidate_SOC": 75.07,
+      "original_E_next": 150131.07,
+      "candidate_E_next": 150131.07,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 848.53,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 65460.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 104131.07,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.4195,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 52,
+      "hour": 23,
+      "timestamp": "2025-06-21T23:00:00Z",
+      "original_diesel": 46665.85,
+      "native_curtailment": 2516.15,
+      "recapture_delta": 2516.15,
+      "final_diesel": 44149.7,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 31330.21,
+      "candidate_charge": 31330.21,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2516.15,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 46665.85,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 161176.21,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 57.9895,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 55,
+      "hour": 7,
+      "timestamp": "2025-06-24T07:00:00Z",
+      "original_diesel": 62075.11,
+      "native_curtailment": 3504.3,
+      "recapture_delta": 3504.3,
+      "final_diesel": 58570.81,
+      "original_SOC": 92.16,
+      "candidate_SOC": 92.16,
+      "original_E_next": 184321.69,
+      "candidate_E_next": 184321.69,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3504.3,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62075.11,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 138321.69,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 62.3426,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 56,
+      "hour": 8,
+      "timestamp": "2025-06-25T08:00:00Z",
+      "original_diesel": 58789.26,
+      "native_curtailment": 12506.83,
+      "recapture_delta": 12506.83,
+      "final_diesel": 46282.43,
+      "original_SOC": 86.18,
+      "candidate_SOC": 86.18,
+      "original_E_next": 172355.92,
+      "candidate_E_next": 172355.92,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 12506.83,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58789.26,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 126355.92,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 66.6859,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 57,
+      "hour": 0,
+      "timestamp": "2025-06-26T00:00:00Z",
+      "original_diesel": 60873.81,
+      "native_curtailment": 1132.29,
+      "recapture_delta": 1132.29,
+      "final_diesel": 59741.52,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1132.29,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60873.81,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 57,
+      "hour": 1,
+      "timestamp": "2025-06-26T01:00:00Z",
+      "original_diesel": 59028.83,
+      "native_curtailment": 3991.4,
+      "recapture_delta": 3991.4,
+      "final_diesel": 55037.43,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 47826.09,
+      "candidate_charge": 47826.09,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3991.4,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59028.83,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 80.0646,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 57,
+      "hour": 21,
+      "timestamp": "2025-06-26T21:00:00Z",
+      "original_diesel": 14407.08,
+      "native_curtailment": 539.35,
+      "recapture_delta": 539.35,
+      "final_diesel": 13867.73,
+      "original_SOC": 70.59,
+      "candidate_SOC": 70.59,
+      "original_E_next": 141177.57,
+      "candidate_E_next": 141177.57,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 2184.84,
+      "candidate_discharge": 2184.84,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 539.35,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 14407.08,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143552.4,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 29.8284,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 59,
+      "hour": 0,
+      "timestamp": "2025-06-28T00:00:00Z",
+      "original_diesel": 60689.19,
+      "native_curtailment": 679.32,
+      "recapture_delta": 679.32,
+      "final_diesel": 60009.87,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 679.32,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60689.19,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 59,
+      "hour": 6,
+      "timestamp": "2025-06-28T06:00:00Z",
+      "original_diesel": 53820.85,
+      "native_curtailment": 3720.86,
+      "recapture_delta": 3720.86,
+      "final_diesel": 50099.99,
+      "original_SOC": 86.55,
+      "candidate_SOC": 86.55,
+      "original_E_next": 173104.59,
+      "candidate_E_next": 173104.59,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3720.86,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 53820.85,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 127104.59,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 68.4193,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 59,
+      "hour": 9,
+      "timestamp": "2025-06-28T09:00:00Z",
+      "original_diesel": 62748.19,
+      "native_curtailment": 15358.42,
+      "recapture_delta": 15358.42,
+      "final_diesel": 47389.770000000004,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 49495.52,
+      "candidate_charge": 49495.52,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 15358.42,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62748.19,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 144464.12,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 50.8943,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 60,
+      "hour": 1,
+      "timestamp": "2025-06-29T01:00:00Z",
+      "original_diesel": 61295.56,
+      "native_curtailment": 3140.1,
+      "recapture_delta": 3140.1,
+      "final_diesel": 58155.46,
+      "original_SOC": 83.13,
+      "candidate_SOC": 83.13,
+      "original_E_next": 166259.35,
+      "candidate_E_next": 166259.35,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3140.1,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 61295.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 120259.35,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 86.8521,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 60,
+      "hour": 6,
+      "timestamp": "2025-06-29T06:00:00Z",
+      "original_diesel": 60710.9,
+      "native_curtailment": 2292.56,
+      "recapture_delta": 2292.56,
+      "final_diesel": 58418.340000000004,
+      "original_SOC": 87.42,
+      "candidate_SOC": 87.42,
+      "original_E_next": 174839.01,
+      "candidate_E_next": 174839.01,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2292.56,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60710.9,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 128839.01,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 67.3132,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 60,
+      "hour": 9,
+      "timestamp": "2025-06-29T09:00:00Z",
+      "original_diesel": 60018.77,
+      "native_curtailment": 16205.74,
+      "recapture_delta": 16205.74,
+      "final_diesel": 43813.03,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 47610.28,
+      "candidate_charge": 47610.28,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 16205.74,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60018.77,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146198.54,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 47.7086,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 61,
+      "hour": 0,
+      "timestamp": "2025-06-30T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 334.44,
+      "recapture_delta": 334.44,
+      "final_diesel": 60563.34,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 334.44,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 61,
+      "hour": 9,
+      "timestamp": "2025-06-30T09:00:00Z",
+      "original_diesel": 58434.63,
+      "native_curtailment": 3093.53,
+      "recapture_delta": 3093.53,
+      "final_diesel": 55341.1,
+      "original_SOC": 92.1,
+      "candidate_SOC": 92.1,
+      "original_E_next": 184201.04,
+      "candidate_E_next": 184201.04,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3093.53,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58434.63,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 138201.04,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 49.701,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 62,
+      "hour": 0,
+      "timestamp": "2025-07-01T00:00:00Z",
+      "original_diesel": 60579.03,
+      "native_curtailment": 288.75,
+      "recapture_delta": 288.75,
+      "final_diesel": 60290.28,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 288.75,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60579.03,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 62,
+      "hour": 7,
+      "timestamp": "2025-07-01T07:00:00Z",
+      "original_diesel": 48967.79,
+      "native_curtailment": 4465.16,
+      "recapture_delta": 4465.16,
+      "final_diesel": 44502.630000000005,
+      "original_SOC": 78.28,
+      "candidate_SOC": 78.28,
+      "original_E_next": 156561.25,
+      "candidate_E_next": 156561.25,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 4465.16,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 48967.79,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 110561.25,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.9274,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 62,
+      "hour": 8,
+      "timestamp": "2025-07-01T08:00:00Z",
+      "original_diesel": 46485.87,
+      "native_curtailment": 20934.92,
+      "recapture_delta": 20934.92,
+      "final_diesel": 25550.950000000004,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 36346.47,
+      "candidate_charge": 36346.47,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 20934.92,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 46485.87,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 156561.25,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 63.8017,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 63,
+      "hour": 21,
+      "timestamp": "2025-07-02T21:00:00Z",
+      "original_diesel": 66834.17,
+      "native_curtailment": 926.27,
+      "recapture_delta": 926.27,
+      "final_diesel": 65907.9,
+      "original_SOC": 87.64,
+      "candidate_SOC": 87.64,
+      "original_E_next": 175272.58,
+      "candidate_E_next": 175272.58,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 926.27,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 66834.17,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 129272.58,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 66.207,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 65,
+      "hour": 11,
+      "timestamp": "2025-07-04T11:00:00Z",
+      "original_diesel": 33068.4,
+      "native_curtailment": 9748.97,
+      "recapture_delta": 9748.97,
+      "final_diesel": 23319.43,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 32944.38,
+      "candidate_charge": 32944.38,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12000.0,
+      "candidate_served": 12000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 9748.97,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 33068.4,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 159691.17,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.2765,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 68,
+      "hour": 20,
+      "timestamp": "2025-07-07T20:00:00Z",
+      "original_diesel": 66052.21,
+      "native_curtailment": 2082.18,
+      "recapture_delta": 2082.18,
+      "final_diesel": 63970.030000000006,
+      "original_SOC": 91.73,
+      "candidate_SOC": 91.73,
+      "original_E_next": 183453.3,
+      "candidate_E_next": 183453.3,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17121.32,
+      "candidate_served": 17121.32,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2082.18,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 66052.21,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 137453.3,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 80.0349,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 68,
+      "hour": 21,
+      "timestamp": "2025-07-07T21:00:00Z",
+      "original_diesel": 23004.04,
+      "native_curtailment": 20.96,
+      "recapture_delta": 20.96,
+      "final_diesel": 22983.08,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 7115.98,
+      "candidate_charge": 7115.98,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 20.96,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 23004.04,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 183453.3,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 59.0424,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 68,
+      "hour": 22,
+      "timestamp": "2025-07-07T22:00:00Z",
+      "original_diesel": 17798.45,
+      "native_curtailment": 2878.0,
+      "recapture_delta": 2878.0,
+      "final_diesel": 14920.45,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2878.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 17798.45,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 190000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 48.2966,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 69,
+      "hour": 0,
+      "timestamp": "2025-07-08T00:00:00Z",
+      "original_diesel": 60752.77,
+      "native_curtailment": 752.85,
+      "recapture_delta": 752.85,
+      "final_diesel": 59999.92,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 49999.99,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 752.85,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60752.77,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 70,
+      "hour": 0,
+      "timestamp": "2025-07-09T00:00:00Z",
+      "original_diesel": 10000.0,
+      "native_curtailment": 316.35,
+      "recapture_delta": 316.35,
+      "final_diesel": 9683.65,
+      "original_SOC": 49.55,
+      "candidate_SOC": 49.55,
+      "original_E_next": 99095.55,
+      "candidate_E_next": 99095.55,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 832.09,
+      "candidate_discharge": 832.09,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 316.35,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 10000.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 70,
+      "hour": 1,
+      "timestamp": "2025-07-09T01:00:00Z",
+      "original_diesel": 10000.0,
+      "native_curtailment": 7651.41,
+      "recapture_delta": 7651.41,
+      "final_diesel": 2348.59,
+      "original_SOC": 46.27,
+      "candidate_SOC": 46.27,
+      "original_E_next": 92542.89,
+      "candidate_E_next": 92542.89,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 6028.45,
+      "candidate_discharge": 6028.45,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 7651.41,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 10000.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 99095.55,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 92.5791,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 70,
+      "hour": 22,
+      "timestamp": "2025-07-09T22:00:00Z",
+      "original_diesel": 31461.18,
+      "native_curtailment": 794.46,
+      "recapture_delta": 794.46,
+      "final_diesel": 30666.72,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 15866.21,
+      "candidate_charge": 15866.21,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 794.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 31461.18,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 175403.09,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 37.3909,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 72,
+      "hour": 1,
+      "timestamp": "2025-07-11T01:00:00Z",
+      "original_diesel": 59976.77,
+      "native_curtailment": 1842.58,
+      "recapture_delta": 1842.58,
+      "final_diesel": 58134.189999999995,
+      "original_SOC": 87.99,
+      "candidate_SOC": 87.99,
+      "original_E_next": 175988.81,
+      "candidate_E_next": 175988.81,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1842.58,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59976.77,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 129988.81,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 84.2731,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 72,
+      "hour": 8,
+      "timestamp": "2025-07-11T08:00:00Z",
+      "original_diesel": 54758.97,
+      "native_curtailment": 3097.74,
+      "recapture_delta": 3097.74,
+      "final_diesel": 51661.23,
+      "original_SOC": 81.9,
+      "candidate_SOC": 81.9,
+      "original_E_next": 163794.33,
+      "candidate_E_next": 163794.33,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3097.74,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 54758.97,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 117794.33,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 64.7396,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 72,
+      "hour": 10,
+      "timestamp": "2025-07-11T10:00:00Z",
+      "original_diesel": 54504.81,
+      "native_curtailment": 8177.32,
+      "recapture_delta": 8177.32,
+      "final_diesel": 46327.49,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 44170.22,
+      "candidate_charge": 44170.22,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 8177.32,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 54504.81,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 149363.4,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.8243,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 72,
+      "hour": 21,
+      "timestamp": "2025-07-11T21:00:00Z",
+      "original_diesel": 67508.39,
+      "native_curtailment": 667.79,
+      "recapture_delta": 667.79,
+      "final_diesel": 66840.6,
+      "original_SOC": 90.57,
+      "candidate_SOC": 90.57,
+      "original_E_next": 181143.43,
+      "candidate_E_next": 181143.43,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 667.79,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 67508.39,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 135143.43,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 30.2424,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 73,
+      "hour": 9,
+      "timestamp": "2025-07-12T09:00:00Z",
+      "original_diesel": 56667.69,
+      "native_curtailment": 9282.59,
+      "recapture_delta": 9282.59,
+      "final_diesel": 47385.100000000006,
+      "original_SOC": 71.21,
+      "candidate_SOC": 71.21,
+      "original_E_next": 142420.91,
+      "candidate_E_next": 142420.91,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 9282.59,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56667.69,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 96420.91,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 65.0596,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 74,
+      "hour": 21,
+      "timestamp": "2025-07-13T21:00:00Z",
+      "original_diesel": 10000.0,
+      "native_curtailment": 590.86,
+      "recapture_delta": 590.86,
+      "final_diesel": 9409.14,
+      "original_SOC": 71.82,
+      "candidate_SOC": 71.82,
+      "original_E_next": 143638.1,
+      "candidate_E_next": 143638.1,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 7242.68,
+      "candidate_discharge": 7242.68,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 590.86,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 10000.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 151510.58,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 84.191,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 74,
+      "hour": 22,
+      "timestamp": "2025-07-13T22:00:00Z",
+      "original_diesel": 10000.0,
+      "native_curtailment": 3527.71,
+      "recapture_delta": 3527.71,
+      "final_diesel": 6472.29,
+      "original_SOC": 66.98,
+      "candidate_SOC": 66.98,
+      "original_E_next": 133967.96,
+      "candidate_E_next": 133967.96,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 8896.53,
+      "candidate_discharge": 8896.53,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3527.71,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 10000.0,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143638.1,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 76.8387,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 81,
+      "hour": 23,
+      "timestamp": "2025-07-20T23:00:00Z",
+      "original_diesel": 63076.31,
+      "native_curtailment": 105.46,
+      "recapture_delta": 105.46,
+      "final_diesel": 62970.85,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 49707.78,
+      "candidate_charge": 49707.78,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 105.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 63076.31,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 144268.84,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 59.5687,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 82,
+      "hour": 22,
+      "timestamp": "2025-07-21T22:00:00Z",
+      "original_diesel": 67825.99,
+      "native_curtailment": 2339.81,
+      "recapture_delta": 2339.81,
+      "final_diesel": 65486.18000000001,
+      "original_SOC": 82.78,
+      "candidate_SOC": 82.78,
+      "original_E_next": 165562.9,
+      "candidate_E_next": 165562.9,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2339.81,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 67825.99,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 119562.9,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 64.7038,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 86,
+      "hour": 11,
+      "timestamp": "2025-07-25T11:00:00Z",
+      "original_diesel": 46111.78,
+      "native_curtailment": 17002.63,
+      "recapture_delta": 17002.63,
+      "final_diesel": 29109.149999999998,
+      "original_SOC": 86.18,
+      "candidate_SOC": 86.18,
+      "original_E_next": 172359.18,
+      "candidate_E_next": 172359.18,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12000.0,
+      "candidate_served": 12000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 17002.63,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 46111.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 126359.18,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 56.7147,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 87,
+      "hour": 6,
+      "timestamp": "2025-07-26T06:00:00Z",
+      "original_diesel": 53880.3,
+      "native_curtailment": 6149.26,
+      "recapture_delta": 6149.26,
+      "final_diesel": 47731.04,
+      "original_SOC": 93.94,
+      "candidate_SOC": 93.94,
+      "original_E_next": 187884.36,
+      "candidate_E_next": 187884.36,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 6149.26,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 53880.3,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 141884.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 63.806,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 87,
+      "hour": 8,
+      "timestamp": "2025-07-26T08:00:00Z",
+      "original_diesel": 29483.25,
+      "native_curtailment": 5965.39,
+      "recapture_delta": 5965.39,
+      "final_diesel": 23517.86,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 17211.38,
+      "candidate_charge": 17211.38,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5965.39,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 29483.25,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 174165.53,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 46.8732,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 88,
+      "hour": 22,
+      "timestamp": "2025-07-27T22:00:00Z",
+      "original_diesel": 64185.31,
+      "native_curtailment": 958.43,
+      "recapture_delta": 958.43,
+      "final_diesel": 63226.88,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 47358.55,
+      "candidate_charge": 47358.55,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 958.43,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 64185.31,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146430.13,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.0899,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 89,
+      "hour": 1,
+      "timestamp": "2025-07-28T01:00:00Z",
+      "original_diesel": 58800.49,
+      "native_curtailment": 68.49,
+      "recapture_delta": 68.49,
+      "final_diesel": 58732.0,
+      "original_SOC": 85.79,
+      "candidate_SOC": 85.79,
+      "original_E_next": 171585.68,
+      "candidate_E_next": 171585.68,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 68.49,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58800.49,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 125585.68,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 85.3242,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 89,
+      "hour": 9,
+      "timestamp": "2025-07-28T09:00:00Z",
+      "original_diesel": 57935.98,
+      "native_curtailment": 19994.38,
+      "recapture_delta": 19994.38,
+      "final_diesel": 37941.600000000006,
+      "original_SOC": 75.41,
+      "candidate_SOC": 75.41,
+      "original_E_next": 150823.51,
+      "candidate_E_next": 150823.51,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 19994.38,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 57935.98,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 104823.51,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 65.6412,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 89,
+      "hour": 10,
+      "timestamp": "2025-07-28T10:00:00Z",
+      "original_diesel": 47902.63,
+      "native_curtailment": 25892.07,
+      "recapture_delta": 25892.07,
+      "final_diesel": 22010.559999999998,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 42583.14,
+      "candidate_charge": 42583.14,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 25892.07,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 47902.63,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 150823.51,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 51.1558,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 89,
+      "hour": 22,
+      "timestamp": "2025-07-28T22:00:00Z",
+      "original_diesel": 58996.1,
+      "native_curtailment": 1213.78,
+      "recapture_delta": 1213.78,
+      "final_diesel": 57782.32,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 41927.61,
+      "candidate_charge": 41927.61,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1213.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58996.1,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 151426.6,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 21.9657,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 90,
+      "hour": 0,
+      "timestamp": "2025-07-29T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 39.12,
+      "recapture_delta": 39.12,
+      "final_diesel": 60858.659999999996,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 39.12,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 90,
+      "hour": 5,
+      "timestamp": "2025-07-29T05:00:00Z",
+      "original_diesel": 59104.46,
+      "native_curtailment": 283.98,
+      "recapture_delta": 283.98,
+      "final_diesel": 58820.479999999996,
+      "original_SOC": 76.2,
+      "candidate_SOC": 76.2,
+      "original_E_next": 152406.36,
+      "candidate_E_next": 152406.36,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 15000.0,
+      "candidate_served": 15000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 283.98,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59104.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 106406.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.7853,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 90,
+      "hour": 7,
+      "timestamp": "2025-07-29T07:00:00Z",
+      "original_diesel": 62621.32,
+      "native_curtailment": 2658.81,
+      "recapture_delta": 2658.81,
+      "final_diesel": 59962.51,
+      "original_SOC": 93.28,
+      "candidate_SOC": 93.28,
+      "original_E_next": 186560.95,
+      "candidate_E_next": 186560.95,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2658.81,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62621.32,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 140560.95,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 60.0802,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 90,
+      "hour": 19,
+      "timestamp": "2025-07-29T19:00:00Z",
+      "original_diesel": 64174.24,
+      "native_curtailment": 584.6,
+      "recapture_delta": 584.6,
+      "final_diesel": 63589.64,
+      "original_SOC": 77.13,
+      "candidate_SOC": 77.13,
+      "original_E_next": 154260.77,
+      "candidate_E_next": 154260.77,
+      "original_charge": 50000.0,
+      "candidate_charge": 49999.99,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 16500.0,
+      "candidate_served": 16500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 584.6,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 64174.24,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 108260.77,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 40.0896,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 91,
+      "hour": 0,
+      "timestamp": "2025-07-30T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 8.76,
+      "recapture_delta": 8.76,
+      "final_diesel": 60889.02,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 8.76,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 91,
+      "hour": 7,
+      "timestamp": "2025-07-30T07:00:00Z",
+      "original_diesel": 54034.28,
+      "native_curtailment": 913.42,
+      "recapture_delta": 913.42,
+      "final_diesel": 53120.86,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 41412.96,
+      "candidate_charge": 41412.95,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 913.42,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 54034.28,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 151900.08,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 53.0259,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 93,
+      "hour": 22,
+      "timestamp": "2025-08-01T22:00:00Z",
+      "original_diesel": 26369.81,
+      "native_curtailment": 67.5,
+      "recapture_delta": 67.5,
+      "final_diesel": 26302.31,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 10521.14,
+      "candidate_charge": 10521.14,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 67.5,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 26369.81,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 180320.55,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 52.016,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 95,
+      "hour": 0,
+      "timestamp": "2025-08-03T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 30.8,
+      "recapture_delta": 30.8,
+      "final_diesel": 60866.979999999996,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 30.8,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 95,
+      "hour": 7,
+      "timestamp": "2025-08-03T07:00:00Z",
+      "original_diesel": 55211.67,
+      "native_curtailment": 13659.36,
+      "recapture_delta": 13659.36,
+      "final_diesel": 41552.31,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 47057.33,
+      "candidate_charge": 47057.33,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 13659.36,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 55211.67,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146707.26,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 67.5714,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 95,
+      "hour": 22,
+      "timestamp": "2025-08-03T22:00:00Z",
+      "original_diesel": 19734.82,
+      "native_curtailment": 1800.29,
+      "recapture_delta": 1800.29,
+      "final_diesel": 17934.53,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 2057.71,
+      "candidate_charge": 2057.71,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1800.29,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 19734.82,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 188106.91,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 15.1825,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 97,
+      "hour": 9,
+      "timestamp": "2025-08-05T09:00:00Z",
+      "original_diesel": 61953.74,
+      "native_curtailment": 2762.65,
+      "recapture_delta": 2762.65,
+      "final_diesel": 59191.09,
+      "original_SOC": 80.43,
+      "candidate_SOC": 80.43,
+      "original_E_next": 160865.17,
+      "candidate_E_next": 160865.17,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2762.65,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 61953.74,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 114865.17,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 61.6551,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 98,
+      "hour": 0,
+      "timestamp": "2025-08-06T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 4.41,
+      "recapture_delta": 4.41,
+      "final_diesel": 60893.369999999995,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 4.41,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 99,
+      "hour": 0,
+      "timestamp": "2025-08-07T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 1.3,
+      "recapture_delta": 1.3,
+      "final_diesel": 60896.479999999996,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1.3,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 99,
+      "hour": 6,
+      "timestamp": "2025-08-07T06:00:00Z",
+      "original_diesel": 59791.08,
+      "native_curtailment": 2936.06,
+      "recapture_delta": 2936.06,
+      "final_diesel": 56855.020000000004,
+      "original_SOC": 71.8,
+      "candidate_SOC": 71.8,
+      "original_E_next": 143607.36,
+      "candidate_E_next": 143607.36,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2936.06,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59791.08,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 97607.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.7759,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 99,
+      "hour": 7,
+      "timestamp": "2025-08-07T07:00:00Z",
+      "original_diesel": 62414.26,
+      "native_curtailment": 3864.02,
+      "recapture_delta": 3864.02,
+      "final_diesel": 58550.240000000005,
+      "original_SOC": 94.8,
+      "candidate_SOC": 94.8,
+      "original_E_next": 189607.36,
+      "candidate_E_next": 189607.36,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 3864.02,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62414.26,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 143607.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 60.5621,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 100,
+      "hour": 10,
+      "timestamp": "2025-08-08T10:00:00Z",
+      "original_diesel": 60202.6,
+      "native_curtailment": 13341.68,
+      "recapture_delta": 13341.68,
+      "final_diesel": 46860.92,
+      "original_SOC": 78.91,
+      "candidate_SOC": 78.91,
+      "original_E_next": 157819.03,
+      "candidate_E_next": 157819.03,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 13341.68,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60202.6,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 111819.03,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 62.6918,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 100,
+      "hour": 11,
+      "timestamp": "2025-08-08T11:00:00Z",
+      "original_diesel": 37657.9,
+      "native_curtailment": 6057.73,
+      "recapture_delta": 6057.73,
+      "final_diesel": 31600.170000000002,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 34979.32,
+      "candidate_charge": 34979.32,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12000.0,
+      "candidate_served": 12000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 6057.73,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 37657.9,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 157819.03,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 45.9766,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 101,
+      "hour": 0,
+      "timestamp": "2025-08-09T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 1.8,
+      "recapture_delta": 1.8,
+      "final_diesel": 60895.979999999996,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1.8,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 101,
+      "hour": 1,
+      "timestamp": "2025-08-09T01:00:00Z",
+      "original_diesel": 59121.65,
+      "native_curtailment": 2550.2,
+      "recapture_delta": 2550.2,
+      "final_diesel": 56571.450000000004,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 47826.09,
+      "candidate_charge": 47826.08,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2550.2,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 59121.65,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 146000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.776,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 101,
+      "hour": 7,
+      "timestamp": "2025-08-09T07:00:00Z",
+      "original_diesel": 55921.75,
+      "native_curtailment": 2795.07,
+      "recapture_delta": 2795.07,
+      "final_diesel": 53126.68,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 46568.59,
+      "candidate_charge": 46568.58,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2795.07,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 55921.75,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 147156.9,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 60.6331,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 101,
+      "hour": 8,
+      "timestamp": "2025-08-09T08:00:00Z",
+      "original_diesel": 11488.92,
+      "native_curtailment": 7447.78,
+      "recapture_delta": 7447.78,
+      "final_diesel": 4041.1400000000003,
+      "original_SOC": 93.78,
+      "candidate_SOC": 93.78,
+      "original_E_next": 187566.32,
+      "candidate_E_next": 187566.32,
+      "original_charge": 0.0,
+      "candidate_charge": 0.0,
+      "original_discharge": 2238.99,
+      "candidate_discharge": 2238.99,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 7447.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 11488.92,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 190000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 42.3514,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 102,
+      "hour": 7,
+      "timestamp": "2025-08-10T07:00:00Z",
+      "original_diesel": 61418.23,
+      "native_curtailment": 4589.92,
+      "recapture_delta": 4589.92,
+      "final_diesel": 56828.310000000005,
+      "original_SOC": 93.87,
+      "candidate_SOC": 93.87,
+      "original_E_next": 187745.62,
+      "candidate_E_next": 187745.62,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 4589.92,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 61418.23,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 141745.62,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 62.6059,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 103,
+      "hour": 0,
+      "timestamp": "2025-08-11T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 0.48,
+      "recapture_delta": 0.48,
+      "final_diesel": 60897.299999999996,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 0.48,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 103,
+      "hour": 23,
+      "timestamp": "2025-08-11T23:00:00Z",
+      "original_diesel": 51467.88,
+      "native_curtailment": 747.26,
+      "recapture_delta": 747.26,
+      "final_diesel": 50720.619999999995,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 37221.17,
+      "candidate_charge": 37221.17,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 18000.0,
+      "candidate_served": 18000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 747.26,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 51467.88,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 155756.52,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 39.3064,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 104,
+      "hour": 0,
+      "timestamp": "2025-08-12T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 0.45,
+      "recapture_delta": 0.45,
+      "final_diesel": 60897.33,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 0.45,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 104,
+      "hour": 5,
+      "timestamp": "2025-08-12T05:00:00Z",
+      "original_diesel": 56727.29,
+      "native_curtailment": 386.68,
+      "recapture_delta": 386.68,
+      "final_diesel": 56340.61,
+      "original_SOC": 76.56,
+      "candidate_SOC": 76.56,
+      "original_E_next": 153127.57,
+      "candidate_E_next": 153127.57,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 15000.0,
+      "candidate_served": 15000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 386.68,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56727.29,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 107127.57,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 79.7757,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 106,
+      "hour": 0,
+      "timestamp": "2025-08-14T00:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 0.01,
+      "recapture_delta": 0.01,
+      "final_diesel": 60897.77,
+      "original_SOC": 73.0,
+      "candidate_SOC": 73.0,
+      "original_E_next": 146000.0,
+      "candidate_E_next": 146000.0,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 0.01,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 100000.0,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 100.0,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 106,
+      "hour": 7,
+      "timestamp": "2025-08-14T07:00:00Z",
+      "original_diesel": 62621.32,
+      "native_curtailment": 1042.11,
+      "recapture_delta": 1042.11,
+      "final_diesel": 61579.21,
+      "original_SOC": 93.99,
+      "candidate_SOC": 93.99,
+      "original_E_next": 187970.36,
+      "candidate_E_next": 187970.36,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1042.11,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62621.32,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 141970.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 59.8743,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 106,
+      "hour": 8,
+      "timestamp": "2025-08-14T08:00:00Z",
+      "original_diesel": 15572.05,
+      "native_curtailment": 5484.64,
+      "recapture_delta": 5484.64,
+      "final_diesel": 10087.41,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 2206.13,
+      "candidate_charge": 2206.13,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5484.64,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 15572.05,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 187970.36,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 39.4795,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 107,
+      "hour": 9,
+      "timestamp": "2025-08-15T09:00:00Z",
+      "original_diesel": 63276.46,
+      "native_curtailment": 11785.01,
+      "recapture_delta": 11785.01,
+      "final_diesel": 51491.45,
+      "original_SOC": 92.5,
+      "candidate_SOC": 92.5,
+      "original_E_next": 184994.38,
+      "candidate_E_next": 184994.38,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 11785.01,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 63276.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 138994.38,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 49.9578,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 108,
+      "hour": 6,
+      "timestamp": "2025-08-16T06:00:00Z",
+      "original_diesel": 60897.78,
+      "native_curtailment": 1037.41,
+      "recapture_delta": 1037.41,
+      "final_diesel": 59860.369999999995,
+      "original_SOC": 84.16,
+      "candidate_SOC": 84.16,
+      "original_E_next": 168319.56,
+      "candidate_E_next": 168319.56,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 14223.54,
+      "candidate_served": 14223.54,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 1037.41,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60897.78,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 122319.56,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 68.85,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 108,
+      "hour": 8,
+      "timestamp": "2025-08-16T08:00:00Z",
+      "original_diesel": 52205.38,
+      "native_curtailment": 5743.53,
+      "recapture_delta": 5743.53,
+      "final_diesel": 46461.85,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 38477.47,
+      "candidate_charge": 38477.47,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12878.68,
+      "candidate_served": 12878.68,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5743.53,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 52205.38,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 154600.73,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 48.8849,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 109,
+      "hour": 9,
+      "timestamp": "2025-08-17T09:00:00Z",
+      "original_diesel": 58056.94,
+      "native_curtailment": 8024.94,
+      "recapture_delta": 8024.94,
+      "final_diesel": 50032.0,
+      "original_SOC": 92.96,
+      "candidate_SOC": 92.96,
+      "original_E_next": 185913.78,
+      "candidate_E_next": 185913.78,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12401.92,
+      "candidate_served": 12401.92,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 8024.94,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 58056.94,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 139913.78,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 48.9635,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 110,
+      "hour": 7,
+      "timestamp": "2025-08-18T07:00:00Z",
+      "original_diesel": 62621.32,
+      "native_curtailment": 2863.23,
+      "recapture_delta": 2863.23,
+      "final_diesel": 59758.09,
+      "original_SOC": 79.12,
+      "candidate_SOC": 79.12,
+      "original_E_next": 158246.89,
+      "candidate_E_next": 158246.89,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 2863.23,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 62621.32,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 112246.89,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 68.3682,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 112,
+      "hour": 7,
+      "timestamp": "2025-08-20T07:00:00Z",
+      "original_diesel": 60999.69,
+      "native_curtailment": 5669.76,
+      "recapture_delta": 5669.76,
+      "final_diesel": 55329.93,
+      "original_SOC": 92.34,
+      "candidate_SOC": 92.34,
+      "original_E_next": 184673.16,
+      "candidate_E_next": 184673.16,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 13500.0,
+      "candidate_served": 13500.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5669.76,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 60999.69,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 138673.16,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 60.4691,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 115,
+      "hour": 10,
+      "timestamp": "2025-08-23T10:00:00Z",
+      "original_diesel": 53793.46,
+      "native_curtailment": 5593.79,
+      "recapture_delta": 5593.79,
+      "final_diesel": 48199.67,
+      "original_SOC": 93.04,
+      "candidate_SOC": 93.04,
+      "original_E_next": 186076.63,
+      "candidate_E_next": 186076.63,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12102.22,
+      "candidate_served": 12102.22,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 5593.79,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 53793.46,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 140076.63,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 48.6647,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 115,
+      "hour": 21,
+      "timestamp": "2025-08-23T21:00:00Z",
+      "original_diesel": 67519.1,
+      "native_curtailment": 91.91,
+      "recapture_delta": 91.91,
+      "final_diesel": 67427.19,
+      "original_SOC": 89.68,
+      "candidate_SOC": 89.68,
+      "original_E_next": 179365.06,
+      "candidate_E_next": 179365.06,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17598.08,
+      "candidate_served": 17598.08,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 91.91,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 67519.1,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 133365.06,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 31.6148,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 116,
+      "hour": 11,
+      "timestamp": "2025-08-24T11:00:00Z",
+      "original_diesel": 56480.79,
+      "native_curtailment": 20195.94,
+      "recapture_delta": 20195.94,
+      "final_diesel": 36284.850000000006,
+      "original_SOC": 75.17,
+      "candidate_SOC": 75.17,
+      "original_E_next": 150338.37,
+      "candidate_E_next": 150338.37,
+      "original_charge": 50000.0,
+      "candidate_charge": 50000.0,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 12000.0,
+      "candidate_served": 12000.0,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 20195.94,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 56480.79,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 104338.37,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 66.5497,
+          "class": "CARRIED_STATE"
+        }
+      }
+    },
+    {
+      "origin_id": 119,
+      "hour": 22,
+      "timestamp": "2025-08-27T22:00:00Z",
+      "original_diesel": 32287.22,
+      "native_curtailment": 751.83,
+      "recapture_delta": 751.83,
+      "final_diesel": 31535.39,
+      "original_SOC": 95.0,
+      "candidate_SOC": 95.0,
+      "original_E_next": 190000.0,
+      "candidate_E_next": 190000.0,
+      "original_charge": 15637.61,
+      "candidate_charge": 15637.61,
+      "original_discharge": 0.0,
+      "candidate_discharge": 0.0,
+      "original_served": 17897.78,
+      "candidate_served": 17897.78,
+      "original_unmet": 0.0,
+      "candidate_unmet": 0.0,
+      "inputs_audit": {
+        "executor_native_curtailment": {
+          "value": 751.83,
+          "class": "CURRENT_REALIZED"
+        },
+        "executor_original_diesel": {
+          "value": 32287.22,
+          "class": "CURRENT_REALIZED"
+        },
+        "carried_state_energy_wh": {
+          "value": 175613.4,
+          "class": "CARRIED_STATE"
+        },
+        "carried_state_fuel_l": {
+          "value": 38.0941,
+          "class": "CARRIED_STATE"
+        }
+      }
+    }
+  ]
+}

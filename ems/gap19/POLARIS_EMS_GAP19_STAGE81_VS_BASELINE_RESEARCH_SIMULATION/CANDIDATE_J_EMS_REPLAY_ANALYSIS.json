@@ -1,0 +1,127 @@
+{
+  "disclaimer": "CANDIDATE J EMS REPLAY ANALYSIS. RESEARCH-ONLY. Post-hoc analysis of two already-written raw-results files (CANDIDATE_F_EMS_REPLAY_RESULTS.json for control+F, CANDIDATE_J_EMS_REPLAY_RESULTS.json for J). No model load, no GAP19 call, no .fit() in this script.",
+  "normal_origins_n": 245,
+  "tie_epsilon_wh": 0.001,
+  "aggregate": {
+    "stage81_frozen": {
+      "n": 245,
+      "planned_diesel_fuel_l": 10849.6015,
+      "realized_diesel_fuel_l": 10849.6015,
+      "planned_curtailment_wh": 10157843.9,
+      "realized_curtailment_wh": 8869721.3,
+      "realized_critical_load_unmet_wh": 1739283.7,
+      "planned_battery_charge_wh": 38658765.0,
+      "realized_battery_charge_wh": 36534371.8,
+      "planned_battery_discharge_wh": 26575094.9,
+      "realized_battery_discharge_wh": 26575094.1,
+      "soc_violations": 0,
+      "origins_with_nonzero_realized_unmet": 220
+    },
+    "candidate_F": {
+      "n": 245,
+      "planned_diesel_fuel_l": 10888.1696,
+      "realized_diesel_fuel_l": 10888.1696,
+      "planned_curtailment_wh": 10212971.6,
+      "realized_curtailment_wh": 8855806.5,
+      "realized_critical_load_unmet_wh": 1658490.2,
+      "planned_battery_charge_wh": 38736403.3,
+      "realized_battery_charge_wh": 36657230.9,
+      "planned_battery_discharge_wh": 26629563.4,
+      "realized_battery_discharge_wh": 26629563.5,
+      "soc_violations": 0,
+      "origins_with_nonzero_realized_unmet": 219
+    },
+    "candidate_J": {
+      "n": 245,
+      "planned_diesel_fuel_l": 10886.1994,
+      "realized_diesel_fuel_l": 10886.1994,
+      "planned_curtailment_wh": 10247190.7,
+      "realized_curtailment_wh": 8845829.5,
+      "realized_critical_load_unmet_wh": 1647681.0,
+      "planned_battery_charge_wh": 38809817.8,
+      "realized_battery_charge_wh": 36754214.6,
+      "planned_battery_discharge_wh": 26698917.8,
+      "realized_battery_discharge_wh": 26698917.6,
+      "soc_violations": 0,
+      "origins_with_nonzero_realized_unmet": 220
+    }
+  },
+  "aggregate_diffs": {
+    "unmet_wh_J_minus_F": -10809.2,
+    "unmet_pct_J_minus_F": -0.6517,
+    "unmet_wh_J_minus_control": -91602.7,
+    "unmet_pct_J_minus_control": -5.2667,
+    "diesel_l_J_minus_F": -1.9702,
+    "diesel_l_J_minus_control": 36.5979
+  },
+  "per_origin_win_tie_regression": {
+    "J_vs_F": {
+      "wins": 124,
+      "ties": 27,
+      "regressions": 94,
+      "largest_improvement": [
+        "2024-06-13T00:00:00Z",
+        -2333.7999999999993
+      ],
+      "largest_regression": [
+        "2024-05-18T00:00:00Z",
+        3027.0
+      ],
+      "regression_month_distribution": {
+        "03": 10,
+        "04": 18,
+        "05": 15,
+        "06": 16,
+        "07": 12,
+        "08": 11,
+        "09": 6,
+        "10": 6
+      },
+      "all_origin_month_distribution": {
+        "03": 31,
+        "04": 30,
+        "05": 31,
+        "06": 30,
+        "07": 31,
+        "08": 31,
+        "09": 30,
+        "10": 31
+      }
+    },
+    "J_vs_control": {
+      "wins": 143,
+      "ties": 25,
+      "regressions": 77
+    }
+  },
+  "bootstrap_95ci_realized_unmet_diff": {
+    "J_minus_F": {
+      "point_estimate_sum_diff": -10809.2,
+      "mean_diff": -10821.5019,
+      "ci95_lo": -26858.375,
+      "ci95_hi": 6716.4975,
+      "n_boot": 2000,
+      "method": "corrected_origin_level_paired_bootstrap_sum_diff"
+    },
+    "J_minus_F_excludes_zero": false,
+    "J_minus_control": {
+      "point_estimate_sum_diff": -91602.7,
+      "mean_diff": -91720.2226,
+      "ci95_lo": -121322.785,
+      "ci95_hi": -61777.185,
+      "n_boot": 2000,
+      "method": "corrected_origin_level_paired_bootstrap_sum_diff"
+    },
+    "J_minus_control_excludes_zero": true
+  },
+  "input_hashes": {
+    "CANDIDATE_F_EMS_REPLAY_RESULTS.json": {
+      "before": "56974fcef86f219e2f6aec1671b14acd36b69c9c4eb9bad7245a2830dcf2fd32",
+      "after": "56974fcef86f219e2f6aec1671b14acd36b69c9c4eb9bad7245a2830dcf2fd32"
+    },
+    "CANDIDATE_J_EMS_REPLAY_RESULTS.json": {
+      "before": "4bae35a8651e084c8dd768339cf5a230780be38fcdf07de187042b72e6b93448",
+      "after": "4bae35a8651e084c8dd768339cf5a230780be38fcdf07de187042b72e6b93448"
+    }
+  }
+}

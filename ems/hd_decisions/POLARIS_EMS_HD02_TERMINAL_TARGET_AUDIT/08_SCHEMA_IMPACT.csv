@@ -1,0 +1,4 @@
+Artifact_Name,Schema_Impact_Type,Field_Modification_Details,Justification
+ForecastBundle,ADDITIVE_EXTENSION_REQUIRED,Extend demand_critical forecast vector to H+N steps,Required to evaluate E_EBR_target(H) causally
+StationState,NO_CHANGE,None,Initial state handling unaffected
+DispatchPlan,ADDITIVE_EXTENSION_REQUIRED,Add terminal_ebr_target and terminal_shortfall fields,Required for auditability of Stage 2 boundary performance

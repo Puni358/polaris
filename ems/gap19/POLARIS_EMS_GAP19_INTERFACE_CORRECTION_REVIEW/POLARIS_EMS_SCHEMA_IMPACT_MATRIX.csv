@@ -1,0 +1,4 @@
+SCHEMA,PREVIOUS_CLAIM,CORRECTED_CLAIM,BACKWARD_COMPATIBLE,RATIONALE
+ForecastBundle,NO_SCHEMA_CHANGE_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,YES (100% backward compatible defaults),5-tier demand vector breakdown requires additive fields
+StationState,NO_SCHEMA_CHANGE_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,YES (100% backward compatible defaults),Fuel remaining & operating mode state require additive fields
+DispatchPlan,NO_SCHEMA_CHANGE_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,YES (100% backward compatible defaults),Stage 1-4 diagnostic objective outputs require additive fields

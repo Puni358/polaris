@@ -1,0 +1,7 @@
+GAP_ID,FEATURE,FROZEN_FACT,V2_GOVERNED_SPECIFICATION,SUPPORT_STATUS,AUDIT_VERDICT
+GAP-01,Objective Structure,Single composite scalar weighted sum,4-Stage Lexicographic MILP,NOT_SUPPORTED,PASS
+GAP-02,Unmet Load Penalty,"$10,000/kWh soft penalty",Stage 1 Hard Constraint p_unmet_critical=0,NOT_SUPPORTED,PASS
+GAP-03,Load Tiers,Single composite load demand,5-tier load classification,NOT_SUPPORTED,PASS
+GAP-04,Diesel Objective,Cost proxy in dollars,Stage 3 Physical fuel volume in Liters,PARTIALLY_SUPPORTED,PASS
+GAP-05,Emergency Reserve,20% technical min SOC,Stage 2 Dynamic EBR energy target shortfall min,NOT_SUPPORTED,PASS
+GAP-06,Terminal SOC,Free terminal state,Stage 2 Terminal Energy Target constraint,NOT_SUPPORTED,PASS

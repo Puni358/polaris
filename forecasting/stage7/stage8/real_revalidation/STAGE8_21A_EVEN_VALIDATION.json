@@ -1,0 +1,112 @@
+{
+  "timestamp_utc": "2026-09-13T10:12:14.954522+00:00",
+  "experiment_name": "POLARIS Stage 8.21A Governed Experiment",
+  "even_control_mae": 37.6201,
+  "even_candidate_mae": 37.5916,
+  "even_delta_mae": -0.0285,
+  "even_control_nmae": 29.2063,
+  "even_candidate_nmae": 29.1841,
+  "even_delta_nmae": -0.0221,
+  "even_control_rmse": 60.1606,
+  "even_candidate_rmse": 60.1587,
+  "even_delta_rmse": -0.0019,
+  "improving_folds": 2,
+  "worst_fold_degradation": 0.2541,
+  "fold_results": [
+    {
+      "fold": 1,
+      "control_mae": 49.3114,
+      "candidate_mae": 49.5655,
+      "delta_mae": 0.2541,
+      "control_nmae": 29.5265,
+      "candidate_nmae": 29.6786,
+      "delta_nmae": 0.1521,
+      "control_rmse": 81.355,
+      "candidate_rmse": 81.7334,
+      "delta_rmse": 0.3784,
+      "improved": false
+    },
+    {
+      "fold": 2,
+      "control_mae": 70.5688,
+      "candidate_mae": 69.9989,
+      "delta_mae": -0.5699,
+      "control_nmae": 36.9196,
+      "candidate_nmae": 36.6215,
+      "delta_nmae": -0.2981,
+      "control_rmse": 103.7439,
+      "candidate_rmse": 103.4081,
+      "delta_rmse": -0.3358,
+      "improved": true
+    },
+    {
+      "fold": 3,
+      "control_mae": 40.3456,
+      "candidate_mae": 40.5233,
+      "delta_mae": 0.1777,
+      "control_nmae": 28.1423,
+      "candidate_nmae": 28.2662,
+      "delta_nmae": 0.124,
+      "control_rmse": 67.2567,
+      "candidate_rmse": 67.3239,
+      "delta_rmse": 0.0672,
+      "improved": false
+    },
+    {
+      "fold": 4,
+      "control_mae": 25.7704,
+      "candidate_mae": 25.7721,
+      "delta_mae": 0.0017,
+      "control_nmae": 36.7313,
+      "candidate_nmae": 36.7337,
+      "delta_nmae": 0.0024,
+      "control_rmse": 44.6132,
+      "candidate_rmse": 44.4596,
+      "delta_rmse": -0.1536,
+      "improved": false
+    },
+    {
+      "fold": 5,
+      "control_mae": 2.1041,
+      "candidate_mae": 2.0979,
+      "delta_mae": -0.0061,
+      "control_nmae": 58.5528,
+      "candidate_nmae": 58.3822,
+      "delta_nmae": -0.1706,
+      "control_rmse": 3.8345,
+      "candidate_rmse": 3.8687,
+      "delta_rmse": 0.0342,
+      "improved": true
+    }
+  ],
+  "gates": {
+    "G1_MAE_Improvement": {
+      "required": "even_delta_mae < 0",
+      "value": -0.0285,
+      "pass": true
+    },
+    "G2_Fold_Consistency": {
+      "required": "improving_folds >= 4",
+      "value": 2,
+      "pass": false
+    },
+    "G3_Worst_Fold_Tolerance": {
+      "required": "worst_fold <= 0.50 W/m2",
+      "value": 0.2541,
+      "pass": true
+    },
+    "G4_nMAE_RMSE_NonDegradation": {
+      "required": "delta_nmae <= 0 and delta_rmse <= 0",
+      "pass": true
+    },
+    "G5_Causal_Integrity": {
+      "required": "causal_pass == True",
+      "pass": true
+    },
+    "G6_Exact_Control_Reproduction": {
+      "required": "control_mae matches baseline",
+      "pass": true
+    }
+  },
+  "EVEN_GATES": "FAIL"
+}

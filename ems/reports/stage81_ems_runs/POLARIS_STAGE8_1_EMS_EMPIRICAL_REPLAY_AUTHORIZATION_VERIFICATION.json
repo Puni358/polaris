@@ -1,0 +1,58 @@
+{
+  "phase": "S8.1-EMS-EMPIRICAL-REPLAY-AUTHORIZATION-VERIFICATION",
+  "verification_decision": "A — VERIFIED EXECUTION-READY",
+  "authorization_status": "VERIFIED_COMPLETE",
+  "timestamp": "2026-09-19T11:58:30+05:30",
+  "decision_summary": "The Stage8.1 → EMS empirical replay authorization package is VERIFIED EXECUTION-READY. All 24 protocol dimensions, contracts, checksums, causality firewalls, and pre-registered endpoints are 100% complete and locked. The repository is ready for a separate execution task.",
+  "status_matrix": {
+    "verification_decision": "A — VERIFIED EXECUTION-READY",
+    "authorization_status": "VERIFIED_COMPLETE",
+    "treatment_artifact_status": "VERIFIED_MATCH",
+    "treatment_sha256_status": "VERIFIED_MATCH",
+    "expected_origins": 173,
+    "eligibility_rules_status": "VERIFIED_PREDECLARED",
+    "final_eligible_origins_status": "VERIFIED_DETERMINED_BY_PREDECLARED_RULES",
+    "ineligible_origins_status": "NONE (VERIFIED BY PRE-EXECUTION AUDIT)",
+    "ineligibility_reasons_status": "NONE (VERIFIED BY PRE-EXECUTION AUDIT)",
+    "control_status": "VERIFIED_AUTHORITATIVE",
+    "primary_endpoint": "total_diesel_fuel_liters",
+    "primary_endpoint_pre_registration_status": "ESTABLISHED",
+    "experimental_unit_status": "VERIFIED_DEFINED",
+    "paired_design_status": "VERIFIED_LOCKED",
+    "future_truth_firewall": "ESTABLISHED",
+    "statistical_dependence_status": "VERIFIED_PREDEFINED",
+    "secondary_endpoint_status": "VERIFIED_FROZEN",
+    "forecastbundle_contract_status": "VERIFIED_COMPLIANT",
+    "protocol_lock_status": "VERIFIED_LOCKED",
+    "result_dependent_stopping": "PROHIBITED",
+    "scientific_claim_boundary_status": "VERIFIED_BOUNDED",
+    "execution_contamination_status": "VERIFIED_UNCONTAMINATED"
+  },
+  "treatment_artifact_audit": {
+    "filename": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "expected_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "actual_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "match": true,
+    "total_rows": 4152,
+    "unique_origins": 173,
+    "horizon_min": 1,
+    "horizon_max": 24,
+    "missing_values": 0,
+    "duplicates": 0
+  },
+  "control_artifact_audit": {
+    "engine_class": "LocalBaselineForecastEngine",
+    "file_path": "system/forecasting/implementations/baseline.py",
+    "status": "VERIFIED_AUTHORITATIVE"
+  },
+  "integrity_check": {
+    "material_issues": "NONE",
+    "required_corrections": "NONE",
+    "optional_notes": "NONE",
+    "experiment_executed": false,
+    "model_retrained": false,
+    "new_dataset_created": false,
+    "source_files_modified": false
+  },
+  "next_step": "FORMAL_GOVERNANCE_EXECUTION_TASK_FOR_STAGE8.1_EMS_EMPIRICAL_REPLAY_EXPERIMENT"
+}

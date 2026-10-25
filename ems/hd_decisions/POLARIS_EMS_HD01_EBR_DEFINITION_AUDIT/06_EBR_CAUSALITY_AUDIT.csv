@@ -1,0 +1,6 @@
+Candidate_ID,Input_Dependencies,Uses_Future_Truth,Uses_Exogenous_Forecast,Causality_Status,Causality_Violation_Reason
+CAND_A,Static Config Scalar (X%),NO,NO,CAUSALLY_VALID,None
+CAND_B,Static Config Scalar (Y Wh),NO,NO,CAUSALLY_VALID,None
+CAND_C,D_critical forecast (t:t+N) & eta_dis,NO,YES,CAUSALLY_VALID,Valid for N <= 24h with forecast bundle
+CAND_D_EXOG,Pre-solve State S(t0) & ForecastBundle,NO,YES,CAUSALLY_VALID,Valid if target generation is pre-solve exogenous
+CAND_D_ENDOG,In-solve dispatch outputs E(t) / P(t),YES (Circular),NO,BLOCKED,Creates illegal feedback loop in same solve timestep

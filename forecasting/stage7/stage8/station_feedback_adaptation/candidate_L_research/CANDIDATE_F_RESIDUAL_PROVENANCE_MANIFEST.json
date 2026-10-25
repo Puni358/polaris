@@ -1,0 +1,65 @@
+{
+  "generated_at_utc": "2026-10-03T19:40:09.238497+00:00",
+  "purpose": "Authoritative Candidate F Residual Dataset & Error Forensics (2020-2023)",
+  "input_hashes": {
+    "matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "predictions": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "model_f": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+  },
+  "residual_dataset": {
+    "path": "/home/punith-bs/01polaris (Copy)/candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+    "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "row_count": 26011,
+    "origin_count": 1369,
+    "columns": [
+      "forecast_start",
+      "timestamp",
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "cloud_frac",
+      "elevation_x_cloud_frac",
+      "ctx_last_obs",
+      "ctx_std_3h",
+      "ctx_mean_24h",
+      "split",
+      "pred_candidate_F_total",
+      "actual_SW_IN",
+      "prediction",
+      "actual",
+      "residual",
+      "absolute_error",
+      "squared_error",
+      "forecast_error",
+      "year",
+      "day_of_year",
+      "elev_regime",
+      "cloud_regime"
+    ]
+  },
+  "forensics_summary": {
+    "overall_mae": 45.5322,
+    "overall_rmse": 84.1981,
+    "overall_bias": 17.4503,
+    "daytime_mae": 74.0219,
+    "daytime_rmse": 107.7377,
+    "daytime_bias": 29.1483,
+    "consecutive_origin_pairs_count": 1220,
+    "lag1_pearson_r": 0.4641,
+    "lag1_pearson_p_value": 3.4291715692995443e-66,
+    "lag1_spearman_rho": 0.4969,
+    "lag1_regression_slope": 0.4646,
+    "lag1_regression_r2": 0.2154,
+    "next_origin_signal": "PRESENT"
+  },
+  "governance": {
+    "candidate_k_trained": false,
+    "candidate_f_retrained": false,
+    "stage8_1_modified": false,
+    "training_ready": false,
+    "lock_status": "CORRECTION MODEL TRAINING LOCKED"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "manifest_id": "POLARIS_23_HORIZON_OFAT_SPECIFICATION_MANIFEST",
+  "governance_status": "SPECIFICATION_COMPLETE_EXECUTION_LOCKED",
+  "authorization_classification": "CLASSIFICATION_A_EXECUTION_NOT_AUTHORIZED",
+  "execution_status": "NOT_AUTHORIZED",
+  "execution_gate": "EXECUTION NOT AUTHORIZED — LOCKED PENDING SEPARATE EXPLICIT APPROVAL",
+  "timestamp_utc": "2026-09-19T19:57:30+05:30",
+  "experiment_design": {
+    "design_type": "23-Horizon One-Factor-At-A-Time (OFAT) Restoration Design",
+    "purpose": "Determine the downstream EMS effect associated with individually restoring each genuine horizon weight from the V3 Stage8.1 objective",
+    "experimental_unit": "ORIGIN (24 sequential MPC cycles per origin)",
+    "population_size_origins": 173,
+    "mpc_cycles_per_origin": 24,
+    "total_treatment_arms": 23,
+    "treatment_arm_indices": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "excluded_arm_index_0_analytical": {
+      "j": 0,
+      "reason": "0.95^0 = 1.0, making it mathematically identical to V3 control. Execution skipped to avoid duplicate computation.",
+      "analytical_result": "Delta_0 = 0.0 liters fuel difference by definition"
+    }
+  },
+  "arm_inventory": {
+    "control_arm": {
+      "arm_id": "CONTROL_V3_STAGE8_1",
+      "name": "V3 Stage 8.1 Baseline Objective Control",
+      "status": "FROZEN_REUSED_ARTIFACT",
+      "rerun_v3": false,
+      "weight_specification": "w_t = 0.95^t for t in 0..23",
+      "source_artifact_csv": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv",
+      "source_artifact_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e"
+    },
+    "treatment_arms": [
+      {
+        "arm_id": "TREATMENT_ARM_J01",
+        "j": 1,
+        "restored_horizon_h": 2,
+        "restored_timestep_t": 1,
+        "weight_vector_description": "w_1 = 1.0, w_t = 0.95^t for t != 1",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J02",
+        "j": 2,
+        "restored_horizon_h": 3,
+        "restored_timestep_t": 2,
+        "weight_vector_description": "w_2 = 1.0, w_t = 0.95^t for t != 2",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J03",
+        "j": 3,
+        "restored_horizon_h": 4,
+        "restored_timestep_t": 3,
+        "weight_vector_description": "w_3 = 1.0, w_t = 0.95^t for t != 3",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J04",
+        "j": 4,
+        "restored_horizon_h": 5,
+        "restored_timestep_t": 4,
+        "weight_vector_description": "w_4 = 1.0, w_t = 0.95^t for t != 4",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J05",
+        "j": 5,
+        "restored_horizon_h": 6,
+        "restored_timestep_t": 5,
+        "weight_vector_description": "w_5 = 1.0, w_t = 0.95^t for t != 5",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J06",
+        "j": 6,
+        "restored_horizon_h": 7,
+        "restored_timestep_t": 6,
+        "weight_vector_description": "w_6 = 1.0, w_t = 0.95^t for t != 6",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J07",
+        "j": 7,
+        "restored_horizon_h": 8,
+        "restored_timestep_t": 7,
+        "weight_vector_description": "w_7 = 1.0, w_t = 0.95^t for t != 7",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J08",
+        "j": 8,
+        "restored_horizon_h": 9,
+        "restored_timestep_t": 8,
+        "weight_vector_description": "w_8 = 1.0, w_t = 0.95^t for t != 8",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J09",
+        "j": 9,
+        "restored_horizon_h": 10,
+        "restored_timestep_t": 9,
+        "weight_vector_description": "w_9 = 1.0, w_t = 0.95^t for t != 9",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J10",
+        "j": 10,
+        "restored_horizon_h": 11,
+        "restored_timestep_t": 10,
+        "weight_vector_description": "w_10 = 1.0, w_t = 0.95^t for t != 10",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J11",
+        "j": 11,
+        "restored_horizon_h": 12,
+        "restored_timestep_t": 11,
+        "weight_vector_description": "w_11 = 1.0, w_t = 0.95^t for t != 11",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J12",
+        "j": 12,
+        "restored_horizon_h": 13,
+        "restored_timestep_t": 12,
+        "weight_vector_description": "w_12 = 1.0, w_t = 0.95^t for t != 12",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J13",
+        "j": 13,
+        "restored_horizon_h": 14,
+        "restored_timestep_t": 13,
+        "weight_vector_description": "w_13 = 1.0, w_t = 0.95^t for t != 13",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J14",
+        "j": 14,
+        "restored_horizon_h": 15,
+        "restored_timestep_t": 14,
+        "weight_vector_description": "w_14 = 1.0, w_t = 0.95^t for t != 14",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J15",
+        "j": 15,
+        "restored_horizon_h": 16,
+        "restored_timestep_t": 15,
+        "weight_vector_description": "w_15 = 1.0, w_t = 0.95^t for t != 15",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J16",
+        "j": 16,
+        "restored_horizon_h": 17,
+        "restored_timestep_t": 16,
+        "weight_vector_description": "w_16 = 1.0, w_t = 0.95^t for t != 16",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J17",
+        "j": 17,
+        "restored_horizon_h": 18,
+        "restored_timestep_t": 17,
+        "weight_vector_description": "w_17 = 1.0, w_t = 0.95^t for t != 17",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J18",
+        "j": 18,
+        "restored_horizon_h": 19,
+        "restored_timestep_t": 18,
+        "weight_vector_description": "w_18 = 1.0, w_t = 0.95^t for t != 18",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J19",
+        "j": 19,
+        "restored_horizon_h": 20,
+        "restored_timestep_t": 19,
+        "weight_vector_description": "w_19 = 1.0, w_t = 0.95^t for t != 19",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J20",
+        "j": 20,
+        "restored_horizon_h": 21,
+        "restored_timestep_t": 20,
+        "weight_vector_description": "w_20 = 1.0, w_t = 0.95^t for t != 20",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J21",
+        "j": 21,
+        "restored_horizon_h": 22,
+        "restored_timestep_t": 21,
+        "weight_vector_description": "w_21 = 1.0, w_t = 0.95^t for t != 21",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J22",
+        "j": 22,
+        "restored_horizon_h": 23,
+        "restored_timestep_t": 22,
+        "weight_vector_description": "w_22 = 1.0, w_t = 0.95^t for t != 22",
+        "expected_milp_solves": 4152
+      },
+      {
+        "arm_id": "TREATMENT_ARM_J23",
+        "j": 23,
+        "restored_horizon_h": 24,
+        "restored_timestep_t": 23,
+        "weight_vector_description": "w_23 = 1.0, w_t = 0.95^t for t != 23",
+        "expected_milp_solves": 4152
+      }
+    ]
+  },
+  "solve_count_accounting": {
+    "origins": 173,
+    "mpc_steps_per_origin": 24,
+    "solves_per_treatment_arm": 4152,
+    "number_of_treatment_arms": 23,
+    "treatment_milp_solves": 95496,
+    "control_milp_solves_new": 0,
+    "total_new_milp_solves": 95496,
+    "exact_fresh_solve_requirement": "Fresh exact MILP solve for every treatment MPC cycle. No warm starts, no approximate optimization, no skipped cycles, no reduced origins."
+  },
+  "safe_computational_optimizations": [
+    {
+      "optimization_id": "OPT_1_MODEL_PRECOMPUTATION",
+      "description": "Precompute constraint/model structure per (origin, MPC step) where mathematically identical across treatment arms, mutating only the objective coefficient vector."
+    },
+    {
+      "optimization_id": "OPT_2_PARALLELIZATION",
+      "description": "Parallelize independent origins/arms across worker processes."
+    },
+    {
+      "optimization_id": "OPT_3_STATE_ISOLATION",
+      "description": "Keep each treatment's state trajectory completely isolated."
+    }
+  ],
+  "resource_configuration": {
+    "max_workers": 8,
+    "worker_concurrency_mode": "Multiprocessing process pool with independent origin/arm dispatch",
+    "memory_isolation": "Isolated process space per worker"
+  },
+  "thermal_governance": {
+    "target_operating_temperature_policy": "NO 100C TARGET OPERATING TEMPERATURE ALLOWED",
+    "monitoring_mode": "Continuous active CPU temperature monitoring during execution",
+    "thermal_stop_rule": "If CPU temperature approaches machine thermal limits or system exhibits thermal instability, manually halt execution immediately.",
+    "scientific_integrity_invariant": "Scientific semantics, cycle count, origin count, or optimization fidelity must NEVER be altered to accommodate thermal constraints.",
+    "telemetry_logging": "Record thermal observations alongside execution telemetry if hardware sensors are accessible."
+  },
+  "telemetry_requirements": {
+    "schema": "37-field V2/V3 observational telemetry schema",
+    "logging_policy": "Preserve all existing V2/V3 telemetry fields. Zero weakening of logging to improve runtime.",
+    "total_expected_telemetry_rows": 95496
+  },
+  "statistical_plan": {
+    "design": "Paired origin-level treatment-vs-V3 comparisons across N=173 origins",
+    "primary_endpoint": "total_diesel_fuel_liters per 24-hour origin",
+    "secondary_endpoints": [
+      "battery_throughput_wh",
+      "renewable_curtailment_wh",
+      "startup_events_count",
+      "unmet_load_wh"
+    ],
+    "multiplicity_correction": {
+      "primary_multiplicity_method": "HOLM_BONFERRONI",
+      "family_wise_alpha": 0.05,
+      "number_of_horizon_tests": 23,
+      "bh_fdr_confirmatory_status": "NOT_USED",
+      "predeclared_primary_procedure": "Holm-Bonferroni step-down control of family-wise error rate across 23 hypotheses H_0,j: mu_treatment_j = mu_V3 at alpha = 0.05",
+      "secondary_exploratory_fdr_procedure": "Benjamini-Hochberg procedure at FDR q = 0.05 retained strictly for secondary/exploratory descriptive analysis with NO bearing on the primary confirmatory decision",
+      "analytical_arm_j0": "Delta_0 = 0.0 by definition (excluded from multiplicity penalty)",
+      "selection_rule": "Strictly predeclared. Zero post-hoc selection of horizons based on observed results."
+    }
+  },
+  "protected_input_hashes": {
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.json": "5c84d72bc13d52d9b1580ca02b66a5e1281db2bd1be97405e3a27f6cf4c0ff95",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.md": "b348f98ec448d37e69f8c05e197c36ca2cfdf5137df776fa2e7d77b817e948c3",
+    "system/optimization/implementations/milp.py": "e2a05fbdfedcd89574d71587d65b4c1069ebbd18cfcb9bcf51bfef252f4c9bf6",
+    "system/simulation/simulator.py": "aa7668697b0932bb821b016f4d221cd88bb82d36fb56358c2be6ce8806296cc7",
+    "system/runtime/runner.py": "4f32fb0f9aef7c11f74fa18cbf5e7ffecdf61681b4efb489bb2dfabf972b220e",
+    "system/forecasting/implementations/s81_solar.py": "b99e746a51d95bf085c88cbb5f154563a6f1d171e544ae5d01fbffbbbe834167",
+    "system/schemas/forecast_bundle.py": "090b8f44ff5ae7a8c3d9a16fbdadcd7acae6e511487ea0b7fb5ca8fa7b78972d",
+    "system/schemas/station_state.py": "ffcd75b6aedbf12d4d98d28a3f8fa3ddf7a14e9185a767431bf3bb79a835b3ec",
+    "system/schemas/dispatch_plan.py": "d76dbdcf1b3fb457385906f3458db9ebddbc8e0fdb291079d8efd4df6a83a005"
+  },
+  "execution_gate_declaration": {
+    "execution_authorized": false,
+    "code_execution_performed": false,
+    "execution_status": "NOT_AUTHORIZED",
+    "current_status": "SPECIFICATION COMPLETE AND EXECUTION-READY; EXECUTION LOCKED PENDING EXPLICIT AUTHORIZATION",
+    "next_authorized_step": "Separate explicit governance authorization to trigger execution runner"
+  }
+}

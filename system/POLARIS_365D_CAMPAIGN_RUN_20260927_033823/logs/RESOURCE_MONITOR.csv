@@ -1,0 +1,9 @@
+timestamp,cpu_count,mem_total_gb,mem_avail_gb,disk_free_gb,thermal_status,sleep_inhibition_status
+2026-09-27T03:38:24Z,4,7.5,3.17,241.0,"{'SEN2': 43.05, 'acpitz': 27.8, 'TCPU': 76.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 75.0}",ACTIVE
+2026-09-27T03:38:25Z,4,7.5,3.14,241.0,"{'SEN2': 43.05, 'acpitz': 27.8, 'TCPU': 85.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 85.0}",ACTIVE
+2026-09-27T03:38:26Z,4,7.5,3.15,241.0,"{'SEN2': 43.05, 'acpitz': 27.8, 'TCPU': 80.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 80.0}",ACTIVE
+2026-09-27T03:38:27Z,4,7.5,3.14,241.0,"{'SEN2': 43.05, 'acpitz': 27.8, 'TCPU': 94.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 94.0}",ACTIVE
+2026-09-27T03:38:28Z,4,7.5,3.17,241.0,"{'SEN2': 43.05, 'acpitz': 27.8, 'TCPU': 87.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 87.0}",ACTIVE
+2026-09-27T03:38:29Z,4,7.5,3.17,241.0,"{'SEN2': 44.05, 'acpitz': 27.8, 'TCPU': 91.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 91.0}",ACTIVE
+2026-09-27T03:38:30Z,4,7.5,3.2,241.0,"{'SEN2': 44.05, 'acpitz': 27.8, 'TCPU': 84.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 84.0}",ACTIVE
+2026-09-27T03:38:31Z,4,7.5,3.23,240.99,"{'SEN2': 44.05, 'acpitz': 27.8, 'TCPU': 46.0, 'INT3400 Thermal': 20.0, 'x86_pkg_temp': 46.0}",ACTIVE

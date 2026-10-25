@@ -1,0 +1,39 @@
+{
+  "audit_name": "STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT",
+  "governance_status": "FORMAL_CLOSURE_CORRECTION_AUDIT_ONLY",
+  "target_site": "SITES Nuolja (68.362°N, 18.739°E, 702m ASL)",
+  "source_horizon_artifact": "stage7/stage7_5_terrain_horizon/nuolja_horizon_profile_360deg.csv",
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "odd_accessed": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "issue_1_sky_view_factor_integration": {
+    "num_azimuth_steps": 360,
+    "min_horizon_elevation_deg": -1.8029,
+    "max_horizon_elevation_deg": 29.7988,
+    "mean_horizon_elevation_deg": 9.5954,
+    "median_horizon_elevation_deg": 4.0660,
+    "exact_integrated_svf": 0.942228,
+    "exact_integrated_tcf": 0.057772,
+    "visible_terrain_fraction_pct": 5.7772,
+    "method": "Discrete 360° azimuthal integration with elevation angles clamped >= 0° for horizontal sensor plate"
+  },
+  "issue_2_numerical_reconciliation": {
+    "crude_theoretical_upper_bound_w_m2": 39.29,
+    "physically_realistic_peak_w_m2": 13.00,
+    "annual_daytime_mean_w_m2": "2.50 to 4.50",
+    "fraction_of_daytime_sw_in_pct": "1.5%",
+    "baseline_stage8_1_odd_mae_w_m2": 36.188657,
+    "baseline_stage8_1_odd_rmse_w_m2": 64.219495,
+    "resolution_statement": "The crude theoretical upper bound (39.29 W/m²) assumes physically impossible simultaneous 800 W/m² direct solar illumination on all 360° terrain facets and fresh snow. Realistic peak is ~13 W/m² (rare spring snow hours) and annual daytime mean is ~3 W/m²."
+  },
+  "physical_distinction_vs_redundancy": {
+    "physical_mechanism": "Physically distinct (Stage 7.5 is subtractive direct/sky blocking; reflection is additive terrain scattering)",
+    "information_redundancy": "Redundant for GBT models because required parameters (horizon profile, solar geometry, snow state) are already fully present in Stage 7.5 and Stage 8.1."
+  },
+  "final_classification": "B. PHYSICALLY REAL BUT QUANTITATIVELY IMMATERIAL",
+  "final_route_decision": "CLOSED_NOT_FEASIBLE",
+  "surviving_class_a_candidates": 0,
+  "experiment_authorized": false
+}

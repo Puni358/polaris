@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-09-12T08:58:00+00:00",
+  "stage": "STAGE 7.5 TERRAIN / HORIZON FORECASTING EXPERIMENT",
+  "audit_type": "CRITICAL_ODD_CONTROL_DISCREPANCY_FORENSIC_AUDIT",
+  "authoritative_stage6_6_odd_champion_mae_w_m2": 37.005888,
+  "authoritative_stage5_2_odd_baseline_mae_w_m2": 39.084821,
+  "reported_stage7_5_control_odd_mae_w_m2": 37.344943,
+  "discrepancy_w_m2": 0.339055,
+  "traceability": {
+    "exact_source_of_37_344943": "run_stage7_5_official_odd_evaluation.py executing fit_stage4_parameters(tr_df)",
+    "globally_frozen_stage4_parameters_used": false,
+    "stage4_refitted_on_even_origins": true,
+    "stage6_6_component_recalibrated": false,
+    "control_model_retrained_on_refitted_residuals": true,
+    "control_prediction_reconstructed_instead_of_loaded": true
+  },
+  "candidate_pipeline_audit": {
+    "candidate_features_frozen": true,
+    "candidate_hyperparameters_frozen": true,
+    "refitted_pipeline_candidate_mae_w_m2": 36.609806,
+    "globally_frozen_pipeline_candidate_mae_w_m2": 36.613571,
+    "candidate_outperforms_champion_in_both_pipelines": true
+  },
+  "bootstrap_validity": {
+    "reported_bootstrap_status": "INVALID_FOR_FINAL_CHAMPION_CLAIM",
+    "reason": "Computed against refitted control (37.344943 W/m\u00b2) instead of globally frozen champion (37.005888 W/m\u00b2)",
+    "corrected_bootstrap_mean_delta_mae_w_m2": -0.397063,
+    "corrected_bootstrap_95_ci_w_m2": [
+      -0.791521,
+      0.001941
+    ],
+    "corrected_fraction_delta_mae_lt_0": 0.9743
+  },
+  "odd_governance": {
+    "odd_target_accessed": true,
+    "odd_predictions_generated": true,
+    "odd_metrics_evaluated": true,
+    "odd_used_for_tuning": false,
+    "odd_used_for_feature_selection": false,
+    "odd_used_for_hyperparameter_tuning": false,
+    "candidate_modified_after_even_cv": false
+  },
+  "governance_status": {
+    "stage7_5_status": "EVEN_CV_PASSED_CANDIDATE_FROZEN_PENDING_CORRECTED_ODD_AUTHORIZATION",
+    "stage6_6_status": "OFFICIAL_OPERATIONAL_CHAMPION_PRESERVED",
+    "corrected_odd_evaluation_required": true
+  }
+}

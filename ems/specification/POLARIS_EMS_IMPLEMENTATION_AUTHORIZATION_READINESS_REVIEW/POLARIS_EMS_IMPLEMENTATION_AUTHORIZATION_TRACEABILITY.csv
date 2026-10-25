@@ -1,0 +1,17 @@
+Decision_ID,Stakeholder_Policy,Objective_Spec,Imp_Spec_V2,Authorization_Readiness,Candidate_Scope_Handling
+D1,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,5 load tiers distinct; preemption mechanics excluded
+D2,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Shedding priority order N->I->D->E excluded; priority rules intact
+D3,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,BESS power bounds included (GAP_11)
+D4,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Genset power bounds included; min run time excluded (GAP_04)
+D5,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Frequency/voltage primary EMS exclusion included (GAP_05)
+D6,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Emergency FSM conceptual structure excluded from execution
+D7,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Stage 2 shortfall math specified; target generation excluded (GAP_10)
+D8,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Physical fuel inventory separated; resupply accounting excluded
+D9,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Energy balance equation included (GAP_20)
+D10,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Curtailment concepts resolved; production classifier excluded (GAP_15)
+D11,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,BESS VOLL calibration excluded (GAP_17)
+D12,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Terminal SOC math specified; stage placement excluded (GAP_12)
+D13,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Solar/wind/demand uncertainty channels represented; margins excluded
+D14,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Reliability-first priority hierarchy resolved; solver realization excluded (GAP_19)
+D15,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,4-tier lexicographic priority resolved; solver realization excluded
+D16,APPROVED,REVIEW_PASSED,REVIEW_PASSED,READY_FOR_HUMAN_DECISION,Site thermal derating curves excluded (GAP_18)

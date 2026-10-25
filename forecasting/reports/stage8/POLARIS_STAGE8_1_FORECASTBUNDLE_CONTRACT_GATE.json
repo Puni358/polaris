@@ -1,0 +1,157 @@
+{
+  "document_id": "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_GATE",
+  "date_utc": "2026-09-18",
+  "track": "SOLAR_FORECASTING_SYSTEM_INTEGRATION_TRACK",
+  "phase": "PHASE_S8_1_C1_STAGE8_1_FORECASTBUNDLE_CONTRACT_GATE",
+  "task_type": "BOUNDED_READ_ONLY_SCIENTIFIC_AND_ENGINEERING_CONTRACT_QUALIFICATION",
+  "authorization_status": "AUTHORIZED_S8_1_C1_CONTRACT_GATE_ONLY",
+  "final_contract_decision": "CATEGORY_B_CONTRACT_COMPATIBLE_THROUGH_ADAPTER_WITHOUT_SCHEMA_CHANGE",
+  "contract_change_required": false,
+  "governance_disposition": {
+    "STAGE8_1_CAPABILITY_STATUS": "FROZEN",
+    "FORECASTBUNDLE_CONTRACT_STATUS": "FROZEN",
+    "SOLAR_PV_MAPPING_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "INTERVAL_SEMANTICS_STATUS": "ESTABLISHED",
+    "TIMESTAMP_HORIZON_COMPATIBILITY": "ESTABLISHED",
+    "CAUSAL_RUNTIME_COMPATIBILITY": "ESTABLISHED",
+    "PROVENANCE_COMPATIBILITY": "ESTABLISHED",
+    "SERIALIZATION_COMPATIBILITY": "ESTABLISHED",
+    "ADAPTER_FEASIBILITY": "ESTABLISHED",
+    "CONTRACT_CHANGE_REQUIRED": false,
+    "STAGE8_1_INTEGRATION_AUTHORIZATION": "NOT_AUTHORIZED",
+    "NEXT_GOVERNED_STEP": "SEPARATE_ADAPTER_IMPLEMENTATION_AUTHORIZATION_REVIEW"
+  },
+  "authoritative_artifacts_inspected": [
+    "POLARIS_REPRODUCIBLE_BASELINE_FREEZE.json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.json",
+    "system/schemas/forecast_bundle.py",
+    "system/forecasting/interface/base.py",
+    "system/forecasting/implementations/baseline.py",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D1_D2.md",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D3_PV_MAPPING.md",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D4_WIND_SOURCE.md",
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D6_MULTI_SOURCE_COMPOSITION.md",
+    "POLARIS_FORECASTBUNDLE_GOVERNANCE_DECISION_D7_FINAL_CONTRACT_RESOLUTION.md"
+  ],
+  "stage8_1_capability_specification": {
+    "target": "surface_downwelling_shortwave_radiation_SW_IN",
+    "units": "W/m^2",
+    "horizon_hours": 24,
+    "model_architecture": "HistGradientBoostingRegressor_37_features",
+    "output_type": "DETERMINISTIC_POINT_PREDICTIONS",
+    "odd_test_mae_w_m2": 36.188657,
+    "odd_test_nmae_percent": 28.0688,
+    "scope": "SOLAR_IRRADIANCE_ONLY"
+  },
+  "forecast_bundle_schema_v1_0_specification": {
+    "schema_version": "1.0.0",
+    "horizon_hours": 24,
+    "required_channels": [
+      "solar_irradiance (W/m^2)",
+      "solar_generation (W)",
+      "wind_generation (W)",
+      "demand (W)"
+    ],
+    "array_shapes": "24 values per array (point, lower, upper)",
+    "validation_rules": [
+      "lower <= point <= upper elementwise",
+      "non-finite (NaN/Inf) rejection",
+      "field-specific non-negativity (point >= 0.0)",
+      "ISO-8601 UTC timestamp parsing",
+      "strict 1-hour timestamp monotonicity"
+    ]
+  },
+  "solar_pv_mapping_assessment": {
+    "governance_decision": "D3_AUTHORIZED_ENGINEERING_REPRESENTATION",
+    "formula": "raw_power = SW_IN * 300 * 0.20 * 0.85; solar_generation = min(raw_power, 60000.0)",
+    "units_preserved": true,
+    "non_negativity_preserved": true,
+    "timestamps_preserved": true,
+    "clipping_limit_w": 60000.0,
+    "empirical_pv_validation_claimed": false
+  },
+  "interval_semantics_assessment": {
+    "governance_decision_d1": "LOWER_UPPER_SEMANTICS = FORECAST_UNCERTAINTY_BOUNDS_WITHOUT_CLAIMED_STATISTICAL_COVERAGE",
+    "governance_decision_d2": "POINT_ONLY_REPRESENTATION = AUTHORIZED_DEGENERATE_POINT_REPRESENTATION",
+    "array_mapping": "lower = point = upper = y_pred",
+    "schema_lower_le_point_le_upper_satisfied": true,
+    "statistical_coverage_claimed": false
+  },
+  "timestamp_horizon_assessment": {
+    "stage8_1_horizon": 24,
+    "bundle_horizon": 24,
+    "timestamp_format": "ISO-8601 UTC string (YYYY-MM-DDTHH:MM:SSZ)",
+    "monotonicity_delta_seconds": 3600,
+    "origin_alignment_valid": true
+  },
+  "causal_boundary_assessment": {
+    "uses_only_origin_t0_information": true,
+    "future_ground_truth_required": false,
+    "digital_twin_hidden_state_accessed": false,
+    "causality_violations": false
+  },
+  "wind_and_demand_boundary": {
+    "stage8_1_provides_wind": false,
+    "stage8_1_provides_demand": false,
+    "synthetic_demo_population": "Populated from baseline providers or synthetic scenario fixtures",
+    "synthetic_label_required": true
+  },
+  "conceptual_adapter_architecture": {
+    "adapter_class_name": "Stage81ForecastEngine",
+    "inherits_from": "ForecastEngine",
+    "modifies_forecast_bundle_schema": false,
+    "modifies_forecast_engine_interface": false,
+    "modifies_station_state": false,
+    "modifies_energy_optimizer": false,
+    "modifies_dispatch_plan": false,
+    "modifies_digital_twin": false,
+    "adapter_code_implemented_in_this_phase": false
+  },
+  "provenance_compatibility": {
+    "metadata_field": "ForecastBundle.metadata['stage8_1_provenance']",
+    "metadata_sufficient_without_schema_change": true
+  },
+  "serialization_determinism": {
+    "deterministic_output": true,
+    "lossless_round_trip": true,
+    "dict_json_serialization_valid": true
+  },
+  "contract_change_test": {
+    "schema_modified": false,
+    "new_top_level_fields": false,
+    "forecast_engine_contract_modified": false,
+    "station_state_modified": false,
+    "optimizer_modified": false,
+    "mpc_modified": false,
+    "digital_twin_modified": false,
+    "contract_change_required": false
+  },
+  "scientific_vs_engineering_firewall": {
+    "proves_interface_compatibility": true,
+    "proves_empirical_ems_performance": false,
+    "proves_real_world_fuel_savings": false,
+    "proves_site_pv_calibration": false
+  },
+  "hard_stop_conditions_verified": {
+    "stage8_1_retrained": false,
+    "stage8_1_features_changed": false,
+    "uncertainty_bounds_invented": false,
+    "d1_d2_semantics_changed": false,
+    "pv_mapping_recalibrated": false,
+    "schema_modified": false,
+    "adapter_code_implemented": false,
+    "ems_executed": false
+  },
+  "governance_firewall_verification": {
+    "WIND_SPEED_MODELING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_MODELING": "NOT_AUTHORIZED",
+    "DEMAND_MODELING": "NOT_AUTHORIZED",
+    "ADAPTER_CODE_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED",
+    "FROZEN_TRACKS_INTACT": true
+  }
+}

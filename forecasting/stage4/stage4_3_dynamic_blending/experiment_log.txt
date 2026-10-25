@@ -1,0 +1,382 @@
+================================================================================
+POLARIS STAGE 4.3 — DYNAMIC BLENDING
+================================================================================
+
+================================================================================
+PHASE 0: LOADING DATA
+================================================================================
+Stage 4 predictions: 8328 rows
+Stage 4 parameters: H1-H24 loaded
+NWP forecasts: 8328 rows
+Clear-sky data: 8784 rows
+SITES observations: 8784 rows
+
+================================================================================
+PHASE 1: DATA ASSEMBLY & FEATURE ENGINEERING
+================================================================================
+
+Verification: Max difference between stored Stage 4 and recomputed: 0.029826 W/m²
+
+Computing context features...
+
+Merged dataset: 8328 rows
+  Total origins: 347
+  Daytime samples: 5768
+  Night samples: 2560
+
+================================================================================
+PHASE 2: TRAIN/TEST SPLIT
+================================================================================
+Total origins: 347
+EVEN origins (train): 174
+ODD origins (test):   173
+
+Train set:
+  Total samples: 4176
+  Daytime samples: 2885
+  Date range: 2024-01-20 to 2024-12-31
+
+Test set:
+  Total samples: 4152
+  Daytime samples: 2883
+  Date range: 2024-01-21 to 2024-12-30
+
+✓ Split verification passed
+
+================================================================================
+PHASE 3: FEATURE SET & LEAKAGE AUDIT
+================================================================================
+Feature set (10 features):
+   1. solar_elevation
+   2. clearsky_ghi
+   3. horizon_hour
+   4. cloud_frac
+   5. ctx_mean
+   6. ctx_max
+   7. ctx_std
+   8. pred_stage3b_cloud_nwp
+   9. pred_physics
+  10. clearsky_x_clearfrac
+
+Leakage audit:
+  ✓ All features available at forecast issuance
+  ✓ No future actual SW_IN
+  ✓ No future observed weather
+  ✓ No test-set information
+
+Feature correlation matrix:
+  Max off-diagonal correlation: 0.981
+  Condition number: 1694.3
+    WARNING: High condition number suggests multicollinearity
+
+  High correlations (|r| > 0.7):
+    solar_elevation <-> clearsky_ghi: 0.981
+    solar_elevation <-> pred_stage3b_cloud_nwp: 0.815
+    solar_elevation <-> pred_physics: 0.869
+    clearsky_ghi <-> pred_stage3b_cloud_nwp: 0.843
+    clearsky_ghi <-> pred_physics: 0.885
+    ctx_mean <-> ctx_max: 0.948
+    ctx_mean <-> ctx_std: 0.969
+    ctx_max <-> ctx_std: 0.973
+    pred_stage3b_cloud_nwp <-> pred_physics: 0.812
+    pred_physics <-> clearsky_x_clearfrac: 0.787
+
+================================================================================
+PHASE 4: DYNAMIC BLENDING MODEL
+================================================================================
+
+Unit test: theta=0 reproduces Stage 4
+  Max difference: 0.000000 W/m²
+  ✓ Unit test passed
+
+================================================================================
+PHASE 5: FORWARD-CHAINING CV FOR LAMBDA SELECTION
+================================================================================
+Strategy: Forward-chaining cross-validation within 174 EVEN origins
+  - Ensures training data is always temporally BEFORE validation data
+  - Prevents future information leakage
+  - More realistic evaluation of temporal generalization
+
+Forward-chaining folds (minimum training size: 100 origins):
+  Fold 1: Train[0:100] → Val[100:118]
+    Train: 2024-01-20 to 2024-08-05
+    Val:   2024-08-07 to 2024-09-10
+  Fold 2: Train[0:118] → Val[118:136]
+    Train: 2024-01-20 to 2024-09-10
+    Val:   2024-09-12 to 2024-10-16
+  Fold 3: Train[0:136] → Val[136:154]
+    Train: 2024-01-20 to 2024-10-16
+    Val:   2024-10-18 to 2024-11-21
+  Fold 4: Train[0:154] → Val[154:174]
+    Train: 2024-01-20 to 2024-11-21
+    Val:   2024-11-23 to 2024-12-31
+
+Hyperparameters:
+  Lambda search: [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+  Huber delta: 10.0 W/m² (transition point for robust loss)
+  λ=    0.01: CV MAE = 22.006 ± 18.668 W/m²
+  λ=    0.10: CV MAE = 21.879 ± 18.509 W/m²
+  λ=    1.00: CV MAE = 21.756 ± 18.339 W/m²
+  λ=   10.00: CV MAE = 21.617 ± 18.124 W/m²
+  λ=  100.00: CV MAE = 21.582 ± 18.041 W/m²
+  λ= 1000.00: CV MAE = 21.584 ± 18.030 W/m²
+
+✓ Selected λ = 100.0 (CV MAE = 21.582 W/m²)
+  Saved: /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/cv_results.csv
+
+================================================================================
+PHASE 6: TRAIN FINAL MODEL ON ALL EVEN ORIGINS
+================================================================================
+Training data:
+  Samples: 2885
+  Features: 10
+
+Optimization result:
+  Success: True
+  Message: CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH
+  Iterations: 6
+  Final loss: 378.6122
+
+Learned coefficients (theta):
+  solar_elevation               : -0.004096
+  clearsky_ghi                  : -0.003718
+  horizon_hour                  : -0.003723
+  cloud_frac                    : -0.042093
+  ctx_mean                      : -0.001554
+  ctx_max                       : +0.006896
+  ctx_std                       : +0.006371
+  pred_stage3b_cloud_nwp        : +0.008786
+  pred_physics                  : +0.008077
+  clearsky_x_clearfrac          : +0.021799
+
+Feature importance (by |coefficient|):
+  cloud_frac                    : |coef| = 0.042093
+  clearsky_x_clearfrac          : |coef| = 0.021799
+  pred_stage3b_cloud_nwp        : |coef| = 0.008786
+  pred_physics                  : |coef| = 0.008077
+  ctx_max                       : |coef| = 0.006896
+  ctx_std                       : |coef| = 0.006371
+  solar_elevation               : |coef| = 0.004096
+  horizon_hour                  : |coef| = 0.003723
+  clearsky_ghi                  : |coef| = 0.003718
+  ctx_mean                      : |coef| = 0.001554
+
+================================================================================
+PHASE 7: EVALUATE ON TEST SET (ODD ORIGINS)
+================================================================================
+Test data:
+  Samples: 2883
+  Date range: 2024-01-21 to 2024-12-30
+
+✓ Weight bounds verified: all w_dynamic ∈ [0, 1]
+
+================================================================================
+FINAL TEST SET COMPARISON (173 ODD ORIGINS, DAYTIME)
+================================================================================
+
+Stage 4 (fixed weights):
+  MAE:   43.451 W/m²
+  RMSE:  74.853 W/m²
+  nMAE:  33.70%
+  nRMSE: 58.06%
+  Bias:  -1.972 W/m²
+
+Stage 4.3 (dynamic weights):
+  MAE:   43.463 W/m²
+  RMSE:  74.863 W/m²
+  nMAE:  33.71%
+  nRMSE: 58.07%
+  Bias:  -2.289 W/m²
+
+Improvement:
+  Δ MAE:  +0.012 W/m² (+0.03%)
+  Δ nMAE: +0.01 pp
+
+================================================================================
+PHASE 8: STATISTICAL SIGNIFICANCE TEST
+================================================================================
+Paired bootstrap resampling over forecast origins (n=1000 iterations)
+
+Bootstrap results (1000 iterations):
+  Mean Δ MAE: +0.003 W/m²
+  Std Δ MAE:  0.031 W/m²
+  95% CI:     [-0.055, +0.063] W/m²
+
+Paired t-test:
+  t-statistic: 0.026
+  p-value:     0.9791
+  → No statistically significant difference (p >= 0.05)
+
+================================================================================
+PHASE 9: DYNAMIC WEIGHT DIAGNOSTICS
+================================================================================
+
+Dynamic weight statistics (test set):
+  Mean:   0.4361
+  Std:    0.2628
+  Min:    0.0908
+  Max:    0.9999
+  Median: 0.3513
+
+Stage 4 weight statistics (test set, for comparison):
+  Mean:   0.4345
+  Std:    0.2633
+  Min:    0.0963
+  Max:    0.9999
+
+Weight variance:
+  Stage 4 (across horizons only): 0.069708
+  Dynamic (across samples):       0.069051
+
+Feature correlations with dynamic weight:
+  solar_elevation               : -0.081  → Physics
+  clearsky_ghi                  : -0.108  → Physics
+  horizon_hour                  : +0.421  → Chronos
+  cloud_frac                    : -0.054  → Physics
+  ctx_mean                      : +0.097  → Chronos
+  ctx_max                       : +0.114  → Chronos
+  ctx_std                       : +0.113  → Chronos
+  pred_stage3b_cloud_nwp        : -0.237  → Physics
+  pred_physics                  : -0.174  → Physics
+  clearsky_x_clearfrac          : -0.051  → Physics
+
+Component separation |P_chronos - P_physics|:
+  Mean:   59.29 W/m²
+  Median: 25.62 W/m²
+  Std:    73.33 W/m²
+  % with separation < 10 W/m²: 34.7%
+  % with separation < 50 W/m²: 61.9%
+
+================================================================================
+PHASE 10: PER-HORIZON ANALYSIS
+================================================================================
+
+  H     n   w_S4  w_dyn  w_std   MAE_S4  MAE_dyn       Δ
+H 1    56  0.301  0.302  0.010     4.57     4.57   +0.00 →
+H 2    63  0.427  0.429  0.012     7.35     7.35   -0.00 →
+H 3    74  0.427  0.429  0.012    13.54    13.51   -0.03 →
+H 4    87  0.437  0.439  0.012    20.30    20.27   -0.04 →
+H 5    99  0.204  0.205  0.009    32.84    32.79   -0.04 →
+H 6   115  0.269  0.271  0.012    38.48    38.48   +0.00 →
+H 7   132  0.402  0.405  0.016    49.45    49.41   -0.04 →
+H 8   145  0.409  0.413  0.017    54.04    54.10   +0.06 →
+H 9   170  0.349  0.352  0.017    56.93    56.92   -0.01 →
+H10   173  0.337  0.341  0.018    66.42    66.60   +0.17 ✗
+H11   173  0.209  0.213  0.014    77.15    77.32   +0.17 ✗
+H12   173  0.233  0.237  0.015    77.51    77.91   +0.41 ✗
+H13   173  0.109  0.111  0.009    61.84    61.79   -0.05 →
+H14   173  0.297  0.300  0.018    63.21    63.23   +0.02 →
+H15   173  0.333  0.335  0.019    54.61    54.61   +0.00 →
+H16   158  0.578  0.578  0.018    51.58    51.25   -0.33 ✓
+H17   144  1.000  1.000  0.000    35.28    35.28   -0.00 →
+H18   126  0.949  0.949  0.003    24.70    24.60   -0.10 ✓
+H19   111  0.914  0.914  0.004    16.35    16.28   -0.07 →
+H20    96  0.891  0.891  0.005    11.99    11.94   -0.05 →
+H21    82  0.793  0.791  0.008     8.27     8.23   -0.04 →
+H22    71  0.398  0.395  0.011     5.74     5.73   -0.01 →
+H23    61  0.096  0.096  0.004     2.92     2.92   +0.00 →
+H24    55  0.228  0.227  0.008     3.01     3.00   -0.02 →
+
+Horizon summary:
+  Improved (Δ < -0.1):  2 / 24
+  Degraded (Δ > +0.1):  3 / 24
+  Neutral  (|Δ| ≤ 0.1): 19 / 24
+
+================================================================================
+PHASE 11: CLOUD REGIME ANALYSIS
+================================================================================
+
+Regime                      n  w_mean   MAE_S4  MAE_dyn       Δ
+Clear (0-10%)             447   0.470    31.83    31.78   -0.05
+Few (10-30%)              238   0.460    48.55    48.57   +0.02
+Scattered (30-60%)        406   0.424    53.92    54.01   +0.09
+Broken (60-80%)           396   0.429    44.55    44.56   +0.01
+Overcast (80-100%)       1396   0.427    42.94    42.95   +0.01
+
+================================================================================
+PHASE 12: NIGHTTIME HANDLING
+================================================================================
+Nighttime samples: 1269
+  Stage 4 night MAE:   0.3242 W/m²
+  Stage 4.3 night MAE: 0.3242 W/m²
+  ✓ Nighttime behavior preserved (using Stage 4 predictions)
+
+================================================================================
+PHASE 13: SAVE PREDICTIONS
+================================================================================
+Saved: /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/dynamic_predictions.csv
+  Rows: 4152 (173 origins × 24 horizons)
+
+================================================================================
+PHASE 14: SAVE MODEL PARAMETERS
+================================================================================
+Saved: /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/model_parameters.json
+
+================================================================================
+PHASE 15: VISUALIZATION
+================================================================================
+Saved: /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/diagnostics.png
+
+================================================================================
+FINAL SUMMARY
+================================================================================
+
+POLARIS Stage 4.3 — Dynamic Blending Results
+
+METHODOLOGY:
+  - Delta-parameterized logistic blender
+  - 174 EVEN training origins (forward-chaining CV)
+  - 173 ODD test origins (held-out)
+  - 10 features, Ridge regularization (λ = 100.0)
+  - Huber loss (δ = 10.0 W/m²)
+
+BENCHMARK COMPARISON (173 ODD Origins, Daytime):
+  Stage 4:   MAE = 43.451 W/m², nMAE = 33.70%
+  Stage 4.3: MAE = 43.463 W/m², nMAE = 33.71%
+  
+  Improvement: Δ MAE = +0.012 W/m² (+0.03%)
+               Δ nMAE = +0.01 pp
+  
+  95% CI: [-0.055, +0.063] W/m²
+  p-value: 0.9791
+
+DYNAMIC BEHAVIOR:
+  Weight statistics:
+    Mean:   0.4361
+    Std:    0.2628
+    Range:  [0.0908, 0.9999]
+  
+  Per-horizon adaptation:
+    Improved:  2 / 24 horizons
+    Degraded:  3 / 24 horizons
+    Neutral:   19 / 24 horizons
+
+ARTIFACTS SAVED:
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/dynamic_predictions.csv
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/dynamic_metrics.csv
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/model_parameters.json
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/horizon_metrics.csv
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/cloud_regime_metrics.csv
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/feature_importance.csv
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/cv_results.csv
+  /home/punith-bs/01polaris (Copy)/stage4/stage4_3_dynamic_blending/diagnostics.png
+
+================================================================================
+SUCCESS CRITERION EVALUATION
+================================================================================
+
+✗ OUTCOME C: DEGRADATION
+
+Stage 4.3 DEGRADED performance by 0.012 W/m² compared to Stage 4.
+
+Possible reasons:
+  - Features do not contain sufficient predictive information
+  - Regularization too strong/weak
+  - Dynamic blending hypothesis invalid for this data
+
+RECOMMENDATION: REJECT Stage 4.3, retain Stage 4 as champion.
+               Dynamic blending approach requires rethinking.
+
+================================================================================
+EXPERIMENT COMPLETE
+================================================================================

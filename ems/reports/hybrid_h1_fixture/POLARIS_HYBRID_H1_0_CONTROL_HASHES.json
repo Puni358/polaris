@@ -1,0 +1,10 @@
+{
+  "execution_timestamp": "2026-09-20T06:34:51.691792+00:00",
+  "control_policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+  "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+  "initial_state_sha256": "3e38d4f5e3046d642c26b56a84e9e0130b0bfddea24be37640b90a4fd2c55fbd",
+  "raw_control_telemetry_csv_sha256": "ae51359b145f92f8b24169aef1f70b701de56b06cbab77aca4ca5f1df8c5a1a8",
+  "control_manifest_json_sha256": "dc8b7dc89576732a4d5d1a5c5b09a7f031809e848207f145a3b531b0c6ba52de",
+  "control_report_md_sha256": "dbbdf2789dadc34915ace5be596f6c6ca22bab06b08a66338854dab49d79dd45",
+  "control_provenance_json_sha256": "29a592ce1ff3122ddee5589da6a51335cd1274bc772de25d434093994e006118"
+}

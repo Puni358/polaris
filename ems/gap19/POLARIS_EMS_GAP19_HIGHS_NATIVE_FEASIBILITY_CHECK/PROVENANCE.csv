@@ -1,0 +1,23 @@
+audit_document,PROVENANCE
+audit_phase,GAP19_HIGHS_NATIVE_FEASIBILITY_CHECK
+audit_date,2026-09-22
+generation_mode,EVIDENCE_BASED_TECHNICAL_AUDIT
+execution_performed,READ_ONLY
+
+# ============================================================
+# AUDIT ENVIRONMENT AND ARTIFACT PROVENANCE
+# ============================================================
+
+attribute,value,details_and_verification_source
+Audit Host OS,Linux x86_64,Kernel Linux 6.6.137+ x86_64
+Python Virtual Environment,/home/punith-bs/01polaris (Copy)/.venv,Isolated Python 3.12.3 virtual environment
+Installed SciPy Package Version,1.18.1,Verified via scipy-1.18.1.dist-info in virtual environment
+Bundled HiGHS C++ Engine Version,1.12.0,Verified via binary string extraction from _core.cpython-312-x86_64-linux-gnu.so
+Bundled HiGHS Module Location,scipy.optimize._highspy._core,Dynamic binary library within SciPy installation directory
+Standalone highspy Package Status,NOT INSTALLED,Verified via pip3 show highspy (Package not found) and python import attempt
+POLARIS Source Code Status,UNMODIFIED,Audit performed strictly read-only; zero lines modified in POLARIS codebase
+POLARIS MILP Formulation Audited,LocalMILPEnergyOptimizer,360 decision variables 12 constraint families (audited in previous phase)
+HiGHS Multi-Objective Class Inspected,HighsLinearObjective,Inspected via dir(scipy.optimize._highspy._core.HighsLinearObjective)
+HiGHS Multi-Objective Methods Inspected,_Highs instance methods,Inspected via dir(scipy.optimize._highspy._core._Highs())
+HiGHS Option Manager Inspected,HighsOptionsManager,Inspected via scipy.optimize._highspy._highs_options.HighsOptionsManager()
+Execution Firewall Enforcement,READ-ONLY FIREWALL ENFORCED,No MILP solves MPC runs EMS simulations digital twin runs or benchmarks executed

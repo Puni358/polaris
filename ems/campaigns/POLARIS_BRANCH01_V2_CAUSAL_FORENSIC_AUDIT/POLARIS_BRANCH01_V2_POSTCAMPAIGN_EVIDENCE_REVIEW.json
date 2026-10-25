@@ -1,0 +1,47 @@
+{
+  "audit_name": "POLARIS_BRANCH01_V2_POSTCAMPAIGN_EVIDENCE_REVIEW",
+  "timestamp": "2026-09-21T14:13:01Z",
+  "authoritative_campaign_directory": "POLARIS_BRANCH01_REMEDIATED_CAMPAIGN_V2",
+  "frozen_identities": {
+    "model_sha": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "control_sha": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "optimizer_sha": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "simulator_sha": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "fixture_sha": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "baseline_sha": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993"
+  },
+  "campaign_completeness": {
+    "status": "PASS",
+    "trajectories_completed": 173,
+    "h1_steps_completed": 4152,
+    "checkpoint_completed_count": 173
+  },
+  "control_forecast_identity": {
+    "status": "PASS",
+    "forecast_class": "Stage81ForecastEngine",
+    "implementation_path": "system/forecasting/implementations/s81_solar.py",
+    "source_sha": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "semantics": "Stage 8.1 GHI forecasting with engineering PV mapping"
+  },
+  "treatment_model_identity": {
+    "status": "PASS",
+    "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "model_sha": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781"
+  },
+  "solar_only_intervention": {
+    "status": "PASS",
+    "demand_inheritance_matches": 4152,
+    "wind_inheritance_matches": 4152,
+    "demand_inherited_from_control": true,
+    "wind_inherited_from_control": true
+  },
+  "receding_horizon_validity": {
+    "status": "PASS",
+    "unique_feature_vector_hashes": 4152,
+    "unique_treatment_solar_hashes": 4096
+  },
+  "load_service_accounting": {
+    "status": "PASS",
+    "max_load_served_error_kwh": 2.2737367544323206e-13
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "audit_name": "STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT",
+  "governance_status": "FORMAL_PROVENANCE_CORRECTED",
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "odd_accessed": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "historical_metrics_preserved": true,
+  "corrections": [
+    {
+      "route": "Stage 8.24 (Scandes Orographic Flow & Mountain Froude)",
+      "original_wording": "REJECTED_BY_EXPERIMENT — Proven redundant; GBT already infers Froude",
+      "corrected_wording": "The Stage 8.24 executed candidate degraded under EVEN validation (+0.3972 W/m²), but the executed Froude implementation used a 2-point approximation and did not exactly match the pre-registered atmospheric-definition specification. Therefore the result is not a fully faithful validation of the pre-registered Froude formulation.",
+      "corrected_classification": "PROVISIONAL_REJECTION_IMPLEMENTATION_QUALIFIED",
+      "demonstrated": "Executed approximate 2-point U_perp + Froude implementation degraded EVEN benchmark",
+      "not_demonstrated": "Exact pre-registered Froude formulation has NOT been independently validated as ineffective",
+      "reopen_condition": "Only reopen if a governance-approved rerun using the exact pre-registered Froude/N definition is scientifically justified and authorized"
+    },
+    {
+      "route": "Stage 8.17A (AROME-Arctic Structural Disagreement)",
+      "original_wording": "Lacked causal real-time delivery; feature extraction failed EVEN CV robustness gates",
+      "corrected_wording": "AROME-Arctic disagreement features (wind_disagreement_700 and LWP_disagreement) failed to provide incremental predictive skill on the locked real-data ODD benchmark and degraded MAE/nMAE/RMSE relative to the frozen Stage 8.1 control.",
+      "corrected_classification": "REJECTED_BY_REAL_DATA_REVALIDATION",
+      "real_data_dataset": "arome_arctic_347_origins_real_subset.csv (100% coverage, 8328 horizon tuples)",
+      "real_data_odd_metrics": {
+        "control_mae_w_m2": 36.211027,
+        "candidate_mae_w_m2": 36.426418,
+        "delta_mae_w_m2": 0.215391,
+        "control_nmae_pct": 28.0861,
+        "candidate_nmae_pct": 28.2532,
+        "delta_nmae_pp": 0.1671,
+        "control_rmse_w_m2": 64.230507,
+        "candidate_rmse_w_m2": 64.611649,
+        "delta_rmse_w_m2": 0.381142
+      },
+      "demonstrated": "Real AROME disagreement features degraded held-out ODD performance",
+      "not_demonstrated": "Does NOT demonstrate that AROME data is unusable or unavailable",
+      "reopen_condition": "Only reopen if a materially different AROME physical representation is proposed and independently justified with verified causal real-data provenance"
+    }
+  ]
+}

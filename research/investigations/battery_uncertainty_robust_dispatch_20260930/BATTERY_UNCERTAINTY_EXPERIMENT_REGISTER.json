@@ -1,0 +1,42 @@
+{
+  "campaign_metadata": {
+    "campaign_id": "battery_uncertainty_robust_dispatch_20260930",
+    "timestamp": "2026-09-30T23:43:00Z",
+    "trajectory": "polaris_2024_annual_365d_8784h",
+    "lead_investigator": "POLARIS Research & Governance Execution Agent",
+    "status": "COMPLETED",
+    "classification": "CONDITIONALLY_ROBUST_BATTERY_DISPATCH"
+  },
+  "uncertainty_dimensions": {
+    "capacity_kWh_envelope": [100.0, 150.0, 200.0, 300.0, 400.0],
+    "power_kW_envelope": [25.0, 50.0, 100.0],
+    "efficiency_envelope": [0.81, 0.8464, 0.9025],
+    "soc_bounds_envelope": ["10-90%", "20-80%", "20-90%", "30-80%"],
+    "degradation_cost_envelope": [0.0, 0.01, 0.025, 0.05, 0.075, 0.10],
+    "telemetry_scenarios": ["T0", "T1", "T2", "T3", "T4", "T5", "T6"],
+    "battery_availability_states": ["FULL_AVAILABLE", "PARTIAL_AVAILABLE", "TEMP_UNAVAILABLE", "FULLY_UNAVAILABLE"],
+    "robust_dispatch_strategies": ["STRATEGY_A_NOMINAL", "STRATEGY_B_CONSERVATIVE", "STRATEGY_C_ROBUST_BOUNDS", "STRATEGY_D_FALLBACK_NON_BATTERY"]
+  },
+  "staged_experimentation": [
+    {
+      "stage_id": "STAGE_1_ONE_FACTOR",
+      "description": "One-factor uncertainty sweeps across capacity, power, efficiency, SOC bounds, and degradation cost."
+    },
+    {
+      "stage_id": "STAGE_2_TELEMETRY",
+      "description": "Telemetry validity and freshness scenarios T0 through T6 under G1.3-E governance."
+    },
+    {
+      "stage_id": "STAGE_3_AVAILABILITY",
+      "description": "Battery availability degradation and non-battery fallback operational testing."
+    },
+    {
+      "stage_id": "STAGE_4_STRATEGY_EVALUATION",
+      "description": "Comparison of robust dispatch strategies A, B, C, D."
+    },
+    {
+      "stage_id": "STAGE_5_ENVELOPE_ROBUSTNESS",
+      "description": "Full envelope robustness evaluation across B0-B7 plus uncertainty bounds."
+    }
+  ]
+}

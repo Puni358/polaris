@@ -1,0 +1,141 @@
+{
+  "phase_id": "battery_agnostic_portability_20260930",
+  "governance_header": {
+    "research_type": "BATTERY_AGNOSTIC_PORTABILITY_STUDY",
+    "target_hardware_evidence": false,
+    "target_nuolja_identity_established": false,
+    "production_promotion": "NOT_AUTHORIZED",
+    "disclaimer": "RESEARCH SCENARIO - NOT TARGET-HARDWARE EVIDENCE"
+  },
+  "abstract_battery_classes": [
+    {
+      "class_id": "BATTERY_CLASS_A",
+      "class_name": "Small / High-Power Ratio BESS",
+      "description": "Short-duration power-smoothing battery configuration (100 kWh nominal, 50 kW power, 0.50C max rate)",
+      "capacity_kWh": 100.0,
+      "power_kW": 50.0,
+      "soc_min_pct": 20.0,
+      "soc_max_pct": 95.0,
+      "round_trip_efficiency": 0.8464,
+      "classification": "ENGINEERING_SCENARIO_ONLY"
+    },
+    {
+      "class_id": "BATTERY_CLASS_B",
+      "class_name": "Reference Synthetic BESS (Existing Fixture)",
+      "description": "Medium-duration reference battery configuration from POLARIS EMS synthetic fixture (200 kWh nominal, 50 kW power, 0.25C max rate)",
+      "capacity_kWh": 200.0,
+      "power_kW": 50.0,
+      "soc_min_pct": 20.0,
+      "soc_max_pct": 95.0,
+      "round_trip_efficiency": 0.8464,
+      "classification": "SYNTHETIC_ENGINEERING_ASSUMPTION"
+    },
+    {
+      "class_id": "BATTERY_CLASS_C",
+      "class_name": "Large / Long-Duration BESS",
+      "description": "High-capacity energy-shifting battery configuration (400 kWh nominal, 100 kW power, 0.25C max rate)",
+      "capacity_kWh": 400.0,
+      "power_kW": 100.0,
+      "soc_min_pct": 20.0,
+      "soc_max_pct": 95.0,
+      "round_trip_efficiency": 0.8464,
+      "classification": "ENGINEERING_SCENARIO_ONLY"
+    },
+    {
+      "class_id": "BATTERY_CLASS_D",
+      "class_name": "High-Efficiency BESS",
+      "description": "Advanced high-efficiency cell storage configuration (200 kWh nominal, 50 kW power, 90.25% RTE)",
+      "capacity_kWh": 200.0,
+      "power_kW": 50.0,
+      "soc_min_pct": 20.0,
+      "soc_max_pct": 95.0,
+      "round_trip_efficiency": 0.9025,
+      "classification": "ENGINEERING_SCENARIO_ONLY"
+    },
+    {
+      "class_id": "BATTERY_CLASS_E",
+      "class_name": "Narrow-Window Constrained BESS",
+      "description": "Conservative SOC operational window storage configuration (200 kWh nominal, 50 kW power, SOC 30% - 80%)",
+      "capacity_kWh": 200.0,
+      "power_kW": 50.0,
+      "soc_min_pct": 30.0,
+      "soc_max_pct": 80.0,
+      "round_trip_efficiency": 0.8464,
+      "classification": "ENGINEERING_SCENARIO_ONLY"
+    }
+  ],
+  "experiments_B0_B7": [
+    {
+      "experiment_id": "B0",
+      "description": "Current Synthetic Reference (Class B)",
+      "class_id": "BATTERY_CLASS_B",
+      "capacity_kWh": 200.0,
+      "power_kW": 50.0,
+      "eta_rt": 0.8464,
+      "soc_bounds_pct": "20% - 95%"
+    },
+    {
+      "experiment_id": "B1",
+      "description": "Reduced Energy Capacity (Class A)",
+      "class_id": "BATTERY_CLASS_A",
+      "capacity_kWh": 100.0,
+      "power_kW": 50.0,
+      "eta_rt": 0.8464,
+      "soc_bounds_pct": "20% - 95%"
+    },
+    {
+      "experiment_id": "B2",
+      "description": "Increased Energy Capacity (Class C)",
+      "class_id": "BATTERY_CLASS_C",
+      "capacity_kWh": 400.0,
+      "power_kW": 100.0,
+      "eta_rt": 0.8464,
+      "soc_bounds_pct": "20% - 95%"
+    },
+    {
+      "experiment_id": "B3",
+      "description": "Reduced Power Capability (Low-Power BESS)",
+      "class_id": "CUSTOM_SCENARIO",
+      "capacity_kWh": 200.0,
+      "power_kW": 25.0,
+      "eta_rt": 0.8464,
+      "soc_bounds_pct": "20% - 95%"
+    },
+    {
+      "experiment_id": "B4",
+      "description": "Increased Power Capability (High-Power BESS)",
+      "class_id": "CUSTOM_SCENARIO",
+      "capacity_kWh": 200.0,
+      "power_kW": 100.0,
+      "eta_rt": 0.8464,
+      "soc_bounds_pct": "20% - 95%"
+    },
+    {
+      "experiment_id": "B5",
+      "description": "Efficiency Envelope (Class D)",
+      "class_id": "BATTERY_CLASS_D",
+      "capacity_kWh": 200.0,
+      "power_kW": 50.0,
+      "eta_rt": 0.9025,
+      "soc_bounds_pct": "20% - 95%"
+    },
+    {
+      "experiment_id": "B6",
+      "description": "SOC Window Envelope (Class E)",
+      "class_id": "BATTERY_CLASS_E",
+      "capacity_kWh": 200.0,
+      "power_kW": 50.0,
+      "eta_rt": 0.8464,
+      "soc_bounds_pct": "30% - 80%"
+    },
+    {
+      "experiment_id": "B7",
+      "description": "Combined Battery Envelope (Large High-Eff BESS)",
+      "class_id": "CUSTOM_SCENARIO",
+      "capacity_kWh": 400.0,
+      "power_kW": 100.0,
+      "eta_rt": 0.9025,
+      "soc_bounds_pct": "20% - 95%"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-09-13T11:08:00+05:30",
+  "document_title": "STAGE 8 REAL DATA REVALIDATION FINAL REPORT",
+  "reproducible_baseline": {
+    "stage": "Stage 8.1",
+    "features": 37,
+    "prediction_rows": 4152,
+    "prediction_file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0,
+    "verification_status": "INDEPENDENT_VERIFICATION_MATCH_PASS"
+  },
+  "stage8_17a_status": {
+    "status": "STAGE8.17A = NOT RECONSTRUCTABLE",
+    "reason": "Real raw AROME-Arctic NWP files and 40-feature extraction code missing; synthetic prohibited",
+    "historical_claim_mae": 35.241085,
+    "historical_claim_nmae": 27.3337,
+    "provenance_classification": "UNVERIFIED_HISTORICAL_REFERENCE_ONLY"
+  },
+  "stage8_19_status": {
+    "status": "STAGE8.19 = NOT RECONSTRUCTABLE",
+    "reason": "Real raw ABIS GNSS ZTD observations and real AROME files missing; synthetic prohibited",
+    "invalidated_claim_mae": 34.821405,
+    "invalidated_claim_nmae": 27.0081,
+    "provenance_classification": "PERMANENTLY_INVALIDATED_AND_EXPUNGED"
+  },
+  "authoritative_metrics": {
+    "baseline_mae": 36.188657,
+    "baseline_nmae": 28.0688,
+    "baseline_rmse": 64.219495,
+    "baseline_bias": 1.439399
+  }
+}

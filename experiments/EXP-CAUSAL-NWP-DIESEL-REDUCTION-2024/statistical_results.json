@@ -1,0 +1,25 @@
+{
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "paired_test": "Wilcoxon signed-rank test (two-sided and one-sided greater)",
+  "delta_definition": "Fuel_Arm_A (Baseline) - Fuel_Arm_B (Candidate) in Liters",
+  "sample_size_origins": 123,
+  "total_hours": 2952,
+  "mean_delta_liters": -9.1518,
+  "median_delta_liters": -8.4424,
+  "bootstrap_method": "BCa (10,000 resamples, seed=42)",
+  "bootstrap_95_ci_mean_liters": [
+    -12.044919075957614,
+    -6.37553167902063
+  ],
+  "bootstrap_95_ci_median_liters": [
+    -12.527100000000004,
+    -4.380000000000003
+  ],
+  "wilcoxon_statistic": 1641.0,
+  "wilcoxon_p_value_two_sided": 4.201081808504508e-08,
+  "wilcoxon_p_value_one_sided_greater": 0.9999999789945909,
+  "wins_candidate_lower_fuel": 36,
+  "losses_candidate_higher_fuel": 87,
+  "ties": 0,
+  "success_gate_fuel_saved": false
+}

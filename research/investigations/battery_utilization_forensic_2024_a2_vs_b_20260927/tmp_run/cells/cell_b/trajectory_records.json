@@ -1,0 +1,84 @@
+{
+  "cell_id": "cell_b",
+  "run_id": "test_run",
+  "status": "COMPLETED",
+  "total_records": 5,
+  "cumulative_fuel_l": 28.668,
+  "cumulative_diesel_energy_kwh": 54.6718,
+  "integrity_counters": {
+    "truth_leakage_count": 0,
+    "state_reset_count": 0,
+    "fuel_reset_count": 0,
+    "soc_reset_count": 0,
+    "infeasibility_count": 0,
+    "unmet_critical_load_wh": 0.0,
+    "power_balance_max_error_w": 0.0
+  },
+  "records": [
+    {
+      "cycle_index": 0,
+      "timestamp": "2024-01-01T00:00:00Z",
+      "p_solar_actual": 0.0,
+      "p_wind_actual": 0.0,
+      "p_demand_actual": 21600.0,
+      "p_chg": 0.0,
+      "p_dis": 21997.78,
+      "p_diesel": 0.0,
+      "soc_after": 38.04,
+      "step_fuel_l": 0.0,
+      "cumulative_fuel_l": 0.0
+    },
+    {
+      "cycle_index": 1,
+      "timestamp": "2024-01-01T01:00:00Z",
+      "p_solar_actual": 0.0,
+      "p_wind_actual": 0.0,
+      "p_demand_actual": 21600.0,
+      "p_chg": 0.0,
+      "p_dis": 21997.78,
+      "p_diesel": 0.0,
+      "soc_after": 26.09,
+      "step_fuel_l": 0.0,
+      "cumulative_fuel_l": 0.0
+    },
+    {
+      "cycle_index": 2,
+      "timestamp": "2024-01-01T02:00:00Z",
+      "p_solar_actual": 0.0,
+      "p_wind_actual": 0.0,
+      "p_demand_actual": 21600.0,
+      "p_chg": 0.0,
+      "p_dis": 11204.440799999998,
+      "p_diesel": 10793.3392,
+      "soc_after": 20.0,
+      "step_fuel_l": 7.6983,
+      "cumulative_fuel_l": 7.6983
+    },
+    {
+      "cycle_index": 3,
+      "timestamp": "2024-01-01T03:00:00Z",
+      "p_solar_actual": 0.0,
+      "p_wind_actual": 0.0,
+      "p_demand_actual": 21600.0,
+      "p_chg": 0.0,
+      "p_dis": 0.0,
+      "p_diesel": 21997.78,
+      "soc_after": 20.0,
+      "step_fuel_l": 10.4994,
+      "cumulative_fuel_l": 18.1978
+    },
+    {
+      "cycle_index": 4,
+      "timestamp": "2024-01-01T04:00:00Z",
+      "p_solar_actual": 0.0,
+      "p_wind_actual": 0.0,
+      "p_demand_actual": 21600.0,
+      "p_chg": 0.0,
+      "p_dis": 0.0,
+      "p_diesel": 21880.73,
+      "soc_after": 20.0,
+      "step_fuel_l": 10.4702,
+      "cumulative_fuel_l": 28.668
+    }
+  ]
+}

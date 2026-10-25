@@ -1,0 +1,784 @@
+{
+  "control": {
+    "fuel_L": 10368.8513,
+    "unmet_total_Wh": 1032509.69,
+    "critical_unmet_first_Wh": 329350.79000000004,
+    "critical_unmet_prop_Wh": 787093.9007032095,
+    "noncritical_unmet_Wh": 703158.8999999999,
+    "R_CF_pct": 99.03820089828054,
+    "R_P_pct": 97.70145926577187,
+    "hours_soc_below_20": 0,
+    "min_soc_pct": 39.21,
+    "curtailment_Wh": 14317007.84,
+    "diesel_on_hours": 657,
+    "diesel_starts": 480,
+    "held_cloud_hours": 33948,
+    "optimizer_status_counts": {
+      "OPTIMAL": 2952
+    },
+    "j2_reserve_shortfall_Wh": 0.0,
+    "fuel_exhausted_hours": 27,
+    "final_soc_pct_mean": 72.19894308943088
+  },
+  "arms": {
+    "A": {
+      "result_label": "LEGACY_REPRODUCTION \u2014 KNOWN TIMESTAMP DEFECT",
+      "causal": true,
+      "promotion_eligible": false,
+      "in_E1_family": true,
+      "fuel_L": 8877.039,
+      "unmet_total_Wh": 909623.6,
+      "critical_unmet_first_Wh": 278723.0,
+      "critical_unmet_prop_Wh": 699544.81325095,
+      "noncritical_unmet_Wh": 630900.6,
+      "R_CF_pct": 99.18604861695168,
+      "R_P_pct": 97.95712779982317,
+      "hours_soc_below_20": 0,
+      "min_soc_pct": 20.0,
+      "curtailment_Wh": 12496008.76,
+      "diesel_on_hours": 563,
+      "diesel_starts": 359,
+      "held_cloud_hours": 33948,
+      "optimizer_status_counts": {
+        "OPTIMAL": 2952
+      },
+      "j2_reserve_shortfall_Wh": 0.0,
+      "fuel_exhausted_hours": 21,
+      "final_soc_pct_mean": 63.00764227642277,
+      "saving_pct_vs_control": 14.387440390817442,
+      "S1": {
+        "dR_CF_pp": 0.14784771867114443,
+        "PASS": true
+      },
+      "S2": {
+        "dR_P_pp": 0.25566853405129564,
+        "PASS": true
+      },
+      "S3": {
+        "violations": 0,
+        "PASS": true
+      },
+      "S4_point": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 909623.6,
+        "U_ref_Wh": 1032509.6900000001,
+        "delta_Wh": -122886.09000000008,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 31,
+        "origins_equal": 43,
+        "origins_better": 49,
+        "per_origin_delta_Wh": {
+          "mean": -999.0739024390246,
+          "median": 0.0,
+          "min": -18258.09,
+          "max": 10572.800000000001
+        },
+        "worst_5_origins": {
+          "28": 10572.800000000001,
+          "30": 6145.950000000001,
+          "105": 6133.639999999999,
+          "32": 4114.449999999999,
+          "96": 4059.380000000001
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": true
+      },
+      "S4_point_vs_A_reported": null,
+      "S4_strict": {
+        "status": "EVALUATED",
+        "mean_delta_U_Wh_per_origin": -999.0739024390246,
+        "upper_bound_Wh_per_origin": -269.15966056910577,
+        "percentile": 97.5,
+        "interval": "two_sided_95_upper",
+        "bootstrap": {
+          "algorithm": "Politis-Romano stationary bootstrap, circular wrap-around, geometric block lengths with mean = mean_block_days origins, numpy.random.default_rng(seed) (PCG64), percentile interval of the resampled means",
+          "seed": 42,
+          "mean_block_days": 10,
+          "resamples": 10000,
+          "numpy": "2.5.2",
+          "n_origins": 123
+        },
+        "rule": "upper bound of mean paired delta U <= 0",
+        "PASS": true
+      },
+      "secondary_soc_parity_fuel": {
+        "status": "REPORTED (secondary, not decision-bearing)",
+        "protocol_text": "SoC-parity-adjusted fuel = fuel + max(0, E_end,ctrl \u2212 E_end,arm)\u00b7(1/0.92)\u00b7f, with f \u2208 {0.30, 0.75} L/kWh, the diesel's best/worst marginal efficiency from `diesel.yaml` (5 L/h base + 0.25 L/kWh at 100 kW and 10 kW)  [PROTOCOL.md \u00a77, row 'SoC']",
+        "applied_form": "\u03a3_o [fuel_arm,o + max(0, E_end,ctrl,o \u2212 E_end,arm,o)\u00b7(1/0.92)\u00b7f]",
+        "limitations": "Secondary, reported only, never decision-bearing. Asymmetric: max(0, \u00b7) gives no credit when an arm ends higher, so per-origin summation also penalizes day-to-day noise and is biased against arms. f brackets the diesel's marginal efficiency (0.30 and 0.75 L/kWh), both reported; no single adjusted value is chosen. The aggregate reading would give a smaller or equal penalty. Daily resets mean the adjustment does not represent multi-day operation.",
+        "mean_end_energy_gap_kwh": 21.84084723577236,
+        "origins_arm_ends_lower": 92,
+        "by_f": {
+          "0.30": {
+            "adjusted_fuel_L": 9753.046894565217,
+            "saving_pct_vs_control": 5.9389838625112015,
+            "mean_saving_L_per_origin": 5.0065398815836
+          },
+          "0.75": {
+            "adjusted_fuel_L": 11067.058736413044,
+            "saving_pct_vs_control": -6.7337009299481805,
+            "mean_saving_L_per_origin": -5.676483222870273
+          }
+        }
+      },
+      "reliability_gates_PASS": true,
+      "E1": {
+        "mean_saving_L_per_origin": 12.128555284552847,
+        "total_saving_L": 1491.8123000000003,
+        "wilcoxon_statistic": 779.0,
+        "wilcoxon_p": 8.242118203064593e-14,
+        "bca95_low": 9.684282067481963,
+        "bca95_high": 14.853209370771744,
+        "holm_adj_p": 8.242118203064593e-14,
+        "holm_family_size": 2,
+        "E1_STAT_PASS": true,
+        "EVALUATED": true,
+        "PASS": true
+      },
+      "verdict": "GATES PASSED (research-only result; not promotion-eligible)"
+    },
+    "A_FIX": {
+      "result_label": "DIAGNOSTIC \u2014 NOT PROMOTION-ELIGIBLE",
+      "causal": true,
+      "promotion_eligible": false,
+      "in_E1_family": false,
+      "fuel_L": 9204.2447,
+      "unmet_total_Wh": 1317586.6400000001,
+      "critical_unmet_first_Wh": 484814.38,
+      "critical_unmet_prop_Wh": 987144.8071712649,
+      "noncritical_unmet_Wh": 832772.2600000001,
+      "R_CF_pct": 98.5842024693954,
+      "R_P_pct": 97.11725303951948,
+      "hours_soc_below_20": 0,
+      "min_soc_pct": 20.0,
+      "curtailment_Wh": 13202406.15,
+      "diesel_on_hours": 572,
+      "diesel_starts": 375,
+      "held_cloud_hours": 33948,
+      "optimizer_status_counts": {
+        "OPTIMAL": 2952
+      },
+      "j2_reserve_shortfall_Wh": 0.0,
+      "fuel_exhausted_hours": 16,
+      "final_soc_pct_mean": 66.15162601626015,
+      "saving_pct_vs_control": 11.231780322666994,
+      "S1": {
+        "dR_CF_pp": -0.45399842888514286,
+        "PASS": false
+      },
+      "S2": {
+        "dR_P_pp": -0.584206226252391,
+        "PASS": false
+      },
+      "S3": {
+        "violations": 0,
+        "PASS": true
+      },
+      "S4_point": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 1317586.64,
+        "U_ref_Wh": 1032509.6900000001,
+        "delta_Wh": 285076.94999999984,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 80,
+        "origins_equal": 13,
+        "origins_better": 30,
+        "per_origin_delta_Wh": {
+          "mean": 2317.698780487805,
+          "median": 1333.18,
+          "min": -12666.460000000001,
+          "max": 15726.060000000001
+        },
+        "worst_5_origins": {
+          "78": 15726.060000000001,
+          "97": 14422.84,
+          "53": 13821.300000000003,
+          "5": 11594.27,
+          "96": 11193.68
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": false
+      },
+      "S4_point_vs_A_reported": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 1317586.64,
+        "U_ref_Wh": 909623.6,
+        "delta_Wh": 407963.0399999999,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 82,
+        "origins_equal": 19,
+        "origins_better": 22,
+        "per_origin_delta_Wh": {
+          "mean": 3316.7726829268295,
+          "median": 1284.3999999999996,
+          "min": -11030.47,
+          "max": 32079.390000000003
+        },
+        "worst_5_origins": {
+          "53": 32079.390000000003,
+          "58": 20171.58,
+          "78": 19207.89,
+          "75": 18454.46,
+          "83": 15452.420000000002
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": false
+      },
+      "S4_strict": {
+        "status": "EVALUATED",
+        "mean_delta_U_Wh_per_origin": 2317.698780487805,
+        "upper_bound_Wh_per_origin": 3350.9224512195115,
+        "percentile": 97.5,
+        "interval": "two_sided_95_upper",
+        "bootstrap": {
+          "algorithm": "Politis-Romano stationary bootstrap, circular wrap-around, geometric block lengths with mean = mean_block_days origins, numpy.random.default_rng(seed) (PCG64), percentile interval of the resampled means",
+          "seed": 42,
+          "mean_block_days": 10,
+          "resamples": 10000,
+          "numpy": "2.5.2",
+          "n_origins": 123
+        },
+        "rule": "upper bound of mean paired delta U <= 0",
+        "PASS": false
+      },
+      "secondary_soc_parity_fuel": {
+        "status": "REPORTED (secondary, not decision-bearing)",
+        "protocol_text": "SoC-parity-adjusted fuel = fuel + max(0, E_end,ctrl \u2212 E_end,arm)\u00b7(1/0.92)\u00b7f, with f \u2208 {0.30, 0.75} L/kWh, the diesel's best/worst marginal efficiency from `diesel.yaml` (5 L/h base + 0.25 L/kWh at 100 kW and 10 kW)  [PROTOCOL.md \u00a77, row 'SoC']",
+        "applied_form": "\u03a3_o [fuel_arm,o + max(0, E_end,ctrl,o \u2212 E_end,arm,o)\u00b7(1/0.92)\u00b7f]",
+        "limitations": "Secondary, reported only, never decision-bearing. Asymmetric: max(0, \u00b7) gives no credit when an arm ends higher, so per-origin summation also penalizes day-to-day noise and is biased against arms. f brackets the diesel's marginal efficiency (0.30 and 0.75 L/kWh), both reported; no single adjusted value is chosen. The aggregate reading would give a smaller or equal penalty. Daily resets mean the adjustment does not represent multi-day operation.",
+        "mean_end_energy_gap_kwh": 16.942830406504065,
+        "origins_arm_ends_lower": 88,
+        "by_f": {
+          "0.30": {
+            "adjusted_fuel_L": 9883.799528260868,
+            "saving_pct_vs_control": 4.67797017919557,
+            "mean_saving_L_per_origin": 3.943510339342525
+          },
+          "0.75": {
+            "adjusted_fuel_L": 10903.131770652173,
+            "saving_pct_vs_control": -5.152745036011586,
+            "mean_saving_L_per_origin": -4.343743663838811
+          }
+        }
+      },
+      "reliability_gates_PASS": false,
+      "verdict": "REPORTED ONLY (not in the E1 family)"
+    },
+    "B": {
+      "result_label": "NONCAUSAL \u2014 DIAGNOSTIC \u2014 NOT DEPLOYABLE",
+      "causal": false,
+      "promotion_eligible": false,
+      "in_E1_family": false,
+      "fuel_L": 6758.5723,
+      "unmet_total_Wh": 975519.58,
+      "critical_unmet_first_Wh": 0.0,
+      "critical_unmet_prop_Wh": 739434.6499451766,
+      "noncritical_unmet_Wh": 975519.58,
+      "R_CF_pct": 100.0,
+      "R_P_pct": 97.84063799544091,
+      "hours_soc_below_20": 0,
+      "min_soc_pct": 20.0,
+      "curtailment_Wh": 4287516.119999999,
+      "diesel_on_hours": 450,
+      "diesel_starts": 264,
+      "held_cloud_hours": 33948,
+      "optimizer_status_counts": {
+        "OPTIMAL": 2952
+      },
+      "j2_reserve_shortfall_Wh": 0.0,
+      "fuel_exhausted_hours": 0,
+      "final_soc_pct_mean": 72.99471544715449,
+      "saving_pct_vs_control": 34.818504919633675,
+      "S1": {
+        "dR_CF_pp": 0.961799101719464,
+        "PASS": true
+      },
+      "S2": {
+        "dR_P_pp": 0.139178729669041,
+        "PASS": true
+      },
+      "S3": {
+        "violations": 0,
+        "PASS": true
+      },
+      "S4_point": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 975519.58,
+        "U_ref_Wh": 1032509.6900000001,
+        "delta_Wh": -56990.1100000001,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 75,
+        "origins_equal": 0,
+        "origins_better": 48,
+        "per_origin_delta_Wh": {
+          "mean": -463.3342276422764,
+          "median": 4068.95,
+          "min": -42681.54,
+          "max": 13938.4
+        },
+        "worst_5_origins": {
+          "12": 13938.4,
+          "122": 12923.85,
+          "49": 12214.039999999999,
+          "107": 11835.47,
+          "55": 11630.83
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": true
+      },
+      "S4_point_vs_A_reported": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 975519.58,
+        "U_ref_Wh": 909623.6,
+        "delta_Wh": 65895.97999999998,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 76,
+        "origins_equal": 1,
+        "origins_better": 46,
+        "per_origin_delta_Wh": {
+          "mean": 535.7396747967476,
+          "median": 4202.49,
+          "min": -39252.07000000001,
+          "max": 14483.619999999999
+        },
+        "worst_5_origins": {
+          "12": 14483.619999999999,
+          "49": 12267.169999999998,
+          "107": 11835.47,
+          "55": 11630.83,
+          "41": 11566.47
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": false
+      },
+      "S4_strict": {
+        "status": "EVALUATED",
+        "mean_delta_U_Wh_per_origin": -463.3342276422764,
+        "upper_bound_Wh_per_origin": 1862.3032317073155,
+        "percentile": 97.5,
+        "interval": "two_sided_95_upper",
+        "bootstrap": {
+          "algorithm": "Politis-Romano stationary bootstrap, circular wrap-around, geometric block lengths with mean = mean_block_days origins, numpy.random.default_rng(seed) (PCG64), percentile interval of the resampled means",
+          "seed": 42,
+          "mean_block_days": 10,
+          "resamples": 10000,
+          "numpy": "2.5.2",
+          "n_origins": 123
+        },
+        "rule": "upper bound of mean paired delta U <= 0",
+        "PASS": false
+      },
+      "secondary_soc_parity_fuel": {
+        "status": "REPORTED (secondary, not decision-bearing)",
+        "protocol_text": "SoC-parity-adjusted fuel = fuel + max(0, E_end,ctrl \u2212 E_end,arm)\u00b7(1/0.92)\u00b7f, with f \u2208 {0.30, 0.75} L/kWh, the diesel's best/worst marginal efficiency from `diesel.yaml` (5 L/h base + 0.25 L/kWh at 100 kW and 10 kW)  [PROTOCOL.md \u00a77, row 'SoC']",
+        "applied_form": "\u03a3_o [fuel_arm,o + max(0, E_end,ctrl,o \u2212 E_end,arm,o)\u00b7(1/0.92)\u00b7f]",
+        "limitations": "Secondary, reported only, never decision-bearing. Asymmetric: max(0, \u00b7) gives no credit when an arm ends higher, so per-origin summation also penalizes day-to-day noise and is biased against arms. f brackets the diesel's marginal efficiency (0.30 and 0.75 L/kWh), both reported; no single adjusted value is chosen. The aggregate reading would give a smaller or equal penalty. Daily resets mean the adjustment does not represent multi-day operation.",
+        "mean_end_energy_gap_kwh": 15.987413577235776,
+        "origins_arm_ends_lower": 62,
+        "by_f": {
+          "0.30": {
+            "adjusted_fuel_L": 7399.806605434783,
+            "saving_pct_vs_control": 28.63426823919461,
+            "mean_saving_L_per_origin": 24.138574752562747
+          },
+          "0.75": {
+            "adjusted_fuel_L": 8361.658063586956,
+            "saving_pct_vs_control": 19.357913218536023,
+            "mean_saving_L_per_origin": 16.318644198480033
+          }
+        }
+      },
+      "reliability_gates_PASS": false,
+      "verdict": "NONCAUSAL DIAGNOSTIC \u2014 NOT DEPLOYABLE \u2014 NEVER ELIGIBLE"
+    },
+    "C": {
+      "result_label": "RESEARCH-ONLY CANDIDATE \u2014 NOT PROMOTION-ELIGIBLE (CALIBRATED POINT + LOWER-BOUND RESERVE)",
+      "causal": true,
+      "promotion_eligible": false,
+      "in_E1_family": true,
+      "fuel_L": 7702.5779999999995,
+      "unmet_total_Wh": 2698158.1399999997,
+      "critical_unmet_first_Wh": 1141296.75,
+      "critical_unmet_prop_Wh": 2073701.2001625649,
+      "noncritical_unmet_Wh": 1556861.3899999997,
+      "R_CF_pct": 96.66708499789739,
+      "R_P_pct": 93.94419563544714,
+      "hours_soc_below_20": 0,
+      "min_soc_pct": 20.0,
+      "curtailment_Wh": 7784750.13,
+      "diesel_on_hours": 529,
+      "diesel_starts": 325,
+      "held_cloud_hours": 33948,
+      "optimizer_status_counts": {
+        "OPTIMAL": 2952
+      },
+      "j2_reserve_shortfall_Wh": 0.0,
+      "fuel_exhausted_hours": 6,
+      "final_soc_pct_mean": 74.57040650406503,
+      "saving_pct_vs_control": 25.714259206321156,
+      "S1": {
+        "dR_CF_pp": -2.3711159003831455,
+        "PASS": false
+      },
+      "S2": {
+        "dR_P_pp": -3.7572636303247293,
+        "PASS": false
+      },
+      "S3": {
+        "violations": 0,
+        "PASS": true
+      },
+      "S4_point": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 2698158.14,
+        "U_ref_Wh": 1032509.6900000001,
+        "delta_Wh": 1665648.4500000002,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 109,
+        "origins_equal": 3,
+        "origins_better": 11,
+        "per_origin_delta_Wh": {
+          "mean": 13541.857317073169,
+          "median": 12275.070000000002,
+          "min": -12424.25,
+          "max": 42745.88
+        },
+        "worst_5_origins": {
+          "32": 42745.88,
+          "60": 42052.770000000004,
+          "64": 38010.58,
+          "73": 33974.53,
+          "37": 33255.49
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": false
+      },
+      "S4_point_vs_A_reported": {
+        "status": "EVALUATED",
+        "U_arm_Wh": 2698158.14,
+        "U_ref_Wh": 909623.6,
+        "delta_Wh": 1788534.54,
+        "n_origins": 123,
+        "n_cells": 2952,
+        "origins_worse": 113,
+        "origins_equal": 3,
+        "origins_better": 7,
+        "per_origin_delta_Wh": {
+          "mean": 14540.931219512195,
+          "median": 13682.69,
+          "min": -14656.510000000002,
+          "max": 41578.18
+        },
+        "worst_5_origins": {
+          "60": 41578.18,
+          "32": 38631.43,
+          "64": 38030.65,
+          "73": 33974.53,
+          "42": 33948.259999999995
+        },
+        "rule": "U_arm <= U_ref (ties pass, no tolerance)",
+        "PASS": false
+      },
+      "S4_strict": {
+        "status": "EVALUATED",
+        "mean_delta_U_Wh_per_origin": 13541.857317073169,
+        "upper_bound_Wh_per_origin": 16121.841286585364,
+        "percentile": 97.5,
+        "interval": "two_sided_95_upper",
+        "bootstrap": {
+          "algorithm": "Politis-Romano stationary bootstrap, circular wrap-around, geometric block lengths with mean = mean_block_days origins, numpy.random.default_rng(seed) (PCG64), percentile interval of the resampled means",
+          "seed": 42,
+          "mean_block_days": 10,
+          "resamples": 10000,
+          "numpy": "2.5.2",
+          "n_origins": 123
+        },
+        "rule": "upper bound of mean paired delta U <= 0",
+        "PASS": false
+      },
+      "secondary_soc_parity_fuel": {
+        "status": "REPORTED (secondary, not decision-bearing)",
+        "protocol_text": "SoC-parity-adjusted fuel = fuel + max(0, E_end,ctrl \u2212 E_end,arm)\u00b7(1/0.92)\u00b7f, with f \u2208 {0.30, 0.75} L/kWh, the diesel's best/worst marginal efficiency from `diesel.yaml` (5 L/h base + 0.25 L/kWh at 100 kW and 10 kW)  [PROTOCOL.md \u00a77, row 'SoC']",
+        "applied_form": "\u03a3_o [fuel_arm,o + max(0, E_end,ctrl,o \u2212 E_end,arm,o)\u00b7(1/0.92)\u00b7f]",
+        "limitations": "Secondary, reported only, never decision-bearing. Asymmetric: max(0, \u00b7) gives no credit when an arm ends higher, so per-origin summation also penalizes day-to-day noise and is biased against arms. f brackets the diesel's marginal efficiency (0.30 and 0.75 L/kWh), both reported; no single adjusted value is chosen. The aggregate reading would give a smaller or equal penalty. Daily resets mean the adjustment does not represent multi-day operation.",
+        "mean_end_energy_gap_kwh": 9.832678536585366,
+        "origins_arm_ends_lower": 59,
+        "by_f": {
+          "0.30": {
+            "adjusted_fuel_L": 8096.953910869566,
+            "saving_pct_vs_control": 21.91079149848001,
+            "mean_saving_L_per_origin": 18.47071048073524
+          },
+          "0.75": {
+            "adjusted_fuel_L": 8688.517777173915,
+            "saving_pct_vs_control": 16.205589936718308,
+            "mean_saving_L_per_origin": 13.661248153057619
+          }
+        }
+      },
+      "reliability_gates_PASS": false,
+      "E1": {
+        "mean_saving_L_per_origin": 21.677018699186988,
+        "total_saving_L": 2666.2732999999994,
+        "wilcoxon_statistic": 160.0,
+        "wilcoxon_p": 4.4630036182149516e-20,
+        "bca95_low": 18.75039233837275,
+        "bca95_high": 24.779986172093945,
+        "holm_adj_p": 8.926007236429903e-20,
+        "holm_family_size": 2,
+        "E1_STAT_PASS": true,
+        "EVALUATED": false,
+        "PASS": false
+      },
+      "verdict": "NOT AN IMPROVEMENT (reliability gate failed or not evaluable)"
+    }
+  },
+  "winner": null,
+  "winner_note": "No arm in EXP-THREE-ARM-2024 is promotion-eligible; a winner change needs a separate governance decision.",
+  "E1_family": [
+    "A",
+    "C"
+  ],
+  "E1_family_size": 2,
+  "gates_config": {
+    "S1_S2_S3": "RECORDED",
+    "E1_test": "two-sided paired Wilcoxon, Holm-adjusted p < 0.05, AND BCa 95% lower bound > 0 L/origin (10,000 resamples, default_rng(42))",
+    "E1_holm_family": [
+      "A",
+      "C"
+    ],
+    "S4": "ADOPTED",
+    "S4_strict": "ADOPTED",
+    "S4_strict_bootstrap_seed": 42,
+    "primary_fuel_metric": "unadjusted",
+    "S4_strict_interval": "two_sided_95_upper",
+    "S4_strict_mean_block_days": {
+      "value": 10,
+      "status": "APPROVED",
+      "evidence": "M6; PROTOCOL.md \u00a75/\u00a77; origins are consecutive days (runner evaluation_origins)"
+    },
+    "S4_strict_resamples": {
+      "value": 10000,
+      "status": "APPROVED",
+      "evidence": "M6; PROTOCOL.md \u00a75"
+    },
+    "_comment": "null = unresolved. S4/S4_strict: 'ADOPTED'/'NOT_ADOPTED' (D2/D6). E1_holm_family: list (D10 APPROVED, M7/M8). primary_fuel_metric fixed 'unadjusted' (D4 APPROVED). S4_strict_interval: 'two_sided_95_upper' (D6 APPROVED, M8). soc_parity_secondary: per-origin application (delegated, M9), secondary only.",
+    "soc_parity_secondary": {
+      "protocol_text_verbatim": "SoC-parity-adjusted fuel = fuel + max(0, E_end,ctrl \u2212 E_end,arm)\u00b7(1/0.92)\u00b7f, with f \u2208 {0.30, 0.75} L/kWh, the diesel's best/worst marginal efficiency from `diesel.yaml` (5 L/h base + 0.25 L/kWh at 100 kW and 10 kW)  [PROTOCOL.md \u00a77, row 'SoC']",
+      "protocol_aggregation_semantics": "NOT STATED. The protocol text has no origin index and no summation; it does not say whether fuel and E_end are per origin or totals.",
+      "application": "per_origin",
+      "per_origin_form": "\u03a3_o [fuel_arm,o + max(0, E_end,ctrl,o \u2212 E_end,arm,o)\u00b7(1/0.92)\u00b7f]",
+      "aggregate_form_alternative": "\u03a3_o fuel_arm,o + max(0, \u03a3_o E_end,ctrl,o \u2212 \u03a3_o E_end,arm,o)\u00b7(1/0.92)\u00b7f  (considered, not adopted; not implemented)",
+      "application_record": "Delegated clarification of how the unchanged PROTOCOL \u00a77 formula is applied (M9, 2026-10-11, before any evaluation run). Not part of the original preregistered text. Reasons: each origin is an independent 24 h episode that restarts at 50% SoC (make_initial_state), so an end-of-day energy deficit cannot be repaid by another origin's surplus; per-origin pairing matches the per-origin E1 deltas; per-origin penalty >= aggregate penalty, so it is the more cautious reading.",
+      "limitations": "Secondary, reported only, never decision-bearing. Asymmetric: max(0, \u00b7) gives no credit when an arm ends higher, so per-origin summation also penalizes day-to-day noise and is biased against arms. f brackets the diesel's marginal efficiency (0.30 and 0.75 L/kWh), both reported; no single adjusted value is chosen. The aggregate reading would give a smaller or equal penalty. Daily resets mean the adjustment does not represent multi-day operation.",
+      "f_values_l_per_kwh": [
+        0.3,
+        0.75
+      ],
+      "f_source": "diesel.yaml: 5 L/h base + 0.25 L/kWh -> 0.30 L/kWh at 100 kW, 0.75 L/kWh at 10 kW",
+      "E_end": "e_after_wh after hour 23 of each origin",
+      "role": "secondary, reported only, never decision-bearing",
+      "status": "RESOLVED BY DELEGATED TECHNICAL AUTHORITY",
+      "authority": "Technical PM (CC) under the project lead's delegation, M9 cmsg_017TpQv3UrTPMkzn658LmXvX2WPEGQjqxQQ7wSucS9sxg4 (2026-10-11T04:29:38Z, Puni, project lead): pending technical decisions delegated to CC as technical project manager. Recorded 2026-10-11, before any calibration or evaluation run. Not a project-lead approval and not an authorization."
+    },
+    "E1_holm_family_note": "D10 APPROVED (M7/M8): {A, C} vs PC-Control, as PROTOCOL.md \u00a77. A_FIX and B are reported as diagnostics only and never enter the family. C is a research-only candidate (D10a, M9). M6 proposal {A, A_FIX, C} not adopted.",
+    "S4_strict_interval_record": {
+      "value": "two_sided_95_upper",
+      "percentile": 97.5,
+      "status": "APPROVED",
+      "evidence": "M8 (project lead)",
+      "sign_convention": "delta U per origin = U_arm - U_ctrl (Wh); PASS iff 97.5th percentile of bootstrap means <= 0"
+    }
+  },
+  "primary_fuel_metric": "unadjusted realized diesel litres; saving = control - arm",
+  "diagnostic_comparisons": {
+    "A_vs_A_FIX": {
+      "definition": "A_FIX minus A, paired by origin (diagnostic, not confirmatory)",
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": 2.660208943089432,
+        "bca_low": 1.077214873282601,
+        "bca_high": 4.415146147260711
+      },
+      "unmet_Wh": {
+        "n": 123,
+        "mean_diff": 3316.7726829268295,
+        "bca_low": 2368.5994808590176,
+        "bca_high": 4489.138235321535
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": -0.6018461475563021,
+        "bca_low": -0.8448076235021373,
+        "bca_high": -0.4091337166619968
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": -0.8398747603036949,
+        "bca_low": -1.146886574611919,
+        "bca_high": -0.589197050194631
+      }
+    },
+    "A_FIX_vs_C": {
+      "definition": "C minus A_FIX, paired by origin (diagnostic, not confirmatory)",
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": -12.208672357723579,
+        "bca_low": -15.861075060009126,
+        "bca_high": -8.718642588936937
+      },
+      "unmet_Wh": {
+        "n": 123,
+        "mean_diff": 11224.158536585366,
+        "bca_low": 9363.102274870136,
+        "bca_high": 13183.538184537136
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": -1.917117471497991,
+        "bca_low": -2.372887345698264,
+        "bca_high": -1.5175382525562031
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": -3.173057404072342,
+        "bca_low": -3.750024760006961,
+        "bca_high": -2.6364333882612074
+      }
+    }
+  },
+  "arm_c_evaluation_coverage": {
+    "status": "REPORTED (diagnostic, never decision-bearing)",
+    "definition": "share of daylight executed hours with realized value >= Arm C lower bound for that hour",
+    "n_daylight_hours": 2575,
+    "overall_coverage": 0.7860194174757281,
+    "by_bin": [
+      {
+        "elevation_bin": 0,
+        "cloud_bin": 0,
+        "n_hours": 75,
+        "origin_days": 37,
+        "coverage": 1.0
+      },
+      {
+        "elevation_bin": 0,
+        "cloud_bin": 1,
+        "n_hours": 152,
+        "origin_days": 72,
+        "coverage": 0.9671052631578947
+      },
+      {
+        "elevation_bin": 0,
+        "cloud_bin": 2,
+        "n_hours": 223,
+        "origin_days": 93,
+        "coverage": 0.905829596412556
+      },
+      {
+        "elevation_bin": 1,
+        "cloud_bin": 0,
+        "n_hours": 101,
+        "origin_days": 43,
+        "coverage": 0.8514851485148515
+      },
+      {
+        "elevation_bin": 1,
+        "cloud_bin": 1,
+        "n_hours": 154,
+        "origin_days": 74,
+        "coverage": 0.922077922077922
+      },
+      {
+        "elevation_bin": 1,
+        "cloud_bin": 2,
+        "n_hours": 265,
+        "origin_days": 94,
+        "coverage": 0.8037735849056604
+      },
+      {
+        "elevation_bin": 2,
+        "cloud_bin": 0,
+        "n_hours": 133,
+        "origin_days": 45,
+        "coverage": 0.7142857142857143
+      },
+      {
+        "elevation_bin": 2,
+        "cloud_bin": 1,
+        "n_hours": 189,
+        "origin_days": 79,
+        "coverage": 0.6666666666666666
+      },
+      {
+        "elevation_bin": 2,
+        "cloud_bin": 2,
+        "n_hours": 387,
+        "origin_days": 98,
+        "coverage": 0.7260981912144703
+      },
+      {
+        "elevation_bin": 3,
+        "cloud_bin": 0,
+        "n_hours": 147,
+        "origin_days": 38,
+        "coverage": 0.8435374149659864
+      },
+      {
+        "elevation_bin": 3,
+        "cloud_bin": 1,
+        "n_hours": 310,
+        "origin_days": 77,
+        "coverage": 0.6935483870967742
+      },
+      {
+        "elevation_bin": 3,
+        "cloud_bin": 2,
+        "n_hours": 439,
+        "origin_days": 91,
+        "coverage": 0.724373576309795
+      }
+    ]
+  },
+  "secondary_block_bootstrap_fuel": {
+    "A": {
+      "mean_saving_L_per_origin": 12.128555284552847,
+      "ci95_low": 9.066816951219515,
+      "ci95_high": 15.020606077235769,
+      "role": "secondary, not decision-bearing"
+    },
+    "A_FIX": {
+      "mean_saving_L_per_origin": 9.468346341463413,
+      "ci95_low": 6.613253495934959,
+      "ci95_high": 12.391405650406504,
+      "role": "secondary, not decision-bearing"
+    },
+    "B": {
+      "mean_saving_L_per_origin": 29.35186178861789,
+      "ci95_low": 23.622833821138215,
+      "ci95_high": 34.66534136178862,
+      "role": "secondary, not decision-bearing"
+    },
+    "C": {
+      "mean_saving_L_per_origin": 21.677018699186988,
+      "ci95_low": 15.491413861788619,
+      "ci95_high": 27.29733636178862,
+      "role": "secondary, not decision-bearing"
+    }
+  },
+  "solves_used": {
+    "per_arm": {
+      "PC-Control": 2952,
+      "A": 2952,
+      "A_FIX": 2952,
+      "B": 2952,
+      "C": 2952
+    },
+    "total": 14760
+  }
+}

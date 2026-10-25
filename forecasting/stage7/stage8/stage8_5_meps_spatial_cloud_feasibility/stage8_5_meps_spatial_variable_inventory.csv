@@ -1,0 +1,9 @@
+variable_name,product,description,units,fill_value,coverage_347_origins,missingness_pct
+cloud_area_fraction,meps_det_sfc,Total cloud area fraction across vertical column,percent (0-100%),None,347/347 (100.0%),0.0
+low_type_cloud_area_fraction,meps_det_sfc,Low-level cloud area fraction,percent (0-100%),None,347/347 (100.0%),0.0
+medium_type_cloud_area_fraction,meps_det_sfc,Mid-level cloud area fraction,percent (0-100%),None,347/347 (100.0%),0.0
+high_type_cloud_area_fraction,meps_det_sfc,High-level cloud area fraction,percent (0-100%),None,347/347 (100.0%),0.0
+x_wind (700 hPa),meps_det_pl,Zonal wind speed at 700 hPa pressure level,m/s,None,347/347 (100.0%),0.0
+y_wind (700 hPa),meps_det_pl,Meridional wind speed at 700 hPa pressure level,m/s,None,347/347 (100.0%),0.0
+cloud_base_altitude,meps_det_sfc,Altitude of lowest cloud base,meters a.s.l.,9.96921E36 (clear sky),347/347 (100.0%),0.0
+cloud_top_altitude,meps_det_sfc,Altitude of highest cloud top,meters a.s.l.,9.96921E36 (clear sky),347/347 (100.0%),0.0

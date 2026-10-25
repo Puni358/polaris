@@ -1,0 +1,35 @@
+{
+  "register_name": "POLARIS_EMS_DEC004_BLOCKER_STATUS",
+  "version": "2.0.0",
+  "status": "FINAL_SELECTED",
+  "decision_id": "DEC-004",
+  "decision_title": "Operational response to ECD UNKNOWN_INVALID",
+  "human_decision_status": "OPTION_D_PROTECTED_CRITICAL_LOAD_FALLBACK",
+  "selected_option": "D: PROTECTED_CRITICAL_LOAD_FALLBACK",
+  "candidate_options_status": {
+    "A: HOLD_LAST_VALID_DISPATCH": "NOT_SELECTED",
+    "B: ZERO_DISPATCH": "NOT_SELECTED",
+    "C: OPERATOR_INTERVENTION": "NOT_SELECTED",
+    "D: PROTECTED_CRITICAL_LOAD_FALLBACK": "SELECTED_AND_SEALED"
+  },
+  "gating_impact": {
+    "ecd_core_implementation": "PASS (Not blocked)",
+    "ecd_unit_tests": "PASS (Not blocked)",
+    "dec004_governance_policy": "PASS (Selected and sealed)",
+    "option_d_runtime_implementation": "NOT_IMPLEMENTED",
+    "implementation_authorization": "NOT_GRANTED",
+    "ecd_runtime_integration": "BLOCKED by implementation authorization gate",
+    "ecd_mpc_integration": "BLOCKED by implementation authorization gate",
+    "production_deployment": "BLOCKED_PENDING_ENGINEERING_AND_IMPLEMENTATION_GATES"
+  },
+  "dependencies": [
+    "DEC-001: Production T_required override TTL value (BLK-006)",
+    "DEC-002: Production Telemetry & Command Max-Age value (BLK-007)",
+    "DEC-003: Upstream Cryptographic Ingress Scheme (BLK-008)",
+    "ENG-001: Protected critical equipment inventory & breaker mapping",
+    "ENG-002: Dynamic critical load trajectory model P_critical(t)",
+    "ENG-003: Minimum viable operating levels P_min,viable",
+    "ENG-004: Generator turndown ratio and measured fuel curve",
+    "ENG-005: Battery charge acceptance, SOC floor, SOC ceiling, and thermal limits"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "audit_manifest_id": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_HORIZON_PROTOCOL_CONFORMANCE_AUDIT",
+  "final_classification": "B \u2014 EXECUTION VALIDITY CONDITIONALLY ACCEPTABLE",
+  "authoritative_question_category": "CATEGORY_B_AUTHORITATIVELY_IMPLIED_AND_PRE_VERIFIED",
+  "governance_classification_rationale": "The hybrid horizon continuation rule (24-k Stage8.1 empirical forecasts + k baseline clear-sky forecasts) was authoritatively implied by frozen ForecastBundle/MPC contracts and formally pre-verified in POLARIS_STAGE8_1_EMS_REPLAY_CORRECTION_AUTHORIZATION_VERIFICATION.md prior to execution. Reporting of percentage totals in secondary endpoint summary represents a non-material presentation artifact requiring clarification.",
+  "execution_status": "COMPLETE",
+  "experiment_executed_during_audit": false,
+  "source_files_modified_during_audit": false,
+  "experiment_rerun_during_audit": false,
+  "source_identity_status": {
+    "treatment_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "s81_solar_py_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "runner_py_sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc"
+  },
+  "horizon_semantics_lifecycle": {
+    "k_0": "24 empirical Stage8.1 + 0 baseline",
+    "k_1": "23 empirical Stage8.1 + 1 baseline",
+    "k_2": "22 empirical Stage8.1 + 2 baseline",
+    "k_12": "12 empirical Stage8.1 + 12 baseline",
+    "k_23": "1 empirical Stage8.1 + 23 baseline",
+    "vector_length": 24,
+    "zero_padding": "NONE"
+  },
+  "control_treatment_symmetry_analysis": {
+    "treatment_construction": "Stage8.1 empirical prediction for h <= 24-k, baseline clear-sky forecast for h > 24-k",
+    "control_construction": "Baseline clear-sky forecast for all h in 1..24",
+    "delta_y_hat": "Stage8.1 - Baseline for h <= 24-k, 0.0 for h > 24-k",
+    "symmetry_verdict": "GENUINELY_COMPARABLE_ZERO_CONTRAST_UNFORECAST_HOURS"
+  },
+  "empirical_identification": "Interpretation B: Operational effect of replacing baseline solar forecasts with empirical Stage8.1 forecasts over the available 24h receding forecast trajectory (h <= 24-k), followed by common baseline clear-sky forecasts for the remainder of the MPC optimization horizon.",
+  "forecast_error_association": {
+    "X_definition": "treatment_signed_mean_error - control_signed_mean_error",
+    "Y_definition": "treatment_diesel_fuel_liters - control_diesel_fuel_liters",
+    "N": 173,
+    "spearman_rho": -0.9198,
+    "p_value": 2.283046250976508e-71,
+    "status": "PRE_REGISTERED_EXACT_MATCH"
+  },
+  "secondary_endpoint_accounting_audit": {
+    "percentage_endpoint_totals_note": "Reporting sums of percentages across 173 origins (2812.98% / 1062.15%) is a presentation/reporting error. Origin means (16.26% vs 6.14%) and recomputed aggregate energy ratios (16.26% vs 6.39%) reflect true operational performance.",
+    "status": "NON_MATERIAL_REPORTING_CORRECTION_REQUIRED"
+  },
+  "forensic_claim_separation": {
+    "independently_recomputed": [
+      "Spearman rho",
+      "Bootstrap 95% CI",
+      "Wilcoxon signed-rank test",
+      "Primary fuel totals",
+      "Secondary endpoint means/medians"
+    ],
+    "established_by_source_inspection": [
+      "Source SHA256 hashes",
+      "Raw float preservation",
+      "MPC horizon vector slicing",
+      "Future-truth isolation"
+    ],
+    "asserted_by_execution_manifest": [
+      "Process worker count",
+      "Execution runtime"
+    ],
+    "not_independently_established": [
+      "Hardware thermal telemetry"
+    ]
+  },
+  "protocol_hash_status": "PROTOCOL_HASH = NOT_ESTABLISHED (provenance limitation only)",
+  "scientific_claim_boundary": "Empirical Stage8.1 solar forecasts replayed through the frozen POLARIS EMS under the controlled POLARIS synthetic station environment.",
+  "material_issues": [],
+  "required_corrections": [
+    "Clarify percentage endpoint reporting (present origin means and aggregate energy ratios instead of percentage sums)."
+  ]
+}

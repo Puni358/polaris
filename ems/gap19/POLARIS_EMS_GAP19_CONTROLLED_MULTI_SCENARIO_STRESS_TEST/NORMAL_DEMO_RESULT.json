@@ -1,0 +1,16 @@
+{
+  "scenario_key": "normal_demo",
+  "scenario_filename": "demo_scenario.json",
+  "execution_status": "SUCCESS_CLEAN",
+  "completed_steps": 24,
+  "requested_steps": 24,
+  "solver_fallbacks": 0,
+  "solver_retries": 0,
+  "all_cycles_optimal": true,
+  "j1_unmet_load_total": 0.0,
+  "j2_reserve_shortfall_total": 45555094.631199986,
+  "j3_diesel_fuel_total": 2533.07,
+  "j4_renewable_curtailment_total": 4419117.428399999,
+  "final_battery_soc_pct": 95.0,
+  "final_diesel_hours_running": 9.0
+}

@@ -1,0 +1,133 @@
+{
+  "experiment_id": "EXP-CANDIDATE-S-SW-DIESEL-REDUCTION-2024",
+  "title": "POLARIS Candidate S & SW 123-Origin Closed-Loop Evaluation Results",
+  "governance_status": "CAMPAIGN COMPLETED",
+  "execution_date_utc": "2026-10-05T13:31:11Z",
+  "origins_count": 123,
+  "total_timesteps_per_arm": 2952,
+  "arms": {
+    "Control_Frozen_B": {
+      "arm": "Control_Frozen_B",
+      "total_fuel_l": 6603.9802,
+      "mean_fuel_origin_l": 53.69089593495935,
+      "median_fuel_origin_l": 53.9349,
+      "total_served_wh": 36435580.83,
+      "total_unmet_wh": 7844419.08,
+      "total_curtailment_wh": 9477704.0,
+      "critical_first": {
+        "served_wh": 32007222.66,
+        "unmet_wh": 2235977.34,
+        "reliability_pct": 93.47030260022427
+      },
+      "proportional": {
+        "served_wh": 28659712.8440032,
+        "unmet_wh": 5583487.1559968,
+        "reliability_pct": 83.69461044529484
+      },
+      "min_soc_pct": 54.97,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 484,
+      "diesel_startups": 324,
+      "mean_efc": 0.5421036630081301,
+      "residue_corrections_count": 144,
+      "max_residue_zeroed_w": 2.3263292741435376e-08
+    },
+    "Candidate_S": {
+      "arm": "Candidate_S",
+      "total_fuel_l": 4804.4646,
+      "mean_fuel_origin_l": 39.06068780487805,
+      "median_fuel_origin_l": 36.4867,
+      "total_served_wh": 36461291.97,
+      "total_unmet_wh": 7818707.97,
+      "total_curtailment_wh": 7542369.39,
+      "critical_first": {
+        "served_wh": 32131908.96,
+        "unmet_wh": 2111291.04,
+        "reliability_pct": 93.83442248388
+      },
+      "proportional": {
+        "served_wh": 28695721.482550513,
+        "unmet_wh": 5547478.517449487,
+        "reliability_pct": 83.79976603398781
+      },
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 331,
+      "diesel_startups": 232,
+      "mean_efc": 0.5537874284552846,
+      "residue_corrections_count": 128,
+      "max_residue_zeroed_w": 5.464851683430985e-07
+    },
+    "Candidate_SW": {
+      "arm": "Candidate_SW",
+      "total_fuel_l": 4096.9668,
+      "mean_fuel_origin_l": 33.30867317073171,
+      "median_fuel_origin_l": 33.7024,
+      "total_served_wh": 35860212.58,
+      "total_unmet_wh": 8419787.36,
+      "total_curtailment_wh": 7460501.39,
+      "critical_first": {
+        "served_wh": 32015459.12,
+        "unmet_wh": 2227740.88,
+        "reliability_pct": 93.49435543407158
+      },
+      "proportional": {
+        "served_wh": 28286084.78283602,
+        "unmet_wh": 5957115.217163979,
+        "reliability_pct": 82.60350896772503
+      },
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_below_20": 0,
+      "diesel_on_hours": 264,
+      "diesel_startups": 168,
+      "mean_efc": 0.547446612804878,
+      "residue_corrections_count": 138,
+      "max_residue_zeroed_w": 1.94727639547707e-09
+    }
+  },
+  "statistical_tests": {
+    "Candidate_S_vs_Control_B": {
+      "total_fuel_saving_liters": 1799.515600000001,
+      "fuel_saving_percentage": 27.248955107406303,
+      "mean_paired_saving_liters": 14.6302081300813,
+      "median_paired_saving_liters": 13.261600000000008,
+      "bca_95_ci_liters": [
+        11.472357896270973,
+        17.739520246447917
+      ],
+      "wilcoxon_statistic": 849.0,
+      "wilcoxon_p_value": 3.2628823000893333e-13,
+      "delta_critical_first_rel_pp": 0.3641198836557322,
+      "delta_proportional_rel_pp": 0.10515558869296626,
+      "safety_gate_1_critical_first_pass": true,
+      "safety_gate_2_proportional_pass": true,
+      "safety_gate_3_hard_soc_pass": true,
+      "all_safety_gates_pass": true,
+      "diesel_gate_pass": true,
+      "final_verdict": "SUCCESS \u2014 SAFETY GATES PASS AND DIESEL GATE PASS"
+    },
+    "Candidate_SW_vs_Control_B": {
+      "total_fuel_saving_liters": 2507.0134,
+      "fuel_saving_percentage": 37.962158033120694,
+      "mean_paired_saving_liters": 20.38222276422764,
+      "median_paired_saving_liters": 18.9345,
+      "bca_95_ci_liters": [
+        17.059722740334994,
+        23.750970884222465
+      ],
+      "wilcoxon_statistic": 458.0,
+      "wilcoxon_p_value": 2.494159267526503e-17,
+      "delta_critical_first_rel_pp": 0.024052833847306943,
+      "delta_proportional_rel_pp": -1.0911014775698078,
+      "safety_gate_1_critical_first_pass": true,
+      "safety_gate_2_proportional_pass": false,
+      "safety_gate_3_hard_soc_pass": true,
+      "all_safety_gates_pass": false,
+      "diesel_gate_pass": false,
+      "final_verdict": "SAFETY FAILURE \u2014 DO NOT ADVANCE"
+    }
+  }
+}

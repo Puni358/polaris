@@ -1,0 +1,596 @@
+{
+  "classification": "SAFETY-CHANGING",
+  "classification_reason": "Candidate safety gate status changed between A and B: A={'Candidate_S': True, 'Candidate_SW': False, 'Candidate_SL': True, 'Candidate_SWL': True}, B={'Candidate_S': True, 'Candidate_SW': True, 'Candidate_SL': True, 'Candidate_SWL': True}",
+  "winner_arm_a": "Candidate_S",
+  "winner_saving_pct_a": 23.113551272708992,
+  "winner_arm_b": "Candidate_SW",
+  "winner_saving_pct_b": 23.769088266292407,
+  "winner_retained": false,
+  "metrics_by_arm_real": {
+    "Control_Frozen_B_A": {
+      "arm": "Control_Frozen_B",
+      "realization": "A",
+      "diesel_fuel_l": 6096.9003999999995,
+      "critical_first_reliability_pct": 93.75383962363331,
+      "proportional_reliability_pct": 83.84995137907113,
+      "min_soc_pct": 54.99,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 7797.26628,
+      "curtailment_kwh": 10015.257710000002,
+      "diesel_on_hours": 442,
+      "diesel_startups": 308,
+      "efc": 66.450617625,
+      "mean_delta_c_w": 1079.583719512195,
+      "total_delta_c_kwh": 3186.93114
+    },
+    "Candidate_S_A": {
+      "arm": "Candidate_S",
+      "realization": "A",
+      "diesel_fuel_l": 4687.6902,
+      "critical_first_reliability_pct": 94.39446076885338,
+      "proportional_reliability_pct": 84.67263263642377,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 7428.47174,
+      "curtailment_kwh": 8269.9863,
+      "diesel_on_hours": 327,
+      "diesel_startups": 237,
+      "efc": 69.12163282499999,
+      "mean_delta_c_w": 717.1379674796747,
+      "total_delta_c_kwh": 2116.9912799999997
+    },
+    "Candidate_SW_A": {
+      "arm": "Candidate_SW",
+      "realization": "A",
+      "diesel_fuel_l": 3768.5494,
+      "critical_first_reliability_pct": 94.03612676385384,
+      "proportional_reliability_pct": 83.26846137547865,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 8140.82943,
+      "curtailment_kwh": 8009.08059,
+      "diesel_on_hours": 248,
+      "diesel_startups": 159,
+      "efc": 67.039240525,
+      "mean_delta_c_w": 485.6245223577236,
+      "total_delta_c_kwh": 1433.56359
+    },
+    "Candidate_SL_A": {
+      "arm": "Candidate_SL",
+      "realization": "A",
+      "diesel_fuel_l": 5280.2375,
+      "critical_first_reliability_pct": 94.39317747757218,
+      "proportional_reliability_pct": 85.00643547290123,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 7250.227309999999,
+      "curtailment_kwh": 8655.896449999998,
+      "diesel_on_hours": 379,
+      "diesel_startups": 281,
+      "efc": 69.2879521,
+      "mean_delta_c_w": 806.2610230352303,
+      "total_delta_c_kwh": 2380.08254
+    },
+    "Candidate_SWL_A": {
+      "arm": "Candidate_SWL",
+      "realization": "A",
+      "diesel_fuel_l": 5263.9645,
+      "critical_first_reliability_pct": 94.49463134286515,
+      "proportional_reliability_pct": 85.24108847645199,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 7133.64711,
+      "curtailment_kwh": 8682.4984,
+      "diesel_on_hours": 375,
+      "diesel_startups": 270,
+      "efc": 69.46162945,
+      "mean_delta_c_w": 824.8186551490514,
+      "total_delta_c_kwh": 2434.86467
+    },
+    "Control_Frozen_B_B": {
+      "arm": "Control_Frozen_B",
+      "realization": "B",
+      "diesel_fuel_l": 5685.2269,
+      "critical_first_reliability_pct": 93.97516861741893,
+      "proportional_reliability_pct": 78.65546345739993,
+      "min_soc_pct": 57.83,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 10354.70584,
+      "curtailment_kwh": 11384.87131,
+      "diesel_on_hours": 389,
+      "diesel_startups": 303,
+      "efc": 67.0868014,
+      "mean_delta_c_w": 933.0382147696478,
+      "total_delta_c_kwh": 2754.32881
+    },
+    "Candidate_S_B": {
+      "arm": "Candidate_S",
+      "realization": "B",
+      "diesel_fuel_l": 4750.8294,
+      "critical_first_reliability_pct": 94.57050337001215,
+      "proportional_reliability_pct": 80.4091645106736,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 9469.68916,
+      "curtailment_kwh": 10097.27817,
+      "diesel_on_hours": 332,
+      "diesel_startups": 237,
+      "efc": 66.651855825,
+      "mean_delta_c_w": 1002.5530555555556,
+      "total_delta_c_kwh": 2959.5366200000003
+    },
+    "Candidate_SW_B": {
+      "arm": "Candidate_SW",
+      "realization": "B",
+      "diesel_fuel_l": 4333.9003,
+      "critical_first_reliability_pct": 94.27061726123728,
+      "proportional_reliability_pct": 79.97743476068003,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 94.97,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 9673.63043,
+      "curtailment_kwh": 10044.984550000001,
+      "diesel_on_hours": 279,
+      "diesel_startups": 186,
+      "efc": 65.491802,
+      "mean_delta_c_w": 1008.7298136856369,
+      "total_delta_c_kwh": 2977.77041
+    },
+    "Candidate_SL_B": {
+      "arm": "Candidate_SL",
+      "realization": "B",
+      "diesel_fuel_l": 5229.2693,
+      "critical_first_reliability_pct": 94.61139134193066,
+      "proportional_reliability_pct": 80.48898522514246,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 9444.768970000001,
+      "curtailment_kwh": 10433.85752,
+      "diesel_on_hours": 371,
+      "diesel_startups": 277,
+      "efc": 68.5302923,
+      "mean_delta_c_w": 955.2839464769647,
+      "total_delta_c_kwh": 2819.9982099999997
+    },
+    "Candidate_SWL_B": {
+      "arm": "Candidate_SWL",
+      "realization": "B",
+      "diesel_fuel_l": 5318.5651,
+      "critical_first_reliability_pct": 94.65855936361088,
+      "proportional_reliability_pct": 80.56523069981615,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_violations_count": 0,
+      "unmet_load_kwh": 9402.978009999999,
+      "curtailment_kwh": 10438.74488,
+      "diesel_on_hours": 381,
+      "diesel_startups": 279,
+      "efc": 68.71663844999999,
+      "mean_delta_c_w": 970.3388855013551,
+      "total_delta_c_kwh": 2864.44039
+    }
+  },
+  "safety_by_real": {
+    "A": {
+      "Candidate_S": {
+        "delta_cf_pp": 0.6406211452200665,
+        "gate1_pass": true,
+        "delta_prop_pp": 0.8226812573526416,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      },
+      "Candidate_SW": {
+        "delta_cf_pp": 0.28228714022053225,
+        "gate1_pass": true,
+        "delta_prop_pp": -0.5814900035924779,
+        "gate2_pass": false,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": false
+      },
+      "Candidate_SL": {
+        "delta_cf_pp": 0.6393378539388692,
+        "gate1_pass": true,
+        "delta_prop_pp": 1.1564840938301018,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      },
+      "Candidate_SWL": {
+        "delta_cf_pp": 0.7407917192318365,
+        "gate1_pass": true,
+        "delta_prop_pp": 1.391137097380863,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      }
+    },
+    "B": {
+      "Candidate_S": {
+        "delta_cf_pp": 0.5953347525932173,
+        "gate1_pass": true,
+        "delta_prop_pp": 1.753701053273673,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      },
+      "Candidate_SW": {
+        "delta_cf_pp": 0.29544864381834657,
+        "gate1_pass": true,
+        "delta_prop_pp": 1.321971303280094,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      },
+      "Candidate_SL": {
+        "delta_cf_pp": 0.6362227245117253,
+        "gate1_pass": true,
+        "delta_prop_pp": 1.8335217677425248,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      },
+      "Candidate_SWL": {
+        "delta_cf_pp": 0.6833907461919466,
+        "gate1_pass": true,
+        "delta_prop_pp": 1.9097672424162226,
+        "gate2_pass": true,
+        "min_soc_pct": 20.0,
+        "soc_violations": 0,
+        "gate3_pass": true,
+        "all_gates_pass": true
+      }
+    }
+  },
+  "statistical_by_real": {
+    "A": {
+      "Candidate_S": {
+        "total_saving_l": 1409.2101999999995,
+        "saving_pct": 23.113551272708992,
+        "mean_paired_saving_l": 11.45699349593496,
+        "median_paired_saving_l": 10.395600000000002,
+        "bca_95_ci_low_l": 8.503901519080028,
+        "bca_95_ci_high_l": 14.317686482634105,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 1213.0,
+        "wilcoxon_raw_p": 2.454686532071873e-10,
+        "holm_adjusted_p": 7.364059596215619e-10,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      },
+      "Candidate_SW": {
+        "total_saving_l": 2328.3509999999997,
+        "saving_pct": 38.18909359254089,
+        "mean_paired_saving_l": 18.929682926829273,
+        "median_paired_saving_l": 18.601300000000002,
+        "bca_95_ci_low_l": 15.86996374925236,
+        "bca_95_ci_high_l": 21.837516780393734,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 491.0,
+        "wilcoxon_raw_p": 5.080651904191921e-17,
+        "holm_adjusted_p": 2.0322607616767684e-16,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": false,
+        "target_40pct_achieved": false
+      },
+      "Candidate_SL": {
+        "total_saving_l": 816.6628999999994,
+        "saving_pct": 13.394722669243531,
+        "mean_paired_saving_l": 6.639535772357724,
+        "median_paired_saving_l": 6.446200000000005,
+        "bca_95_ci_low_l": 4.307106591638537,
+        "bca_95_ci_high_l": 8.844046808391385,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 1665.0,
+        "wilcoxon_raw_p": 7.196041816356016e-07,
+        "holm_adjusted_p": 1.4392083632712033e-06,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      },
+      "Candidate_SWL": {
+        "total_saving_l": 832.9358999999995,
+        "saving_pct": 13.661628784357369,
+        "mean_paired_saving_l": 6.771836585365854,
+        "median_paired_saving_l": 7.537199999999995,
+        "bca_95_ci_low_l": 4.379051389903502,
+        "bca_95_ci_high_l": 9.124397125426793,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 1784.0,
+        "wilcoxon_raw_p": 8.165915350633619e-07,
+        "holm_adjusted_p": 1.4392083632712033e-06,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      }
+    },
+    "B": {
+      "Candidate_S": {
+        "total_saving_l": 934.3975,
+        "saving_pct": 16.43553575671712,
+        "mean_paired_saving_l": 7.596727642276422,
+        "median_paired_saving_l": 7.9532000000000025,
+        "bca_95_ci_low_l": 5.403564151093235,
+        "bca_95_ci_high_l": 9.74679346727474,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 1371.0,
+        "wilcoxon_raw_p": 1.977711374019297e-09,
+        "holm_adjusted_p": 5.933134122057891e-09,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      },
+      "Candidate_SW": {
+        "total_saving_l": 1351.3265999999994,
+        "saving_pct": 23.769088266292407,
+        "mean_paired_saving_l": 10.986395121951219,
+        "median_paired_saving_l": 11.437000000000005,
+        "bca_95_ci_low_l": 8.550175590691707,
+        "bca_95_ci_high_l": 13.456517176841182,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 1066.0,
+        "wilcoxon_raw_p": 4.105592215875379e-12,
+        "holm_adjusted_p": 1.6422368863501516e-11,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      },
+      "Candidate_SL": {
+        "total_saving_l": 455.95759999999973,
+        "saving_pct": 8.020042260758313,
+        "mean_paired_saving_l": 3.7069723577235765,
+        "median_paired_saving_l": 2.396100000000004,
+        "bca_95_ci_low_l": 1.7797814942806847,
+        "bca_95_ci_high_l": 5.524070907443516,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 2047.0,
+        "wilcoxon_raw_p": 8.489108243034917e-05,
+        "holm_adjusted_p": 0.00016978216486069833,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      },
+      "Candidate_SWL": {
+        "total_saving_l": 366.66179999999986,
+        "saving_pct": 6.44937847599363,
+        "mean_paired_saving_l": 2.9809902439024394,
+        "median_paired_saving_l": 1.9627000000000017,
+        "bca_95_ci_low_l": 1.034373535638959,
+        "bca_95_ci_high_l": 4.904232502148605,
+        "ci_strictly_positive": true,
+        "wilcoxon_stat": 2659.0,
+        "wilcoxon_raw_p": 0.0035828942838814753,
+        "holm_adjusted_p": 0.0035828942838814753,
+        "holm_significant_at_005": true,
+        "diesel_gate_pass": true,
+        "target_40pct_achieved": false
+      }
+    }
+  },
+  "a_vs_b_paired_deltas": {
+    "Control_Frozen_B": {
+      "diff_fuel_total_l": -411.6735,
+      "diff_fuel_mean_l": -3.346939024390244,
+      "diff_fuel_bca_95_ci": [
+        -5.159983797943218,
+        -1.4279604633084968
+      ],
+      "diff_fuel_raw_p": 0.00038126653345948037,
+      "diff_fuel_holm_p": 0.0015250661338379215,
+      "diff_rcf_mean_pp": 0.22132899378562743,
+      "diff_rcf_bca_95_ci": [
+        0.08118460702200198,
+        0.35644922169813414
+      ],
+      "diff_rp_mean_pp": -5.194487921671198,
+      "diff_rp_bca_95_ci": [
+        -5.5714832297820545,
+        -4.828234191898614
+      ],
+      "mean_min_soc_a": 60.807398373983744,
+      "mean_min_soc_b": 61.40943089430895,
+      "diff_min_soc_mean_pp": 0.6020325203252024,
+      "mean_delta_c_a_wh": 25910.009268292684,
+      "mean_delta_c_b_wh": 22392.91715447155
+    },
+    "Candidate_S": {
+      "diff_fuel_total_l": 63.1392,
+      "diff_fuel_mean_l": 0.5133268292682927,
+      "diff_fuel_bca_95_ci": [
+        -1.217419613636133,
+        2.2122689663591397
+      ],
+      "diff_fuel_raw_p": 0.33615386305593287,
+      "diff_fuel_holm_p": 1.0,
+      "diff_rcf_mean_pp": 0.17604260115877016,
+      "diff_rcf_bca_95_ci": [
+        0.02390072900639327,
+        0.31692517129185455
+      ],
+      "diff_rp_mean_pp": -4.263468125750174,
+      "diff_rp_bca_95_ci": [
+        -4.599303159776467,
+        -3.9626441091865714
+      ],
+      "mean_min_soc_a": 46.58252032520325,
+      "mean_min_soc_b": 47.18658536585366,
+      "diff_min_soc_mean_pp": 0.6040650406504067,
+      "mean_delta_c_a_wh": 17211.311219512198,
+      "mean_delta_c_b_wh": 24061.273333333334
+    },
+    "Candidate_SW": {
+      "diff_fuel_total_l": 565.3508999999999,
+      "diff_fuel_mean_l": 4.596348780487804,
+      "diff_fuel_bca_95_ci": [
+        2.6584352518087933,
+        6.724462367915923
+      ],
+      "diff_fuel_raw_p": 2.438863718993855e-05,
+      "diff_fuel_holm_p": 0.00012194318594969274,
+      "diff_rcf_mean_pp": 0.23449049738342223,
+      "diff_rcf_bca_95_ci": [
+        0.1148341091428873,
+        0.38807492004865685
+      ],
+      "diff_rp_mean_pp": -3.2910266147986342,
+      "diff_rp_bca_95_ci": [
+        -3.656126121309413,
+        -2.935485754848536
+      ],
+      "mean_min_soc_a": 40.95691056910568,
+      "mean_min_soc_b": 40.71902439024391,
+      "diff_min_soc_mean_pp": -0.2378861788617887,
+      "mean_delta_c_a_wh": 11654.988536585366,
+      "mean_delta_c_b_wh": 24209.515528455282
+    },
+    "Candidate_SL": {
+      "diff_fuel_total_l": -50.968199999999904,
+      "diff_fuel_mean_l": -0.4143756097560968,
+      "diff_fuel_bca_95_ci": [
+        -2.1792216030578007,
+        1.3395375527982267
+      ],
+      "diff_fuel_raw_p": 0.4746709794080364,
+      "diff_fuel_holm_p": 1.0,
+      "diff_rcf_mean_pp": 0.21821386435847212,
+      "diff_rcf_bca_95_ci": [
+        0.05830556235014013,
+        0.38070970184618635
+      ],
+      "diff_rp_mean_pp": -4.5174502477587755,
+      "diff_rp_bca_95_ci": [
+        -4.866629409187229,
+        -4.203294908572641
+      ],
+      "mean_min_soc_a": 48.57975609756098,
+      "mean_min_soc_b": 48.75154471544716,
+      "diff_min_soc_mean_pp": 0.1717886178861789,
+      "mean_delta_c_a_wh": 19350.264552845525,
+      "mean_delta_c_b_wh": 22926.81471544715
+    },
+    "Candidate_SWL": {
+      "diff_fuel_total_l": 54.60059999999999,
+      "diff_fuel_mean_l": 0.44390731707317066,
+      "diff_fuel_bca_95_ci": [
+        -0.9410045469203427,
+        1.8530753715418862
+      ],
+      "diff_fuel_raw_p": 0.7742106451242946,
+      "diff_fuel_holm_p": 1.0,
+      "diff_rcf_mean_pp": 0.16392802074572574,
+      "diff_rcf_bca_95_ci": [
+        0.0068346362432599155,
+        0.28507219878926837
+      ],
+      "diff_rp_mean_pp": -4.675857776635843,
+      "diff_rp_bca_95_ci": [
+        -5.018861093260669,
+        -4.368904489815446
+      ],
+      "mean_min_soc_a": 47.28170731707318,
+      "mean_min_soc_b": 47.56796747967479,
+      "diff_min_soc_mean_pp": 0.2862601626016263,
+      "mean_delta_c_a_wh": 19795.647723577236,
+      "mean_delta_c_b_wh": 23288.133252032523
+    }
+  },
+  "audit_gates": {
+    "G1_Determinism": {
+      "pass": true,
+      "max_diff_diesel_w": 0.0,
+      "max_diff_battery_charge_w": 0.0,
+      "max_diff_battery_discharge_w": 0.0,
+      "max_diff_soc_after_pct": 0.0,
+      "max_diff_unmet_load_w": 0.0
+    },
+    "G2_Accounting": {
+      "pass": true,
+      "unique_origins_a": 123,
+      "unique_origins_b": 123,
+      "total_rows": 29520,
+      "expected_rows": 29520
+    },
+    "G3_Optimizer_Status": {
+      "pass": true,
+      "non_optimal_count": 0
+    },
+    "G4_Route_Propagation": {
+      "pass": true,
+      "mismatches_count": 0
+    },
+    "G5_EMERGENCY_Rows": {
+      "pass": true,
+      "violations_count": 0
+    },
+    "G6_Busbar_Balance": {
+      "pass": true,
+      "max_busbar_balance_error_w": 0.0
+    },
+    "G7_SOC_Accounting": {
+      "pass": true,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "soc_floor_violations_count": 0
+    },
+    "G8_Fuel_Accounting": {
+      "pass": true,
+      "max_fuel_accounting_error_l": 5.000000000165983e-05,
+      "starvation_rows_count": 1,
+      "starvation_rows": [
+        {
+          "origin_id": 39,
+          "arm": "Candidate_SW",
+          "realization": "A",
+          "hour": 22,
+          "diesel_power": 0.0,
+          "diesel_fuel": 3.6293
+        }
+      ]
+    },
+    "G9_Reconciliation": {
+      "pass": true,
+      "missing_or_nan_fields": []
+    },
+    "G11_Hour0_Identity": {
+      "pass": true,
+      "max_h0_diff_diesel_w": 0.0,
+      "max_h0_diff_charge_plan_w": 0.0,
+      "max_h0_diff_discharge_plan_w": 0.0,
+      "max_h0_diff_served_plan_w": 0.0,
+      "max_h0_diff_unmet_plan_w": 0.0,
+      "max_h0_diff_flex_plan_w": 0.0,
+      "max_h0_diff_v_start": 0.0,
+      "max_h0_diff_j1": 0.0,
+      "max_h0_diff_j2": 0.0,
+      "max_h0_diff_j3": 0.0,
+      "max_h0_diff_j4": 0.0
+    },
+    "G10_Hash_Guards": {
+      "pass": true,
+      "verified_hashes_count": 18
+    }
+  }
+}

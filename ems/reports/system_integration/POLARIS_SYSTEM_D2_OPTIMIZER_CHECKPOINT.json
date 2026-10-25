@@ -1,0 +1,92 @@
+{
+  "checkpoint_id": "POLARIS_SYSTEM_D2_OPTIMIZER_CHECKPOINT",
+  "phase": "D2 — Formal Local Energy Optimizer & Final Closure Verification",
+  "title": "Formal Mathematical Receding-Horizon Energy Optimizer Implementation and Final Closure Verification",
+  "timestamp": "2026-09-16T08:41:00Z",
+  "status": "COMPLETED",
+  "d2_status": "PASS",
+  "freeze_status": "D2 = FROZEN / APPROVED",
+  "final_closure_verification": {
+    "battery_terminal_condition": "Terminal SOC target is unconstrained; terminal SOC is bounded only by normal SOC operating limits (20% <= SOC[24] <= 95%).",
+    "objective_timestep_scaling": "VERIFIED: Objective coefficients and battery transition constraints in milp.py read dt from config and scale power terms by dt.",
+    "diesel_objective_semantics": "MILP objective is a monetary composite optimization objective ($); evaluator reports physical diesel fuel consumption (Liters). Startup fuel = startup_cost / fuel_price = 6.0 L.",
+    "flexible_load_semantics": "P_demand represents Base/Inflexible Station Demand; P_flex_sched represents Scheduled Flexible Load Consumption. Total Station Demand = P_base + P_flex_sched. Bus-bar consumption = P_served + P_flex_sched + P_chg. Zero double-counting.",
+    "mpc_receding_horizon_execution": "VERIFIED: observe state -> forecast 24h -> optimize 24h -> execute 1st step -> update state -> repeat."
+  },
+  "claim_hygiene": {
+    "boundary_statement": "Research validation and operational prototype validation are separate. The frozen research artifacts establish only the claims documented by their respective research protocols. D2 demonstrates that a local MILP mathematical optimizer can execute offline and pass physical constraint and integrity tests. D2 does not establish real-world forecasting or EMS performance.",
+    "demo_metrics_disclaimer": "These metrics validate implementation/runtime behavior on the synthetic smoke-test scenario; they do not constitute empirical validation of POLARIS EMS performance under real station conditions.",
+    "evidence_type": "ENGINEERING / DEMO EVIDENCE ONLY"
+  },
+  "governance": {
+    "research_branch": "CLOSED (ABC2 FROZEN)",
+    "odd_data_status": "SEALED (0 rows accessed)",
+    "historical_artifacts_status": "UNTOUCHED",
+    "network_requirement": "100% OFFLINE LOCAL RUNTIME"
+  },
+  "optimization_formulation": {
+    "optimization_class": "Mixed-Integer Linear Program (MILP)",
+    "solver_used": "HiGHS (via scipy.optimize.milp)",
+    "horizon_hours": 24,
+    "decision_variables_per_timestep": 15,
+    "total_decision_variables": 360,
+    "binary_variables": ["u_chg", "u_dis", "u_diesel", "v_start"],
+    "continuous_variables": ["p_sol_used", "p_wind_used", "p_curt_sol", "p_curt_wind", "p_chg", "p_dis", "E_next", "p_diesel", "p_served", "p_unmet", "p_flex"]
+  },
+  "physical_accounting": {
+    "bus_bar_power_balance": "P_solar_used + P_wind_used + P_dis + P_diesel - P_served - P_chg - P_flex == 0",
+    "demand_deficit_balance": "P_served + P_unmet == P_demand",
+    "renewable_available_decomposition": "P_solar + P_wind == P_solar_used + P_wind_used + P_curtailment",
+    "battery_transition": "E[t+1] = E[t] + (eta_chg * P_chg - P_dis / eta_dis) * dt",
+    "battery_exclusivity": "u_chg + u_dis <= 1"
+  },
+  "verification_results": {
+    "test_suite": "system/tests/test_offline_runtime.py",
+    "total_tests": 14,
+    "passed_tests": 14,
+    "failed_tests": 0,
+    "network_isolation_verified": true,
+    "counterfactual_causality_verified": true,
+    "energy_balance_conserved": true,
+    "flexible_load_no_double_counting_verified": true,
+    "diesel_fuel_conversion_consistency_verified": true,
+    "battery_physics_and_exclusivity_verified": true,
+    "diesel_min_max_limits_verified": true,
+    "flexible_load_constraints_verified": true,
+    "infeasible_and_solver_error_handling_verified": true,
+    "objective_timestep_scaling_verified": true,
+    "interface_integrity_verified": true,
+    "deterministic_reproducibility_verified": true,
+    "demo_comparison_verified": true,
+    "research_firewall_verified": true
+  },
+  "demo_comparison_summary": {
+    "milp_formal_optimizer": {
+      "total_diesel_fuel_liters": 1029.51,
+      "total_diesel_energy_kwh": 3138.06,
+      "total_renewable_energy_used_kwh": 20798.52,
+      "total_renewable_curtailment_kwh": 1057.94,
+      "renewable_utilization_pct": 95.16,
+      "renewable_curtailment_pct": 4.84,
+      "battery_throughput_kwh": 3752.9,
+      "battery_equivalent_cycles": 18.7645,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_status": "OPTIMAL"
+    },
+    "rule_based_baseline_optimizer": {
+      "total_diesel_fuel_liters": 1192.7,
+      "total_diesel_energy_kwh": 2270.81,
+      "total_renewable_energy_used_kwh": 19496.99,
+      "total_renewable_curtailment_kwh": 2359.47,
+      "renewable_utilization_pct": 89.2,
+      "renewable_curtailment_pct": 10.8,
+      "battery_throughput_kwh": 2011.62,
+      "battery_equivalent_cycles": 10.0581,
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0,
+      "constraint_status": "OPTIMAL"
+    }
+  },
+  "next_recommended_phase": "D3 (Multi-Horizon Rolling MPC & Pluggable Local ML Forecast Engine Containers)"
+}

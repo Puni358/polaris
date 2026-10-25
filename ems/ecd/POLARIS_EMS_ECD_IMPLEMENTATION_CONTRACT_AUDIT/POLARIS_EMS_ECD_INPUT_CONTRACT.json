@@ -1,0 +1,107 @@
+{
+  "contract_name": "POLARIS_EMS_ECD_INPUT_CONTRACT",
+  "version": "1.0.0",
+  "status": "CLOSED_FOR_REVIEW",
+  "inputs": [
+    {
+      "name": "T_required",
+      "required": true,
+      "existing": false,
+      "source": "OPERATIONAL_OVERRIDE_OR_CONFIGURED_BASELINE",
+      "units": "hours",
+      "validity_rules": "present, numeric, finite, > 0",
+      "freshness_rules": "explicit_expiry AND max_age_guard",
+      "status": "GOVERNANCE_REQUIRED_FOR_TTL_NUMERICAL_VALUE"
+    },
+    {
+      "name": "critical_load_trajectory",
+      "required": true,
+      "existing": false,
+      "source": "FORECAST_BUNDLE_ADDITIVE_EXTENSION",
+      "units": "Watts",
+      "validity_rules": "non-empty array or scalar, numeric, finite, >= 0",
+      "freshness_rules": "aligned with forecast horizon timestamp",
+      "status": "ADDITIVE_SCHEMA_REQUIRED"
+    },
+    {
+      "name": "battery_soc",
+      "required": true,
+      "existing": true,
+      "source": "StationState.battery_soc",
+      "units": "percent (0.0 - 1.0 or 0 - 100)",
+      "validity_rules": "present, numeric, finite, 0.0 <= soc <= 1.0",
+      "freshness_rules": "telemetry freshness timestamp",
+      "status": "EXISTING"
+    },
+    {
+      "name": "battery_nominal_capacity",
+      "required": true,
+      "existing": true,
+      "source": "BatteryConfig.capacity_kwh",
+      "units": "kWh",
+      "validity_rules": "present, numeric, finite, > 0",
+      "freshness_rules": "static config",
+      "status": "EXISTING"
+    },
+    {
+      "name": "battery_minimum_soc",
+      "required": true,
+      "existing": true,
+      "source": "BatteryConfig.soc_min",
+      "units": "percent (0.0 - 1.0)",
+      "validity_rules": "present, numeric, finite, 0.0 <= soc_min < 1.0",
+      "freshness_rules": "static config",
+      "status": "EXISTING"
+    },
+    {
+      "name": "battery_discharge_efficiency",
+      "required": true,
+      "existing": true,
+      "source": "BatteryConfig.eta_dis",
+      "units": "dimensionless (0.0 - 1.0)",
+      "validity_rules": "present, numeric, finite, 0.0 < eta_dis <= 1.0",
+      "freshness_rules": "static config",
+      "status": "EXISTING"
+    },
+    {
+      "name": "battery_discharge_limit",
+      "required": true,
+      "existing": true,
+      "source": "BatteryConfig.p_dis_max_kw",
+      "units": "kW",
+      "validity_rules": "present, numeric, finite, >= 0",
+      "freshness_rules": "static config",
+      "status": "EXISTING"
+    },
+    {
+      "name": "diesel_fuel_remaining",
+      "required": true,
+      "existing": false,
+      "source": "StationState.fuel_remaining_liters",
+      "units": "Liters",
+      "validity_rules": "present, numeric, finite, >= 0.0",
+      "freshness_rules": "telemetry freshness timestamp",
+      "status": "ADDITIVE_SCHEMA_REQUIRED"
+    },
+    {
+      "name": "generator_fuel_model",
+      "required": true,
+      "existing": true,
+      "source": "GeneratorConfig (alpha_lph, beta_l_per_kwh)",
+      "units": "L/h, L/kWh",
+      "validity_rules": "present, numeric, finite, >= 0",
+      "freshness_rules": "static config",
+      "status": "EXISTING"
+    },
+    {
+      "name": "generator_operating_limits",
+      "required": true,
+      "existing": true,
+      "source": "GeneratorConfig (p_min_kw, p_max_kw)",
+      "units": "kW",
+      "validity_rules": "present, numeric, finite, 0 <= p_min <= p_max",
+      "freshness_rules": "static config",
+      "status": "EXISTING"
+    }
+  ]
+}

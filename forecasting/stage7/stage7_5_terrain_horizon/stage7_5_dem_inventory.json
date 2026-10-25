@@ -1,0 +1,19 @@
+{
+  "station": "SITES Nuolja Middle Station",
+  "latitude_deg": 68.362074,
+  "longitude_deg": 18.738752,
+  "station_dem_elevation_m": 668.6088256835938,
+  "dem_dataset": "Copernicus DEM GLO-30",
+  "spatial_resolution_m": 30.0,
+  "vertical_datum": "EGM2008",
+  "horizontal_datum": "WGS84",
+  "tile_name": "Copernicus_DSM_COG_10_N68_00_E018_00_DEM.tif",
+  "file_size_bytes": 20943743,
+  "bounds": [
+    17.99972222222222,
+    68.00013888888888,
+    18.99972222222222,
+    69.00013888888888
+  ],
+  "crs": "EPSG:4326"
+}

@@ -1,0 +1,48 @@
+{
+  "audit_name": "POLARIS_EMS_OPTION_D_HASH_AUDIT",
+  "generated_at": "2026-09-23T22:30:00Z",
+  "status": "SEALED",
+  "package_path": "POLARIS_EMS_OPTION_D_GOVERNANCE_RESOLUTION",
+  "artifact_hashes": [
+    {
+      "file": "README.md",
+      "sha256": "72b9d5d75850c2d6662acdb379d637c5f8e09dad45928c68a5877e32f6d91879"
+    },
+    {
+      "file": "GOVERNANCE_RESOLUTION.md",
+      "sha256": "f148e988f8ff0c38a976f839e1f70a3ed1ab40e0c75de37365243633846de49b"
+    },
+    {
+      "file": "OPTION_D_FORMAL_DEFINITION.md",
+      "sha256": "04ddb83fcedffcc16e458c6d2c2f7da7a2e214635b88a23ea09568fbdd3a6c3a"
+    },
+    {
+      "file": "D1_D6_CONSISTENCY_AUDIT.md",
+      "sha256": "c7a0d65d27923bab89b79f40e424ff450ee6b4a20d668a9daaaac22dcf4e192a"
+    },
+    {
+      "file": "CONTRADICTION_REGISTER.md",
+      "sha256": "3555a5cffa574f2398da2c2a03521c6727b80cc065ed1860ef0a90facd46f542"
+    },
+    {
+      "file": "NUMERICAL_VALUE_FIREWALL.md",
+      "sha256": "61faeda2b400aea62714e96ae2c38b03dd98540b2053b669b7f6eded4c4d0d9a"
+    },
+    {
+      "file": "OPEN_PARAMETER_REGISTER.md",
+      "sha256": "653bb584f4ba5ad01a023b68cb6dc8194836a4037b0fd914cf21d762a9961eba"
+    },
+    {
+      "file": "PROHIBITED_BEHAVIOR_REGISTER.md",
+      "sha256": "39d01ee5dc9859b6663275d50281aee65aa5404b069ae344dbc5a2a622779bd0"
+    },
+    {
+      "file": "DEC004_OPTION_D_UPDATE.md",
+      "sha256": "85b2db04bb01a01d405d6bf78c80fc0e754fe4e606512cc86a62b9504ac62da2"
+    },
+    {
+      "file": "GOVERNANCE_DECISION_REGISTER.json",
+      "sha256": "3736c13e1c3189f70781acbcba6ce1adda01961e041f4a94bbfe95a7b7f447d1"
+    }
+  ]
+}

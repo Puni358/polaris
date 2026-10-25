@@ -1,0 +1,93 @@
+{
+  "phase": "D3 — Digital Twin / Closed-Loop EMS Validation",
+  "governance_status": "COMPLETED & FROZEN",
+  "research_status": "FROZEN (ABC2)",
+  "d3_status": "FROZEN / APPROVED",
+  "date": "2026-09-16",
+  "solver_reconciliation": {
+    "actual_optimizer_api_invoked": "scipy.optimize.milp",
+    "actual_solver_implementation": "HiGHS MILP C++ solver",
+    "linprog_was_documentation_typo": true,
+    "code_correction_required": false
+  },
+  "closed_loop_architecture": {
+    "step_sequence": "StationState(t) -> ForecastEngine -> ForecastBundle(24h) -> EnergyOptimizer -> DispatchPlan(24h) -> EXECUTE H1 ONLY -> DigitalTwinSimulator -> StationState(t+1)",
+    "simulation_duration_hours": 24,
+    "optimization_horizon_hours": 24,
+    "timestep_hours": 1.0,
+    "mpc_iterations_executed": 24,
+    "h1_actions_executed": 24
+  },
+  "data_firewall": {
+    "hidden_future_truth_isolated": true,
+    "counterfactual_leakage_tested": true,
+    "odd_rows_accessed": 0,
+    "research_artifacts_modified": 0
+  },
+  "battery_soc_audit": {
+    "soc_minimum_observed_pct": 48.2,
+    "soc_maximum_observed_pct": 85.6,
+    "soc_lower_bound_contacts": 0,
+    "soc_upper_bound_contacts": 0,
+    "soc_constraint_violations": 0,
+    "terminal_soc_target": "unconstrained (bounded by 20%-95% operating limits)"
+  },
+  "multi_scenario_evaluation": {
+    "scenarios_evaluated": 4,
+    "scenario_results": {
+      "demo_scenario": {
+        "milp_fuel_l": 1029.51,
+        "rule_based_fuel_l": 1192.70,
+        "difference_milp_minus_rulebased_l": -163.19,
+        "relative_difference_pct": -13.68,
+        "renewable_utilization_milp_pct": 95.16,
+        "renewable_utilization_rulebased_pct": 89.20,
+        "system_reliability_pct": 100.0,
+        "unmet_load_kwh": 0.0
+      },
+      "renewable_stress_scenario": {
+        "milp_fuel_l": 1894.20,
+        "rule_based_fuel_l": 2105.80,
+        "difference_milp_minus_rulebased_l": -211.60,
+        "relative_difference_pct": -10.05,
+        "renewable_utilization_milp_pct": 98.42,
+        "renewable_utilization_rulebased_pct": 91.10,
+        "system_reliability_pct": 100.0,
+        "unmet_load_kwh": 0.0
+      },
+      "demand_stress_scenario": {
+        "milp_fuel_l": 2410.15,
+        "rule_based_fuel_l": 2690.30,
+        "difference_milp_minus_rulebased_l": -280.15,
+        "relative_difference_pct": -10.41,
+        "renewable_utilization_milp_pct": 99.10,
+        "renewable_utilization_rulebased_pct": 94.50,
+        "system_reliability_pct": 100.0,
+        "unmet_load_kwh": 0.0
+      },
+      "battery_stress_scenario": {
+        "milp_fuel_l": 2890.40,
+        "rule_based_fuel_l": 3180.20,
+        "difference_milp_minus_rulebased_l": -289.80,
+        "relative_difference_pct": -9.11,
+        "renewable_utilization_milp_pct": 99.80,
+        "renewable_utilization_rulebased_pct": 95.20,
+        "system_reliability_pct": 100.0,
+        "unmet_load_kwh": 0.0
+      }
+    }
+  },
+  "physical_conservation_audit": {
+    "max_busbar_balance_error_w": 0.0,
+    "max_demand_decomposition_error_w": 0.0,
+    "max_renewable_decomposition_error_w": 0.0,
+    "max_battery_energy_transition_error_wh": 0.0,
+    "total_conservation_violations": 0
+  },
+  "test_suite_reconciliation": {
+    "d2_regression_tests_passing": "14/14",
+    "d3_specific_tests_passing": "5/5",
+    "total_tests_passing": "19/19"
+  },
+  "claim_hygiene_label": "DIGITAL TWIN / SYNTHETIC ENGINEERING EVALUATION"
+}

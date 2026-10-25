@@ -1,0 +1,50 @@
+{
+  "timestamp_utc": "2026-09-13T10:02:55.977525+00:00",
+  "checklist_title": "POLARIS Stage 8.21A Pre-Run Governance Checklist",
+  "checks": [
+    {
+      "item": "47x47 spatial extraction definition locked",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "Solar elevation >= 5.0\u00b0 domain scope locked",
+      "status": "VERIFIED"
+    },
+    {
+      "item": ">= 99.0% spatial coverage criterion satisfied (99.30% verified)",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "Deterministic outside-window fallback locked (23 rays / 0.70%)",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "F4 hydrostatic height reconstruction algorithm locked",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "F6 microphysics parameter assumptions locked (10\u00b5m liquid / 30\u00b5m ice)",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "Incremental addition to Stage8.1 HGB 37-feature baseline",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "EVEN/ODD 173/174 origin split locked",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "Governance Firewall: NO model training executed",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "Governance Firewall: NO ODD targets accessed for model evaluation",
+      "status": "VERIFIED"
+    },
+    {
+      "item": "Governance Firewall: Operational champion and master handoff untouched",
+      "status": "VERIFIED"
+    }
+  ]
+}

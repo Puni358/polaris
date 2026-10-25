@@ -1,0 +1,2 @@
+stage4_daytime_mae,archA_daytime_mae,total_mae_reduction_W_m2,residual_std_archA,residual_lag1_autocorr,total_variance_explained_pct,remaining_hard_cases_gt150,pct_remaining_hard_cases,decision_gate_selected,decision_gate_label
+43.353222417002264,39.392734097301634,3.96048831970063,69.37448469714505,0.6223870972242181,14.026604397164583,180,6.243496357960457,DECISION B,Meaningful actionable nonlinear structure remains; targeted architecture justified.

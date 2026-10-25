@@ -1,0 +1,20 @@
+{
+  "stakeholder_decision_capture": "COMPLETE",
+  "decisions_total": 16,
+  "decisions_human_selected": 16,
+  "policy_specification": "PENDING",
+  "formal_stakeholder_authorization": "PENDING",
+  "current_ems_implementation": "FROZEN",
+  "current_ems_objective": "FROZEN",
+  "objective_modification": "NOT_AUTHORIZED",
+  "ems_modification": "NOT_AUTHORIZED",
+  "ems_execution": "NOT_AUTHORIZED",
+  "mpc_execution": "NOT_AUTHORIZED",
+  "v2_rerun": "NOT_AUTHORIZED",
+  "new_ems_experiment": "NOT_AUTHORIZED",
+  "policy_recommendation": "NONE",
+  "policy_ranking": "NONE",
+  "next_governed_step": "HUMAN_POLICY_PACKAGE_REVIEW",
+  "following_governed_step": "GOVERNED_EMS_OBJECTIVE_SPECIFICATION",
+  "audit_timestamp": "2026-09-21T18:15:29.770202+00:00"
+}

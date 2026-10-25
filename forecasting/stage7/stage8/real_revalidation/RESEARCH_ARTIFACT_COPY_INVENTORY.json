@@ -1,0 +1,1573 @@
+{
+  "summary": {
+    "number_of_files_found": 223,
+    "number_copied": 3,
+    "number_already_present_identical": 220,
+    "number_of_conflicts": 3,
+    "number_failed": 0,
+    "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation"
+  },
+  "inventory": [
+    {
+      "filename": "RESEARCH_ARTIFACT_COPY_INVENTORY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/RESEARCH_ARTIFACT_COPY_INVENTORY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/RESEARCH_ARTIFACT_COPY_INVENTORY.json",
+      "sha256": "24d51010e2750644c394f9b4b1ebd970823c32f92c2de1f0c64c2987756cc11d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "RESEARCH_ARTIFACT_COPY_INVENTORY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/RESEARCH_ARTIFACT_COPY_INVENTORY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/RESEARCH_ARTIFACT_COPY_INVENTORY.md",
+      "sha256": "6353679f3d68c5ad988568bcf8b23ea09fb02e87cb0eb932d76916acfbdc15ef",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "ENEV_CHECKPOINT_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/ENEV_CHECKPOINT_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/ENEV_CHECKPOINT_CORRECTION_AUDIT.json",
+      "sha256": "fe08c56ff14c667c2c570d8b6aabf56ffc82840cd2aa632484aef0a6a78745c3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "ENEV_METAR_FEASIBILITY_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/ENEV_METAR_FEASIBILITY_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/ENEV_METAR_FEASIBILITY_CHECKPOINT.json",
+      "sha256": "7641f4867d35642812ed188cae5aa5c7c38e86d85333526584fb2963c338f192",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "ENEV_METAR_FEATURE_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/ENEV_METAR_FEATURE_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/ENEV_METAR_FEATURE_FEASIBILITY_AUDIT.md",
+      "sha256": "bd87558b04bf311cbca57ae87355a4e7ea23e03d22dccf0cf8ddce282057cd77",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "POLARIS_MASTER_HANDOFF.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/POLARIS_MASTER_HANDOFF.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/POLARIS_MASTER_HANDOFF.md",
+      "sha256": "f27a8119d73be6683e536f126e81e17331218977f2e4936c1fc6e5292aa1bce3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "POLARIS_STAGE6_4_REPRODUCIBILITY_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/fe44618f-711b-4c0c-a9ca-25e453b39acb/POLARIS_STAGE6_4_REPRODUCIBILITY_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/POLARIS_STAGE6_4_REPRODUCIBILITY_REPORT.md",
+      "sha256": "b5211917e5b7ef7e82249aa574f0fb8801f6fcf1d252a4d9841bab39469c44cb",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "POLARIS_STAGE8_ROUTE_REGISTRY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/POLARIS_STAGE8_ROUTE_REGISTRY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/POLARIS_STAGE8_ROUTE_REGISTRY.json",
+      "sha256": "89e3d7709d8af30f0e9c05197d44abc6b0f92c88d4b6f5224d7abf2ce8c4c529",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "POLARIS_STAGE8_ROUTE_REGISTRY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/POLARIS_STAGE8_ROUTE_REGISTRY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/POLARIS_STAGE8_ROUTE_REGISTRY.md",
+      "sha256": "0ca3c59b8c68a1dd90c56707a48f70d44c557223f60827fccaa25f727e2a4bb8",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "POLARIS_master_handoff.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/1d1f096f-5053-420f-ad2d-0d78739def47/POLARIS_master_handoff.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/POLARIS_master_handoff.md",
+      "sha256": "50f8a7910993e2e1f14dd678f9c96827eed3143a5ce0b2f60f7bc6194e224dcf",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_11A_EVIDENCE_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_11A_EVIDENCE_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_11A_EVIDENCE_CORRECTION_AUDIT.json",
+      "sha256": "39e6210571f2e43b49b68d4d01ea514bee71b608d2e74e1644f458f65b69a35c",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_11A_FINAL_FORENSIC_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_11A_FINAL_FORENSIC_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_11A_FINAL_FORENSIC_AUDIT.json",
+      "sha256": "cba255377bca76468f384af607ac1f4c92bd63b38bcb375d282966b983e91e11",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_11A_FINAL_FORENSIC_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_11A_FINAL_FORENSIC_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_11A_FINAL_FORENSIC_AUDIT.md",
+      "sha256": "60077e6d161e479a5b4a7db1e7d04e0381f0004fde67292ffb9b58968b0c785a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_11A_PROJECT_STATE_UPDATE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_11A_PROJECT_STATE_UPDATE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_11A_PROJECT_STATE_UPDATE_AUDIT.json",
+      "sha256": "ae3106bc0dfd2cd46b56823f36945651fdd46cffe33422224b52346e7e03e213",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_12_STATUS_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_12_STATUS_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_12_STATUS_MANIFEST.json",
+      "sha256": "4469d7d752e293236d471a550b73f34e41390301af7033ef946ef0c0d3018089",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_13_EVIDENCE_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_13_EVIDENCE_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_13_EVIDENCE_CORRECTION_AUDIT.json",
+      "sha256": "0683c4fefcc41b40985fc42485aba89f7316a7a57e7e016bcb9b9c61ff3f784d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_13_FINAL_EVIDENCE_HARDENING_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_13_FINAL_EVIDENCE_HARDENING_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_13_FINAL_EVIDENCE_HARDENING_AUDIT.json",
+      "sha256": "06b97e80ac69eb3058598d33be03b2015e78ef69302a261135c3bba8666b8177",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_13_FINAL_EVIDENCE_HARDENING_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_13_FINAL_EVIDENCE_HARDENING_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_13_FINAL_EVIDENCE_HARDENING_AUDIT.md",
+      "sha256": "93cfeda3bb74e2e8fa96dd6441d1f7093472d97126786cf530a383be6c330ada",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_13_PROJECT_STATE_UPDATE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_13_PROJECT_STATE_UPDATE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_13_PROJECT_STATE_UPDATE_AUDIT.json",
+      "sha256": "2c43b38721ee7c6ef8c4993e4a6d4050d958214ab4d946bf033cf193fbc8ae56",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.json",
+      "sha256": "7d6efd013c874138512a17b8729202e06dc1c66d862d4afd97c3d4a757d853fd",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_13_SATELLITE_CLOUD_ROUTE_FORENSIC_AUDIT.md",
+      "sha256": "729d27a5a93470efae956d37b138ee71b11b1907d06d44b261a579216c1bfc35",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_14C_CMIC_EUMETSAT_ACCESS_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_14C_CMIC_EUMETSAT_ACCESS_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_14C_CMIC_EUMETSAT_ACCESS_AUDIT.json",
+      "sha256": "a5259f0aebb2c6487cd35d304990bb182b0626be0bc1ba6cb5bffb8afa6d094b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_14C_CMIC_EUMETSAT_ACCESS_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_14C_CMIC_EUMETSAT_ACCESS_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_14C_CMIC_EUMETSAT_ACCESS_AUDIT.md",
+      "sha256": "511622535e68b89b004721563246efe2b71d825a0b156135388813aaf2f9bbf2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_14C_CMIC_EUMETSAT_ACQUISITION_SPEC.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_14C_CMIC_EUMETSAT_ACQUISITION_SPEC.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_14C_CMIC_EUMETSAT_ACQUISITION_SPEC.md",
+      "sha256": "a2ad164e47938d362edc14a0884ed5dbb5619935c1372743879a2a4435a1e470",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.json",
+      "sha256": "59bbf4725ca536d93e28e9db7ad9797347aa16f07599327d5f9ec272453cc9c4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.md",
+      "sha256": "3303c83b9e48f85987cf3f0f68800b3eca5b03a2817e68e92c14b738fbb99d37",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_AUDIT.json",
+      "sha256": "45805c1e4962468ed0082c6de2de086c34d8c2c443c362ad182ecf2b9c371481",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_AUDIT.md",
+      "sha256": "e9ab2b6665bdf5c9f8e1fb3a649b3ad6bbde55d808a8dcb70dd8caddf47bed0d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_CLOSED.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_CLOSED.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_15A_LOCAL_UPWIND_CLOUD_FEASIBILITY_CLOSED.json",
+      "sha256": "b6bdfdc2c5283099eaf728414a5cbbcf6bf401559148b24c9ec625c8df3a4df7",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16A_NWP_UNCERTAINTY_FEASIBILITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16A_NWP_UNCERTAINTY_FEASIBILITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16A_NWP_UNCERTAINTY_FEASIBILITY_AUDIT.json",
+      "sha256": "bdbf99c629819ee06906c7f8728e6ba9ec4be5f802da406cf58dbc2ce40b992e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16A_NWP_UNCERTAINTY_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16A_NWP_UNCERTAINTY_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16A_NWP_UNCERTAINTY_FEASIBILITY_AUDIT.md",
+      "sha256": "8248ac9c28f19b4b1af4f77b8d1697d5cd398142c1c12f2bce7dd58f1f604a20",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_1_SIGMA_LWP_CLOSED.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_1_SIGMA_LWP_CLOSED.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_1_SIGMA_LWP_CLOSED.json",
+      "sha256": "0f6e94b435e3698696a26ca6174de0ac68a089aecb35f60ec950dc41b0f3ca25",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_1_SIGMA_LWP_CLOSED.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_1_SIGMA_LWP_CLOSED.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_1_SIGMA_LWP_CLOSED.md",
+      "sha256": "8d48344fa0023911075afe1cb61c8adad5d30b6d07655a79ae36ccd649fd2363",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_1_SIGMA_LWP_EXPERIMENT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_1_SIGMA_LWP_EXPERIMENT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_1_SIGMA_LWP_EXPERIMENT.json",
+      "sha256": "38995b32f89dc0e36e5aceb2ddabd8ac48ba656c55ae1d4d831b3355ec495e80",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_CONTROL_REPRODUCTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_CONTROL_REPRODUCTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_CONTROL_REPRODUCTION_AUDIT.json",
+      "sha256": "03e19dc5bb3e2c6e548ead90997ce19bbc8056654ab1e8e3b8a87b7bbcce21e6",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_CONTROL_REPRODUCTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_CONTROL_REPRODUCTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_CONTROL_REPRODUCTION_AUDIT.md",
+      "sha256": "15542729536065655d51adbe8734263485cdab20a8aa108106e6755ac3d642cf",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_CANDIDATE_FREEZE.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_CANDIDATE_FREEZE.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_CANDIDATE_FREEZE.json",
+      "sha256": "3a71f1414eb44bf1c31297870356483a1c5290ec0a4bf98e296f6f88f897e3be",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_CANDIDATE_FREEZE.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_CANDIDATE_FREEZE.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_CANDIDATE_FREEZE.md",
+      "sha256": "069de9201b63e655f25131e78e4fde7ddbd005c10ca5aad2eb2ea3d28b37dc69",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_EXPERIMENT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_EXPERIMENT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_EXPERIMENT.json",
+      "sha256": "37898f49dc1ae708e05e8c85f6980eee9aa402ec63c938f193faa60853bd9172",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_EXPERIMENT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_EXPERIMENT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_EXPERIMENT.md",
+      "sha256": "e0e7b34dd1fb92d61dace611503d8dd2cf401a2d944a6574d7e8681cce5a6ac9",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_ODD_VALIDATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_ODD_VALIDATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_ODD_VALIDATION.json",
+      "sha256": "3246c431f480c04d3cb45160a313d047a6661131680cbbfb7b08e14f07af8036",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_ODD_VALIDATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_ODD_VALIDATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_ODD_VALIDATION.md",
+      "sha256": "488d6808f4b14e42fbaea1c64007f1b096daf5aed2d4a5a5a8f14f23cb5affb7",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_PROMOTION_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_PROMOTION_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_PROMOTION_CHECKPOINT.json",
+      "sha256": "afc9513541c50a062b717d985d57bda070ee50c01aea29d0338cb0d1cf439836",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_PHI_INCONSIST_PROMOTION_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_PHI_INCONSIST_PROMOTION_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_PHI_INCONSIST_PROMOTION_CHECKPOINT.md",
+      "sha256": "00c7d8e0b243f76ce8318e0b0368db4aede25e3d59d69f0db27fb33681d33214",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_POST_PROMOTION_NUMERICAL_INTEGRITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_POST_PROMOTION_NUMERICAL_INTEGRITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_POST_PROMOTION_NUMERICAL_INTEGRITY_AUDIT.json",
+      "sha256": "26c79c41d312ab33017745200158c5ee0f6e6b44bdfe545bbcd1b0d95f5465e6",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_POST_PROMOTION_NUMERICAL_INTEGRITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_POST_PROMOTION_NUMERICAL_INTEGRITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_POST_PROMOTION_NUMERICAL_INTEGRITY_AUDIT.md",
+      "sha256": "0263db8321a0424ac129b06694087639b68b86e177728bb49546ed891ab990b9",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_RECONCILIATION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_RECONCILIATION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_RECONCILIATION_AUDIT.json",
+      "sha256": "fbdd8b7f023f4a0eb36b6bb82aac7939615354e45556c241570628f0e6a323ce",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_16B_2_RECONCILIATION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_16B_2_RECONCILIATION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_16B_2_RECONCILIATION_AUDIT.md",
+      "sha256": "8308e81e864abc7f76b056f5f9dc0b155612f17f0354cf747c68f09c2bee3882",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.json",
+      "sha256": "19b85a93b3e8a20a8d0caef055426152b664fc10be4d1653200d7276da5521a0",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_19_ANTIGRAVITY_FORENSIC_RECOVERY.md",
+      "sha256": "a2f02ab047434ad7aa1b19b77995c09bee83e52c27bd2af5a4a82db31549cb9e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_AROME_GOVERNANCE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_AROME_GOVERNANCE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_AROME_GOVERNANCE_AUDIT.json",
+      "sha256": "a80013f6d210fa3db415cd56fc314098d20921c1142d264b05fc2576a6e53006",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_AROME_GOVERNANCE_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_AROME_GOVERNANCE_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_AROME_GOVERNANCE_AUDIT.md",
+      "sha256": "00989ff87897275d61d0a72d11780e8add48f324f15c287417facb8ad867d98b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.json",
+      "sha256": "d86bd2520f718153968523b9b6a93bfe9a7c76c3d45f53c44889e621b2ae4558",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.md",
+      "sha256": "b5a6310b869867b504a84e47d3eedf0e0ad1b5bd7b3c6829d4e8eb582efc0e69",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_PROMOTION_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_PROMOTION_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_PROMOTION_CHECKPOINT.json",
+      "sha256": "145c090c70b78dc172024e440634c2f7e9362160d5643a7885adf936278e47d6",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_PROMOTION_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_PROMOTION_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_PROMOTION_CHECKPOINT.md",
+      "sha256": "8a4ffcc7203214cd0bbcce56899e97f6a0ef533f86f82647dfff99a1a4bc8cfd",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_DIAGNOSTIC_ANALYSIS.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_DIAGNOSTIC_ANALYSIS.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_DIAGNOSTIC_ANALYSIS.json",
+      "sha256": "db4569a0bde7f47d6287fc2785cceb3c5fc02026f1b4b085df36a647f8c3df7d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_DIAGNOSTIC_ANALYSIS.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_DIAGNOSTIC_ANALYSIS.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_DIAGNOSTIC_ANALYSIS.md",
+      "sha256": "52f8e529fdbccf5e4a7d2e62705943a9f2926a0544f6b52eea4b059cf7afbb0a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.json",
+      "sha256": "acc92bcc3ddd32697c531b92cae630c3e772e64eb1bba8633e3786eae2f7fdd3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.md",
+      "sha256": "656333d2b3979ab02dca7e0be94ed5a3e10435d39ccd5aabc81ddc9a1dac1d2a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_GOVERNANCE_REPAIR_FEASIBILITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_GOVERNANCE_REPAIR_FEASIBILITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_GOVERNANCE_REPAIR_FEASIBILITY_AUDIT.json",
+      "sha256": "f41ab0ca8d45f098020e568f39c11f3073b8bf2446929d97b0265513c98e02c1",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_GOVERNANCE_REPAIR_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_GOVERNANCE_REPAIR_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_GOVERNANCE_REPAIR_FEASIBILITY_AUDIT.md",
+      "sha256": "727c81f691beab207f6ad0fdee25e37376496e152dca8ed131f8b5a8227127fb",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_DATA_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_DATA_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_DATA_MANIFEST.json",
+      "sha256": "b34efe8522e35997de315986eba4974f48deabc5d167b34120a4aa2235d6d588",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_DATA_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_DATA_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_DATA_MANIFEST.md",
+      "sha256": "877ec56ae40e0215552d78d75b911ada095b0a444b6e707db5a11aa64f859499",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_NUMERICAL_PROVENANCE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_NUMERICAL_PROVENANCE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_NUMERICAL_PROVENANCE_AUDIT.json",
+      "sha256": "9e55f42d1245ce707c29cb8819abaad2385a0354ad098086f904fc669cd81264",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_NUMERICAL_PROVENANCE_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_NUMERICAL_PROVENANCE_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_NUMERICAL_PROVENANCE_AUDIT.md",
+      "sha256": "79070864e98d7f3c0f17ea033aad940c20e77793b059e626540b351433ed35f9",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_POSTMORTEM.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_POSTMORTEM.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_POSTMORTEM.json",
+      "sha256": "8003dba495bc1c3ff633928ca21677d4447e1a94271e7a657f796ae9fcdab18e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_POSTMORTEM.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_POSTMORTEM.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_POSTMORTEM.md",
+      "sha256": "3562a3ddcd53b0d3a63f8823d7fea56fc0cc6f94bf01b4b6e32eb0fabd5311cc",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_POSTMORTEM_CORRECTED.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_POSTMORTEM_CORRECTED.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_POSTMORTEM_CORRECTED.json",
+      "sha256": "0bb2bab903ba07898731b068b311c80d0484966faa9d89d24c58bd3da7115feb",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_POSTMORTEM_CORRECTED.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_POSTMORTEM_CORRECTED.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_POSTMORTEM_CORRECTED.md",
+      "sha256": "686b430862553051dce5fd426646c7b0921a823d967fc288ff7a731d1c397031",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_RESEARCH_HANDOFF.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_RESEARCH_HANDOFF.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_RESEARCH_HANDOFF.md",
+      "sha256": "ab2ee6d21ddf33317736541b634a672d27e65c5aa3d42af217601321cc495a1d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REAL_AROME_RESEARCH_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_RESEARCH_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_RESEARCH_MANIFEST.json",
+      "sha256": "f3084396815430956f70ebda4d5e51b5386e80017fa60c9955d119fac83c8b6d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REPORT_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REPORT_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REPORT_CORRECTION_AUDIT.json",
+      "sha256": "b76069eaba48db2d8834f0748dac6f0fae5df32fbcaa6b20c77fc2fa3e5a624e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_REPORT_CORRECTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REPORT_CORRECTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REPORT_CORRECTION_AUDIT.md",
+      "sha256": "a74b11866c484dc94ade5c6c90254ecf6b31a307579da864c219830e40effafa",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.json",
+      "sha256": "1bdd1800525b9c1fec13f0ba2cf76543afe0c7718f7a8dd0d083c028cef183e9",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_RETROACTIVE_CANDIDATE_FREEZE_RECONSTRUCTION.md",
+      "sha256": "54dd18a424113cf3f64eca7581b0962842e04314e0aa7df590607fc20eed04d3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.json",
+      "sha256": "c880881ee7618155b75d1dd639ba463893ab3bcd1a0202c6f66dea6351f5b9fb",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.md",
+      "sha256": "befb045f7d87fc26be2f5a907ddf9d2e7f32e0e53e79909f44e9c4dff1db8d00",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.json",
+      "sha256": "b2ebb660a4d9f065d5225a7850a0e5815ba0aff9dbff3187e06bd8d203a490ad",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.md",
+      "sha256": "4c808a84126393dc15b259e2640851b97f5e04a999365d28cdee231aef3ead36",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19C_ABIS_CANDIDATE_FREEZE.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19C_ABIS_CANDIDATE_FREEZE.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19C_ABIS_CANDIDATE_FREEZE.json",
+      "sha256": "efa31efc086724099ee1c831f76917042c6ef8ed807436d030577068966b20a2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19C_ABIS_CANDIDATE_FREEZE.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19C_ABIS_CANDIDATE_FREEZE.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19C_ABIS_CANDIDATE_FREEZE.md",
+      "sha256": "96aa1b15ac33dfd5d4e0f06649da0029f7d2eb9d38bef732fd547d8552d565f3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.json",
+      "sha256": "2ca7d6d3a60f20f010854508236cceca72f2e0b92eb493026faf32f1d56a75c7",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.md",
+      "sha256": "e473383f94b70b3121893fdc1ad08849387a3d20bc7c7ce2fc71bf4b2a1b3a8a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.json",
+      "sha256": "55bf6a834cfb0cd4d67cf4b0980f69d3eefe995bef12ce8ab96f6f4b11ffeb09",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.md",
+      "sha256": "e538a6881d467e74dc0265a834776c29940153abfd392b6742dc9df4dfa336ad",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.json",
+      "sha256": "b8e81b541d253044160b0ece73feee738c4c609fc55d515a50c732f400283c1b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.md",
+      "sha256": "d84d93a0583b8c30f9ea9ac2be82a304a5f6ef30db1f9f204fbab5f2fbe97325",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT.json",
+      "sha256": "a60fb91c27ccbb3dfa7bd2522398f3eee025d7f95f363683fcd10786e42b9e30",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT.md",
+      "sha256": "a3f171449f88e90738866adcc9a1680b8c78ed7086f2ddb048ead55fc4599bc8",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.json",
+      "sha256": "07f66c81c5de9dfedcf568a1df97de15f57ef1ada8b3524cfd7128aeea2f7495",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_NUMERICAL_PROVENANCE_AUDIT.md",
+      "sha256": "fae12396ab1110471e2f50e162ef0ed003208286613378c9a2fba7b3732b0b9a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_ODD_PREDICTIONS_RECOVERY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_ODD_PREDICTIONS_RECOVERY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_ODD_PREDICTIONS_RECOVERY_AUDIT.json",
+      "sha256": "328460a28f972e85cd840f8d685cf1e1b49bdc893a77019d56187ab296653422",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_ODD_PREDICTIONS_RECOVERY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_ODD_PREDICTIONS_RECOVERY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_ODD_PREDICTIONS_RECOVERY_AUDIT.md",
+      "sha256": "63ffcc83654f36e3db2947b24f6dac7be05b0aa09a7c88bd1b00614b6c5e9539",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.json",
+      "sha256": "d9ce8bbf3e8f5abeab9005ccca6d947cb69fa064ef325c0efbcbe6d18762e7d4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.md",
+      "sha256": "de96bca2a4c20608364558c8879c538cb0a083d0e4cba5c0e12f7d4dc2dc9914",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_REPRODUCTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_REPRODUCTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_REPRODUCTION_AUDIT.json",
+      "sha256": "444bbf710bb4814bced7845fe6bf6f667c2f140d22d6963ec312a0dc58c34131",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_REPRODUCTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_REPRODUCTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_REPRODUCTION_AUDIT.md",
+      "sha256": "640d1151d77a821be596dfc15cea6218e2a34ec8b9dd89e797f21e1c9a58870f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.json",
+      "sha256": "67f58bcd923a5a9394c5edb86971369579357d57c1bb3fe8d0f3eae4d14ae956",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_ROOT_CAUSE_FORENSIC_AUDIT.md",
+      "sha256": "d462d24d2a7183aea3c76644508d6046a08af972c9c19887a2b6f5cae6368998",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT.json",
+      "sha256": "c957b1b5f475a0337e301db67dbac4d0d25d328a96526a3a6e6f9727384865e2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT.md",
+      "sha256": "ab9536508fe7dc0e26360d3b5adf33ed399559d5f035aa9f0357dbffb77be734",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT.json",
+      "sha256": "d0b4ea16afe2482820e17a20b19c056a140d1c12bab4e3f0a7e1b867c84923ab",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT.md",
+      "sha256": "133610458b580406e2cc63c9d7c2ca67ba5c87a98dbb07a05c20fc4d84d76ed2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_20A_INDEPENDENT_OBSERVATION_DISCOVERY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_20A_INDEPENDENT_OBSERVATION_DISCOVERY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_20A_INDEPENDENT_OBSERVATION_DISCOVERY.json",
+      "sha256": "d38be0a4f2b91b0009c56245de0d49aeb6c3040483ba45abe159dd37cb3d7b3a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_20A_INDEPENDENT_OBSERVATION_DISCOVERY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_20A_INDEPENDENT_OBSERVATION_DISCOVERY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_20A_INDEPENDENT_OBSERVATION_DISCOVERY.md",
+      "sha256": "2545a09d81b1a286a8c1abc929fb1e24f6e4c08fed775770ecfc75c600cf556f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT.json",
+      "sha256": "7665efb32dc0c4367273bcc6f2d98cba61f2e1888dba973bc05f0cb777c1b77b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT.md",
+      "sha256": "938998d6410c659989d9a35e1590ca90708d51f721cb5aafe199de8714edca09",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.json",
+      "sha256": "bcd0484c865c74fd3a20aca0e63ff194ec85512af1c331f67500f9a6456dd55e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_3D_SLANT_PATH_FEASIBILITY.md",
+      "sha256": "ceb26be3d2ec608071453eccf2de6832c0e7093d2d529ca3d8fce91ea80d9687",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_DATA_COVERAGE_PLAN.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_DATA_COVERAGE_PLAN.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_DATA_COVERAGE_PLAN.json",
+      "sha256": "4945ac1d9c2819e1403a72201735aa425cffc1595083c1be8d8601d56de11ea9",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_DATA_COVERAGE_PLAN.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_DATA_COVERAGE_PLAN.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_DATA_COVERAGE_PLAN.md",
+      "sha256": "d2f33a0a4a77268b3353df3ff096c499a58b274b66c4660f0e0459fea98d51f3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EVEN_VALIDATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EVEN_VALIDATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EVEN_VALIDATION.json",
+      "sha256": "e9585ca29cbcf03107fb6acbc040cca2355057168759ffe61b47640b858e08ed",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EVEN_VALIDATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EVEN_VALIDATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EVEN_VALIDATION.md",
+      "sha256": "87272bdc7dee6c5e2a111d1de3ac873b4b47661f3f071dec2874e4fa1ff388fc",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EXECUTION_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EXECUTION_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EXECUTION_MANIFEST.json",
+      "sha256": "958c071d7a2bf4752a93437f6ad8026792304a8674cfcbed994a8e7a3d2ffc96",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EXECUTION_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EXECUTION_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EXECUTION_MANIFEST.md",
+      "sha256": "5926b79534ef291f70f61cc8895ac944b0848fe26960a70d75ab2930ae276bc1",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EXPERIMENT_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EXPERIMENT_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EXPERIMENT_MANIFEST.json",
+      "sha256": "24a456eb9586b881e6a72d5949b1472255f31c0dc870ab95aa80da8eef16e1b6",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EXPERIMENT_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EXPERIMENT_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EXPERIMENT_MANIFEST.md",
+      "sha256": "c70eccde0e0105c28273704c830f833303e99742966e285e2f1ea807298f9f7b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EXPERIMENT_SPECIFICATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EXPERIMENT_SPECIFICATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EXPERIMENT_SPECIFICATION.json",
+      "sha256": "86ced863729861e44716d36d8f0e4a93e0e8d97967b9cd310dfac4ff335bdb18",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_EXPERIMENT_SPECIFICATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_EXPERIMENT_SPECIFICATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_EXPERIMENT_SPECIFICATION.md",
+      "sha256": "f267c1bfc80ef3d4ea1f8e9103179c057f4ff41747fb7d16214908d6f5b79596",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_ACTUAL_RAY_GEOMETRY.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_ACTUAL_RAY_GEOMETRY.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_ACTUAL_RAY_GEOMETRY.csv",
+      "sha256": "4aebeae717c67d89c322e41dc2eb726b7befdfa4bc5580f60292d12c7be80809",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.json",
+      "sha256": "493bc675861d5de37ec66944a791da7b9cbe63e3e241d5f12d312e279540d546",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_F4_F6_RESOLUTION_AUDIT.md",
+      "sha256": "59117b0e4c1eabf75d7b2f5ddeb7211c3aced1f10f6b4e433f4298fcecf57c72",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.json",
+      "sha256": "194b9c850a6b94082fb2814827462750caa1d3bd03b5aabb1d07fd30d477efc2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_F4_F6_RESOLUTION_MANIFEST.md",
+      "sha256": "68ee65ed4ec17897085839a7a08f97711c551843fa83c2f3671b1d669f69767e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_FINAL_CONSISTENCY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_FINAL_CONSISTENCY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_FINAL_CONSISTENCY_AUDIT.json",
+      "sha256": "5bf6a7bf1e246a8a7e544c09fe6f7a9c4781c466e26bdcbca6813efe51968dca",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_FINAL_CONSISTENCY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_FINAL_CONSISTENCY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_FINAL_CONSISTENCY_AUDIT.md",
+      "sha256": "5ae043e5f11abb0595d6671b04c00ed81b252d073e643aebd9da9e5531a25e0f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_PASS_CRITERION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_PASS_CRITERION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_PASS_CRITERION_AUDIT.json",
+      "sha256": "60bed83138855749ccd9db856412e10d4ac4b2d8a5f4d28bbf585a64eed3cb15",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_PASS_CRITERION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_PASS_CRITERION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_PASS_CRITERION_AUDIT.md",
+      "sha256": "711ca71ad6c7536757267576d4acb52a4634dd1d0f2262ce91346eeb1ffbeadb",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_RAY_DENOMINATOR_RECONCILIATION.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_RAY_DENOMINATOR_RECONCILIATION.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_RAY_DENOMINATOR_RECONCILIATION.csv",
+      "sha256": "ec6cb7671a5506140479422277ac382dce76098d7e54d68e89634292f5213d4e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_SPATIAL_GEOMETRY_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_SPATIAL_GEOMETRY_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_SPATIAL_GEOMETRY_REPORT.md",
+      "sha256": "191716fa2e7dd87e5a0e906cbb00e978fd6ced81f676dc1ca9e01be105292f84",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F3_WINDOW_COVERAGE_FINAL.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F3_WINDOW_COVERAGE_FINAL.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F3_WINDOW_COVERAGE_FINAL.csv",
+      "sha256": "ffe8082f6edfc10610809cf0e1e5b2df3290b0c957b4a765b691d83ded6e2365",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F4_VERTICAL_COORDINATE_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F4_VERTICAL_COORDINATE_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F4_VERTICAL_COORDINATE_REPORT.md",
+      "sha256": "f26be9ed4ccd237f7cbc64099d5f106d28e9bc9308695aeb2e0d41dc511b7d5e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_F6_OPTICAL_PROXY_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_F6_OPTICAL_PROXY_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_F6_OPTICAL_PROXY_REPORT.md",
+      "sha256": "57160242ebceb63fccfecbb1a44f1d9ea584bacf99a4c027fe3fd1be28118dd5",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEASIBILITY_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEASIBILITY_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEASIBILITY_CORRECTION_AUDIT.json",
+      "sha256": "68e3d230234a10f63e1ba2ff50a90cb38fedc74d40fb06c96855a13abab57655",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEASIBILITY_CORRECTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEASIBILITY_CORRECTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEASIBILITY_CORRECTION_AUDIT.md",
+      "sha256": "c9456ea9c363bd3d5b577fa045299325fc8403b20d6af3dc44a0edb806577c39",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEASIBILITY_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEASIBILITY_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEASIBILITY_MANIFEST.json",
+      "sha256": "795eb7d2e1fcb92c51cf8db9e43374c0ef6c17ddd9e7d8d737e8ae92834eae38",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEASIBILITY_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEASIBILITY_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEASIBILITY_MANIFEST.md",
+      "sha256": "87106d6e555292f2f76b58afc2741a6756e702042007b28a55abad32824dfc78",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEASIBILITY_RESEARCH_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEASIBILITY_RESEARCH_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEASIBILITY_RESEARCH_AUDIT.md",
+      "sha256": "a177c73b4a254872612ecea3d1935efa261dbad2ec3a8f4093192fd6abd634c4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEATURE_DEFINITION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEATURE_DEFINITION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEATURE_DEFINITION.json",
+      "sha256": "d0ad5ba90bb53f35827eadde2bdf6b1ed287f64592dcbcf8586cf3b7f40d5806",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FEATURE_DEFINITION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FEATURE_DEFINITION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FEATURE_DEFINITION.md",
+      "sha256": "b027a56a7342f3c8384ed11954ce94ed54730f64539d7f1a24d9f7bec2fe0616",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_CLOSURE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_CLOSURE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_CLOSURE_AUDIT.json",
+      "sha256": "95b66151b21e8e7d5e8abb5591acad661288110687118fd1fbeeea926c0a4906",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_CLOSURE_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_CLOSURE_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_CLOSURE_AUDIT.md",
+      "sha256": "45608ced899c3b150e1fd5045d1a89a6e118ec4f62fa28953a6f89417303b5ca",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_CLOUD_HEIGHT_GEOMETRY.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_CLOUD_HEIGHT_GEOMETRY.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_CLOUD_HEIGHT_GEOMETRY.csv",
+      "sha256": "2351078c94292b5252869d5fc615519360dfaecbcb7c9ace9d52648c2bac3af2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_F3_F6_RESOLUTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_F3_F6_RESOLUTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_F3_F6_RESOLUTION_AUDIT.json",
+      "sha256": "920a9c2c61c8b157f2b96844a1d09a077088cf2c31b81f412cacd492f446e6d5",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_F3_F6_RESOLUTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_F3_F6_RESOLUTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_F3_F6_RESOLUTION_AUDIT.md",
+      "sha256": "03a728de6aed38a813991adaade81dce3906e940470b722205a56d80439209a1",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_FEASIBILITY_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_FEASIBILITY_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_FEASIBILITY_MANIFEST.json",
+      "sha256": "7471b739a6ee62bab54ab0f640a023a9454f5404e1bd142caf6e335edba90d38",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_FEASIBILITY_MANIFEST_conflict_c1ea6e2d.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_FEASIBILITY_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_FEASIBILITY_MANIFEST_conflict_c1ea6e2d.md",
+      "sha256": "6bbff527370cbd608a063955137b1ec94f0197acb1d311fafcd935b4ec51a505",
+      "status": "COPIED_CONFLICT_RESOLVED"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_OPTICAL_PROXY_SENSITIVITY.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_OPTICAL_PROXY_SENSITIVITY.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_OPTICAL_PROXY_SENSITIVITY.csv",
+      "sha256": "c99acb265255f9bf1ee0af1a5d503125c272d8481d67d303fbb518971794f44d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_REPORT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_REPORT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_REPORT.json",
+      "sha256": "627ebd26af889c057d42495879836b65394060d99c8a80a1f862a0035c458fbc",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_FINAL_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_FINAL_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_FINAL_REPORT.md",
+      "sha256": "b8d3a25951c1178e2f7d577ccc948dccb9004fdb54a74747b9571179ee12f71f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_PRE_RUN_FALLBACK_AUDIT.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_PRE_RUN_FALLBACK_AUDIT.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_PRE_RUN_FALLBACK_AUDIT.csv",
+      "sha256": "cdd73c87db6ddbb42d1243b3343dd5f8c06db387e600b0365652eabfdf1bd4ea",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_PRE_RUN_FEATURE_INTEGRITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_PRE_RUN_FEATURE_INTEGRITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_PRE_RUN_FEATURE_INTEGRITY_AUDIT.json",
+      "sha256": "ff5b4744c57064b15b3afd7f42a25e8163f0d9c9fbe31bc00dba5d670abc4941",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_PRE_RUN_FEATURE_INTEGRITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_PRE_RUN_FEATURE_INTEGRITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_PRE_RUN_FEATURE_INTEGRITY_AUDIT.md",
+      "sha256": "4ed0dda6c87d121ddd2b9d71cdf7918aeda695e28660af5a8aeec6097a9ab35d",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_PRE_RUN_FEATURE_SUMMARY.csv",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_PRE_RUN_FEATURE_SUMMARY.csv",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_PRE_RUN_FEATURE_SUMMARY.csv",
+      "sha256": "ab8bc406a84d54a3921a6da0741609100a6c57748dd2bd426657984bbbce4531",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.json",
+      "sha256": "c8bb77825a82fbdd79809984db618041ae9584697de60d9d1d905e7ef6e7b2c1",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.md",
+      "sha256": "0649589ec6767c8cfd80bbf85f51e856170467f48cf9741c0b53e0bfb3622875",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_22_EVIDENCE_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_22_EVIDENCE_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_22_EVIDENCE_AUDIT.md",
+      "sha256": "10fbc13da720e9cc50ff72fb844aed9f7ef531d456a00426a1428e8fe0316bad",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_22_SATELLITE_CLOUD_MOTION_BRIEF.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_22_SATELLITE_CLOUD_MOTION_BRIEF.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_22_SATELLITE_CLOUD_MOTION_BRIEF.md",
+      "sha256": "5cd890f30046a8803e2a28ecb16adcb1282b03ee4c2e4d39ed5fcd55541103a6",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_22_SATELLITE_CLOUD_MOTION_FEASIBILITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_22_SATELLITE_CLOUD_MOTION_FEASIBILITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_22_SATELLITE_CLOUD_MOTION_FEASIBILITY_AUDIT.json",
+      "sha256": "0c0b7e3a20efef57769da368e4aecd2b6cd93da95eb9586bb4a8bfc0f1cbef1a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_22_SATELLITE_CLOUD_MOTION_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_22_SATELLITE_CLOUD_MOTION_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_22_SATELLITE_CLOUD_MOTION_FEASIBILITY_AUDIT.md",
+      "sha256": "e1066f5f92bc6df76a4cb0458faf336c239fce789d3ef8d5f07fe30be20fc7e3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_22_SATELLITE_CLOUD_MOTION_GPT_BRIEF.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_22_SATELLITE_CLOUD_MOTION_GPT_BRIEF.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_22_SATELLITE_CLOUD_MOTION_GPT_BRIEF.md",
+      "sha256": "805c522b31b047050ff588b3b75f5c697ac5138c7ed280fd3c23652230858dfc",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_22_SATELLITE_CLOUD_MOTION_SYNTHESIS.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_22_SATELLITE_CLOUD_MOTION_SYNTHESIS.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_22_SATELLITE_CLOUD_MOTION_SYNTHESIS.md",
+      "sha256": "3ab415e315282a38dbfb7173876ed42ec94ec0547c7023ca469aeba20c3e8b54",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EMPIRICAL_DATA_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EMPIRICAL_DATA_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EMPIRICAL_DATA_FEASIBILITY_AUDIT.md",
+      "sha256": "eca6168c0ca0d5c96af2d9811c9caa25d63576aaeab1ef34244c63cc92c44a48",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EVEN_VALIDATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EVEN_VALIDATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EVEN_VALIDATION.json",
+      "sha256": "414bac4b9a11f3dd4fc68fdc093bfc0a2aa5cc61452df2dc2750d1a8d9815797",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EVEN_VALIDATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EVEN_VALIDATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EVEN_VALIDATION.md",
+      "sha256": "04e3ee1a1b18582fe493b9b4254ba48aadf87f4a0da12d780d83b30c0ffd7b87",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EXECUTION_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EXECUTION_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EXECUTION_MANIFEST.json",
+      "sha256": "0b765ee1e13bfd43a80ad45ec3a600eeacbcaf2768599e18b571f620273729ca",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EXECUTION_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EXECUTION_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EXECUTION_MANIFEST.md",
+      "sha256": "59c4fbb72485d89c604ffb5963e3fcaf602e410a17945b9603b852abb64d9248",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EXPERIMENT_SPECIFICATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EXPERIMENT_SPECIFICATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EXPERIMENT_SPECIFICATION.md",
+      "sha256": "99ac66071a86ade65c3c6991c038b909283c8f5bdc903c643ea305bad5a57c1c",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_EXPERIMENT_SPECIFICATION_CORRECTION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_EXPERIMENT_SPECIFICATION_CORRECTION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_EXPERIMENT_SPECIFICATION_CORRECTION.md",
+      "sha256": "987327e5411908077535d2a10a11126a86efdfa60fa8dc1a9a1357887b885746",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_LOCAL_MESOSCALE_BRIEF.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_LOCAL_MESOSCALE_BRIEF.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_LOCAL_MESOSCALE_BRIEF.md",
+      "sha256": "ea16b62c6a322d3e16e0fe251f1ca49a133c776b3be356b622dd6521613f051b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_LOCAL_MESOSCALE_GPT_BRIEF.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_LOCAL_MESOSCALE_GPT_BRIEF.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_LOCAL_MESOSCALE_GPT_BRIEF.md",
+      "sha256": "e154e0796c87b275be34049de0c468d9085c73de747eb95b715a42a6440fed24",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_LOCAL_MESOSCALE_SYNTHESIS.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_LOCAL_MESOSCALE_SYNTHESIS.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_LOCAL_MESOSCALE_SYNTHESIS.md",
+      "sha256": "8b1cbcfe042fda9b43612e09e979ceebb7b5dea1a6dc0f6664654ca560926251",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_23_POSTMORTEM.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_23_POSTMORTEM.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_23_POSTMORTEM.md",
+      "sha256": "256fa5f4c6aa0fd9b773cdfaecd65c5253f28f8f9c37054c4f930b063a28a8c4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_24_CLOSURE_REPORT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_24_CLOSURE_REPORT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_24_CLOSURE_REPORT.json",
+      "sha256": "092e8ea3848114e05090ad023657855057fb56dab92956a10a094fc6684e6cd5",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_24_CLOSURE_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_24_CLOSURE_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_24_CLOSURE_REPORT.md",
+      "sha256": "80447269455c6f3f27291b4a840c7c7273edb355fe05e5d9b4a99e909a6c5bcf",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_24_EVEN_VALIDATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_24_EVEN_VALIDATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_24_EVEN_VALIDATION.json",
+      "sha256": "87e48de7f617a75209b69ef7c339a04c5c5bc14afd1b221fea106b10d97aa0b0",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_24_EVEN_VALIDATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_24_EVEN_VALIDATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_24_EVEN_VALIDATION.md",
+      "sha256": "d406064e353e65236b1e24a6c6ead73a1c45fed314d687e31761f1fdbd0e710f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_24_EXECUTION_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_24_EXECUTION_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_24_EXECUTION_MANIFEST.json",
+      "sha256": "ae9f7cb06b8e0fc830fe2d2eab8fa620622eda8e0208e63f5d9476ee623c2d2c",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_24_EXECUTION_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_24_EXECUTION_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_24_EXECUTION_MANIFEST.md",
+      "sha256": "c7ff842c27fe41362a2b77e25fd0a176bc8f5be87dec06a99958ad703ec45193",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_5_PRE_EXECUTION_CONTROL_AUDIT_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c3f2e791-c034-4645-afe4-c1de6e25e70f/STAGE8_5_PRE_EXECUTION_CONTROL_AUDIT_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_5_PRE_EXECUTION_CONTROL_AUDIT_REPORT.md",
+      "sha256": "db9a829521ef9e48f94719188a81a8d607e2413c842dc9b98c10d8e858f23aa3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_AROME_POINT_SUBSET_FEASIBILITY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_AROME_POINT_SUBSET_FEASIBILITY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_AROME_POINT_SUBSET_FEASIBILITY.json",
+      "sha256": "7434a0a33f4af0bc7a4a6f51ee44ce9ddc08542a7e0313e313846b08af6ee003",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_AROME_POINT_SUBSET_FEASIBILITY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_AROME_POINT_SUBSET_FEASIBILITY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_AROME_POINT_SUBSET_FEASIBILITY.md",
+      "sha256": "3d7f843b035c57cb11a8e581cd4ee2aa37045b4d558c9c0ad409701ee720124b",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_BOTTLENECK_EVIDENCE_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_BOTTLENECK_EVIDENCE_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_BOTTLENECK_EVIDENCE_CORRECTION_AUDIT.json",
+      "sha256": "6d1f3d0241936f6842d1532efd96f6c46800d4d05381434fea3e9d48fca4ba99",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_BOTTLENECK_FORENSIC_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_BOTTLENECK_FORENSIC_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_BOTTLENECK_FORENSIC_AUDIT.json",
+      "sha256": "113ac5fe8658ca37c991d24f9cb2f43d005a07f1d13636e3979bcafc605b032a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_BOTTLENECK_FORENSIC_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/e6fa6f7a-81f8-4245-944b-829ddd9246ff/STAGE8_BOTTLENECK_FORENSIC_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_BOTTLENECK_FORENSIC_AUDIT.md",
+      "sha256": "c64a275386e9d05da6b5602edd7639771f71fc20bb50870dba6ace524a2c8630",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT.json",
+      "sha256": "c0c174c9199d7b6dd028fb433296419aa83344245a121b7d5626acff70342a16",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_CLOUD_EVOLUTION_FEASIBILITY_AUDIT.md",
+      "sha256": "75cafa382c2512118cdc27ec38ee81620d4fc5163c3b952b722fa52074f11681",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.json",
+      "sha256": "888e763fd6e5d9acd23d080a5675ffe9de118167a46a76040b1bba89c9747ad2",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_CLOUD_EVOLUTION_FINAL_PROVENANCE_AUDIT.md",
+      "sha256": "4784065697b7dc498987cb2822d6b1e47a09d01a89cd1f0174fe45b647561bd4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_ENEV_EXPERIMENT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/STAGE8_ENEV_EXPERIMENT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_ENEV_EXPERIMENT.json",
+      "sha256": "cdc35449d203c4df3bd8e9d95b511c9ab7098f4063d031f537ee5b8109ac16d1",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_ENEV_EXPERIMENT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/11d26e00-a045-428c-bdbb-e7c8fb7429cd/STAGE8_ENEV_EXPERIMENT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_ENEV_EXPERIMENT.md",
+      "sha256": "3beedd57635feafc44331fcd3209fd2288ceedd846f666de122493d404e72e26",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.json",
+      "sha256": "9a1b5d94a63c5fd177522af6a5ccaa61c1ccf2ee6ac744fe34617c3ed0d6fcfa",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS.md",
+      "sha256": "c608358e2dcad046ec3edbee6b900fdda21b06c0dbda61b42e9e0d421c868411",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_OROGRAPHIC_CANDIDATE_PREEXPERIMENT_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_OROGRAPHIC_CANDIDATE_PREEXPERIMENT_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_OROGRAPHIC_CANDIDATE_PREEXPERIMENT_AUDIT.json",
+      "sha256": "0987443a16f27ded64dfec735cf3d3fb1f8945b0e49a78f66109ec5887d1d12e",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_OROGRAPHIC_CANDIDATE_PREEXPERIMENT_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_OROGRAPHIC_CANDIDATE_PREEXPERIMENT_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_OROGRAPHIC_CANDIDATE_PREEXPERIMENT_AUDIT.md",
+      "sha256": "1815b132e9d484adbcf0c06007056412a997f8655a2695bb4f397d3199c3607c",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.json",
+      "sha256": "fdc3c94b3e98a8e87f7868016126ad112e10f59fbbb155d663cb73b00895bbc9",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_OROGRAPHIC_FLOW_REGIME_EXPERIMENT_SPEC.md",
+      "sha256": "63233a38804e5032f873e92dd1dcea18b31eb0cb5fd3d63932a5ccf75a56d4d1",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.json",
+      "sha256": "19b826021281061abfd8ba3c94f98e358ad44db37a594ff998b60e8c9fa69c95",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.md",
+      "sha256": "3d6b0d4993b44ace70551c9c1e35536c172510b86b4dda0cabbf60725d7eb693",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT.json",
+      "sha256": "03b4a5fda803189c21c1a745c44868e24fc8180ef1e18a5be5067911a43fb914",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_POST_CLOUD_EVOLUTION_RESEARCH_CHECKPOINT.md",
+      "sha256": "70435a83911d07255a90e67cab4d44fcc100104db026a6a17b89fd8ba492c740",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_PRE_OPUS_ARTIFACT_INVENTORY.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_PRE_OPUS_ARTIFACT_INVENTORY.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_PRE_OPUS_ARTIFACT_INVENTORY.json",
+      "sha256": "c2c6df2207b906efb07f434d7de5db9b402a575b13bcce4ca025cb70d1253848",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_PRE_OPUS_ARTIFACT_INVENTORY.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_PRE_OPUS_ARTIFACT_INVENTORY.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_PRE_OPUS_ARTIFACT_INVENTORY.md",
+      "sha256": "99b0b989e65ab107913c875d4bbae514a34236ba2320abf4a17529117bca8e12",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_PRE_OPUS_ARTIFACT_PHYSICAL_VERIFICATION.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_PRE_OPUS_ARTIFACT_PHYSICAL_VERIFICATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_PRE_OPUS_ARTIFACT_PHYSICAL_VERIFICATION.json",
+      "sha256": "dfd3fe64fc140c4efd0c45a6a01eb59d473e4bced2fc454e2451f31bef3f624f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_PRE_OPUS_ARTIFACT_PHYSICAL_VERIFICATION.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_PRE_OPUS_ARTIFACT_PHYSICAL_VERIFICATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_PRE_OPUS_ARTIFACT_PHYSICAL_VERIFICATION.md",
+      "sha256": "a7fd3e7a2ea358f585c23841159a3ec51f5156da6dc95c4a090d64373401e0c6",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_PRE_OPUS_CHAMPION_RECONCILIATION_conflict_c1ea6e2d.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_PRE_OPUS_CHAMPION_RECONCILIATION.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_PRE_OPUS_CHAMPION_RECONCILIATION_conflict_c1ea6e2d.json",
+      "sha256": "a9bfb1d1380a32e1b7beb06cb340453a719a91cb3c7c30bd61aa346bf4537876",
+      "status": "COPIED_CONFLICT_RESOLVED"
+    },
+    {
+      "filename": "STAGE8_PRE_OPUS_CHAMPION_RECONCILIATION_conflict_c1ea6e2d.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_PRE_OPUS_CHAMPION_RECONCILIATION.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_PRE_OPUS_CHAMPION_RECONCILIATION_conflict_c1ea6e2d.md",
+      "sha256": "071f57d71d4824701ef60c1c2505570b203907e3d14e1e287d2784120ad4ba57",
+      "status": "COPIED_CONFLICT_RESOLVED"
+    },
+    {
+      "filename": "STAGE8_REALDATA_REBUILD_FINAL_REPORT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_REALDATA_REBUILD_FINAL_REPORT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_REALDATA_REBUILD_FINAL_REPORT.json",
+      "sha256": "1445843c49ab712d7219419955b4133b8a85c24ae1711b08d308dcc0abee8720",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_REALDATA_REBUILD_FINAL_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_REALDATA_REBUILD_FINAL_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_REALDATA_REBUILD_FINAL_REPORT.md",
+      "sha256": "0e11cbbd63a071997dfc8a97e7ed31cdd3118d9bb2914e3de06fc55e80917a94",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_REALDATA_REBUILD_MANIFEST.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_REALDATA_REBUILD_MANIFEST.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_REALDATA_REBUILD_MANIFEST.json",
+      "sha256": "dc77dba877cb12b59f23fdc6cc9a433ff03db801461970531dcdc555f48a9711",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_REALDATA_REBUILD_MANIFEST.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_REALDATA_REBUILD_MANIFEST.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_REALDATA_REBUILD_MANIFEST.md",
+      "sha256": "7cc1656b02340395874ea1e1c61c170301fb7c1f0191f01aee83eca05a123702",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT.json",
+      "sha256": "4b8ca86c0f461cf91a166fc6999e6f6ba6a32212afd079cf3bbfa9552c0666f4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_REMAINING_ATMOSPHERIC_RADIATIVE_PHYSICS_AUDIT.md",
+      "sha256": "da0a44c1068a621559ab2b4df89595147cab2e17ffe3f2e5172c610ba411f70a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT.json",
+      "sha256": "a923499067b38382a4332a432602fb71bb8983f32841ee0cd389f9ca356787b3",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_RESEARCH_SPACE_REDUCTION_CORRECTION_AUDIT.md",
+      "sha256": "78742b2dd9d56a1a5057fa67103d6ab82fcc11fe0efaa7ddb1d019012b8b202a",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_RESEARCH_SPACE_REDUCTION_REPORT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_RESEARCH_SPACE_REDUCTION_REPORT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_RESEARCH_SPACE_REDUCTION_REPORT.json",
+      "sha256": "cf4f1ab757709dbcca582260d978c1025e02515857489d358f1ab682c0d649bc",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_RESEARCH_SPACE_REDUCTION_REPORT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_RESEARCH_SPACE_REDUCTION_REPORT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_RESEARCH_SPACE_REDUCTION_REPORT.md",
+      "sha256": "0c2b06dfdca3760202d13a6a752f20f2df0d1b988166021c363c9f6f460c3007",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT.json",
+      "sha256": "966478768630848c867f733d3b491b450a91a65af3ce55fe0f9ae0963c30e50f",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_TERRAIN_REFLECTED_RADIATION_CLOSURE_CORRECTION_AUDIT.md",
+      "sha256": "fb5dbd42835de7aa44065daf46237d171fe3fe3ea93edb30e0c9ec3782050323",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT.json",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT.json",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT.json",
+      "sha256": "da1188d268194b085ffed0692cf6d6ed948ae178ec6e0121d36c9e5ec0e7b653",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT.md",
+      "sha256": "9caca6306aabf8d75c258830a34640d699e21beb05ecd5d069326b1e0ee2e966",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    },
+    {
+      "filename": "stage6_2_experiment_plan.md",
+      "source_path": "/home/punith-bs/.gemini/antigravity/brain/fe44618f-711b-4c0c-a9ca-25e453b39acb/stage6_2_experiment_plan.md",
+      "destination_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/stage6_2_experiment_plan.md",
+      "sha256": "8a6224db3c922f28d4485f449fd5931564fd291141913c5bc1586cfec98e4da4",
+      "status": "ALREADY_PRESENT_IDENTICAL"
+    }
+  ]
+}

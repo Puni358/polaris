@@ -1,0 +1,96 @@
+{
+  "document_title": "POLARIS Forecast Uncertainty -> Risk -> EMS Interface Design (V2)",
+  "document_version": "2.0.0-RESEARCH-DESIGN",
+  "branch": "POLARIS — CANDIDATE D V2 MATHEMATICAL REFORMULATION",
+  "target_station": "Mount Nuolja AWS (ANS_NMS, 702m a.s.l.)",
+  "governance_status": "DESIGN_ONLY_STRICT_SEPARATION",
+  "implementation_readiness": "DESIGN-READY",
+  "timestamp": "2026-10-05T07:59:15+05:30",
+  "what_was_wrong_with_v1": [
+    "Conflated raw ACF (0.6386) with fitted AR coefficient (0.6435), omitting intercept (c=11.73 W/m2) and unconditional mean (mu=32.89 W/m2).",
+    "Broken state semantics: accumulated critical demand and shortfall backwards from origin 0 to k, rather than forward from state t across the lookahead window.",
+    "Introduced unsupported arbitrary constants: 12.6 kWh floor, erroneous 38.6 kWh EBR claim (actual is 75.65 kWh), uncalibrated epsilon=0.01, and Gaussian z-multipliers.",
+    "Subtracted point wind forecast unconditionally with zero uncertainty, directly repeating the primary failure mode of critical-aware EBR (wind over-prediction at low sun).",
+    "Assumed Gaussian independent AR innovations despite Ljung-Box test rejecting whiteness (p < 1e-6) and kurtosis showing heavy tails (kappa=3.45).",
+    "Conflated solar irradiance (W/m2), electrical PV power (W), inverter clipping (60 kW), and battery energy (Wh).",
+    "Claimed a chance constraint without valid coverage guarantees under cross-year distribution drift.",
+    "Proposed using station_state.ebr_target_wh_override for vector injection, which only accepts a scalar in GAP19."
+  ],
+  "corrected_mathematical_formulation": {
+    "ar1_error_model": {
+      "equation": "e_t = c + phi * e_{t-1} + epsilon_t",
+      "fitted_phi": 0.6435,
+      "empirical_acf_lag1": 0.6386,
+      "intercept_c_w_m2": 11.7258,
+      "unconditional_mean_mu_w_m2": 32.8914,
+      "forward_conditional_mean": "hat_e_I(tau | t) = mu(x_tau) * (1 - phi^{tau - t + 1}) + phi^{tau - t + 1} * e_I^{obs}(t)"
+    },
+    "forward_window_state_semantics": {
+      "current_state_time": "t in {0, ..., 23}",
+      "forward_window": "W_t = {tau in Z | t <= tau <= min(t + 5, 23)}",
+      "window_length": "w(t) in [1, 6] hours"
+    },
+    "cumulative_shortfall_risk": {
+      "variance_scale": "S_C(t, W_t) = sqrt( sum_{tau in W_t} [ sum_{l=tau}^{min(t+5, 23)} phi^{l-tau} ]^2 * sigma_{innov}^2(x_tau) )",
+      "innovation_scale": "sigma_{innov}(x_tau) = 24.03 + 0.1464 * clearsky_ghi[tau] [W/m2]",
+      "risk_envelope_wh": "U_{sol}^{risk}(t, W_t; 1-alpha) = sum_{tau in W_t} 51.0 * Delta t * hat_e_I(tau | t) + Omega_{cal}(1-alpha, x_t) * S_C(t, W_t)"
+    },
+    "reserve_derivation": {
+      "gross_critical_energy_wh": "E_{crit}^{gross}(t) = (1 / eta_{dis}) * sum_{tau in W_t} P_{crit}[tau] * Delta t",
+      "credited_renewable_energy_wh": "E_{ren}^{credit}(t) = max(0, sum_{tau in W_t} [ hat_P_{pv}[tau] + P_{wind}^{credit}[tau] ] * Delta t - U_{sol}^{risk}(t, W_t; 1-alpha) )",
+      "dynamic_reserve_target_wh": "E_{stage2_target}[t] = max( R_{floor}^{surv}(t), E_{crit}^{gross}(t) - E_{ren}^{credit}(t) )",
+      "survivability_floor_wh": "R_{floor}^{surv}(t) = (1 / eta_{dis}) * P_{crit}[t] * Delta t = 11600 / 0.92 = 12608.7 Wh (exactly 1.0 hour critical survivability)",
+      "terminal_alignment_wh": "E_{stage2_target}[23] = max( E_{stage2_target}[23], E_{term}^{target} )"
+    }
+  },
+  "definitions_and_units": {
+    "solar_irradiance": "W/m^2",
+    "pv_dc_power": "W (K_pv = 51.0 W / (W/m^2))",
+    "pv_ac_power": "W (min(60000.0, 51.0 * I))",
+    "wind_power": "W",
+    "critical_load_power": "W",
+    "battery_energy": "Wh (capacity = 200,000 Wh, usable = [40,000, 190,000] Wh)",
+    "charge_discharge_efficiency": "eta_chg = 0.92, eta_dis = 0.92 (round-trip = 0.8464)"
+  },
+  "wind_uncertainty_treatment": {
+    "mode_1_default": "Conservative Zero-Credit Baseline: P_{wind}^{credit}(tau) = 0.0 W. Proves wind over-prediction cannot cause critical deficit.",
+    "mode_2_experimental": "Empirical Lower-Quantile Wind Crediting: max(0, hat_P_{wind} - Delta_{wind}^{risk}). FLAGGED as unvalidated due to synthetic benchmark wind data."
+  },
+  "relationship_to_ebr": {
+    "resolution": "Risk-Bounded Dynamic Credit (Option D).",
+    "mathematical_relation": "E_{stage2_target}[t] <= E_{crit}^{gross}(t) = E_{EBR}(t). Reverts exactly to governed 6-hour EBR (75.65 kWh) at night or when solar uncertainty is complete.",
+    "fuel_saving_mechanism": "Releases reserve down to 1-hour floor (12.6 kWh) on clear mornings, eliminating step-0 diesel burning."
+  },
+  "gap19_research_interface": {
+    "injection_path": "config['ebr_target_wh'] (24-element vector).",
+    "constraint_layer": "Layer C, Constraints 288-311: E_next[t] + s_J2[t] >= E_stage2_target[t] + min_e_wh.",
+    "code_modifications": "ZERO. GAP19 lines 118-124 natively ingest 24-element vector from config.",
+    "invalid_path_warning": "station_state.ebr_target_wh_override only accepts scalar float; must remain None."
+  },
+  "assumptions_retained": [
+    "AR(1) captures dominant linear temporal persistence (phi=0.6435).",
+    "Irradiance error scale is governed by clear-sky GHI.",
+    "1.0 hour critical load survivability floor (12.6 kWh) is required for emergency diesel start buffer."
+  ],
+  "unsupported_assumptions_removed": [
+    "Gaussian innovation distribution and white noise.",
+    "Conflating ACF with AR coefficient.",
+    "Backward horizon summation from origin 0 to k.",
+    "Arbitrary constants (12.6 kWh floor, 38.6 kWh EBR claim, uncalibrated epsilon).",
+    "Unconditional point wind subtraction.",
+    "Vector override via station_state.ebr_target_wh_override."
+  ],
+  "validation_readiness": {
+    "can_be_validated_offline": [
+      "Forward-window cumulative shortfall coverage on historical 2020-2022 data.",
+      "Conformal calibration of nonconformity multiplier Omega_cal(1-alpha).",
+      "Dynamic reserve sensitivity across clear-sky and overcast regimes."
+    ],
+    "what_remains_blocked": [
+      "Real wind forecast uncertainty (benchmark wind is synthetic).",
+      "Horizons k in [20..24] in historical solar dataset.",
+      "Real-time sensor telemetry feedback (quarantined due to unmodeled latency).",
+      "Closed-loop execution on production code."
+    ]
+  }
+}

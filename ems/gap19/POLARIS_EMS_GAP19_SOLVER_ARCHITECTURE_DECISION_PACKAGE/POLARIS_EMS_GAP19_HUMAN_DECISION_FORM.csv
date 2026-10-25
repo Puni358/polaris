@@ -1,0 +1,9 @@
+FIELD,VALUE
+DECISION_QUESTION,Which solver architecture should POLARIS authorize for implementation of the approved four-stage lexicographic EMS objective?
+OPTION_A,Sequential MILP Lexicographic Orchestration
+OPTION_B,Solver-Native Lexicographic / Multi-Objective Architecture
+OPTION_C,Penalty-Encoded Scalar Objective
+HUMAN_DECISION,__________________
+DECISION_DATE,__________________
+DECISION_AUTHORITY,__________________
+RATIONALE,__________________

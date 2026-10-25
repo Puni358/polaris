@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-09-13T06:48:35+00:00",
+  "stage": "POLARIS STAGE 8.14B — UPWIND / LOCAL CLOUD OBSERVABILITY FEASIBILITY",
+  "status": "PROPOSED — FEASIBILITY AUDIT ONLY",
+  "forecasting_experiment": false,
+  "ODD_experiment": false,
+  "champion_change": false,
+  "model_training": false,
+  "cross_validation": false,
+  "hyperparameter_tuning": false,
+  "master_handoff_modified": false,
+  "champion_state": {
+    "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "research_question": "Can POLARIS obtain a causally available, empirically observable, spatially representative measurement of the actual cloud state/evolution upwind or locally around Nuolja that contains information not already represented by the frozen Stage 8.1 feature set?",
+  "candidate_families": [
+    "Ground-based all-sky / sky-camera observations",
+    "Ground-based cloud-base / ceilometer observations",
+    "Ground-based radiometer / pyranometer decomposition",
+    "Satellite cloud-mask observations",
+    "Satellite cloud-motion observations",
+    "Satellite cloud optical properties (COT/CER/phase)"
+  ],
+  "closed_route_exclusions": [
+    "Stage 6.2 thermal-IR satellite route",
+    "Stage 8.4 VIIRS feasibility audit",
+    "Stage 8.5 MEPS spatial cloud route",
+    "Stage 8.8 cloud vertical geometry route",
+    "Stage 8.9A independent cloud-state/cloud-motion audit",
+    "Stage 8.12 ensemble uncertainty route",
+    "Stage 8.13 satellite-cloud route audit"
+  ],
+  "authorized_actions": [
+    "Data source identification and metadata logging",
+    "20-point feasibility criteria verification",
+    "Publication latency vs acquisition timestamp audit",
+    "Polar-night / low-sun empirical availability check",
+    "Information novelty reconciliation against Stage 8.1"
+  ]
+}

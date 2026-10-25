@@ -1,0 +1,25 @@
+{
+  "package_name": "POLARIS_EMS_GAP19_ECD_OPTION_D_TWO_BLOCKER_CORRECTION_FINAL",
+  "timestamp": "2026-09-26T19:25:00Z",
+  "protected_sources_sha256": {
+    "system/runtime/runner.py": "86aee0b51ba169458aa4cd8bbf678120b43d284144998d9c81e37f5fcaad5efc",
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "system/schemas/station_state.py": "f2cb385efdb2fdc95b681c765642660f1e0d06125c545b7464a8ac4a83e9185f",
+    "system/schemas/dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b",
+    "system/control/ecd.py": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23"
+  },
+  "artifact_hashes_sha256": {
+    "FUTURE_IMPLEMENTATION_DELTA.md": "db985c83d308b3674a398ac32c8cbd057e7110896eff7febff65a16a8e934d40",
+    "FINAL_CORRECTED_VERDICT.md": "a4e564bedfa959b4e6e967c59fde6431b4692738a7a4f83667fc68e6272930b2",
+    "FUEL_EQUATION_CLASSIFICATION_CORRECTION.md": "446ef0dfa839da578d8f838f5fcb4fe9eba0e448b4bbe4948a18061acb5f92d1",
+    "GOVERNANCE_ENGINEERING_FIREWALL.md": "cd2b265cfab265532fa3dd609bd969964e31e573b97057e0efd6664d8da38f06",
+    "SOURCE_INTEGRITY_AUDIT.md": "b23b7787486770f10354fe98972a7523d22a135f479185eff8d0f2eb0c347a80",
+    "README.md": "4d9b1901e06f63aa03639cbd42b112c2c7b76b2cf47d426469b7699e1ad601f1",
+    "FUEL_STATE_CLASSIFICATION_CORRECTION.md": "01b5db292b5459844547b1e1947dba7f647f317cbaf52598b85baaeb8df3ccfd",
+    "COMBINED_FLOW_CORRECTION.md": "8062fdb35684479305e455d471b23a39d07f97cfca7464b563a401e65ffec7f7",
+    "INFEASIBILITY_FLOW_CORRECTION.md": "18e50312777a865082afb1df826689cc1ba3968a791d85b0508d306a46b1fddf"
+  }
+}

@@ -1,0 +1,2 @@
+ctrl_mae_w_m2,cand_mae_w_m2,delta_mae_w_m2,ctrl_nmae_pct,cand_nmae_pct,ctrl_rmse_w_m2,cand_rmse_w_m2,ctrl_bias_w_m2,cand_bias_w_m2,folds_improved,gate_decision
+37.620054,49.445841,11.825787,37.9745,46.8266,60.160645,81.330841,4.218739,-21.989163,0,REJECTED

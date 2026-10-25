@@ -1,0 +1,162 @@
+{
+  "phase": "S8.1-UI-SPEC",
+  "specification_type": "Local Industrial HMI / SCADA Control Room Interface Specification",
+  "governance_decision": "B = UI/UX SPECIFICATION COMPLETE WITH DATA/UI LIMITATIONS",
+  "ui_ux_implementation_phase_gate": "UI_UX_IMPLEMENTATION_PHASE = READY",
+  "conceptual_architecture": {
+    "host": "Local Host Machine",
+    "runtime": "POLARIS Python Runtime (100% Offline, SciPy MILP HiGHS Solver)",
+    "proposed_ui_architecture": "Local HMI Server / Presentation Layer via localhost browser display surface",
+    "data_protocol": "Authoritative JSON Runtime Artifact Ingestion"
+  },
+  "optimizer_engine_fidelity": {
+    "authoritative_solver": "SciPy MILP (scipy.optimize.milp / HiGHS engine)",
+    "pyomo_status": "NOT USED in frozen runtime (corrected in specification)"
+  },
+  "visual_design_system": {
+    "style": "Industrial Microgrid SCADA Control Room HMI",
+    "background_color": "#0B0F19 (Deep Space)",
+    "panel_color": "#1E293B (Slate Panels)",
+    "border_color": "#334155 (Grid Borders)",
+    "typography": {
+      "telemetry_and_values": "JetBrains Mono / Monospace",
+      "labels_and_headings": "Inter / Technical Sans"
+    },
+    "color_semantics": {
+      "operational_green": "#10B981 (Normal / Nominal Energy Flow)",
+      "solar_cyan": "#06B6D4 (PV Generation / Active Forecast)",
+      "warning_amber": "#F59E0B (Diesel Generation / Peak Load / Curtailment)",
+      "fault_crimson": "#EF4444 (D4-C1 Fault / Low SOC Limit)",
+      "slate_muted": "#64748B (Offline / Synthetic Mode / Standby)"
+    }
+  },
+  "unsupported_numerical_value_corrections": {
+    "400V_3phase_busbar": "Corrected to 'Microgrid AC / Energy Bus' (Voltage/phase not exposed by runtime)",
+    "solve_time_42ms": "Removed static 42ms; updated to dynamic DispatchPlan.solve_time_ms",
+    "objective_value_185.4": "Removed static 185.4; updated to dynamic DispatchPlan.objective_value",
+    "mpc_step_12_24": "Updated to dynamic format MPC CYCLE: k / N"
+  },
+  "screen_specifications": {
+    "screen_1_overview": "Primary control-room HMI featuring dynamic microgrid energy flow diagram, top telemetry ribbon, horizon power stack area chart, and core KPIs.",
+    "screen_2_energy_flow": "SCADA Single-Line Diagram showing Microgrid AC / Energy Bus, inverter/generator SCADA symbol nodes, battery SOC gauge, and directional power flow indicators.",
+    "screen_3_forecasts": "24h forecast horizon visualization displaying Stage81ForecastEngine irradiance (W/m2), 37-feature model metadata card, PV engineering conversion mapping, and synthetic demand curve.",
+    "screen_4_optimization_mpc": "SciPy MILP decision view showing dynamic MPC step k/N, solve time (ms), objective value, and 24-step DispatchPlan table with H1 execution highlight.",
+    "screen_5_digital_twin": "Simulated station state progression showing battery SOC trajectory (%), cumulative diesel fuel/energy, and step k -> k+1 state transition monitor.",
+    "screen_6_scenarios": "Scenario selector supporting authorized synthetic scenarios S1 Normal, S2 Low Solar, S4 High Demand, S5 High Renewable, S6 Low Battery, and S7 Governed Infeasibility.",
+    "screen_7_alarms": "Industrial alarm table displaying severity (GOVERNED_DEGRADED / CRITICAL), source, and D4-C1 zero-dispatch fault containment rules.",
+    "screen_8_analytics": "Post-hoc EMS metrics summary showing 85.92L fuel consumed, 84.82% renewable utilization, 213.02 kWh battery throughput, and scoped 0 kWh unmet load statement."
+  },
+  "runtime_data_mapping": {
+    "station_load": {
+      "field": "StationState.last_observed_demand",
+      "unit": "W",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Labeled SYNTHETIC DEMONSTRATION LOAD"
+    },
+    "solar_generation": {
+      "field": "DispatchPlan.solar_generation.point[0]",
+      "unit": "W",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Formatted via PV engineering formula"
+    },
+    "diesel_power": {
+      "field": "DispatchPlan.diesel_power[0]",
+      "unit": "W",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "H1 executed diesel dispatch"
+    },
+    "battery_soc": {
+      "field": "StationState.battery_soc_pct",
+      "unit": "%",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Simulated battery state (0-100%)"
+    },
+    "battery_power": {
+      "field": "DispatchPlan.battery_discharge[0] - DispatchPlan.battery_charge[0]",
+      "unit": "W",
+      "status": "DERIVED DISPLAY VALUE",
+      "context": "Positive = Discharge, Negative = Charge"
+    },
+    "solar_forecast": {
+      "field": "ForecastBundle.solar_irradiance.point",
+      "unit": "W/m2",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Stage 8.1 24h point-only forecast horizon"
+    },
+    "optimizer_status": {
+      "field": "DispatchPlan.constraint_status",
+      "unit": "Text",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "OPTIMAL / OPTIMIZATION_INFEASIBLE"
+    },
+    "objective_value": {
+      "field": "DispatchPlan.objective_value",
+      "unit": "Float",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "SciPy MILP cost objective (1e9 on fault)"
+    },
+    "solve_time": {
+      "field": "DispatchPlan.solve_time_ms",
+      "unit": "ms",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "SciPy MILP solve time (when available)"
+    },
+    "total_diesel_fuel": {
+      "field": "run_report.json / ems_evaluation.total_diesel_fuel_liters",
+      "unit": "L",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Synthetic scenario total fuel"
+    },
+    "renewable_utilization": {
+      "field": "run_report.json / ems_evaluation.renewable_utilization_pct",
+      "unit": "%",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Synthetic scenario renewable percentage"
+    },
+    "unmet_critical_load": {
+      "field": "run_report.json / ems_evaluation.unmet_critical_load_kwh",
+      "unit": "kWh",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Scoped: 0 kWh during 24h S1 trajectory"
+    },
+    "execution_solar_mae": {
+      "field": "run_report.json / forecast_evaluation.solar_irradiance_metrics.mae",
+      "unit": "W/m2",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Execution-run MAE on S1 (42.3054 W/m2)"
+    },
+    "ood_benchmark_mae": {
+      "field": "Scientific Record: STAGE8_1_OOD_BENCHMARK_MAE",
+      "unit": "W/m2",
+      "status": "ESTABLISHED RUNTIME FIELD",
+      "context": "Frozen benchmark (36.188657 W/m2)"
+    },
+    "unsupported_fields": [
+      {
+        "element": "Busbar Voltage/Phase",
+        "status": "DATA SOURCE NOT CURRENTLY AVAILABLE"
+      },
+      {
+        "element": "Nuolja Site Turbine Specs",
+        "status": "DATA SOURCE NOT CURRENTLY AVAILABLE"
+      },
+      {
+        "element": "Measured Station Demand",
+        "status": "DATA SOURCE NOT CURRENTLY AVAILABLE"
+      }
+    ]
+  },
+  "firewall_rules": {
+    "wind_provenance": "Abisko 10m wind speed labeled CONDITIONAL REGIONAL PROXY; Ross Island E-33 labeled ANTARCTIC REFERENCE TURBINE; Nuolja turbine specs labeled NOT ESTABLISHED / PROXY DATA.",
+    "demand_provenance": "Synthetic load labeled SYNTHETIC DEMONSTRATION LOAD or SYNTHETIC DEMAND SCENARIO. 'Live station load' is strictly prohibited.",
+    "solar_metrics": "Execution-run MAE (42.3054 W/m2 on S1) and frozen benchmark MAE (36.188657 W/m2) strictly distinguished.",
+    "reliability": "0 kWh unmet critical load during the executed 24-step S1 synthetic trajectory. '100% system reliability' prohibited."
+  },
+  "implementation_firewall": {
+    "backend_code_modified": false,
+    "frontend_code_created": false,
+    "frozen_contracts_changed": false,
+    "mock_data_files_created": false
+  },
+  "next_governed_step": "UI_UX_IMPLEMENTATION_PHASE_AUTHORIZATION"
+}

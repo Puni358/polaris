@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-09-13T07:52:00+00:00",
+  "stage": "POLARIS STAGE 8.15A \u2014 LOCAL/UPWIND CLOUD OBSERVATION FEASIBILITY AUDIT",
+  "status": "COMPLETED \u2014 FEASIBILITY AUDIT ONLY",
+  "stage_8_15b_authorized": false,
+  "stage_8_15b_conclusion": "Stage 8.15B NOT JUSTIFIED.",
+  "champion_governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0,
+    "model_changes": 0,
+    "odd_target_access": 0,
+    "odd_evaluation": 0,
+    "experiments_executed": 0,
+    "polaris_master_handoff_modified": false
+  },
+  "candidates_investigated_count": 13,
+  "candidate_classifications": {
+    "A1_Nuolja_Summit_Sky_Camera": "REJECTED \u2014 DATA NON-EXISTENCE",
+    "A2_Abisko_ANS_Sky_Camera": "REJECTED \u2014 PRODUCT MISMATCH",
+    "A3_Nuolja_Radiation_Logger_Context": "NOT NOVEL \u2014 ALREADY IN STAGE 8.1",
+    "B1_Nuolja_Summit_Ceilometer": "REJECTED \u2014 NON-EXISTENT",
+    "B2_Abisko_ANS_Ceilometer": "REJECTED \u2014 INSUFFICIENT COVERAGE",
+    "B3_Kiruna_ESNQ_METAR_Ceilometer": "REJECTED \u2014 SPATIAL & TERRAIN MISMATCH",
+    "B4_Regional_Ceilometer_Network": "REJECTED \u2014 SPATIAL & TERRAIN MISMATCH",
+    "C1_Abisko_ANS_Surface_Radiation": "REJECTED \u2014 DUPLICATE (STAGE 8.3)",
+    "C2_Riksgransen_Upwind_Weather_Station": "NOT NOVEL \u2014 REDUNDANT WITH MEPS RH",
+    "C3_Bodo_Radiosonde_Sounding": "REJECTED \u2014 LOW CADENCE & SPATIAL MISMATCH",
+    "D1_NWC_SAF_PPS_CMIC": "CONDITIONAL \u2014 UNVERIFIED LIVE ROUTE & COVERAGE GATE FAIL",
+    "D2_EUMETSAT_OCA_CDR_0617": "REJECTED \u2014 TEMPORAL CUTOFF (ENDS 2019)",
+    "D3_NASA_VIIRS_Science_L2": "BLOCKED \u2014 OPERATIONALLY NON-CAUSAL (LATENCY 3-8H)",
+    "D4_NASA_VIIRS_NRT_L2": "BLOCKED \u2014 OPERATIONALLY NON-CAUSAL & NO 2024 ARCHIVE",
+    "D5_Meteosat_SEVIRI_MTG_Geostationary": "REJECTED \u2014 PARALLAX & HIGH LATITUDE GEOMETRY",
+    "D6_NORDRAD_Radar_Composite": "REJECTED \u2014 RADAR GEOMETRY & SENSITIVITY MISMATCH"
+  },
+  "strongest_candidate": {
+    "name": "EUMETSAT NWC SAF PPS Cloud Microphysics (CMIC)",
+    "classification": "CONDITIONAL",
+    "daylight_optical_coverage_pct": 70.11,
+    "predeclared_coverage_gate_pct": 90.0,
+    "coverage_gate_status": "FAIL",
+    "blockers": [
+      "Live EUMETSAT Data Store test returned HTTP 404 / collection absent from 188 exposed collections",
+      "Public open HTTP THREDDS mirror yields only 70.11% daylight optical coverage (fails >=90% gate)",
+      "Unverified HTTP publication timestamps on 27 historical swaths (causality unverified)",
+      "Polar night optical retrieval failure (fill values for 76 origins under SZA > 84 deg)"
+    ]
+  },
+  "gate_check_for_stage_8_15b": {
+    "causal_availability_empirically_demonstrated": false,
+    "2024_coverage_sufficient": false,
+    "spatial_terrain_representativeness_defensible": true,
+    "information_genuinely_novel": true,
+    "extraction_operationally_reproducible": false,
+    "no_future_observation_leakage": true,
+    "all_6_conditions_satisfied": false
+  }
+}

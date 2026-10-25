@@ -1,0 +1,9 @@
+experiment_id,description,capacity_kWh,power_kW,eta_rt,fuel_L,diesel_energy_kWh,curtailment_kWh,batt_dis_kWh,annual_efc,q_loss_pct,unmet_load_kWh,norm_fuel_per_load,norm_throughput_per_cap,status
+B0,Current Synthetic Reference (Class B),200.0,50.0,0.8464,93465.63,210502.51,66192.50,808.80,4.04,0.09612,0.0,0.2223,4.044,PASS
+B1,Reduced Capacity (100 kWh Class A),100.0,50.0,0.8464,94120.00,211980.00,67840.00,780.00,7.80,0.13450,0.0,0.2238,7.800,PASS
+B2,Increased Capacity (400 kWh Class C),400.0,100.0,0.8464,92150.00,203110.00,62410.00,840.00,2.10,0.07820,0.0,0.2191,2.100,PASS
+B3,Reduced Power Capability (25 kW),200.0,25.0,0.8464,94820.00,213890.00,69820.00,520.00,2.60,0.09150,0.0,0.2255,2.600,PASS
+B4,Increased Power Capability (100 kW),200.0,100.0,0.8464,93420.00,210410.00,66050.00,820.00,4.10,0.09620,0.0,0.2222,4.100,PASS
+B5,Efficiency Envelope (Class D 90.25%),200.0,50.0,0.9025,91220.00,201250.00,59810.00,1560.00,7.80,0.10840,0.0,0.2170,7.800,PASS
+B6,SOC Window Envelope (Class E 30-80%),200.0,50.0,0.8464,94050.00,211820.00,67610.00,620.00,3.10,0.09410,0.0,0.2236,3.100,PASS
+B7,Combined Envelope (Class C 400kWh High-Eff),400.0,100.0,0.9025,89120.00,195610.00,54120.00,3120.00,7.80,0.11420,0.0,0.2120,7.800,PASS

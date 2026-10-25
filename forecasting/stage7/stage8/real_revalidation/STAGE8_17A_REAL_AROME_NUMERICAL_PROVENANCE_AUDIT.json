@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-09-13T09:03:41.359022+00:00",
+  "arome_input": "REAL",
+  "arome_sha256": "db5fa7591e586c0e1288a76806a7717d4ad13779458cb48a961959d48ceec298",
+  "predictions_persisted": true,
+  "prediction_csv_sha256": "26bac202e3ce3cd851f1467a6a1c1b675b0409285058f895924d095eb8f0b908",
+  "metrics_recomputed_from_disk": true,
+  "hardcoded_metrics_found": false,
+  "synthetic_inputs": false,
+  "odd_tuning": false,
+  "reproduction_status": "C. NOT REPRODUCED / DEGRADED ON REAL AROME DATA",
+  "recomputed_metrics": {
+    "candidate_mae_w_m2": 36.426418,
+    "candidate_nmae_pct": 28.2532,
+    "candidate_rmse_w_m2": 64.611649,
+    "candidate_bias_w_m2": 0.537993,
+    "control_mae_w_m2": 36.211027,
+    "control_nmae_pct": 28.0861,
+    "control_rmse_w_m2": 64.230507,
+    "control_bias_w_m2": 0.994557,
+    "night_mae_w_m2": 0.0,
+    "daytime_rows": 2883,
+    "night_rows": 1269,
+    "total_rows": 4152
+  },
+  "bootstrap": {
+    "mean_delta_w_m2": 0.177449,
+    "ci_95": [
+      -0.112722,
+      0.474933
+    ],
+    "pct_improving": 11.81,
+    "ci_excludes_zero": false
+  },
+  "historical_comparison": {
+    "historical_reported": {
+      "mae": 35.241085,
+      "nmae": 27.3337,
+      "rmse": 63.290812,
+      "bias": 1.810421
+    },
+    "deltas_new_minus_historical": {
+      "mae": 1.185333,
+      "nmae": 0.9195,
+      "rmse": 1.320837,
+      "bias": -1.272428
+    }
+  }
+}

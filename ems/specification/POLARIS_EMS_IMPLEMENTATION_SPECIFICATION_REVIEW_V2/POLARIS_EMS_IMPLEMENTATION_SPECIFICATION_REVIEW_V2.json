@@ -1,0 +1,69 @@
+{
+  "governance_review_v2": {
+    "review_id": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION_REVIEW_V2",
+    "timestamp": "2026-09-22T06:37:30+05:30",
+    "review_type": "FRESH_INDEPENDENT_READ_ONLY_REVIEW",
+    "target_package": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION/",
+    "correction_package": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION_CORRECTION/",
+    "governance_baseline": {
+      "stakeholder_policy": "APPROVED",
+      "objective_specification": "REVIEW_PASSED",
+      "implementation_specification_package": "REVIEW_PASSED_PENDING_AUTHORIZATION",
+      "implementation_specification_review": "PASS",
+      "implementation_authorization": "NOT_GRANTED",
+      "next_governed_step": "IMPLEMENTATION_AUTHORIZATION_REVIEW"
+    },
+    "classification_summary": {
+      "implementation_specified": 3,
+      "implementation_deferred": 8,
+      "station_data_required": 5,
+      "governance_clarification_required": 4,
+      "numerical_calibration_required": 2,
+      "total_items": 22,
+      "reconciliation": "EXACT_MATCH"
+    },
+    "critical_item_checks": {
+      "gap_03_status": "IMPLEMENTATION_DEFERRED",
+      "gap_10_status": "IMPLEMENTATION_DEFERRED",
+      "gap_12_status": "IMPLEMENTATION_DEFERRED",
+      "gap_15_status": "IMPLEMENTATION_DEFERRED",
+      "gap_19_status": "IMPLEMENTATION_DEFERRED",
+      "gap_21_status": "GOVERNANCE_CLARIFICATION_REQUIRED",
+      "gap_21_single_formal_category": true,
+      "d2_shedding_priority_promoted": false,
+      "five_load_tiers_preserved": true,
+      "emergency_fsm_executable_promoted": false,
+      "stage2_target_shortfall_semantics": "TARGET_SHORTFALL_MINIMIZATION",
+      "d10_curtailment_formula": "PROVISIONAL_DIAGNOSTIC_ONLY"
+    },
+    "pass_criteria_evaluation": {
+      "total_criteria": 28,
+      "criteria_passed": 28,
+      "criteria_failed": 0,
+      "all_passed": true
+    },
+    "provenance_audit": {
+      "milp_py_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+      "milp_py_status": "UNMODIFIED_FROZEN",
+      "hash_audit_csv_sha256": "cc88775a01678a0fbf418daf9c5a2427d2b870f5a4d3cbbea7a797eaeba46177",
+      "hash_sidecar_sha256": "cc88775a01678a0fbf418daf9c5a2427d2b870f5a4d3cbbea7a797eaeba46177",
+      "hash_sidecar_match": true
+    },
+    "execution_audit": {
+      "ems_code_modification": false,
+      "milp_execution": false,
+      "mpc_execution": false,
+      "ems_execution": false,
+      "digital_twin_execution": false,
+      "model_training": false,
+      "model_inference": false,
+      "test_contract_execution": false,
+      "no_execution_performed": true
+    },
+    "final_determination": {
+      "implementation_specification_review": "PASS",
+      "implementation_authorization": "NOT_GRANTED",
+      "next_governed_step": "IMPLEMENTATION_AUTHORIZATION_REVIEW"
+    }
+  }
+}

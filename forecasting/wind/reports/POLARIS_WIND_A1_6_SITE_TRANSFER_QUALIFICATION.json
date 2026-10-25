@@ -1,0 +1,121 @@
+{
+  "governance": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A1_6_SITE_TRANSFER_QUALIFICATION",
+    "authorization": "AUTHORIZED_PHASE_A1_6_ONLY",
+    "date_utc": "2026-09-18T03:52:00Z"
+  },
+  "machine_readable_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "AUTHORIZED_PHASE_A1_6",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "TARGET_DECISION": "PROXY_TARGET_CONDITIONALLY_SUPPORTED",
+    "A2_READINESS": "CONDITIONALLY_READY_PENDING_SPECIFIED_RESOLUTION",
+    "WIND_MODEL_TRAINING": "NOT_AUTHORIZED",
+    "WIND_MODEL_INFERENCE": "NOT_AUTHORIZED",
+    "WIND_MODEL_SELECTION": "NOT_AUTHORIZED",
+    "WIND_FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_EXPERIMENT": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "A1_6_ONLY"
+  },
+  "starting_evidence_from_a1_5": {
+    "acquired_dataset": "SMHI Station 188790 (Abisko Aut)",
+    "latitude_deg_N": 68.3538,
+    "longitude_deg_E": 18.8164,
+    "altitude_m_asl": 392.235,
+    "anemometer_height_m": 10.0,
+    "distance_to_nuolja_km": 4.1,
+    "custodian": "Polarforskningssekretariatet (Swedish Polar Research Secretariat)",
+    "temporal_coverage_2024": "8784 hourly observations (100% complete)",
+    "parameters": ["10m Wind Speed (m/s)", "10m Wind Direction (deg)"],
+    "quality_control": "SMHI Quality Controlled Archive (Codes G/Y)",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+  },
+  "target_definition_assessment": {
+    "candidate_target": "10m hourly measured wind speed (v_wind in m/s) at Abisko Aut",
+    "supported_interpretation": "PROXY_TARGET_FOR_NUOLJA_CONTEXT",
+    "explanation": "Abisko 10m wind speed is scientifically defensible as an empirical proxy target representing the regional Nuolja/Abisko polar microgrid context, but site-transfer limitations (310m altitude offset, valley floor vs mountain ridge topography) remain unresolved and must be carried into future research governance."
+  },
+  "site_transfer_assessment": {
+    "spatial_proximity": {
+      "distance_km": 4.1,
+      "direction": "East-Northeast",
+      "same_regional_catchment": true,
+      "catchment_name": "Abisko Valley / Torneträsk Lake Basin"
+    },
+    "altitude_comparison": {
+      "abisko_aut_altitude_m": 392.235,
+      "nuolja_aws_altitude_m": 702.0,
+      "altitude_difference_m": 309.765,
+      "altitude_transfer_method": "NOT_ESTABLISHED"
+    },
+    "topographic_comparison": {
+      "abisko_aut_terrain": "Low-gradient valley floor / Lake Torneträsk shoreline (341m lake level)",
+      "nuolja_aws_terrain": "Eastern mountain ridge slope of Mount Nuolja (702m)",
+      "physical_implications": "Mountain slope experiences ridge speed-up and katabatic slope flows; valley floor experiences lake-breeze and surface roughness friction. Wind speeds are correlated but not physically identical."
+    },
+    "custodial_and_operational_alignment": {
+      "abisko_aut_owner": "Polarforskningssekretariatet",
+      "nuolja_aws_owner": "Polarforskningssekretariatet",
+      "same_institutional_framework": true
+    }
+  },
+  "specific_issue_evaluations": {
+    "altitude_issue": {
+      "status": "ALTITUDE_TRANSFER_METHOD = NOT_ESTABLISHED",
+      "finding": "No authorized altitude transfer model exists in repository governance. Raw data was NOT rescaled, and generic wind-profile equations were NOT applied in A1.6."
+    },
+    "measurement_height_issue": {
+      "status": "10M_MEASURED_WIND_SPEED_DIRECT",
+      "finding": "Dataset represents 10m height 1-hour average wind speed. No height conversion formula was applied, and 10m wind is NOT claimed to be turbine-hub wind."
+    },
+    "wind_speed_vs_wind_power_distinction": {
+      "status": "WIND_SPEED_TARGET_ONLY",
+      "finding": "Target is measured wind speed (m/s). No turbine power curve was introduced, no conversion to Watts was performed, and measured wind generation capability is NOT claimed."
+    },
+    "temporal_task_qualification": {
+      "status": "STRUCTURALLY_COMPATIBLE",
+      "finding": "8,784 continuous hourly records for 2024 provide structural compatibility for future 24-hour receding-horizon forecasting formulations."
+    }
+  },
+  "a2_readiness_assessment": {
+    "status": "CONDITIONALLY_READY_PENDING_SPECIFIED_RESOLUTION",
+    "statement": "A2 requires resolution of the documented data limitations before authorization.",
+    "unresolved_prerequisites": [
+      "Formal project governance decision authorizing either (a) using Abisko 10m measured wind speed directly as the microgrid base station target, or (b) authorizing an explicit altitude/boundary layer transfer model.",
+      "Formal project governance authorization of an explicit IEC 61400-12-1 wind turbine power curve model (P = f(v)) to map wind speed (m/s) to electrical power (W) for ForecastBundle.wind_generation.",
+      "Pre-registration of canonical train/val/test temporal fold splits matching Stage8.1.",
+      "Pre-registration of baseline benchmark models (Naive Persistence, Raw NWP) and evaluation metrics (MAE, RMSE).",
+      "Separate explicit project governance authorization granting Phase A2."
+    ]
+  },
+  "limitation_statements": [
+    "Abisko is not Nuolja.",
+    "Geographic proximity (~4.1 km) does not establish identical wind conditions.",
+    "Measured wind speed (m/s) does not establish measured wind generation (W).",
+    "No altitude correction formula was invented or applied in A1.6.",
+    "No turbine power curve was introduced in A1.6.",
+    "No empirical wind-model performance is claimed.",
+    "No wind forecasting capability has yet been demonstrated or trained."
+  ],
+  "firewall_compliance": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "LOCALBASELINEFORECASTENGINE_MODIFIED": "NO",
+    "EXPERIMENT_EXECUTED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "MODEL_SELECTION_EXECUTED": "NO",
+    "FORECAST_WINDOWS_CREATED": "NO",
+    "SYNTHETIC_SCENARIOS_MODIFIED": "NO",
+    "REAL_DATA_INTEGRATED": "NO",
+    "IMPLEMENTATION_STATUS": "A1_6_ONLY"
+  }
+}

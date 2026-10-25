@@ -1,0 +1,98 @@
+{
+  "timestamp_utc": "2026-09-13T09:03:21.888828+00:00",
+  "model_name": "Stage 8.17A Real AROME Disagreement Model",
+  "features_count": 40,
+  "feature_list": [
+    "horizon_hour",
+    "month",
+    "hour",
+    "solar_elevation",
+    "solar_zenith",
+    "clearsky_ghi",
+    "fc_cloud_cover",
+    "fc_temperature_2m",
+    "fc_relative_humidity_2m",
+    "cloud_frac",
+    "pred_stage3b_cloud_nwp",
+    "phys_pred_fold",
+    "pred_stage4_fold",
+    "disagreement_fold",
+    "ctx_std_3h",
+    "ctx_std_6h",
+    "ctx_std_12h",
+    "ctx_std_24h",
+    "ctx_abs_change_1h",
+    "ctx_abs_change_3h",
+    "ctx_abs_change_6h",
+    "ctx_max_diff_6h",
+    "ctx_mean_diff_6h",
+    "ctx_slope_6h",
+    "ctx_kt_std_6h",
+    "ctx_last_obs",
+    "ctx_mean_24h",
+    "ctx_max_24h",
+    "lwp_latest",
+    "iwp_latest",
+    "lwp_x_cloud",
+    "terrain_horizon_elevation_deg",
+    "terrain_elevation_margin_deg",
+    "terrain_solar_obstruction_flag",
+    "clearsky_ghi_terrain_adjusted",
+    "u700",
+    "v700",
+    "phi_inconsist",
+    "wind_disagreement_700",
+    "LWP_disagreement"
+  ],
+  "model_architecture": "HistGradientBoostingRegressor",
+  "hyperparameters": {
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "arome_dataset_sha256": "db5fa7591e586c0e1288a76806a7717d4ad13779458cb48a961959d48ceec298",
+  "even_cv_summary": {
+    "control_mae": 44.71889489648143,
+    "candidate_mae": 44.55348049342708,
+    "delta_mae": -0.16541440305434918,
+    "folds": [
+      {
+        "fold": 1,
+        "control_mae": 49.13379173816597,
+        "candidate_mae": 49.306956786946124,
+        "delta_mae": 0.17316504878015593,
+        "improved": false
+      },
+      {
+        "fold": 2,
+        "control_mae": 69.18154305292556,
+        "candidate_mae": 68.431584832488,
+        "delta_mae": -0.7499582204375628,
+        "improved": true
+      },
+      {
+        "fold": 3,
+        "control_mae": 40.42463686196329,
+        "candidate_mae": 40.59076585687416,
+        "delta_mae": 0.16612899491086353,
+        "improved": false
+      },
+      {
+        "fold": 4,
+        "control_mae": 25.9468286990024,
+        "candidate_mae": 25.704121170748934,
+        "delta_mae": -0.2427075282534652,
+        "improved": true
+      },
+      {
+        "fold": 5,
+        "control_mae": 2.0999368433085226,
+        "candidate_mae": 2.0363776283170916,
+        "delta_mae": -0.06355921499143102,
+        "improved": true
+      }
+    ]
+  }
+}

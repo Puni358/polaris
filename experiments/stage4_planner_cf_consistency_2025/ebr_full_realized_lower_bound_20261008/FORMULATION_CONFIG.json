@@ -1,0 +1,22 @@
+{
+  "formulation_name": "FORMULATION_G_FULL_REALIZED_EBR_LOWER_BOUND",
+  "T": 24,
+  "capacity_wh": 200000.0,
+  "e_min_wh": 40000.0,
+  "e_max_wh": 190000.0,
+  "soc_margin_wh": 2.0,
+  "battery_power_w": 50000.0,
+  "eta_chg": 0.92,
+  "eta_dis": 0.92,
+  "diesel_max_w": 100000.0,
+  "base_fuel_l_per_h": 5.0,
+  "marginal_fuel_l_per_wh": 0.00025,
+  "startup_fuel_l_primary": 0.0,
+  "gap_limit_l": 0.01,
+  "terminal": "none (completely removed)",
+  "fuel_inventory": "relaxed",
+  "diesel_min_w": "relaxed (0)",
+  "reserve": "24-hour exogenous realized EBR profile",
+  "ebr_slack_cost": 1.0,
+  "service": "full critical and non-critical; no unmet variables"
+}

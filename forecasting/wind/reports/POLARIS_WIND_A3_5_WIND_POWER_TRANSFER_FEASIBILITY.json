@@ -1,0 +1,189 @@
+{
+  "document_id": "POLARIS_WIND_A3_5_WIND_POWER_TRANSFER_FEASIBILITY",
+  "date_utc": "2026-09-18",
+  "track": "PATH_A_WIND_FORECASTING",
+  "phase": "PHASE_A3_5_ANTARCTIC_WIND_POWER_TRANSFER_FEASIBILITY",
+  "task_type": "BOUNDED_READ_ONLY_SCIENTIFIC_FEASIBILITY_QUALIFICATION",
+  "authorization_status": "AUTHORIZED_A3_5_QUALIFICATION_ONLY",
+  "core_question_selection": {
+    "ross_island_reference": "CATEGORY_B_TURBINE_SPECIFIC_ROSS_ISLAND_REFERENCE",
+    "future_nuolja_scenario_research": "CATEGORY_E_CONDITIONAL_REFERENCE_METHOD_FOR_FUTURE_NUOLJA_SCENARIO_RESEARCH",
+    "empirical_ross_island_relationship": "NOT_SUPPORTED_RAW_SCADA_RESTRICTED",
+    "transferable_antarctic_methodology": "NOT_SUPPORTED_EMPIRICALLY",
+    "site_specific_nuolja_mapping": "PROHIBITED_NUOLJA_ASSET_STATUS_NOT_ESTABLISHED"
+  },
+  "final_feasibility_classification": "FEASIBILITY_DECISION_B_REFERENCE_METHODOLOGY_CONDITIONALLY_SUPPORTED",
+  "governance_decisions": {
+    "ROSS_ISLAND_REFERENCE_STATUS": "ESTABLISHED",
+    "ROSS_ISLAND_EMPIRICAL_MAPPING_STATUS": "INSUFFICIENT",
+    "ANTARCTIC_TRANSFER_METHOD_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "NUOLJA_REFERENCE_METHOD_STATUS": "CONDITIONALLY_SPECIFIABLE",
+    "NUOLJA_SITE_SPECIFIC_MAPPING_STATUS": "NOT_ESTABLISHED",
+    "WIND_GENERATION_RESEARCH_READINESS": "CONDITIONALLY_READY_FOR_CONCEPTUAL_SCENARIOS",
+    "WIND_POWER_MAPPING_IMPLEMENTATION_READINESS": "NOT_READY",
+    "GOVERNANCE_STATE_CHANGED": false,
+    "NEXT_GOVERNED_STEP": "NOT_ESTABLISHED"
+  },
+  "evidence_reviewed": [
+    "POLARIS_WIND_A1_6_SITE_TRANSFER_QUALIFICATION.md",
+    "POLARIS_WIND_A2_MODEL_DEVELOPMENT_AND_TRAINING.md",
+    "POLARIS_WIND_A3_SCIENTIFIC_EVIDENCE_REVIEW.md",
+    "POLARIS_WIND_A3_RESEARCH_DISPOSITION.md",
+    "POLARIS_WIND_A3_4_ANTARCTIC_WIND_ENERGY_EVIDENCE_QUALIFICATION.md",
+    "POLARIS_WIND_A3_4_ANTARCTIC_WIND_ENERGY_EVIDENCE_QUALIFICATION.json",
+    "POLARIS_WIND_POWER_MAPPING_PREREQUISITE_RESEARCH.md",
+    "POLARIS_WIND_ASSET_AND_POWER_CURVE_ACQUISITION_QUALIFICATION.md"
+  ],
+  "ross_island_reference_qualification": {
+    "ROSS_ISLAND_ASSET_IDENTITY": "ESTABLISHED",
+    "ROSS_ISLAND_TURBINE_SPECIFICATIONS": "ESTABLISHED",
+    "ROSS_ISLAND_MANUFACTURER_POWER_CURVE": "ESTABLISHED",
+    "ROSS_ISLAND_WIND_MEASUREMENTS": "CONDITIONALLY_ESTABLISHED",
+    "ROSS_ISLAND_GENERATION_TELEMETRY": "CONDITIONALLY_ESTABLISHED",
+    "ROSS_ISLAND_PAIRED_WIND_POWER_DATA": "NOT_ESTABLISHED",
+    "ROSS_ISLAND_EMPIRICAL_MAPPING": "INSUFFICIENT",
+    "category_distinctions": {
+      "MANUFACTURER_POWER_CURVE": "ESTABLISHED",
+      "SITE_EMPIRICAL_WIND_POWER_RELATIONSHIP": "INSUFFICIENT",
+      "MEASURED_SCADA_WIND_POWER_PAIRS": "NOT_ESTABLISHED_DATA_BLOCKED"
+    }
+  },
+  "manufacturer_power_curve_capabilities": {
+    "turbine_model": "Enercon E-33 (330 kW)",
+    "theoretical_power_mapping_supported": true,
+    "required_measurement_height_m": 37.0,
+    "standard_conditions": "15 deg C, 1013 hPa, rho = 1.225 kg/m3",
+    "air_density_scaling_supported": true,
+    "operating_regions": {
+      "region_1_cut_in": "3.0 m/s",
+      "region_2_partial_load": "3.0 - 13.0 m/s (Cubic factory rise)",
+      "region_3_rated_output": "13.0 - 28.0 m/s (330 kW flat)",
+      "region_4_cut_out": "> 28.0 m/s (Storm pitch de-rating)"
+    },
+    "instantiation_for_nuolja_authorized": false
+  },
+  "empirical_relationship_qualification": {
+    "A_timestamped_wind_speed_power_pairs": "NOT_ESTABLISHED",
+    "B_timestamped_wind_speed_generation_pairs": "NOT_ESTABLISHED",
+    "C_scada_power_time_series_paired": "DATA_BLOCKED",
+    "D_empirical_fitted_relationship": "NOT_ESTABLISHED",
+    "E_validated_site_specific_model": "NOT_ESTABLISHED",
+    "note": "Manufacturer power curve or annual generation totals are NOT equivalent to empirical paired SCADA dataset."
+  },
+  "antarctic_transfer_evidence": [
+    {
+      "source_site": "Ross Island (Crater Hill)",
+      "target_site": "McMurdo / Scott Base Grid",
+      "measured_variables": "Wind speed, nacelle wind, SCADA kW",
+      "temporal_resolution": "10-minute SCADA",
+      "transfer_method": "Enercon E-33 factory curve + air density scaling",
+      "validation_method": "Internal operator SCADA logs",
+      "classification": "SITE_SPECIFIC_METHOD"
+    },
+    {
+      "source_site": "Mawson Station",
+      "target_site": "Mawson Grid",
+      "measured_variables": "Wind speed, monthly kWh totals",
+      "temporal_resolution": "Monthly aggregated",
+      "transfer_method": "Enercon E-30 factory curve + katabatic shear model",
+      "validation_method": "Monthly fuel and kWh logs",
+      "classification": "SITE_SPECIFIC_METHOD"
+    },
+    {
+      "source_site": "Princess Elisabeth Station",
+      "target_site": "Utsteinen Grid",
+      "measured_variables": "Micro-wind generation, demand, battery SOC",
+      "temporal_resolution": "Sub-hourly",
+      "transfer_method": "Microgrid smart load-prioritization control",
+      "validation_method": "Microgrid controller operational logs",
+      "classification": "CROSS_SITE_TRANSFER_METHODOLOGY"
+    },
+    {
+      "source_site": "AWACA Katabatic Studies",
+      "target_site": "Adélie Land / Interior Slope",
+      "measured_variables": "Sodar multi-level wind speed & direction",
+      "temporal_resolution": "Hourly",
+      "transfer_method": "Log-law / power-law vertical shear boundary layer equations",
+      "validation_method": "Radiosonde and Sodar observational profiles",
+      "classification": "OBSERVED_EMPIRICAL_RELATIONSHIP"
+    }
+  ],
+  "physical_relationship_firewall": {
+    "equation": "P_aero = 0.5 * rho * A * Cp * v^3",
+    "status": "SIMPLIFIED_PHYSICAL_BACKGROUND_ONLY",
+    "derived_coefficients_authorized": false,
+    "cp_fitting_authorized": false,
+    "power_prediction_authorized": false,
+    "polaris_mapping_authorized": false
+  },
+  "input_compatibility": {
+    "target_wind_speed": "Abisko 10m measured wind speed (Conditional regional proxy)",
+    "forecast_input": "Frozen A2/A3 AR-X model (10m MAE 2.0364 m/s at Abisko)",
+    "hub_height_compatibility": "INCOMPATIBLE (Nuolja hub height undefined)",
+    "vertical_shear_compatibility": "INCOMPATIBLE (Nuolja shear exponent unmodeled)",
+    "air_density_compatibility": "CONDITIONALLY_COMPATIBLE (Temperature TA measured)",
+    "power_curve_compatibility": "REFERENCE_ONLY (Enercon E-33 established for Ross Island)",
+    "curtailment_availability_compatibility": "INCOMPATIBLE (Unmonitored)"
+  },
+  "nuolja_applicability_firewall": {
+    "ABISKO_10M_WIND_SPEED": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "DIRECT_NUOLJA_WIND_MEASUREMENT": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_TURBINE_SPECIFICATIONS": "NOT_ESTABLISHED",
+    "NUOLJA_POWER_CURVE": "NOT_ESTABLISHED",
+    "NUOLJA_GENERATION_TELEMETRY": "NOT_ESTABLISHED",
+    "governance_principle": "NOT_ESTABLISHED ≠ PROVEN_ABSENT",
+    "strongest_transfer_interpretation": "TRANSFER_CLAIM_INTERPRETATION_B_CONDITIONAL_ANTARCTIC_REFERENCE",
+    "site_specific_nuolja_mapping_prohibited": true
+  },
+  "reference_methodology_feasibility": {
+    "conceptually_specifiable": true,
+    "empirically_validated": false,
+    "site_specifically_supported_for_nuolja": false,
+    "conceptual_workflow": [
+      "1. Ingest 10m wind speed forecast from frozen A2 AR-X model",
+      "2. Scale wind speed to hub height using log/power law shear equation",
+      "3. Adjust wind speed for polar air density per IEC 61400-12",
+      "4. Apply authorized turbine factory power curve P(v)",
+      "5. Apply nominal environmental de-rating factors"
+    ],
+    "numerical_mapping_created": false
+  },
+  "polaris_dependency_chain": {
+    "step_1_a3_wind_speed_evidence": "A3 wind-speed forecasting evidence established for Abisko 10m proxy (MAE 2.0364 m/s)",
+    "step_2_site_transfer": "CONDITIONALLY_ESTABLISHED (Regional proxy supported; 309.8m altitude offset unscaled)",
+    "step_3_wind_asset_representation": "ADVANCED BY A3.5 (Conceptual reference methodology feasible; Nuolja asset status remains NOT_ESTABLISHED)",
+    "step_4_site_specific_wind_speed_to_power_mapping": "BLOCKED (INSUFFICIENT for Ross Island SCADA; NOT ESTABLISHED for Nuolja)",
+    "step_5_wind_generation_forecasting": "BLOCKED (NOT_ESTABLISHED)",
+    "step_6_forecastbundle_ems_integration": "BLOCKED (NOT_AUTHORIZED)",
+    "a3_5_impact": "CLARIFIES_CONCEPTUAL_REFERENCE_FEASIBILITY_WHILE_KEEPING_NUOLJA_MAPPING_BLOCKED"
+  },
+  "governance_state_impact": {
+    "NUOLJA_WIND_GENERATION_MAPPING_STATUS": "NOT_ESTABLISHED (Unchanged)",
+    "WIND_POWER_MAPPING_AUTHORIZATION": "NOT_AUTHORIZED (Unchanged)",
+    "WIND_GENERATION_FORECASTING_AUTHORIZATION": "NOT_AUTHORIZED (Unchanged)",
+    "FORECASTBUNDLE_INTEGRATION_AUTHORIZATION": "NOT_AUTHORIZED (Unchanged)",
+    "GOVERNANCE_STATE_CHANGED": false
+  },
+  "hard_stop_conditions_verified": {
+    "turbine_specification_guessed": false,
+    "generic_power_law_substituted_as_site_curve": false,
+    "ross_island_assumed_equivalent_to_nuolja": false,
+    "missing_telemetry_fabricated": false,
+    "model_fitted": false,
+    "forecasting_executed": false,
+    "code_modified": false
+  },
+  "governance_firewall_verification": {
+    "WIND_SPEED_MODELING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_MODELING": "NOT_AUTHORIZED",
+    "WIND_POWER_MAPPING_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "ALTITUDE_CORRECTION": "NOT_AUTHORIZED",
+    "SITE_TRANSFER_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "MPC_INTEGRATION": "NOT_AUTHORIZED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED",
+    "FROZEN_TRACKS_INTACT": true
+  }
+}

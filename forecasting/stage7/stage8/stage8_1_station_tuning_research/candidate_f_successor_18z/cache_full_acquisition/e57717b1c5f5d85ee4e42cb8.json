@@ -1,0 +1,181 @@
+{
+  "cache_key": "e57717b1c5f5d85ee4e42cb8",
+  "content_sha256": "06b683646439de7b6ce35963749799b5d21f3b963ea5af6e37340769ec92c8eb",
+  "detail": "validated",
+  "forecast_start": "2025-05-21T00:00:00+00:00",
+  "payload": {
+    "forecast_reference_time_utc": "2025-05-20T18:00:00+00:00",
+    "per_horizon": [
+      {
+        "horizon_hour": 1,
+        "iwp_mass_fraction": 2.7169008e-06,
+        "lead_hour": 7,
+        "lwp_mass_fraction": 2.592802e-06,
+        "valid_time_utc": "2025-05-21T01:00:00+00:00"
+      },
+      {
+        "horizon_hour": 2,
+        "iwp_mass_fraction": 2.5021145e-06,
+        "lead_hour": 8,
+        "lwp_mass_fraction": 1.6093254e-06,
+        "valid_time_utc": "2025-05-21T02:00:00+00:00"
+      },
+      {
+        "horizon_hour": 3,
+        "iwp_mass_fraction": 2.5065965e-06,
+        "lead_hour": 9,
+        "lwp_mass_fraction": 1.7434359e-06,
+        "valid_time_utc": "2025-05-21T03:00:00+00:00"
+      },
+      {
+        "horizon_hour": 4,
+        "iwp_mass_fraction": 2.6649795e-06,
+        "lead_hour": 10,
+        "lwp_mass_fraction": 2.130866e-06,
+        "valid_time_utc": "2025-05-21T04:00:00+00:00"
+      },
+      {
+        "horizon_hour": 5,
+        "iwp_mass_fraction": 2.2957101e-06,
+        "lead_hour": 11,
+        "lwp_mass_fraction": 1.8775463e-06,
+        "valid_time_utc": "2025-05-21T05:00:00+00:00"
+      },
+      {
+        "horizon_hour": 6,
+        "iwp_mass_fraction": 1.3111858e-06,
+        "lead_hour": 12,
+        "lwp_mass_fraction": 9.164214e-07,
+        "valid_time_utc": "2025-05-21T06:00:00+00:00"
+      },
+      {
+        "horizon_hour": 7,
+        "iwp_mass_fraction": 1.5504193e-06,
+        "lead_hour": 13,
+        "lwp_mass_fraction": 9.0897083e-07,
+        "valid_time_utc": "2025-05-21T07:00:00+00:00"
+      },
+      {
+        "horizon_hour": 8,
+        "iwp_mass_fraction": 1.0781223e-06,
+        "lead_hour": 14,
+        "lwp_mass_fraction": 5.2154064e-07,
+        "valid_time_utc": "2025-05-21T08:00:00+00:00"
+      },
+      {
+        "horizon_hour": 9,
+        "iwp_mass_fraction": 1.5303958e-06,
+        "lead_hour": 15,
+        "lwp_mass_fraction": 1.2665987e-06,
+        "valid_time_utc": "2025-05-21T09:00:00+00:00"
+      },
+      {
+        "horizon_hour": 10,
+        "iwp_mass_fraction": 1.4485558e-06,
+        "lead_hour": 16,
+        "lwp_mass_fraction": 1.013279e-06,
+        "valid_time_utc": "2025-05-21T10:00:00+00:00"
+      },
+      {
+        "horizon_hour": 11,
+        "iwp_mass_fraction": 2.4575274e-07,
+        "lead_hour": 17,
+        "lwp_mass_fraction": 8.940697e-08,
+        "valid_time_utc": "2025-05-21T11:00:00+00:00"
+      },
+      {
+        "horizon_hour": 12,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 18,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T12:00:00+00:00"
+      },
+      {
+        "horizon_hour": 13,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 19,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T13:00:00+00:00"
+      },
+      {
+        "horizon_hour": 14,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 20,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T14:00:00+00:00"
+      },
+      {
+        "horizon_hour": 15,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 21,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T15:00:00+00:00"
+      },
+      {
+        "horizon_hour": 16,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 22,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T16:00:00+00:00"
+      },
+      {
+        "horizon_hour": 17,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 23,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T17:00:00+00:00"
+      },
+      {
+        "horizon_hour": 18,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 24,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T18:00:00+00:00"
+      },
+      {
+        "horizon_hour": 19,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 25,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T19:00:00+00:00"
+      },
+      {
+        "horizon_hour": 20,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 26,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T20:00:00+00:00"
+      },
+      {
+        "horizon_hour": 21,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 27,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T21:00:00+00:00"
+      },
+      {
+        "horizon_hour": 22,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 28,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T22:00:00+00:00"
+      },
+      {
+        "horizon_hour": 23,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 29,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-21T23:00:00+00:00"
+      },
+      {
+        "horizon_hour": 24,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 30,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-05-22T00:00:00+00:00"
+      }
+    ],
+    "pressure_hpa": 700.0
+  },
+  "retrieval_status": "OK"
+}

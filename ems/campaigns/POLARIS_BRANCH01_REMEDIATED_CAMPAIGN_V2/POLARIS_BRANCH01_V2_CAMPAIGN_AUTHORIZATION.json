@@ -1,0 +1,23 @@
+{
+  "campaign_id": "POLARIS_BRANCH01_REMEDIATED_CAMPAIGN_V2",
+  "authorization_timestamp": "2026-09-21T08:58:37Z",
+  "status": "AUTHORIZED_EXECUTION",
+  "trajectory_count": 173,
+  "h1_steps_per_trajectory": 24,
+  "total_h1_steps": 4152,
+  "workers": 8,
+  "frozen_identities": {
+    "model_sha": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "control_sha": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "optimizer_sha": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "simulator_sha": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "fixture_sha": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "baseline_sha": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993"
+  },
+  "governance_rules": {
+    "non_solar_forecast_inheritance": "STRICT_EXACT_VECTOR_MATCH",
+    "zero_placeholder_fallback": "FORBIDDEN_FAIL_CLOSED",
+    "future_truth_firewall": "STRICT_CAUSAL_ONLY",
+    "annualization_claim": "FORBIDDEN_REPRESENTATIVE_SET_ONLY"
+  }
+}

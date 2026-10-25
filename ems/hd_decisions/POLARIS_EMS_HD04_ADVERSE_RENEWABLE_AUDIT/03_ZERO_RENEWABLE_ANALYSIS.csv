@@ -1,0 +1,5 @@
+Property,Mathematical_Formulation,Technical_Validity,What_It_Guarantees,What_It_Fails_To_Represent,Safety_Classification
+Solar Generation,P_solar_survival(t) = 0,TECHNICALLY_VALID,Guarantees survivability during total solar outage / night,Fails to credit daytime solar generation,Conservative Reliability Floor
+Wind Generation,P_wind_survival(t) = 0,TECHNICALLY_VALID,Guarantees survivability during wind lull / turbine trip,Fails to credit available wind generation,Conservative Reliability Floor
+Battery Endurance T_batt,max N s.t. sum D_critical * dt / eta_dis <= E(t0) - E_min,TECHNICALLY_VALID,Absolute battery run hours without renewable recharging,Fails to represent solar battery topping-off,Worst-Case Battery Endurance
+Diesel Endurance T_fuel,max N s.t. sum F_step <= F_remaining(t0),TECHNICALLY_VALID,Absolute diesel run hours required without renewable assistance,Fails to represent fuel savings from solar/wind,Worst-Case Fuel Endurance

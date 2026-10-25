@@ -1,0 +1,80 @@
+================================================================================
+POLARIS CLOSED-LOOP DIESEL-REDUCTION EXPERIMENT EXECUTION LOG
+Experiment ID: EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024
+Timestamp: 2026-10-04T13:38:35Z
+================================================================================
+
+[PHASE 1: PRE-EXECUTION CRYPTOGRAPHIC HASH & REPRODUCIBILITY AUDIT]
+- Dataset: data/POLARIS_v0_1_future_weather_forecasts_2024.csv
+  SHA-256: 8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16 -> MATCH (PASS)
+- Candidate Forecaster: system/forecasting/implementations/causal_nwp_physics.py
+  SHA-256: 14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710 -> MATCH (PASS)
+- Baseline Forecaster: system/forecasting/implementations/baseline.py
+  SHA-256: 905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993 -> MATCH (PASS)
+- GAP19 Optimizer: system/optimization/implementations/gap19_highs_native.py
+  SHA-256: fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737 -> MATCH (PASS)
+- Policy Router: system/control/router.py
+  SHA-256: 041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f -> MATCH (PASS)
+- Realization Executor: system/simulation/research_realization_executor.py
+  SHA-256: c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b -> MATCH (PASS)
+- Closed-Loop Runner: system/research/closed_loop_causal_nwp_runner.py
+  SHA-256: 62cb1607a8dfa63edd804142f167916c1cc11bef30d49ae380d236efad03daa4 -> MATCH (PASS)
+- Battery Config: system/config/battery.yaml
+  SHA-256: eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216 -> MATCH (PASS)
+- Diesel Config: system/config/diesel.yaml
+  SHA-256: 421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3 -> MATCH (PASS)
+- Solar PV Config: system/config/solar_pv.yaml
+  SHA-256: 611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e -> MATCH (PASS)
+- Loads Config: system/config/loads.yaml
+  SHA-256: eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467 -> MATCH (PASS)
+- Optimizer Config: system/config/optimizer.yaml
+  SHA-256: bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8 -> MATCH (PASS)
+- Git Status: git diff --stat is empty. Zero tracked files modified -> MATCH (PASS)
+
+[PHASE 2: RESEARCH UNIT TEST SUITE AUDIT]
+- Test Suite: pytest test_causal_nwp_physics.py test_research_realization_executor.py test_closed_loop_causal_nwp_runner.py
+- Results: 43 passed in 8.62s -> 43/43 PASS
+
+[PHASE 3: CLOSED-LOOP EXECUTION ATTEMPT]
+- Target Evaluation Window: 2024-05-01 through 2024-08-31 (123 daily origins)
+- Origin 1: 2024-05-01 00:00:00 (State timestamp: 2024-04-30T23:00:00Z)
+- Initial State: SoC = 50.0%, Energy = 100,000 Wh, Diesel OFF, Fuel = 100.0 L
+- Governed Critical Load Scenario: critical_demand_w = [11600.0] * 24 (system/config/loads.yaml:5)
+- Simulated Research Assumption: terminal_target_wh = 100,000.0 Wh
+
+- Execution Step: Arm A (Control Baseline)
+  Hour t = 0 (origin 2024-04-30T23:00:00Z)
+  Generating forecast bundle from current state... Done.
+  Evaluating router policy... Done (route_mode = EMERGENCY).
+  Calling GAP19HighsNativeOptimizer.optimize()...
+  
+[EXECUTION FAILURE INTERCEPTED]
+Exception: ValueError
+Message: Protected critical load (11600.0W) exceeds total demand (11325.76W) at index 10.
+Traceback:
+  File "/home/punith-bs/01polaris (Copy)/system/research/closed_loop_causal_nwp_runner.py", line 231, in run_closed_loop
+    plan = self.optimizer.optimize(bundle, current_state, self.configs)
+  File "/home/punith-bs/01polaris (Copy)/system/optimization/implementations/gap19_highs_native.py", line 107, in optimize
+    raise ValueError(f"Protected critical load ({cp}W) exceeds total demand ({dp}W) at index {idx}.")
+
+[FAILURE ROOT CAUSE ANALYSIS]
+1. system/config/loads.yaml:5 defines critical_load.baseline_power_w = 11600.0 W.
+2. In baseline.py:79, forecast demand is modeled as d_val = max(10000.0, round(last_obs_demand + 3000.0 * cos(h * pi / 12), 2)).
+3. At horizon index 10 (h=11), cosine modulation drives forecast demand down to 11,325.76 W, which is below the 11,600.0 W critical load threshold.
+4. gap19_highs_native.py:90-94 consumes critical_demand_w directly from config without clipping:
+     critical_demand = [float(v) for v in cd_cfg]
+   and enforces line 106-107:
+     if cp > dp + 1e-4:
+         raise ValueError(f"Protected critical load ({cp}W) exceeds total demand ({dp}W) at index {idx}.")
+5. Because critical demand physically cannot exceed total demand (cp <= dp), GAP19 strictly fails closed with ValueError when total demand is lower than 11.6 kW.
+6. The frozen closed_loop_causal_nwp_runner.py passes self.configs directly to gap19_highs_native.py without dynamic clipping.
+7. Both gap19_highs_native.py (production) and closed_loop_causal_nwp_runner.py (frozen runner) are immutable under governance rules and manifest hash freezing.
+
+[GOVERNANCE DISPOSITION]
+In accordance with governance rule:
+"If the runner cannot faithfully use the governed 11.6 kW scenario, mark the experiment BLOCKED."
+and execution safety rule:
+"If an execution failure occurs, STOP and report it. Do not silently work around it."
+
+EXECUTION DISPOSITION: STOPPED AND MARKED BLOCKED.
+Zero production code modified. Zero frozen hashes altered.

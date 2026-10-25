@@ -1,0 +1,77 @@
+{
+  "register_name": "POLARIS_EMS_ECD_GOVERNANCE_BLOCKER_REGISTER",
+  "version": "1.0.0",
+  "status": "AUDITED",
+  "items": [
+    {
+      "id": "BLK-001",
+      "item": "T_required Governance Threshold (72.0 h)",
+      "classification": "CLOSED",
+      "description": "Preserved as synthetic engineering test value for survivability evaluation.",
+      "resolution": "Governed value closed under HD-03."
+    },
+    {
+      "id": "BLK-002",
+      "item": "T_test Synthetic Horizon (2.0 h)",
+      "classification": "CLOSED",
+      "description": "Preserved strictly for synthetic logic validation fixture.",
+      "resolution": "Governed value closed for prototype testing."
+    },
+    {
+      "id": "BLK-003",
+      "item": "Prototype Critical Load (30,000 W)",
+      "classification": "CLOSED",
+      "description": "Preserved strictly as synthetic engineering test parameter.",
+      "resolution": "Governed constant for prototype fixture."
+    },
+    {
+      "id": "BLK-004",
+      "item": "E3 Survivability Margin Semantics",
+      "classification": "CLOSED",
+      "description": "Larger margin = preserved resource; smaller margin = limiting resource; equal margin = TIE/BOTH.",
+      "resolution": "Governance rules closed."
+    },
+    {
+      "id": "BLK-005",
+      "item": "Emergency Mode Trigger Condition",
+      "classification": "CLOSED",
+      "description": "EMERGENCY triggered iff M_battery < 0 OR M_diesel < 0. No percentage-based shortcuts.",
+      "resolution": "Governance rules closed."
+    },
+    {
+      "id": "BLK-006",
+      "item": "T_required TTL Numerical Value",
+      "classification": "GOVERNANCE-REQUIRED",
+      "description": "Numerical duration for operational command TTL in production runtime.",
+      "resolution": "NOT-ESTABLISHED. Must be specified prior to production deployment."
+    },
+    {
+      "id": "BLK-007",
+      "item": "Telemetry & Command Max-Age Guard",
+      "classification": "GOVERNANCE-REQUIRED",
+      "description": "Numerical age limit for data freshness rejection.",
+      "resolution": "NOT-ESTABLISHED. Must be specified prior to production deployment."
+    },
+    {
+      "id": "BLK-008",
+      "item": "Cryptographic Signature Scheme for Override",
+      "classification": "GOVERNANCE-REQUIRED",
+      "description": "Specific authentication algorithm for operational override payloads.",
+      "resolution": "NOT-ESTABLISHED. Must be defined by security governance."
+    },
+    {
+      "id": "BLK-009",
+      "item": "Floating-Point Tie Tolerance Epsilon",
+      "classification": "ENGINEERING-DEFINITION-REQUIRED",
+      "description": "Numerical threshold for float comparison in tie detection (proposed epsilon = 1e-6 h).",
+      "resolution": "Engineering parameter proposed; implementation ready."
+    },
+    {
+      "id": "BLK-010",
+      "item": "Time-Varying Critical Load Trajectory Integration",
+      "classification": "ENGINEERING-DEFINITION-REQUIRED",
+      "description": "First-principles cumulative integration method for P_crit(t).",
+      "resolution": "Additive schema proposed; algorithm defined conceptually."
+    }
+  ]
+}

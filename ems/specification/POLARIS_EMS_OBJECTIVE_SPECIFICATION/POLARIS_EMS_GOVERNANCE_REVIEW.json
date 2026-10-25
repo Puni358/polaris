@@ -1,0 +1,64 @@
+{
+  "governance_review_metadata": {
+    "title": "POLARIS EMS Objective Specification & Requirements Governance Review",
+    "timestamp": "2026-09-21T21:20:00Z",
+    "output_directory": "POLARIS_EMS_OBJECTIVE_SPECIFICATION/",
+    "frozen_optimizer_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35"
+  },
+  "final_governance_status": {
+    "V2_EVIDENCE_LOCK": "PASS",
+    "EMS_OBJECTIVE_SOURCE_AUDIT": "PASS",
+    "OBJECTIVE_NUMERIC_RECONCILIATION": "PASS",
+    "REQUIREMENTS_RECONCILIATION": "PARTIAL",
+    "OBJECTIVE_REQUIREMENT_ALIGNMENT": "PARTIALLY_ALIGNED",
+    "CURRENT_OBJECTIVE_STATUS": "FROZEN_IMPLEMENTATION",
+    "RELIABILITY_REQUIREMENT": "QUALITATIVE_ONLY",
+    "FUEL_REQUIREMENT": "QUALITATIVE_ONLY",
+    "RENEWABLE_REQUIREMENT": "QUALITATIVE_ONLY",
+    "BATTERY_REQUIREMENT": "PARTIALLY_GOVERNED",
+    "FUEL_VS_RELIABILITY_TRADEOFF": "NOT_SPECIFIED",
+    "OBJECTIVE_PRIORITY": "NOT_SPECIFIED",
+    "OBJECTIVE_FORMULATION_POLICY": "NOT_SPECIFIED",
+    "FORECAST_UNCERTAINTY_POLICY": "NOT_SPECIFIED",
+    "CRITICAL_LOAD_POLICY": "QUALITATIVE_ONLY",
+    "NUMERICAL_REQUIREMENTS": "REQUIRES_STAKEHOLDER_SPECIFICATION",
+    "STAKEHOLDER_DECISIONS_REQUIRED": 15,
+    "EMS_OBJECTIVE_SPECIFICATION": "DRAFT_PENDING_AUTHORIZATION",
+    "OBJECTIVE_MODIFICATION": "NOT_AUTHORIZED",
+    "EMS_MODIFICATION": "NOT_AUTHORIZED",
+    "MODEL_MODIFICATION": "NOT_AUTHORIZED",
+    "MODEL_RETRAINING": "NOT_AUTHORIZED",
+    "NEW_EMS_EXPERIMENT": "NOT_AUTHORIZED",
+    "ANNUAL_RESULT_STATUS": "REPRESENTATIVE_TRAJECTORY_SET",
+    "NUOLJA_STATION_SPECIFIC_ANNUAL_SAVING": "NOT_ESTABLISHED",
+    "NEXT_GOVERNED_STEP": "HUMAN_REVIEW_OF_EXPLICIT_EMS_OBJECTIVE_SPECIFICATION"
+  },
+  "v2_evidence_summary": {
+    "completed_trajectories": 173,
+    "h1_execution_steps": 4152,
+    "control": {
+      "diesel_generation_kwh": 62126.805,
+      "fuel_consumption_liters": 22486.701,
+      "load_served_kwh": 75480.485,
+      "unmet_load_kwh": 40352.215
+    },
+    "treatment": {
+      "diesel_generation_kwh": 95667.521,
+      "fuel_consumption_liters": 33836.880,
+      "load_served_kwh": 106024.238,
+      "unmet_load_kwh": 9808.462
+    },
+    "difference": {
+      "fuel_consumption_liters_diff": 11350.179,
+      "load_served_kwh_diff": 30543.753,
+      "unmet_load_kwh_diff": -30543.753
+    },
+    "causal_classification": "MECHANISM_PARTIALLY_ESTABLISHED"
+  },
+  "implementation_fact": {
+    "unmet_load_penalty_per_kwh": 10000.0,
+    "marginal_diesel_cost_per_kwh": 0.625,
+    "implicit_ratio": "16000:1",
+    "governance_classification": "PROTOTYPE_ASSUMPTION"
+  }
+}

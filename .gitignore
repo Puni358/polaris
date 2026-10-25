@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------
+# Environments and build output (recreate with the README steps)
+# ---------------------------------------------------------------
+.venv/
+venv/
+**/.venv/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# Raw datasets and weather-model caches (too large / third-party
+# licensed). See DATASET.md for how to re-acquire them.
+# ---------------------------------------------------------------
+/data/
+/arome_cache_21x21/
+/forecasting/stage7/stage8/station_feedback_adaptation/candidate_L_research/meps_cache/
+/docs/POLARIS_JUDGE_PACK/07_DATA_inputs/raw_*
+/(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv
+*.grib
+*.grib2
+*.idx
+*.tif
+
+# Rendered video frames (the final brag.mp4 is kept)
+/docs/launch_video/composition/frames/
+
+# ---------------------------------------------------------------
+# Stray empty files created by shell mishaps
+# ---------------------------------------------------------------
+/0
+/D-
+/E
+/I-
+/Digital
+/DispatchPlan
+/ECD
+/ForecastBundle
+/ForecastEngine
+/GOVERNED_INFEASIBILITY_STATE,*
+

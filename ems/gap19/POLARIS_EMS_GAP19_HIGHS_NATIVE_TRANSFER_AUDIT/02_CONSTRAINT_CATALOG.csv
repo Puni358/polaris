@@ -1,0 +1,26 @@
+audit_document,02_CONSTRAINT_CATALOG
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,system/optimization/implementations/milp.py
+source_lines,144-274
+generation_mode,READ_ONLY_STATIC_CODE_ANALYSIS
+execution_performed,FALSE
+
+constraint_id,label,type,lhs_bound,rhs_bound,scipy_encoding,variables_involved,timestep_scope,code_lines,mathematical_form,notes
+C1_t,Solar Decomposition,equality,p_sol_max(t),p_sol_max(t),"lhs=rhs=p_sol_max, LinearConstraint","p_sol_used[t], p_curt_sol[t]",per_t,L155-L161,"p_sol_used(t) + p_curt_sol(t) = P_solar_gen(t)","RHS is data (forecast), not a variable. lhs==rhs in LinearConstraint encodes equality."
+C2_t,Wind Decomposition,equality,p_wind_max(t),p_wind_max(t),"lhs=rhs=p_wind_max, LinearConstraint","p_wind_used[t], p_curt_wind[t]",per_t,L163-L169,"p_wind_used(t) + p_curt_wind(t) = P_wind_gen(t)","RHS is data (forecast), not a variable."
+C3_t,Bus-Bar Power Balance,equality,0.0,0.0,"lhs=rhs=0, LinearConstraint","p_sol_used[t], p_wind_used[t], p_dis[t], p_diesel[t], p_served[t], p_chg[t], p_flex[t]",per_t,L171-L182,"p_sol_used(t) + p_wind_used(t) + p_dis(t) + p_diesel(t) - p_served(t) - p_chg(t) - p_flex(t) = 0","Instantaneous power balance at bus-bar. No energy storage term—transition handled by C8."
+C4_t,Demand Deficit Balance,equality,p_dem(t),p_dem(t),"lhs=rhs=p_dem, LinearConstraint","p_served[t], p_unmet[t]",per_t,L184-L190,"p_served(t) + p_unmet(t) = P_demand(t)","Splits demand into served and unmet portions."
+C5_t,Charge Upper Bound (Big-M),inequality,-inf,0.0,"lhs=-inf rhs=0, LinearConstraint","p_chg[t], u_chg[t]",per_t,L192-L198,"p_chg(t) - max_p_chg * u_chg(t) <= 0","Big-M linking: charging power zero when u_chg=0."
+C6_t,Discharge Upper Bound (Big-M),inequality,-inf,0.0,"lhs=-inf rhs=0, LinearConstraint","p_dis[t], u_dis[t]",per_t,L200-L206,"p_dis(t) - max_p_dis * u_dis(t) <= 0","Big-M linking: discharging power zero when u_dis=0."
+C7_t,Charge/Discharge Exclusivity,inequality,-inf,1.0,"lhs=-inf rhs=1, LinearConstraint","u_chg[t], u_dis[t]",per_t,L208-L214,"u_chg(t) + u_dis(t) <= 1","Prevents simultaneous charge and discharge."
+C8_t,Battery Energy Transition (t=0),equality,initial_e_wh,initial_e_wh,"lhs=rhs=initial_e_wh, LinearConstraint","E_next[0], p_chg[0], p_dis[0]",t=0_only,L216-L225,"E_next(0) - eta_chg * p_chg(0) * dt + (p_dis(0) / eta_dis) * dt = E0","E0 = initial_e_wh from StationState. dt = timestep_hours from config."
+C8_t,Battery Energy Transition (t>0),equality,0.0,0.0,"lhs=rhs=0, LinearConstraint","E_next[t], E_next[t-1], p_chg[t], p_dis[t]",t=1_to_23,L226-L233,"E_next(t) - E_next(t-1) - eta_chg * p_chg(t) * dt + (p_dis(t) / eta_dis) * dt = 0","Couples current timestep energy to previous. Creates temporal coupling across 24h horizon."
+C9_t,Diesel Minimum Output (Big-M),inequality,0.0,+inf,"lhs=0 rhs=inf, LinearConstraint","p_diesel[t], u_diesel[t]",per_t,L235-L241,"p_diesel(t) - min_diesel_w * u_diesel(t) >= 0","Enforces min output when diesel is ON."
+C10_t,Diesel Maximum Output (Big-M),inequality,-inf,0.0,"lhs=-inf rhs=0, LinearConstraint","p_diesel[t], u_diesel[t]",per_t,L243-L249,"p_diesel(t) - max_diesel_w * u_diesel(t) <= 0","Enforces max output when diesel is ON."
+C11_t0,Diesel Startup Tracking (t=0),inequality,-initial_diesel_running,+inf,"lhs=-initial_diesel_running rhs=inf, LinearConstraint","v_start[0], u_diesel[0]",t=0_only,L251-L258,"v_start(0) - u_diesel(0) >= -initial_diesel_running","Encodes: if diesel was running at period start, v_start can be 0 without contradiction."
+C11_t,Diesel Startup Tracking (t>0),inequality,0.0,+inf,"lhs=0 rhs=inf, LinearConstraint","v_start[t], u_diesel[t], u_diesel[t-1]",t=1_to_23,L259-L264,"v_start(t) - u_diesel(t) + u_diesel(t-1) >= 0","Captures startup event: v_start=1 when u_diesel transitions 0->1."
+C12,Flexible Load Total Energy,equality,flex_total_wh,flex_total_wh,"lhs=rhs=flex_total_wh, LinearConstraint","p_flex[t] for t in [flex_start_h, flex_finish_h)",active_only_if_has_flexible_load,L266-L274,"SUM_{t=flex_start}^{flex_finish-1} p_flex(t) = flex_total_wh","Global constraint spanning multiple timesteps. Only included if deferrable_loads config is non-empty."
+
+total_constraints_per_horizon,"11 per timestep * 24 + optional C12 = 264 or 265 constraint rows (excluding C8 which has distinct forms for t=0 and t>0)"
+constraint_matrix_shape_note,"A shape: (264 or 265) x 360 (rows x columns). Sparse in practice—each row has at most 3-5 non-zero entries."
+scipy_encoding_summary,"All constraints passed as a single LinearConstraint(A, lhs, rhs) object where equality is encoded by lhs==rhs and one-sided inequality by lhs=-inf or rhs=+inf."

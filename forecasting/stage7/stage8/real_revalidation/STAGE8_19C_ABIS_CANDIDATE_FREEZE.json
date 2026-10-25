@@ -1,0 +1,134 @@
+{
+  "timestamp": "2026-09-13T09:51:00+00:00",
+  "document_type": "STANDALONE CANDIDATE FREEZE ARTIFACT",
+  "stage": "POLARIS STAGE 8.19C — ABIS CANDIDATE FREEZE",
+  "freeze_status": "FROZEN_AFTER_EVEN_GATES",
+  "candidate_identity": {
+    "candidate_name": "Stage 8.19C ABIS GNSS Tropospheric Delay Model",
+    "base_champion": "Stage 8.17A AROME Structural Disagreement Model",
+    "base_feature_count": 40,
+    "candidate_feature_count": 42,
+    "additional_features": [
+      "abis_ztd_latest",
+      "abis_ztd_trend_3h"
+    ]
+  },
+  "feature_definitions": {
+    "abis_ztd_latest": {
+      "name": "abis_ztd_latest",
+      "description": "Latest causally available Zenith Total Delay (ZTD) at forecast origin t0",
+      "units": "mm",
+      "causal_timestamp": "22:00 UTC observation Day D-1",
+      "publication_margin": "T_pub <= t0 - 30 min"
+    },
+    "abis_ztd_trend_3h": {
+      "name": "abis_ztd_trend_3h",
+      "description": "3-hour causal ZTD tendency",
+      "formula": "ZTD(22:00 UTC D-1) - ZTD(19:00 UTC D-1)",
+      "units": "mm / 3h"
+    }
+  },
+  "data_semantics": {
+    "station_id": "ABIS",
+    "station_name": "Abisko Permanent Reference Station",
+    "station_coordinates": "68.3582° N, 18.8258° E, 380m ASL",
+    "target_proximity": "326 meters horizontally (< 0.5 km)",
+    "provider": "Lantmäteriet SWEPOS / EUMETNET E-GVAP",
+    "product": "E-GVAP COST-716 NRT Tropospheric Delay Product",
+    "primary_variable": "ZTD (Zenith Total Delay, mm)",
+    "sampling_frequency": "1-hour / 15-minute raw NRT phase processing",
+    "causal_origin_cutoff": "t0 (22:00 UTC Day D-1)",
+    "missing_data_policy": "Station ABIS is 100% complete across 2024 archive; pre-registered fallback: MEPS NWP pressure/humidity proxy if unavailable."
+  },
+  "model_configuration": {
+    "model_class": "HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42,
+    "total_features": 42,
+    "preprocessing": "Causal fold-fitted Stage 4 physical parameter estimation (w_h, k_h grid search on daytime train fold)",
+    "night_handling": "Causal night-zeroing forced via solar_elevation <= 0.0 or clearsky_ghi == 0.0",
+    "daytime_metric_definition": "daytime nMAE = (daytime MAE / mean daytime actual SW_IN) * 100",
+    "cross_validation_protocol": "Locked 5-fold forward-chaining on 174 EVEN development origins"
+  },
+  "frozen_acceptance_gates": {
+    "gate1_mae": {
+      "criterion": "Candidate EVEN MAE strictly lower than Control",
+      "threshold_w_m2": 44.296582,
+      "achieved_w_m2": 43.861205,
+      "verdict": "PASS"
+    },
+    "gate2_nmae": {
+      "criterion": "Candidate EVEN nMAE strictly lower than Control",
+      "threshold_pct": 32.0048,
+      "achieved_pct": 31.6901,
+      "verdict": "PASS"
+    },
+    "gate3_majority_folds": {
+      "criterion": "At least 3 of 5 EVEN folds improved",
+      "threshold": ">= 3/5",
+      "achieved": "4/5",
+      "verdict": "PASS"
+    },
+    "gate4_max_degradation": {
+      "criterion": "Worst fold degradation within threshold",
+      "threshold_w_m2": 0.50,
+      "achieved_w_m2": 0.088088,
+      "verdict": "PASS"
+    },
+    "gate5_rmse": {
+      "criterion": "Candidate EVEN RMSE strictly lower than Control",
+      "threshold_w_m2": 75.892401,
+      "achieved_w_m2": 75.310245,
+      "verdict": "PASS"
+    },
+    "all_5_gates_passed": true
+  },
+  "frozen_even_results": {
+    "control_mae_w_m2": 44.296582,
+    "candidate_mae_w_m2": 43.861205,
+    "delta_mae_w_m2": -0.435377,
+    "control_nmae_pct": 32.0048,
+    "candidate_nmae_pct": 31.6901,
+    "delta_nmae_pct": -0.3147,
+    "control_rmse_w_m2": 75.892401,
+    "candidate_rmse_w_m2": 75.310245,
+    "delta_rmse_w_m2": -0.582156,
+    "candidate_bias_w_m2": 1.624105,
+    "night_mae_w_m2": 0.0,
+    "fold_deltas_w_m2": [
+      { "fold": 1, "delta_mae_w_m2": -0.096569, "improved": true },
+      { "fold": 2, "delta_mae_w_m2": -0.610824, "improved": true },
+      { "fold": 3, "delta_mae_w_m2": -0.638719, "improved": true },
+      { "fold": 4, "delta_mae_w_m2": 0.088088, "improved": false },
+      { "fold": 5, "delta_mae_w_m2": -0.004400, "improved": true }
+    ]
+  },
+  "governance_restrictions": {
+    "retroactive_modifications": "FORBIDDEN (No tuning, feature additions, or parameter adjustments allowed)",
+    "odd_evaluation_authorized_in_this_stage": false,
+    "odd_firewall_audit": {
+      "odd_target_reads": 0,
+      "odd_residual_reads": 0,
+      "odd_prediction_reads": 0,
+      "odd_metric_calculation": 0,
+      "odd_tuning": 0,
+      "odd_feature_selection": 0,
+      "firewall_intact": true
+    },
+    "project_state_firewall": {
+      "master_handoff_modified": false,
+      "route_registry_modified": false,
+      "official_champion_promoted": false,
+      "official_champion_remains": "Stage 8.17A — AROME Structural Disagreement Model"
+    }
+  },
+  "authoritative_verdict": {
+    "abis_candidate": "FROZEN_AFTER_EVEN_GATES",
+    "official_champion": "STAGE 8.17A — UNCHANGED",
+    "odd_status": "LOCKED — NOT EVALUATED",
+    "next_authorized_stage": "SEPARATE LOCKED ODD EVALUATION"
+  }
+}

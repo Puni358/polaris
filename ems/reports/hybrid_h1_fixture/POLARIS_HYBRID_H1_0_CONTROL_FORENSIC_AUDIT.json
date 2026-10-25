@@ -1,0 +1,97 @@
+{
+  "audit_version": "1.0.0",
+  "timestamp": "2026-09-20T12:04:00Z",
+  "step": "STEP10C_CONTROL_FORENSIC_AUDIT",
+  "objective": "Read-only post-execution control forensic audit of Step 10C same-truth control trajectory",
+  "final_classification": "A \u2014 VALID COMPLETED PAIRED CONTROL EXECUTION",
+  "verifications": {
+    "A_24_control_cycles": {
+      "status": "PASS",
+      "message": "Control telemetry contains exactly 24 MPC cycles (got 24)."
+    },
+    "B_24_milp_solves": {
+      "status": "PASS",
+      "message": "Control trajectory completed exactly 24 MILP solves (got 24)."
+    },
+    "C_24_simulator_steps": {
+      "status": "PASS",
+      "message": "Control trajectory completed exactly 24 simulator steps."
+    },
+    "D_same_initial_state": {
+      "status": "PASS",
+      "message": "Initial state verified identical to treatment: t0=2024-01-01T00:00:00Z, SOC=50.0%."
+    },
+    "E_same_truth_trajectory": {
+      "status": "PASS",
+      "message": "Control trajectory ground truth verified 100% identical to treatment ground truth."
+    },
+    "F_same_timestamps": {
+      "status": "PASS",
+      "message": "Timestamp progression verified 100% identical to treatment trajectory."
+    },
+    "G_future_truth_firewall": {
+      "status": "PASS",
+      "message": "Source code ordering and telemetry confirm zero future actual truth passed to optimizer."
+    },
+    "H_complete_telemetry": {
+      "status": "PASS",
+      "message": "All 24 control timestep records contain complete decision and state transition fields."
+    },
+    "I_no_constraint_violations": {
+      "status": "PASS",
+      "message": "Control optimizer status verified 100% OPTIMAL across all 24 cycles ({'OPTIMAL'})."
+    },
+    "J_solver_identity": {
+      "status": "PASS",
+      "message": "Solver identity verified as scipy.optimize.milp (HiGHS C++ solver)."
+    },
+    "K_control_policy_integrity": {
+      "status": "PASS",
+      "message": "Control policy verified as POLARIS_BASELINE_RULE_BASED_CONTROL / persistence baseline."
+    },
+    "L_treatment_artifacts_unchanged": {
+      "status": "PASS",
+      "message": "Step 10B treatment telemetry CSV hash verified untouched (27a2f6b260dc7595...)."
+    },
+    "M_no_source_modifications": {
+      "status": "PASS",
+      "message": "Protected runtime source files (schemas, optimizer, simulator) remain 100% byte-for-byte identical."
+    },
+    "N_no_protocol_modifications": {
+      "status": "PASS",
+      "message": "Predeclared 24-step MPC control protocol executed without deviation."
+    }
+  },
+  "control_summary": {
+    "control_policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+    "trajectory_duration_hours": 24,
+    "completed_mpc_cycles": 24,
+    "completed_simulator_steps": 24,
+    "total_diesel_fuel_liters": 195.5,
+    "total_diesel_energy_kwh": 562.002,
+    "total_solar_used_kwh": 310.686,
+    "total_wind_used_kwh": 67.889,
+    "total_renewable_curtailment_kwh": 0.0,
+    "total_load_served_kwh": 865.147,
+    "total_unmet_load_kwh": 0.0,
+    "total_battery_charge_kwh": 278.076,
+    "total_battery_discharge_kwh": 202.646,
+    "min_battery_soc_pct": 26.96,
+    "max_battery_soc_pct": 93.47,
+    "execution_duration_seconds": 24.375
+  },
+  "mandatory_status": {
+    "CONTROL_EXECUTION_STATUS": "COMPLETE",
+    "CONTROL_MILP_SOLVES": 24,
+    "CONTROL_SIMULATOR_STEPS": 24,
+    "CONTROL_FUEL_L": 195.5,
+    "TREATMENT_FUEL_L": 195.5,
+    "PAIRED_DIESEL_FUEL_DIFFERENCE_L": 0.0,
+    "SAME_TRUTH": "PASS",
+    "SAME_INITIAL_STATE": "PASS",
+    "FUTURE_TRUTH_FIREWALL": "PASS",
+    "CONTROL_TELEMETRY": "PASS",
+    "TREATMENT_ARTIFACTS_MODIFIED": "NO",
+    "FINAL_CLASSIFICATION": "A"
+  }
+}

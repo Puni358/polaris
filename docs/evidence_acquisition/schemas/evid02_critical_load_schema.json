@@ -1,0 +1,46 @@
+{
+  "_comment": "VERSIONED EVID-02 CRITICAL-LOAD MEASUREMENT EVIDENCE SCHEMA. Documents the record shape a real, station-specific Nuolja (or Maitri/Bharati) critical-load measurement submission must satisfy before it could ever replace the SYNTHETIC_ENGINEERING_SCENARIO figures in CRITICAL_LOAD_HIGH_POWER_AUDIT.md / CRITICAL_LOAD_ONLINE_SOURCE_AUDIT.md. No record conforming to this schema exists anywhere in this repository as of this pass -- this file is an acquisition template, not evidence.",
+  "schema_version": "1.0.0",
+  "record_shape": {
+    "circuit_or_equipment_identity": {
+      "circuit_id": "string -- station's own circuit/panel identifier",
+      "equipment_description": "string -- what this circuit actually powers (e.g. 'life-support heating loop', 'comms rack', 'kitchen/galley')",
+      "criticality_rationale": "string -- WHY this circuit is classified critical (survival-relevant vs. comfort-relevant), citing the station's own operational safety doctrine if one exists; must not merely restate the project's own 9.865 kW vs 11.6 kW framing without a station-specific justification"
+    },
+    "measurement_method": {
+      "method": "one of: continuous_metering | periodic_manual_read | estimated_from_nameplate | other (if other, must be described)",
+      "units": "watts (instantaneous) or watt-hours (energy over sampling_interval)",
+      "sampling_interval_seconds": "number -- e.g. 60, 900, 3600",
+      "measurement_period_start_utc": "ISO-8601 UTC",
+      "measurement_period_end_utc": "ISO-8601 UTC"
+    },
+    "instrument_identity": {
+      "meter_or_instrument_id": "string -- serial number or station asset tag",
+      "calibration_last_verified_utc": "ISO-8601 UTC or 'UNKNOWN' (explicit)",
+      "calibration_authority": "string -- who/what certified the calibration, or 'UNKNOWN'"
+    },
+    "timestamp_and_station_identity": {
+      "station_identity": "string -- e.g. 'Nuolja Middle Station'",
+      "each_sample_timestamp_utc": "ISO-8601 UTC, explicit offset, one per sample row (this schema expects a time series, not a single scalar)"
+    },
+    "missing_reading_and_operating_mode_treatment": {
+      "missing_reading_policy": "Every sample gap must be recorded explicitly as null/missing with a reason code (e.g. SENSOR_OFFLINE, METER_UNREACHABLE, SCHEDULED_MAINTENANCE) -- never interpolated, zero-filled, or mean-filled and then presented as measured.",
+      "operating_mode_at_each_sample": "one of: NORMAL | REDUCED_LOAD_SHED | EMERGENCY | MAINTENANCE | UNKNOWN -- required per sample, since a critical-load figure measured during REDUCED_LOAD_SHED is not the same quantity as one measured during NORMAL operation."
+    },
+    "source_files_and_provenance": {
+      "raw_source_file_or_log_reference": "string -- exact file/log/SCADA-export this record was extracted from, independently re-checkable",
+      "extraction_method": "string -- how the record was derived from the raw source (manual transcription, automated export, etc.)",
+      "submitted_by": "string -- name/role of the person submitting this record",
+      "submission_date_utc": "ISO-8601 UTC"
+    },
+    "validation_and_acceptance_checks": [
+      "Every sample has a station_identity matching a real, named station (not a placeholder).",
+      "Every sample's operating_mode is recorded, not defaulted to NORMAL.",
+      "Every missing reading carries an explicit reason code, not a silently-interpolated value.",
+      "measurement_period_start_utc < measurement_period_end_utc, and sample timestamps fall within that range.",
+      "criticality_rationale is station-specific, not a restatement of the project's own synthetic-scenario framing.",
+      "At least one of {continuous metering spanning >=7 days, or a documented circuit-by-circuit nameplate audit cross-checked against at least one metered peak-load event} before this record is treated as sufficient to inform CL-01's real-data reconsideration -- a single instantaneous reading is explicitly INSUFFICIENT."
+    ]
+  },
+  "explicit_non_substitution_clause": "A record conforming to this schema must NEVER be inferred from, backed into, or reconciled with CRITICAL_LOAD_HIGH_POWER_SCENARIO.md's provisional 11.6 kW synthetic figure. That figure's SYNTHETIC_ENGINEERING_SCENARIO / provisional status (CL-01, decided 2026-10-17) is preserved explicitly and is not altered, superseded, or informed by anything in this schema or any submission made against it, unless and until a real measurement is obtained and independently validated."
+}

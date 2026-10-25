@@ -1,0 +1,47 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_INTEGRATION_HASH_AUDIT",
+  "generated_at": "2026-09-23T18:57:00Z",
+  "status": "SEALED",
+  "artifact_hashes": [
+    {
+      "file": "POLARIS_EMS_ECD_INTEGRATION_CONTRACT.md",
+      "sha256": "d068f52497780bdcfb1faf133754980f0998f155a04b56142d72c4ddcfe7c2b9"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_RUNTIME_DATAFLOW_AUDIT.md",
+      "sha256": "33340f18439fdab1bab784c9830be924d273f465402ae44ff7e10597a1111384"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_SCHEMA_INTEGRATION_SPEC.md",
+      "sha256": "6accc4c8da6071c65080b85bdf15fb9ee7d98c4042f1496fa5c2b9fe4c29d7f9"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_MPC_INTEGRATION_AUDIT.md",
+      "sha256": "909d123bc2c1d3067db24356b594c8727a929fc061aa572036b377cdc6662c9f"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_OPTIMIZER_BOUNDARY_AUDIT.md",
+      "sha256": "2c9056283261ab6c8de685351f00aa4c745c4f63bd7b349961ade3f9f78ef93b"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_EMERGENCY_POLICY_BOUNDARY.md",
+      "sha256": "ec6274b2d429010709a01ae59093d5b274e6e75a0119784e98854345044e660e"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_UNKNOWN_INVALID_HANDLING.md",
+      "sha256": "9f7da6827d44b021f90166a48824129fbc3b4e9972ad1e7c9ca1ec44f1c19014"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_PROVENANCE_TRUTH_FIREWALL_AUDIT.md",
+      "sha256": "bac2ba61e5358295ccd6c330b1aad3bd78abee1182f9215e006a0d38f6e602c1"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_INTEGRATION_TEST_PLAN.md",
+      "sha256": "105b28e07d2a9cc1932037693aefd0e4bd17ee951a682d7341199f376d3b1e4a"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_INTEGRATION_BLOCKER_REGISTER.json",
+      "sha256": "c7f7f712f4a27a90f3da386e59672e7dabfadfc31f5ea503b18d2b3e367fd6dc"
+    }
+  ]
+}

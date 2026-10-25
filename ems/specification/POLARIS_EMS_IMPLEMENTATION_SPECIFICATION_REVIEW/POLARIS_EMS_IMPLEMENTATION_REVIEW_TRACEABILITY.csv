@@ -1,0 +1,12 @@
+DECISION_ID,POLICY_TITLE,POLICY_SOURCE,MATH_SOURCE,IMPLEMENTATION_CONTRACT,AUDIT_RESULT,STATUS
+D1,,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md Section D1,Objective Specification Section 3.1,"5 tier load contracts (Critical, Essential, Deferrable, Interruptible, Noncritical)",PASS_5_TIERS_PRESERVED,VERIFIED
+D2,Automated Load Shedding,Section D2,Section 3.2,Dwell time & anti-chattering specified; exact priority order deferred,PASS_PRIORITY_ORDER_DEFERRED,VERIFIED
+D3-D5,Critical SLA Target,Section D3-D5,Section 4.1,Stage 1 Z1* = 0 hard constraint; Z1* > 0 triggers governed infeasibility state,PASS_HARD_CONSTRAINT_PRESERVED,VERIFIED
+D6,Emergency Mode Concept,Section D6,Section 4.5,FSM conceptual structure specified; trigger values require governance approval,PASS_TRIGGERS_GOVERNED,VERIFIED
+D7,Emergency Battery Resilience,Section D7,Section 4.3,"Target shortfall J2 = sum(max(0, SOC_target - SOC)); target generation functions deferred",CORRECTIONS_REQUIRED_TARGET_GEN_DEFERRED,RECYCLED_TO_DEFERRED
+D8,Fuel Conservation,Section D8,Section 4.2,Physical inventory F_rem(t+1) = F_rem(t) - Fuel(t) specified; resupply budget requires station data,PASS_INVENTORY_SEPARATED,VERIFIED
+D9-D10,Renewable Curtailment,Section D9-D10,Section 4.2,Curtailment formula is provisional diagnostic only; executable classification deferred,CORRECTIONS_REQUIRED_FORMULA_PROVISIONAL,RECYCLED_TO_DEFERRED
+D11-D12,Battery Reserve & Terminal SOC,Section D11-D12,Section 4.3,SOC_min_tech 20% floor specified; terminal SOC stage placement deferred; numerical values require calibration,CORRECTIONS_REQUIRED_PLACEMENT_DEFERRED,RECYCLED_TO_DEFERRED
+D13,Forecast Uncertainty,Section D13,Section 4.4,"Solar, wind, demand uncertainty pipeline specified; numerical margins require empirical calibration",PASS_NUMERICAL_CALIBRATION_REQUIRED,VERIFIED
+D14-D15,Lexicographic Priority,Section D14-D15,Hierarchy Section 2,Sequential 4-pass solve pipeline proposed; solver architecture alternatives deferred,CORRECTIONS_REQUIRED_ALTERNATIVES_DEFERRED,RECYCLED_TO_DEFERRED
+D16,Governance Boundary,Section D16,Section 5,Governance boundary maintained; fail-closed fallback dispatch policy requires governance sign-off,CORRECTIONS_REQUIRED_FALLBACK_DISPATCH_GOVERNED,RECYCLED_TO_GOVERNANCE

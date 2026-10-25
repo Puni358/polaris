@@ -1,0 +1,37 @@
+{
+  "audit_name": "POLARIS EMS HD-01B EBR Resilience Interval N Evidence Audit",
+  "timestamp": "2026-09-23T04:23:00Z",
+  "governance_scope": {
+    "decision_id": "HD-01B-N",
+    "topic": "Numerical Value for EBR Resilience Interval N",
+    "status": "GOVERNANCE_DECISION_REQUIRED"
+  },
+  "closed_decisions": {
+    "HD-01A": "EBR is dynamic critical-load-based target: E_EBR_target(t) = sum_{k=t+1}^{t+N} D_critical(k) * dt / eta_dis",
+    "HD-01B_architecture": "N is FIXED, SEPARATELY GOVERNED, DISTINCT FROM MPC HORIZON H=24h AND T_required"
+  },
+  "audit_findings": {
+    "numerical_N_exists": false,
+    "N_derivable_from_repo": false,
+    "mpc_horizon_conflation": "H=24h in milp.py is solver decision horizon; distinct from EBR interval N",
+    "survival_window_conflation": "T_required is operational resupply window; distinct from EBR interval N",
+    "ups_autonomy_conflation": "15 minutes in implementation spec is sub-hourly ATS hold-up time; distinct from hourly EMS policy N",
+    "loads_yaml_baseline": "30 kW baseline power in loads.yaml is PROTOTYPE_ASSUMPTION; not station-measured profile"
+  },
+  "classifications": {
+    "HD01B_N_EVIDENCE": "NOT_ESTABLISHED",
+    "HD01B_N_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD01B_N_POLICY_BASIS": "GOVERNANCE_REQUIRED",
+    "HD01B_N_ENGINEERING_BASIS": "ABSENT",
+    "HD01B_N_DERIVATION": "NOT_POSSIBLE_WITH_CURRENT_EVIDENCE",
+    "HD01B_T_REQUIRED_INDEPENDENCE": "CONFIRMED",
+    "HD01B_MPC_HORIZON_INDEPENDENCE": "CONFIRMED",
+    "HD01B_N_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD01B_N_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "final_verdict": {
+    "HD01B_N_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD01B_N_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "HD01B_N_NUMERICAL_VALUE": "GOVERNANCE_DECISION_REQUIRED"
+  }
+}

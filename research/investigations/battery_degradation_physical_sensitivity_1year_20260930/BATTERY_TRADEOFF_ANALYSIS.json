@@ -1,0 +1,40 @@
+{
+  "study_id": "battery_degradation_physical_sensitivity_1year_20260930",
+  "tradeoff_metrics": [
+    {
+      "segment": "P6_to_P3",
+      "penalty_change": "$0.05/kWh -> $0.02/kWh",
+      "fuel_saved_L": 4815.63,
+      "additional_battery_throughput_kWh": 2751.20,
+      "additional_cycles": 13.76,
+      "additional_renewable_utilization_kWh": 14052.90,
+      "fuel_saved_per_added_cycle_L": 349.97,
+      "efficiency_return_kWh_fuel_per_kWh_wear": 1.75
+    },
+    {
+      "segment": "P3_to_P1",
+      "penalty_change": "$0.02/kWh -> $0.005/kWh",
+      "fuel_saved_L": 4330.00,
+      "additional_battery_throughput_kWh": 2140.00,
+      "additional_cycles": 10.70,
+      "additional_renewable_utilization_kWh": 11830.00,
+      "fuel_saved_per_added_cycle_L": 404.67,
+      "efficiency_return_kWh_fuel_per_kWh_wear": 2.02
+    },
+    {
+      "segment": "P1_to_P0",
+      "penalty_change": "$0.005/kWh -> $0.00/kWh",
+      "fuel_saved_L": 2170.00,
+      "additional_battery_throughput_kWh": 1150.00,
+      "additional_cycles": 5.75,
+      "additional_renewable_utilization_kWh": 5370.00,
+      "fuel_saved_per_added_cycle_L": 377.39,
+      "efficiency_return_kWh_fuel_per_kWh_wear": 1.89
+    }
+  ],
+  "knee_point_analysis": {
+    "identified_knee_range_kwh": "$0.005/kWh to $0.020/kWh",
+    "knee_behavior": "Between P1 ($0.005/kWh) and P3 ($0.020/kWh), every added battery cycle yields ~350-405 L of fuel savings. Below P1 ($0.005/kWh), marginal fuel savings saturate while battery throughput continues to increase rapidly.",
+    "governance_note": "Selection of an operational point within the knee range requires formal engineering & business governance approval; no parameter promotion is recommended by this study."
+  }
+}

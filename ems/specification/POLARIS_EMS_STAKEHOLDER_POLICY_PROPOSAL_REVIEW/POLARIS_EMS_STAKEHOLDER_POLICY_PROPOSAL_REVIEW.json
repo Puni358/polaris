@@ -1,0 +1,29 @@
+{
+  "ai_policy_proposal_review": "COMPLETE",
+  "role_based_proposal": "RECEIVED",
+  "decisions_total": 16,
+  "category_counts": {
+    "A_DIRECTLY_SUPPORTED": 11,
+    "B_ROLE_BASED_PROPOSAL": 16,
+    "C_PROVISIONAL_NUMERICAL_ASSUMPTION": 9,
+    "D_HUMAN_AUTHORIZATION_REQUIRED": 16,
+    "E_ENGINEERING_VALIDATION_REQUIRED": 15,
+    "F_CLARIFICATION_REQUIRED": 2,
+    "A_DIRECTLY_SUPPORTED_SUBFACTS": 12,
+    "FULLY_AUTHORIZED_POLICIES": 0,
+    "PARTIALLY_SUPPORTED_DECISIONS": 12,
+    "NOT_ESTABLISHED_DECISIONS": 4
+  },
+  "formal_stakeholder_authorization": "NOT_GRANTED",
+  "official_decision_sheet_modified": "NO",
+  "ems_modified": "NO",
+  "objective_modified": "NO",
+  "milp_executed": "NO",
+  "mpc_executed": "NO",
+  "digital_twin_executed": "NO",
+  "v2_rerun": "NO",
+  "policy_recommendation_by_review": "NONE",
+  "policy_ranking_by_review": "NONE",
+  "next_governed_step": "HUMAN_REVIEW_OF_ROLE_BASED_POLICY_PROPOSAL",
+  "audit_timestamp": "2026-09-21T17:24:12.917593+00:00"
+}

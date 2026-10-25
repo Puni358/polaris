@@ -1,0 +1,38 @@
+{
+  "timestamp": "20261006T103734Z",
+  "rows": 2952,
+  "rows_ok": true,
+  "statuses_all_optimal": true,
+  "g1_mismatch_rows": 72,
+  "reproduction": {
+    "PASS": true,
+    "max_abs_diff": 0.0,
+    "per_field": {
+      "charge_w": 0.0,
+      "discharge_w": 0.0,
+      "diesel_w": 0.0,
+      "served_w": 0.0,
+      "unmet_w": 0.0,
+      "fuel_l": 0.0,
+      "soc_pct": 0.0,
+      "solar_w": 0.0,
+      "wind_w": 0.0,
+      "demand_w": 0.0
+    },
+    "rows": 2952
+  },
+  "protected_pre": [],
+  "class_counts": {
+    "B": 70,
+    "C": 2
+  },
+  "starvation_rows": 2,
+  "planner_curtailment_tie_rows": 72,
+  "max_mismatch_w_by_class": {
+    "B": 7175.257391304334,
+    "C": 2832.5083152173693
+  },
+  "protected_post": [],
+  "out_dir": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/forensic_planned_capture_20261006T103734Z",
+  "status": "FORENSIC_COMPLETE"
+}

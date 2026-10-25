@@ -1,0 +1,356 @@
+{
+  "manifest_id": "POLARIS_STEP3_REAL_DATA_READINESS_AUDIT_MANIFEST",
+  "audit_type": "READ_ONLY_REAL_DATA_GOVERNANCE_AUDIT",
+  "audit_timestamp_utc": "2026-09-20T10:25:00Z",
+  "execution_boundaries": {
+    "milp_solves_executed": 0,
+    "experiment_reruns_executed": 0,
+    "model_training_performed": false,
+    "forecasts_generated": false,
+    "architecture_modified": false,
+    "frozen_evidence_modified": false,
+    "proxy_data_substituted_as_measured": false
+  },
+  "governance_state_verification": {
+    "V3_REFERENCE": "FROZEN",
+    "OFAT": "COMPLETED / FROZEN RESEARCH",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_ESTABLISHED",
+    "PRODUCTION_POLICY_PROMOTION": "NOT_YET_DECIDED",
+    "REAL_STATION_DEMAND": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "state_consistent_with_disk_artifacts": true
+  },
+  "real_demand_qualification_test": {
+    "criteria": [
+      "Actual measured electrical load/demand",
+      "Identifiable physical station/facility",
+      "Continuous or sufficiently resolved time series",
+      "Timestamps",
+      "Measurement units",
+      "Provenance/custodian",
+      "Sufficient duration for forecasting/validation",
+      "Lawful/authorized use",
+      "No ambiguity between demand and generation",
+      "No unsupported conversion from unrelated quantities"
+    ],
+    "prohibited_substitutions": [
+      "Monthly energy totals",
+      "Synthetic demand",
+      "Anonymized proxy demand",
+      "Modelled demand",
+      "Published load profile without raw telemetry",
+      "Renewable generation data",
+      "Weather data",
+      "Generic microgrid demand profiles"
+    ]
+  },
+  "demand_data_evidence_inventory": [
+    {
+      "dataset_id": "AADC_ANTARCTIC_STATION_ENERGY",
+      "name": "Monthly Electricity Usage at Australian Antarctic Stations",
+      "station_facility": "Mawson, Davis, Casey, Macquarie Island",
+      "custodian": "Australian Antarctic Division (AAD) / AADC",
+      "data_type": "Electricity Consumption and Diesel Fuel Usage",
+      "temporal_resolution": "Monthly aggregated totals; 1-hour logger exists but is restricted",
+      "continuity": "1993-01 to 2016-02 (monthly); logger coverage unknown",
+      "access_type": "PUBLICLY_DOCUMENTED_MONTHLY / RESTRICTED_HIGH_RESOLUTION",
+      "access_request_status": "DELIVERY_FAILED — 550 5.7.133 external sender restriction",
+      "actually_received": false,
+      "scientific_usability_for_polaris": "INSUFFICIENT — Monthly totals are too coarse for 1-hour MPC validation. 1-hour logger not received.",
+      "classification": "REAL STATION MEASUREMENT (MONTHLY AGGREGATED — INSUFFICIENT RESOLUTION)",
+      "blocker": "AADC group address rejects external senders (550 5.7.133). Retry not authorized. High-resolution logger not accessed."
+    },
+    {
+      "dataset_id": "SANAE_IV_STATION_ELECTRICAL_LOAD",
+      "name": "SANAE IV Station Active Electrical Load",
+      "station_facility": "SANAE IV Station, Dronning Maud Land, Antarctica",
+      "custodian": "South African National Antarctic Programme (SANAP) / Stellenbosch University",
+      "data_type": "Active Electrical Load (P_load kW)",
+      "temporal_resolution": "1-hour operational logging (literature-described)",
+      "continuity": "Multi-year operational logging (exact coverage unknown)",
+      "access_type": "RESTRICTED — REQUEST ACCESS REQUIRED",
+      "access_request_status": "DISPATCHED — AWAITING CUSTODIAN RESPONSE (antarcticlegacy@sun.ac.za)",
+      "actually_received": false,
+      "scientific_usability_for_polaris": "CONDITIONALLY_ESTABLISHED if received — documented ~72 kW base load, ~150 kW peak in literature; raw 1-hour time series not received",
+      "classification": "REAL STATION MEASUREMENT (RESTRICTED ACCESS — NOT RECEIVED)",
+      "blocker": "Raw time series not received. Awaiting custodian response."
+    },
+    {
+      "dataset_id": "PRINCESS_ELISABETH_MICROGRID_LOAD",
+      "name": "Princess Elisabeth Antarctica Microgrid Load",
+      "station_facility": "Princess Elisabeth Antarctica Station, Utsteinen Ridge",
+      "custodian": "International Polar Foundation (IPF)",
+      "data_type": "Microgrid Load Prioritization Telemetry (kW)",
+      "temporal_resolution": "Sub-hourly / 1-hour microgrid logging (literature-described)",
+      "continuity": "Multi-year operational profile (exact coverage unknown)",
+      "access_type": "RESTRICTED — REQUEST ACCESS REQUIRED",
+      "access_request_status": "DISPATCHED — AWAITING CUSTODIAN RESPONSE (info@polarfoundation.org)",
+      "actually_received": false,
+      "scientific_usability_for_polaris": "CONDITIONALLY_ESTABLISHED if received — zero-emission smart microgrid profile literature-described; raw data not received",
+      "classification": "REAL STATION MEASUREMENT (RESTRICTED ACCESS — NOT RECEIVED)",
+      "blocker": "Raw time series not received. Awaiting custodian response."
+    },
+    {
+      "dataset_id": "ACEP_ARCTIC_REMOTE_MICROGRID_DEMAND",
+      "name": "ACEP Arctic Remote Community Microgrid Demand",
+      "station_facility": "Kotzebue, Cordova, Wales, St. Mary's (Arctic Alaska, USA)",
+      "custodian": "Alaska Center for Energy and Power (ACEP) / University of Alaska Fairbanks",
+      "data_type": "Remote Community Electrical Demand (P_load kW), Wind generation (kW), Diesel dispatch (kW)",
+      "temporal_resolution": "1-hour continuous time series",
+      "continuity": "Multi-year community load profiles",
+      "access_type": "RESTRICTED — INSTITUTIONAL / UTILITY NDA PROTECTED",
+      "access_request_status": "DISPATCHED — AWAITING CUSTODIAN RESPONSE (ACEP.info@alaska.edu)",
+      "actually_received": false,
+      "scientific_usability_for_polaris": "CONDITIONALLY_ESTABLISHED as a proxy if received — Arctic remote microgrid, NOT an Antarctic research station; demand characteristics differ",
+      "classification": "REAL COMPONENT / MUNICIPAL MEASUREMENT (RESTRICTED ACCESS — NOT RECEIVED / PROXY)",
+      "blocker": "Raw time series not received. Utility NDA restrictions may apply. Not a polar research station."
+    },
+    {
+      "dataset_id": "OPENEI_KAGGLE_GENERIC_PROXIES",
+      "name": "OpenEI/Kaggle Generic Normalized Remote Grid Load Profiles",
+      "station_facility": "Generic Anonymized Remote Grids",
+      "custodian": "OpenEI / NREL / Kaggle Community",
+      "data_type": "Normalized Load Profiles (unitless or per-unit)",
+      "temporal_resolution": "1-hour",
+      "continuity": "Synthetic/Standardized 1-year profiles",
+      "access_type": "OPEN",
+      "access_request_status": "NOT REQUIRED — OPEN ACCESS",
+      "actually_received": true,
+      "scientific_usability_for_polaris": "INSUFFICIENT — Generic anonymized proxies. NOT identifiable polar research station demand. Prohibited as POLARIS empirical demand target.",
+      "classification": "ANONYMIZED PROXY DEMAND (PROHIBITED AS EMPIRICAL TARGET)",
+      "blocker": "Disqualified — does not meet real station demand qualification criteria (criteria 1, 2, 8 fail)."
+    },
+    {
+      "dataset_id": "SITES_NUOLJA_SOLAR_IRRADIANCE",
+      "name": "SITES Nuolja 2024 Hourly Solar Irradiance (SW_IN)",
+      "station_facility": "Nuolja Field Station, Abisko Scientific Research Station (68.36°N, 18.74°E)",
+      "custodian": "Swedish Infrastructure for Ecosystem Science (SITES)",
+      "data_type": "Downward Shortwave Solar Irradiance (SW_IN W/m²) — NOT ELECTRICAL DEMAND",
+      "temporal_resolution": "1-hour",
+      "continuity": "Calendar Year 2024 (8,784 timesteps)",
+      "access_type": "PUBLICLY DOWNLOADABLE",
+      "access_request_status": "RECEIVED AND USED (Stage8.1 champion training data)",
+      "actually_received": true,
+      "scientific_usability_for_polaris": "FULLY ESTABLISHED AS SOLAR IRRADIANCE INPUT — Explicitly NOT station electrical demand",
+      "classification": "REAL METEOROLOGICAL MEASUREMENT — SOLAR IRRADIANCE (NOT DEMAND)",
+      "blocker": "None for solar irradiance purpose. Does NOT qualify as station demand data."
+    }
+  ],
+  "aadc_failure_preservation": {
+    "attempted_recipient": "aadcwebqueries@aad.gov.au",
+    "error_code": "550 5.7.133",
+    "bounce_reason": "RESOLVER.RST.SenderNotAuthenticatedForGroup — Recipient distribution group restricts external senders",
+    "delivery_status": "DELIVERY FAILED — EXTERNAL SENDER RESTRICTION",
+    "data_access_decision": "NOT RECEIVED / NOT REVIEWED",
+    "scientific_interpretation": "NONE — bounced by mail server sender restriction before substantive scientific review",
+    "retry_to_same_group_authorized": false,
+    "clarification": "This is NOT an AADC rejection of the scientific request. The request never reached human review."
+  },
+  "demand_current_state": {
+    "DEMAND_TARGET_STATUS": "NOT_ESTABLISHED",
+    "DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "STATE_DECISION": "STATE_C_ROUTES_UNRESOLVED_OR_FAILED_NO_MEASURED_DATASET_RECEIVED",
+    "ACTUALLY_RECEIVED": false,
+    "DEMAND_A2_AUTHORIZATION": "NOT_AUTHORIZED",
+    "DEMAND_A2_STATUS": "NOT_READY",
+    "state_change_evidence": "None — no new data received since last recorded state."
+  },
+  "wind_data_evidence": {
+    "wind_speed_target": {
+      "station": "SMHI Abisko Aut, Station 188790",
+      "measurement": "10 m hourly wind speed (m/s)",
+      "interpretation": "Conditional regional proxy for Mount Nuolja",
+      "status": "CONDITIONALLY_ESTABLISHED",
+      "A2_champion_model": "Autoregressive Ridge (AR-X)",
+      "A2_research_status": "FROZEN",
+      "limitations": [
+        "Station is approximately 4.1 km from Nuolja AWS",
+        "Altitude difference approximately 310 m (Abisko 392 m a.s.l. vs Nuolja 702 m a.s.l.)",
+        "No established altitude scaling or boundary-layer lapse rate correction",
+        "Wind speed (m/s) is NOT wind generation (W)"
+      ]
+    },
+    "wind_generation_qualification": {
+      "nuolja_turbine_asset_identity": "NOT_ESTABLISHED",
+      "rated_power": "NOT_ESTABLISHED",
+      "rotor_diameter": "NOT_ESTABLISHED",
+      "hub_height": "NOT_ESTABLISHED",
+      "cut_in_speed": "NOT_ESTABLISHED",
+      "rated_speed": "NOT_ESTABLISHED",
+      "cut_out_speed": "NOT_ESTABLISHED",
+      "power_curve": "NOT_ESTABLISHED",
+      "measured_generation_telemetry": "NOT_ESTABLISHED",
+      "paired_wind_speed_generation_observations": "NOT_ESTABLISHED",
+      "generic_physical_aerodynamic_law": "CONDITIONALLY_ESTABLISHED (P = 0.5 * rho * A * v^3 * Cp is a known physical relationship; cannot be evaluated without turbine specifications)",
+      "overall_status": "NOT_ESTABLISHED",
+      "note": "Ross Island / Scott Base–McMurdo / Enercon E-33 data is a reference case only. No confirmed Nuolja turbine identity."
+    }
+  },
+  "real_data_architecture_readiness": {
+    "clarification": "ARCHITECTURAL READINESS is assessed independently of SCIENTIFIC DATA READINESS.",
+    "interfaces": {
+      "Real_Data_Provider_Adapter": {
+        "status": "NOT_READY",
+        "note": "Adapter not implemented. No measured demand dataset received to build against."
+      },
+      "StationState": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Schema fields conceptually mappable to real demand and irradiance inputs; actual validated adapter not implemented."
+      },
+      "LocalDataProvider": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Interface structure compatible; requires units conversion (kW to W) and ISO UTC formatting. Not implemented."
+      },
+      "ForecastEngine": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Solar: Stage8.1 frozen champion exists. Wind: A2 wind speed model exists but speed-to-power mapping not established. Demand: no model authorized."
+      },
+      "ForecastBundle": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Contract schema v1.0 intact. Wind field requires W; A2 produces m/s. Conversion NOT established. Demand field requires qualifying data."
+      },
+      "EnergyOptimizer_MILP": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Frozen architecture accepts ForecastBundle inputs. No modification required for real-data path IF upstream adapters are validated."
+      },
+      "DispatchPlan": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Contract frozen and intact. No modification required."
+      },
+      "DigitalTwin_Simulator": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Digital twin stepping logic intact. Requires real initial state (SOC, diesel status) if real data used; currently modelled for synthetic scenarios."
+      },
+      "Evaluation": {
+        "status": "CONDITIONALLY_READY",
+        "note": "Evaluation metrics infrastructure present. Requires real ground-truth to make real-data claims."
+      }
+    },
+    "architectural_readiness_summary": "CONDITIONALLY_READY (No frozen-contract incompatibility identified in prior reconnaissance. Real-data adapter pathway conceptually feasible. Adapter NOT implemented. Scientific data qualification is the primary blocker, not architecture.)",
+    "scientific_data_readiness_summary": "DATA_BLOCKED (Demand: not received. Wind generation: not established. Architecture readiness does NOT imply data readiness.)"
+  },
+  "real_station_validation_gate": {
+    "gate_name": "POLARIS_REAL_STATION_VALIDATION_GATE",
+    "gate_status": "NOT_PASSED",
+    "minimum_required_evidence": [
+      {"item": "Measured station electrical demand time series", "status": "DATA_BLOCKED"},
+      {"item": "Measured renewable generation or defensible generation telemetry", "status": "NOT_ESTABLISHED"},
+      {"item": "Timestamp alignment between demand and generation", "status": "NOT_ESTABLISHED"},
+      {"item": "Confirmed station identity and location", "status": "NOT_ESTABLISHED (pending custodian response)"},
+      {"item": "Data provenance and custodian documentation", "status": "NOT_ESTABLISHED"},
+      {"item": "Sufficient continuous duration for train/val/test separation", "status": "NOT_ESTABLISHED"},
+      {"item": "Missing-data characterization and quality-control status", "status": "NOT_ESTABLISHED"},
+      {"item": "Train/validation/test separation design", "status": "NOT_ESTABLISHED"},
+      {"item": "Causal/future-truth firewall established for real data", "status": "NOT_ESTABLISHED"},
+      {"item": "Authorized access and lawful use terms confirmed", "status": "NOT_ESTABLISHED"}
+    ]
+  },
+  "bounded_next_actions": [
+    {
+      "branch": "SANAP / SANAE IV",
+      "action": "WAIT for custodian response to already-dispatched request (antarcticlegacy@sun.ac.za)",
+      "constraint": "One bounded response wait only. No additional follow-up email campaigns."
+    },
+    {
+      "branch": "IPF / Princess Elisabeth",
+      "action": "WAIT for custodian response to already-dispatched request (info@polarfoundation.org)",
+      "constraint": "One bounded response wait only."
+    },
+    {
+      "branch": "ACEP / UAF",
+      "action": "WAIT for custodian response to already-dispatched request (ACEP.info@alaska.edu)",
+      "constraint": "One bounded response wait only. NDA terms may restrict usability."
+    },
+    {
+      "branch": "AADC",
+      "action": "RETRY NOT AUTHORIZED to same group address. If AAD is still desired, identify an alternate contact route through AAD official web contact form or published data-access application pathway.",
+      "constraint": "Do not resend to aadcwebqueries@aad.gov.au."
+    },
+    {
+      "branch": "Nuolja Wind Generation",
+      "action": "Identify publicly documented wind energy installations at or near Nuolja / Abisko Scientific Research Station through site operator (ANS/ICOS Sweden) or SITES portal communications. Establish turbine identity before any power mapping.",
+      "constraint": "Read-only investigation only. No modeling until asset identity established."
+    },
+    {
+      "branch": "Path B Hybrid Scenario",
+      "action": "If all custodian responses fail or become impractical, present Path B (explicitly labelled hybrid scenario) as a formally governed alternative to the human project authority for decision.",
+      "constraint": "Path B requires explicit human governance authorization before any implementation."
+    }
+  ],
+  "data_readiness_matrix": [
+    {
+      "evidence_branch": "Station Electrical Demand",
+      "target": "Continuous hourly P_load (W or kW)",
+      "provenance": "SANAP / IPF / ACEP (pending); AADC (failed)",
+      "resolution": "1-hour (required)",
+      "access": "RESTRICTED — requests pending",
+      "received": "NO",
+      "scientific_qualification": "DATA_BLOCKED",
+      "next_action": "Await custodian responses"
+    },
+    {
+      "evidence_branch": "Nuolja Wind Speed (A2)",
+      "target": "SMHI Abisko Aut 188790, 10 m hourly wind speed",
+      "provenance": "SMHI Open Data — verified",
+      "resolution": "1-hour",
+      "access": "OPEN",
+      "received": "YES",
+      "scientific_qualification": "CONDITIONALLY_ESTABLISHED (as regional proxy only; altitude not corrected)",
+      "next_action": "No action required for wind speed research artifact. Power mapping blocked by turbine specs."
+    },
+    {
+      "evidence_branch": "Nuolja Wind Generation",
+      "target": "Electrical wind power output (W) at Nuolja",
+      "provenance": "Not identified",
+      "resolution": "Not established",
+      "access": "NOT_ESTABLISHED",
+      "received": "NO",
+      "scientific_qualification": "NOT_ESTABLISHED",
+      "next_action": "Identify turbine asset at Nuolja/ANS before any generation mapping."
+    },
+    {
+      "evidence_branch": "Solar Irradiance (Stage8.1)",
+      "target": "SITES Nuolja 2024 hourly SW_IN (W/m²)",
+      "provenance": "SITES — public download — verified",
+      "resolution": "1-hour",
+      "access": "OPEN",
+      "received": "YES",
+      "scientific_qualification": "FULLY_ESTABLISHED as meteorological irradiance input (NOT demand)",
+      "next_action": "None — frozen and used in Stage8.1 champion."
+    },
+    {
+      "evidence_branch": "Station Energy / Generation (AADC)",
+      "target": "Monthly kWh totals — Australian Antarctic stations",
+      "provenance": "AADC — documented",
+      "resolution": "Monthly (insufficient)",
+      "access": "PUBLICLY_DOCUMENTED / delivery failed",
+      "received": "NO",
+      "scientific_qualification": "INSUFFICIENT — resolution too coarse for MPC validation",
+      "next_action": "Identify alternate AAD contact route (e.g., web form). Do not retry to aadcwebqueries@aad.gov.au."
+    }
+  ],
+  "explicit_blockers": [
+    "No measured continuous high-resolution station electrical demand received from any custodian.",
+    "AADC access route delivery failed (550 5.7.133); retry not authorized to same address.",
+    "SANAP, IPF, ACEP responses pending — no receipt, no review, no decision.",
+    "Nuolja turbine identity not established; wind generation mapping blocked.",
+    "No altitude scaling established between Abisko 392 m a.s.l. and Nuolja 702 m a.s.l.",
+    "Wind speed (m/s) to power (W) conversion not established; ForecastBundle wind field cannot be populated.",
+    "Real-data adapter not implemented and not authorized.",
+    "Real-station validation gate not passed on any criterion requiring measured demand."
+  ],
+  "step3_final_classification": "C — DATA BLOCKED",
+  "classification_rationale": "No measured station electrical demand has been received. Wind generation mapping is not established. The real-station validation gate fails on every criterion requiring measured demand data. The primary blockers are external custodian access restrictions, not architectural incompatibility. The POLARIS architecture is conditionally ready to receive a real-data adapter when qualified data becomes available.",
+  "final_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "REAL_DATA_ARCHITECTURE_STATUS": "CONDITIONALLY_READY (architectural only — data qualification blocked)",
+    "STEP3_FINAL_CLASSIFICATION": "C — DATA BLOCKED"
+  }
+}

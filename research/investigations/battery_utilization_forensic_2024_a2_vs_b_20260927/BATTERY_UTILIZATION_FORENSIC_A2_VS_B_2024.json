@@ -1,0 +1,32 @@
+{
+  "campaign_id": "polaris_365d_run_20260927_033823",
+  "hours_verified": 8784,
+  "trajectory_identity": "CONFIRMED_IDENTICAL",
+  "future_truth_status": "FIREWALL_PASS (0 access)",
+  "protected_hash_status": "100% MATCH",
+  "a2_fuel_l": 77022.5981,
+  "b_fuel_l": 93465.6264,
+  "absolute_difference_l": 16443.0283,
+  "relative_difference_pct": 21.35,
+  "a2_charge_kwh": 11652.08584,
+  "a2_discharge_kwh": 9917.52533,
+  "b_charge_kwh": 890.3559700000003,
+  "b_discharge_kwh": 808.7973731999999,
+  "b_soc_range_pct": [
+    20.0,
+    38.04
+  ],
+  "a2_soc_range_pct": [
+    20.0,
+    95.0
+  ],
+  "identified_causes": [
+    "J2 Governed Reserve Shortfall Envelope enforces a 57.83% SOC floor target (115,652.17 Wh) with Priority 3 (strictly above Priority 2 Diesel Fuel cost), forcing diesel generation to preserve/restore battery reserve rather than discharging for non-critical demand.",
+    "Deterministic local baseline forecasting engine predicts low/decaying future solar/wind over 24h horizon, prompting 24h MILP lookahead to preserve battery energy for future reserve shortfall minimization.",
+    "Round-trip battery efficiency losses (eta_chg * eta_dis = 84.64%) discourage battery throughput when diesel is already required for net demand coverage.",
+    "Hard minimum SOC physical limit (min_soc_pct = 20.0%, 40,000 Wh) strictly binds for 8,302 out of 8,784 hours (94.51%), physically preventing battery discharge."
+  ],
+  "evidence_strength": "DEFINITIVE_MATHEMATICAL_AND_TELEMETRY_PROOF",
+  "governance_status": "CATEGORY_A_AND_D (Governed Policy and Multi-Objective Priority Hierarchy Functioning Exactly as Specified)",
+  "modification_authorized": false
+}

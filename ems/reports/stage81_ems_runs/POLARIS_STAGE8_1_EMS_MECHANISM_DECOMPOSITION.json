@@ -1,0 +1,47 @@
+{
+  "investigation_status": "COMPLETE_READ_ONLY_DIAGNOSTIC",
+  "frozen_result_status": "IMMUTABLE_V1_BASELINE_ACCEPTED",
+  "v1_mechanism_status": "AGGREGATE_ASSOCIATION_ONLY",
+  "v1_causal_mechanism": "NOT_ESTABLISHED",
+  "experiment_rerun": false,
+  "origin_rerun": false,
+  "v1_result_modified": false,
+  "origin_count": 173,
+  "frozen_v1_summary": {
+    "control_diesel_fuel_liters": 4671.0,
+    "treatment_diesel_fuel_liters": 6447.44,
+    "mean_paired_difference_liters": 10.2684,
+    "median_paired_difference_liters": 5.66,
+    "bootstrap_95_ci": [
+      5.4795,
+      15.2113
+    ],
+    "wilcoxon_w": 5351.5,
+    "wilcoxon_p": 0.0013566,
+    "spearman_rho": -0.9198,
+    "spearman_p": 2.283e-71
+  },
+  "what_v1_establishes": {
+    "aggregate_outcome_difference": "Treatment used +10.2684 L/origin more diesel fuel than control under the controlled synthetic EMS environment.",
+    "secondary_differences": "Accompanied by lower renewable use (-79.46 kWh), lower curtailment (-120.43 kWh / -10.12%), and lower battery throughput (-64.65 kWh / -0.32 cycles).",
+    "heterogeneity": "Group P (95 origins) mean delta = +36.0633 L, Group N (77 origins) mean delta = -21.4230 L, Group Z (1 origin) = 0.00 L.",
+    "scientific_boundary": "V1 tells us WHAT happened at the aggregate outcome level, but not the complete timestep-level mechanism explaining WHY it happened."
+  },
+  "mae_reconciliation": {
+    "official_stage81_ood_benchmark_daytime_mae_w_m2": 36.1887,
+    "v1_replay_subset_allhours_treatment_mae_w_m2": 25.1281,
+    "v1_replay_subset_allhours_control_mae_w_m2": 174.2477,
+    "status": "RECONCILED"
+  },
+  "hypotheses_for_v2_testing": [
+    "HYPOTHESIS \u2014 REQUIRES V2 TELEMETRY: Diesel dispatch timing differences drive fuel increase",
+    "HYPOTHESIS \u2014 REQUIRES V2 TELEMETRY: Battery throughput reduction is a downstream consequence of diesel scheduling",
+    "HYPOTHESIS \u2014 REQUIRES V2 TELEMETRY: Renewable curtailment reduction is a downstream consequence of state changes"
+  ],
+  "v2_handoff": {
+    "next_step": "NEXT STEP \u2014 WHY DID DIESEL USE INCREASE?",
+    "v2_protocol_id": "STAGE8.1_EMS_MECHANISM_OBSERVABILITY_REPLAY_V2",
+    "v2_status": "DESIGNED_NOT_EXECUTED",
+    "v2_execution_authorized": false
+  }
+}

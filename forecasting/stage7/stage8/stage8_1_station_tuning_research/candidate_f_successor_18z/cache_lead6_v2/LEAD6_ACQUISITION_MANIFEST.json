@@ -1,0 +1,17 @@
+{
+  "all_711_complete": true,
+  "attempted": 711,
+  "by_status": {
+    "OK": 711
+  },
+  "contract_version": "v2",
+  "elapsed_s": null,
+  "failed": 0,
+  "lead": 6,
+  "max_outbound_attempts": 1500,
+  "ok": 711,
+  "planned_unique_origins": 711,
+  "skipped_over_bounds": 0,
+  "stopped_early_reason": null,
+  "total_outbound_attempts_used": 711
+}

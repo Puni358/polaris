@@ -1,0 +1,61 @@
+{
+  "stage": "STAGE 8.8B \u2014 CLOUD RADIATIVE-PATH GEOMETRY FORECASTING EXPERIMENT",
+  "date": "2026-09-12",
+  "decision": "REJECTED",
+  "control_model": "Stage 8.1 Champion (37 features)",
+  "candidate_model": "Stage 8.8B Candidate (40 features)",
+  "even_cv_metrics": {
+    "control_mae_w_m2": 35.270823,
+    "candidate_mae_w_m2": 35.417182,
+    "delta_mae_w_m2": 0.14636,
+    "control_nmae_pct": 36.2419,
+    "candidate_nmae_pct": 37.0364,
+    "delta_nmae_pp": 0.7946,
+    "control_rmse_w_m2": 56.761152,
+    "candidate_rmse_w_m2": 56.870775,
+    "delta_rmse_w_m2": 0.109623,
+    "control_bias_w_m2": 2.67498,
+    "candidate_bias_w_m2": 3.210776,
+    "delta_bias_w_m2": 0.535796,
+    "improved_folds": "2/5",
+    "max_fold_degradation_w_m2": 0.564104
+  },
+  "bootstrap": {
+    "seed": 42,
+    "resamples": 10000,
+    "mean_delta_mae_w_m2": 0.154597,
+    "ci_95_lower": -0.097347,
+    "ci_95_upper": 0.408509
+  },
+  "gates": {
+    "gate1_mae_threshold_minus_0_50": {
+      "pass": false,
+      "delta": 0.14636
+    },
+    "gate2_fold_consistency_4_of_5": {
+      "pass": false,
+      "improved_folds": 2
+    },
+    "gate3_worst_fold_degradation_0_50": {
+      "pass": false,
+      "max_degradation": 0.564104
+    },
+    "gate4_secondary_nmae_rmse": {
+      "pass": false,
+      "delta_nmae": 0.7946,
+      "delta_rmse": 0.109623
+    },
+    "gate5_causality_100pct": {
+      "pass": true
+    },
+    "gate6_control_reproduction": {
+      "pass": true,
+      "ctrl_mae": 35.270823
+    }
+  },
+  "odd_firewall_status": {
+    "odd_evaluated": false,
+    "odd_target_reads": 0,
+    "odd_metrics": {}
+  }
+}

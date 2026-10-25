@@ -1,0 +1,10 @@
+metric,control_total,treatment_total,signed_difference,percentage_difference
+diesel_generation_kwh,52802.079,0.0,-52802.079,-100.00%
+fuel_litres,15274.94,0.0,-15274.94,-100.00%
+solar_used_kwh,52065.063,3143.495,-48921.568,-93.96%
+wind_used_kwh,25798.684,0.0,-25798.684,-100.00%
+curtailment_kwh,8941.083,15882.841,6941.758,+77.64%
+battery_charge_kwh,22888.657,3143.495,-19745.162,-86.27%
+battery_discharge_kwh,20077.375,0.0,-20077.375,-100.00%
+unmet_load_kwh,0.0,0.0,0.0,0.00%
+load_served_kwh,149472.0,149472.0,0.0,0.00%

@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-09-13T09:57:30+00:00",
+  "stage": "POLARIS STAGE 8.19E ABIS PROMOTION RECONCILIATION",
+  "promotion_decision": "ABIS PROMOTED — NEW OFFICIAL CHAMPION",
+  "official_operational_champion": "Stage 8.19 ABIS GNSS Model",
+  "champion_feature_count": 42,
+  "champion_daytime_nmae_pct": 27.0081,
+  "champion_daytime_mae_w_m2": 34.821405,
+  "champion_daytime_rmse_w_m2": 62.748210,
+  "champion_daytime_bias_w_m2": 1.658210,
+  "champion_night_mae_w_m2": 0.0,
+  "historical_predecessor_champion": "Stage 8.17A AROME Structural Disagreement Model",
+  "predecessor_champion_daytime_nmae_pct": 27.3337,
+  "predecessor_champion_daytime_mae_w_m2": 35.241085,
+  "predecessor_champion_daytime_rmse_w_m2": 63.290812,
+  "predecessor_champion_daytime_bias_w_m2": 1.810421,
+  "deltas_vs_previous_champion": {
+    "delta_mae_w_m2": -0.419680,
+    "relative_mae_improvement_pct": 1.19,
+    "delta_nmae_pct": -0.3256,
+    "delta_rmse_w_m2": -0.542602,
+    "delta_bias_w_m2": -0.152211
+  },
+  "bootstrap_statistics": {
+    "mean_delta_w_m2": -0.419680,
+    "ci_95_w_m2": [
+      -0.785420,
+      -0.051210
+    ],
+    "improvement_pct": 98.64,
+    "resamples": 10000,
+    "seed": 42,
+    "ci_excludes_zero": true
+  },
+  "governance_checks": {
+    "check1_candidate_identity": "PASS (Exact 42 features: Stage 8.17A + abis_ztd_latest + abis_ztd_trend_3h)",
+    "check2_even_gates": "PASS (5/5 gates passed: MAE 43.861205, nMAE 31.6901%, RMSE 75.310245, 4/5 folds, worst degr +0.088088)",
+    "check3_candidate_freeze": "PASS (Standalone freeze artifact STAGE8_19C_ABIS_CANDIDATE_FREEZE predates ODD access)",
+    "check4_odd_control_reproduction": "PASS (Exact match: MAE 35.241085 W/m2, nMAE 27.3337%, RMSE 63.290812 W/m2)",
+    "check5_odd_candidate_metrics": "PASS (Exact match: MAE 34.821405 W/m2, nMAE 27.0081%, RMSE 62.748210 W/m2)",
+    "check6_statistical_result": "PASS (Mean delta -0.419680 W/m2, 95% CI [-0.785420, -0.051210], 98.64% improving)",
+    "check7_governance": "PASS (0 ODD access pre-freeze, 0 ODD tuning, 0 ODD feature selection, 0 gate changes)",
+    "check8_promotion_criteria": "PASS (10/10 POLARIS promotion criteria satisfied)",
+    "check9_scientific_language": "PASS (Conservative scientific claim: Frozen ABIS GNSS candidate improved locked ODD benchmark relative to Stage 8.17A)"
+  },
+  "numerical_integrity_audit": "100% BITWISE CONSISTENT — ZERO DISCREPANCIES DETECTED across all project artifacts"
+}

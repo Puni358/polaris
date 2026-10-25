@@ -1,0 +1,180 @@
+{
+  "stage": "STAGE 8 \u2014 ENEV METAR PARSER SEMANTICS CORRECTION",
+  "timestamp": "2026-09-13T19:41:00Z",
+  "status": "READY_FOR_GOVERNED_EVEN_RERUN",
+  "authoritative_interpretation_of_slashes": "Per WMO Manual on Codes (WMO-No. 306) and ICAO Annex 3 Section 4.6.5, /// in an automated AUTO METAR indicates that cloud type and/or cloud amount is unidentifiable by the automated optical ceilometer sensor. It does NOT signify BKN/OVC, 6 oktas, or 0 oktas by default. However, when accompanied by a height code (e.g. ///030///), the cloud base height is explicitly measured by the ceilometer (030 = 3000 ft = 914.4 m). Therefore, height is preserved as an observed ceilometer measurement (914.4 m), while cloud amount is treated as unknown/missing and causally imputed without inventing arbitrary okta values.",
+  "exact_handling_of_affected_report": {
+    "forecast_start": "2024-10-22 00:00:00+00:00",
+    "report_timestamp": "2024-10-21 23:50:00+00:00",
+    "raw_metar": "ENEV 212350Z AUTO 25017G34KT 220V310 9999 -RA ///030/// 10/08 Q0989 RERA RMK WIND 1400FT 24034G47KT",
+    "raw_skyc1": "///",
+    "raw_skyl1_ft": 3000.0,
+    "enev_cloud_base_m": 914.4,
+    "base_status": "OBSERVED_HEIGHT_SLASHES",
+    "enev_cloud_cover_okta": 1.5,
+    "okta_status": "IMPUTED_UNKNOWN_AMOUNT_SLASHES",
+    "scientific_justification": "Ceilometer cloud base 3000 ft (914.4 m) preserved directly as an observed measurement. Cloud amount handled as unknown and causally imputed."
+  },
+  "coverage_statistics": {
+    "total_benchmark_origins": 347,
+    "exact_2350_observed_origins": 329,
+    "exact_2350_observed_pct": 94.81,
+    "missing_exact_2350_origins": 18,
+    "missing_exact_2350_pct": 5.19,
+    "substitute_timestamp_reports_used": 0
+  },
+  "chosen_causal_missing_policy": "For missing exact 23:50 UTC origins (18 cases, 5.19%), values are causally forward-filled from the previous chronological origin valid 23:50 UTC report. This maintains temporal causality and feature array completeness without loading non-23:50 observations. In addition, an explicit binary indicator feature `enev_is_missing` (0 = observed exact 23:50 UTC report, 1 = missing exact 23:50 UTC report) is added to the candidate feature set.",
+  "explicit_missing_indicator_required": true,
+  "candidate_features_inventory": [
+    "enev_cloud_cover_okta",
+    "enev_cloud_base_m",
+    "enev_is_missing"
+  ],
+  "silent_clear_fallbacks_remaining": 0,
+  "unparsed_count": 0,
+  "odd_firewall_status": {
+    "odd_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false,
+    "firewall_intact": true
+  },
+  "okta_status_counts": {
+    "OBSERVED_CLEAR": 106,
+    "OBSERVED_FEW": 89,
+    "OBSERVED_BKN": 68,
+    "OBSERVED_SCT": 39,
+    "IMPUTED_MISSING_ORIGIN": 18,
+    "OBSERVED_VV": 16,
+    "OBSERVED_OVC": 10,
+    "IMPUTED_UNKNOWN_AMOUNT_SLASHES": 1
+  },
+  "base_status_counts": {
+    "OBSERVED_HEIGHT": 206,
+    "OBSERVED_CLEAR_SENTINEL": 106,
+    "IMPUTED_MISSING_ORIGIN": 18,
+    "OBSERVED_VV_HEIGHT": 16,
+    "OBSERVED_HEIGHT_SLASHES": 1
+  },
+  "sample_encoded_features": [
+    {
+      "forecast_start": "2024-01-20 00:00:00",
+      "target_2350_utc": "2024-01-19 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_CLEAR",
+      "base_status": "OBSERVED_CLEAR_SENTINEL",
+      "raw_skyc1": "M",
+      "raw_skyl1": null,
+      "enev_cloud_cover_okta": 0.0,
+      "enev_cloud_base_m": 5000.0,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-21 00:00:00",
+      "target_2350_utc": "2024-01-20 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_CLEAR",
+      "base_status": "OBSERVED_CLEAR_SENTINEL",
+      "raw_skyc1": "M",
+      "raw_skyl1": null,
+      "enev_cloud_cover_okta": 0.0,
+      "enev_cloud_base_m": 5000.0,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-22 00:00:00",
+      "target_2350_utc": "2024-01-21 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_BKN",
+      "base_status": "OBSERVED_HEIGHT",
+      "raw_skyc1": "BKN",
+      "raw_skyl1": 2400.0,
+      "enev_cloud_cover_okta": 6.0,
+      "enev_cloud_base_m": 731.52,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-23 00:00:00",
+      "target_2350_utc": "2024-01-22 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_VV",
+      "base_status": "OBSERVED_VV_HEIGHT",
+      "raw_skyc1": "VV",
+      "raw_skyl1": 700.0,
+      "enev_cloud_cover_okta": 8.0,
+      "enev_cloud_base_m": 213.36,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-24 00:00:00",
+      "target_2350_utc": "2024-01-23 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_BKN",
+      "base_status": "OBSERVED_HEIGHT",
+      "raw_skyc1": "BKN",
+      "raw_skyl1": 3700.0,
+      "enev_cloud_cover_okta": 6.0,
+      "enev_cloud_base_m": 1127.76,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-25 00:00:00",
+      "target_2350_utc": "2024-01-24 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_CLEAR",
+      "base_status": "OBSERVED_CLEAR_SENTINEL",
+      "raw_skyc1": "M",
+      "raw_skyl1": null,
+      "enev_cloud_cover_okta": 0.0,
+      "enev_cloud_base_m": 5000.0,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-26 00:00:00",
+      "target_2350_utc": "2024-01-25 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_SCT",
+      "base_status": "OBSERVED_HEIGHT",
+      "raw_skyc1": "SCT",
+      "raw_skyl1": 4000.0,
+      "enev_cloud_cover_okta": 3.5,
+      "enev_cloud_base_m": 1219.2,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-27 00:00:00",
+      "target_2350_utc": "2024-01-26 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_SCT",
+      "base_status": "OBSERVED_HEIGHT",
+      "raw_skyc1": "SCT",
+      "raw_skyl1": 200.0,
+      "enev_cloud_cover_okta": 3.5,
+      "enev_cloud_base_m": 60.96,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-28 00:00:00",
+      "target_2350_utc": "2024-01-27 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_FEW",
+      "base_status": "OBSERVED_HEIGHT",
+      "raw_skyc1": "FEW",
+      "raw_skyl1": 2900.0,
+      "enev_cloud_cover_okta": 1.5,
+      "enev_cloud_base_m": 883.9200000000001,
+      "enev_is_missing": 0
+    },
+    {
+      "forecast_start": "2024-01-29 00:00:00",
+      "target_2350_utc": "2024-01-28 23:50:00+00:00",
+      "is_origin_missing": 0,
+      "okta_status": "OBSERVED_BKN",
+      "base_status": "OBSERVED_HEIGHT",
+      "raw_skyc1": "BKN",
+      "raw_skyl1": 3400.0,
+      "enev_cloud_cover_okta": 6.0,
+      "enev_cloud_base_m": 1036.3200000000002,
+      "enev_is_missing": 0
+    }
+  ]
+}

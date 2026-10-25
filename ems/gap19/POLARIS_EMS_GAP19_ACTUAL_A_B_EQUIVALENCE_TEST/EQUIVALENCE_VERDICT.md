@@ -1,0 +1,24 @@
+# EQUIVALENCE VERDICT
+
+## OFFICIAL EQUIVALENCE VERDICT FOR POLARIS EMS GAP19
+
+```text
+GAP19_SOLVER_ARCHITECTURE =
+OPTION_B_SELECTED_BY_HUMAN_GOVERNANCE
+
+OPTION_A =
+INDEPENDENT_REFERENCE_IMPLEMENTATION
+
+OPTION_B =
+NATIVE_HIGHS_IMPLEMENTATION_CANDIDATE
+
+ACTUAL_POLARIS_A_B_EQUIVALENCE =
+ESTABLISHED
+
+OPTION_B_IMPLEMENTATION =
+NOT_AUTHORIZED
+```
+
+### VERDICT STATEMENT
+
+> **The tested native HiGHS Option B implementation is empirically equivalent to the independently constructed Option A lexicographic reference for the frozen POLARIS MILP instance under the declared test configuration.**

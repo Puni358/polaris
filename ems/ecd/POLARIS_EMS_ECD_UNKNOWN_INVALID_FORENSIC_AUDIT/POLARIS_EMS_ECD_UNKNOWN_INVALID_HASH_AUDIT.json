@@ -1,0 +1,27 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_UNKNOWN_INVALID_HASH_AUDIT",
+  "generated_at": "2026-09-23T19:04:00Z",
+  "status": "SEALED",
+  "artifact_hashes": [
+    {
+      "file": "POLARIS_EMS_ECD_UNKNOWN_INVALID_FORENSIC_REPORT.md",
+      "sha256": "94d288f92189df2d44fe2651cb9c928e26e28aaf5a22ee78c9c966a7075792f2"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_UNKNOWN_INVALID_EVIDENCE_TABLE.md",
+      "sha256": "9e6f430997c9647cb880ed2040ba9425fa4254e3053f302e8fc21f32671ad7f8"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_UNKNOWN_INVALID_CONTROL_FLOW.md",
+      "sha256": "d5510d9d7e3fad7d9138e3cb9e8cdcd377a72983ea16956ec861ee9981fd9d00"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_UNKNOWN_INVALID_GOVERNANCE_STATUS.json",
+      "sha256": "ca21612448152677c506f07d780f37c88b21d196c506655d8a1e969e2ce58c27"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_UNKNOWN_INVALID_EVIDENCE_CORRECTION.md",
+      "sha256": "cc9c0073e6a4462fc4804c4f3047fc33dd1a2223f9cc361c99e46cc9262040a1"
+    }
+  ]
+}

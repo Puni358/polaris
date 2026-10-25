@@ -1,0 +1,226 @@
+{
+  "checkpoint": "PHASE10_CANDIDATE_C_DESIGN_CHECKPOINT",
+  "status": "DESIGN_FROZEN_PENDING_TRAINING",
+  "trained": false,
+  "odd_accessed": false,
+  "date": "September 2026",
+  "odd_firewall": "INTACT",
+  "protected_champion": "Stage_8.1_37_feature_HGB_NOT_MODIFIED",
+
+  "provenance_completeness_notice": {
+    "session_has_local_filesystem_access": false,
+    "gaps_found": [
+      {
+        "item": "Stage 5.2 (Architecture A - GBDT residual corrector)",
+        "found_in_uploaded_documents": false,
+        "source_of_description": "user's own characterization in the Candidate C request message, not an independently verified design doc"
+      },
+      {
+        "item": "Phase 10 Candidate B",
+        "found_in_uploaded_documents": "partial - two one-line mentions inside Candidate A checkpoint only, no design checkpoint",
+        "source_of_description": "updatePHASE10_CANDIDATE_A_DESIGN_CHECKPOINT.md lines referencing 'symmetric multi-task embedding (permutation invariant)'"
+      },
+      {
+        "item": "Stage 4: Horizon-Adaptive Cloud-Damped Clear-Sky Ensemble",
+        "found_in_uploaded_documents": "not under this exact name",
+        "closest_matches": ["Stage 4.1 Cloud Regime Affine", "Stage 4.3 Ensemble Hybrid Dynamic Ridge Blend"],
+        "detail_level": "one-line summary table entries only, no design checkpoint or implementation file"
+      }
+    ],
+    "recommendation": "Upload Stage 4 / Stage 5.2 / Candidate B design checkpoints for a fully independently-verified audit if stricter provenance is required before training."
+  },
+
+  "audit_summary": [
+    {
+      "id": "stage_4",
+      "source": "history table only, no design doc",
+      "mechanism": "cloud-regime affine adjustment (4.1); dynamic Ridge blend of Stage 3B/3C/affine (4.3)",
+      "target": "absolute SW_IN via blended predictions",
+      "correction": "linear blend / affine, not a learned nonlinear residual net",
+      "status": "superseded, pre-dates current EVEN/ODD 173/174 gate protocol"
+    },
+    {
+      "id": "stage_5_2",
+      "source": "user-supplied description only, no doc found",
+      "mechanism": "presumed second-stage GBDT regressing (actual - first_stage_pred), added back to frozen anchor",
+      "target": "residual",
+      "correction": "additive, tree-based, row-independent",
+      "status": "referenced only as the pattern to avoid duplicating"
+    },
+    {
+      "id": "phase9_candidate_2",
+      "source": "PHASE9_MASTER_CLOSURE_CHECKPOINT.json",
+      "mechanism": "tested disagreement_fold as standalone correlate of error",
+      "target": "none - correlation study only",
+      "correction": "none built",
+      "status": "REAL_BUT_PARTIAL_NOT_STANDALONE; explicit note that directional correction paired with disagreement was not designed or tested",
+      "key_evidence": "r=0.41 with |error| magnitude; Pearson -0.12 / Spearman -0.07 with signed error"
+    },
+    {
+      "id": "candidate_b",
+      "source": "two one-line mentions only, no design doc",
+      "mechanism": "presumed shared trunk + horizon embedding, joint multi-horizon regression",
+      "target": "absolute SW_IN jointly across horizons",
+      "correction": "none - single-stage, no anchor/residual decomposition",
+      "status": "result unknown to this session"
+    },
+    {
+      "id": "candidate_a",
+      "source": "full design checkpoints (original + 6113-param corrected)",
+      "mechanism": "bidirectional GRU over 24-horizon sequence",
+      "target": "absolute SW_IN per horizon",
+      "correction": "none - single-stage sequence regression",
+      "status": "design frozen at 6113 params, not yet trained"
+    }
+  ],
+
+  "duplication_risks_identified": [
+    "second-stage GBDT residual regression on the full tabular feature set duplicates Stage 5.2",
+    "disagreement_fold as a plain input feature with no directional mechanism duplicates Phase 9 Candidate 2 territory",
+    "single-stage symmetric joint multi-horizon regression collapses into Candidate B",
+    "any recurrent/attention coupling across the 24-horizon sequence collapses into Candidate A",
+    "linear/affine blending of upstream predictions duplicates Stage 4.1/4.3"
+  ],
+
+  "identified_gap": "Phase 9 Candidate 2 explicitly logged that pairing disagreement_fold with a learned directional correction had not been designed or tested. No audited approach does this.",
+
+  "candidate_c_proposal": {
+    "name": "Disagreement-Gated Residual MLP",
+    "core_idea": "Frozen physical anchor plus a small MLP producing a residual magnitude and a sigmoid gate from a shared hidden layer; applied correction is gate * magnitude, letting the network suppress correction when models agree and apply it when they disagree.",
+
+    "anchor": {
+      "source_feature": "pred_stage4_fold",
+      "frozen": true,
+      "trained_or_modified": false,
+      "units_for_addition": "raw W/m^2, read directly from existing feature column",
+      "also_used_standardized_as_network_input": true,
+      "new_feature_created": false
+    },
+
+    "architecture": {
+      "input_dim": 39,
+      "input_type": "standardized, row-wise (no sequence)",
+      "shared_trunk": {"type": "Dense", "in": 39, "out": 16, "activation": "ReLU", "dropout": 0.2},
+      "magnitude_head": {"type": "Dense", "in": 16, "out": 1, "activation": "linear"},
+      "gate_head": {"type": "Dense", "in": 16, "out": 1, "activation": "sigmoid"},
+      "correction_formula": "gate(x) * magnitude(x)",
+      "output_formula": "anchor + correction"
+    },
+
+    "first_stage_status": "FROZEN - anchor is a fixed input value, not a model parameter; no gradients flow into producing it",
+
+    "parameter_count": {
+      "shared_dense_39_to_16": {"weights": 624, "bias": 16, "total": 640},
+      "magnitude_head_16_to_1": {"weights": 16, "bias": 1, "total": 17},
+      "gate_head_16_to_1": {"weights": 16, "bias": 1, "total": 17},
+      "total_parameters": 674,
+      "verification_method": "direct PyTorch instantiation (nn.Linear x3) + sum(p.numel() for p in model.parameters()), to be confirmed at implementation time; NOT YET RUN"
+    },
+
+    "training_configuration": {
+      "loss": "MAE(y_hat, actual_SW_IN)",
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "beta_1": 0.9,
+      "beta_2": 0.999,
+      "epsilon": 1e-07,
+      "weight_decay": 0.0001,
+      "dropout": 0.2,
+      "hyperparameter_sweep_performed": false,
+      "hyperparameters_reused_from": "Candidate A locked configuration",
+      "batch_construction": "8 origins per batch (192 rows), rows processed independently, origin-grouped for protocol consistency only",
+      "max_epochs": 300,
+      "early_stopping_patience": 20
+    },
+
+    "preprocessing": {
+      "scaler": "StandardScaler",
+      "fit_on": "inner-training-fold origins only",
+      "anchor_scaling": "kept raw/unstandardized separately for the additive step; standardized copy also included among the 39 network inputs"
+    },
+
+    "fold_protocol": {
+      "outer_cv": "5-fold GroupKFold by origin_id",
+      "split": "EVEN_only_173_origins"
+    },
+
+    "inner_validation_protocol": {
+      "fraction": 0.2,
+      "seed_formula": "INNER_SPLIT_BASE_SEED + fold_idx",
+      "inner_split_base_seed": 42,
+      "deterministic": true,
+      "leakage_guarantee": "internal validation origins are a subset of that fold's training pool; test-fold origins never used for early stopping"
+    },
+
+    "random_seeds": {
+      "model_init_and_dropout": "torch.manual_seed(42 + fold_idx) per outer fold",
+      "recorded_per_fold_at_training_time": "not yet run"
+    },
+
+    "causal_justification": "Zero new features or data sources introduced; all 39 inputs, including pred_stage4_fold and disagreement_fold, were already causally verified at t0 in the Candidate A design checkpoint's causality audit.",
+
+    "distinctiveness": {
+      "vs_stage_5_2": "neural (small MLP) not GBDT; explicit multiplicative gate structure not guaranteed to emerge from generic tree splits; purpose-built around the disagreement-direction question",
+      "vs_phase9_candidate2": "operationalizes the explicitly-flagged-as-untested directional correction, via a learned gate rather than a raw input feature",
+      "vs_candidate_b": "anchor + gated-residual decomposition, row-wise and asymmetric, vs. single-stage symmetric joint regression with no anchor",
+      "vs_candidate_a": "no sequence coupling at all; distinguishing structure is the anchor/gate/residual decomposition, not temporal modeling",
+      "worth_testing_despite_a_b": "A and B both compete on the same axis (single learned function predicting the absolute target end-to-end). Candidate C never attempts that axis - it tests a structurally different, previously-flagged-but-unbuilt hypothesis, independently informative regardless of A/B outcomes"
+    }
+  },
+
+  "locked_protocol_unchanged": {
+    "total_origins": 347,
+    "even_origins": 173,
+    "odd_origins": 174,
+    "even_only_development": true,
+    "cross_validation": "5_fold_GroupKFold_by_origin",
+    "nested_inner_validation": true,
+    "odd_firewall": "intact, not accessed",
+    "gates": "G1-G6 unchanged",
+    "control_baseline_even": {
+      "mae_wm2": 26.3668,
+      "nmae_pct": 20.4507,
+      "rmse_wm2": 55.2513
+    },
+    "no_feature_additions": true,
+    "no_arbitrary_hyperparameter_sweeps": true,
+    "odd_evaluation_condition": "only if all EVEN gates pass for Candidate C",
+    "champion_protected": true
+  },
+
+  "do_not_repeat": [
+    {
+      "pattern": "second-stage GBDT residual regression on full tabular feature set",
+      "prior_use": "Stage 5.2 (per user description)",
+      "how_candidate_c_avoids_it": "small MLP with explicit gated-magnitude structure, not a tree ensemble"
+    },
+    {
+      "pattern": "disagreement as a raw/plain input feature with no directional mechanism",
+      "prior_use": "Phase 9 Candidate 2",
+      "how_candidate_c_avoids_it": "routes disagreement-relevant information through a dedicated sigmoid gate scaling a learned correction"
+    },
+    {
+      "pattern": "single-stage symmetric multi-horizon joint regression",
+      "prior_use": "Candidate B (as described)",
+      "how_candidate_c_avoids_it": "explicitly two-stage: frozen anchor + gated residual"
+    },
+    {
+      "pattern": "sequence/temporal coupling across the 24 horizons",
+      "prior_use": "Candidate A",
+      "how_candidate_c_avoids_it": "strictly row-wise, no recurrence or attention over horizons"
+    },
+    {
+      "pattern": "linear/affine blend of upstream predictions",
+      "prior_use": "Stage 4.1 / 4.3",
+      "how_candidate_c_avoids_it": "learned nonlinear (ReLU + sigmoid gate) correction, not a linear blend"
+    }
+  ],
+
+  "next_step": "AWAITING_EXPLICIT_TRAINING_AUTHORIZATION",
+  "notes": [
+    "This checkpoint documents a design freeze only.",
+    "Parameter count (674) is a hand/formula calculation and has NOT been confirmed by direct PyTorch instantiation - to be verified at implementation time before training.",
+    "No training, no ODD access, no new features, no hyperparameter sweep occurred during this design phase.",
+    "Do not proceed to implementation or training without explicit user authorization."
+  ]
+}

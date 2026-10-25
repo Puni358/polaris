@@ -1,0 +1,56 @@
+{
+  "note": "NODE-LIMITED SOLUTIONS ARE NOT FINAL/OPTIMAL -- diagnostic only.",
+  "results": [
+    {
+      "node_limit": 100,
+      "status": 4,
+      "success": false,
+      "message": "The HiGHS status code was not recognized. (HiGHS Status 16: Solution limit reached)",
+      "objective": 31132.143780023634,
+      "mip_gap": 0.045368478668022,
+      "mip_node_count": 100,
+      "mip_dual_bound": 29719.7257790491,
+      "solve_time_ms": 289.2535150022013,
+      "raw_hour0": {
+        "p_chg": -0.0,
+        "p_dis": 35942.9,
+        "u_chg": 0.0,
+        "u_dis": 1.0
+      }
+    },
+    {
+      "node_limit": 1000,
+      "status": 4,
+      "success": false,
+      "message": "The HiGHS status code was not recognized. (HiGHS Status 16: Solution limit reached)",
+      "objective": 31132.143780023634,
+      "mip_gap": 0.04116639082497504,
+      "mip_node_count": 1000,
+      "mip_dual_bound": 29850.545781955123,
+      "solve_time_ms": 1032.818263003719,
+      "raw_hour0": {
+        "p_chg": -0.0,
+        "p_dis": 35942.9,
+        "u_chg": 0.0,
+        "u_dis": 1.0
+      }
+    },
+    {
+      "node_limit": 10000,
+      "status": 4,
+      "success": false,
+      "message": "The HiGHS status code was not recognized. (HiGHS Status 16: Solution limit reached)",
+      "objective": 31132.143780023634,
+      "mip_gap": 0.03691293647154791,
+      "mip_node_count": 10000,
+      "mip_dual_bound": 29982.96493444778,
+      "solve_time_ms": 5455.698908001068,
+      "raw_hour0": {
+        "p_chg": -0.0,
+        "p_dis": 35942.9,
+        "u_chg": 0.0,
+        "u_dis": 1.0
+      }
+    }
+  ]
+}

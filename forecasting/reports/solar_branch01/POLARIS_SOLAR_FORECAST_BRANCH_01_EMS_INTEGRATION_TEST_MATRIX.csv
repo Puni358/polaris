@@ -1,0 +1,21 @@
+test_id,category,description,input,expected_result,actual_result,status,evidence_artifact,governance_relevance
+INT_01,MODEL_LOAD,Verify HGB model loads from serialized joblib artifact,model.joblib,24 MultiOutput Estimators Loaded,24 Estimators Loaded,PASS,RUN_BRANCH01_CANDIDATE_A_HGB/model.joblib,Model Artifact Integrity
+INT_02,HASH,Verify model joblib SHA-256 matches freeze manifest,model.joblib SHA,65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781,Match,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_MODEL_FREEZE_MANIFEST.json,Immutability Assurance
+INT_03,FEATURE_SCHEMA,Verify 18-feature schema and column ordering,Feature Vector X(t),18 Float64 Features Exact Order,Match,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_FEATURE_CONTRACT.csv,Feature Contract Compliance
+INT_04,TARGET_SCHEMA,Verify 24 horizon prediction vector SW_IN(t+1..t+24),Feature Matrix,"Shape (N, 24) W/m^2","Shape (N, 24)",PASS,artifacts/model_runs/RUN_BRANCH01_CANDIDATE_A_HGB/validation_predictions.csv,Target Contract Compliance
+INT_05,TIMESTAMP,Verify ISO-8601 UTC timestamp monotonicity and alignment,Forecast Origins,Strict UTC Monotonic 1h Step,Match,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_SPLIT_RECONCILIATION.csv,Temporal Integrity
+INT_06,CAUSALITY,Verify information_available_time <= forecast_origin,Runtime Features,Zero Future Leakage,Pass,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_PHASE3_CAUSALITY_AUDIT.md,Causality Firewall
+INT_07,NWP,Verify NWP issue run causality (t_issue <= t_origin),NWP Cache Index,Effective Lead 1h..42h,Pass,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_NWP_CAUSAL_CONTRACT.csv,NWP Causality
+INT_08,CLEARSKY,Verify clear-sky feature lookup uses origin t only,Clear-Sky Series,Causal Origin Clear-Sky,Pass,PASS,clear_sky/nuolja_clearsky_2024.csv,Clear-Sky Causality
+INT_09,FORECASTBUNDLE,Verify ForecastBundle 1.0.0 creation with W/m^2 and W fields,Prediction Vector,Valid ForecastBundle Object,Valid,PASS,system/schemas/forecast_bundle.py,Schema Compatibility
+INT_10,FORECASTENGINE,Verify Branch01ForecastEngine predict() interface,StationState + Context,Returns ForecastBundle,Valid,PASS,system/forecasting/interface/base.py,Interface Compatibility
+INT_11,TRUTH_FIREWALL,Verify Digital Twin simulator truth is completely isolated,Simulator Object,Zero Truth Access,Isolated,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_MODEL_EVIDENCE_AUDIT.md,Truth Firewall
+INT_12,FAIL_CLOSED,Verify NaN/Inf input raises exception and invalidates forecast,NaN Feature Vector,ModelGovernanceError / INVALID,Fails Closed,PASS,forecasting/solar_branch_01/implementation/source_validator.py,Runtime Robustness
+INT_13,PHYSICAL_VALIDITY,Verify predictions are non-negative (SW_IN >= 0.0 W/m^2),Predictions,SW_IN >= 0.0 W/m^2,SW_IN >= 0.0,PASS,system/schemas/forecast_bundle.py,Physical Guard
+INT_14,OPTIMIZER_INTERFACE,Verify EnergyOptimizer consumes ForecastBundle without math changes,ForecastBundle,Zero MILP Formula Changes,Untouched,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_INTEGRATION_INTERFACE_AUDIT.csv,Optimizer Preservation
+INT_15,DISPATCHPLAN,Verify DispatchPlan schema remains unchanged,Optimizer Output,Schema Version 1.0.0 Untouched,Untouched,PASS,system/schemas/dispatch_plan.py,Contract Preservation
+INT_16,DIGITAL_TWIN,Verify DigitalTwinSimulator interface remains unchanged,Simulator Config,Zero Simulator Changes,Untouched,PASS,system/simulation/digital_twin.py,Simulator Isolation
+INT_17,STAGE8_1_SEPARATION,Verify s81_solar.py SHA-256 remains 100% identical,s81_solar.py SHA,d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c,Match,PASS,system/forecasting/implementations/s81_solar.py,Stage 8.1 Firewall
+INT_18,DETERMINISM,Verify identical inputs yield identical outputs (Replay diff <= 1e-5),"X_val, X_test",Diff = 0.0 W/m^2,Diff < 1e-13,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_MODEL_EVIDENCE_AUDIT.md,Reproducibility
+INT_19,PROVENANCE,Verify ForecastBundle metadata records model SHA and run ID,ForecastBundle Metadata,Traceable to Run & Model SHA,Traceable,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_MODEL_FREEZE_MANIFEST.json,Traceability
+INT_20,ROLLBACK,Verify fallback behavior policy on invalid forecast,Invalid Forecast,FALLBACK_POLICY = REQUIRES_SEPARATE_GOVERNANCE,Governed Policy Required,PASS,POLARIS_SOLAR_FORECAST_BRANCH_01_EMS_INTEGRATION_TEST_PLAN.md,Fail-Safe Boundary

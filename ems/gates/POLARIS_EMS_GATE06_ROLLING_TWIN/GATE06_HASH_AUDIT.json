@@ -1,0 +1,17 @@
+{
+  "gate": "GATE-06",
+  "subject": "ROLLING DIGITAL TWIN STATE + TRUTH FIREWALL VALIDATION",
+  "cycle_count": 24,
+  "source_modifications": 1,
+  "status": "SEALED",
+  "test_fixture_file": "tests/test_gate06_rolling_twin_fixture.py",
+  "test_fixture_results": "6_PASSED_OF_6",
+  "full_suite_results": "47_PASSED_OF_47",
+  "file_hashes": {
+    "GATE06_GOVERNANCE_TRACE.md": "6931a8c88533c3fd99ce47ea46274b1e5149ba5a5c10d85b0b4b9bea8ad4353e",
+    "GATE06_RESULTS.md": "7cbb17c03426eda1d57346cb857975e205c808b81d5b9cc8b40ea3b165f19401",
+    "GATE06_ROLLING_STATE_TRACE.md": "bacf5a4eb6ac4c0279ed91a618f0be93c7c461ed3d2e8a450a38a7c750f2a359",
+    "GATE06_STATUS.md": "d97949d3bbf0d246c7449d80befdf04f97540cd2e8f28cf6e0ad46bd911304eb",
+    "GATE06_TRUTH_FIREWALL_AUDIT.md": "f204e8f0c848d8a56ad62779c978d5f4284149ba9c1c452f4039d61a33685b0e"
+  }
+}

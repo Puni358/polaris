@@ -1,0 +1,43 @@
+audit_document,05_HIGHS_NATIVE_CAPABILITY_AUDIT
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,"HiGHS C++ API documentation, highspy Python package documentation, HiGHS GitHub source"
+generation_mode,READ_ONLY_DOCUMENTATION_AND_SOURCE_REVIEW
+execution_performed,FALSE
+
+# ============================================================
+# HIGHS NATIVE CAPABILITY AUDIT
+# DISTINGUISHED FROM SCIPY API CAPABILITY
+# ============================================================
+
+# IMPORTANT GOVERNANCE NOTE:
+# HiGHS is the underlying C++ solver used by scipy.optimize.milp.
+# HiGHS also has its own direct Python binding: highspy (pip install highspy).
+# These are two SEPARATE access paths to the same solver engine.
+# This document audits what HiGHS itself supports, NOT what scipy exposes.
+
+capability_item,highs_native_supports,evidence_basis,confidence_level,notes
+Single-objective MILP (minimize c^T x),YES,"Core HiGHS functionality. Used by scipy.optimize.milp. Documented and production-tested.",CONFIRMED,"Standard LP/MILP solving — the current POLARIS path."
+Multiple sequential MILP solves (Option A pattern),YES,"HiGHS can solve the same model multiple times with modified objective vectors. API: Highs.changeColCost() Highs.run(). Each call is an independent MILP solve.",CONFIRMED,"Option A implementation pattern: solve Stage 1 → lock objective → solve Stage 2 etc."
+Objective constraint (epsilon-constraint for lex),YES,"After solving Stage k, the optimal value z_k* can be added as a new inequality constraint via Highs.addRow() before solving Stage k+1.",CONFIRMED,"Standard epsilon-constraint method. Mathematically equivalent to sequential objective-locking."
+Native multi-objective optimization (parallel simultaneous),CONDITIONAL,"HiGHS 1.5+ introduced experimental multi-objective LP (not MILP) support via the 'multi-objective' model type. As of HiGHS 1.x stable releases, native multi-objective for MILP is NOT documented as a stable production feature.",CONDITIONAL_NOT_FOR_MILP,"Critical distinction: HiGHS multi-objective LP ≠ HiGHS multi-objective MILP. POLARIS uses MILP (binary variables). Multi-objective MILP via a single HiGHS call is not confirmed as a stable HiGHS feature."
+Lexicographic optimization via single API call,NOT_CONFIRMED,"No documented single-call lexicographic MILP API exists in HiGHS stable releases (1.x). Lexicographic optimization in HiGHS requires iterative sequential solves at the application layer.",NOT_CONFIRMED_IN_HIGHS_STABLE,"This was the key contested claim in prior governance documents."
+highspy Python package access,YES_IF_INSTALLED,"highspy provides direct Python access to HiGHS C++ API without scipy wrapper. Enables Highs() object model construction. NOT currently installed or used in POLARIS.",CONFIRMED_API_EXISTS_NOT_INSTALLED,"pip install highspy; 'import highspy' — not present in POLARIS .venv as of audit date."
+addLinearObjective() or equivalent multi-objective setter,UNDER_INVESTIGATION,"HiGHS C++ API includes experimental multi-objective support in development branches. The stable highspy API exposes: setObjectiveSense() passLinearObjective() — these are single-objective setters. Multi-objective setters in stable highspy: not confirmed.",UNCERTAIN_REQUIRES_VERSION_CHECK,"Any claim that HiGHS natively supports multi-objective via a single API call requires version-specific evidence."
+Integer programming with multiple objectives,NOT_CONFIRMED_STABLE,"HiGHS development roadmap mentions multi-objective but stable MILP multi-objective is not documented in HiGHS 1.5/1.6 release notes as a production feature.",NOT_CONFIRMED,"Governance-safe position: treat as unconfirmed until version-specific evidence is provided."
+Accessing HiGHS via scipy multi-objective extension,NOT_POSSIBLE,"scipy.optimize.milp wrapper does not pass multi-objective parameters to HiGHS regardless of HiGHS native capability.",CONFIRMED,"The scipy API layer is the binding constraint regardless of HiGHS native capability."
+
+# ============================================================
+# VERSION DEPENDENCY NOTE
+# ============================================================
+highs_version_relevance,"HiGHS capabilities vary by version. POLARIS uses HiGHS via scipy. The scipy version in use determines which HiGHS version is bundled. Without executing 'scipy.__version__' and checking the bundled HiGHS version, the exact HiGHS version in POLARIS cannot be confirmed from static analysis alone."
+highs_version_determination_method,"Would require: python3 -c 'import scipy; print(scipy.__version__)' then cross-reference scipy version to bundled HiGHS version. This is an EXECUTABLE command — not performed under this read-only audit."
+governance_implication,"Version dependency creates an open item: HiGHS multi-objective capability claims MUST be qualified by version. Generic 'HiGHS supports multi-objective' claims are not governance-grade without version evidence."
+
+# ============================================================
+# SUMMARY: HIGHS NATIVE CAPABILITY BOUNDARY
+# ============================================================
+summary_1,"HiGHS natively supports sequential single-objective MILP solving (Option A pattern) via its own API."
+summary_2,"HiGHS does NOT expose a confirmed stable single-call native lexicographic MILP API as of HiGHS 1.x stable releases."
+summary_3,"HiGHS multi-objective LP support exists experimentally but multi-objective MILP (relevant to POLARIS binary variables) is not confirmed stable."
+summary_4,"Accessing any HiGHS native multi-objective feature requires bypassing scipy.optimize.milp and using highspy or C++ API directly."
+summary_5,"The current POLARIS implementation uses scipy.optimize.milp — it accesses HiGHS through the scipy wrapper only."

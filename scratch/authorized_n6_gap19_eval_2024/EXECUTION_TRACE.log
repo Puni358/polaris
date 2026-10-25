@@ -1,0 +1,43 @@
+2026-10-21 02:41:56,212 [INFO] ================================================================================
+2026-10-21 02:41:56,212 [INFO] POLARIS — FULL END-TO-END N6 + GAP19 EVALUATION (2024 DATASET)
+2026-10-21 02:41:56,212 [INFO] Authorized Scope: EXECUTE_N6_2024_END_TO_END
+2026-10-21 02:41:56,212 [INFO] ================================================================================
+2026-10-21 02:41:56,212 [INFO] Verifying governance invariants and cryptographic asset hashes...
+2026-10-21 02:41:56,215 [INFO]   [OK] N6 Model SHA-256 verified: b1b54c93e2dbefdc...
+2026-10-21 02:41:56,215 [INFO]   [OK] CANDIDATE_N_MANIFEST winner: null invariant confirmed.
+2026-10-21 02:41:56,216 [INFO]   [OK] H1.0 Fixture SHA-256 verified: 762297aae21c0cb9...
+2026-10-21 02:41:56,216 [INFO] Loading subsystem configs and instantiating real components...
+2026-10-21 02:41:56,256 [INFO] Loaded H1.0 fixture: 8784 records (2024 canonical)
+2026-10-21 02:41:56,288 [INFO] Loaded candidate_k clean matrix: 347 00:00 UTC origins
+2026-10-21 02:41:57,557 [INFO] 
+================================================================================
+2026-10-21 02:41:57,557 [INFO] PHASE 3: MODE A — REPRESENTATIVE SMOKE SIMULATION (2024-06-01T00:00:00Z, index 3648)
+2026-10-21 02:41:57,557 [INFO] ================================================================================
+2026-10-21 02:41:58,440 [INFO] Smoke Run Results:
+2026-10-21 02:41:58,441 [INFO]   Candidate N6 Solver Status:   OPTIMAL
+2026-10-21 02:41:58,441 [INFO]   Candidate N6 Router Mode:     NORMAL
+2026-10-21 02:41:58,441 [INFO]   Candidate N6 Diesel Consumed: 36.1971 L
+2026-10-21 02:41:58,441 [INFO]   Candidate N6 Diesel Run Hours:3 h
+2026-10-21 02:41:58,441 [INFO]   Candidate N6 Completed Steps: 24 / 24
+2026-10-21 02:41:58,441 [INFO]   Baseline Diesel Consumed:     27.7419 L
+2026-10-21 02:41:58,441 [INFO]   Delta Fuel (N6 - Base):       8.4552 L
+2026-10-21 02:41:58,441 [INFO] 
+[PASS] Mode A Smoke Acceptance Criteria strictly verified! Proceeding to Mode B...
+2026-10-21 02:41:58,441 [INFO] 
+================================================================================
+2026-10-21 02:41:58,441 [INFO] PHASE 4: MODE B — FULL 2024 MULTI-ORIGIN EVALUATION
+2026-10-21 02:41:58,441 [INFO] Target Origin Count: 347 eligible 00:00 UTC origins
+2026-10-21 02:41:58,441 [INFO] ================================================================================
+2026-10-21 02:43:14,631 [INFO] Progress: 50/347 origins (14.4%) | N6 Burn: 3,830.5 L | Base Burn: 1,181.4 L | Optimal Solves: 50/50 | ETA: 7.5 min
+2026-10-21 02:44:16,615 [INFO] Progress: 100/347 origins (28.8%) | N6 Burn: 6,048.5 L | Base Burn: 2,393.4 L | Optimal Solves: 100/100 | ETA: 5.7 min
+2026-10-21 02:45:03,127 [INFO] Progress: 150/347 origins (43.2%) | N6 Burn: 7,639.6 L | Base Burn: 3,702.9 L | Optimal Solves: 150/150 | ETA: 4.0 min
+2026-10-21 02:45:45,190 [INFO] Progress: 200/347 origins (57.6%) | N6 Burn: 9,603.1 L | Base Burn: 5,054.5 L | Optimal Solves: 200/200 | ETA: 2.8 min
+2026-10-21 02:46:34,238 [INFO] Progress: 250/347 origins (72.0%) | N6 Burn: 11,797.2 L | Base Burn: 6,125.9 L | Optimal Solves: 250/250 | ETA: 1.8 min
+2026-10-21 02:48:34,687 [INFO] Progress: 300/347 origins (86.5%) | N6 Burn: 15,216.6 L | Base Burn: 7,230.0 L | Optimal Solves: 300/300 | ETA: 1.0 min
+2026-10-21 02:50:19,242 [INFO] Progress: 347/347 origins (100.0%) | N6 Burn: 18,298.3 L | Base Burn: 8,120.5 L | Optimal Solves: 347/347 | ETA: 0.0 min
+2026-10-21 02:50:19,253 [INFO] 
+================================================================================
+2026-10-21 02:50:19,253 [INFO] POLARIS EVALUATION COMPLETE!
+2026-10-21 02:50:19,253 [INFO] Total Runtime: 503.03 seconds
+2026-10-21 02:50:19,253 [INFO] Artifacts preserved in: /home/punith-bs/01polaris (Copy)/scratch/authorized_n6_gap19_eval_2024
+2026-10-21 02:50:19,254 [INFO] ================================================================================

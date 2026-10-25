@@ -1,0 +1,153 @@
+{
+  "audit_metadata": {
+    "project": "POLARIS Energy Management System",
+    "task": "POLARIS G1.3-E Evidence Integrity & Claim Provenance Audit",
+    "audit_timestamp": "2026-09-27T21:05:00Z",
+    "auditor_role": "Scientific and Governance Audit Agent",
+    "target_research_package": "investigations/gap1_3e_telemetry_freshness_research_2026",
+    "preceding_governance_package": "investigations/emergency_trigger_governance_2026",
+    "governance_policy_status": "LOCKED_HUMAN_POLICY",
+    "zero_code_modifications_verified": true
+  },
+  "summary_metrics": {
+    "total_claims_audited": 65,
+    "total_numerical_claims_audited": 38,
+    "source_fact_count": 11,
+    "context_limited_count": 17,
+    "engineering_inference_count": 15,
+    "illustrative_only_count": 15,
+    "unsupported_count": 4,
+    "misrepresented_count": 3,
+    "critical_claims_requiring_qualification": 18,
+    "critical_claims_requiring_removal": 5,
+    "unverified_sources_count": 0
+  },
+  "classification_breakdown": {
+    "SOURCE_FACT": 11,
+    "CONTEXT_LIMITED_FACT": 17,
+    "ENGINEERING_INFERENCE": 15,
+    "ILLUSTRATIVE_ONLY": 15,
+    "UNSUPPORTED": 4,
+    "MISREPRESENTED": 3
+  },
+  "especially_audited_claims": [
+    {
+      "id": "CR-01",
+      "claim": "generator state/fault relays can change in <100 ms",
+      "classification": "CONTEXT_LIMITED_FACT",
+      "supported": true,
+      "authoritative": false,
+      "action": "QUALIFY AS CONTEXT-LIMITED (Applies to relay hardware, not SCADA ingress)"
+    },
+    {
+      "id": "CR-02",
+      "claim": "active power dynamics are approximately 1-5 seconds",
+      "classification": "ENGINEERING_INFERENCE",
+      "supported": true,
+      "authoritative": false,
+      "action": "RESTATE AS ENGINEERING INFERENCE (Derived from generic governor dynamics)"
+    },
+    {
+      "id": "CR-03",
+      "claim": "fuel level dynamics are approximately 10-60 minutes",
+      "classification": "ILLUSTRATIVE_ONLY",
+      "supported": true,
+      "authoritative": false,
+      "action": "QUALIFY AS ILLUSTRATIVE (Hypothetical 500L tank & load example)"
+    },
+    {
+      "id": "CR-04",
+      "claim": "stale health telemetry can mask a breaker trip",
+      "classification": "ENGINEERING_INFERENCE",
+      "supported": true,
+      "authoritative": false,
+      "action": "RESTATE AS ENGINEERING INFERENCE (Logically sound hazard mechanism)"
+    },
+    {
+      "id": "CR-05",
+      "claim": "10-minute-old fuel reading credited under high survivability margin",
+      "classification": "ILLUSTRATIVE_ONLY",
+      "supported": false,
+      "authoritative": false,
+      "action": "QUALIFY AS ILLUSTRATIVE (Hypothetical Option E framework example)"
+    },
+    {
+      "id": "CR-06",
+      "claim": "low-SOC condition could require telemetry fresher than 5 seconds",
+      "classification": "ILLUSTRATIVE_ONLY",
+      "supported": false,
+      "authoritative": false,
+      "action": "QUALIFY AS ILLUSTRATIVE (Hypothetical Option E framework example)"
+    },
+    {
+      "id": "CR-07",
+      "claim": "physical rates of change span four orders of magnitude",
+      "classification": "ENGINEERING_INFERENCE",
+      "supported": true,
+      "authoritative": false,
+      "action": "RESTATE AS ENGINEERING INFERENCE (Derived mathematical order-of-magnitude ratio)"
+    },
+    {
+      "id": "CR-08",
+      "claim": "dynamic uncertainty criteria are scientifically superior",
+      "classification": "UNSUPPORTED",
+      "supported": false,
+      "authoritative": false,
+      "action": "REMOVE EVALUATIVE LANGUAGE (Rephrase to candidate for further study)"
+    },
+    {
+      "id": "CR-09",
+      "claim": "hybrid uncertainty + corroboration is exemplary",
+      "classification": "UNSUPPORTED",
+      "supported": false,
+      "authoritative": false,
+      "action": "REMOVE EVALUATIVE LANGUAGE (Rephrase to conceptually thorough target)"
+    },
+    {
+      "id": "CR-10",
+      "claim": "static age thresholds cannot adapt to system risk state",
+      "classification": "ENGINEERING_INFERENCE",
+      "supported": true,
+      "authoritative": false,
+      "action": "RESTATE AS ENGINEERING INFERENCE (Sound control logic deduction)"
+    }
+  ],
+  "dynamic_uncertainty_audit": {
+    "equation": "sigma_Egen(t_now, Delta_t_age) = integral sigma_Pgen(t; Delta_t_age) dt <= epsilon_surv_tolerance",
+    "state_estimation_model_provided": false,
+    "uncertainty_growth_model_fitted": false,
+    "sensor_noise_bounds_measured": false,
+    "empirically_estimated_sigma": false,
+    "closed_survivability_tolerance": false,
+    "emergency_risk_relationship_validated": false,
+    "empirical_validation_data_present": false,
+    "statistical_confidence_guarantee_proven": false,
+    "reclassification": "CONCEPTUAL RESEARCH FRAMEWORK"
+  },
+  "resource_specific_rule_status": {
+    "generator_operating_state": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "generator_active_power": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "generator_available_power": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "fuel_tank_level": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "fuel_flow_rate": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "startup_readiness": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "health_fault_state": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "maintenance_lockout": "CONCEPTUAL_FRAMEWORK_ONLY",
+    "rules_definable_today": 0
+  },
+  "evidence_boundary_final": {
+    "final_classification": "C. Evidence Insufficient \u2014 Additional Empirical Research Required",
+    "universal_threshold_supported": false,
+    "measurement_specific_threshold_supported": false,
+    "resource_specific_threshold_supported": false,
+    "state_dependent_threshold_supported": false,
+    "uncertainty_based_rule_supported": false,
+    "hybrid_rule_supported": false
+  },
+  "governance_lock": {
+    "g1.3e_policy_locked": true,
+    "production_lock_active": true,
+    "implementation_authorized": false,
+    "hard_stop": true
+  }
+}

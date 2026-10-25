@@ -1,0 +1,6 @@
+Component_Path,Component_Type,Field_Symbol,Current_MPC_Usage,Detector_Separation_Capability,Notes
+system/schemas/forecast_bundle.py,Schema,solar_generation.point,Used as p_sol_max in milp.py,Clean (Detector creates local zero vector),Normal MPC receives point forecast
+system/schemas/forecast_bundle.py,Schema,solar_generation.lower,Unused in milp.py,Clean (Available for quantile scenario),Lower uncertainty bound
+system/schemas/forecast_bundle.py,Schema,wind_generation.point,Used as p_wind_max in milp.py,Clean (Detector creates local zero vector),Normal MPC receives point forecast
+system/schemas/forecast_bundle.py,Schema,wind_generation.lower,Unused in milp.py,Clean (Available for quantile scenario),Lower uncertainty bound
+system/optimization/implementations/milp.py,Optimizer,solar_gen / wind_gen,Passed directly from ForecastBundle,Clean (Optimizer receives read-only operating_mode),No change to optimizer inputs

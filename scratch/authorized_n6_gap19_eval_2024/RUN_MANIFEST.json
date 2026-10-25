@@ -1,0 +1,13 @@
+{
+  "run_id": "RUN_N6_2024_EVAL_20261020_212019",
+  "authorized_scope": "EXECUTE_N6_2024_END_TO_END",
+  "output_directory": "/home/punith-bs/01polaris (Copy)/scratch/authorized_n6_gap19_eval_2024",
+  "files_generated": [
+    "EXECUTION_TRACE.log",
+    "CONFIG_SNAPSHOT.json",
+    "MODE_A_SMOKE_REPORT.json",
+    "MODE_B_PER_ORIGIN_RESULTS.json",
+    "MODE_B_SUMMARY_METRICS.json",
+    "RUN_MANIFEST.json"
+  ]
+}

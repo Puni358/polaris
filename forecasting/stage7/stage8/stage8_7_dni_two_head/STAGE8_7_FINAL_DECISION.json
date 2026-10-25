@@ -1,0 +1,57 @@
+{
+  "stage": "8.7",
+  "title": "POLARIS Stage 8.7 — MEPS DNI-Anchored Direct/Diffuse Two-Head Architecture Final Decision",
+  "timestamp_utc": "2026-09-12T22:32:00Z",
+  "status_summary": {
+    "8.7A_FEASIBILITY": "PASS",
+    "8.7A_PROXY_GOVERNANCE": "APPROVED",
+    "8.7B_ARCHITECTURE": "REJECTED",
+    "OVERALL_STAGE8_7": "CLOSED_REJECTED"
+  },
+  "stage8_7a_proxy": {
+    "formula": "DirectProxy_h = DNI_h * max(0, sin(solar_elevation_h)) * (1 - terrain_solar_obstruction_flag_h)",
+    "hash": "a7f3e891c94b20d3671f845d098e21a44e5f7b88",
+    "coverage": "8328/8328 tuples",
+    "causality": "347/347 origins"
+  },
+  "stage8_7b_results": {
+    "even_cv_control_mae_w_m2": 37.620054,
+    "even_cv_candidate_mae_w_m2": 49.445841,
+    "even_cv_delta_mae_w_m2": 11.825787,
+    "even_cv_folds_improved": "0/5",
+    "even_cv_max_degradation_w_m2": 28.022026,
+    "even_cv_control_nmae_pct": 37.9745,
+    "even_cv_candidate_nmae_pct": 46.8266,
+    "even_cv_control_rmse_w_m2": 60.160645,
+    "even_cv_candidate_rmse_w_m2": 81.330841,
+    "gates": {
+      "g1_delta_mae_le_minus_0_50": false,
+      "g2_at_least_4_folds_improve": false,
+      "g3_worst_fold_degradation_le_0_50": false,
+      "g4_nmae_and_rmse_le_control": false,
+      "g5_100pct_causality": true,
+      "g6_exact_control_reproduction": true
+    }
+  },
+  "odd_firewall_status": {
+    "odd_evaluated": false,
+    "odd_target_reads": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "odd_tuning": 0
+  },
+  "post_hoc_rescue_audit": {
+    "alternative_proxy_formula_tested": false,
+    "alternative_hyperparameters_tested": false,
+    "architecture_tuning_performed": false,
+    "fold_selection_performed": false,
+    "horizon_cherry_picking_performed": false,
+    "odd_tuning_performed": false
+  },
+  "champion_protection": {
+    "current_champion": "Stage 8.1 U700/V700 700 hPa Steering Wind Model",
+    "official_odd_mae_w_m2": 36.188657,
+    "official_odd_nmae_pct": 28.0688,
+    "master_handoff_modified": false
+  }
+}

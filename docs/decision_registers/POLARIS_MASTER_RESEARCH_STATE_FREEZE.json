@@ -1,0 +1,152 @@
+{
+  "manifest_id": "POLARIS_MASTER_RESEARCH_STATE_FREEZE_MANIFEST",
+  "governance_checkpoint_id": "POLARIS_STEP1_GOVERNANCE_CHECKPOINT",
+  "checkpoint_timestamp_utc": "2026-09-20T10:15:00Z",
+  "hash_verification_status": "PASS",
+  "frozen_evidence_inventory": {
+    "stage8_1_forecast_evidence": {
+      "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+      "system/forecasting/implementations/s81_solar.py": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c"
+    },
+    "v3_execution_evidence": {
+      "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+      "POLARIS_STAGE8_1_EMS_V3_EXECUTION.json": "9bb13084b1db08c1ff322e6d4bdb4a1fbd62d534a0fa26c66b4c898bdba9d900",
+      "POLARIS_STAGE8_1_EMS_V3_EXECUTION.md": "6d2bf01b26385ba9f403c6dc8e30e511577d97a52e0f918449b23c125ee6cda0",
+      "POLARIS_STAGE8_1_EMS_V3_POST_EXECUTION_FORENSIC_AUDIT.json": "1693702428dc9c8ef292177d4b773d59c5fbad1671251d9367506cadcf095c27"
+    },
+    "v4g_execution_evidence": {
+      "POLARIS_STAGE8_1_EMS_V4G_EXECUTION_RAW.csv": "61389d23a307dcb1bbc5ea90f9bf43843b52d88f66d5ff1d03bb1dea55199788",
+      "POLARIS_STAGE8_1_EMS_V4G_EXECUTION.json": "620d8add38c8146c15e7646c0793f74a34437dbd2c9d719759b16b2be1e6934e",
+      "POLARIS_STAGE8_1_EMS_V4G_EXECUTION.md": "206377a930bb235b319e5c3071a8341911b4bee2676e927eed824b62aef7a284",
+      "POLARIS_STAGE8_1_EMS_V4G_POST_EXECUTION_FORENSIC_AUDIT.json": "4b629d208680482e9340fdae1fef142f0dea91af2fb14995dc5ec5baed9189c0"
+    },
+    "ofat_execution_evidence": {
+      "POLARIS_23_HORIZON_OFAT_EXECUTION_RAW.csv": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "POLARIS_23_HORIZON_OFAT_EXECUTION.json": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "POLARIS_23_HORIZON_OFAT_EXECUTION.md": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "run_polaris_23_horizon_ofat_experiment.py": "63cd171c8391fbc02c571965f5508dd46ef82a5bd2c161b40dcef946b9d57b0e"
+    },
+    "ofat_forensic_freeze_audit": {
+      "POLARIS_23_HORIZON_OFAT_FORENSIC_FREEZE_AUDIT.json": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "POLARIS_23_HORIZON_OFAT_FORENSIC_FREEZE_AUDIT.md": "18078c29d12a1a6f82ddb99da7841ff13c606f7628b0e09e1f4c48ec56888fae"
+    },
+    "ofat_reconciliation_analysis": {
+      "POLARIS_23_HORIZON_OFAT_ANALYSIS_RECONCILIATION.json": "538bec346dc99f987bb3fb761b2b654032838f79861f5f91e0840a57d3df25e5",
+      "POLARIS_23_HORIZON_OFAT_ANALYSIS_RECONCILIATION.md": "907c33c4ab091e54ff20bd5751a6068a7605c4148322ec652e68e9a58db70f2a",
+      "POLARIS_DIESEL_IMPROVEMENT_DEVELOPMENTAL_RECONCILIATION.json": "95a4a6a31dc98980b0456e3fad9a9dbe68c446b3ff1f4ac0efe9191bd189f60d",
+      "POLARIS_DIESEL_IMPROVEMENT_DEVELOPMENTAL_RECONCILIATION.md": "07f35ac9caf72b5058616dfa75a6a342cd40006a8c5d8f47a98fc966877b71e0"
+    },
+    "arm5_terminology_correction": {
+      "POLARIS_23_HORIZON_OFAT_ARM5_TERMINOLOGY_CORRECTION.json": "94492edadd4905a4d05553064bc4c612e4c383eb5b3b11f4294e48c3849c46b4",
+      "POLARIS_23_HORIZON_OFAT_ARM5_TERMINOLOGY_CORRECTION.md": "2090f9d63f7a091088b039c1cae48a127e02048cf1d34dc1d2aa556ed0dfc33e"
+    }
+  },
+  "current_governance_position": {
+    "STAGE8_1_FORECAST_RESEARCH": "FROZEN",
+    "V3_REFERENCE": "FROZEN",
+    "V4G": "CLOSED / NOT_PROMOTED",
+    "OFAT": "COMPLETED / FROZEN RESEARCH",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_YET_ESTABLISHED",
+    "PRODUCTION_POLICY_PROMOTION": "NOT_YET_DECIDED",
+    "REAL_STATION_DEMAND": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "SYSTEM_ARCHITECTURE": "VALIDATED",
+    "SCIENTIFIC_REAL_WORLD_VALIDATION": "DATA_BLOCKED"
+  },
+  "stage8_1_status": {
+    "forecasting_research_status": "FROZEN",
+    "official_champion": "37-feature HistGradientBoosting solar irradiance model",
+    "reopen_research": false,
+    "distinction": "Benchmark forecast accuracy (MAE/RMSE) is distinct from downstream EMS dispatch performance."
+  },
+  "v3_status": {
+    "execution_status": "COMPLETED AND FORENSICALLY AUDITED",
+    "class_f_gamma": 0.95,
+    "ems_role": "FROZEN EMS REFERENCE / CONTROL",
+    "production_champion_declared": false
+  },
+  "v4g_status": {
+    "branch_status": "CLOSED / NOT PROMOTED",
+    "isolation_type": "Exploratory candidate branch (not pure single-horizon isolation)",
+    "synthetic_environment_mean_diesel_liters": 83.8145,
+    "comparison_vs_v3": "Higher mean diesel fuel consumption (+22.6801 L/origin, +37.10% vs V3 control)",
+    "characterization": "Described using rigorous scientific terminology; not a real-world or production failure."
+  },
+  "ofat_status": {
+    "experiment_status": "COMPLETED / FORENSICALLY FROZEN / RECONCILED / RESEARCH-VALID",
+    "treatment_arms": 23,
+    "analytically_excluded_horizon": "j=0",
+    "origins_count": 173,
+    "mpc_cycles_per_origin": 24,
+    "total_treatment_milp_solves": 95496,
+    "v3_control_reused": true,
+    "future_truth_firewall": "PASSED",
+    "state_isolation": "PASSED",
+    "result_dependent_stopping": false,
+    "tuning_performed": false,
+    "protocol_modified_during_execution": false,
+    "raw_telemetry_preserved": true,
+    "checkpoint_manifest_reconciled": true,
+    "forensic_freeze_audit_status": "PASSED"
+  },
+  "corrected_ofat_interpretation": {
+    "nature": "EMS objective-weight sensitivity experiment",
+    "not_a": [
+      "forecast accuracy experiment",
+      "proof that one horizon is universally optimal",
+      "real-world diesel-saving measurement",
+      "automatic production policy selection"
+    ],
+    "true_v3_reference_reconciled": true,
+    "erroneous_harness_summary_values_discarded": true
+  },
+  "arm5_terminology_correction": {
+    "exact_telemetry_invariance_horizons": [11, 17, 18, 20, 21, 22, 23],
+    "arm5_classification": "operationally invariant within the observed floating-point tolerance",
+    "arm5_prohibited_terms": ["bitwise identical", "exact invariant", "exact telemetry match"]
+  },
+  "diesel_developmental_chain": {
+    "v0_baseline_liters": 85.1130,
+    "v3_stage81_liters": 61.1344,
+    "ofat_j14_liters": 59.6374,
+    "v4g_candidate_liters": 83.8145,
+    "v0_to_v3_change": {
+      "absolute_liters": -23.9786,
+      "percentage": -28.17
+    },
+    "v3_to_ofat_j14_change": {
+      "absolute_liters": -1.4970,
+      "percentage": -2.45
+    },
+    "j14_production_selection": false,
+    "scientific_takeaway": "23-horizon OFAT research demonstrated horizon-weight sensitivity; it did not by itself establish a production champion."
+  },
+  "real_world_claim_boundary": {
+    "environment_scope": "All diesel results are derived strictly from the controlled synthetic POLARIS station environment.",
+    "prohibited_claims": [
+      "real Nuolja diesel savings",
+      "real polar-station fuel savings",
+      "field-validated reliability",
+      "production EMS performance"
+    ]
+  },
+  "unresolved_governance_decisions": [
+    "OFAT_PRODUCTION_CHAMPION_SELECTION",
+    "PRODUCTION_POLICY_PROMOTION",
+    "REAL_STATION_DEMAND_DATA_ACQUISITION",
+    "NUOLJA_WIND_GENERATION_MAPPING"
+  ],
+  "next_authorized_step": "READ_ONLY_OFAT_CHAMPION_PROMOTION_AUDIT",
+  "final_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "OFAT_PROMOTED_TO_PRODUCTION": "NO",
+    "V4G_PROMOTED": "NO",
+    "MASTER_STATE_FREEZE": "PASS",
+    "NEXT_AUTHORIZED_STEP": "READ_ONLY_OFAT_CHAMPION_PROMOTION_AUDIT"
+  }
+}

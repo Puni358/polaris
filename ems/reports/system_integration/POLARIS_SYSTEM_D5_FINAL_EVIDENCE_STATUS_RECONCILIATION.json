@@ -1,0 +1,151 @@
+{
+  "reconciliation_id": "POLARIS_SYSTEM_D5_FINAL_EVIDENCE_STATUS_RECONCILIATION_20260917",
+  "timestamp": "2026-09-17T08:45:00+05:30",
+  "governance_state": {
+    "D4": "CLOSED",
+    "D5_CONTRACT": "FROZEN",
+    "D5_IMPLEMENTATION": "COMPLETE",
+    "D5_IMPLEMENTATION_REVIEW": "PASSED",
+    "D5_EXECUTION": "COMPLETED_AS_AUTHORIZED",
+    "D5_EVIDENCE_PROVENANCE": "CORRECTED_WITH_DOCUMENTED_LIMITATIONS",
+    "D5_RESULTS": "AVAILABLE_FOR_SCIENTIFIC_REVIEW",
+    "D6": "NOT_INITIATED"
+  },
+  "read_only_firewall_status": "ENFORCED_ZERO_RERUNS_ZERO_CODE_EDITS",
+  "evidence_classification": [
+    {
+      "property": "D5 Contract & Freeze Hashes",
+      "category": "DIRECTLY VERIFIED",
+      "evidence_source": "SHA256 recomputation of 4 governance files against recorded hashes",
+      "status_label": "VERIFIED"
+    },
+    {
+      "property": "System Component Immutability",
+      "category": "DIRECTLY VERIFIED",
+      "evidence_source": "Source inspection of system/schemas, system/optimization, system/simulation, system/evaluation",
+      "status_label": "VERIFIED (UNTOUCHED)"
+    },
+    {
+      "property": "Two-World Causal Firewall",
+      "category": "DIRECTLY VERIFIED",
+      "evidence_source": "Source inspection of system/robustness/orchestrator.py & perturbation.py",
+      "status_label": "VERIFIED"
+    },
+    {
+      "property": "H1-Only Receding Horizon Semantics",
+      "category": "DIRECTLY VERIFIED",
+      "evidence_source": "Source inspection of DigitalTwinSimulator.step() & orchestrator.py loop",
+      "status_label": "VERIFIED"
+    },
+    {
+      "property": "Actual Trajectory Pairing",
+      "category": "VERIFIED THROUGH SHARED-SOURCE PROVENANCE",
+      "evidence_source": "Raw provenance files reference demo_scenario.json / synthetic_168h_endurance_scenario.json",
+      "status_label": "VERIFIED_EQUAL (SHARED SOURCE PROVENANCE)"
+    },
+    {
+      "property": "Initial State (S0) Pairing",
+      "category": "VERIFIED THROUGH SHARED-SOURCE PROVENANCE",
+      "evidence_source": "Raw provenance files reference D5Runner._create_initial_state() parameters",
+      "status_label": "VERIFIED_EQUAL (SHARED CONSTRUCTOR PROVENANCE)"
+    },
+    {
+      "property": "Pre-Dispatch Paired Conditions",
+      "category": "VERIFIED THROUGH SHARED-SOURCE PROVENANCE",
+      "evidence_source": "Scenario configs, station configs, battery configs, optimizer & solver configs",
+      "status_label": "VERIFIED_EQUAL (SHARED-SOURCE PROVENANCE)"
+    },
+    {
+      "property": "D5-6 Iteration Completion (168 steps)",
+      "category": "CONSISTENT WITH PRESERVED RUN-LEVEL EVIDENCE",
+      "evidence_source": "Raw result JSON run_metadata fields (completed_steps: 168)",
+      "status_label": "CONSISTENT WITH PRESERVED RAW RUN-LEVEL EVIDENCE"
+    },
+    {
+      "property": "Run-Level Physical & Fault Metrics",
+      "category": "CONSISTENT WITH PRESERVED RUN-LEVEL EVIDENCE",
+      "evidence_source": "Raw result JSON physical_outcome_metrics & execution_and_fault_metrics",
+      "status_label": "RUN-LEVEL METRIC RECONCILIATION = MATCH"
+    },
+    {
+      "property": "Result-Dependent Stopping Absence",
+      "category": "CONSISTENT WITH PRESERVED EXECUTION EVIDENCE",
+      "evidence_source": "All 6 gates D5-1..D5-6 present in results directory in exact predefined order",
+      "status_label": "CONSISTENT WITH PRESERVED EXECUTION EVIDENCE"
+    },
+    {
+      "property": "Rerun Count (= 0)",
+      "category": "CONSISTENT WITH PRESERVED EXECUTION EVIDENCE",
+      "evidence_source": "Zero rerun files or alternate run directories recorded",
+      "status_label": "NO RERUNS RECORDED"
+    },
+    {
+      "property": "Execution Manifest Hash Semantics",
+      "category": "AMBIGUOUS / NOT INDEPENDENTLY VERIFIABLE",
+      "evidence_source": "Recorded hash matches canonical pre-insertion SHA256; disk file SHA256 differs after write",
+      "status_label": "MANIFEST HASH = EVIDENCE-PACKAGING AMBIGUITY"
+    },
+    {
+      "property": "Preflight Temporal Ordering",
+      "category": "INFERRED",
+      "evidence_source": "Manifest creation timestamp precedes run completion timestamp; no separate preflight log",
+      "status_label": "INFERRED_VALID"
+    }
+  ],
+  "governance_hashes_verification": {
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.md": {
+      "expected": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "actual": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.json": {
+      "expected": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "actual": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md": {
+      "expected": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "actual": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.json": {
+      "expected": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df",
+      "actual": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df",
+      "status": "VERIFIED"
+    }
+  },
+  "manifest_hash_ambiguity_reconciliation": {
+    "manifest_id": "POLARIS_SYSTEM_D5_EXECUTION_MANIFEST_20260917",
+    "recorded_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "pre_insertion_canonical_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "disk_file_hash": "c4b52743dc8a87fce3702b7418497e5d759674df78f4cf04a9bea3f7e48e72dd",
+    "manifest_hash_status": "EVIDENCE-PACKAGING AMBIGUITY",
+    "experimental_validity_impact": "NONE ESTABLISHED",
+    "explanation": "The ambiguity concerns the exact hashing convention for the self-referential manifest hash field. It does not by itself establish that the authorized experiment parameters were altered or that the experimental execution was invalid."
+  },
+  "historical_evidence_preservation": {
+    "POLARIS_SYSTEM_D5_RESULTS_CHECKPOINT.md": "PRESERVED_UNTOUCHED",
+    "POLARIS_SYSTEM_D5_RESULTS_CHECKPOINT.json": "PRESERVED_UNTOUCHED",
+    "POLARIS_SYSTEM_D5_POST_EXECUTION_EVIDENCE_AUDIT.md": "PRESERVED_UNTOUCHED",
+    "POLARIS_SYSTEM_D5_POST_EXECUTION_EVIDENCE_AUDIT.json": "PRESERVED_UNTOUCHED",
+    "POLARIS_SYSTEM_D5_POST_EXECUTION_EVIDENCE_CORRECTION_AUDIT.md": "PRESERVED_UNTOUCHED",
+    "POLARIS_SYSTEM_D5_POST_EXECUTION_EVIDENCE_CORRECTION_AUDIT.json": "PRESERVED_UNTOUCHED"
+  },
+  "limitations_analysis": {
+    "contradicts_authorized_execution": false,
+    "changes_recorded_numerical_results": false,
+    "results_available_for_scientific_review": true
+  },
+  "final_status_reconciliation": {
+    "EXPERIMENTAL_EXECUTION_STATUS": "PASS / NO CONTRADICTION FOUND",
+    "EVIDENCE_PROVENANCE_STATUS": "CORRECTED / WITH DOCUMENTED LIMITATIONS",
+    "FROZEN_ARTIFACT_INTEGRITY": "VERIFIED",
+    "D5_RESULTS": "AVAILABLE FOR SCIENTIFIC REVIEW",
+    "MANIFEST_HASH": "EVIDENCE-PACKAGING AMBIGUITY",
+    "PAIRING": "SHARED-SOURCE PROVENANCE VERIFIED",
+    "D5_6_ITERATION_COUNT": "CONSISTENT WITH PRESERVED RAW RUN-LEVEL EVIDENCE",
+    "H1_ONLY_SEMANTICS": "VERIFIED",
+    "CAUSAL_FIREWALL": "VERIFIED",
+    "D6_STATUS": "NOT INITIATED"
+  }
+}

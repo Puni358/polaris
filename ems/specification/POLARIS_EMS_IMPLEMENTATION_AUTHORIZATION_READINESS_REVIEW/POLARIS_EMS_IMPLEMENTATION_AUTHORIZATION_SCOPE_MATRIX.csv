@@ -1,0 +1,23 @@
+Feature_Module,Gap_ID,Scope_Category,Inclusion_Rationale,Governance_Boundary_Condition
+Frequency / Voltage Support Exclusion,GAP_05,CANDIDATE_AUTHORIZED_SCOPE,Unambiguous out-of-scope boundary constraint for MILP loop,Must not process sub-second frequency response in primary EMS MILP
+BESS Degradation & C-rate Limits,GAP_11,CANDIDATE_AUTHORIZED_SCOPE,Linear power bounds and C-rate constraints fully specified,Must enforce Pbess_min <= Pbess <= Pbess_max and C-rate bounds
+Energy Balance Equivalence,GAP_20,CANDIDATE_AUTHORIZED_SCOPE,Fundamental conservation of energy formulation fully specified,Must enforce sum(Pgen) + Pbess_dis + Ppv = Pload + Pbess_ch + Pcurt
+Feeder Power Flow Directionality,GAP_01,EXCLUDED_SCOPE,Requires station single-line diagram and feeder impedance specs,Must defer directional feeder constraints
+Load Shedding & Restoration Hysteresis,GAP_02,EXCLUDED_SCOPE,Requires transient load dynamics and dwell-time data,Must defer automated hysteresis execution
+Deferrable Load Preemption Mechanics,GAP_03,EXCLUDED_SCOPE,Preemption execution mode choices unresolved,Must preserve 5 load tiers distinct without selecting preemption mode
+Genset Duty Cycle & Min Run Time,GAP_04,EXCLUDED_SCOPE,Requires physical generator manufacturer specs,Must defer min run time implementation
+Feeder Priority Assignment,GAP_06,EXCLUDED_SCOPE,Requires physical station ATS mapping,Must defer feeder priority assignment
+Fuel Curve Linearization,GAP_07,EXCLUDED_SCOPE,Requires manufacturer fuel consumption curves,Must defer fuel curve piecewise linearization
+Black-Start Automation,GAP_08,EXCLUDED_SCOPE,Requires stakeholder governance authority decision,Must defer black-start transition logic
+Multi-Genset Dispatch Policy,GAP_09,EXCLUDED_SCOPE,Requires stakeholder policy choice (equal vs merit),Must defer multi-genset optimization
+Stage-2 Target Generation Function,GAP_10,EXCLUDED_SCOPE,Target generation function choice unresolved,Must keep 35% target as provisional engineering value
+Terminal SOC Stage Placement,GAP_12,EXCLUDED_SCOPE,Stage placement options (Stage 0 vs 2 vs 3) unresolved,Must retain terminal SOC constraint as deferred placement
+Renewable Telemetry Protocol,GAP_13,EXCLUDED_SCOPE,Requires site telemetry communication interface specs,Must defer telemetry loss signaling
+Grid Export Metering Policy,GAP_14,EXCLUDED_SCOPE,Requires utility interconnection governance clarification,Must defer export compensation logic
+Production Curtailment Classifier,GAP_15,EXCLUDED_SCOPE,Necessary curtailment formula is provisional diagnostic only,Must treat curtailment formula as diagnostic only
+Dynamic Reserve Margin Calibration,GAP_16,EXCLUDED_SCOPE,Requires empirical forecast error calibration,Must keep reserve margins as uncalibrated parameters
+BESS VOLL Weight Calibration,GAP_17,EXCLUDED_SCOPE,Requires economic VOLL calibration study,Must keep VOLL penalty weights as uncalibrated parameters
+Thermal Derating Curves,GAP_18,EXCLUDED_SCOPE,Requires site thermal coefficient data,Must defer thermal derating logic
+Lexicographic Solver Realization,GAP_19,EXCLUDED_SCOPE,Solver realization choice (4-pass vs native) unresolved,Must retain multi-pass options as deferred
+Fallback Dispatch Policy,GAP_21,EXCLUDED_SCOPE,Requires governance policy sign-off,Must defer fallback dispatch execution
+Communication Latency Mitigation,GAP_22,EXCLUDED_SCOPE,Requires site network latency profile,Must defer latency compensation

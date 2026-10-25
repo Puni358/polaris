@@ -1,0 +1,229 @@
+2026-10-21 00:11:35,492 [INFO] ================================================================================
+2026-10-21 00:11:35,493 [INFO] POLARIS — ANNUAL CHECKPOINTED N6 RHC PIPELINE SIMULATION (2024 DATASET)
+2026-10-21 00:11:35,493 [INFO] ================================================================================
+2026-10-21 00:11:35,535 [INFO] Simulation span: steps 0 to 8760 (8760 steps remaining)
+2026-10-21 00:11:43,573 [INFO] Progress: 50 / 8760 hours (0.6%) | Diesel Burn: 38.99 L | Run Hours: 4 | ETA: 23.3 min
+2026-10-21 00:11:51,503 [INFO] Progress: 100 / 8760 hours (1.1%) | Diesel Burn: 53.99 L | Run Hours: 6 | ETA: 23.0 min
+2026-10-21 00:12:00,366 [INFO] Progress: 150 / 8760 hours (1.7%) | Diesel Burn: 68.99 L | Run Hours: 8 | ETA: 23.8 min
+2026-10-21 00:12:10,088 [INFO] Progress: 200 / 8760 hours (2.3%) | Diesel Burn: 83.99 L | Run Hours: 10 | ETA: 24.6 min
+2026-10-21 00:12:19,745 [INFO] Progress: 250 / 8760 hours (2.9%) | Diesel Burn: 98.99 L | Run Hours: 12 | ETA: 25.1 min
+2026-10-21 00:12:24,024 [ERROR] [ERROR] Optimization failed at step 271 (2024-01-12T07:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 4: charge=0.01, discharge=4913.44.
+2026-10-21 00:12:29,490 [INFO] Progress: 300 / 8760 hours (3.4%) | Diesel Burn: 114.02 L | Run Hours: 14 | ETA: 25.4 min
+2026-10-21 00:12:39,195 [INFO] Progress: 350 / 8760 hours (4.0%) | Diesel Burn: 129.02 L | Run Hours: 16 | ETA: 25.5 min
+2026-10-21 00:12:48,753 [INFO] Progress: 400 / 8760 hours (4.6%) | Diesel Burn: 144.02 L | Run Hours: 18 | ETA: 25.5 min
+2026-10-21 00:12:57,224 [INFO] Progress: 450 / 8760 hours (5.1%) | Diesel Burn: 159.28 L | Run Hours: 20 | ETA: 25.1 min
+2026-10-21 00:12:59,342 [ERROR] [ERROR] Optimization failed at step 462 (2024-01-20T06:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 2: charge=0.01, discharge=8588.11.
+2026-10-21 00:13:05,023 [INFO] Progress: 500 / 8760 hours (5.7%) | Diesel Burn: 181.80 L | Run Hours: 23 | ETA: 24.6 min
+2026-10-21 00:13:12,725 [INFO] Progress: 550 / 8760 hours (6.3%) | Diesel Burn: 196.80 L | Run Hours: 25 | ETA: 24.2 min
+2026-10-21 00:13:20,003 [INFO] Progress: 600 / 8760 hours (6.8%) | Diesel Burn: 211.80 L | Run Hours: 27 | ETA: 23.7 min
+2026-10-21 00:13:26,399 [INFO] Progress: 650 / 8760 hours (7.4%) | Diesel Burn: 219.30 L | Run Hours: 28 | ETA: 23.1 min
+2026-10-21 00:13:35,341 [INFO] Progress: 700 / 8760 hours (8.0%) | Diesel Burn: 234.30 L | Run Hours: 30 | ETA: 23.0 min
+2026-10-21 00:13:41,911 [INFO] Progress: 750 / 8760 hours (8.6%) | Diesel Burn: 241.80 L | Run Hours: 31 | ETA: 22.5 min
+2026-10-21 00:13:48,981 [INFO] Progress: 800 / 8760 hours (9.1%) | Diesel Burn: 249.30 L | Run Hours: 32 | ETA: 22.1 min
+2026-10-21 00:13:56,072 [INFO] Progress: 850 / 8760 hours (9.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 21.8 min
+2026-10-21 00:14:02,563 [INFO] Progress: 900 / 8760 hours (10.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 21.4 min
+2026-10-21 00:14:09,847 [INFO] Progress: 950 / 8760 hours (10.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 21.1 min
+2026-10-21 00:14:17,054 [INFO] Progress: 1000 / 8760 hours (11.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.9 min
+2026-10-21 00:14:24,145 [INFO] Progress: 1050 / 8760 hours (12.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.6 min
+2026-10-21 00:14:30,361 [ERROR] [ERROR] Optimization failed at step 1088 (2024-02-15T08:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 4: charge=3541.25, discharge=0.01.
+2026-10-21 00:14:31,837 [INFO] Progress: 1100 / 8760 hours (12.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.5 min
+2026-10-21 00:14:37,963 [ERROR] [ERROR] Optimization failed at step 1138 (2024-02-17T10:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 3: charge=5925.46, discharge=0.01.
+2026-10-21 00:14:39,407 [INFO] Progress: 1150 / 8760 hours (13.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.3 min
+2026-10-21 00:14:46,366 [INFO] Progress: 1200 / 8760 hours (13.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.0 min
+2026-10-21 00:14:53,400 [INFO] Progress: 1250 / 8760 hours (14.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.8 min
+2026-10-21 00:15:02,289 [INFO] Progress: 1300 / 8760 hours (14.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.8 min
+2026-10-21 00:15:13,347 [INFO] Progress: 1350 / 8760 hours (15.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.9 min
+2026-10-21 00:15:22,133 [INFO] Progress: 1400 / 8760 hours (16.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.9 min
+2026-10-21 00:15:29,584 [INFO] Progress: 1450 / 8760 hours (16.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.7 min
+2026-10-21 00:15:37,791 [INFO] Progress: 1500 / 8760 hours (17.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.5 min
+2026-10-21 00:15:37,858 [ERROR] [ERROR] Optimization failed at step 1500 (2024-03-03T12:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 1: charge=8121.09, discharge=0.01.
+2026-10-21 00:15:51,193 [INFO] Progress: 1550 / 8760 hours (17.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.8 min
+2026-10-21 00:16:09,231 [INFO] Progress: 1600 / 8760 hours (18.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.4 min
+2026-10-21 00:16:10,064 [ERROR] [ERROR] Optimization failed at step 1607 (2024-03-07T23:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 1: charge=0.01, discharge=500.01.
+2026-10-21 00:17:42,604 [INFO] ================================================================================
+2026-10-21 00:17:42,604 [INFO] POLARIS — ANNUAL CHECKPOINTED N6 RHC PIPELINE SIMULATION (2024 DATASET)
+2026-10-21 00:17:42,604 [INFO] ================================================================================
+2026-10-21 00:17:42,632 [INFO] [RESUME] Checkpoint loaded successfully! Resuming from step 1600/8760
+2026-10-21 00:17:42,632 [INFO] Simulation span: steps 1600 to 8760 (7160 steps remaining)
+2026-10-21 00:17:43,448 [ERROR] [ERROR] Optimization failed at step 1607 (2024-03-07T23:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 1: charge=0.01, discharge=500.01.
+2026-10-21 00:17:50,612 [INFO] Progress: 1650 / 8760 hours (18.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 18.9 min
+2026-10-21 00:18:03,097 [INFO] Progress: 1700 / 8760 hours (19.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 24.1 min
+2026-10-21 00:18:18,351 [INFO] Progress: 1750 / 8760 hours (20.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 27.8 min
+2026-10-21 00:18:30,889 [INFO] Progress: 1800 / 8760 hours (20.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 28.0 min
+2026-10-21 00:18:46,651 [INFO] Progress: 1850 / 8760 hours (21.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 29.5 min
+2026-10-21 00:18:57,542 [ERROR] [ERROR] Optimization failed at step 1880 (2024-03-19T08:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 5: charge=13259.25, discharge=0.01.
+2026-10-21 00:19:04,735 [ERROR] [ERROR] Optimization failed at step 1896 (2024-03-20T00:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 11: charge=8038.79, discharge=0.01.
+2026-10-21 00:19:06,998 [INFO] Progress: 1900 / 8760 hours (21.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 32.2 min
+2026-10-21 00:19:24,296 [INFO] Progress: 1950 / 8760 hours (22.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 33.0 min
+2026-10-21 00:19:44,684 [INFO] Progress: 2000 / 8760 hours (22.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 34.4 min
+2026-10-21 00:20:06,069 [INFO] Progress: 2050 / 8760 hours (23.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 35.6 min
+2026-10-21 00:20:20,261 [ERROR] [ERROR] Optimization failed at step 2075 (2024-03-27T11:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 1: charge=0.01, discharge=15499.99.
+2026-10-21 00:20:34,231 [INFO] Progress: 2100 / 8760 hours (24.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 38.1 min
+2026-10-21 00:21:52,160 [INFO] ================================================================================
+2026-10-21 00:21:52,160 [INFO] POLARIS — ANNUAL CHECKPOINTED N6 RHC PIPELINE SIMULATION (2024 DATASET)
+2026-10-21 00:21:52,160 [INFO] ================================================================================
+2026-10-21 00:21:52,193 [INFO] [RESUME] Checkpoint loaded successfully! Resuming from step 2100/8760
+2026-10-21 00:21:52,193 [INFO] Simulation span: steps 2100 to 8760 (6660 steps remaining)
+2026-10-21 00:22:15,687 [INFO] Progress: 2150 / 8760 hours (24.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 51.8 min
+2026-10-21 00:22:47,529 [INFO] Progress: 2200 / 8760 hours (25.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 60.5 min
+2026-10-21 00:23:12,031 [INFO] Progress: 2250 / 8760 hours (25.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 57.7 min
+2026-10-21 00:23:36,781 [INFO] Progress: 2300 / 8760 hours (26.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 56.3 min
+2026-10-21 00:23:59,247 [INFO] Progress: 2350 / 8760 hours (26.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 54.3 min
+2026-10-21 00:24:17,360 [INFO] Progress: 2400 / 8760 hours (27.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 51.3 min
+2026-10-21 00:24:35,365 [INFO] Progress: 2450 / 8760 hours (28.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 49.0 min
+2026-10-21 00:24:39,493 [ERROR] [ERROR] Optimization failed at step 2459 (2024-04-12T11:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 0: charge=19569.89, discharge=0.01.
+2026-10-21 00:24:47,559 [ERROR] [ERROR] Optimization failed at step 2480 (2024-04-13T08:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 4: charge=14966.06, discharge=0.01.
+2026-10-21 00:24:57,200 [INFO] Progress: 2500 / 8760 hours (28.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 48.3 min
+2026-10-21 00:24:59,175 [ERROR] [ERROR] Optimization failed at step 2507 (2024-04-14T11:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 4: charge=0.01, discharge=15499.99.
+2026-10-21 00:25:20,147 [INFO] Progress: 2550 / 8760 hours (29.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 47.8 min
+2026-10-21 00:25:51,552 [INFO] Progress: 2600 / 8760 hours (29.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 49.1 min
+2026-10-21 00:26:19,601 [INFO] Progress: 2650 / 8760 hours (30.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 49.5 min
+2026-10-21 00:26:20,017 [ERROR] [ERROR] Optimization failed at step 2650 (2024-04-20T10:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 5: charge=0.01, discharge=13384.23.
+2026-10-21 00:26:33,047 [ERROR] [ERROR] Optimization failed at step 2672 (2024-04-21T08:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 1: charge=18193.45, discharge=0.01.
+2026-10-21 00:26:38,578 [ERROR] [ERROR] Optimization failed at step 2682 (2024-04-21T18:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 0: charge=197.69, discharge=0.01.
+2026-10-21 00:26:50,929 [INFO] Progress: 2700 / 8760 hours (30.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 50.3 min
+2026-10-21 00:27:20,588 [INFO] Progress: 2750 / 8760 hours (31.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 50.6 min
+2026-10-21 00:28:02,815 [INFO] ================================================================================
+2026-10-21 00:28:02,816 [INFO] POLARIS — ANNUAL CHECKPOINTED N6 RHC PIPELINE SIMULATION (2024 DATASET)
+2026-10-21 00:28:02,816 [INFO] ================================================================================
+2026-10-21 00:28:02,840 [INFO] [RESUME] Checkpoint loaded successfully! Resuming from step 2750/8760
+2026-10-21 00:28:02,840 [INFO] Simulation span: steps 2750 to 8760 (6010 steps remaining)
+2026-10-21 00:28:21,731 [ERROR] [ERROR] Optimization failed at step 2778 (2024-04-25T18:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 0: charge=355.79, discharge=0.01.
+2026-10-21 00:28:35,539 [ERROR] [ERROR] Optimization failed at step 2799 (2024-04-26T15:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 1: charge=12153.64, discharge=0.01.
+2026-10-21 00:28:35,539 [INFO] Progress: 2800 / 8760 hours (32.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 65.0 min
+2026-10-21 00:28:39,372 [ERROR] [ERROR] Optimization failed at step 2805 (2024-04-26T21:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 2: charge=0.01, discharge=5499.67.
+2026-10-21 00:28:47,700 [ERROR] [ERROR] Optimization failed at step 2815 (2024-04-27T07:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 8: charge=17210.35, discharge=0.01.
+2026-10-21 00:29:07,827 [INFO] Progress: 2850 / 8760 hours (32.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 64.0 min
+2026-10-21 00:29:37,439 [INFO] Progress: 2900 / 8760 hours (33.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 61.6 min
+2026-10-21 00:29:59,990 [ERROR] [ERROR] Optimization failed at step 2926 (2024-05-01T22:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 5: charge=12009.03, discharge=0.01.
+2026-10-21 00:30:11,901 [INFO] Progress: 2950 / 8760 hours (33.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 62.5 min
+2026-10-21 00:30:18,350 [ERROR] [ERROR] Optimization failed at step 2957 (2024-05-03T05:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 13: charge=1014.19, discharge=0.01.
+2026-10-21 00:30:39,334 [INFO] Progress: 3000 / 8760 hours (34.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 60.1 min
+2026-10-21 00:31:07,054 [INFO] Progress: 3050 / 8760 hours (34.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 58.4 min
+2026-10-21 00:31:39,894 [INFO] Progress: 3100 / 8760 hours (35.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 58.5 min
+2026-10-21 00:31:58,947 [ERROR] [ERROR] Optimization failed at step 3131 (2024-05-10T11:00:00+00:00): DispatchPlan violates charge/discharge exclusivity at index 0: charge=0.01, discharge=15499.99.
+2026-10-21 00:34:22,493 [INFO] ================================================================================
+2026-10-21 00:34:22,493 [INFO] POLARIS — ANNUAL CHECKPOINTED N6 RHC PIPELINE SIMULATION (2024 DATASET)
+2026-10-21 00:34:22,493 [INFO] ================================================================================
+2026-10-21 00:34:22,522 [INFO] [RESUME] Checkpoint loaded successfully! Resuming from step 3100/8760
+2026-10-21 00:34:22,522 [INFO] Simulation span: steps 3100 to 8760 (5660 steps remaining)
+2026-10-21 00:35:03,253 [INFO] Progress: 3150 / 8760 hours (36.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 76.2 min
+2026-10-21 00:35:28,325 [INFO] Progress: 3200 / 8760 hours (36.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 61.0 min
+2026-10-21 00:36:01,225 [INFO] Progress: 3250 / 8760 hours (37.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 60.4 min
+2026-10-21 00:36:30,781 [INFO] Progress: 3300 / 8760 hours (37.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 58.4 min
+2026-10-21 00:36:54,704 [INFO] Progress: 3350 / 8760 hours (38.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 54.9 min
+2026-10-21 00:37:24,907 [INFO] Progress: 3400 / 8760 hours (38.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 54.3 min
+2026-10-21 00:37:53,800 [INFO] Progress: 3450 / 8760 hours (39.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 53.4 min
+2026-10-21 00:38:18,288 [INFO] Progress: 3500 / 8760 hours (40.0%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 51.7 min
+2026-10-21 00:38:46,879 [INFO] Progress: 3550 / 8760 hours (40.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 51.0 min
+2026-10-21 00:39:10,740 [INFO] Progress: 3600 / 8760 hours (41.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 49.6 min
+2026-10-21 00:39:38,398 [INFO] Progress: 3650 / 8760 hours (41.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 48.9 min
+2026-10-21 00:40:05,511 [INFO] Progress: 3700 / 8760 hours (42.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 48.2 min
+2026-10-21 00:40:29,552 [INFO] Progress: 3750 / 8760 hours (42.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 47.1 min
+2026-10-21 00:40:53,617 [INFO] Progress: 3800 / 8760 hours (43.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 46.2 min
+2026-10-21 00:41:19,749 [INFO] Progress: 3850 / 8760 hours (43.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 45.5 min
+2026-10-21 00:41:50,102 [INFO] Progress: 3900 / 8760 hours (44.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 45.3 min
+2026-10-21 00:42:18,085 [INFO] Progress: 3950 / 8760 hours (45.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 44.9 min
+2026-10-21 00:42:44,942 [INFO] Progress: 4000 / 8760 hours (45.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 44.3 min
+2026-10-21 00:43:09,752 [INFO] Progress: 4050 / 8760 hours (46.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 43.6 min
+2026-10-21 00:43:21,115 [INFO] Progress: 4100 / 8760 hours (46.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 41.8 min
+2026-10-21 00:43:42,987 [INFO] Progress: 4150 / 8760 hours (47.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 41.0 min
+2026-10-21 00:44:12,318 [INFO] Progress: 4200 / 8760 hours (47.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 40.7 min
+2026-10-21 00:44:42,784 [INFO] Progress: 4250 / 8760 hours (48.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 40.5 min
+2026-10-21 00:45:13,972 [INFO] Progress: 4300 / 8760 hours (49.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 40.4 min
+2026-10-21 00:45:37,434 [INFO] Progress: 4350 / 8760 hours (49.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 39.7 min
+2026-10-21 00:46:05,035 [INFO] Progress: 4400 / 8760 hours (50.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 39.3 min
+2026-10-21 00:46:32,403 [INFO] Progress: 4450 / 8760 hours (50.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 38.8 min
+2026-10-21 00:46:57,429 [INFO] Progress: 4500 / 8760 hours (51.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 38.3 min
+2026-10-21 00:47:28,819 [INFO] Progress: 4550 / 8760 hours (51.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 38.0 min
+2026-10-21 00:47:52,153 [INFO] Progress: 4600 / 8760 hours (52.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 37.4 min
+2026-10-21 00:48:12,279 [INFO] Progress: 4650 / 8760 hours (53.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 36.7 min
+2026-10-21 00:48:49,808 [INFO] Progress: 4700 / 8760 hours (53.7%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 36.7 min
+2026-10-21 00:49:21,640 [INFO] Progress: 4750 / 8760 hours (54.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 36.4 min
+2026-10-21 00:49:52,852 [INFO] Progress: 4800 / 8760 hours (54.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 36.1 min
+2026-10-21 00:50:24,070 [INFO] Progress: 4850 / 8760 hours (55.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 35.8 min
+2026-10-21 00:50:52,335 [INFO] Progress: 4900 / 8760 hours (55.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 35.4 min
+2026-10-21 00:51:12,940 [INFO] Progress: 4950 / 8760 hours (56.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 34.7 min
+2026-10-21 00:51:37,807 [INFO] Progress: 5000 / 8760 hours (57.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 34.1 min
+2026-10-21 00:51:59,050 [INFO] Progress: 5050 / 8760 hours (57.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 33.5 min
+2026-10-21 00:52:27,764 [INFO] Progress: 5100 / 8760 hours (58.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 33.1 min
+2026-10-21 00:52:43,420 [INFO] Progress: 5150 / 8760 hours (58.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 32.3 min
+2026-10-21 00:53:06,614 [INFO] Progress: 5200 / 8760 hours (59.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 31.8 min
+2026-10-21 00:53:45,335 [INFO] Progress: 5250 / 8760 hours (59.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 31.6 min
+2026-10-21 00:54:14,621 [INFO] Progress: 5300 / 8760 hours (60.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 31.2 min
+2026-10-21 00:54:30,543 [INFO] Progress: 5350 / 8760 hours (61.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 30.5 min
+2026-10-21 00:54:55,535 [INFO] Progress: 5400 / 8760 hours (61.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 30.0 min
+2026-10-21 00:55:22,482 [INFO] Progress: 5450 / 8760 hours (62.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 29.6 min
+2026-10-21 00:55:44,928 [INFO] Progress: 5500 / 8760 hours (62.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 29.0 min
+2026-10-21 00:56:09,530 [INFO] Progress: 5550 / 8760 hours (63.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 28.5 min
+2026-10-21 00:56:27,527 [INFO] Progress: 5600 / 8760 hours (63.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 27.9 min
+2026-10-21 00:56:48,902 [INFO] Progress: 5650 / 8760 hours (64.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 27.4 min
+2026-10-21 00:56:57,917 [INFO] Progress: 5700 / 8760 hours (65.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 26.6 min
+2026-10-21 00:57:16,545 [INFO] Progress: 5750 / 8760 hours (65.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 26.0 min
+2026-10-21 00:57:43,518 [INFO] Progress: 5800 / 8760 hours (66.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 25.6 min
+2026-10-21 00:57:52,806 [INFO] Progress: 5850 / 8760 hours (66.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 24.9 min
+2026-10-21 00:58:14,821 [INFO] Progress: 5900 / 8760 hours (67.4%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 24.4 min
+2026-10-21 00:58:29,207 [INFO] Progress: 5950 / 8760 hours (67.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 23.8 min
+2026-10-21 00:58:55,339 [INFO] Progress: 6000 / 8760 hours (68.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 23.4 min
+2026-10-21 00:59:13,575 [INFO] Progress: 6050 / 8760 hours (69.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 22.8 min
+2026-10-21 00:59:31,493 [INFO] Progress: 6100 / 8760 hours (69.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 22.3 min
+2026-10-21 00:59:51,338 [INFO] Progress: 6150 / 8760 hours (70.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 21.8 min
+2026-10-21 01:00:14,304 [INFO] Progress: 6200 / 8760 hours (70.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 21.4 min
+2026-10-21 01:00:30,771 [INFO] Progress: 6250 / 8760 hours (71.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.8 min
+2026-10-21 01:00:42,182 [INFO] Progress: 6300 / 8760 hours (71.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 20.2 min
+2026-10-21 01:00:56,804 [INFO] Progress: 6350 / 8760 hours (72.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.7 min
+2026-10-21 01:01:06,401 [INFO] Progress: 6400 / 8760 hours (73.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 19.1 min
+2026-10-21 01:01:16,070 [INFO] Progress: 6450 / 8760 hours (73.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 18.5 min
+2026-10-21 01:01:32,094 [INFO] Progress: 6500 / 8760 hours (74.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 18.1 min
+2026-10-21 01:01:47,135 [INFO] Progress: 6550 / 8760 hours (74.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 17.6 min
+2026-10-21 01:02:00,825 [INFO] Progress: 6600 / 8760 hours (75.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 17.1 min
+2026-10-21 01:02:13,154 [INFO] Progress: 6650 / 8760 hours (75.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 16.5 min
+2026-10-21 01:02:25,515 [INFO] Progress: 6700 / 8760 hours (76.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 16.1 min
+2026-10-21 01:02:34,456 [INFO] Progress: 6750 / 8760 hours (77.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 15.5 min
+2026-10-21 01:02:41,561 [INFO] Progress: 6800 / 8760 hours (77.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 15.0 min
+2026-10-21 01:02:50,248 [INFO] Progress: 6850 / 8760 hours (78.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 14.5 min
+2026-10-21 01:02:57,582 [INFO] Progress: 6900 / 8760 hours (78.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 14.0 min
+2026-10-21 01:03:04,683 [INFO] Progress: 6950 / 8760 hours (79.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 13.5 min
+2026-10-21 01:03:12,826 [INFO] Progress: 7000 / 8760 hours (79.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 13.0 min
+2026-10-21 01:03:20,067 [INFO] Progress: 7050 / 8760 hours (80.5%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 12.5 min
+2026-10-21 01:03:27,420 [INFO] Progress: 7100 / 8760 hours (81.1%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 12.1 min
+2026-10-21 01:03:34,452 [INFO] Progress: 7150 / 8760 hours (81.6%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 11.6 min
+2026-10-21 01:03:40,697 [INFO] Progress: 7200 / 8760 hours (82.2%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 11.1 min
+2026-10-21 01:03:47,116 [INFO] Progress: 7250 / 8760 hours (82.8%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 10.7 min
+2026-10-21 01:03:53,900 [INFO] Progress: 7300 / 8760 hours (83.3%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 10.3 min
+2026-10-21 01:04:00,677 [INFO] Progress: 7350 / 8760 hours (83.9%) | Diesel Burn: 256.80 L | Run Hours: 33 | ETA: 9.8 min
+2026-10-21 01:04:08,529 [INFO] Progress: 7400 / 8760 hours (84.5%) | Diesel Burn: 264.30 L | Run Hours: 34 | ETA: 9.4 min
+2026-10-21 01:04:16,818 [INFO] Progress: 7450 / 8760 hours (85.0%) | Diesel Burn: 271.80 L | Run Hours: 35 | ETA: 9.0 min
+2026-10-21 01:04:24,347 [INFO] Progress: 7500 / 8760 hours (85.6%) | Diesel Burn: 286.80 L | Run Hours: 37 | ETA: 8.6 min
+2026-10-21 01:04:32,007 [INFO] Progress: 7550 / 8760 hours (86.2%) | Diesel Burn: 294.30 L | Run Hours: 38 | ETA: 8.2 min
+2026-10-21 01:04:39,706 [INFO] Progress: 7600 / 8760 hours (86.8%) | Diesel Burn: 301.80 L | Run Hours: 39 | ETA: 7.8 min
+2026-10-21 01:04:48,938 [INFO] Progress: 7650 / 8760 hours (87.3%) | Diesel Burn: 316.80 L | Run Hours: 41 | ETA: 7.4 min
+2026-10-21 01:04:59,589 [INFO] Progress: 7700 / 8760 hours (87.9%) | Diesel Burn: 331.80 L | Run Hours: 43 | ETA: 7.1 min
+2026-10-21 01:05:08,829 [INFO] Progress: 7750 / 8760 hours (88.5%) | Diesel Burn: 354.30 L | Run Hours: 46 | ETA: 6.7 min
+2026-10-21 01:05:18,038 [INFO] Progress: 7800 / 8760 hours (89.0%) | Diesel Burn: 369.30 L | Run Hours: 48 | ETA: 6.3 min
+2026-10-21 01:05:26,844 [INFO] Progress: 7850 / 8760 hours (89.6%) | Diesel Burn: 384.30 L | Run Hours: 50 | ETA: 6.0 min
+2026-10-21 01:05:35,673 [INFO] Progress: 7900 / 8760 hours (90.2%) | Diesel Burn: 399.30 L | Run Hours: 52 | ETA: 5.6 min
+2026-10-21 01:05:45,180 [INFO] Progress: 7950 / 8760 hours (90.8%) | Diesel Burn: 414.30 L | Run Hours: 54 | ETA: 5.2 min
+2026-10-21 01:05:54,868 [INFO] Progress: 8000 / 8760 hours (91.3%) | Diesel Burn: 429.30 L | Run Hours: 56 | ETA: 4.9 min
+2026-10-21 01:06:05,750 [INFO] Progress: 8050 / 8760 hours (91.9%) | Diesel Burn: 444.30 L | Run Hours: 58 | ETA: 4.5 min
+2026-10-21 01:06:14,409 [INFO] Progress: 8100 / 8760 hours (92.5%) | Diesel Burn: 466.81 L | Run Hours: 61 | ETA: 4.2 min
+2026-10-21 01:06:22,972 [INFO] Progress: 8150 / 8760 hours (93.0%) | Diesel Burn: 481.81 L | Run Hours: 63 | ETA: 3.9 min
+2026-10-21 01:06:31,240 [INFO] Progress: 8200 / 8760 hours (93.6%) | Diesel Burn: 496.81 L | Run Hours: 65 | ETA: 3.5 min
+2026-10-21 01:06:41,368 [INFO] Progress: 8250 / 8760 hours (94.2%) | Diesel Burn: 511.81 L | Run Hours: 67 | ETA: 3.2 min
+2026-10-21 01:06:51,679 [INFO] Progress: 8300 / 8760 hours (94.7%) | Diesel Burn: 526.81 L | Run Hours: 69 | ETA: 2.9 min
+2026-10-21 01:07:01,747 [INFO] Progress: 8350 / 8760 hours (95.3%) | Diesel Burn: 549.54 L | Run Hours: 72 | ETA: 2.6 min
+2026-10-21 01:07:10,424 [INFO] Progress: 8400 / 8760 hours (95.9%) | Diesel Burn: 572.35 L | Run Hours: 75 | ETA: 2.2 min
+2026-10-21 01:07:19,005 [INFO] Progress: 8450 / 8760 hours (96.5%) | Diesel Burn: 587.35 L | Run Hours: 77 | ETA: 1.9 min
+2026-10-21 01:07:29,184 [INFO] Progress: 8500 / 8760 hours (97.0%) | Diesel Burn: 602.35 L | Run Hours: 79 | ETA: 1.6 min
+2026-10-21 01:07:39,883 [INFO] Progress: 8550 / 8760 hours (97.6%) | Diesel Burn: 617.35 L | Run Hours: 81 | ETA: 1.3 min
+2026-10-21 01:07:49,529 [INFO] Progress: 8600 / 8760 hours (98.2%) | Diesel Burn: 632.84 L | Run Hours: 83 | ETA: 1.0 min
+2026-10-21 01:07:58,325 [INFO] Progress: 8650 / 8760 hours (98.7%) | Diesel Burn: 648.56 L | Run Hours: 85 | ETA: 0.7 min
+2026-10-21 01:08:06,441 [INFO] Progress: 8700 / 8760 hours (99.3%) | Diesel Burn: 671.06 L | Run Hours: 88 | ETA: 0.4 min
+2026-10-21 01:08:16,779 [INFO] Progress: 8750 / 8760 hours (99.9%) | Diesel Burn: 686.06 L | Run Hours: 90 | ETA: 0.1 min
+2026-10-21 01:08:18,543 [INFO] Progress: 8760 / 8760 hours (100.0%) | Diesel Burn: 693.56 L | Run Hours: 91 | ETA: 0.0 min
+2026-10-21 01:08:18,544 [INFO] ================================================================================
+2026-10-21 01:08:18,544 [INFO] ANNUAL N6 RHC PIPELINE SIMULATION COMPLETED SUCCESSFULLY:
+2026-10-21 01:08:18,544 [INFO]   Total Diesel Consumed:   693.56 Liters
+2026-10-21 01:08:18,544 [INFO]   Diesel Run Hours:        91 hours
+2026-10-21 01:08:18,544 [INFO]   Results saved to:        scratch/n6_rhc_annual_results.json
+2026-10-21 01:08:18,544 [INFO] ================================================================================

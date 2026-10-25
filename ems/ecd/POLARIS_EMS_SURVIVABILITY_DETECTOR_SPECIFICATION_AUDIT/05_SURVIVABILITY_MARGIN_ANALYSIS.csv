@@ -1,0 +1,18 @@
+audit_document,05_SURVIVABILITY_MARGIN_ANALYSIS
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# SURVIVABILITY MARGIN FORMULATION & COMPARISON LOGIC
+# ============================================================
+
+margin_metric,formula,units,mathematical_properties,policy_e3_applicability,classification_status
+Battery Hour Margin,M_batt = T_batt - T_required,hours,Physical buffer hours above required survival window,Directly measures battery survival buffer in hours,DERIVABLE_FORMULA
+Diesel Hour Margin,M_fuel = T_fuel - T_required,hours,Physical buffer hours above required survival window,Directly measures fuel survival buffer in hours,DERIVABLE_FORMULA
+Battery Survival Ratio,R_batt = T_batt / T_required,unitless ratio,Fractional coverage of required survival window,Normalized fraction (R < 1.0 indicates shortfall),DERIVABLE_FORMULA
+Diesel Survival Ratio,R_fuel = T_fuel / T_required,unitless ratio,Fractional coverage of required survival window,Normalized fraction (R < 1.0 indicates shortfall),DERIVABLE_FORMULA
+Limiting Resource Identification,Limiting Resource = argmin(R_batt R_fuel),enum (BATTERY DIESEL NEITHER),Identifies resource with weaker survival coverage,Directly implements Policy E3 (preserves weaker resource),DERIVABLE_LOGIC
+Direct Comparison Validity,M_batt vs M_fuel or R_batt vs R_fuel,N/A,Requires identical T_required and D_critical trajectory,Mathematically valid ONLY under common T_required,RESOLVED_BY_EXISTING_GOVERNANCE
+Unmatched Window Invalidation,Comparing T_batt(window_A) vs T_fuel(window_B),N/A,INVALID: Unmatched underlying windows create false ranking,Prohibited; common T_required is mathematically required,PROHIBITED_BY_MATHEMATICAL_LOGIC

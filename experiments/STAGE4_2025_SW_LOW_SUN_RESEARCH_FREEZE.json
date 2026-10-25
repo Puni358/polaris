@@ -1,0 +1,165 @@
+{
+  "experiment_id": "EXP-STAGE4-SW-LOW-SUN-2025-HOLDOUT",
+  "freeze_status": "FROZEN — AUTHORITATIVE RESEARCH CHECKPOINT",
+  "date_utc": "2026-10-05",
+  "governing_documents": {
+    "preregistration_md": {
+      "path": "experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.md",
+      "sha256": "9cb2d5459894be8add07a3bd01595f40ab2485c2a18510765c4d8f0264fe4e46"
+    },
+    "preregistration_json": {
+      "path": "experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.json",
+      "sha256": "9a16ccc8c28267331da2816fe0c7c04aeb9afd6f963e49673eb6c3872d892623"
+    },
+    "holdout_governance_md": {
+      "path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.md",
+      "sha256": "22e67a16a90ef90fa88b248614a83d853511a33619548272535e05615314d7a7"
+    },
+    "holdout_governance_json": {
+      "path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.json",
+      "sha256": "f96fd97c812f44e88455c966c500a3874a99f07b8ae94744759d0fac6b461bf7"
+    }
+  },
+  "population": {
+    "calendar_window": "2025-05-01 00:00:00 to 2025-08-31 00:00:00",
+    "origins_count": 123,
+    "hours_per_arm": 2952,
+    "total_arm_hours": 14760,
+    "exclusions_count": 0
+  },
+  "arms": [
+    "Control_Frozen_B",
+    "Candidate_S",
+    "Candidate_SW",
+    "Candidate_SL",
+    "Candidate_SWL"
+  ],
+  "execution_totals": {
+    "origins_executed": 123,
+    "execution_failures": 0,
+    "solver_infeasibilities": 0,
+    "simultaneous_flow_violations_gt_tau": 0,
+    "runtime_seconds": 3640.85
+  },
+  "results": {
+    "Control_Frozen_B": {
+      "diesel_fuel_liters": 6117.9691,
+      "critical_first_reliability_pct": 93.669482,
+      "proportional_reliability_pct": 83.823383,
+      "min_soc_pct": 54.99,
+      "soc_violations_lt_20": 0
+    },
+    "Candidate_S": {
+      "diesel_fuel_liters": 4648.3272,
+      "saving_pct_vs_b": 24.0201,
+      "critical_first_reliability_pct": 94.327168,
+      "delta_cf_pp": 0.657686,
+      "proportional_reliability_pct": 84.604885,
+      "delta_prop_pp": 0.781502,
+      "min_soc_pct": 20.00,
+      "soc_violations_lt_20": 0,
+      "safety_gates_pass": true
+    },
+    "Candidate_SW": {
+      "diesel_fuel_liters": 3885.0225,
+      "saving_pct_vs_b": 36.4981,
+      "critical_first_reliability_pct": 94.090514,
+      "delta_cf_pp": 0.421032,
+      "proportional_reliability_pct": 83.467189,
+      "delta_prop_pp": -0.356194,
+      "min_soc_pct": 20.00,
+      "soc_violations_lt_20": 0,
+      "safety_gates_pass": false
+    },
+    "Candidate_SL": {
+      "diesel_fuel_liters": 5334.1331,
+      "saving_pct_vs_b": 12.8120,
+      "critical_first_reliability_pct": 94.455173,
+      "delta_cf_pp": 0.785691,
+      "proportional_reliability_pct": 85.150455,
+      "delta_prop_pp": 1.327072,
+      "min_soc_pct": 20.00,
+      "soc_violations_lt_20": 0,
+      "safety_gates_pass": true,
+      "diesel_gate": {
+        "mean_paired_saving_l": 6.3727,
+        "median_paired_saving_l": 5.9488,
+        "bca_95_ci_l": [4.1057, 8.5926],
+        "wilcoxon_stat": 1662.0,
+        "wilcoxon_raw_p": 6.9037e-7,
+        "holm_adjusted_p": 6.9037e-7,
+        "gate_pass": true
+      },
+      "final_classification": "SUCCESS"
+    },
+    "Candidate_SWL": {
+      "diesel_fuel_liters": 5221.3152,
+      "saving_pct_vs_b": 14.6561,
+      "critical_first_reliability_pct": 94.484413,
+      "delta_cf_pp": 0.814931,
+      "proportional_reliability_pct": 85.264223,
+      "delta_prop_pp": 1.440840,
+      "min_soc_pct": 20.00,
+      "soc_violations_lt_20": 0,
+      "safety_gates_pass": true,
+      "diesel_gate": {
+        "mean_paired_saving_l": 7.2899,
+        "median_paired_saving_l": 7.3848,
+        "bca_95_ci_l": [4.9970, 9.5583],
+        "wilcoxon_stat": 1564.0,
+        "wilcoxon_raw_p": 2.2831e-8,
+        "holm_adjusted_p": 4.5662e-8,
+        "gate_pass": true
+      },
+      "final_classification": "SUCCESS"
+    }
+  },
+  "factorial_contrasts": {
+    "C1_wind_without_protection": {
+      "formula": "SW - S",
+      "proportional_rel_pp_mean": -1.1377,
+      "bca_95_ci_pp": [-1.5910, -0.7184]
+    },
+    "C2_protection_under_solar_plus_wind": {
+      "formula": "SW-L - SW",
+      "proportional_rel_pp_mean": 1.7970,
+      "bca_95_ci_pp": [1.4205, 2.1995]
+    },
+    "C3_protection_under_solar_only": {
+      "formula": "S-L - S",
+      "proportional_rel_pp_mean": 0.5456,
+      "bca_95_ci_pp": [0.2755, 0.8331]
+    },
+    "C4_interaction_mechanism_diagnostic": {
+      "formula": "(SW-L - SW) - (S-L - S)",
+      "proportional_rel_pp_mean": 1.2515,
+      "bca_95_ci_pp": [0.8683, 1.6546],
+      "excludes_zero": true,
+      "statement": "Factorial evidence supports the hypothesized low-sun protection mechanism on the 2025 synthetic holdout."
+    }
+  },
+  "governance_status": {
+    "candidate_sl": "SUCCESS",
+    "candidate_swl": "SUCCESS",
+    "candidate_sw": "SAFETY FAILURE",
+    "target_40pct": "NOT ACHIEVED",
+    "production_promotion": "NOT AUTHORIZED",
+    "physical_deployment_validation": "NOT ESTABLISHED",
+    "stage4_status": "SUCCESSFUL CONFIRMATORY RESEARCH EXPERIMENT"
+  },
+  "limitations": [
+    "Demand and realized wind inputs are synthetic benchmark components.",
+    "Release-time semantics for previous_day1 NWP are assumed under the frozen benchmark convention and are not validated against live telemetry feeds.",
+    "Solar elevation retains the frozen one-hour offset.",
+    "The 15 deg threshold is a research regime convention, not a universal physical invariant.",
+    "Stage 4 is research evidence, not physical deployment validation.",
+    "SW-L requires further prospective validation before any operational consideration.",
+    "No production code was modified."
+  ],
+  "production_integrity_hashes": {
+    "gap19": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "dispatch_plan": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b",
+    "causal_nwp": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "s_sw_adapter": "a3ba73ad32ed2be20c0f197689081abf64402da41205a674fe76a15767e40de4"
+  }
+}

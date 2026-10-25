@@ -1,0 +1,53 @@
+{
+  "route": "STAGE 8.6 CAMS ROUTE",
+  "stage_8_6a_feasibility": {
+    "status": "PASS",
+    "description": "EMPIRICALLY FEASIBLE / CAUSALLY USABLE FOR EXPERIMENT",
+    "verified_origins": "347/347",
+    "verified_forecast_tuples": "8,328/8,328",
+    "data_completeness": "100% (AOD550: 100%, TCWV: 100%, missing: 0)",
+    "causality_verified": "100% (D-1 12Z initialization, t_init = t0 - 12h, valid time == target timestamp)",
+    "spatial_grid_cell": "68.4 N, 18.8 E (4.91 km from Nuolja target at 68.362074 N, 18.738752 E)",
+    "raw_grib_files": 12,
+    "inspected_messages": 16656
+  },
+  "stage_8_6b_forecasting": {
+    "status": "REJECTED",
+    "description": "PREDECLARED FORECASTING GATES FAILED",
+    "candidate_features": 39,
+    "control_features": 37,
+    "eval_origins": "174 EVEN origins (5-fold forward-chaining CV)",
+    "control_even_mae_w_m2": 37.620054,
+    "candidate_even_mae_w_m2": 37.867306,
+    "delta_mae_w_m2": 0.247252,
+    "control_even_nmae_pct": 37.9745,
+    "candidate_even_nmae_pct": 37.5944,
+    "delta_nmae_pct": -0.3801,
+    "control_even_rmse_w_m2": 60.160645,
+    "candidate_even_rmse_w_m2": 60.524544,
+    "delta_rmse_w_m2": 0.363899,
+    "gate_outcomes": {
+      "gate1_primary_mae": "FAIL (actual: 37.867306 W/m2, required: <= 37.120054 W/m2)",
+      "gate2_fold_consistency": "FAIL (3/5 folds improved, required: >= 4)",
+      "gate3_worst_fold_degradation": "FAIL (+1.310037 W/m2 in Fold 3, required: <= +0.50 W/m2)",
+      "gate4_directional_metrics": "FAIL (nMAE improved by -0.38 pp, but RMSE degraded by +0.36 W/m2)",
+      "gate5_causality": "PASS (8,328/8,328 tuples causal)",
+      "gate6_control_reproduction": "PASS (reproduced 37.620054 W/m2 with 0.000000 W/m2 error)"
+    }
+  },
+  "overall_cams_route_status": {
+    "data_feasibility": "PASS",
+    "forecasting_utility": "FAIL / REJECTED",
+    "operational_model_status": "NOT ADDED"
+  },
+  "scientific_interpretation": "CAMS was successfully validated as a causally accessible atmospheric-composition data source, but the predeclared forecasting experiment showed insufficient and inconsistent predictive benefit, so CAMS AOD550 and TCWV were rejected from the operational POLARIS model.",
+  "governance_locks": {
+    "odd_targets_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false,
+    "odd_tuning_performed": false,
+    "active_operational_champion": "Stage 8.1 U700+V700 Steering Wind Model",
+    "official_odd_champion_mae_w_m2": 36.188657,
+    "official_odd_champion_nmae_pct": 28.0688
+  }
+}

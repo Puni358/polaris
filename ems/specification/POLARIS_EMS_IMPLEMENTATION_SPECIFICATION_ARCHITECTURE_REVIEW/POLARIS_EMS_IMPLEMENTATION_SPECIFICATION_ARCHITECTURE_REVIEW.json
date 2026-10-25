@@ -1,0 +1,26 @@
+{
+  "governance_status": {
+    "overall_review": "PASS",
+    "implementation_readiness": "READY_FOR_IMPLEMENTATION_SPECIFICATION",
+    "implementation_authorization": "NOT_GRANTED",
+    "code_modification": "NOT_AUTHORIZED",
+    "gap19_solver_architecture": "REQUIRES_GOVERNANCE_DECISION",
+    "future_architecture": "DEFINED",
+    "stakeholder_policy": "HUMAN_APPROVED",
+    "objective_specification_governance": "PASS",
+    "current_ems_implementation": "FROZEN",
+    "execution_firewall": "PASS",
+    "protected_artifact_integrity": "PASS",
+    "hash_integrity": "PASS",
+    "next_governed_step": "IMPLEMENTATION_SPECIFICATION_AND_AUTHORIZATION_REVIEW"
+  },
+  "component_hashes": {
+    "milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "optimizer.yaml": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8",
+    "battery.yaml": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel.yaml": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "loads.yaml": "ab6943d72f2054b001274de5a3fe229c9987eb31fb11be0422f33754fd5f3cad",
+    "solar_pv.yaml": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "station.yaml": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42"
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "diagnostic_name": "POLARIS_PHASE_C1_HORIZON_DIAGNOSTIC",
+  "timestamp_utc": "2026-09-16 00:28:58+0000",
+  "population_accounting": {
+    "parent_eligible_origins": 104,
+    "theoretical_max_cells": 624,
+    "aggregate_valid_target_cells": 609,
+    "total_omitted_cells": 15,
+    "population_policy": "Option B (Horizon-Specific Valid Origins Only; No Imputation)"
+  },
+  "horizon_results": {
+    "H7": {
+      "horizon_hour": 7,
+      "N_h": 89,
+      "omitted_cells": 15,
+      "validation_fold_counts": {
+        "fold_0": 0,
+        "fold_1": 18,
+        "fold_2": 17,
+        "fold_3": 18,
+        "fold_4": 18
+      },
+      "training_fold_counts": {
+        "fold_0": 89,
+        "fold_1": 71,
+        "fold_2": 72,
+        "fold_3": 71,
+        "fold_4": 71
+      },
+      "ridge": {
+        "r2_P0": -0.9793588293271172,
+        "r2_P1": -1.1992074283702263,
+        "delta_r2": -0.21984859904310916
+      },
+      "gbdt": {
+        "r2_P0": -1.036682959447147,
+        "r2_P1": -0.5701625287600791,
+        "delta_r2": 0.46652043068706783,
+        "bootstrap_95ci": [
+          0.2459871058489394,
+          0.7083162392935531
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H8": {
+      "horizon_hour": 8,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_0": 0,
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20
+      },
+      "training_fold_counts": {
+        "fold_0": 104,
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84
+      },
+      "ridge": {
+        "r2_P0": -0.6927458752430056,
+        "r2_P1": -1.0283062713632045,
+        "delta_r2": -0.33556039612019894
+      },
+      "gbdt": {
+        "r2_P0": -0.7784518361425983,
+        "r2_P1": -0.3560074432536502,
+        "delta_r2": 0.4224443928889481,
+        "bootstrap_95ci": [
+          0.22594247235142292,
+          0.6382544450371488
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H9": {
+      "horizon_hour": 9,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_0": 0,
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20
+      },
+      "training_fold_counts": {
+        "fold_0": 104,
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84
+      },
+      "ridge": {
+        "r2_P0": -1.062308624452987,
+        "r2_P1": -1.3431705906177966,
+        "delta_r2": -0.28086196616480974
+      },
+      "gbdt": {
+        "r2_P0": -1.2439373399762186,
+        "r2_P1": -0.7177452079283209,
+        "delta_r2": 0.5261921320478977,
+        "bootstrap_95ci": [
+          0.30621593737732034,
+          0.7485200740810983
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H10": {
+      "horizon_hour": 10,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_0": 0,
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20
+      },
+      "training_fold_counts": {
+        "fold_0": 104,
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84
+      },
+      "ridge": {
+        "r2_P0": -1.1604188800005026,
+        "r2_P1": -1.5118903280067428,
+        "delta_r2": -0.3514714480062402
+      },
+      "gbdt": {
+        "r2_P0": -1.3000364973271146,
+        "r2_P1": -0.8958911940914194,
+        "delta_r2": 0.4041453032356952,
+        "bootstrap_95ci": [
+          0.17317631716468054,
+          0.6617962978231433
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H11": {
+      "horizon_hour": 11,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_0": 0,
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20
+      },
+      "training_fold_counts": {
+        "fold_0": 104,
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84
+      },
+      "ridge": {
+        "r2_P0": -1.1109047987032823,
+        "r2_P1": -1.3078676156930507,
+        "delta_r2": -0.19696281698976836
+      },
+      "gbdt": {
+        "r2_P0": -1.244320943585298,
+        "r2_P1": -0.7637420166299314,
+        "delta_r2": 0.48057892695536664,
+        "bootstrap_95ci": [
+          0.2436514156883337,
+          0.7261772445646941
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H12": {
+      "horizon_hour": 12,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_0": 0,
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20
+      },
+      "training_fold_counts": {
+        "fold_0": 104,
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84
+      },
+      "ridge": {
+        "r2_P0": -1.2566247202243876,
+        "r2_P1": -1.5321805248589961,
+        "delta_r2": -0.2755558046346085
+      },
+      "gbdt": {
+        "r2_P0": -1.2663230382899222,
+        "r2_P1": -1.012604834411897,
+        "delta_r2": 0.25371820387802524,
+        "bootstrap_95ci": [
+          -0.00690907058124188,
+          0.51304024680145
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    }
+  },
+  "artifact_hashes": {
+    "INFORMATION_PROBE_RESULTS.json": "ba801e50fbf583f5ec951b08d7cb61d61574c33a92017eb7a10ce96150f5e467",
+    "PHASE_A_FORENSIC_INTEGRITY_AUDIT.json": "f78bddf72b4a2bfb3780ffdb916d49c81616555ccbc0b7bd11e609ef440f3734",
+    "PHASE_B_HEDGING_DIAGNOSTIC.json": "d376296878b42c0a7981e81550c7077caee81b478669594a7af0c89899b874ca",
+    "PHASE_B_FORENSIC_INTEGRITY_AUDIT.json": "4f69466c743203c81b9b3c605c95a2f1bf7366b61acb07b978b65483e1c3d31a",
+    "POLARIS_PHASE_AB_SCIENTIFIC_SYNTHESIS_CHECKPOINT.json": "a80dbc19476bd1109da9f0c17825bfc4752aad814e60342b9b3de2f935de59bf",
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+    "INFORMATION_PROBE_ELIGIBLE_EVEN_ORIGINS.csv": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e"
+  },
+  "controlled_interpretation": "GBDT probes show horizon-specific incremental out-of-fold predictive power, with uncertainty quantified by the prespecified origin-level bootstrap confidence interval and within-month permutation procedure. Successful GBDT extraction of horizon-specific information demonstrates that the specified probe can extract information from P1. It does not establish that Stage8.1 has a representation limitation, because GBDT and Stage8.1 differ in model class, objective, loss, capacity, optimization, and training procedure."
+}

@@ -1,0 +1,2 @@
+champion_stage4_mae,champion_stage4_nmae_pct,best_candidate_model,best_candidate_mae,best_candidate_nmae_pct,delta_mae,delta_nmae_pct,bootstrap_mean_delta_mae,bootstrap_ci_95_lower,bootstrap_ci_95_upper,even_cv_supported_improvement
+43.450807884206704,33.70146896576901,Global Affine Calibration (C1),44.94023430669869,34.85670314434122,1.489426422491988,1.1552341785722078,1.4892071985009814,1.0976656397875557,1.8794102098223098,False

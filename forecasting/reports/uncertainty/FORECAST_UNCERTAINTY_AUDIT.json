@@ -1,0 +1,377 @@
+{
+  "audit_metadata": {
+    "title": "POLARIS Day 1 Forecast Uncertainty Audit",
+    "date": "2026-10-05",
+    "target_station": "Mount Nuolja AWS (ANS_NMS)",
+    "coordinates": {
+      "latitude_deg_N": 68.362074,
+      "longitude_deg_E": 18.738875,
+      "elevation_m_asl": 702.0
+    },
+    "governance_mode": "RESEARCH_AUDIT_ONLY",
+    "production_modifications": false,
+    "controller_experiments_run": false
+  },
+  "artifacts_audited": [
+    {
+      "description": "Historical Candidate F Residual Dataset (2020-2023)",
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "row_count": 26011,
+      "origins_count": 1369,
+      "status": "VERIFIED"
+    },
+    {
+      "description": "Frozen Candidate F Point Model",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "Reproducible Baseline 2024 Odd Origins Fixture",
+      "path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "row_count": 4152,
+      "origins_count": 173,
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2 Calibration Experiment 01 Results",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_CALIBRATION_EXP_01_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-06 Physical Boundary Evidence Audit",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_06_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-07 GAP19 Uncertainty Interface Evaluation",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_07_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-08 Adaptive Risk-Budget Evaluation",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_08_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-09 Stochastic MILP Evaluation",
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-10 Risk-Aware Multi-Scenario Evaluation",
+      "path": "experiments/L2_EXP_10_RISK_AWARE_MULTI_SCENARIO/L2_EXP_10_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-11 Adaptive q10 NN Relaxation Evaluation",
+      "path": "experiments/L2_EXP_11_ADAPTIVE_Q_NN/results/L2_EXP_11_RESULTS.md",
+      "status": "VERIFIED"
+    },
+    {
+      "description": "L2-EXP-12 Horizon Risk Budget Evaluation",
+      "path": "experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_RESULTS.md",
+      "status": "VERIFIED"
+    }
+  ],
+  "section_1_causal_pairs_and_provenance": {
+    "status": "VERIFIED_WITH_GAPS",
+    "station_id": "ANS_NMS",
+    "station_name": "Mount Nuolja Automatic Weather Station (Middle Station)",
+    "sensor_type": "Apogee SP110 Silicon-cell Pyranometer (Total SW_IN)",
+    "sensor_deployment": "2.86 m a.g.l., 702 m a.s.l.",
+    "nwp_source": "MET Norway MEPS 18Z run (grid point y=760, x=486; 1.24 km offset)",
+    "causality_rules": {
+      "issuance_lead": "6h before target day 00:00 UTC (MEPS 18Z run)",
+      "context_window": "24h prior, ending strictly at t0 - 1h",
+      "future_leakage": "ZERO (verified)"
+    },
+    "provenance_gaps": [
+      {
+        "gap_id": "GAP-PROV-01",
+        "classification": "VERIFIED",
+        "finding": "2020-2023 Historical MEPS extraction only spans hours 00:00 to 18:00 UTC (19 hours per origin). Target hours 19:00 to 23:00 UTC are 100% absent across all 1,369 historical origins."
+      },
+      {
+        "gap_id": "GAP-PROV-02",
+        "classification": "VERIFIED",
+        "finding": "Inconsistent horizon indexing: 1,321 origins are indexed h=1..19 (dispatch hour + 1), while 48 recovered origins are indexed h=6..24 (MEPS lead time). Consequently, horizons 20-24 have zero daytime rows in 2022 validation and only 20 daytime rows in 2023 blind test."
+      },
+      {
+        "gap_id": "GAP-PROV-03",
+        "classification": "BLOCKED",
+        "finding": "Absence of direct/diffuse radiation decomposition: Nuolja AWS has only a single unshaded upward pyranometer (SW_IN). No DNI, DHI, downward shortwave, or surface optical albedo exist anywhere in the repository (EXP-06)."
+      },
+      {
+        "gap_id": "GAP-PROV-04",
+        "classification": "BLOCKED",
+        "finding": "Absence of sensor calibration records: No calibration certificates, sensitivity multipliers, cosine error curves, leveling checks, or maintenance/cleaning logs exist for the pyranometer (EXP-06)."
+      }
+    ]
+  },
+  "section_2_forecast_error_distributions": {
+    "dataset_2020_2023_daytime": {
+      "sample_count": 15879,
+      "mean_bias_w_m2": 29.15,
+      "median_error_w_m2": 17.51,
+      "mae_w_m2": 74.02,
+      "rmse_w_m2": 107.74,
+      "std_w_m2": 103.73,
+      "skewness": 0.58,
+      "kurtosis": 5.23,
+      "quantiles_w_m2": {
+        "q05": -108.57,
+        "q10": -69.21,
+        "q25": -17.43,
+        "q50": 17.51,
+        "q75": 72.84,
+        "q90": 166.42,
+        "q95": 224.2
+      }
+    },
+    "dataset_2024_daytime": {
+      "sample_count": 2216,
+      "mean_bias_w_m2": 2.46,
+      "median_error_w_m2": 1.06,
+      "mae_w_m2": 46.49,
+      "rmse_w_m2": 73.2,
+      "std_w_m2": 73.18,
+      "skewness": -0.12,
+      "kurtosis": 3.39,
+      "quantiles_w_m2": {
+        "q10": -70.65,
+        "q25": -20.47,
+        "q50": 1.06,
+        "q75": 26.84,
+        "q90": 82.46
+      }
+    },
+    "distribution_by_solar_elevation": [
+      {
+        "elevation_band": "0-5 deg",
+        "count_2024": 459,
+        "bias_2024": 0.63,
+        "mae_2024": 8.86,
+        "rmse_2024": 13.87,
+        "count_hist": 2599,
+        "bias_hist": 0.29,
+        "mae_hist": 11.58,
+        "rmse_hist": 17.16
+      },
+      {
+        "elevation_band": "5-10 deg",
+        "count_2024": 331,
+        "bias_2024": 2.44,
+        "mae_2024": 20.74,
+        "rmse_2024": 29.3,
+        "count_hist": 2086,
+        "bias_hist": 19.29,
+        "mae_hist": 32.58,
+        "rmse_hist": 41.33
+      },
+      {
+        "elevation_band": "10-15 deg",
+        "count_2024": 281,
+        "bias_2024": 9.31,
+        "mae_2024": 34.52,
+        "rmse_2024": 48.19,
+        "count_hist": 2056,
+        "bias_hist": 47.3,
+        "mae_hist": 62.91,
+        "rmse_hist": 77.09
+      },
+      {
+        "elevation_band": "15-25 deg",
+        "count_2024": 459,
+        "bias_2024": 4.17,
+        "mae_2024": 50.94,
+        "rmse_2024": 68.49,
+        "count_hist": 3653,
+        "bias_hist": 61.95,
+        "mae_hist": 92.82,
+        "rmse_hist": 119.52
+      },
+      {
+        "elevation_band": "25-35 deg",
+        "count_2024": 376,
+        "bias_2024": -2.69,
+        "mae_2024": 71.76,
+        "rmse_2024": 93.8,
+        "count_hist": 3006,
+        "bias_hist": 36.1,
+        "mae_hist": 105.56,
+        "rmse_hist": 138.29
+      },
+      {
+        "elevation_band": ">35 deg",
+        "count_2024": 310,
+        "bias_2024": 2.69,
+        "mae_2024": 103.33,
+        "rmse_2024": 131.84,
+        "count_hist": 2479,
+        "bias_hist": -4.12,
+        "mae_hist": 117.63,
+        "rmse_hist": 153.08
+      }
+    ],
+    "distribution_by_cloud_regime_hist": [
+      {
+        "regime": "Clear (<0.2)",
+        "count": 4176,
+        "bias": 60.69,
+        "mae": 80.2,
+        "rmse": 119.73,
+        "std": 103.22,
+        "q10": -32.94,
+        "q90": 224.2
+      },
+      {
+        "regime": "Partial (0.2-0.8)",
+        "count": 3057,
+        "bias": 37.59,
+        "mae": 81.46,
+        "rmse": 111.58,
+        "std": 105.07,
+        "q10": -89.42,
+        "q90": 179.16
+      },
+      {
+        "regime": "Overcast (>0.8)",
+        "count": 8646,
+        "bias": 10.93,
+        "mae": 68.41,
+        "rmse": 99.96,
+        "std": 99.37,
+        "q10": -101.87,
+        "q90": 120.3
+      }
+    ]
+  },
+  "section_3_error_characteristics": {
+    "heteroscedasticity": "VERIFIED \u2014 Error standard deviation ranges from ~9 W/m\u00b2 (horizon 1) to ~106 W/m\u00b2 (horizon 12), and from 13.9 W/m\u00b2 (solar elevation < 5 deg) to 132.0 W/m\u00b2 (> 35 deg). Error spread is non-stationary.",
+    "asymmetry_and_bias": "VERIFIED \u2014 Candidate F exhibits systematic over-prediction bias during daytime (+29.15 W/m\u00b2 in 2020-2023 historical, up to +22.45 W/m\u00b2 in afternoon 2024). Downside errors cause critical microgrid deficits.",
+    "horizon_autocorrelation": {
+      "status": "VERIFIED",
+      "findings": "Strong adjacent-horizon correlation: r(h6,h7)=0.78, r(h7,h8)=0.63, r(h11,h12)=0.63, r(h12,h13)=0.70, r(h13,h14)=0.69. Cloud forecast errors persist over 3 to 6 hours rather than acting as independent noise."
+    },
+    "day_to_day_persistence": {
+      "status": "VERIFIED",
+      "lag_1_pearson_r": 0.4641,
+      "lag_1_spearman_rho": 0.4969,
+      "variance_explained_r2": 0.2154,
+      "finding": "21.5% of next day's forecast origin residual is linearly predictable from the previous day's residual."
+    },
+    "cumulative_24h_energy_error_2024": {
+      "mean_wh_m2": 23.99,
+      "std_wh_m2": 529.71,
+      "mae_wh_m2": 344.96,
+      "q10_wh_m2": -608.4,
+      "q50_wh_m2": -6.47,
+      "q90_wh_m2": 677.83
+    }
+  },
+  "section_4_static_q10_evaluation": {
+    "verdict": "MARGINALLY_CALIBRATED_BUT_OPERATIONALLY_OVERCONSERVATIVE",
+    "authoritative_requalification_results": {
+      "nominal_target_percent": 90.0,
+      "acceptance_band_percent": [
+        87.0,
+        93.0
+      ],
+      "validation_2022_daytime_coverage_percent": 90.12,
+      "validation_2022_status": "PASS (within [87%, 93%], spot on nominal 90%)",
+      "blind_2023_daytime_coverage_percent": 86.77,
+      "blind_2023_status": "MILD_UNDERCOVERAGE_CALIBRATION_FAILURE (0.23% below 87% floor)",
+      "pooled_daytime_coverage_percent": 88.53,
+      "pooled_status": "PASS (within [87%, 93%])",
+      "methodological_firewall_note": "These authoritative one-sided q10 requalification figures (nominal 90%) must NOT be conflated with the L2 conformal prediction interval experiments (L2-EXP-01/02/03), which evaluated two-sided 80% intervals [q10, q90] under Stage C physical bounding (1.25 * clearsky_ghi) that collapsed to 70.0%-71.8%."
+    },
+    "reliability_benefit_verified": "In L2-EXP-07, planning against static q10 cut realized critical unmet load by 93.39% (7,994 Wh/origin to 529 Wh/origin, p=8.75e-20).",
+    "operational_cost_verified": "In L2-EXP-07, static q10 increased diesel fuel by +38.18% (+16.36 L/origin, +2,012 L total) and increased solar curtailment by +92.87% (+34.7 kWh/origin, +4.26 MWh total) across 123 NORMAL origins.",
+    "nature_of_2023_calibration_failure": "The 2023 calibration failure is not a catastrophic statistical collapse, but a mild seasonal under-coverage drift (86.77% vs 87.00% floor). The disqualifying operational defect of static q10 is that enforcing a 90% lower bound at every single hour of every 24h horizon is economically ruinous (+38.2% fuel, +92.9% curtailment), treating crystal-clear midday sun with identical conservatism as storm fronts.",
+    "relaxation_failure_mechanisms": {
+      "pointwise_adaptive_nn_exp_11": "Pointwise uncoordinated relaxation (EXP-11) doubled unmet load (+106.3%) because morning optimism suppressed diesel, causing battery exhaustion during afternoon cloud troughs.",
+      "horizon_risk_budget_exp_12": "Hourly budget decay without joint state integration (EXP-12) worsened unmet load to 111.2 kWh (+71.0% over static q10)."
+    }
+  },
+  "section_5_supportability_of_representations": {
+    "static_quantile": {
+      "status": "REFUTED_AS_CALIBRATED_UNVERIFIED_AS_OPTIMAL",
+      "justification": "Fails empirical calibration in 2023; incurs +38% fuel penalty and +93% curtailment."
+    },
+    "horizon_dependent_quantiles": {
+      "status": "BLOCKED_ON_DATA_GAP",
+      "justification": "Horizons 20-24 have zero daytime rows in 2022 validation in the 2020-2023 archive; cannot learn horizon-dependent adjustments for full 24h cycle."
+    },
+    "prediction_intervals": {
+      "status": "BLOCKED_ON_PHYSICAL_ENVELOPE",
+      "justification": "Stage B unconstrained CQR achieves 80.4% coverage, but Stage C physical bounding drops to 70.05% because setting a diffuse floor constant is blocked by lack of DHI/DNI sensors (EXP-06)."
+    },
+    "residual_distributions": {
+      "status": "VERIFIED_SUPPORTABLE",
+      "justification": "Directly computable from 26,011 rows (2020-2023) and 2,216 rows (2024); preserves heteroscedasticity, regimes, and empirical asymmetry."
+    },
+    "scenarios": {
+      "status": "CONDITIONALLY_SUPPORTABLE_WITH_CAVEATS",
+      "justification": "HiGHS MILP solves 3 scenarios in 1.5s (EXP-09/10), but non-anticipativity and priority semantics must be preserved, and scenarios must be trajectory-coherent rather than marginal quantiles."
+    },
+    "cumulative_horizon_error_bounds": {
+      "status": "VERIFIED_HIGHLY_SUPPORTABLE",
+      "justification": "Battery storage is an energy integrator (Wh). Total 24h energy error (mean +24 Wh/m2, std 530 Wh/m2, q10 -608 Wh/m2) matches microgrid physical failure mechanisms far better than hourly pointwise margins."
+    },
+    "cumulative_24h_vs_prefix_window_bounds": {
+      "status": "PREFIX_CUMULATIVE_BOUND_DECISIVELY_SUPPORTED_OVER_24H_LUMPED",
+      "comparison_analysis": {
+        "lumped_24h_energy_bound": {
+          "definition": "Single scalar energy error bound over full 24h: sum_{t=1}^{24} (y_pred - y_true) * dt",
+          "empirical_limitation": "In 97.7% of evaluated 2024 origins, the maximum cumulative solar shortfall occurs BEFORE horizon 24 (peaking at horizons 14-17). Mean maximum intra-day cumulative shortfall is 227.2 Wh/m2, compared to a final 24h net shortfall of only 24.0 Wh/m2 (nearly 10x difference).",
+          "physical_flaw": "Battery storage is an energy integrator that responds to cumulative energy at time k (E_k). If solar is over-predicted from 09:00 to 14:00 UTC, the battery depletes and triggers afternoon unmet load before hour 24. A lumped 24h bound cannot protect against intra-day drawdown timing."
+        },
+        "prefix_cumulative_error_bound": {
+          "definition": "Monotonically structured cumulative error bound over prefixes k in [1..24]: Delta E_prefix(k) = sum_{t=1}^k (y_pred - y_true) * dt",
+          "empirical_support": "Empirical prefix error spread std(E_prefix(k)) grows continuously from 3.7 Wh/m2 at h=1 to 511.4 Wh/m2 at h=16, then plateaus at night (h >= 18). Peak 90th percentile prefix shortfall reaches 692.2 Wh/m2 at h=18.",
+          "operational_fit": "Aligns exactly with receding-horizon dispatch and battery state trajectory E_k >= E_min + Delta E_prefix(k). Directly prevents the afternoon battery exhaustion observed in EXP-11 and EXP-12."
+        }
+      }
+    }
+  },
+  "final_synthesis": {
+    "what_we_know": [
+      "Solar forecast error is non-stationary, heteroscedastic, and scales with solar elevation and cloud cover.",
+      "Candidate F has an empirical positive daytime bias (+2.5 to +29.2 W/m2) that leads unbuffered EMS into energy deficits.",
+      "Solar forecast errors have strong temporal autocorrelation across adjacent horizons (r=0.63 to 0.78) and day-to-day persistence (r=0.464, R2=21.5%).",
+      "Planning against static q10 cuts unmet critical load by 93.4%, but at an operational penalty of +38.2% diesel fuel and +92.9% solar curtailment.",
+      "Authoritative q10 requalification confirms nominal 90% coverage achieved 90.12% in 2022 validation, 86.77% in 2023 blind test (failing the [87%, 93%] acceptance band by 0.23%), and 88.53% pooled. Static q10 is therefore marginally calibrated, but operationally over-conservative (+38.2% fuel, +92.9% curtailment).",
+      "Uncoordinated pointwise hourly relaxation of q10 (EXP-11, EXP-12) fails because morning optimism empties the battery before afternoon deficit troughs."
+    ],
+    "what_we_do_not_know": [
+      "True decomposition of low-sun irradiance into diffuse skylight, terrain albedo, and sensor cosine error (blocked by lack of DHI/DNI at Nuolja AWS).",
+      "True physical fuel consumption in Liters (blocked by prototype linear fuel equation; no bench calibration).",
+      "Performance on hours 19:00 to 23:00 UTC across 2020-2023 (blocked by MEPS 18Z +24h lead time cutoff).",
+      "Closed-loop performance under live rolling-horizon operational telemetry (only semi-empirical replay on 173 odd origins has been tested)."
+    ],
+    "why_static_q10_is_not_defensible": "Static q10 is not defensible as an operational uncertainty representation because: (1) while its one-sided calibration is near nominal (90.12% in 2022, 88.53% pooled), it suffered a confirmed 2023 blind test failure (86.77% vs 87% floor), (2) applying a 10th-percentile derating uniformly across all 24 hours ignores the strong 9x variance expansion between dawn and midday, (3) it imposes an economically prohibitive penalty of +38.18% diesel fuel and +92.87% solar curtailment by assuming storm conditions during clear midday sun, and (4) its reliability benefit is achieved through brute-force fossil over-generation rather than genuine uncertainty awareness.",
+    "single_best_uncertainty_representation_to_test_next": "Prefix Cumulative Energy Error Bound Envelope: B_prefix(k, cloud_regime) for k in [1..24], tested as a Dynamic Horizon-Indexed Emergency Battery Reserve (EBR) trajectory in GAP19 Stage 2.",
+    "exact_evidence_supporting_recommendation": [
+      "1. Intra-day Deficit Timing: In 97.7% of 2024 origins, maximum cumulative solar shortfall occurs before horizon 24, peaking between horizons 14 and 17 (mean max shortfall 227.2 Wh/m2 vs final 24h net shortfall of 24.0 Wh/m2). A lumped 24h bound leaves afternoon hours vulnerable to battery exhaustion.",
+      "2. Battery Physical Integration: Battery state satisfies E_k = E_0 + sum_{t=1}^k (P_gen - P_load) dt. Microgrid deficits occur when prefix energy fails to meet prefix load; a prefix cumulative bound Delta E_prefix(k) matches battery storage state dynamics exactly.",
+      "3. Empirical Prefix Tractability: Prefix error std expands smoothly from 3.7 Wh/m2 at h=1 to 511.4 Wh/m2 at h=16, then plateaus at night, reflecting atmospheric physics without requiring pointwise hourly independence assumptions.",
+      "4. Explains Failure of Pointwise Relaxations: Forensics of L2-EXP-11 (NN adaptive q) and L2-EXP-12 (horizon risk budget) proved that uncoordinated hourly relaxations fail because they deplete the battery before afternoon deficit troughs. A prefix bound enforces energy conservation across all sub-horizons.",
+      "5. Zero GAP19 Architecture Impact: Can be implemented directly as a time-indexed EBR floor E_batt(k) >= EBR_baseline(k) + B_prefix(k) in GAP19 Stage 2. Adds zero decision variables, requires zero multi-scenario non-anticipativity constraints, and avoids the EXP-06 sensor-blocked physical upper envelope."
+    ],
+    "what_must_not_be_changed_yet": [
+      "Production code in system/, EMS, router.py, and realization executor.",
+      "GAP19 MILP objective hierarchy, priorities, and solver tolerances.",
+      "Stage 8.1 / Candidate F model weights, features, and frozen artifact hashes.",
+      "Numerical physical envelope upper bound constants (no tuning of 80 W/m2 or diffuse floors until sensor authority is established).",
+      "Pre-registered governance files and test suites."
+    ],
+    "unresolved_assumptions": [
+      "1. Station Engine Fuel Curve Calibration: Linear fuel equation (5.0 L/h + 0.00025 L/Wh) remains an uncalibrated engineering prototype; exact physical Liter savings in the field remain unvalidated.",
+      "2. High-Zenith Low-Sun Diffuse Decomposition: Relative quantitative contributions of diffuse skylight, mountain terrain reflection, snow albedo, and pyranometer cosine error at Mount Nuolja remain unmeasured due to lack of DHI/DNI sensors (EXP-06).",
+      "3. Operational Replay Scope: Evaluated on 173 odd origins (semi-empirical replay fixture); performance under live real-time rolling telemetry remains an operational inference.",
+      "4. Historical Pre-2024 Evening Hours: Hours 19:00 to 23:00 UTC remain absent from the historical MEPS 18Z archive."
+    ]
+  }
+}

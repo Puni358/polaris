@@ -1,0 +1,31 @@
+{
+  "stage": "STAGE 8.5 MEPS SPATIAL CLOUD FIELD FEASIBILITY AUDIT",
+  "audit_date": "2026-09-12",
+  "benchmark_origins_audited": 347,
+  "latest_causal_meps_run": "D-1 18:00 UTC (18Z) run",
+  "meps_issuance_lead_time": "6 hours prior to t0 (t_issuance = t0 - 6h)",
+  "meps_sfc_18z_coverage": "347/347 (100.0%)",
+  "meps_pl_18z_coverage": "347/347 (100.0%)",
+  "meps_ml_18z_coverage": "0/347 (0.0% \u2014 Disproved for 18Z)",
+  "spatial_grid_resolution_km": 2.5,
+  "supported_spatial_features": [
+    "upstream_cloud_fraction",
+    "downstream_cloud_fraction",
+    "along_wind_cloud_gradient",
+    "cross_wind_cloud_gradient",
+    "cloud_advection_proxy",
+    "cloud_fraction_temporal_tendency"
+  ],
+  "causality_pass": true,
+  "governance": {
+    "odd_target_access": "NO",
+    "odd_predictions": "NO",
+    "odd_metrics": "NO",
+    "odd_tuning": "NO",
+    "champion_modified": "NO",
+    "current_champion": "Stage 8.1 U700+V700 Steering Wind Model",
+    "forecasting_experiment_run": "NO",
+    "cv_run": "NO",
+    "integrity": "PASS"
+  }
+}

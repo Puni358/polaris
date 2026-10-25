@@ -1,0 +1,21 @@
+audit_document,12_AB_IMPLEMENTATION_NEUTRALITY
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# A/B IMPLEMENTATION NEUTRALITY MATRIX
+# ============================================================
+
+formulation_dimension,option_a_sequential_milp_representation,option_b_native_highs_representation,solver_neutrality_verification_status
+Decision Variables x,360 decision variables per 24h horizon (15 vars/step x 24 steps),360 decision variables per 24h horizon (identical bounds & integrality),VERIFIED NEUTRAL (Identical variable vector)
+Constraint Matrix A lb ub,12 constraint families (bus balance bounds battery transitions diesel limits),12 constraint families (identical rows lhs rhs),VERIFIED NEUTRAL (Identical feasibility space)
+Stage 1 Objective (Critical),c_1 = p_unmet_critical * dt; solve stage 1; lock J1*,HighsLinearObjective(priority=0 coeff=c_1),VERIFIED NEUTRAL (Identical Stage 1 cost vector)
+Stage 2 Objective (EBR/Terminal),c_2 = (s_EBR + s_term); solve stage 2; lock J2*,HighsLinearObjective(priority=1 coeff=c_2),VERIFIED NEUTRAL (Identical Stage 2 cost vector)
+Stage 3 Objective (Fuel),c_3 = (F_base*u + F_marg*p + F_start*v); solve stage 3; lock J3*,HighsLinearObjective(priority=2 coeff=c_3),VERIFIED NEUTRAL (Identical Stage 3 cost vector)
+Stage 4 Objective (Renewable),c_4 = (p_curt_sol + p_curt_wind) * dt; solve stage 4,HighsLinearObjective(priority=3 coeff=c_4),VERIFIED NEUTRAL (Identical Stage 4 cost vector)
+Priority Hierarchical Order,Sequential execution order (Stage 1 -> 2 -> 3 -> 4),HighsLinearObjective priority integers (0 -> 1 -> 2 -> 3),VERIFIED NEUTRAL (1-to-1 priority mapping)
+Objective Locking / Tolerance,Explicit linear constraints c_k^T x <= z_k* + epsilon_k,HighsLinearObjective abs_tolerance and rel_tolerance fields,VERIFIED NEUTRAL (Equivalence criteria defined)
+Terminal Conditions,E(H) >= E_terminal_target (or s_term shortfall penalized in Stage 2),E(H) >= E_terminal_target (or s_term shortfall penalized in Stage 2),VERIFIED NEUTRAL (Identical terminal bounds)
+Mathematical Equivalence Result,Option A and Option B solve the EXACT SAME mathematical optimization problem,Option A and Option B solve the EXACT SAME mathematical optimization problem,VERIFIED NEUTRAL (A/B implementation-neutral)

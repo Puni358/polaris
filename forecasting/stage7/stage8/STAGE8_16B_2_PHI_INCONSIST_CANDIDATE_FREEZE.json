@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-09-13T02:43:00+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 — CANDIDATE FREEZE / PROMOTION CHECKPOINT",
+  "status": "PASSED EVEN-CV \u2192 CANDIDATE FOR ODD VALIDATION",
+  "candidate_name": "Stage 8.1 + phi_inconsist",
+  "feature_name": "phi_inconsist",
+  "mathematical_formula": "phi_inconsist = | N_total - (1.0 - exp(-0.02 * LWP_latest)) |",
+  "parameters": {
+    "alpha": 0.02,
+    "feature_count_control": 37,
+    "feature_count_candidate": 38,
+    "random_state": 42,
+    "cv_folds": 5,
+    "cv_type": "forward_chaining"
+  },
+  "authoritative_even_cv_results": {
+    "control_mae_w_m2": 45.09128,
+    "candidate_mae_w_m2": 44.718895,
+    "delta_mae_w_m2": -0.372385,
+    "control_nmae_pct": 32.579,
+    "candidate_nmae_pct": 32.3099,
+    "delta_nmae_pct": -0.2691,
+    "control_rmse_w_m2": 76.985584,
+    "candidate_rmse_w_m2": 76.443487,
+    "delta_rmse_w_m2": -0.542097,
+    "improved_folds_count": 3,
+    "worst_fold_degradation_w_m2": 0.17641,
+    "acceptance_gates": {
+      "G1_MAE": "PASS",
+      "G2_nMAE": "PASS",
+      "G3_Folds": "PASS",
+      "G4_WorstFold": "PASS",
+      "G5_RMSE": "PASS"
+    }
+  },
+  "freeze_rules_enforced": {
+    "feature_definition_frozen": true,
+    "alpha_coefficient_frozen": true,
+    "model_architecture_frozen": true,
+    "preprocessing_frozen": true,
+    "odd_targets_read_before_freeze": 0,
+    "odd_tuning_allowed": false
+  }
+}

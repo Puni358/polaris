@@ -1,0 +1,13 @@
+{
+  "origin_timestamp": "2024-11-20T00:00:00Z",
+  "treatment_diesel_fuel_l": 260.356,
+  "control_diesel_fuel_l": 169.949,
+  "fuel_saving_l": -90.407,
+  "fuel_saving_pct": -53.2,
+  "treatment_on_hours": 15,
+  "control_on_hours": 9,
+  "on_hours_saving": -6,
+  "initial_state_sha256": "7197dd305d74c21656a86d9703654c3acfb896415865a5c0ef81d9676fa8cb6f",
+  "treatment_raw_csv_sha256": "26a476adb48acb8c09e8a6a80ffcfc595cbc0deae82929e2e62b1465dcd5b89f",
+  "control_raw_csv_sha256": "c280209aac974a5af092aacf2aae074081a42d5c11b6edb2ccaca5fb04514ff5"
+}

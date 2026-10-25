@@ -1,0 +1,6 @@
+Formulation_Component,Mathematical_Symbol,Current_Code_State,Governed_Specification_State,Semantic_Meaning,Efficiency_Treatment,Status
+Physical Min Floor,E_min_tech,40000.0 Wh (20% SOC),40000.0 Wh (20% SOC),Hard physical battery cell protection limit,Unadjusted,IMPLEMENTATION_FACT
+Baseline Reserve Floor,E_EBR_floor,Not implemented,SOC_EBR_floor > 20%,Hard operational reserve floor constraint,Unadjusted,GOVERNANCE_FACT
+Dynamic Reserve Target,E_EBR_target(t),Not implemented,SOC_EBR_target(t),Soft resilience headroom target optimized in Stage 2,Unadjusted in cell Wh; requires /eta_dis for AC load,GOVERNANCE_FACT
+Available Reserve Energy,E_reserve_available(t),Not implemented,E(t) or E(t) - E_min_tech,Stored cell energy available for reserve evaluation,Currently stored cell Wh (unadjusted for eta_dis),CONCEPTUALLY_RESOLVED
+Stage 2 Objective,J_2,Not implemented,min sum max(0 E_target - E(t)) + max(0 E_term - E(H)),Minimize Stage 2 reserve shortfall above floor,Linearized soft target penalty,REQUIRES_IMPLEMENTATION_SPECIFICATION

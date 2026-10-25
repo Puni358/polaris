@@ -1,0 +1,83 @@
+{
+  "stage": "STAGE 8 FORENSIC AUDIT OF BOTTLENECK DIAGNOSIS",
+  "timestamp": "2026-09-12T18:20:00Z",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+  "official_frozen_odd_metrics": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "nighttime_mae_w_m2": 0.0
+  },
+  "ai_claims_audited": [
+    {
+      "claim_id": "STAGE_6_1_ENSEMBLE_SPREAD",
+      "ai_claim": "Ensemble spread has Spearman rho = +0.767 with forecast error.",
+      "audit_verdict": "PARTIALLY SUPPORTED",
+      "evidence_detail": "Spearman rho = +0.7685 is with ABSOLUTE residual |y - pred| in Stage 6.1, NOT signed residual (rho = +0.0697). Stage 6.1 candidate model degraded EVEN CV MAE by +0.0457 W/m2 and failed all 4 performance gates."
+    },
+    {
+      "claim_id": "STAGE_8_1_FEATURE_INVENTORY",
+      "ai_claim": "Ensemble spread is absent from current 37-feature champion.",
+      "audit_verdict": "SUPPORTED",
+      "evidence_detail": "Stage 8.1 uses MEPS deterministic control run features (cloud_frac, lwp_latest, iwp_latest, u700, v700), but zero ensemble spread features (meps_std_SW_IN, meps_std_total_cloud)."
+    },
+    {
+      "claim_id": "STAGE_6_1_TO_8_12_NOVELTY",
+      "ai_claim": "Stage 8.12 uses a genuinely novel exploitation mechanism (regime/weighting) compared to Stage 6.1 flat GBDT input.",
+      "audit_verdict": "PARTIALLY SUPPORTED",
+      "evidence_detail": "Mechanistically an architectural variation using the exact same underlying signal (meps_std_SW_IN). Association with absolute residual does not equal point-forecast MAE improvement."
+    },
+    {
+      "claim_id": "STAGE_6_4_FORECAST_REVISON",
+      "ai_claim": "Stage 6.4 tested inter-run forecast revisions, not forward cloud trajectories within a single run.",
+      "audit_verdict": "SUPPORTED",
+      "evidence_detail": "Stage 6.4 tested D-1 18Z vs 12Z/06Z MEPS run differences. Passed MAE gate (-0.2657 W/m2) but failed fold-consistency (3/5 folds) and worst-fold degradation (+0.2857 W/m2)."
+    },
+    {
+      "claim_id": "STAGE_8_6_CAMS_AEROSOL",
+      "ai_claim": "CAMS AOD550 was never taken to a forecasting experiment.",
+      "audit_verdict": "INCORRECT",
+      "evidence_detail": "Stage 8.6B WAS EXECUTED and REJECTED! Feasibility passed (347/347 origins), but Stage 8.6B EVEN CV MAE degraded by +0.247252 W/m2 (37.867306 vs 37.620054 W/m2 control) and failed 4 of 6 decision gates."
+    },
+    {
+      "claim_id": "STAGE_8_7_DNI_TWO_HEAD",
+      "ai_claim": "Stage 8.7 evidence omitted / unreferenced.",
+      "audit_verdict": "INCORRECT (OMISSION)",
+      "evidence_detail": "Stage 8.7 tested MEPS DNI-anchored direct/diffuse two-head architecture. EVEN CV MAE degraded severely by +11.825787 W/m2 (49.445841 vs 37.620054 W/m2 control), 0/5 folds improved. Route CLOSED_REJECTED."
+    },
+    {
+      "claim_id": "STAGE_8_9A_INDEPENDENT_CLOUD",
+      "ai_claim": "Independent cloud-motion evidence omitted / unreferenced.",
+      "audit_verdict": "INCORRECT (OMISSION)",
+      "evidence_detail": "Stage 8.9A evaluated 6 independent cloud data sources (VIIRS, Meteosat, Ceilometer, All-Sky Imager, Cloud Motion Vectors). All failed feasibility due to dissemination latency (3-8h), polar night optical masking, extreme parallax shift (>20.9 km), or mountain ridge barriers. Route FAIL_CONFIRMED."
+    }
+  ],
+  "stage_8_12_recommendation": {
+    "classification": "NOT_YET_JUSTIFIED",
+    "reasoning": "Relying on meps_std_SW_IN uses a signal already tested and rejected in Stage 6.1. Architectural repackaging without pre-experiment risk-bounding proof does not satisfy POLARIS novelty requirements."
+  },
+  "authoritative_bottleneck_conclusion": {
+    "unique_bottleneck_established": false,
+    "primary_limiting_factor": "Irreducible NWP cloud-timing/phase errors inherent to 2.5 km regional NWP forecasts in Arctic complex terrain.",
+    "surviving_routes_status": {
+      "stage_8_6_cams": "CLOSED_REJECTED",
+      "stage_8_7_dni": "CLOSED_REJECTED",
+      "stage_8_8_geometry": "CLOSED_REJECTED",
+      "stage_8_9_independent_cloud": "CLOSED_REJECTED",
+      "stage_8_10_model_level": "CONDITIONAL_NOT_JUSTIFIED",
+      "stage_8_11_lwp_trajectory": "CLOSED_NOT_NOVEL",
+      "stage_8_12_uncertainty": "PROPOSED_REQUIRES_AUDIT"
+    }
+  },
+  "firewall_verification": {
+    "odd_target_sw_in_reads": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "model_training": "NONE",
+    "cross_validation": "NONE",
+    "hyperparameter_tuning": "NONE",
+    "official_champion_status": "UNCHANGED",
+    "master_handoff_modified": false
+  }
+}

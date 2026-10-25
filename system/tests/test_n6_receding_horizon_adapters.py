@@ -2,7 +2,7 @@
 POLARIS -- N6 Receding-Horizon Adapters + IA-2 Route Provenance + IA-3
 Authoritative-State Lookup Test Suite
 =====================================================================================
-Companion to `N6_IA1_IA2_REMEDIATION_REPORT.md`. Validates, EXCLUSIVELY against
+Companion to `forecasting/n6/reports/N6_IA1_IA2_REMEDIATION_REPORT.md`. Validates, EXCLUSIVELY against
 hand-built Fakes:
 
   (1) IA-1 (owner decision): the receding-horizon adapter variant in

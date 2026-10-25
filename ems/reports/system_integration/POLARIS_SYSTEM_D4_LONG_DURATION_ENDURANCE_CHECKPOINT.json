@@ -1,0 +1,108 @@
+{
+  "phase": "D4-B",
+  "status": "FROZEN_APPROVED",
+  "disclaimer": "SYNTHETIC ENGINEERING TEST DATA — NOT REAL NUOLJA MEASUREMENTS",
+  "timestamp": "2026-09-16T22:00:00Z",
+  "fixture_provenance": {
+    "generator_script": "system/scripts/generate_synthetic_168h_scenario.py",
+    "generator_sha256": "3921cb95ab27d61e13ba11273acc30149a97dbbafcdaad0683e9e177358cbce8",
+    "scenario_file": "system/data/scenarios/synthetic_168h_endurance_scenario.json",
+    "scenario_sha256": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8"
+  },
+  "execution_provenance": [
+    {
+      "execution_id": "D4-EXEC-20260916-01",
+      "timestamp": "2026-09-16T15:20:00Z",
+      "optimizer": "MILP & Rule",
+      "status": "Draft static calculations",
+      "milp_fuel_l": 3584.20,
+      "rule_fuel_l": 4120.50
+    },
+    {
+      "execution_id": "D4-EXEC-168H-MILP-02",
+      "timestamp": "2026-09-16T16:16:53Z",
+      "optimizer": "LocalMILPEnergyOptimizer",
+      "status": "Logged in task-1103.log (overwritten on disk by run 03)",
+      "physical_h1_executed_fuel_l": 2071.70,
+      "evaluator_horizon_accumulated_fuel_l": 2585.70
+    },
+    {
+      "execution_id": "D4-EXEC-168H-RULE-03",
+      "timestamp": "2026-09-16T16:20:37Z",
+      "optimizer": "LocalRuleBasedEnergyOptimizer",
+      "status": "Active in system/artifacts/run_report.json",
+      "evaluator_fuel_l": 3329.75
+    }
+  ],
+  "fuel_reconciliation": {
+    "true_physical_h1_executed_fuel_liters": 2071.70,
+    "physical_breakdown": {
+      "active_hours": 72,
+      "base_fuel_liters": 360.00,
+      "marginal_fuel_liters": 1657.70,
+      "startup_count": 9,
+      "startup_fuel_liters": 54.00
+    },
+    "evaluator_accumulated_plan_horizon_fuel_liters": 2585.70,
+    "evaluator_breakdown": {
+      "evaluated_hours": 104,
+      "base_fuel_liters": 520.00,
+      "marginal_fuel_liters": 1657.70,
+      "evaluated_startups": 68,
+      "startup_fuel_liters": 408.00
+    },
+    "discrepancy_explanation": "514.00 L difference is exact: 32 additional plan-horizon hours (160 L) + 59 plan-horizon boundary restarts (354 L) accumulated by evaluator iterating across all 24h plans rather than H1 only.",
+    "rule_based_authoritative_fuel_liters": 3329.75
+  },
+  "solver_provenance": {
+    "api": "scipy.optimize.milp",
+    "backend": "HiGHS",
+    "implementation_path": "system/optimization/implementations/milp.py",
+    "binary_variables_passed": true,
+    "binary_variable_count_per_step": 4,
+    "total_binary_variables_per_horizon": 96,
+    "iterations_optimal_count": 168,
+    "iterations_failed_count": 0
+  },
+  "config_provenance": {
+    "configuration_drift_detected": false,
+    "files": {
+      "battery.yaml": {
+        "sha256": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216"
+      },
+      "diesel.yaml": {
+        "sha256": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3"
+      },
+      "loads.yaml": {
+        "sha256": "ab6943d72f2054b001274de5a3fe229c9987eb31fb11be0422f33754fd5f3cad"
+      },
+      "optimizer.yaml": {
+        "sha256": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8"
+      },
+      "solar_pv.yaml": {
+        "sha256": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e"
+      },
+      "station.yaml": {
+        "sha256": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42"
+      }
+    }
+  },
+  "physical_conservation": {
+    "max_busbar_residual_w": 0.0,
+    "max_demand_residual_w": 0.0,
+    "max_renewable_residual_w": 0.0,
+    "max_battery_transition_residual_wh": 0.0,
+    "total_violations": 0
+  },
+  "regression_suite": {
+    "total_tests": 24,
+    "passed": 24,
+    "status": "PASS"
+  },
+  "firewall_audit": {
+    "research_files_accessed": 0,
+    "research_datasets_accessed": 0,
+    "odd_rows_accessed": 0,
+    "read_only_audit_enforced": true
+  }
+}

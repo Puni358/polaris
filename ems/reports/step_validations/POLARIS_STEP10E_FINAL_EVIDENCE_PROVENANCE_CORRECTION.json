@@ -1,0 +1,140 @@
+{
+  "audit_type": "STEP10E_FINAL_EVIDENCE_PROVENANCE_CORRECTION",
+  "audit_date": "2026-09-20",
+  "read_only": true,
+  "rerun_performed": false,
+  "optimizer_calls": 0,
+  "simulator_steps": 0,
+  "source_modifications": 0,
+  "governance_status": {
+    "STEP10E_TREATMENT_EVIDENCE": "FROZEN_VALID",
+    "STEP10E_CONTROL_RAW_EVIDENCE": "NOT_AVAILABLE",
+    "STEP10E_REPORTED_PAIRED_RESULT": "PRESERVED",
+    "STEP10E_INDEPENDENT_PAIRED_REPRODUCIBILITY": "NOT_ESTABLISHED"
+  },
+  "final_evidence_classification": "B_REPORTED_IN_FROZEN_COMPARISON_ARTIFACTS_BUT_CONTROL_LACKS_INDEPENDENT_RAW_TELEMETRY",
+  "frozen_artifact_inventory": {
+    "treatment_raw_csv": {
+      "path": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv",
+      "sha256": "3d514b6ef45b63dcafaf7077497142c240e9cdd8a76cb37c295973ea16805546",
+      "origin_timestamp": "2024-06-01T00:00:00Z",
+      "status": "FROZEN_VALID"
+    },
+    "treatment_manifest_json": {
+      "path": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT.json",
+      "sha256": "61dafd11a2a185472a38d453c271c167edd7b49d16e3673fb600c6414b8511c3",
+      "origin_timestamp": "2024-06-01T00:00:00Z",
+      "status": "FROZEN_VALID"
+    },
+    "comparison_manifest_json": {
+      "path": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_CONTROL_COMPARISON.json",
+      "sha256": "8a6b7a6e7c542baa7e84867b1e7b9eaa61223f84036c66793f04aa5eb5f78aae",
+      "origin_timestamp": "2024-06-01T00:00:00Z",
+      "status": "FROZEN_VALID_METADATA"
+    },
+    "control_raw_csv": {
+      "path": "POLARIS_HYBRID_H1_0_CONTROL_RAW.csv",
+      "sha256": "ae51359b145f92f8b24169aef1f70b701de56b06cbab77aca4ca5f1df8c5a1a8",
+      "origin_timestamp": "2024-01-01T00:00:00Z",
+      "status": "FROZEN_VALID_FOR_2024_01_01_ONLY"
+    },
+    "control_manifest_json": {
+      "path": "POLARIS_HYBRID_H1_0_CONTROL.json",
+      "sha256": "dc8b7dc89576732a4d5d1a5c5b09a7f031809e848207f145a3b531b0c6ba52de",
+      "origin_timestamp": "2024-01-01T00:00:00Z",
+      "status": "FROZEN_VALID_FOR_2024_01_01_ONLY"
+    }
+  },
+  "gross_metrics_evaluation": {
+    "solar_treatment_417_828_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "solar_control_476_614_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "wind_treatment_121_465_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "wind_control_121_465_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "charge_treatment_348_650_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "charge_control_360_376_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "discharge_treatment_304_538_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "discharge_control_261_489_kwh": "NOT_PROVEN_AS_AUTHORITATIVE",
+    "finding": "No frozen CSV, JSON, or codebase script in Step 10E evidence derives or records these larger gross metric numbers. They do not represent verifiable experimental evidence and are classified as NOT_PROVEN_AS_AUTHORITATIVE."
+  },
+  "verifiable_raw_telemetry_metrics": {
+    "treatment_origin_2024_06_01": {
+      "diesel_fuel_liters": 121.463,
+      "diesel_generation_kwh": 325.854,
+      "solar_generation_used_kwh": 251.9,
+      "wind_generation_used_kwh": 78.215,
+      "renewable_curtailment_kwh": 0.0,
+      "battery_charge_kwh": 181.424,
+      "battery_discharge_kwh": 162.802,
+      "unmet_load_kwh": 0.0,
+      "generator_on_hours": 8,
+      "status": "CONFIRMED_FROM_RAW_TELEMETRY"
+    },
+    "control_origin_2024_06_01": {
+      "diesel_fuel_liters": 125.461,
+      "diesel_generation_kwh": 321.843,
+      "solar_generation_used_kwh": 310.686,
+      "wind_generation_used_kwh": 78.215,
+      "renewable_curtailment_kwh": 0.0,
+      "battery_charge_kwh": 193.15,
+      "battery_discharge_kwh": 119.753,
+      "unmet_load_kwh": 0.0,
+      "generator_on_hours": 9,
+      "status": "PRESERVED_FROM_COMPARISON_METADATA_RAW_CSV_NOT_AVAILABLE"
+    }
+  },
+  "paired_differences_reported": {
+    "diesel_fuel_diff_liters": -3.997,
+    "diesel_fuel_diff_percent": -3.19,
+    "diesel_generation_diff_kwh": 4.011,
+    "solar_used_diff_kwh": -58.786,
+    "wind_used_diff_kwh": 0.0,
+    "battery_charge_diff_kwh": -11.726,
+    "battery_discharge_diff_kwh": 43.049
+  },
+  "fuel_formula_reconciliation": {
+    "formula": "Fuel (L) = (ON_hours * 5.0 L/h) + (Generation_kWh * 1000 Wh/kWh * 0.00025 L/Wh)",
+    "treatment": {
+      "on_hours": 8,
+      "generation_kwh": 325.854,
+      "base_fuel_l": 40.0,
+      "marginal_fuel_l": 81.4635,
+      "total_fuel_l": 121.4635,
+      "status": "CONFIRMED_FROM_FROZEN_RAW_TELEMETRY"
+    },
+    "control": {
+      "on_hours": 9,
+      "generation_kwh": 321.843,
+      "base_fuel_l": 45.0,
+      "marginal_fuel_l": 80.46075,
+      "total_fuel_l": 125.46075,
+      "status": "DERIVED_FROM_METADATA_METRICS"
+    },
+    "paired_fuel_math": {
+      "base_fuel_saved_l": -5.0,
+      "extra_marginal_fuel_l": 1.00275,
+      "net_fuel_saved_l": -3.99725
+    }
+  },
+  "evidence_breakdown": {
+    "observed": [
+      "Stage 8.1 ML forecast treatment was injected for 24 steps on origin 2024-06-01T00:00:00Z.",
+      "Treatment raw telemetry contains 24 MPC steps with 8 generator ON hours and 325.854 kWh diesel generation.",
+      "Treatment raw telemetry sum of solar_used_command_w = 251.900 kWh, wind_used_command_w = 78.215 kWh, battery_charge_command_w = 181.424 kWh, battery_discharge_command_w = 162.802 kWh.",
+      "Treatment diesel fuel formula evaluates to 121.463 L."
+    ],
+    "reported": [
+      "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_CONTROL_COMPARISON.json reports Control diesel fuel = 125.461 L and paired fuel difference = -3.997 L (-3.19%).",
+      "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_CONTROL_COMPARISON.json reports Control generation = 321.843 kWh and paired differences."
+    ],
+    "derived": [
+      "Treatment piecewise-affine fuel formula (8h * 5.0 L/h + 325.854 kWh * 0.25 L/kWh) mathematically yields 121.463 L.",
+      "Saving 1 generator ON hour reduces fixed base fuel overhead by -5.000 L, while producing +4.011 kWh generation adds +1.003 L marginal fuel, yielding a net fuel difference of -3.997 L."
+    ],
+    "not_established": [
+      "Independently verifiable raw control telemetry CSV for origin 2024-06-01T00:00:00Z (existing frozen control raw CSV POLARIS_HYBRID_H1_0_CONTROL_RAW.csv is for origin 2024-01-01T00:00:00Z).",
+      "Independently reproducible causal chain from forecast to paired fuel difference from raw telemetry alone.",
+      "Authoritative status for gross metric values 417.828 solar, 121.465 wind, 348.650 charge, 304.538 discharge (not present or derived in frozen evidence)."
+    ]
+  },
+  "conclusion": "The Step 10E treatment raw telemetry for origin 2024-06-01T00:00:00Z is frozen and valid. The paired comparison reporting -3.997 L (-3.19%) diesel fuel reduction is preserved in authoritative comparison metadata. However, because no separate frozen raw control CSV exists for origin 2024-06-01T00:00:00Z (the existing frozen control raw CSV is for 2024-01-01), the final evidence status is classified as B (reported in frozen comparison artifacts but control lacks independent raw telemetry). All gross metrics (417.828, 121.465, etc.) are classified as NOT_PROVEN_AS_AUTHORITATIVE. Zero solves, steps, or reconstructions were performed."
+}

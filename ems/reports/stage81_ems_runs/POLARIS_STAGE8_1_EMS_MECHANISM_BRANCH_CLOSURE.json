@@ -1,0 +1,61 @@
+{
+  "closure_manifest_id": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE",
+  "v1_experiment_status": "ACCEPTED_AND_FROZEN",
+  "v1_mechanism_branch_status": "CLOSED",
+  "v2_engineering_status": "LOCKED",
+  "v1_frozen_result": {
+    "n_origins": 173,
+    "primary_endpoint_mean_paired_difference_liters": 10.2684,
+    "bootstrap_95_ci_liters": [
+      5.4795,
+      15.2113
+    ],
+    "wilcoxon_w": 5351.5,
+    "wilcoxon_p": 0.0013566,
+    "spearman_rho": -0.9198,
+    "spearman_p": 2.283e-71,
+    "diesel_energy_delta_kwh": 58.1351,
+    "renewable_used_delta_kwh": -79.4577,
+    "renewable_curtailment_delta_kwh": -120.4317,
+    "renewable_curtailment_pct_delta": -10.1204,
+    "renewable_utilization_pct_delta": 10.1204,
+    "battery_throughput_delta_kwh": -64.6521,
+    "battery_equivalent_cycles_delta": -0.3233,
+    "unmet_critical_load_kwh": 0.0,
+    "system_reliability_pct_delta": 0.0,
+    "constraint_violations_delta": 0.0
+  },
+  "origin_heterogeneity_summary": {
+    "treatment_greater_than_control": 95,
+    "treatment_less_than_control": 77,
+    "equal": 1
+  },
+  "authoritative_scientific_conclusion": "Empirical Stage8.1 solar forecasts replayed through the frozen POLARIS EMS under the controlled POLARIS synthetic station environment were associated with a mean increase of 10.2684 L/origin in diesel fuel relative to the frozen control forecast, alongside lower battery throughput and lower renewable curtailment.",
+  "mechanism_causal_chain_status": "NOT_ESTABLISHED",
+  "final_mechanism_classification": "C \u2014 ONLY ASSOCIATIONS ESTABLISHED",
+  "mae_discrepancy_status": "RECONCILED",
+  "official_stage81_ood_benchmark_daytime_mae_w_m2": 36.1887,
+  "v1_replay_subset_allhours_treatment_mae_w_m2": 25.1281,
+  "v1_replay_subset_allhours_control_mae_w_m2": 174.2477,
+  "missing_telemetry_limitations": [
+    "Hourly SOC trajectory",
+    "Hourly diesel commitment / start / stop events",
+    "Hourly battery charge / discharge trajectory",
+    "Hourly solar curtailment events"
+  ],
+  "integrity_flags": {
+    "V1_EXPERIMENT_RERUN": "NO",
+    "V1_ORIGIN_RERUN": "NO",
+    "V1_PILOT": "NO",
+    "V1_RESULT_MODIFIED": "NO",
+    "MODEL_RETRAINED": "NO",
+    "FORECAST_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "OPTIMIZER_MODIFIED": "NO",
+    "SIMULATOR_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "V2_IMPLEMENTED": "NO",
+    "V2_EXECUTED": "NO"
+  }
+}

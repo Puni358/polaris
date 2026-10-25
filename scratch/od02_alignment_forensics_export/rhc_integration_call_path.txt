@@ -1,0 +1,106 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: RHC INTEGRATION CALL PATH & FORECAST ADAPTER USAGE
+Source: `system/evaluation/n6_multi_origin_harness/adapters.py`
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+--------------------------------------------------------------------------------
+1. SINGLE-SHOT HARNESS ADAPTER: N6ForecastProviderAdapter (lines 698-744)
+--------------------------------------------------------------------------------
+698: class N6ForecastProviderAdapter:
+699:     """
+700:     Implements `ForecastProviderProtocol` (`.predict(origin, step_index, context)
+701:     -> Dict[str, Any]`) around an injected object assumed to already expose
+702:     the real `N6SolarForecastEngine.predict(station_state, context) ->
+703:     ForecastBundle` signature (confirmed by direct read of
+704:     `run_n6_closed_loop_simulation.py` line ~142, this pass).
+705: 
+706:     The real engine forecasts the FULL 24-hour bundle in one call; this
+707:     adapter therefore calls it exactly ONCE per origin (on `step_index == 0`)
+708:     and caches the resulting bundle, returning per-step views via
+709:     `ForecastBundleStepView` on every call -- never re-forecasting per step,
+710:     since the real engine's contract does not support that and nothing in
+711:     this repository has ever exercised it that way.
+712: 
+713:     Under approved Decision OD-02, the bundle is aligned to simulator dispatch
+714:     steps (N6 rows 1..23 -> dispatch steps 0..22, with 0.0 baseline fallback
+715:     at step 23).
+716:     """
+717: 
+718:     def __init__(self, real_forecast_engine: Any, station_state_cls: Any, feature_matrix_by_origin: Dict[str, Any]) -> None:
+719:         self._engine = real_forecast_engine
+720:         self._station_state_cls = station_state_cls
+721:         self._feature_matrix_by_origin = feature_matrix_by_origin
+722:         self._cached_bundle_by_origin: Dict[str, Any] = {}
+723: 
+724:     def predict(self, origin: str, step_index: int, context: Dict[str, Any]) -> Dict[str, Any]:
+725:         if origin not in self._cached_bundle_by_origin:
+726:             if origin not in self._feature_matrix_by_origin:
+727:                 raise ValueError(
+728:                     f"Fail-closed: no N6 feature matrix supplied for origin '{origin}' -- this "
+729:                     "adapter never synthesizes a feature matrix."
+730:                 )
+731:             real_station_state = StationStateCodec.from_plain_dict(context.get("state", {}), self._station_state_cls)
+732:             raw_bundle = self._engine.predict(
+733:                 real_station_state, {"n6_feature_matrix": self._feature_matrix_by_origin[origin]}
+734:             )
+735:             self._cached_bundle_by_origin[origin] = _align_n6_bundle_od02(raw_bundle)
+736:         bundle = self._cached_bundle_by_origin[origin]
+737:         view = ForecastBundleStepView.step_view(bundle, step_index)
+738:         view["origin"] = origin
+739:         view["_real_bundle_ref"] = bundle  # passed through for RoutedOptimizerAdapter's single-shot optimize call
+740:         return view
+
+--------------------------------------------------------------------------------
+2. RECEDING-HORIZON ADAPTER: N6RecedingHorizonForecastAdapter (lines 1650-1687)
+--------------------------------------------------------------------------------
+1650:         station_state_cls: Any,
+1651:         feature_matrix_by_origin_and_step: Dict[str, List[Any]],
+1652:     ) -> None:
+1653:         self._engine = real_forecast_engine
+1654:         self._station_state_cls = station_state_cls
+1655:         self._feature_matrix_by_origin_and_step = feature_matrix_by_origin_and_step
+1656: 
+1657:     def predict(self, origin: str, step_index: int, context: Dict[str, Any]) -> Dict[str, Any]:
+1658:         if origin not in self._feature_matrix_by_origin_and_step:
+1659:             raise ValueError(
+1660:                 f"Fail-closed: no N6 per-step feature matrix supplied for origin '{origin}' -- "
+1661:                 "this adapter never synthesizes one."
+1662:             )
+1663:         steps = self._feature_matrix_by_origin_and_step[origin]
+1664:         if step_index >= len(steps):
+1665:             raise ValueError(
+1666:                 f"Fail-closed: no N6 feature matrix supplied for origin '{origin}' at step "
+1667:                 f"{step_index} (only {len(steps)} step(s) supplied)."
+1668:             )
+1669:         if "state" not in context:
+1670:             raise ValueError(
+1671:                 f"Fail-closed: no 'state' key in context at step {step_index} for origin '{origin}' -- "
+1672:                 "N6RecedingHorizonForecastAdapter requires the CURRENT simulated StationState every step."
+1673:             )
+1674:         real_station_state = StationStateCodec.from_plain_dict(context["state"], self._station_state_cls)
+1675:         raw_bundle = self._engine.predict(real_station_state, {"n6_feature_matrix": steps[step_index]})
+1676:         aligned_bundle = _align_n6_bundle_od02(raw_bundle)
+1677:         # Under approved Decision OD-02, the bundle is aligned to simulator dispatch
+1678:         # steps (N6 rows 1..23 -> dispatch steps 0..22, with 0.0 baseline fallback
+1679:         # at step 23). The freshly-aligned bundle's own hour 0 is raw row 1 (the
+1680:         # immediate next step's decision-relevant value).
+1681:         view = ForecastBundleStepView.step_view(aligned_bundle, 0)
+1682:         view["origin"] = origin
+1683:         view["step_index"] = step_index
+1684:         view["_real_bundle_ref"] = aligned_bundle
+1685:         view["_real_station_state_ref"] = real_station_state
+1686:         return view
+
+--------------------------------------------------------------------------------
+3. ANALYSIS: RE-FORECASTING VS ALIGNED-ARRAY CACHING
+--------------------------------------------------------------------------------
+1. Single-Shot Mode (N6ForecastProviderAdapter):
+   - At step 0 of each origin, `self._engine.predict()` generates the 24-hour raw forecast.
+   - `_align_n6_bundle_od02` is called ONCE and the aligned bundle is stored in `self._cached_bundle_by_origin[origin]`.
+   - Subsequent steps $1 \dots 23$ do NOT re-run prediction; they slice the cached aligned bundle.
+2. Receding-Horizon Mode (N6RecedingHorizonForecastAdapter):
+   - At every step $k \in \{0 \dots 23\}$, `self._engine.predict()` is called FRESH with the current simulated station state and step-specific feature matrix `steps[step_index]`.
+   - `_align_n6_bundle_od02` is called FRESH on the newly returned `raw_bundle`.
+   - It takes the aligned bundle's hour 0 (`step_view(aligned_bundle, 0)`), which corresponds to raw row 1 of the fresh prediction.
+   - Thus, in receding-horizon mode, the adapter is applied FRESH to each newly generated 24-hour prediction, NOT to an already rolled/sliced array from midnight.

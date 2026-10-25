@@ -1,0 +1,8 @@
+Finding_ID,Item_ID,Category,Review_V1_Finding,Correction_Status,Review_V2_Verification,Status
+FND_V1_01,GAP_21,DUAL_CLASSIFICATION,GAP_21 had dual classification in text vs register,CORRECTED,Verified register & text strictly match GOVERNANCE_CLARIFICATION_REQUIRED,RESOLVED
+FND_V1_02,GAP_03,UNAUTHORIZED_PROMOTION,GAP_03 implied non-preemptive selection,CORRECTED,Verified preemption options remain IMPLEMENTATION_DEFERRED,RESOLVED
+FND_V1_03,GAP_10,UNAUTHORIZED_PROMOTION,GAP_10 implied 35% target generation selection,CORRECTED,Verified target generation remains IMPLEMENTATION_DEFERRED (35% provisional),RESOLVED
+FND_V1_04,GAP_12,UNAUTHORIZED_PROMOTION,GAP_12 implied Stage 0 constraint placement selection,CORRECTED,Verified stage placement (Stage 0/2/3) remains IMPLEMENTATION_DEFERRED,RESOLVED
+FND_V1_05,GAP_15,UNAUTHORIZED_PROMOTION,GAP_15 presented necessary curtailment formula as executable,CORRECTED,Verified formula is explicitly marked PROVISIONAL_DIAGNOSTIC_ONLY,RESOLVED
+FND_V1_06,GAP_19,UNAUTHORIZED_PROMOTION,GAP_19 implied sequential 4-pass solver architecture selection,CORRECTED,Verified solver architecture alternatives remain IMPLEMENTATION_DEFERRED,RESOLVED
+FND_V1_07,D2,UNAUTHORIZED_PROMOTION,D2 implied N->I->D->E exact shedding priority order selection,CORRECTED,Verified shedding priority order remains IMPLEMENTATION_DEFERRED,RESOLVED

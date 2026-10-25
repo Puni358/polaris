@@ -1,0 +1,18 @@
+audit_document,07_STAGE3_FUEL_FORMULATION
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# STAGE 3: FUEL CONSERVATION FORMULATION & DECOMPOSITION
+# ============================================================
+
+term_component,symbol_formula,units,current_implementation_fact,governed_target_specification,classification_type
+Marginal Fuel Rate,F_marg * p_diesel(t) * dt,Liters (L),c_fuel * F_marg * p_diesel * dt ($0.000625/Wh proxy),F_marg * p_diesel(t) * dt (0.00025 L/Wh * W * h = Liters),OBJECTIVE TERM
+Base Fuel Rate,F_base * u_diesel(t) * dt,Liters (L),c_fuel * F_base * u_diesel * dt ($12.50/h proxy),F_base * u_diesel(t) * dt (5.0 L/h * 1 * h = Liters),OBJECTIVE TERM
+Startup Fuel Volume,F_start * v_start(t),Liters (L),startup_cost * v_start ($15.00 proxy),F_start * v_start(t) (6.0 L per startup event),OBJECTIVE TERM
+Generator Runtime,sum_{t=0}^{H-1} u_diesel(t) * dt,Hours (h),Implicit in base fuel cost term,Reported operational metric for maintenance tracking,REPORTING METRIC
+Emergency Fuel Reserve,Fuel_tank_level >= Reserve_fuel,Liters (L),Not enforced in current MILP,Hard physical tank lower bound constraint,CONSTRAIN_OR_GOVERNANCE_BLOCKER
+Seasonal Fuel Budget,sum_{period} Fuel(t) <= Fuel_budget,Liters (L),Not enforced in current MILP,Hard constraint if seasonal budget policy is active,CONSTRAIN_OR_GOVERNANCE_BLOCKER
+Dollar Cost Conversion,c_fuel * J3,Dollars ($),Directly embedded in objective cost vector c,Post-processing reporting metric ($2.50/L * Liters),REPORTING METRIC

@@ -1,0 +1,123 @@
+{
+  "audit_package": "POLARIS_EMS_GAP19_HIGHS_NATIVE_TRANSFER_AUDIT",
+  "audit_phase": "GAP19_HIGHS_NATIVE_TRANSFER_AUDIT",
+  "audit_date": "2026-09-22",
+  "generation_mode": "READ_ONLY_STATIC_CODE_ANALYSIS",
+  "execution_performed": false,
+  "execution_firewall_status": "MAINTAINED — no MILP executed, no EMS executed, no code modified, no dependencies installed",
+  "source_files_analyzed": [
+    "system/optimization/implementations/milp.py",
+    "system/config/optimizer.yaml"
+  ],
+  "governing_documents_referenced": [
+    "POLARIS_EMS_OBJECTIVE_SPECIFICATION_V2/",
+    "POLARIS_EMS_GAP19_FINAL_HUMAN_DECISION_PACKAGE/"
+  ],
+  "protected_files_integrity": {
+    "milp.py_sha256": "TO_BE_VERIFIED_BY_INDEPENDENT_PASS",
+    "optimizer.yaml_sha256": "TO_BE_VERIFIED_BY_INDEPENDENT_PASS",
+    "note": "Protected source file hashes are verified by the independent hash verification package, not by this audit document."
+  },
+  "audit_artifacts": [
+    {
+      "document_id": "01",
+      "filename": "01_DECISION_VARIABLES.csv",
+      "description": "Complete decision variable catalog — all 15 variables per timestep, types, bounds, integrality, units, code line references",
+      "sha256": "f410e706480b7b6ae1a00703c07d979121869a88ac4474ee1025df5bb22ac73a"
+    },
+    {
+      "document_id": "02",
+      "filename": "02_CONSTRAINT_CATALOG.csv",
+      "description": "Complete constraint catalog — all 12 constraint types, mathematical forms, scipy encoding, timestep scope, code line references",
+      "sha256": "7d70712f673c7e1d021c350695d215fc6926f53caa481f6f92cca8dffa72dce3"
+    },
+    {
+      "document_id": "03",
+      "filename": "03_OBJECTIVE_FUNCTION_CURRENT.csv",
+      "description": "Current objective function — exact coefficients per variable, weighting modes (baseline/Class-F/V4G/custom), governance stage mapping",
+      "sha256": "2040f0369219f5ba7f5fe72c26dd3675d01bbf5012b15309e3c4de90a60a85ee"
+    },
+    {
+      "document_id": "04",
+      "filename": "04_SCIPY_API_CAPABILITY_AUDIT.csv",
+      "description": "SciPy milp API capability audit — what scipy.optimize.milp can and cannot express, clearly distinguished from HiGHS native capabilities",
+      "sha256": "29ca24218ae090ef36fb442ce46c27982a1b601942c3178ceac28c4fb3153b7b"
+    },
+    {
+      "document_id": "05",
+      "filename": "05_HIGHS_NATIVE_CAPABILITY_AUDIT.csv",
+      "description": "HiGHS native capability audit — HiGHS C++ API and highspy capabilities, distinguished from scipy wrapper capabilities, version dependency noted",
+      "sha256": "a3f909bdd163273a0ddfbc3d33f81873ff003df5682341de5e5b514c3d527c50"
+    },
+    {
+      "document_id": "06",
+      "filename": "06_MATHEMATICAL_EQUIVALENCE_ANALYSIS.csv",
+      "description": "Mathematical equivalence analysis — conditions under which Option A and Option B are equivalent, what stays identical, what changes, transfer feasibility per component",
+      "sha256": "4552492908b14b14a52fd7e5dceb938189e3a42c134597cc0895e4188c9450ed"
+    },
+    {
+      "document_id": "07",
+      "filename": "07_TRANSFER_FEASIBILITY_MATRIX.csv",
+      "description": "Full transfer feasibility matrix — every MILP component assessed for transferability to Option A and Option B with engineering effort and blocking dependencies",
+      "sha256": "97baf3596d6ea6a9a8b6d6b254528b3cdb5f80af04b9004952056350b3eaf6c1"
+    },
+    {
+      "document_id": "08",
+      "filename": "08_BLOCKING_OPEN_ITEMS.csv",
+      "description": "Blocking open items — 9 items classified by category (mathematical specification / parameter unspecified / dependency / interface decision / architecture decision)",
+      "sha256": "f0ac2a7c0000487fa72f391491bed923dc492dde2ca2ab4ce125764be69298ef"
+    },
+    {
+      "document_id": "09",
+      "filename": "09_INTERFACE_IMPACT_ANALYSIS.md",
+      "description": "Full interface impact analysis — ForecastBundle StationState DispatchPlan config dict EnergyOptimizer base class — impact assessment for both options",
+      "sha256": "872389ebc02d09d11651559c5c49e5700ccbcf5ea7d3752abb6404935b137290"
+    },
+    {
+      "document_id": "10",
+      "filename": "10_OBJECTIVE_STAGE_MAPPING.csv",
+      "description": "Objective stage mapping — current weighted-sum coefficients mapped to governed 4-stage lex structure, including battery degradation governance note",
+      "sha256": "ec5b5f1dcd1885f67b373478e2cab3951f2e718db03cd575b2158c7c0a648d51"
+    },
+    {
+      "document_id": "11",
+      "filename": "11_TRANSFER_VERDICT_SUMMARY.md",
+      "description": "Transfer verdict summary — authoritative conclusions for both options, key distinctions (API capability vs HiGHS capability, engineering effort vs mathematical incompatibility), audit integrity statement",
+      "sha256": "df0e308a313be908a31816e03bcfdb6ab0d8ca68636cb77ca8d39910d59e9a53"
+    },
+    {
+      "document_id": "12",
+      "filename": "12_AUDIT_MANIFEST.json",
+      "description": "This manifest — provenance, artifact hashes, audit scope declaration",
+      "sha256": "SELF_REFERENTIAL — not included in manifest hash"
+    }
+  ],
+  "audit_scope_declaration": {
+    "in_scope": [
+      "Static inspection of milp.py source code",
+      "Static inspection of optimizer.yaml configuration",
+      "Mathematical analysis of constraint and objective structure",
+      "API documentation review (scipy, HiGHS)",
+      "Synthesis of prior governance artifacts"
+    ],
+    "out_of_scope": [
+      "Executing MILP optimizer",
+      "Running EMS or MPC",
+      "Installing Python packages",
+      "Running benchmarks or simulations",
+      "Modifying any source code",
+      "Modifying any schema or configuration",
+      "Executing Digital Twin"
+    ]
+  },
+  "key_findings": {
+    "F1": "The MILP optimization problem (360 variables, 12 constraint types, all bounds) is fully mathematically transferable to both Option A and Option B without modification.",
+    "F2": "scipy.optimize.milp exposes ONLY a single-objective interface to HiGHS. Multi-objective HiGHS capabilities (if they exist) are NOT accessible via the scipy wrapper.",
+    "F3": "Stage 1 (p_unmet), Stage 3 (p_diesel, u_diesel, v_start), and Stage 4 (p_curt_sol, p_curt_wind) objective terms exist in the current code and require only decomposition (not formulation) for transfer.",
+    "F4": "Stage 2 (terminal battery reserve) has NO current objective coefficient. This is a NEW formulation requirement for both options. It is NOT a transfer item — it is new engineering work.",
+    "F5": "Battery degradation penalties (p_chg, p_dis) exist in the current objective but have no explicit assignment in the governed 4-stage hierarchy. This requires a governance decision.",
+    "F6": "highspy is not installed in the current POLARIS environment. Option B requires highspy installation as a prerequisite.",
+    "F7": "HiGHS stable MILP multi-objective (as opposed to LP multi-objective) is not confirmed as a production feature in HiGHS 1.x stable releases. This is an open dependency for Option B.",
+    "F8": "Option A and Option B are analytically equivalent under: same objective order, zero epsilon tolerance, same feasibility region, same HiGHS underlying solver. This equivalence is analytical — not empirically verified (empirical verification requires execution, which is outside this audit scope)."
+  }
+}

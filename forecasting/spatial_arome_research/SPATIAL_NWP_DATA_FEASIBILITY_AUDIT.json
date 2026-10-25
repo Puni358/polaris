@@ -1,0 +1,155 @@
+{
+  "audit_metadata": {
+    "audit_title": "POLARIS Raw Spatial NWP Field Data & Causal Feasibility Audit",
+    "date": "2026-09-14",
+    "target_site": "SITES Nuolja (68.362074\u00b0N, 18.738752\u00b0E)",
+    "benchmark_scope": "347 clean origins (173 EVEN dev, 174 ODD test)",
+    "official_champion": "Stage 8.1 37-feature HGB (ODD MAE 36.188657 W/m\u00b2, nMAE 28.0688%)",
+    "champion_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "research_question": "Does preserving the spatial structure of existing causal NWP information provide predictive information that our current point-feature representation destroys?",
+    "executive_verdict": "GO"
+  },
+  "nwp_products_audit": {
+    "AROME_Arctic": {
+      "archive_2024_status": "AVAILABLE_ONLINE_100_PERCENT",
+      "archive_url": "https://thredds.met.no/thredds/catalog/aromearcticarchive/2024/catalog.html",
+      "sample_2024_file": "https://thredds.met.no/thredds/catalog/aromearcticarchive/2024/01/01/catalog.html?dataset=aromearcticarchive/2024/01/01/arome_arctic_det_2_5km_20240101T00Z.nc",
+      "raw_spatial_field_retrieval": true,
+      "native_horizontal_resolution_km": 2.5,
+      "grid_projection": "Lambert Conformal Conic (proj=lcc, lat_1=77.5, lat_2=77.5, lat_0=77.5, lon_0=-25.0, R=6371000m)",
+      "domain_extent": "Lat 62.0\u00b0N to 88.0\u00b0N, Lon -18.0\u00b0E to 80.0\u00b0E (739 x 949 grid points)",
+      "initialization_cycles_utc": [
+        "00:00",
+        "03:00",
+        "06:00",
+        "09:00",
+        "12:00",
+        "15:00",
+        "18:00",
+        "21:00"
+      ],
+      "forecast_lead_times_hours": "0 to 66 hours (00, 06, 12, 18Z) / 0 to 36 hours (03, 09, 15, 21Z)",
+      "temporal_resolution": "1-hourly discrete timesteps",
+      "nuolja_nearest_grid_cell": {
+        "y_index": 209,
+        "x_index": 548,
+        "grid_latitude": 68.364774,
+        "grid_longitude": 18.715312,
+        "distance_to_nuolja_km": 1.007
+      },
+      "variables_available": {
+        "surface": [
+          "cloud_area_fraction",
+          "high_type_cloud_area_fraction",
+          "medium_type_cloud_area_fraction",
+          "low_type_cloud_area_fraction",
+          "atmosphere_mass_content_of_cloud_liquid_water (LWP)",
+          "atmosphere_mass_content_of_cloud_ice (IWP)",
+          "integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time",
+          "x_wind_10m",
+          "y_wind_10m",
+          "air_temperature_2m",
+          "relative_humidity_2m",
+          "surface_air_pressure"
+        ],
+        "pressure_levels": "13 levels (1000, 925, 850, 700, 500, 400, 300, 250, 200, 150, 100, 70, 50 hPa) for x_wind, y_wind, air_temperature, relative_humidity, specific_humidity",
+        "model_levels": "65 hybrid model levels for 3D u, v, t, q, cloud water/ice"
+      }
+    },
+    "MEPS_MetCoOp": {
+      "archive_2024_status": "AVAILABLE_ONLINE_100_PERCENT",
+      "archive_url": "https://thredds.met.no/thredds/catalog/meps25epsarchive/2024/catalog.html",
+      "sample_2024_file": "https://thredds.met.no/thredds/catalog/meps25epsarchive/2024/01/01/catalog.html?dataset=meps25epsarchive/2024/01/01/meps_det_sfc_20240101T00Z.ncml",
+      "raw_spatial_field_retrieval": true,
+      "native_horizontal_resolution_km": 2.5,
+      "grid_projection": "Lambert Conformal Conic (proj=lcc, lat_1=63.3, lat_2=63.3, lat_0=63.3, lon_0=15.0, R=6371000m)",
+      "domain_extent": "Lat 49.8\u00b0N to 75.2\u00b0N, Lon -18.1\u00b0E to 54.2\u00b0E (949 x 1069 grid points)",
+      "initialization_cycles_utc": [
+        "00:00",
+        "06:00",
+        "12:00",
+        "18:00"
+      ],
+      "forecast_lead_times_hours": "0 to 67 hours",
+      "temporal_resolution": "1-hourly discrete timesteps",
+      "nuolja_nearest_grid_cell": {
+        "y_index": 760,
+        "x_index": 486,
+        "grid_latitude": 68.355701,
+        "grid_longitude": 18.763666,
+        "distance_to_nuolja_km": 1.243
+      },
+      "variables_available": {
+        "surface": [
+          "cloud_area_fraction",
+          "high_type_cloud_area_fraction",
+          "medium_type_cloud_area_fraction",
+          "low_type_cloud_area_fraction",
+          "atmosphere_mass_content_of_cloud_liquid_water (LWP)",
+          "atmosphere_mass_content_of_cloud_ice (IWP)",
+          "integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time",
+          "x_wind_10m",
+          "y_wind_10m",
+          "air_temperature_2m"
+        ],
+        "pressure_levels": "Pressure level collections (meps_det_pl) for 3D fields",
+        "model_levels": "65 hybrid model levels (meps_det_hl)"
+      }
+    },
+    "ECMWF_IFS_Fallback": {
+      "archive_2024_status": "AVAILABLE_OPEN_DATA",
+      "raw_spatial_field_retrieval": true,
+      "native_horizontal_resolution_km": 11.0,
+      "grid_projection": "Regular Lat/Lon 0.1\u00b0 (~11 km x 4 km at 68\u00b0N)",
+      "initialization_cycles_utc": [
+        "00:00",
+        "12:00"
+      ],
+      "role": "Coarse synoptic baseline comparison / fallback"
+    }
+  },
+  "causal_availability_analysis": {
+    "benchmark_origin_definition": "t0 = 00:00 UTC Day D",
+    "eligible_arome_meps_cycle": "Day D-1 18:00 UTC initialization run",
+    "issuance_publication_time": "20:15 - 20:45 UTC Day D-1 (~3.25 to 3.75 hours before t0)",
+    "causal_lead_coverage": "Forecast lead +7h to +30h covers H1 to H24 of Day D",
+    "post_t0_leakage_firewall": "Strictly enforced. 00Z Day D run is published at ~02:15 UTC Day D (post-t0) and is excluded."
+  },
+  "stage_forensic_comparisons": {
+    "Stage8_5": {
+      "spatial_data_used": "MEPS 2.5 km 9x9 grid around Nuolja",
+      "reduction_method": "Hand-engineered scalar features (spatial means, gradients, upwind advection scalars)",
+      "received_2D_tensor": false,
+      "preserved_spatial_relationships": false,
+      "notes": "Tabular GBDT model received 14 scalar features appended to 37 baseline features. 2D grid topology was completely destroyed."
+    },
+    "Stage8_17A": {
+      "spatial_data_used": "Real AROME-Arctic nearest grid point (lat 68.364774, lon 18.715312)",
+      "reduction_method": "Point / single grid-cell feature extraction",
+      "received_2D_tensor": false,
+      "preserved_spatial_relationships": false,
+      "notes": "3 scalar disagreement features added to 37-feature GBDT matrix. Zero spatial neighborhood information retained."
+    }
+  },
+  "perplexity_report_verification": {
+    "claim_arome_2024_unknown": {
+      "perplexity_claim": "AROME-Arctic 2024 archive status unknown / THREDDS server has 2018 data",
+      "audit_verdict": "FALSE / UNVERIFIED BY PERPLEXITY",
+      "empirical_fact": "The 2024 AROME-Arctic archive is 100% online on MET Norway THREDDS (https://thredds.met.no/thredds/catalog/aromearcticarchive/2024/catalog.html) with 8 daily initialization runs for all 366 days of 2024."
+    },
+    "claim_meps_2024_likely": {
+      "perplexity_claim": "MEPS 2024 archive likely available",
+      "audit_verdict": "CONFIRMED",
+      "empirical_fact": "MEPS 2024 surface, pressure level, and hybrid level archives are 100% online on MET Norway THREDDS for all 366 days of 2024."
+    }
+  },
+  "storage_and_volume_estimates": {
+    "total_forecast_origins": 347,
+    "hours_per_origin": 24,
+    "total_spatial_frames": 8328,
+    "window_5x5_5vars_mb": 4.16,
+    "window_11x11_5vars_mb": 20.15,
+    "window_21x21_5vars_mb": 73.45,
+    "window_64x64_10vars_5levels_gb": 6.82
+  }
+}

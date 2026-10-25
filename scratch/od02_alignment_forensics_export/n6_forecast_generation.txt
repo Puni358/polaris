@@ -1,0 +1,110 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: N6 SOLAR FORECAST GENERATION IMPLEMENTATION
+Sources:
+  1. `system/forecasting/implementations/n6_solar.py` (lines 277-281, 445-585)
+  2. `system/forecasting/implementations/s81_corrected_solar.py` (lines 40-53, 250-255)
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+--------------------------------------------------------------------------------
+1. VERBATIM SOURCE EXCERPTS FROM n6_solar.py
+--------------------------------------------------------------------------------
+
+A. PV Power Transformation (_sw_in_to_solar_power_w, lines 277-281):
+277:     def _sw_in_to_solar_power_w(self, sw_in_w_m2: float) -> float:
+278:         """Applies Stage 8.1 D3 engineering PV transformation."""
+279:         raw_power = float(sw_in_w_m2) * self.k_pv
+280:         clipped = min(raw_power, self.p_max_w)
+281:         return max(0.0, float(clipped))
+
+B. Conformal EBR Reserve Trajectory (_compute_ebr_reserve, lines 445-471):
+445:     def _compute_ebr_reserve(self, scale_s: np.ndarray) -> List[float]:
+446:         """
+447:         Computes 24-hour EBR reserve trajectory E_target[t] over a 6-hour rolling lookahead.
+448:         Formula per Stage 8.1 / candidate N protocol:
+449:             s_wh = K_pv * scale_s / ETA_DIS
+450:             E_target[t] = EBR_BASE_WH + Q90_W * max(SCALE_FLOOR_WH, sum_{j=t}^{min(t+6, 24)-1} s_wh[j])
+451:         """
+452:         scale_s_wh = self.k_pv * scale_s / ETA_DIS
+453:         ebr_target_wh = []
+454: 
+455:         for t in range(24):
+456:             window_end = min(t + 6, 24)
+457:             rolling_sum = float(np.sum(scale_s_wh[t:window_end]))
+458:             effective_s = max(SCALE_FLOOR_WH, rolling_sum)
+459:             target = EBR_BASE_WH + Q90_W * effective_s
+460:             ebr_target_wh.append(float(round(target, 2)))
+461: 
+462:         return ebr_target_wh
+
+C. Prediction and Timestamps Construction (predict, lines 525-569):
+536:         # Timestamps convention: horizon 1 == forecast_start + 0h
+537:         timestamps = [
+538:             (origin_dt + timedelta(hours=h - 1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+539:             for h in range(1, 25)
+540:         ]
+541: 
+542:         # Power conversions
+543:         solar_irr_pts = [float(round(v, 4)) for v in y_pred]
+544:         solar_irr_lower = [float(round(v, 4)) for v in y_lower]
+545:         solar_irr_upper = [float(round(v, 4)) for v in y_upper]
+546: 
+547:         solar_gen_pts = [round(self._sw_in_to_solar_power_w(v), 2) for v in y_pred]
+548:         solar_gen_lower = [round(self._sw_in_to_solar_power_w(v), 2) for v in y_lower]
+549:         solar_gen_upper = [round(self._sw_in_to_solar_power_w(v), 2) for v in y_upper]
+550: 
+551:         # Ensure exact monotonicity: lower <= point <= upper
+552:         for i in range(24):
+553:             solar_irr_lower[i] = min(solar_irr_lower[i], solar_irr_pts[i])
+554:             solar_irr_upper[i] = max(solar_irr_upper[i], solar_irr_pts[i])
+555:             solar_gen_lower[i] = min(solar_gen_lower[i], solar_gen_pts[i])
+556:             solar_gen_upper[i] = max(solar_gen_upper[i], solar_gen_pts[i])
+557: 
+558:         solar_irradiance = TimeseriesForecast(
+559:             point=solar_irr_pts,
+560:             lower=solar_irr_lower,
+561:             upper=solar_irr_upper,
+562:             unit="W/m^2",
+563:         )
+564:         solar_generation = TimeseriesForecast(
+565:             point=solar_gen_pts,
+566:             lower=solar_gen_lower,
+567:             upper=solar_gen_upper,
+568:             unit="W",
+569:         )
+
+--------------------------------------------------------------------------------
+2. UPSTREAM HORIZON CONVENTION DOCUMENTATION (s81_corrected_solar.py)
+--------------------------------------------------------------------------------
+Lines 40-48:
+"- Horizon/timestamp convention: this project's established convention
+  (verified across Stage 3b/4, NWP, terrain, u700/v700 throughout this
+  investigation) is horizon_hour=1 == forecast_start + 0h. This engine
+  uses that convention for its output timestamps -- NOT the +1h convention
+  used by Branch01's engine / the older s81_solar.py stub. ForecastBundle
+  permits a 0h or 1h gap between origin_timestamp and timestamps[0], so
+  this is schema-legal; it is called out explicitly here and in bundle
+  metadata so a caller comparing against those other engines' timestamp
+  conventions is not misled."
+
+Lines 250-252:
+"        # Convention (see module docstring): horizon_hour=1 == forecast_start + 0h.
+        timestamps = [(origin_dt + timedelta(hours=h - 1)).strftime("%Y-%m-%dT%H:%M:%SZ") for h in range(1, 25)]"
+
+--------------------------------------------------------------------------------
+3. FORENSIC SYNTHESIS: MODEL VS OUTPUT-CONSTRUCTION LIMITATIONS
+--------------------------------------------------------------------------------
+1. Why does N6 output 24 points?
+   The upstream feature matrix `candidate_k_2024_clean_matrix.parquet` contains
+   exactly 24 rows per origin (for `horizon_hour` 1 through 24).
+2. Why is index 0 labeled $t_0 + 0\text{h}$?
+   The authors of Stage 8.1 corrected pipeline explicitly defined `horizon_hour=1`
+   as $t_0 + 0\text{h}$ (`origin_dt + timedelta(hours=h-1)`).
+3. Consequence for Horizon 24 ($t_0 + 24\text{h}$):
+   Because the feature matrix provides only 24 rows ($h \in [1, 24]$), the model
+   evaluates predictions for $t_0 + 0\text{h} \dots t_0 + 23\text{h}$. It does NOT
+   evaluate a prediction for $t_0 + 24\text{h}$.
+4. Nature of the Limitation:
+   The inability to provide an N6 model forecast for $t_0 + 24\text{h}$ is an
+   *output-construction and feature-availability limitation*, NOT an intrinsic
+   architectural inability of gradient-boosted trees to predict a 25th lead hour.

@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "report_type": "MULTI_TRAJECTORY_CAMPAIGN_REPORT",
+    "timestamp": "2026-09-21T06:53:56Z",
+    "execution_scope": "4,152 H1 execution steps across 173 separate 24-hour trajectory slices"
+  },
+  "aggregate_results": {
+    "control_diesel_kwh": 52802.079,
+    "treatment_diesel_kwh": 0.0,
+    "diesel_difference_kwh": -52802.079,
+    "diesel_percentage_difference": "-100.00%",
+    "control_fuel_litres": 15274.94,
+    "treatment_fuel_litres": 0.0,
+    "fuel_difference_litres": -15274.94,
+    "fuel_percentage_difference": "-100.00%"
+  },
+  "trajectory_distribution": {
+    "total_trajectories": 173,
+    "treatment_less_than_control": 154,
+    "treatment_equal_control": 19,
+    "treatment_greater_than_control": 0,
+    "min_diff_kwh": -546.279,
+    "max_diff_kwh": 0.0,
+    "mean_diff_kwh": -305.214,
+    "median_diff_kwh": -289.323,
+    "std_diff_kwh": 111.71
+  },
+  "governance_status": {
+    "MULTI_TRAJECTORY_CAMPAIGN": "COMPLETE",
+    "FORENSIC_AUDIT": "PASS",
+    "MODEL_IDENTITY": "PASS",
+    "CONTROL_IDENTITY": "PASS",
+    "TRAJECTORY_COVERAGE": "REPRESENTATIVE_TRAJECTORY_SET",
+    "SAME_TRUTH": "PASS",
+    "CAUSALITY": "PASS",
+    "TREATMENT_FALLBACK": "NONE",
+    "MODEL_INFERENCE_EXECUTED": "YES",
+    "EMS_EXECUTED": "YES",
+    "MPC_EXECUTED": "YES",
+    "H1_EXECUTION_STEPS": 4152,
+    "ENERGY_RECONCILIATION": "PASS",
+    "BATTERY_PHYSICS": "PASS",
+    "DIESEL_ACCOUNTING": "PASS",
+    "CHECKPOINT_RECONCILIATION": "PASS",
+    "SLEEP_INHIBIT_STATUS": "ACTIVE",
+    "SLEEP_INHIBIT_RELEASE": "PASS",
+    "ANNUAL_RESULT_STATUS": "REPRESENTATIVE_TRAJECTORY_SET",
+    "NUOLJA_STATION_SPECIFIC_ANNUAL_SAVING": "NOT_ESTABLISHED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED"
+  }
+}

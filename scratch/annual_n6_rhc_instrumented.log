@@ -1,0 +1,142 @@
+2026-10-21 18:38:26,119 [INFO] ================================================================================
+2026-10-21 18:38:26,120 [INFO] POLARIS -- SCENARIO 1 INSTRUMENTED RERUN (curtailment + cycling capture)
+2026-10-21 18:38:26,120 [INFO] ================================================================================
+2026-10-21 18:39:11,264 [INFO] Progress: 200 / 8760 (2.3%) | Diesel: 83.99 L | Curtailed: 0.0 kWh | ETA: 32.2 min
+2026-10-21 18:39:54,496 [INFO] Progress: 400 / 8760 (4.6%) | Diesel: 156.52 L | Curtailed: 0.0 kWh | ETA: 30.8 min
+2026-10-21 18:40:35,857 [INFO] Progress: 600 / 8760 (6.8%) | Diesel: 216.52 L | Curtailed: 0.0 kWh | ETA: 29.4 min
+2026-10-21 18:41:14,654 [INFO] Progress: 800 / 8760 (9.1%) | Diesel: 261.52 L | Curtailed: 0.0 kWh | ETA: 27.9 min
+2026-10-21 18:41:49,268 [INFO] Progress: 1000 / 8760 (11.4%) | Diesel: 269.02 L | Curtailed: 10.0 kWh | ETA: 26.3 min
+2026-10-21 18:42:24,263 [INFO] Progress: 1200 / 8760 (13.7%) | Diesel: 269.02 L | Curtailed: 29.1 kWh | ETA: 25.0 min
+2026-10-21 18:43:04,834 [INFO] Progress: 1400 / 8760 (16.0%) | Diesel: 269.02 L | Curtailed: 146.9 kWh | ETA: 24.4 min
+2026-10-21 18:44:00,820 [INFO] Progress: 1600 / 8760 (18.3%) | Diesel: 269.02 L | Curtailed: 446.8 kWh | ETA: 25.0 min
+2026-10-21 18:45:01,797 [INFO] Progress: 1800 / 8760 (20.5%) | Diesel: 269.02 L | Curtailed: 761.9 kWh | ETA: 25.5 min
+2026-10-21 18:46:34,556 [INFO] Progress: 2000 / 8760 (22.8%) | Diesel: 269.02 L | Curtailed: 1,317.3 kWh | ETA: 27.5 min
+2026-10-21 18:48:32,950 [INFO] Progress: 2200 / 8760 (25.1%) | Diesel: 269.02 L | Curtailed: 2,249.7 kWh | ETA: 30.2 min
+2026-10-21 18:50:14,547 [INFO] Progress: 2400 / 8760 (27.4%) | Diesel: 269.02 L | Curtailed: 3,219.4 kWh | ETA: 31.3 min
+2026-10-21 18:51:49,829 [INFO] Progress: 2600 / 8760 (29.7%) | Diesel: 269.02 L | Curtailed: 4,322.3 kWh | ETA: 31.7 min
+2026-10-21 18:53:46,294 [INFO] Progress: 2800 / 8760 (32.0%) | Diesel: 269.02 L | Curtailed: 6,041.5 kWh | ETA: 32.6 min
+2026-10-21 18:55:40,197 [INFO] Progress: 3000 / 8760 (34.2%) | Diesel: 269.02 L | Curtailed: 7,467.6 kWh | ETA: 33.1 min
+2026-10-21 18:57:40,546 [INFO] Progress: 3200 / 8760 (36.5%) | Diesel: 269.02 L | Curtailed: 9,007.0 kWh | ETA: 33.4 min
+2026-10-21 18:59:26,475 [INFO] Progress: 3400 / 8760 (38.8%) | Diesel: 269.02 L | Curtailed: 10,880.1 kWh | ETA: 33.1 min
+2026-10-21 19:01:33,089 [INFO] Progress: 3600 / 8760 (41.1%) | Diesel: 269.02 L | Curtailed: 12,948.3 kWh | ETA: 33.1 min
+2026-10-21 19:03:38,573 [INFO] Progress: 3800 / 8760 (43.4%) | Diesel: 269.02 L | Curtailed: 14,555.2 kWh | ETA: 32.9 min
+2026-10-21 19:05:37,522 [INFO] ================================================================================
+2026-10-21 19:05:37,522 [INFO] POLARIS -- SCENARIO 1 INSTRUMENTED RERUN (curtailment + cycling capture)
+2026-10-21 19:05:37,522 [INFO] ================================================================================
+2026-10-21 19:06:18,140 [INFO] Progress: 200 / 8760 (2.3%) | Diesel: 83.99 L | Curtailed: 0.0 kWh | ETA: 28.9 min
+2026-10-21 19:06:57,332 [INFO] Progress: 400 / 8760 (4.6%) | Diesel: 156.52 L | Curtailed: 0.0 kWh | ETA: 27.8 min
+2026-10-21 19:07:31,837 [INFO] Progress: 600 / 8760 (6.8%) | Diesel: 216.52 L | Curtailed: 0.0 kWh | ETA: 25.9 min
+2026-10-21 19:08:03,786 [INFO] Progress: 800 / 8760 (9.1%) | Diesel: 261.52 L | Curtailed: 0.0 kWh | ETA: 24.2 min
+2026-10-21 19:08:37,867 [INFO] Progress: 1000 / 8760 (11.4%) | Diesel: 269.02 L | Curtailed: 10.0 kWh | ETA: 23.3 min
+2026-10-21 19:09:10,774 [INFO] Progress: 1200 / 8760 (13.7%) | Diesel: 269.02 L | Curtailed: 29.1 kWh | ETA: 22.4 min
+2026-10-21 19:09:46,616 [INFO] Progress: 1400 / 8760 (16.0%) | Diesel: 269.02 L | Curtailed: 146.9 kWh | ETA: 21.8 min
+2026-10-21 19:10:37,725 [INFO] Progress: 1600 / 8760 (18.3%) | Diesel: 269.02 L | Curtailed: 446.8 kWh | ETA: 22.4 min
+2026-10-21 19:11:33,280 [INFO] Progress: 1800 / 8760 (20.5%) | Diesel: 269.02 L | Curtailed: 761.9 kWh | ETA: 22.9 min
+2026-10-21 19:12:58,856 [INFO] Progress: 2000 / 8760 (22.8%) | Diesel: 269.02 L | Curtailed: 1,317.3 kWh | ETA: 24.9 min
+2026-10-21 19:14:52,594 [INFO] Progress: 2200 / 8760 (25.1%) | Diesel: 269.02 L | Curtailed: 2,249.7 kWh | ETA: 27.6 min
+2026-10-21 19:16:37,565 [INFO] Progress: 2400 / 8760 (27.4%) | Diesel: 269.02 L | Curtailed: 3,219.4 kWh | ETA: 29.1 min
+2026-10-21 19:18:02,995 [INFO] Progress: 2600 / 8760 (29.7%) | Diesel: 269.02 L | Curtailed: 4,322.3 kWh | ETA: 29.4 min
+2026-10-21 19:19:27,232 [INFO] Progress: 2800 / 8760 (32.0%) | Diesel: 269.02 L | Curtailed: 6,041.5 kWh | ETA: 29.4 min
+2026-10-21 19:20:49,657 [INFO] Progress: 3000 / 8760 (34.2%) | Diesel: 269.02 L | Curtailed: 7,467.6 kWh | ETA: 29.2 min
+2026-10-21 19:22:13,935 [INFO] Progress: 3200 / 8760 (36.5%) | Diesel: 269.02 L | Curtailed: 9,007.0 kWh | ETA: 28.9 min
+2026-10-21 19:23:32,400 [INFO] Progress: 3400 / 8760 (38.8%) | Diesel: 269.02 L | Curtailed: 10,880.1 kWh | ETA: 28.2 min
+2026-10-21 19:24:50,921 [INFO] Progress: 3600 / 8760 (41.1%) | Diesel: 269.02 L | Curtailed: 12,948.3 kWh | ETA: 27.6 min
+2026-10-21 19:26:02,230 [INFO] Progress: 3800 / 8760 (43.4%) | Diesel: 269.02 L | Curtailed: 14,555.2 kWh | ETA: 26.6 min
+2026-10-21 19:27:19,633 [INFO] Progress: 4000 / 8760 (45.7%) | Diesel: 269.02 L | Curtailed: 16,308.5 kWh | ETA: 25.8 min
+2026-10-21 19:28:22,243 [INFO] Progress: 4200 / 8760 (47.9%) | Diesel: 269.02 L | Curtailed: 17,566.4 kWh | ETA: 24.7 min
+2026-10-21 19:29:41,848 [INFO] Progress: 4400 / 8760 (50.2%) | Diesel: 269.02 L | Curtailed: 19,071.1 kWh | ETA: 23.9 min
+2026-10-21 19:30:56,948 [INFO] Progress: 4600 / 8760 (52.5%) | Diesel: 269.02 L | Curtailed: 20,537.4 kWh | ETA: 22.9 min
+2026-10-21 19:32:22,662 [INFO] Progress: 4800 / 8760 (54.8%) | Diesel: 269.02 L | Curtailed: 22,330.4 kWh | ETA: 22.1 min
+2026-10-21 19:33:48,406 [INFO] Progress: 5000 / 8760 (57.1%) | Diesel: 269.02 L | Curtailed: 23,800.2 kWh | ETA: 21.2 min
+2026-10-21 19:34:56,948 [INFO] Progress: 5200 / 8760 (59.4%) | Diesel: 269.02 L | Curtailed: 24,788.7 kWh | ETA: 20.1 min
+2026-10-21 19:36:14,816 [INFO] Progress: 5400 / 8760 (61.6%) | Diesel: 269.02 L | Curtailed: 25,905.2 kWh | ETA: 19.1 min
+2026-10-21 19:37:22,278 [INFO] Progress: 5600 / 8760 (63.9%) | Diesel: 269.02 L | Curtailed: 26,755.5 kWh | ETA: 17.9 min
+2026-10-21 19:38:16,093 [INFO] Progress: 5800 / 8760 (66.2%) | Diesel: 269.02 L | Curtailed: 27,317.5 kWh | ETA: 16.7 min
+2026-10-21 19:39:14,010 [INFO] Progress: 6000 / 8760 (68.5%) | Diesel: 269.02 L | Curtailed: 27,894.2 kWh | ETA: 15.5 min
+2026-10-21 19:40:12,967 [INFO] Progress: 6200 / 8760 (70.8%) | Diesel: 269.02 L | Curtailed: 28,448.4 kWh | ETA: 14.3 min
+2026-10-21 19:40:53,465 [INFO] Progress: 6400 / 8760 (73.1%) | Diesel: 269.02 L | Curtailed: 28,862.4 kWh | ETA: 13.0 min
+2026-10-21 19:41:33,094 [INFO] Progress: 6600 / 8760 (75.3%) | Diesel: 269.02 L | Curtailed: 29,188.2 kWh | ETA: 11.8 min
+2026-10-21 19:42:04,377 [INFO] Progress: 6800 / 8760 (77.6%) | Diesel: 269.02 L | Curtailed: 29,408.8 kWh | ETA: 10.5 min
+2026-10-21 19:42:27,560 [INFO] Progress: 7000 / 8760 (79.9%) | Diesel: 269.02 L | Curtailed: 29,472.2 kWh | ETA: 9.3 min
+2026-10-21 19:42:48,742 [INFO] Progress: 7200 / 8760 (82.2%) | Diesel: 269.02 L | Curtailed: 29,484.8 kWh | ETA: 8.1 min
+2026-10-21 19:43:08,529 [INFO] Progress: 7400 / 8760 (84.5%) | Diesel: 276.52 L | Curtailed: 29,484.8 kWh | ETA: 6.9 min
+2026-10-21 19:43:30,463 [INFO] Progress: 7600 / 8760 (86.8%) | Diesel: 314.02 L | Curtailed: 29,484.8 kWh | ETA: 5.8 min
+2026-10-21 19:43:56,846 [INFO] Progress: 7800 / 8760 (89.0%) | Diesel: 381.52 L | Curtailed: 29,484.8 kWh | ETA: 4.7 min
+2026-10-21 19:44:30,221 [INFO] Progress: 8000 / 8760 (91.3%) | Diesel: 441.52 L | Curtailed: 29,484.8 kWh | ETA: 3.7 min
+2026-10-21 19:44:55,359 [INFO] Progress: 8200 / 8760 (93.6%) | Diesel: 514.11 L | Curtailed: 29,484.8 kWh | ETA: 2.7 min
+2026-10-21 19:45:21,113 [INFO] Progress: 8400 / 8760 (95.9%) | Diesel: 589.41 L | Curtailed: 29,484.8 kWh | ETA: 1.7 min
+2026-10-21 19:45:46,438 [INFO] Progress: 8600 / 8760 (98.2%) | Diesel: 649.98 L | Curtailed: 29,484.8 kWh | ETA: 0.7 min
+2026-10-21 19:46:05,587 [INFO] Progress: 8760 / 8760 (100.0%) | Diesel: 710.34 L | Curtailed: 29,484.8 kWh | ETA: 0.0 min
+2026-10-21 19:46:05,735 [INFO] ================================================================================
+2026-10-21 19:46:05,735 [INFO] SCENARIO 1 INSTRUMENTED RERUN COMPLETE:
+2026-10-21 19:46:05,735 [INFO]   pipeline: POLARIS_N6_RHC_C2_INSTRUMENTED
+2026-10-21 19:46:05,735 [INFO]   total_diesel_consumed_liters: 710.3352
+2026-10-21 19:46:05,735 [INFO]   diesel_run_hours: 94
+2026-10-21 19:46:05,735 [INFO]   total_steps_executed: 8760
+2026-10-21 19:46:05,735 [INFO]   renewable_curtailed_kwh: 29484.8
+2026-10-21 19:46:05,736 [INFO]   battery_cycling_loss_kwh: 6347.1
+2026-10-21 19:46:05,736 [INFO]   equivalent_battery_cycles: 182.48
+2026-10-21 19:46:05,736 [INFO]   total_fuel_cost_eur: 1775.84
+2026-10-21 19:46:05,736 [INFO]   total_unmet_load_kwh: 131400.0
+2026-10-21 19:46:05,736 [INFO]   hours_with_unmet_load: 8760
+2026-10-21 19:46:05,736 [INFO] ================================================================================
+2026-10-21 19:46:49,830 [INFO] ================================================================================
+2026-10-21 19:46:49,830 [INFO] POLARIS -- SCENARIO 1 INSTRUMENTED RERUN (curtailment + cycling capture)
+2026-10-21 19:46:49,831 [INFO] ================================================================================
+2026-10-21 19:47:53,899 [INFO] Progress: 200 / 8760 (2.3%) | Diesel: 1,151.84 L | Curtailed: 0.0 kWh | ETA: 45.7 min
+2026-10-21 19:48:56,291 [INFO] Progress: 400 / 8760 (4.6%) | Diesel: 2,285.56 L | Curtailed: 0.0 kWh | ETA: 44.0 min
+2026-10-21 19:49:59,364 [INFO] Progress: 600 / 8760 (6.8%) | Diesel: 3,406.51 L | Curtailed: 0.0 kWh | ETA: 43.0 min
+2026-10-21 19:51:00,051 [INFO] Progress: 800 / 8760 (9.1%) | Diesel: 4,529.13 L | Curtailed: 0.0 kWh | ETA: 41.5 min
+2026-10-21 19:51:57,574 [INFO] Progress: 1000 / 8760 (11.4%) | Diesel: 5,619.76 L | Curtailed: 0.0 kWh | ETA: 39.8 min
+2026-10-21 19:52:56,536 [INFO] Progress: 1200 / 8760 (13.7%) | Diesel: 6,723.38 L | Curtailed: 0.0 kWh | ETA: 38.5 min
+2026-10-21 19:53:55,546 [INFO] Progress: 1400 / 8760 (16.0%) | Diesel: 7,725.14 L | Curtailed: 0.0 kWh | ETA: 37.3 min
+2026-10-21 19:55:02,333 [INFO] Progress: 1600 / 8760 (18.3%) | Diesel: 8,673.31 L | Curtailed: 0.0 kWh | ETA: 36.7 min
+2026-10-21 19:56:08,760 [INFO] Progress: 1800 / 8760 (20.5%) | Diesel: 9,623.81 L | Curtailed: 0.0 kWh | ETA: 36.0 min
+2026-10-21 19:57:11,943 [INFO] Progress: 2000 / 8760 (22.8%) | Diesel: 10,477.95 L | Curtailed: 0.0 kWh | ETA: 35.0 min
+2026-10-21 19:58:11,321 [INFO] Progress: 2200 / 8760 (25.1%) | Diesel: 11,235.92 L | Curtailed: 0.0 kWh | ETA: 33.9 min
+2026-10-21 19:59:08,933 [INFO] Progress: 2400 / 8760 (27.4%) | Diesel: 11,929.16 L | Curtailed: 0.0 kWh | ETA: 32.6 min
+2026-10-21 19:59:55,196 [INFO] Progress: 2600 / 8760 (29.7%) | Diesel: 12,590.36 L | Curtailed: 0.0 kWh | ETA: 31.0 min
+2026-10-21 20:00:38,490 [INFO] Progress: 2800 / 8760 (32.0%) | Diesel: 13,012.38 L | Curtailed: 5.8 kWh | ETA: 29.4 min
+2026-10-21 20:01:26,292 [INFO] Progress: 3000 / 8760 (34.2%) | Diesel: 13,529.02 L | Curtailed: 18.9 kWh | ETA: 28.0 min
+2026-10-21 20:02:20,540 [INFO] Progress: 3200 / 8760 (36.5%) | Diesel: 14,077.10 L | Curtailed: 91.6 kWh | ETA: 27.0 min
+2026-10-21 20:03:15,142 [INFO] Progress: 3400 / 8760 (38.8%) | Diesel: 14,512.55 L | Curtailed: 234.3 kWh | ETA: 25.9 min
+2026-10-21 20:04:05,074 [INFO] Progress: 3600 / 8760 (41.1%) | Diesel: 14,902.90 L | Curtailed: 435.5 kWh | ETA: 24.7 min
+2026-10-21 20:04:45,749 [INFO] Progress: 3800 / 8760 (43.4%) | Diesel: 15,377.26 L | Curtailed: 481.6 kWh | ETA: 23.4 min
+2026-10-21 20:05:29,090 [INFO] Progress: 4000 / 8760 (45.7%) | Diesel: 15,815.84 L | Curtailed: 521.3 kWh | ETA: 22.2 min
+2026-10-21 20:06:26,197 [INFO] Progress: 4200 / 8760 (47.9%) | Diesel: 16,447.01 L | Curtailed: 578.9 kWh | ETA: 21.3 min
+2026-10-21 20:07:18,486 [INFO] Progress: 4400 / 8760 (50.2%) | Diesel: 16,977.43 L | Curtailed: 663.9 kWh | ETA: 20.3 min
+2026-10-21 20:08:12,349 [INFO] Progress: 4600 / 8760 (52.5%) | Diesel: 17,543.71 L | Curtailed: 732.9 kWh | ETA: 19.3 min
+2026-10-21 20:09:10,476 [INFO] Progress: 4800 / 8760 (54.8%) | Diesel: 17,999.80 L | Curtailed: 898.8 kWh | ETA: 18.4 min
+2026-10-21 20:10:01,716 [INFO] Progress: 5000 / 8760 (57.1%) | Diesel: 18,568.61 L | Curtailed: 969.2 kWh | ETA: 17.4 min
+2026-10-21 20:10:51,829 [INFO] Progress: 5200 / 8760 (59.4%) | Diesel: 19,256.42 L | Curtailed: 969.2 kWh | ETA: 16.5 min
+2026-10-21 20:11:44,046 [INFO] Progress: 5400 / 8760 (61.6%) | Diesel: 19,888.12 L | Curtailed: 969.2 kWh | ETA: 15.5 min
+2026-10-21 20:12:38,682 [INFO] Progress: 5600 / 8760 (63.9%) | Diesel: 20,620.84 L | Curtailed: 969.2 kWh | ETA: 14.6 min
+2026-10-21 20:13:42,936 [INFO] Progress: 5800 / 8760 (66.2%) | Diesel: 21,474.98 L | Curtailed: 969.2 kWh | ETA: 13.7 min
+2026-10-21 20:14:47,165 [INFO] Progress: 6000 / 8760 (68.5%) | Diesel: 22,336.12 L | Curtailed: 969.2 kWh | ETA: 12.9 min
+2026-10-21 20:15:49,537 [INFO] Progress: 6200 / 8760 (70.8%) | Diesel: 23,220.90 L | Curtailed: 969.2 kWh | ETA: 12.0 min
+2026-10-21 20:17:17,021 [INFO] Progress: 6400 / 8760 (73.1%) | Diesel: 24,143.35 L | Curtailed: 969.2 kWh | ETA: 11.2 min
+2026-10-21 20:18:52,155 [INFO] Progress: 6600 / 8760 (75.3%) | Diesel: 25,100.46 L | Curtailed: 969.2 kWh | ETA: 10.5 min
+2026-10-21 20:20:26,570 [INFO] Progress: 6800 / 8760 (77.6%) | Diesel: 26,099.55 L | Curtailed: 969.2 kWh | ETA: 9.7 min
+2026-10-21 20:22:03,394 [INFO] Progress: 7000 / 8760 (79.9%) | Diesel: 27,167.43 L | Curtailed: 969.2 kWh | ETA: 8.9 min
+2026-10-21 20:23:32,217 [INFO] Progress: 7200 / 8760 (82.2%) | Diesel: 28,228.68 L | Curtailed: 969.2 kWh | ETA: 8.0 min
+2026-10-21 20:25:05,737 [INFO] Progress: 7400 / 8760 (84.5%) | Diesel: 29,330.69 L | Curtailed: 969.2 kWh | ETA: 7.0 min
+2026-10-21 20:26:35,597 [INFO] Progress: 7600 / 8760 (86.8%) | Diesel: 30,456.88 L | Curtailed: 969.2 kWh | ETA: 6.1 min
+2026-10-21 20:28:02,324 [INFO] Progress: 7800 / 8760 (89.0%) | Diesel: 31,588.19 L | Curtailed: 969.2 kWh | ETA: 5.1 min
+2026-10-21 20:29:36,946 [INFO] Progress: 8000 / 8760 (91.3%) | Diesel: 32,699.07 L | Curtailed: 969.2 kWh | ETA: 4.1 min
+2026-10-21 20:31:17,263 [INFO] Progress: 8200 / 8760 (93.6%) | Diesel: 33,861.86 L | Curtailed: 969.2 kWh | ETA: 3.0 min
+2026-10-21 20:32:56,009 [INFO] Progress: 8400 / 8760 (95.9%) | Diesel: 34,986.46 L | Curtailed: 969.2 kWh | ETA: 2.0 min
+2026-10-21 20:34:32,292 [INFO] Progress: 8600 / 8760 (98.2%) | Diesel: 36,144.98 L | Curtailed: 969.2 kWh | ETA: 0.9 min
+2026-10-21 20:35:49,952 [INFO] Progress: 8760 / 8760 (100.0%) | Diesel: 37,046.16 L | Curtailed: 969.2 kWh | ETA: 0.0 min
+2026-10-21 20:35:50,146 [INFO] ================================================================================
+2026-10-21 20:35:50,146 [INFO] SCENARIO 1 INSTRUMENTED RERUN COMPLETE:
+2026-10-21 20:35:50,146 [INFO]   pipeline: POLARIS_N6_RHC_C2_INSTRUMENTED
+2026-10-21 20:35:50,147 [INFO]   total_diesel_consumed_liters: 37046.1589
+2026-10-21 20:35:50,147 [INFO]   diesel_run_hours: 2074
+2026-10-21 20:35:50,147 [INFO]   total_steps_executed: 8760
+2026-10-21 20:35:50,147 [INFO]   renewable_curtailed_kwh: 969.2
+2026-10-21 20:35:50,147 [INFO]   battery_cycling_loss_kwh: 11962.1
+2026-10-21 20:35:50,147 [INFO]   equivalent_battery_cycles: 343.91
+2026-10-21 20:35:50,147 [INFO]   total_fuel_cost_eur: 92615.4
+2026-10-21 20:35:50,147 [INFO]   total_unmet_load_kwh: 0.0
+2026-10-21 20:35:50,147 [INFO]   hours_with_unmet_load: 0
+2026-10-21 20:35:50,147 [INFO] ================================================================================

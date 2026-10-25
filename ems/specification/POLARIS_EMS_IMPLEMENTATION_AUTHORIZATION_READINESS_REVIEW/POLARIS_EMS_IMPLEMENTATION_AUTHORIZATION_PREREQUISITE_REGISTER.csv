@@ -1,0 +1,8 @@
+Prerequisite_ID,Prerequisite_Name,Governed_Source,Current_Status,Required_For_Scope,Blocking,Authority_Required,Evidence,Next_Action
+PRQ_01,Stakeholder Policy Approval,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET/,APPROVED,Candidate Scope,NO,Stakeholder Board,Decision Sheet Document,Maintain Approved Status
+PRQ_02,Policy Definition Resolution,POLARIS_EMS_POLICY_DEFINITION_RESOLUTION/,RESOLVED,Candidate Scope,NO,Stakeholder Board,Policy Resolution Package,Maintain Resolved Status
+PRQ_03,Objective Specification Review,POLARIS_EMS_OBJECTIVE_SPECIFICATION_REVIEW/,REVIEW_PASSED,Candidate Scope,NO,Technical Review Gate,Objective Review PASS Report,Maintain Passed Status
+PRQ_04,Implementation Specification Review V2,POLARIS_EMS_IMPLEMENTATION_SPECIFICATION_REVIEW_V2/,REVIEW_PASSED,Candidate Scope,NO,Governance Gatekeeper,Implementation Review V2 PASS Report,Maintain Passed Status
+PRQ_05,Candidate Scope Isolation,POLARIS_EMS_IMPLEMENTATION_SPECIFICATION_REVIEW_V2.md,COMPLETE,Candidate Scope,NO,Governance Gatekeeper,GAP_05/11/20 Isolation Contract,Submit for Human Decision
+PRQ_06,Frozen Code Baseline Integrity,system/optimization/implementations/milp.py,VERIFIED_FROZEN,Candidate Scope,NO,Code Auditor,SHA-256 Digest Match (ee913b6...),Enforce Freeze Boundary
+PRQ_07,Human Authorization Sign-Off,HUMAN_GOVERNANCE_GATE,PENDING_DECISION,Candidate Scope,YES (FOR CODE IMPLEMENTATION),Human Executive Stakeholder,Formal Decision Signature,Present Readiness Package to Human

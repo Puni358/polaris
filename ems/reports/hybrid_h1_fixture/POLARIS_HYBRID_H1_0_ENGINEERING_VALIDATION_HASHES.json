@@ -1,0 +1,9 @@
+{
+  "execution_timestamp": "2026-09-20T06:22:10.690697+00:00",
+  "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+  "optimizer_milp_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+  "raw_telemetry_csv_sha256": "27a2f6b260dc759526f4c3feb2e329d32a802945d85cefc9159219d2870ac81b",
+  "execution_manifest_json_sha256": "c5ce9864b83c5d0972082b67a80ed2c17cd7593a29c4d1e9c79451dcae0e3276",
+  "execution_report_md_sha256": "28119d4a613e949268b473009ffe6d08b2a795a4e81ff9d8b997b6da33a10a4b",
+  "provenance_manifest_json_sha256": "26f4fe956d97f9263e93ad38021d63c0f280df8d70c7675cda6aad62002cfb1a"
+}

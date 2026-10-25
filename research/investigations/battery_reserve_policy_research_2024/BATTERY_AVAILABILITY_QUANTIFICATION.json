@@ -1,0 +1,58 @@
+{
+  "adequacy_table": [
+    {
+      "soc_pct": 20.0,
+      "stored_energy_kwh": 40.0,
+      "delivered_critical_kwh": 0.0,
+      "critical_load_hours": 0.0
+    },
+    {
+      "soc_pct": 30.0,
+      "stored_energy_kwh": 60.0,
+      "delivered_critical_kwh": 18.4,
+      "critical_load_hours": 1.59
+    },
+    {
+      "soc_pct": 40.0,
+      "stored_energy_kwh": 80.0,
+      "delivered_critical_kwh": 36.8,
+      "critical_load_hours": 3.17
+    },
+    {
+      "soc_pct": 50.0,
+      "stored_energy_kwh": 100.0,
+      "delivered_critical_kwh": 55.2,
+      "critical_load_hours": 4.76
+    },
+    {
+      "soc_pct": 57.83,
+      "stored_energy_kwh": 115.66,
+      "delivered_critical_kwh": 69.61,
+      "critical_load_hours": 6.0
+    },
+    {
+      "soc_pct": 60.0,
+      "stored_energy_kwh": 120.0,
+      "delivered_critical_kwh": 73.6,
+      "critical_load_hours": 6.34
+    },
+    {
+      "soc_pct": 70.0,
+      "stored_energy_kwh": 140.0,
+      "delivered_critical_kwh": 92.0,
+      "critical_load_hours": 7.93
+    },
+    {
+      "soc_pct": 80.0,
+      "stored_energy_kwh": 160.0,
+      "delivered_critical_kwh": 110.4,
+      "critical_load_hours": 9.52
+    },
+    {
+      "soc_pct": 95.0,
+      "stored_energy_kwh": 190.0,
+      "delivered_critical_kwh": 138.0,
+      "critical_load_hours": 11.9
+    }
+  ]
+}

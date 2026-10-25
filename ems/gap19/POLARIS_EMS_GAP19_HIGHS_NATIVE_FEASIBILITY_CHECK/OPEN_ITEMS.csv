@@ -1,0 +1,17 @@
+audit_document,OPEN_ITEMS
+audit_phase,GAP19_HIGHS_NATIVE_FEASIBILITY_CHECK
+audit_date,2026-09-22
+generation_mode,EVIDENCE_BASED_TECHNICAL_AUDIT
+execution_performed,READ_ONLY
+
+# ============================================================
+# POLARIS GAP19 UNRESOLVED AND OPEN ITEMS REGISTRY
+# ============================================================
+
+item_id,category,description,impact_on_option_a,impact_on_option_b,resolution_requirement
+OPEN-01,Governance / Formulation,Stage 2 Emergency Battery Reserve (EBR) / terminal reserve objective formulation is absent from current POLARIS MILP code.,BLOCKING (Requires formulation for Stage 2),BLOCKING (Requires formulation for Stage 2),POLARIS team must formally define mathematical formulation and penalty parameters for Stage 2 EBR.
+OPEN-02,Governance / Objective Hierarchy,Battery degradation objective placement within the 4-stage lexicographic hierarchy is unresolved.,AFFECTS STAGE CONFIGURATION,AFFECTS STAGE CONFIGURATION,Governance decision required on whether degradation is integrated into Stage 3 or placed in an auxiliary stage.
+OPEN-03,Technical / API Architecture,scipy.optimize.milp() does not expose native multi-objective API; Option B requires internal scipy._highspy._core access or standalone highspy.,NONE (Option A uses standard scipy.optimize.milp()),BLOCKING FOR PUBLIC API (Requires architectural bypass or dependency addition),Decision required on using private C++ wrapper scipy.optimize._highspy._core vs adding highspy to dependencies.
+OPEN-04,Environment / Dependencies,Standalone highspy package is NOT installed in the POLARIS python environment.,NONE,REQUIRES INSTALLATION IF USING PUBLIC HIGHSPY,Dependency governance approval required prior to installing highspy if Option B selected via standalone package.
+OPEN-05,Numerical / Tolerance Semantics,Mapping exact native HiGHS MILP objective tolerance semantics (abs_tolerance rel_tolerance) to POLARIS priority requirements.,NONE (Option A uses explicit constraint locking),REQUIRES MAPPING AND VERIFICATION,Formulate explicit tolerance mapping rules and test internal HiGHS tolerance behavior against constraint locking.
+OPEN-06,Empirical / Verification,No empirical A-vs-B equivalence benchmark test has been executed on actual POLARIS dispatch datasets.,NOT PERFORMED,NOT PERFORMED,Execute empirical comparative run of Option A vs Option B on standard test cases once solver path and Stage 2 formulation are complete.

@@ -1,0 +1,13 @@
+ASPECT,TECHNICAL_DESCRIPTION,CLASSIFICATION,EVIDENCE_SOURCE
+Mathematical Structure,Sequential 4-pass MILP optimization. Pass k minimizes J_k subject to linear inequality lock constraints J_i(x) <= J_i* + eps_i for i < k.,ARCHITECTURAL_PROPOSAL,EMS Objective Specification V2 Section 4
+Optimization Passes,Pass 1: min J1 (Critical load shortfall); Pass 2: min J2 (EBR reserve shortfall); Pass 3: min J3 (Diesel fuel); Pass 4: min J4 (Avoidable curtailment).,ARCHITECTURAL_PROPOSAL,EMS Objective Specification V2 Section 4
+Objective Locks,Linear inequality constraints added to constraint matrix: J_i(x) <= J_i* + eps_i.,ARCHITECTURAL_PROPOSAL,Option A Blueprint
+Epsilon Requirements,"eps_1, eps_2, eps_3 require engineering calibration. Setting eps=0 risks floating-point infeasibility; large eps allows priority relaxation.",STATIC_TECHNICAL_FINDING,Numerical Sensitivity Analysis
+Priority Leakage,"Lexicographic priority preserved via explicit lock constraints, subject to bounded numerical lock tolerances and solver feasibility tolerances.",STATIC_TECHNICAL_FINDING,Optimization Theory
+Solver Invocations,4 sequential solver calls per MPC cycle.,ARCHITECTURAL_PROPOSAL,MPC Architecture Specs
+Current Stack Compatibility,TECHNICALLY_FEASIBLE using current SciPy 1.18.1 / HiGHS stack.,ESTABLISHED,scipy.optimize.milp signature audit
+External Dependencies,Zero new dependencies. Uses existing environment.,ESTABLISHED,pyproject.toml & environment audit
+Failure Handling,"Detect and record solver failure (infeasibility, timeout, numerical instability). Operational response REQUIRES_GOVERNANCE_DECISION.",RESPONSE_POLICY_REQUIRED,Failure Mode Register
+Reproducibility,"Deterministic replay within authorized numerical/structural tolerances using identical seeds, solver options, and inputs.",GOVERNANCE_REQUIREMENT,Reproducibility Requirements
+Runtime Implications,O(4 * T_solve) per step. Actual execution time STATUS = NOT_MEASURED.,NOT_MEASURED,Performance Analysis
+Rollback Procedure,Restore previously authorized optimizer implementation and configuration in milp.py and optimizer.yaml.,ARCHITECTURAL_PROPOSAL,Rollback Register

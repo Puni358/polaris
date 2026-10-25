@@ -1,0 +1,12 @@
+{
+  "experiment_name": "EXP-PLANNER-CF-EBR-TERMINAL-S0-LOWER-BOUND-20261008",
+  "objective": "Forecast-faithful EBR + terminal lower bound for resolve-s=0 slice",
+  "base_certified_lower_bound_l": 1397.8483,
+  "terminal_only_lower_bound_l": 3196.1171,
+  "pc_sw_reference_l": 8729.2446,
+  "target_40_pct_l": 6118.1827,
+  "ebr_formula": "E_SW[t] = (1/0.92) * sum_{k=t}^{min(t+5,23)} max(0, D_crit[k] - S_fc[k] - W_fc[k])",
+  "terminal_merged_formula": "E[24] + s_j2[23] >= max(ebr_target_s0[23], 100000.0) + min_e_wh",
+  "j2_objective": "1.0 * sum(s_j2[t])",
+  "verdict": "BLOCKED"
+}

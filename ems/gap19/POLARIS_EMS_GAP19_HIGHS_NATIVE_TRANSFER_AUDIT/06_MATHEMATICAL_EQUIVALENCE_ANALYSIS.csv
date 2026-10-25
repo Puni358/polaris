@@ -1,0 +1,82 @@
+audit_document,06_MATHEMATICAL_EQUIVALENCE_ANALYSIS
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,milp.py + governed EMS Objective Specification V2
+generation_mode,READ_ONLY_MATHEMATICAL_ANALYSIS
+execution_performed,FALSE
+
+# ============================================================
+# MATHEMATICAL EQUIVALENCE ANALYSIS
+# CURRENT POLARIS MILP → GOVERNED LEXICOGRAPHIC OBJECTIVE
+# ============================================================
+
+# QUESTION BEING ANSWERED:
+# Can the current POLARIS MILP formulation be transferred to implement
+# the governed lexicographic 4-stage objective WITHOUT changing the
+# mathematical optimization problem?
+
+# ============================================================
+# SECTION A: WHAT STAYS IDENTICAL IN BOTH OPTIONS
+# ============================================================
+
+preserved_element,mathematical_form,notes
+Decision variable set,"x ∈ R^360 with integrality constraints on indices 11 12 13 14 of each 15-variable timestep block","15 variables × 24 timesteps = 360 total. Unchanged across Option A and Option B."
+Variable bounds,"lb ≤ x ≤ ub as defined in 01_DECISION_VARIABLES.csv","Bounds are data-dependent (solar_gen wind_gen demand) but unchanged by solver architecture choice."
+Constraint matrix A,"264×360 or 265×360 sparse matrix as defined in 02_CONSTRAINT_CATALOG.csv","Constraints C1-C12 are the SAME mathematical feasibility region in both options."
+RHS vectors lhs and rhs,"As defined in 02_CONSTRAINT_CATALOG.csv","Unchanged."
+Integrality vector,"1 for u_chg u_dis u_diesel v_start; 0 for continuous variables","Unchanged."
+
+# ============================================================
+# SECTION B: WHAT CHANGES BETWEEN OPTIONS
+# ============================================================
+
+# Option A: Sequential MILP with Objective Locking (scipy-compatible)
+option_A_mechanism,"Run 4 sequential scipy.optimize.milp calls. After each stage k, add constraint: c_k^T x <= z_k* + epsilon_k (objective lock). Next stage optimizes new objective over locked feasible set."
+option_A_mathematical_form,"Stage 1: min_{x in F} f1(x); Stage 2: min_{x in F, f1(x)<=z1*+eps1} f2(x); etc."
+option_A_objective_per_stage,"Stage 1: c1 = [unmet_penalty * dt for p_unmet indices]; Stage 2: c2 = [shortfall penalty for E(H) reserve]; Stage 3: c3 = [fuel+startup costs]; Stage 4: c4 = [curtailment penalties]"
+option_A_feasible_set_modification,"Each stage k+1 solves over F_k = F ∩ {f1<=z1*+eps1} ∩ ... ∩ {fk<=zk*+epsk}. The feasible set SHRINKS with each stage. This is the epsilon-constraint method."
+option_A_api_requirement,"4 calls to scipy.optimize.milp. Between calls: extract z_k* from res.fun, construct new constraint row, add to LinearConstraint, rebuild. Feasible within current scipy API."
+
+# Option B: Native HiGHS Multi-Objective (requires highspy or C++ API)
+option_B_mechanism_IF_SUPPORTED,"Pass all 4 objective vectors to HiGHS multi-objective API in a single model. HiGHS solver internally manages lexicographic priority."
+option_B_mathematical_form,"IF HiGHS lexicographic MILP is confirmed: lex-min (f1(x), f2(x), f3(x), f4(x)) subject to x in F. Mathematically identical to Option A epsilon-constraint with eps_k=0."
+option_B_api_requirement,"Requires highspy (not scipy). Requires confirmed HiGHS version with stable MILP multi-objective support. Not currently available in POLARIS stack."
+
+# ============================================================
+# SECTION C: MATHEMATICAL EQUIVALENCE ASSESSMENT
+# ============================================================
+
+equivalence_question,"Are Option A (sequential MILP epsilon-constraint) and Option B (native lex MILP) mathematically equivalent?"
+equivalence_answer,"YES — under the following conditions:"
+condition_1,"Same objective order: Stage 1 must be lexicographically first in both options."
+condition_2,"Zero tolerance: epsilon_k = 0 in Option A. If epsilon_k > 0, Option A admits solutions that Option B (strict lex) would reject."
+condition_3,"Same formulation: identical variables V, constraints F, and per-stage objective functions f1...f4."
+condition_4,"Same solver: If both options use HiGHS as the underlying solver, numerical behavior of each solve is deterministic and identical."
+condition_5,"Tie-breaking: If multiple optima exist at any stage, the tie-breaking rule must be consistent between options. Strict lex (epsilon=0) eliminates Stage k degeneracy before Stage k+1."
+
+non_equivalence_cases,"Option A and Option B produce DIFFERENT results when:"
+non_equivalence_1,"epsilon_k > 0: Option A is more permissive in Stage k satisfaction, potentially allowing different Stage k+1 solutions."
+non_equivalence_2,"Option B uses a different internal tolerance or lex criterion than Option A's added constraint formulation."
+non_equivalence_3,"Multi-objective HiGHS uses Pareto-front enumeration rather than strict lexicographic priority — these are different mathematical problems."
+
+# ============================================================
+# SECTION D: TRANSFER FEASIBILITY ASSESSMENT
+# ============================================================
+
+transfer_item,transferable,mathematical_change,engineering_effort_required,notes
+All 360 decision variables,YES,NONE,NONE,"Variables V are fully transferable to any MILP solver API."
+All 12 constraint types (264+ rows),YES,NONE,NONE,"Constraint matrix A and bounds [lb_c, ub_c] transfer directly to any MILP API."
+Current single weighted-sum objective → Stage 3+4 combined objective,YES with DECOMPOSITION,REQUIRED,"Requires separating p_unmet penalty (Stage 1) from curtailment/fuel penalties (Stage 3/4). Current c vector mixes all into one sum.",LOW_ENGINEERING_EFFORT
+Stage 1 objective isolation,YES,MINOR,"Construct c1 with only p_unmet coefficients non-zero. All other coefficients zero.",LOW_ENGINEERING_EFFORT
+Stage 2 objective (terminal battery reserve),YES_WITH_FORMULATION_WORK,REQUIRED,"E_reserve shortfall must be formulated as an objective or constraint. Currently Stage 2 is only an implicit SOC bound not an explicit objective term. Requires adding E(H) terminal reserve term to c2.",MODERATE_ENGINEERING_EFFORT
+Stage 3 objective isolation,YES,MINOR,"Construct c3 with only p_diesel u_diesel v_start coefficients non-zero.",LOW_ENGINEERING_EFFORT
+Stage 4 objective isolation,YES,MINOR,"Construct c4 with only p_curt_sol p_curt_wind coefficients non-zero.",LOW_ENGINEERING_EFFORT
+Sequential epsilon-constraint addition (Option A),YES_VIA_SCIPY,NONE_FOR_MATH,"Each stage adds one new LinearConstraint row. The math is exact and equivalent to strict lex with epsilon=0.",MODERATE_ENGINEERING_EFFORT_FOR_IMPLEMENTATION
+HiGHS native multi-objective (Option B),CONDITIONAL,"Requires highspy installation, HiGHS version confirmation, and confirmation that MILP multi-objective is stable. Mathematical equivalence to Option A is conditional (see Section C).",HIGH_ENGINEERING_EFFORT_AND_OPEN_DEPENDENCY
+
+# ============================================================
+# SECTION E: WHAT CANNOT BE PRESERVED (OPEN ITEMS)
+# ============================================================
+open_item_1,"Stage 2 objective formulation: the current MILP has NO Stage 2 objective coefficient. Stage 2 = SOC lower bound only. The governed EMS V2 requires an explicit Stage 2 shortfall objective. This requires defining: E_reserve_shortfall(H) = max(0, E_EBR_target - E(H)). This is a NEW objective term — not a transfer of an existing one."
+open_item_2,"Epsilon tolerance values for Option A objective-locking constraints are NOT defined in the current code or the governed spec. These must be specified before implementation."
+open_item_3,"Terminal reserve target E_EBR_target or SOC_terminal_target is NOT quantified in optimizer.yaml or milp.py. This is a blocking engineering input for Stage 2."
+open_item_4,"The unweighted treatment of p_unmet (gamma^t = 1.0 forced) in the current code — while reasonable — is not explicitly addressed in the governed spec. Temporal weighting of Stage 1 objective requires governance clarification."

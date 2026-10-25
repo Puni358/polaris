@@ -1,0 +1,70 @@
+{
+  "traceability_title": "POLARIS DEMONSTRATION METRIC TRACEABILITY MATRIX",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "mappings": [
+    {
+      "metric_name": "Total Load (kWh)",
+      "demo_report_field": "total_demand_kwh",
+      "evaluator_output_field": "total_demand_wh / 1000.0",
+      "evaluator_function": "EvaluationEngine.evaluate_ems_performance",
+      "file_path": "system/evaluation/evaluator.py",
+      "line_number": 126,
+      "source_vector": "dispatch_plan.load_served + flexible_load_schedule + unmet_load"
+    },
+    {
+      "metric_name": "Renewable Energy Used (kWh)",
+      "demo_report_field": "total_renewable_energy_used_kwh",
+      "evaluator_output_field": "total_renewables_used_wh / 1000.0",
+      "evaluator_function": "EvaluationEngine.evaluate_ems_performance",
+      "file_path": "system/evaluation/evaluator.py",
+      "line_number": 137,
+      "source_vector": "dispatch_plan.solar_used + wind_used"
+    },
+    {
+      "metric_name": "Battery Energy Discharged (kWh)",
+      "demo_report_field": "battery_throughput_kwh",
+      "evaluator_output_field": "total_battery_dis_wh / 1000.0",
+      "evaluator_function": "EvaluationEngine.evaluate_ems_performance",
+      "file_path": "system/evaluation/evaluator.py",
+      "line_number": 152,
+      "source_vector": "dispatch_plan.battery_discharge"
+    },
+    {
+      "metric_name": "Diesel Generation (kWh)",
+      "demo_report_field": "total_diesel_energy_kwh",
+      "evaluator_output_field": "total_diesel_energy_wh / 1000.0",
+      "evaluator_function": "EvaluationEngine.evaluate_ems_performance",
+      "file_path": "system/evaluation/evaluator.py",
+      "line_number": 147,
+      "source_vector": "dispatch_plan.diesel_power"
+    },
+    {
+      "metric_name": "Diesel Runtime (hours)",
+      "demo_report_field": "diesel_runtime_hours",
+      "evaluator_output_field": "count(d_pow > 0)",
+      "evaluator_function": "EvaluationEngine.evaluate_ems_performance",
+      "file_path": "system/evaluation/evaluator.py",
+      "line_number": 129,
+      "source_vector": "dispatch_plan.diesel_power"
+    },
+    {
+      "metric_name": "Unmet Critical Load (kWh)",
+      "demo_report_field": "unmet_critical_load_kwh",
+      "evaluator_output_field": "total_unmet_wh / 1000.0",
+      "evaluator_function": "EvaluationEngine.evaluate_ems_performance",
+      "file_path": "system/evaluation/evaluator.py",
+      "line_number": 154,
+      "source_vector": "dispatch_plan.unmet_load"
+    },
+    {
+      "metric_name": "Ending Battery SOC (%)",
+      "demo_report_field": "ending_battery_soc_pct",
+      "evaluator_output_field": "current_state.battery_soc_pct",
+      "evaluator_function": "DigitalTwinSimulator.step",
+      "file_path": "system/simulation/simulator.py",
+      "line_number": 51,
+      "source_vector": "StationState.battery_soc_pct"
+    }
+  ]
+}

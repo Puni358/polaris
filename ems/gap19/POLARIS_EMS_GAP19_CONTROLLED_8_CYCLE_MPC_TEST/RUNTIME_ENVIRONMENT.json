@@ -1,0 +1,21 @@
+{
+  "os": "Linux 6.6.137+ #1 SMP PREEMPT_DYNAMIC",
+  "python_version": "3.12.3",
+  "solver_environment": {
+    "solver_name": "HiGHS",
+    "solver_interface": "highspy",
+    "highspy_version": "1.7.2",
+    "numpy_version": "1.26.4",
+    "threads": 1,
+    "blend_multi_objectives": false
+  },
+  "execution_boundary": {
+    "mpc_cycles_executed": 8,
+    "logical_option_b_solves": 8,
+    "fallback_solvers": "NONE",
+    "retries": 0,
+    "ecd_calls": 0,
+    "option_d_calls": 0,
+    "digital_twin_truth_calls": 0
+  }
+}

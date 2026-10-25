@@ -1,0 +1,15 @@
+Parameter / Feature,Current Implementation Value,Source Document & Code Location,Governed Requirement State,Status,Stakeholder Decision Required
+Unmet Critical Load Penalty,$10000.00/kWh ($10/Wh),loads.yaml L4 / milp.py L112,NOT_SPECIFIED,PROTOTYPE_ASSUMPTION / GOVERNANCE GAP,DECISION_06 / DECISION_14
+Marginal Diesel Fuel Cost,$0.625/kWh (0.00025 L/Wh x $2.50/L),diesel.yaml L6-7 / milp.py L111,NOT_SPECIFIED,PROTOTYPE_ASSUMPTION / GOVERNANCE GAP,DECISION_07 / DECISION_14
+Base Running Fuel Cost,$12.50/hour (5.0 L/h x $2.50/L),diesel.yaml L5,7 / milp.py L113,NOT_SPECIFIED,PROTOTYPE_ASSUMPTION / GOVERNANCE GAP,DECISION_07
+Generator Startup Penalty,$15.00/start,diesel.yaml L8 / milp.py L114,NOT_SPECIFIED,PROTOTYPE_ASSUMPTION / GOVERNANCE GAP,DECISION_07
+Renewable Curtailment Penalty,$1.00/kWh ($0.001/Wh),optimizer.yaml L6 / milp.py L107,NOT_SPECIFIED,PROTOTYPE_ASSUMPTION / GOVERNANCE GAP,DECISION_10
+BESS Degradation Penalty,$0.05/kWh ($0.00005/Wh),battery.yaml L11 / milp.py L109,NOT_SPECIFIED,PROTOTYPE_ASSUMPTION / GOVERNANCE GAP,DECISION_07
+BESS Operating SOC Range,20% to 95% SOC (40 to 190 kWh),battery.yaml L4-5 / milp.py L123,EXPLICITLY_SPECIFIED,EXPLICITLY_GOVERNED,None
+Generator Power Range,10 kW to 100 kW when active,diesel.yaml L3-4 / milp.py L238,EXPLICITLY_SPECIFIED,EXPLICITLY_GOVERNED,None
+Annual Fuel Consumption Limit,Uncapped in optimization,None,NOT_SPECIFIED,GOVERNANCE GAP,DECISION_08
+Maximum Unmet Load SLA,Uncapped soft penalty,None,NOT_SPECIFIED,GOVERNANCE GAP,DECISION_04
+Emergency BESS Reserve Floor,20% SOC technical lower bound,battery.yaml L4,NOT_SPECIFIED,GOVERNANCE GAP,DECISION_11
+Terminal BESS SOC Constraint,Unconstrained (E_24 >= E_min),milp.py L123,NOT_SPECIFIED,GOVERNANCE GAP,DECISION_12
+Renewable Target Fraction %,Unconstrained (tracked post-hoc),None,NOT_SPECIFIED,GOVERNANCE GAP,DECISION_09
+Forecast Uncertainty Margin,Zero (deterministic point forecast),milp.py L68-70,NOT_SPECIFIED,GOVERNANCE GAP,DECISION_13

@@ -1,0 +1,86 @@
+{
+  "correction_metadata": {
+    "title": "POLARIS EMS D1/D2 Policy-to-Mathematics Boundary Correction",
+    "version": "1.0.0",
+    "date": "2026-09-22",
+    "correction_type": "GOVERNANCE_POLICY_TO_MATH_BOUNDARY_CORRECTION",
+    "governance_status": "D1_D2_BOUNDARY_CORRECTION = COMPLETE",
+    "next_governed_step": "EMS_OBJECTIVE_SPECIFICATION_REVIEW"
+  },
+  "leakage_identified": {
+    "D2_EXACT_SHEDDING_SEQUENCE": {
+      "type": "UNAUTHORIZED_POLICY_TO_MATH_INFERENCE",
+      "description": "Exact shedding order N->I->D->E and reverse restoration order E->D->I->N were stated as if authorized. The D1 five-tier classification does not authorize an exact executable sequence.",
+      "status": "CORRECTED"
+    },
+    "D1_VARIABLE_DESCRIPTIONS": {
+      "type": "UNAUTHORIZED_IMPLEMENTATION_ASSUMPTION",
+      "description": "P_demand_D said 'with scheduling bounds' implying bounds already defined. P_shed_D said 'Shed/Deferred' implying deferral semantics. P_served_E/P_shed_E marked FULLY_SPECIFIED when tier semantics unresolved.",
+      "status": "CORRECTED"
+    },
+    "D1_TIER_NAME_PRIORITY_INFERENCE": {
+      "type": "UNAUTHORIZED_POLICY_TO_MATH_INFERENCE",
+      "description": "L_N described as 'shed first during deficit' inferring shedding priority from tier name alone.",
+      "status": "CORRECTED"
+    },
+    "LOAD_BALANCE_EQUATION_SEMANTICS": {
+      "type": "MISSING_GOVERNANCE_CLARIFICATION",
+      "description": "Load balance accounting identity lacked explicit statement that it does not define operational shedding/deferral/interruption/restoration semantics.",
+      "status": "CORRECTED"
+    }
+  },
+  "corrections_applied": {
+    "D2_shedding_order_removed": true,
+    "D2_restoration_order_removed": true,
+    "D2_policy_concept_preserved": true,
+    "D1_governance_clarification_added": true,
+    "D1_variable_descriptions_corrected": true,
+    "load_balance_semantics_note_added": true
+  },
+  "d1_status": {
+    "D1_POLICY": "RESOLVED",
+    "LOAD_TIER_COUNT": 5,
+    "LOAD_TIER_FORMULATION": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "STATION_LOAD_MAPPING": "STATION_DATA_REQUIRED",
+    "DEFERRABLE_DISTINCT_FROM_ESSENTIAL": true,
+    "INTERRUPTIBLE_DISTINCT_FROM_NONCRITICAL": true
+  },
+  "d2_status": {
+    "D2_POLICY": "RESOLVED",
+    "D2_AUTOMATED_SHEDDING": "POLICY_RESOLVED",
+    "D2_SHEDDING_PRIORITY_ORDER": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D2_RESTORATION_ORDER": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D2_TEMPORAL_SCHEDULING": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D2_INTERRUPTION_LIMITS": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D2_RESTART_BEHAVIOR": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D2_ANTI_CHATTERING": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D2_EXECUTABLE_FORMULATION": "REQUIRES_IMPLEMENTATION_SPECIFICATION"
+  },
+  "regression_checks": {
+    "D15_RECONCILIATION": "PASS",
+    "STAGE2_OBJECTIVE_SEMANTICS": "TARGET_SHORTFALL_MINIMIZATION",
+    "RESERVE_HEADROOM_MAXIMIZATION": "DESCRIPTIVE_INTERPRETATION_ONLY",
+    "D8_PHYSICAL_FUEL_INVENTORY": "PHYSICAL_CONSTRAINT",
+    "D8_SEASONAL_FUEL_ACCOUNTING": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "D10_CURTAILMENT_DECOMPOSITION": "CONCEPTUAL_DECOMPOSITION_ONLY",
+    "D10_EXECUTABLE_CLASSIFICATION": "REQUIRES_IMPLEMENTATION_SPECIFICATION",
+    "EMERGENCY_MODE_ENTRY": "REQUIRES_IMPLEMENTATION_SPECIFICATION_AND_GOVERNANCE_MAPPING"
+  },
+  "zero_execution_verification": {
+    "MODEL_TRAINED": false,
+    "MODEL_INFERRED": false,
+    "MILP_EXECUTED": false,
+    "MPC_EXECUTED": false,
+    "EMS_EXECUTED": false,
+    "DIGITAL_TWIN_EXECUTED": false,
+    "V2_RERUN": false,
+    "NEW_EXPERIMENT": false,
+    "EMS_CODE_MODIFIED": false,
+    "MILP_MODIFIED": false,
+    "OPTIMIZER_MODIFIED": false,
+    "CONFIG_MODIFIED": false,
+    "STAKEHOLDER_POLICY_REOPENED": false
+  },
+  "implementation_authorization": "NOT_GRANTED",
+  "ems_execution": "NOT_AUTHORIZED"
+}

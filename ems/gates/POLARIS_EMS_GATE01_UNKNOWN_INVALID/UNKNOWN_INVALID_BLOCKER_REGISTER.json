@@ -1,0 +1,32 @@
+{
+  "gate_id": "GATE-01",
+  "subject": "UNKNOWN_INVALID_OPERATIONAL_RESPONSE",
+  "current_status": "GOVERNANCE_DECISION_REQUIRED",
+  "selected_option": "NONE",
+  "blockers": [
+    {
+      "blocker_id": "BLK-GATE01-01",
+      "category": "GOVERNANCE_POLICY",
+      "title": "Unresolved UNKNOWN_INVALID Operational Dispatch Policy",
+      "description": "No safe physical dispatch policy for UNKNOWN_INVALID has been authorized by multi-stakeholder governance.",
+      "status": "UNRESOLVED_BLOCKER",
+      "required_action": "Formal multi-stakeholder governance decision specifying physical fallback behavior."
+    },
+    {
+      "blocker_id": "BLK-GATE01-02",
+      "category": "ENGINEERING_INTERFACE",
+      "title": "Undefined Operator Override Interface",
+      "description": "Technical interface for human operator manual intervention and dispatch override is not defined.",
+      "status": "UNRESOLVED_BLOCKER",
+      "required_action": "Engineering specification of operator override API, transport protocol, and authentication."
+    },
+    {
+      "blocker_id": "BLK-GATE01-03",
+      "category": "STATION_SPECIFIC",
+      "title": "Unestablished Real Station Fail-Safe Topology",
+      "description": "Physical fail-safe circuit and hardware behavior during control telemetry loss is not established for Nuolja station.",
+      "status": "UNRESOLVED_BLOCKER",
+      "required_action": "Acquire station site engineering schematic and physical failsafe boundary definition."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+$ python3 -B experiments/exp_three_arm_2024/scripts/run_three_arm_2024.py --repo . --preflight
+(run 2026-10-11T05:49:20Z in the sandbox repo replica; execution section signed 2026-10-11T05:49:08Z for the preflight stage only)
+PREFLIGHT PASSED. This does not start or authorize a run.
+exit code: 0
+(finished 2026-10-11T05:49:23Z)

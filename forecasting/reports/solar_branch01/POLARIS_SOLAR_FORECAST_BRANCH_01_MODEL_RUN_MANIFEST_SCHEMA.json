@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PolarisModelRunManifestSchema",
+  "type": "object",
+  "required": [
+    "run_id",
+    "branch_id",
+    "model_id",
+    "model_type",
+    "model_file",
+    "model_sha256",
+    "dataset_hashes",
+    "feature_contract",
+    "hyperparameters",
+    "random_seeds",
+    "split_definitions",
+    "execution_metadata",
+    "metrics",
+    "replay_results",
+    "governance_status"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "pattern": "^RUN_[0-9]{8}_[0-9]{6}_[a-f0-9]{8}$"
+    },
+    "branch_id": {
+      "type": "string",
+      "const": "POLARIS_SOLAR_FORECAST_BRANCH_01"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "model_type": {
+      "type": "string"
+    },
+    "model_file": {
+      "type": "string"
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "dataset_hashes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "feature_contract": {
+      "type": "object",
+      "required": [
+        "feature_count",
+        "target_column",
+        "feature_names",
+        "feature_order"
+      ],
+      "properties": {
+        "feature_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "target_column": {
+          "type": "string",
+          "const": "actual_SW_IN"
+        },
+        "feature_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "feature_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "hyperparameters": {
+      "type": "object"
+    },
+    "random_seeds": {
+      "type": "object",
+      "required": [
+        "random",
+        "numpy"
+      ],
+      "properties": {
+        "random": {
+          "type": "integer"
+        },
+        "numpy": {
+          "type": "integer"
+        },
+        "torch": {
+          "type": "integer"
+        }
+      }
+    },
+    "split_definitions": {
+      "type": "object",
+      "required": [
+        "train",
+        "validation",
+        "test",
+        "embargo_hours"
+      ],
+      "properties": {
+        "train": {
+          "type": "object"
+        },
+        "validation": {
+          "type": "object"
+        },
+        "test": {
+          "type": "object"
+        },
+        "embargo_hours": {
+          "type": "integer",
+          "const": 24
+        }
+      }
+    },
+    "execution_metadata": {
+      "type": "object",
+      "required": [
+        "python_version",
+        "worker_count",
+        "cli_command",
+        "git_provenance"
+      ],
+      "properties": {
+        "python_version": {
+          "type": "string"
+        },
+        "worker_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "worker_reason": {
+          "type": "string"
+        },
+        "cli_command": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "git_provenance": {
+          "type": "object",
+          "required": [
+            "commit_hash",
+            "branch",
+            "is_dirty"
+          ],
+          "properties": {
+            "commit_hash": {
+              "type": "string"
+            },
+            "branch": {
+              "type": "string"
+            },
+            "is_dirty": {
+              "type": "boolean"
+            },
+            "diff_sha256": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "mae",
+        "rmse",
+        "bias"
+      ],
+      "properties": {
+        "mae": {
+          "type": "number"
+        },
+        "rmse": {
+          "type": "number"
+        },
+        "bias": {
+          "type": "number"
+        },
+        "daytime_mae": {
+          "type": "number"
+        },
+        "night_mae": {
+          "type": "number"
+        }
+      }
+    },
+    "replay_results": {
+      "type": "object",
+      "required": [
+        "success",
+        "max_abs_difference",
+        "atol",
+        "rtol"
+      ],
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "max_abs_difference": {
+          "type": "number"
+        },
+        "atol": {
+          "type": "number",
+          "const": 1e-05
+        },
+        "rtol": {
+          "type": "number",
+          "const": 1e-05
+        }
+      }
+    },
+    "governance_status": {
+      "type": "string",
+      "enum": [
+        "REPRODUCIBLE",
+        "NOT_REPRODUCIBLE",
+        "IN_PROGRESS",
+        "BLOCKED"
+      ]
+    }
+  }
+}

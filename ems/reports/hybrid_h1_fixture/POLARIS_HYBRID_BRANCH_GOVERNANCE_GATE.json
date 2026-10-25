@@ -1,0 +1,203 @@
+{
+  "manifest_id": "POLARIS_HYBRID_BRANCH_GOVERNANCE_GATE_MANIFEST",
+  "task_type": "HYBRID_REAL_DATA_SYNTHETIC_ENGINEERING_BRANCH_GOVERNANCE_GATE",
+  "audit_timestamp_utc": "2026-09-20T10:59:00Z",
+  "execution_boundaries": {
+    "frozen_evidence_modified": false,
+    "milp_solves_executed": 0,
+    "experiment_rerun": false,
+    "new_modeling": false,
+    "new_tuning": false,
+    "architecture_modified": false,
+    "synthetic_data_generated": false,
+    "contact_email_dispatched": false,
+    "hybrid_simulation_executed": false
+  },
+  "current_evidence_state": {
+    "STAGE8_1_FORECAST_RESEARCH": "FROZEN",
+    "V3_REFERENCE": "FROZEN",
+    "OFAT": "COMPLETED_FROZEN_RESEARCH",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_ESTABLISHED",
+    "REAL_STATION_DEMAND": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "SYSTEM_ARCHITECTURE": "VALIDATED"
+  },
+  "real_data_closure_summary": {
+    "step_3_result": "REAL_DEMAND_DATA = DATA_BLOCKED",
+    "step_4_result": "Legitimate access routes identified, zero data received",
+    "step_5_result": "Authenticated contact execution unavailable; zero emails dispatched",
+    "step_6_result": "Public repository search complete; zero qualifying public demand datasets found",
+    "data_acquisition_closure_status": "CLOSED_FOR_CURRENT_RESEARCH_CYCLE"
+  },
+  "hybrid_branch_purpose": {
+    "scientific_definition": "REAL MEASURED INPUTS + CONDITIONALLY ESTABLISHED PROXY INPUTS + EXPLICIT SYNTHETIC ENGINEERING INPUTS -> FROZEN POLARIS FORECAST/EMS ARCHITECTURE -> CONTROLLED DIGITAL TWIN SIMULATION -> ENGINEERING EVALUATION",
+    "authorized_purposes": [
+      "Validate system integration",
+      "Validate causal runtime flow",
+      "Validate MPC/EMS dispatch behavior",
+      "Validate forecast-to-dispatch interfaces",
+      "Demonstrate operation under controlled scenarios",
+      "Evaluate engineering performance under declared assumptions"
+    ],
+    "prohibited_claims": [
+      "Real Nuolja station validation",
+      "Measured station-demand validation",
+      "Proof of real diesel savings",
+      "Proof of real grid reliability",
+      "Proof of real wind generation",
+      "Global robustness certification"
+    ]
+  },
+  "input_provenance_matrix": [
+    {
+      "input": "Nuolja / SITES SW_IN",
+      "source": "SITES Nuolja Middle Station AWS (Calendar Year 2024, 8,784 steps)",
+      "status": "REAL_MEASURED",
+      "real_or_synthetic": "REAL_MEASURED",
+      "allowed_use": "Solar forecasting and solar availability input only"
+    },
+    {
+      "input": "Abisko SMHI Wind Speed",
+      "source": "SMHI Station 188790 (Abisko Aut, 10m anemometer)",
+      "status": "CONDITIONALLY_ESTABLISHED_REGIONAL_PROXY",
+      "real_or_synthetic": "REAL_MEASUREMENT_PROXY",
+      "allowed_use": "Explicitly proxy-labelled wind input only (NOT direct Nuolja measurement)"
+    },
+    {
+      "input": "Station Electrical Demand",
+      "source": "POLARIS Synthetic Load Generator (Deterministic Baseline)",
+      "status": "DATA_BLOCKED",
+      "real_or_synthetic": "SYNTHETIC",
+      "allowed_use": "Controlled engineering and digital-twin validation only (NOT real station demand)"
+    },
+    {
+      "input": "Wind Generation",
+      "source": "Generic IEC 61400-12 Reference Turbine Specification (60 kW peak)",
+      "status": "NUOLJA_GENERATION_NOT_ESTABLISHED",
+      "real_or_synthetic": "SYNTHETIC_ENGINEERING_SCENARIO",
+      "allowed_use": "Controlled engineering scenario only if explicitly authorized (NOT Nuolja hardware)"
+    },
+    {
+      "input": "Solar-to-PV Mapping (D3)",
+      "source": "P_raw = SW_IN * 300m^2 * 0.20 * 0.85; P_solar = min(P_raw, 60000 W)",
+      "status": "ENGINEERING_MAPPING",
+      "real_or_synthetic": "ENGINEERING_ASSUMPTION",
+      "allowed_use": "Synthetic PV array conversion model (NOT empirical station PV validation)"
+    }
+  ],
+  "labeling_rules": {
+    "demand_trace_label": "SYNTHETIC_STATION_DEMAND",
+    "wind_speed_label": "ABISKO_10M_REGIONAL_WIND_PROXY",
+    "wind_generation_label": "GENERIC_ENGINEERING_WIND_SCENARIO",
+    "prohibited_labels": [
+      "measured station load",
+      "Nuolja measured wind",
+      "Nuolja wind generation",
+      "empirical demand baseline"
+    ]
+  },
+  "frozen_architecture": {
+    "pipeline": "Data -> ForecastEngine -> ForecastBundle -> EnergyOptimizer -> DispatchPlan -> Simulator -> Evaluation",
+    "mpc_loop": "observe -> forecast 24h -> optimize 24h -> execute H1 -> update state -> repeat",
+    "frozen_schemas": [
+      "ForecastBundle v1.0",
+      "StationState v1.0",
+      "DispatchPlan v1.0",
+      "EMS Optimizer Contract",
+      "DigitalTwin Simulator Contract"
+    ]
+  },
+  "baseline_hybrid_scenario_design": {
+    "solar": "Real Nuolja SITES SW_IN (2024)",
+    "wind": "Abisko SMHI 188790 10m measured wind-speed proxy",
+    "demand": "POLARIS synthetic station electrical demand fixture",
+    "wind_generation": "Generic engineering turbine representation (if required by EMS schema)",
+    "battery": "Existing frozen synthetic battery specification (50 kWh, 25 kW max)",
+    "diesel": "Existing frozen synthetic diesel generator specification (60 kW max, 15 kW min)",
+    "ems": "Frozen POLARIS EMS / MILP optimizer",
+    "digital_twin": "Controlled synthetic simulation environment"
+  },
+  "synthetic_demand_generator_requirements": {
+    "naming_rule": "SYNTHETIC STATION DEMAND",
+    "required_parameters": [
+      "base_demand_w",
+      "daily_profile_shape",
+      "seasonal_profile_shape",
+      "stochastic_noise_component",
+      "peak_demand_w",
+      "min_demand_w",
+      "physical_units",
+      "temporal_resolution",
+      "random_seed",
+      "deterministic_reproducibility",
+      "physical_bounds"
+    ]
+  },
+  "wind_generation_scenario_requirements": {
+    "naming_rule": "GENERIC ENGINEERING ASSUMPTION — NOT NULLOJA HARDWARE",
+    "required_parameters": [
+      "assumed_turbine_rated_power_w",
+      "cut_in_speed_ms",
+      "rated_speed_ms",
+      "cut_out_speed_ms",
+      "power_curve_source_or_assumption",
+      "relationship_to_proxy_wind_speed",
+      "scaling_assumptions",
+      "provenance_metadata"
+    ]
+  },
+  "hybrid_claim_boundary": {
+    "allowed_claims": [
+      "POLARIS was evaluated in a controlled hybrid engineering environment combining real measured solar irradiance, a conditionally established regional wind-speed proxy, and explicitly synthetic station demand.",
+      "The hybrid environment evaluates system integration and EMS/MPC behavior under declared engineering assumptions."
+    ],
+    "prohibited_claims": [
+      "POLARIS was validated on real Nuolja station demand.",
+      "POLARIS achieved X% fuel savings at Nuolja.",
+      "Nuolja wind generation was forecast.",
+      "System reliability was demonstrated at the real station."
+    ]
+  },
+  "evaluation_metrics": [
+    "diesel_fuel_liters (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "diesel_energy_kwh (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "renewable_energy_used_kwh (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "renewable_curtailment_kwh (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "battery_throughput_kwh (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "battery_equivalent_cycles (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "unmet_synthetic_critical_load_kwh (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "constraint_violations_count (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "forecast_rmse_mae (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "optimizer_status_code (HYBRID SYNTHETIC-ENVIRONMENT RESULT)",
+    "execution_time_ms (HYBRID SYNTHETIC-ENVIRONMENT RESULT)"
+  ],
+  "pre_execution_gates": [
+    "Formal synthetic demand generator specification freeze",
+    "Formal wind generation scenario specification freeze (if wind included)",
+    "Governance authorization of hybrid scenario configuration package",
+    "Verification of zero changes to frozen ForecastBundle/EMS contracts"
+  ],
+  "explicit_exclusions": [
+    "No MILP solves during Step 7",
+    "No digital twin simulations during Step 7",
+    "No model training or parameter tuning during Step 7",
+    "No modification of frozen V3, V4G, or OFAT evidence",
+    "No resending of custodian email/contact requests"
+  ],
+  "final_governance_decision": {
+    "HYBRID_BRANCH_STATUS": "DESIGN_AUTHORIZED / EXECUTION_NOT_YET_AUTHORIZED",
+    "REAL_DEMAND_DATA": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "REAL_STATION_VALIDATION": "NOT_AUTHORIZED / NOT_ESTABLISHED",
+    "HYBRID_ENGINEERING_VALIDATION": "DESIGN-AUTHORIZED"
+  },
+  "mandatory_final_status": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "STEP7_FINAL_CLASSIFICATION": "HYBRID ENGINEERING BRANCH — DESIGN AUTHORIZED, EXECUTION NOT YET AUTHORIZED"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "recovery_metadata": {
+    "recovery_id": "recovered_run_20261010_093458",
+    "recovery_status": "RECOVERED_AND_RECONCILED",
+    "timestamp_utc": "2026-10-10T11:49:06.138567+00:00",
+    "recovery_script": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/offline_optimizer_replay_20261010/reconcile_and_recover_run.py",
+    "recovery_script_sha256": "479363622253055cddd8d7e6729c535c96dd7f1207b7902b6f97468fe2503972",
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "disclaimer": "This artifact directory was reconstructed via provenance-preserving recovery from an immutable failed run directory. Zero simulations, optimizer workers, or MILP solves were executed. The original source execution remains permanently FAILED."
+  },
+  "source_execution": {
+    "source_run_id": "run_20261010_093458",
+    "source_run_path": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/offline_optimizer_replay_20261010/run_20261010_093458",
+    "source_run_status": "FAILED",
+    "source_failure_reason": "Final artifacts failed publication validation.",
+    "source_artifact_hashes": {
+      "incremental_results.jsonl": "899d9828fa1ef9b0917f1d5b2515f9e962482bc95b11ea2c182ce47cc5ad8b22",
+      "OFFLINE_OPTIMIZER_REPLAY_PER_ORIGIN.csv.tmp": "ff29db6387f44dcc7ee86c6569484f2140c33264def5fdd54a1b38b1df2ed1ce",
+      "OFFLINE_OPTIMIZER_REPLAY_RESULTS.json": "8bc2c0e18f659d9b880c43d985abdcd84809ff5ffe739fd3c5a516042323e621",
+      "RUN_STATUS.json": "ea16a5ca1ff36c8091a8c32538cd6810909014b51fdb5b94b723d1785e0716e2"
+    }
+  },
+  "recovered_artifact_hashes": {
+    "OFFLINE_OPTIMIZER_REPLAY_PER_ORIGIN.csv": "ff29db6387f44dcc7ee86c6569484f2140c33264def5fdd54a1b38b1df2ed1ce",
+    "incremental_results.jsonl": "899d9828fa1ef9b0917f1d5b2515f9e962482bc95b11ea2c182ce47cc5ad8b22",
+    "OFFLINE_OPTIMIZER_REPLAY_RESULTS.json": "8bc2c0e18f659d9b880c43d985abdcd84809ff5ffe739fd3c5a516042323e621"
+  },
+  "verification_evidence": {
+    "total_origins_verified": 240,
+    "segment_1_winter_spring_count": 119,
+    "segment_2_autumn_winter_count": 121,
+    "quarantined_blind_origins_count": 0,
+    "date_boundaries_enforced": {
+      "segment_1_range": [
+        "2025-01-01 00:00:00",
+        "2025-04-29 00:00:00"
+      ],
+      "segment_2_range": [
+        "2025-09-01 00:00:00",
+        "2025-12-30 00:00:00"
+      ],
+      "april_30_excluded": true,
+      "december_31_excluded": true
+    },
+    "recomputed_aggregates": {
+      "control_fuel_l": 17049.5344,
+      "candidate_fuel_l": 16363.387,
+      "delta_fuel_l": -686.1474,
+      "percentage_delta_fuel": -4.0244,
+      "control_curtailment_wh": 4396856.26,
+      "candidate_curtailment_wh": 2512504.69,
+      "delta_curtailment_wh": -1884351.57,
+      "control_unmet_load_wh": 23894128.89,
+      "candidate_unmet_load_wh": 24227672.28,
+      "delta_unmet_load_wh": 333543.39,
+      "control_diesel_hours": 1037,
+      "candidate_diesel_hours": 1028,
+      "delta_diesel_hours": -9
+    },
+    "statistical_bootstrap_reproduction": {
+      "seed": 20261010,
+      "n_resamples": 2000,
+      "mean_block_length_days": 10.0,
+      "delta_fuel_l_ci_95": [
+        -4.652719489583333,
+        -1.2466589791666676
+      ],
+      "delta_curtail_wh_ci_95": [
+        -11873.117433333333,
+        -4130.5778572916715
+      ],
+      "delta_diesel_hrs_ci_95": [
+        -0.15416666666666667,
+        0.0875
+      ]
+    },
+    "solver_feasibility_check": "100% FEASIBLE (0 deficit violations, 0 balance violations)"
+  },
+  "scientific_governance": {
+    "decision_verdict": "NO SUPPORTED IMPROVEMENT",
+    "justification": "Candidate exhibits equal or inferior performance due to increased unmet load (+333,543.39 Wh; approximately +1.40%), despite diesel fuel reduction (-686.1474 L; approximately -4.02%). Candidate promotion is strictly prohibited.",
+    "quantitative_summary": {
+      "unmet_load_delta_wh": 333543.39,
+      "unmet_load_delta_percentage": 1.4,
+      "fuel_delta_liters": -686.1474,
+      "fuel_delta_percentage": -4.0244
+    },
+    "solar_realization_proxy_disclosure": "Solar generation is a proxy derived from pyranometer downward shortwave irradiance (actual_SW_IN) via D3 physical transform min(51.0 * GHI, 60.0 kW), and does NOT represent empirical PV inverter telemetry. Replay results reflect synthetic closed-loop simulation evidence only and do not validate field performance.",
+    "candidate_promotion": "STRICTLY_PROHIBITED_RESEARCH_ONLY",
+    "operational_qualification": "OFFLINE_SYNTHETIC_REPLAY_EVIDENCE_ONLY_NOT_OPERATIONALLY_QUALIFIED"
+  }
+}

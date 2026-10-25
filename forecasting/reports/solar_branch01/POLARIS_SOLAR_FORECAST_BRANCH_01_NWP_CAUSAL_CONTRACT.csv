@@ -1,0 +1,6 @@
+mpc_origin_utc,selected_nwp_issue_utc,lead_time_h1_utc,lead_time_h24_utc,effective_lead_range,causal_validity,fail_closed_action,degradation_notes
+00:00,00:00,01:00 (Lead 1h),00:00+1d (Lead 24h),1h to 24h,PASS,Raise ModelGovernanceError if 00:00 UTC NWP missing,Direct baseline alignment. Zero issue latency.
+03:00,00:00,04:00 (Lead 4h),03:00+1d (Lead 27h),4h to 27h,PASS (Lead Shifted),Raise ModelGovernanceError if 00:00 UTC NWP missing,3h issue latency. Lead shift H_effective = H + 3.
+06:00,00:00,07:00 (Lead 7h),06:00+1d (Lead 30h),7h to 30h,PASS (Lead Shifted),Raise ModelGovernanceError if 00:00 UTC NWP missing,6h issue latency. Lead shift H_effective = H + 6.
+12:00,00:00,13:00 (Lead 13h),12:00+1d (Lead 36h),13h to 36h,PASS (Lead Shifted),Raise ModelGovernanceError if 00:00 UTC NWP missing,12h issue latency. Lead shift H_effective = H + 12.
+18:00,00:00,19:00 (Lead 19h),18:00+1d (Lead 42h),19h to 42h,PASS (Lead Shifted),Raise ModelGovernanceError if 00:00 UTC NWP missing,18h issue latency. Lead shift H_effective = H + 18.

@@ -1,0 +1,458 @@
+{
+ "experiment_id": "EXP-STAGE4-REALIZATION-CONSISTENCY-2025",
+ "design_version": "REALIZATION-CONSISTENCY-PREREGISTRATION-v1.0",
+ "date_utc": "2026-10-06",
+ "governance_status": "READY FOR FINAL AUTHORIZATION - NOT EXECUTED - NOT FROZEN (U1 and U8 resolved; U2-U7, U9, U10 defaults pending authorization)",
+ "campaign_run": false,
+ "markdown_companion": {
+  "path": "EXP_STAGE4_REALIZATION_CONSISTENCY_PREREGISTRATION.md",
+  "sha256": "1e9077d4bb3f3828f7040a9fbd39a31e46308c547ce648a80c7579099124cf0b"
+ },
+ "population": {
+  "origins": 123,
+  "origin_ids": "1..123 unique",
+  "horizon_hours": 24,
+  "hours_per_arm_per_realization": 2952
+ },
+ "accounting": {
+  "arm_realization_runs": "123 x 5 x 2 = 1230",
+  "arm_hours_per_realization": 14760,
+  "arm_hours_total": 29520
+ },
+ "thresholds": {
+  "material_saving_pp": 1.0,
+  "material_reliability_pp": 0.1,
+  "justification": "fixed before run; S-SW-L gap ~9.4pp; accounting sensitivity <=0.12pp"
+ },
+ "ambiguities_requiring_signoff": [
+  "U1 non-critical ordering in B",
+  "U2 flex sink vs zero",
+  "U3 A critical-first accounting under shortfall",
+  "U4 demand forecast bias",
+  "U5 Holm family size",
+  "U6 thresholds",
+  "U7 determinism gate",
+  "U8 startup 2.0 L held fixed",
+  "U9 research harness and G5 instrumentation",
+  "U10 dead read p_chg_plan kept in A"
+ ],
+ "hash_guards": {
+  "research_realization_executor.py": "c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b",
+  "gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+  "dispatch_plan.py": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b",
+  "causal_nwp_physics.py": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "router.py": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+  "station_state.py": "e763439a6ddecbbadb9287f99258e595ab7f23f0eb9a7377f5a54beb7661df88",
+  "route_mode_propagation.py": "80456f8776925860ad20c407ec92f3ac78dbd387f4863ea48dc1917490e89376",
+  "research_numerical_extractor.py": "95b2f3b53609a6e420a18692b4b0e3927cb47841d9e1200cce04677094a5950e",
+  "corrected_runner.py": "770cb61b0a73f3f8c66fd3918419ef31768dd88b47306a47bd60d1e3b06d3ecc",
+  "corrected_preregistration_md": "4f438f466a285d2d230edda168075f883919317922de3a5866dbb7ca5cdac14b",
+  "corrected_telemetry_csv": "6b3636d7ae4d596016f4e7b3b5fc63e9a26e374041b586b619b49afc2eec7d2e",
+  "corrected_results_csv": "8c13b904e286e25167a8eca5144e545627b6c598f36716e93fcf9ee95a2ab57e",
+  "stage4_freeze_md": "e73558cfd03acd35fc55d24a055f7ccc6a31d0d973a3cc2e4443a8665ac21cd7",
+  "stage4_freeze_json": "6b0bb6f7af44ef06731180d50239de222f301fa571c5862d115f7644d3be7b87",
+  "stage4_frozen_results_csv": "18d13dec71eab82919c900da52b5248699e4b5b8fa4c4ed8499aff494f4fa62b"
+ },
+ "experiment_matrix": [
+  {
+   "arm": "Control_B",
+   "realization": "A",
+   "renewable_credit": "none (unconditional EBR)",
+   "low_sun_protection": "\u2014",
+   "realization_semantics": "CURRENT: existing executor surplus semantics (research_realization_executor.py unmodified); planned charge read and discarded",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "S",
+   "realization": "A",
+   "renewable_credit": "solar only",
+   "low_sun_protection": "OFF",
+   "realization_semantics": "CURRENT: existing executor surplus semantics (research_realization_executor.py unmodified); planned charge read and discarded",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "SW",
+   "realization": "A",
+   "renewable_credit": "solar+wind",
+   "low_sun_protection": "OFF",
+   "realization_semantics": "CURRENT: existing executor surplus semantics (research_realization_executor.py unmodified); planned charge read and discarded",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "S-L",
+   "realization": "A",
+   "renewable_credit": "solar only",
+   "low_sun_protection": "ON",
+   "realization_semantics": "CURRENT: existing executor surplus semantics (research_realization_executor.py unmodified); planned charge read and discarded",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "SW-L",
+   "realization": "A",
+   "renewable_credit": "solar+wind",
+   "low_sun_protection": "ON",
+   "realization_semantics": "CURRENT: existing executor surplus semantics (research_realization_executor.py unmodified); planned charge read and discarded",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "Control_B",
+   "realization": "B",
+   "renewable_credit": "none (unconditional EBR)",
+   "low_sun_protection": "\u2014",
+   "realization_semantics": "PLAN-CONSISTENT: critical first, then planned charge capped by realized supply and battery limits, residual to non-critical; flex sink; no new shedding policy",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "S",
+   "realization": "B",
+   "renewable_credit": "solar only",
+   "low_sun_protection": "OFF",
+   "realization_semantics": "PLAN-CONSISTENT: critical first, then planned charge capped by realized supply and battery limits, residual to non-critical; flex sink; no new shedding policy",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "SW",
+   "realization": "B",
+   "renewable_credit": "solar+wind",
+   "low_sun_protection": "OFF",
+   "realization_semantics": "PLAN-CONSISTENT: critical first, then planned charge capped by realized supply and battery limits, residual to non-critical; flex sink; no new shedding policy",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "S-L",
+   "realization": "B",
+   "renewable_credit": "solar only",
+   "low_sun_protection": "ON",
+   "realization_semantics": "PLAN-CONSISTENT: critical first, then planned charge capped by realized supply and battery limits, residual to non-critical; flex sink; no new shedding policy",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  },
+  {
+   "arm": "SW-L",
+   "realization": "B",
+   "renewable_credit": "solar+wind",
+   "low_sun_protection": "ON",
+   "realization_semantics": "PLAN-CONSISTENT: critical first, then planned charge capped by realized supply and battery limits, residual to non-critical; flex sink; no new shedding policy",
+   "primary_outcomes": [
+    "diesel_fuel_L",
+    "paired_saving_vs_control_L_and_pct",
+    "critical_first_reliability_pct",
+    "proportional_reliability_pct",
+    "min_realized_soc_pct",
+    "soc_floor_violations_count"
+   ],
+   "secondary_outcomes": [
+    "unmet_load_kWh",
+    "curtailment_kWh",
+    "diesel_on_hours",
+    "startups",
+    "EFC",
+    "planned_vs_realized_charge_error_W"
+   ],
+   "safety_gates": [
+    "Gate1 dR_CF>=0.00pp vs Control same realization",
+    "Gate2 dR_P>=0.00pp vs Control same realization",
+    "Gate3 no realized SOC<20.00%"
+   ],
+   "statistical_tests": [
+    "paired Wilcoxon two-sided, Holm across 4 candidates per realization",
+    "BCa 95% 10000 resamples seed 42 origin-paired",
+    "A-vs-B paired deltas per arm with BCa and Wilcoxon, Holm across 5 arms per outcome"
+   ],
+   "decision_rule": "BLOCKED > SAFETY-CHANGING > RANKING-CHANGING > SENSITIVE > ROBUST (see section 10)"
+  }
+ ],
+ "governance_resolutions": {
+  "U1_plan_consistent_realization": {
+   "status": "RESOLVED",
+   "arm_B_order": [
+    "critical load served from realized supply",
+    "planned battery charge realized (capped by remaining supply, 50 kW, room to 95%)",
+    "planned flex realized as sink",
+    "non-critical load served from remaining realized supply"
+   ],
+   "status_of_arm_B": "research diagnostic realization semantics; does NOT establish the correct operational load-priority policy; tests only whether the planned-vs-realized charge mismatch materially changes candidate conclusions",
+   "literal_planned_served_excluded_because": "the plan's served variable is tied to critical load by Layer B, so literal honouring serves only critical load and zeroes non-critical service for all arms; this changes load-service policy rather than isolating the charge mismatch"
+  },
+  "U8_startup_fuel": {
+   "status": "RESOLVED - OPTION A (preserve extractor semantics)",
+   "optimizer_objective_startup_L_per_start": 2.0,
+   "optimizer_source": "research_numerical_extractor.py:148 default, charged at line 380; diesel.yaml has no startup_fuel_l key",
+   "reported_primary_fuel": "simulator accounted fuel (0 L per start), same quantity as corrected reproduction",
+   "secondary_fuel": "MILP-objective fuel = accounted + 2.0 L x startups, reported for every arm and realization",
+   "corrected_preregistration_0_L_statement": "documentation error about the optimizer; not corrected here; governance to correct in that document without changing results",
+   "rejected_options": {
+    "B_exclude_startup": "requires changing MILP objective or accounting; breaks comparability",
+    "C_other": "not required"
+   }
+  },
+  "optimizer_identity": {
+   "same_code_config_and_exogenous_inputs": true,
+   "identical_at_hour_0": true,
+   "identical_after_hour_0": false,
+   "reason": "closed loop feeds realized SOC, fuel and route into next MILP; this is the mechanism under test",
+   "verified_exogenous_identity_share_per_origin_hour": {
+    "forecast_solar": 1.0,
+    "forecast_wind": 1.0,
+    "forecast_demand": 1.0,
+    "critical_demand": 1.0,
+    "actual_solar": 1.0,
+    "actual_wind": 1.0,
+    "actual_demand": 1.0,
+    "low_sun_flag": 1.0,
+    "timestamp": 1.0
+   },
+   "state_dependent_divergence": {
+    "soc_identical_at_hour0_share": 1.0,
+    "soc_differs_after_hour0_arm_hour_share": 0.9465,
+    "route_differs_across_arms_share": 0.3645
+   }
+  }
+ },
+ "audit_gates_added": {
+  "G11": "hour-0 optimizer inputs and outputs identical between A and B for every origin"
+ },
+ "remaining_items_pending_authorization": [
+  "U2 flex sink vs zero",
+  "U3 A critical-first accounting under shortfall",
+  "U4 demand forecast bias",
+  "U5 Holm family of four per realization",
+  "U6 thresholds 1.0 pp and 0.10 pp",
+  "U7 determinism gate",
+  "U9 research-harness approval and build-time row-count instrumentation",
+  "U10 dead read p_chg_plan kept in A"
+ ]
+}

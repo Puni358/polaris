@@ -1,0 +1,11 @@
+feature_pair,feature_1,feature_2,num_valid_cells,max_cell_gain_W_m2,min_cell_gain_W_m2,cell_gain_spread_W_m2,top_cell_count
+cloud_frac × solar_elevation,cloud_frac,solar_elevation,9,16.471387386005663,0.05228868067672184,16.419098705328942,286
+cloud_frac × clearsky_ghi,cloud_frac,clearsky_ghi,9,16.601095684150476,0.25859869005335384,16.34249699409712,280
+disagreement_fold × cloud_frac,disagreement_fold,cloud_frac,9,15.54514499887213,1.0629015674884692,14.482243431383662,231
+horizon_hour × solar_elevation,horizon_hour,solar_elevation,9,12.282555947896643,-0.026858525954077058,12.30941447385072,256
+horizon_hour × ctx_std_6h,horizon_hour,ctx_std_6h,9,11.754772409408467,0.3048665951434615,11.449905814265005,225
+ctx_std_6h × solar_elevation,ctx_std_6h,solar_elevation,9,10.892947677313193,0.27478733307545955,10.618160344237733,425
+ctx_slope_6h × cloud_frac,ctx_slope_6h,cloud_frac,9,10.477986231492894,-0.11217889614189805,10.590165127634792,306
+ctx_std_6h × clearsky_ghi,ctx_std_6h,clearsky_ghi,9,10.998506076440272,0.4162155173997444,10.582290559040528,422
+ctx_std_6h × cloud_frac,ctx_std_6h,cloud_frac,9,10.294427469214295,-0.0886632125391508,10.383090681753446,309
+pred_stage4 × clearsky_ghi,pred_stage4,clearsky_ghi,7,9.549076358068545,0.3151411998856827,9.233935158182863,847

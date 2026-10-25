@@ -1,0 +1,125 @@
+{
+  "disclaimer": "RESEARCH-SIMULATION OUTPUT ONLY. Uses SIMULATED_RESEARCH_ASSUMPTION values (see RESEARCH_EXCEPTION_DECISION_RECORD.md). Not a real operational result, not a stakeholder-authorized configuration, not a performance claim for either forecast engine.",
+  "results": [
+    {
+      "engine": "baseline",
+      "origin": "2024-06-01T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 148596.5,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "stage8_1_corrected",
+      "origin": "2024-06-01T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 145351.79,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 8774.77,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 75.23,
+      "next_battery_energy_wh": 150462.2
+    },
+    {
+      "engine": "baseline",
+      "origin": "2024-06-02T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 148596.5,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "stage8_1_corrected",
+      "origin": "2024-06-02T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 143049.61,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 8487.46,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 75.39,
+      "next_battery_energy_wh": 150774.5
+    },
+    {
+      "engine": "baseline",
+      "origin": "2024-06-03T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 148596.5,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "stage8_1_corrected",
+      "origin": "2024-06-03T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 141645.26,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "baseline",
+      "origin": "2024-06-04T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 119924.74,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "stage8_1_corrected",
+      "origin": "2024-06-04T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 114913.48,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "baseline",
+      "origin": "2024-06-05T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 143544.75,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    },
+    {
+      "engine": "stage8_1_corrected",
+      "origin": "2024-06-05T00:00:00Z",
+      "route": "NORMAL",
+      "terminal_target_wh": 138614.49,
+      "constraint_status": "OPTIMAL",
+      "battery_charge_t0_w": 0.0,
+      "battery_discharge_t0_w": 12100.0,
+      "diesel_power_t0_w": 0.0,
+      "next_battery_soc_pct": 73.42,
+      "next_battery_energy_wh": 146847.8
+    }
+  ]
+}

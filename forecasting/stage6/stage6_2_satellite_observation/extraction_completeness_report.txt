@@ -1,0 +1,25 @@
+POLARIS Stage 6.2 — Extraction Completeness & Causality Audit Report
+========================================================================
+Date Executed: 2026-09-11 00:41:14
+Total Benchmark Origins: 347
+Valid Pre-t0 Satellite Passes Extracted: 26 (7.49%)
+Strict Causality (tacq <= t0) Satisfied: 347 / 347 (100.00%)
+
+Timestamp Method: Conservative swath-level end timestamp (t_end_utc)
+Coverage Quality Threshold: <= 50.0 km
+
+Nearest Pixel Distance Stats (km):
+- Min: 0.200
+- Mean: 0.857
+- Median: 0.732
+- Max: 1.844
+
+Observation Age Stats (hours):
+- Min: 0.67
+- Mean: 1.88
+- Median: 1.76
+- Max: 5.01
+
+Files Output:
+1. satellite_feature_summary.csv
+2. satellite_causality_audit.csv

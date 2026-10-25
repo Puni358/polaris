@@ -1,0 +1,240 @@
+{
+  "title": "POLARIS Stage8.1 \u2192 EMS V2 Telemetry Non-Intervention Correction Audit",
+  "task_type": "BOUNDED IMPLEMENTATION CORRECTION ONLY",
+  "previous_blocker": "v2_telemetry_collector.record_step(...) executed inside simulator try...except block, allowing telemetry exceptions to set execution_status='FAILED_TERMINATED'.",
+  "correction_implemented": "Moved telemetry capture outside the simulator step try...except block into an isolated, dedicated try...except Exception as te: block. Telemetry exceptions are caught and stored in self._telemetry_faults without modifying execution_status, completed_steps, StationState, DispatchPlan, or EMS failure semantics.",
+  "final_classification": "A \u2014 TELEMETRY FAILURE ISOLATION CORRECTED AND BOUNDED NON-INTERVENTION TESTS PASS",
+  "protected_artifacts_verified": true,
+  "protected_artifact_hashes": [
+    {
+      "file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "expected_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "actual_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv",
+      "expected_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "actual_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.json",
+      "expected_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "actual_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.md",
+      "expected_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "actual_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.md",
+      "expected_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "actual_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.json",
+      "expected_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "actual_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.md",
+      "expected_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "actual_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.json",
+      "expected_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "actual_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.md",
+      "expected_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "actual_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+      "expected_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "actual_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.md",
+      "expected_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "actual_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.json",
+      "expected_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "actual_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.md",
+      "expected_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "actual_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.json",
+      "expected_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "actual_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.md",
+      "expected_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "actual_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.json",
+      "expected_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "actual_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.md",
+      "expected_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "actual_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.json",
+      "expected_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "actual_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "match": true
+    }
+  ],
+  "source_file_hashes": {
+    "system/runtime/runner.py": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "system/telemetry/v2_logger.py": "131ff6f4dc83a2a57329362871eaab356b5b41fb2e7318b7a127bd47cd20aaac",
+    "system/tests/test_v2_telemetry.py": "aad44e780a850fbb76407496efe7c59cc6c957d8672c99b43faea7cc696abc76",
+    "system/optimization/implementations/milp.py": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+    "run_polaris_stage8_1_ems_empirical_replay.py": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc"
+  },
+  "bounded_test_results": {
+    "total_passed": 35,
+    "total_failed": 0,
+    "tests": [
+      {
+        "test_name": "test_1_exactly_37_unique_fields",
+        "status": "PASSED",
+        "requirement": "Exactly 37 unique fields represented"
+      },
+      {
+        "test_name": "test_2_field_availability_classification_totals",
+        "status": "PASSED",
+        "requirement": "23 Direct, 14 Instrumentation breakdown"
+      },
+      {
+        "test_name": "test_3_record_validation",
+        "status": "PASSED",
+        "requirement": "24-step forecast vector dimension validation"
+      },
+      {
+        "test_name": "test_4_exact_float_forecast_preservation",
+        "status": "PASSED",
+        "requirement": "Exact float forecast vector preservation"
+      },
+      {
+        "test_name": "test_5_deterministic_serialization",
+        "status": "PASSED",
+        "requirement": "Deterministic JSON and CSV export"
+      },
+      {
+        "test_name": "test_6_passive_non_mutation",
+        "status": "PASSED",
+        "requirement": "Passive non-mutation of execution objects"
+      },
+      {
+        "test_name": "test_gov_1_telemetry_disabled_normal_execution",
+        "status": "PASSED",
+        "requirement": "TEST 1: Telemetry disabled -> normal EMS execution path"
+      },
+      {
+        "test_name": "test_gov_2_telemetry_enabled_successful_identical_semantics",
+        "status": "PASSED",
+        "requirement": "TEST 2: Telemetry enabled -> identical EMS semantics"
+      },
+      {
+        "test_name": "test_gov_3_telemetry_collector_deliberate_exception_isolated",
+        "status": "PASSED",
+        "requirement": "TEST 3: Telemetry exception isolated from EMS status"
+      },
+      {
+        "test_name": "test_gov_4_telemetry_serialization_failure_isolated",
+        "status": "PASSED",
+        "requirement": "TEST 4: Telemetry serialization failure isolated"
+      },
+      {
+        "test_name": "test_gov_5_optimizer_deliberate_failure_preserved",
+        "status": "PASSED",
+        "requirement": "TEST 5: Optimizer failure -> existing EMS failure semantics preserved"
+      },
+      {
+        "test_name": "test_gov_6_simulator_failure_preserved",
+        "status": "PASSED",
+        "requirement": "TEST 6: Simulator failure -> existing EMS failure semantics preserved"
+      },
+      {
+        "test_name": "test_gov_7_telemetry_exception_cannot_change_dispatch_plan",
+        "status": "PASSED",
+        "requirement": "TEST 7: Telemetry exception cannot change DispatchPlan"
+      },
+      {
+        "test_name": "test_gov_8_telemetry_exception_cannot_change_station_state",
+        "status": "PASSED",
+        "requirement": "TEST 8: Telemetry exception cannot change StationState"
+      },
+      {
+        "test_name": "test_gov_9_telemetry_exception_cannot_change_timestep_advancement",
+        "status": "PASSED",
+        "requirement": "TEST 9: Telemetry exception cannot change timestep advancement"
+      },
+      {
+        "test_name": "test_gov_10_telemetry_exception_cannot_change_forecast_vectors",
+        "status": "PASSED",
+        "requirement": "TEST 10: Telemetry exception cannot change forecast vectors"
+      },
+      {
+        "test_name": "test_s81_adapter.py (12 tests)",
+        "status": "PASSED",
+        "requirement": "Stage8.1 ForecastEngine adapter & ForecastBundle v1.0 compliance"
+      },
+      {
+        "test_name": "test_d5_implementation.py (7 tests)",
+        "status": "PASSED",
+        "requirement": "ForecastBundle v1.0 schema enforcement"
+      }
+    ]
+  },
+  "governance_assessments": {
+    "telemetry_failure_isolation": "VERIFIED ISOLATED: Telemetry exceptions caught in separate try...except block, logged to _telemetry_faults, zero effect on EMS execution status.",
+    "ems_failure_semantics_preserved": "VERIFIED UNCHANGED: Genuine optimizer/simulator failures still produce FAILED_TERMINATED with exact fault classes.",
+    "mutation_protection": "VERIFIED IMMUTABLE: Zero mutation of ForecastBundle, DispatchPlan, StationState, or DigitalTwinSimulator.",
+    "state_and_dispatch_equivalence": "VERIFIED EQUIVALENT: Telemetry disabled vs enabled vs faulty collector produce bit-for-bit identical fuel, energy, and load metrics.",
+    "offline_status": "VERIFIED 100% OFFLINE: Zero network/cloud dependencies.",
+    "v1_integrity": "FROZEN AND UNCHANGED: Zero V1 reruns performed.",
+    "v2_execution_status": "NOT AUTHORIZED"
+  },
+  "required_final_governance_state": {
+    "v1": "ACCEPTED + FROZEN",
+    "v1_result": "UNCHANGED",
+    "v1_rerun": "NO",
+    "v2_protocol": "HARDENED",
+    "v2_pre_implementation_consistency": "COMPLETE",
+    "v2_telemetry_implementation": "COMPLETE",
+    "v2_non_intervention_correction": "COMPLETE",
+    "v2_execution": "NOT AUTHORIZED"
+  }
+}

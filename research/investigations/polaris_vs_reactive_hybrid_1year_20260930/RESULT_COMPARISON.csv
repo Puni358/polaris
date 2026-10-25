@@ -1,0 +1,11 @@
+Metric,POLARIS,Reactive Hybrid,Difference,Relative Difference (%)
+Diesel fuel (L),93465.63,77022.60,+16443.03,+21.35%
+Diesel energy (kWh),210502.51,165770.39,+44732.12,+26.98%
+Diesel runtime (h),5142,4018,+1124,+27.97%
+Diesel starts,412,326,+86,+26.38%
+Renewable used (kWh),315057.10,349027.50,-33970.40,-9.73%
+Renewable curtailed (kWh),66192.50,21460.40,+44732.10,+208.44%
+Battery discharge (kWh),808.80,9917.53,-9108.73,-91.84%
+Battery throughput (kWh),808.80,9917.53,-9108.73,-91.84%
+Minimum SOC (%),20.00%,20.00%,0.00%,0.00%
+Unmet load (kWh),0.00,0.00,0.00,0.00%

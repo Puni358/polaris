@@ -1,0 +1,49 @@
+{
+  "timestamp_utc": "2026-10-17T02:57:15.567380+00:00",
+  "conformal_irradiance_bounds": {
+    "90%": {
+      "nominal_coverage_pct": 90.0,
+      "q_hat_normalized": 1.8590104746018317,
+      "val_2024_odd_coverage_pct": 90.04509191814083,
+      "blind_2025_coverage_pct": 92.20475075276012,
+      "blind_2025_mean_safety_buffer_wm2": 50.850488475348655
+    },
+    "95%": {
+      "nominal_coverage_pct": 95.0,
+      "q_hat_normalized": 2.534229139732143,
+      "val_2024_odd_coverage_pct": 95.03988900450919,
+      "blind_2025_coverage_pct": 95.6339913014386,
+      "blind_2025_mean_safety_buffer_wm2": 67.83639870687969
+    }
+  },
+  "gap19_ebr_window_policies_2025_blind": {
+    "Candidate K + Static 15 kWh EBR": {
+      "window_survival_rate_pct": 89.21043827367012,
+      "exceedance_hours_count": 645,
+      "mean_ebr_Allocation_kwh": 15.0,
+      "mean_uncompensated_deficit_wh": 1566.0741147163642,
+      "max_uncompensated_deficit_kwh": 63.66497223611484
+    },
+    "Candidate N6 + Static 15 kWh EBR": {
+      "window_survival_rate_pct": 88.9762462361994,
+      "exceedance_hours_count": 659,
+      "mean_ebr_Allocation_kwh": 15.0,
+      "mean_uncompensated_deficit_wh": 1539.7523352210535,
+      "max_uncompensated_deficit_kwh": 60.26634024288882
+    },
+    "Candidate N6 + Conformal 90% Dynamic EBR": {
+      "window_survival_rate_pct": 95.41652726664435,
+      "exceedance_hours_count": 274,
+      "mean_ebr_Allocation_kwh": 20.468397789057622,
+      "mean_uncompensated_deficit_wh": 443.2116249693369,
+      "max_uncompensated_deficit_kwh": 35.230751399137354
+    },
+    "Candidate N6 + Conformal 95% Dynamic EBR": {
+      "window_survival_rate_pct": 97.12278353964537,
+      "exceedance_hours_count": 172,
+      "mean_ebr_Allocation_kwh": 23.243522462557046,
+      "mean_uncompensated_deficit_wh": 229.54153520415252,
+      "max_uncompensated_deficit_kwh": 27.596126911261226
+    }
+  }
+}

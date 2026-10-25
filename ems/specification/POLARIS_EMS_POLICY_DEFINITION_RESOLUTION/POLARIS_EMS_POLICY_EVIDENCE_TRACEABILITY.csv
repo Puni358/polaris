@@ -1,0 +1,51 @@
+element_id,element_description,evidence_type,source_document,source_section,governing_decision,area,notes
+E001,100% continuous service target for Critical Loads in normal/degraded modes,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_03,D03,AREA_03,Fixed — not re-derived
+E002,0 kWh unmet Critical Load in normal/degraded modes (hard constraint),HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_04,D04,AREA_03,Fixed — not re-derived
+E003,0 minutes intentional interruption for Critical loads,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_05,D05,AREA_03,Physical ATS gap governed separately
+E004,Lexicographic multi-stage optimization with hard Stage-1 reliability boundary,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_06,D06,"AREA_01,AREA_09",Fixed — not re-derived
+E005,Primary fuel metric = liters consumed (not kWh or cost),HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_07,D07,AREA_04,Fixed — not re-derived
+E006,Seasonal/resupply-cycle fuel budget with protected emergency reserve,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_08,D08,AREA_05,Fixed — not re-derived
+E007,Minimize avoidable renewable curtailment (no arbitrary % target),HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_09,D09,AREA_07,Fixed — not re-derived
+E008,Necessary renewable curtailment allowed without objective penalty,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_10,D10,AREA_07,Fixed — not re-derived
+E009,Dynamic emergency reserve adapting to risk plus baseline reserve floor,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_11,D11,AREA_06,Fixed — not re-derived
+E010,Dynamic terminal SOC requirement adapting to risk plus minimum terminal floor,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_12,D12,AREA_06,Fixed — not re-derived
+E011,Deterministic safety margins combined with real-time MPC rolling feedback,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_13,D13,AREA_08,Fixed — not re-derived
+E012,Reliability has absolute priority; fuel minimized subject to reliability and budget,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_14,D14,"AREA_04,AREA_05,AREA_09",Fixed — not re-derived
+E013,Strict Lexicographic Hierarchy: Reliability → Resilience → Fuel → Renewables,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_15,D15,AREA_09,Fixed — not re-derived
+E014,Multi-tier governance approval structure,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_16,D16,AREA_10,Fixed — not re-derived
+E015,Five-tier load classification scheme by consequence of loss,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_01,D01,"AREA_01,AREA_02",Fixed — not re-derived
+E016,Automated tier-based load shedding queue; Critical protected,HUMAN_SELECTED_POLICY,POLARIS_EMS_STAKEHOLDER_DECISION_SHEET.md,DECISION_02,D02,"AREA_01,AREA_02",Fixed — not re-derived
+E017,Qualitative requirement for reliable electrical power to polar research station,DOCUMENTED_REQUIREMENT,POLARIS_MASTER_HANDOFF.md,Section_1,—,AREA_03,General mission statement
+E018,Qualitative goal to minimize diesel fuel consumption,DOCUMENTED_REQUIREMENT,POLARIS_MASTER_HANDOFF.md,Section_1,—,AREA_04,No numerical target
+E019,Qualitative goal to maximize renewable integration,DOCUMENTED_REQUIREMENT,POLARIS_MASTER_HANDOFF.md,Section_1,—,AREA_07,No numerical target
+E020,Qualitative goal to mitigate solar forecast uncertainty,DOCUMENTED_REQUIREMENT,POLARIS_MASTER_HANDOFF.md,Section_58,—,AREA_08,No method specified
+E021,Battery technical minimum SOC = 20% (40 kWh from 200 kWh),CURRENT_IMPLEMENTATION_FACT,system/config/battery.yaml,min_soc_pct,—,AREA_06,PROTOTYPE_ASSUMPTION — SHA verified
+E022,Battery maximum SOC = 95% (190 kWh from 200 kWh),CURRENT_IMPLEMENTATION_FACT,system/config/battery.yaml,max_soc_pct,—,AREA_07,PROTOTYPE_ASSUMPTION — SHA verified
+E023,Battery max charge/discharge power = 50 kW each,CURRENT_IMPLEMENTATION_FACT,system/config/battery.yaml,max_charge_power_w,—,AREA_07,PROTOTYPE_ASSUMPTION — SHA verified
+E024,Battery degradation penalty = $0.00005/Wh ($0.05/kWh),CURRENT_IMPLEMENTATION_FACT,system/config/battery.yaml,deg_penalty_per_wh,—,AREA_04,PROTOTYPE_ASSUMPTION — SHA verified
+E025,Diesel generator minimum power = 10 kW,CURRENT_IMPLEMENTATION_FACT,system/config/diesel.yaml,min_power_w,—,AREA_07,PROTOTYPE_ASSUMPTION — SHA verified
+E026,Diesel generator maximum power = 100 kW,CURRENT_IMPLEMENTATION_FACT,system/config/diesel.yaml,max_power_w,—,AREA_04,PROTOTYPE_ASSUMPTION — SHA verified
+E027,Base fuel consumption = 5.0 L/h when diesel on,CURRENT_IMPLEMENTATION_FACT,system/config/diesel.yaml,base_fuel_consumption_l_per_h,—,AREA_04,PROTOTYPE_ASSUMPTION — SHA verified
+E028,Marginal fuel consumption = 0.25 L/kWh generated,CURRENT_IMPLEMENTATION_FACT,system/config/diesel.yaml,marginal_fuel_consumption_l_per_wh,—,AREA_04,PROTOTYPE_ASSUMPTION — SHA verified
+E029,Diesel minimum continuous up-time = 2 hours,CURRENT_IMPLEMENTATION_FACT,system/config/diesel.yaml,min_up_time_hours,—,AREA_01,PROTOTYPE_ASSUMPTION — SHA verified
+E030,Critical load baseline power = 30000 W (30 kW),CURRENT_IMPLEMENTATION_FACT,system/config/loads.yaml,baseline_power_w,—,AREA_02,PROTOTYPE_ASSUMPTION — not a governed tier assignment
+E031,Unmet load penalty in loads.yaml = $10/Wh ($10000/kWh) — implementation fact ONLY,CURRENT_IMPLEMENTATION_FACT,system/config/loads.yaml,unmet_penalty_per_wh,—,AREA_03,PROTOTYPE_ASSUMPTION — explicitly NOT the SLA policy
+E032,Deferrable water pump load = 10 kW for 4 hours in window 08:00–18:00,CURRENT_IMPLEMENTATION_FACT,system/config/loads.yaml,deferrable_loads,—,AREA_02,PROTOTYPE_ASSUMPTION
+E033,Curtailable secondary heating = max 5 kW,CURRENT_IMPLEMENTATION_FACT,system/config/loads.yaml,curtailable_loads,—,AREA_02,PROTOTYPE_ASSUMPTION
+E034,Optimizer: RULE_BASED_HEURISTIC_D1 algorithm; unmet load weight 1000.0,CURRENT_IMPLEMENTATION_FACT,system/config/optimizer.yaml,weights,—,"AREA_04,AREA_09",PROTOTYPE_ASSUMPTION — single composite scalar; NOT lexicographic
+E035,MILP terminal SOC unconstrained at horizon boundary,CURRENT_IMPLEMENTATION_FACT,system/optimization/implementations/milp.py,terminal_SOC,—,AREA_06,FROZEN — SHA verified
+E036,MILP uses single composite scalar objective function,CURRENT_IMPLEMENTATION_FACT,system/optimization/implementations/milp.py,objective_function,—,AREA_09,FROZEN — SHA verified
+E037,MILP c_unmet = $10000/kWh soft penalty — NOT a hard constraint,CURRENT_IMPLEMENTATION_FACT,system/optimization/implementations/milp.py,c_unmet,—,AREA_03,FROZEN — SHA verified; explicitly NOT the SLA policy
+E038,MILP c_marg = $0.625/kWh marginal fuel cost proxy,CURRENT_IMPLEMENTATION_FACT,system/optimization/implementations/milp.py,c_marg,—,AREA_04,FROZEN — cost proxy; NOT the liters-based objective
+E039,16000:1 objective coefficient ratio ($10000/$0.625),CURRENT_IMPLEMENTATION_FACT,system/optimization/implementations/milp.py,objective_ratio,—,AREA_09,FROZEN — explicitly NOT the policy priority ordering
+E040,Solar PV array = 300 m² at 20% efficiency; max inverter 60 kW AC,CURRENT_IMPLEMENTATION_FACT,system/config/solar_pv.yaml,array,—,AREA_07,PROTOTYPE_ASSUMPTION — SHA verified
+E041,Station location: SITES Nuolja 68.36°N 18.74°E (Arctic — polar night applicable),CURRENT_IMPLEMENTATION_FACT,system/config/station.yaml,location,—,AREA_08,SHA verified
+E042,Liters-to-cost derivation: $0.625/kWh = 2.50 $/L × 0.25 L/kWh,ENGINEERING_INFERENCE,diesel.yaml × unit_conversion,—,—,AREA_04,Purely derived; not a policy value
+E043,35% EBR ≈ 70 kWh from 200 kWh capacity (PROVISIONAL),ENGINEERING_INFERENCE,battery.yaml × D11_provisional,—,—,AREA_06,PROVISIONAL — pending SD-07 validation
+E044,45% EBR ≈ 90 kWh from 200 kWh capacity (PROVISIONAL),ENGINEERING_INFERENCE,battery.yaml × D11_provisional,—,—,AREA_06,PROVISIONAL — pending SD-07 validation
+E045,Station circuit-level load tier assignment,STATION_DATA_REQUIRED,—,—,D01,AREA_02,SD-01 — must be provided by station operator
+E046,ATS switching gap measurement,STATION_DATA_REQUIRED,—,—,D05,AREA_03,SD-02 — hardware measurement required
+E047,Generator fuel calibration curves,STATION_DATA_REQUIRED,—,—,D07,AREA_04,SD-04 — bench testing required
+E048,Station fuel tank capacity and resupply schedule,STATION_DATA_REQUIRED,—,—,D08,AREA_05,SD-05 — logistics data required
+E049,Historical forecast vs actual error statistics,STATION_DATA_REQUIRED,—,—,D13,AREA_08,SD-09 to SD-11 — meteorological records required
+E050,Lexicographic MILP mathematical formulation,NEXT_SPECIFICATION_REQUIRED,—,—,"D06,D15",AREA_09,NS-01 to NS-05 — Objective Specification phase

@@ -1,0 +1,77 @@
+{
+  "audit_name": "POLARIS EMS HD-05D Fuel-Battery Degradation Valuation Audit",
+  "timestamp": "2026-09-23T04:00:00Z",
+  "governance_scope": {
+    "decision_id": "HD-05D",
+    "topic": "Numerical Fuel vs Battery Degradation Valuation Tradeoff",
+    "status": "GOVERNANCE_DECISION_REQUIRED"
+  },
+  "closed_decisions": {
+    "HD-05A": "Stage 3 — Resource Management",
+    "HD-05B": "Extra diesel allowed during NORMAL operation to reduce battery cycling",
+    "HD-05C": "Battery degradation subordinate to critical service during EMERGENCY",
+    "HD-05D": "Numerical tradeoff coefficient UNRESOLVED"
+  },
+  "current_implementation_facts": {
+    "c_deg_value": 0.00005,
+    "c_deg_units": "$/Wh",
+    "c_deg_source": "system/config/battery.yaml:L11",
+    "c_deg_comment": "# Cycling penalty",
+    "c_deg_status": "PROTOTYPE_ASSUMPTION / HEURISTIC_CYCLING_PENALTY",
+    "fuel_cost_per_l": 2.50,
+    "fuel_cost_units": "$/L",
+    "fuel_cost_source": "system/config/diesel.yaml:L7",
+    "fuel_cost_status": "PROTOTYPE_ASSUMPTION / IMPLEMENTATION_ONLY",
+    "marginal_fuel_consumption_l_per_wh": 0.00025,
+    "base_fuel_consumption_l_per_h": 5.0,
+    "startup_cost_dollars": 15.0
+  },
+  "empirical_evidence_status": {
+    "battery_aging_calibration": "NOT_ESTABLISHED",
+    "battery_replacement_cost": "NOT_ESTABLISHED",
+    "battery_lifetime_cycles": "NOT_ESTABLISHED",
+    "fuel_price_governance_authorization": "NOT_ESTABLISHED",
+    "fuel_degradation_tradeoff_derivation": "NOT_ESTABLISHED"
+  },
+  "conceptual_options": [
+    {
+      "id": "A",
+      "name": "Monetary Stage 3",
+      "formula": "J3 = fuel_cost($) + deg_cost($)",
+      "evidence_needed": "Authorized $/L fuel price AND authorized $/Wh degradation value"
+    },
+    {
+      "id": "B",
+      "name": "Liter-Based Tradeoff",
+      "formula": "J3 = fuel_liters + lambda_deg * throughput_Wh",
+      "evidence_needed": "Governed exchange factor lambda_deg [L/Wh]"
+    },
+    {
+      "id": "C",
+      "name": "Constrained Cycling",
+      "formula": "min fuel_liters s.t. cycling <= Budget_Wh",
+      "evidence_needed": "Governed maximum throughput budget per horizon [Wh]"
+    },
+    {
+      "id": "D",
+      "name": "Lexicographic Subobjectives",
+      "formula": "Stage 3a: min fuel; Stage 3b: min cycling s.t. fuel <= (1+eps)*fuel*",
+      "evidence_needed": "Governed fuel tolerance fraction eps"
+    }
+  ],
+  "classifications": {
+    "HD05D_ECONOMIC_TRADEOFF": "NOT_ESTABLISHED",
+    "HD05D_CDEG_POLICY_VALIDITY": "NOT_ESTABLISHED",
+    "HD05D_FUEL_VALUE": "IMPLEMENTATION_ONLY",
+    "HD05D_BATTERY_VALUE": "NOT_ESTABLISHED",
+    "HD05D_COMMON_UNIT_FORMULATION": "REQUIRES_GOVERNANCE",
+    "HD05D_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "final_verdict": {
+    "HD05D_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "HD05D_NUMERICAL_TRADEOFF": "GOVERNANCE_DECISION_REQUIRED",
+    "HD05D_BATTERY_AGING_ECONOMIC_VALUE": "NOT_ESTABLISHED_UNLESS_EVIDENCE_FOUND"
+  }
+}

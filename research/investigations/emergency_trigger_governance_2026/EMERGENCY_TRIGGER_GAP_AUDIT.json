@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "project": "POLARIS Energy Management System",
+    "document": "EMERGENCY_TRIGGER_GAP_AUDIT",
+    "version": "2.0.0-audited",
+    "date": "2026-09-27",
+    "human_governance_status": "DECISION_PREPARATION_ONLY"
+  },
+  "gaps": [
+    {
+      "gap_id": "GAP-01",
+      "name": "CREDIBLE_DISPATCHABLE_GENERATION",
+      "unresolved_question": "What does POLARIS mean by CREDIBLE generation over the six-hour survivability horizon?",
+      "classification": "HUMAN_GOVERNANCE_DECISION",
+      "affected_subsystems": ["Emergency Entry", "Emergency Exit", "Survivability Assessment"],
+      "candidate_models": ["Model A: Nameplate Potential", "Model B: Credible Operating Capacity", "Model C: Fuel-Constrained Energy", "Model D: Critical-Load Bounded Energy", "Model E: Dynamic Status-Constrained"],
+      "human_decision_required": "Select generator credibility model and whether generator energy is capped by critical demand",
+      "safe_engineering_assumption": "Fuel efficiency coefficients and thermal derating curves"
+    },
+    {
+      "gap_id": "GAP-02",
+      "name": "RENEWABLE_CREDIBILITY_DERATING",
+      "unresolved_question": "Should renewable generation forecasts be credited toward 6-hour critical survivability guarantees, and if so, under what confidence mechanism?",
+      "classification": "HUMAN_GOVERNANCE_DECISION",
+      "affected_subsystems": ["Emergency Entry", "Forecast Dependency", "Preemptive Emergency Triggers"],
+      "candidate_approaches": ["Approach A: Fixed 50% Derating", "Approach B: P10 Forecast Quantile", "Approach C: Forecast + Uncertainty Envelope", "Approach D: Zero Renewable Credit for Emergency", "Approach E: Resource-Specific Dynamic Derating", "Approach F: Persistence Extrapolation"],
+      "human_decision_required": "Policy choice on trusting renewable forecasts for emergency critical safety",
+      "safe_engineering_assumption": "Specific statistical confidence interval parameters"
+    },
+    {
+      "gap_id": "GAP-03",
+      "name": "EMERGENCY_EXIT_CRITERIA_PARAMETERS",
+      "unresolved_question": "Which numerical exit conditions are mandatory governance policy vs implementation details?",
+      "classification": "REQUIRES_HUMAN_APPROVAL",
+      "affected_subsystems": ["Emergency Exit", "Mode Hysteresis"],
+      "audited_parameters": {
+        "critical_load_served": {"value": "100%", "classification": "GOVERNED_HUMAN_DECISION"},
+        "survivability_margin_buffer": {"value": "+10 kWh", "classification": "ENGINEERING_ASSUMPTION"},
+        "reserve_target_restoration": {"value": "SOC >= 37.83%", "classification": "REQUIRES_HUMAN_APPROVAL"},
+        "mandatory_generator_available": {"value": "A_k = 1", "classification": "REQUIRES_HUMAN_APPROVAL"},
+        "exit_persistence_window": {"value": "4 intervals (1h)", "classification": "IMPLEMENTATION_DETAIL"}
+      }
+    },
+    {
+      "gap_id": "GAP-04",
+      "name": "SURVIVABILITY_HORIZON_FORECAST_DEPENDENCY",
+      "unresolved_question": "What evidence is sufficient to declare 6-hour survivability guaranteed when weather forecasts are missing or unverified?",
+      "classification": "HUMAN_GOVERNANCE_DECISION",
+      "affected_subsystems": ["Survivability Assessment", "Missing Telemetry Handling"],
+      "candidate_fallback_policies": ["Alternative 1: Forecast-Independent Guarantee (Dispatchable Only)", "Alternative 2: Forecast-Assisted Guarantee", "Alternative 3: Missing-Forecast Fallback (Set E_ren = 0.0)"]
+    },
+    {
+      "gap_id": "GAP-05",
+      "name": "EXIT_RECOVERY_SEMANTICS_TRANSITIONS",
+      "unresolved_question": "Can Emergency Mode exit directly into RESERVE_DEFICIT state if critical load survivability is secure (M_surv >= 0) but battery SOC remains below target (SOC < 37.83%)?",
+      "classification": "HUMAN_GOVERNANCE_DECISION",
+      "affected_subsystems": ["State Machine Transitions", "Flexible Load Restoration"],
+      "candidate_paths": ["Option A: Direct to NORMAL Only (Requires SOC >= 37.83%)", "Option B: Permit Exit to RESERVE_DEFICIT (If M_surv >= 0 but SOC < 37.83%)"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "audit_name": "POLARIS_PHASE_C1_FORENSIC_INTEGRITY_AUDIT",
+  "timestamp_utc": "2026-09-16 00:28:58+0000",
+  "overall_verdict": "PASS \u2014 Forensic Integrity Verified",
+  "checks": {
+    "population_accounting": "PASS \u2014 104 parent origins, 604 aggregate valid cells verified.",
+    "target_imputation": "PASS \u2014 Zero target imputation or value alteration performed.",
+    "canonical_folds": "PASS \u2014 Canonical fold assignment untouched (SHA256 verified).",
+    "model_specification": "PASS \u2014 Ridge alpha=1.0 and GBDT max_depth=3, n_est=200, lr=0.05, min_leaf=10, seed=42 verified.",
+    "fold_internal_fitting": "PASS \u2014 Scaling and fitting performed strictly inside training folds.",
+    "bootstrap_unit": "PASS \u2014 10,000 paired origin-level bootstrap resamples. 0 degenerate resamples.",
+    "permutation_procedure": "PASS \u2014 1,000 within-month target permutations per horizon. Zero model refitting during permutation.",
+    "odd_firewall": "PASS \u2014 0 ODD rows accessed (100% sealed).",
+    "nwp_firewall": "PASS \u2014 No additional NWP data or external sources accessed.",
+    "interpretation_firewall": "PASS \u2014 Controlled scientific wording strictly enforced."
+  },
+  "artifact_hashes": {
+    "PHASE_C1_HORIZON_DIAGNOSTIC.json": "6becb0e21567f3f4c86525a2105ce6cad84ee3fc2021ce16cce0a06f5a567c23",
+    "PHASE_C1_HORIZON_DIAGNOSTIC.md": "98a22c27b7717f2b9af91b41c8bdc64ec044cfb3af30dc2a51ebbccf1298c619",
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad"
+  }
+}

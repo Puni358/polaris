@@ -1,0 +1,15 @@
+# POLARIS Prototype Station Configuration
+station_id: "nuolja_arctic_prototype_station"
+location:
+  name: "SITES Nuolja Research Station (Prototype Microgrid)"
+  latitude: 68.362074
+  longitude: 18.738752
+  timezone: "Etc/GMT-1"
+status_label: "PROTOTYPE_ASSUMPTION"
+components:
+  - "battery"
+  - "diesel_genset"
+  - "solar_pv"
+  - "wind_turbine"
+  - "critical_demand"
+  - "flexible_loads"

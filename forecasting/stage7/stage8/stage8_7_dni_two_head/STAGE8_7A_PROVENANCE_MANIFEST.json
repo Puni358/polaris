@@ -1,0 +1,19 @@
+{
+  "stage": "8.7A",
+  "title": "Stage 8.7A Provenance Manifest",
+  "execution_timestamp_utc": "2026-09-12 16:44:43 UTC",
+  "script_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_7_dni_two_head/run_stage8_7a_feasibility.py",
+  "script_sha256": "3fad68e55d4d884968839cca2c52d8b48658765d325e1c789486f59c3a1dd585",
+  "research_basis": "POLARIS STAGE 8.7 \u2014 SCIENTIFIC ROUTE SELECTION STUDY",
+  "benchmark_station": "SITES Nuolja (68.362074 N, 18.738752 E)",
+  "meps_grid_point": "y = 760, x = 486 (68.355701 N, 18.763666 E, dist 1.31 km)",
+  "primary_meps_variable": "integral_of_surface_direct_normal_irradiance_wrt_time",
+  "meps_forecast_run": "D-1 18:00 UTC MEPS deterministic surface collection",
+  "governance_note": "Re-evaluation of Stage 7.2 E4 DNI variable under two-head target architecture reformulation. NOT a new data-source discovery.",
+  "input_files_sha256": {
+    "ST8_1_PATH": "aa6ce29f3acec6345b82e11b7182ba0fe4110f7c044486f56f2fd5b179b49b08",
+    "BENCHMARK_PATH": "ac5a2b2732ff181c492754ef5077829aad58d8e9dbbcea37173fd0a4fea908e0",
+    "TERRAIN_PATH": "0a29c9c03815cc90faf3540dbd199b430ae292c8c2b327c02062a17732b7d689",
+    "MEPS_RAD_PATH": "d177b835b6a597e962f6f14eeba870d5d80cbbb8dfbde366b8168b6b27576200"
+  }
+}

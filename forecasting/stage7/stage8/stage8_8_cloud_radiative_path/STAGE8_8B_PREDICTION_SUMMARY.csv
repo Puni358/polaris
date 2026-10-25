@@ -1,0 +1,2 @@
+stage,control_mae_w_m2,candidate_mae_w_m2,delta_mae_w_m2,control_nmae_pct,candidate_nmae_pct,delta_nmae_pp,control_rmse_w_m2,candidate_rmse_w_m2,delta_rmse_w_m2,control_bias_w_m2,candidate_bias_w_m2,delta_bias_w_m2,improved_folds,max_fold_degradation_w_m2,bootstrap_mean_delta_w_m2,bootstrap_ci_95,gate_decision
+STAGE 8.8B EVEN CV,35.270823,35.417182,0.14636,36.2419,37.0364,0.7946,56.761152,56.870775,0.109623,2.67498,3.210776,0.535796,2/5,0.564104,0.154597,"[-0.097347, 0.408509]",REJECTED

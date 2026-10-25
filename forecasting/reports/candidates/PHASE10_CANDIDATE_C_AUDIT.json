@@ -1,0 +1,35 @@
+{
+  "csv_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+  "csv_shape": [
+    8328,
+    45
+  ],
+  "checks": {
+    "1_csv_located_correctly": true,
+    "2_39_input_features_present": true,
+    "3_347_total_origins": true,
+    "4_173_even_174_odd_origins": true,
+    "5_24_rows_per_origin": true,
+    "6_correct_horizon_1_to_24": true,
+    "7_no_nans": true,
+    "8_candidate_c_row_independent": true,
+    "9_anchor_is_pred_stage4_fold": true,
+    "10_raw_anchor_used_for_final_additive_prediction": true,
+    "11_scaler_probe_uses_even_only": true,
+    "12_instantiated_param_count_674": true,
+    "13_architecture_matches_frozen_checkpoint": true,
+    "14_no_odd_feature_values_in_calculations": true,
+    "15_g6_treatment_honest_and_reproducible": true
+  },
+  "all_pass": true,
+  "instantiated_param_count": 674,
+  "expected_param_count": 674,
+  "even_origins": 173,
+  "odd_origins": 174,
+  "locked_control_reference": {
+    "mae_wm2": 26.3668,
+    "nmae_pct": 20.4507,
+    "rmse_wm2": 55.2513,
+    "note": "Locked reference control from prior checkpoints. Must reproduce exact reference within tolerance for G6 PASS."
+  }
+}

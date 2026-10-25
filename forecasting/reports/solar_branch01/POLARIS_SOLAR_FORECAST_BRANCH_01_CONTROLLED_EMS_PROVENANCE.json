@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "experiment_id": "CONTROLLED_EMS_INTEGRATION_VALIDATION_H1_0",
+    "timestamp": "2026-09-21T09:05:00Z",
+    "governance_mode": "CONTROLLED_EMS_INTEGRATION_VALIDATION_ONLY"
+  },
+  "model_identity": {
+    "MODEL_ID": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "MODEL_SHA256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "MODEL_PATH": "artifacts/model_runs/RUN_BRANCH01_CANDIDATE_A_HGB/model.joblib"
+  },
+  "trajectory_identity": {
+    "TRAJECTORY_ID": "POLARIS_HYBRID_FIXTURE_H1_0",
+    "TRAJECTORY_SOURCE_ARTIFACT": "POLARIS_HYBRID_FIXTURE_H1_0/fixture.csv",
+    "TRAJECTORY_SOURCE_SHA256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "TIMESTEPS": 24
+  },
+  "execution_summary": {
+    "control_mpc_cycles_completed": 24,
+    "treatment_mpc_cycles_completed": 24,
+    "model_inferences_executed": 24,
+    "control_diesel_energy_wh": 488492.9,
+    "treatment_diesel_energy_wh": 0.0,
+    "paired_diesel_diff_wh": -488492.9
+  }
+}

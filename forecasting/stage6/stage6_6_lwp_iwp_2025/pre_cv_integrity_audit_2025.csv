@@ -1,0 +1,10 @@
+check_name,status,detail
+364 Origins Present,PASS,Found 364 / 364 origins
+24 Horizons / Origin,PASS,Origins with 24 horizons: 364 / 364
+Total Row Count,PASS,Total rows: 8736 / 8736
+No Duplicate Rows,PASS,Duplicate rows found: 0
+No NaN/Inf Values,PASS,"NaNs: 0, Infs: 0"
+Physical Ranges,PASS,"LWP: [0.00, 1811.75] g/m2, IWP: [0.00, 97.96] g/m2, Ps: [915.6, 977.7] hPa (2024 reference: LWP [0,1598.28], IWP [0,157.86], Ps [891.8,974.1])"
+Surface Pressure Bound,PASS,Max surface pressure: 977.70 hPa (< 1000 hPa)
+Horizon/valid_time alignment (fix vs 2024 off-by-one),PASS,"valid_time == forecast_start + (horizon_hour-1)h for all rows (2024 artifact used +horizon_hour, confirmed off by 1h)"
+Schema matches 2024,PASS,"['origin_index', 'forecast_start', 'horizon_hour', 'valid_time', 'forecast_reference_time', 'surface_air_pressure_hpa', 'lwp_latest', 'iwp_latest', 'meps_run_id']"

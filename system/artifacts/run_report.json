@@ -1,0 +1,32 @@
+{
+  "run_id": "polaris_run_d2_offline_2024-06-01T00:00:00Z",
+  "schema_version": "1.0.0",
+  "environment": "LOCAL_OFFLINE_PC",
+  "network_connectivity": "DISCONNECTED (100% OFFLINE)",
+  "optimizer_type": "MILP",
+  "data_mode": "DEMO / SMOKE-TEST SCENARIO (PROTOTYPE ASSUMPTIONS)",
+  "execution_status": "GOVERNANCE_DECISION_REQUIRED",
+  "completed_steps": 0,
+  "requested_steps": 1,
+  "fault_count": 1,
+  "governed_fault_count": 1,
+  "fault_classes": [
+    "OPTIMIZATION_INFEASIBLE"
+  ],
+  "termination_reason": "OPTIMIZATION_INFEASIBLE: OPTIMIZATION_INFEASIBLE: HighsModelStatus.kInfeasible",
+  "fault_events": [
+    {
+      "timestep": 0,
+      "fault_class": "OPTIMIZATION_INFEASIBLE",
+      "source": "EnergyOptimizer",
+      "severity": "GOVERNED_DEGRADED",
+      "response": "GOVERNED_ZERO_DISPATCH",
+      "state_advanced": false,
+      "message": "OPTIMIZATION_INFEASIBLE: HighsModelStatus.kInfeasible"
+    }
+  ],
+  "timesteps_executed": 0,
+  "forecast_evaluation": {},
+  "ems_evaluation": {},
+  "research_qualification": "POLARIS research branch is frozen (ABC2). Operational 24h pipeline is a local system skeleton."
+}

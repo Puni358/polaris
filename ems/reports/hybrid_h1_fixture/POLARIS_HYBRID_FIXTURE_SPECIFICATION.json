@@ -1,0 +1,157 @@
+{
+  "specification_id": "POLARIS_HYBRID_FIXTURE_SPECIFICATION",
+  "fixture_version": "H1.0",
+  "governance_status": "SPECIFICATION_FREEZE_DETERMINISM_READY",
+  "execution_authorized": false,
+  "governance_date_utc": "2026-09-20T11:02:00Z",
+  "synthetic_demand_specification": {
+    "fixture_identity": "SYNTHETIC_STATION_DEMAND",
+    "disclaimer": "SYNTHETIC_STATION_DEMAND != NULLOJA_MEASURED_DEMAND. Strictly for controlled engineering validation.",
+    "base_demand_w": 25000.0,
+    "min_demand_w": 15000.0,
+    "max_demand_w": 45000.0,
+    "peak_demand_w": 45000.0,
+    "units": "Watts (W)",
+    "temporal_resolution": "1-hour discrete intervals (delta_t = 1h)",
+    "duration_timesteps": 8784,
+    "timestamp_convention": "ISO 8601 UTC (YYYY-MM-DDTHH:00:00Z)",
+    "daily_load_shape": {
+      "diurnal_type": "Double-peak polar station load profile",
+      "night_base_w": 18000.0,
+      "morning_peak_hour_utc": 8,
+      "morning_peak_w": 38000.0,
+      "day_sustained_w": 32000.0,
+      "evening_peak_hour_utc": 19,
+      "evening_peak_w": 42000.0
+    },
+    "seasonal_profile": {
+      "winter_multiplier": 1.20,
+      "summer_multiplier": 0.85,
+      "transitional_multiplier": 1.00
+    },
+    "stochastic_component": {
+      "enabled_in_baseline_h1_0": false,
+      "noise_distribution": "Gaussian N(0, sigma=1000 W)",
+      "random_seed": 42,
+      "clipping_bounds": [15000.0, 45000.0]
+    },
+    "missing_data_policy": "Zero missing values in synthetic sequence. 100% complete deterministic time series.",
+    "reproducibility_procedure": "Deterministic generation formula using fixed seed 42. Output SHA-256 fingerprint verified."
+  },
+  "wind_generation_fixture_specification": {
+    "scenario_identity": "POLAR_REFERENCE_TURBINE_SCENARIO",
+    "hardware_disclaimer": "GENERIC ENGINEERING ASSUMPTION — NOT NULLOJA HARDWARE. Ross Island Enercon E-33 specs NOT used as Nuolja specs.",
+    "turbine_rated_power_w": 60000.0,
+    "cut_in_speed_ms": 3.0,
+    "rated_speed_ms": 12.0,
+    "cut_out_speed_ms": 25.0,
+    "power_curve_model": "Piecewise cubic IEC 61400-12 reference curve",
+    "interpolation_method": "Exact cubic piecewise evaluation",
+    "clipping_bounds": [0.0, 60000.0],
+    "units": "Watts (W)",
+    "mapping_pipeline": "Abisko SMHI 10m wind proxy -> Generic IEC 60 kW curve -> P_wind_synthetic (Class: SYNTHETIC_ENGINEERING_SCENARIO)"
+  },
+  "solar_pipeline_specification": {
+    "source_dataset": "SITES Nuolja Middle Station AWS 2024 SW_IN",
+    "forecasting_pipeline": "Frozen Stage8.1 Champion Model (37-feature HistGradientBoosting, MAE 43.18 W/m^2)",
+    "pv_conversion_mapping": "D3 Engineering Mapping: P_raw = SW_IN * 300 * 0.20 * 0.85; P_solar = min(P_raw, 60000 W)",
+    "units": "Watts (W)"
+  },
+  "time_alignment_contract": {
+    "timezone": "UTC",
+    "timestamp_format": "ISO 8601 (YYYY-MM-DDTHH:00:00Z)",
+    "sampling_interval": "1-hour monotonic grid",
+    "join_key": "timestamp_utc",
+    "daylight_savings_treatment": "None (UTC strict monotonic)",
+    "missing_data_treatment": "Strict window rejection for real observations; no silent interpolation."
+  },
+  "truth_firewall_contract": {
+    "controller_visible_state": [
+      "StationState(t_0)",
+      "Historical observations (t <= t_0)",
+      "ForecastBundle(t_0, horizon=24h)"
+    ],
+    "hidden_future_truth": [
+      "Actual future demand P_load(t_0 + k)",
+      "Actual future solar SW_IN(t_0 + k)",
+      "Actual future wind speed v_wind(t_0 + k)"
+    ],
+    "firewall_rule": "The controller MUST NOT access future actual ground truth before simulator step execution."
+  },
+  "initial_state_contract": {
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 25000.0,
+    "diesel_running": false,
+    "diesel_hours_running": 0.0,
+    "mapped_to_schema": "StationState v1.0 (Zero schema modifications)"
+  },
+  "hybrid_evaluation_scenario_classes": [
+    {
+      "class_id": "H1",
+      "name": "Baseline Hybrid",
+      "purpose": "Evaluate end-to-end causal runtime and MPC loop under baseline synthetic load and real solar irradiance.",
+      "inputs": ["Real Nuolja SW_IN", "Abisko 10m Wind Proxy", "Synthetic Demand H1.0", "Generic 60 kW Wind Curve"],
+      "duration": "168-hour (7-day) receding horizon pass",
+      "execution_status": "NOT_EXECUTED"
+    },
+    {
+      "class_id": "H2",
+      "name": "Solar Forecast Replay",
+      "purpose": "Evaluate EMS dispatch sensitivity to Stage8.1 solar forecast errors.",
+      "inputs": ["Real Nuolja SW_IN", "Stage8.1 Solar Forecast", "Synthetic Demand H1.0"],
+      "duration": "168-hour receding horizon pass",
+      "execution_status": "NOT_EXECUTED"
+    },
+    {
+      "class_id": "H3",
+      "name": "Wind Proxy Scenario",
+      "purpose": "Evaluate EMS dispatch under regional proxy wind speed inputs.",
+      "inputs": ["Abisko 10m Wind Proxy", "Generic 60 kW Wind Curve", "Synthetic Demand H1.0"],
+      "duration": "168-hour receding horizon pass",
+      "execution_status": "NOT_EXECUTED"
+    },
+    {
+      "class_id": "H4",
+      "name": "Combined Renewable Hybrid",
+      "purpose": "Evaluate solar + wind microgrid balancing under high renewable penetration.",
+      "inputs": ["Real Nuolja SW_IN", "Abisko Wind Proxy", "Generic Wind Curve", "Synthetic Demand H1.0"],
+      "duration": "168-hour receding horizon pass",
+      "execution_status": "NOT_EXECUTED"
+    },
+    {
+      "class_id": "H5",
+      "name": "Stress Scenario",
+      "purpose": "Evaluate system stability during prolonged polar low-solar / high-demand events.",
+      "inputs": ["Real Winter SW_IN", "Synthetic High Winter Demand (30-45 kW)", "Frozen Battery/Diesel"],
+      "duration": "168-hour receding horizon pass",
+      "execution_status": "NOT_EXECUTED"
+    }
+  ],
+  "claim_boundary": {
+    "allowed_claims": [
+      "POLARIS was evaluated in a controlled hybrid engineering environment combining real measured solar irradiance, a conditionally established regional wind-speed proxy, and explicitly synthetic station demand.",
+      "Results describe behavior in the specified controlled engineering environment.",
+      "Real measured solar observations were used as an input."
+    ],
+    "prohibited_claims": [
+      "POLARIS was validated on real Nuolja station demand.",
+      "POLARIS was validated at Nuolja Station.",
+      "POLARIS achieved X% real-world fuel savings.",
+      "Nuolja wind generation was measured.",
+      "Nuolja turbine performance was validated.",
+      "System reliability was demonstrated for the real station."
+    ]
+  },
+  "governance_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "STEP8_FINAL_CLASSIFICATION": "A — HYBRID FIXTURE FULLY SPECIFIED AND DETERMINISM-READY"
+  }
+}

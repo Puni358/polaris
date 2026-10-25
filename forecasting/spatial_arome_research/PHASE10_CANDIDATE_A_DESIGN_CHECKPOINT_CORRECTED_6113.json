@@ -1,0 +1,116 @@
+{
+  "checkpoint": "PHASE10_CANDIDATE_A_DESIGN_CHECKPOINT_CORRECTED_6113",
+  "supersedes": "updatePHASE10_CANDIDATE_A_DESIGN_CHECKPOINT.json",
+  "status": "DESIGN_FROZEN_PARAMETER_COUNT_CORRECTED_AWAITING_TRAINING_AUTHORIZATION",
+  "date": "September 2026",
+  "odd_firewall": "INTACT",
+  "protected_champion": "Stage_8.1_37_feature_HGB_NOT_MODIFIED",
+
+  "architecture_change": "NONE - all layer shapes, activations, dropout rates, and hyperparameters are exactly as originally frozen",
+
+  "parameter_count_correction": {
+    "previous_stated_total": 6049,
+    "corrected_total": 6113,
+    "root_causes": [
+      {
+        "issue": "GRU bias convention mismatch",
+        "previous_assumption": "single tied bias vector per gate: 2 x [3 x ((32+16)x16 + 16)] = 4704",
+        "actual_standard_nn_GRU": "separate bias_ih and bias_hh per gate (torch.nn.GRU default, bias=True): 2 x [3x16x32 + 3x16x16 + 3x16 + 3x16] = 4800",
+        "delta": 96
+      },
+      {
+        "issue": "Output Dense layer arithmetic error",
+        "previous_stated": "32x1 weights + 1 bias = 65 (also recorded as dense_output_weights: 64 in original JSON)",
+        "correct_value": "32x1 + 1 = 33",
+        "delta": -32
+      }
+    ],
+    "net_delta": 64,
+    "verification_methods": [
+      "hand arithmetic using standard nn.GRU bias convention",
+      "direct instantiation of nn.Linear(39,32)+nn.GRU(32,16,bidirectional=True)+nn.Linear(32,1) and sum(p.numel() for p in model.parameters())"
+    ],
+    "verified_in_script": "phase10_candidate_a_train.py, function count_parameters(), executed as part of the pre-training audit"
+  },
+
+  "corrected_parameter_breakdown": {
+    "dense1_39_to_32": {
+      "weights": 1248,
+      "bias": 32,
+      "total": 1280
+    },
+    "bidirectional_gru_32_to_16x2": {
+      "weight_ih_per_direction": 1536,
+      "weight_hh_per_direction": 768,
+      "bias_ih_per_direction": 48,
+      "bias_hh_per_direction": 48,
+      "total_per_direction": 2400,
+      "total_bidirectional": 4800
+    },
+    "dense_out_32_to_1": {
+      "weights": 32,
+      "bias": 1,
+      "total": 33
+    },
+    "total_parameters": 6113
+  },
+
+  "unchanged_fields": {
+    "input_shape": [24, 39],
+    "static_features_count": 14,
+    "horizon_varying_features_count": 25,
+    "dense1_dim": 32,
+    "gru_hidden_dim_per_direction": 16,
+    "bidirectional": true,
+    "return_sequences": true,
+    "dropout": 0.2,
+    "loss": "MAE_over_24_horizons",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "beta_1": 0.9,
+    "beta_2": 0.999,
+    "epsilon": 1e-07,
+    "weight_decay": 0.0001,
+    "batch_size_origins": 8,
+    "max_epochs": 300,
+    "early_stopping_patience": 20,
+    "cross_validation": "5_fold_GroupKFold_by_origin_id",
+    "split": "EVEN_only_173_origins",
+    "odd_status": "LOCKED_NEVER_ACCESSED",
+    "gate_requirements_G1_G6": "unchanged, see original design checkpoint"
+  },
+
+  "nested_inner_validation_reproducibility": {
+    "requirement": "deterministic and explicitly recorded",
+    "seed_formula": "seed = INNER_SPLIT_BASE_SEED + fold_idx",
+    "inner_split_base_seed": 42,
+    "fold_idx_range": "1..5 (one per outer GroupKFold fold)",
+    "selection_method": "np.random.RandomState(seed).choice(n_train_origins_in_fold, n_val, replace=False)",
+    "n_val_formula": "max(1, round(0.2 * n_train_origins_in_fold))",
+    "recorded_per_fold": [
+      "inner_split_seed",
+      "train_inner_origins (explicit list)",
+      "val_inner_origins (explicit list)",
+      "test_origins (explicit list)"
+    ],
+    "recorded_in": [
+      "console audit/training output",
+      "PHASE10_CANDIDATE_A_RESULTS_REAL.json (produced by phase10_candidate_a_train.py --train)"
+    ],
+    "leakage_guarantee_unchanged": "internal validation origins are always a subset of that fold's training pool; never include that fold's test origins; test-fold origins never used for early stopping"
+  },
+
+  "implementation": {
+    "framework": "PyTorch (torch.nn.GRU, bidirectional=True)",
+    "proxy_used": false,
+    "script": "phase10_candidate_a_train.py",
+    "flattening_across_horizons": "NEVER - [origin, 24, feature] structure preserved through model input at every stage"
+  },
+
+  "next_step": "AWAITING_EXPLICIT_TRAINING_AUTHORIZATION",
+  "notes": [
+    "This checkpoint corrects a reporting/arithmetic error only.",
+    "No architecture, hyperparameter, or data-handling change was made.",
+    "Do not train until explicit authorization is given for this exact frozen configuration."
+  ]
+}

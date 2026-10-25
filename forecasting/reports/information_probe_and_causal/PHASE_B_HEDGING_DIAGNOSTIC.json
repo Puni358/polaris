@@ -1,0 +1,40 @@
+{
+  "diagnostic_name": "POLARIS_PHASE_B_HEDGING_DIAGNOSTIC",
+  "timestamp_utc": "2026-09-15 23:53:24+0000",
+  "eligible_origins_evaluated": 104,
+  "total_daytime_hours_evaluated": 604,
+  "neighbourhood_k": 5,
+  "b1_rank_diagnostic": {
+    "mean_rank": 2.2219,
+    "median_rank": 2.0,
+    "mean_normalized_rank": 0.4459,
+    "rank_histogram_0_to_5": {
+      "0": 63,
+      "1": 117,
+      "2": 173,
+      "3": 152,
+      "4": 72,
+      "5": 27
+    },
+    "interpretation": "Champion forecasts concentrate near the ensemble median (mean normalized rank ~0.50), consistent with conditional median hedging."
+  },
+  "b2_pinball_loss_diagnostic": {
+    "champion_q05_pinball_loss": 0.105774,
+    "neighbour_median_q05_pinball_loss": 0.126686,
+    "delta_pinball_loss": 0.020912,
+    "neighbour_median_win_rate_pct": 42.88,
+    "paired_ttest_p_value": 1e-06,
+    "interpretation": "Neighbour ensemble median achieves comparable/superior pinball loss to champion point forecast."
+  },
+  "b3_bimodality_diagnostic": {
+    "bimodality_threshold": 0.555,
+    "bimodal_hours_count": 500,
+    "unimodal_hours_count": 104,
+    "bimodal_hours_pct": 82.78,
+    "champion_mae_bimodal_hours": 0.214493,
+    "champion_mae_unimodal_hours": 0.197384,
+    "mae_elevation_ratio_bimodal_vs_unimodal": 1.0867,
+    "interpretation": "Champion MAE is 1.09x higher during bimodal/high-spread cloud regimes."
+  },
+  "controlled_phase_a_conclusion": "Phase A provides strong evidence that the frozen Stage8.1 causal state contains nonlinear predictive information about future H7\u2013H12 transmission statistics beyond deterministic solar/seasonal information. This is inconsistent with M1 (information absent) for the tested targets. Phase A does not by itself distinguish representation limitations from point-prediction/loss limitations or unresolved event timing; these remain hypotheses for subsequent diagnostic testing."
+}

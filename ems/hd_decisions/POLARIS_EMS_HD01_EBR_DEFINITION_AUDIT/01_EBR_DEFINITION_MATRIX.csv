@@ -1,0 +1,5 @@
+Candidate_ID,Candidate_Name,Math_Formulation,Technically_Implementable,Physically_Meaningful,Requires_Numerical_Authorization,Adapts_To_Critical_Load,Duplicates_Tech_Min,Schema_Impact,Causality_Status
+CAND_A,Fixed SOC EBR,"E_target(t) = C_bat * (SOC_fixed / 100)",YES,PARTIAL,YES,NO,YES_IF_20_PERCENT,NO_CHANGE,CAUSALLY_VALID
+CAND_B,Fixed Energy EBR,"E_target(t) = E_fixed_wh",YES,PARTIAL,YES,NO,YES_IF_40KWH,NO_CHANGE,CAUSALLY_VALID
+CAND_C,Critical-Load-Based EBR,"E_target(t) = sum_{k=t+1}^{t+N} D_critical(k) * dt / eta_dis",YES,YES,DERIVABLE_FROM_N,YES,NO,ADDITIVE_EXTENSION_REQUIRED,CAUSALLY_VALID
+CAND_D,Dynamic Exogenous EBR,"E_target(t) = f(D_critical, Weather, Fuel_Status, Operating_Mode)",YES,YES,NOT_REQUIRED,YES,NO,ADDITIVE_EXTENSION_REQUIRED,CAUSALLY_VALID_IF_EXOGENOUS

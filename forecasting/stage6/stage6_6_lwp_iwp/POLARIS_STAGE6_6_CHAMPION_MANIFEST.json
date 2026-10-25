@@ -1,0 +1,130 @@
+{
+  "manifest_version": "1.0",
+  "champion_id": "STAGE_6_6_LWP_IWP",
+  "champion_name": "POLARIS Stage 6.6 Surface-Aware LWP/IWP Cloud Microphysics Model",
+  "status": "FROZEN_OPERATIONAL_CHAMPION",
+  "freeze_timestamp": "2026-09-12T11:55:00Z",
+  "target_station": "Nuolja (68.355701\u00b0N, 18.763666\u00b0E, Elev: 702 m a.s.l.)",
+  "authoritative_odd_metrics": {
+    "stage5_2_frozen_control": {
+      "daytime_mae_w_m2": 39.084821,
+      "daytime_nmae_pct": 30.315107,
+      "daytime_rmse_w_m2": 68.993487,
+      "daytime_bias_pred_minus_actual_w_m2": 1.934725,
+      "daytime_bias_actual_minus_pred_w_m2": -1.934725,
+      "night_mae_w_m2": 0.0
+    },
+    "stage6_6_champion_candidate": {
+      "daytime_mae_w_m2": 37.005888,
+      "daytime_nmae_pct": 28.702638,
+      "daytime_rmse_w_m2": 65.671702,
+      "daytime_bias_pred_minus_actual_w_m2": 1.144965,
+      "daytime_bias_actual_minus_pred_w_m2": -1.144965,
+      "night_mae_w_m2": 0.0
+    },
+    "deltas": {
+      "delta_mae_w_m2": -2.078933,
+      "delta_nmae_pct": -1.612469,
+      "delta_rmse_w_m2": -3.321785,
+      "delta_bias_w_m2": -0.78976,
+      "relative_mae_reduction_pct": -5.3189,
+      "relative_rmse_reduction_pct": -4.8146
+    },
+    "bootstrap": {
+      "n_resamples": 10000,
+      "resampling_unit": "paired origin-level",
+      "seed": 42,
+      "mean_delta_mae_w_m2": -2.078277,
+      "ci_95_lower_w_m2": -2.809838,
+      "ci_95_upper_w_m2": -1.34476,
+      "fraction_negative": 1.0,
+      "statistically_significant": true
+    },
+    "odd_dataset_counts": {
+      "total_origins": 173,
+      "total_forecast_hours": 4152,
+      "daytime_hours": 2883,
+      "night_hours": 1269,
+      "mean_daytime_actual_sw_in_w_m2": 128.928528
+    }
+  },
+  "features": {
+    "total_feature_count": 31,
+    "stage5_2_base_features": [
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold",
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h"
+    ],
+    "stage6_6_new_features": [
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud"
+    ],
+    "feature_descriptions": {
+      "lwp_latest": "Surface-aware integrated Liquid Water Path (kg/m2) from 13 MEPS pressure levels truncated at model surface pressure",
+      "iwp_latest": "Surface-aware integrated Ice Water Path (kg/m2) from 13 MEPS pressure levels truncated at model surface pressure",
+      "lwp_x_cloud": "Interaction feature: lwp_latest * cloud_frac"
+    }
+  },
+  "model_hyperparameters": {
+    "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "locked_split_and_protocol": {
+    "origins_total": 347,
+    "even_train_origins": 174,
+    "odd_test_origins": 173,
+    "even_cv_gates_passed": 5,
+    "causal_night_mask": "(solar_elevation <= 0.0) | (clearsky_ghi == 0.0) -> prediction forced to 0.0 W/m2",
+    "data_sources": [
+      "SITES Nuolja 2024 hourly solar radiation (obs_SW_IN)",
+      "PVLIB clear-sky decomposition (clearsky_ghi, solar_elevation, solar_zenith, kt)",
+      "MEPS OpenData 2.5km deterministic 3D pressure-level cloud condensate fields (specific_cloud_liquid_water_content, specific_cloud_ice_water_content, surface_air_pressure)",
+      "Open-Meteo NWP forecast (fc_cloud_cover, fc_temperature_2m, fc_relative_humidity_2m)"
+    ]
+  },
+  "resolved_forensic_issues": {
+    "stage4_refit_discrepancy": "Initial ODD script refitted Stage 4 parameters on EVEN data, giving control MAE 39.3927 W/m2. Audit verified true frozen Stage 5.2 baseline uses pred_stage4_full, reproducing 39.0848 W/m2 exactly and yielding authoritative candidate MAE 37.0059 W/m2."
+  },
+  "artifact_paths": {
+    "champion_manifest": "stage6/stage6_6_lwp_iwp/POLARIS_STAGE6_6_CHAMPION_MANIFEST.json",
+    "champion_manifest_md": "stage6/stage6_6_lwp_iwp/POLARIS_STAGE6_6_CHAMPION_MANIFEST.md",
+    "forensic_audit_json": "stage6/stage6_6_lwp_iwp/control_discrepancy_forensic_audit.json",
+    "extracted_features_csv": "stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+    "odd_predictions_comparison_csv": "stage6/stage6_6_lwp_iwp/odd_predictions_comparison.csv",
+    "odd_evaluation_results_json": "stage6/stage6_6_lwp_iwp/odd_evaluation_results.json",
+    "gate_decision_json": "stage6/stage6_6_lwp_iwp/gate_decision.json",
+    "final_report_md": "stage6/stage6_6_lwp_iwp/final_stage6_6_report.md",
+    "master_handoff": "POLARIS_MASTER_HANDOFF.md"
+  },
+  "audit_status": "READ_ONLY_NUMERICAL_AUDIT_PASSED"
+}

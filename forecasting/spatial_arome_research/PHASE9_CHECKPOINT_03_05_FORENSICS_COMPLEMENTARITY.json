@@ -1,0 +1,157 @@
+{
+  "phase": "PHASE9_CHECKPOINT_03_05",
+  "phase3_h9_h12_forensics": {
+    "worst_single_horizon": "H12",
+    "h12_mae_w_m2": 64.837218,
+    "h12_rmse_w_m2": 101.007472,
+    "h12_bias_w_m2": -14.747066,
+    "h9_h12_share_of_total_abs_error_pct": 52.0,
+    "h9_h12_share_of_daytime_obs_pct": 37.4,
+    "worst_decile_origins_share_of_h9_h12_error_pct": 32.1,
+    "worst_5pct_origins_share_of_h9_h12_error_pct": 17.8,
+    "origins_net_underestimate_pct": 59,
+    "origins_net_overestimate_pct": 41,
+    "seasonal_concentration": {
+      "april_bias_w_m2": -41.31,
+      "may_bias_w_m2": -43.36,
+      "june_bias_w_m2": 13.47,
+      "note": "Apr-May show systematic large negative bias distinct from Jun-Sep"
+    },
+    "volatility_correlation_with_h9_h12_mae": 0.726,
+    "top10pct_worst_events_share_of_total_error_pct": 46.6,
+    "bias_reversal_h9_12_to_h14_15": {
+      "per_origin_correlation": 0.451,
+      "pct_origins_showing_clean_reversal": 21,
+      "pct_origins_same_direction_both_windows": 38,
+      "conclusion": "aggregate reversal is real but NOT a robust per-day mechanism; driven by different subsets of days, not consistent sign-flipping"
+    },
+    "verdict": "genuine error mode, concentrated in shoulder-season (Apr-May) cloud-transition/high-volatility conditions; not a simple uniform bias correction opportunity"
+  },
+  "phase4_model_by_model": {
+    "ranking_by_daytime_mae_w_m2": [
+      {
+        "model": "HGB 37-feature (Stage 8.1)",
+        "mae": 36.19,
+        "rmse": 64.22,
+        "bias": 1.44,
+        "nmae_pct": 28.07
+      },
+      {
+        "model": "HGB 40-feature (Stage 8.17A)",
+        "mae": 36.43,
+        "rmse": 64.61,
+        "bias": 0.54,
+        "nmae_pct": 28.25
+      },
+      {
+        "model": "HGB 42-feature (Stage 8.19)",
+        "mae": 36.49,
+        "rmse": 64.76,
+        "bias": 0.76,
+        "nmae_pct": 28.3
+      },
+      {
+        "model": "Dynamic Ensemble Hybrid (Stage 4.3)",
+        "mae": 43.45,
+        "rmse": 74.85,
+        "bias": -1.97,
+        "nmae_pct": 33.7
+      },
+      {
+        "model": "LightGBM 22-feature (Stage 3C)",
+        "mae": 55.61,
+        "rmse": 99.46,
+        "bias": -9.28,
+        "nmae_pct": 43.13
+      },
+      {
+        "model": "Chronos-2 Raw",
+        "mae": 56.46,
+        "rmse": 100.52,
+        "bias": -12.76,
+        "nmae_pct": 43.79
+      },
+      {
+        "model": "Kt Persistence 24h",
+        "mae": 56.55,
+        "rmse": 106.16,
+        "bias": -2.2,
+        "nmae_pct": 43.86
+      },
+      {
+        "model": "Chronos-2 Multivariate",
+        "mae": 56.96,
+        "rmse": 100.91,
+        "bias": -13.96,
+        "nmae_pct": 44.18
+      },
+      {
+        "model": "TimesFM 3.0",
+        "mae": 89.56,
+        "rmse": 155.73,
+        "bias": -76.62,
+        "nmae_pct": 69.47
+      },
+      {
+        "model": "Moirai 2.0",
+        "mae": 109.32,
+        "rmse": 184.06,
+        "bias": -104.37,
+        "nmae_pct": 84.79
+      }
+    ],
+    "best_model_per_horizon": "an HGB variant wins every horizon except H1 (TimesFM) and H23-H24 (Dynamic Ensemble Hybrid, marginal)",
+    "h9_h12_leader": "HGB 37-feature (or near-twin) at every horizon; next best structurally distinct model (Dynamic Ensemble Hybrid) is 19% worse at H12, foundation models 60-200% worse",
+    "note_evaluation_alignment": "all figures computed on the same 173 ODD dates and shared ground truth for every model, correcting the origin-count mismatch found in audit"
+  },
+  "phase5_complementarity": {
+    "signed_error_correlation_vs_HGB37": {
+      "HGB40": 0.98,
+      "HGB42": 0.99,
+      "DynamicEnsembleHybrid": 0.91,
+      "LightGBM22": 0.73,
+      "Chronos2Raw": 0.72,
+      "Chronos2Multivariate": 0.72,
+      "KtPersistence24h": 0.69,
+      "TimesFM3": 0.5,
+      "Moirai2": 0.42
+    },
+    "abs_error_correlation_vs_HGB37": {
+      "HGB40": 0.98,
+      "HGB42": 0.98,
+      "DynamicEnsembleHybrid": 0.89,
+      "LightGBM22": 0.72,
+      "Chronos2Raw": 0.7,
+      "Chronos2Multivariate": 0.7,
+      "KtPersistence24h": 0.7,
+      "TimesFM3": 0.55,
+      "Moirai2": 0.52
+    },
+    "overall_win_rate_vs_HGB37_pct": {
+      "HGB40": 36.2,
+      "HGB42": 36.8,
+      "DynamicEnsembleHybrid": 41.4,
+      "LightGBM22": 35.1,
+      "Chronos2Raw": 36.0,
+      "Chronos2Multivariate": 34.7,
+      "KtPersistence24h": 28.5,
+      "TimesFM3": 26.1,
+      "Moirai2": 21.8
+    },
+    "win_rate_during_HGB_worst10pct_events_pct": {
+      "HGB40": 52.2,
+      "HGB42": 51.9,
+      "DynamicEnsembleHybrid": 43.6,
+      "LightGBM22": 39.8,
+      "Chronos2Raw": 42.9,
+      "Chronos2Multivariate": 43.9,
+      "KtPersistence24h": 38.1,
+      "TimesFM3": 39.8,
+      "Moirai2": 40.1
+    },
+    "conclusion": "no model pair shows genuinely complementary (anti-correlated or near-zero-correlated) errors; all alternative models are both weaker overall AND relatively worse (not better) during HGB's hardest events; hard events are hard for every model, not specifically for HGB",
+    "ensemble_recommendation": "NOT JUSTIFIED with the current model inventory; do not proceed to weighted/horizon-specific ensembling of these specific models without new evidence of genuine error diversity"
+  },
+  "status": "PHASE_3_4_5_COMPLETE",
+  "next_phase": "PHASE 7 candidate solution design, informed by: (a) H9-H12 shoulder-season/high-volatility error mode from Phase 3, (b) no multi-model ensembling opportunity from Phase 5 -> favor single-model residual/regime-aware approaches over model blending"
+}

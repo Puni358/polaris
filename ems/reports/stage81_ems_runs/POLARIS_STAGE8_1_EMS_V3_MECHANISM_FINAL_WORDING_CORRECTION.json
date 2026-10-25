@@ -1,0 +1,78 @@
+{
+  "correction_id": "POLARIS_STAGE8_1_EMS_V3_MECHANISM_FINAL_WORDING_CORRECTION",
+  "correction_timestamp_utc": "2026-09-19T12:38:00Z",
+  "governance_status": "V3_MECHANISM_FINAL_WORDING_CORRECTED_AND_LOCKED",
+  "v3_mechanism_branch_status": "CLOSED",
+  "authoritative_execution_preservation": {
+    "raw_csv_path": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv",
+    "raw_csv_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "execution_json_sha256": "9bb13084b1db08c1ff322e6d4bdb4a1fbd62d534a0fa26c66b4c898bdba9d900",
+    "execution_md_sha256": "6d2bf01b26385ba9f403c6dc8e30e511577d97a52e0f918449b23c125ee6cda0",
+    "predictions_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "raw_evidence_modified": false,
+    "replays_executed": 0
+  },
+  "authoritative_primary_result": {
+    "statistical_unit": "ORIGIN (N=173 paired origins)",
+    "mean_control_fuel_l": 27.0,
+    "mean_v2_treatment_fuel_l": 37.27,
+    "mean_v3_class_f_fuel_l": 23.99,
+    "paired_v3_vs_v2_mean_diff_l": -13.28,
+    "paired_v3_vs_v2_median_diff_l": -13.5,
+    "paired_v3_vs_v2_bootstrap_95_ci_l": [-15.11, -11.48],
+    "wilcoxon_w_stat": 32.0,
+    "wilcoxon_p_value": 6.217937e-21
+  },
+  "wording_correction_audit": {
+    "original_overstatement": "Under gamma=1.0 ... full penalty weight ... leads the optimizer to expect late-afternoon solar generation and plan late battery charging, forcing pre-emptive diesel starts at t=0..3.",
+    "problematic_term": "forcing / forced / caused",
+    "reason_for_correction": "The experiment did not isolate an individual forecast horizon and demonstrate that removing or discounting that horizon alone causes the diesel decision.",
+    "approved_scientific_interpretation_locked": "Under gamma=1.0, the late-horizon forecast structure receives full operational-cost weighting. The h=14 forecast exhibits the largest positive bias in the examined horizon-level error analysis (+19.72 W/m²). Under gamma=0.95, its corresponding objective weight falls to 0.5133. The observed V2→V3 dispatch change is therefore strongly consistent with reduced optimizer sensitivity to these later-horizon forecast-dependent costs, although the contribution of any individual horizon was not independently isolated.",
+    "component_mechanism_classification": "B — STRONGLY SUPPORTED BUT NOT FULLY ISOLATED",
+    "classification_rationale": "Horizon-specific forecast error is directly observed; Class F objective weighting is directly established; gamma=0.95 materially reduces later-horizon objective weighting (w_13=0.5133); V2 and V3 exhibit different dispatch trajectories; the observed change is strongly consistent with reduced sensitivity to later-horizon forecast-dependent costs; however, the experiment did not independently manipulate h=14 or any individual horizon; therefore individual-horizon causal contribution is not established."
+  },
+  "causal_language_policy_status": {
+    "approved_terms": [
+      "strongly consistent with",
+      "provides evidence for",
+      "supports",
+      "preceded",
+      "was followed by",
+      "coincided with",
+      "associated with",
+      "reduced sensitivity",
+      "observed dispatch change"
+    ],
+    "prohibited_unsupported_terms": [
+      "forced",
+      "forcing",
+      "caused",
+      "induced",
+      "drove",
+      "guaranteed",
+      "proved that h=14 caused",
+      "the h=14 error caused the diesel start"
+    ]
+  },
+  "v3_mechanism_branch_closure_record": {
+    "V1": "ACCEPTED + FROZEN",
+    "V2": "ACCEPTED + FROZEN",
+    "V3": "VALID COMPLETED EXECUTION + FROZEN",
+    "V3_RAW_EVIDENCE": "FROZEN",
+    "V3_PRIMARY_RESULT": "FROZEN",
+    "V3_MECHANISM_EVIDENCE": "ACCEPTED WITH QUALIFICATIONS",
+    "V3_MECHANISM_WORDING": "CORRECTED + LOCKED",
+    "V3_MECHANISM_BRANCH": "CLOSED",
+    "V4": "DESIGN PHASE ONLY",
+    "V4_IMPLEMENTATION": "NOT STARTED",
+    "V4_EXECUTION": "NOT AUTHORIZED"
+  },
+  "v4_handoff_statement": "V3 mechanism evidence indicates that the Class F improvement is strongly consistent with reduced optimizer sensitivity to later-horizon forecast-dependent operational costs. Individual forecast-horizon contributions were not isolated. V4 design may therefore investigate mechanism-targeted alternatives, but must define each intervention and its parameterization prospectively before implementation or execution.",
+  "non_intervention_verification": {
+    "replays_executed": 0,
+    "code_modified": false,
+    "v4_implemented": false,
+    "v4_executed": false,
+    "parameters_tuned": false
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "audit_metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "audit_phase": "READ_ONLY_MODEL_EVIDENCE_AND_REPRODUCIBILITY_AUDIT",
+    "audit_timestamp": "2026-09-21T08:19:18Z",
+    "auditor": "Antigravity Autonomous Governance Auditor",
+    "authorization": "READ_ONLY_AUDIT_ONLY"
+  },
+  "governance_state": {
+    "TRAINING_SPECIFICATION_GOVERNANCE_REVIEW": "PASS",
+    "ARCHITECTURE_DECISION_REVIEW": "PASS",
+    "TRAINING_AUTHORIZATION": "CONSUMED_FOR_FIRST_CONTROLLED_BRANCH01_TRAINING_CAMPAIGN",
+    "AUDIT_AUTHORIZATION": "READ_ONLY_EVIDENCE_VERIFICATION_ONLY"
+  },
+  "dataset_verification": {
+    "raw_sites_path": "(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv",
+    "raw_sites_sha256": "6842e0f71b1b1d4a3ea40d56cb620fd88ca7daa1701177dbf8954680795f45f3",
+    "clearsky_path": "clear_sky/nuolja_clearsky_2024.csv",
+    "clearsky_sha256": "3cb49a4f475a34ec8a1ffac15b81a742ea3bfa0ef6cfa3296c00fdfbf6fbf918",
+    "n_observations_raw": 8832,
+    "n_supported_origins": 8784,
+    "status": "PASS"
+  },
+  "split_reconciliation": {
+    "train_origins": 5832,
+    "val_origins": 1440,
+    "test_origins": 1464,
+    "total_split_origins": 8736,
+    "embargo_excluded_origins": 48,
+    "reconciled_total_origins": 8784,
+    "embargo_hours": 24,
+    "status": "PASS"
+  },
+  "forensic_discrepancy_analysis": {
+    "val_mae": 26.3503,
+    "test_mae": 4.3687,
+    "train_target_mean": 115.06,
+    "val_target_mean": 47.3,
+    "test_target_mean": 1.43,
+    "train_zero_night_pct": 22.0,
+    "val_zero_night_pct": 39.95,
+    "test_zero_night_pct": 67.76,
+    "primary_cause": "POLAR_NIGHT_REGIME_SEASONAL_SHIFT",
+    "finding": "The held-out test distribution is strongly dominated by low-irradiance conditions: 67.76% of target points are exactly zero and 92.36% are <=5 W/m^2. Performance is materially better in this low-irradiance regime than at SW_IN >5 W/m^2. Therefore, the aggregate 4.3687 W/m^2 test MAE is not representative of the model's performance on substantial daytime irradiance."
+  },
+  "replay_verification": {
+    "hgb_max_abs_diff": 5.68e-14,
+    "hgb_replay_status": "PASS",
+    "ridge_max_abs_diff": 5.68e-14,
+    "ridge_replay_status": "PASS"
+  },
+  "reproducibility_classification": "A",
+  "reproducibility_label": "REPRODUCIBLE_AND_AUDIT_VERIFIED",
+  "scientific_validity": "PASS",
+  "model_promotion_gate": {
+    "MODEL_REVIEW_READY": "YES",
+    "EMS_INTEGRATION_AUTHORIZATION": "NOT_GRANTED",
+    "NEXT_GOVERNED_STEP": "MODEL_REVIEW_AND_EMS_INTEGRATION_AUTHORIZATION_REVIEW"
+  },
+  "final_assertions": {
+    "MODEL_EVIDENCE_AUDIT": "COMPLETE",
+    "DATASET_INTEGRITY": "PASS",
+    "FEATURE_CONTRACT": "PASS",
+    "TARGET_CONTRACT": "PASS",
+    "CAUSALITY": "PASS",
+    "NWP_CAUSALITY": "PASS",
+    "SPLIT_INTEGRITY": "PASS",
+    "TRAINING_ISOLATION": "PASS",
+    "VALIDATION_METRICS": "PASS",
+    "ARCHITECTURE_SELECTION": "PASS",
+    "TEST_FIREWALL": "PASS",
+    "TEST_RESULT": "VERIFIED",
+    "REPLAY_VERIFICATION": "PASS",
+    "MODEL_RUN_MANIFEST": "PASS",
+    "34_ITEM_CHECKLIST": "PASS",
+    "SOURCE_PROVENANCE": "PASS",
+    "CLEARSKY_CAUSALITY": "PASS",
+    "STAGE8_1_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "EMS_EXECUTED": "NO",
+    "RETRAINING_PERFORMED_DURING_AUDIT": "NO",
+    "HYPERPARAMETER_SEARCH_PERFORMED_DURING_AUDIT": "NO",
+    "REPRODUCIBILITY_CLASSIFICATION": "A",
+    "SCIENTIFIC_VALIDITY": "PASS",
+    "MODEL_REVIEW_READY": "YES",
+    "EMS_INTEGRATION_AUTHORIZATION": "NOT_GRANTED",
+    "NEXT_GOVERNED_STEP": "MODEL_REVIEW_AND_EMS_INTEGRATION_AUTHORIZATION_REVIEW"
+  }
+}

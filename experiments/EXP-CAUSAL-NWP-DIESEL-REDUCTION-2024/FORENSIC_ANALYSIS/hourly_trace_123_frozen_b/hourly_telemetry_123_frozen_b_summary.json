@@ -1,0 +1,35 @@
+{
+  "execution_timestamp_utc": "2026-10-05T04:26:33Z",
+  "elapsed_seconds": 592.9,
+  "origins_count": 123,
+  "total_hourly_rows": 2952,
+  "telemetry_artifact": {
+    "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/hourly_trace_123_frozen_b/hourly_telemetry_123_frozen_b.json",
+    "sha256": "13359f2742a0eecce14dc1c506ce0a933a9a5a441082120f83adf21d8c3f48e5",
+    "row_count": 2952
+  },
+  "critical_first": {
+    "total_critical_demand_wh": 34243200.0,
+    "total_served_critical_wh": 32007222.81,
+    "total_unmet_critical_wh": 2235977.19,
+    "reliability_pct": 93.470303
+  },
+  "exact_hourly_proportional": {
+    "total_critical_demand_wh": 34243200.0,
+    "total_served_critical_wh": 28659712.84,
+    "total_unmet_critical_wh": 5583487.16,
+    "reliability_pct": 83.69461
+  },
+  "flat_proportional_approximation": {
+    "reliability_pct": 82.28451,
+    "discrepancy_pp": 1.410101
+  },
+  "frozen_totals_verification": {
+    "total_diesel_fuel_liters": 6603.9802,
+    "total_unmet_load_wh": 7844419.08,
+    "total_served_load_wh": 36435580.83,
+    "total_curtailment_wh": 9477704.0,
+    "min_soc_pct": 54.97,
+    "all_123_origins_reproduced": true
+  }
+}

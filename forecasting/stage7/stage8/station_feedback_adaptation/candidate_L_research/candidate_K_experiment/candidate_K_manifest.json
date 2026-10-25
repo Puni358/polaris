@@ -1,0 +1,88 @@
+{
+  "experiment_name": "POLARIS Candidate K Causal EWMA Residual Correction",
+  "execution_timestamp": "2026-10-04T01:20:00Z",
+  "policy": "READ_ONLY_SOURCE_POLICY_STRICT",
+  "input_hashes": {
+    "MATRIX_38_FEATURE": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "FROZEN_F_PREDICTIONS": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "HISTORICAL_RESIDUAL_DATASET": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "RESIDUAL_PROVENANCE_MANIFEST": "4e0dfb08ace1ac605be6421776aa0de68c74b329620e11b565505b36c1543933",
+    "FROZEN_F_MODEL": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+  },
+  "output_hashes": {
+    "candidate_L_research/candidate_K_experiment/candidate_K_validation_results.csv": "e2bc8daac8fcf73e6efc22da82f0670bdb2ccb780f063f9f2b2415fdd7ccd7b7",
+    "candidate_L_research/candidate_K_experiment/candidate_K_predictions_2023.csv": "f0e4347fb2dc677003ee743e300e44ffa020bc2c0ac478f2619ceb58ed909037",
+    "candidate_L_research/candidate_K_experiment/candidate_K_blind_results.csv": "65d007d0ee2b2c9439ec41a0ae7c4e230e8e5ecd73276fbe614c13b19aefd261",
+    "candidate_L_research/candidate_K_experiment/candidate_K_report.md": "21f48931d7aa04bf1fbfa467fbf1b6abe1def3b3a1332154189e3bc864e69897"
+  },
+  "selected_hyperparameters": {
+    "variant": "A_global",
+    "alpha": 0.1,
+    "min_history": 1,
+    "max_clip": 75.0,
+    "scale_mode": "unscaled",
+    "val_mae_f": 42.65440961788032,
+    "val_mae_k": 38.85343422704675,
+    "val_mae_delta": 3.800975390833571,
+    "val_rmse_f": 80.5207233731642,
+    "val_rmse_k": 74.79419355271197,
+    "val_rmse_delta": 5.726529820452228,
+    "val_bias_f": 16.750799899062727,
+    "val_bias_k": 1.193322774917763
+  },
+  "validation_2022_summary": {
+    "frozen_f_mae": 42.65440961788032,
+    "candidate_k_mae": 38.85343422704675,
+    "mae_delta": 3.800975390833571,
+    "frozen_f_rmse": 80.5207233731642,
+    "candidate_k_rmse": 74.79419355271197,
+    "rmse_delta": 5.726529820452228
+  },
+  "blind_test_2023_summary": {
+    "overall": {
+      "frozen_f_mae": 53.86621887410835,
+      "candidate_k_mae": 48.4003339282157,
+      "mae_delta": 5.465884945892647,
+      "frozen_f_rmse": 90.49486155581587,
+      "candidate_k_rmse": 81.53346858349089,
+      "rmse_delta": 8.961392972324987,
+      "frozen_f_bias": 27.98918798920378,
+      "candidate_k_bias": 2.7604857457916374,
+      "mae_95_ci": [
+        4.6006295002312285,
+        6.373771975801269
+      ],
+      "rmse_95_ci": [
+        7.689435927376991,
+        10.1807566107681
+      ]
+    },
+    "daytime": {
+      "frozen_f_mae": 75.58677018785734,
+      "candidate_k_mae": 67.867863241398,
+      "mae_delta": 7.718906946459342,
+      "frozen_f_rmse": 107.51314725704337,
+      "candidate_k_rmse": 96.86080085113925,
+      "rmse_delta": 10.652346405904126,
+      "frozen_f_bias": 40.00919915600326,
+      "candidate_k_bias": 4.38129865598182,
+      "mae_95_ci": [
+        6.439042219850975,
+        8.949272873429905
+      ],
+      "rmse_95_ci": [
+        9.152393651345463,
+        12.108291875326316
+      ]
+    }
+  },
+  "status_block": {
+    "INPUT_HASH_GATE": "PASS",
+    "F_MODEL_CALLED": "NO",
+    "F_PREDICTIONS_REGENERATED": "NO",
+    "IMMUTABLE_DATA_MODIFIED": "NO",
+    "OUTPUT_ISOLATION": "PASS",
+    "CAUSALITY": "PASS",
+    "CANDIDATE_K": "QUALIFIED FOR NEXT GATE"
+  }
+}

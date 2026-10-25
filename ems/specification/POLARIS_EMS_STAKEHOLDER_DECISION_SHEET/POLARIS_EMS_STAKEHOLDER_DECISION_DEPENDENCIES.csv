@@ -1,0 +1,17 @@
+decision_id,upstream_dependency_ids,downstream_dependent_ids,dependency_type,logical_rationale,is_policy_ranking
+DECISION_01,NONE,"DECISION_02, DECISION_03",FOUNDATIONAL_DEFINITION,Cannot tier loads or set SLAs without initial classification,NO
+DECISION_02,DECISION_01,DECISION_03,SCOPE_DEFINITION,Shedding schedule requires load classification,NO
+DECISION_03,"DECISION_01, DECISION_02","DECISION_04, DECISION_05",SLA_DEFINITION,Service level target defines threshold for unmet load and outage duration,NO
+DECISION_04,DECISION_03,DECISION_06,BOUND_DEFINITION,Unmet load tolerance informs penalty vs constraint choice,NO
+DECISION_05,DECISION_03,DECISION_06,TIME_BOUND_DEFINITION,Outage duration limit informs horizon constraints,NO
+DECISION_06,"DECISION_04, DECISION_05","DECISION_14, DECISION_15",FORMULATION_TYPE,Reliability math formulation dictates objective structure,NO
+DECISION_07,NONE,"DECISION_08, DECISION_14",METRIC_DEFINITION,Diesel metric definition must precede budget caps and exchange rates,NO
+DECISION_08,DECISION_07,DECISION_14,BUDGET_CAP,Fuel budget cap bounds feasible trade-off space,NO
+DECISION_09,NONE,"DECISION_10, DECISION_15",KPI_DEFINITION,Renewable target informs curtailment treatment,NO
+DECISION_10,DECISION_09,DECISION_15,PENALTY_POLICY,Curtailment policy determines objective loss term,NO
+DECISION_11,NONE,"DECISION_12, DECISION_13",RESERVE_FLOOR,Emergency SOC floor bounds terminal SOC and uncertainty reserves,NO
+DECISION_12,DECISION_11,DECISION_13,HORIZON_BOUND,Terminal SOC policy constrains multi-period optimization,NO
+DECISION_13,"DECISION_11, DECISION_12",DECISION_15,UNCERTAINTY_MARGIN,Forecast uncertainty handling influences multi-objective trade-off,NO
+DECISION_14,"DECISION_06, DECISION_07, DECISION_08",DECISION_15,EXCHANGE_RATE,Fuel/reliability trade-off requires both reliability SLA and fuel metric,NO
+DECISION_15,DECISION_01..14,DECISION_16,COMPOSITE_HIERARCHY,Overall priority hierarchy requires all individual policy choices,NO
+DECISION_16,DECISION_15,FUTURE_EMS_SPECIFICATION,Approval authority signs off on final specification,NO

@@ -1,0 +1,70 @@
+{
+  "audit_version": "1.0.0",
+  "audit_type": "STATIC_READ_ONLY_INTEGRATION_AUDIT",
+  "timestamp": "2026-09-20T13:15:00Z",
+  "authoritative_stage81_artifact": {
+    "file_path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv",
+    "sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "size_bytes": 406701,
+    "model_name": "Stage8.1 U700+V700 Steering Wind Model",
+    "model_architecture": "HistGradientBoostingRegressor (37 features)",
+    "evaluation_split": "Official Held-Out ODD",
+    "total_origins": 173,
+    "total_forecast_hours": 4152,
+    "target_variable": "actual_SW_IN",
+    "prediction_column": "pred_stage8_1_candidate",
+    "unit": "W/m^2"
+  },
+  "current_integration_path_audit": {
+    "failure_point": "H10RuntimeAdapter.get_runtime_context() did not populate stage81_sw_in_forecast or sw_in_forecast in runtime_context.",
+    "consequence": "Stage81ForecastEngine.predict() silently defaulted to its internal clear-sky fallback formula (cs_ghi * 0.75), which was identical to LocalBaselineForecastEngine.",
+    "step10c_forensic_result": "STEP10C_FORENSIC_RESULT = B"
+  },
+  "minimal_integration_design": {
+    "loader_component": "Stage81PredictionLoader",
+    "injection_channel": "runtime_context['stage81_sw_in_forecast']",
+    "fail_closed_guard": "Stage81ForecastEngine raises RuntimeError if stage81_sw_in_forecast is missing or invalid; clear-sky fallback is disabled for Stage 8.1 treatment mode."
+  },
+  "forecast_alignment_audit": {
+    "sample_odd_origin": "2024-06-01 00:00:00+00:00",
+    "horizon_hours": 24,
+    "timestamp_mapping_valid": true,
+    "pv_power_d3_mapping": "min(SW_IN * 300 * 0.20 * 0.85, 60000.0) = min(SW_IN * 51.0, 60kW)"
+  },
+  "forecast_differentiation_proof": {
+    "differing_odd_origins_count": "173 / 173 (100%)",
+    "sample_origin_2024_06_01": {
+      "differing_forecast_points": 24,
+      "max_abs_solar_diff_w_m2": 220.66,
+      "mean_abs_solar_diff_w_m2": 97.74,
+      "first_differing_timestamp": "2024-06-01 00:00:00+00:00",
+      "last_differing_timestamp": "2024-06-01 23:00:00+00:00"
+    },
+    "wind_treatment_status": "AUTHORIZED_BASELINE_PROXY (Identical in treatment & control)",
+    "demand_treatment_status": "SYNTHETIC_H10_DEMAND (Identical in treatment & control)",
+    "single_variable_treatment_preserved": true
+  },
+  "treatment_identity_correction": {
+    "previous_inaccurate_label": "POLARIS_STAGE8_1_EMS_V4G",
+    "proposed_treatment_policy_id": "POLARIS_STAGE8_1_H10_ML_FORECAST_TREATMENT",
+    "control_policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL"
+  },
+  "truth_firewall_audit": {
+    "status": "PASS",
+    "future_ground_truth_leakage": false,
+    "simulator_isolation": true
+  },
+  "provenance_and_fail_closed_requirements": {
+    "stage81_ml_forecast_injected": true,
+    "prediction_csv_sha256_verified": true,
+    "fail_closed_on_missing_artifact": true
+  },
+  "execution_audit": {
+    "milp_solves_completed": 0,
+    "mpc_cycles_completed": 0,
+    "simulator_steps_completed": 0,
+    "source_code_modifications": 0,
+    "frozen_evidence_modifications": 0
+  },
+  "STEP10D_INTEGRATION_STATUS": "READY_FOR_AUTHORIZATION"
+}

@@ -1,0 +1,42 @@
+{
+  "register_name": "POLARIS_EMS_DEC004_D1_D6_GOVERNANCE_STATUS",
+  "version": "1.0.0",
+  "status": "OPEN_FOR_HUMAN_DECISION",
+  "package_id": "POLARIS_EMS_DEC004_UNKNOWN_INVALID_DECISION_PACKAGE",
+  "decision_id": "DEC-004",
+  "option_d_status": "CANDIDATE_ONLY",
+  "sub_decisions": {
+    "D1_protected_critical_load_definition": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "established_evidence": "3 conceptual categories (heating, water, comms)",
+      "selected_option": "UNRESOLVED"
+    },
+    "D2_battery_behavior_under_option_d": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "established_evidence": "Excess diesel charging proposed; discharge unresolved",
+      "selected_option": "UNRESOLVED"
+    },
+    "D3_zero_renewable_and_diesel_unavailable": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "established_evidence": "0 kW active generation supply state",
+      "selected_option": "UNRESOLVED"
+    },
+    "D4_critical_load_shortfall_shedding": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "established_evidence": "Supply deficit (P_supply < P_critical) mechanics",
+      "selected_option": "UNRESOLVED"
+    },
+    "D5_option_d_max_duration_and_escalation": {
+      "status": "HUMAN_DECISION_REQUIRED",
+      "established_evidence": "Degraded mode watchdog boundary",
+      "selected_option": "UNRESOLVED"
+    },
+    "D6_diesel_minimum_excess_disposition": {
+      "status": "HUMAN_PROPOSED_DIRECTION",
+      "established_evidence": "Human direction: charge battery where feasible, then curtail",
+      "selected_option": "HUMAN_PROPOSED_DIRECTION"
+    }
+  },
+  "implementation_authorization": "NOT_GRANTED",
+  "execution_status": "NOT_EXECUTED"
+}

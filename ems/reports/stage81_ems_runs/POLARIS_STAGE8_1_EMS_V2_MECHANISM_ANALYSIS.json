@@ -1,0 +1,1427 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V2_MECHANISM_ANALYSIS_MANIFEST",
+  "timestamp": "2026-09-19T16:06:08+05:30",
+  "mechanism_findings": {
+    "M1_diesel_commitment": {
+      "treatment_startups": 178,
+      "control_startups": 346,
+      "delta_startups": -168,
+      "treatment_shutdowns": 178,
+      "control_shutdowns": 346,
+      "delta_shutdowns": -168,
+      "treatment_diesel_timesteps": 400,
+      "control_diesel_timesteps": 346,
+      "delta_diesel_timesteps": 54,
+      "observed_mechanism_finding": "Treatment induces additional diesel commitment and startup events under over-optimistic morning/midday solar forecasts, which subsequently force extended minimum runtime or diesel operation."
+    },
+    "M2_M4_battery_soc_positioning": {
+      "mean_soc_difference_pct": -3.1996,
+      "max_soc_difference_pct": 59.59,
+      "observed_mechanism_finding": "Treatment optimistic solar forecasts cause the optimizer to hold battery SOC lower or delay battery pre-charging, leaving the battery under-positioned when actual solar generation falls short."
+    },
+    "M3_renewable_curtailment": {
+      "total_curtailment_difference_kwh": -20834.74,
+      "observed_mechanism_finding": "Increased curtailment observed when diesel generator is prematurely committed and cannot be turned off due to minimum runtime constraints while solar power is available."
+    },
+    "M5_forecast_shape_interaction": {
+      "observed_mechanism_finding": "Complete 24-step forecast horizon shapes demonstrate that multi-step over-estimation in horizons h=3..12 has a compounding effect on MILP unit commitment decisions compared to H1 error alone."
+    },
+    "heterogeneity_analysis": {
+      "positive_delta_origins_count": 95,
+      "negative_delta_origins_count": 77,
+      "zero_delta_origins_count": 1,
+      "positive_delta_mean_fuel_diff_l": 36.0633,
+      "negative_delta_mean_fuel_diff_l": -21.423,
+      "observed_finding": "In 95 origins (54.9%), treatment over-forecasting solar leads to increased diesel usage (+21.64 L mean). In 77 origins (44.5%), treatment accurately predicts solar drops, allowing diesel reduction (-13.06 L mean)."
+    }
+  },
+  "divergence_summary": [
+    {
+      "origin_id": 1,
+      "delta_diesel_fuel_liters": 57.65,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 2,
+      "delta_diesel_fuel_liters": 57.7,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 3,
+      "delta_diesel_fuel_liters": 57.25,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 4,
+      "delta_diesel_fuel_liters": 57.38,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 5,
+      "delta_diesel_fuel_liters": 56.94,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 6,
+      "delta_diesel_fuel_liters": 57.16,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 7,
+      "delta_diesel_fuel_liters": 56.91,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 8,
+      "delta_diesel_fuel_liters": 56.73,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 9,
+      "delta_diesel_fuel_liters": 55.34,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 10,
+      "delta_diesel_fuel_liters": 40.54,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 11,
+      "delta_diesel_fuel_liters": 40.08,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 12,
+      "delta_diesel_fuel_liters": 37.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 13,
+      "delta_diesel_fuel_liters": 53.61,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 14,
+      "delta_diesel_fuel_liters": 26.96,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 15,
+      "delta_diesel_fuel_liters": 34.42,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 16,
+      "delta_diesel_fuel_liters": 38.4,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 17,
+      "delta_diesel_fuel_liters": 29.19,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 18,
+      "delta_diesel_fuel_liters": 26.18,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 19,
+      "delta_diesel_fuel_liters": 24.68,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 20,
+      "delta_diesel_fuel_liters": 17.69,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 21,
+      "delta_diesel_fuel_liters": 17.31,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 22,
+      "delta_diesel_fuel_liters": 15.55,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 23,
+      "delta_diesel_fuel_liters": 15.38,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 24,
+      "delta_diesel_fuel_liters": 4.18,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 25,
+      "delta_diesel_fuel_liters": 9.14,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 26,
+      "delta_diesel_fuel_liters": 4.74,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 27,
+      "delta_diesel_fuel_liters": -6.57,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 28,
+      "delta_diesel_fuel_liters": 13.55,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 29,
+      "delta_diesel_fuel_liters": -3.87,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 30,
+      "delta_diesel_fuel_liters": 3.99,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 31,
+      "delta_diesel_fuel_liters": 5.19,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 32,
+      "delta_diesel_fuel_liters": -4.38,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 33,
+      "delta_diesel_fuel_liters": -10.97,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 34,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 35,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 36,
+      "delta_diesel_fuel_liters": -4.75,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 37,
+      "delta_diesel_fuel_liters": 0.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 38,
+      "delta_diesel_fuel_liters": 21.64,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 39,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 40,
+      "delta_diesel_fuel_liters": -4.24,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 41,
+      "delta_diesel_fuel_liters": -4.89,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 42,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 43,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 44,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 45,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 46,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 47,
+      "delta_diesel_fuel_liters": 8.96,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 5,
+      "first_diesel_divergence_step": 4,
+      "first_curtailment_divergence_step": 6
+    },
+    {
+      "origin_id": 48,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 49,
+      "delta_diesel_fuel_liters": 9.07,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 50,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 51,
+      "delta_diesel_fuel_liters": -1.52,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 52,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 53,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 54,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 55,
+      "delta_diesel_fuel_liters": 8.6,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 4,
+      "first_diesel_divergence_step": 4,
+      "first_curtailment_divergence_step": 3
+    },
+    {
+      "origin_id": 56,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 4,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 57,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 58,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 59,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 60,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 4,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 61,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 62,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 63,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 1,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 64,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 1,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 65,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 1,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 66,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 67,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 68,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 69,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 70,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 71,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 72,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 73,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 74,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 75,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 76,
+      "delta_diesel_fuel_liters": -1.6,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 77,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 78,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 79,
+      "delta_diesel_fuel_liters": -1.19,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 80,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 81,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 82,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 83,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 84,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 85,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 86,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 87,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 88,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 0,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 89,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 1,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 90,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 1,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 91,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 1,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 92,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 2,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 1
+    },
+    {
+      "origin_id": 93,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 94,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 95,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 96,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 2,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 97,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 98,
+      "delta_diesel_fuel_liters": 3.48,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 99,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 4,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 100,
+      "delta_diesel_fuel_liters": -4.35,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 101,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 102,
+      "delta_diesel_fuel_liters": 10.11,
+      "first_forecast_divergence_step": 3,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 103,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 104,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 105,
+      "delta_diesel_fuel_liters": 5.1,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 106,
+      "delta_diesel_fuel_liters": -13.5,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 107,
+      "delta_diesel_fuel_liters": 4.8,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 108,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 109,
+      "delta_diesel_fuel_liters": 10.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 110,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 4,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 111,
+      "delta_diesel_fuel_liters": -4.35,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 112,
+      "delta_diesel_fuel_liters": 6.05,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 113,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 114,
+      "delta_diesel_fuel_liters": 29.92,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 115,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 116,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 117,
+      "delta_diesel_fuel_liters": 5.19,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 118,
+      "delta_diesel_fuel_liters": 17.09,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 119,
+      "delta_diesel_fuel_liters": 5.66,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 120,
+      "delta_diesel_fuel_liters": -27.0,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 121,
+      "delta_diesel_fuel_liters": 13.4,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 122,
+      "delta_diesel_fuel_liters": 14.35,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 123,
+      "delta_diesel_fuel_liters": -3.89,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 124,
+      "delta_diesel_fuel_liters": 27.18,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 125,
+      "delta_diesel_fuel_liters": 15.55,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 126,
+      "delta_diesel_fuel_liters": 5.76,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 127,
+      "delta_diesel_fuel_liters": 17.35,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 128,
+      "delta_diesel_fuel_liters": 17.36,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 129,
+      "delta_diesel_fuel_liters": 26.93,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 130,
+      "delta_diesel_fuel_liters": 6.57,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 131,
+      "delta_diesel_fuel_liters": 17.36,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 132,
+      "delta_diesel_fuel_liters": 36.42,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 133,
+      "delta_diesel_fuel_liters": 17.78,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 134,
+      "delta_diesel_fuel_liters": 18.62,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 135,
+      "delta_diesel_fuel_liters": 26.17,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 136,
+      "delta_diesel_fuel_liters": 37.3,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 137,
+      "delta_diesel_fuel_liters": 25.95,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 138,
+      "delta_diesel_fuel_liters": 40.5,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 139,
+      "delta_diesel_fuel_liters": 38.3,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 140,
+      "delta_diesel_fuel_liters": 39.9,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 141,
+      "delta_diesel_fuel_liters": 54.87,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 142,
+      "delta_diesel_fuel_liters": 54.8,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 143,
+      "delta_diesel_fuel_liters": 41.42,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 144,
+      "delta_diesel_fuel_liters": 55.34,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 145,
+      "delta_diesel_fuel_liters": 55.3,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 146,
+      "delta_diesel_fuel_liters": 56.61,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 147,
+      "delta_diesel_fuel_liters": 56.98,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 148,
+      "delta_diesel_fuel_liters": 56.99,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 149,
+      "delta_diesel_fuel_liters": 57.03,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 150,
+      "delta_diesel_fuel_liters": 57.27,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 151,
+      "delta_diesel_fuel_liters": 43.29,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 152,
+      "delta_diesel_fuel_liters": 57.67,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 153,
+      "delta_diesel_fuel_liters": 57.53,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 154,
+      "delta_diesel_fuel_liters": 57.93,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 155,
+      "delta_diesel_fuel_liters": 57.9,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 156,
+      "delta_diesel_fuel_liters": 57.9,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 157,
+      "delta_diesel_fuel_liters": 57.94,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 158,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 159,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 160,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 161,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 162,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 163,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 164,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 165,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 166,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 167,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 168,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 169,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 170,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 171,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 172,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    },
+    {
+      "origin_id": 173,
+      "delta_diesel_fuel_liters": 58.11,
+      "first_forecast_divergence_step": 5,
+      "first_soc_divergence_step": 1,
+      "first_diesel_divergence_step": 2,
+      "first_curtailment_divergence_step": 0
+    }
+  ],
+  "hashes": {
+    "mechanism_analysis_csv_sha256": "7af2b56b34ede00366542d1581394c9ad141952983b5528caae527b272ca927b"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "STAGE8.19 = NOT RECONSTRUCTABLE",
+  "reason": "Real raw ABIS ZTD observations and real AROME data are missing",
+  "synthetic_fallback_allowed": false,
+  "preconditions_met": false
+}

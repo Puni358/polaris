@@ -1,0 +1,98 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#09090b;overflow:hidden}
+#s{width:1920px;height:1080px;position:relative;font-family:"Noto Sans","Liberation Sans","DejaVu Sans",sans-serif;color:#f4f4f5;background:radial-gradient(ellipse at 50% 120%,#0b1c2a 0%,#09090b 60%)}
+.abs{position:absolute;left:0;width:1920px;text-align:center}
+.big{font-weight:800;letter-spacing:-0.02em}
+.mono{font-family:"DejaVu Sans Mono","Liberation Mono",monospace;font-variant-numeric:tabular-nums}
+canvas{position:absolute;left:0;top:0}
+</style></head><body><div id="s">
+<canvas id="bg" width="1920" height="1080"></canvas>
+<div id="t1" class="abs big" style="top:330px;font-size:150px;color:#2ee6ff"></div>
+<div id="t2" class="abs big" style="top:520px;font-size:78px"></div>
+<div id="t3" class="abs big" style="top:640px;font-size:60px;color:#ffb21f"></div>
+<div id="cnt" class="abs big mono" style="top:360px;font-size:230px;color:#ffb21f"></div>
+<div id="cl" class="abs" style="top:290px;font-size:54px;color:#d4d4d8;font-weight:600"></div>
+<div id="cl2" class="abs" style="top:640px;font-size:54px;color:#d4d4d8;font-weight:600"></div>
+<div id="cap" class="abs big" style="top:70px;font-size:64px"></div>
+<canvas id="ch" width="1920" height="1080"></canvas>
+<div id="pct" class="abs big" style="top:70px;font-size:230px;color:#3df0a0;text-shadow:0 0 60px #3df0a0aa"></div>
+<div id="zero" class="abs big" style="top:300px;font-size:200px;color:#3df0a0;text-shadow:0 0 60px #3df0a0aa"></div>
+<div id="co2" class="abs" style="top:620px;font-size:70px;font-weight:700"></div>
+<div id="logo" class="abs big" style="top:380px;font-size:230px;letter-spacing:0.08em;text-shadow:0 0 70px #2ee6ffaa"></div>
+<div id="tag" class="abs" style="top:660px;font-size:68px;font-weight:600;color:#d4d4d8"></div>
+</div>
+<script>
+const W=[{"ghi": 0.0, "soc": 36.63, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 22.5, "dz": 0.0, "dem": 36.0}, {"ghi": 0.24, "soc": 45.51, "dz": 88.66, "dem": 45.0}, {"ghi": 5.8, "soc": 62.84, "dz": 70.79, "dem": 38.4}, {"ghi": 17.68, "soc": 83.13, "dz": 75.26, "dem": 38.4}, {"ghi": 26.17, "soc": 94.47, "dz": 51.73, "dem": 38.4}, {"ghi": 22.44, "soc": 82.38, "dz": 0.0, "dem": 38.4}, {"ghi": 12.54, "soc": 72.72, "dz": 0.0, "dem": 38.4}, {"ghi": 4.77, "soc": 64.85, "dz": 0.0, "dem": 38.4}, {"ghi": 0.39, "soc": 57.57, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 49.56, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 39.56, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 24.24, "dz": 0.0, "dem": 43.2}, {"ghi": 0.0, "soc": 41.87, "dz": 73.32, "dem": 45.0}, {"ghi": 0.0, "soc": 64.87, "dz": 79.66, "dem": 36.0}, {"ghi": 0.0, "soc": 87.87, "dz": 81.0, "dem": 36.0}, {"ghi": 0.0, "soc": 76.96, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 68.05, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 64.46, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 63.59, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 64.54, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 66.11, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 67.05, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 66.18, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 59.99, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 45.86, "dz": 0.0, "dem": 36.0}, {"ghi": 0.15, "soc": 24.85, "dz": 0.0, "dem": 45.0}, {"ghi": 3.34, "soc": 47.7, "dz": 82.91, "dem": 38.4}, {"ghi": 8.89, "soc": 70.21, "dz": 80.54, "dem": 38.4}, {"ghi": 13.63, "soc": 92.74, "dz": 76.67, "dem": 38.4}, {"ghi": 13.52, "soc": 80.39, "dz": 0.0, "dem": 38.4}, {"ghi": 8.68, "soc": 70.63, "dz": 0.0, "dem": 38.4}, {"ghi": 2.89, "soc": 62.7, "dz": 0.0, "dem": 38.4}, {"ghi": 0.17, "soc": 55.43, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 47.41, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 37.41, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 60.41, "dz": 78.2, "dem": 43.2}, {"ghi": 0.0, "soc": 83.35, "dz": 84.85, "dem": 45.0}, {"ghi": 0.0, "soc": 67.23, "dz": 0.0, "dem": 36.0}, {"ghi": 0.0, "soc": 50.38, "dz": 0.0, "dem": 36.0}, {"ghi": 0.0, "soc": 39.48, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 30.56, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 26.98, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 26.11, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 27.05, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 28.62, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 29.57, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 28.7, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 22.5, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 45.5, "dz": 76.0, "dem": 36.0}, {"ghi": 0.08, "soc": 64.47, "dz": 79.9, "dem": 45.0}, {"ghi": 2.52, "soc": 87.36, "dz": 83.03, "dem": 38.4}, {"ghi": 4.04, "soc": 70.05, "dz": 0.0, "dem": 38.4}, {"ghi": 17.56, "soc": 81.39, "dz": 52.15, "dem": 38.4}, {"ghi": 19.67, "soc": 69.22, "dz": 0.0, "dem": 38.4}, {"ghi": 11.9, "soc": 59.55, "dz": 0.0, "dem": 38.4}, {"ghi": 1.92, "soc": 51.59, "dz": 0.0, "dem": 38.4}, {"ghi": 0.14, "soc": 44.31, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 36.3, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 26.3, "dz": 0.0, "dem": 38.4}, {"ghi": 0.0, "soc": 37.81, "dz": 53.23, "dem": 43.2}, {"ghi": 0.0, "soc": 60.81, "dz": 85.0, "dem": 45.0}, {"ghi": 0.0, "soc": 83.81, "dz": 79.66, "dem": 36.0}, {"ghi": 0.0, "soc": 66.96, "dz": 0.0, "dem": 36.0}, {"ghi": 0.0, "soc": 56.06, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 47.15, "dz": 0.0, "dem": 26.4}, {"ghi": 0.0, "soc": 43.56, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 42.69, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 43.64, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 45.2, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 46.15, "dz": 0.0, "dem": 21.6}, {"ghi": 0.0, "soc": 45.28, "dz": 0.0, "dem": 21.6}];
+const T=parseFloat(new URLSearchParams(location.search).get('t')||'0');
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), ease=x=>1-Math.pow(1-cl(x),3), io=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const seg=(a,b)=>cl((T-a)/(b-a));
+function show(id,html,t0,t1,fin=0.45,fout=0.4,rise=24){const e=document.getElementById(id);
+ if(T<t0||T>t1){e.style.opacity=0;e.innerHTML='';return}
+ e.innerHTML=html;const a=ease((T-t0)/fin),b=ease((t1-T)/fout);e.style.opacity=Math.min(a,b);
+ e.style.transform=`translateY(${(1-a)*rise}px)`}
+// background: stars + aurora
+const bg=document.getElementById('bg').getContext('2d');
+let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const stars=[...Array(160)].map(()=>({x:rnd()*1920,y:rnd()*700,r:rnd()*2+.4,p:rnd()*6}));
+stars.forEach(s=>{const a=.35+.35*Math.sin(T*1.5+s.p);bg.fillStyle=`rgba(230,240,255,${a*(1-seg(14,16)*0.0)})`;bg.beginPath();bg.arc(s.x,s.y,s.r,0,7);bg.fill()});
+const aur=Math.max(0,1-seg(3,5.5))*0.9+0.18;
+for(let k=0;k<3;k++){const g=bg.createLinearGradient(0,150,0,640);const c=['61,240,160','46,230,255','183,156,255'][k];
+ g.addColorStop(0,`rgba(${c},0)`);g.addColorStop(.5,`rgba(${c},${.22*aur})`);g.addColorStop(1,`rgba(${c},0)`);bg.fillStyle=g;bg.beginPath();bg.moveTo(0,640);
+ for(let x=0;x<=1920;x+=40){bg.lineTo(x,330+k*40+Math.sin(x/260+T*.5+k*2)*70+Math.sin(x/90+T*.9)*18)}bg.lineTo(1920,640);bg.closePath();bg.fill()}
+// S1
+show('t1','68.4°N',0.2,3.4,.6,.4);
+show('t2','For weeks, the sun never rises.',0.9,3.3);
+show('t3','So the generator runs.',2.3,3.4,.4,.35);
+// S2 counter
+{const e=document.getElementById('cnt'),l=document.getElementById('cl'),l2=document.getElementById('cl2');
+ if(T>=3.4&&T<6.5){const a=ease((T-3.4)/.4),b=ease((6.5-T)/.35),o=Math.min(a,b);const v=Math.round(38405*ease(seg(3.5,5.9)));
+  e.style.opacity=o;e.textContent=v.toLocaleString('en-US')+' L';e.style.textShadow=`0 0 ${40+30*Math.sin(T*6)}px #ffb21f88`;
+  l.style.opacity=o;l.textContent='A simple controller burns';l2.style.opacity=Math.min(o,ease((T-5.3)/.4));l2.textContent='in one year.'}
+ else{e.style.opacity=0;l.style.opacity=0;l2.style.opacity=0}}
+// S3 chart
+const ch=document.getElementById('ch'),c=ch.getContext('2d');c.clearRect(0,0,1920,1080);
+function chart(){ if(T<6.4||T>10.4)return;const o=Math.min(ease((T-6.4)/.5),ease((10.4-T)/.4));c.globalAlpha=o;
+ const x0=170,x1=1750,y0=250,y1=900,n=W.length,prog=ease(seg(6.6,9.6));
+ const X=i=>x0+(x1-x0)*i/(n-1);
+ c.strokeStyle='#3f3f46';c.lineWidth=2;c.setLineDash([6,8]);for(let k=0;k<=4;k++){const y=y0+(y1-y0)*k/4;c.beginPath();c.moveTo(x0,y);c.lineTo(x1,y);c.stroke()}c.setLineDash([]);
+ const last=Math.floor(prog*(n-1));
+ const Y=(v,m)=>y1-(y1-y0)*v/m;
+ // sun fill
+ c.beginPath();c.moveTo(X(0),y1);for(let i=0;i<=last;i++)c.lineTo(X(i),Y(W[i].ghi,40));c.lineTo(X(last),y1);c.closePath();
+ let g=c.createLinearGradient(0,y0,0,y1);g.addColorStop(0,'rgba(46,230,255,.6)');g.addColorStop(1,'rgba(46,230,255,.03)');c.fillStyle=g;c.fill();
+ c.strokeStyle='#2ee6ff';c.lineWidth=6;c.shadowColor='#2ee6ff';c.shadowBlur=14;c.beginPath();for(let i=0;i<=last;i++){i?c.lineTo(X(i),Y(W[i].ghi,40)):c.moveTo(X(i),Y(W[i].ghi,40))}c.stroke();
+ // demand
+ c.strokeStyle='#ffffff';c.lineWidth=5;c.shadowColor='#fff';c.beginPath();for(let i=0;i<=last;i++){const y=Y(W[i].dem,60);if(i){c.lineTo(X(i),Y(W[i-1].dem,60));c.lineTo(X(i),y)}else c.moveTo(X(i),y)}c.stroke();
+ // diesel
+ c.strokeStyle='#ff8a3d';c.lineWidth=6;c.shadowColor='#ff8a3d';c.beginPath();for(let i=0;i<=last;i++){const y=Y(W[i].dz,100);if(i){c.lineTo(X(i),Y(W[i-1].dz,100));c.lineTo(X(i),y)}else c.moveTo(X(i),y)}c.stroke();
+ // soc
+ c.strokeStyle='#3df0a0';c.lineWidth=8;c.shadowColor='#3df0a0';c.shadowBlur=18;c.beginPath();for(let i=0;i<=last;i++){i?c.lineTo(X(i),Y(W[i].soc,100)):c.moveTo(X(i),Y(W[i].soc,100))}c.stroke();
+ c.shadowBlur=0;c.fillStyle='#3df0a0';c.beginPath();c.arc(X(last),Y(W[last].soc,100),13,0,7);c.fill();
+ // legend
+ c.font='700 36px "Noto Sans",sans-serif';c.textAlign='left';
+ [['#2ee6ff','Sunlight'],['#3df0a0','Battery'],['#ff8a3d','Diesel'],['#ffffff','Demand']].forEach((l,i)=>{c.fillStyle=l[0];c.fillRect(170+i*330,935,48,10);c.fillStyle='#e4e4e7';c.fillText(l[1],232+i*330,952)});
+ c.globalAlpha=1}
+chart();
+show('cap','POLARIS plans 24 hours ahead. Diesel is the last resort.',6.5,10.3,.5,.4,10);
+document.getElementById('cap').style.fontSize='54px';
+// S4 bars
+{const p=document.getElementById('pct');const bars=T>=10.2&&T<14.4;const o=bars?Math.min(ease((T-10.2)/.4),ease((14.4-T)/.35)):0;
+ c.globalAlpha=o;if(bars){const gT=ease(seg(10.4,11.4)),sh=ease(seg(11.6,12.8));
+  const bx=330,bw=1260,by=[450,650],bh=110;
+  c.fillStyle='#71717a';c.fillRect(bx,by[0],bw*gT,bh);
+  const gv=bw*(1-0.3*sh)*gT;const gr=c.createLinearGradient(bx,0,bx+bw,0);gr.addColorStop(0,'#3df0a0');gr.addColorStop(1,'#22c07a');c.fillStyle=gr;c.shadowColor='#3df0a0';c.shadowBlur=24;c.fillRect(bx,by[1],gv,bh);c.shadowBlur=0;
+  c.font='700 46px "Noto Sans",sans-serif';c.fillStyle='#e4e4e7';c.textAlign='left';c.fillText('Simple controller',bx,by[0]-20);c.fillText('POLARIS',bx,by[1]-20);
+  c.font='800 60px "DejaVu Sans Mono",monospace';c.fillStyle='#09090b';c.fillText(Math.round(38405*gT).toLocaleString('en-US')+' L',bx+30,by[0]+78);
+  c.fillText(Math.round(38405-(38405-26890)*sh).toLocaleString('en-US')+' L',bx+30,by[1]+78)}
+ c.globalAlpha=1;
+ if(bars){p.style.opacity=Math.min(o,ease((T-12.1)/.35));p.textContent='−30%';p.style.transform=`scale(${1+0.12*(1-ease((T-12.1)/.5))})`}else p.style.opacity=0}
+// S5
+{const z=document.getElementById('zero');const co=document.getElementById('co2');
+ if(T>=14.2&&T<16.8){const a=ease((T-14.2)/.4),b=ease((16.8-T)/.3);z.style.opacity=Math.min(a,b);z.textContent='0 kWh';z.style.transform=`translateY(${(1-a)*24}px)`;
+  co.style.opacity=Math.min(ease((T-14.9)/.4),b);co.innerHTML='of load lost &nbsp;·&nbsp; <span style="color:#3df0a0">31 t</span> of CO₂ not emitted'}else{z.style.opacity=0;co.style.opacity=0}}
+// S6
+show('logo','POLARIS',16.6,18.2,.55,.01,16);
+show('tag','Predict the sun. Plan the night.',17.0,18.2,.45,.01,14);
+document.getElementById('t2').style.opacity=document.getElementById('t2').style.opacity;
+window.READY=true;
+</script></body></html>

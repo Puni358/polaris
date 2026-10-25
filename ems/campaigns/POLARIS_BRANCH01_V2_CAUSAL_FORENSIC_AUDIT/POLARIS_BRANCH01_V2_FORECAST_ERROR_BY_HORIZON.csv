@@ -1,0 +1,2 @@
+model_id,horizon,n_samples,mean_control_solar_w,mean_treatment_solar_w,mean_actual_solar_w,control_mae_w,treatment_mae_w,mae_diff_w,control_rmse_w,treatment_rmse_w,control_bias_w,treatment_bias_w
+POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1,H1,4152,12945.245,4582.453,4565.219,9122.961,808.121,-8314.841,13143.122,1703.152,8380.026,17.234

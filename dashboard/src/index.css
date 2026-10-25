@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  background-color: #09090b;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui;
+  color: #e4e4e7;
+}
+
+.tnum {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #121214; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+
+@keyframes spin-blades { to { transform: rotate(360deg); } }
+@keyframes flow-dash { to { stroke-dashoffset: -28; } }
+.flow-anim { animation: flow-dash 0.9s linear infinite; }
+.px-cell { transition: background-color 0.35s ease, box-shadow 0.35s ease; }
+
+@keyframes pulse-solve { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+.pulse-solve { animation: pulse-solve 0.9s ease-in-out infinite; }
+@keyframes fw-pass { from { left: 2%; } to { left: 73%; } }
+@keyframes fw-bounce { 0% { left: 98%; } 45% { left: 79%; } 55% { left: 79%; } 100% { left: 98%; } }
+@keyframes glow-emerald { 0%, 100% { box-shadow: 0 0 10px #10b98188; } 50% { box-shadow: 0 0 22px #10b981; } }
+
+
+/* brighter chart lines: soft glow so thin strokes stay visible on the dark panels */
+.recharts-line-curve, .recharts-area-curve { filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.28)); stroke-linecap: round; stroke-linejoin: round; }
+.recharts-reference-line-line { filter: drop-shadow(0 0 2px rgba(255, 178, 31, 0.5)); }

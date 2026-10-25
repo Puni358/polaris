@@ -1,0 +1,49 @@
+{
+  "status": "BLOCKED_FAIL_CLOSED_UNKNOWN_INVALID",
+  "cli_input": {
+    "critical_load_kw_user_supplied": 11.6,
+    "critical_load_w_user_supplied": 11600.0,
+    "label": "SYNTHETIC_USER_SUPPLIED_SCENARIO_PARAMETER_FOR_THIS_RUN_ONLY",
+    "provenance": "Entered on the CLI for this run. Not a validated real-Nuolja-station measurement. Not registered in POLARIS_MASTER_DECISION_REGISTER.md."
+  },
+  "governance_status_unchanged_by_this_run": {
+    "real_station_T_required": "NOT_ESTABLISHED (POLARIS_MASTER_DECISION_REGISTER.md, ECD-01)",
+    "real_station_critical_load_evidence": "EXTERNAL_EVIDENCE_REQUIRED (EVID-02), unavailable",
+    "owner_decision_A_T_required": "A-iii selected (fail closed) -- NOT implemented in router.py/ecd.py",
+    "owner_decision_B_critical_load_routing": "B-iii selected (fail closed) -- NOT implemented in router.py/ecd.py",
+    "owner_decision_C_unknown_invalid_response": "M-A selected (fail closed/block) -- NOT implemented at orchestration level",
+    "cl_01_11_6kw_value": "Remains scoped 'research' only; NOT promoted to routing/safety_enforcement use by this script"
+  },
+  "protected_assets_verification": {
+    "candidate_n6_model.joblib": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/candidate_n6_model.joblib",
+      "hash": "b1b54c93e2dbefdcb562e4229394a2492b299b66426beaafead17f6777395197",
+      "verified": true
+    },
+    "candidate_n1_model.joblib": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/candidate_n1_model.joblib",
+      "hash": "7265dabe6ea2c81bc38e724b41e0c02dd1e485cd124939b7249320b3f4abf9d7",
+      "verified": true
+    },
+    "CANDIDATE_N_MANIFEST.json": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/candidate_n_additive_physics/artifacts/CANDIDATE_N_MANIFEST.json",
+      "hash": "1666a6860706ab266eec7d7995b7ee31308d21263aa1112485e229b916be1031",
+      "verified": true
+    },
+    "ensemble_parameters.json": {
+      "path": "/home/punith-bs/01polaris (Copy)/stage4/stage4_results/ensemble_parameters.json",
+      "hash": "26cfbd19744a4a01719470d20808b5316af7262aed6c2cd84376d8987ce0abc0",
+      "verified": true
+    }
+  },
+  "routing": {
+    "route": "UNKNOWN_INVALID",
+    "router_internal_critical_load_w": 15300.0,
+    "router_internal_critical_load_source": "current_state.last_observed_demand (full observed demand), NOT the user-supplied --critical-load-kw value -- confirmed by direct, read-only inspection of router.py this run. router.py never reads configs['critical_demand_w'] or configs['loads']['critical_load'].",
+    "t_required_hours_used": 6.0,
+    "t_required_source": "UNGOVERNED CODE DEFAULT (router.py line 45, 6.0h) -- no system/config/*.yaml sets ecd.t_required_hours. This is the exact HD-03 finding; NOT the real-station value (NOT_ESTABLISHED) and NOT the 72h prototype (implementation NOT_GRANTED).",
+    "unknown_invalid_reachability_note": "UNKNOWN_INVALID is architecturally unreachable from this call site today: both router.py's T_required default and its critical-load substitution chain always resolve to a finite, positive number, so ecd.py's own correctly-implemented fail-closed path is never triggered here -- independent of what this CLI's --critical-load-kw value is. This is unchanged by this run; it is a pre-existing, already-documented gap between the owner's recorded A-iii/B-iii/M-A decision and router.py's/ecd.py's actual (unmodified) code."
+  },
+  "optimizer_executed": null,
+  "failure_reason": "Target horizon payload is unauthenticated."
+}

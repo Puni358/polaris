@@ -1,0 +1,71 @@
+{
+  "benchmark_id": "polaris_vs_reactive_hybrid_1year_20260930",
+  "execution_timestamp": "2026-09-30T21:10:56Z",
+  "horizon_hours": 8784,
+  "trajectory_id": "polaris_2024_annual_365d_8784h",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "data_origin": "SYNTHETIC_EXPERIMENTAL_TRAJECTORY",
+  "empirical_status": "NOT_EMPIRICAL",
+  "fairness_verification": {
+    "identical_load": true,
+    "identical_solar": true,
+    "identical_wind": true,
+    "identical_battery": true,
+    "identical_diesel_model": true,
+    "identical_initial_soc": true,
+    "baseline_uses_forecast": false,
+    "baseline_uses_optimizer": false,
+    "baseline_uses_future_information": false
+  },
+  "comparison_summary": {
+    "cell_a2_reactive_baseline_fuel_l": 77022.5981,
+    "cell_b_polaris_closed_loop_fuel_l": 93465.6264,
+    "fuel_saved_l": -16443.0283,
+    "fuel_reduction_percent": -21.35,
+    "fuel_difference_l": 16443.0283,
+    "diesel_energy_difference_kwh": 44732.12,
+    "curtailment_difference_kwh": 44732.10
+  },
+  "cell_details": {
+    "cell_a2_reactive_hybrid_baseline": {
+      "controller_id": "ReactiveHybridBaseline",
+      "total_cycles": 8784,
+      "cumulative_fuel_l": 77022.5981,
+      "cumulative_diesel_energy_kwh": 165770.3923,
+      "diesel_runtime_hours": 4018,
+      "diesel_starts": 326,
+      "renewable_used_kwh": 349027.5,
+      "renewable_curtailment_kwh": 21460.4,
+      "battery_charge_kwh": 11652.0858,
+      "battery_discharge_kwh": 9917.5253,
+      "equivalent_battery_cycles": 49.5876,
+      "soc_range_pct": [20.0, 95.0],
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0
+    },
+    "cell_b_polaris_closed_loop_mpc": {
+      "controller_id": "PolarisClosedLoopMPC",
+      "total_cycles": 8784,
+      "cumulative_fuel_l": 93465.6264,
+      "cumulative_diesel_energy_kwh": 210502.5055,
+      "diesel_runtime_hours": 5142,
+      "diesel_starts": 412,
+      "renewable_used_kwh": 315057.1,
+      "renewable_curtailment_kwh": 66192.5,
+      "battery_charge_kwh": 890.356,
+      "battery_discharge_kwh": 808.7974,
+      "equivalent_battery_cycles": 4.044,
+      "soc_range_pct": [20.0, 38.04],
+      "unmet_critical_load_kwh": 0.0,
+      "system_reliability_pct": 100.0
+    },
+    "cell_a_simple_diesel_only_reference": {
+      "controller_id": "SimpleDieselOnlyBaseline",
+      "total_cycles": 8784,
+      "cumulative_fuel_l": 105821.95,
+      "cumulative_diesel_energy_kwh": 247607.8,
+      "unmet_critical_load_kwh": 0.0
+    }
+  }
+}

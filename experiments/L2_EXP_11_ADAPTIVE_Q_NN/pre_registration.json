@@ -1,0 +1,140 @@
+{
+  "experiment_id": "L2-EXP-11",
+  "title": "Adaptive q10 Relaxation Using a Low-Capacity Neural Network",
+  "created_at_utc": "2026-10-04T10:45:00.000000+00:00",
+  "governance": {
+    "mode": "STRICTLY_RESEARCH_ONLY",
+    "production_promotion_authorized": false,
+    "baseline_gap19_frozen": true,
+    "candidate_f_frozen": true,
+    "static_q10_frozen": true,
+    "held_out_2024_firewall": true,
+    "statement": "2024 evaluation outcomes were not used to select, tune, or modify the L2-EXP-11 formulation, architecture, or hyperparameters after pre-registration."
+  },
+  "research_question": "Can a low-capacity neural network learn WHEN q10 is unnecessarily pessimistic, and safely relax q10 only in those situations while retaining q10-level reliability?",
+  "core_hypothesis": "Static q10 applies constant conservatism. An adaptive q-level selector can preserve q10 conservatism during high-risk regimes while relaxing to higher quantiles (up to q25) during low-risk regimes, reducing unnecessary diesel commitment and solar curtailment without sacrificing critical reliability.",
+  "model_specification": {
+    "role": "Adaptive q-level selector (NOT a solar predictor, NOT an EMS controller)",
+    "target_definition": "Normalized Downside Shortfall: s_t = clip(max(0, F_t - Y_t) / max(clearsky_t, 25.0), 0.0, 1.0)",
+    "input_features": [
+      "horizon_hour", "month", "hour", "solar_elevation", "solar_zenith",
+      "clearsky_ghi", "fc_cloud_cover", "fc_temperature_2m", "fc_relative_humidity_2m",
+      "cloud_frac", "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold",
+      "disagreement_fold", "ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h",
+      "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h", "ctx_max_diff_6h",
+      "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h", "ctx_last_obs",
+      "ctx_mean_24h", "ctx_max_24h", "lwp_latest", "iwp_latest", "lwp_x_cloud",
+      "terrain_horizon_elevation_deg", "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag", "clearsky_ghi_terrain_adjusted",
+      "u700", "v700", "elevation_x_cloud_frac"
+    ],
+    "input_dimension": 38,
+    "candidate_architectures_evaluated_on_2022_validation": [
+      {
+        "name": "Arch-1 (16,)",
+        "hidden_layers": [16],
+        "parameter_count": 641,
+        "val_mae": 0.13718,
+        "val_mse": 0.03376,
+        "val_r2": 0.4252
+      },
+      {
+        "name": "Arch-2 (32,)",
+        "hidden_layers": [32],
+        "parameter_count": 1281,
+        "val_mae": 0.14000,
+        "val_mse": 0.03413,
+        "val_r2": 0.4188
+      },
+      {
+        "name": "Arch-3 (32, 16)",
+        "hidden_layers": [32, 16],
+        "parameter_count": 1793,
+        "val_mae": 0.13980,
+        "val_mse": 0.03462,
+        "val_r2": 0.4106
+      },
+      {
+        "name": "Arch-4 (64, 32)",
+        "hidden_layers": [64, 32],
+        "parameter_count": 4609,
+        "val_mae": 0.14338,
+        "val_mse": 0.03898,
+        "val_r2": 0.3363
+      }
+    ],
+    "selected_architecture": {
+      "name": "Arch-1 (16,)",
+      "hidden_layer_sizes": [16],
+      "activation": "relu",
+      "solver": "adam",
+      "alpha_l2": 0.001,
+      "learning_rate_init": 0.001,
+      "batch_size": 64,
+      "max_iter": 300,
+      "early_stopping": true,
+      "n_iter_no_change": 15,
+      "validation_fraction": 0.15,
+      "random_state": 42,
+      "total_parameter_count": 641,
+      "preprocessing": "SimpleImputer(strategy='median') fit on 2020-2021 Train data followed by StandardScaler()",
+      "selection_rationale": "Achieved lowest validation MAE (0.13718), lowest MSE (0.03376), and highest R2 (0.4252) among candidate set while maintaining minimal parameter capacity (641 parameters)."
+    },
+    "simple_non_nn_baseline": {
+      "model": "Ridge Regression",
+      "alpha": 10.0,
+      "val_mae": 0.14537,
+      "val_mse": 0.03584,
+      "purpose": "Rigorous non-NN benchmark on identical features and target."
+    },
+    "calibration": {
+      "method": "Isotonic Regression",
+      "calibration_set": "VALIDATION_2022 (Daytime)",
+      "monotonic": true,
+      "out_of_bounds": "clip"
+    },
+    "adaptive_q_mapping": {
+      "q_min": 0.10,
+      "q_max": 0.25,
+      "s_low": 0.05,
+      "s_high": 0.18,
+      "formula": "q_t = q_max - (q_max - q_min) * clip((s_pred_cal - s_low) / (s_high - s_low), 0.0, 1.0)",
+      "night_fallback": "q_t = 0.10 when clearsky_ghi <= 0 or solar_elevation <= 0",
+      "safety_invariant": "0.10 <= q_t <= 0.25 strictly enforced at every hour"
+    },
+    "planning_trajectory_formula": "p_solar,t = q10,t_power + ((q_t - 0.10) / (0.50 - 0.10)) * max(0, q50,t_power - q10,t_power)"
+  },
+  "experimental_arms": {
+    "Arm_A": "Candidate F Point Forecast Control",
+    "Arm_B": "Static q10 Conservative Lower Bound (Primary Reliability Benchmark)",
+    "Arm_C": "L2-EXP-10 Arm F (Corrected Priority: J_deficit > J_reserve > J_fuel > J_curt, with central charge replay fix)",
+    "Arm_D": "NN Adaptive-q (New Proposed Method)",
+    "Arm_E": "Perfect Foresight Diagnostic"
+  },
+  "acceptance_gates": {
+    "gate_1_soc_floor": "Zero SOC floor violations (< 20%)",
+    "gate_2_soc_ceiling": "Zero SOC upper-bound violations (> 95%)",
+    "gate_3_replay_accounting": "Zero physical or accounting violations",
+    "gate_4_unmet_load": "Realized unmet critical load: Arm D <= Arm B + 10% (64,005.6 * 1.10 = 70,406.2 Wh)",
+    "gate_5_reliability": "Arm D reliability statistically consistent with static q10",
+    "gate_6_curtailment": "Meaningful reduction in solar curtailment vs Arm B",
+    "gate_7_diesel": "Arm D diesel does not materially increase vs Arm B"
+  },
+  "evaluation_scope": {
+    "total_origins": 173,
+    "normal_origins": 123,
+    "emergency_origins": 50,
+    "evaluation_year": 2024,
+    "quarantined": true
+  },
+  "verified_input_hashes": {
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "exact_38_feature_matrix_2020_2023": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "historical_residual_dataset_2020_2023": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+  }
+}

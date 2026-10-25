@@ -1,0 +1,95 @@
+{
+  "campaign_metadata": {
+    "campaign_id": "diesel_reduction_battery_dispatch_20260930",
+    "timestamp": "2026-09-30T23:35:00Z",
+    "trajectory": "polaris_2024_annual_365d_8784h",
+    "lead_investigator": "POLARIS Research & Governance Execution Agent",
+    "status": "COMPLETED",
+    "classification": "DIESEL_REDUCTION_CONDITIONALLY_DEMONSTRATED"
+  },
+  "experimental_dimensions": {
+    "dimension_1_degradation_penalty": [
+      0.0,
+      0.01,
+      0.025,
+      0.05,
+      0.075,
+      0.10
+    ],
+    "dimension_2_battery_efficiency": [
+      0.81,
+      0.8464,
+      0.88,
+      0.9025,
+      1.00
+    ],
+    "dimension_3_soc_reserve": [
+      0.10,
+      0.15,
+      0.20,
+      0.25,
+      0.30
+    ],
+    "dimension_4_diesel_minimum_power": [
+      0.0,
+      5.0,
+      10.0
+    ],
+    "dimension_5_battery_capacity_kWh": [
+      100.0,
+      200.0,
+      300.0,
+      400.0
+    ],
+    "dimension_6_battery_power_kW": [
+      25.0,
+      50.0,
+      75.0,
+      100.0
+    ]
+  },
+  "screening_stages": [
+    {
+      "stage_id": "STAGE_1_ONE_FACTOR",
+      "description": "One-factor sensitivity analysis sweeping single parameters while holding others at C0 baseline."
+    },
+    {
+      "stage_id": "STAGE_2_INTERACTION",
+      "description": "Cross-factor interaction screening across degradation penalty, efficiency, SOC min, and diesel min power."
+    },
+    {
+      "stage_id": "STAGE_3_ENVELOPE_ROBUSTNESS",
+      "description": "Evaluation of promising dispatch configurations across synthetic battery-agnostic envelope B0-B7."
+    }
+  ],
+  "experiment_groups": [
+    {
+      "group_id": "CONTROL",
+      "experiments": ["C0"]
+    },
+    {
+      "group_id": "DEGRADATION_SWEEP",
+      "experiments": ["DEG_000", "DEG_010", "DEG_025", "DEG_050", "DEG_075", "DEG_100"]
+    },
+    {
+      "group_id": "EFFICIENCY_SWEEP",
+      "experiments": ["EFF_810", "EFF_846", "EFF_880", "EFF_902", "EFF_1000"]
+    },
+    {
+      "group_id": "SOC_RESERVE_SWEEP",
+      "experiments": ["SOC_10", "SOC_15", "SOC_20", "SOC_25", "SOC_30"]
+    },
+    {
+      "group_id": "DIESEL_MIN_POWER_SWEEP",
+      "experiments": ["DMIN_00", "DMIN_05", "DMIN_10"]
+    },
+    {
+      "group_id": "INTERACTION_PAIRS",
+      "experiments": ["C4_ZERO_DEG_IDEAL_EFF", "DEG0_EFF90", "DEG01_EFF88", "DEG025_EFF88_DMIN0"]
+    },
+    {
+      "group_id": "ENVELOPE_B0_B7",
+      "experiments": ["B0_CTRL", "B1_CAP100", "B2_CAP400", "B3_PWR25", "B4_PWR100", "B5_EFF90", "B6_SOC30_80", "B7_COMBINED"]
+    }
+  ]
+}

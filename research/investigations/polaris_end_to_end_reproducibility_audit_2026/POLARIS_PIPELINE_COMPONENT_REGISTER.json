@@ -1,0 +1,103 @@
+{
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "empirical_status": "NON_EMPIRICAL",
+  "components": [
+    {
+      "component": "System Entrypoint & Orchestration",
+      "artifact": "PolarisLocalRunner",
+      "path": "system/runtime/runner.py",
+      "version_or_identifier": "v1.0.0",
+      "status": "PRODUCTION_SKELETON",
+      "used_in_execution": true
+    },
+    {
+      "component": "Data Ingestion Provider",
+      "artifact": "LocalDataProvider",
+      "path": "system/data/provider.py",
+      "version_or_identifier": "v1.0.0",
+      "status": "PRODUCTION_SKELETON",
+      "used_in_execution": true
+    },
+    {
+      "component": "Forecasting Engine",
+      "artifact": "LocalBaselineForecastEngine",
+      "path": "system/forecasting/implementations/baseline.py",
+      "version_or_identifier": "v1.0.0",
+      "status": "PROTOTYPE_UNVALIDATED",
+      "used_in_execution": true
+    },
+    {
+      "component": "EMS Control Router",
+      "artifact": "EMSControlRouter",
+      "path": "system/control/router.py",
+      "version_or_identifier": "v1.0.0",
+      "status": "OPERATIONAL_ROUTER",
+      "used_in_execution": true
+    },
+    {
+      "component": "Energy Optimizer",
+      "artifact": "LocalMILPEnergyOptimizer",
+      "path": "system/optimization/implementations/milp.py",
+      "version_or_identifier": "v1.0.0 (Scipy HiGHS)",
+      "status": "MILP_FORMAL_OPTIMIZER",
+      "used_in_execution": true
+    },
+    {
+      "component": "Digital Twin Simulator",
+      "artifact": "DigitalTwinSimulator",
+      "path": "system/simulation/simulator.py",
+      "version_or_identifier": "v1.0.0",
+      "status": "OFFLINE_CLOSED_LOOP_TWIN",
+      "used_in_execution": true
+    },
+    {
+      "component": "Evaluation Engine",
+      "artifact": "EvaluationEngine",
+      "path": "system/evaluation/evaluator.py",
+      "version_or_identifier": "v1.0.0",
+      "status": "EVALUATION_MODULE",
+      "used_in_execution": true
+    },
+    {
+      "component": "Battery Storage Configuration",
+      "artifact": "battery.yaml",
+      "path": "system/config/battery.yaml",
+      "version_or_identifier": "200kWh_50kW_v1",
+      "status": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION",
+      "used_in_execution": true
+    },
+    {
+      "component": "Diesel Generator Configuration",
+      "artifact": "diesel.yaml",
+      "path": "system/config/diesel.yaml",
+      "version_or_identifier": "100kW_10kWmin_v1",
+      "status": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION",
+      "used_in_execution": true
+    },
+    {
+      "component": "Solar PV Configuration",
+      "artifact": "solar_pv.yaml",
+      "path": "system/config/solar_pv.yaml",
+      "version_or_identifier": "300m2_60kW_v1",
+      "status": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION",
+      "used_in_execution": true
+    },
+    {
+      "component": "Electrical Loads Configuration",
+      "artifact": "loads.yaml",
+      "path": "system/config/loads.yaml",
+      "version_or_identifier": "critical_deferrable_v1",
+      "status": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION",
+      "used_in_execution": true
+    },
+    {
+      "component": "Optimizer Configuration",
+      "artifact": "optimizer.yaml",
+      "path": "system/config/optimizer.yaml",
+      "version_or_identifier": "milp_weights_v1",
+      "status": "LOCKED_SYNTHETIC_ENGINEERING_ASSUMPTION",
+      "used_in_execution": true
+    }
+  ]
+}

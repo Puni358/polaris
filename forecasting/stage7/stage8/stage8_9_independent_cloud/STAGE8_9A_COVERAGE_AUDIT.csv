@@ -1,0 +1,9 @@
+source_name,eligible_origins,usable_origins,missing_origins,unavailable_origins,quality_invalid_origins,usable_origin_pct,forecast_hours_covered,coverage_classification
+NASA VIIRS CLDPROP Science L2,347,225,122,0,122,64.84,5400,CONDITIONAL / INSUFFICIENT COVERAGE
+NASA VIIRS NRT L2,347,0,347,347,0,0.00,0,OPERATIONALLY NON-CAUSAL
+EUMETSAT NWC SAF PPS CMIC,347,210,137,85,52,60.52,5040,CONDITIONAL / INSUFFICIENT COVERAGE
+Meteosat SEVIRI GEO Imagery,347,0,347,0,347,0.00,0,NOT FEASIBLE (Extreme Parallax & Limb Distortion)
+Nuolja Sky Imager (NMS),347,0,347,347,0,0.00,0,NOT FEASIBLE (No 2024 Camera Archive)
+Kiruna Airport METAR (ESNQ),347,347,0,0,0,100.00,8328,NOT FEASIBLE (Spatially Irrelevant 88.4 km ESE)
+NWC SAF PPS AMV (Cloud Motion),347,48,299,180,119,13.83,1152,INSUFFICIENT COVERAGE
+Satellite Optical Flow Sequences,347,0,347,225,122,0.00,0,OPERATIONALLY NON-CAUSAL

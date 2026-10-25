@@ -1,0 +1,13 @@
+REQUIREMENT_ITEM,SPECIFICATION,VERIFICATION_METHOD,GOVERNANCE_STATUS
+Solver Identity,HiGHS MILP solver engine (via SciPy or native binding),Environment manifest audit,GOVERNANCE_REQUIREMENT
+Solver Version,SciPy 1.18.1 / HiGHS bundled version,Environment manifest audit,GOVERNANCE_REQUIREMENT
+Python Version,Python 3.12.3,Environment manifest audit,GOVERNANCE_REQUIREMENT
+Dependency Lock,pyproject.toml & exact environment package hashes,Pip freeze SHA256 audit,GOVERNANCE_REQUIREMENT
+Objective Vectors,Exact mathematical formulation for Stage 1-4 cost vectors c_1..c_4,Static code inspection,GOVERNANCE_REQUIREMENT
+Stage Objective Persistence,"Record J1*, J2*, J3*, J4* in DispatchPlan diagnostic metadata",DispatchPlan output audit,GOVERNANCE_REQUIREMENT
+Lock Tolerances,"Explicitly governed eps_1, eps_2, eps_3 values logged in provenance",Provenance log audit,GOVERNANCE_REQUIREMENT
+Solver Options,"Preserve presolve, primal/dual feasibility, and integrality options",Optimizer config audit,GOVERNANCE_REQUIREMENT
+Model Inputs,Identical ForecastBundle and StationState input payloads,Input payload SHA256 audit,GOVERNANCE_REQUIREMENT
+Initial State,Identical initial battery SOC and generator operational status,StationState payload audit,GOVERNANCE_REQUIREMENT
+Termination Status,Record solver return status code for every stage pass,Provenance log audit,GOVERNANCE_REQUIREMENT
+Fresh-Process Replay,Deterministic execution within authorized numerical/structural tolerances in a fresh Python process,Replay test execution,GOVERNANCE_REQUIREMENT

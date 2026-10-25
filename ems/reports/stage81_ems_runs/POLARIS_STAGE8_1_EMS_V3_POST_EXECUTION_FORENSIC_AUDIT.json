@@ -1,0 +1,175 @@
+{
+  "audit_id": "POLARIS_STAGE8_1_EMS_V3_POST_EXECUTION_FORENSIC_AUDIT",
+  "audit_timestamp_utc": "2026-09-19T12:25:00Z",
+  "scientific_validity_classification": "A — VALID COMPLETED V3 EXECUTION",
+  "early_execution_protocol_violation": false,
+  "execution_history_forensics": {
+    "total_runner_invocations": 4,
+    "invocations_detail": [
+      {
+        "invocation": 1,
+        "step_index": 248,
+        "command": "python3 run_polaris_stage8_1_ems_v3_execution.py",
+        "exit_code": 1,
+        "failure_reason": "SyntaxError (invalid escape sequence '\\{' in string literal at line 598)",
+        "entered_origin_loop": false,
+        "executed_optimizer": false,
+        "executed_simulator": false,
+        "completed_origins": 0,
+        "artifacts_created": false
+      },
+      {
+        "invocation": 2,
+        "step_index": 252,
+        "command": "python3 run_polaris_stage8_1_ems_v3_execution.py",
+        "exit_code": 1,
+        "failure_reason": "SyntaxError (invalid escape sequence '\\{' in string literal at line 601)",
+        "entered_origin_loop": false,
+        "executed_optimizer": false,
+        "executed_simulator": false,
+        "completed_origins": 0,
+        "artifacts_created": false
+      },
+      {
+        "invocation": 3,
+        "step_index": 258,
+        "command": "python3 run_polaris_stage8_1_ems_v3_execution.py",
+        "exit_code": 1,
+        "failure_reason": "ModuleNotFoundError (No module named 'numpy' at line 21 import stage)",
+        "entered_origin_loop": false,
+        "executed_optimizer": false,
+        "executed_simulator": false,
+        "completed_origins": 0,
+        "artifacts_created": false
+      },
+      {
+        "invocation": 4,
+        "step_index": 260,
+        "command": ".venv/bin/python run_polaris_stage8_1_ems_v3_execution.py",
+        "exit_code": 0,
+        "failure_reason": "NONE (Task-260 completed successfully in 2588.29s)",
+        "entered_origin_loop": true,
+        "executed_optimizer": true,
+        "executed_simulator": true,
+        "completed_origins": 173,
+        "artifacts_created": true
+      }
+    ],
+    "scientific_pre_run_contamination": false,
+    "raw_csv_single_run_verification": true
+  },
+  "raw_artifact_immutability": {
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": {
+      "expected_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+      "actual_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+      "match": true
+    },
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.json": {
+      "expected_sha256": "9bb13084b1db08c1ff322e6d4bdb4a1fbd62d534a0fa26c66b4c898bdba9d900",
+      "actual_sha256": "9bb13084b1db08c1ff322e6d4bdb4a1fbd62d534a0fa26c66b4c898bdba9d900",
+      "match": true
+    },
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.md": {
+      "expected_sha256": "6d2bf01b26385ba9f403c6dc8e30e511577d97a52e0f918449b23c125ee6cda0",
+      "actual_sha256": "6d2bf01b26385ba9f403c6dc8e30e511577d97a52e0f918449b23c125ee6cda0",
+      "match": true
+    }
+  },
+  "raw_csv_structure": {
+    "total_rows": 4152,
+    "total_columns": 49,
+    "unique_origins": 173,
+    "timesteps_per_origin": 24,
+    "arm_representation": "COEXISTING_COLUMNS_PER_ROW"
+  },
+  "three_arm_pairing": {
+    "total_unique_origins": 173,
+    "mpc_timesteps_per_origin": 24,
+    "missing_keys_count": 0,
+    "duplicate_keys_count": 0,
+    "pairing_keys_verified": ["origin_id", "origin_timestamp", "mpc_timestep_idx", "timestamp"]
+  },
+  "initial_state_equivalence": {
+    "initial_soc_control_pct": 50.0,
+    "initial_soc_v2_pct": 50.0,
+    "initial_soc_v3_pct": 50.0,
+    "max_initial_soc_diff_pct": 0.0,
+    "initial_diesel_running_match": true,
+    "initial_cumulative_fuel_before_l": 0.0
+  },
+  "forecast_equivalence": {
+    "treatment_forecast_vector_24_identical": true,
+    "control_forecast_vector_24_identical": true,
+    "max_h1_treatment_forecast_diff_w_m2": 0.0,
+    "stage81_prediction_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "class_f_intervention_isolation": {
+    "arm2_v2_gamma": 1.0,
+    "arm3_v3_gamma": 0.95,
+    "horizon_weight_formula": "w_t = 0.95^t for t in 0..23",
+    "other_differences_found": false
+  },
+  "future_truth_firewall": {
+    "leakage_to_forecast_engine": false,
+    "leakage_to_optimizer": false,
+    "truth_access_isolated_to_simulator": true
+  },
+  "telemetry_field_to_source_audit": {
+    "standard_37_fields_present": true,
+    "comparative_arm_fields_count": 12,
+    "total_columns": 49
+  },
+  "critical_arm_specific_metric_mapping": {
+    "control_metrics_field_mapping_valid": true,
+    "v2_metrics_field_mapping_valid": true,
+    "v3_metrics_field_mapping_valid": true,
+    "cross_arm_metric_reference_errors": false
+  },
+  "independent_primary_endpoint_recomputation": {
+    "statistical_unit": "ORIGIN (N=173 paired origins)",
+    "primary_endpoint": "Total Diesel Fuel (Liters) per 24-Hour Origin",
+    "mean_control_diesel_fuel_l": 27.0,
+    "mean_v2_treatment_diesel_fuel_l": 37.27,
+    "mean_v3_class_f_diesel_fuel_l": 23.99,
+    "paired_v3_vs_v2": {
+      "mean_difference_liters": -13.28,
+      "median_difference_liters": -13.5,
+      "bootstrap_95_ci_liters": [-15.11, -11.48],
+      "wilcoxon_stat": 32.0,
+      "p_value": 6.217937e-21
+    }
+  },
+  "fuel_model_reconciliation": {
+    "raw_csv_cumulative_fuel_column_status": "ZERO_UNINITIALIZED_BY_GETATTR_DEFAULT",
+    "step_level_diesel_power_telemetry_status": "100_PERCENT_COMPLETE",
+    "reconstruction_from_raw_telemetry_power": {
+      "mean_control_fuel_l": 27.0,
+      "mean_v2_treatment_fuel_l": 37.27,
+      "mean_v3_class_f_fuel_l": 23.99,
+      "mean_difference_v3_vs_v2_l": -13.28
+    },
+    "exact_numerical_convergence": true
+  },
+  "independent_secondary_endpoints_recomputation": {
+    "mean_control_curtailment_kwh": 177.38,
+    "mean_v2_treatment_curtailment_kwh": 56.95,
+    "mean_v3_class_f_curtailment_kwh": 17.57,
+    "mean_curtailment_diff_v3_vs_v2_kwh": -39.38,
+    "mean_battery_throughput_kwh": 80.04,
+    "total_unmet_critical_load_kwh": 0.0
+  },
+  "execution_completeness": {
+    "expected_origins": 173,
+    "completed_control_origins": 173,
+    "completed_v2_treatment_origins": 173,
+    "completed_v3_class_f_origins": 173,
+    "failed_origins": 0,
+    "retries": 0
+  },
+  "provenance_verification": {
+    "all_11_component_hashes_match": true,
+    "stage81_prediction_artifact_match": true
+  },
+  "blockers_or_corrections_required": [],
+  "next_governed_step": "POLARIS_STAGE8_1_EMS_V3_MECHANISM_FORENSIC_ANALYSIS"
+}

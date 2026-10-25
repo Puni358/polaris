@@ -1,0 +1,5 @@
+Candidate_ID,ForecastBundle_Impact,StationState_Impact,DispatchPlan_Impact,Overall_Schema_Classification,Schema_Modification_Notes
+CAND_A (Fixed SOC),NO_CHANGE,NO_CHANGE,NO_CHANGE,NO_CHANGE,Passed via optimizer config dictionary
+CAND_B (Fixed Energy),NO_CHANGE,NO_CHANGE,NO_CHANGE,NO_CHANGE,Passed via optimizer config dictionary
+CAND_C (Critical-Load-Based),ADDITIVE_EXTENSION_REQUIRED,NO_CHANGE,ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,Requires demand_critical array in ForecastBundle
+CAND_D (Dynamic Exogenous),ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,ADDITIVE_EXTENSION_REQUIRED,Requires demand_critical in ForecastBundle and operating_mode/fuel_remaining in StationState

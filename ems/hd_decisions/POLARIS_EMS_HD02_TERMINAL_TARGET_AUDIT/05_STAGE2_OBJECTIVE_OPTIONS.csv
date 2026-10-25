@@ -1,0 +1,5 @@
+Option_ID,Objective_Formulation,Mathematical_Effect,Double_Counting_Risk,Boundary_Protection,Requires_New_Policy_Parameter
+OPT_A,min sum_t=1..H max(0 E_EBR(t)-E(t)),Single sum covering t=1..H,NONE,Full protection including t=H,NO
+OPT_B,min sum_t=1..H-1 max(0 E_EBR(t)-E(t)) + max(0 E_EBR(H)-E(H)),Explicitly split boundary term,NONE,Full protection including t=H,NO
+OPT_C,min sum_t=1..H max(0 E_EBR(t)-E(t)) + max(0 E_EBR(H)-E(H)),Double-weighted penalty on t=H,CONFIRMED,Over-penalizes t=H shortfall,NO
+OPT_D,min sum_t=1..H max(0 E_EBR(t)-E(t)) s.t. E(H) >= E_EBR(H),Hard boundary constraint at t=H,NONE,Hard boundary protection (may cause infeasibility),NO

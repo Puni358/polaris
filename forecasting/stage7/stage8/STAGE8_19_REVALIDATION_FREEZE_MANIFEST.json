@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-09-13T10:49:28+05:30",
+  "document_title": "STAGE 8.19 REVALIDATION FREEZE MANIFEST DATA CONTRACT",
+  "model_specification": {
+    "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "hyperparameters": {
+      "loss": "absolute_error",
+      "max_depth": 4,
+      "min_samples_leaf": 30,
+      "l2_regularization": 10.0,
+      "random_state": 42
+    }
+  },
+  "feature_inventory": {
+    "total_feature_count": 42,
+    "base_features_stage8_17a": 40,
+    "new_candidate_features": [
+      "wind_disagreement_700",
+      "LWP_disagreement",
+      "abis_ztd_latest",
+      "abis_ztd_trend_3h"
+    ]
+  },
+  "freeze_status": "FROZEN_PRE_ODD_CONTRACT",
+  "real_data_requirement_verified": true
+}

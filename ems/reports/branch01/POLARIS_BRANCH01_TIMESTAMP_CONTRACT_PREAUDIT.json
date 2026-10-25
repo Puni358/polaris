@@ -1,0 +1,18 @@
+{
+  "audit_title": "POLARIS Branch 01 Timestamp Contract Pre-Correction Audit",
+  "date": "2026-09-21T13:59:50Z",
+  "affected_file": "scripts/run_polaris_branch01_remediated_campaign.py",
+  "affected_function": "run_trajectory_worker",
+  "affected_lines": "38-39, 100-101, 110, 156-162",
+  "current_timestamp_representations": {
+    "csv_observation_format": "YYYY-MM-DD HH:MM:SS (e.g. '2024-01-23 00:00:00')",
+    "norm_ts_output_for_csv": "YYYY-MM-DDTHH:MM:SS (e.g. '2024-01-23T00:00:00')",
+    "runtime_state_timestamp_format": "YYYY-MM-DDTHH:MM:SSZ (e.g. '2024-01-23T00:00:00Z')"
+  },
+  "current_failure_mechanism": {
+    "dictionary_lookup": "curr_ts in obs_ts_map evaluated to False at every MPC step due to missing 'Z' suffix in obs_ts_map keys",
+    "fallback_behavior": "Executed else branch: rt_ctx_t['feature_vector'] = [0.0] * 18",
+    "consequence": "Model evaluated on identical zero vector, producing static solar forecast hash 'a4563d489ba318ccf17fca95c8a408c314de0c07253cac46c50b88dc24d01fe0'"
+  },
+  "canonical_remediation_target": "Unified canonicalize_ts() function appending 'Z' to all UTC timestamps, removing zero-vector fallback and enforcing fail-closed error handling"
+}

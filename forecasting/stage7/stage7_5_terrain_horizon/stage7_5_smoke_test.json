@@ -1,0 +1,13 @@
+{
+  "dem_loaded": true,
+  "crs_verified": true,
+  "nuolja_coords_inside_bounds": true,
+  "nuolja_pixel_row": 2297,
+  "nuolja_pixel_col": 1330,
+  "station_dem_elevation_m": 668.6088256835938,
+  "azimuths_computed": 360,
+  "max_horizon_angle_deg": 29.7988,
+  "min_horizon_angle_deg": -1.8029,
+  "mean_horizon_angle_deg": 9.595415833333332,
+  "smoke_test_status": "PASS"
+}

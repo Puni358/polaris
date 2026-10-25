@@ -1,0 +1,86 @@
+{
+  "checkpoint": "ENEV_METAR_FEATURE_FEASIBILITY",
+  "timestamp": "2026-09-13T19:18:00Z",
+  "station": {
+    "icao": "ENEV",
+    "name": "Evenes/Harstad-Narvik Airport",
+    "lat": 68.517,
+    "lon": 16.683,
+    "elevation_m": 26,
+    "distance_to_nuolja_km": 86,
+    "direction_from_nuolja": "WNW",
+    "upstream_for_prevailing_westerlies": true
+  },
+  "data_status": {
+    "archive": "IEM ASOS",
+    "period": "2024-01-20 to 2024-12-31",
+    "total_rows": 13651,
+    "benchmark_origin_coverage": "347/347 = 100%",
+    "raw_skyc1_population_pct": 68,
+    "effective_cloud_state_pct": 100,
+    "effective_cloud_state_source": "skyc1 layers (68%) + CAVOK/NSC/NCD/SKC in raw METAR (32%)"
+  },
+  "causal_availability": {
+    "most_recent_causal_report": "23:50 UTC",
+    "minutes_before_t0": 10,
+    "publication_latency": "1-5 minutes (aviation standard)",
+    "strictly_causal": true
+  },
+  "proposed_features": [
+    {
+      "name": "enev_cloud_cover_okta",
+      "type": "scalar",
+      "source": "skyc1 + CAVOK/NSC from raw METAR at 23:50 UTC",
+      "encoding": "CAVOK/NSC/NCD/SKC=0, FEW=1.5, SCT=3.5, BKN=6, OVC=8, VV=8",
+      "expected_coverage_pct": 100,
+      "physical_hypothesis": "Upstream cloud cover = precursor for incoming cloud mass"
+    },
+    {
+      "name": "enev_cloud_base_m",
+      "type": "scalar",
+      "source": "skyl1 (ft→m) + CAVOK/NSC sentinel from raw METAR at 23:50 UTC",
+      "encoding": "skyl1 * 0.3048 for layers; 5000m sentinel for CAVOK/NSC; VVxxx * 30.48 for VV",
+      "expected_coverage_pct": 100,
+      "physical_hypothesis": "Low upstream cloud base → incoming cloud deck immerses Nuolja terrain"
+    }
+  ],
+  "independence_from_stage81": {
+    "axis_1_observation_vs_forecast": "PASS — ceilometer observation vs MEPS NWP forecast",
+    "axis_2_spatial_location": "PASS — 86km WNW upstream vs Nuolja grid cell",
+    "axis_3_physical_quantity": "PASS — cloud base height vs cloud fraction; oktas vs 0-1 continuous",
+    "axis_4_temporal_freshness": "PASS — 23:50 UTC = 5h50m newer than MEPS D-1 18Z assimilation cutoff",
+    "overall": "GENUINELY INDEPENDENT on all four axes"
+  },
+  "risk_factors": [
+    {
+      "risk": "86km spatial separation + Scandes mountain barrier decoupling",
+      "severity": "HIGH",
+      "note": "Same distance/barrier argument that killed Kiruna ESNQ. But ENEV is upstream, Kiruna is downstream."
+    },
+    {
+      "risk": "Coastal lowland (26m) vs mountain (702m) altitude mismatch",
+      "severity": "MEDIUM",
+      "note": "ENEV CBH AGL + 26m may not correspond to Nuolja terrain intersection"
+    }
+  ],
+  "gate_evaluations": {
+    "usable_fields": "PASS",
+    "causal_availability": "PASS",
+    "encoding_defensibility": "PASS",
+    "information_novelty": "PASS",
+    "feature_set_minimality": "PASS (2 features on 347 origins)"
+  },
+  "decision": "CONDITIONAL",
+  "decision_rationale": "All audit gates PASS. The CONDITIONAL gate is the 86km Scandes spatial separation risk, which is empirically unresolvable without a governed experiment.",
+  "next_step": "Governed experiment: 2-feature ENEV augmentation of Stage 8.1 champion, trained on even-indexed origins, evaluated on ODD odd-indexed origins",
+  "governance": {
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "model_training": false,
+    "champion_unchanged": true,
+    "champion_mae": 36.188657,
+    "champion_nmae_pct": 28.0688,
+    "champion_rmse": 64.219495
+  }
+}

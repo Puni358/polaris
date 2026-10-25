@@ -1,0 +1,74 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "phase": "TRAINING_AUTHORIZATION_CORRECTION",
+  "authorization_mode": "READ_ONLY_CORRECTION_ONLY",
+  "patch_verifications": {
+    "PATCH_1_SELECTION_RULE": "PASS",
+    "PATCH_2_TIE_RULE": "PASS",
+    "PATCH_3_HYPERPARAMETER_GOVERNANCE": "PASS",
+    "PATCH_4_PREPROCESSING_FAIRNESS": "PASS",
+    "PATCH_5_FINAL_TEST_PROCEDURE": "PASS",
+    "PATCH_6_TEST_FIREWALL": "PASS",
+    "PATCH_7_AUTHORIZATION_SCOPE": "PASS",
+    "PATCH_8_PRIOR_SAFEGUARDS_PRESERVED": "PASS"
+  },
+  "governed_selection_rules": {
+    "primary_metric": "VALIDATION_MAE",
+    "secondary_metric": "VALIDATION_RMSE",
+    "tie_breaking_rule": "1. Compare Validation MAE. 2. If identical at reported precision, compare Validation RMSE. 3. If also identical, declare ARCHITECTURE_SELECTION = INCONCLUSIVE_AFTER_VALIDATION.",
+    "test_set_isolation": "TEST set strictly prohibited from participating in architecture selection or hyperparameter tuning."
+  },
+  "governed_hyperparameters": {
+    "candidate_a_histgradientboosting": {
+      "loss": "squared_error",
+      "learning_rate": 0.05,
+      "max_iter": 100,
+      "max_depth": 6,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 20,
+      "l2_regularization": 1.0,
+      "max_bins": 255,
+      "random_state": 42,
+      "wrapper": "MultiOutputRegressor"
+    },
+    "candidate_b_ridge": {
+      "alpha": 1.0,
+      "fit_intercept": true,
+      "solver": "auto",
+      "tol": 0.0001,
+      "random_state": 42,
+      "preprocessing": "StandardScaler (fitted strictly on X_train)"
+    }
+  },
+  "governed_campaign_protocol": {
+    "step_1": "Fit Candidate A on TRAIN; evaluate on VALIDATION.",
+    "step_2": "Fit Candidate B on TRAIN; evaluate on VALIDATION.",
+    "step_3": "Apply selection rule (Validation MAE -> Validation RMSE).",
+    "step_4": "Freeze selected candidate model and complete configuration.",
+    "step_5": "Execute fresh-process replay verification (atol=1e-5, rtol=1e-5).",
+    "step_6": "Evaluate frozen selected model on held-out TEST split (no retraining on TRAIN+VAL).",
+    "step_7": "Generate MODEL_RUN_MANIFEST.json and 34-item checklist."
+  },
+  "authorizations": {
+    "TRAINING_AUTHORIZATION": "GRANTED_FOR_FIRST_CONTROLLED_BRANCH01_TRAINING_CAMPAIGN_ONLY",
+    "EMS_INTEGRATION_AUTHORIZATION": "NOT_GRANTED",
+    "EMS_EXECUTION": "NOT_AUTHORIZED",
+    "STAGE8_1_MODIFICATION": "NOT_AUTHORIZED"
+  },
+  "final_status_block": {
+    "TRAINING_AUTHORIZATION_CORRECTION": "PASS",
+    "PATCH_1_SELECTION_RULE": "PASS",
+    "PATCH_2_TIE_RULE": "PASS",
+    "PATCH_3_HYPERPARAMETER_GOVERNANCE": "PASS",
+    "PATCH_4_PREPROCESSING_FAIRNESS": "PASS",
+    "PATCH_5_FINAL_TEST_PROCEDURE": "PASS",
+    "PATCH_6_TEST_FIREWALL": "PASS",
+    "PATCH_7_AUTHORIZATION_SCOPE": "PASS",
+    "PATCH_8_PRIOR_SAFEGUARDS_PRESERVED": "PASS",
+    "TRAINING_AUTHORIZATION": "GRANTED_FOR_FIRST_CONTROLLED_BRANCH01_TRAINING_CAMPAIGN_ONLY",
+    "EMS_INTEGRATION_AUTHORIZATION": "NOT_GRANTED",
+    "EMS_EXECUTION": "NOT_AUTHORIZED",
+    "STAGE8_1_MODIFICATION": "NOT_AUTHORIZED",
+    "NEXT_GOVERNED_STEP": "EXECUTION_OF_FIRST_CONTROLLED_BRANCH01_TRAINING_CAMPAIGN"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp_utc": "2026-09-14T13:20:21.473387+00:00",
+  "document_title": "POLARIS PRE-TRAINING LOCAL SPATIAL 3X3 AUDIT CONTRACT",
+  "pre_registration_provenance": {
+    "prereg_json_sha256": "1c0929ffea75490ee23137f5822fc69c806942572b7922e343dcf72d87c8e4fb",
+    "prereg_md_sha256": "e997b9d6a18858095c7dbc350c198ef0546cd8eda313fd946d7f0d19d588f4c5"
+  },
+  "model_verification": {
+    "model_class": "PreRegisteredLocalSpatial3x3Model",
+    "trainable_parameters": 15633,
+    "expected_parameters": 15633,
+    "parameter_count_match": true,
+    "forward_pass_ok": true,
+    "backward_pass_ok": true
+  },
+  "data_and_control_verification": {
+    "even_origins_count": 173,
+    "valid_even_tensors": 173,
+    "control_preds_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "control_csv_hash_match": true,
+    "ctrl_daytime_mae_wm2": 47.451469,
+    "ctrl_daytime_nmae_pct": 36.8045,
+    "ctrl_daytime_rmse_wm2": 74.376601
+  },
+  "odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "audit_checklist": {
+    "1_exact_parameter_count_15633": true,
+    "2_forward_pass_shape_correct": true,
+    "3_backward_pass_gradients_valid": true,
+    "4_even_origins_count_173": true,
+    "5_cached_tensors_available_173": true,
+    "6_local_patch_shape_24_11_3_3": true,
+    "7_station_anchor_center_grid_209_548": true,
+    "8_zero_odd_origins_accessed": true,
+    "9_zero_network_fetches": true,
+    "10_no_new_features_extracted": true,
+    "11_g6_control_csv_sha256_verified": true,
+    "12_g6_control_metrics_verified": true,
+    "13_fixed_daytime_normalizer_128_9284": true,
+    "14_preregistration_artifacts_finalized": true,
+    "15_model_training_not_yet_started": true
+  },
+  "pre_training_audit_verdict": "PRE-TRAINING AUDIT PASS \u2014 AUTHORIZED FOR SINGLE CANDIDATE EXPERIMENT",
+  "training_started": false,
+  "cryptographic_hashes": {
+    "audit_script_sha256": "42de7945e028ff4c7e9a4eb073bac16b2ee00f98fabb21317d0bb9dcb0e9b8df",
+    "audit_json_sha256": "993e9f169e2530bb9b69ec459fb20d5bb6d2c3787fb488f48ce2a6b8a13cd29a"
+  }
+}

@@ -1,0 +1,6 @@
+COMPONENT,CURRENT_STATE,FUTURE_STATE,CHANGE_TYPE,POLICY_SOURCE,SAFETY_IMPACT,AUTHORIZATION_STATUS
+system/optimization/implementations/milp.py,Single composite scalar weighted solver,4-Stage Lexicographic MILP solver architecture,OPTIMIZER_CHANGE,Decision 15,HIGH,IMPLEMENTATION_AUTHORIZATION_REQUIRED
+system/config/optimizer.yaml,Prototype penalty weights (c_unmet=1000.0),Governed objective parameters & stage tolerances,STATIC_CONFIGURATION_CHANGE,Decision 02,MEDIUM,IMPLEMENTATION_AUTHORIZATION_REQUIRED
+system/schemas/forecast_bundle.py,Point forecasts without explicit margin fields,Unchanged schema; margins applied prior to bundle ingestion,NO_CHANGE,Decision 13,NEUTRAL,NO_CHANGE_REQUIRED
+system/schemas/station_state.py,"Captures E(t), diesel status, timestamps",Unchanged schema; fully supports Wh energy domain,NO_CHANGE,"Decision 11, 12",NEUTRAL,NO_CHANGE_REQUIRED
+system/schemas/dispatch_plan.py,Captures output power & SOC vectors,Unchanged schema; fully supports lexicographic dispatch outputs,NO_CHANGE,Decision 15,NEUTRAL,NO_CHANGE_REQUIRED

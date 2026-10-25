@@ -1,0 +1,127 @@
+{
+  "title": "POLARIS PC-SW v1.2 Temporal Diesel/Battery Allocation Forensics",
+  "date": "2026-10-08",
+  "status": "READ-ONLY forensic research. No production/policy change in this pass. No AGY execution.",
+  "hash_verification": {"status": "VERIFIED", "mismatches": []},
+  "closed_branches_reused_not_reopened": ["EBR formulation/multipliers", "Rule-D true-curtailment", "T1 temporal tie-break (campaign artifact read and cited)"],
+  "planner_objective": {
+    "priority_order": {"J1": 5, "J_NC": 4, "J2": 3, "J3": 2, "J4": 1},
+    "J3_terms": {
+      "marginal_fuel_L_per_Wh": 0.00025,
+      "base_fuel_L_per_h": 5.0,
+      "startup_fuel_L": 2.0,
+      "diesel_min_W": 10000.0,
+      "diesel_max_W": 100000.0
+    },
+    "label": "VERIFIED (traced from research_numerical_extractor_planner_cf_v1.py)"
+  },
+  "diesel_charging_population": {
+    "hours": 526,
+    "pct_of_diesel_on": 96.2,
+    "fuel_L": 8557.77,
+    "pct_of_total": 98.04,
+    "ebr_margin_Wh_range": [7280, 148027],
+    "zero_hours_tightly_binding": true,
+    "j1_jnc_zero_hours": 539,
+    "j1_jnc_zero_pct": 98.5,
+    "j2_zero_fraction_population": 1.0,
+    "label": "VERIFIED (reused from prior task)"
+  },
+  "j3_geometry_concentration_bias": {
+    "mean_diesel_power_when_on_W": 43833.6,
+    "max_diesel_power_observed_W": 67825.99,
+    "diesel_max_cap_W": 100000.0,
+    "effective_ceiling_W_approx": 68000,
+    "effective_ceiling_source": "load (~12-18kW) + battery charge-rate cap (50kW, unmodifiable)",
+    "finding": "J3's flat per-hour base fuel favors concentrated short high-power bursts over smooth long low-power operation; planner already operates near the load+charge-cap ceiling, not the diesel max",
+    "theoretical_base_fuel_floor_at_100kw_L": 1198.85,
+    "theoretical_base_fuel_floor_at_realistic_ceiling_L": 1763.01,
+    "actual_base_fuel_L": 2735.0,
+    "label": "DERIVED (new in this pass)"
+  },
+  "run_fragmentation": {
+    "total_runs": 335,
+    "length_1h": 170,
+    "length_2h": 127,
+    "length_3h": 32,
+    "length_4h": 3,
+    "length_5h": 3,
+    "mean_run_length_h": 1.633,
+    "decomposition": "run SHORTNESS caused by J3 base-fuel concentration bias (causal, new); run MULTIPLICITY caused by EBR/reserve timing (closed branch, cited not reopened)",
+    "label": "VERIFIED (counts), DERIVED (decomposition)"
+  },
+  "t1_campaign_evidence": {
+    "source": "experiments/stage4_planner_cf_consistency_2025/t1_temporal_tie_break_campaign_20261008/CAMPAIGN_REPORT.md",
+    "reused_not_rerun": true,
+    "solve_level_invariance": {
+      "resolves_applied": 2941,
+      "resolves_skipped_j2_positive": 11,
+      "invariance_failures": 0,
+      "finding": "J1,J_NC,J2,J3,u_diesel*,v_start* bit-identical to baseline in 100% of applied resolves"
+    },
+    "realized_outcome": {
+      "fuel_delta_L": 241.6077,
+      "fuel_delta_pct": 2.77,
+      "fuel_total_L": 8970.8523,
+      "R_P_pct": 97.7948,
+      "R_P_control_reference_pct": 97.7963,
+      "gate_S2_result": "FAIL",
+      "critical_unmet_delta_Wh": 3596.20,
+      "curtailment_delta_kWh": 1207.52,
+      "diesel_starts_delta": 9,
+      "diesel_energy_delta_kWh": 1626.43
+    },
+    "root_cause_mechanisms": [
+      "cross-run reallocation: 330/2941 resolves actually INCREASED hour-0 charging due to whole-run weighted objective",
+      "closed-loop feedback depletion: postponed charging left lower battery reserve, forecast divergence then forced more diesel later",
+      "curtailment inefficiency: postponed charging shifted top-up toward solar ramp, causing more curtailment when solar arrived against a fuller battery"
+    ],
+    "decisive_conclusion": "Diesel timing IS genuinely degenerate at the solve level (proven both theoretically and now empirically), but that degeneracy does NOT survive translation into the realized closed-loop trajectory under rolling MPC.",
+    "label": "VERIFIED (persisted campaign artifact, reused)"
+  },
+  "battery_energy_arbitrage": {
+    "representative_case": "origin 2",
+    "charged_energy_Wh": 71693.7,
+    "stored_energy_Wh": 65958.2,
+    "delivered_energy_Wh_approx": 60681.5,
+    "round_trip_loss_Wh_approx": 11012.2,
+    "round_trip_loss_pct_approx": 15.4,
+    "residual_unused": 0,
+    "generalized_to_population": false,
+    "label": "DERIVED (single traced episode only, UNKNOWN at population scale)"
+  },
+  "fuel_accounting_partition": {
+    "exact_mutually_exclusive_partition_possible": false,
+    "immediate_load_requirement_L_upper_bound": 171.48,
+    "ebr_reserve_aggregate_L": 724.5549,
+    "base_plus_startup_structural_L": 3405.0,
+    "solver_degeneracy_net_fuel_L": 0,
+    "overlap_note": "EBR/future-battery-requirement/lexicographic-objective categories are the same underlying mechanism viewed from different angles; base/startup is a structural axis explaining timing shape, not an independent causal bucket",
+    "label": "VERIFIED where counted; DERIVED for categorization; UNKNOWN for fuel-inventory isolation"
+  },
+  "largest_remaining_new_mechanism": {
+    "found": false,
+    "reason": "Base-fuel concentration bias is real but already near its practical ceiling (bounded by the unmodifiable 50kW battery charge-rate cap); within-run temporal degeneracy is real and large in principle but empirically failed safety when actually tested (T1, S2 fail, +241.6L worse).",
+    "label": "DERIVED"
+  },
+  "lever_proposed": false,
+  "governance_classification": "D",
+  "classification_meaning": "Mechanism real, no safe online lever exists",
+  "final_answers": {
+    "q1_why_charge_when_ebr_not_binding": "Layer-C enforced at every hour of the 24h horizon, not just binding hours; early charging funds a later binding hour in the same horizon",
+    "q2_necessity_type": "mixed - need is EBR-structural, timing/shape is J3-economic, specific allocation is hierarchy-degenerate",
+    "q3_fuel_associated_L": 8557.77,
+    "q4_fragmentation_fuel_L": "not separable as standalone figure",
+    "q5_fuel_for_critical_service_L": "negligible in strict J1 sense; 724.5549 L aggregate for J2",
+    "q6_temporal_positioning_recoverable": "none safely recoverable - T1 attempted this and made fuel use worse",
+    "q7_uniquely_determined": false,
+    "q7_degenerate_verified_empirically": true,
+    "q8_rolling_horizon_creates_behavior": true,
+    "q9_largest_remaining_mechanism": "none found meeting all five criteria",
+    "q10_nonarbitrary_lever_exists": false,
+    "q11_lever_spec": "N/A",
+    "q12_next_question": "trajectory-shape (multi-hour-ahead) decision-time discriminator for the 77/44 origin split, still untested"
+  },
+  "policy_experiment_executed": false,
+  "agy_execution_spec_provided": false
+}

@@ -1,0 +1,88 @@
+{
+  "artifact_name": "candidate_k_model.joblib",
+  "model_sha256": "8fa57cedd6aa9ad0f8e4077f82dff3d550a22acaee44e924869b94360165b8e7",
+  "training_timestamp_utc": {
+    "start": "2026-10-16T15:51:44.441631+00:00",
+    "end": "2026-10-16T15:51:44.601072+00:00"
+  },
+  "environment": {
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "scikit_learn_version": "1.9.0",
+    "numpy_version": "2.5.2",
+    "pandas_version": "3.0.5",
+    "joblib_version": "1.6.0"
+  },
+  "hypothesis": "Hypothesis 1: Baseline Conditioning (pred_stage4_clean + clean_attenuation)",
+  "hyperparameters": {
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "features": {
+    "count": 35,
+    "order": [
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "clearsky_ghi_terrain_adjusted",
+      "u700",
+      "v700",
+      "lwp_18z_fc",
+      "iwp_18z_fc",
+      "lwp_x_cloud_18z",
+      "elevation_x_cloud_frac",
+      "pred_stage4_clean",
+      "clean_attenuation"
+    ]
+  },
+  "input_hashes": {
+    "train_v2": "7f2435fe5b2b239c9a2950366d56ab4297f29f1e8813d23a9ab64f62ca50483d",
+    "val_v2": "24e6828ee7cb7d45fd755844653e4ad9396f07bfe1a551b4411867bb07c948a9",
+    "train_base": "1b6ff36e50e0c415f3f1160a80aaa18fe2f6576245d28bbaaaed7cba1f9a1f57",
+    "val_base": "087b5ca7d7ac70cf21918021854bfa01c59b6ee8e8eccb03253ad32b9c472664"
+  },
+  "training_provenance": {
+    "dataset": "dataset_v2/train.csv joined with stage4_clean_baseline/train_baseline.csv",
+    "origins": 174,
+    "total_rows": 4176,
+    "daytime_fitted_rows": 2885,
+    "target": "actual_SW_IN - pred_stage4_clean (residual on clean Stage 4)"
+  },
+  "validation_provenance": {
+    "dataset": "dataset_v2/validation.csv joined with stage4_clean_baseline/validation_baseline.csv",
+    "origins": 173,
+    "total_rows": 4152,
+    "daytime_evaluated_rows": 2883
+  },
+  "governance": {
+    "blind_partition_used": false,
+    "refit_on_validation": false,
+    "winner_status": "null",
+    "operational_promotion": false
+  }
+}

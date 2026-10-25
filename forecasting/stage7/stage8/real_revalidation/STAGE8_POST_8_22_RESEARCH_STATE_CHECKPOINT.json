@@ -1,0 +1,81 @@
+{
+  "timestamp_utc": "2026-09-13T16:43:00Z",
+  "checkpoint_name": "POLARIS_POST_STAGE8_22_RESEARCH_STATE_CHECKPOINT",
+  "current_reproducible_champion": {
+    "stage": "Stage 8.1",
+    "feature_count": 37,
+    "architecture": "HistGradientBoostingRegressor (loss=absolute_error, max_depth=4, min_samples_leaf=30, l2_regularization=10.0)",
+    "odd_daytime_nmae_pct": 28.0688,
+    "odd_mae_wm2": 36.188657,
+    "odd_rmse_wm2": 64.219495,
+    "odd_bias_wm2": 1.439399,
+    "status": "VERIFIED_OPERATIONAL_BASELINE",
+    "odd_protection_status": "PROTECTED_UNTOUCHED"
+  },
+  "stage_8_21a_closure_summary": {
+    "route_id": "STAGE8.21A",
+    "route_name": "3D Cloud-Solar-Ray Geometry",
+    "technical_feasibility": "FEASIBLE AND NOVEL",
+    "even_control_mae_wm2": 37.6201,
+    "even_candidate_mae_wm2": 37.5916,
+    "even_delta_mae_wm2": -0.0285,
+    "improving_folds": "2 / 5",
+    "gate_g2_status": "FAIL",
+    "final_verdict": "REJECTED_ON_EVEN",
+    "odd_touched": false
+  },
+  "stage_8_22_closure_summary": {
+    "route_id": "STAGE8.22",
+    "route_name": "Satellite Cloud-Motion / NRT Cloud State",
+    "technical_feasibility": "NOT FEASIBLE",
+    "geo_seviri_amv": "Operationally infeasible (VZA 78.07 deg, 21-37 km parallax shift, 14.5 km pixel elongation)",
+    "leo_amv": "Not causally available (t_pub > t0, <14% coverage)",
+    "leo_optical_flow": "Not causally available (t_pub > t0, polar night, mountain cloud non-stationarity)",
+    "leo_nwc_saf_pps_cth": "Feasible but not novel (0 velocity vectors, redundant with Stage 8.1 MEPS clouds when advected)",
+    "experiment_authorized": false,
+    "final_verdict": "CLOSED_NOT_FEASIBLE",
+    "odd_touched": false
+  },
+  "investigated_information_axes": [
+    {"axis": "historical SW_IN context", "stage": "Stage 6.1/6.2", "status": "CLOSED"},
+    {"axis": "solar geometry", "stage": "Stage 6.3", "status": "INCLUDED_IN_CHAMPION"},
+    {"axis": "MEPS cloud fraction", "stage": "Stage 6.4", "status": "INCLUDED_IN_CHAMPION"},
+    {"axis": "MEPS LWP/IWP", "stage": "Stage 6.6", "status": "INCLUDED_IN_CHAMPION"},
+    {"axis": "vertical cloud summaries", "stage": "Stage 7.1", "status": "REJECTED_ON_EVEN"},
+    {"axis": "cloud base/top geometry", "stage": "Stage 7.2", "status": "REJECTED_ON_EVEN"},
+    {"axis": "terrain/horizon", "stage": "Stage 7.5", "status": "INCLUDED_IN_CHAMPION"},
+    {"axis": "MEPS 700 hPa wind", "stage": "Stage 8.1", "status": "INCLUDED_IN_CHAMPION"},
+    {"axis": "MEPS spatial cloud fields", "stage": "Stage 8.2", "status": "REJECTED_ON_EVEN"},
+    {"axis": "MEPS native radiation", "stage": "Stage 8.3", "status": "REJECTED_ON_EVEN"},
+    {"axis": "MEPS ensemble spread", "stage": "Stage 8.4", "status": "REJECTED_ON_EVEN"},
+    {"axis": "deterministic forecast revisions", "stage": "Stage 8.5", "status": "REJECTED_ON_EVEN"},
+    {"axis": "snow/cloud interaction", "stage": "Stage 8.6", "status": "REJECTED_ON_EVEN"},
+    {"axis": "CAMS AOD/TCWV", "stage": "Stage 8.7/8.8", "status": "REJECTED_ON_EVEN"},
+    {"axis": "satellite thermal IR", "stage": "Stage 8.9", "status": "REJECTED_ON_EVEN"},
+    {"axis": "Abisko direct/diffuse radiation", "stage": "Stage 8.10/8.19", "status": "CLOSED_REVERTED"},
+    {"axis": "AROME wind/LWP disagreement", "stage": "Stage 8.17A", "status": "REJECTED_ON_EVEN"},
+    {"axis": "3D cloud-solar-ray geometry", "stage": "Stage 8.21A", "status": "REJECTED_ON_EVEN"},
+    {"axis": "satellite cloud-motion/NRT state", "stage": "Stage 8.22", "status": "CLOSED_NOT_FEASIBLE"},
+    {"axis": "local temperature/RH/dew-point state", "stage": "Stage 8.23", "status": "REJECTED_ON_EVEN"}
+  ],
+  "new_research_position": {
+    "statement": "We are no longer in a generic feature-addition phase.",
+    "prioritized_physical_mechanisms": [
+      "A. Orographic cloud formation / atmospheric flow regime",
+      "B. Cloud growth/decay/evolution mechanisms",
+      "C. Diffuse and broken-cloud radiative-transfer information",
+      "D. Other genuinely independent physical observations"
+    ]
+  },
+  "governance_locks": [
+    "No ODD access during feasibility research.",
+    "No ODD evaluation unless an EVEN experiment passes all predeclared gates.",
+    "No changing the 347-origin benchmark.",
+    "No changing the Stage 8.1 champion during research.",
+    "No retroactive route reopening without new evidence.",
+    "No master/registry modification until a route has a justified experimental result.",
+    "No theoretical coverage claims presented as empirical coverage.",
+    "No unsupported claims of novelty or causal availability."
+  ],
+  "next_action": "conduct a fresh research synthesis for genuinely independent physical mechanisms affecting future SW_IN, prioritizing orographic cloud formation/flow regime, cloud evolution, and diffuse/broken-cloud radiative transfer. Research only first. No experiment is authorized at this stage."
+}

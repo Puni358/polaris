@@ -1,0 +1,12 @@
+{
+  "timestamp": "2024-06-04T10:00:00Z",
+  "battery_soc_pct": 74.03,
+  "battery_energy_wh": 148059.89,
+  "diesel_running": false,
+  "diesel_hours_running": 0.0,
+  "last_observed_solar_irradiance": 485.38,
+  "last_observed_demand": 33045.12,
+  "last_observed_wind_generation": 35654.05,
+  "operating_mode": "NORMAL",
+  "diesel_fuel_remaining_liters": 67.8514
+}

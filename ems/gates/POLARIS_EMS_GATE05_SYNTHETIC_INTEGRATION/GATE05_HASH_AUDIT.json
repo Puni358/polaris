@@ -1,0 +1,16 @@
+{
+  "gate": "GATE-05",
+  "subject": "SYNTHETIC INTEGRATED EMS FIXTURE",
+  "source_modifications": 0,
+  "status": "SEALED",
+  "test_fixture_file": "tests/test_gate05_synthetic_fixture.py",
+  "test_fixture_results": "6_PASSED_OF_6",
+  "full_suite_results": "41_PASSED_OF_41",
+  "file_hashes": {
+    "GATE05_FIXTURE_SPEC.md": "0b18fe5ad0cae223d8dbb5360e7d52846d268c21e41024d7a20314c54fa41867",
+    "GATE05_GOVERNANCE_EVENT_TRACE.md": "7172ca86fe1193dfc6e71fad95e1915e2f20a0f10452e867667824f46d96d619",
+    "GATE05_INTEGRATION_RESULTS.md": "1f13646091607b198ff2a2e043b758dc271a125ac1432df602677e3a2a2a957c",
+    "GATE05_STATUS.md": "f8f87967b8a0373be1ad307a004678bd6011900ac67bbda59a045797eb5eab35",
+    "GATE05_TRUTH_FIREWALL_AUDIT.md": "a91ec19a051d6fb2a0eb984d401ba33949619967f1e6bb3e6785ef25561c8feb"
+  }
+}

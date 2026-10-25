@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-09-12 09:24:06",
+  "script_name": "run_stage6_5_snow_cloud_experiment.py",
+  "input_files": [
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_clearsky_decomposition.csv",
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "/home/punith-bs/01polaris (Copy)/stage4/stage4_results/ensemble_predictions.csv"
+  ],
+  "control_features_count": 28,
+  "candidate_features_count": 31,
+  "execution_time_seconds": 26.8
+}

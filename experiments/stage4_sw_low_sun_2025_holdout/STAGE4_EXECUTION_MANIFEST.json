@@ -1,0 +1,71 @@
+{
+  "experiment_id": "EXP-STAGE4-SW-LOW-SUN-2025-HOLDOUT",
+  "design_version": "STAGE4-PREREG-v1.0",
+  "timestamp_utc": "2026-10-05T15:32:56Z",
+  "population": {
+    "calendar_range": "2025-05-01 to 2025-08-31",
+    "origins_count": 123,
+    "origin_hours_per_arm": 2952,
+    "total_arm_hours": 14760,
+    "exclusions_count": 0
+  },
+  "governance_hashes": {
+    "gap19_solver": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "dispatch_plan": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b",
+    "causal_nwp_forecaster": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "s_sw_adapter": "a3ba73ad32ed2be20c0f197689081abf64402da41205a674fe76a15767e40de4",
+    "s_sw_preregistration_md": "1f018b1aba2651950b8cd5474ee9ea4dd2c6db6e9d9a584b1a5791eb59e80be5",
+    "s_sw_preregistration_json": "3607876afea7cea169887faa3b92c7a21142e9fbc5bd38ac93a6b72351342ba4",
+    "numerical_boundary_addendum_md": "228474e1100d4ce4a1c1470198125d699ddd3d9c0bf1f91678f4373f8e1d0054",
+    "numerical_boundary_addendum_json": "94c6f623a35628bd5f4efab40557c8fa99395fdf81b4c6c665ab0af968d7bfdd",
+    "solar_elevation_module": "3ac68ee705e9a9ec68044687c5df79100082d9ab172d09baac70dde6be00ed54",
+    "nwp_2025": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+    "nwp_2025_manifest": "534ed055d632950c474e4a38ff11b4b31f16955e6dff5968b7acabd31edf14cf",
+    "stage4_prereg_md": "9cb2d5459894be8add07a3bd01595f40ab2485c2a18510765c4d8f0264fe4e46",
+    "stage4_prereg_json": "9a16ccc8c28267331da2816fe0c7c04aeb9afd6f963e49673eb6c3872d892623",
+    "holdout_gov_md": "22e67a16a90ef90fa88b248614a83d853511a33619548272535e05615314d7a7",
+    "holdout_gov_json": "f96fd97c812f44e88455c966c500a3874a99f07b8ae94744759d0fac6b461bf7"
+  },
+  "classifications": {
+    "Candidate_SL": "SUCCESS",
+    "Candidate_SWL": "SUCCESS"
+  },
+  "artifacts": {
+    "summary_md": "STAGE4_CAMPAIGN_SUMMARY.md",
+    "execution_audit_md": "STAGE4_EXECUTION_AUDIT.md",
+    "safety_report_md": "STAGE4_SAFETY_REPORT.md",
+    "safety_report_json": "STAGE4_SAFETY_REPORT.json",
+    "statistical_report_md": "STAGE4_STATISTICAL_REPORT.md",
+    "statistical_report_json": "STAGE4_STATISTICAL_REPORT.json",
+    "factorial_report_md": "STAGE4_FACTORIAL_C4_REPORT.md",
+    "factorial_report_json": "STAGE4_FACTORIAL_C4_REPORT.json",
+    "origin_manifest_json": "STAGE4_ORIGIN_MANIFEST.json",
+    "origin_results_csv": "STAGE4_123_ORIGIN_RESULTS.csv",
+    "origin_results_json": "STAGE4_123_ORIGIN_RESULTS.json",
+    "hourly_telemetry_csv": "STAGE4_123_ORIGIN_HOURLY_TELEMETRY.csv",
+    "hourly_telemetry_json": "STAGE4_123_ORIGIN_HOURLY_TELEMETRY.json",
+    "checkpoint_jsonl": "CANDIDATE_STAGE4_CHECKPOINT.jsonl",
+    "adapter_py": "stage4_low_sun_adapter.py",
+    "runner_py": "run_stage4_sw_low_sun_2025_campaign.py",
+    "tests_py": "test_stage4_implementation.py"
+  },
+  "artifact_sha256": {
+    "STAGE4_CAMPAIGN_SUMMARY.md": "bb6c7d4b740b9ec9b3796c8a563d12701816b9ff359684936a98f90dd1759db4",
+    "STAGE4_EXECUTION_AUDIT.md": "0f7c1e8b2c3cc514d3d0d3dbdf36a1bdb08801ce15af8ecb0c2959fad2b6c1b3",
+    "STAGE4_SAFETY_REPORT.md": "322229daf9596d624e6cb23b336ef01e4483ed85441185e9202c3649c6fc17e3",
+    "STAGE4_SAFETY_REPORT.json": "40df13e347234990b92b94e9644c18bb714d8cfd62203def2c123d820be101f0",
+    "STAGE4_STATISTICAL_REPORT.md": "0e601788a78eeb7567dc782cca7635e59824c255c3c2526c35860f47effee63a",
+    "STAGE4_STATISTICAL_REPORT.json": "f2c35311dd387cda99cea0cdffc5d8fc48252dc1e48a2348cf59179de80143f5",
+    "STAGE4_FACTORIAL_C4_REPORT.md": "57d302c3925ee127c8514fcbe18bab05764b165131ac72d5d2787103c6513d16",
+    "STAGE4_FACTORIAL_C4_REPORT.json": "99ce51b22a3b33f3eb2390a923a0bda2202959e341930430e8c9797c0f9df8b7",
+    "STAGE4_ORIGIN_MANIFEST.json": "7a6c791ff64cf8c8b85d27e061aba94e8d6515f32efb418789d5f0b9b56cc288",
+    "STAGE4_123_ORIGIN_RESULTS.csv": "18d13dec71eab82919c900da52b5248699e4b5b8fa4c4ed8499aff494f4fa62b",
+    "STAGE4_123_ORIGIN_RESULTS.json": "d1710b8345a4ee21de8d4fc696cc189ea2508ff038a3ff42281560457eac4376",
+    "STAGE4_123_ORIGIN_HOURLY_TELEMETRY.csv": "90c71d58fdf6fbfd5cbe9ffe5f27367e558f2650aeb31cdd340691c6e3587007",
+    "STAGE4_123_ORIGIN_HOURLY_TELEMETRY.json": "7fcd8ba9df2f925ad6137e4893124e3c833a907b26d1ca7ab37b7b4af7944de3",
+    "CANDIDATE_STAGE4_CHECKPOINT.jsonl": "cfcdc65cc7f6ea2ac88ee69c02d94c218f16a7e96324028f1d454dbf2b4d7371",
+    "stage4_low_sun_adapter.py": "3427da6a7b1d7763f8fa655e541cd2a344aeefdd33379137c6311501799395d0",
+    "run_stage4_sw_low_sun_2025_campaign.py": "8a62feb30a09a9bae7bab1261c73a1f33b857c585f2af5a37c757e29c2f0c312",
+    "test_stage4_implementation.py": "80e3a3e1b88a8d34e0716912bd82c4db4bc297b7d6bc51098fbe1a9a574080e9"
+  }
+}

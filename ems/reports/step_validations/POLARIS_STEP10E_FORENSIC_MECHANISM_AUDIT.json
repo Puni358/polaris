@@ -1,0 +1,157 @@
+{
+  "audit_type": "STEP10E_FORENSIC_MECHANISM_AUDIT",
+  "experiment_id": "POLARIS_STAGE8_1_H10_ML_FORECAST_TREATMENT_VS_BASELINE",
+  "trajectory_origin": "2024-06-01T00:00:00Z",
+  "rerun_performed": false,
+  "source_modifications": 0,
+  "result_classification": "A_MECHANISM_FULLY_RECONCILED",
+  "paired_metrics": {
+    "diesel_fuel_liters": {
+      "treatment": 121.463,
+      "control": 125.461,
+      "difference": -3.997,
+      "percent_difference": -3.19
+    },
+    "diesel_generation_kwh": {
+      "treatment": 325.854,
+      "control": 321.843,
+      "difference": 4.011
+    },
+    "solar_generation_used_kwh": {
+      "treatment": 251.9,
+      "control": 310.686,
+      "difference": -58.786
+    },
+    "wind_generation_used_kwh": {
+      "treatment": 78.215,
+      "control": 78.215,
+      "difference": 0.0
+    },
+    "renewable_curtailment_kwh": {
+      "treatment": 0.0,
+      "control": 0.0,
+      "difference": 0.0
+    },
+    "battery_charge_kwh": {
+      "treatment": 181.424,
+      "control": 193.15,
+      "difference": -11.726
+    },
+    "battery_discharge_kwh": {
+      "treatment": 162.802,
+      "control": 119.753,
+      "difference": 43.049
+    },
+    "unmet_load_kwh": {
+      "treatment": 0.0,
+      "control": 0.0,
+      "difference": 0.0
+    }
+  },
+  "cycle_level_analysis": {
+    "total_mpc_cycles": 24,
+    "first_divergent_cycle": 0,
+    "first_divergent_timestamp": "2024-06-01T00:00:00Z",
+    "divergent_variables": [
+      "diesel_power_command_w",
+      "battery_charge_command_w",
+      "battery_discharge_command_w"
+    ]
+  },
+  "forecast_differentiation": {
+    "hours_with_different_forecasts": 24,
+    "max_absolute_difference_w_m2": 246.09,
+    "mean_absolute_difference_w_m2": 72.35,
+    "mean_signed_difference_w_m2": -48.03,
+    "hours_ml_greater_than_baseline": 12,
+    "hours_ml_less_than_baseline": 12,
+    "hours_ml_closer_to_actual": 18,
+    "hours_ml_farther_from_actual": 6,
+    "ml_irradiance_mae_w_m2": 78.16,
+    "baseline_irradiance_mae_w_m2": 137.8,
+    "ml_irradiance_rmse_w_m2": 121.2,
+    "baseline_irradiance_rmse_w_m2": 178.23
+  },
+  "battery_mechanism": {
+    "initial_soc_pct": 50.0,
+    "initial_energy_wh": 100000.0,
+    "treatment_final_soc_pct": 44.98,
+    "control_final_soc_pct": 73.77,
+    "treatment_final_energy_wh": 89951.5,
+    "control_final_energy_wh": 147531.8,
+    "treatment_soc_range_pct": {
+      "min": 39.19,
+      "max": 91.79
+    },
+    "control_soc_range_pct": {
+      "min": 21.54,
+      "max": 80.38
+    },
+    "charge_efficiency": 0.92,
+    "discharge_efficiency": 0.92,
+    "net_discharge_delta_kwh": 43.049,
+    "net_charge_delta_kwh": -11.726,
+    "battery_role_explanation": "Treatment pre-charges battery early at Cycle 00 and block-charges at Cycles 17-19 to 91.8% SOC, enabling generator shutdown during Cycles 20-23 and reducing diesel operating hours from 9 to 8."
+  },
+  "diesel_mechanism": {
+    "generator_base_fuel_l_per_h": 5.0,
+    "generator_marginal_fuel_l_per_wh": 0.00025,
+    "treatment_on_hours": 8,
+    "control_on_hours": 9,
+    "on_hours_difference": -1,
+    "treatment_base_fuel_l": 40.0,
+    "control_base_fuel_l": 45.0,
+    "base_fuel_difference_l": -5.0,
+    "treatment_marginal_fuel_l": 81.463,
+    "control_marginal_fuel_l": 80.461,
+    "marginal_fuel_difference_l": 1.003,
+    "treatment_fuel_efficiency_l_per_kwh": 0.3728,
+    "control_fuel_efficiency_l_per_kwh": 0.3898,
+    "efficiency_difference_l_per_kwh": -0.0171
+  },
+  "energy_reconciliation": {
+    "treatment": {
+      "total_generation_kwh": 655.969,
+      "initial_stored_energy_kwh": 100.0,
+      "final_stored_energy_kwh": 89.952,
+      "load_served_kwh": 637.347,
+      "battery_losses_kwh": 28.671,
+      "curtailment_kwh": 0.0,
+      "unmet_load_kwh": 0.0,
+      "energy_balance_error_kwh": -0.0
+    },
+    "control": {
+      "total_generation_kwh": 710.744,
+      "initial_stored_energy_kwh": 100.0,
+      "final_stored_energy_kwh": 147.532,
+      "load_served_kwh": 637.347,
+      "battery_losses_kwh": 25.865,
+      "curtailment_kwh": 0.0,
+      "unmet_load_kwh": 0.0,
+      "energy_balance_error_kwh": 0.0
+    }
+  },
+  "soc_reconciliation": {
+    "summary_reported_treatment": "39.2-91.8%",
+    "summary_reported_control": "21.5% -> 80.4%",
+    "raw_telemetry_treatment_soc_range": "39.19% to 91.79%",
+    "raw_telemetry_control_soc_range": "21.54% to 80.38%",
+    "reconciliation_verdict": "Both ranges represent genuine min-max SOC boundaries experienced during the 24 MPC cycles. The notation 21.5% -> 80.4% represents min-to-max range (21.5% min, 80.4% max), not initial-to-final SOC."
+  },
+  "causal_chain": {
+    "step_1_forecast": "Stage 8.1 ML forecast provided lower daytime solar (-48.03 W/m2 mean signed diff, MAE 78.16 vs 137.80 W/m2).",
+    "step_2_optimizer_anticipation": "Optimizer at Cycle 00 and Cycles 17-19 foresaw lower solar availability and high evening load.",
+    "step_3_block_charging": "Optimizer dispatched high-power diesel block-charging (42.8 kW at C0, 63.3-75.8 kW at C17-18).",
+    "step_4_soc_trajectory": "Battery SOC reached 91.79% at C20 (vs Control min 21.54% at C5 and gradual charging).",
+    "step_5_operating_hours": "Treatment shut OFF generator for Cycles 20-23 (4 consecutive hours), reducing total generator ON hours from 9 to 8.",
+    "step_6_fuel_accounting": "Saving 1 generator ON hour reduced fixed base fuel by -5.000 L, while producing +4.011 kWh generation added +1.003 L marginal fuel.",
+    "step_7_net_result": "Net fuel consumption difference = -5.000 L + 1.003 L = -3.997 Liters (-3.19%)."
+  },
+  "anomalies": [],
+  "unsupported_claims": [
+    "Stage8.1 universally reduces diesel fuel by 3.19%",
+    "Stage8.1 guarantees real-world station fuel savings at Nuolja",
+    "Stage8.1 ML forecast is superior solely because it achieved lower operational fuel consumption"
+  ],
+  "conclusion": "The -3.997 L diesel fuel reduction in Treatment is fully reconciled by the reduction of 1 diesel generator operating hour (8h vs 9h), enabled by Stage 8.1 ML forecast driven battery pre-charging and block-charging, saving 5.0 L of fixed base overhead fuel."
+}

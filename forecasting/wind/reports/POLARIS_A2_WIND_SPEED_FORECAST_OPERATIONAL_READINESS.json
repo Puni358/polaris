@@ -1,0 +1,101 @@
+{
+  "readiness_metadata": {
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "POLARIS_A2_WIND_SPEED_FORECAST_OPERATIONAL_READINESS",
+    "timestamp_utc": "2026-09-18T06:26:55Z",
+    "investigation_type": "READ_ONLY_OPERATIONAL_READINESS_AND_INTERFACE_QUALIFICATION",
+    "evaluator": "POLARIS_GOVERNANCE_AGENT"
+  },
+  "authoritative_states": {
+    "PATH_A_SELECTION": "SELECTED",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "A2_RESEARCH_CHAMPION_STATUS": "VERIFIED",
+    "A2_AUDIT_STATUS": "VERIFIED_WITH_LIMITATIONS",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "WIND_GENERATION_MAPPING_DECISION": "C",
+    "WIND_POWER_MAPPING_IMPLEMENTATION_READINESS": "NOT_READY",
+    "WIND_SPEED_TO_POWER_MAPPING": "NOT_ESTABLISHED",
+    "WIND_GENERATION_REPRESENTATION": "NOT_ESTABLISHED"
+  },
+  "readiness_evaluations": {
+    "A2_WIND_SPEED_FORECAST_READINESS": "READY_FOR_IMPLEMENTATION_AUTHORIZATION",
+    "FORECAST_INTERFACE_READINESS": "CONDITIONALLY_READY",
+    "FORECASTBUNDLE_REPRESENTATION_STATUS": "NOT_ESTABLISHED",
+    "A2_RUNTIME_INPUT_READINESS": "CONDITIONALLY_ESTABLISHED",
+    "FORECASTENGINE_CONTRACT_CHANGE_REQUIRED": "NO",
+    "WIND_SPEED_FORECAST_REPRESENTATION": "NOT_ESTABLISHED",
+    "NEXT_DECISION": "C"
+  },
+  "non_authorization_states": {
+    "A2_MODEL_TRAINING": "COMPLETE_HISTORICAL_RESEARCH_ONLY",
+    "A2_MODEL_RETRAINING": "NOT_AUTHORIZED",
+    "A2_MODEL_TUNING": "NOT_AUTHORIZED",
+    "NEW_WIND_EXPERIMENT": "NOT_AUTHORIZED",
+    "WIND_POWER_MAPPING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "WIND_SPEED_TO_POWER_MAPPING": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "FORECASTENGINE_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_EMS_EXPERIMENT": "NOT_AUTHORIZED",
+    "PRODUCTION_MODIFICATION": "NOT_AUTHORIZED",
+    "FROZEN_CONTRACT_CHANGE": "NOT_AUTHORIZED"
+  },
+  "a2_champion_scientific_summary": {
+    "model_class": "sklearn.linear_model.Ridge",
+    "script_path": "research/wind_a2/run_a2_wind_speed_experiments.py",
+    "test_set_mae_ms": 2.0364,
+    "test_set_rmse_ms": 2.7136,
+    "test_set_bias_ms": -0.2793,
+    "mae_improvement_over_persistence_pct": 30.58,
+    "horizon_hours": 24,
+    "timestep": "1-hour"
+  },
+  "codebase_boundary_audit": {
+    "forecast_engine_interface": "system/forecasting/interface/base.py",
+    "forecast_engine_signature": "predict(station_state: StationState, runtime_context: Dict[str, Any]) -> ForecastBundle",
+    "forecast_engine_abstract_change_required": false,
+    "forecast_bundle_schema": "system/schemas/forecast_bundle.py (v1.0.0)",
+    "forecast_bundle_mandatory_fields": ["solar_irradiance", "solar_generation", "wind_generation", "demand"],
+    "forecast_bundle_standalone_wind_speed_field_exists": false,
+    "forecast_bundle_wind_generation_unit": "W",
+    "repurposing_wind_generation_for_speed_allowed": false
+  },
+  "boundary_compatibility_breakdown": {
+    "structural_compatibility": "ESTABLISHED (24 hourly predictions match 24h horizon requirement)",
+    "semantic_compatibility": "NOT_ESTABLISHED (ForecastBundle v1.0 lacks a standalone wind_speed field in m/s)",
+    "provenance_compatibility": "ESTABLISHED (Metadata can carry SMHI 188790 station ID and regional proxy label)",
+    "implementation_compatibility": "CONDITIONALLY_ESTABLISHED (Requires a ForecastEngine adapter class wrapping AR-X)",
+    "governance_authorization": "NOT_AUTHORIZED (Separate governance authorization required before writing adapter or updating bundle schema)"
+  },
+  "firewall_verifications": {
+    "STAGE8_1": "UNCHANGED",
+    "A1": "UNCHANGED",
+    "A1_5": "UNCHANGED",
+    "A1_6": "UNCHANGED",
+    "A2_TARGET_DEFINITION": "UNCHANGED",
+    "A2_MODEL_DEVELOPMENT": "UNCHANGED",
+    "A2_EVIDENCE_AUDIT": "UNCHANGED",
+    "A2_ARX_ARTIFACT": "UNCHANGED",
+    "A2_RESULTS": "UNCHANGED",
+    "A2_INTEGRATION_READINESS": "UNCHANGED",
+    "WIND_ASSET_ACQUISITION": "UNCHANGED",
+    "D1_D7": "UNCHANGED",
+    "FORECASTBUNDLE": "UNCHANGED",
+    "FORECASTENGINE": "UNCHANGED",
+    "STATIONSTATE": "UNCHANGED",
+    "DISPATCHPLAN": "UNCHANGED",
+    "EMS": "UNCHANGED",
+    "MPC": "UNCHANGED",
+    "DIGITAL_TWIN": "UNCHANGED",
+    "D5": "UNCHANGED",
+    "FROZEN_SCHEMAS": "UNCHANGED"
+  }
+}

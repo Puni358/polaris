@@ -1,0 +1,38 @@
+[2026-09-12 14:19:58,773] INFO: 
+================================================================================
+[2026-09-12 14:19:58,773] INFO: [STAGE 7.5] TERRAIN / HORIZON FORECASTING EXPERIMENT PIPELINE
+[2026-09-12 14:19:58,773] INFO: [STAGE 7.5] Frozen Champion: Stage 6.6 LWP/IWP Model
+[2026-09-12 14:19:58,773] INFO: [STAGE 7.5] ODD Status: STRICTLY LOCKED
+[2026-09-12 14:19:58,773] INFO: ================================================================================
+[2026-09-12 14:19:59,096] INFO: [STAGE 7.5] RESUME CHECK
+[2026-09-12 14:19:59,096] INFO: Total origins: 347 | EVEN: 174 | ODD: 173 (LOCKED)
+[2026-09-12 14:19:59,123] INFO: Total rows: 8328 | EVEN rows: 4176
+[2026-09-12 14:20:26,832] INFO: 
+================================================================================
+[2026-09-12 14:20:26,833] INFO: [STAGE 7.5] TERRAIN / HORIZON FORECASTING EXPERIMENT PIPELINE
+[2026-09-12 14:20:26,833] INFO: [STAGE 7.5] Frozen Champion: Stage 6.6 LWP/IWP Model
+[2026-09-12 14:20:26,833] INFO: [STAGE 7.5] ODD Status: STRICTLY LOCKED
+[2026-09-12 14:20:26,833] INFO: ================================================================================
+[2026-09-12 14:20:27,159] INFO: [STAGE 7.5] RESUME CHECK
+[2026-09-12 14:20:27,159] INFO: Total origins: 347 | EVEN: 174 | ODD: 173 (LOCKED)
+[2026-09-12 14:20:27,160] INFO: Total rows: 8328 | EVEN rows: 4176
+[2026-09-12 14:20:27,632] INFO: [STAGE 7.5] Pre-CV Data Audit PASSED: 0 NaNs/Infs across all 33 raw features.
+[2026-09-12 14:20:27,638] INFO: 
+================================================================================
+[2026-09-12 14:20:27,639] INFO: [STAGE 7.5] EVEN CV EVALUATION
+[2026-09-12 14:20:27,639] INFO: ================================================================================
+[2026-09-12 14:20:27,639] INFO: [STAGE 7.5] ODD TARGET ACCESS: LOCKED
+[2026-09-12 14:20:27,639] INFO: [STAGE 7.5] Fold 1/5 — training & validation...
+[2026-09-12 14:20:30,041] INFO: Fold 1/5 | Control MAE: 49.8174 W/m² | Candidate MAE: 49.0328 W/m² | Delta: -0.7846 W/m² | Gate Status: NOT FINALIZED
+[2026-09-12 14:20:30,041] INFO: [STAGE 7.5] ODD TARGET ACCESS: LOCKED
+[2026-09-12 14:20:30,041] INFO: [STAGE 7.5] Fold 2/5 — training & validation...
+[2026-09-12 14:20:33,937] INFO: Fold 2/5 | Control MAE: 71.0775 W/m² | Candidate MAE: 70.8406 W/m² | Delta: -0.2369 W/m² | Gate Status: NOT FINALIZED
+[2026-09-12 14:20:33,937] INFO: [STAGE 7.5] ODD TARGET ACCESS: LOCKED
+[2026-09-12 14:20:33,937] INFO: [STAGE 7.5] Fold 3/5 — training & validation...
+[2026-09-12 14:20:38,302] INFO: Fold 3/5 | Control MAE: 41.2620 W/m² | Candidate MAE: 41.0200 W/m² | Delta: -0.2419 W/m² | Gate Status: NOT FINALIZED
+[2026-09-12 14:20:38,302] INFO: [STAGE 7.5] ODD TARGET ACCESS: LOCKED
+[2026-09-12 14:20:38,302] INFO: [STAGE 7.5] Fold 4/5 — training & validation...
+[2026-09-12 14:20:42,328] INFO: Fold 4/5 | Control MAE: 26.8042 W/m² | Candidate MAE: 26.1143 W/m² | Delta: -0.6899 W/m² | Gate Status: NOT FINALIZED
+[2026-09-12 14:20:42,328] INFO: [STAGE 7.5] ODD TARGET ACCESS: LOCKED
+[2026-09-12 14:20:42,328] INFO: [STAGE 7.5] Fold 5/5 — training & validation...
+[2026-09-12 14:20:46,286] INFO: Fold 5/5 | Control MAE: 2.4420 W/m² | Candidate MAE: 2.1680 W/m² | Delta: -0.2740 W/m² | Gate Status: NOT FINALIZED

@@ -1,0 +1,35 @@
+item_number,description,audit_status
+1,1. run_id recorded,PASS
+2,2. architecture specified,PASS
+3,3. model class verified,PASS
+4,4. wrapper class verified,PASS
+5,5. hyperparameters frozen,PASS
+6,6. random seed set to 42,PASS
+7,7. dataset ID verified,PASS
+8,8. dataset SHA verified,PASS
+9,9. row count matches 8832/8784,PASS
+10,10. timestamp range 2024,PASS
+11,11. timezone UTC verified,PASS
+12,12. feature list 18 verified,PASS
+13,13. feature order exact,PASS
+14,14. feature matrix SHA recorded,PASS
+15,15. target definition SW_IN t+1..t+24,PASS
+16,16. target ordering exact,PASS
+17,17. forecast horizon 24h,PASS
+18,18. preprocessing train-only,PASS
+19,19. preprocessing params saved,PASS
+20,20. train split Jan-Aug,PASS
+21,21. validation split Sep-Oct,PASS
+22,22. test split Nov-Dec,PASS
+23,23. 24h embargo applied,PASS
+24,24. source-code hash recorded,PASS
+25,25. git commit tracked,PASS
+26,26. working-tree clean,PASS
+27,27. Python 3.12 verified,PASS
+28,28. scikit-learn dependency verified,PASS
+29,29. OS Linux verified,PASS
+30,30. training logs complete,PASS
+31,31. resource metadata recorded,PASS
+32,32. model joblib SHA recorded,PASS
+33,33. prediction artifact SHA recorded,PASS
+34,34. fresh-process replay PASSED,PASS

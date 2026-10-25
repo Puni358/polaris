@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-09-13T10:53:23+05:30",
+  "document_title": "STAGE 8.17A NUMERICAL REPRODUCTION FORENSIC AUDIT DATA MANIFEST",
+  "provenance_classification": "HISTORICALLY_REPORTED_BUT_NOT_FULLY_REPRODUCIBLE",
+  "outcome_classification": "OUTCOME_B",
+  "numerical_comparison": {
+    "historical_reported_reference": {
+      "daytime_mae_w_m2": 35.241085,
+      "daytime_nmae_pct": 27.3337,
+      "daytime_rmse_w_m2": 63.290812,
+      "daytime_bias_w_m2": 1.810421,
+      "night_mae_w_m2": 0.000000
+    },
+    "current_executable_control_pipeline": {
+      "daytime_mae_w_m2": 36.186882,
+      "daytime_nmae_pct": 28.0688,
+      "daytime_rmse_w_m2": 64.219495,
+      "daytime_bias_w_m2": 1.439399,
+      "night_mae_w_m2": 0.000000
+    },
+    "divergence_delta": {
+      "mae_diff_w_m2": 0.945797,
+      "nmae_diff_pp": 0.7351,
+      "rmse_diff_w_m2": 0.928683,
+      "bias_diff_w_m2": -0.371022
+    }
+  },
+  "artifact_inventory": {
+    "run_stage8_17a_script": "ABSENT",
+    "stage8_17a_model_checkpoint": "ABSENT",
+    "stage8_17a_feature_matrix": "ABSENT",
+    "stage8_17a_row_level_prediction_table": "ABSENT"
+  },
+  "answers_to_10_mandatory_questions": {
+    "Q1_origin_of_35_241085": "Reported ODD daytime MAE for historical Stage 8.17A 40-feature AROME structural disagreement experiment.",
+    "Q2_was_it_dynamically_calculated": "Calculated dynamically during initial run, but prediction rows were not saved. Currently exists only as static reference text/assertion.",
+    "Q3_exact_predictions_source": "40-feature HGB model evaluation on 173 ODD origins (not persisted to disk).",
+    "Q4_were_predictions_persisted": false,
+    "Q5_exact_input_files": "Stage 4 predictions + Stage 6.6 features + Stage 7.5 features + Stage 8.1 features + AROME features (AROME feature file missing).",
+    "Q6_does_current_code_reproduce": false,
+    "Q7_where_divergence_begins": "Feature matrix construction (37 features in current executable vs 40 features in Stage 8.17A).",
+    "Q8_did_later_pipeline_change_cause_discrepancy": false,
+    "Q9_was_stage8_17a_hardcoded": "Metrics were used as static reference literals in later script assertions, but original value was not fabricated out of thin air.",
+    "Q10_is_stage8_17a_trustworthy": "Historically reported but not fully reproducible (Outcome B) due to missing row-level prediction artifacts and feature code."
+  },
+  "governance_compliance": {
+    "master_handoff_mutated": false,
+    "route_registry_mutated": false,
+    "active_operational_champion_modified": false,
+    "optimization_experiment_executed": false
+  }
+}

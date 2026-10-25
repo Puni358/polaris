@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-09-13T09:14:46+00:00",
+  "document_type": "RETROACTIVE CANDIDATE FREEZE RECONSTRUCTION",
+  "stage": "POLARIS STAGE 8.17A",
+  "retroactive_notice": "THIS IS A RETROACTIVE RECONSTRUCTION CREATED DURING GOVERNANCE REPAIR. IT DOES NOT CLAIM TO HAVE EXISTED PRIOR TO ODD TARGET ACCESS.",
+  "frozen_candidate_name": "Stage 8.17A AROME Structural Disagreement Candidate",
+  "frozen_features": [
+    "wind_disagreement_700",
+    "LWP_disagreement"
+  ],
+  "feature_formulas": {
+    "wind_disagreement_700": "sqrt((AROME_U700 - MEPS_U700)^2 + (AROME_V700 - MEPS_V700)^2)",
+    "LWP_disagreement": "abs(AROME_LWP - MEPS_LWP)"
+  },
+  "frozen_model_config": {
+    "model_class": "HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42,
+    "total_features": 40
+  },
+  "pre_odd_even_cv_benchmark": {
+    "control_mae_w_m2": 44.718895,
+    "candidate_mae_w_m2": 44.296582,
+    "delta_mae_w_m2": -0.422313,
+    "control_nmae_pct": 32.3099,
+    "candidate_nmae_pct": 32.0048,
+    "delta_nmae_pct": -0.3051,
+    "control_rmse_w_m2": 76.443487,
+    "candidate_rmse_w_m2": 75.892401,
+    "delta_rmse_w_m2": -0.551086,
+    "improved_folds_count": 3,
+    "worst_fold_degradation_w_m2": 0.115316,
+    "all_5_gates_passed": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "stage": "STAGE_1_CAUSAL_MEPS_ACQUISITION",
+  "status": "STOPPED_ON_UPSTREAM_DISCREPANCY",
+  "timestamp_completed_utc": "2026-10-20T22:19:31.919081+00:00",
+  "pilot_window": {
+    "start_utc": "2024-06-01T00:00:00Z",
+    "end_decision_utc": "2024-06-07T23:00:00Z",
+    "decision_count": 168
+  },
+  "downloaded_artifacts": [
+    {
+      "cycle": "2024-05-31T18:00:00Z",
+      "raw_ascii_file": "meps_20240531T18Z_leads_31_52.ascii",
+      "raw_ascii_size_bytes": 5387,
+      "raw_ascii_sha256": "beeb8dd78ac84127a3b7b848939c3da65bf0d813496af59ec7b7f39efb60f453",
+      "json_file": "meps_20240531T18Z_leads_31_52.json",
+      "json_size_bytes": 4395,
+      "json_sha256": "cdebbcc19c40469a0849b079805ed29c696a0ae92a4d5e730858316761fa4a38",
+      "leads_acquired": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "validation_status": "VALIDATED_OK"
+    }
+  ],
+  "stop_condition_triggered": {
+    "rule": "If a URL, variable, lead, timestamp convention, or publication-time assumption does not match the plan, stop and report the discrepancy rather than substituting data.",
+    "failed_cycle": "2024-06-01T18:00:00Z",
+    "http_status": 400,
+    "upstream_server_reality": "MET Norway THREDDS meps_det_pl_20240601T18Z.ncml has time dimension size = 39 (not 67). After lead 24 (2024-06-02T18:00:00Z), forecast temporal resolution switches from 1-hourly to 3-hourly (leads 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60, 63, 66).",
+    "missing_physical_leads": "Intermediate hourly leads (31, 32, 34, 35, 37, 38, 40, 41, 43, 44, 46, 47, 49, 50, 52) do not exist physically in the MET Norway archive for this run.",
+    "projection_request_error": "OPeNDAP error: Bad Projection Request: stop >= size: 52 >= 39",
+    "impact_on_plan": "Attempting to query hourly leads [31:1:52] fails closed on the server. The data cannot be acquired without downsampling or temporal interpolation, which is prohibited under the strict no-substitution policy."
+  },
+  "statement_of_invariants": {
+    "forecast_inference_run": false,
+    "chronos2_inference_run": false,
+    "n6_inference_run": false,
+    "gap19_highs_optimization_run": false,
+    "digitaltwin_simulation_run": false,
+    "benchmarking_run": false,
+    "production_modules_modified": false,
+    "mdr_modified": false,
+    "data_substituted_or_interpolated": false
+  }
+}

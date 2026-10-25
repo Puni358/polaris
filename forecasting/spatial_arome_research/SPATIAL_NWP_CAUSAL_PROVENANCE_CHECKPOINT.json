@@ -1,0 +1,166 @@
+{
+  "audit_metadata": {
+    "date": "2026-09-14",
+    "target_location": {
+      "site": "SITES Nuolja",
+      "latitude": 68.362074,
+      "longitude": 18.738752,
+      "elevation_m_asl": 702.0
+    },
+    "benchmark_context": "POLARIS Phase 11 Pre-Experiment Governance Audit",
+    "locked_benchmark_parameters": {
+      "total_origins": 347,
+      "even_development_origins": 173,
+      "odd_official_test_origins": 174,
+      "t0_origin_time": "00:00 UTC Day D",
+      "h1_horizon_valid_time": "00:00 UTC Day D",
+      "h24_horizon_valid_time": "23:00 UTC Day D",
+      "odd_firewall_status": "ABSOLUTE / UNTOUCHED"
+    },
+    "current_champion": {
+      "model_name": "Stage 8.1 37-feature HGB",
+      "odd_mae_w_m2": 36.188657,
+      "odd_nmae_pct": 28.0688,
+      "odd_rmse_w_m2": 64.219495,
+      "odd_bias_w_m2": 1.439399
+    }
+  },
+  "verdict": "CAUSALLY VERIFIED",
+  "verdict_rationale": "Empirical audit proves that raw spatial NWP data (AROME-Arctic 2.5km and MEPS 2.5km) for the Day D-1 18:00 UTC run are published on MET Norway THREDDS by ~20:15-20:45 UTC Day D-1, preceding the locked benchmark origin t0 = 00:00 UTC Day D by 3.25 to 3.75 hours. Forecast leads +6h to +29h cover all 24 POLARIS horizons (H1-H24) without post-t0 data leakage.",
+  "task1_causal_provenance": {
+    "arome_arctic": {
+      "exact_initialization_time": "Day D-1 18:00 UTC",
+      "nominal_forecast_production_time": "Day D-1 19:30-20:00 UTC",
+      "actual_publication_availability_time": "Day D-1 20:15-20:45 UTC (documented on THREDDS catalog)",
+      "archive_timestamp_representation": "Initialization time (forecast_reference_time = 18:00 UTC)",
+      "guaranteed_available_before_d00z": true,
+      "operational_delay_risk": "None. Even with +2h HPC delays (~22:30 UTC), data is available before t0 (00:00 UTC)",
+      "polaris_lead_mapping": "H1 (00:00 UTC) = Lead +6h through H24 (23:00 UTC) = Lead +29h"
+    },
+    "meps": {
+      "exact_initialization_time": "Day D-1 18:00 UTC (3D-Var assimilation cycle)",
+      "nominal_forecast_production_time": "Day D-1 19:30-20:00 UTC",
+      "actual_publication_availability_time": "Day D-1 20:15-20:45 UTC (documented on THREDDS catalog)",
+      "archive_timestamp_representation": "Initialization time (forecast_reference_time = 18:00 UTC)",
+      "guaranteed_available_before_d00z": true,
+      "operational_delay_risk": "None. Fully published >3 hours prior to t0 boundary",
+      "polaris_lead_mapping": "H1 (00:00 UTC) = Lead +6h through H24 (23:00 UTC) = Lead +29h"
+    },
+    "previous_audit_claim_correction": {
+      "previous_claim_lead_range": "+7h to +30h",
+      "corrected_lead_range": "+6h to +29h",
+      "correction_reason": "POLARIS H1 valid time is 00:00 UTC Day D (00:00 Day D minus 18:00 Day D-1 = +6h lead). POLARIS H24 valid time is 23:00 UTC Day D (23:00 Day D minus 18:00 Day D-1 = +29h lead)."
+    }
+  },
+  "task2_actual_archive_verification": {
+    "representative_dates_inspected": [
+      "2024-01-14 18Z",
+      "2024-04-14 18Z",
+      "2024-07-14 18Z",
+      "2024-10-14 18Z"
+    ],
+    "arome_arctic_status": "100% Verified across all seasons (67 forecast steps, leads +0h to +66h present)",
+    "meps_surface_status": "100% Verified across all seasons (67 forecast steps, leads +0h to +66h present)",
+    "meps_hybrid_level_status": "100% Verified across all seasons (67 forecast steps, leads +0h to +66h present)",
+    "meps_pressure_level_status": "Verified (67 steps in Jan/Jul/Oct; 39 steps up to +24h in Apr)"
+  },
+  "task3_spatial_field_content": {
+    "arome_arctic_dimensions": {
+      "y": 949,
+      "x": 739,
+      "dx_km": 2.5,
+      "dy_km": 2.5,
+      "projection": "Lambert Conformal Conic"
+    },
+    "meps_dimensions": {
+      "y": 1069,
+      "x": 949,
+      "dx_km": 2.5,
+      "dy_km": 2.5,
+      "projection": "Lambert Conformal Conic"
+    },
+    "verified_variables": {
+      "surface_radiation": [
+        "integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time",
+        "surface_downwelling_shortwave_flux_in_air",
+        "integral_of_surface_net_downward_shortwave_flux_wrt_time"
+      ],
+      "cloud_fraction": [
+        "cloud_area_fraction",
+        "high_type_cloud_area_fraction",
+        "medium_type_cloud_area_fraction",
+        "low_type_cloud_area_fraction",
+        "cloud_area_fraction_pl"
+      ],
+      "liquid_water_content": [
+        "mass_fraction_of_cloud_condensed_water_in_air_pl"
+      ],
+      "ice_water_content": [
+        "mass_fraction_of_cloud_ice_in_air_pl"
+      ],
+      "wind_fields": [
+        "x_wind_10m",
+        "y_wind_10m",
+        "x_wind_pl",
+        "y_wind_pl",
+        "x_wind_z",
+        "y_wind_z"
+      ],
+      "temperature_humidity": [
+        "air_temperature_2m",
+        "relative_humidity_2m",
+        "specific_humidity_2m",
+        "air_temperature_pl",
+        "relative_humidity_pl",
+        "specific_humidity_pl",
+        "air_temperature_z",
+        "relative_humidity_z"
+      ]
+    },
+    "level_distinction": {
+      "surface": "2D single-level fields (surface_downwelling_shortwave_flux_in_air, cloud_area_fraction, 10m wind, 2m T/RH)",
+      "pressure_level": "3D pressure-level fields across 13 standard pressure surfaces (1000 to 300 hPa)",
+      "model_level": "3D hybrid-level fields across 65 native model levels"
+    }
+  },
+  "task4_nuolja_grid": {
+    "target_coordinates": {
+      "latitude": 68.362074,
+      "longitude": 18.738752
+    },
+    "arome_arctic_nearest_cell": {
+      "grid_y": 209,
+      "grid_x": 548,
+      "latitude": 68.364774,
+      "longitude": 18.715312,
+      "distance_km": 1.0074
+    },
+    "meps_nearest_cell": {
+      "grid_y": 760,
+      "grid_x": 486,
+      "latitude": 68.355701,
+      "longitude": 18.763666,
+      "distance_km": 1.2431
+    }
+  },
+  "task5_stage8_forensic_check": {
+    "stage8_5": {
+      "preserved_2d_tensor": false,
+      "description": "Stage 8.5 extracted a 9x9 MEPS grid surrounding Nuolja but collapsed it into 14 scalar tabular summary statistics (means, stds, upwind advection projections) fed to a tabular HistGradientBoostingRegressor.",
+      "tested_raw_spatial_representation": false
+    },
+    "stage8_17a": {
+      "preserved_spatial_neighborhood": false,
+      "description": "Stage 8.17A extracted point features at a single nearest grid cell (68.364774\u00b0N, 18.715312\u00b0E) and added 3 scalar disagreement features to the 37 baseline tabular features.",
+      "tested_raw_spatial_representation": false
+    },
+    "forensic_conclusion": "POLARIS has NEVER evaluated a raw 2D spatial field tensor or a spatial representation learning model."
+  },
+  "task6_governance_no_experiment_design": {
+    "model_training_conducted": false,
+    "odd_access_conducted": false,
+    "champion_modified": false,
+    "architecture_decisions_made": false,
+    "statement": "Zero experiment design decisions (CNN vs ConvLSTM, channels, window size, hyperparameters, training procedure) were made during this audit. All design choices are deferred to subsequent authorized planning phases."
+  }
+}

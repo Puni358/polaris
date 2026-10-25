@@ -1,0 +1,50 @@
+{
+  "document_metadata": {
+    "title": "POLARIS Stage 8.1 EMS V4.G Single-Horizon Mechanism Isolation Resource Configuration Correction Report",
+    "schema_version": "1.0.0",
+    "created_at": "2026-09-19T18:23:00Z",
+    "governance_status": "V4G_RESOURCE_CONFIGURATION_CORRECTION_COMPLETE",
+    "candidate_id": "V4.G_SINGLE_HORIZON_ISOLATED_DISCOUNTING"
+  },
+  "correction_summary": {
+    "resource_correction_status": "PASS",
+    "max_workers": 2,
+    "resource_change_type": "NON_SCIENTIFIC_RUNTIME_CONFIGURATION",
+    "scientific_protocol_changed": false,
+    "ems_changed": false,
+    "optimizer_scientific_logic_changed": false,
+    "forecast_artifact_changed": false,
+    "simulator_changed": false,
+    "statistical_design_changed": false,
+    "empirical_execution": "NOT_EXECUTED",
+    "pilot_execution": "NOT_EXECUTED",
+    "smoke_test": "NOT_EXECUTED",
+    "origin_1_replay": "NOT_EXECUTED",
+    "thermal_monitoring_mode": "MANUAL",
+    "monitoring_requirement": "Execution must be continuously monitored, and the process must be manually halted if thermal limits are exceeded."
+  },
+  "thermal_safety_context": {
+    "previous_8_worker_incident": true,
+    "previous_2_worker_formal_replay": "COMPLETED",
+    "previous_2_worker_reported_cpu_temperature": "<75C",
+    "selected_worker_configuration": 2,
+    "thermal_monitoring_mode": "MANUAL",
+    "monitoring_requirement": "Execution must be continuously monitored, and the process must be manually halted if thermal limits are exceeded."
+  },
+  "provenance_and_hash_invariants": {
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "052e43be4cbe4599a0a4cb402b805ecdbbdab1cf2bf13b5bf0314bd94bf6ffea",
+    "POLARIS_STAGE8_1_EMS_V4G_SPECIFICATION_FREEZE.md": "b181ca55d78a9c4ce8c707db3b8398e0bb50b5fd03b22b72edbf32efb692aa06",
+    "system/optimization/implementations/milp.py": "e2a05fbdfedcd89574d71587d65b4c1069ebbd18cfcb9bcf51bfef252f4c9bf6",
+    "system/simulation/simulator.py": "aa7668697b0932bb821b016f4d221cd88bb82d36fb56358c2be6ce8806296cc7",
+    "system/runtime/runner.py": "4f32fb0f9aef7c11f74fa18cbf5e7ffecdf61681b4efb489bb2dfabf972b220e"
+  },
+  "documents_updated": [
+    "POLARIS_STAGE8_1_EMS_V4G_EXECUTION_AUTHORIZATION.md",
+    "POLARIS_STAGE8_1_EMS_V4G_EXECUTION_AUTHORIZATION.json"
+  ],
+  "final_governance_state": {
+    "v4g_execution_authorization": "AUTHORIZED",
+    "v4g_empirical_execution_status": "NOT_YET_EXECUTED"
+  }
+}

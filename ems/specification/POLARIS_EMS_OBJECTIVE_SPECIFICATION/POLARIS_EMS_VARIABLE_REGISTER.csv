@@ -1,0 +1,35 @@
+VARIABLE_NAME,VARIABLE_TYPE,DOMAIN,UNITS,DESCRIPTION,HIERARCHY_STAGE,GOVERNANCE_STATUS
+P_solar_used(t),Decision Variable,"Continuous [0, P_solar_cons(t)]",W,Solar generation power dispatched to AC busbar,Stage 0 - 4,FULLY_SPECIFIED
+P_wind_used(t),Decision Variable,"Continuous [0, P_wind_cons(t)]",W,Wind generation power dispatched to AC busbar,Stage 0 - 4,FULLY_SPECIFIED
+P_curt_solar(t),Decision Variable,"Continuous [0, P_solar_cons(t)]",W,Curtailed solar power,Stage 4,FULLY_SPECIFIED
+P_curt_wind(t),Decision Variable,"Continuous [0, P_wind_cons(t)]",W,Curtailed wind power,Stage 4,FULLY_SPECIFIED
+P_curt_necessary(t),Decision Variable,"Continuous [0, P_curt(t)]",W,Necessary curtailment for battery/diesel physical protection (conceptual only),Stage 0,CONCEPTUAL_DECOMPOSITION_ONLY
+P_curt_avoidable(t),Decision Variable,"Continuous [0, P_curt(t)]",W,Avoidable curtailment from inefficient dispatch (conceptual only),Stage 4,CONCEPTUAL_DECOMPOSITION_ONLY
+P_bat_chg(t),Decision Variable,"Continuous [0, P_chg_max]",W,Battery charging power from AC busbar,Stage 0 - 4,FULLY_SPECIFIED
+P_bat_dis(t),Decision Variable,"Continuous [0, P_dis_max]",W,Battery discharging power to AC busbar,Stage 0 - 4,FULLY_SPECIFIED
+u_chg(t),Decision Variable,"Binary {0, 1}",dimensionless,Battery charging state flag,Stage 0 - 4,FULLY_SPECIFIED
+u_dis(t),Decision Variable,"Binary {0, 1}",dimensionless,Battery discharging state flag,Stage 0 - 4,FULLY_SPECIFIED
+SOC(t),State Variable,"Continuous [SOC_min_tech, SOC_max]",dimensionless,Battery state of charge at timestep t,Stage 0 - 4,FULLY_SPECIFIED
+E_bat(t),State Variable,"Continuous [E_min_tech, E_max]",Wh,Stored battery energy at timestep t,Stage 0 - 4,FULLY_SPECIFIED
+P_diesel(t),Decision Variable,"Continuous [0, P_diesel_max]",W,Diesel generator electrical power output,Stage 0 - 4,FULLY_SPECIFIED
+u_diesel(t),Decision Variable,"Binary {0, 1}",dimensionless,Diesel generator running commitment flag,Stage 0 - 4,FULLY_SPECIFIED
+v_start(t),Decision Variable,"Binary {0, 1}",dimensionless,Diesel generator startup event flag,Stage 0 - 4,FULLY_SPECIFIED
+Fuel_liter(t),Dependent Variable,"Continuous [0, inf)",liters,Fuel volume consumed by diesel generator at timestep t,Stage 3,FULLY_SPECIFIED
+F_rem(t),State Variable,"Continuous [0, F_capacity]",liters,Remaining station diesel fuel inventory,Stage 0 - 3,PHYSICAL_CONSTRAINT
+P_served_C(t),Decision Variable,"Continuous [0, P_demand_C]",W,Served Critical load power — accounting variable (SLA: 100% in normal ops),Stage 1,FULLY_SPECIFIED
+P_unmet_C(t),Decision Variable,"Continuous [0, P_demand_C]",W,Unmet Critical load power — accounting variable (SLA: 0 in normal ops),Stage 1,FULLY_SPECIFIED
+P_shed_C(t),Decision Variable,"Continuous [0, P_demand_C]",W,Shed Critical load power — accounting variable (Policy: 0 in normal ops),Stage 1,FULLY_SPECIFIED
+P_served_E(t),Decision Variable,"Continuous [0, P_demand_E]",W,Served Essential load power — accounting variable. Tier semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_unmet_E(t),Decision Variable,"Continuous [0, P_demand_E]",W,Unmet Essential load power — accounting variable. Tier semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_shed_E(t),Decision Variable,"Continuous [0, P_demand_E]",W,Shed Essential load power — accounting variable. Shedding/restoration semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_served_D(t),Decision Variable,"Continuous [0, P_demand_D]",W,Served Deferrable load power — accounting variable. Scheduling/deferral semantics require Implementation Specification.,Stage 1 - 3,POLICY_RESOLVED
+P_unmet_D(t),Decision Variable,"Continuous [0, P_demand_D]",W,Unmet Deferrable load power — accounting variable. Tier semantics require Implementation Specification.,Stage 1 - 3,POLICY_RESOLVED
+P_shed_D(t),Decision Variable,"Continuous [0, P_demand_D]",W,Shed/reduced Deferrable load power — accounting variable. Does NOT define whether load is delayed/interrupted/rescheduled/task-constrained. Semantics require Implementation Specification.,Stage 1 - 3,POLICY_RESOLVED
+P_served_I(t),Decision Variable,"Continuous [0, P_demand_I]",W,Served Interruptible load power — accounting variable. Tier semantics distinct from Noncritical — exact semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_unmet_I(t),Decision Variable,"Continuous [0, P_demand_I]",W,Unmet Interruptible load power — accounting variable. Tier semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_shed_I(t),Decision Variable,"Continuous [0, P_demand_I]",W,Shed Interruptible load power — accounting variable. Interruption duration and restoration semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_served_N(t),Decision Variable,"Continuous [0, P_demand_N]",W,Served Noncritical load power — accounting variable. Tier semantics distinct from Interruptible — exact semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_unmet_N(t),Decision Variable,"Continuous [0, P_demand_N]",W,Unmet Noncritical load power — accounting variable. Tier semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+P_shed_N(t),Decision Variable,"Continuous [0, P_demand_N]",W,Shed Noncritical load power — accounting variable. Shedding priority and restoration semantics require Implementation Specification.,Stage 1 - 2,POLICY_RESOLVED
+SOC_EBR_target(t),Parameter Interface,"Continuous [SOC_EBR_floor, 1.0]",dimensionless,Dynamic Emergency Battery Reserve target,Stage 2,PARTIALLY_SPECIFIED
+SOC_terminal_target(H),Parameter Interface,"Continuous [SOC_terminal_floor, 1.0]",dimensionless,Dynamic terminal SOC target at horizon end,Stage 2,PARTIALLY_SPECIFIED

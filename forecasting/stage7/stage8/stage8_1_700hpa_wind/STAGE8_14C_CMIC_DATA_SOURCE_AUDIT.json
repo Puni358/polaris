@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-09-13T07:00:00+00:00",
+  "stage": "POLARIS STAGE 8.14C \u2014 CMIC DATA SOURCE & CAUSALITY AUDIT",
+  "status": "COMPLETED \u2014 DATA FEASIBILITY AUDIT ONLY",
+  "target_candidate": "EUMETSAT NWC SAF PPS CMIC",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model (Daytime nMAE = 28.0688%)",
+  "archive_audit_summary": {
+    "primary_source_1": "EUMETSAT Data Store (Custom Ordering API - Requires API Consumer Key)",
+    "primary_source_2": "MET Norway THREDDS Service (Public HTTP - Fragmented 2024 CMIC Swaths)",
+    "archive_completeness": "INCOMPLETE ON PUBLIC OPEN HTTP THREDDS",
+    "credentials_required": "EUMETSAT Data Store API credentials required for complete 2024 bulk retrieval"
+  },
+  "origin_coverage_accounting": {
+    "total_benchmark_origins": 347,
+    "daylight_origins_sza_le_84": 271,
+    "polar_night_origins_sza_gt_84": 76,
+    "valid_optical_origins": 190,
+    "no_granule_origins": 34,
+    "causality_rejected_origins": 27,
+    "low_sun_invalid_origins": 20,
+    "daylight_optical_coverage_fraction": 0.7011,
+    "overall_optical_coverage_fraction": 0.5476,
+    "daylight_optical_gate_threshold": 0.9,
+    "daylight_optical_gate_status": "FAIL (70.1% < 90.0%)",
+    "completeness_gate_status": "PASS (347/347 origins categorized)"
+  },
+  "causality_audit_summary": {
+    "physical_acquisition_causality_t_acq_le_t0": "VERIFIED (346 / 347 origins)",
+    "publication_availability_causality_t_pub_le_t0": "CONDITIONALLY VERIFIED (NRT nowcast ~30-60 min; historical HTTP timestamps unverified)",
+    "unverified_publication_count": 27
+  },
+  "spatial_representativeness": {
+    "nuolja_coordinate": "68.362074 N, 18.738752 E",
+    "pixel_resolution": "1.0 km - 2.0 km polar stereographic",
+    "nearest_pixel_distance": "< 2.5 km",
+    "viewing_zenith_angle": "< 45\u00b0 (Polar orbiter overpass over Scandes)"
+  },
+  "information_novelty_classification": {
+    "cot": "GENUINELY NOVEL (Radiative optical depth vs MEPS scalar cloud_frac)",
+    "eff_radius": "PARTIALLY NOVEL (Particle size um)",
+    "cma": "GENUINELY NOVEL (Observed thermal cloud mask)",
+    "ctth": "REDUNDANT / NWP_DERIVED (Excluded as optical fallback)"
+  },
+  "final_classification": "CONDITIONAL",
+  "remaining_blockers": [
+    "EUMETSAT Data Store API credentials / manual bulk order required to download full 2024 L2 CMIC archive",
+    "Daylight origin optical coverage (70.1%) fails predeclared >=90% daylight coverage threshold",
+    "Polar night optical channel fill values require dual-branch feature pipeline"
+  ],
+  "forecasting_experiment_authorized": false,
+  "governance_verification": {
+    "odd_target_accessed_for_evaluation": false,
+    "odd_predictions_generated": 0,
+    "model_training_executed": false,
+    "cross_validation_executed": false,
+    "hyperparameter_tuning_executed": false,
+    "champion_modified": false,
+    "master_handoff_modified": false
+  }
+}

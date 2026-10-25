@@ -1,0 +1,21 @@
+{
+  "research_id": "polaris_battery_reserve_policy_research_2024",
+  "frozen_campaign_id": "polaris_365d_run_20260927_033823",
+  "hours_analyzed": 8784,
+  "production_modifications": 0,
+  "frozen_campaign_modifications": 0,
+  "governance_modifications": 0,
+  "current_j2_target_wh": 115652.17,
+  "current_j2_target_soc_pct": 57.83,
+  "protected_nominal_capacity_pct": 57.83,
+  "available_normal_dispatch_pct_nominal": 37.17,
+  "available_normal_dispatch_pct_physical": 49.57,
+  "models_evaluated": [
+    "Model A: Current Governed Policy (Continuous High-Priority J2 Target)",
+    "Model B: Normal-Operation Reserve Floor (Hard/Soft Floor at 57.83% SOC)",
+    "Model C: Emergency-State Reserve (20%-95% SOC Normal Mode; Reserve Active in Emergency Mode Only)",
+    "Model D: Dynamic Reserve (Reserve Varies Dynamically with Forecasted Renewables & Critical Load)"
+  ],
+  "unresolved_governance_questions": 8,
+  "human_decision_status": "GOVERNANCE_DECISION_REQUIRED"
+}

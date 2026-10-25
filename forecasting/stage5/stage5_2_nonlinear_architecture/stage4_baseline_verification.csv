@@ -1,0 +1,2 @@
+total_origins,even_train_origins,odd_test_origins,odd_daytime_hours,odd_daytime_mae,odd_daytime_nmae,odd_rmse,odd_bias,odd_night_mae
+347,174,173,2883,43.450807884206704,33.70146896576901,74.85301396395839,1.97155372887419,0.32418282779520474

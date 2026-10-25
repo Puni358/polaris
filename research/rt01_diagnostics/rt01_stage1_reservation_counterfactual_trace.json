@@ -1,0 +1,97 @@
+{
+  "scenario_filename": "synthetic_168h_endurance_scenario.json",
+  "stage1_config_used": {
+    "weights.reserve_shortfall_penalty": 0.5,
+    "reservation.terminal_target_soc_pct": 40.0,
+    "reservation.fuel_reserve_target_l": 20.0
+  },
+  "comparison": {
+    "baseline": {
+      "total_unmet_load_wh": 14974.11,
+      "total_unmet_load_kwh": 14.9741,
+      "steps_119_121_unmet_wh": 14974.11,
+      "steps_119_121_unmet_kwh": 14.9741,
+      "all_unmet_steps": [
+        119,
+        120,
+        121
+      ],
+      "first_literal_fuel_exhaustion_step": 68,
+      "last_normal_milp_step": 45,
+      "normal_route_steps_with_nonzero_reserve_shortfall": [],
+      "cumulative_reserve_shortfall_wh_normal_route_only": 0.0
+    },
+    "stage1": {
+      "total_unmet_load_wh": 14974.11,
+      "total_unmet_load_kwh": 14.9741,
+      "steps_119_121_unmet_wh": 14974.11,
+      "steps_119_121_unmet_kwh": 14.9741,
+      "all_unmet_steps": [
+        119,
+        120,
+        121
+      ],
+      "first_literal_fuel_exhaustion_step": 49,
+      "last_normal_milp_step": 44,
+      "normal_route_steps_with_nonzero_reserve_shortfall": [
+        19,
+        20,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "cumulative_reserve_shortfall_wh_normal_route_only": 662137.69
+    },
+    "steps_119_121_unmet_kwh_delta": 0.0,
+    "total_unmet_load_kwh_delta": 0.0,
+    "shortfall_119_121_eliminated": false,
+    "shortfall_119_121_reduced_but_not_eliminated": false,
+    "baseline_total_diesel_fuel_liters": 120.56,
+    "stage1_total_diesel_fuel_liters": 124.25,
+    "baseline_renewable_utilization_pct": 79.76,
+    "stage1_renewable_utilization_pct": 78.83,
+    "baseline_system_reliability_pct": 99.73,
+    "stage1_system_reliability_pct": 99.73,
+    "baseline_last_normal_milp_step": 45,
+    "stage1_last_normal_milp_step": 44,
+    "baseline_solve_wall_time_s": 21.855,
+    "stage1_solve_wall_time_s": 23.45
+  },
+  "pre_execution_hash_manifest": {
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/option_d.py": "022cc6a0aef4e61772a7274ef3b0e772abacf16fab373feb3273d6af0f653771",
+    "system/control/ecd.py": "091358c08b9460e0e9a802ff149c2b54ce1d8036bc2d6eed0f4c1fd9e41c96db",
+    "system/control/router.py": "b2a46bc5bd8c619b5eca9b020daa3dd1b4571214bab47cfe17587bc9074e90f3",
+    "system/simulation/simulator.py": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "system/runtime/runner.py": "6d1671b6efbf6ac1f422e26a039bb0dae158cb99c2075ea5680d062f8dc53b10",
+    "system/orchestration/manifest.py": "7b7756932a01dbc904ee780c3e0e30f8eab36952bbea6c75610c12c927d8bb35",
+    "system/optimization/implementations/milp.py": "f10b0d6db236612a7c11188eedad12ca62ed0e087ff33720ed77d05df8307fb2",
+    "system/config/optimizer.yaml": "8dbe98ae49731a27ed4ae85fa1ba5faa27a0837e3f04414ca24085737e9bafd6",
+    "system/config/battery.yaml": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "system/config/diesel.yaml": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "system/config/loads.yaml": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+    "system/config/solar_pv.yaml": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "system/config/station.yaml": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42",
+    "system/data/scenarios/synthetic_168h_endurance_scenario.json": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8"
+  },
+  "post_execution_hash_manifest": {
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/option_d.py": "022cc6a0aef4e61772a7274ef3b0e772abacf16fab373feb3273d6af0f653771",
+    "system/control/ecd.py": "091358c08b9460e0e9a802ff149c2b54ce1d8036bc2d6eed0f4c1fd9e41c96db",
+    "system/control/router.py": "b2a46bc5bd8c619b5eca9b020daa3dd1b4571214bab47cfe17587bc9074e90f3",
+    "system/simulation/simulator.py": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "system/runtime/runner.py": "6d1671b6efbf6ac1f422e26a039bb0dae158cb99c2075ea5680d062f8dc53b10",
+    "system/orchestration/manifest.py": "7b7756932a01dbc904ee780c3e0e30f8eab36952bbea6c75610c12c927d8bb35",
+    "system/optimization/implementations/milp.py": "f10b0d6db236612a7c11188eedad12ca62ed0e087ff33720ed77d05df8307fb2",
+    "system/config/optimizer.yaml": "8dbe98ae49731a27ed4ae85fa1ba5faa27a0837e3f04414ca24085737e9bafd6",
+    "system/config/battery.yaml": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "system/config/diesel.yaml": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "system/config/loads.yaml": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+    "system/config/solar_pv.yaml": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "system/config/station.yaml": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42",
+    "system/data/scenarios/synthetic_168h_endurance_scenario.json": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8"
+  },
+  "protected_hash_diffs_detected": {}
+}

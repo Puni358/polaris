@@ -1,0 +1,16 @@
+audit_document,04_ADVERSE_RENEWABLE_ANALYSIS
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# ADVERSE RENEWABLE ASSUMPTION ANALYSIS & CLASSIFICATION
+# ============================================================
+
+approach_option,mathematical_representation,causal_validity,repository_support_status,classification
+Zero Renewable Baseline,P_solar(k) = 0 and P_wind(k) = 0 for all k,FULLY CAUSAL: Assumes worst-case storm/night zero generation,Fully calculable from initial state without forecast dependency,EXISTING_ENGINEERING_ONLY
+Conservative Lower Bound,P_solar = solar_generation.lower; P_wind = wind_generation.lower,FULLY CAUSAL: Uses forecast uncertainty lower bound,ForecastBundle contains lower arrays; bounds uncalibrated for emergency,MISSING_GOVERNANCE
+Point Forecast,P_solar = solar_generation.point; P_wind = wind_generation.point,FULLY CAUSAL: Standard expected generation point forecast,ForecastBundle contains point forecast arrays,EXISTING_ENGINEERING_ONLY
+Hidden Future Actuals,Uses ground truth actuals in simulator,NON-CAUSAL: Violates causal information boundary,Strictly prohibited by POLARIS causal execution firewall,PROHIBITED_BY_CAUSALITY_FIREWALL
+Governed Policy Choice,Zero Renewable Baseline recommended for worst-case emergency detector,Strictly causal; guarantees survivability under zero generation,Requires human governance authorization for emergency detector baseline,GOVERNANCE_DECISION_REQUIRED

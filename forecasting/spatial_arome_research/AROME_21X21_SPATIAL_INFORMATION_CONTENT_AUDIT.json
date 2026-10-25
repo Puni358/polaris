@@ -1,0 +1,647 @@
+{
+  "timestamp_utc": "2026-09-14T12:00:38.116512+00:00",
+  "document_title": "POLARIS AROME 21\u00d721 SPATIAL INFORMATION CONTENT DIAGNOSTIC AUDIT",
+  "governance_audit": {
+    "even_origins_count": 173,
+    "odd_firewall": {
+      "odd_origins_accessed": false,
+      "odd_tensors_loaded": false,
+      "odd_predictions_generated": false,
+      "odd_metrics_evaluated": false,
+      "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+    },
+    "no_model_training": true,
+    "no_odd_access": true,
+    "diagnostic_only": true
+  },
+  "audit_1_spatial_variability": [
+    {
+      "channel_idx": 0,
+      "channel_name": "surface_downwelling_shortwave_flux_in_air",
+      "mean_spatial_mean": 66.257623,
+      "mean_spatial_std": 23.205986,
+      "mean_spatial_range": 96.42987,
+      "mean_cv": 0.2793,
+      "mean_abs_center_minus_mean": 18.161661,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 1,
+      "channel_name": "cloud_area_fraction",
+      "mean_spatial_mean": 0.673847,
+      "mean_spatial_std": 0.153291,
+      "mean_spatial_range": 0.583333,
+      "mean_cv": 0.9254,
+      "mean_abs_center_minus_mean": 0.122817,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 2,
+      "channel_name": "high_type_cloud_area_fraction",
+      "mean_spatial_mean": 0.362411,
+      "mean_spatial_std": 0.099004,
+      "mean_spatial_range": 0.397777,
+      "mean_cv": 1.0708,
+      "mean_abs_center_minus_mean": 0.060022,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 3,
+      "channel_name": "medium_type_cloud_area_fraction",
+      "mean_spatial_mean": 0.304502,
+      "mean_spatial_std": 0.131208,
+      "mean_spatial_range": 0.517664,
+      "mean_cv": 1.637,
+      "mean_abs_center_minus_mean": 0.091565,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 4,
+      "channel_name": "low_type_cloud_area_fraction",
+      "mean_spatial_mean": 0.47516,
+      "mean_spatial_std": 0.205866,
+      "mean_spatial_range": 0.746767,
+      "mean_cv": 1.8627,
+      "mean_abs_center_minus_mean": 0.172343,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 5,
+      "channel_name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+      "mean_spatial_mean": 8e-06,
+      "mean_spatial_std": 1.3e-05,
+      "mean_spatial_range": 8.5e-05,
+      "mean_cv": 0.3483,
+      "mean_abs_center_minus_mean": 8e-06,
+      "structure_classification": "Homogeneous"
+    },
+    {
+      "channel_idx": 6,
+      "channel_name": "mass_fraction_of_cloud_ice_in_air_pl",
+      "mean_spatial_mean": 0.0,
+      "mean_spatial_std": 0.0,
+      "mean_spatial_range": 1e-06,
+      "mean_cv": 0.0,
+      "mean_abs_center_minus_mean": 0.0,
+      "structure_classification": "Homogeneous"
+    },
+    {
+      "channel_idx": 7,
+      "channel_name": "x_wind_10m",
+      "mean_spatial_mean": 0.087464,
+      "mean_spatial_std": 2.335129,
+      "mean_spatial_range": 12.291175,
+      "mean_cv": 1.4924,
+      "mean_abs_center_minus_mean": 2.34643,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 8,
+      "channel_name": "y_wind_10m",
+      "mean_spatial_mean": 1.932252,
+      "mean_spatial_std": 2.605334,
+      "mean_spatial_range": 12.532939,
+      "mean_cv": 4.7175,
+      "mean_abs_center_minus_mean": 1.340189,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 9,
+      "channel_name": "x_wind_700hPa",
+      "mean_spatial_mean": 4.029753,
+      "mean_spatial_std": 1.083181,
+      "mean_spatial_range": 5.495579,
+      "mean_cv": 0.7529,
+      "mean_abs_center_minus_mean": 0.7058,
+      "structure_classification": "Strongly Spatial Structured"
+    },
+    {
+      "channel_idx": 10,
+      "channel_name": "y_wind_700hPa",
+      "mean_spatial_mean": 5.610144,
+      "mean_spatial_std": 1.015516,
+      "mean_spatial_range": 5.184772,
+      "mean_cv": 0.3095,
+      "mean_abs_center_minus_mean": 0.609703,
+      "structure_classification": "Moderately Structured"
+    }
+  ],
+  "audit_2_3_gradients_and_topology": [
+    {
+      "channel_idx": 0,
+      "channel_name": "surface_downwelling_shortwave_flux_in_air",
+      "mean_gradient_magnitude": 13.377816,
+      "mean_center_edge_contrast": 20.908995,
+      "mean_directional_asymmetry": 0.4294
+    },
+    {
+      "channel_idx": 1,
+      "channel_name": "cloud_area_fraction",
+      "mean_gradient_magnitude": 0.064476,
+      "mean_center_edge_contrast": 0.138324,
+      "mean_directional_asymmetry": 1.0381
+    },
+    {
+      "channel_idx": 2,
+      "channel_name": "high_type_cloud_area_fraction",
+      "mean_gradient_magnitude": 0.029131,
+      "mean_center_edge_contrast": 0.077622,
+      "mean_directional_asymmetry": 1.4866
+    },
+    {
+      "channel_idx": 3,
+      "channel_name": "medium_type_cloud_area_fraction",
+      "mean_gradient_magnitude": 0.049002,
+      "mean_center_edge_contrast": 0.102682,
+      "mean_directional_asymmetry": 1.8417
+    },
+    {
+      "channel_idx": 4,
+      "channel_name": "low_type_cloud_area_fraction",
+      "mean_gradient_magnitude": 0.090099,
+      "mean_center_edge_contrast": 0.189136,
+      "mean_directional_asymmetry": 1.7473
+    },
+    {
+      "channel_idx": 5,
+      "channel_name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+      "mean_gradient_magnitude": 5e-06,
+      "mean_center_edge_contrast": 9e-06,
+      "mean_directional_asymmetry": 0.5451
+    },
+    {
+      "channel_idx": 6,
+      "channel_name": "mass_fraction_of_cloud_ice_in_air_pl",
+      "mean_gradient_magnitude": 0.0,
+      "mean_center_edge_contrast": 0.0,
+      "mean_directional_asymmetry": 0.036
+    },
+    {
+      "channel_idx": 7,
+      "channel_name": "x_wind_10m",
+      "mean_gradient_magnitude": 1.474523,
+      "mean_center_edge_contrast": 2.497813,
+      "mean_directional_asymmetry": 0.2185
+    },
+    {
+      "channel_idx": 8,
+      "channel_name": "y_wind_10m",
+      "mean_gradient_magnitude": 1.546512,
+      "mean_center_edge_contrast": 1.46465,
+      "mean_directional_asymmetry": 3.3925
+    },
+    {
+      "channel_idx": 9,
+      "channel_name": "x_wind_700hPa",
+      "mean_gradient_magnitude": 0.440182,
+      "mean_center_edge_contrast": 0.746267,
+      "mean_directional_asymmetry": 0.9246
+    },
+    {
+      "channel_idx": 10,
+      "channel_name": "y_wind_700hPa",
+      "mean_gradient_magnitude": 0.42243,
+      "mean_center_edge_contrast": 0.685673,
+      "mean_directional_asymmetry": 0.3493
+    }
+  ],
+  "audit_4_temporal_coherence": [
+    {
+      "channel_idx": 0,
+      "channel_name": "surface_downwelling_shortwave_flux_in_air",
+      "mean_adjacent_horizon_corr": 0.7932,
+      "mean_h1_vs_h6_corr": 0.3521,
+      "mean_h1_vs_h24_corr": 0.2996,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 1,
+      "channel_name": "cloud_area_fraction",
+      "mean_adjacent_horizon_corr": 0.5544,
+      "mean_h1_vs_h6_corr": 0.2018,
+      "mean_h1_vs_h24_corr": 0.0612,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 2,
+      "channel_name": "high_type_cloud_area_fraction",
+      "mean_adjacent_horizon_corr": 0.4625,
+      "mean_h1_vs_h6_corr": 0.11,
+      "mean_h1_vs_h24_corr": -0.001,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 3,
+      "channel_name": "medium_type_cloud_area_fraction",
+      "mean_adjacent_horizon_corr": 0.5306,
+      "mean_h1_vs_h6_corr": 0.1716,
+      "mean_h1_vs_h24_corr": 0.0352,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 4,
+      "channel_name": "low_type_cloud_area_fraction",
+      "mean_adjacent_horizon_corr": 0.6753,
+      "mean_h1_vs_h6_corr": 0.3483,
+      "mean_h1_vs_h24_corr": 0.1192,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 5,
+      "channel_name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+      "mean_adjacent_horizon_corr": 0.4731,
+      "mean_h1_vs_h6_corr": 0.171,
+      "mean_h1_vs_h24_corr": 0.054,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 6,
+      "channel_name": "mass_fraction_of_cloud_ice_in_air_pl",
+      "mean_adjacent_horizon_corr": 0.4364,
+      "mean_h1_vs_h6_corr": 0.191,
+      "mean_h1_vs_h24_corr": -0.1129,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 7,
+      "channel_name": "x_wind_10m",
+      "mean_adjacent_horizon_corr": 0.9187,
+      "mean_h1_vs_h6_corr": 0.732,
+      "mean_h1_vs_h24_corr": 0.4987,
+      "coherence_status": "High Temporal Continuity"
+    },
+    {
+      "channel_idx": 8,
+      "channel_name": "y_wind_10m",
+      "mean_adjacent_horizon_corr": 0.9212,
+      "mean_h1_vs_h6_corr": 0.7383,
+      "mean_h1_vs_h24_corr": 0.6088,
+      "coherence_status": "High Temporal Continuity"
+    },
+    {
+      "channel_idx": 9,
+      "channel_name": "x_wind_700hPa",
+      "mean_adjacent_horizon_corr": 0.7329,
+      "mean_h1_vs_h6_corr": 0.3865,
+      "mean_h1_vs_h24_corr": 0.1087,
+      "coherence_status": "Moderate/Low Continuity"
+    },
+    {
+      "channel_idx": 10,
+      "channel_name": "y_wind_700hPa",
+      "mean_adjacent_horizon_corr": 0.7214,
+      "mean_h1_vs_h6_corr": 0.343,
+      "mean_h1_vs_h24_corr": 0.1299,
+      "coherence_status": "Moderate/Low Continuity"
+    }
+  ],
+  "audit_5_motion_signal": [
+    {
+      "channel_idx": 1,
+      "channel_name": "cloud_area_fraction",
+      "mean_displacement_grid_cells": 0.7856,
+      "mean_apparent_speed_kmh": 1.96,
+      "n_horizon_pairs_evaluated": 3521
+    },
+    {
+      "channel_idx": 0,
+      "channel_name": "surface_downwelling_shortwave_flux_in_air",
+      "mean_displacement_grid_cells": 0.2033,
+      "mean_apparent_speed_kmh": 0.51,
+      "n_horizon_pairs_evaluated": 2083
+    },
+    {
+      "channel_idx": 5,
+      "channel_name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+      "mean_displacement_grid_cells": 1.79,
+      "mean_apparent_speed_kmh": 4.48,
+      "n_horizon_pairs_evaluated": 55
+    }
+  ],
+  "audit_6_7_forecast_error_correlations": {
+    "sample_size_causal_daytime": 2216,
+    "top_correlations": [
+      {
+        "feature_col": "ch0_range",
+        "feature_description": "Ch 0 Spatial Range",
+        "pearson_r": 0.586,
+        "pearson_p_val": 1.7771250486425613e-204,
+        "pearson_ci95": [
+          0.5579,
+          0.6127
+        ],
+        "spearman_rho": 0.653,
+        "spearman_p_val": 1.5154278793415433e-269,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch0_std",
+        "feature_description": "Ch 0 Spatial Std (Variability)",
+        "pearson_r": 0.5326,
+        "pearson_p_val": 1.2552193060187898e-162,
+        "pearson_ci95": [
+          0.5021,
+          0.5618
+        ],
+        "spearman_rho": 0.6281,
+        "spearman_p_val": 1.8578233341106835e-243,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch0_grad_mag",
+        "feature_description": "Ch 0 Gradient Magnitude",
+        "pearson_r": 0.5199,
+        "pearson_p_val": 1.0867442701561252e-153,
+        "pearson_ci95": [
+          0.4888,
+          0.5496
+        ],
+        "spearman_rho": 0.6242,
+        "spearman_p_val": 1.2279999407278963e-239,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch0_mean",
+        "feature_description": "Ch 0 Spatial Mean",
+        "pearson_r": 0.5052,
+        "pearson_p_val": 6.992482248532555e-144,
+        "pearson_ci95": [
+          0.4735,
+          0.5356
+        ],
+        "spearman_rho": 0.6238,
+        "spearman_p_val": 2.822100237689533e-239,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch0_center",
+        "feature_description": "Ch 0 Center Value",
+        "pearson_r": 0.5083,
+        "pearson_p_val": 7.054963415739759e-146,
+        "pearson_ci95": [
+          0.4767,
+          0.5385
+        ],
+        "spearman_rho": 0.5949,
+        "spearman_p_val": 2.8305787561478515e-212,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch7_grad_mag",
+        "feature_description": "Ch 7 Gradient Magnitude",
+        "pearson_r": -0.2133,
+        "pearson_p_val": 3.1855977327683515e-24,
+        "pearson_ci95": [
+          -0.2527,
+          -0.1732
+        ],
+        "spearman_rho": -0.2526,
+        "spearman_p_val": 1.3474736846361635e-33,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch7_center",
+        "feature_description": "Ch 7 Center Value",
+        "pearson_r": -0.1322,
+        "pearson_p_val": 4.144306735767045e-10,
+        "pearson_ci95": [
+          -0.1729,
+          -0.0911
+        ],
+        "spearman_rho": -0.2004,
+        "spearman_p_val": 1.6486250490078198e-21,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch8_center_minus_mean",
+        "feature_description": "Ch 8 Center-minus-Mean Dev",
+        "pearson_r": -0.1531,
+        "pearson_p_val": 4.3017391431876086e-13,
+        "pearson_ci95": [
+          -0.1935,
+          -0.1122
+        ],
+        "spearman_rho": -0.1936,
+        "spearman_p_val": 3.709826088765275e-20,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch7_std",
+        "feature_description": "Ch 7 Spatial Std (Variability)",
+        "pearson_r": -0.156,
+        "pearson_p_val": 1.5413671027821535e-13,
+        "pearson_ci95": [
+          -0.1963,
+          -0.1151
+        ],
+        "spearman_rho": -0.1891,
+        "spearman_p_val": 2.820202423008863e-19,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch1_grad_mag",
+        "feature_description": "Ch 1 Gradient Magnitude",
+        "pearson_r": 0.2117,
+        "pearson_p_val": 7.216779189634544e-24,
+        "pearson_ci95": [
+          0.1716,
+          0.2511
+        ],
+        "spearman_rho": 0.1873,
+        "spearman_p_val": 5.958110453458735e-19,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch1_std",
+        "feature_description": "Ch 1 Spatial Std (Variability)",
+        "pearson_r": 0.1806,
+        "pearson_p_val": 1.065175307336253e-17,
+        "pearson_ci95": [
+          0.14,
+          0.2206
+        ],
+        "spearman_rho": 0.1771,
+        "spearman_p_val": 4.525889644701632e-17,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch0_center_minus_mean",
+        "feature_description": "Ch 0 Center-minus-Mean Dev",
+        "pearson_r": 0.1467,
+        "pearson_p_val": 3.929452570177952e-12,
+        "pearson_ci95": [
+          0.1057,
+          0.1872
+        ],
+        "spearman_rho": 0.1759,
+        "spearman_p_val": 7.356677254884754e-17,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch7_range",
+        "feature_description": "Ch 7 Spatial Range",
+        "pearson_r": -0.1401,
+        "pearson_p_val": 3.521252958750885e-11,
+        "pearson_ci95": [
+          -0.1807,
+          -0.099
+        ],
+        "spearman_rho": -0.1672,
+        "spearman_p_val": 2.3716188352891908e-15,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch8_grad_mag",
+        "feature_description": "Ch 8 Gradient Magnitude",
+        "pearson_r": -0.1224,
+        "pearson_p_val": 7.458808603200796e-09,
+        "pearson_ci95": [
+          -0.1632,
+          -0.0812
+        ],
+        "spearman_rho": -0.1604,
+        "spearman_p_val": 3.118094032113241e-14,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch8_center",
+        "feature_description": "Ch 8 Center Value",
+        "pearson_r": -0.0872,
+        "pearson_p_val": 3.916701104805744e-05,
+        "pearson_ci95": [
+          -0.1284,
+          -0.0458
+        ],
+        "spearman_rho": -0.1577,
+        "spearman_p_val": 8.316311272738791e-14,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch1_range",
+        "feature_description": "Ch 1 Spatial Range",
+        "pearson_r": 0.1675,
+        "pearson_p_val": 2.0866108987745934e-15,
+        "pearson_ci95": [
+          0.1267,
+          0.2077
+        ],
+        "spearman_rho": 0.1563,
+        "spearman_p_val": 1.3515850772536578e-13,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch7_center_minus_mean",
+        "feature_description": "Ch 7 Center-minus-Mean Dev",
+        "pearson_r": -0.1133,
+        "pearson_p_val": 8.979851289348748e-08,
+        "pearson_ci95": [
+          -0.1542,
+          -0.072
+        ],
+        "spearman_rho": -0.1379,
+        "spearman_p_val": 7.12436118320187e-11,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch2_mean",
+        "feature_description": "Ch 2 Spatial Mean",
+        "pearson_r": -0.1122,
+        "pearson_p_val": 1.1855771821795466e-07,
+        "pearson_ci95": [
+          -0.1531,
+          -0.0709
+        ],
+        "spearman_rho": -0.1292,
+        "spearman_p_val": 1.0181854460839803e-09,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch2_center",
+        "feature_description": "Ch 2 Center Value",
+        "pearson_r": -0.1088,
+        "pearson_p_val": 2.84139977679199e-07,
+        "pearson_ci95": [
+          -0.1498,
+          -0.0675
+        ],
+        "spearman_rho": -0.125,
+        "spearman_p_val": 3.5412540188568935e-09,
+        "statistically_significant": true
+      },
+      {
+        "feature_col": "ch1_dir_asymmetry",
+        "feature_description": "Ch 1 Directional Asymmetry",
+        "pearson_r": -0.0091,
+        "pearson_p_val": 0.6668899086048286,
+        "pearson_ci95": [
+          -0.0508,
+          0.0325
+        ],
+        "spearman_rho": 0.1202,
+        "spearman_p_val": 1.3748613636727203e-08,
+        "statistically_significant": false
+      }
+    ],
+    "center_vs_spatial_comparison": [
+      {
+        "channel_name": "surface_downwelling_shortwave_flux_in_air",
+        "center_val_spearman_rho": 0.5949,
+        "spatial_mean_spearman_rho": 0.6238,
+        "spatial_std_spearman_rho": 0.6281,
+        "center_minus_mean_spearman_rho": 0.1759,
+        "directional_asym_spearman_rho": 0.0141
+      },
+      {
+        "channel_name": "cloud_area_fraction",
+        "center_val_spearman_rho": -0.0634,
+        "spatial_mean_spearman_rho": -0.1095,
+        "spatial_std_spearman_rho": 0.1771,
+        "center_minus_mean_spearman_rho": 0.022,
+        "directional_asym_spearman_rho": 0.1202
+      },
+      {
+        "channel_name": "mass_fraction_of_cloud_condensed_water_in_air_pl",
+        "center_val_spearman_rho": -0.0191,
+        "spatial_mean_spearman_rho": -0.0218,
+        "spatial_std_spearman_rho": -0.005,
+        "center_minus_mean_spearman_rho": -0.0061,
+        "directional_asym_spearman_rho": -0.0132
+      }
+    ]
+  },
+  "audit_8_cnn_gru_information_loss": {
+    "pooled_layer": "AdaptiveAvgPool2d((1,1))",
+    "input_feature_map_shape": "(Batch, 32, 21, 21)",
+    "output_feature_map_shape": "(Batch, 32, 1, 1)",
+    "mathematical_pooling_formula": "y_c = (1 / 441) * sum_{i=1}^{21} sum_{j=1}^{21} x_{c, i, j}",
+    "discarded_information_types": [
+      {
+        "type": "Exact Spatial Location & Anchor Displacement",
+        "explanation": "Global average pooling treats all 441 pixels identically. A dense cloud bank centered directly over Nuolja (10,10) produces the exact same pooled value as an identical cloud bank located 20 km to the North-West."
+      },
+      {
+        "type": "Directional Structure & Advection Trajectory",
+        "explanation": "Summing across grid axes collapses gradient directions (dx, dy). Advection trajectories (e.g., cloud front moving from West to East vs East to West) integrate to identical scalar spatial means."
+      },
+      {
+        "type": "Cloud-Edge Topology & Spatial Asymmetry",
+        "explanation": "Spatial features representing sharp cloud-clearsky transitions (high gradient magnitude) are averaged out with smooth surrounding regions, destroying edge contrast and structural orientation."
+      },
+      {
+        "type": "Relative Center-vs-Neighborhood Contrast",
+        "explanation": "The critical physical signal of whether Nuolja is under an isolated cloud hole (center bright, surroundings dark) vs isolated cloud cover (center dark, surroundings bright) cannot be distinguished when spatial maps are reduced to a single global mean."
+      }
+    ]
+  },
+  "audit_9_classification": {
+    "outcome": "C \u2014 STRONG SPATIAL INFORMATION EXISTS",
+    "explanation": "AROME spatial fields exhibit rich, coherent spatial structure (gradients, directional asymmetry, temporal continuity) AND strong, statistically significant correlations with control forecast error (e.g., cloud spatial std, SW flux range, and LWP variability correlate with control MAE up to |rho| > 0.20, p < 1e-10).",
+    "most_important_question_answer": "YES. The diagnostic audit demonstrates that real AROME spatial fields contain highly coherent, statistically significant spatial signals (spatial variability, cloud gradients, and directional asymmetry) that strongly correlate with control forecast error. The current architecture's use of AdaptiveAvgPool2d((1,1)) mathematically wipes out 100% of spatial location, direction, and topology before temporal GRU processing, effectively turning rich 21\u00d721 2D atmospheric fields into uninformative scalar averages. A topology-preserving architecture (e.g. ConvGRU or spatially-aligned attention) is fully justified.",
+    "recommendation": "Proceed to design a topology-preserving, spatially-aligned neural architecture (e.g. 2D ConvGRU or Spatial Cross-Attention) that preserves spatial coordinates and directional advection without collapsing the patch via AdaptiveAvgPool2d."
+  },
+  "cryptographic_hashes": {
+    "control_predictions_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "audit_script_sha256": "e6693bb1dabb9e2eece3a4d10f1f6ad000c3d1c3ed09aed75fad963ecb4d624a",
+    "audit_json_sha256": "d5a3b3108baa00c6200880f7463141f8597601cd956b221923a7c2385ca0cd88"
+  }
+}

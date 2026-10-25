@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-09-13T07:50:00+00:00",
+  "stage": "POLARIS STAGE 8.14C \u2014 EUMETSAT LIVE ACCESS FORENSIC AUDIT",
+  "status": "COMPLETED \u2014 LIVE ACCESS AUDITED",
+  "cmic_status": "UNVERIFIED",
+  "forecasting_experiment_authorized": false,
+  "verification_matrix": {
+    "verified": {
+      "eumdac_version": "3.1.1",
+      "authentication_status": "SUCCESS (OAuth2 client credentials)",
+      "datastore_connection": "SUCCESS",
+      "total_collections_exposed": 188,
+      "cloud_related_collections_found": 15,
+      "eo_eum_dat_0617_metadata": {
+        "title": "Optimal Cloud Analysis Climate Data Record Release 1 - MSG - 0 degree",
+        "coverage_start": "2004-01-19",
+        "coverage_end": "2019-08-31",
+        "temporal_resolution": "15 minutes",
+        "variables": [
+          "cloud top pressure",
+          "cloud optical thickness (COT)",
+          "cloud effective radius (CER)",
+          "uncertainties"
+        ],
+        "usable_for_2024_benchmark": false,
+        "reason": "Data record ends in 2019; locked benchmark is 2024"
+      }
+    },
+    "not_verified": {
+      "pps_cmic_product_id": "EO:EUM:DAT:MULT:PPS-CMIC",
+      "pps_cmic_direct_query_http_status": 404,
+      "pps_cmic_matches_in_188_collections": 0,
+      "current_2024_cmic_observational_route": "NOT ESTABLISHED",
+      "operational_causal_cmic_availability": false,
+      "cmic_forecasting_utility": "UNVERIFIED"
+    }
+  },
+  "cloud_collections_audited": [
+    {
+      "id": "EO:EUM:DAT:MSG:CLM",
+      "title": "Cloud Mask - MSG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:MSG:RSS-CLM",
+      "title": "Rapid Scan Cloud Mask - MSG"
+    },
+    {
+      "id": "EO:EUM:DAT:0617",
+      "title": "Optimal Cloud Analysis Climate Data Record Release 1 - MSG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:0800",
+      "title": "Cloud Mask (GRIB2) - MTG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:0678",
+      "title": "Cloud Mask (netCDF) - MTG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:0684",
+      "title": "Optimal Cloud Analysis - MTG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:0680",
+      "title": "Cloud Type - MTG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:0681",
+      "title": "Cloud Top Temperature and Height - MTG - 0 degree"
+    },
+    {
+      "id": "EO:EUM:DAT:MSG:CTH",
+      "title": "Cloud Top Height - MSG - 0 degree"
+    }
+  ],
+  "security_compliance": {
+    "secrets_persisted": false,
+    "credentials_in_files": false,
+    "credentials_in_git": false
+  },
+  "governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "champion_daytime_nmae_pct": 28.0688,
+    "model_changes": 0,
+    "odd_target_access": 0,
+    "odd_evaluation": 0,
+    "experiments_executed": 0,
+    "polaris_master_handoff_modified": false
+  }
+}

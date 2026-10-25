@@ -1,0 +1,19 @@
+feature_index,feature_name,source_module,input_source,availability_time,causal_status,unit,dtype,missing_policy
+1,sw_in_lag_0h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+2,sw_in_lag_1h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t - 1h,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+3,sw_in_lag_2h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t - 2h,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+4,sw_in_lag_3h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t - 3h,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+5,sw_in_lag_6h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t - 6h,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+6,sw_in_lag_12h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t - 12h,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+7,sw_in_lag_23h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t - 23h,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+8,sw_in_mean_24h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+9,sw_in_std_24h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+10,sw_in_max_24h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+11,sw_in_min_24h,LookbackFeatureBuilder,Nuolja SITES SW_IN,<= origin t,STRICT_CAUSAL,W/m^2,float64,Fail-Closed
+12,solar_elevation,AstronomicalFeatureBuilder,Position math (68.3582 N, 18.7842 E),<= origin t,DETERMINISTIC,degrees,float64,Fail-Closed
+13,solar_zenith,AstronomicalFeatureBuilder,Position math (68.3582 N, 18.7842 E),<= origin t,DETERMINISTIC,degrees,float64,Fail-Closed
+14,sin_hour,AstronomicalFeatureBuilder,Hour angle cyclic,<= origin t,DETERMINISTIC,dimensionless,float64,Fail-Closed
+15,cos_hour,AstronomicalFeatureBuilder,Hour angle cyclic,<= origin t,DETERMINISTIC,dimensionless,float64,Fail-Closed
+16,sin_doy,AstronomicalFeatureBuilder,Day of year cyclic,<= origin t,DETERMINISTIC,dimensionless,float64,Fail-Closed
+17,cos_doy,AstronomicalFeatureBuilder,Day of year cyclic,<= origin t,DETERMINISTIC,dimensionless,float64,Fail-Closed
+18,clearsky_sw_in_origin,ClearSkyFeatureBuilder,Physical clear-sky model,<= origin t,DETERMINISTIC,W/m^2,float64,Fail-Closed

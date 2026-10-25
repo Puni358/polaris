@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "sw_fuel_l": 8729.2446,
+  "sw_r_cf": 99.18507519741145,
+  "sw_r_p": 97.80465368567035,
+  "sw_unmet_crit_wh": 279056.32999999996,
+  "sw_unmet_total_wh": 985870.15,
+  "sw_diesel_hours": 547,
+  "sw_diesel_starts": 335,
+  "sw_diesel_energy_kwh": 23976.98468,
+  "sw_min_soc_pct": 20.0,
+  "sw_soc_violations": 0,
+  "ctrl_fuel_l": 10196.9712,
+  "ctrl_r_cf": 99.15894817073172,
+  "ctrl_r_p": 97.79634721184915,
+  "telemetry_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+  "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710"
+}

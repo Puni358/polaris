@@ -1,0 +1,164 @@
+{
+  "audit_manifest_id": "POLARIS_STAGE8_1_EMS_V2_IMPLEMENTATION_READINESS_AUDIT",
+  "final_classification": "B \u2014 V2 IMPLEMENTATION-READY WITH DOCUMENTED PROVENANCE LIMITATIONS",
+  "v1_status": "ACCEPTED_AND_FROZEN",
+  "v1_result_changed": "NO",
+  "v1_rerun": "NO",
+  "v2_protocol_status": "HARDENED",
+  "v2_implementation": "NOT_EXECUTED",
+  "v2_execution": "NOT_AUTHORIZED",
+  "source_modifications": "NONE",
+  "ems_modifications": "NONE",
+  "optimizer_modifications": "NONE",
+  "simulator_modifications": "NONE",
+  "forecast_modifications": "NONE",
+  "protocol_hash_verification": {
+    "md_protocol_file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.md",
+    "expected_md_hash": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+    "actual_md_hash": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+    "json_protocol_file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+    "expected_json_hash": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "actual_json_hash": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "status": "PASS"
+  },
+  "component_provenance": {
+    "control_engine": {
+      "path": "system/forecasting/implementations/baseline.py",
+      "identity": "LocalBaselineForecastEngine",
+      "sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+      "provenance": "ESTABLISHED"
+    },
+    "s81_engine": {
+      "path": "system/forecasting/implementations/s81_solar.py",
+      "identity": "Stage81ForecastEngine",
+      "sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "provenance": "ESTABLISHED"
+    },
+    "forecast_bundle": {
+      "path": "system/schemas/forecast_bundle.py",
+      "identity": "ForecastBundle Schema v1.0.0",
+      "sha256": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+      "provenance": "ESTABLISHED"
+    },
+    "station_state": {
+      "path": "system/schemas/station_state.py",
+      "identity": "StationState Schema",
+      "sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "provenance": "ESTABLISHED"
+    },
+    "dispatch_plan": {
+      "path": "system/schemas/dispatch_plan.py",
+      "identity": "DispatchPlan Schema",
+      "sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "provenance": "ESTABLISHED"
+    },
+    "ems_orchestration_runner": {
+      "path": "system/runtime/runner.py",
+      "identity": "System Runtime Orchestrator",
+      "sha256": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69",
+      "provenance": "ESTABLISHED"
+    },
+    "ems_replay_runner": {
+      "path": "run_polaris_stage8_1_ems_empirical_replay.py",
+      "identity": "Stage8.1 Empirical Replay Runner",
+      "sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "provenance": "ESTABLISHED"
+    },
+    "milp_optimizer": {
+      "path": "system/optimization/implementations/milp.py",
+      "identity": "POLARISMILPOptimizer",
+      "sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+      "provenance": "ESTABLISHED"
+    },
+    "simulator": {
+      "path": "system/simulation/simulator.py",
+      "identity": "DigitalTwinSimulator",
+      "sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "provenance": "ESTABLISHED"
+    },
+    "evaluator": {
+      "path": "system/evaluation/evaluator.py",
+      "identity": "EvaluationEngine",
+      "sha256": "79af472d52aab4b63180aaccac044ee48c9893f257c4f6988ccff7da1cec8729",
+      "provenance": "ESTABLISHED"
+    },
+    "treatment_artifact": {
+      "path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "identity": "Frozen Empirical Predictions CSV",
+      "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "provenance": "ESTABLISHED"
+    }
+  },
+  "ems_orchestration_provenance": {
+    "ems_orchestration_path": "system/runtime/runner.py & run_polaris_stage8_1_ems_empirical_replay.py",
+    "ems_orchestration_sha256": "0a1bb4f1... & c305aa81...",
+    "ems_orchestration_identity": "POLARIS MPC Receding Horizon Replay Runner",
+    "ems_orchestration_provenance": "ESTABLISHED"
+  },
+  "solver_provenance": {
+    "solver_version": "HiGHS MILP Solver v1.7+",
+    "solver_interface_path": "system/optimization/implementations/milp.py",
+    "solver_interface_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+    "solver_binary_or_library_identity": "Dynamic C++ HiGHS Shared Library",
+    "solver_binary_hash": "SOLVER_BINARY_HASH = NOT_ESTABLISHED",
+    "solver_provenance": "ESTABLISHED_WITH_DOCUMENTED_PROVENANCE_LIMITATION"
+  },
+  "v1_to_v2_mechanical_equivalence_matrix": {
+    "V2_CONTROL_EQUIVALENCE_TO_V1": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_TREATMENT_EQUIVALENCE_TO_V1": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_INITIAL_STATE_EQUIVALENCE": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_REALIZED_TRAJECTORY_EQUIVALENCE": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_FORECAST_INPUT_EQUIVALENCE": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_EMS_CONFIGURATION_EQUIVALENCE": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_OPTIMIZER_EQUIVALENCE": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_SIMULATOR_EQUIVALENCE": "A \u2014 MECHANICALLY VERIFIABLE NOW",
+    "V2_SOLVER_EQUIVALENCE": "B \u2014 REQUIRES IMPLEMENTATION-AND-TEST VERIFICATION"
+  },
+  "telemetry_feasibility_matrix": {
+    "origin_id": "DIRECTLY_AVAILABLE",
+    "origin_timestamp": "DIRECTLY_AVAILABLE",
+    "mpc_timestep_idx": "DIRECTLY_AVAILABLE",
+    "timestamp": "DIRECTLY_AVAILABLE",
+    "treatment_forecast_vector_24": "DIRECTLY_AVAILABLE",
+    "control_forecast_vector_24": "DIRECTLY_AVAILABLE",
+    "actual_solar_truth": "DIRECTLY_AVAILABLE",
+    "treatment_h1_forecast": "DIRECTLY_AVAILABLE",
+    "control_h1_forecast": "DIRECTLY_AVAILABLE",
+    "treatment_forecast_error_h1": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "control_forecast_error_h1": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "forecast_difference_h1": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "soc_before": "DIRECTLY_AVAILABLE",
+    "soc_after": "DIRECTLY_AVAILABLE",
+    "diesel_state_before": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "diesel_state_after": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "cumulative_diesel_fuel_before": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "cumulative_diesel_fuel_after": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "cumulative_diesel_energy_after": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "cumulative_battery_throughput_after": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "optimizer_status": "DIRECTLY_AVAILABLE",
+    "objective_value": "DIRECTLY_AVAILABLE",
+    "diesel_commitment": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "startup_event": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "shutdown_event": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "battery_charge_decision": "DIRECTLY_AVAILABLE",
+    "battery_discharge_decision": "DIRECTLY_AVAILABLE",
+    "reserve_status": "AVAILABLE_WITH_OBSERVATIONAL_LOGGING",
+    "constraint_status": "DIRECTLY_AVAILABLE",
+    "h1_diesel_power": "DIRECTLY_AVAILABLE",
+    "h1_battery_charge_power": "DIRECTLY_AVAILABLE",
+    "h1_battery_discharge_power": "DIRECTLY_AVAILABLE",
+    "h1_renewable_dispatch": "DIRECTLY_AVAILABLE",
+    "h1_renewable_curtailment": "DIRECTLY_AVAILABLE",
+    "h1_served_load": "DIRECTLY_AVAILABLE",
+    "h1_unmet_load": "DIRECTLY_AVAILABLE"
+  },
+  "observability_vs_intervention_assessment": {
+    "observational_integrity": "PASS \u2014 TELEMETRY CAN BE IMPLEMENTED AS A PURE OBSERVATIONAL LOGGING LAYER",
+    "blockers": "NONE"
+  },
+  "diesel_mechanism_question_answerability": {
+    "question_answerability": "READY",
+    "explanation": "Capturing structured timestep arrays across categories A-F provides complete visibility into the exact step where forecast differences trigger EMS decision divergence."
+  },
+  "authorization_recommendation": "V2 observability protocol is hardened and implementation-ready with documented provenance limitations. V2 execution remains NOT AUTHORIZED pending separate governance unlock."
+}

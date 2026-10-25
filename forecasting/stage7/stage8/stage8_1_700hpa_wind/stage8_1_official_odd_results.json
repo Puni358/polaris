@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-10-02T14:43:33.623016+00:00",
+  "stage": "STAGE 8.1 700 hPa STEERING WIND EXPERIMENT",
+  "evaluation": "OFFICIAL_HELD_OUT_ODD_EVALUATION",
+  "status": "NEW OFFICIAL OPERATIONAL CHAMPION",
+  "control_source": "stage4_results/ensemble_predictions.csv (pred_ensemble)",
+  "stage4_refit_executed": false,
+  "control_reproduction": {
+    "expected_mae_w_m2": 36.613571,
+    "actual_mae_w_m2": 36.613571,
+    "pass": true
+  },
+  "odd_counts": {
+    "origins": 173,
+    "forecast_hours": 4152,
+    "daytime_rows": 2883,
+    "night_rows": 1269
+  },
+  "stage7_5_control": {
+    "daytime_mae_w_m2": 36.613571,
+    "daytime_nmae_pct": 28.3983,
+    "daytime_rmse_w_m2": 65.347064,
+    "daytime_bias_w_m2": 1.307778,
+    "night_mae_w_m2": 0.0
+  },
+  "stage8_1_candidate": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "deltas": {
+    "delta_mae_w_m2": -0.424913,
+    "delta_nmae_pp": -0.3296,
+    "delta_rmse_w_m2": -1.127569,
+    "delta_bias_w_m2": 0.131622
+  },
+  "bootstrap": {
+    "n_resamples": 10000,
+    "seed": 42,
+    "mean_delta_mae_w_m2": -0.424222,
+    "ci_95_lower_w_m2": -0.887999,
+    "ci_95_upper_w_m2": 0.026372,
+    "fraction_delta_mae_lt_0": 0.9665
+  },
+  "governance_audit": {
+    "odd_target_accessed": true,
+    "odd_predictions_generated": true,
+    "odd_metrics_evaluated": true,
+    "odd_used_for_tuning": false,
+    "odd_used_for_feature_selection": false,
+    "odd_used_for_hyperparameter_tuning": false
+  }
+}

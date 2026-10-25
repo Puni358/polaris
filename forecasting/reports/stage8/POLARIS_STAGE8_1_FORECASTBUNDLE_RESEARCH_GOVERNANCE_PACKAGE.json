@@ -1,0 +1,180 @@
+{
+  "project": "POLARIS",
+  "task": "STAGE8.1 CHAMPION -> FORECASTBUNDLE v1.0 RESEARCH GOVERNANCE PACKAGE",
+  "timestamp": "2026-09-17T19:54:00Z",
+  "authoritative_inputs": [
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_COMPATIBILITY_AUDIT.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "POLARIS_FORECASTBUNDLE_INTERVAL_SEMANTICS_AUDIT.md/json",
+    "POLARIS_FORECASTBUNDLE_POINT_SEMANTICS_EVIDENCE_CHECK.md/json",
+    "system/schemas/forecast_bundle.py",
+    "POLARIS_REPRODUCIBLE_BASELINE_FREEZE.json"
+  ],
+  "current_control_state": {
+    "point_semantics": "PARTIALLY_ESTABLISHED",
+    "interval_semantics": "NOT ESTABLISHED",
+    "point_only_representation": "NOT ESTABLISHED",
+    "pv_mapping": "NOT ESTABLISHED",
+    "wind_source": "NOT ESTABLISHED",
+    "demand_source": "NOT ESTABLISHED",
+    "multi_source_composition": "NOT ESTABLISHED",
+    "frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "DECISION_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  },
+  "existing_facts": [
+    "Stage8.1 champion produces 24 hourly point predictions (y_pred) of SW_IN in W/m^2.",
+    "ForecastBundle v1.0 requires 24-step horizon across 4 channels (point, lower, upper).",
+    "point field is established as 24-step point forecast array; deterministic expected point prediction is an inferred synthesis.",
+    "lower/upper semantics are not defined in any schema; prototype scaling is PROTOTYPE_UNVALIDATED.",
+    "Downstream MILP and Rule-Based optimizers consume ONLY .point arrays."
+  ],
+  "governance_decisions": {
+    "D1_lower_upper_semantics": {
+      "question": "What concept do lower and upper represent?",
+      "existing_evidence": "No contract definition; prototype scaling is PROTOTYPE_UNVALIDATED.",
+      "status": "DECISION REQUIRED",
+      "candidate_categories": [
+        "Category D1.A: Statistical prediction intervals / quantiles",
+        "Category D1.B: Operational error bounds / envelopes",
+        "Category D1.C: Physical min/max bounds",
+        "Category D1.D: Deterministic boundary equality (lower = point, upper = point)"
+      ]
+    },
+    "D2_point_only_representation": {
+      "question": "How do point-only models populate lower and upper?",
+      "existing_evidence": "Stage8.1 is point-only; no base interface rule exists.",
+      "status": "DECISION REQUIRED"
+    },
+    "D3_pv_mapping": {
+      "question": "Which PV model maps SW_IN (W/m^2) to solar generation (W)?",
+      "existing_evidence": "_irradiance_to_power_w() exists in baseline engine; no Stage8.1 contract authorization.",
+      "status": "DECISION REQUIRED"
+    },
+    "D4_wind_source": {
+      "question": "What is the authoritative wind forecast provider?",
+      "existing_evidence": "Baseline engine reads persistent array; no Stage8.1 composition source defined.",
+      "status": "DECISION REQUIRED"
+    },
+    "D5_demand_source": {
+      "question": "What is the authoritative demand forecast provider?",
+      "existing_evidence": "Baseline engine reads persistent array; no Stage8.1 composition source defined.",
+      "status": "DECISION REQUIRED"
+    },
+    "D6_multi_source_composition": {
+      "question": "What composition rule combines separate solar, wind, and demand forecasts?",
+      "existing_evidence": "Baseline engine composes internal streams; no Stage8.1 composition path established.",
+      "status": "DECISION REQUIRED"
+    },
+    "D7_frozen_contract_change": {
+      "question": "Is a ForecastBundle contract extension required?",
+      "existing_evidence": "Schema v1.0 is frozen; necessity of extension depends on D1-D6.",
+      "status": "NOT_ESTABLISHED"
+    }
+  },
+  "governance_vs_engineering_separation": [
+    {
+      "domain": "D1: Interval Semantics",
+      "governance_question": "What semantic meaning should lower/upper represent?",
+      "engineering_consequence": "Forecast providers must generate bounds matching defined semantic."
+    },
+    {
+      "domain": "D2: Point-Only Representation",
+      "governance_question": "What representation rule is authorized for point-only models?",
+      "engineering_consequence": "Adapter wrapper must apply authorized representation rule."
+    },
+    {
+      "domain": "D3: PV Mapping",
+      "governance_question": "Which PV conversion model is authorized for Stage8.1?",
+      "engineering_consequence": "Adapter wrapper must implement authorized PV conversion function."
+    },
+    {
+      "domain": "D4/D5: Wind & Demand Sources",
+      "governance_question": "Which wind and demand forecast sources are authorized?",
+      "engineering_consequence": "Adapter must fetch and validate forecasts from authorized sources."
+    },
+    {
+      "domain": "D6: Multi-Source Composition",
+      "governance_question": "How are separate streams composite-validated?",
+      "engineering_consequence": "ForecastEngine.predict() or adapter must composite streams into ForecastBundle."
+    },
+    {
+      "domain": "D7: Contract Change",
+      "governance_question": "Is a schema version update required?",
+      "engineering_consequence": "Schema files and serialization tests may need updating if governance mandates contract changes."
+    }
+  ],
+  "human_decision_table": [
+    {
+      "decision_id": "D1",
+      "question": "lower/upper Semantics",
+      "existing_evidence": "No contract definition; prototype scaling is PROTOTYPE_UNVALIDATED.",
+      "current_status": "DECISION REQUIRED"
+    },
+    {
+      "decision_id": "D2",
+      "question": "Point-Only Representation",
+      "existing_evidence": "Stage8.1 is point-only (y_pred); no base interface rule exists.",
+      "current_status": "DECISION REQUIRED"
+    },
+    {
+      "decision_id": "D3",
+      "question": "SW_IN -> Solar Power Mapping",
+      "existing_evidence": "_irradiance_to_power_w() exists in baseline engine; no Stage8.1 contract authorization.",
+      "current_status": "DECISION REQUIRED"
+    },
+    {
+      "decision_id": "D4",
+      "question": "Wind Forecast Source",
+      "existing_evidence": "Baseline engine reads persistent array; no Stage8.1 composition source defined.",
+      "current_status": "DECISION REQUIRED"
+    },
+    {
+      "decision_id": "D5",
+      "question": "Demand Forecast Source",
+      "existing_evidence": "Baseline engine reads persistent array; no Stage8.1 composition source defined.",
+      "current_status": "DECISION REQUIRED"
+    },
+    {
+      "decision_id": "D6",
+      "question": "Multi-Source Composition",
+      "existing_evidence": "Baseline engine composes internal streams; no Stage8.1 composition path established.",
+      "current_status": "DECISION REQUIRED"
+    },
+    {
+      "decision_id": "D7",
+      "question": "ForecastBundle Contract Change",
+      "existing_evidence": "Schema v1.0 is frozen; necessity of extension depends on D1-D6.",
+      "current_status": "NOT_ESTABLISHED"
+    }
+  ],
+  "implementation_gate": {
+    "status": "NOT_AUTHORIZED",
+    "prohibitions": "No adapter code, no schema modification, no Stage8.1 -> EMS experiment until D1-D6 are formally decided by human governance."
+  },
+  "file_modification_audit": {
+    "source_code_modified": false,
+    "forecastbundle_modified": false,
+    "schema_modified": false,
+    "stage8_1_modified": false,
+    "d5_modified": false,
+    "optimizer_modified": false,
+    "mpc_modified": false,
+    "adapter_implemented": false,
+    "experiment_executed": false,
+    "data_acquisition_performed": false,
+    "historical_control_artifacts_modified": false
+  },
+  "final_status": {
+    "point_semantics": "PARTIALLY_ESTABLISHED",
+    "interval_semantics": "NOT ESTABLISHED",
+    "point_only_representation": "NOT ESTABLISHED",
+    "pv_mapping": "NOT ESTABLISHED",
+    "wind_source": "NOT ESTABLISHED",
+    "demand_source": "NOT ESTABLISHED",
+    "multi_source_composition": "NOT ESTABLISHED",
+    "frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "DECISION_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "experiment_id": "EXP-OFFLINE-OPTIMIZER-REPLAY-20261010",
+    "timestamp_utc": "2026-10-10T10:59:43.569619+00:00",
+    "frozen_gamma": 0.25,
+    "weather_file": "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_future_weather_forecasts_2025.csv",
+    "weather_file_sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+    "evaluation_population": {
+      "total_non_blind_origins": 240,
+      "segment_1_winter_spring_count": 119,
+      "segment_2_autumn_winter_count": 121,
+      "quarantined_blind_origins_count": 123
+    },
+    "total_solve_steps": 11520,
+    "wall_clock_seconds": 5082.49
+  },
+  "aggregate_outcomes": {
+    "control": {
+      "total_fuel_consumed_liters": 17049.5344,
+      "total_curtailment_wh": 4396856.26,
+      "total_unmet_load_wh": 23894128.89,
+      "total_diesel_run_hours": 1037,
+      "cumulative_j1_deficit_wh": 0.0,
+      "cumulative_j2_shortfall_wh": 0.0
+    },
+    "candidate": {
+      "total_fuel_consumed_liters": 16363.387,
+      "total_curtailment_wh": 2512504.69,
+      "total_unmet_load_wh": 24227672.28,
+      "total_diesel_run_hours": 1028,
+      "cumulative_j1_deficit_wh": 0.0,
+      "cumulative_j2_shortfall_wh": 0.0
+    },
+    "paired_differences": {
+      "total_delta_fuel_liters": -686.1474,
+      "percentage_delta_fuel": -4.0244,
+      "mean_delta_fuel_per_origin_liters": -2.8589,
+      "total_delta_curtailment_wh": -1884351.57,
+      "total_delta_diesel_hours": -9
+    }
+  },
+  "statistical_bootstrap": {
+    "n_resamples": 2000,
+    "mean_block_length_days": 10.0,
+    "seed": 20261010,
+    "method": "calendar_gap_aware_stratified_stationary_bootstrap",
+    "segment_1_size": 119,
+    "segment_2_size": 121,
+    "delta_fuel_l_mean_point": -2.8589475,
+    "delta_fuel_l_ci_95": [
+      -4.652719489583333,
+      -1.2466589791666676
+    ],
+    "delta_curtail_wh_mean_point": -7851.464875,
+    "delta_curtail_wh_ci_95": [
+      -11873.117433333333,
+      -4130.5778572916715
+    ],
+    "delta_diesel_hrs_mean_point": -0.0375,
+    "delta_diesel_hrs_ci_95": [
+      -0.15416666666666667,
+      0.0875
+    ]
+  },
+  "durability": {
+    "snapshot_disclaimer": "This block is a point-in-time snapshot taken BEFORE this results JSON's own temp-file write, os.replace, and directory-fsync attempt. It cannot report the outcome of its own publication step. A directory-sync failure occurring during the publication of THIS file may be recorded in RUN_STATUS.json but will not appear here. RUN_STATUS.json in this run directory is the authoritative, latest durability record; this field is informational only.",
+    "directory_sync_guaranteed": true,
+    "status": "GUARANTEED",
+    "warnings_count": 0,
+    "warnings": []
+  },
+  "solver_feasibility": {
+    "control_infeasible_steps": 0,
+    "candidate_infeasible_steps": 0,
+    "busbar_balance_violations": 0,
+    "soc_bound_violations": 0
+  },
+  "governance_decision": {
+    "verdict": "NO SUPPORTED IMPROVEMENT",
+    "justification": "Candidate exhibits equal or inferior performance under the simulation replay.",
+    "operational_qualification": "QUALIFIED_AS_OFFLINE_CLOSED_LOOP_SYNTHETIC_REPLAY",
+    "production_promotion": "STRICTLY_PROHIBITED_RESEARCH_ONLY"
+  }
+}

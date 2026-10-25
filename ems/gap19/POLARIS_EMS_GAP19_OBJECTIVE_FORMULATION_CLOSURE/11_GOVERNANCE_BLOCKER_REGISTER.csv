@@ -1,0 +1,21 @@
+audit_document,11_GOVERNANCE_BLOCKER_REGISTER
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# GOVERNANCE BLOCKER & UNRESOLVED ITEMS REGISTER
+# ============================================================
+
+item_id,item_name,category,description,impact_on_option_a,impact_on_option_b,single_governed_classification
+OI-01,Stage 2 EBR Target Value,Formulation / Policy,Numerical value of E_EBR_target(t) [Wh] is not specified in policy,Requires numerical parameter for Stage 2 solve,Requires numerical parameter for Stage 2 solve,GOVERNANCE_DECISION_REQUIRED
+OI-02,Stage 2 Terminal Reserve Target,Formulation / Policy,Numerical value of E_terminal_target [Wh] is not specified in policy,Requires numerical parameter for terminal constraint/penalty,Requires numerical parameter for terminal constraint/penalty,GOVERNANCE_DECISION_REQUIRED
+OI-03,Lexicographic Epsilon Values,Solver Semantics,Numerical tolerance values epsilon_k for objective locking,Used in sequential MILP RHS constraints c_k^T x <= z_k* + epsilon_k,Passed to HighsLinearObjective abs/rel_tolerance fields,ENGINEERING_DEFINITION_REQUIRED
+OI-04,Battery Degradation Stage Placement,Objective Hierarchy,Stage placement of degradation penalty (p_chg/p_dis) is unassigned in policy,Determines which sequential stage includes degradation term,Determines which HighsLinearObjective priority includes degradation,GOVERNANCE_DECISION_REQUIRED
+OI-05,5-Tier Load Schema Breakdown,System Architecture,ForecastBundle & StationState lack 5-tier load breakdown (Critical Essential etc),Requires critical demand vector for Stage 1 formulation,Requires critical demand vector for Stage 1 formulation,ENGINEERING_DEFINITION_REQUIRED
+OI-06,Temporal Weighting Vector,Formulation,Uniform weighting w_t = 1.0 vs discount factor gamma^t,Resolved: w_t = 1.0 uniform physical sum across horizon,Resolved: w_t = 1.0 uniform physical sum across horizon,RESOLVED_BY_EXISTING_GOVERNANCE
+OI-07,DispatchPlan Multi-Stage Reporting,Schema / Telemetry,DispatchPlan schema lacks multi-stage objective reporting fields,Requires additive fields in DispatchPlan schema,Requires additive fields in DispatchPlan schema,ENGINEERING_DEFINITION_REQUIRED
+OI-08,Fuel Tank & Seasonal Budget Limits,Formulation / Policy,Minimum tank reserve and seasonal fuel budget values not authorized,Required if hard fuel budget constraints are active,Required if hard fuel budget constraints are active,GOVERNANCE_DECISION_REQUIRED
+OI-09,Empirical A/B Equivalence Benchmark,Verification,No empirical comparative run executed on actual POLARIS datasets,Pending execution after formulation closure and solver selection,Pending execution after formulation closure and solver selection,ENGINEERING_DEFINITION_REQUIRED
+OI-10,Option B Access Architecture Route,System Architecture,scipy.optimize.milp() does not expose multi-objective; needs _core or highspy,N/A (Uses public scipy.optimize.milp()),Requires private scipy._highspy._core access or highspy dependency,ENGINEERING_DEFINITION_REQUIRED

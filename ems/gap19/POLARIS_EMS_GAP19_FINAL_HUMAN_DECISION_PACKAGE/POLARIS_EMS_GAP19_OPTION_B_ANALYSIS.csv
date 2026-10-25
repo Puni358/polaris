@@ -1,0 +1,14 @@
+ASPECT,TECHNICAL_DESCRIPTION,CLASSIFICATION,EVIDENCE_SOURCE
+Mathematical Structure,Single solver invocation passing objective priority levels to a solver engine natively supporting lexicographic optimization.,ARCHITECTURAL_PROPOSAL,Solver MO Literature
+Current API Exposure,NOT_EXPOSED by current scipy.optimize.milp() API.,NOT_EXPOSED,scipy.optimize.milp signature audit
+HiGHS Native Capability,NOT_VERIFIED for current installed SciPy wrapper path.,NOT_VERIFIED,GAP19 Audit
+Dependency Requirement,"POTENTIAL_IMPLEMENTATION_PATH. Requires separate dependency and API verification (e.g. highspy, Gurobi, CPLEX).",REQUIRES_EXTERNAL_DEPENDENCY,Dependency Register
+Priority Semantics,Native lexicographic priority hierarchy evaluated internally by solver engine subject to solver documented tolerances.,ARCHITECTURAL_PROPOSAL,Native MO Solver Manuals
+Solver Invocations,1 solver call per MPC cycle.,ARCHITECTURAL_PROPOSAL,Native MO Solver Specs
+Licensing Considerations,highspy (MIT); commercial solvers require paid/academic license verification.,REQUIRES_SEPARATE_DEPENDENCY_AND_API_VERIFICATION,License Register
+Deployment & Platform,"Architecturally compatible with offline deployment, subject to cross-platform binary wheel validation on Windows and Linux.",REQUIRES_SEPARATE_DEPENDENCY_AND_API_VERIFICATION,Deployment Analysis
+Integration Complexity,Requires creating a wrapper adapter around LocalMILPEnergyOptimizer to interface with native solver API.,ARCHITECTURAL_PROPOSAL,Interface Impact Matrix
+Failure Handling,Detect and record failure; operational response REQUIRES_GOVERNANCE_DECISION.,RESPONSE_POLICY_REQUIRED,Failure Mode Register
+Reproducibility,"Deterministic replay within authorized numerical/structural tolerances, subject to solver native presolve & seed controls.",GOVERNANCE_REQUIREMENT,Reproducibility Requirements
+Runtime Implications,O(T_native_MO) per step. Actual execution time STATUS = NOT_MEASURED.,NOT_MEASURED,Performance Analysis
+Rollback Procedure,Restore previously authorized runtime dependency manifest and optimizer implementation.,ARCHITECTURAL_PROPOSAL,Rollback Register

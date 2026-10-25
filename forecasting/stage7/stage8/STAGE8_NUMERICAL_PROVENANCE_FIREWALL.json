@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-09-13T10:45:00+05:30",
+  "document_title": "POLARIS STAGE 8 NUMERICAL PROVENANCE FIREWALL SPECIFICATION",
+  "version": "1.0",
+  "governance_status": "MANDATORY_ENFORCEMENT",
+  "rules": {
+    "G1_persist_row_level_predictions": {
+      "name": "Persist Row-Level Predictions",
+      "requirement": "Exactly one authoritative prediction row per origin x horizon (e.g. 173 ODD origins x 24 horizons = 4,152 rows)."
+    },
+    "G2_persist_actual_target": {
+      "name": "Persist Actual Target Alongside Prediction",
+      "requirement": "Mandatory columns: origin_datetime, horizon_hour, target_timestamp, y_true, y_pred."
+    },
+    "G3_persist_artifact_hash": {
+      "name": "Persist Prediction Artifact Hash",
+      "requirement": "Cryptographic SHA-256 hash of prediction table persisted in evaluation manifest."
+    },
+    "G4_recompute_metrics_from_rows": {
+      "name": "Direct Metric Recomputation",
+      "requirement": "Recompute MAE, nMAE, RMSE, bias directly from persisted rows. Zero hardcoded metric literals."
+    },
+    "G5_recompute_control_metric": {
+      "name": "Independent Control Baseline Recomputation",
+      "requirement": "Independently recompute control metric from same evaluation artifact."
+    },
+    "G6_control_tolerance_stop_gate": {
+      "name": "Hard Control Tolerance Stop Gate",
+      "requirement": "If actual control != frozen reference control within exact tolerance (|delta| <= 1e-5 W/m2): STOP. No editing evaluator literals. No hardcoding expected metrics. No promotion."
+    },
+    "G7_prohibit_evaluator_literals": {
+      "name": "Prohibition of Manual Evaluator Literals",
+      "requirement": "Metrics must NEVER be inserted manually into evaluation code to make assertions pass."
+    },
+    "G8_classify_synthetic_sources": {
+      "name": "Synthetic Data Source Classification",
+      "requirement": "Any synthetic feature/data source must be explicitly classified SYNTHETIC and can never qualify as real-world evidence for an operational promotion."
+    },
+    "G9_recomputable_bootstrap_bounds": {
+      "name": "Recomputable Bootstrap Results",
+      "requirement": "Bootstrap results must be recomputable from persisted row-level predictions."
+    },
+    "G10_end_to_end_numerical_lineage": {
+      "name": "Complete End-to-End Numerical Lineage",
+      "requirement": "Promotion is forbidden unless numerical provenance is complete from raw input artifact -> feature artifact -> frozen model/config -> row-level predictions -> independently recomputed metrics."
+    }
+  }
+}

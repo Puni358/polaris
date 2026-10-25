@@ -1,0 +1,23 @@
+audit_document,01_BATTERY_SURVIVABILITY_ANALYSIS
+audit_phase,SURVIVABILITY_DETECTOR_SPECIFICATION_AUDIT
+audit_date,2026-09-22
+generation_mode,REPRODUCIBLE_CODE_AUDIT
+execution_performed,READ_ONLY
+
+# ============================================================
+# BATTERY SURVIVABILITY FORMULATION & REPOSITORY EVIDENCE
+# ============================================================
+
+parameter_aspect,symbol_formula,repository_source_file,prototype_value_or_expression,units,audited_status_and_gaps
+Stored Battery Energy,E(t) = C_bat * (SOC(t) / 100),system/schemas/station_state.py,battery_energy_wh,Wh,VERIFIED FACT: State variable in StationState
+Battery Capacity,C_bat,system/config/battery.yaml,capacity_wh = 200000.0,Wh,VERIFIED FACT: Configured 200 kWh pack capacity
+Technical Minimum SOC,min_soc_pct,system/config/battery.yaml,min_soc_pct = 20.0,%,VERIFIED FACT: 20% equipment floor (40 kWh)
+Technical Minimum Energy,E_min = C_bat * (min_soc_pct / 100),system/optimization/implementations/milp.py,min_e_wh = 40000.0,Wh,VERIFIED FACT: Hard physical bound in MILP
+Usable Cell Energy,E_usable_cell(t) = max(0 E(t) - E_min),system/simulation/simulator.py,curr_e_wh - min_e_wh,Wh,VERIFIED FACT: Cell-side available energy above E_min
+Discharge Efficiency,eta_dis,system/config/battery.yaml,discharge_efficiency = 0.92,unitless ratio,VERIFIED FACT: 92% discharge efficiency
+Usable Bus Energy,E_usable_bus(t) = (E(t) - E_min) * eta_dis,system/optimization/implementations/milp.py,(curr_e_wh - min_e_wh) * 0.92,Wh,DERIVABLE FACT: Available energy delivered to AC bus
+Max Discharge Power,P_dis_max,system/config/battery.yaml,max_discharge_power_w = 50000.0,W,VERIFIED FACT: 50 kW inverter discharge power limit
+Critical Load Demand,D_critical(k),system/schemas/forecast_bundle.py,demand.point (aggregate only),W,MISSING DATA: ForecastBundle lacks critical tier breakdown
+Cumulative Critical Energy,E_critical_bus(N) = sum_{k=1..N} D_critical(k) * dt,system/optimization/implementations/milp.py,N/A,Wh,DERIVABLE FORMULA: Causal forward critical energy sum
+Battery Forward Endurance,T_batt = max{N | E_critical_bus(N)/eta_dis <= E_usable_cell and D_crit(k) <= P_dis_max},N/A,Forward critical endurance horizon N (hours),hours,DERIVABLE FORMULA: Causal battery endurance
+Emergency Battery Reserve,E_EBR_target(t),POLARIS_EMS_OBJECTIVE_SPECIFICATION_V2,Symbolic target above E_min,Wh,GOVERNANCE BLOCKER: Resilience target; numerical value unauthorized

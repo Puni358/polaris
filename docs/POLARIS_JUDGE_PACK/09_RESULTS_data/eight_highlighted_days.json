@@ -1,0 +1,133 @@
+{
+ "variant": "scenario2_initial_state_exact",
+ "days": [
+  {
+   "date": "2024-01-27",
+   "title": "Most decisions that mattered",
+   "tag": "Decision map",
+   "reason": "In 3 of the 24 hours the opposite diesel choice would have left critical load unserved. The battery bottomed at 22.5% (floor 20%) and the lights stayed on all day.",
+   "focusHour": 6,
+   "metrics": {
+    "diesel_l": 162.2,
+    "diesel_hours": 7,
+    "min_soc_pct": 22.5,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 2.9,
+    "protected_load_hours": 3,
+    "protected_reserve_hours": 0
+   }
+  },
+  {
+   "date": "2024-02-07",
+   "title": "Coldest day of the year",
+   "tag": "Coldest",
+   "reason": "Measured -21.7 °C at the station, winter-peak load (796 kWh) and only 15 kWh of sun. The generator ran 7 hours (161 L); the battery never went below 24.2% and no load was lost.",
+   "focusHour": 8,
+   "metrics": {
+    "diesel_l": 161.0,
+    "diesel_hours": 7,
+    "min_soc_pct": 24.2,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 15.2,
+    "protected_load_hours": 2,
+    "protected_reserve_hours": 0
+   }
+  },
+  {
+   "date": "2024-03-31",
+   "title": "Late-winter forecast miss, absorbed by the reserve",
+   "tag": "Reserve at work",
+   "reason": "The forecast overestimated the sun by 94 W/m² on average. The reserve cushion absorbed it: only 58 L of diesel (3 hours), 1 hour where the reserve itself was protected, and no load lost.",
+   "focusHour": 8,
+   "metrics": {
+    "diesel_l": 57.8,
+    "diesel_hours": 3,
+    "min_soc_pct": 26.9,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 164.9,
+    "protected_load_hours": 0,
+    "protected_reserve_hours": 1
+   }
+  },
+  {
+   "date": "2024-05-01",
+   "title": "First diesel-free day of the year",
+   "tag": "First diesel-free",
+   "reason": "Spring sun finally covers the station: 254 kWh of solar, zero generator hours all day, minimum battery 34.0% and no load lost. Every earlier day of the year needed the generator.",
+   "focusHour": 11,
+   "metrics": {
+    "diesel_l": 0.0,
+    "diesel_hours": 0,
+    "min_soc_pct": 34.0,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 254.4,
+    "protected_load_hours": 0,
+    "protected_reserve_hours": 0
+   }
+  },
+  {
+   "date": "2024-05-20",
+   "title": "Biggest plan-versus-reality gap, corrected",
+   "tag": "Feedback loop",
+   "reason": "In one hour the real battery level was 23.5 percentage points away from what the plan expected. That error did not carry forward: the next plan started from the measured level. No diesel, no load lost.",
+   "focusHour": 11,
+   "metrics": {
+    "diesel_l": 0.0,
+    "diesel_hours": 0,
+    "min_soc_pct": 42.8,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 296.5,
+    "protected_load_hours": 0,
+    "protected_reserve_hours": 0
+   }
+  },
+  {
+   "date": "2024-05-26",
+   "title": "Peak of the midnight sun",
+   "tag": "Midnight sun",
+   "reason": "348 kWh of solar in one day. The generator stayed off all day and the battery filled up, so 125 kWh of sun could not be stored (the model's biggest spill).",
+   "focusHour": 12,
+   "metrics": {
+    "diesel_l": 0.0,
+    "diesel_hours": 0,
+    "min_soc_pct": 40.0,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 347.9,
+    "protected_load_hours": 0,
+    "protected_reserve_hours": 0
+   }
+  },
+  {
+   "date": "2024-07-07",
+   "title": "Forecast badly wrong, still no diesel",
+   "tag": "Forecast miss",
+   "reason": "The sunshine forecast missed by 106 W/m² on average during the sunny hours and in one hour the real battery level was up to 18 percentage points away from the plan. The next plan started from the real level, the generator never ran and no load was lost.",
+   "focusHour": 5,
+   "metrics": {
+    "diesel_l": 0.0,
+    "diesel_hours": 0,
+    "min_soc_pct": 34.8,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 339.7,
+    "protected_load_hours": 0,
+    "protected_reserve_hours": 0
+   }
+  },
+  {
+   "date": "2024-11-10",
+   "title": "Hardest day: the most diesel",
+   "tag": "Most diesel",
+   "reason": "Almost no sun (3.7 kWh) and a full winter load. The most diesel of the year, 178 L over 8 hours, yet the battery stayed above 23.1% and not one kWh of load was lost.",
+   "focusHour": 6,
+   "metrics": {
+    "diesel_l": 177.5,
+    "diesel_hours": 8,
+    "min_soc_pct": 23.1,
+    "unserved_kwh": 0.0,
+    "solar_kwh": 3.7,
+    "protected_load_hours": 2,
+    "protected_reserve_hours": 0
+   }
+  }
+ ]
+}

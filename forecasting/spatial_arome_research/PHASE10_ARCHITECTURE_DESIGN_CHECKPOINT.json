@@ -1,0 +1,155 @@
+{
+  "checkpoint": "PHASE10_ARCHITECTURE_DESIGN_CHECKPOINT",
+  "status": "DESIGN_ONLY_NO_TRAINING_PERFORMED",
+  "odd_firewall": "INTACT — no ODD rows read, aggregated, or referenced in this checkpoint",
+  "protected_champion_official_odd_metrics": {
+    "mae_w_m2": 36.188657,
+    "rmse_w_m2": 64.219495,
+    "bias_w_m2": 1.439399,
+    "nmae_pct": 28.0688,
+    "note": "Fixed and unchanged. Never to be replaced by any reconstructed control value."
+  },
+
+  "data_audit_facts": {
+    "matrix_shape": [8328, 45],
+    "n_origins_total": 347,
+    "n_origins_even": 173,
+    "n_origins_odd": 174,
+    "rows_per_origin": 24,
+    "origin_level_context_features_constant_across_horizon": [
+      "ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h",
+      "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h",
+      "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h",
+      "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h"
+    ],
+    "horizon_varying_nwp_features_lag1_autocorrelation_even_split": {
+      "fc_temperature_2m": 0.933,
+      "v700": 0.838,
+      "u700": 0.816,
+      "fc_relative_humidity_2m": 0.799,
+      "fc_cloud_cover": 0.674,
+      "cloud_frac": 0.674
+    },
+    "per_horizon_abs_error_even_split_pred_stage4_fold": {
+      "h1": 1.67, "h2": 2.87, "h3": 5.97, "h4": 10.33, "h5": 18.82,
+      "h6": 25.60, "h7": 37.74, "h8": 45.30, "h9": 55.94, "h10": 66.42,
+      "h11": 77.15, "h12": 77.51, "h13": 61.84, "h14": 63.21, "h15": 54.61,
+      "h16": 47.11, "h17": 29.37, "h18": 18.02, "h19": 10.60, "h20": 6.92,
+      "h21": 4.35, "h22": 2.73, "h23": 1.14, "h24": 1.26
+    }
+  },
+
+  "architecture_audit_answers": {
+    "q1_explicit_temporal_modeling": "No — rows are i.i.d. to HGB; horizon_hour is a scalar feature, not a sequence position.",
+    "q2_explicit_horizon_dependencies": "No — no coupling mechanism between predictions at different horizons of the same origin.",
+    "q3_shared_representation_across_horizons": "Only implicit parameter sharing via one global tree ensemble; no explicit multi-task structure.",
+    "q4_exploits_sequential_trajectory": "No — despite strong measured autocorrelation (0.67-0.93) in horizon-varying NWP inputs within an origin, no neighbor-horizon deltas/trends are exposed or modeled explicitly.",
+    "q5_h9_h12_from_tabular_limitation": "Plausible but confounded — H9-H12 error peak co-locates with the diurnal peak in solar elevation/clearsky GHI, i.e. largest physical magnitude, so this is not proof of an architectural cause; it motivates the hypothesis without confirming it.",
+    "q6_information_already_encoded": "Trailing-24h observation summary stats, last obs, per-horizon NWP forecast fields, LWP/IWP, clearsky GHI (raw + terrain-adjusted), solar geometry, terrain obstruction, three prior-stage model predictions plus disagreement.",
+    "q7_missing_architectural_capability": "(a) neighbor-horizon/sequence coupling, (b) explicit shared multi-task representation across an origin's 24 horizons, (c) as a non-coupling alternative, a dedicated residual-modeling second stage."
+  },
+
+  "candidates": [
+    {
+      "id": "A",
+      "name": "Temporal sequence model (per-origin trajectory encoder)",
+      "hgb_limitation_addressed": "No temporal/sequence-aware processing (audit q1, q4)",
+      "information_used": "24-step per-origin sequence of horizon-varying features + static ctx_* vector; all pre-existing columns reshaped, no new data",
+      "why_could_improve_h9_h12": "Small GRU/TCN can exploit measured trajectory momentum (autocorr 0.67-0.93) that HGB does not use explicitly",
+      "why_different_from_phase9": "Phase 9 candidates added single features to the same row-independent HGB; this changes the processing architecture itself",
+      "overfitting_risk": "Highest of the three — only 173 EVEN origins for a sequence NN",
+      "computational_cost": "Low-moderate; CPU-trainable in minutes but needs careful regularization",
+      "evaluation": "5-fold OOF-by-origin on EVEN only"
+    },
+    {
+      "id": "B",
+      "name": "Multi-horizon shared-representation model",
+      "hgb_limitation_addressed": "No shared multi-task representation across H1-H24 of one origin (audit q2, q3)",
+      "information_used": "Same 37 features; joint multi-task training over all 24 horizons per origin instead of independent row fits",
+      "why_could_improve_h9_h12": "Lets the model borrow strength across an origin's horizons if H9-H12 errors are structurally linked to an origin-level regime rather than purely independent per-row noise",
+      "why_different_from_phase9": "Changes what is jointly optimized, not what features exist — distinct from both Phase 9 feature-engineering candidates and from Candidate A's recurrence-based coupling",
+      "overfitting_risk": "Moderate — smaller than Candidate A since no recurrent state, but still risk of per-origin idiosyncrasy overfit with only 173 EVEN origins",
+      "computational_cost": "Low; small MLP, seconds to low minutes on CPU",
+      "evaluation": "5-fold OOF-by-origin on EVEN only"
+    },
+    {
+      "id": "C",
+      "name": "Residual/dual-stage architecture",
+      "hgb_limitation_addressed": "None directly — tests whether a second learned stage recovers residual structure the single-stage tabular model misses (audit q7c)",
+      "information_used": "Stage 1: same-pipeline reconstructed HGB control (explicitly labeled, per Phase 9 caveat). Stage 2: trained on Stage 1's OOF residuals using same 37 features plus intrinsic within-origin residual-context derivations",
+      "why_could_improve_h9_h12": "If Stage 1 residuals at H9-H12 have exploitable conditional structure a single HGB fit under-fits",
+      "why_different_from_phase9": "Phase 9's disagreement-signal candidate was one new feature fed into the same one-stage model; this is a separately trained second stage",
+      "overfitting_risk": "Lowest of the three, but weakest link to the audited architectural gap; closest in spirit to the already gate-failed Phase 9 Candidate 3/A",
+      "computational_cost": "Lowest of the three",
+      "evaluation": "Stage 1 via 5-fold OOF-by-origin; Stage 2 trained only on Stage 1's out-of-fold residuals, validated with its own 5-fold OOF-by-origin"
+    }
+  ],
+
+  "ranking": [
+    {"rank": 1, "id": "B", "reason": "Most directly targets best-evidenced architectural gap; lower overfitting risk than A given dataset size; cheap and easy to keep leakage-safe"},
+    {"rank": 2, "id": "A", "reason": "Well-motivated by measured autocorrelation but higher risk/complexity for this dataset size; secondary hypothesis if B fails"},
+    {"rank": 3, "id": "C", "reason": "Lowest risk but weakest connection to the audited gap; closest to an already-rejected Phase 9 candidate in spirit"}
+  ],
+
+  "selected_primary_architecture": {
+    "id": "B",
+    "name": "Multi-horizon shared-representation model",
+    "exact_inputs": {
+      "static_per_origin": [
+        "ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h",
+        "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h",
+        "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h",
+        "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h"
+      ],
+      "per_horizon": [
+        "horizon_hour", "month", "hour", "solar_elevation", "solar_zenith",
+        "clearsky_ghi", "clearsky_ghi_terrain_adjusted", "fc_cloud_cover",
+        "fc_temperature_2m", "fc_relative_humidity_2m", "cloud_frac",
+        "lwp_latest", "iwp_latest", "lwp_x_cloud",
+        "terrain_horizon_elevation_deg", "terrain_elevation_margin_deg",
+        "terrain_solar_obstruction_flag", "u700", "v700",
+        "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold",
+        "disagreement_fold", "is_daytime", "is_night_causal"
+      ],
+      "excluded": ["actual_SW_IN (target only)", "any ODD row", "any future timestep information"]
+    },
+    "output_structure": "Shared small MLP trunk (<=2 hidden layers, width <=64, dropout) + horizon embedding, multi-task loss batched per origin (all 24 horizons jointly), one predicted SW_IN per (origin, horizon)",
+    "training_procedure": {
+      "data": "EVEN split only, 173 origins / 4152 rows",
+      "batching": "grouped by origin (24 rows per group)",
+      "loss": "MAE averaged over the 24 horizons per origin",
+      "regularization": "dropout + weight decay, deliberately small/fixed configuration, no hyperparameter sweep",
+      "early_stopping": "on held-out OOF fold only"
+    },
+    "validation_procedure": {
+      "scheme": "5-fold OOF, folds assigned by origin_id, all 24 horizons of an origin kept in one fold",
+      "control": "same-pipeline reconstructed HGB control (explicitly labeled as reconstructed, not official champion), same EVEN OOF folds"
+    },
+    "leakage_controls": [
+      "EVEN only; ODD not read or referenced",
+      "no future actual SW_IN or future errors as inputs",
+      "fold split strictly by origin_id",
+      "architecture/hyperparameters fixed before any OOF result is inspected"
+    ],
+    "preregistered_gates": {
+      "G1": "aggregated delta_mae <= -0.50 W/m^2 vs EVEN same-pipeline control",
+      "G2": ">=4/5 folds improved",
+      "G3": "max fold degradation <= +0.50 W/m^2",
+      "G4": "candidate nMAE <= control nMAE AND candidate RMSE <= control RMSE",
+      "G5": "causal/parser compliance",
+      "G6": "exact control reproduction reported honestly as approximate unless original Stage 8.1 code/hyperparameters are located; official champion numbers never replaced"
+    },
+    "scientific_justification": "Smallest, lowest-risk architectural change directly targeting a concretely demonstrated gap (no shared/multi-task representation across an origin's 24 horizons); reuses 100% of existing feature space; no new hyperparameter sweep; cleanly answers whether cross-horizon shared representation extracts more signal than fully independent tabular treatment, without touching ODD or reopening feature research."
+  },
+
+  "explicit_non_claims": [
+    "Not claimed that Candidate B will pass its gates.",
+    "Not claimed H9-H12 error is caused by architecture rather than input-magnitude/physical volatility.",
+    "Not claimed 28.0688% nMAE is a lower bound.",
+    "Not claimed neural/temporal architectures cannot help in some other form in the future."
+  ],
+
+  "training_performed_this_checkpoint": false,
+  "odd_accessed_this_checkpoint": false,
+  "next_action": "Await explicit go-ahead to train Candidate B under the procedure above, EVEN data only, and report G1-G6 plus fold-by-fold and H9-H12-specific delta_mae."
+}

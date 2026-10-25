@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "project": "POLARIS Energy Management System",
+    "document": "GAP1_FINAL_GOVERNANCE_FORMALIZATION",
+    "version": "3.0.0-authoritative",
+    "date": "2026-09-27",
+    "human_policy_status": "COMPLETE",
+    "formal_semantics_status": "COMPLETE",
+    "research_prerequisites_status": "PENDING_G1.3E_RESEARCH",
+    "implementation_authorized": false
+  },
+  "authoritative_human_decisions": {
+    "g1_availability": {
+      "name": "G1 — AVAILABILITY",
+      "rule": "Generator safety credit requires generator to be operational OR capable of becoming operational under G1.2, dispatchable, and supported by validated telemetry/evidence.",
+      "distinctions": ["configured != operational", "running != dispatchable", "rated != available", "available != fuel-sufficient"]
+    },
+    "g2_fuel": {
+      "name": "G2 — FUEL SUFFICIENCY & UNCERTAINTY",
+      "rule": "Requires sufficient fuel for 6h survivability interval. Fuel uncertainty makes contribution UNKNOWN/invalid (0.0 kWh credit). UNKNOWN_INVALID != EMERGENCY."
+    },
+    "g3_startup": {
+      "name": "G3 — STARTUP TRANSIENTS",
+      "rule": "OFF generator counts only if validated start-readiness exists and startup delay is validated. Generation credit begins only after startup constraint satisfied. Instantaneous start forbidden for safety credit."
+    },
+    "g4_unknown_health": {
+      "name": "G4 — UNKNOWN GENERATOR HEALTH",
+      "rule": "Unknown health sets generator credit to 0.0 kWh. Evaluates remaining verified resources. Emergency applies ONLY if remaining verified resources yield M_surv < 0."
+    },
+    "g5_time_varying_output": {
+      "name": "G5 — TIME-VARYING GENERATOR OUTPUT ENVELOPE",
+      "formula": "E_gen_credible_raw = integral_0_to_6(P_gen_credible(t)) dt",
+      "rule": "P_gen_credible(t) accounts for availability, dispatchability, startup delay, fuel depletion, output bounds, derating, operating limits, health evidence."
+    },
+    "g1_1_demand_cap": {
+      "name": "G1.1 — CRITICAL-LOAD DEMAND CAP",
+      "formula": "E_gen_credible = min(integral_0_to_6(P_gen_credible(t)) dt, max(0, 69.60 - E_batt_deliverable))",
+      "rule": "Generator safety credit MUST be capped to remaining critical-load energy requirement (69.60 kWh max). Credit above remaining requirement shall not increase survivability credit."
+    },
+    "g1_2_off_generator_dispatchability": {
+      "name": "G1.2 — OFF GENERATOR DISPATCHABILITY",
+      "rule": "Dispatchable includes OFF generator ONLY when validated start-readiness exists, unit can become operational under validated startup process, and startup delay is explicitly represented."
+    },
+    "g1_3_e_telemetry_freshness": {
+      "name": "G1.3-E — TELEMETRY FRESHNESS",
+      "numerical_threshold_assigned": false,
+      "rule": "NO UNIVERSAL NUMERICAL FRESHNESS THRESHOLD. Safety-critical telemetry must be sufficiently fresh under resource-specific, evidence-based research rules. System MUST NOT invent a universal number or default to 30s/300s/900s.",
+      "policy_interface": "FreshnessEligible(resource, measurement, t_now, evidence_context)"
+    },
+    "g1_4_telemetry_loss_emergency": {
+      "name": "G1.4 — TELEMETRY LOSS / EMERGENCY",
+      "rule": "If generator telemetry becomes invalid AND verified remaining resources can no longer establish 6h survivability (M_surv < 0) -> enter EMERGENCY. Telemetry invalidity itself is NOT automatically equivalent to Emergency."
+    },
+    "g6_evidence_threshold": {
+      "name": "G6 — STRICT EVIDENCE VALIDATION THRESHOLD",
+      "rule": "Every required evidence field for generator safety credit MUST validate. No optimistic defaults. Missing/invalid/stale evidence -> generator receives 0.0 kWh credit. UNKNOWN/INVALID != EMERGENCY."
+    }
+  },
+  "reconciled_survivability_equation": {
+    "m_surv_formula": "M_surv = E_batt_deliverable + E_gen_credible + E_ren_credible - 69.60 kWh",
+    "unit": "bus-delivered kWh",
+    "decoupling_proven": true
+  }
+}

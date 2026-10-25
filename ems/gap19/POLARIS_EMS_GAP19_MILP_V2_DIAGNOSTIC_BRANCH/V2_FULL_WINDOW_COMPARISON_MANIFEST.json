@@ -1,0 +1,102 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "manifest_timestamp_utc": "2026-10-03T08:34:31Z",
+  "experiment_type": "CONTROLLED_OPTIMIZER_FORMULATION_EXPERIMENT",
+  "status": "COMPLETE_ZERO_FLAGS",
+  "production_deployment": false,
+  "forecast_engine_ablation": false,
+  "human_execution_authorization": "NOT_GRANTED",
+  "note": "Full-window (347-origin) controlled comparison of frozen GAP19 vs research-only V2. Supersedes nothing; the implementation checkpoint remains the authoritative record of the implementation itself and is unchanged (hashes re-verified below).",
+
+  "preserved_checkpoint_files": {
+    "description": "Hashes re-verified identical to MILP_V2_RESEARCH_IMPLEMENTATION_CHECKPOINT_MANIFEST.json. Frozen checkpoint preserved, not modified, by this experiment.",
+    "files": [
+      {"path": "system/optimization/implementations/gap19_highs_native.py", "sha256": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737", "drift": false},
+      {"path": "system/optimization/implementations/gap19_highs_native_milp_v2_research.py", "sha256": "5e24ecc17abe4104746425b2fb96c0594473a3bbdf43201fc50a60c98835e6c0", "drift": false},
+      {"path": "system/schemas/dispatch_plan.py", "sha256": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b", "drift": false},
+      {"path": "system/tests/test_gap19_milp_v2_research.py", "sha256": "89fc0bbabf30fcf1398ef24718194998023d86f418106d15cc66880177c82a3b", "drift": false},
+      {"path": "system/config/loads.yaml", "sha256": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467", "drift": false},
+      {"path": "system/orchestration/worker.py", "sha256": "829a06556e7085858ec816ac7d0d1e8dbc99c8c41e3da0cde4e453566fbc0323", "drift": false},
+      {"path": "system/runtime/runner.py", "sha256": "6d1671b6efbf6ac1f422e26a039bb0dae158cb99c2075ea5680d062f8dc53b10", "drift": false},
+      {"path": "system/orchestration/manifest.py", "sha256": "7b7756932a01dbc904ee780c3e0e30f8eab36952bbea6c75610c12c927d8bb35", "drift": false},
+      {"path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/MILP_V2_RESEARCH_IMPLEMENTATION_CHECKPOINT.md", "sha256": "449c47dfc930570b03a00c4f72f9f05b4fba3c1ac5da52f6f514f67e90e67a28", "drift": false, "note": "unchanged since checkpoint creation"},
+      {"path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/MILP_V2_RESEARCH_IMPLEMENTATION_CHECKPOINT_MANIFEST.json", "sha256": "afbd22a5fd95c31632f605d05c6920ae08200a0ec1766b4deca0f688f3876673", "drift": false, "note": "unchanged since checkpoint creation"}
+    ]
+  },
+
+  "new_files_this_experiment": [
+    {
+      "path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/run_v2_full_window_comparison.py",
+      "role": "full_window_comparison_script",
+      "sha256": "7660da19b3b164d049c94399df4a6d2859502d2af1f416e60179418db8c6a963"
+    },
+    {
+      "path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/V2_FULL_WINDOW_COMPARISON_RESULTS.json",
+      "role": "raw_per_origin_results_347_origins",
+      "sha256": "3a97ef237331725b02dc8d08c6a7b1ca905ed21b2855f8c98d9f4446fc8e8c4c"
+    },
+    {
+      "path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/V2_FULL_WINDOW_COMPARISON_REPORT.md",
+      "role": "human_readable_full_window_report"
+    },
+    {
+      "path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/run_v2_real_data_comparison.py",
+      "role": "earlier_8_origin_small_real_data_comparison_script",
+      "sha256": "389b79e4ca6529728378ecc4b6e5c921fdc011d603bcefb17524a90a4f64b96a"
+    },
+    {
+      "path": "POLARIS_EMS_GAP19_MILP_V2_DIAGNOSTIC_BRANCH/V2_REAL_DATA_COMPARISON_RESULTS.json",
+      "role": "earlier_8_origin_small_real_data_raw_results",
+      "sha256": "85ea75f5bd872bfde076ac2a1e434089f4cf445099aa700fdc0174bbbb618c97"
+    }
+  ],
+
+  "experiment_design": {
+    "num_origins": 347,
+    "origin_source": "stage8_1_full_37_feature_matrix_2024_CORRECTED.csv forecast_start column (the real '347 clean origins across 2024' used elsewhere in this repository)",
+    "forecast_engine": "LocalBaselineForecastEngine, identical for both optimizer arms at every origin (not an ablation of forecast engines)",
+    "station_state": "identical warmed-up state per origin for both arms: 80% SOC / 160000 Wh, diesel running 2h, 500 L fuel remaining",
+    "terminal_target_wh_formula": "compute_terminal_target_wh, imported unmodified from POLARIS_EMS_GAP19_STAGE81_VS_BASELINE_RESEARCH_SIMULATION/run_research_simulation.py (frozen R1/R2 formula)",
+    "critical_demand_formula": "min(11600.0, demand[t]), the same production formula worker.py uses",
+    "config_source": "system/config/*.yaml, loaded unmodified",
+    "runtime_seconds": 280.2
+  },
+
+  "route_counts": {"NORMAL": 245, "EMERGENCY": 102, "OTHER": 0, "total": 347},
+
+  "findings_by_category": {
+    "1_essential_tier_formulation_effects": [
+      "essential service fraction ranges 32.2%-100% (mean 50.4%, median 48.5%) across 245 NORMAL origins; no origin has essential_demand_sum == 0",
+      "curtailment lower in V2 than GAP19 at all 245/245 origins (mean 130273.4 -> 85954.7 Wh, ~34% reduction)",
+      "battery charge AND discharge totals differ at all 245/245 origins, consistently with GAP19 higher -- directional consistency across independent origins indicates causal effect, not noise",
+      "GAP19.unmet_load - V2.unmet_load == V2.load_served_essential exactly at every origin, max deviation 7.3e-12 Wh (float noise) -- Rev.3 double-counting fix confirmed on full real window",
+      "J4 higher in V2 at every origin (adds unmet_essential term); not interpreted as a performance regression per task instruction"
+    ],
+    "2_solver_tie_breaking_effects": [
+      "NONE detected on real-data window -- contrasts with the synthetic flat-profile smoke-test finding (checkpoint Scenarios 3 and 5)",
+      "diesel dispatch exactly identical between GAP19 and V2 at all 245/245 origins: on-hours count (426=426), startup-event count (220=220), and aggregate sum (0 origins differ by >1e-6 W), checked per-origin not just in aggregate",
+      "dispatch_schedule_byte_identical=False at all 245 origins, but fully attributable to the Essential-tier battery effect (finding 1), not tie-breaking, since diesel (the tie-sensitive component in the synthetic tests) is perfectly identical here",
+      "conclusion: the degenerate-schedule finding from the implementation checkpoint is specific to artificially flat/constant-profile inputs; real non-flat data shows no evidence of it"
+    ],
+    "3_unchanged_gap19_behavior": [
+      "J1 (critical deficit) = 0.0 at all 245 origins, both optimizers -- critical load always fully served",
+      "J2, J3 bit-identical between GAP19 and V2 at all 245/245 origins (j1_j2_j3_identical=True, 245/245)",
+      "diesel dispatch identical at every origin (see finding 2)",
+      "demand accounting: 0.0 Wh max error at every origin, both optimizers (served[+served_essential]+unmet==demand, per-hour, all 245 origins)",
+      "energy-balance error: 0.0 at every origin, both optimizers",
+      "essential balance: 0.0 Wh max error at every origin (served_essential+unmet_essential==essential_demand)",
+      "SOC ceiling (95%) reached identically at all 245 origins; SOC floor differs at 19/245 origins as a downstream consequence of finding 1, not a new bound violation; SOC stayed within [20%,95%] at every origin both arms",
+      "solver status OPTIMAL at all 245 compared origins; zero infeasibilities in the full window"
+    ],
+    "4_unexpected_v2_behavior": [
+      "NONE -- zero automated flags raised across all 347 origins (0 infeasibility, 0 objective-stage divergence, 0 demand-accounting error, 0 energy-balance error, 0 diesel-aggregate divergence)",
+      "no checkpoint assumption violated"
+    ]
+  },
+
+  "automated_flags_raised": 0,
+
+  "invariant_failures": [],
+
+  "action_taken_on_failure": "NONE_REQUIRED -- no invariant failed; V2 was not modified"
+}

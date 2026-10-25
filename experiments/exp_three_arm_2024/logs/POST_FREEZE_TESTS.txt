@@ -1,0 +1,2 @@
+$ python3 -I -m pytest -p no:cacheprovider -q -rA experiments/exp_three_arm_2024/tests  (sandbox, 2026-10-11T05:20:27Z, after the §9 hash was written)
+334 passed, 36 warnings in 60.99s (0:01:00)

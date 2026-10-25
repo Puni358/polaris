@@ -1,0 +1,76 @@
+{
+  "investigation_id": "polaris_battery_capacity_polar_benchmark_2026",
+  "current_synthetic_assumption_kwh": 200.0,
+  "classification": "STRONGLY_PLAUSIBLE_ENGINEERING_ASSUMPTION",
+  "evidence_summary": "Documented stationary battery capacities at polar research stations range from 300 kWh (Qinling Station) to 405 kWh (Isfjord Radio), 438 kWh (Princess Elisabeth), and >1,000 kWh (Arctowski Station). The 200 kWh synthetic battery provides 11.9h of critical load autonomy (11.6 kW) and 5.3h of average base load autonomy (28.2 kW), which is closely aligned with operational polar microgrid sizing ratios.",
+  "documented_stations_surveyed": [
+    {
+      "station": "Princess Elisabeth Antarctica",
+      "bess_kwh": 438.0,
+      "type": "Stationary BESS",
+      "load_kw": "10-20 kW",
+      "country": "Belgium"
+    },
+    {
+      "station": "Isfjord Radio Svalbard",
+      "bess_kwh": 405.0,
+      "type": "Stationary BESS",
+      "load_kw": "~50 kW",
+      "country": "Norway"
+    },
+    {
+      "station": "Qinling Station Antarctica",
+      "bess_kwh": 300.0,
+      "type": "Stationary BESS",
+      "load_kw": "150 kW max",
+      "country": "China"
+    },
+    {
+      "station": "Henryk Arctowski Station",
+      "bess_kwh": 1080.0,
+      "type": "Stationary BESS",
+      "load_kw": "~100 kW",
+      "country": "Poland"
+    },
+    {
+      "station": "Scott Base / McMurdo RIWE",
+      "bess_kwh": 10000.0,
+      "type": "Stationary BESS",
+      "load_kw": "2.8 MW peak",
+      "country": "New Zealand / USA"
+    },
+    {
+      "station": "Longyearbyen Microgrid",
+      "bess_kwh": 7000.0,
+      "type": "Settlement BESS",
+      "load_kw": "6 MW peak",
+      "country": "Norway"
+    },
+    {
+      "station": "Troll Station",
+      "bess_kwh": null,
+      "type": "Direct Feed Solar (No BESS)",
+      "load_kw": "Unspecified",
+      "country": "Norway"
+    },
+    {
+      "station": "Neumayer III Station",
+      "bess_kwh": 6.67,
+      "type": "UPS Only (2x20kW/20min)",
+      "load_kw": "150 kW",
+      "country": "Germany"
+    },
+    {
+      "station": "Casey Station",
+      "bess_kwh": null,
+      "type": "Direct Feed Solar (No BESS)",
+      "load_kw": "Unspecified",
+      "country": "Australia"
+    }
+  ],
+  "production_modifications": 0,
+  "governance_modifications": 0,
+  "battery_configuration_modifications": 0,
+  "canonical_fixture_modifications": 0,
+  "frozen_campaign_modifications": 0
+}

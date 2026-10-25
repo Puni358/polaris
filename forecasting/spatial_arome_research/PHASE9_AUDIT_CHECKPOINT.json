@@ -1,0 +1,43 @@
+{
+  "phase": "PHASE9_AUDIT_CHECKPOINT",
+  "champion_verification": {
+    "reported_odd_daytime_mae_w_m2": 36.188657,
+    "independently_recomputed_from_horizon_summary_csv": 36.188657,
+    "independently_recomputed_from_raw_prediction_index_csv": 36.188657,
+    "status": "CONFIRMED_CONSISTENT"
+  },
+  "discrepancies": [
+    {
+      "id": "AUDIT-1",
+      "title": "origin key format inconsistent across model families",
+      "original_assumption": "origin is a directly joinable key across all models",
+      "corrected": "Stage 8.1 uses integer origin index (1-173); Stage 8.17A/8.19 use full ISO datetime strings; foundation models and Stage 3C/4.3 use YYYY-MM-DD date strings",
+      "resolution": "derived canonical `date` key from timestamp column for all models; verified identical ground-truth actual values across all 10 models at matched (date, horizon) pairs (cross-model std ~9e-6)",
+      "severity": "would silently break any naive cross-model join"
+    },
+    {
+      "id": "AUDIT-2",
+      "title": "bulk timestamp parsing fails without format='mixed'",
+      "original_assumption": "timestamp column uniformly parseable with a single to_datetime call",
+      "corrected": "mixed offset formats (+00:00 vs trailing Z) cause NaT for 9 of 10 models unless format='mixed' specified",
+      "resolution": "used format='mixed' and verified zero NaT after fix",
+      "severity": "reproducibility hazard; silent failure mode"
+    },
+    {
+      "id": "AUDIT-3",
+      "title": "foundation-model 'Full 347 origins' label does not match actual origin count",
+      "original_assumption": "Chronos/TimesFM/Moirai/Persistence evaluated on the official 347-origin benchmark set",
+      "corrected": "these five models actually contain 365 unique origins (full calendar year); Stage 3C/4.3 correctly contain 347",
+      "resolution": "restricted all models to the 173 verified ODD dates before any cross-model comparison in Phase 3-5",
+      "severity": "aggregate metrics in POLARIS_MODEL_COMPARISON_MATRIX.csv for these five models are not apples-to-apples with the ODD champion figure without this restriction"
+    },
+    {
+      "id": "AUDIT-4",
+      "title": "prior corrections in the record re-confirmed, no new issue",
+      "details": "Stage 8.19 27.0081% claim correctly marked INVALIDATED_HISTORICAL_CLAIM (synthetic ZTD fallback); Stage 8.24 27.32% correctly labeled EVEN-only, not comparable to ODD champion",
+      "severity": "informational, no action needed"
+    }
+  ],
+  "status": "AUDIT_COMPLETE",
+  "next_phase": "PHASE9_CHECKPOINT_ERROR_FORENSICS_AND_COMPLEMENTARITY"
+}

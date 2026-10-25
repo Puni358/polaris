@@ -1,0 +1,48 @@
+{
+  "checkpoint_id": "POLARIS_EMS_GAP19_IMPLEMENTATION_CHECKPOINT",
+  "timestamp": "2026-09-27T00:05:00Z",
+  "protected_baseline_hashes": {
+    "system/control/ecd.py": {
+      "sha256": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+      "status": "PROTECTED_IMMUTABLE",
+      "verification": "MATCH_EXACT"
+    },
+    "system/optimization/implementations/gap19_highs_native.py": {
+      "sha256": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+      "status": "PROTECTED_IMMUTABLE",
+      "verification": "MATCH_EXACT"
+    },
+    "system/optimization/implementations/milp.py": {
+      "sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+      "status": "PROTECTED_IMMUTABLE",
+      "verification": "MATCH_EXACT"
+    },
+    "system/schemas/station_state.py": {
+      "sha256": "e763439a6ddecbbadb9287f99258e595ab7f23f0eb9a7377f5a54beb7661df88",
+      "status": "PROTECTED_IMMUTABLE",
+      "verification": "MATCH_EXACT"
+    },
+    "system/runtime/runner.py": {
+      "sha256": "4f3157ac5f476d708cad54085e639987380ef5230dcc6d94208ebf617246ed07",
+      "status": "PROTECTED_IMMUTABLE",
+      "verification": "MATCH_EXACT"
+    }
+  },
+  "implementation_component_hashes": {
+    "system/simulation/simulator.py": {
+      "sha256": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+      "status": "AUTHORIZED_MODIFIED",
+      "provenance": "ESTABLISHED"
+    },
+    "system/control/router.py": {
+      "sha256": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+      "status": "AUTHORIZED_NEW",
+      "provenance": "ESTABLISHED"
+    },
+    "system/optimization/implementations/option_d.py": {
+      "sha256": "eb15854400561c1dd29382c087f352633bc4816c5a51f0cb4112511acee72159",
+      "status": "AUTHORIZED_NEW",
+      "provenance": "ESTABLISHED"
+    }
+  }
+}

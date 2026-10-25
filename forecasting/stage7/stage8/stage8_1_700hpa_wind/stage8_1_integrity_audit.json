@@ -1,0 +1,19 @@
+{
+  "stage": "STAGE 8.1 700 hPa STEERING WIND EXPERIMENT",
+  "benchmark_origins": 347,
+  "eval_horizons": 24,
+  "total_rows": 8328,
+  "u700_present": true,
+  "v700_present": true,
+  "nan_count": 0,
+  "inf_count": 0,
+  "causality_verified": true,
+  "exact_control_reproduced": true,
+  "odd_access_classification": {
+    "odd_target_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false
+  },
+  "governance_compliance": "PASS"
+}

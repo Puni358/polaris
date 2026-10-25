@@ -1,0 +1,128 @@
+{
+  "governance": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A2_MODEL_DEVELOPMENT_AND_TRAINING",
+    "authorization": "AUTHORIZED_PHASE_A2_RESEARCH_ONLY",
+    "date_utc": "2026-09-18T04:03:00Z"
+  },
+  "machine_readable_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A2_MODEL_DEVELOPMENT_COMPLETED",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_TARGET_EMPIRICAL_STATUS": "MEASURED",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "A2_WIND_POWER_TARGET": "NOT_AUTHORIZED",
+    "A2_WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "A2_MODEL_TRAINING": "EXECUTED_A2_ONLY",
+    "A2_MODEL_INFERENCE": "EXECUTED_A2_ONLY",
+    "A2_MODEL_SELECTION": "COMPLETED_A2_RESEARCH_CHAMPION_SELECTED",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_EMS_EXPERIMENT": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "A2_RESEARCH_ONLY"
+  },
+  "target_specification": {
+    "variable": "10m Height Measured Wind Speed",
+    "units": "m/s",
+    "station_name": "Abisko Aut (Station 188790)",
+    "custodian": "Polarforskningssekretariatet / SMHI",
+    "empirical_status": "MEASURED",
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "mandatory_proxy_limitation": "Abisko measured wind speed is used as a conditionally supported regional proxy for the Mount Nuolja research context; it is not direct measured Nuolja wind."
+  },
+  "experimental_design": {
+    "forecasting_task": "24-hour receding horizon, 1-hour step (H=24h, dt=1h, W_hist=24h)",
+    "benchmark_period": "2024-01-20 to 2024-12-31 (342 valid forecast origins)",
+    "temporal_splits": {
+      "train_set": "2024-01-20 to 2024-08-31 (219 origins, 5,265 instances)",
+      "validation_set": "2024-09-01 to 2024-10-31 (61 origins, 1,464 instances)",
+      "test_set": "2024-11-01 to 2024-12-31 (62 origins, 1,488 instances)"
+    },
+    "test_set_mean_target_ms": 5.3486
+  },
+  "evaluations": {
+    "baselines": {
+      "baseline_1_naive_persistence": {
+        "MAE_ms": 2.9334,
+        "RMSE_ms": 4.0679,
+        "Bias_ms": -0.0050,
+        "nMAE_pct": 54.84
+      },
+      "baseline_2_diurnal_climate_persistence": {
+        "MAE_ms": 2.9302,
+        "RMSE_ms": 4.0940,
+        "Bias_ms": -2.0132,
+        "nMAE_pct": 54.78
+      },
+      "baseline_3_raw_nwp_forecast": {
+        "MAE_ms": 18.8024,
+        "RMSE_ms": 22.7894,
+        "Bias_ms": 18.7913,
+        "nMAE_pct": 351.54
+      }
+    },
+    "candidates": {
+      "candidate_1_gbdt_direct_multi_horizon": {
+        "MAE_ms": 2.1654,
+        "RMSE_ms": 2.8962,
+        "Bias_ms": -0.3319,
+        "nMAE_pct": 40.49
+      },
+      "candidate_2_nwp_bias_correction_gbdt": {
+        "MAE_ms": 4.5137,
+        "RMSE_ms": 7.4638,
+        "Bias_ms": 2.0417,
+        "nMAE_pct": 84.39
+      },
+      "candidate_3_autoregressive_ridge_arx": {
+        "MAE_ms": 2.0364,
+        "RMSE_ms": 2.7136,
+        "Bias_ms": -0.2793,
+        "nMAE_pct": 38.07
+      }
+    },
+    "champion": {
+      "selected_champion": "Candidate 3: Autoregressive Ridge Regression (AR-X)",
+      "champion_status": "A2_RESEARCH_CHAMPION",
+      "test_mae_ms": 2.0364,
+      "test_rmse_ms": 2.7136,
+      "test_bias_ms": -0.2793,
+      "test_nmae_pct": 38.07,
+      "mae_improvement_over_naive_persistence_pct": 30.58,
+      "mae_improvement_over_raw_nwp_pct": 89.17
+    }
+  },
+  "reproducibility": {
+    "script_path": "research/wind_a2/run_a2_wind_speed_experiments.py",
+    "raw_target_dataset": "research/wind_a2/smhi_188790_ws_full.csv",
+    "nwp_dataset": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "results_json": "research/wind_a2/a2_wind_research_results.json",
+    "random_seed": 42
+  },
+  "firewall_compliance": {
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "FROZEN_SCHEMAS_MODIFIED": "NO",
+    "D5_HISTORICAL_RESULTS_MODIFIED": "NO",
+    "SOLAR_RESEARCH_ARTIFACTS_MODIFIED": "NO",
+    "WIND_POWER_FORECASTING_EXECUTED": "NO",
+    "NUOLJA_WIND_RECONSTRUCTION_EXECUTED": "NO",
+    "UNAUTHORIZED_ALTITUDE_SCALING": "NO",
+    "FORECASTBUNDLE_INTEGRATION": "NO",
+    "EMS_INTEGRATION": "NO",
+    "IMPLEMENTATION_STATUS": "A2_RESEARCH_ONLY"
+  }
+}

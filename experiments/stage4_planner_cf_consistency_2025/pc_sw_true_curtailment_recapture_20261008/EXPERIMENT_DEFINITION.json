@@ -1,0 +1,13 @@
+{
+  "title": "POLARIS Rule D: True-Curtailment Diesel Recapture Full Governed Execution",
+  "date": "2026-10-08",
+  "policy": "RULE D \u2014 TRUE-CURTAILMENT DIESEL RECAPTURE",
+  "governed_baseline_path": "experiments/stage4_planner_cf_consistency_2025/CAMPAIGN_V12_615_20261006/PC_HOURLY_TELEMETRY.csv",
+  "causal_nwp_path": "system/forecasting/implementations/causal_nwp_physics.py",
+  "telemetry_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+  "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "population": 123,
+  "hours_executed": 2952,
+  "semantics": "Two-pass realization per executed hour: Pass 1 calculates native physical curtailment; Pass 2 dispatches diesel_final = original_diesel - min(original_diesel, curtailment).",
+  "verdict": "FAIL \u2014 SEMANTIC/IDENTITY CHECK"
+}

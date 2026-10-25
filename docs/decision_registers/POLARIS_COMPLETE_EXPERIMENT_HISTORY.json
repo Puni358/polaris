@@ -1,0 +1,49 @@
+{
+  "project": "POLARIS Solar Irradiance Forecasting",
+  "timestamp": "2026-09-13T21:47:44.591194+05:30",
+  "operational_champion": {
+    "stage": "Stage 8.1",
+    "model_id": "Stage8.1_700hPa_Wind_Control",
+    "architecture": "HistGradientBoostingRegressor",
+    "feature_count": 37,
+    "odd_daytime_mae_w_m2": 36.188657,
+    "odd_daytime_nmae_percent": 28.068774,
+    "odd_daytime_rmse_w_m2": 64.219495,
+    "odd_daytime_bias_w_m2": 1.439399,
+    "status": "FROZEN_OPERATIONAL_CHAMPION"
+  },
+  "benchmark_protocol": {
+    "location": "Mount Nuolja (68.362N, 18.739E)",
+    "forecast_origin_t0": "00:00:00 UTC Day D",
+    "forecast_horizon_hours": 24,
+    "total_origins": 347,
+    "even_origins": 173,
+    "odd_origins": 174,
+    "odd_firewall_intact": true
+  },
+  "total_experiments_reconstructed": 19,
+  "distinct_model_families": 6,
+  "total_feature_routes_closed": 14,
+  "expunged_invalid_claims": [
+    {
+      "stage": "Stage 8.19",
+      "claim": "27.0081% nMAE / 34.82 W/m2 MAE",
+      "reason": "Audit proved original execution used synthetic random ZTD fallback (np.random.seed(819)). Expunged."
+    }
+  ],
+  "horizon_error_highlights": {
+    "h1_mae_w_m2": {
+      "stage8_1_hgb": 4.049545,
+      "stage8_17a_arome": 3.459753,
+      "timesfm3": 3.842061,
+      "chronos2_raw": 7.2126
+    },
+    "h12_mae_w_m2": {
+      "stage8_1_hgb": 64.837218,
+      "stage8_17a_arome": 64.817762,
+      "timesfm3": 170.034984,
+      "chronos2_raw": 93.613186
+    }
+  },
+  "phase9_next_action": "ERROR FORENSICS + COMPLEMENTARY MODEL / ENSEMBLE RESEARCH"
+}

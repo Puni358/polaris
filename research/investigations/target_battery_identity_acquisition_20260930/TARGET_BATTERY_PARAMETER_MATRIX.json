@@ -1,0 +1,202 @@
+{
+  "phase_id": "target_battery_identity_acquisition_20260930",
+  "parameter_matrix": [
+    {
+      "parameter": "Manufacturer",
+      "value": null,
+      "unit": null,
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Model",
+      "value": null,
+      "unit": null,
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Chemistry",
+      "value": null,
+      "unit": null,
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Cell/Module Configuration",
+      "value": null,
+      "unit": null,
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Nominal Voltage",
+      "value": null,
+      "unit": "V",
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Nominal Energy",
+      "value": 200.0,
+      "unit": "kWh",
+      "source": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Usable Energy",
+      "value": 150.0,
+      "unit": "kWh",
+      "source": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json (20-95% SOC)",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Max Charge Power",
+      "value": 50.0,
+      "unit": "kW",
+      "source": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Max Discharge Power",
+      "value": 50.0,
+      "unit": "kW",
+      "source": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "C-rate",
+      "value": 0.25,
+      "unit": "C",
+      "source": "Derived (50 kW / 200 kWh)",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "SOC Limits",
+      "value": "20.0% - 95.0%",
+      "unit": "pct",
+      "source": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "evidence_tier": "SYNTHETIC_FIXTURE_PROXY",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Operating Temperature",
+      "value": null,
+      "unit": "C",
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Charge Efficiency",
+      "value": 0.92,
+      "unit": "fraction",
+      "source": "milp.py / router.py default config",
+      "evidence_tier": "SYNTHETIC_ASSUMPTION",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Discharge Efficiency",
+      "value": 0.92,
+      "unit": "fraction",
+      "source": "milp.py / router.py default config",
+      "evidence_tier": "SYNTHETIC_ASSUMPTION",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Round-Trip Efficiency",
+      "value": 0.8464,
+      "unit": "fraction",
+      "source": "milp.py derived property (0.92 * 0.92)",
+      "evidence_tier": "SYNTHETIC_ASSUMPTION",
+      "target_specific": false,
+      "verified": false,
+      "classification": "SYNTHETIC"
+    },
+    {
+      "parameter": "Cycle Life",
+      "value": null,
+      "unit": "EFC",
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "End-of-Life Criterion",
+      "value": null,
+      "unit": "pct capacity",
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "Calendar Life",
+      "value": null,
+      "unit": "years",
+      "source": "None",
+      "evidence_tier": "NONE",
+      "target_specific": false,
+      "verified": false,
+      "classification": "UNKNOWN"
+    },
+    {
+      "parameter": "BMS Telemetry Availability",
+      "value": false,
+      "unit": null,
+      "source": "Workspace & Site Data Investigation",
+      "evidence_tier": "TIER_A_TARGET_SYSTEM",
+      "target_specific": true,
+      "verified": true,
+      "classification": "VERIFIED_ABSENT"
+    }
+  ],
+  "matrix_summary": {
+    "verified_count": 1,
+    "documented_count": 0,
+    "inferred_count": 0,
+    "synthetic_count": 8,
+    "unknown_count": 10
+  }
+}

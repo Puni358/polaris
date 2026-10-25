@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "review_type": "SINGLE_TRAJECTORY_FORENSIC_EVIDENCE_COMPLETENESS_REVIEW",
+    "timestamp": "2026-09-21T11:07:00Z",
+    "auditor": "Antigravity Read-Only Governance Auditor"
+  },
+  "governance_assertions": {
+    "EXPERIMENT_RESULT": "VALID_SINGLE_TRAJECTORY_RESULT",
+    "EVIDENCE_COMPLETENESS": "PASS",
+    "CAUSALITY_EVIDENCE": "DIRECTLY_ESTABLISHED",
+    "TRUTH_FIREWALL_EVIDENCE": "DIRECTLY_ESTABLISHED",
+    "ENERGY_ACCOUNTING_EVIDENCE": "DIRECTLY_ESTABLISHED",
+    "FIRST_DIVERGENCE_EVIDENCE": "DIRECTLY_ESTABLISHED",
+    "MODEL_TRACEABILITY_EVIDENCE": "DIRECTLY_ESTABLISHED",
+    "SECOND_TRAJECTORY_AUTHORIZATION": "NOT_GRANTED",
+    "MULTI_TRAJECTORY_CAMPAIGN": "NOT_AUTHORIZED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED"
+  },
+  "first_divergence": {
+    "cycle": 0,
+    "timestamp": "2024-01-01T00:00:00Z",
+    "ctrl_solar_forecast_w": 0.0,
+    "tmt_solar_forecast_w": 61.57,
+    "solar_truth_w": 0.0,
+    "ctrl_soc_pct": 50.0,
+    "tmt_soc_pct": 50.0,
+    "ctrl_diesel_w": 21997.78,
+    "tmt_diesel_w": 0.0,
+    "ctrl_battery_action": "DIESEL_ON_CHARGE",
+    "tmt_battery_action": "DIESEL_OFF_DISCHARGE"
+  }
+}

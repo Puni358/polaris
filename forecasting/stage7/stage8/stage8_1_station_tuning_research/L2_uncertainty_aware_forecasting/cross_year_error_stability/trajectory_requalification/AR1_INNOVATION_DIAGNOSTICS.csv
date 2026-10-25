@@ -1,0 +1,20 @@
+metric,value,description
+sample_size_N,14517.0,Total contiguous chronological daylight pairs
+mean,1.8982,Mean innovation residual (W/m^2)
+std,84.0494,Innovation standard deviation (W/m^2)
+skewness,0.3294,Sample skewness
+excess_kurtosis,3.4452,Sample excess kurtosis (Fisher)
+acf_lag1,-0.0278,Origin-aware innovation autocorrelation lag 1
+acf_lag2,0.008,Origin-aware innovation autocorrelation lag 2
+acf_lag3,0.0261,Origin-aware innovation autocorrelation lag 3
+acf_lag4,-0.0263,Origin-aware innovation autocorrelation lag 4
+acf_lag5,-0.0216,Origin-aware innovation autocorrelation lag 5
+pacf_lag1,-0.0278,Partial autocorrelation lag 1
+pacf_lag2,0.0072,Partial autocorrelation lag 2
+pacf_lag3,0.0266,Partial autocorrelation lag 3
+pacf_lag4,-0.0249,Partial autocorrelation lag 4
+pacf_lag5,-0.0234,Partial autocorrelation lag 5
+ljung_box_lag5_stat,38.8589,Ljung-Box test statistic at lag 5
+ljung_box_lag5_pvalue,2.535312947360424e-07,Ljung-Box p-value at lag 5
+ljung_box_lag10_stat,79.0334,Ljung-Box test statistic at lag 10
+ljung_box_lag10_pvalue,7.76378961120372e-13,Ljung-Box p-value at lag 10

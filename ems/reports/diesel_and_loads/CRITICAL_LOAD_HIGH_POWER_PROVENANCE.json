@@ -1,0 +1,42 @@
+{
+  "SELECTED_CRITICAL_LOAD_SCENARIO": "DELIBERATELY_CONSERVATIVE_SYNTHETIC_DESIGN",
+  "P_CRITICAL_KW": 11.60,
+  "P_CRITICAL_TIME_VARIATION": "CONSTANT",
+  "CRITICAL_LOAD_STATUS": "SYNTHETIC_ENGINEERING_SCENARIO",
+  "REAL_NUOLJA_CRITICAL_LOAD": "NOT_ESTABLISHED",
+  "P_CRITICAL_BASIS": "DELIBERATELY_CONSERVATIVE_SYNTHETIC_DESIGN",
+  "trajectory_8784_stats": {
+    "rows": 8784,
+    "min_kw": 11.60,
+    "max_kw": 11.60,
+    "mean_kw": 11.60,
+    "median_kw": 11.60
+  },
+  "provenance_breakdown": {
+    "equation_derived_survival_core": {
+      "target_indoor_temp_c": 10.0,
+      "reference_condition": "T_out = -28C, v_wind = 15 m/s",
+      "P_heating_kw": 8.765,
+      "P_water_kw": 0.80,
+      "P_comms_kw": 0.30,
+      "P_critical_kw": 9.865
+    },
+    "selected_conservative_design": {
+      "target_indoor_temp_c": 18.0,
+      "P_heating_kw": 10.50,
+      "P_water_kw": 0.80,
+      "P_comms_kw": 0.30,
+      "P_critical_kw": 11.60
+    },
+    "explicit_conservative_margin": {
+      "peak_blizzard_kw": 1.735,
+      "percentage_above_survival_core": 17.59
+    }
+  },
+  "compatibility_audit": {
+    "h1_0_min_demand_kw": 15.00,
+    "hours_audited": 8784,
+    "violations_count": 0,
+    "max_ratio_percent": 77.33
+  }
+}

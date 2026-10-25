@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "project": "POLARIS Energy Management System",
+    "document": "EMERGENCY_TRIGGER_MATH_RECONCILIATION",
+    "version": "1.0.0-reconciled",
+    "date": "2026-09-27",
+    "human_governance_status": "LOCKED_AND_APPROVED"
+  },
+  "three_concept_reconciliation": {
+    "concept_1_stored_reserve_target": {
+      "definition": "Normal-mode battery replenishment target in total stored energy",
+      "formula": "(P_critical * T_required) / eta_dis",
+      "e_reserve_stored_kwh": 75.652,
+      "soc_target_percent": 37.826,
+      "governance_role": "NORMAL_MODE_RESERVE_TARGET",
+      "is_physical_floor": false,
+      "is_emergency_threshold": false
+    },
+    "concept_2_deliverable_battery_energy": {
+      "definition": "Real energy deliverable to the critical bus above physical minimum SOC (20%)",
+      "formula": "max(0, (SOC - SOC_physical_min) * C_nom * eta_dis)",
+      "soc_physical_min_percent": 20.0,
+      "c_nom_kwh": 200.0,
+      "eta_dis": 0.92,
+      "deliverable_at_target_soc_kwh": 32.801
+    },
+    "concept_3_six_hour_survivability": {
+      "definition": "Delivered electrical energy required by critical load over 6 hours",
+      "formula": "P_critical * T_required",
+      "p_critical_kw": 11.6,
+      "t_required_hours": 6.0,
+      "e_critical_delivered_kwh": 69.600
+    }
+  },
+  "deliverable_energy_reference_table": [
+    {"soc_percent": 20.0, "stored_kwh": 40.0, "stored_above_min_kwh": 0.0, "deliverable_bus_kwh": 0.0, "role": "Physical Min SOC Floor"},
+    {"soc_percent": 25.0, "stored_kwh": 50.0, "stored_above_min_kwh": 10.0, "deliverable_bus_kwh": 9.2, "role": "Deep Deficit"},
+    {"soc_percent": 30.0, "stored_kwh": 60.0, "stored_above_min_kwh": 20.0, "deliverable_bus_kwh": 18.4, "role": "Deficit / Recovery Active"},
+    {"soc_percent": 37.826, "stored_kwh": 75.652, "stored_above_min_kwh": 35.652, "deliverable_bus_kwh": 32.801, "role": "Normal Mode Reserve Target"},
+    {"soc_percent": 40.0, "stored_kwh": 80.0, "stored_above_min_kwh": 40.0, "deliverable_bus_kwh": 36.8, "role": "Normal Operating Range"},
+    {"soc_percent": 50.0, "stored_kwh": 100.0, "stored_above_min_kwh": 60.0, "deliverable_bus_kwh": 55.2, "role": "Normal Operating Range"},
+    {"soc_percent": 57.826, "stored_kwh": 115.652, "stored_above_min_kwh": 75.652, "deliverable_bus_kwh": 69.600, "role": "Historical J2 Standalone Autonomy Point"},
+    {"soc_percent": 60.0, "stored_kwh": 120.0, "stored_above_min_kwh": 80.0, "deliverable_bus_kwh": 73.6, "role": "High Reserve Energy"},
+    {"soc_percent": 80.0, "stored_kwh": 160.0, "stored_above_min_kwh": 120.0, "deliverable_bus_kwh": 110.4, "role": "High State of Charge"},
+    {"soc_percent": 95.0, "stored_kwh": 190.0, "stored_above_min_kwh": 150.0, "deliverable_bus_kwh": 138.0, "role": "Physical Max SOC Limit"}
+  ],
+  "historical_j2_derivation": {
+    "formula": "E_stored_J2 = E_phys_min (40 kWh) + E_reserve_stored (75.652 kWh) = 115.652 kWh",
+    "soc_percent": 57.826,
+    "deliverable_kwh": 69.6,
+    "reuse_as_emergency_threshold_permitted": false
+  },
+  "dimensionally_consistent_m_surv": {
+    "formula": "M_surv = E_batt_deliverable + E_gen_credible_bus + E_ren_credible_bus - E_critical_delivered_req",
+    "unit": "bus-delivered kWh"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "research_metadata": {
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "POLARIS_WIND_POWER_REPRESENTATION_RESEARCH",
+    "timestamp_utc": "2026-09-18T04:22:15Z",
+    "investigation_type": "BOUNDED_SCIENTIFIC_AND_ENGINEERING_REPRESENTATION_AUDIT",
+    "evaluator": "POLARIS_GOVERNANCE_AGENT"
+  },
+  "governance_and_machine_states": {
+    "PATH_A_SELECTION": "SELECTED",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "A2_RESEARCH_CHAMPION_STATUS": "VERIFIED",
+    "A2_AUDIT_STATUS": "VERIFIED_WITH_LIMITATIONS",
+    "A2_TARGET_VARIABLE": "WIND_SPEED",
+    "A2_TARGET_UNITS": "M/S",
+    "A2_TARGET_HEIGHT": "10M",
+    "A2_TARGET_RESOLUTION": "HOURLY",
+    "A2_TARGET_STATION": "ABISKO_AUT_188790",
+    "A2_SITE_INTERPRETATION": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "A2_DIRECT_NUOLJA_MEASUREMENT": "NOT_ESTABLISHED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "TURBINE_SPECIFICATION_STATUS": "NOT_ESTABLISHED",
+    "HUB_HEIGHT_TRANSFER": "NOT_ESTABLISHED",
+    "POWER_CURVE_STATUS": "NOT_ESTABLISHED",
+    "MEASURED_WIND_GENERATION": "NOT_ESTABLISHED",
+    "GENERIC_PHYSICAL_MAPPING": "CONDITIONALLY_ESTABLISHED",
+    "SITE_SPECIFIC_NUOLJA_MAPPING": "NOT_ESTABLISHED",
+    "WIND_SPEED_TO_POWER_MAPPING": "NOT_ESTABLISHED",
+    "WIND_GENERATION_REPRESENTATION": "NOT_ESTABLISHED",
+    "EXTERNAL_EVIDENCE_REQUIRED": "YES",
+    "WIND_GENERATION_MAPPING_DECISION": "B",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "NEW_FORECASTING_MODEL": "NO",
+    "NEW_A2_EXPERIMENT": "NO",
+    "NEW_WIND_POWER_MODEL": "NO",
+    "PRODUCTION_MODIFICATION": "NO",
+    "FROZEN_CONTRACT_CHANGE": "NO"
+  },
+  "a2_champion_context": {
+    "script_path": "research/wind_a2/run_a2_wind_speed_experiments.py",
+    "results_json": "research/wind_a2/a2_wind_research_results.json",
+    "model_class": "sklearn.linear_model.Ridge",
+    "target": "10 m Wind Speed (m/s)",
+    "station": "SMHI Abisko Aut 188790 (392.2 m a.s.l.)",
+    "test_mae_ms": 2.0364,
+    "test_rmse_ms": 2.7136,
+    "horizon_hours": 24,
+    "timestep": "1-hour"
+  },
+  "physical_quantity_distinctions": {
+    "a2_forecast_target": "10 m meteorological wind speed (m/s)",
+    "hub_height_physical_input": "Wind speed at turbine hub height v_hub (m/s)",
+    "power_output_quantity": "Instantaneous or hourly average electrical power P_wind (W)",
+    "energy_quantity": "Cumulative electrical energy E_wind (Wh or kWh)"
+  },
+  "equipment_and_site_audit_results": {
+    "turbine_manufacturer": "NOT_ESTABLISHED",
+    "turbine_model": "NOT_ESTABLISHED",
+    "rated_power_w": "NOT_ESTABLISHED",
+    "rotor_diameter_m": "NOT_ESTABLISHED",
+    "hub_height_m": "NOT_ESTABLISHED",
+    "cut_in_speed_ms": "NOT_ESTABLISHED",
+    "rated_wind_speed_ms": "NOT_ESTABLISHED",
+    "cut_out_speed_ms": "NOT_ESTABLISHED",
+    "power_curve_p_v": "NOT_ESTABLISHED",
+    "number_of_turbines": "NOT_ESTABLISHED",
+    "site_electrical_telemetry": "NOT_ESTABLISHED"
+  },
+  "generic_physical_evidence": {
+    "aerodynamic_power_law": "P_mech = 0.5 * rho * A * Cp(v) * v^3",
+    "standard_references": [
+      "IEC 61400-12-1: Wind Energy Generation Systems - Part 12-1: Power Performance Measurements of Electricity Producing Wind Turbines",
+      "Betz Limit (Cp <= 16/27 ~ 59.3%)",
+      "Standard Air Density rho = 1.225 kg/m^3 at sea level, 15°C"
+    ],
+    "generic_feasibility": "Generic physical transformation from wind speed to power is well-defined mathematically and standardized globally."
+  },
+  "external_sources_consulted": [
+    {
+      "source": "IEC 61400-12-1 / Standard Wind Energy Engineering Literature",
+      "reference": "International Electrotechnical Commission Standard 61400-12-1 (2017)",
+      "parameter_supported": "Generic Power Curve P(v) dynamics and air density correction p_corr = p_std * (rho / rho_0)",
+      "applicability": "Generic physical baseline formulation only",
+      "limitations": "Does not establish actual POLARIS asset specifications or site-specific Nuolja microclimate dynamics."
+    }
+  ],
+  "minimum_next_prerequisites": [
+    "Authoritative turbine asset specifications (manufacturer, model, rated capacity, hub height, power curve) for POLARIS/Nuolja site.",
+    "Empirical wind generation telemetry or paired wind-speed / power output observations.",
+    "Authorized vertical wind profile shear / altitude transfer model from Abisko 10m (392m a.s.l.) to turbine hub height at Mount Nuolja (702m a.s.l.)."
+  ],
+  "firewall_verifications": {
+    "STAGE8_1": "UNCHANGED",
+    "D1_D7": "UNCHANGED",
+    "A1": "UNCHANGED",
+    "A1_5": "UNCHANGED",
+    "A1_6": "UNCHANGED",
+    "A2": "UNCHANGED",
+    "A2_MODEL_ARTIFACT": "UNCHANGED",
+    "A2_RESULTS": "UNCHANGED",
+    "A2_EVIDENCE_AUDIT": "UNCHANGED",
+    "A2_INTEGRATION_READINESS_ASSESSMENT": "UNCHANGED",
+    "FORECASTBUNDLE": "UNCHANGED",
+    "FORECASTENGINE": "UNCHANGED",
+    "EMS": "UNCHANGED",
+    "MPC": "UNCHANGED",
+    "DIGITAL_TWIN": "UNCHANGED",
+    "FROZEN_SCHEMAS": "UNCHANGED",
+    "D5_HISTORICAL_RESULTS": "UNCHANGED"
+  }
+}

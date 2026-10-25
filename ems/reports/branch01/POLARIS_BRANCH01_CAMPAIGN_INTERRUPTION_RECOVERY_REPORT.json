@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "report_type": "CAMPAIGN_INTERRUPTION_RECOVERY_REPORT",
+    "timestamp": "2026-09-21T11:28:00Z",
+    "auditor": "Antigravity Read-Only Recovery Auditor"
+  },
+  "process_identity": {
+    "pid": 266793,
+    "status": "RUNNING",
+    "cmdline": "PYTHONPATH=. .venv/bin/python /home/punith-bs/.gemini/antigravity/brain/d45d59a1-6d51-4492-b760-815382d360e2/scratch/execute_branch01_multi_trajectory_campaign.py",
+    "original_process_still_running": "YES"
+  },
+  "checkpoint_status": {
+    "checkpoint_found": "YES",
+    "checkpoint_path": "POLARIS_BRANCH01_CAMPAIGN_CHECKPOINT.json",
+    "checkpoint_integrity": "PASS",
+    "completed_trajectories": 6,
+    "completed_h1_steps": 144,
+    "remaining_trajectories": 167,
+    "resume_from_trajectory": "TRAJ_20240202"
+  },
+  "governance_assertions": {
+    "INTERRUPTION_REASON": "NETWORK",
+    "CAMPAIGN_PROCESS_STATUS": "RUNNING",
+    "CAMPAIGN_STARTED": "YES",
+    "TRAJECTORIES_STARTED": 6,
+    "TRAJECTORIES_COMPLETED": 6,
+    "H1_STEPS_COMPLETED": 144,
+    "CHECKPOINT_FOUND": "YES",
+    "LATEST_VALID_CHECKPOINT": "POLARIS_BRANCH01_CAMPAIGN_CHECKPOINT.json",
+    "CHECKPOINT_INTEGRITY": "PASS",
+    "RESUMABLE": "YES",
+    "RESUME_FROM_TRAJECTORY": "TRAJ_20240202",
+    "REMAINING_TRAJECTORIES": 167,
+    "SLEEP_INHIBIT_STATUS": "ACTIVE",
+    "SOURCE_IMMUTABILITY": "PASS",
+    "RECOVERY_CLASSIFICATION": "A"
+  }
+}

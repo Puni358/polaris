@@ -1,0 +1,107 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_AUTHORIZATION_MANIFEST",
+  "authorization_classification": "V3_EXECUTION_AUTHORIZATION_CLASSIFICATION = A — V3 EXECUTION AUTHORIZED",
+  "status_flags": {
+    "V3_DESIGN_STATUS": "DESIGN_ONLY",
+    "V3_GATE2_STATUS": "REVIEW_COMPLETE",
+    "V3_GATE2A_STATUS": "SPECIFICATION_REVIEW_COMPLETE",
+    "V3_CLASS_F_PARAMETER_STATUS": "FROZEN_PREDECLARED",
+    "V3_IMPLEMENTATION": "COMPLETE",
+    "V3_STATIC_AUDIT": "VERIFIED_A",
+    "V3_EXECUTION_AUTHORIZATION": "AUTHORIZED_A",
+    "V3_EXECUTION": "NOT_YET_EXECUTED",
+    "V2_MODIFICATION": "NO",
+    "V2_RERUN": "NO",
+    "V1_MODIFICATION": "NO",
+    "FORECAST_MODIFICATION": "NO",
+    "SIMULATOR_MODIFICATION": "NO",
+    "RAW_EVIDENCE_MODIFICATION": "NO"
+  },
+  "timestamp_utc": "2026-09-19T16:52:15+05:30",
+  "experiment_design": {
+    "design_type": "3-Arm Paired Replay Design",
+    "experimental_unit": "ORIGIN (24-hour simulation replay)",
+    "population_size": 173,
+    "arms": [
+      {
+        "arm_id": "ARM_1_CONTROL",
+        "name": "Control Arm",
+        "forecast_engine": "LocalBaselineForecastEngine",
+        "forecast_engine_sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+        "optimizer_config": {"timestep_hours": 1.0, "horizon_discount_factor_gamma": 1.0}
+      },
+      {
+        "arm_id": "ARM_2_V2_TREATMENT",
+        "name": "V2 Treatment Arm",
+        "forecast_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+        "optimizer_config": {"timestep_hours": 1.0, "horizon_discount_factor_gamma": 1.0}
+      },
+      {
+        "arm_id": "ARM_3_V3_CLASS_F_TREATMENT",
+        "name": "V3 Class F Treatment Arm",
+        "forecast_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+        "optimizer_config": {"timestep_hours": 1.0, "horizon_discount_factor_gamma": 0.95}
+      }
+    ]
+  },
+  "forecast_provenance": {
+    "forecast_artifact_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "total_prediction_rows": 4152,
+    "total_origins": 173,
+    "horizon_construction": "24-k empirical Stage8.1 floats + k common baseline continuation values per MPC cycle"
+  },
+  "class_f_intervention_provenance": {
+    "target_file": "system/optimization/implementations/milp.py",
+    "target_file_sha256": "fc4fafe712a62fa301b3fbe021cd933c64bd08bd96d6a644ba412207134a19c3",
+    "frozen_parameter_gamma": 0.95,
+    "weight_sequence": "w_t = 0.95^t for relative decision timestep t in 0..23",
+    "weighted_terms": [
+      "p_diesel fuel power cost",
+      "u_diesel base running cost",
+      "v_start startup event penalty",
+      "p_chg battery charging degradation",
+      "p_dis battery discharging degradation",
+      "p_curt_sol solar curtailment penalty",
+      "p_curt_wind wind curtailment penalty"
+    ],
+    "unweighted_terms": [
+      "p_unmet critical load penalty (c[base+9] unweighted, w_t=1.0)"
+    ]
+  },
+  "equivalence_and_firewall": {
+    "initial_state_equivalence": "Control = V2 Treatment = V3 Treatment for every origin",
+    "future_truth_firewall": "Future truth isolated to simulator/evaluator pathway only; zero leakage to forecast, EMS, or optimizer"
+  },
+  "telemetry_and_endpoints": {
+    "schema": "37-field V2 observational telemetry schema preserved",
+    "primary_endpoint": "total_diesel_fuel_liters per 24-hour origin",
+    "secondary_endpoints": ["battery_throughput_wh", "renewable_curtailment_wh", "startup_events_count", "unmet_load_wh"]
+  },
+  "stopping_and_tuning_rules": {
+    "parameter_tuning": "PROHIBITED",
+    "grid_search": "PROHIBITED",
+    "result_dependent_stopping": "PROHIBITED",
+    "origin_filtering": "PROHIBITED"
+  },
+  "protected_sha256_hashes": {
+    "system/optimization/implementations/milp.py": "fc4fafe712a62fa301b3fbe021cd933c64bd08bd96d6a644ba412207134a19c3",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/runtime/runner.py": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "system/forecasting/implementations/s81_solar.py": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "system/forecasting/implementations/baseline.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/schemas/station_state.py": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+    "system/schemas/dispatch_plan.py": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION.json": "09427eafb49c46caa6fbe9626f4edc57ff8dc8ffc4d64386e6073e1a8ab6f143",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION_RAW.csv": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+    "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.json": "6ddcc73add04bab6075d98378f61c5433da5b1e2399789969bb5622cbe002efd",
+    "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.md": "8ec1d4c66697b52a9045ace89eb1f5b6361b44c3c2b2c53c6172173f70bb1355"
+  },
+  "runtime_thermal_safeguards": {
+    "worker_count": "Preserve authorized single-worker / low-concurrency execution",
+    "thermal_monitoring": "Active CPU temperature and RAM monitoring required during execution"
+  },
+  "no_execution_statement": "ABSOLUTE CONFIRMATION: ZERO V3 scientific replay runs occurred during this Gate 4 authorization task. No origin was executed, no scientific outcome data was generated.",
+  "next_authorized_action": "Execution runner invocation under authorized governance package"
+}

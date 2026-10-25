@@ -1,0 +1,15 @@
+{
+  "num_variables": 409,
+  "num_constraints": 313,
+  "num_binary": 96,
+  "num_continuous": 313,
+  "c1_hash": "e765d60e12f232103991ac56627acb7b108b7663d2369e6b3e612c3ea5b91dcd",
+  "c2_hash": "880cede4cef96710cdcd7d96a647e9c339c29753f9e8c9ad3bf186d28c38f910",
+  "c3_hash": "1b060cf8ffdb1096bc1d310f56b078bf1b0ed7db6a58eafb8cd4c50344a6e9af",
+  "c4_hash": "f819b74dae8c07c42c34e7185a604827a444e8184fee07e93b8e709d56490efc",
+  "matrix_shape": [
+    313,
+    409
+  ],
+  "matrix_hash": "4a57d15592fb0cfedb057e2649c3af408ce1979ea4a883bee60c8589e11642b6"
+}

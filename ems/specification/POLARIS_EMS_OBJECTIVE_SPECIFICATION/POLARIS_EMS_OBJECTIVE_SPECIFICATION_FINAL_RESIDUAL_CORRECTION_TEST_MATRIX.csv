@@ -1,0 +1,21 @@
+TEST_ID,TEST_NAME,TARGET_ELEMENT,EXPECTED_RESULT,ACTUAL_RESULT,STATUS,GOVERNANCE_IMPACT
+TEST_01,TEST_D15_REMAINS_RECONCILED,Decision D15 Hierarchy Status,D15_RECONCILIATION = PASS preserved,D15 Option A confirmed across decision sheet & resolution,PASS,Hierarchy authority preserved
+TEST_02,TEST_STAGE2_HARD_FLOOR_VS_TARGET_DISTINCT,Stage 2 Storage Layer Separation,"Tech floor, Baseline reserve floor, Dynamic EBR target, Terminal target distinct",4 distinct storage concepts established,PASS,Prevents storage parameter conflation
+TEST_03,TEST_STAGE2_NOT_CLAIMED_EXECUTABLE,Stage 2 Execution Status,STAGE2_FORMULATION = REQUIRES_IMPLEMENTATION_SPECIFICATION,Formulation marked for implementation spec,PASS,Avoids premature solver assumption
+TEST_04,TEST_STAGE2_NO_TAUTOLOGY,Stage 2 Objective Non-Tautology,Hard baseline floor separated from reserve headroom target math,Stage 2 objective tautology eliminated,PASS,Ensures non-zero reserve optimization
+TEST_05,TEST_STAGE2_BOUNDARY_CASES_EXPLICIT,Stage 2 Target Boundary Cases,"Boundary cases explicit (target <= floor, target > max)",4 boundary conditions explicitly documented,PASS,Prevents runtime edge-case ambiguity
+TEST_06,TEST_D10_CONCEPTUAL_ONLY,D10 Curtailment Decomposition,Designated CONCEPTUAL_DECOMPOSITION_ONLY,Decomposition formula labeled conceptual only,PASS,Prevents unauthorized math inference
+TEST_07,TEST_D10_NO_EXECUTABLE_CLASSIFICATION_INVENTED,D10 Runtime Algorithm,D10_EXECUTABLE_CLASSIFICATION = REQUIRES_IMPLEMENTATION_SPECIFICATION,Runtime classification marked for implementation spec,PASS,Preserves policy boundaries
+TEST_08,TEST_D10_STAGE4_REMAINS_IMPLEMENTATION_DEPENDENT,Stage 4 Avoidable Curtailment Math,Stage 4 math marked implementation dependent,Stage 4 solver equation marked for implementation spec,PASS,Aligns solver math with spec roadmap
+TEST_09,TEST_D8_PHYSICAL_FUEL_INVENTORY_DISTINCT,Physical Fuel Inventory,F_rem(t) >= 0 physical constraint distinct from fuel policy,Physical inventory constraint separated from budget policy,PASS,Ensures physical law compliance
+TEST_10,TEST_D8_FUEL_POLICY_DISTINCT,Fuel Resupply Policy,Resupply cycle budget distinct from physical inventory,Resupply policy marked Stage 3 optimization,PASS,Clarifies policy vs physics
+TEST_11,TEST_D8_RELIABILITY_PRIORITY_PRESERVED,D14 Reliability Dominance over Fuel,Fuel budget NEVER forces Critical Load shedding,D14 absolute reliability priority enforced,PASS,Protects Critical Load SLA
+TEST_12,TEST_D8_INFEASIBILITY_NOT_INVENTED,Fuel Exhaustion Infeasibility Response,FUEL_RELIABILITY_INFEASIBILITY = REQUIRES_GOVERNANCE_CLARIFICATION,Infeasibility response flagged for governance review,PASS,Prevents runtime emergency invention
+TEST_13,TEST_D8_RECEDING_HORIZON_NOT_OVERSIMPLIFIED,Receding Horizon Fuel Accounting,D8_SEASONAL_FUEL_ACCOUNTING = REQUIRES_IMPLEMENTATION_SPECIFICATION,Multi-day budget accounting marked for implementation spec,PASS,Prevents 24h budget oversimplification
+TEST_14,TEST_NO_UNAUTHORIZED_NUMERICAL_VALUES,Numerical Register Audit,0 unauthorized policy values,All provisional values explicitly classified,PASS,Maintains numerical governance
+TEST_15,TEST_NO_POLICY_REOPENING,Policy Decision Sheet Freeze,0 changes to D1-D16 stakeholder choices,All 16 policy choices preserved unchanged,PASS,Enforces policy freeze
+TEST_16,TEST_CURRENT_EMS_FROZEN,System Code & Config Freeze,Zero edits to system/ or prototype configs,System SHA-256 hashes 100% verified,PASS,Enforces software freeze
+TEST_17,TEST_NO_CODE_MODIFICATION,Code Change Audit,0 lines of software code edited,Code modification status = NO,PASS,Ensures read-only audit
+TEST_18,TEST_NO_EXECUTION,Runtime Execution Audit,"Zero models trained, zero solvers executed",Execution status = NO for all runtimes,PASS,Guarantees zero execution
+TEST_19,TEST_NO_NEW_EXPERIMENT,Experiment Execution Audit,Zero experiments or simulation reruns,Experiment status = NO,PASS,Guarantees experiment freeze
+TEST_20,TEST_HASH_VERIFICATION,File SHA-256 Provenance Audit,All hashes calculated directly from file bytes,Complete hash audit register updated,PASS,Guarantees complete byte audit

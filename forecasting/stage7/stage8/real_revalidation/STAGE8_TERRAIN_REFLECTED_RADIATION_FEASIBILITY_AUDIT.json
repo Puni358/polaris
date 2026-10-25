@@ -1,0 +1,64 @@
+{
+  "audit_name": "STAGE8_TERRAIN_REFLECTED_RADIATION_FEASIBILITY_AUDIT",
+  "governance_status": "FEASIBILITY_RESEARCH_ONLY",
+  "target_site": "SITES Nuolja (68.362°N, 18.739°E, 702m ASL)",
+  "research_question": "Does terrain-reflected / multiply-reflected shortwave radiation provide a genuinely independent physical information source for the Nuolja SW_IN target?",
+  "operational_champion": "Stage 8.1 37-feature HGB",
+  "official_odd_daytime_nmae_pct": 28.0688,
+  "odd_accessed": false,
+  "master_handoff_modified": false,
+  "route_registry_modified": false,
+  "physical_magnitude_audit": {
+    "target_sensor_orientation": "Horizontal upward-pointing pyranometer",
+    "average_horizon_elevation_deg": 5.8,
+    "sky_view_factor_v_sky": 0.9898,
+    "terrain_view_factor_v_terrain": 0.0102,
+    "fresh_snow_albedo": 0.85,
+    "peak_reflected_sw_in_w_m2": 6.93,
+    "mean_daytime_reflected_sw_in_w_m2": "0.5 to 1.5",
+    "fraction_of_total_ghi_pct": "< 1.5%",
+    "baseline_model_mae_w_m2": 36.19,
+    "physical_materiality_verdict": "IMMOBILE / IMMATERIAL (Signal magnitude <5 W/m² peak is well below model noise)"
+  },
+  "distinction_from_stage_7_5": {
+    "stage_7_5_mechanism": "Terrain horizon / blocking of direct beam and diffuse sky dome (V_sky reduction)",
+    "new_hypothesis_mechanism": "Terrain-reflected radiation off surrounding slopes (V_terrain * albedo * GHI_slope)",
+    "redundancy_finding": "Since V_terrain = 1 - V_sky, terrain-reflection geometry is mathematically derivable from Stage 7.5 horizon profiles and solar geometry."
+  },
+  "snow_albedo_analysis": {
+    "seasonal_correlation_with_doy": "98.4%",
+    "previous_audit_stage": "Stage 6.5 (Snow Depth / Albedo)",
+    "finding": "Explicit snow variables add zero incremental skill over solar geometry and baseline MEPS cloud fields."
+  },
+  "causality_audit": {
+    "dem_and_solar_geometry": "PASS (Static / Deterministic)",
+    "meps_snow_albedo": "PASS (Causally available at t0 = 00:00 UTC)",
+    "satellite_nrt_snow": "FAIL (Polar night darkness and multi-day cloud masking)"
+  },
+  "candidates_evaluated": [
+    {
+      "candidate": "Level 1: Simple Reflection Index",
+      "classification": "B. IMMATERIAL / C. REDUNDANT",
+      "survives": false
+    },
+    {
+      "candidate": "Level 2: DEM Facet View-Factor Model",
+      "classification": "B. IMMATERIAL / C. REDUNDANT",
+      "survives": false
+    },
+    {
+      "candidate": "Level 3: Direct + Diffuse Slope Model",
+      "classification": "B. IMMATERIAL / E. DISPROPORTIONATE",
+      "survives": false
+    },
+    {
+      "candidate": "Level 4: Full 3D Ray Tracing",
+      "classification": "E. COMPUTATIONALLY DISPROPORTIONATE",
+      "survives": false
+    }
+  ],
+  "surviving_class_a_candidates": 0,
+  "route_verdict": "NOT_FEASIBLE",
+  "route_status": "CLOSED",
+  "experiment_authorized": false
+}

@@ -1,0 +1,3 @@
+Concept_Name,Scope,Evaluation_Location,Time_Horizon,Primary_Purpose,Relationship_Classification,Double_Counting_Risk
+Emergency Battery Reserve (EBR),Rolling Operational Resilience Target,Inside Optimizer Loop (Stage 2),MPC Horizon (H = 24h),Absorb short-term solar drops / forecast errors,B. Related but distinct concepts,High if T_required > 24h is forced into Stage 2 objective
+Emergency Survivability (T_batt / T_fuel),Exogenous Operational Survival Assessment,Outside Optimizer Loop (Emergency Detector),Full Survival Horizon (T_required),Assess multi-day mission survival & resupply coverage,B. Related but distinct concepts,Low if Detector operates strictly pre-solve

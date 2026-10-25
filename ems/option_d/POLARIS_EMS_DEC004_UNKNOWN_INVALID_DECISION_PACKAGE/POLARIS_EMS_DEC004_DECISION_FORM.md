@@ -1,0 +1,56 @@
+# POLARIS EMS — DEC-004 HUMAN GOVERNANCE DECISION FORM
+
+## 1. Governance Decision Metadata
+
+```text
+DECISION_ID = DEC-004
+
+DECISION_TITLE = Operational response to ECD UNKNOWN_INVALID
+
+DECISION_QUESTION = What operational response should POLARIS adopt when the Emergency Condition Detector (ECD) returns UNKNOWN_INVALID?
+
+OPTIONS =
+    A: HOLD_LAST_VALID_DISPATCH (NOT_SELECTED)
+    B: ZERO_DISPATCH (NOT_SELECTED)
+    C: OPERATOR_INTERVENTION (NOT_SELECTED)
+    D: PROTECTED_CRITICAL_LOAD_FALLBACK (SELECTED_AND_SEALED)
+    E: DEFER (NOT_SELECTED)
+
+HUMAN_DECISION = OPTION_D_PROTECTED_CRITICAL_LOAD_FALLBACK
+
+DECISION_STATUS = FINAL_SELECTED
+
+DECISION_OWNER = HUMAN_GOVERNANCE_DECISION_MAKER
+
+DATE_RESOLVED = 2026-09-23
+```
+
+---
+
+## 2. Summary of Options and Final Selection Record
+
+- **OPTION A: HOLD LAST VALID DISPATCH** — `NOT_SELECTED`
+- **OPTION B: ZERO-DISPATCH / FAIL-CLOSED CONTROL** — `NOT_SELECTED`
+- **OPTION C: OPERATOR / MANUAL INTERVENTION** — `NOT_SELECTED`
+- **OPTION D: PROTECTED CRITICAL-LOAD FALLBACK** — `SELECTED_AND_SEALED`
+  - *Concept*: Suppress noncritical loads and supply authorized critical load ONLY using available renewables + diesel + battery under D1–D6 governance rules.
+  - *Governance Status*: `SELECTED_AND_SEALED`
+  - *Implementation Status*: `NOT_IMPLEMENTED` (Authorization `NOT_GRANTED`)
+
+---
+
+## 3. Stakeholder Decision Signature Block
+
+```text
+Selected Option: OPTION_D_PROTECTED_CRITICAL_LOAD_FALLBACK
+
+Authorized By (Print Name): HUMAN GOVERNANCE DECISION MAKER
+
+Role / Title: POLARIS EMS GOVERNANCE AUTHORITY
+
+Signature: [SEALED VIA HUMAN GOVERNANCE DIRECTIVE]
+
+Date: 2026-09-23
+```
+
+Status: `FORM_SEALED_WITH_HUMAN_SELECTION`

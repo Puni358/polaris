@@ -1,0 +1,19 @@
+{
+  "status": "G1_FAIL_NG1",
+  "g12": {
+    "blocked_origins": [],
+    "PASS": true,
+    "n_origins": 123
+  },
+  "G1_ORACLE_PHYS": {
+    "rows": 2952,
+    "unmatched": 0,
+    "max_abs_diff_w": 7175.257391304334,
+    "PASS": false,
+    "variant": "ORACLE-PHYS",
+    "origins": 123
+  },
+  "oracle_phys_fuel_L": 4071.6985,
+  "oracle_ctrl_fuel_L": 7275.8888,
+  "origins": 123
+}

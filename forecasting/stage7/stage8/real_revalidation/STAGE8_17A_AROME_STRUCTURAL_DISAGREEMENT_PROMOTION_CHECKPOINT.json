@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-09-13T09:06:58+00:00",
+  "stage": "POLARIS STAGE 8.17A FORMAL PROMOTION REVIEW",
+  "promotion_decision": "PROMOTE",
+  "new_official_champion": "Stage 8.17A AROME Structural Disagreement Model",
+  "previous_operational_champion": "Stage 8.16B-2 Stage 8.1 + Phi_inconsist Model",
+  "promotion_date": "2026-09-13",
+  "total_features": 40,
+  "new_features_added": [
+    "wind_disagreement_700",
+    "LWP_disagreement"
+  ],
+  "feature_definitions": {
+    "wind_disagreement_700": "sqrt((AROME_U700 - MEPS_U700)^2 + (AROME_V700 - MEPS_V700)^2)",
+    "LWP_disagreement": "abs(AROME_LWP - MEPS_LWP)"
+  },
+  "model_architecture": "HistGradientBoostingRegressor(loss='absolute_error', max_depth=4, min_samples_leaf=30, l2_regularization=10.0, random_state=42)",
+  "held_out_odd_benchmark": {
+    "odd_origins_count": 173,
+    "previous_champion_mae_w_m2": 35.727549,
+    "new_champion_mae_w_m2": 35.241085,
+    "delta_mae_w_m2": -0.486464,
+    "relative_mae_improvement_pct": -1.36,
+    "previous_champion_nmae_pct": 27.7111,
+    "new_champion_nmae_pct": 27.3337,
+    "delta_nmae_pct": -0.3774,
+    "previous_champion_rmse_w_m2": 63.764094,
+    "new_champion_rmse_w_m2": 63.290812,
+    "delta_rmse_w_m2": -0.473282,
+    "new_champion_bias_w_m2": 1.810421,
+    "night_mae_w_m2": 0.0,
+    "bootstrap_mean_delta_w_m2": -0.435210,
+    "bootstrap_ci_95": [
+      -0.812405,
+      -0.058015
+    ],
+    "bootstrap_improvement_pct": 98.92,
+    "statistically_significant": true
+  },
+  "audit_verdicts": {
+    "odd_evaluation_integrity": "PASS",
+    "feature_causality": "PASS (173/173 origins pass T_pub <= t0)",
+    "zero_odd_contamination": "PASS",
+    "feature_implementation": "PASS",
+    "result_reproducibility": "PASS",
+    "implementation_anomalies": "NONE"
+  }
+}

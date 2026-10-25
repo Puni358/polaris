@@ -1,0 +1,37 @@
+{
+  "provenance_metadata": {
+    "project": "POLARIS Energy Management System",
+    "task": "GAP_1_GOVERNANCE_FORMALIZATION_AND_CONSISTENCY_AUDIT",
+    "timestamp": "2026-09-27T12:37:00Z",
+    "workspace": "/home/punith-bs/01polaris (Copy)",
+    "investigation_folder": "investigations/emergency_trigger_governance_2026"
+  },
+  "verification_status": {
+    "gap1_formalization": "COMPLETE",
+    "g1_g6_decisions": "PROVISIONAL",
+    "contradiction_audit": "COMPLETE",
+    "human_decisions_remaining": "REPORTED",
+    "production_modifications": 0,
+    "ecd_modifications": 0,
+    "generator_configuration_modifications": 0,
+    "campaign_modifications": 0,
+    "protected_hashes": "VERIFIED",
+    "hard_stop": "ACTIVE"
+  },
+  "formalization_artifacts_generated": [
+    "GAP1_FORMAL_SEMANTICS_AUDIT.md",
+    "GAP1_FORMAL_SEMANTICS_AUDIT.json",
+    "GAP1_G1_G6_TRACEABILITY.md",
+    "GAP1_CONTRADICTION_REGISTER.md",
+    "GAP1_REQUIRED_INPUTS_AND_STATE.md",
+    "GAP1_HUMAN_DECISION_GAPS.md",
+    "GAP1_FORMALIZATION_PROVENANCE.json"
+  ],
+  "formalization_summary": {
+    "provisional_decisions_formalized": 6,
+    "mandatory_audit_checks_completed": 15,
+    "contradictions_identified": 7,
+    "unresolved_human_decision_items": 4,
+    "strictly_neutral_decision_framing": true
+  }
+}

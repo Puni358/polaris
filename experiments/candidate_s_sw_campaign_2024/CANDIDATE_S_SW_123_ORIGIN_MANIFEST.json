@@ -1,0 +1,52 @@
+{
+  "experiment_id": "EXP-CANDIDATE-S-SW-DIESEL-REDUCTION-2024",
+  "title": "POLARIS Candidate S & SW 123-Origin Closed-Loop Campaign Manifest",
+  "execution_date_utc": "2026-10-05T13:31:11Z",
+  "governing_preregistration_hashes": {
+    "markdown": "1f018b1aba2651950b8cd5474ee9ea4dd2c6db6e9d9a584b1a5791eb59e80be5",
+    "json": "3607876afea7cea169887faa3b92c7a21142e9fbc5bd38ac93a6b72351342ba4"
+  },
+  "governing_addendum_hashes": {
+    "markdown": "228474e1100d4ce4a1c1470198125d699ddd3d9c0bf1f91678f4373f8e1d0054",
+    "json": "94c6f623a35628bd5f4efab40557c8fa99395fdf81b4c6c665ab0af968d7bfdd"
+  },
+  "production_hashes": {
+    "gap19_solver": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "causal_nwp_forecaster": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "dispatch_plan": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b"
+  },
+  "campaign_artifacts": {
+    "CANDIDATE_S_SW_123_ORIGIN_RESULTS.csv": {
+      "size_bytes": 24076,
+      "sha256": "cbfcc70b2c8b9c00570ef08b37071f9c99370034b502b0dbdb0edf913a3c184e"
+    },
+    "CANDIDATE_S_SW_123_ORIGIN_RESULTS.json": {
+      "size_bytes": 4607,
+      "sha256": "154c8c4b4dbe0ad4175b851cb93e8e1d7761ed599cbed8e236c21651fe6bf8bb"
+    },
+    "CANDIDATE_S_SW_123_ORIGIN_HOURLY_TELEMETRY.csv": {
+      "size_bytes": 3079671,
+      "sha256": "0a380745307ca2c0ba2f1a4ce98bba443c792694aa53587cd8504ac743d2f4fa"
+    },
+    "CANDIDATE_S_SW_123_ORIGIN_HOURLY_TELEMETRY.json": {
+      "size_bytes": 11085365,
+      "sha256": "3bb0943b986200ce54afd2209cdd6756e0a38b0dfedfeeabc3af552a316ea8e3"
+    },
+    "CANDIDATE_S_SW_123_ORIGIN_STATISTICS.md": {
+      "size_bytes": 1952,
+      "sha256": "bea239f665a48c5183b55122378f9a9380b2701b37a90921950124042d395121"
+    },
+    "CANDIDATE_S_SW_123_ORIGIN_SAFETY_GATE.md": {
+      "size_bytes": 1050,
+      "sha256": "ac5adba9cb5bab7a8f46eb293c2e2fa51d2b84455d0c3c38fbc0d77055a18bf1"
+    },
+    "CANDIDATE_S_SW_123_ORIGIN_EXECUTION_AUDIT.md": {
+      "size_bytes": 1124,
+      "sha256": "53d5a0f9d8fde354618ea9702c3e1316a1f48401dca45087f9c68391ded9daf7"
+    },
+    "CANDIDATE_S_SW_CHECKPOINT.jsonl": {
+      "size_bytes": 9911121,
+      "sha256": "d00c5434bacecce0d9b1d80d7d644d2b2763cf41c0d219b0b0f059d0718f84dd"
+    }
+  }
+}

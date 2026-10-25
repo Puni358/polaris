@@ -1,0 +1,127 @@
+{
+  "artifact_id": "POLARIS_STAGE8_D5_SCIENTIFIC_SYNTHESIS_20260917",
+  "timestamp": "2026-09-17T09:30:00+05:30",
+  "governance_action": "SYSTEM_INTEGRATION_FIRST_SCIENTIFIC_SYNTHESIS",
+  "source_artifacts": [
+    "POLARIS_REPRODUCIBLE_BASELINE_FREEZE.json",
+    "STAGE8_REAL_DATA_REVALIDATION_FINAL_REPORT.json",
+    "POLARIS_SYSTEM_D5_RESULTS_CHECKPOINT.json",
+    "POLARIS_SYSTEM_D5_SCIENTIFIC_INTERPRETATION.json",
+    "POLARIS_LOCAL_SYSTEM_ARCHITECTURE.json"
+  ],
+  "stage8_1_champion": {
+    "name": "Stage 8.1 Solar Irradiance Forecasting Champion (37 Features)",
+    "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "hyperparameters": {
+      "loss": "absolute_error",
+      "max_depth": 4,
+      "min_samples_leaf": 30,
+      "l2_regularization": 10.0,
+      "random_state": 42
+    },
+    "feature_count": 37,
+    "target": "SW_IN (surface downwelling shortwave radiation in W/m^2)",
+    "prediction_file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "odd_performance": {
+      "daytime_mae_w_m2": 36.188657,
+      "daytime_nmae_pct": 28.0688,
+      "daytime_rmse_w_m2": 64.219495,
+      "daytime_bias_w_m2": 1.439399,
+      "night_mae_w_m2": 0.0
+    },
+    "status": "FROZEN_REPRODUCIBLE_BASELINE"
+  },
+  "stage8_1_findings": {
+    "established": "Stage8.1 established empirical solar irradiance (SW_IN) forecasting capability (36.19 W/m^2 MAE) on real Nuolja meteorological data using 37 features including 700 hPa steering wind features.",
+    "unsupported_routes": "Stage8.17a (unverified historical reference, non-reconstructable missing raw AROME files). Stage8.19 (permanently invalidated and expunged due to synthetic data violation)."
+  },
+  "d5_findings": {
+    "execution_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "forecast_producer": "LocalBaselineForecastEngine (prototype baseline / heuristic persistence engine)",
+    "lsf_across_all_gates": 100.0,
+    "summary": "D5 established observed changes in diesel consumption and renewable curtailment under the tested controlled forecast perturbation scenarios, while maintaining 100% LSF across all six D5 scenarios.",
+    "scenarios": {
+      "D5-1": {"perturbed_channel": "Solar 0.70x", "fuel_delta_l": 2.15, "fuel_delta_pct": 2.50, "curtailment_delta_kwh": -90.11, "curtailment_delta_pct": -61.16},
+      "D5-2": {"perturbed_channel": "Solar 1.30x", "fuel_delta_l": -41.90, "fuel_delta_pct": -48.77, "curtailment_delta_kwh": 17.96, "curtailment_delta_pct": 12.19},
+      "D5-3": {"perturbed_channel": "Wind 0.70x", "fuel_delta_l": 46.04, "fuel_delta_pct": 53.58, "curtailment_delta_kwh": -134.20, "curtailment_delta_pct": -91.09},
+      "D5-4": {"perturbed_channel": "Demand 1.20x", "fuel_delta_l": 49.81, "fuel_delta_pct": 57.97, "curtailment_delta_kwh": -122.15, "curtailment_delta_pct": -82.91},
+      "D5-5": {"perturbed_channel": "Solar 1.30x, Wind 1.30x, Demand 0.80x", "fuel_delta_l": -85.92, "fuel_delta_pct": -100.00, "curtailment_delta_kwh": 336.14, "curtailment_delta_pct": 228.16},
+      "D5-6": {"perturbed_channel": "Solar 1.15x, Wind 1.15x (168h)", "fuel_delta_l": -96.66, "fuel_delta_pct": -40.03, "curtailment_delta_kwh": 691.36, "curtailment_delta_pct": 43.91, "steps": 168}
+    }
+  },
+  "combined_established_findings": [
+    "POLARIS architecture cleanly separates forecasting from energy optimization through the ForecastBundle contract.",
+    "Stage8.1 establishes empirical solar forecasting performance (Daytime MAE = 36.19 W/m^2) on real Nuolja meteorological data.",
+    "D5 demonstrates that EMS behavior is operationally sensitive to controlled forecast perturbations under the tested conditions.",
+    "Station load service remained at 100% LSF across all six tested D5 perturbation scenarios under tested profiles.",
+    "D5-6 completed 168 consecutive closed-loop decision points under persistent +15% renewable perturbation without unmet load, constraint violation, or execution fault.",
+    "Stage8.1 provides empirical forecasting evidence, while D5 provides complementary evidence that downstream EMS behavior is sensitive to controlled forecast perturbations. The direct relationship between Stage8.1 forecast quality and EMS outcomes remains untested."
+  ],
+  "unestablished_findings": [
+    "Stage8.1 champion forecasts were NOT used in D5 execution.",
+    "D5 does NOT measure empirical Stage8.1 model error distribution.",
+    "D5 perturbations do NOT represent empirical Stage8.1 error frequencies or probabilities.",
+    "Real-world operational fuel savings attributable to the Stage8.1 champion have NOT been measured.",
+    "POLARIS is NOT established as globally robust or safe under arbitrary field conditions.",
+    "D5-6 does NOT establish infinite-horizon control stability or universal control stability.",
+    "Component degradation, equipment failure, or long-term field reliability are NOT established.",
+    "Wind forecasting performance of Stage8.1 is NOT established.",
+    "Demand forecasting performance of Stage8.1 is NOT established.",
+    "Quantitative operational value of replacing prototype forecast producer with Stage8.1 champion is NOT ESTABLISHED BY CURRENT EVIDENCE."
+  ],
+  "controlled_perturbation_vs_empirical_error": {
+    "d5_perturbation": "Controlled experimental scale parameters (gamma = 0.70 ... 1.30) applied to baseline forecasts.",
+    "stage8_1_empirical_error": "Model-vs-actual discrepancy (Daytime MAE = 36.19 W/m^2) measured from real Nuolja ODD test set.",
+    "equivalence_status": "NOT ESTABLISHED BY THE CURRENT EVIDENCE"
+  },
+  "missing_forecast_to_ems_link": {
+    "current_stage8_1_chain": "Actual historical data -> Stage8.1 ML forecast -> Forecasting metrics (MAE = 36.19 W/m^2)",
+    "current_d5_chain": "Prototype baseline forecast -> Controlled perturbation -> Frozen EMS -> Operational outcomes",
+    "eventual_integrated_chain": "Actual data -> Stage8.1 champion 24h forecast -> ForecastBundle -> Frozen EMS / MPC -> Digital Twin -> Operational outcomes",
+    "status_statement": "The direct empirical link between actual Stage8.1 champion forecast accuracy/error and downstream EMS operational outcomes such as diesel consumption has NOT yet been tested."
+  },
+  "project_sequence": {
+    "current_priority": "FULL_SYSTEM_ARCHITECTURE_AND_INTEGRATION",
+    "d5_reopening": false,
+    "champion_in_loop_now": false,
+    "future_validation_after_integration": true,
+    "sequence_steps": [
+      "1. Stage8.1 solar forecasting research is completed and frozen.",
+      "2. D5 EMS controlled-perturbation sensitivity characterization is completed and frozen.",
+      "3. D5 will NOT be reopened.",
+      "4. The immediate engineering priority is to finish the full POLARIS system architecture and integration.",
+      "5. Stage8.1 champion will enter the established ForecastEngine -> ForecastBundle -> EMS interface as the real forecasting component.",
+      "6. The future integration step must use the existing frozen ForecastEngine -> ForecastBundle interface rather than modifying the frozen EMS/optimizer architecture merely to accommodate the Stage8.1 champion.",
+      "7. Complete integrated system must be validated before any champion-in-loop operational experiment.",
+      "8. Separate system-level champion-in-loop validation authorized as a NEW experiment only AFTER integration is complete.",
+      "9. Future validation is a NEW experiment and must not be represented as part of D5."
+    ]
+  },
+  "claim_ladder": {
+    "safe_now": [
+      "POLARIS separates forecasting from energy optimization via a clean ForecastBundle interface contract.",
+      "Stage8.1 established empirical solar forecasting accuracy (Daytime MAE = 36.19 W/m^2) on real Nuolja meteorological data.",
+      "Our EMS maintained 100% load service under the tested forecast perturbation scenarios."
+    ],
+    "safe_with_qualification": [
+      "Systematic forecast perturbations produce observed changes in diesel fuel consumption and curtailment (under tested station configurations).",
+      "Stage8.1 provides empirical forecasting evidence, while D5 provides complementary evidence that downstream EMS behavior is sensitive to controlled forecast perturbations. The direct relationship between Stage8.1 forecast quality and EMS outcomes remains untested."
+    ],
+    "do_not_claim": [
+      "Our AI forecasting model reduced diesel consumption (UNSUPPORTED: D5 used prototype baseline engine).",
+      "Our EMS is robust to forecast errors (UNSUPPORTED: D5 tested controlled perturbations under specific profiles).",
+      "Our forecasting model improves operational efficiency (UNSUPPORTED: Champion-in-loop operational link is untested)."
+    ]
+  },
+  "sih_story": {
+    "problem": "Polar microgrids operate under extreme weather and strict storage limits where unmanaged forecast errors risk diesel waste or blackouts.",
+    "forecasting_contribution": "Stage8.1 developed a 37-feature HistGradientBoosting solar forecasting model incorporating 700 hPa steering wind features (Daytime MAE = 36.19 W/m^2).",
+    "control_contribution": "POLARIS decouples forecasting from control via a standardized ForecastBundle contract, feeding a receding-horizon MILP optimizer.",
+    "sensitivity_contribution": "D5 evaluated closed-loop EMS sensitivity to controlled forecast perturbations (gamma = 0.70 ... 1.30), demonstrating 100% LSF maintenance while establishing observed changes in diesel consumption and renewable curtailment.",
+    "current_limitation": "The direct empirical link between actual Stage8.1 champion forecast accuracy/error and downstream EMS operational outcomes such as diesel consumption has NOT yet been tested.",
+    "engineering_priority": "Complete full POLARIS system architecture and integration.",
+    "later_validation": "Perform system-level champion-in-loop operational validation as a NEW experiment only after complete system integration."
+  },
+  "final_scientific_position": "STAGE8.1 provides empirical solar forecasting evidence (36.19 W/m^2 MAE). D5 provides controlled forecast-to-EMS sensitivity evidence. Stage8.1 provides empirical forecasting evidence, while D5 provides complementary evidence that downstream EMS behavior is sensitive to controlled forecast perturbations. The direct relationship between Stage8.1 forecast quality and EMS outcomes remains untested. NEXT PROJECT STEP: Full POLARIS system architecture and integration. NOT: Immediate champion-in-loop experimentation."
+}

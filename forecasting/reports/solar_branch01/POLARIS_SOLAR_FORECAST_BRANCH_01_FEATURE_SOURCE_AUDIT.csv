@@ -1,0 +1,7 @@
+feature_name,source,units,timestamp_semantics,lookback_window,forecast_dependency,causal_at_origin,availability_period,latency,missing_data_policy,status
+ctx_last_obs,Nuolja_SITES_SW_IN,W/m^2,Observed SW_IN at origin t,0h (t),None,True,2024-01-01 to 2024-12-31,0h,Fail closed if null,AUTHORIZED
+ctx_mean_6h,Nuolja_SITES_SW_IN,W/m^2,"Mean SW_IN over [t-6h, t]",6h,None,True,2024-01-01 to 2024-12-31,0h,Fail closed if null,AUTHORIZED
+clearsky_ghi,Astronomical_Model,W/m^2,Theoretical clear-sky GHI at target t+h,Deterministic future calculation,Solar coordinates at t+h,True,All time,0h,Deterministic formula,AUTHORIZED
+clearsky_ghi_terrain_adjusted,Terrain_Solar_Model,W/m^2,Terrain-shadowed clear-sky GHI at t+h,Deterministic future calculation,Solar elevation/azimuth vs DEM horizon,True,All time,0h,Deterministic formula,AUTHORIZED
+fc_cloud_cover,AROME_NWP,%,NWP predicted cloud cover for t+h from issue t_issue,Issue time t_issue <= t,NWP Forecast Run,True,2024-01-20 to 2024-12-31 (00:00 UTC issue),Variable (t - t_issue),Fail closed if t_issue > t,CONDITIONAL (Requires t_issue <= t)
+future_actual_SW_IN,Ground_Truth,W/m^2,Target observation at t+h,Future,Future observation,False,N/A,N/A,Strictly Forbidden,REJECTED (Causality Violation)

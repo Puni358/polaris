@@ -1,0 +1,16 @@
+VALUE,UNIT,LOCATION,MEANING,AUDIT_CLASSIFICATION,PROMOTED_TO_POLICY,GOVERNANCE_RESULT
+"0,000/kWh",USD/kWh,milp.py line 78,Prototype critical load unmet penalty cost,CURRENT_IMPLEMENTATION_FACT,NO,VALID
+bash.625/kWh,USD/kWh,milp.py line 82,Prototype diesel base fuel penalty cost,CURRENT_IMPLEMENTATION_FACT,NO,VALID
+20%,% SOC,battery.yaml line 12,Technical battery minimum SOC hardware floor,TECHNICAL_HARDWARE_FLOOR,NO,VALID
+35%,% SOC,Specification Section 9,Provisional baseline EBR reserve floor,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+45%,% SOC,Specification Section 9,Provisional dynamic EBR target level,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+55%,% SOC,Specification Section 10,Provisional baseline Terminal SOC target,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+65%,% SOC,Specification Section 10,Provisional high-resilience Terminal SOC target,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+-15% to -25%,% derate,Specification Section 14,Provisional Solar PV forecast safety margin range,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+-20% to -30%,% derate,Specification Section 14,Provisional Wind forecast safety margin range,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
++10%,% increase,Specification Section 14,Provisional Demand forecast safety margin,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+30 days,days,Specification Section 11,Provisional fuel resupply cycle duration,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+5 minutes,minutes,Specification Section 6,Provisional load shedding minimum dwell time,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+15 minutes,minutes,Specification Section 8,Provisional Emergency Mode entry trigger duration,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+2 kWh,kWh,Specification Section 8,Provisional Emergency Mode energy deficit threshold,PROVISIONAL_ENGINEERING_VALUE,NO,VALID
+50–70%,% renewable,Objective Specification Section 4.2,Ill-conceived fixed renewable target (EXPLICITLY REJECTED),EXPLICITLY_REJECTED_POLICY,NO,VALID

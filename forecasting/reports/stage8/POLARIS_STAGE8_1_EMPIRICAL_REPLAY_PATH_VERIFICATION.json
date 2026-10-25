@@ -1,0 +1,56 @@
+{
+  "phase": "S8.1-EMPIRICAL-REPLAY-PATH-VERIFICATION",
+  "final_decision": "A — EMPIRICAL REPLAY PATH VERIFIED",
+  "timestamp": "2026-09-19T11:36:00+05:30",
+  "decision_summary": "The frozen empirical Stage8.1 prediction artifact (POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv) is demonstrably capable of entering the frozen EMS path under PATH A (Empirical Artifact Replay) with 100% temporal alignment and strict causal isolation.",
+  "status_indicators": {
+    "empirical_link_execution_path": "ESTABLISHED",
+    "empirical_artifact_injection": "ESTABLISHED",
+    "empirical_forecast_error_to_ems_relationship": "NOT_YET_ESTABLISHED",
+    "future_truth_firewall": "ESTABLISHED",
+    "control_comparison_feasibility": "ESTABLISHED",
+    "downstream_environment": "MIXED / SYNTHETIC CONTROLLED",
+    "experiment_executed": false,
+    "model_retrained": false,
+    "d5_rerun": false,
+    "ems_modified": false,
+    "forecastbundle_schema_modified": false,
+    "ui_modified": false
+  },
+  "authoritative_empirical_artifact": {
+    "filename": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "total_rows": 4152,
+    "unique_origins": 173,
+    "horizon_min": 1,
+    "horizon_max": 24,
+    "missing_values": 0,
+    "duplicates": 0
+  },
+  "artifact_injection_path": {
+    "injection_type": "PATH A — EMPIRICAL ARTIFACT REPLAY",
+    "adapter_class": "Stage81ForecastEngine",
+    "runtime_context_key": "stage81_sw_in_forecast",
+    "schema_change_required": false,
+    "model_retraining_required": false
+  },
+  "replay_harness_requirement": {
+    "required": true,
+    "description": "Thin read-only experiment runner script to iterate over 173 origins, extract y_pred/y_true, and execute PolarisLocalRunner.run_pipeline()"
+  },
+  "determinism": "CONDITIONALLY_ESTABLISHED — EMPIRICAL INJECTION PATH NOT YET EXECUTED",
+  "unresolved_dependencies": [],
+  "next_authorized_step": "FORMAL_GOVERNANCE_AUTHORIZATION_AND_EXECUTION_PROTOCOL_FOR_STAGE8.1_EMS_EMPIRICAL_REPLAY_EXPERIMENT",
+  "integrity_firewall": {
+    "source_files_modified": "NONE",
+    "scientific_model_modified": false,
+    "ems_modified": false,
+    "forecastbundle_schema_modified": false,
+    "ui_modified": false,
+    "d5_modified": false,
+    "stage8_1_benchmark_modified": false,
+    "experiment_executed": false,
+    "model_retrained": false,
+    "new_forecast_model": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "stage": "8.7A",
+  "title": "POLARIS Stage 8.7A Governance Review & Decision",
+  "timestamp_utc": "2026-09-12 16:47:00 UTC",
+  "decision": "CONDITIONAL_PENDING_PROXY_APPROVAL",
+  "stage8_7b_authorized": false,
+  "proxy_provenance": {
+    "formula_evaluated": "DirectProxy_h = DNI_h * max(0, sin(solar_elevation_h)) * (1 - terrain_solar_obstruction_flag_h)",
+    "predeclared_in_study": false,
+    "classification": "IMPLEMENTATION_ASSUMPTION",
+    "requirement": "Requires explicit scientific governance approval before Stage 8.7B authorization"
+  },
+  "negative_residual_language_audit": {
+    "unsupported_causal_claims_removed": true,
+    "revised_classification": "The negative-residual cases are concentrated mostly at solar elevation >20°, but their causal origin is not established by this feasibility audit.",
+    "empirical_stats": {
+      "overall_count": 95,
+      "overall_total": 8328,
+      "overall_pct": 1.1407300672430354,
+      "daytime_count": 95,
+      "daytime_total": 5768,
+      "daytime_pct": 1.647018030513176,
+      "min_residual_w_m2": -333.42853108207544,
+      "regime_breakdown": {
+        "solar_elevation_le_5deg": 3,
+        "solar_elevation_5_to_20deg": 1,
+        "solar_elevation_gt_20deg": 91
+      }
+    }
+  },
+  "leakage_check": {
+    "direct_proxy_causally_valid_input": true,
+    "diffuse_residual_is_outcome_derived_target": true,
+    "prohibited_as_forecast_time_input": true,
+    "actual_sw_in_read_rule": "Validation/test actual SW_IN must not be read before prediction",
+    "stage8_7b_target_protocol_compliant": true
+  },
+  "odd_firewall": {
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "odd_tuning": 0
+  },
+  "master_handoff_modified": false
+}

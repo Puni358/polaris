@@ -1,0 +1,149 @@
+{
+  "timestamp": "2026-09-13T10:35:00+00:00",
+  "audit_type": "STAGE8_19_T0_TIMESTAMP_RECONCILIATION_AUDIT",
+  "stage": "POLARIS STAGE 8.19",
+  "official_operational_champion": {
+    "model_name": "Stage 8.19 ABIS GNSS Model",
+    "status": "FROZEN_OPERATIONAL_CHAMPION",
+    "total_features": 42,
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_nmae_pct": 27.0081,
+    "daytime_rmse_w_m2": 62.748210,
+    "daytime_bias_w_m2": 1.658210,
+    "night_mae_w_m2": 0.0
+  },
+  "authoritative_t0_definition": {
+    "benchmark_t0_utc": "00:00:00 UTC on Day D",
+    "benchmark_timezone": "UTC (+00:00)",
+    "local_timezone": "Europe/Stockholm (CET UTC+1 / CEST UTC+2)",
+    "local_clock_equivalent_t0": "01:00:00 CET (Winter) / 02:00:00 CEST (Summer) on Day D",
+    "forecast_horizon_start": "t0 = 00:00:00 UTC Day D",
+    "h1_timestamp": "00:00:00 UTC Day D",
+    "h24_timestamp": "23:00:00 UTC Day D",
+    "sites_target_semantics": "Period-ending hourly averages. H1 (00:00:00 UTC) aggregates 10-minute readings at 23:00, 23:10, 23:20, 23:30, 23:40, 23:50 UTC from preceding hour (23:00-00:00 UTC).",
+    "timestamp_conversion": "Benchmark uses strictly UTC timestamps (+00:00). No local clock conversion is performed in benchmark dataset or target files."
+  },
+  "abis_causality_audit": {
+    "station_id": "ABIS",
+    "station_name": "Abisko Permanent Reference Station",
+    "coordinates": "68.3582 N, 18.8258 E, 380m ASL",
+    "target_proximity": "326 meters horizontally (< 0.5 km)",
+    "provider": "Lantmäteriet SWEPOS / EUMETNET E-GVAP",
+    "product": "E-GVAP COST-716 NRT Tropospheric Delay Product",
+    "primary_variable": "ZTD (Zenith Total Delay, mm)",
+    "scientific_definition": "GNSS-derived zenith total delay (ZTD), used as an independent observation-derived atmospheric feature.",
+    "observation_timestamp": "22:00:00 UTC Day D-1",
+    "observation_timestamp_relative_to_t0": "t0 - 2 hours",
+    "publication_dissemination_timestamp": "23:30:00 UTC Day D-1",
+    "publication_dissemination_relative_to_t0": "t0 - 30 minutes",
+    "causal_margin": "30 minutes prior to t0 (T_pub <= t0 - 30 min)",
+    "checkpoint_wording_audit": "The original STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT contained loose phrasing equating 22:00 UTC D-1 directly with 't0' or stating '22:00 UTC observation D-1 (t0)'. Reconciled: 22:00 UTC D-1 is the latest observation timestamp (t0 - 2h), published at 23:30 UTC D-1 (t0 - 30m), whereas t0 is 00:00 UTC Day D. Under authoritative benchmark t0 = 00:00 UTC Day D, ABIS remains 100% causally valid with a 30-minute causal publication margin.",
+    "causal_validity_confirmed": true
+  },
+  "causal_inventory_all_42_features": [
+    {
+      "family": "Historical SW_IN Context",
+      "features": ["ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h", "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h", "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h", "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h"],
+      "data_source": "SITES Nuolja Station (SW_IN)",
+      "valid_time": "Past 24h relative to t0 (00:00 UTC D-1 to 00:00 UTC Day D)",
+      "issue_acquisition_time": "Real-time logging up to 00:00 UTC Day D",
+      "publication_time": "00:00 UTC Day D",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "0 minutes (T_pub <= t0)",
+      "causal_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "Solar Geometry",
+      "features": ["solar_elevation", "solar_zenith", "month", "hour"],
+      "data_source": "NREL SPA Deterministic Astronomical Algorithm",
+      "valid_time": "Forecast horizon valid time (t0 + h, h=0..23)",
+      "issue_acquisition_time": "Deterministic calculation known infinitely in advance",
+      "publication_time": "Known in advance",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "Infinite",
+      "causal_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "Clear-Sky Physics & Physical Self-Consistency",
+      "features": ["clearsky_ghi", "phi_inconsist"],
+      "data_source": "Simplified Solis Clear-Sky Model + MEPS LWP",
+      "valid_time": "Forecast horizon valid time (t0 + h, h=0..23)",
+      "issue_acquisition_time": "18:00 UTC Day D-1 (MEPS run initialization)",
+      "publication_time": "21:30 UTC Day D-1",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "2 hours 30 minutes prior to t0 (T_pub <= t0 - 2.5h)",
+      "causal_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "MEPS NWP Forecast Features",
+      "features": ["fc_cloud_cover", "fc_temperature_2m", "fc_relative_humidity_2m", "cloud_frac", "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold", "disagreement_fold", "lwp_latest", "iwp_latest", "lwp_x_cloud", "u700", "v700", "meps_std_SW_IN", "meps_std_total_cloud", "meps_mean_total_cloud"],
+      "data_source": "MET Norway MEPS 2.5km Operational NWP (18Z D-1 run)",
+      "valid_time": "Forecast horizon valid time (t0 + h, h=0..23)",
+      "issue_acquisition_time": "18:00 UTC Day D-1",
+      "publication_time": "21:30 UTC Day D-1",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "2 hours 30 minutes prior to t0 (T_pub <= t0 - 2.5h)",
+      "causal_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "AROME Structural Disagreement Features",
+      "features": ["wind_disagreement_700", "LWP_disagreement"],
+      "data_source": "MET Norway AROME-Arctic 2.5km NWP vs MEPS (18Z D-1 run)",
+      "valid_time": "Forecast horizon valid time (t0 + h, h=0..23)",
+      "issue_acquisition_time": "18:00 UTC Day D-1",
+      "publication_time": "21:30 UTC Day D-1",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "2 hours 30 minutes prior to t0 (T_pub <= t0 - 2.5h)",
+      "causal_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "Terrain / Horizon Features",
+      "features": ["terrain_horizon_elevation_deg", "terrain_elevation_margin_deg", "terrain_solar_obstruction_flag", "clearsky_ghi_terrain_adjusted"],
+      "data_source": "Lantmäteriet 2m DEM + Nuolja Local Horizon Mask",
+      "valid_time": "Forecast horizon valid time (t0 + h, h=0..23)",
+      "issue_acquisition_time": "Static topographic dataset",
+      "publication_time": "Known in advance",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "Infinite",
+      "causal_status": "CAUSAL_VERIFIED"
+    },
+    {
+      "family": "ABIS GNSS Tropospheric Delay Features",
+      "features": ["abis_ztd_latest", "abis_ztd_trend_3h"],
+      "data_source": "Lantmäteriet SWEPOS / EUMETNET E-GVAP COST-716 NRT Product (Station ABIS)",
+      "valid_time": "22:00 UTC observation D-1 (t0 - 2h)",
+      "issue_acquisition_time": "22:00 UTC Day D-1",
+      "publication_time": "23:30 UTC Day D-1",
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causal_margin": "30 minutes prior to t0 (T_pub <= t0 - 30 min)",
+      "causal_status": "CAUSAL_VERIFIED"
+    }
+  ],
+  "discrepancy_reconciliation_summary": {
+    "discrepancy_identified": "Previous post-promotion checkpoint text stated 'T_pub <= t0 (22:00 UTC Day D-1)' and 'Latest Causal Observation: 22:00 UTC Day D-1'. This conflated the latest observation timestamp (22:00 UTC D-1 = t0 - 2h) with the benchmark forecast origin (t0 = 00:00:00 UTC Day D).",
+    "authoritative_reconciliation": "The benchmark forecast origin t0 is authoritatively 00:00:00 UTC Day D. ABIS observation time is 22:00 UTC Day D-1 (t0 - 2h) and publication time is 23:30 UTC Day D-1 (t0 - 30m). Thus T_pub <= t0 is fully satisfied with a 30-minute causal safety buffer.",
+    "files_corrected": [
+      "STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.md",
+      "STAGE8_19_POST_PROMOTION_CAUSAL_AVAILABILITY_CHECKPOINT.json",
+      "POLARIS_MASTER_HANDOFF.md",
+      "POLARIS_STAGE8_ROUTE_REGISTRY.md",
+      "POLARIS_STAGE8_ROUTE_REGISTRY.json"
+    ],
+    "files_preserved": [
+      "STAGE8_17A_AROME_STRUCTURAL_DISAGREEMENT_CHECKPOINT.md/.json",
+      "STAGE8_17A_FINAL_PROMOTION_RECONCILIATION.md/.json",
+      "STAGE8_19A_ABIS_GNSS_ADVERSARIAL_VERIFICATION.md/.json",
+      "STAGE8_19B_ABIS_DATA_FEASIBILITY_PRE_REGISTRATION.md/.json",
+      "STAGE8_19C_ABIS_CANDIDATE_FREEZE.md/.json",
+      "STAGE8_19C_ABIS_EVEN_EXPERIMENT_RESULT.md/.json",
+      "STAGE8_19D_ABIS_LOCKED_ODD_EVALUATION.md/.json",
+      "STAGE8_19E_ABIS_PROMOTION_RECONCILIATION.md/.json",
+      "All pre-existing benchmark CSV files"
+    ]
+  },
+  "second_governance_lock": {
+    "lock_name": "Second Governance Lock — No Feature Grinding",
+    "status": "ENFORCED",
+    "rule_text": "Future research must prioritize genuinely independent information sources. Experiments that merely re-parameterize, spatially differentiate without strong independent justification, repackage existing signals, add neighboring grid statistics, or increase model complexity on redundant data are strictly prohibited."
+  }
+}

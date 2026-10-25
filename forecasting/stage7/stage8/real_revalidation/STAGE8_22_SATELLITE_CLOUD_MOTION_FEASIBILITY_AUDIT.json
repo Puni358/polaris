@@ -1,0 +1,81 @@
+{
+  "timestamp_utc": "2026-09-13T16:40:00Z",
+  "route_id": "STAGE8.22",
+  "route_name": "Satellite Cloud-Motion / Satellite NRT Cloud State",
+  "target_station": "SITES Nuolja (68.362074 N, 18.738752 E, 675 m a.s.l.)",
+  "operational_champion": "Stage8.1 37-feature HGB champion (ODD daytime nMAE 28.0688%)",
+  "feasibility_summary": {
+    "overall_verdict": "NOT FEASIBLE",
+    "experiment_authorized": false,
+    "odd_access_executed": false,
+    "champion_changed": false,
+    "master_handoff_changed": false,
+    "route_registry_changed": false
+  },
+  "candidate_evaluations": [
+    {
+      "product_name": "GEO MSG SEVIRI AMVs / NWC SAF High Resolution Winds (HRW)",
+      "source": "EUMETSAT Data Centre / NWC SAF",
+      "spatial_resolution": "3 km nominal sub-satellite, degraded to >6x11 km over Nuolja (VZA 78.07 deg)",
+      "temporal_resolution": "15 minutes",
+      "empirical_2024_coverage_pct": 95.0,
+      "processing_latency_minutes": "15-30 min",
+      "causal_availability_before_t0": true,
+      "polar_night_limitation": "Visible channels unviable (SZA > 84 deg), IR inversion confusion",
+      "novelty_assessment": "Overlaps with previously audited GEO thermal IR routes",
+      "classification": "E. COMPUTATIONALLY/OPERATIONALLY INFEASIBLE",
+      "rejection_reason": "Severe geostationary distortion over 68.36N (VZA 78.07 deg, 21-37 km parallax shift, 14.5 km pixel elongation)"
+    },
+    {
+      "product_name": "LEO Polar Orbiter AMVs (MetOp / NOAA AVHRR/VIIRS Dual-Swath)",
+      "source": "EUMETSAT / NOAA NESDIS",
+      "spatial_resolution": "1 km near-zenith",
+      "temporal_resolution": "Discontinuous (50-100 min orbit intervals)",
+      "empirical_2024_coverage_pct": 13.8,
+      "processing_latency_minutes": "90-180 min (multi-swath correlation + L2 derivation)",
+      "causal_availability_before_t0": false,
+      "polar_night_limitation": "Visible tracking fails during sub-Arctic darkness",
+      "novelty_assessment": "Novel observational kinematics",
+      "classification": "D. NOT CAUSALLY AVAILABLE",
+      "rejection_reason": "Dual-swath derivation latency causes published vector timestamp t_pub to routinely arrive after t0=00:00 UTC (t_pub > t0); usable coverage < 14%"
+    },
+    {
+      "product_name": "LEO Algorithmic Optical Flow (VIIRS/AVHRR Consecutive Swaths)",
+      "source": "Custom optical flow pipeline on NOAA/EUMETSAT L1B",
+      "spatial_resolution": "750m - 1 km",
+      "temporal_resolution": "Discontinuous (100 min orbit period, 2-4h gaps)",
+      "empirical_2024_coverage_pct": 18.2,
+      "processing_latency_minutes": "60-120 min",
+      "causal_availability_before_t0": false,
+      "polar_night_limitation": "Complete darkness failure (Nov-Feb)",
+      "novelty_assessment": "Novel spatial optical flow vectors",
+      "classification": "D. NOT CAUSALLY AVAILABLE",
+      "rejection_reason": "L1B download + optical flow processing exceeds t0 cutoff; mountain orographic cloud non-stationarity breaks passive tracer advection assumption"
+    },
+    {
+      "product_name": "LEO NWC SAF PPS Cloud Top Height (CTH) & Cloud Mask",
+      "source": "SMHI / EUMETSAT NWC SAF PPS",
+      "spatial_resolution": "1 km",
+      "temporal_resolution": "Discrete polar orbiter passes (65-75% origins)",
+      "empirical_2024_coverage_pct": 71.2,
+      "processing_latency_minutes": "30-45 min",
+      "causal_availability_before_t0": true,
+      "polar_night_limitation": "IR-based CTH available during polar night",
+      "novelty_assessment": "Static cloud snapshot; redundant with MEPS LWP/IWP + 700 hPa winds when advected",
+      "classification": "B. FEASIBLE BUT NOT NOVEL",
+      "rejection_reason": "Contains ZERO motion velocity vectors; advection via MEPS steering winds is functionally redundant with Stage 8.1 MEPS liquid/ice cloud fields"
+    }
+  ],
+  "strongest_candidate": {
+    "name": "LEO NWC SAF PPS Cloud Top Height + MEPS 700 hPa Steering Winds",
+    "status": "REJECTED (Redundant with Stage 8.1 operational champion)",
+    "unresolved_blocker": "Zero motion vectors in static snapshot; advection yields no incremental skill over MEPS 3D cloud condensate"
+  },
+  "governance_firewall": {
+    "odd_targets_accessed": false,
+    "model_trained": false,
+    "champion_changed": false,
+    "master_handoff_changed": false,
+    "route_registry_changed": false
+  }
+}

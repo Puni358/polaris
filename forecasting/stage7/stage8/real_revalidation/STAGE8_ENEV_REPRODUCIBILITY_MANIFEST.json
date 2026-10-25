@@ -1,0 +1,49 @@
+{
+  "manifest": "STAGE8_ENEV_REPRODUCIBILITY_MANIFEST",
+  "timestamp": "2026-09-13T14:13:32.896299+00:00",
+  "code_hash": "8b0ce51d17429f4b0a6bfd2e23c880abf36eabccb1fcd777fdaa44e57921c3a0",
+  "input_hashes": {
+    "enev_metar_csv": "fca7069e029fe2c80b8972dc848fa9cbc540673f507ef84fe221d21812055a2d",
+    "nwp_csv": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"
+  },
+  "feature_definition": {
+    "candidate_features": [
+      "enev_cloud_cover_okta",
+      "enev_cloud_base_m",
+      "enev_is_missing"
+    ],
+    "control_features_count": 37,
+    "candidate_features_count": 40
+  },
+  "parser_version": "v2_exact_2350_wmo_semantics",
+  "benchmark_protocol": {
+    "total_origins": 347,
+    "even_origins": 174,
+    "cv_folds": 5,
+    "cv_strategy": "forward_chaining"
+  },
+  "control_configuration": {
+    "architecture": "HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "candidate_configuration": {
+    "architecture": "HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "results": {
+    "control_even_mae": 37.620053600000006,
+    "candidate_even_mae": 37.8189056,
+    "delta_even_mae": 0.19885199999999514,
+    "folds_improved": 3,
+    "max_fold_degradation": 1.392324
+  },
+  "gate_verdict": "REJECTED_BY_EVEN_GATES"
+}

@@ -1,0 +1,69 @@
+{
+  "project": "POLARIS",
+  "task": "FORECASTBUNDLE RESEARCH GOVERNANCE DECISION RECORD D1/D2",
+  "timestamp": "2026-09-17T20:02:10Z",
+  "authoritative_inputs": [
+    "POLARIS_FORECASTBUNDLE_INTERVAL_SEMANTICS_AUDIT.md/json",
+    "POLARIS_FORECASTBUNDLE_POINT_SEMANTICS_EVIDENCE_CHECK.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_RESEARCH_GOVERNANCE_PACKAGE.md/json",
+    "POLARIS_STAGE8_1_FORECASTBUNDLE_CONTRACT_RESOLUTION.md/json",
+    "system/schemas/forecast_bundle.py"
+  ],
+  "governance_decisions_recorded": {
+    "D1": {
+      "name": "lower/upper Semantics",
+      "status": "DECISION_RECORDED",
+      "value": "FORECAST_UNCERTAINTY_BOUNDS_WITHOUT_CLAIMED_STATISTICAL_COVERAGE",
+      "designation": "ForecastBundle.lower and ForecastBundle.upper are designated as forecast-uncertainty bound fields surrounding point forecast.",
+      "limitations": "Does not claim 80%, 90%, 95% coverage, confidence intervals, or physical operating limits."
+    },
+    "D2": {
+      "name": "Point-Only Representation",
+      "status": "DECISION_RECORDED",
+      "value": "AUTHORIZED_DEGENERATE_POINT_REPRESENTATION",
+      "designation": "Point-only sources may be represented using lower = point, point = point, upper = point.",
+      "interpretation": "lower = point = upper means no uncertainty information is represented by this point-only source; does NOT mean real-world uncertainty is zero."
+    }
+  },
+  "scientific_claim_limitations": "Establishes contract boundary semantics only. Does not establish uncertainty calibration, coverage, reliability, or empirical accuracy guarantees.",
+  "d1_d2_frozen_contract_assessment": {
+    "frozen_contract_change_required": "NO",
+    "reasoning": "Degenerate bounds (lower = point = upper) satisfy lower <= point <= upper structural schema constraint without error or schema modification."
+  },
+  "engineering_consequence_assessment": [
+    "Future forecast providers/adapters must format arrays consistently with D1/D2.",
+    "Adapters representing point-only models must not fabricate coverage metadata.",
+    "Downstream MILP and Rule-Based optimizers continue consuming .point arrays directly."
+  ],
+  "remaining_governance_decisions": {
+    "D3_PV_MAPPING": "NOT_ESTABLISHED",
+    "D4_WIND_SOURCE": "NOT_ESTABLISHED",
+    "D5_DEMAND_SOURCE": "NOT_ESTABLISHED",
+    "D6_MULTI_SOURCE_COMPOSITION": "NOT_ESTABLISHED",
+    "D7_FINAL_FROZEN_CONTRACT_CHANGE_REQUIRED": "NOT_ESTABLISHED"
+  },
+  "implementation_status": "NOT_AUTHORIZED",
+  "historical_artifact_protection": {
+    "compatibility_audit_modified": false,
+    "contract_resolution_modified": false,
+    "interval_semantics_audit_modified": false,
+    "point_semantics_check_modified": false,
+    "research_governance_package_modified": false,
+    "forecastbundle_schema_modified": false,
+    "source_code_modified": false
+  },
+  "final_control_state": {
+    "d1_status": "DECISION_RECORDED",
+    "d2_status": "DECISION_RECORDED",
+    "lower_upper_semantics": "FORECAST_UNCERTAINTY_BOUNDS_WITHOUT_CLAIMED_STATISTICAL_COVERAGE",
+    "point_only_representation": "AUTHORIZED_DEGENERATE_POINT_REPRESENTATION",
+    "d1_d2_frozen_contract_change_required": "NO",
+    "d3_pv_mapping": "NOT_ESTABLISHED",
+    "d4_wind_source": "NOT_ESTABLISHED",
+    "d5_demand_source": "NOT_ESTABLISHED",
+    "d6_multi_source_composition": "NOT_ESTABLISHED",
+    "d7_final_frozen_contract_change_required": "NOT_ESTABLISHED",
+    "final_governance_status": "D1_D2_RECORDED_REMAINING_DECISIONS_REQUIRED",
+    "implementation_status": "NOT_AUTHORIZED"
+  }
+}

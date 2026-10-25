@@ -1,0 +1,42 @@
+{
+  "stage": "STAGE 8.8A \u2014 CLOUD RADIATIVE-PATH GEOMETRY AUDIT",
+  "status": "STAGE_8_8A_FEASIBILITY_DECISION_COMPLETE",
+  "date": "2026-09-12",
+  "decision": "PASS",
+  "rationale": "Cloud Radiative-Path Geometry (cloud_base_altitude, cloud_top_altitude, cloud_geometric_thickness) is 100% available across all 347 origins (8,328 forecast hours) in the D-1 18Z MEPS deterministic archive (meps_det_sfc). It is 100% causally compliant with the locked D-1 18Z issuance rule. An exact inventory of the frozen 37 Stage 8.1 features confirms that NO existing feature contains explicit vertical cloud altitude or depth. The proposed route supplies genuinely novel, independent geometric path information not present in column-integrated LWP/IWP or 2D cloud fraction alone. Clear-sky sentinel values (9.96921e36) are cleanly handled via prospective zero-masking guardrails.",
+  "target_station": {
+    "name": "SITES Nuolja",
+    "latitude": 68.362074,
+    "longitude": 18.738752,
+    "elevation_m_asl": 702
+  },
+  "meps_variables_verified": [
+    {
+      "name": "cloud_base_altitude",
+      "units": "m",
+      "product": "meps_det_sfc",
+      "fill_value": "9.96921e36",
+      "coverage_origins": "347/347 (100%)"
+    },
+    {
+      "name": "cloud_top_altitude",
+      "units": "m",
+      "product": "meps_det_sfc",
+      "fill_value": "9.96921e36",
+      "coverage_origins": "347/347 (100%)"
+    }
+  ],
+  "minimal_candidate_features": [
+    "cloud_base_altitude_causal",
+    "cloud_top_altitude_causal",
+    "cloud_geometric_thickness"
+  ],
+  "preprocessing_guardrail": "Map clear-sky / zero cloud cover sentinel values (9.96921e36) to 0.0 before model consumption.",
+  "firewall_compliance": {
+    "odd_target_reads": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_calculated": 0,
+    "stage8_1_champion_modified": false,
+    "master_handoff_modified": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pipeline": "POLARIS_N6_RHC_C2_INSTRUMENTED",
+  "total_diesel_consumed_liters": 37046.1589,
+  "diesel_run_hours": 2074,
+  "total_steps_executed": 8760,
+  "renewable_curtailed_kwh": 969.2,
+  "battery_cycling_loss_kwh": 11962.1,
+  "equivalent_battery_cycles": 343.91,
+  "total_fuel_cost_eur": 92615.4,
+  "total_unmet_load_kwh": 0.0,
+  "hours_with_unmet_load": 0
+}

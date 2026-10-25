@@ -1,0 +1,28 @@
+{
+  "inventory_item": "ENEV_UPSTREAM_METAR_RESEARCH_SPACE_REDUCTION",
+  "timestamp": "2026-09-13T19:47:00+05:30",
+  "entry": {
+    "ROUTE": "ENEV_UPSTREAM_METAR",
+    "STATUS": "CLOSED_AFTER_GOVERNED_EVEN_REJECTION",
+    "REASON": "FAILED_G1_G2_G3_G4",
+    "DATA_VALIDITY": "PASSED_G5",
+    "CONTROL_VALIDITY": "PASSED_G6",
+    "ODD_STATUS": "FIREWALLED"
+  },
+  "route_details": {
+    "station_icao": "ENEV",
+    "station_name": "Harstad/Narvik Airport, Evenes",
+    "distance_km": 86,
+    "direction": "WNW",
+    "features_tested": [
+      "enev_cloud_cover_okta",
+      "enev_cloud_base_m",
+      "enev_is_missing"
+    ],
+    "control": "Stage 8.1 37-feature HGB",
+    "even_mae_control_w_m2": 37.620054,
+    "even_mae_candidate_w_m2": 37.818906,
+    "delta_mae_w_m2": 0.198852,
+    "gate_verdict": "REJECTED_BY_EVEN_GATES"
+  }
+}

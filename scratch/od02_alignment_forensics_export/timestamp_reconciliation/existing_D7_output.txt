@@ -1,0 +1,70 @@
+raw_sha256: f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473
+raw_TIME_ZONE_header: UTC+1
+raw_TIME_RESOLUTION: 10 minutes
+raw_station: Meteorological from Nuolja Middle Station, North-Western Sweden
+raw_lat_lon: ('68.36207412', '18.73875158')
+raw_rows: 52704
+raw_first_last: ('2024-01-01 00:00:00', '2024-12-31 23:50:00')
+raw_duplicates: 0
+raw_step_counts: {Timedelta('0 days 00:10:00'): 52703}
+raw_missing_stamps: 0
+dst_2024-03-31_rows: 144
+dst_2024-03-31_dups: 0
+dst_2024-10-27_rows: 144
+dst_2024-10-27_dups: 0
+raw_SW_IN_nan: 0
+hourly_sha256: 80b721a16a79dab828eb1aa02755d22c34acc35b5f48ad0d1beb5b9ab237052d
+hourly_rows: 8784
+hourly_dups: 0
+hourly_missing: 0
+agg_floor_maxabs: 3.342393029015511e-11
+agg_ceil_maxabs: 428.6500000000333
+weather_sha256: 8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16
+weather_actual_vs_hourly_maxabs: 3.3330002224829514e-07
+weather_unmatched: 0
+weather_lead_hours_set: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+weather_horizon_minus_lead: [1]
+weather_dups_(fs,h): 0
+weather_ts_unique: True
+weather_years: [2024]
+weather_fs_hours: [0]
+step_alignment_note: realized step k timestamp == fs+k == first planner target at step k (consistent)
+labels_are_UTC_median_elev_at_first_light_deg: 5.69
+labels_are_UTC_frac_first_light_with_sun_below_-2deg: 0.0
+labels_are_UTC+1_median_elev_at_first_light_deg: 1.38
+labels_are_UTC+1_frac_first_light_with_sun_below_-2deg: 0.0
+corr_lag_-120min: 0.70789
+corr_lag_-110min: 0.72916
+corr_lag_-100min: 0.74942
+corr_lag_-90min: 0.7686
+corr_lag_-80min: 0.78662
+corr_lag_-70min: 0.80341
+corr_lag_-60min: 0.81891
+corr_lag_-50min: 0.83308
+corr_lag_-40min: 0.84585
+corr_lag_-30min: 0.85718
+corr_lag_-20min: 0.86701
+corr_lag_-10min: 0.87531
+corr_lag_+0min: 0.88205
+corr_lag_+10min: 0.88718
+corr_lag_+20min: 0.89067
+corr_lag_+30min: 0.8925
+corr_lag_+40min: 0.89265
+corr_lag_+50min: 0.8911
+corr_lag_+60min: 0.88785
+corr_lag_+70min: 0.88291
+corr_lag_+80min: 0.8763
+corr_lag_+90min: 0.86806
+corr_lag_+100min: 0.85824
+corr_lag_+110min: 0.84688
+corr_lag_+120min: 0.83406
+best_lag_min: 40
+best_corr: 0.89265
+first_light_days: 180
+decomposition_elev_maxabs_vs_UTC+1: 0.008
+decomposition_elev_maxabs_vs_UTC: 5.529
+labels_UTC_median_elev_at_last_light_deg: -2.85
+labels_UTC+1_median_elev_at_last_light_deg: 1.83
+days: 180
+median_label_midpoint_h: 11.67
+median_solar_noon_UTC_h: 10.75 ; as UTC+1 label: 11.75

@@ -1,0 +1,9 @@
+METRIC,CLAIMED_COUNT,VERIFIED_COUNT,VERIFICATION_METHOD,FIREWALL_STATUS
+MILP Solves Executed,0,0,Static code inspection & zero solver process footprint,PASS
+EMS Optimization Steps,0,0,Static code inspection & mtime audit of milp.py,PASS
+MPC Simulation Steps,0,0,Static code inspection & zero output log updates,PASS
+Digital Twin Runs,0,0,Static code inspection & simulator state immutability,PASS
+Model Inferences,0,0,Static code inspection & forecast model immutability,PASS
+Dependency Installs,0,0,pyproject.toml & package manifest audit,PASS
+Code Modifications,0,0,Git diff & SHA256 verification of milp.py,PASS
+Schema Modifications,0,0,Git diff & SHA256 verification of schema classes,PASS

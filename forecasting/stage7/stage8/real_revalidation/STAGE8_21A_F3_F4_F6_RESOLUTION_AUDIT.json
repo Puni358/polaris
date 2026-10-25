@@ -1,0 +1,229 @@
+{
+  "timestamp_utc": "2026-09-13T09:52:09.824501+00:00",
+  "audit_title": "POLARIS Stage 8.21A F3/F4/F6 Feasibility Resolution Audit Summary",
+  "route": "STAGE8.21A \u2014 3D SOLAR SLANT-PATH HYDROMETEOR GEOMETRY",
+  "final_classification": "B. CONDITIONAL FEASIBILITY \u2014 SPECIFIC DATA/PHYSICS GAP MUST BE RESOLVED",
+  "gate_verdicts": {
+    "F3_SPATIAL_GEOMETRY": {
+      "status": "CONDITIONAL",
+      "verdict_detail": "CONDITIONAL \u2014 EXPANSION REQUIRED. 25x25 window (30km radius) covers zeniths <= 80\u00b0; zenith = 85\u00b0 at 5km cloud height requires 57.15km displacement -> 47x47 window (57.5km radius) is required."
+    },
+    "F4_VERTICAL_COORDINATE": {
+      "status": "PASS",
+      "verdict_detail": "PASS. Hydrostatic pressure-to-height coordinate reconstruction dz = (R_d * T_v / g_0) * d(ln p) is physically rigorous, verified with MEPS variables T, q_v, P, P_sfc, and demonstrated on real MEPS columns."
+    },
+    "F6_OPTICAL_PROXY": {
+      "status": "CONDITIONAL",
+      "verdict_detail": "CONDITIONAL \u2014 PARAMETERIZED ATTENUATION PROXY. q_l and q_i are directly observed, but microphysical effective radii (r_e_liq=10\u00b5m, r_e_ice=30\u00b5m) are parameterized modeling assumptions. Feature models direct-beam extinction proxy, not full diffuse SW_IN."
+    },
+    "COMPUTATIONAL_FEASIBILITY": {
+      "status": "PASS",
+      "verdict_detail": "PASS. 3.82 GB batch extraction for 47x47 window across 347 origins via server-side OPeNDAP slicing is fully operationally tractable (< 25 min)."
+    }
+  },
+  "governance_verification": {
+    "EXPERIMENT_RUN": false,
+    "MODEL_TRAINING": false,
+    "ODD_ACCESS": false,
+    "ODD_PREDICTIONS_CREATED": false,
+    "CHAMPION_CHANGED": false,
+    "MASTER_HANDOFF_CHANGED": false,
+    "ROUTE_REGISTRY_CHANGED": false
+  },
+  "f3_window_evaluation": [
+    {
+      "window_size": "25x25",
+      "grid_points": 625,
+      "total_span_km": 60.0,
+      "cardinal_radius_km": 30.0,
+      "corner_radius_km": 42.43,
+      "max_cloud_h_at_80deg_cardinal_km": 5.29,
+      "max_cloud_h_at_85deg_cardinal_km": 2.62,
+      "status_for_85deg_5km_cloud": "INSUFFICIENT"
+    },
+    {
+      "window_size": "31x31",
+      "grid_points": 961,
+      "total_span_km": 75.0,
+      "cardinal_radius_km": 37.5,
+      "corner_radius_km": 53.03,
+      "max_cloud_h_at_80deg_cardinal_km": 6.61,
+      "max_cloud_h_at_85deg_cardinal_km": 3.28,
+      "status_for_85deg_5km_cloud": "INSUFFICIENT"
+    },
+    {
+      "window_size": "35x35",
+      "grid_points": 1225,
+      "total_span_km": 85.0,
+      "cardinal_radius_km": 42.5,
+      "corner_radius_km": 60.1,
+      "max_cloud_h_at_80deg_cardinal_km": 7.49,
+      "max_cloud_h_at_85deg_cardinal_km": 3.72,
+      "status_for_85deg_5km_cloud": "INSUFFICIENT"
+    },
+    {
+      "window_size": "41x41",
+      "grid_points": 1681,
+      "total_span_km": 100.0,
+      "cardinal_radius_km": 50.0,
+      "corner_radius_km": 70.71,
+      "max_cloud_h_at_80deg_cardinal_km": 8.82,
+      "max_cloud_h_at_85deg_cardinal_km": 4.37,
+      "status_for_85deg_5km_cloud": "INSUFFICIENT"
+    },
+    {
+      "window_size": "47x47",
+      "grid_points": 2209,
+      "total_span_km": 115.0,
+      "cardinal_radius_km": 57.5,
+      "corner_radius_km": 81.32,
+      "max_cloud_h_at_80deg_cardinal_km": 10.14,
+      "max_cloud_h_at_85deg_cardinal_km": 5.03,
+      "status_for_85deg_5km_cloud": "SUFFICIENT"
+    },
+    {
+      "window_size": "51x51",
+      "grid_points": 2601,
+      "total_span_km": 125.0,
+      "cardinal_radius_km": 62.5,
+      "corner_radius_km": 88.39,
+      "max_cloud_h_at_80deg_cardinal_km": 11.02,
+      "max_cloud_h_at_85deg_cardinal_km": 5.47,
+      "status_for_85deg_5km_cloud": "SUFFICIENT"
+    }
+  ],
+  "f4_hydrostatic_reconstruction": {
+    "surface_908.6hPa": {
+      "pressure_hpa": 908.6,
+      "height_msl_m": 702.0,
+      "height_agl_m": 0.0,
+      "status": "SURFACE BOUNDARY"
+    },
+    "850hPa": {
+      "pressure_hpa": 850,
+      "height_msl_m": 1222.9,
+      "height_agl_m": 520.9,
+      "status": "ABOVE GROUND"
+    },
+    "800hPa": {
+      "pressure_hpa": 800,
+      "height_msl_m": 1691.1,
+      "height_agl_m": 989.1,
+      "status": "ABOVE GROUND"
+    },
+    "700hPa": {
+      "pressure_hpa": 700,
+      "height_msl_m": 2702.3,
+      "height_agl_m": 2000.3,
+      "status": "ABOVE GROUND"
+    },
+    "500hPa": {
+      "pressure_hpa": 500,
+      "height_msl_m": 5141.0,
+      "height_agl_m": 4439.0,
+      "status": "ABOVE GROUND"
+    },
+    "400hPa": {
+      "pressure_hpa": 400,
+      "height_msl_m": 6676.2,
+      "height_agl_m": 5974.2,
+      "status": "ABOVE GROUND"
+    },
+    "300hPa": {
+      "pressure_hpa": 300,
+      "height_msl_m": 8562.5,
+      "height_agl_m": 7860.5,
+      "status": "ABOVE GROUND"
+    },
+    "250hPa": {
+      "pressure_hpa": 250,
+      "height_msl_m": 9718.0,
+      "height_agl_m": 9016.0,
+      "status": "ABOVE GROUND"
+    },
+    "200hPa": {
+      "pressure_hpa": 200,
+      "height_msl_m": 11122.3,
+      "height_agl_m": 10420.3,
+      "status": "ABOVE GROUND"
+    },
+    "150hPa": {
+      "pressure_hpa": 150,
+      "height_msl_m": 12932.8,
+      "height_agl_m": 12230.8,
+      "status": "ABOVE GROUND"
+    },
+    "100hPa": {
+      "pressure_hpa": 100,
+      "height_msl_m": 15484.6,
+      "height_agl_m": 14782.6,
+      "status": "ABOVE GROUND"
+    },
+    "50hPa": {
+      "pressure_hpa": 50,
+      "height_msl_m": 19846.9,
+      "height_agl_m": 19144.9,
+      "status": "ABOVE GROUND"
+    },
+    "1000hPa": {
+      "pressure_hpa": 1000,
+      "height_msl_m": null,
+      "height_agl_m": null,
+      "status": "BELOW GROUND \u2014 MASKED OUT (P > P_sfc)"
+    },
+    "925hPa": {
+      "pressure_hpa": 925,
+      "height_msl_m": null,
+      "height_agl_m": null,
+      "status": "BELOW GROUND \u2014 MASKED OUT (P > P_sfc)"
+    }
+  },
+  "f6_microphysics_sensitivity": [
+    {
+      "scenario": "Baseline Standard",
+      "r_e_liquid_um": 10.0,
+      "r_e_ice_um": 30.0,
+      "beta_liquid_per_km": 28.6886,
+      "beta_ice_per_km": 2.6071,
+      "beta_total_per_km": 31.2957,
+      "layer_tau_60deg_1km": 62.5914,
+      "direct_transmittance_60deg": 0.0
+    },
+    {
+      "scenario": "Fine Droplets / Ice",
+      "r_e_liquid_um": 6.0,
+      "r_e_ice_um": 20.0,
+      "beta_liquid_per_km": 47.8143,
+      "beta_ice_per_km": 3.9107,
+      "beta_total_per_km": 51.725,
+      "layer_tau_60deg_1km": 103.45,
+      "direct_transmittance_60deg": 0.0
+    },
+    {
+      "scenario": "Coarse Droplets / Ice",
+      "r_e_liquid_um": 15.0,
+      "r_e_ice_um": 45.0,
+      "beta_liquid_per_km": 19.1257,
+      "beta_ice_per_km": 1.7381,
+      "beta_total_per_km": 20.8638,
+      "layer_tau_60deg_1km": 41.7276,
+      "direct_transmittance_60deg": 0.0
+    }
+  ],
+  "computational_summary": {
+    "grid_window": "47x47 grid cells (115 km x 115 km)",
+    "pressure_levels": 13,
+    "forecast_horizons": 24,
+    "variables_extracted": [
+      "mass_fraction_of_cloud_condensed_water_in_air_pl",
+      "mass_fraction_of_cloud_ice_in_air_pl",
+      "air_temperature_pl",
+      "specific_humidity_pl"
+    ],
+    "total_origins": 347,
+    "payload_per_origin_mb": 10.52,
+    "total_batch_payload_gb": 3.56,
+    "opendap_extraction_time_min": "< 25 min",
+    "tractability_verdict": "HIGHLY PRACTICAL (PASS)"
+  }
+}

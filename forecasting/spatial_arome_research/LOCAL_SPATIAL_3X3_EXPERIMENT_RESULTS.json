@@ -1,0 +1,162 @@
+{
+  "timestamp_utc": "2026-09-14T13:23:32.353433+00:00",
+  "document_title": "POLARIS LOCAL SPATIAL 3X3 EXPERIMENT RESULTS",
+  "final_verdict": "VALID + EVEN GATES FAIL \u2014 REJECTED",
+  "verdict_text": "The pre-registered local 3x3 candidate model failed one or more EVEN promotion gates against the frozen reproducible control. Route is closed.",
+  "training_completed_successfully": true,
+  "model_architecture": {
+    "model_class": "PreRegisteredLocalSpatial3x3Model",
+    "trainable_parameters": 15633,
+    "spatial_readout": "Center [1,1] + Flattened 3x3 Linear(144,32) -> BN -> ReLU",
+    "horizon_embedding": "Embedding(24,16)",
+    "horizon_gate": "MLP(48->32->32) -> Sigmoid -> Elementwise Multiplication",
+    "context_encoder": "Linear(38,32) -> BN -> ReLU",
+    "fusion_head": "Linear(80,32) -> ReLU -> Dropout(0.2) -> Linear(32,1)"
+  },
+  "training_protocol": {
+    "even_origins_count": 173,
+    "cross_validation": "5-fold GroupKFold by forecast_origin",
+    "optimizer": "AdamW (lr=1e-3, weight_decay=1e-4)",
+    "batch_size": 8,
+    "max_epochs": 300,
+    "patience": 20,
+    "seed": 42
+  },
+  "frozen_control_reference": {
+    "daytime_MAE_W_m2": 47.451469,
+    "daytime_nMAE_pct": 36.8045,
+    "daytime_RMSE_W_m2": 74.376601,
+    "daytime_bias_W_m2": -8.863007,
+    "fold_daytime_maes": [
+      51.357262837081414,
+      40.24049289730699,
+      48.351210158518874,
+      52.92395212019802,
+      44.39315725239263
+    ]
+  },
+  "candidate_results": {
+    "candidate_primary_daytime_metrics": {
+      "daytime_MAE_W_m2": 50.47194,
+      "daytime_nMAE_pct": 39.1473,
+      "daytime_RMSE_W_m2": 78.069452,
+      "daytime_bias_W_m2": -8.460377,
+      "delta_daytime_MAE_vs_ctrl_W_m2": 3.020471,
+      "delta_daytime_nMAE_vs_ctrl_pp": 2.3428,
+      "delta_daytime_RMSE_vs_ctrl_W_m2": 3.692851,
+      "folds_improved_count": 2,
+      "max_fold_degradation_W_m2": 6.267389
+    },
+    "candidate_secondary_full_horizon_metrics": {
+      "total_24h_MAE_W_m2": 27.251399,
+      "total_24h_RMSE_W_m2": 57.065529,
+      "total_24h_bias_W_m2": -4.829043,
+      "night_MAE_W_m2": 0.672516
+    },
+    "fold_results": [
+      {
+        "fold": 1,
+        "epochs_run": 48,
+        "cand_daytime_mae_wm2": 51.212555,
+        "ctrl_daytime_mae_wm2": 51.357263,
+        "delta_daytime_mae_wm2": -0.144708,
+        "cand_daytime_nmae_pct": 39.7217,
+        "cand_daytime_rmse_wm2": 79.083335,
+        "cand_daytime_bias_wm2": -3.668262,
+        "daytime_row_count": 443,
+        "improved": true
+      },
+      {
+        "fold": 2,
+        "epochs_run": 49,
+        "cand_daytime_mae_wm2": 45.383297,
+        "ctrl_daytime_mae_wm2": 40.240493,
+        "delta_daytime_mae_wm2": 5.142804,
+        "cand_daytime_nmae_pct": 35.2004,
+        "cand_daytime_rmse_wm2": 70.036134,
+        "cand_daytime_bias_wm2": -4.864168,
+        "daytime_row_count": 444,
+        "improved": false
+      },
+      {
+        "fold": 3,
+        "epochs_run": 49,
+        "cand_daytime_mae_wm2": 54.618599,
+        "ctrl_daytime_mae_wm2": 48.35121,
+        "delta_daytime_mae_wm2": 6.267389,
+        "cand_daytime_nmae_pct": 42.3635,
+        "cand_daytime_rmse_wm2": 85.261987,
+        "cand_daytime_bias_wm2": -6.432069,
+        "daytime_row_count": 446,
+        "improved": false
+      },
+      {
+        "fold": 4,
+        "epochs_run": 39,
+        "cand_daytime_mae_wm2": 57.312267,
+        "ctrl_daytime_mae_wm2": 52.923952,
+        "delta_daytime_mae_wm2": 4.388315,
+        "cand_daytime_nmae_pct": 44.4528,
+        "cand_daytime_rmse_wm2": 88.102853,
+        "cand_daytime_bias_wm2": -23.385897,
+        "daytime_row_count": 442,
+        "improved": false
+      },
+      {
+        "fold": 5,
+        "epochs_run": 51,
+        "cand_daytime_mae_wm2": 43.80172,
+        "ctrl_daytime_mae_wm2": 44.393157,
+        "delta_daytime_mae_wm2": -0.591438,
+        "cand_daytime_nmae_pct": 33.9737,
+        "cand_daytime_rmse_wm2": 65.372128,
+        "cand_daytime_bias_wm2": -3.986837,
+        "daytime_row_count": 441,
+        "improved": true
+      }
+    ],
+    "gates": {
+      "G1_aggregate_daytime_delta_mae": {
+        "value_wm2": 3.020471,
+        "target_wm2": -0.5,
+        "pass": false
+      },
+      "G2_folds_improved": {
+        "value": 2,
+        "target": 4,
+        "pass": false
+      },
+      "G3_max_fold_degradation": {
+        "value_wm2": 6.267389,
+        "target_wm2": 0.5,
+        "pass": false
+      },
+      "G4_daytime_nmae_and_rmse": {
+        "cand_nmae_pct": 39.1473,
+        "ctrl_nmae_pct": 36.8045,
+        "cand_rmse_wm2": 78.069452,
+        "ctrl_rmse_wm2": 74.376601,
+        "pass": false
+      },
+      "G5_causal_compliance": {
+        "pass": true
+      },
+      "G6_control_verification": {
+        "pass": true
+      },
+      "ALL_EVEN_GATES_PASS": false
+    }
+  },
+  "odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "cryptographic_hashes": {
+    "candidate_predictions_csv_sha256": "9120ff9eedca48043b34f613043a221ce8c1727ae824ef222dd07ca84f2e0939",
+    "training_script_sha256": "6fc811d07328c35b212393d38f46ae41b3f9959472194138eb86f9a8c859c0f3",
+    "results_json_sha256": "35e6348f02e82689b25c909cfd0e2f756cd5db1c6783833b63d1dd72501fde1a"
+  }
+}

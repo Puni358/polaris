@@ -1,0 +1,4 @@
+Formulation_Structure,Mathematical_Stage2_Objective,Double_Counting_Evaluation,Risk_Classification,Resolution_Strategy
+Dual Term (Sum t=1..H + Terminal),min sum_t=1..H max(0 E_EBR(t)-E(t)) + max(0 E_EBR(H)-E(H)),Term for t=H is evaluated TWICE in objective,CONFIRMED,Remove terminal term OR change sum to t=1..H-1
+Single Rolling Sum (t=1..H),min sum_t=1..H max(0 E_EBR(t)-E(t)),t=H is evaluated exactly ONCE in sum,NONE,Use single sum over t=1..H
+Split Sum (t=1..H-1 + Terminal),min sum_t=1..H-1 max(0 E_EBR(t)-E(t)) + max(0 E_EBR(H)-E(H)),t=H is evaluated exactly ONCE in terminal term,NONE,Visually separates intra-horizon from boundary

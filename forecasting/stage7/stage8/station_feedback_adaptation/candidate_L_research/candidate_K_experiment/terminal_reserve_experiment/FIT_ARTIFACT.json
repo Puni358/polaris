@@ -1,0 +1,49 @@
+{
+  "disclaimer": "RESEARCH-ONLY. Mechanism A uncertainty-margin lookup table. Fit ONLY on TRAIN_2020_2021 + VALIDATION_2022 rows of the frozen, hash-verified CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv joined to CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv. BLIND_TEST_2023 and all 2024 data are STRUCTURALLY EXCLUDED from this fitting function (the 2024 matrix is never loaded here). No governance-authorized numeric value is used; every quantile level in Q_SWEEP and MIN_CELL_N are explicitly-labeled research assumptions, not policy.",
+  "methodological_deviation": "Design doc specified 'disagreement_fold decile x horizon'. Implemented instead as 'disagreement_fold decile x lookahead-window-membership' (pooling hour-ahead 19-24) because per-individual-horizon daytime sample counts beyond hour-ahead 19 are statistically unusable at this Arctic site (n=1 for horizons 20-24 in TRAIN+VAL). This is the coarsest defensible generalization of Mechanism A, disclosed here, not silently substituted.",
+  "fit_sample_sizes": {
+    "n_total_fit_rows_train_val": 20824,
+    "n_daytime_fit_rows_train_val": 12206,
+    "n_lookahead_window_daytime_rows_train_val": 462,
+    "per_decile_n": {}
+  },
+  "min_cell_n_research_assumption": 15,
+  "q_sweep_research_only": [
+    0.75,
+    0.9,
+    0.95
+  ],
+  "q_primary_research_only": 0.9,
+  "decile_edges_sw_in": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "margin_tables_by_q": {
+    "0.75": {
+      "per_decile": {},
+      "pooled_value_sw_in": 120.206925
+    },
+    "0.9": {
+      "per_decile": {},
+      "pooled_value_sw_in": 153.22874000000007
+    },
+    "0.95": {
+      "per_decile": {},
+      "pooled_value_sw_in": 167.038355
+    }
+  },
+  "fallback_to_pooled_deciles_by_q": {
+    "0.75": [],
+    "0.9": [],
+    "0.95": []
+  }
+}

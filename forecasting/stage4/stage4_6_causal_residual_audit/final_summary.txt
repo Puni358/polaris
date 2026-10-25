@@ -1,0 +1,62 @@
+===============================================================================
+POLARIS STAGE 4.6 — CAUSAL RESIDUAL AUDIT & INFORMATION EXHAUSTION FINAL REPORT
+===============================================================================
+Date: 2026-09-10
+Status: AUDIT COMPLETE & DECISION RENDERED
+
+1. BASELINE REPRODUCTION (HELD-OUT ODD TEST):
+   - Daytime MAE:  43.4508 W/m²
+   - Daytime nMAE: 33.70%
+   - RMSE:         74.8530 W/m² (daytime)
+   - Bias:         -1.9716 W/m² (actual - pred, daytime)
+   - Night MAE:    0.3242 W/m²
+
+2. CAUSAL LEAKAGE & COLD-START AUDIT:
+   - Forecast origins audited: 347
+   - Forecast hours audited: 8328
+   - Causal Leakage Violations: 0 (Zero-leakage automated assertion passed)
+   - Cold-Start Origins: 1/347 (0.29%)
+   - Cold-Start Rule: e_hat = 0.0 W/m² (Stage 4 unchanged)
+
+3. OVERLAP VS NON-OVERLAP ACF ANALYSIS:
+   - Structure A (Within-Origin Overlapping): Lag-1 ACF = 0.5515, Lag-2 = 0.2105
+   - Structure B (Consecutive Daily Origins):   Lag-1 ACF = -0.0492, Lag-2 = 0.0512
+   - Structure C (Continuous Hourly Timeline): Lag-1 ACF = 0.6744, Lag-2 = 0.4334
+   - Finding: The high intra-origin ACF (~0.66) is heavily driven by 24-hour forecast window overlap! On non-overlapping daily origin steps, the correlation drops to ~-0.0492.
+
+4. DIRECTIONAL SIGN & EVENT PERSISTENCE:
+   - P(sign_t == sign_t-1) All Daytime:    0.7440 (Null = 0.50)
+   - P(sign_t == sign_t-1) High Solar:     0.7640
+   - P(sign_t == sign_t-1) Hard Error:     0.9024
+   - Finding: Temporal residual and sign persistence EXISTS, particularly in continuous hourly series and for hard-error events. However, sign persistence alone is insufficient for operational correction because EVEN CV strongly degrades.
+
+5. ONLINE CAUSAL RESIDUAL CORRECTION TEST RESULTS (HELD-OUT ODD TEST):
+   - Stage 4 Champion:           MAE = 43.4508 W/m² | nMAE = 33.70%
+   - Model A (Naive Persistence): MAE = 43.3900 W/m² | ΔMAE = -0.0608 W/m²
+   - Model B (Scaled Persistence):MAE = 43.4260 W/m² | ΔMAE = -0.0248 W/m²
+   - Model C (Multi-lag Linear):   MAE = 45.1526 W/m² | ΔMAE = +1.7018 W/m²
+
+6. STATISTICAL UNCERTAINTY (10,000 Origin Bootstrap on Scaled Persistence):
+   - Mean ΔMAE (Scaled Persistence): -0.0248 W/m²
+   - 95% Bootstrap CI: [-0.0447, -0.0027] W/m²
+   - CRITICAL INTERPRETATION: The ODD-held-out CI is slightly negative (tiny apparent improvement). HOWEVER, the EVEN forward-chaining CV for Scaled Persistence was STRONGLY DEGRADING (+4.8691 W/m² mean across splits). This inconsistency across CV and test means the tiny ODD improvement is NOT robust, NOT consistent, and likely a held-out-set fluctuation. Causal residual correction DOES NOT provide a reliable improvement strategy.
+
+7. FINAL DECISION:
+   ---------------------------------------------------------------------------
+   OPTION C — EXISTING INFORMATION IS EFFECTIVELY EXHAUSTED
+   ---------------------------------------------------------------------------
+   Temporal residual and sign persistence exists, particularly in the continuous
+   hourly series, but much of the apparent autocorrelation is amplified by
+   overlapping forecast windows. Consecutive daily-origin persistence is weak,
+   and causal residual-history corrections do NOT provide a robust or
+   consistently improving forecasting strategy in forward-chaining validation.
+
+   Distinction:
+   - PREDICTABLE residual structure EXISTS (signs persist ~74% of the time)
+   - OPERATIONALLY EXPLOITABLE residual information at forecast issuance: NO
+
+   RECOMMENDATION:
+   STOP tuning Stage 4 with the existing benchmark feature space.
+   Move to NEW INFORMATION SOURCES (satellite cloud imagery, cloud-motion vectors,
+   sky cameras, spatial NWP grids).
+===============================================================================

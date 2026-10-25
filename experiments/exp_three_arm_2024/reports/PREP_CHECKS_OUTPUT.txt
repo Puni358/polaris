@@ -1,0 +1,856 @@
+EXP-THREE-ARM-2024 preparation checks (synthetic only; no experiment, calibration, replay, training or MILP solve)
+Generated: 2026-10-11T06:16:08Z in a sandbox copy: repo system/ code, frozen experiment modules, four 2024 data files, this package. No 2025 data file present. D9 authorization boundary (schema v2) re-freeze.
+Environment: Python 3.13.16, numpy 2.5.3, pandas 3.0.5, pvlib 0.16.1, pytest 9.1.1, scipy 1.18.1, highspy (import only; Highs mocked to raise)
+
+$ python3 -I -m py_compile experiments/exp_three_arm_2024/scripts/*.py experiments/exp_three_arm_2024/tests/*.py
+exit code: 0
+
+$ python3 -I -m pytest -p no:cacheprovider -v -rA experiments/exp_three_arm_2024/tests
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+rootdir: /tmp/ai-0/-home-ai/aee2eb20-1887-5674-a5e6-aefcb8e09da1/scratchpad/sbx
+plugins: anyio-4.15.1
+collecting ... collected 381 items
+
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_preflight_only_signature_passes_preflight_but_not_execute PASSED [  0%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_scoped_signature_passes_both_modes PASSED [  0%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[PREFLIGHT_ONLY] PASSED [  0%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[None] PASSED [  1%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[] PASSED [  1%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[execute_experiment] PASSED [  1%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[EXECUTE] PASSED [  1%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_preflight_section_with_execute_scope_is_invalid PASSED [  2%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_requires_instruction_reference[None] PASSED [  2%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_requires_instruction_reference[] PASSED [  2%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_requires_instruction_reference[   ] PASSED [  2%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[None] PASSED [  3%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[1] PASSED [  3%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[2] PASSED [  3%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[3] PASSED [  3%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_v1_shaped_record_signed_like_the_0549_block_cannot_execute PASSED [  4%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_unknown_mode_or_stage_raises PASSED [  4%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_signed_before_preflight_signature_is_refused PASSED [  4%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_history_never_grants_authorization PASSED [  4%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[package_manifest_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-package_manifest_sha256-execution_preflight] PASSED [  5%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[package_manifest_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-package_manifest_sha256-execution] PASSED [  5%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[experiment_config_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-experiment_config_sha256-execution_preflight] PASSED [  5%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[experiment_config_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-experiment_config_sha256-execution] PASSED [  6%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[calibration_artifact_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb-calibration_artifact_sha256-execution_preflight] PASSED [  6%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[calibration_artifact_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb-calibration_artifact_sha256-execution] PASSED [  6%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760-solve_ceiling-execution_preflight] PASSED [  6%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760-solve_ceiling-execution] PASSED [  7%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760.0-solve_ceiling-execution_preflight] PASSED [  7%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760.0-solve_ceiling-execution] PASSED [  7%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-99999-solve_ceiling-execution_preflight] PASSED [  7%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-99999-solve_ceiling-execution] PASSED [  8%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[decision-APPROVE_PREFLIGHT-not 'APPROVE'-execution_preflight] PASSED [  8%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[decision-APPROVE_PREFLIGHT-not 'APPROVE'-execution] PASSED [  8%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signer_role-assistant-signer_role-execution_preflight] PASSED [  8%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signer_role-assistant-signer_role-execution] PASSED [  9%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signed_at_utc-2026-10-11 06:00:00-signed_at_utc-execution_preflight] PASSED [  9%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signed_at_utc-2026-10-11 06:00:00-signed_at_utc-execution] PASSED [  9%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_package_edit_after_signing_invalidates_both_scopes PASSED [  9%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_calibration_authorization_binds_the_artifact PASSED [ 10%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_unsigned_calibration_blocks_both_modes PASSED [ 10%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_calibration_config_hash_must_be_current PASSED [ 10%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_calibration_under_a_recorded_prior_freeze_stays_valid_after_refreeze PASSED [ 11%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_signing_execution_sections_leaves_calibration_unchanged PASSED [ 11%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_refused_with_preflight_only_authorization PASSED [ 11%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_refused_on_unsigned_template PASSED [ 11%]
+experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_rechecks_scope_even_if_preflight_is_bypassed PASSED [ 12%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_evaluation_window_and_buffers_are_dropped PASSED [ 12%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_isolation_fails_closed_even_if_the_filter_is_wrong PASSED [ 12%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_target_hours_inside_evaluation_window_rejected PASSED [ 12%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_non_2024_rows_abort[2025-01-01 00:00:00] PASSED [ 13%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_non_2024_rows_abort[2025-06-01 12:00:00] PASSED [ 13%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_non_2024_rows_abort[2023-12-31 23:00:00] PASSED [ 13%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_2025_origin_aborts PASSED [ 13%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-24 rows] PASSED [ 14%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-duplicate] PASSED [ 14%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-non-finite] PASSED [ 14%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-outside] PASSED [ 14%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-negative] PASSED [ 15%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-None] PASSED [ 15%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_gamma_recovered_on_synthetic_data PASSED [ 15%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_gamma_tie_requires_an_approved_rule PASSED [ 16%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_point_forecast_zero_at_night PASSED [ 16%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_boundary_rule_raises[None] PASSED [ 16%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_boundary_rule_raises[] PASSED [ 16%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_boundary_rule_raises[closest] PASSED [ 17%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_boundary_rules_are_explicit PASSED [ 17%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_quantile_method_raises[None] PASSED [ 17%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_quantile_method_raises[] PASSED [ 17%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_quantile_method_raises[conformal] PASSED [ 18%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_split_conformal_order_statistic PASSED [ 18%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_residual_space_raises PASSED [ 18%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_insufficient_bin_policy_unresolved_raises[None] PASSED [ 18%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_insufficient_bin_policy_unresolved_raises[fill_global] PASSED [ 19%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_insufficient_bin_policy_unresolved_raises[nearest] PASSED [ 19%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_fail_policy_raises_on_sparse_bin PASSED [ 19%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_merge_is_recorded_and_never_silent PASSED [ 19%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_quantile_table_is_deterministic_and_complete PASSED [ 20%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_lower_bound_never_exceeds_point_and_missing_bin_raises PASSED [ 20%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_artifact_records_provenance_and_is_deterministic PASSED [ 20%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_artifact_never_overwritten PASSED [ 20%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_load_artifact_accepts_valid_and_rejects_tampering PASSED [ 21%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_missing_artifact_raises PASSED [ 21%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_main_refuses_before_reading_data PASSED [ 21%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_main_refuses_when_artifact_exists_even_if_signed PASSED [ 22%]
+experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_corrected_geometry_matches_arm_c_runtime_geometry PASSED [ 22%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[0] PASSED [ 22%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[1] PASSED [ 22%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[2] PASSED [ 23%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[3] PASSED [ 23%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[4] PASSED [ 23%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[5] PASSED [ 23%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[6] PASSED [ 24%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[7] PASSED [ 24%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[8] PASSED [ 24%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[9] PASSED [ 24%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[10] PASSED [ 25%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[11] PASSED [ 25%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[12] PASSED [ 25%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[13] PASSED [ 25%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[14] PASSED [ 26%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[15] PASSED [ 26%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[16] PASSED [ 26%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[17] PASSED [ 27%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[18] PASSED [ 27%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[19] PASSED [ 27%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[20] PASSED [ 27%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[21] PASSED [ 28%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[22] PASSED [ 28%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[23] PASSED [ 28%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_step0_equals_package PASSED [ 28%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_rejects_2025_rows PASSED [ 29%]
+experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_static_guard_runner_has_no_2025_paths PASSED [ 29%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[system/forecasting/implementations/causal_nwp_physics.py-14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710] PASSED [ 29%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[experiments/stage4_sw_low_sun_2025_holdout/stage4_low_sun_adapter.py-3427da6a7b1d7763f8fa655e541cd2a344aeefdd33379137c6311501799395d0] PASSED [ 29%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py-a8dd9fc7d84e3d2344ba4f99ba1b1cd0ec2165a83d8f7af438b69f8178815093] PASSED [ 30%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[system/simulation/research_realization_executor.py-c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b] PASSED [ 30%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv-f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473] PASSED [ 30%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[data/POLARIS_v0_1_future_weather_forecasts_2024.csv-8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16] PASSED [ 30%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_only_solar_channel_differs PASSED [ 31%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_corrected_solar_equals_legacy_shifted_one_hour PASSED [ 31%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_reserve_elevation_not_double_converted PASSED [ 31%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_corrected_forecaster_matches_reserve_geometry PASSED [ 32%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_refuses_double_wrap PASSED [ 32%]
+experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_arm_configs_identical_except_correction PASSED [ 32%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_tie_passes PASSED [ 32%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_regression_fails_by_one_hundredth_watt PASSED [ 33%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_improvement_passes PASSED [ 33%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-unpaired0] PASSED [ 33%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-unpaired1] PASSED [ 33%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-duplicate] PASSED [ 34%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-non-finite] PASSED [ 34%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-non-optimal] PASSED [ 34%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-no rows] PASSED [ 34%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-hours 0..23] PASSED [ 35%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_failed_arm_makes_verdict_not_an_improvement PASSED [ 35%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_stationary_bootstrap_matches_documented_algorithm PASSED [ 35%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_stationary_bootstrap_is_seeded_and_reproducible PASSED [ 35%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_strict_s4_uses_config_seed_block_and_interval PASSED [ 36%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_point_and_strict_s4_reported_separately PASSED [ 36%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_strict_s4_not_evaluable_on_missing_pair PASSED [ 36%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_e1_family_is_exactly_the_configured_one[family0] PASSED [ 37%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_e1_family_is_exactly_the_configured_one[family1] PASSED [ 37%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_holm_family_not_shrunk_when_an_arm_fails_safety PASSED [ 37%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family0] PASSED [ 37%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family1] PASSED [ 38%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family2] PASSED [ 38%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family3] PASSED [ 38%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[None] PASSED [ 38%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family5] PASSED [ 39%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_verdict_never_eligible PASSED [ 39%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_primary_fuel_is_unadjusted_and_secondary_is_separate PASSED [ 39%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_secondary_blocked_unless_approved PASSED [ 39%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_primary_metric_cannot_be_switched PASSED [ 40%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a1_split_conformal_rule PASSED [ 40%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a2_protocol_literal_bins PASSED [ 40%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a3_top_bin_merges_into_its_only_neighbour PASSED [ 40%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a3_bottom_bin_merges_upward_and_interior_merges_lower PASSED [ 41%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a3_no_neighbour_left_fails_closed PASSED [ 41%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a4_origin_day_counts_distinct_origins_and_requires_midnight_origins PASSED [ 41%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a5_ghi_residual_space_equals_pv_space_below_clip PASSED [ 41%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a6_tie_rule_largest_gamma PASSED [ 42%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_recommended_values_are_valid_and_now_delegated PASSED [ 42%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_two_pass_reader_never_parses_excluded_values PASSED [ 42%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_two_pass_reader_rejects_2025_before_values PASSED [ 43%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_calibration_main_reads_nothing_before_authorization PASSED [ 43%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d10_real_config_is_the_protocol_family PASSED [ 43%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d10_a_fix_is_diagnostic_only PASSED [ 43%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_delta_is_arm_minus_control PASSED [ 44%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_upper_bound_le_zero_is_the_non_regression_direction[5.0-False-1] PASSED [ 44%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_upper_bound_le_zero_is_the_non_regression_direction[1.0-True--1] PASSED [ 44%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_upper_bound_le_zero_is_the_non_regression_direction[2.0-True-0] PASSED [ 44%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_two_sided_upper_endpoint_is_the_97_5th_percentile PASSED [ 45%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_interval_seed_block_resamples_approved_and_used PASSED [ 45%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d4_per_origin_does_not_net_surplus_against_deficit PASSED [ 45%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d4_secondary_per_origin_delegated_and_formula_unchanged PASSED [ 45%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d5_values_are_the_protocol_values_unchanged_by_m9 PASSED [ 46%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a2_integer_percent_edges_fall_in_the_middle_cloud_bin PASSED [ 46%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a5_diagnostic_zero_below_clip_and_counts_clipped_hours PASSED [ 46%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a5_diagnostic_is_in_the_artifact PASSED [ 46%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a8_daylight_rule_is_the_same_in_calibration_and_at_run_time PASSED [ 47%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a8_recorded_as_recommendation_not_protocol PASSED [ 47%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_m8_protocol_soc_text_is_copied_verbatim_from_protocol PASSED [ 47%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_m8_d10a_is_an_execution_decision_and_d10_unchanged PASSED [ 48%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_m8_d7a_c_label_follows_amendment_1 PASSED [ 48%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a3_sparse_top_bin_pools_with_15_30_and_is_used_for_high_sun_hours PASSED [ 48%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_passing_statuses_are_the_same_in_preflight_and_gates PASSED [ 48%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_non_explicit_status_without_authority_fails[RESOLVED BY DELEGATED TECHNICAL AUTHORITY] PASSED [ 49%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_non_explicit_status_without_authority_fails[APPROVED BY EXISTING AUTHORITY] PASSED [ 49%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_arm_c_and_secondary_need_authority_too PASSED [ 49%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[CONDITIONALLY APPROVED] PASSED [ 49%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[RECOMMENDED \u2014 AWAITING PROJECT-LEAD APPROVAL] PASSED [ 50%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[BLOCKED \u2014 EVIDENCE REQUIRED] PASSED [ 50%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[REQUIRES PROJECT-LEAD AUTHORIZATION] PASSED [ 50%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[resolved by delegated technical authority] PASSED [ 50%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_project_lead_approvals_are_unchanged PASSED [ 51%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_secondary_stays_secondary_with_both_f_values PASSED [ 51%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_d8_resolved_only_on_the_recorded_device_venv_pass PASSED [ 51%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_live_authorization_record_state PASSED [ 51%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_c_is_research_only_and_nothing_is_promotion_eligible PASSED [ 52%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_amendment_is_a_new_file_and_history_is_unchanged PASSED [ 52%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_in_sample_coverage_is_recorded_per_cell_and_pooled PASSED [ 52%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_in_sample_coverage_does_not_change_the_quantiles PASSED [ 53%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_evaluation_coverage_per_bin_daylight_only PASSED [ 53%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_evaluation_coverage_absent_fields_are_reported_not_invented PASSED [ 53%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_arm_c_loop_records_bound_and_realized_value_for_the_executed_hour PASSED [ 53%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_d7a_reporting_items_present PASSED [ 54%]
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_handover_is_outside_the_manifest_because_it_records_the_manifest_hash PASSED [ 54%]
+experiments/exp_three_arm_2024/tests/test_input_integrity_2024.py::test_run_all_guards_pass PASSED [ 54%]
+experiments/exp_three_arm_2024/tests/test_input_integrity_2024.py::test_reserve_provider_matches_2024_decomposition PASSED [ 54%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_config_is_frozen_and_decisions_resolved PASSED [ 55%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_config_gates_resolved PASSED [ 55%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_config_arm_c_method_resolved_by_delegation PASSED [ 55%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_authorization_record_grants_no_execution PASSED [ 55%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_positive_control_governance_checks_pass PASSED [ 56%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_missing_authorization_record PASSED [ 56%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unsigned_template_refused PASSED [ 56%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[decision-PROPOSED-not 'APPROVE'] PASSED [ 56%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signer_name-  -unsigned] PASSED [ 57%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signer_role-assistant-signer_role] PASSED [ 57%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signer_role-Proposed for project-lead approval-signer_role] PASSED [ 57%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signed_at_utc-yesterday-signed_at_utc] PASSED [ 58%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[package_manifest_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-package_manifest_sha256] PASSED [ 58%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[experiment_config_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-experiment_config_sha256] PASSED [ 58%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_calibration_signature_does_not_authorize_execution PASSED [ 58%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_execution_binds_artifact_hash_and_ceiling PASSED [ 59%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_config_change_after_signing_invalidates PASSED [ 59%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D1] PASSED [ 59%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D2] PASSED [ 59%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D3] PASSED [ 60%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D4] PASSED [ 60%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D5] PASSED [ 60%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D6] PASSED [ 60%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D7] PASSED [ 61%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D7a] PASSED [ 61%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D8] PASSED [ 61%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D10] PASSED [ 61%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D10a] PASSED [ 62%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D11] PASSED [ 62%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-BUD] PASSED [ 62%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D1] PASSED [ 62%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D2] PASSED [ 63%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D3] PASSED [ 63%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D4] PASSED [ 63%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D5] PASSED [ 64%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D6] PASSED [ 64%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D7] PASSED [ 64%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D7a] PASSED [ 64%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D8] PASSED [ 65%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D10] PASSED [ 65%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D10a] PASSED [ 65%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D11] PASSED [ 65%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-BUD] PASSED [ 66%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D1] PASSED [ 66%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D2] PASSED [ 66%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D3] PASSED [ 66%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D4] PASSED [ 67%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D5] PASSED [ 67%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D6] PASSED [ 67%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D7] PASSED [ 67%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D7a] PASSED [ 68%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D8] PASSED [ 68%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D10] PASSED [ 68%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D10a] PASSED [ 69%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D11] PASSED [ 69%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-BUD] PASSED [ 69%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D1] PASSED [ 69%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D2] PASSED [ 70%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D3] PASSED [ 70%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D4] PASSED [ 70%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D5] PASSED [ 70%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D6] PASSED [ 71%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D7] PASSED [ 71%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D7a] PASSED [ 71%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D8] PASSED [ 71%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D10] PASSED [ 72%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D10a] PASSED [ 72%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D11] PASSED [ 72%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-BUD] PASSED [ 72%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D1] PASSED [ 73%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D2] PASSED [ 73%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D3] PASSED [ 73%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D4] PASSED [ 74%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D5] PASSED [ 74%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D6] PASSED [ 74%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D7] PASSED [ 74%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D7a] PASSED [ 75%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D8] PASSED [ 75%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D10] PASSED [ 75%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D10a] PASSED [ 75%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D11] PASSED [ 76%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-BUD] PASSED [ 76%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_approval_without_evidence_refused PASSED [ 76%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unfrozen_config_refused PASSED [ 76%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-D10] PASSED [ 77%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-non-empty] PASSED [ 77%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-'B'] PASSED [ 77%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4 status0] PASSED [ 77%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4 status1] PASSED [ 78%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4_strict status] PASSED [ 78%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-without S4] PASSED [ 78%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-seed0] PASSED [ 79%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-seed1] PASSED [ 79%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4_strict_interval unresolved] PASSED [ 79%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-D4_0] PASSED [ 79%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-D4_1] PASSED [ 80%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-soc_parity_secondary] PASSED [ 80%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-per_origin0] PASSED [ 80%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-per_origin1] PASSED [ 80%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_s4_strict_requires_approved_interval_block_and_resamples PASSED [ 81%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_hash_mismatch_refused PASSED [ 81%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_missing_frozen_file_refused PASSED [ 81%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_malformed_expected_hash_refused PASSED [ 81%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_package_file_added_after_manifest_refused PASSED [ 82%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_preregistration_without_freeze_hash_refused PASSED [ 82%]
+experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_preregistration_freeze_line_is_blank_or_matches_the_manifest PASSED [ 82%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_solver_mock_fails_if_called PASSED [ 82%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_real_planner_optimize_is_blocked PASSED [ 83%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_execute_refused_on_real_package_config PASSED [ 83%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_no_bypass_option_exists PASSED [ 83%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_execute_rechecks_preflight_itself PASSED [ 83%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_single_missing_item_blocks_otherwise_complete_package[authorization] PASSED [ 84%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_single_missing_item_blocks_otherwise_complete_package[decision] PASSED [ 84%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_single_missing_item_blocks_otherwise_complete_package[hash] PASSED [ 84%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_missing_calibration_artifact_blocks_execution_and_arm_c PASSED [ 85%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_budget_audit_reconciles_with_ceiling PASSED [ 85%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_budget_mismatch_is_a_preflight_failure PASSED [ 85%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_audit_budget_cli_needs_no_solver PASSED [ 85%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_orchestration_has_exactly_one_optimize_call_site PASSED [ 86%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_budget_is_charged_before_the_inner_optimizer PASSED [ 86%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_rule_d_off_everywhere PASSED [ 86%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_nothing_is_promotion_eligible_and_b_is_noncausal PASSED [ 86%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_a_and_a_fix_differ_only_in_correction PASSED [ 87%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_forecasters_parity_a_vs_a_fix PASSED [ 87%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_arm_b_uses_realized_solar_and_is_tagged PASSED [ 87%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_arm_c_point_to_planner_lower_bound_to_reserve PASSED [ 87%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_run_origin_calls_optimize_exactly_24_times PASSED [ 88%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_timestamp_and_origin_alignment PASSED [ 88%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_no_horizon_tail_lookahead PASSED [ 88%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_reserve_elevation_identical_in_a_and_a_fix PASSED [ 88%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_arm_c_runs_through_loop_with_lower_bound_reserve PASSED [ 89%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_non_optimal_status_invalidates_the_arm PASSED [ 89%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_control_uses_governed_ebr PASSED [ 89%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_failure_marks_arm_invalid_and_run_failed PASSED [ 90%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_incomplete_output_is_not_a_result PASSED [ 90%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_existing_run_directory_is_never_reused PASSED [ 90%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_results_json_written_exclusively PASSED [ 90%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-hourly rows] PASSED [ 91%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-duplicate] PASSED [ 91%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-non-optimal] PASSED [ 91%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-non-finite] PASSED [ 91%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-origin set] PASSED [ 92%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_initial_state_and_configs_match_frozen_reference PASSED [ 92%]
+experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_all_pinned_sources_byte_identical PASSED [ 92%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[calibrate_arm_c.py] PASSED [ 92%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[causal_cloud_lookup.py] PASSED [ 93%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[gates_three_arm.py] PASSED [ 93%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[preflight.py] PASSED [ 93%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[run_three_arm_2024.py] PASSED [ 93%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[solar_convention.py] PASSED [ 94%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[timestamp_guards.py] PASSED [ 94%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[calibrate_arm_c.py] PASSED [ 94%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[causal_cloud_lookup.py] PASSED [ 95%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[gates_three_arm.py] PASSED [ 95%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[preflight.py] PASSED [ 95%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[run_three_arm_2024.py] PASSED [ 95%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[solar_convention.py] PASSED [ 96%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[timestamp_guards.py] PASSED [ 96%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[conftest.py] PASSED [ 96%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[synthetic_fixtures.py] PASSED [ 96%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_authorization_scope_v2.py] PASSED [ 97%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_calibration_arm_c.py] PASSED [ 97%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_causal_cloud_lookup.py] PASSED [ 97%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_d7a_parity.py] PASSED [ 97%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_decision_resolution.py] PASSED [ 98%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_decision_resolution_m7.py] PASSED [ 98%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_decision_resolution_m9.py] PASSED [ 98%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_input_integrity_2024.py] PASSED [ 98%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_preflight_governance.py] PASSED [ 99%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_runner_three_arm.py] PASSED [ 99%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_static_no_protected_access.py] PASSED [ 99%]
+experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_compile PASSED [100%]
+
+=============================== warnings summary ===============================
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py: 16 warnings
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py: 2 warnings
+  /usr/local/lib/python3.13/dist-packages/scipy/stats/_resampling.py:156: RuntimeWarning: invalid value encountered in scalar divide
+    a_hat = 1/6 * sum(nums) / sum(dens)**(3/2)
+
+experiments/exp_three_arm_2024/tests/test_decision_resolution.py: 16 warnings
+experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py: 2 warnings
+  /usr/local/lib/python3.13/dist-packages/scipy/_lib/_util.py:306: DegenerateDataWarning: The BCa confidence interval cannot be calculated. This problem is known to occur when the distribution is degenerate or the statistic is np.min.
+    return fun(*args, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+___________ test_calibration_main_reads_nothing_before_authorization ___________
+----------------------------- Captured stderr call -----------------------------
+CALIBRATION REFUSED (preflight failed):
+  [preregistration] PREREGISTRATION.md missing
+  [authorization] calibration decision is None, not 'APPROVE'
+  [authorization] calibration is unsigned (signer_name empty)
+  [authorization] calibration signer_role is None, not 'project lead'
+  [authorization] calibration signed_at_utc missing or not ISO-8601 UTC ('...Z')
+  [authorization] calibration package_manifest_sha256 does not match the current manifest
+  [authorization] calibration experiment_config_sha256 does not match the current config
+_______________ test_reserve_provider_matches_2024_decomposition _______________
+----------------------------- Captured stdout call -----------------------------
+reserve_provider_vs_decomposition_2024: max_abs_deg=0.000000 mean_abs_deg=0.000000 n=8784
+____________________ test_execute_rechecks_preflight_itself ____________________
+----------------------------- Captured stderr call -----------------------------
+PREFLIGHT FAILED — execution refused:
+  [preregistration] PREREGISTRATION.md missing
+  [calibration] calibration artifact missing: /tmp/pytest-of-root/pytest-29/test_execute_rechecks_prefligh0/repo/experiments/exp_three_arm_2024/calibration/ARM_C_CALIBRATION.json
+  [authorization] execution decision is None, not 'APPROVE'
+  [authorization] execution is unsigned (signer_name empty)
+  [authorization] execution signer_role is None, not 'project lead'
+  [authorization] execution signed_at_utc missing or not ISO-8601 UTC ('...Z')
+  [authorization] execution package_manifest_sha256 does not match the current manifest
+  [authorization] execution experiment_config_sha256 does not match the current config
+  [authorization] execution calibration_artifact_sha256 does not match the calibration artifact
+  [authorization] execution solve_ceiling does not equal the configured total ceiling
+  [authorization] execution execute_instruction_ref is empty (must reference the project lead's explicit execute instruction)
+  [calibration_authorization] calibration decision is None, not 'APPROVE'
+  [calibration_authorization] calibration is unsigned (signer_name empty)
+  [calibration_authorization] calibration signer_role is None, not 'project lead'
+  [calibration_authorization] calibration signed_at_utc missing or not ISO-8601 UTC ('...Z')
+  [calibration_authorization] calibration experiment_config_sha256 does not match the current config
+  [calibration_authorization] calibration package_manifest_sha256 matches neither the current manifest nor a recorded prior freeze
+  [calibration_authorization] calibration artifact has no created_at_utc to bind the calibration authorization to
+  [inputs] input-content guards skipped because earlier checks failed
+=========================== short test summary info ============================
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_preflight_only_signature_passes_preflight_but_not_execute
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_scoped_signature_passes_both_modes
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[PREFLIGHT_ONLY]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[None]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[execute_experiment]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execution_section_with_wrong_or_missing_scope_fails_both_modes[EXECUTE]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_preflight_section_with_execute_scope_is_invalid
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_requires_instruction_reference[None]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_requires_instruction_reference[]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_requires_instruction_reference[   ]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[None]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[1]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[2]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_other_schema_versions_fail_both_modes[3]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_v1_shaped_record_signed_like_the_0549_block_cannot_execute
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_unknown_mode_or_stage_raises
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_signed_before_preflight_signature_is_refused
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_history_never_grants_authorization
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[package_manifest_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-package_manifest_sha256-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[package_manifest_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-package_manifest_sha256-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[experiment_config_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-experiment_config_sha256-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[experiment_config_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-experiment_config_sha256-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[calibration_artifact_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb-calibration_artifact_sha256-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[calibration_artifact_sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb-calibration_artifact_sha256-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760-solve_ceiling-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760-solve_ceiling-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760.0-solve_ceiling-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-14760.0-solve_ceiling-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-99999-solve_ceiling-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[solve_ceiling-99999-solve_ceiling-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[decision-APPROVE_PREFLIGHT-not 'APPROVE'-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[decision-APPROVE_PREFLIGHT-not 'APPROVE'-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signer_role-assistant-signer_role-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signer_role-assistant-signer_role-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signed_at_utc-2026-10-11 06:00:00-signed_at_utc-execution_preflight]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_each_execution_field_is_bound[signed_at_utc-2026-10-11 06:00:00-signed_at_utc-execution]
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_package_edit_after_signing_invalidates_both_scopes
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_calibration_authorization_binds_the_artifact
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_unsigned_calibration_blocks_both_modes
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_calibration_config_hash_must_be_current
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_calibration_under_a_recorded_prior_freeze_stays_valid_after_refreeze
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_signing_execution_sections_leaves_calibration_unchanged
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_refused_with_preflight_only_authorization
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_refused_on_unsigned_template
+PASSED experiments/exp_three_arm_2024/tests/test_authorization_scope_v2.py::test_execute_rechecks_scope_even_if_preflight_is_bypassed
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_evaluation_window_and_buffers_are_dropped
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_isolation_fails_closed_even_if_the_filter_is_wrong
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_target_hours_inside_evaluation_window_rejected
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_non_2024_rows_abort[2025-01-01 00:00:00]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_non_2024_rows_abort[2025-06-01 12:00:00]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_non_2024_rows_abort[2023-12-31 23:00:00]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_2025_origin_aborts
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-24 rows]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-duplicate]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-non-finite]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-outside]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-negative]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_invalid_calibration_rows_rejected[<lambda>-None]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_gamma_recovered_on_synthetic_data
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_gamma_tie_requires_an_approved_rule
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_point_forecast_zero_at_night
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_boundary_rule_raises[None]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_boundary_rule_raises[]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_boundary_rule_raises[closest]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_boundary_rules_are_explicit
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_quantile_method_raises[None]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_quantile_method_raises[]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_quantile_method_raises[conformal]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_split_conformal_order_statistic
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_unresolved_residual_space_raises
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_insufficient_bin_policy_unresolved_raises[None]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_insufficient_bin_policy_unresolved_raises[fill_global]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_insufficient_bin_policy_unresolved_raises[nearest]
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_fail_policy_raises_on_sparse_bin
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_merge_is_recorded_and_never_silent
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_quantile_table_is_deterministic_and_complete
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_lower_bound_never_exceeds_point_and_missing_bin_raises
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_artifact_records_provenance_and_is_deterministic
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_artifact_never_overwritten
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_load_artifact_accepts_valid_and_rejects_tampering
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_missing_artifact_raises
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_main_refuses_before_reading_data
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_main_refuses_when_artifact_exists_even_if_signed
+PASSED experiments/exp_three_arm_2024/tests/test_calibration_arm_c.py::test_corrected_geometry_matches_arm_c_runtime_geometry
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[0]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[1]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[2]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[3]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[4]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[5]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[6]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[7]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[8]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[9]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[10]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[11]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[12]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[13]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[14]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[15]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[16]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[17]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[18]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[19]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[20]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[21]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[22]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_never_reads_next_origin[23]
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_step0_equals_package
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_rejects_2025_rows
+PASSED experiments/exp_three_arm_2024/tests/test_causal_cloud_lookup.py::test_static_guard_runner_has_no_2025_paths
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[system/forecasting/implementations/causal_nwp_physics.py-14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710]
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[experiments/stage4_sw_low_sun_2025_holdout/stage4_low_sun_adapter.py-3427da6a7b1d7763f8fa655e541cd2a344aeefdd33379137c6311501799395d0]
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[experiments/stage4_planner_cf_consistency_2025/research_numerical_extractor_planner_cf_v1.py-a8dd9fc7d84e3d2344ba4f99ba1b1cd0ec2165a83d8f7af438b69f8178815093]
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[system/simulation/research_realization_executor.py-c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b]
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv-f3fe7cf2fff45f21feeceb850e63299a919da658d1474851b1cf611a35e43473]
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_source_files_unchanged[data/POLARIS_v0_1_future_weather_forecasts_2024.csv-8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16]
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_only_solar_channel_differs
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_corrected_solar_equals_legacy_shifted_one_hour
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_reserve_elevation_not_double_converted
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_corrected_forecaster_matches_reserve_geometry
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_refuses_double_wrap
+PASSED experiments/exp_three_arm_2024/tests/test_d7a_parity.py::test_arm_configs_identical_except_correction
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_tie_passes
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_regression_fails_by_one_hundredth_watt
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_improvement_passes
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-unpaired0]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-unpaired1]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-duplicate]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-non-finite]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-non-optimal]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-no rows]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_missing_failed_or_unpaired_is_not_evaluable[<lambda>-hours 0..23]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_s4_failed_arm_makes_verdict_not_an_improvement
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_stationary_bootstrap_matches_documented_algorithm
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_stationary_bootstrap_is_seeded_and_reproducible
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_strict_s4_uses_config_seed_block_and_interval
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_point_and_strict_s4_reported_separately
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_strict_s4_not_evaluable_on_missing_pair
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_e1_family_is_exactly_the_configured_one[family0]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_e1_family_is_exactly_the_configured_one[family1]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_holm_family_not_shrunk_when_an_arm_fails_safety
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family0]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family1]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family2]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family3]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[None]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_and_invalid_families_cannot_enter_e1[family5]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_arm_b_verdict_never_eligible
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_primary_fuel_is_unadjusted_and_secondary_is_separate
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_secondary_blocked_unless_approved
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_primary_metric_cannot_be_switched
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a1_split_conformal_rule
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a2_protocol_literal_bins
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a3_top_bin_merges_into_its_only_neighbour
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a3_bottom_bin_merges_upward_and_interior_merges_lower
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a3_no_neighbour_left_fails_closed
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a4_origin_day_counts_distinct_origins_and_requires_midnight_origins
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a5_ghi_residual_space_equals_pv_space_below_clip
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_a6_tie_rule_largest_gamma
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_recommended_values_are_valid_and_now_delegated
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_two_pass_reader_never_parses_excluded_values
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_two_pass_reader_rejects_2025_before_values
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution.py::test_calibration_main_reads_nothing_before_authorization
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d10_real_config_is_the_protocol_family
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d10_a_fix_is_diagnostic_only
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_delta_is_arm_minus_control
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_upper_bound_le_zero_is_the_non_regression_direction[5.0-False-1]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_upper_bound_le_zero_is_the_non_regression_direction[1.0-True--1]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_upper_bound_le_zero_is_the_non_regression_direction[2.0-True-0]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_two_sided_upper_endpoint_is_the_97_5th_percentile
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d6_interval_seed_block_resamples_approved_and_used
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d4_per_origin_does_not_net_surplus_against_deficit
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d4_secondary_per_origin_delegated_and_formula_unchanged
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_d5_values_are_the_protocol_values_unchanged_by_m9
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a2_integer_percent_edges_fall_in_the_middle_cloud_bin
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a5_diagnostic_zero_below_clip_and_counts_clipped_hours
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a5_diagnostic_is_in_the_artifact
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a8_daylight_rule_is_the_same_in_calibration_and_at_run_time
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a8_recorded_as_recommendation_not_protocol
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_m8_protocol_soc_text_is_copied_verbatim_from_protocol
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_m8_d10a_is_an_execution_decision_and_d10_unchanged
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_m8_d7a_c_label_follows_amendment_1
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m7.py::test_a3_sparse_top_bin_pools_with_15_30_and_is_used_for_high_sun_hours
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_passing_statuses_are_the_same_in_preflight_and_gates
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_non_explicit_status_without_authority_fails[RESOLVED BY DELEGATED TECHNICAL AUTHORITY]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_non_explicit_status_without_authority_fails[APPROVED BY EXISTING AUTHORITY]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_arm_c_and_secondary_need_authority_too
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[CONDITIONALLY APPROVED]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[RECOMMENDED \u2014 AWAITING PROJECT-LEAD APPROVAL]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[BLOCKED \u2014 EVIDENCE REQUIRED]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[REQUIRES PROJECT-LEAD AUTHORIZATION]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_other_statuses_never_pass[resolved by delegated technical authority]
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_project_lead_approvals_are_unchanged
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_secondary_stays_secondary_with_both_f_values
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_d8_resolved_only_on_the_recorded_device_venv_pass
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_live_authorization_record_state
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_c_is_research_only_and_nothing_is_promotion_eligible
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_amendment_is_a_new_file_and_history_is_unchanged
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_in_sample_coverage_is_recorded_per_cell_and_pooled
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_in_sample_coverage_does_not_change_the_quantiles
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_evaluation_coverage_per_bin_daylight_only
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_evaluation_coverage_absent_fields_are_reported_not_invented
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_arm_c_loop_records_bound_and_realized_value_for_the_executed_hour
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_d7a_reporting_items_present
+PASSED experiments/exp_three_arm_2024/tests/test_decision_resolution_m9.py::test_handover_is_outside_the_manifest_because_it_records_the_manifest_hash
+PASSED experiments/exp_three_arm_2024/tests/test_input_integrity_2024.py::test_run_all_guards_pass
+PASSED experiments/exp_three_arm_2024/tests/test_input_integrity_2024.py::test_reserve_provider_matches_2024_decomposition
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_config_is_frozen_and_decisions_resolved
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_config_gates_resolved
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_config_arm_c_method_resolved_by_delegation
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_authorization_record_grants_no_execution
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_positive_control_governance_checks_pass
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_missing_authorization_record
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unsigned_template_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[decision-PROPOSED-not 'APPROVE']
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signer_name-  -unsigned]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signer_role-assistant-signer_role]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signer_role-Proposed for project-lead approval-signer_role]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[signed_at_utc-yesterday-signed_at_utc]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[package_manifest_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-package_manifest_sha256]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_each_authorization_field_is_required[experiment_config_sha256-ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff-experiment_config_sha256]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_calibration_signature_does_not_authorize_execution
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_execution_binds_artifact_hash_and_ceiling
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_config_change_after_signing_invalidates
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D2]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D3]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D4]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D5]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D6]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D7]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D7a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D8]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D10]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D10a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-D11]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[PENDING-BUD]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D2]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D3]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D4]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D5]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D6]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D7]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D7a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D8]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D10]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D10a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-D11]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[UNRESOLVED-BUD]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D2]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D3]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D4]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D5]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D6]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D7]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D7a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D8]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D10]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D10a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-D11]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[CONDITIONALLY APPROVED-BUD]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D2]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D3]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D4]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D5]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D6]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D7]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D7a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D8]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D10]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D10a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-D11]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[Proposed-BUD]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D2]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D3]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D4]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D5]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D6]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D7]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D7a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D8]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D10]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D10a]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-D11]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_any_unapproved_decision_refuses[None-BUD]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_approval_without_evidence_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unfrozen_config_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-D10]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-non-empty]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-'B']
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4 status0]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4 status1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4_strict status]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-without S4]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-seed0]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-seed1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-S4_strict_interval unresolved]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-D4_0]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-D4_1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-soc_parity_secondary]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-per_origin0]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_unresolved_gate_settings_refused[<lambda>-per_origin1]
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_s4_strict_requires_approved_interval_block_and_resamples
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_hash_mismatch_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_missing_frozen_file_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_malformed_expected_hash_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_package_file_added_after_manifest_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_preregistration_without_freeze_hash_refused
+PASSED experiments/exp_three_arm_2024/tests/test_preflight_governance.py::test_real_preregistration_freeze_line_is_blank_or_matches_the_manifest
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_solver_mock_fails_if_called
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_real_planner_optimize_is_blocked
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_execute_refused_on_real_package_config
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_no_bypass_option_exists
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_execute_rechecks_preflight_itself
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_single_missing_item_blocks_otherwise_complete_package[authorization]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_single_missing_item_blocks_otherwise_complete_package[decision]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_single_missing_item_blocks_otherwise_complete_package[hash]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_missing_calibration_artifact_blocks_execution_and_arm_c
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_budget_audit_reconciles_with_ceiling
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_budget_mismatch_is_a_preflight_failure
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_audit_budget_cli_needs_no_solver
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_orchestration_has_exactly_one_optimize_call_site
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_budget_is_charged_before_the_inner_optimizer
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_rule_d_off_everywhere
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_nothing_is_promotion_eligible_and_b_is_noncausal
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_a_and_a_fix_differ_only_in_correction
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_forecasters_parity_a_vs_a_fix
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_arm_b_uses_realized_solar_and_is_tagged
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_arm_c_point_to_planner_lower_bound_to_reserve
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_run_origin_calls_optimize_exactly_24_times
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_timestamp_and_origin_alignment
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_no_horizon_tail_lookahead
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_reserve_elevation_identical_in_a_and_a_fix
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_arm_c_runs_through_loop_with_lower_bound_reserve
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_non_optimal_status_invalidates_the_arm
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_control_uses_governed_ebr
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_failure_marks_arm_invalid_and_run_failed
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_incomplete_output_is_not_a_result
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_existing_run_directory_is_never_reused
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_results_json_written_exclusively
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-hourly rows]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-duplicate]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-non-optimal]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-non-finite]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_validate_run_rejects_partial_or_bad_output[<lambda>-origin set]
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_initial_state_and_configs_match_frozen_reference
+PASSED experiments/exp_three_arm_2024/tests/test_runner_three_arm.py::test_all_pinned_sources_byte_identical
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[calibrate_arm_c.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[causal_cloud_lookup.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[gates_three_arm.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[preflight.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[run_three_arm_2024.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[solar_convention.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_have_no_banned_reference[timestamp_guards.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[calibrate_arm_c.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[causal_cloud_lookup.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[gates_three_arm.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[preflight.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[run_three_arm_2024.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[solar_convention.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[timestamp_guards.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[conftest.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[synthetic_fixtures.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_authorization_scope_v2.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_calibration_arm_c.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_causal_cloud_lookup.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_d7a_parity.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_decision_resolution.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_decision_resolution_m7.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_decision_resolution_m9.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_input_integrity_2024.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_preflight_governance.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_runner_three_arm.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_no_banned_imports[test_static_no_protected_access.py]
+PASSED experiments/exp_three_arm_2024/tests/test_static_no_protected_access.py::test_scripts_compile
+================= 381 passed, 36 warnings in 62.47s (0:01:02) ==================
+exit code: 0
+
+$ python3 -I experiments/exp_three_arm_2024/scripts/run_three_arm_2024.py --repo . --audit-budget
+{
+  "arms": [
+    "PC-Control",
+    "A",
+    "A_FIX",
+    "B",
+    "C"
+  ],
+  "n_arms": 5,
+  "origins": 123,
+  "steps_per_origin": 24,
+  "optimize_calls_per_step": 1,
+  "optimize_calls_per_arm": 2952,
+  "optimize_calls_total": 14760,
+  "highs_run_calls_total": 14760,
+  "max_internal_lexicographic_subsolves_total": 73800,
+  "repeat_check_calls": 0,
+  "retry_calls": 0,
+  "calibration_solver_calls": 0,
+  "rule_d_subarm_calls": 0,
+  "test_solver_calls": 0,
+  "configured_per_arm_ceiling": 2952,
+  "configured_total_ceiling": 14760,
+  "reconciles": true
+}
+exit code: 0

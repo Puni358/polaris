@@ -1,0 +1,134 @@
+[
+  {
+    "id": "q_l_ml",
+    "variable_name": "mass_fraction_of_cloud_condensed_water_in_air_ml",
+    "product": "meps_det_ml",
+    "standard_name": "mass_fraction_of_cloud_condensed_water_in_air",
+    "long_name": "Atmospheric cloud condensed water content in model levels",
+    "units": "kg/kg",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "q_i_ml",
+    "variable_name": "mass_fraction_of_cloud_ice_in_air_ml",
+    "product": "meps_det_ml",
+    "standard_name": "mass_fraction_of_cloud_ice_in_air",
+    "long_name": "Mass fraction of cloud ice in model levels",
+    "units": "kg/kg",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "cloud_base",
+    "variable_name": "cloud_base_altitude",
+    "product": "meps_det_sfc",
+    "standard_name": "cloud_base_altitude",
+    "long_name": "Cloud base altitude",
+    "units": "m",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "cloud_top",
+    "variable_name": "cloud_top_altitude",
+    "product": "meps_det_sfc",
+    "standard_name": "cloud_top_altitude",
+    "long_name": "Cloud top altitude",
+    "units": "m",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "x_wind_pl",
+    "variable_name": "x_wind_pl",
+    "product": "meps_det_pl",
+    "standard_name": "x_wind",
+    "long_name": "Zonal wind pressure levels",
+    "units": "m/s",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "y_wind_pl",
+    "variable_name": "y_wind_pl",
+    "product": "meps_det_pl",
+    "standard_name": "y_wind",
+    "long_name": "Meridional wind pressure levels",
+    "units": "m/s",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "x_wind_ml",
+    "variable_name": "x_wind_ml",
+    "product": "meps_det_ml",
+    "standard_name": "x_wind",
+    "long_name": "Zonal wind model levels",
+    "units": "m/s",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "y_wind_ml",
+    "variable_name": "y_wind_ml",
+    "product": "meps_det_ml",
+    "standard_name": "y_wind",
+    "long_name": "Meridional wind model levels",
+    "units": "m/s",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "ap",
+    "variable_name": "ap",
+    "product": "meps_det_ml",
+    "standard_name": "N/A",
+    "long_name": "N/A",
+    "units": "Pa",
+    "coordinates": "N/A",
+    "fill_value": "N/A",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "b",
+    "variable_name": "b",
+    "product": "meps_det_ml",
+    "standard_name": "N/A",
+    "long_name": "N/A",
+    "units": "1",
+    "coordinates": "N/A",
+    "fill_value": "N/A",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "p0",
+    "variable_name": "p0",
+    "product": "meps_det_ml",
+    "standard_name": "N/A",
+    "long_name": "N/A",
+    "units": "Pa",
+    "coordinates": "N/A",
+    "fill_value": "N/A",
+    "verified_in_2024_archive": true
+  },
+  {
+    "id": "p_sfc",
+    "variable_name": "surface_air_pressure",
+    "product": "meps_det_ml / meps_det_sfc",
+    "standard_name": "surface_air_pressure",
+    "long_name": "Surface air pressure",
+    "units": "Pa",
+    "coordinates": "longitude latitude",
+    "fill_value": "9.96921E36",
+    "verified_in_2024_archive": true
+  }
+]

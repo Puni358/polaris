@@ -1,0 +1,30 @@
+{
+  "fixture_id": "POLARIS_MINIMUM_SYNTHETIC_ENGINEERING_FIXTURE_V1",
+  "provenance_status": "SEALED_SYNTHETIC_FIXTURE",
+  "authoritative_governance": {
+    "t_required_baseline": "6.0 HOURS (SEALED TREQ-001)",
+    "dec_004_option": "OPTION D \u2014 PROTECTED CRITICAL LOAD FALLBACK",
+    "d1_d6_governance": "SEALED"
+  },
+  "parameter_classifications": {
+    "P_critical_total_30kW": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+    "P_heating_15kW": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+    "P_water_10kW": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+    "P_comms_5kW": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+    "P_flexible_15kW": "SYNTHETIC_ENGINEERING_ASSUMPTION",
+    "Solar_0_50kW_curve": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Wind_0_20kW_curve": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Battery_200kWh_capacity": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Battery_SOC_min_20pct": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Battery_SOC_max_95pct": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Battery_50kW_power": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Generator_10kW_min_60kW_max": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Generator_fuel_model_F_5_plus_025P": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Fuel_initial_500L_20L_10L": "REUSED_EXISTING_PROTOTYPE_PARAMETER",
+    "Forecast_persistence_plus_10pct_bias": "SYNTHETIC_ENGINEERING_ASSUMPTION"
+  },
+  "truth_firewall_status": "ENFORCED",
+  "claim_firewall_status": "ENFORCED",
+  "real_nuolja_data_used": false,
+  "empirical_evidence_status": "NOT_ESTABLISHED"
+}

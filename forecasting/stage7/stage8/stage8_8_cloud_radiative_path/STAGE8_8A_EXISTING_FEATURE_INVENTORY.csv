@@ -1,0 +1,38 @@
+feature_name,source,physical_meaning,temporal_convention,contains_cloud_geometry,contains_solar_geometry,contains_lwp_iwp,contains_cloud_fraction,contains_terrain_info
+horizon_hour,NWP / Forecast,Forecast lead time in hours (1 to 24),Forecast Step,False,False,False,False,False
+month,Timestamp,Calendar month of valid forecast time (1-12),Instantaneous,False,False,False,False,False
+hour,Timestamp,Hour of day of valid forecast time (0-23 UTC),Instantaneous,False,False,False,False,False
+solar_elevation,Solpos / Clearsky,Solar elevation angle in degrees above horizon,Instantaneous,False,True,False,False,False
+solar_zenith,Solpos / Clearsky,Solar zenith angle in degrees from zenith (90 - elev),Instantaneous,False,True,False,False,False
+clearsky_ghi,Ineichen / Solpos,Theoretical clear-sky GHI (W/m2) without clouds/terrain,Instantaneous,False,True,False,False,False
+fc_cloud_cover,MEPS meps_det_sfc,MEPS forecasted total cloud cover percentage (0-100%),Instantaneous Forecast,False,False,False,True,False
+fc_temperature_2m,MEPS meps_det_sfc,MEPS forecasted 2-meter air temperature (deg C),Instantaneous Forecast,False,False,False,False,False
+fc_relative_humidity_2m,MEPS meps_det_sfc,MEPS forecasted 2-meter relative humidity (%),Instantaneous Forecast,False,False,False,False,False
+cloud_frac,Derived from fc_cloud_cover,Normalized cloud fraction (fc_cloud_cover / 100.0),Instantaneous Forecast,False,False,False,True,False
+pred_stage3b_cloud_nwp,Stage 3B Chronos-2,Foundation model SW_IN prediction from Chronos-2 (W/m2),Forecast Horizon,False,False,False,False,False
+phys_pred_fold,Stage 4 Physical Model,Clear-sky attenuation model baseline: GHI_cs * (1 - k * cloud_frac),Forecast Horizon,False,True,False,True,False
+pred_stage4_fold,Stage 4 Weighted Ensemble,Weighted combination of Chronos and Physical model predictions,Forecast Horizon,False,True,False,True,False
+disagreement_fold,Derived Stage 4,Absolute disagreement between Chronos and physical model |pred_3b - phys_pred|,Forecast Horizon,False,True,False,True,False
+ctx_std_3h,Surface Station Obs,Standard deviation of surface SW_IN over preceding 3 hours,Lookback Window t0-3h,False,False,False,False,False
+ctx_std_6h,Surface Station Obs,Standard deviation of surface SW_IN over preceding 6 hours,Lookback Window t0-6h,False,False,False,False,False
+ctx_std_12h,Surface Station Obs,Standard deviation of surface SW_IN over preceding 12 hours,Lookback Window t0-12h,False,False,False,False,False
+ctx_std_24h,Surface Station Obs,Standard deviation of surface SW_IN over preceding 24 hours,Lookback Window t0-24h,False,False,False,False,False
+ctx_abs_change_1h,Surface Station Obs,1-hour absolute change in observed SW_IN,Lookback Delta t0-1h,False,False,False,False,False
+ctx_abs_change_3h,Surface Station Obs,3-hour absolute change in observed SW_IN,Lookback Delta t0-3h,False,False,False,False,False
+ctx_abs_change_6h,Surface Station Obs,6-hour absolute change in observed SW_IN,Lookback Delta t0-6h,False,False,False,False,False
+ctx_max_diff_6h,Surface Station Obs,Max 1-hour step change in SW_IN over past 6 hours,Lookback Window t0-6h,False,False,False,False,False
+ctx_mean_diff_6h,Surface Station Obs,Mean 1-hour step change in SW_IN over past 6 hours,Lookback Window t0-6h,False,False,False,False,False
+ctx_slope_6h,Surface Station Obs,Linear trend slope of observed SW_IN over past 6 hours,Lookback Window t0-6h,False,False,False,False,False
+ctx_kt_std_6h,Observed / Clearsky,Standard deviation of clear-sky index Kt = SW_obs / GHI_cs over 6h,Lookback Window t0-6h,False,True,False,False,False
+ctx_last_obs,Surface Station Obs,Most recent surface SW_IN observation at t0-1h (W/m2),Instantaneous Obs,False,False,False,False,False
+ctx_mean_24h,Surface Station Obs,Mean observed SW_IN over past 24 hours (W/m2),Lookback Window t0-24h,False,False,False,False,False
+ctx_max_24h,Surface Station Obs,Max observed SW_IN over past 24 hours (W/m2),Lookback Window t0-24h,False,False,False,False,False
+lwp_latest,Stage 6.6 MEPS Microphysics,Column-integrated liquid water path (kg/m2),Instantaneous Forecast,False,False,True,False,False
+iwp_latest,Stage 6.6 MEPS Microphysics,Column-integrated ice water path (kg/m2),Instantaneous Forecast,False,False,True,False,False
+lwp_x_cloud,Stage 6.6 Derived,Interaction feature lwp_latest * cloud_frac,Instantaneous Forecast,False,False,True,True,False
+terrain_horizon_elevation_deg,Stage 7.5 Copernicus DEM,Horizon elevation angle (deg) along solar azimuth,Instantaneous Solar Pos,False,True,False,False,True
+terrain_elevation_margin_deg,Stage 7.5 Copernicus DEM,Solar elevation margin above terrain horizon (deg),Instantaneous Solar Pos,False,True,False,False,True
+terrain_solar_obstruction_flag,Stage 7.5 Copernicus DEM,Binary flag indicating sun hidden by terrain ridge (0/1),Instantaneous Solar Pos,False,True,False,False,True
+clearsky_ghi_terrain_adjusted,Stage 7.5 Derived,Clear-sky GHI zeroed out during terrain obstruction,Instantaneous Forecast,False,True,False,False,True
+u700,Stage 8.1 MEPS meps_det_pl,Zonal wind speed at 700 hPa (~3000m AGL) (m/s),Instantaneous Forecast,False,False,False,False,False
+v700,Stage 8.1 MEPS meps_det_pl,Meridional wind speed at 700 hPa (~3000m AGL) (m/s),Instantaneous Forecast,False,False,False,False,False

@@ -1,0 +1,13 @@
+{
+  "origin_timestamp": "2024-09-07T00:00:00Z",
+  "policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+  "diesel_fuel_liters": 135.318,
+  "diesel_generation_kwh": 381.272,
+  "solar_used_kwh": 310.686,
+  "wind_used_kwh": 109.523,
+  "battery_charge_kwh": 189.788,
+  "battery_discharge_kwh": 125.855,
+  "generator_on_hours": 8,
+  "min_soc_pct": 28.17,
+  "max_soc_pct": 93.25
+}

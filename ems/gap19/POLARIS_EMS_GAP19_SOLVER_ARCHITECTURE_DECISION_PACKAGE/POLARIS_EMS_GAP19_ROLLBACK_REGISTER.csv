@@ -1,0 +1,6 @@
+TARGET_COMPONENT,ROLLBACK_REQUIREMENT,REVERSION_MECHANISM,VALIDATION_EVIDENCE
+Optimizer Implementation,Restore the previously authorized optimizer implementation.,Git commit revert / file substitution,Verify restored artifact hashes.
+Optimizer Configuration,Restore the previously authorized optimizer configuration.,Git commit revert / file substitution,Verify restored artifact hashes.
+Dependencies,Restore the previously authorized runtime dependency manifest.,Environment manifest restore,Verify environment manifest audit.
+Schemas,Maintain additive compatibility so rollback requires zero schema downgrade.,Backward compatibility layer,Verify schema unit test suite pass.
+Provenance,Log explicit ROLLBACK event in system audit trail.,Provenance logger entry,Verify audit log record.

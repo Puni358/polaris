@@ -1,0 +1,53 @@
+{
+  "constraint_5_charge_bound": {
+    "expr": "p_chg - max_p_chg*u_chg <= 0",
+    "lhs": -17776.879999999997,
+    "rhs": 0.0,
+    "slack_rhs_minus_lhs": 17776.879999999997
+  },
+  "constraint_6_discharge_bound": {
+    "expr": "p_dis - max_p_dis*u_dis <= 0",
+    "lhs": -0.0,
+    "rhs": 0.0,
+    "slack_rhs_minus_lhs": 0.0
+  },
+  "constraint_7_exclusivity": {
+    "expr": "u_chg + u_dis <= 1",
+    "lhs": 1.0,
+    "rhs": 1.0,
+    "slack_rhs_minus_lhs": 0.0
+  },
+  "u_chg_raw": 1.0,
+  "u_chg_integrality_residual_from_0": 1.0,
+  "u_chg_integrality_residual_from_1": 0.0,
+  "u_dis_raw": 0.0,
+  "u_dis_integrality_residual_from_0": 0.0,
+  "u_dis_integrality_residual_from_1": -1.0,
+  "u_chg_bound_check": {
+    "lb": 0.0,
+    "ub": 1.0,
+    "within_bounds": true
+  },
+  "u_dis_bound_check": {
+    "lb": 0.0,
+    "ub": 1.0,
+    "within_bounds": true
+  },
+  "p_chg_bound_check": {
+    "lb": 0.0,
+    "ub": 50000.0,
+    "within_bounds": true
+  },
+  "p_dis_bound_check": {
+    "lb": 0.0,
+    "ub": 50000.0,
+    "within_bounds": true
+  },
+  "max_p_chg_coefficient": 50000.0,
+  "max_p_dis_coefficient": 50000.0,
+  "hypothesis_check_p_chg_equals_max_p_chg_times_u_chg": {
+    "max_p_chg * u_chg_raw": 50000.0,
+    "actual_p_chg_raw": 32223.120000000003,
+    "difference": -17776.879999999997
+  }
+}

@@ -1,0 +1,8 @@
+Criterion,Stage 6.2 (Empirical),Stage 8.2 (Theoretical/Archive),Evidence Status,Explanation
+Origins checked,347,347,FILE-LEVEL VERIFIED,Both evaluated the exact 347 locked POLARIS benchmark origins.
+Archive queried,MET Norway THREDDS (thredds.met.no),NASA LAADS DAAC (Global Earthdata Search),ARCHIVE-VERIFIED,Stage 6.2 queried Scandinavian direct-broadcast reception server; Stage 8.2 audited global NASA DAAC product availability.
+VIIRS candidate overpasses,"2 passes (1 Suomi-NPP, 1 NOAA-21)","~14,600 passes (~42 passes/day theoretical)",THEORETICAL ESTIMATE,MET Norway catalog ingested 2 VIIRS test files; NASA DAAC theoretically archives ~42 passes/day over 68.36°N across 3 satellites.
+Causal overpasses (t_acq <= t0),2 VIIRS (334 total incl AVHRR),347 origins (100.0% theoretical),THEORETICAL ESTIMATE,Orbit geometry indicates 100% of origins have a pass within 50 km; file-level download of 347 granules was not executed in Stage 8.2.
+Operational dissemination latency,Direct broadcast (~15 min),Standard Science L2 (3 to 8 hours),ARCHIVE-VERIFIED,"Direct broadcast is fast (~15 min); standard DAAC science L2 files have 3-8h archiving delay, creating an operational causality gap."
+Sunlit / valid optical retrievals,2 VIIRS,284 / 347 origins (81.8% theoretical),THEORETICAL ESTIMATE,Optical COT/CER require solar illumination (SZA <= 84°). 63 origins occur in polar night/dark twilight. 284/347 is a geometric calculation.
+Final usable origins,2 VIIRS (334 total incl AVHRR),NOT ESTABLISHED (284 theoretical),PARTIAL / REQUIRES FUTURE FILE ENUMERATION,Stage 6.2 empirically extracted 2 real VIIRS granules. Stage 8.2 estimated 284 sunlit origins geometrically; file-level extraction remains to be performed.

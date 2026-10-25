@@ -1,0 +1,114 @@
+{
+  "document_type": "POLARIS_SYSTEM_D4_DATA_REVIEW",
+  "disclaimer": "SYNTHETIC ENGINEERING TEST DATA — NOT REAL NUOLJA MEASUREMENTS",
+  "d4_a_data_fixture_status": "FROZEN / APPROVED",
+  "date": "2026-09-16",
+  "data_identity": {
+    "scenario_file_path": "system/data/scenarios/synthetic_168h_endurance_scenario.json",
+    "generator_script_path": "system/scripts/generate_synthetic_168h_scenario.py",
+    "scenario_id": "synthetic_168h_endurance_scenario",
+    "classification": "SYNTHETIC_ENGINEERING_TEST_DATA",
+    "generation_seed": 42,
+    "generation_method": "deterministic_physics_wave_model",
+    "duration_hours": 168,
+    "timestep_hours": 1.0,
+    "total_timesteps": 168,
+    "first_timestamp": "2024-06-01T00:00:00Z",
+    "last_timestamp": "2024-06-07T23:00:00Z",
+    "fields_present": [
+      "timestep_index",
+      "timestamp",
+      "actual_SW_IN",
+      "clearsky_ghi",
+      "actual_wind_generation",
+      "actual_demand"
+    ]
+  },
+  "hashes": {
+    "generator_script_sha256": "3921cb95ab27d61e13ba11273acc30149a97dbbafcdaad0683e9e177358cbce8",
+    "scenario_json_sha256": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8",
+    "generator_match": true,
+    "scenario_match": true
+  },
+  "descriptive_statistics": {
+    "actual_SW_IN": {
+      "min": 0.0,
+      "max": 800.0,
+      "mean": 223.13,
+      "median": 0.0,
+      "std": 276.73,
+      "zero_count": 91,
+      "positive_count": 77,
+      "negative_count": 0
+    },
+    "clearsky_ghi": {
+      "min": 0.0,
+      "max": 800.0,
+      "mean": 253.19,
+      "median": 0.0,
+      "std": 309.67,
+      "zero_count": 91,
+      "positive_count": 77,
+      "negative_count": 0,
+      "max_sw_ghi_ratio": 1.0,
+      "sw_gt_ghi_count": 0
+    },
+    "actual_wind_generation": {
+      "min": 4130.91,
+      "max": 45193.66,
+      "mean": 25368.74,
+      "median": 25295.61,
+      "std": 10604.12,
+      "zero_count": 0,
+      "negative_count": 0
+    },
+    "actual_demand": {
+      "min": 24007.44,
+      "max": 40942.16,
+      "mean": 30203.88,
+      "median": 28718.13,
+      "std": 4814.15,
+      "non_positive_count": 0
+    }
+  },
+  "temporal_structure_audit": {
+    "duplicate_timestamps": 0,
+    "missing_timestamps": 0,
+    "timestep_spacing_hours": 1.0,
+    "chronological_ordering": "STRICTLY_ASCENDING",
+    "total_rows": 168,
+    "anomalies": 0
+  },
+  "ems_exercise_audit": {
+    "solar_available_timesteps": 77,
+    "wind_available_timesteps": 168,
+    "battery_charge_timesteps": 94,
+    "battery_discharge_timesteps": 74,
+    "battery_soc_range_pct": [48.2, 85.6],
+    "diesel_active_timesteps": 72,
+    "total_diesel_energy_kwh": 6630.81,
+    "total_diesel_fuel_liters": 2585.70,
+    "flexible_load_timesteps": 70,
+    "flexible_load_energy_delivered_kwh": 280.0,
+    "renewable_curtailment_kwh": 21598.24,
+    "renewable_curtailment_pct": 13.98,
+    "unmet_critical_load_kwh": 0.0,
+    "system_reliability_pct": 100.0
+  },
+  "cross_variable_correlations": {
+    "solar_wind": -0.0180,
+    "solar_demand": -0.0663,
+    "wind_demand": 0.0047,
+    "interpretation": "Low Pearson linear correlation; no obvious linear coupling detected."
+  },
+  "research_firewall_audit": {
+    "research_files_accessed": 0,
+    "research_datasets_accessed": 0,
+    "odd_rows_accessed": 0,
+    "stage8_1_modified": false,
+    "phase_abc_modified": false,
+    "abc2_modified": false,
+    "pard_c_modified": false,
+    "d3_modified": false
+  }
+}

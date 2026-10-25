@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Branch01ConfigSchema",
+  "type": "object",
+  "properties": {
+    "branch_id": { "type": "string", "const": "POLARIS_SOLAR_FORECAST_BRANCH_01" },
+    "site": { "type": "string", "default": "Nuolja" },
+    "latitude": { "type": "number", "default": 68.3582 },
+    "longitude": { "type": "number", "default": 18.7842 },
+    "lookback_hours": { "type": "integer", "default": 24 },
+    "target_horizon_hours": { "type": "integer", "default": 24 },
+    "embargo_hours": { "type": "integer", "default": 24 },
+    "default_replay_tolerance": {
+      "type": "object",
+      "properties": {
+        "atol": { "type": "number", "default": 1e-5 },
+        "rtol": { "type": "number", "default": 1e-5 }
+      }
+    }
+  },
+  "required": ["branch_id", "site", "latitude", "longitude", "lookback_hours", "target_horizon_hours", "embargo_hours"]
+}

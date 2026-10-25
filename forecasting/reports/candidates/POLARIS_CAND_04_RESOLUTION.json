@@ -1,0 +1,101 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_CAND_04_RESOLUTION",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A2_7_CAND_04_FOUNDATION_MODEL_RESOLUTION_GATE",
+    "task_type": "PRE_EXECUTION_GOVERNANCE_CORRECTION_ONLY",
+    "authorization_status": "AUTHORIZED_PHASE_A2_7_RESOLUTION_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A2_7_CAND_04_RESOLVED",
+    "A2_7_STATUS": "RESOLVED",
+    "CAND_04_STATUS": "EXCLUDED_FROM_EXECUTION_PROTOCOL",
+    "CAND_04_RESOLUTION_STATUS": "EXCLUDED_DUE_TO_MISSING_LOCAL_REPRODUCIBLE_RESOURCE",
+    "A2_5_PROTOCOL_STATUS": "COMPLETE_AND_READY_FOR_EXECUTION_AUTHORIZATION",
+    "A2_6_AUDIT_STATUS": "PASS",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "FROZEN_ARX_COMPARATOR_STATUS": "VERIFIED_FROZEN",
+    "RUN_BUDGET_RECONCILIATION": "PASS",
+    "TOTAL_POSSIBLE_RUNS": 16,
+    "GLOBAL_RUN_CEILING": 16,
+    "CAND_01_RATIONALE_STATUS": "ESTABLISHED",
+    "CAND_02_RATIONALE_STATUS": "ESTABLISHED",
+    "CAND_03_RATIONALE_STATUS": "ESTABLISHED",
+    "CAND_04_RATIONALE_STATUS": "EXCLUDED",
+    "CAUSAL_TEMPORAL_AUDIT": "PASS",
+    "PROTOCOL_COMPLETENESS_STATUS": "PASS",
+    "WIND_MODEL_TRAINING": "NOT_AUTHORIZED",
+    "WIND_MODEL_INFERENCE": "NOT_AUTHORIZED",
+    "WIND_MODEL_SELECTION": "NOT_AUTHORIZED",
+    "WIND_FORECAST_EXPERIMENT": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "GOVERNANCE_CORRECTION_ONLY",
+    "NEXT_GOVERNED_STEP": "WIND_MODEL_DEVELOPMENT_EXECUTION_AUTHORIZATION"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_MODEL_ARTIFACT_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXPERIMENT_EXECUTED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "MODEL_SELECTION_EXECUTED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "EXTERNAL_PACKAGES_INSTALLED": "NO",
+    "WEIGHTS_DOWNLOADED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "GOVERNANCE_CORRECTION_ONLY"
+  },
+  "cand_04_resolution_details": {
+    "local_package_check": "Neither timesfm nor chronos-forecasting packages exist in virtualenv requirements.txt",
+    "local_checkpoint_check": "No offline pretrained model weights (google/timesfm-1.0 or amazon/chronos-bolt-base) exist locally",
+    "download_performed": false,
+    "installation_performed": false,
+    "resolution_decision": "EXCLUDED_DUE_TO_MISSING_LOCAL_REPRODUCIBLE_RESOURCE",
+    "cand_04_status": "EXCLUDED_FROM_EXECUTION_PROTOCOL",
+    "scientific_result_changed": false
+  },
+  "revised_budget_reconciliation": {
+    "exp_01_runs": 3,
+    "exp_02_runs": 1,
+    "exp_03_runs": 4,
+    "exp_04_runs": 4,
+    "exp_05_runs": 4,
+    "exp_06_runs": 0,
+    "total_calculated_runs": 16,
+    "revised_global_ceiling": 16,
+    "unused_budget_reassigned": false,
+    "reconciliation_passed": true
+  },
+  "updated_protocol_summary": {
+    "established_candidate_families": [
+      "CAND-01: GBDT-Direct Multi-Horizon",
+      "CAND-02: GBDT-Residual Bias Correction",
+      "CAND-03: AR-ElasticNet Regularized Model"
+    ],
+    "excluded_candidate_families": [
+      "CAND-04: Foundation-ZeroShot Model (Excluded due to missing local offline weights)"
+    ],
+    "total_active_experiment_tracks": 5,
+    "frozen_comparator": "Autoregressive Ridge AR-X (Ridge alpha=10.0, Test MAE = 2.0364 m/s)"
+  }
+}

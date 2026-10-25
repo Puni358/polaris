@@ -1,0 +1,7 @@
+{
+  "solar_source_sha256": "0a2b9d2cbf3fea14a75d2e448f9650534f2ff540601d8c89df69e3b9334fa1f8",
+  "wind_source_sha256": "b7f694aa957af57103176d9a2cb77bd506e2c0f56402eab5cc584ebd02d379fd",
+  "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+  "provenance_json_sha256": "ed505b118ee774a628eeac1c8a437b8754f91c71fd2e22764b96e192385a0498",
+  "config_json_sha256": "b60ca342f23179cafc7fc3ea5f1301f023e93c37976a188564cff2815a336762"
+}

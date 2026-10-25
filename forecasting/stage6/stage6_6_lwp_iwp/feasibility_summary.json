@@ -1,0 +1,53 @@
+{
+  "stage": "Stage 6.6 \u2014 MEPS Cloud Microphysics Feasibility Audit",
+  "date": "2026-09-12",
+  "recommendation": "GO",
+  "rationale": "Discovered mass_fraction_of_cloud_condensed_water_in_air_pl and mass_fraction_of_cloud_ice_in_air_pl in meps_det_pl on MET Norway THREDDS. Hydrostatic vertical integration is physically exact and yields highly plausible LWP/IWP values (0..111 g/m\u00b2). Extraction is technically feasible (~45 min total with 8 workers).",
+  "meps_product_used": "meps_det_pl (Pressure Levels)",
+  "nuolja_grid_index": {
+    "y": 760,
+    "x": 486
+  },
+  "nearest_grid_coord": {
+    "lat": 68.355701,
+    "lon": 18.763666
+  },
+  "target_station_coord": {
+    "lat": 68.362074,
+    "lon": 18.738752
+  },
+  "offset_distance_km": 1.24,
+  "integration_formula": "LWP = (1/g) * sum( q_l_k * delta_p_k ), IWP = (1/g) * sum( q_i_k * delta_p_k )",
+  "pressure_levels_hpa": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    700,
+    800,
+    850,
+    925,
+    1000
+  ],
+  "sample_runtimes": {
+    "avg_per_file_sec": 5.34,
+    "estimated_total_serial_hours": 2.05,
+    "estimated_total_parallel_8workers_mins": 15.4
+  },
+  "proposed_candidate_features": [
+    "lwp_latest",
+    "iwp_latest",
+    "cloud_water_total",
+    "lwp_x_cloud"
+  ],
+  "integrity_confirmations": {
+    "even_cv_run": false,
+    "odd_accessed": false,
+    "stage5_2_modified": false,
+    "full_extraction_launched": false
+  }
+}

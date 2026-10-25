@@ -1,0 +1,41 @@
+{
+  "comparison_version": "1.0.0",
+  "comparison_type": "SAME_TRUTH_PAIRED_ENGINEERING_COUNTERFACTUAL",
+  "timestamp": "2026-09-20T06:34:51.691792+00:00",
+  "treatment_reference": {
+    "execution_id": "polaris_h10_exec_20240101_000000Z",
+    "policy_id": "POLARIS_STAGE8_1_EMS_V4G",
+    "observed_diesel_fuel_liters": 195.5,
+    "raw_telemetry_csv": "POLARIS_HYBRID_H1_0_ENGINEERING_VALIDATION_RAW.csv"
+  },
+  "control_reference": {
+    "execution_id": "polaris_h10_control_20240101_000000Z",
+    "policy_id": "POLARIS_BASELINE_RULE_BASED_CONTROL",
+    "observed_diesel_fuel_liters": 195.5,
+    "raw_telemetry_csv": "POLARIS_HYBRID_H1_0_CONTROL_RAW.csv"
+  },
+  "same_environment_verification": {
+    "same_fixture": true,
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "same_origin_timestamp": "2024-01-01T00:00:00Z",
+    "same_trajectory_window": "2024-01-01T00:00:00Z to 2024-01-01T23:00:00Z (Row 0..23)",
+    "same_initial_state": true,
+    "initial_state_sha256": "3e38d4f5e3046d642c26b56a84e9e0130b0bfddea24be37640b90a4fd2c55fbd",
+    "same_hidden_truth": true,
+    "same_simulator": true,
+    "same_truth_firewall": true
+  },
+  "paired_differences": {
+    "PAIRED_DIESEL_FUEL_DIFFERENCE_L": -0.0,
+    "PAIRED_DIESEL_FUEL_DIFFERENCE_PERCENT": -0.0,
+    "PAIRED_DIESEL_ENERGY_DIFFERENCE_KWH": 0.0,
+    "PAIRED_SOLAR_UTILIZATION_DIFFERENCE_KWH": 0.0,
+    "PAIRED_WIND_UTILIZATION_DIFFERENCE_KWH": -0.0,
+    "PAIRED_RENEWABLE_CURTAILMENT_DIFFERENCE_KWH": 0.0,
+    "PAIRED_BATTERY_CHARGE_DIFFERENCE_KWH": -0.0,
+    "PAIRED_BATTERY_DISCHARGE_DIFFERENCE_KWH": 0.0,
+    "PAIRED_UNMET_LOAD_DIFFERENCE_KWH": 0.0
+  },
+  "interpretation": "Under the controlled H1.0 hybrid engineering environment, the treatment policy used 0.000 L more diesel than the same-truth baseline control.",
+  "claim_boundary": "Paired operational difference under the controlled H1.0 hybrid engineering environment ONLY. Not real-world Nuolja savings or production validation."
+}

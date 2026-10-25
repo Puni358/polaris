@@ -1,0 +1,46 @@
+{
+  "specification_id": "POLARIS_HYBRID_FIXTURE_GENERATOR_SPEC",
+  "module_name": "system.fixtures.hybrid_fixture_generator",
+  "class_name": "PolarisHybridFixtureGenerator",
+  "execution_status": "SPECIFICATION_DESIGN_ONLY_NOT_EXECUTED",
+  "governance_date_utc": "2026-09-20T11:02:00Z",
+  "code_architecture": {
+    "class_definition": "class PolarisHybridFixtureGenerator:",
+    "constructor_parameters": [
+      "solar_file_path: str = 'data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv'",
+      "wind_file_path: str = 'research/wind_a2/smhi_188790_ws_full.csv'",
+      "random_seed: int = 42",
+      "base_demand_w: float = 25000.0",
+      "turbine_rated_power_w: float = 60000.0"
+    ],
+    "methods": [
+      "generate_synthetic_demand(timestamps: List[str]) -> List[float]",
+      "generate_synthetic_wind_power(wind_speeds: List[float]) -> List[float]",
+      "apply_d3_pv_mapping(sw_in: List[float]) -> List[float]",
+      "build_hybrid_fixture_dataset() -> Dict[str, Any]",
+      "compute_fixture_sha256_fingerprint(dataset: Dict[str, Any]) -> str"
+    ]
+  },
+  "determinism_guarantee": {
+    "fixed_seed": 42,
+    "prng_type": "numpy.random.RandomState(42)",
+    "reproducibility": "100% deterministic SHA-256 fingerprint over generated dataset dict",
+    "zero_side_effects": "Pure function design; does not mutate global state or modify frozen schemas"
+  },
+  "schema_conformance": {
+    "forecast_bundle_schema": "ForecastBundle v1.0 (Unchanged)",
+    "station_state_schema": "StationState v1.0 (Unchanged)",
+    "dispatch_plan_schema": "DispatchPlan v1.0 (Unchanged)"
+  },
+  "governance_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED"
+  }
+}

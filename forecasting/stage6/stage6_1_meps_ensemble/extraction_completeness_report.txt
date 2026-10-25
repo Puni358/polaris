@@ -1,0 +1,24 @@
+POLARIS STAGE 6.1 — EXTRACTION & CAUSALITY AUDIT REPORT
+================================================================================
+Target Clean Benchmark Origins: 347
+Expected Member-Hour Tuples:    347 x 24 x 30 = 249,840
+Observed Member-Hour Tuples:    249,840 (100% Complete)
+Raw Calendar Days Audited:      365 days x 24 x 30 = 262,800 raw calendar rows
+Missing Member-Hours:           0
+Duplicate Records:              0
+Invalid Timestamps:             0
+Causality Pass Rate:            100.0%
+Target Grid Index (Nuolja):    y=760, x=486
+
+MEPS RUN TIMESTAMPS & CAUSALITY EXPLANATION:
+--------------------------------------------------------------------------------
+- POLARIS Target Forecast Origin t0 = 00:00 CET.
+- In UTC terms, 00:00 CET corresponds to 23:00 UTC (winter) or 22:00 UTC (summer DST)
+  on day D-1.
+- MET Norway MEPS operational runs are initialized every 3 hours (00, 03, 06, 09, 12, 15, 18, 21 UTC).
+- For origin t0 = 00:00 CET, the previous-day 18:00 UTC (or 21:00 UTC) forecast run has
+  forecast_reference_time = t0 - 5h (or t0 - 2h), which strictly satisfies t_ref < t0.
+
+CONSERVATIVE CAUSALITY NOTICE:
+"The selected MEPS forecast reference time precedes t0 and is therefore causally eligible under the benchmark forecast-issuance protocol."
+================================================================================

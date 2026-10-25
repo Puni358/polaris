@@ -1,0 +1,35 @@
+{
+  "test_id": "GAP19_CONTROLLED_8_CYCLE_MPC_TEST",
+  "execution_timestamp": "2026-09-25T06:05:24Z",
+  "data_nature": "SYNTHETIC_ENGINEERING_TEST_VALUE",
+  "num_mpc_cycles": 8,
+  "start_origin_timestamp": "2024-01-01T20:00:00Z",
+  "end_origin_timestamp": "2024-01-02T03:00:00Z",
+  "initial_station_state": {
+    "timestamp": "2024-01-01T20:00:00Z",
+    "battery_soc_pct": 80.0,
+    "battery_energy_wh": 160000.0,
+    "diesel_running": false,
+    "operating_mode": "NORMAL",
+    "terminal_target_wh_override": 100000.0
+  },
+  "technical_config": {
+    "battery": {
+      "capacity_wh": 200000.0,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 95.0,
+      "charge_efficiency": 0.92,
+      "discharge_efficiency": 0.92,
+      "max_charge_power_w": 50000.0,
+      "max_discharge_power_w": 50000.0
+    },
+    "diesel": {
+      "min_power_w": 10000.0,
+      "max_power_w": 100000.0,
+      "base_fuel_consumption_l_per_h": 5.0,
+      "marginal_fuel_consumption_l_per_wh": 0.00025,
+      "startup_fuel_l": 2.0
+    },
+    "terminal_target_wh": 100000.0
+  }
+}

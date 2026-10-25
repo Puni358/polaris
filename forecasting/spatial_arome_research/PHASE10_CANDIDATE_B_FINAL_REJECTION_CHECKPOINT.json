@@ -1,0 +1,82 @@
+{
+  "checkpoint": "PHASE10_CANDIDATE_B_FINAL_REJECTION_CHECKPOINT",
+  "date": "2026-09-14",
+  "status": "REJECTED_BY_EVEN_GATES",
+  "experiment_validity": "VALID",
+  "architecture": "Shared MLP 39-feature input + learned horizon embedding (dim 8), jointly trained across 24 horizons per origin",
+  "protocol": {
+    "split": "EVEN-only",
+    "origins": 173,
+    "outer_cv": "5-fold GroupKFold by origin",
+    "odd_firewall": "INTACT"
+  },
+  "control_even": {
+    "mae_wm2": 26.3668,
+    "rmse_wm2": 55.2513,
+    "nmae_pct": 20.4507
+  },
+  "candidate_even": {
+    "mae_wm2": 26.0112,
+    "rmse_wm2": 54.282,
+    "nmae_pct": 20.175,
+    "bias_wm2": -2.7713
+  },
+  "delta": {
+    "mae_wm2": -0.3556,
+    "rmse_wm2": -0.9693,
+    "nmae_pp": -0.2757
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "control_mae": 29.1137,
+      "candidate_mae": 27.0406,
+      "delta_mae": -2.0731,
+      "improved": true
+    },
+    {
+      "fold": 1,
+      "control_mae": 22.8351,
+      "candidate_mae": 24.0944,
+      "delta_mae": 1.2593,
+      "improved": false
+    },
+    {
+      "fold": 2,
+      "control_mae": 25.5086,
+      "candidate_mae": 25.6572,
+      "delta_mae": 0.1486,
+      "improved": false
+    },
+    {
+      "fold": 3,
+      "control_mae": 30.0997,
+      "candidate_mae": 28.8913,
+      "delta_mae": -1.2084,
+      "improved": true
+    },
+    {
+      "fold": 4,
+      "control_mae": 24.3254,
+      "candidate_mae": 24.4093,
+      "delta_mae": 0.0839,
+      "improved": false
+    }
+  ],
+  "gates": {
+    "G1": "FAIL",
+    "G2": "FAIL",
+    "G3": "FAIL",
+    "G4": "PASS",
+    "G5": "PASS",
+    "G6": "HONESTLY REPORTED AS APPROXIMATE CONTROL REPRODUCTION"
+  },
+  "final_verdict": "REJECTED_BY_EVEN_GATES",
+  "repeat_prevention": [
+    "Do not repeat Candidate B.",
+    "Do not create B1/B2/B3 rescue variants.",
+    "Do not evaluate Candidate B on ODD.",
+    "Do not modify the protected Stage 8.1 HGB champion."
+  ],
+  "next_step": "Proceed to Candidate C design-freeze/audit; do not reopen feature research."
+}

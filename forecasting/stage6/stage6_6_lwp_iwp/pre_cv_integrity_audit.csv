@@ -1,0 +1,9 @@
+check_name,status,detail
+347 Origins Present,PASS,Found 347 / 347 origins
+24 Horizons / Origin,PASS,Origins with 24 horizons: 347 / 347
+Total Row Count,PASS,Total rows: 8328 / 8328
+No Duplicate Rows,PASS,Duplicate rows found: 0
+No NaN/Inf Values,PASS,"NaNs: 0, Infs: 0"
+Physical Ranges,PASS,"LWP: [0.00, 1598.28] g/m², IWP: [0.00, 157.86] g/m², Ps: [891.8, 974.1] hPa"
+Surface Pressure Bound,PASS,Max surface pressure: 974.15 hPa (< 1000 hPa)
+Stage 5.2 Champion Unchanged,PASS,Stage 4 predictions verified present

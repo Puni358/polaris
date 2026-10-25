@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-09-12T10:14:57.239062+00:00",
+  "stage": "STAGE 8.1 700 hPa STEERING WIND EXPERIMENT",
+  "candidate": "E1 U700/V700",
+  "control_reproduction": {
+    "expected_e0_mae": 38.280605,
+    "actual_e0_mae": 38.2806052,
+    "reproduction_pass": true
+  },
+  "candidate_results": {
+    "e1_mae_w_m2": 37.620054,
+    "delta_mae_w_m2": -0.660552,
+    "e1_nmae_pct": 37.9745,
+    "delta_nmae_pct": -2.4173,
+    "e1_rmse_w_m2": 60.160645,
+    "delta_rmse_w_m2": -0.59021,
+    "e1_bias_w_m2": 4.218739,
+    "folds_improved": 5,
+    "max_fold_degradation_w_m2": -0.337953
+  },
+  "gates": {
+    "gate1_mae": {
+      "threshold_w_m2": 38.080605,
+      "actual_w_m2": 37.620054,
+      "pass": true
+    },
+    "gate2_folds": {
+      "required_folds": 4,
+      "actual_folds": 5,
+      "pass": true
+    },
+    "gate3_max_degrad": {
+      "threshold_w_m2": 0.15,
+      "actual_w_m2": -0.337953,
+      "pass": true
+    },
+    "gate4_nmae": {
+      "threshold_pct": 40.3918,
+      "actual_pct": 37.9745,
+      "pass": true
+    },
+    "gate5_rmse": {
+      "threshold_w_m2": 60.750856,
+      "actual_w_m2": 60.160645,
+      "pass": true
+    }
+  },
+  "all_gates_pass": true,
+  "final_decision": "PASS \u2014 FREEZE PENDING FORENSIC AUDIT"
+}

@@ -1,0 +1,6 @@
+{
+  "status": "STAGE8.17A = NOT RECONSTRUCTABLE",
+  "reason": "Real raw AROME-Arctic data and 40-feature extraction script are missing from workspace",
+  "synthetic_fallback_allowed": false,
+  "preconditions_met": false
+}

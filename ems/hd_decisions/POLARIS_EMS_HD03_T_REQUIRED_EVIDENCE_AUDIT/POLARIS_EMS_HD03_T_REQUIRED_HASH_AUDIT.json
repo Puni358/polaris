@@ -1,0 +1,35 @@
+{
+  "audit_name": "POLARIS EMS HD-03 T_required Hash Audit",
+  "timestamp": "2026-09-23T06:49:00Z",
+  "audited_files": [
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "purpose": "MILP solver implementation defining MPC horizon H=24",
+      "key_lines": {
+        "MPC_horizon": "Line 72: H = 24 # Horizon hours"
+      }
+    },
+    {
+      "path": "system/config/diesel.yaml",
+      "purpose": "Diesel generator config defining min_up_time_hours (2h)",
+      "key_lines": {
+        "min_up_time": "Line 9: min_up_time_hours: 2"
+      }
+    },
+    {
+      "path": "POLARIS_EMS_HD01B_N6H_CLOSURE/POLARIS_EMS_HD01B_N6H_CLOSURE.md",
+      "purpose": "Authoritative closure report for HD-01B EBR interval N=6h",
+      "key_lines": {
+        "HD01B_closure": "HD-01B closed with N = 6 HOURS"
+      }
+    },
+    {
+      "path": "POLARIS_EMS_HD04_ZERO_RENEWABLE_CLOSURE/POLARIS_EMS_HD04_ZERO_RENEWABLE_CLOSURE.md",
+      "purpose": "Authoritative closure report for HD-04 Option A Zero-Renewable Baseline",
+      "key_lines": {
+        "HD04_closure": "HD-04 closed with Option A Zero-Renewable Detector Scenario"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

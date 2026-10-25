@@ -1,0 +1,66 @@
+{
+  "_comment": "PROPOSAL ONLY -- NOT AN AUTHORIZATION RECORD. No code in this repository reads this file. system/evaluation/replay_harness.py's CampaignExecutionNotAuthorizedError is raised unconditionally by execute_experiment_a/execute_experiment_b regardless of this file's contents, and this pass does not wire this file into any check -- see N6_CONSOLIDATED_READINESS_REMEDIATION_REPORT.md Workstream 2 for why. This is a PROPOSED SCHEMA, modeled on the existing, in-production precedent experiments/exp_three_arm_2024/AUTHORIZATION_RECORD.json (schema v2), adapted to name the smallest defensible authorization this specific future N6-vs-baseline multi-origin comparison would need. Every signer/hash/decision field below is null or a placeholder string; none is a real signature, hash, or approval. Filling in this template does not authorize anything by itself -- it would only become meaningful if a project owner/governance authority FIRST decided to (a) extend replay_harness.py with a checked-record mechanism analogous to experiments/exp_three_arm_2024/scripts/preflight.py's check_authorization(), and (b) that extension itself passed its own governance review (a code change to a safety-relevant gate, not a bounded engineering task this pass is authorized to make unilaterally).",
+  "proposal_status": "DRAFT_PROPOSAL -- NOT IMPLEMENTED, NOT SIGNED, NOT AUTHORIZED",
+  "proposed_experiment_id": "N6-VS-BASELINE-MULTI-ORIGIN-<date-to-be-assigned-at-authorization-time>",
+  "schema_version_proposed": 1,
+  "modeled_on": "experiments/exp_three_arm_2024/AUTHORIZATION_RECORD.json (schema v2) and experiments/exp_three_arm_2024/scripts/preflight.py:check_authorization()",
+  "required_signer_authority": {
+    "base_record_signer_role": "project lead",
+    "base_record_rationale": "Matches the existing exp_three_arm_2024 precedent for a bounded, offline, research-labeled comparison that makes no production-promotion claim. The same single role ('project lead', case-insensitive exact match) that experiments/exp_three_arm_2024/scripts/preflight.py:298 already requires in code for that experiment.",
+  "additional_signer_if_promotion_claimed": "governance authority",
+    "additional_signer_rationale": "If any future report derived from this comparison is used to argue for production promotion, SAF-05's four SAFETY_GATE_REGISTRY gates (register ID SAF-05, disposition BLOCKED_BY_AUTHORIZATION) would ALSO need a separate, independent governance-authority sign-off -- distinct from, and in addition to, this record's project-lead signature. This proposal does not conflate the two; a signed base record below would authorize ONLY the comparison's execution, never a promotion claim."
+  },
+  "explicit_scope": {
+    "scope_literal_proposed": "EXECUTE_N6_MULTI_ORIGIN_COMPARISON",
+    "scope_excludes": [
+      "Any production control-flow change (PROTECTED_FILES remain untouched by this experiment regardless of this record).",
+      "Any claim of SAF-05 production-promotion governance approval (tracked and signed independently, if ever sought).",
+      "Any DSL-01 Candidate-2 (Net-Deficit EBR) research-acceptance verdict (DSL-01's own epsilon_tol preregistration gate is separate and independent of this record).",
+      "Any re-opening of the sealed 2025 blind partition."
+    ]
+  },
+  "origin_set": {
+    "field_name": "authorized_origin_set",
+    "description": "An explicit, named, finite list of forecast-origin timestamps (or a hash of a frozen origin-list file), matching exactly the origins passed to build_multi_origin_campaign_config. No wildcard, 'all available', or open-ended origin set is acceptable -- mirrors exp_three_arm_2024's fixed 123-origin set.",
+    "value": null
+  },
+  "arms": {
+    "field_name": "authorized_arms",
+    "description": "Exactly two named forecast providers: the baseline (e.g. 'causal_nwp_gamma1') and the candidate ('n6_solar'), matching ScenarioSpec.forecast_provider on both sides of the matched pair. A record naming any provider forecast_lineage.py classifies as an oracle/leakage provider (ORACLE_PROVIDER_NAMES) must be rejected at the preflight-equivalent check, independent of and in addition to ScenarioSpec.__post_init__'s own existing reject_if_oracle call.",
+    "value": {"baseline": null, "candidate": null}
+  },
+  "required_fields_per_signed_section": {
+    "decision": "Must equal the literal string 'APPROVE'.",
+    "signer_name": "Full name of the individual signing.",
+    "signer_role": "Must equal 'project lead' (case-insensitive), matching required_signer_authority above.",
+    "signed_at_utc": "ISO-8601 UTC timestamp.",
+    "harness_code_sha256": "SHA-256 of system/evaluation/n6_multi_origin_harness/harness.py AT THE EXACT COMMIT being authorized -- binds the authorization to this specific implementation, not a future edited version. Not present in the exp_three_arm_2024 precedent (which has no equivalent reusable harness module); added here because this harness, unlike a one-off experiment script, could in principle be edited after a comparison is authorized, which the exp_three_arm_2024 precedent's existing calibration_artifact_sha256/experiment_config_sha256 pair does not need to guard against.",
+    "cross_arm_reproducibility_manifest_sha256": "SHA-256 of the assembled system.evaluation.n6_multi_origin_harness.reproducibility_manifest.CrossArmReproducibilityManifest JSON serialization for this specific run -- see N6_CONSOLIDATED_READINESS_REMEDIATION_REPORT.md Workstream 4. Ensures the authorization is bound to one specific, already-cited set of input/code/config hashes, not merely to 'the harness exists'.",
+    "package_manifest_sha256": "As in the exp_three_arm_2024 precedent: hash of the full staged experiment package.",
+    "experiment_config_sha256": "As in the exp_three_arm_2024 precedent: hash of this comparison's own configuration file (origins, arms, controller settings, expected_steps per origin)."
+  },
+  "execute_section_additional_fields": {
+    "solve_ceiling": "int, exactly equal to n_origins * 2 (arms) * expected_steps_per_origin -- the total solve-budget ceiling, mirroring exp_three_arm_2024's solve_ceiling check.",
+    "execute_instruction_ref": "Must be non-empty and must name the project lead's own separate, explicit 'execute' instruction, by content hash and recording timestamp -- never the same instruction that approved preflight/calibration. Must not already be 'consumed' by a prior run's RUN_STATUS.json-equivalent (single-use guard, mirroring exp_three_arm_2024's AUTHORIZATION_RECORD.json history-entry-2 consumption pattern)."
+  },
+  "one_time_instruction_consumption": {
+    "mechanism_proposed": "Identical in spirit to exp_three_arm_2024: an execute_instruction_ref is consumed the first time a run starts against it, regardless of outcome, and can never authorize a second execution under any circumstance. A new execute_instruction_ref (naming a new, separate project-lead instruction) would be required for any re-run, including a re-run after a failed/incomplete first attempt.",
+    "currently_implemented_in_this_repository": false
+  },
+  "rejection_behavior": {
+    "any_missing_or_null_required_field": "reject (fail closed, no default)",
+    "any_hash_mismatch_against_current_artifact": "reject",
+    "signer_role_not_exactly_'project lead'_case_insensitive": "reject",
+    "origin_set_or_arms_differ_from_what_was_signed": "reject",
+    "execute_instruction_ref_already_consumed_by_a_prior_run": "reject",
+    "scope_field_not_matching_the_operation_requested_(preflight_vs_execute)": "reject",
+    "no_such_check_exists_in_code_today": "CampaignExecutionNotAuthorizedError is raised before any of the above could even be evaluated -- this record's existence or completeness changes nothing about that today."
+  },
+  "approving_authority_summary": "Base record: the project owner, acting in the 'project lead' role, exactly as already established for exp_three_arm_2024. Additional, independent sign-off: a governance authority, ONLY if and when results are used for a production-promotion claim (SAF-05), which this proposal does not assume will happen and does not bundle into the base record.",
+  "what_this_proposal_does_not_do": [
+    "Does not create, forge, or self-approve any authorization.",
+    "Does not modify replay_harness.py's unconditional CampaignExecutionNotAuthorizedError.",
+    "Does not implement check_authorization()-equivalent code for this harness (that code change would itself need its own governance review before being made, per this pass's own boundaries).",
+    "Does not select an origin set, arm pair, or any hash value -- every 'value' field above is null by design."
+  ]
+}

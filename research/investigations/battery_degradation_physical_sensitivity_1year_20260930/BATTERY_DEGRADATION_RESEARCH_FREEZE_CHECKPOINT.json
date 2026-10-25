@@ -1,0 +1,112 @@
+{
+  "freeze_timestamp": "2026-09-30T22:38:09+05:30",
+  "campaign_identity": {
+    "study_id": "battery_degradation_physical_sensitivity_1year_20260930",
+    "trajectory_id": "polaris_2024_annual_365d_8784h",
+    "horizon_hours": 8784,
+    "campaign_directory": "investigations/battery_degradation_physical_sensitivity_1year_20260930/"
+  },
+  "reviewed_files": [
+    "BATTERY_DEGRADATION_SENSITIVITY_REPORT.md",
+    "BATTERY_DEGRADATION_SENSITIVITY_RESULTS.json",
+    "BATTERY_DEGRADATION_PARAMETER_SWEEP.csv",
+    "BATTERY_EFFICIENCY_SENSITIVITY.csv",
+    "DEGRADATION_EFFICIENCY_MATRIX.csv",
+    "BATTERY_TRADEOFF_ANALYSIS.json",
+    "BATTERY_PHYSICAL_EVIDENCE_STATUS.md",
+    "BATTERY_PARAMETER_PROVENANCE.json",
+    "BATTERY_SENSITIVITY_REPRODUCIBILITY.md",
+    "BATTERY_SENSITIVITY_CHECKPOINT.md"
+  ],
+  "current_parameters": {
+    "battery_degradation_penalty": {
+      "value_usd_per_wh": 0.00005,
+      "equivalent_usd_per_kwh": 0.050,
+      "status": "UNVALIDATED_SYNTHETIC_PROXY",
+      "production_validated": false,
+      "physical_evidence_supported": false
+    },
+    "battery_efficiency": {
+      "value_round_trip": 0.8464,
+      "equivalent_percentage": 84.64,
+      "status": "UNVALIDATED_SYNTHETIC_ASSUMPTION",
+      "field_validated": false,
+      "oem_validated": false
+    }
+  },
+  "frozen_sensitivity_results_summary": {
+    "sweep_points": 10,
+    "fuel_range_L": {
+      "min": 82150.00,
+      "max": 94850.00,
+      "c0_control": 93465.63
+    },
+    "cycle_range": {
+      "min": 0.40,
+      "max": 34.25,
+      "c0_control": 4.04
+    },
+    "reproducibility": "DETERMINISTIC_PASS"
+  },
+  "physical_evidence_status": {
+    "physical_degradation_model_supported": false,
+    "absent_evidence_list": [
+      "OEM battery cycle-life data",
+      "capacity fade versus cycle count",
+      "capacity fade versus depth-of-discharge",
+      "temperature-dependent degradation",
+      "C-rate dependence",
+      "calendar aging",
+      "measured charge/discharge efficiency",
+      "field battery telemetry",
+      "validated battery degradation curves",
+      "validated replacement-cost / lifetime economics"
+    ]
+  },
+  "current_state_integrity_snapshot": [
+    {"file": "BATTERY_DEGRADATION_PARAMETER_SWEEP.csv", "sizeBytes": 1451},
+    {"file": "BATTERY_DEGRADATION_SENSITIVITY_REPORT.md", "sizeBytes": 11158},
+    {"file": "BATTERY_DEGRADATION_SENSITIVITY_RESULTS.json", "sizeBytes": 9411},
+    {"file": "BATTERY_EFFICIENCY_SENSITIVITY.csv", "sizeBytes": 451},
+    {"file": "BATTERY_PARAMETER_PROVENANCE.json", "sizeBytes": 1779},
+    {"file": "BATTERY_PHYSICAL_EVIDENCE_STATUS.md", "sizeBytes": 1655},
+    {"file": "BATTERY_SENSITIVITY_CHECKPOINT.md", "sizeBytes": 1422},
+    {"file": "BATTERY_SENSITIVITY_REPRODUCIBILITY.md", "sizeBytes": 1529},
+    {"file": "BATTERY_TRADEOFF_ANALYSIS.json", "sizeBytes": 1726},
+    {"file": "DEGRADATION_EFFICIENCY_MATRIX.csv", "sizeBytes": 210}
+  ],
+  "governance_status": {
+    "battery_degradation_research_status": "FROZEN",
+    "sensitivity_campaign_status": "COMPLETE",
+    "results_preserved": true,
+    "reproducibility_verified": true,
+    "production_change_status": "NONE",
+    "governance_change_status": "NONE",
+    "parameter_selection_status": "NOT_AUTHORIZED",
+    "next_authorized_phase": "BATTERY_PHYSICAL_EVIDENCE_ACQUISITION"
+  },
+  "explicit_prohibitions": [
+    "No zero degradation penalty promotion",
+    "No 100% battery efficiency promotion",
+    "No selection of balanced penalty as production value without evidence",
+    "No selection of lowest-fuel sensitivity point as production value",
+    "No selection of lowest-cycling sensitivity point as production value",
+    "No claim that $0.05/kWh proxy is physically correct",
+    "No claim that any sensitivity value is physically correct",
+    "No production optimizer retuning based solely on this experiment"
+  ],
+  "safety_and_integrity": {
+    "production_modified": false,
+    "governance_modified": false,
+    "protected_artifacts_modified": false
+  },
+  "final_status": {
+    "battery_sensitivity_campaign": "FROZEN",
+    "results_preserved": true,
+    "physical_degradation_model": "NOT_VALIDATED",
+    "current_parameter_promotion": "NOT_AUTHORIZED",
+    "production_changes": "NONE",
+    "governance_changes": "NONE",
+    "next_phase": "BATTERY_PHYSICAL_EVIDENCE_ACQUISITION"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "best_global_step": 200,
+  "best_metric": 1.4998836517333984,
+  "best_model_checkpoint": "/home/punith-bs/01polaris/chronos/polaris_lora_expC_500/checkpoint-200",
+  "epoch": 0.4,
+  "eval_steps": 100,
+  "global_step": 200,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 0.2,
+      "grad_norm": 1.0072373151779175,
+      "learning_rate": 8.020000000000001e-06,
+      "loss": 0.6861651611328125,
+      "step": 100
+    },
+    {
+      "epoch": 0.2,
+      "eval_loss": 1.5092183351516724,
+      "eval_runtime": 0.1015,
+      "eval_samples_per_second": 49.245,
+      "eval_steps_per_second": 49.245,
+      "step": 100
+    },
+    {
+      "epoch": 0.4,
+      "grad_norm": 1.1153837442398071,
+      "learning_rate": 6.02e-06,
+      "loss": 0.6821259307861328,
+      "step": 200
+    },
+    {
+      "epoch": 0.4,
+      "eval_loss": 1.4998836517333984,
+      "eval_runtime": 0.1009,
+      "eval_samples_per_second": 49.55,
+      "eval_steps_per_second": 49.55,
+      "step": 200
+    }
+  ],
+  "logging_steps": 100,
+  "max_steps": 500,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 9223372036854775807,
+  "save_steps": 100,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": false
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 0.0,
+  "train_batch_size": 1,
+  "trial_name": null,
+  "trial_params": null
+}

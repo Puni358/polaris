@@ -1,0 +1,226 @@
+{
+  "audit_version": "1.0.0",
+  "audit_title": "POLARIS Stage 8.1 Multi-Trajectory Forensic Mechanism Audit",
+  "audit_timestamp": "2026-09-21T06:05:00Z",
+  "governance_rule_compliance": {
+    "freeze_completed_173_trajectory_experiment": "PASS - Zero raw telemetry, comparison, or aggregate files modified",
+    "read_only_forensics_first": "PASS - Zero MILP solves or simulator steps executed during audit",
+    "do_not_target_desired_result": "PASS - -50.55% result preserved exactly as observed without manipulation",
+    "do_not_claim_annual_real_station_savings": "PASS - Results scoped strictly to H1.0 engineering environment"
+  },
+  "FINAL_GOVERNANCE_CLASSIFICATION": "A = EXPERIMENT_VALID_ROOT_CAUSE_IDENTIFIED",
+  "phase_1_experiment_integrity": {
+    "verdict": "PASS - EXPERIMENT_INTEGRITY_FULLY_VERIFIED",
+    "eligible_origins_evaluated": 173,
+    "forecast_control_hours_per_trajectory": 24,
+    "total_mpc_cycles_completed": 8304,
+    "total_milp_solves_optimal": 8304,
+    "zero_unmet_load": true,
+    "zero_constraint_violations": true,
+    "input_hashes": {
+      "prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+      "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+      "optimizer_milp_sha256": "system/optimization/implementations/milp.py verified"
+    },
+    "verifications": {
+      "identical_initial_state": true,
+      "identical_hidden_ground_truth": true,
+      "identical_h10_fixture": true,
+      "identical_wind_input": true,
+      "identical_demand_input": true,
+      "identical_optimizer": true,
+      "identical_simulator": true,
+      "identical_fuel_formula": true,
+      "vector_injection_alignment_correct": true,
+      "fallback_used": false,
+      "telemetry_timestamps_aligned": true,
+      "future_truth_firewall_intact": true,
+      "cross_trajectory_contamination": false,
+      "aggregate_summation_matches": true
+    }
+  },
+  "phase_2_distribution_analysis": {
+    "total_baseline_fuel_l": 22486.702,
+    "total_treatment_fuel_l": 33853.081,
+    "total_net_saved_l": -11366.379,
+    "aggregate_saving_pct": -50.55,
+    "mean_trajectory_saving_pct": -51.96,
+    "median_trajectory_saving_pct": -55.6,
+    "std_dev_pct": 42.22,
+    "min_trajectory_saving_pct": -282.51,
+    "max_trajectory_saving_pct": 29.87,
+    "quartiles_pct": {
+      "q25": -71.6,
+      "q50": -55.6,
+      "q75": -21.35
+    },
+    "trajectory_counts": {
+      "positive_saving_gt_0_001_l": 16,
+      "negative_saving_lt_neg_0_001_l": 157,
+      "neutral_saving_abs_lte_0_001_l": 0,
+      "positive_saving_ratio_pct": 9.25
+    },
+    "seasonal_distribution": {
+      "Winter (Jan-Mar)": {
+        "count": 36,
+        "control_fuel_l": 5568.331,
+        "treatment_fuel_l": 9192.288,
+        "saved_l": -3623.957,
+        "aggregate_saving_pct": -65.08,
+        "positive_count": 0,
+        "negative_count": 36
+      },
+      "Spring (Apr-Jun)": {
+        "count": 45,
+        "control_fuel_l": 5511.614,
+        "treatment_fuel_l": 6500.7,
+        "saved_l": -989.086,
+        "aggregate_saving_pct": -17.95,
+        "positive_count": 14,
+        "negative_count": 31
+      },
+      "Summer (Jul-Sep)": {
+        "count": 46,
+        "control_fuel_l": 5125.177,
+        "treatment_fuel_l": 7372.137,
+        "saved_l": -2246.96,
+        "aggregate_saving_pct": -43.84,
+        "positive_count": 2,
+        "negative_count": 44
+      },
+      "Autumn (Oct-Dec)": {
+        "count": 46,
+        "control_fuel_l": 6281.58,
+        "treatment_fuel_l": 10787.956,
+        "saved_l": -4506.376,
+        "aggregate_saving_pct": -71.74,
+        "positive_count": 0,
+        "negative_count": 46
+      }
+    },
+    "top_3_beneficial_trajectories": [
+      {"origin": "2024-06-05T00:00:00Z", "saving_pct": 29.87, "saving_l": 27.72},
+      {"origin": "2024-05-28T00:00:00Z", "saving_pct": 26.88, "saving_l": 34.687},
+      {"origin": "2024-06-09T00:00:00Z", "saving_pct": 19.84, "saving_l": 21.067}
+    ],
+    "top_3_harmful_trajectories": [
+      {"origin": "2024-12-26T00:00:00Z", "saving_pct": -282.51, "saving_l": -152.068},
+      {"origin": "2024-01-27T00:00:00Z", "saving_pct": -162.47, "saving_l": -159.874},
+      {"origin": "2024-11-28T00:00:00Z", "saving_pct": -110.92, "saving_l": -143.103}
+    ]
+  },
+  "phase_3_first_divergence_analysis": {
+    "representative_trajectories": {
+      "A_strongest_benefit": {"origin": "2024-05-28T00:00:00Z", "first_divergent_step": 0},
+      "B_strongest_loss": {"origin": "2024-12-16T00:00:00Z", "first_divergent_step": 0},
+      "C_median_trajectory": {"origin": "2024-12-06T00:00:00Z", "first_divergent_step": 0},
+      "D_closest_to_zero": {"origin": "2024-06-27T00:00:00Z", "first_divergent_step": 0}
+    },
+    "causal_chain": "STATIC 24H FORECAST TRUNCATION & ZERO-PADDING (R2) + REALISTIC LOW FORECAST VS OPTIMISTIC CLEAR-SKY BASELINE (R4) -> MILP OPTIMIZER MINIMIZES DIESEL STARTUPS & DEGRADATION -> BATTERY DISCHARGE SUPPRESSED & SOC HELD AT 93-95% (R5) -> CONTINUOUS LONG DIESEL RUNS COMMITTED (R6) -> SOLAR CURTAILED & DIESEL GENERATION OVERCONSUMED (R9) -> -50.55% AGGREGATE FUEL LOSS"
+  },
+  "phase_4_forecast_error_analysis": {
+    "overall_forecast_mae_w_m2": {"treatment_stage81": 34.05, "control_clearsky": 178.88},
+    "overall_forecast_bias_w_m2": {"treatment_stage81": 1.01, "control_clearsky": 164.31},
+    "daytime_forecast_mae_w_m2": {"treatment_stage81": 46.71, "control_clearsky": 245.63},
+    "daytime_forecast_bias_w_m2": {"treatment_stage81": 1.43, "control_clearsky": 225.74},
+    "pre_diesel_commitment_bias_w_m2": {"treatment_stage81": -1.58, "control_clearsky": 244.41},
+    "key_finding": "Stage 8.1 has dramatically lower MAE (34 W/m^2 vs 178 W/m^2) than Clear-Sky. However, Clear-Sky's optimistic bias tricks Control MPC into discharging battery early (expecting solar), which accidentally leaves battery headroom to absorb actual solar and avoid diesel. Stage 8.1's accurate low solar forecast combined with horizon truncation causes Treatment MPC to hold battery full and run diesel continuously."
+  },
+  "phase_5_battery_and_soc_investigation": {
+    "diesel_on_hours": {"treatment": 1970, "control": 1391, "diff": 579},
+    "diesel_start_events": {"treatment": 468, "control": 523, "diff": -55},
+    "diesel_generation_kwh": {"treatment": 96012.32, "control": 62126.8, "diff": 33885.52},
+    "solar_used_kwh": {"treatment": 18838.02, "control": 51810.13, "diff": -32972.11},
+    "wind_used_kwh": {"treatment": 26669.04, "control": 25347.53, "diff": 1321.52},
+    "battery_charge_kwh": {"treatment": 46095.74, "control": 38940.57, "diff": 7155.16},
+    "battery_discharge_kwh": {"treatment": 32439.71, "control": 27519.51, "diff": 4920.2},
+    "renewable_curtailment_kwh": {"treatment": 6717.48, "control": 9647.18, "diff": -2929.7}
+  },
+  "phase_6_diesel_fuel_accounting": {
+    "fuel_model_formula": "Fuel_L = diesel_ON_hours * 5.0 + diesel_generation_kWh * 0.00025 * 1000",
+    "treatment_fuel_breakdown": {"base_fuel_l": 9850.0, "marginal_fuel_l": 24003.081, "total_fuel_l": 33853.081},
+    "control_fuel_breakdown": {"base_fuel_l": 6955.0, "marginal_fuel_l": 15531.701, "total_fuel_l": 22486.701},
+    "fuel_differences": {
+      "base_fuel_diff_l": 2895.0,
+      "marginal_fuel_diff_l": 8471.38,
+      "total_fuel_diff_l": 11366.38,
+      "base_fuel_share_pct": 25.47,
+      "marginal_fuel_share_pct": 74.53
+    },
+    "dominant_loss_driver": "MORE DIESEL GENERATION (74.53% of fuel penalty) driven by +579 ON hours (+41.6%) and continuous high-power generator dispatch"
+  },
+  "phase_7_root_cause_classification": {
+    "selected_root_causes": [
+      {
+        "code": "R2",
+        "title": "Incorrect Forecast Horizon Semantics (Receding-Horizon Truncation & Zero-Padding)",
+        "status": "PRIMARY_ROOT_CAUSE",
+        "evidence": "In the experiment runner, for step k > 0, the static 24h prediction vector is truncated to s81_vec[k:] and padded with s81_vec[23] (0.0 W/m^2). By step k=12, Treatment sees 0.0 W/m^2 for the entire second half of its 24h horizon (losing tomorrow morning's solar), whereas Control dynamically evaluates the clear-sky model for all 24 hours of future_dt at every step k."
+      },
+      {
+        "code": "R4",
+        "title": "Stage 8.1 Forecast Bias/Error Interaction with MPC Risk Posture",
+        "status": "MAJOR_ROOT_CAUSE",
+        "evidence": "Control's clear-sky baseline is heavily biased positive (+164 W/m^2 overall). This optimistic bias tricks Control MPC into aggressively discharging the battery early, leaving battery headroom to absorb actual solar when it arrives. Stage 8.1 accurately predicts low/zero solar, but combined with R2 truncation, causes Treatment MPC to hold high SOC and commit long diesel runs."
+      },
+      {
+        "code": "R6",
+        "title": "Diesel Commitment Sensitivity & Base/Marginal Fuel Dynamics",
+        "status": "MAJOR_CONTRIBUTING_CAUSE",
+        "evidence": "MILP objective includes $15.00 startup cost + $12.50/h base fuel cost. When diesel is ON and future solar is zero-padded (R2), solver keeps diesel ON continuously at 35-45 kW to avoid future $15 startup costs, resulting in +579 ON hours (+41.6%) and +33,885.5 kWh generation (+54.5%)."
+      },
+      {
+        "code": "R9",
+        "title": "Battery Headroom & Solar Utilization Asymmetry",
+        "status": "CONTRIBUTING_CAUSE",
+        "evidence": "Because Treatment keeps battery near 93-95% SOC, it cannot absorb incoming solar when solar is available, utilizing only 18,838.0 kWh of solar vs Control's 51,810.1 kWh of solar (-63.6%)."
+      }
+    ],
+    "rejected_root_causes": [
+      {"code": "R1", "reason": "Static vector injection at step 0 matched prediction artifact perfectly; failure occurs during receding-horizon stepping k > 0."},
+      {"code": "R3", "reason": "fallback_used was False for 100% of treatment steps; fallback mechanism was never triggered."},
+      {"code": "R8", "reason": "Experiment runner executed reproducibly per code logic, but runner design contained the R2 truncation defect."}
+    ]
+  },
+  "phase_8_candidate_interventions": [
+    {
+      "id": "CANDIDATE_A",
+      "name": "Full 48-Hour / Rolling-Horizon Forecast Window Alignment (Fix R2)",
+      "description": "Provide a full 24-hour lookahead at EVERY step k in [0, 23] from extended predictions or rolling inference, eliminating zero-padding blackout at steps k > 0."
+    },
+    {
+      "id": "CANDIDATE_B",
+      "name": "Symmetric Baseline Horizon Lookahead Alignment",
+      "description": "Ensure Control and Treatment use identical horizon lookahead boundaries to prevent asymmetric information advantages."
+    },
+    {
+      "id": "CANDIDATE_C",
+      "name": "Uncertainty-Aware Solar Reserve & Battery Headroom Policy (Fix R4 & R9)",
+      "description": "Maintain lower target SOC or dynamic battery headroom during daylight hours to allow solar absorption and prevent continuous diesel locking."
+    },
+    {
+      "id": "CANDIDATE_D",
+      "name": "MPC Diesel Startup & Commitment Objective Tuning (Fix R6)",
+      "description": "Rebalance startup penalty vs battery degradation cost in MILP objective to encourage battery discharge over multi-hour diesel idling."
+    }
+  ],
+  "phase_9_pre_registered_metrics": {
+    "primary_metric": "Aggregate diesel consumption difference (Liters saved & % reduction vs baseline)",
+    "secondary_metrics": [
+      "Diesel ON hours (Treatment vs Control)",
+      "Diesel generation (kWh)",
+      "Solar utilization (kWh)",
+      "Renewable curtailment (kWh)",
+      "Battery charge/discharge throughput (kWh)",
+      "Constraint violations (Must be ZERO)",
+      "Unmet load (Must be ZERO)"
+    ],
+    "acceptance_rule": "Candidate passes ONLY if it achieves net positive fuel savings while maintaining 100% constraint compliance and zero unmet load across pre-registered test sets. 50% is an engineering target, NOT a stopping/filtering rule."
+  },
+  "phase_10_recommended_next_steps": {
+    "stage_gate": "DO NOT START LARGE RERUN YET",
+    "step_a": "Execute 1 controlled trajectory (e.g. 2024-05-06T00:00:00Z or 2024-12-16T00:00:00Z) with Candidate A (Rolling Horizon Alignment).",
+    "step_b": "Execute small representative validation set (10 trajectories: 3 winter, 3 spring, 2 summer, 2 autumn).",
+    "step_c": "Execute full 173-trajectory evaluation ONLY after candidate passes Step A and Step B."
+  }
+}

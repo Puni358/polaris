@@ -1,0 +1,287 @@
+{
+  "timestamp_utc": "2026-09-13T09:48:55.525179+00:00",
+  "audit_title": "POLARIS Stage 8.21A Targeted Geometry and Physics Feasibility Correction Audit",
+  "route": "STAGE8.21A \u2014 3D SOLAR SLANT-PATH HYDROMETEOR GEOMETRY",
+  "original_vs_corrected_decisions": {
+    "ORIGINAL_DECISION": "A. FEASIBILITY VERIFIED \u2014 EXPERIMENT MAY BE DESIGNED",
+    "CORRECTED_DECISION": "B. CONDITIONAL FEASIBILITY \u2014 SPECIFIC DATA/PHYSICS GAP MUST BE RESOLVED",
+    "F3_ORIGINAL": "PASS",
+    "F3_CORRECTED": "CONDITIONAL (25x25 window provides 30km cardinal radius; 85\u00b0 zenith at 5km cloud height requires 57.15km displacement -> 47x47 window needed)",
+    "F4_ORIGINAL": "PASS",
+    "F4_CORRECTED": "CONDITIONAL (meps_det_pl provides pressure levels; height z must be defensibly reconstructed via hydrostatic equation or geopotential integration)",
+    "F6_ORIGINAL": "CONDITIONAL",
+    "F6_CORRECTED": "CONDITIONAL (q_l/q_i directly observed, but droplet effective radii r_e must be parameterized; proxy represents physical direct attenuation, not full SW_IN)"
+  },
+  "governance_verification": {
+    "FINAL_EXPERIMENT_RUN": false,
+    "FINAL_MODEL_TRAINING": false,
+    "FINAL_ODD_ACCESS": false,
+    "OPERATIONAL_CHAMPION_CHANGED": false,
+    "MASTER_HANDOFF_CHANGED": false,
+    "ROUTE_REGISTRY_CHANGED": false
+  },
+  "spatial_geometry_audit": {
+    "meps_grid_spacing_km": 2.5,
+    "proposed_25x25_window": {
+      "grid_points": 25,
+      "total_physical_span_km": 60.0,
+      "max_cardinal_radius_km": 30.0,
+      "max_diagonal_radius_km": 42.43
+    },
+    "solar_displacement_table": {
+      "60deg": {
+        "1.0km": {
+          "displacement_km": 1.73,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "2.0km": {
+          "displacement_km": 3.46,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "3.0km": {
+          "displacement_km": 5.2,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "5.0km": {
+          "displacement_km": 8.66,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "8.0km": {
+          "displacement_km": 13.86,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "10.0km": {
+          "displacement_km": 17.32,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "12.0km": {
+          "displacement_km": 20.78,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        }
+      },
+      "70deg": {
+        "1.0km": {
+          "displacement_km": 2.75,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "2.0km": {
+          "displacement_km": 5.49,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "3.0km": {
+          "displacement_km": 8.24,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "5.0km": {
+          "displacement_km": 13.74,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "8.0km": {
+          "displacement_km": 21.98,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "10.0km": {
+          "displacement_km": 27.47,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "12.0km": {
+          "displacement_km": 32.97,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": true
+        }
+      },
+      "75deg": {
+        "1.0km": {
+          "displacement_km": 3.73,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "2.0km": {
+          "displacement_km": 7.46,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "3.0km": {
+          "displacement_km": 11.2,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "5.0km": {
+          "displacement_km": 18.66,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "8.0km": {
+          "displacement_km": 29.86,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "10.0km": {
+          "displacement_km": 37.32,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": true
+        },
+        "12.0km": {
+          "displacement_km": 44.78,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        }
+      },
+      "80deg": {
+        "1.0km": {
+          "displacement_km": 5.67,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "2.0km": {
+          "displacement_km": 11.34,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "3.0km": {
+          "displacement_km": 17.01,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "5.0km": {
+          "displacement_km": 28.36,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "8.0km": {
+          "displacement_km": 45.37,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        },
+        "10.0km": {
+          "displacement_km": 56.71,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        },
+        "12.0km": {
+          "displacement_km": 68.06,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        }
+      },
+      "85deg": {
+        "1.0km": {
+          "displacement_km": 11.43,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "2.0km": {
+          "displacement_km": 22.86,
+          "fits_25x25_cardinal": true,
+          "fits_25x25_diagonal": true
+        },
+        "3.0km": {
+          "displacement_km": 34.29,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": true
+        },
+        "5.0km": {
+          "displacement_km": 57.15,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        },
+        "8.0km": {
+          "displacement_km": 91.44,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        },
+        "10.0km": {
+          "displacement_km": 114.3,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        },
+        "12.0km": {
+          "displacement_km": 137.16,
+          "fits_25x25_cardinal": false,
+          "fits_25x25_diagonal": false
+        }
+      }
+    },
+    "minimum_required_window_for_85deg_5km_cloud": {
+      "required_displacement_km": 57.15,
+      "required_grid_half_width_cells": 23,
+      "minimum_window_grid_points": "47 x 47",
+      "minimum_window_physical_span_km": 115.0,
+      "minimum_window_cardinal_radius_km": 57.5
+    }
+  },
+  "vertical_coordinate_audit": {
+    "pressure_levels": [
+      50,
+      100,
+      150,
+      200,
+      250,
+      300,
+      400,
+      500,
+      700,
+      800,
+      850,
+      925,
+      1000
+    ],
+    "altitude_reconstruction_method": "Hydrostatic equation dz = (R_d * T_v / g) * d(ln P) using MEPS T, P_sfc, and q_v or integrating geopotential Phi",
+    "status": "FEASIBLE RECONSTRUCTION (CONDITIONAL)"
+  },
+  "cloud_ray_intersection_audit": {
+    "interpolation": "3D trilinear interpolation (2D bilinear horizontal + 1D log-linear vertical)",
+    "below_ground_masking": "Levels where P > P_sfc are masked out",
+    "cloud_layers": "13 discrete pressure levels in troposphere provide profile resolution"
+  },
+  "terrain_intersection_audit": {
+    "stage7_5_distinction": "Stage 7.5 evaluates 1D horizon obstruction elevation angle at station pyranometer",
+    "stage8_21a_distinction": "Stage 8.21A evaluates 3D solar vector ray intersection with DEM surface AND 3D atmospheric cloud volume"
+  },
+  "optical_proxy_audit": {
+    "classification": "B. PHYSICALLY PARAMETERIZED ATTENUATION FEASIBILITY",
+    "directly_observed": [
+      "q_l (cloud liquid water mass fraction)",
+      "q_i (cloud ice mass fraction)"
+    ],
+    "parameterized_modeling_assumptions": [
+      "r_e,liquid = 10 \u00b5m",
+      "r_e,ice = 30 \u00b5m"
+    ],
+    "target_coverage": "Proxy models direct-beam attenuation (I_dir = I_0 * exp(-tau)); pyranometer measures SW_IN (direct + diffuse global downwelling)"
+  },
+  "causality_recheck": {
+    "benchmark_t0": "00:00 UTC Day D",
+    "meps_issuance_time": "D-1 18:00 UTC",
+    "publication_time": "D-1 ~21:30 UTC",
+    "causal_lead_margin": "+2.5 hours",
+    "causal_coverage": "347 / 347 origins (100.0%)"
+  },
+  "computational_estimates": {
+    "window_25x25": {
+      "payload_per_origin_mb": 1.49,
+      "total_payload_347_origins_mb": 516.2,
+      "total_payload_347_origins_gb": 0.5,
+      "label": "REPRODUCIBLE ESTIMATE"
+    },
+    "window_47x47": {
+      "payload_per_origin_mb": 5.26,
+      "total_payload_347_origins_mb": 1824.6,
+      "total_payload_347_origins_gb": 1.78,
+      "label": "REPRODUCIBLE ESTIMATE FOR EXPANDED WINDOW"
+    }
+  }
+}

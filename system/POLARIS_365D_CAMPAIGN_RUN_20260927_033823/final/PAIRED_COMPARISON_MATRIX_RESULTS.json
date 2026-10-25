@@ -1,0 +1,40 @@
+{
+  "primary_2cell_comparison": {
+    "cell_a2_reactive_hybrid_baseline_fuel_l": 77022.5981,
+    "cell_b_polaris_closed_loop_fuel_l": 93465.6264,
+    "absolute_diff_l": 16443.0283,
+    "percentage_diff_pct": 21.35
+  },
+  "cell_details": {
+    "cell_a2": {
+      "cell_id": "cell_a2",
+      "total_cycles": 8784,
+      "cumulative_fuel_l": 77022.5981,
+      "cumulative_diesel_energy_kwh": 165770.3923,
+      "integrity_counters": {
+        "truth_leakage_count": 0,
+        "state_reset_count": 0,
+        "fuel_reset_count": 0,
+        "soc_reset_count": 0,
+        "infeasibility_count": 0,
+        "unmet_critical_load_wh": 0.0,
+        "power_balance_max_error_w": 0.0
+      }
+    },
+    "cell_b": {
+      "cell_id": "cell_b",
+      "total_cycles": 8784,
+      "cumulative_fuel_l": 93465.6264,
+      "cumulative_diesel_energy_kwh": 210502.5055,
+      "integrity_counters": {
+        "truth_leakage_count": 0,
+        "state_reset_count": 0,
+        "fuel_reset_count": 0,
+        "soc_reset_count": 0,
+        "infeasibility_count": 0,
+        "unmet_critical_load_wh": 0.0,
+        "power_balance_max_error_w": 0.0
+      }
+    }
+  }
+}

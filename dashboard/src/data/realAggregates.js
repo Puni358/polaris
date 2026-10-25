@@ -1,0 +1,73 @@
+// Real, validated aggregate results from the patched (J1b) solver runs,
+// landed 2026-10-22. Source CSVs: scratch/ui_dashboard_reactive_baseline.csv,
+// scratch/ui_dashboard_scenario1_instrumented.csv,
+// scratch/ui_dashboard_scenario{2,3,4}.csv -- all read and audited directly,
+// not estimated. Used by View 1 (KPI cards, scenario table) and View 4
+// (trade-off scatter). View 2's Decision Inspector still runs on
+// src/data/mockSeries.js until a separate instrumented pass captures the
+// per-hour causal fields it needs.
+
+export const REAL_AGGREGATES = {
+  reactive: {
+    diesel_liters: 54167.02,
+    diesel_run_hours: 6412,
+    diesel_starts: 320,
+    battery_cycles: 44.38,
+    battery_cycling_loss_kwh: 1476.8,
+    fuel_cost_eur: 135417.57,
+    renewable_curtailed_kwh: 0.0,
+    unmet_load_kwh: 0.0,
+    window_hours: 8328,
+    provenance: 'SIMULATED',
+    final_soc_pct: 20.0,
+  },
+  scenario1: {
+    diesel_liters: 37046.16,
+    diesel_run_hours: 2074,
+    diesel_starts: null, // not captured by the instrumented annual script
+    battery_cycles: 343.91,
+    battery_cycling_loss_kwh: 11962.1,
+    fuel_cost_eur: 92615.4,
+    renewable_curtailed_kwh: 969.2,
+    unmet_load_kwh: 0.0,
+    window_hours: 8760,
+    provenance: 'SIMULATED',
+  },
+  scenario4: {
+    diesel_liters: 34263.16,
+    diesel_run_hours: 1905,
+    diesel_starts: 1431,
+    battery_cycles: 348.57,
+    battery_cycling_loss_kwh: 12122.1,
+    fuel_cost_eur: 85657.89,
+    renewable_curtailed_kwh: 4.8,
+    unmet_load_kwh: 200.5,
+    unmet_load_hours: 56,
+    window_hours: 8328,
+    provenance: 'SIMULATED',
+  },
+  scenario3: {
+    diesel_liters: 34674.34,
+    diesel_run_hours: 1976,
+    diesel_starts: 1452,
+    battery_cycles: 347.30,
+    battery_cycling_loss_kwh: 12079.9,
+    fuel_cost_eur: 86685.84,
+    renewable_curtailed_kwh: 83.8,
+    unmet_load_kwh: 0.0,
+    window_hours: 8328,
+    provenance: 'SIMULATED',
+  },
+  scenario2: {
+    diesel_liters: 34199.74,
+    diesel_run_hours: 1872,
+    diesel_starts: 1465,
+    battery_cycles: 353.47,
+    battery_cycling_loss_kwh: 12294.6,
+    fuel_cost_eur: 85499.34,
+    renewable_curtailed_kwh: 28.1,
+    unmet_load_kwh: 0.0,
+    window_hours: 8328,
+    provenance: 'SIMULATED',
+  },
+}

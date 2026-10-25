@@ -1,0 +1,22 @@
+CONSTRAINT_ID,CATEGORY,MATHEMATICAL_EXPRESSION,UNITS,APPLICABLE_MODES,HIERARCHY_STAGE,STAKEHOLDER_DECISION_ID,CURRENT_IMPLEMENTATION_STATUS,GOVERNANCE_STATUS
+C_BUSBAR_BAL,Physical Balance,P_sol_used + P_wind_used + P_bat_dis + P_diesel - P_served_total - P_bat_chg - P_flex == 0,W,All Modes,Stage 0,"D01, D03",IMPLEMENTED,FULLY_SPECIFIED
+C_SOLAR_DEC,Renewable Allocation,P_solar_used(t) + P_curt_solar(t) == P_solar_cons(t),W,All Modes,Stage 0,"D09, D10, D13",IMPLEMENTED,FULLY_SPECIFIED
+C_WIND_DEC,Renewable Allocation,P_wind_used(t) + P_curt_wind(t) == P_wind_cons(t),W,All Modes,Stage 0,"D09, D10, D13",IMPLEMENTED,FULLY_SPECIFIED
+C_LOAD_DEC_C,Demand Decomposition,P_served_C(t) + P_unmet_C(t) == P_demand_C_cons(t),W,All Modes,Stage 0,"D01, D03",PARTIAL,FULLY_SPECIFIED
+C_LOAD_DEC_E,Demand Decomposition,P_served_E(t) + P_unmet_E(t) + P_shed_E(t) == P_demand_E_cons(t),W,All Modes,Stage 0,"D01, D02",NOT_IMPLEMENTED,FULLY_SPECIFIED
+C_LOAD_DEC_I,Demand Decomposition,P_served_I(t) + P_unmet_I(t) + P_shed_I(t) == P_demand_I_cons(t),W,All Modes,Stage 0,"D01, D02",NOT_IMPLEMENTED,FULLY_SPECIFIED
+C_BAT_DYN,Battery Dynamics,E_bat(t+1) == E_bat(t) + (eta_chg*P_bat_chg(t) - P_bat_dis(t)/eta_dis)*dt,Wh,All Modes,Stage 0,"D11, D12",IMPLEMENTED,FULLY_SPECIFIED
+C_BAT_EXCL,Operational Exclusivity,u_chg(t) + u_dis(t) <= 1,dimensionless,All Modes,Stage 0,D11,IMPLEMENTED,FULLY_SPECIFIED
+C_BAT_CHG_BOUND,Power Bound,P_bat_chg(t) - P_chg_max * u_chg(t) <= 0,W,All Modes,Stage 0,D11,IMPLEMENTED,FULLY_SPECIFIED
+C_BAT_DIS_BOUND,Power Bound,P_bat_dis(t) - P_dis_max * u_dis(t) <= 0,W,All Modes,Stage 0,D11,IMPLEMENTED,FULLY_SPECIFIED
+C_BAT_MIN_TECH,Equipment Protection,E_bat(t) >= C_bat * SOC_min_tech (20%),Wh,All Modes,Stage 0,D11,IMPLEMENTED,FULLY_SPECIFIED
+C_DIESEL_BOUNDS,Generator Bounds,P_diesel_min * u_diesel(t) <= P_diesel(t) <= P_diesel_max * u_diesel(t),W,All Modes,Stage 0,D07,IMPLEMENTED,FULLY_SPECIFIED
+C_DIESEL_START,Generator Startup,v_start(t) >= u_diesel(t) - u_diesel(t-1),dimensionless,All Modes,Stage 0,D07,IMPLEMENTED,FULLY_SPECIFIED
+C_CRIT_SLA_NORM,Policy SLA,P_unmet_C(t) == 0,W,Normal Mode,Stage 1,"D03, D04, D05, D14",NOT_IMPLEMENTED,FULLY_SPECIFIED
+C_SHED_PRIORITY,Shedding Queue,P_shed_E(t) <= M * sum(P_shed_I),W,Normal / Degraded,Stage 1,D02,NOT_IMPLEMENTED,FULLY_SPECIFIED
+C_BAT_EBR_RES,Resilience Constraint,E_bat(t) >= C_bat * SOC_EBR(t),Wh,Normal / Degraded,Stage 2,D11,NOT_IMPLEMENTED,PARTIALLY_SPECIFIED
+C_BAT_TERMINAL,Horizon Continuity,E_bat(H) >= C_bat * SOC_terminal_req(H),Wh,All Modes,Stage 2,D12,NOT_IMPLEMENTED,PARTIALLY_SPECIFIED
+C_FUEL_BUDGET,Resource Limit,sum_t Fuel_liter(t) <= Fuel_budget_remaining(t0),liters,All Modes,Stage 3,D08,NOT_IMPLEMENTED,PARTIALLY_SPECIFIED
+C_FORECAST_SOLAR,Uncertainty Margin,P_solar_cons(t) == (1 - gamma_solar) * P_solar_forecast(t),W,All Modes,Stage 0,D13,NOT_IMPLEMENTED,PARTIALLY_SPECIFIED
+C_FORECAST_WIND,Uncertainty Margin,P_wind_cons(t) == (1 - gamma_wind) * P_wind_forecast(t),W,All Modes,Stage 0,D13,NOT_IMPLEMENTED,PARTIALLY_SPECIFIED
+C_FORECAST_DEMAND,Uncertainty Margin,P_demand_cons(t) == (1 + gamma_demand) * P_demand_forecast(t),W,All Modes,Stage 0,D13,NOT_IMPLEMENTED,PARTIALLY_SPECIFIED

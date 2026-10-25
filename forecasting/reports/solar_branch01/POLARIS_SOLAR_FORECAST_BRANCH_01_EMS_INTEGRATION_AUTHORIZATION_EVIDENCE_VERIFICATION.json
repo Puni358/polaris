@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "verification_type": "EMS_INTEGRATION_AUTHORIZATION_EVIDENCE_VERIFICATION",
+    "timestamp": "2026-09-21T08:32:09Z",
+    "auditor": "Antigravity Read-Only Pre-Integration Verification Engine"
+  },
+  "forecast_bundle_fields": {
+    "origin_timestamp_field": "ForecastBundle.origin_timestamp",
+    "timestamps_field": "ForecastBundle.timestamps",
+    "horizon_field": "ForecastBundle.horizon_hours",
+    "SW_IN_FIELD": "ForecastBundle.solar_irradiance.point",
+    "PV_POWER_FIELD": "ForecastBundle.solar_generation.point",
+    "POINT_FORECAST_FIELD": "TimeseriesForecast.point",
+    "LOWER_FIELD": "TimeseriesForecast.lower",
+    "UPPER_FIELD": "TimeseriesForecast.upper",
+    "units_fields": {
+      "solar_irradiance": "W/m^2",
+      "solar_generation": "W",
+      "wind_generation": "W",
+      "demand": "W"
+    },
+    "MODEL_PROVENANCE_FIELD": "ForecastBundle.metadata['model_id']",
+    "MODEL_SHA_FIELD": "ForecastBundle.metadata['model_sha256']",
+    "source_file": "system/schemas/forecast_bundle.py",
+    "status": "PASS"
+  },
+  "forecast_engine_interface": {
+    "FORECASTENGINE_INTERFACE": "PASS",
+    "BRANCH01_ADAPTER_ALREADY_EXISTS": "NO",
+    "BRANCH01_ADAPTER_IMPLEMENTED": "NO",
+    "RUNTIME_SOURCE_MODIFIED_DURING_REVIEW": "NO",
+    "ADAPTER_IMPLEMENTATION": "DEFERRED_TO_CONTROLLED_IMPLEMENTATION_STEP",
+    "source_file": "system/forecasting/interface/base.py"
+  },
+  "causal_runtime_evidence": {
+    "nwp_causality": "STATIC_SOURCE_AUDIT",
+    "nwp_source": "forecasting/solar_branch_01/implementation/nwp_lead_mapper.py",
+    "lookback_causality": "STATIC_SOURCE_AUDIT",
+    "lookback_source": "forecasting/solar_branch_01/implementation/lookback_features.py",
+    "status": "PASS"
+  },
+  "fail_closed_evidence": {
+    "model_missing": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "model_hash_mismatch": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "manifest_missing": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "feature_count_mismatch": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "feature_order_mismatch": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "nan_input": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "inf_input": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "missing_nwp": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "invalid_timestamp": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "missing_lookback": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "inference_exception": "Explicitly Fails Closed (Raises ModelGovernanceError)",
+    "nan_prediction": "Explicitly Fails Closed (ValueError in TimeseriesForecast)",
+    "inf_prediction": "Explicitly Fails Closed (ValueError in TimeseriesForecast)",
+    "physically_invalid_prediction": "Explicitly Fails Closed (ValueError in TimeseriesForecast if < 0.0)",
+    "status": "PASS"
+  },
+  "rollback_boundary": {
+    "NO_RUNTIME_ROLLBACK_FALLBACK_IS_AUTHORIZED_BY_THIS_GATE": true,
+    "NO_AUTOMATIC_STAGE8_1_FALLBACK_IS_AUTHORIZED": true,
+    "NO_ZERO_SOLAR_FALLBACK_IS_AUTHORIZED": true,
+    "NO_CLEARSKY_FALLBACK_IS_AUTHORIZED": true,
+    "NO_BASELINE_FALLBACK_IS_AUTHORIZED": true,
+    "status": "EXPLICITLY_UNAUTHORIZED"
+  },
+  "source_provenance_boundary": {
+    "GOVERNANCE_ARTIFACT_GENERATOR_CREATED": "YES",
+    "GOVERNANCE_ARTIFACT_GENERATOR_MODIFIED": "YES",
+    "SCIENTIFIC_SOURCE_MODIFIED": "NO",
+    "FORECASTING_RUNTIME_SOURCE_MODIFIED": "NO",
+    "FORECASTBUNDLE_SOURCE_MODIFIED": "NO",
+    "FORECASTENGINE_SOURCE_MODIFIED": "NO",
+    "EMS_SOURCE_MODIFIED": "NO",
+    "OPTIMIZER_SOURCE_MODIFIED": "NO",
+    "DISPATCHPLAN_SOURCE_MODIFIED": "NO",
+    "DIGITAL_TWIN_SOURCE_MODIFIED": "NO",
+    "MODEL_ARTIFACT_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO"
+  },
+  "authorization_validity": {
+    "status": "AUTHORIZATION_VALIDATED",
+    "reason": "Branch 01 HGB model freeze and static integration authorization for controlled validation remain 100% evidence-supported and verified."
+  },
+  "final_status_block": {
+    "20_TEST_EVIDENCE": "PASS",
+    "FORECASTBUNDLE_FIELD_VERIFICATION": "PASS",
+    "FORECASTENGINE_INTERFACE": "PASS",
+    "CAUSAL_RUNTIME_EVIDENCE": "PASS",
+    "FAIL_CLOSED_EVIDENCE": "PASS",
+    "ROLLBACK_BOUNDARY": "EXPLICITLY_UNAUTHORIZED",
+    "SCIENTIFIC_SOURCE_MODIFIED": "NO",
+    "RUNTIME_SOURCE_MODIFIED": "NO",
+    "EMS_SOURCE_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "MODEL_APPROVAL": "APPROVED",
+    "EMS_INTEGRATION_AUTHORIZATION": "GRANTED_FOR_CONTROLLED_INTEGRATION_VALIDATION_ONLY",
+    "EMS_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "MPC_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED",
+    "AUTHORIZATION_VALIDITY": "AUTHORIZATION_VALIDATED",
+    "NEXT_GOVERNED_STEP": "STATIC_INTEGRATION_VALIDATION"
+  }
+}

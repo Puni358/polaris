@@ -1,0 +1,4 @@
+condition,lag1_correlation,sample_count
+Solar Elev > 15,0.6438439818956436,2291
+Cloud Cover > 50%,0.6669524982626639,6053
+Hard Error > 150 W/m²,0.5849830080751509,419

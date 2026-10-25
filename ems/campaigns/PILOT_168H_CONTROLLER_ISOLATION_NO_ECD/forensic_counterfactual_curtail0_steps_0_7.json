@@ -1,0 +1,148 @@
+{
+  "0": {
+    "step": 0,
+    "timestamp": "2024-06-01T00:00:00Z",
+    "baseline": {
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_value": 14296.38,
+      "mip_gap": 9.305530531163057e-05,
+      "mip_dual_bound": 14295.052691218443,
+      "hour0": {
+        "renewable_available_w": 33100.04,
+        "renewable_used_w": 0.0,
+        "renewable_curtailed_w": 33100.04,
+        "battery_charge_w": 0.0,
+        "battery_discharge_w": 27448.19,
+        "diesel_power_w": 0.0,
+        "unmet_load_w": 0.0,
+        "soc_after_pct": 35.08
+      },
+      "decomposition": {
+        "curtailment": 14271.890000000001,
+        "battery_deg_charge": 15.507552500000005,
+        "battery_deg_discharge": 8.985592500000001,
+        "diesel_marginal_fuel": 0.0,
+        "diesel_base_fuel": 0.0,
+        "diesel_startup": 0.0,
+        "unmet_load": 0.0
+      },
+      "totals_24h": {
+        "curtailment_wh": 285437.8,
+        "battery_throughput_wh": 179711.85,
+        "diesel_energy_wh": 0.0,
+        "unmet_wh": 0.0
+      }
+    },
+    "counterfactual": {
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_value": 14303.34,
+      "mip_gap": 9.85102588320473e-05,
+      "mip_dual_bound": 14301.934711772949,
+      "hour0": {
+        "renewable_available_w": 33100.04,
+        "renewable_used_w": 33100.04,
+        "renewable_curtailed_w": 0.0,
+        "battery_charge_w": 5651.85,
+        "battery_discharge_w": 0.0,
+        "diesel_power_w": 0.0,
+        "unmet_load_w": 0.0,
+        "soc_after_pct": 52.6
+      },
+      "decomposition": {
+        "curtailment": 14278.935000000003,
+        "battery_deg_charge": 15.461684500000004,
+        "battery_deg_discharge": 8.9467695,
+        "diesel_marginal_fuel": 0.0,
+        "diesel_base_fuel": 0.0,
+        "diesel_startup": 0.0,
+        "unmet_load": 0.0
+      },
+      "totals_24h": {
+        "curtailment_wh": 285578.7,
+        "battery_throughput_wh": 178935.39,
+        "diesel_energy_wh": 0.0,
+        "unmet_wh": 0.0
+      },
+      "constraint_rows_before": 266,
+      "constraint_rows_after": 267
+    },
+    "delta_objective": 6.960000000000946
+  },
+  "7": {
+    "step": 7,
+    "timestamp": "2024-06-01T07:00:00Z",
+    "baseline": {
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_value": 12228.5,
+      "mip_gap": 0.0,
+      "mip_dual_bound": 12228.49610057287,
+      "hour0": {
+        "renewable_available_w": 66715.98000000001,
+        "renewable_used_w": 10907.57,
+        "renewable_curtailed_w": 55808.41,
+        "battery_charge_w": 0.0,
+        "battery_discharge_w": 28998.4,
+        "diesel_power_w": 0.0,
+        "unmet_load_w": 0.0,
+        "soc_after_pct": 20.0
+      },
+      "decomposition": {
+        "curtailment": 12203.104000000001,
+        "battery_deg_charge": 16.704077,
+        "battery_deg_discharge": 8.688251000000001,
+        "diesel_marginal_fuel": 0.0,
+        "diesel_base_fuel": 0.0,
+        "diesel_startup": 0.0,
+        "unmet_load": 0.0
+      },
+      "totals_24h": {
+        "curtailment_wh": 244062.08000000002,
+        "battery_throughput_wh": 173765.02000000002,
+        "diesel_energy_wh": 0.0,
+        "unmet_wh": 0.0
+      }
+    },
+    "counterfactual": {
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_value": 12229.51,
+      "mip_gap": 3.230845218653857e-05,
+      "mip_dual_bound": 12229.113863470033,
+      "hour0": {
+        "renewable_available_w": 66715.98,
+        "renewable_used_w": 66715.98,
+        "renewable_curtailed_w": 0.0,
+        "battery_charge_w": 26810.01,
+        "battery_discharge_w": 0.0,
+        "diesel_power_w": 0.0,
+        "unmet_load_w": 0.0,
+        "soc_after_pct": 48.09
+      },
+      "decomposition": {
+        "curtailment": 12204.129,
+        "battery_deg_charge": 16.697402500000003,
+        "battery_deg_discharge": 8.6826015,
+        "diesel_marginal_fuel": 0.0,
+        "diesel_base_fuel": 0.0,
+        "diesel_startup": 0.0,
+        "unmet_load": 0.0
+      },
+      "totals_24h": {
+        "curtailment_wh": 244082.58,
+        "battery_throughput_wh": 173652.03,
+        "diesel_energy_wh": 0.0,
+        "unmet_wh": 0.0
+      },
+      "constraint_rows_before": 266,
+      "constraint_rows_after": 267
+    },
+    "delta_objective": 1.0100000000002183
+  }
+}

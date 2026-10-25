@@ -1,0 +1,26 @@
+{
+  "audit_directory": "POLARIS_EMS_ECD_PROTOTYPE_INPUT_PROVENANCE_AUDIT",
+  "verification_timestamp": "2026-09-23T18:06:50Z",
+  "audit_phase": "TEST_SPACE_FEASIBILITY_AUDIT_COMPLETE",
+  "total_audit_artifacts": 10,
+  "artifact_sha256_digests": {
+    "POLARIS_EMS_ECD_FUEL_STATE_SOURCE_AUDIT.md": "862cac582510b412b01ab7272b2bbcac0f8bc3ea4d46bffd72c9da3f629ae606",
+    "POLARIS_EMS_ECD_PROTOTYPE_FIXTURE_SPECIFICATION.md": "d3176f965b849c9fc2441ac43b9b605112235501e169a5e95164516af843975f",
+    "POLARIS_EMS_ECD_PROTOTYPE_INPUT_PROVENANCE_AUDIT.json": "fbac233e35ed29e419dcb332cdb9954835943b2e371b96d00f27cbccd094b904",
+    "POLARIS_EMS_ECD_PROTOTYPE_INPUT_PROVENANCE_AUDIT.md": "7aad408c3851044150ec7f29bee9b1f831b8a500d1ed9bfe2a56629e680c7761",
+    "POLARIS_EMS_ECD_PROTOTYPE_PROVENANCE_MATRIX.md": "d16425b759c38bd186d5bc0ee2dd1cc86109f19551bc92e54949c4b56530321a",
+    "POLARIS_EMS_ECD_SCHEMA_INPUT_GAP_AUDIT.md": "4c1d914c9d5434cf6ef37df81ac23457bbae51c29e83eb2b1edc7f68c8a06968",
+    "POLARIS_EMS_ECD_SYNTHETIC_LOAD_SOURCE_AUDIT.md": "0fb415d78bfcee30f1b930f119b262307404cb89ac93976b46d8928cdcc86f26",
+    "POLARIS_EMS_ECD_TEST_CASE_MATRIX.md": "d70791d853060f8275d850152697f7b5e17dc7c877686a109641138e764324eb",
+    "POLARIS_EMS_ECD_TEST_SPACE_FEASIBILITY_AUDIT.md": "2205057f59ac1841306030751acd114e265ef78696607a6d5a7dfb723f870f98"
+  },
+  "integrity_verification": {
+    "protected_runtime_files_modified": false,
+    "protected_schemas_modified": false,
+    "protected_configs_modified": false,
+    "protected_solvers_modified": false,
+    "ecd_runs_executed": false,
+    "simulations_executed": false,
+    "read_only_audit_status": "VERIFIED_PASSED"
+  }
+}

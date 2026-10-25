@@ -1,0 +1,178 @@
+{
+  "timestamp_utc": "2026-09-14T12:34:49.313859+00:00",
+  "document_title": "POLARIS CAUSAL SOLAR-AWARE CLOUD-ADVECTION DIAGNOSTIC REPORT",
+  "governance_audit": {
+    "even_origins_count": 173,
+    "odd_firewall": {
+      "odd_origins_accessed": false,
+      "odd_tensors_loaded": false,
+      "odd_predictions_generated": false,
+      "odd_metrics_evaluated": false,
+      "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+    },
+    "no_model_training": true,
+    "no_odd_access": true,
+    "network_fetches": 0,
+    "diagnostic_only": true
+  },
+  "cloud_motion_summary": {
+    "n_total_horizon_steps": 4152,
+    "n_valid_motion_estimates": 3005,
+    "fraction_valid_motion_estimates": 0.7237,
+    "mean_cloud_displacement_speed_kmh": 1.63
+  },
+  "wind_advection_comparison": {
+    "mean_10m_wind_speed_kmh": 16.4,
+    "mean_700hpa_wind_speed_kmh": 40.67,
+    "mean_cloud_vs_10m_angular_diff_deg": 79.3,
+    "mean_cloud_vs_700hpa_angular_diff_deg": 79.1,
+    "empirically_superior_steering_level": "700 hPa"
+  },
+  "spatial_and_solar_geometry": {
+    "mean_upstream_cloud_fraction": 0.6585,
+    "mean_downstream_cloud_fraction": 0.6276,
+    "mean_sunward_cloud_fraction": 0.6473,
+    "mean_anti_sunward_cloud_fraction": 0.6383,
+    "upstream_vs_downstream_asymmetry": 0.0309
+  },
+  "horizon_stratified_correlations": [
+    {
+      "horizon_group": "H1\u2013H3",
+      "sample_size": 92,
+      "upstream_cloud_spearman_rho": -0.3024,
+      "upstream_cloud_p_val": 0.0033965967619105863,
+      "sunward_cloud_spearman_rho": -0.2606,
+      "sunward_cloud_p_val": 0.012110016395032121
+    },
+    {
+      "horizon_group": "H4\u2013H6",
+      "sample_size": 201,
+      "upstream_cloud_spearman_rho": -0.344,
+      "upstream_cloud_p_val": 5.732090154249228e-07,
+      "sunward_cloud_spearman_rho": -0.3469,
+      "sunward_cloud_p_val": 4.549036405759091e-07
+    },
+    {
+      "horizon_group": "H7\u2013H12",
+      "sample_size": 783,
+      "upstream_cloud_spearman_rho": -0.1593,
+      "upstream_cloud_p_val": 7.520286655365741e-06,
+      "sunward_cloud_spearman_rho": -0.1698,
+      "sunward_cloud_p_val": 1.7767394219371844e-06
+    },
+    {
+      "horizon_group": "H13\u2013H18",
+      "sample_size": 810,
+      "upstream_cloud_spearman_rho": -0.0535,
+      "upstream_cloud_p_val": 0.12842924101292072,
+      "sunward_cloud_spearman_rho": -0.0313,
+      "sunward_cloud_p_val": 0.373701842318707
+    },
+    {
+      "horizon_group": "H19\u2013H24",
+      "sample_size": 330,
+      "upstream_cloud_spearman_rho": 0.0249,
+      "upstream_cloud_p_val": 0.6525988276384733,
+      "sunward_cloud_spearman_rho": 0.0203,
+      "sunward_cloud_p_val": 0.7128111943411258
+    }
+  ],
+  "error_alignment_correlations": [
+    {
+      "feature_col": "upstream_cloud_null",
+      "feature_description": "NULL CONTROL: Upstream Cloud (Randomized Vector)",
+      "spearman_rho": -0.1077,
+      "spearman_p_val": 3.7485605896237073e-07,
+      "pearson_r": -0.0219,
+      "pearson_p_val": 0.30169989922897017,
+      "statistically_significant": true
+    },
+    {
+      "feature_col": "upstream_cloud",
+      "feature_description": "Upstream Cloud Fraction (Real 700hPa Wind)",
+      "spearman_rho": -0.1075,
+      "spearman_p_val": 3.93150889086702e-07,
+      "pearson_r": -0.021,
+      "pearson_p_val": 0.3239207341783296,
+      "statistically_significant": true
+    },
+    {
+      "feature_col": "downstream_cloud",
+      "feature_description": "Downstream Cloud Fraction (Real 700hPa Wind)",
+      "spearman_rho": -0.1059,
+      "spearman_p_val": 5.892592667525742e-07,
+      "pearson_r": -0.0233,
+      "pearson_p_val": 0.2735511329690009,
+      "statistically_significant": true
+    },
+    {
+      "feature_col": "sunward_cloud",
+      "feature_description": "Sunward Cloud Fraction (Solar Azimuth)",
+      "spearman_rho": -0.1033,
+      "spearman_p_val": 1.1052330448449863e-06,
+      "pearson_r": -0.0114,
+      "pearson_p_val": 0.5906519274511771,
+      "statistically_significant": true
+    },
+    {
+      "feature_col": "ang_diff_700hpa",
+      "feature_description": "700hPa Wind vs Cloud Motion Angular Disagreement",
+      "spearman_rho": 0.0473,
+      "spearman_p_val": 0.02599325923421142,
+      "pearson_r": 0.064,
+      "pearson_p_val": 0.0025966739097487163,
+      "statistically_significant": false
+    },
+    {
+      "feature_col": "speed_ratio_700hpa",
+      "feature_description": "700hPa Wind vs Cloud Speed Ratio",
+      "spearman_rho": 0.0464,
+      "spearman_p_val": 0.028990955842249217,
+      "pearson_r": 0.0609,
+      "pearson_p_val": 0.00410937629338773,
+      "statistically_significant": false
+    },
+    {
+      "feature_col": "upstream_lwp",
+      "feature_description": "Upstream Liquid Water Path (LWP)",
+      "spearman_rho": -0.0252,
+      "spearman_p_val": 0.23564723796709253,
+      "pearson_r": 0.0133,
+      "pearson_p_val": 0.5320404662659226,
+      "statistically_significant": false
+    },
+    {
+      "feature_col": "up_down_ratio",
+      "feature_description": "Upstream / Downstream Ratio",
+      "spearman_rho": 0.0208,
+      "spearman_p_val": 0.3269115989576541,
+      "pearson_r": -0.0139,
+      "pearson_p_val": 0.5139188813687403,
+      "statistically_significant": false
+    },
+    {
+      "feature_col": "sunward_lwp",
+      "feature_description": "Sunward Liquid Water Path (LWP)",
+      "spearman_rho": -0.0044,
+      "spearman_p_val": 0.8345573969735822,
+      "pearson_r": 0.0192,
+      "pearson_p_val": 0.3673411741245033,
+      "statistically_significant": false
+    }
+  ],
+  "null_test_summary": {
+    "real_physics_upstream_rho": -0.1075,
+    "random_null_upstream_rho": -0.1077,
+    "signal_exceeds_null": false
+  },
+  "final_classification": {
+    "classification_code": "C \u2014 NO ACTIONABLE SIGNAL",
+    "classification_text": "No robust, physically aligned relationship was found that outperforms random null controls.",
+    "recommendation": "DO NOT PROCEED \u2014 SPATIAL INFORMATION NOT ACTIONABLE"
+  },
+  "cryptographic_hashes": {
+    "control_predictions_csv_sha256": "b4cafe04df7530d1a1c7dbea9242d5800159d221055d0b434e8ed50bfff83366",
+    "diagnostic_script_sha256": "29e9e1d16a10486487a4c3f46ce3c78b59f11d5b960e514566b4f0c6c7098283",
+    "diagnostic_json_sha256": "458dc58ea450f118972afb354037473521902485711b630cae179580c44b9509"
+  }
+}

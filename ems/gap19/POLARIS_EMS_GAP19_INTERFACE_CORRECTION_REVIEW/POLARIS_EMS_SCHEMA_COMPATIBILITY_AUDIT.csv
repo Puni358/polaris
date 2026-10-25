@@ -1,0 +1,4 @@
+SCHEMA,VERSION,ADDITIVE_FIELDS_PERMITTED,BREAKING_CHANGE_REQUIRED,COMPATIBILITY_VERDICT
+ForecastBundle,1.0.0,YES (Optional tier breakdown fields),NO,ADDITIVE_COMPATIBLE
+StationState,1.0.0,YES (Optional fuel & mode fields),NO,ADDITIVE_COMPATIBLE
+DispatchPlan,1.0.0,YES (Optional stage diagnostic fields),NO,ADDITIVE_COMPATIBLE

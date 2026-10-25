@@ -1,0 +1,16 @@
+{
+  "gate": "GATE-06",
+  "audit": "OPTION_D_SOURCE_MODIFICATION_PROVENANCE",
+  "target_file": "system/optimization/implementations/option_d.py",
+  "previous_sha256": "eb15854400561c1dd29382c087f352633bc4816c5a51f0cb4112511acee72159",
+  "current_sha256": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+  "option_d_modification": "if p_diesel > 0 and p_dis == 0",
+  "source_modifications": 1,
+  "other_source_modifications": 0,
+  "policy_change": "NO",
+  "option_d_regression": "PASS",
+  "option_d_tests_passed": "36_OF_36",
+  "audit_document_hash": {
+    "GATE06_OPTION_D_MODIFICATION_AUDIT.md": "8d2b795a09d69529b1ef51aa6f8616afa3183f1bd0267df3a18b93d3a2afe56b"
+  }
+}

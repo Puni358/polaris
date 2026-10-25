@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "review_type": "FINAL_STATIC_INTEGRATION_EVIDENCE_REVIEW",
+    "review_timestamp": "2026-09-21T08:54:00Z",
+    "reviewer": "Antigravity Autonomous Governance & Static Review Committee"
+  },
+  "authoritative_model_identity": {
+    "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "model_version": "1.0.0",
+    "model_path": "artifacts/model_runs/RUN_BRANCH01_CANDIDATE_A_HGB/model.joblib",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "architecture": "MultiOutputRegressor(HistGradientBoostingRegressor)",
+    "verification_status": "PASS"
+  },
+  "sixteen_pillar_evidence_assessment": {
+    "MODEL_IDENTITY": {
+      "status": "PASS",
+      "evidence_type": "ARTIFACT_HASH_AND_MANIFEST"
+    },
+    "FEATURE_CONTRACT": {
+      "status": "PASS",
+      "evidence_type": "MANIFEST_VERIFICATION_AND_SOURCE_AUDIT",
+      "feature_count": 18
+    },
+    "TARGET_CONTRACT": {
+      "status": "PASS",
+      "evidence_type": "MANIFEST_VERIFICATION_AND_SOURCE_AUDIT",
+      "target_variable": "SW_IN",
+      "unit": "W/m^2"
+    },
+    "CAUSALITY": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SOURCE_AUDIT"
+    },
+    "NWP_CAUSALITY": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SOURCE_AUDIT"
+    },
+    "HORIZON_ALIGNMENT": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SOURCE_AUDIT",
+      "horizons": 24
+    },
+    "TIMESTAMP_ALIGNMENT": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SOURCE_AUDIT",
+      "cadence": "1h UTC"
+    },
+    "PREPROCESSING": {
+      "status": "PASS",
+      "evidence_type": "SOURCE_AUDIT"
+    },
+    "FORECASTBUNDLE": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SCHEMA_AUDIT"
+    },
+    "PV_MAPPING": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SOURCE_AUDIT",
+      "formula": "P_solar = min(SW_IN * 51.0, 60000 W)"
+    },
+    "FAIL_CLOSED": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_SOURCE_AUDIT"
+    },
+    "TRUTH_FIREWALL": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_AND_STATIC_ANALYSIS"
+    },
+    "DETERMINISM": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST",
+      "max_abs_diff": 0.0
+    },
+    "SOURCE_PROVENANCE": {
+      "status": "PASS",
+      "evidence_type": "ARTIFACT_HASH"
+    },
+    "PROTECTED_ARTIFACTS_UNCHANGED": {
+      "status": "PASS",
+      "evidence_type": "ARTIFACT_HASH"
+    },
+    "TEST_EVIDENCE": {
+      "status": "PASS",
+      "evidence_type": "EXECUTED_TEST_SUITE_30_OF_30"
+    }
+  },
+  "scientific_regime_characterization": {
+    "overall_test_mae_w_m2": 4.3687,
+    "overall_test_rmse_w_m2": 8.4466,
+    "zero_irradiance_target_percentage": 67.76,
+    "low_irradiance_le_5_w_m2_percentage": 92.36,
+    "daytime_sw_in_gt_5_w_m2_subset_mae_w_m2": 16.4046,
+    "regime_note": "Test MAE of 4.3687 W/m^2 is strongly influenced by Arctic polar night low-variance zero target points (67.76% zero target points). Daytime irradiance error is 16.4046 W/m^2 MAE."
+  },
+  "final_status_block": {
+    "STATIC_INTEGRATION_EVIDENCE_REVIEW": "PASS",
+    "MODEL_IDENTITY": "PASS",
+    "AUTHORITATIVE_MODEL_SHA256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "FEATURE_CONTRACT": "PASS",
+    "TARGET_CONTRACT": "PASS",
+    "CAUSALITY": "PASS",
+    "NWP_CAUSALITY": "PASS",
+    "HORIZON_ALIGNMENT": "PASS",
+    "TIMESTAMP_ALIGNMENT": "PASS",
+    "PREPROCESSING": "PASS",
+    "FORECASTBUNDLE": "PASS",
+    "PV_MAPPING": "PASS",
+    "FAIL_CLOSED": "PASS",
+    "TRUTH_FIREWALL": "PASS",
+    "DETERMINISM": "PASS",
+    "SOURCE_PROVENANCE": "PASS",
+    "PROTECTED_ARTIFACTS_UNCHANGED": "PASS",
+    "TEST_EVIDENCE": "PASS",
+    "MODEL_RETRAINED": "NO",
+    "MODEL_TUNED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "EMS_EXECUTED": "NO",
+    "MPC_EXECUTED": "NO",
+    "MILP_EXECUTED_AS_EMS_EXPERIMENT": "NO",
+    "DIGITAL_TWIN_EXECUTED": "NO",
+    "EMS_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "MPC_EXECUTION_AUTHORIZATION": "NOT_GRANTED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED",
+    "NEXT_GOVERNED_STEP": "CONTROLLED_EMS_INTEGRATION_VALIDATION_REVIEW"
+  }
+}

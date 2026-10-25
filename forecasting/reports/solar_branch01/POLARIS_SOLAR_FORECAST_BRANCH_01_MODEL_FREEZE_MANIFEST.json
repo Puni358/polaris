@@ -1,0 +1,81 @@
+{
+  "model_identity": {
+    "model_id": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1",
+    "model_version": "1.0.0",
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "architecture": "MultiOutputRegressor(HistGradientBoostingRegressor)",
+    "model_path": "artifacts/model_runs/RUN_BRANCH01_CANDIDATE_A_HGB/model.joblib",
+    "model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+    "created_timestamp": "2026-09-21T08:06:40Z",
+    "immutability_status": "FROZEN_IMMUTABLE"
+  },
+  "hyperparameters": {
+    "loss": "squared_error",
+    "learning_rate": 0.05,
+    "max_iter": 100,
+    "max_depth": 6,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0,
+    "max_bins": 255,
+    "random_state": 42
+  },
+  "feature_contract": {
+    "input_dimension": 18,
+    "feature_order": [
+      "sw_in_lag_0h",
+      "sw_in_lag_1h",
+      "sw_in_lag_2h",
+      "sw_in_lag_3h",
+      "sw_in_lag_6h",
+      "sw_in_lag_12h",
+      "sw_in_lag_23h",
+      "sw_in_mean_24h",
+      "sw_in_std_24h",
+      "sw_in_max_24h",
+      "sw_in_min_24h",
+      "solar_elevation",
+      "solar_zenith",
+      "sin_hour",
+      "cos_hour",
+      "sin_doy",
+      "cos_doy",
+      "clearsky_sw_in_origin"
+    ]
+  },
+  "target_contract": {
+    "target_variable": "SW_IN",
+    "unit": "W/m^2",
+    "output_dimension": 24,
+    "horizons": "SW_IN(t+1)...SW_IN(t+24)"
+  },
+  "data_provenance": {
+    "dataset_id": "SITES_Nuolja_2024",
+    "raw_dataset_sha256": "6842e0f71b1b1d4a3ea40d56cb620fd88ca7daa1701177dbf8954680795f45f3",
+    "clearsky_dataset_sha256": "181d27b19f25ae23a3394ff8f5cafcb20bc14c29f26da1db726e1b1bc1778846",
+    "training_origins_count": 5832,
+    "validation_origins_count": 1440,
+    "test_origins_count": 1464,
+    "embargo_hours": 24
+  },
+  "performance_and_audit": {
+    "validation_mae": 26.3503,
+    "validation_rmse": 52.9917,
+    "test_mae": 4.3687,
+    "test_rmse": 8.4466,
+    "replay_verification_status": "PASS",
+    "replay_tolerance": 1e-05,
+    "test_population_description": "Nuolja 2024 Nov-Dec held-out split (1,464 origins x 24 horizons)",
+    "test_regime_characterization": "67.76% zero target points; 92.36% <=5 W/m^2 target points",
+    "polar_night_effect": "Low test MAE reflects low-variance Arctic polar night target values; performance is materially better under low-irradiance than daytime >5 W/m^2 (16.40 W/m^2 MAE)"
+  },
+  "governance": {
+    "reproducibility_classification": "A",
+    "scientific_validity": "PASS",
+    "model_approval": "APPROVED",
+    "ems_integration_authorization": "GRANTED_FOR_CONTROLLED_INTEGRATION_VALIDATION_ONLY",
+    "ems_execution_authorization": "NOT_GRANTED",
+    "mpc_execution_authorization": "NOT_GRANTED",
+    "production_deployment": "NOT_AUTHORIZED"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "checkpoint_name": "SPATIAL_NWP_S0_1_PROTOCOL_FREEZE",
+  "phase": "Phase S0.1",
+  "date": "2026-09-14",
+  "target_location": {
+    "name": "SITES Nuolja",
+    "latitude": 68.362074,
+    "longitude": 18.738752,
+    "elevation_m_asl": 702
+  },
+  "verdict": "PROTOCOL FROZEN",
+  "governance_status": {
+    "no_model_training_performed": true,
+    "no_odd_data_accessed": true,
+    "current_champion_untouched": true
+  },
+  "corrections_made_in_s0_1": [
+    {
+      "correction": "Correction 1 — Physical Spatial Extent",
+      "details": "Distinguished grid cell count (N x N) from center-to-center spatial span ((N - 1) x 2.5 km). Explicitly documented center-to-center spans for 5x5 (10.0 km) through 64x64 (157.5 km)."
+    },
+    {
+      "correction": "Correction 2 — 64x64 Anchor Geometry",
+      "details": "Reconfirmed anchor cell (209, 548) placed at zero-indexed patch coordinate (31, 31) yielding bounds y=[178, 241], x=[517, 580]. Documented that geometric center lies between 31 and 32, making the 1-cell offset a fixed deterministic rule."
+    },
+    {
+      "correction": "Correction 3 — Training Loss Explicitly Frozen",
+      "details": "Frozen as Daytime Mean Absolute Error Loss (torch.nn.L1Loss()), matching POLARIS primary metric. Night hours contribute zero loss/gradient via daytime masking."
+    },
+    {
+      "correction": "Correction 4 — Cross-Validation Wording Standardized",
+      "details": "Standardized to exact locked benchmark wording: '5-fold GroupKFold by forecast origin'. Grouping variable is forecast origin, not month."
+    }
+  ],
+  "candidate_spatial_footprints": [
+    {
+      "footprint": "5x5",
+      "grid_cells": "5x5",
+      "grid_intervals": 4,
+      "center_to_center_span_km": 10.0,
+      "tensor_shape_per_origin": [24, 11, 5, 5],
+      "size_per_origin_kb": 26.4,
+      "even_storage_mb": 4.57,
+      "feasible": true
+    },
+    {
+      "footprint": "9x9",
+      "grid_cells": "9x9",
+      "grid_intervals": 8,
+      "center_to_center_span_km": 20.0,
+      "tensor_shape_per_origin": [24, 11, 9, 9],
+      "size_per_origin_kb": 85.5,
+      "even_storage_mb": 14.80,
+      "feasible": true
+    },
+    {
+      "footprint": "13x13",
+      "grid_cells": "13x13",
+      "grid_intervals": 12,
+      "center_to_center_span_km": 30.0,
+      "tensor_shape_per_origin": [24, 11, 13, 13],
+      "size_per_origin_kb": 178.5,
+      "even_storage_mb": 30.87,
+      "feasible": true
+    },
+    {
+      "footprint": "21x21",
+      "grid_cells": "21x21",
+      "grid_intervals": 20,
+      "center_to_center_span_km": 50.0,
+      "tensor_shape_per_origin": [24, 11, 21, 21],
+      "size_per_origin_kb": 465.7,
+      "even_storage_mb": 80.57,
+      "feasible": true
+    },
+    {
+      "footprint": "33x33",
+      "grid_cells": "33x33",
+      "grid_intervals": 32,
+      "center_to_center_span_km": 80.0,
+      "tensor_shape_per_origin": [24, 11, 33, 33],
+      "size_per_origin_mb": 1.15,
+      "even_storage_mb": 198.97,
+      "feasible": true
+    },
+    {
+      "footprint": "49x49",
+      "grid_cells": "49x49",
+      "grid_intervals": 48,
+      "center_to_center_span_km": 120.0,
+      "tensor_shape_per_origin": [24, 11, 49, 49],
+      "size_per_origin_mb": 2.54,
+      "even_storage_mb": 438.63,
+      "feasible": true
+    },
+    {
+      "footprint": "64x64",
+      "grid_cells": "64x64",
+      "grid_intervals": 63,
+      "center_to_center_span_km": 157.5,
+      "tensor_shape_per_origin": [24, 11, 64, 64],
+      "size_per_origin_mb": 4.33,
+      "even_storage_mb": 748.29,
+      "feasible": true
+    }
+  ],
+  "frozen_nwp_source": {
+    "model": "AROME-Arctic 2.5 km Deterministic Archive",
+    "institution": "MET Norway",
+    "initialization_cycle": "D-1 18:00 UTC",
+    "nearest_grid_index": [209, 548],
+    "nearest_coordinates": [68.364774, 18.715312],
+    "distance_to_nuolja_km": 1.0074
+  },
+  "frozen_channels": [
+    { "index": 1, "name": "surface_downwelling_shortwave_flux_in_air", "level": "Surface", "classification": "REQUIRED" },
+    { "index": 2, "name": "cloud_area_fraction", "level": "Surface", "classification": "REQUIRED" },
+    { "index": 3, "name": "high_type_cloud_area_fraction", "level": "Surface", "classification": "REQUIRED" },
+    { "index": 4, "name": "medium_type_cloud_area_fraction", "level": "Surface", "classification": "REQUIRED" },
+    { "index": 5, "name": "low_type_cloud_area_fraction", "level": "Surface", "classification": "REQUIRED" },
+    { "index": 6, "name": "atmosphere_mass_content_of_cloud_liquid_water", "level": "Surface (LWP)", "classification": "REQUIRED" },
+    { "index": 7, "name": "atmosphere_mass_content_of_cloud_ice", "level": "Surface (IWP)", "classification": "REQUIRED" },
+    { "index": 8, "name": "x_wind_10m", "level": "10m Height", "classification": "REQUIRED" },
+    { "index": 9, "name": "y_wind_10m", "level": "10m Height", "classification": "REQUIRED" },
+    { "index": 10, "name": "x_wind_700hPa", "level": "700 hPa Pressure Level", "classification": "REQUIRED" },
+    { "index": 11, "name": "y_wind_700hPa", "level": "700 hPa Pressure Level", "classification": "REQUIRED" }
+  ],
+  "frozen_vertical_levels": [
+    "Surface (0m)",
+    "10m Height",
+    "700 hPa Pressure Level"
+  ],
+  "patch_extraction_geometry": {
+    "anchor_cell": [209, 548],
+    "odd_footprint_rule": "Symmetric indexing centered at (209, 548) with half-width k=(N-1)/2",
+    "even_64x64_rule": "Anchor (209, 548) placed at position (31, 31) in zero-indexed patch. y-bounds: [178, 241], x-bounds: [517, 580]",
+    "domain_boundary_egress": false,
+    "padding_required": false
+  },
+  "temporal_representation": {
+    "spatial_sequence_length": 24,
+    "lead_hours": "+6h to +29h from D-1 18Z run",
+    "station_history_features": 38,
+    "fusion_method": "Parallel Tabular MLP context vector concatenated with temporal GRU step states"
+  },
+  "training_loss": {
+    "loss_function": "Daytime Mean Absolute Error (MAE) Loss (torch.nn.L1Loss())",
+    "selection_justification": "Matches primary benchmark optimization metric (Daytime MAE W/m^2). Confirmed in Phase 10 Candidate A and C PyTorch implementations.",
+    "night_hours_contribution": "Zero loss / zero gradient during night hours (solar_elevation <= 0)",
+    "masking_implementation": "Daytime hours masked before computing mean L1 loss",
+    "loss_uniformity": "100% identical across all seven spatial footprints"
+  },
+  "normalization": {
+    "fit_scope": "TRAINING ORIGINS ONLY per fold",
+    "method": "Per-channel Z-score standard scaling",
+    "clipping_bounds": [-5.0, 5.0]
+  },
+  "frozen_architecture": {
+    "family": "2D CNN Spatial Encoder + GRU Temporal Model + Tabular Branch",
+    "spatial_encoder": "Conv2d(11,16,k=3,p=1)->BN(16)->ReLU -> Conv2d(16,32,k=3,p=1)->BN(32)->ReLU -> AdaptiveAvgPool2d((1,1))",
+    "temporal_encoder": "GRU(input_size=32, hidden_size=32, batch_first=True)",
+    "tabular_branch": "Linear(38,32)->ReLU",
+    "head": "Linear(64,32)->ReLU->Dropout(0.2)->Linear(32,1)",
+    "parameter_count_per_footprint": 16033,
+    "parameter_count_parity": true
+  },
+  "training_and_reproducibility": {
+    "master_seed": 42,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 8,
+    "max_epochs": 300,
+    "early_stopping_patience": 20
+  },
+  "cross_validation": {
+    "dataset": "173 EVEN development origins",
+    "strategy": "5-fold GroupKFold by forecast origin",
+    "identical_folds_across_all_footprints": true
+  },
+  "promotion_gates": {
+    "G1": "Aggregated EVEN Delta MAE <= -0.50 W/m^2",
+    "G2": ">= 4/5 folds improved",
+    "G3": "Maximum fold degradation <= +0.50 W/m^2",
+    "G4": "Candidate nMAE <= control nMAE AND candidate RMSE <= control RMSE",
+    "G5": "100% causal availability & parser compliance",
+    "G6": "Exact control reproduction"
+  },
+  "winner_selection_rule": {
+    "step_1": "Filter footprints passing all G1-G6 promotion gates.",
+    "step_2": "If none pass, reject all spatial models and retain champion Stage 8.1.",
+    "step_3": "If multiple pass, select larger footprint only if Delta MAE > 0.25 W/m^2 superior to smaller footprint.",
+    "step_4": "If performance is indistinguishable (|Delta MAE| <= 0.25 W/m^2), select the smaller footprint per parsimony."
+  },
+  "leakage_firewall": {
+    "odd_in_training": false,
+    "odd_in_scaling": false,
+    "post_t0_nwp_used": false,
+    "future_observed_sw_in_used": false,
+    "future_observed_clouds_used": false,
+    "firewall_status": "INTACT"
+  },
+  "checkpoint_files_created": [
+    "spatial_arome_research/SPATIAL_NWP_S0_1_PROTOCOL_FREEZE.md",
+    "spatial_arome_research/SPATIAL_NWP_S0_1_PROTOCOL_FREEZE.json"
+  ]
+}

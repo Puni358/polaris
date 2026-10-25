@@ -1,0 +1,2784 @@
+{
+  "created_at": "2026-09-12T08:07:23.411283+00:00",
+  "last_updated": "2026-09-12T08:26:34.009244+00:00",
+  "total_origins": 347,
+  "status": "EXTRACTION_COMPLETE",
+  "origins": {
+    "2024-01-20": {
+      "origin_index": 0,
+      "t0": "2024-01-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240120T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:07:34.606302+00:00"
+    },
+    "2024-01-21": {
+      "origin_index": 1,
+      "t0": "2024-01-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240121T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:16.027885+00:00"
+    },
+    "2024-01-22": {
+      "origin_index": 2,
+      "t0": "2024-01-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240122T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:21.487546+00:00"
+    },
+    "2024-01-23": {
+      "origin_index": 3,
+      "t0": "2024-01-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240123T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:22.010390+00:00"
+    },
+    "2024-01-24": {
+      "origin_index": 4,
+      "t0": "2024-01-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240124T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:33.236403+00:00"
+    },
+    "2024-01-25": {
+      "origin_index": 5,
+      "t0": "2024-01-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240125T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:44.032089+00:00"
+    },
+    "2024-01-26": {
+      "origin_index": 6,
+      "t0": "2024-01-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240126T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:52.195927+00:00"
+    },
+    "2024-01-27": {
+      "origin_index": 7,
+      "t0": "2024-01-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240127T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:50.318005+00:00"
+    },
+    "2024-01-28": {
+      "origin_index": 8,
+      "t0": "2024-01-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240128T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:47.759206+00:00"
+    },
+    "2024-01-29": {
+      "origin_index": 9,
+      "t0": "2024-01-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240129T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:48.598498+00:00"
+    },
+    "2024-01-30": {
+      "origin_index": 10,
+      "t0": "2024-01-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240130T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:45.840742+00:00"
+    },
+    "2024-01-31": {
+      "origin_index": 11,
+      "t0": "2024-01-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240131T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:49.630976+00:00"
+    },
+    "2024-02-01": {
+      "origin_index": 12,
+      "t0": "2024-02-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240201T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:48.571004+00:00"
+    },
+    "2024-02-02": {
+      "origin_index": 13,
+      "t0": "2024-02-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240202T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:48.772245+00:00"
+    },
+    "2024-02-03": {
+      "origin_index": 14,
+      "t0": "2024-02-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240203T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:46.976629+00:00"
+    },
+    "2024-02-04": {
+      "origin_index": 15,
+      "t0": "2024-02-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240204T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:45.938320+00:00"
+    },
+    "2024-02-05": {
+      "origin_index": 16,
+      "t0": "2024-02-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240205T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:09:46.843737+00:00"
+    },
+    "2024-02-06": {
+      "origin_index": 17,
+      "t0": "2024-02-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240206T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:01.011607+00:00"
+    },
+    "2024-02-07": {
+      "origin_index": 18,
+      "t0": "2024-02-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240207T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:10.929625+00:00"
+    },
+    "2024-02-08": {
+      "origin_index": 19,
+      "t0": "2024-02-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240208T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:11.009414+00:00"
+    },
+    "2024-02-09": {
+      "origin_index": 20,
+      "t0": "2024-02-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240209T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:22.022081+00:00"
+    },
+    "2024-02-10": {
+      "origin_index": 21,
+      "t0": "2024-02-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240210T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:29.007436+00:00"
+    },
+    "2024-02-11": {
+      "origin_index": 22,
+      "t0": "2024-02-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240211T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:28.938612+00:00"
+    },
+    "2024-02-12": {
+      "origin_index": 23,
+      "t0": "2024-02-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240212T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:34.571609+00:00"
+    },
+    "2024-02-13": {
+      "origin_index": 24,
+      "t0": "2024-02-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240213T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:30.128801+00:00"
+    },
+    "2024-02-14": {
+      "origin_index": 25,
+      "t0": "2024-02-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240214T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:38.885002+00:00"
+    },
+    "2024-02-15": {
+      "origin_index": 26,
+      "t0": "2024-02-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240215T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:32.519102+00:00"
+    },
+    "2024-02-16": {
+      "origin_index": 27,
+      "t0": "2024-02-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240216T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:38.297666+00:00"
+    },
+    "2024-02-17": {
+      "origin_index": 28,
+      "t0": "2024-02-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240217T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:39.186148+00:00"
+    },
+    "2024-02-18": {
+      "origin_index": 29,
+      "t0": "2024-02-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240218T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:38.284148+00:00"
+    },
+    "2024-02-19": {
+      "origin_index": 30,
+      "t0": "2024-02-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240219T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:34.881684+00:00"
+    },
+    "2024-02-20": {
+      "origin_index": 31,
+      "t0": "2024-02-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240220T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:40.232246+00:00"
+    },
+    "2024-02-21": {
+      "origin_index": 32,
+      "t0": "2024-02-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240221T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:40.208304+00:00"
+    },
+    "2024-02-22": {
+      "origin_index": 33,
+      "t0": "2024-02-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240222T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:52.034789+00:00"
+    },
+    "2024-02-23": {
+      "origin_index": 34,
+      "t0": "2024-02-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240223T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:10:39.958471+00:00"
+    },
+    "2024-02-24": {
+      "origin_index": 35,
+      "t0": "2024-02-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240224T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:00.760670+00:00"
+    },
+    "2024-02-25": {
+      "origin_index": 36,
+      "t0": "2024-02-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240225T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:09.774381+00:00"
+    },
+    "2024-02-26": {
+      "origin_index": 37,
+      "t0": "2024-02-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240226T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:24.676428+00:00"
+    },
+    "2024-02-27": {
+      "origin_index": 38,
+      "t0": "2024-02-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240227T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:20.179171+00:00"
+    },
+    "2024-02-28": {
+      "origin_index": 39,
+      "t0": "2024-02-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240228T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:20.055994+00:00"
+    },
+    "2024-02-29": {
+      "origin_index": 40,
+      "t0": "2024-02-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240229T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:22.168612+00:00"
+    },
+    "2024-03-01": {
+      "origin_index": 41,
+      "t0": "2024-03-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240301T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:20.038462+00:00"
+    },
+    "2024-03-02": {
+      "origin_index": 42,
+      "t0": "2024-03-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240302T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:21.648342+00:00"
+    },
+    "2024-03-03": {
+      "origin_index": 43,
+      "t0": "2024-03-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240303T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:26.312954+00:00"
+    },
+    "2024-03-04": {
+      "origin_index": 44,
+      "t0": "2024-03-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240304T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:23.338248+00:00"
+    },
+    "2024-03-05": {
+      "origin_index": 45,
+      "t0": "2024-03-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240305T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:23.982634+00:00"
+    },
+    "2024-03-06": {
+      "origin_index": 46,
+      "t0": "2024-03-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240306T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:17.502325+00:00"
+    },
+    "2024-03-07": {
+      "origin_index": 47,
+      "t0": "2024-03-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240307T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:27.559359+00:00"
+    },
+    "2024-03-08": {
+      "origin_index": 48,
+      "t0": "2024-03-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240308T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:29.545751+00:00"
+    },
+    "2024-03-09": {
+      "origin_index": 49,
+      "t0": "2024-03-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240309T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:29.488539+00:00"
+    },
+    "2024-03-10": {
+      "origin_index": 50,
+      "t0": "2024-03-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240310T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:38.900783+00:00"
+    },
+    "2024-03-11": {
+      "origin_index": 51,
+      "t0": "2024-03-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240311T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:54.240578+00:00"
+    },
+    "2024-03-12": {
+      "origin_index": 52,
+      "t0": "2024-03-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240312T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:11:51.789570+00:00"
+    },
+    "2024-03-13": {
+      "origin_index": 53,
+      "t0": "2024-03-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240313T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:05.642208+00:00"
+    },
+    "2024-03-14": {
+      "origin_index": 54,
+      "t0": "2024-03-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240314T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:08.136521+00:00"
+    },
+    "2024-03-15": {
+      "origin_index": 55,
+      "t0": "2024-03-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240315T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:08.240247+00:00"
+    },
+    "2024-03-16": {
+      "origin_index": 56,
+      "t0": "2024-03-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240316T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:08.994576+00:00"
+    },
+    "2024-03-17": {
+      "origin_index": 57,
+      "t0": "2024-03-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240317T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:08.688930+00:00"
+    },
+    "2024-03-18": {
+      "origin_index": 58,
+      "t0": "2024-03-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240318T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:05.000755+00:00"
+    },
+    "2024-03-19": {
+      "origin_index": 59,
+      "t0": "2024-03-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240319T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:11.949889+00:00"
+    },
+    "2024-03-20": {
+      "origin_index": 60,
+      "t0": "2024-03-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240320T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:10.222440+00:00"
+    },
+    "2024-03-21": {
+      "origin_index": 61,
+      "t0": "2024-03-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240321T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:11.623532+00:00"
+    },
+    "2024-03-22": {
+      "origin_index": 62,
+      "t0": "2024-03-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240322T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:12.306864+00:00"
+    },
+    "2024-03-23": {
+      "origin_index": 63,
+      "t0": "2024-03-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240323T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:11.529569+00:00"
+    },
+    "2024-03-24": {
+      "origin_index": 64,
+      "t0": "2024-03-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240324T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:18.473031+00:00"
+    },
+    "2024-03-25": {
+      "origin_index": 65,
+      "t0": "2024-03-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240325T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:19.199344+00:00"
+    },
+    "2024-03-26": {
+      "origin_index": 66,
+      "t0": "2024-03-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240326T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:25.324957+00:00"
+    },
+    "2024-03-27": {
+      "origin_index": 67,
+      "t0": "2024-03-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240327T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:57.898128+00:00"
+    },
+    "2024-03-28": {
+      "origin_index": 68,
+      "t0": "2024-03-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240328T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:07.217159+00:00"
+    },
+    "2024-03-29": {
+      "origin_index": 69,
+      "t0": "2024-03-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240329T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:58.947623+00:00"
+    },
+    "2024-03-30": {
+      "origin_index": 70,
+      "t0": "2024-03-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240330T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:36.836028+00:00"
+    },
+    "2024-03-31": {
+      "origin_index": 71,
+      "t0": "2024-03-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240331T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:54.422435+00:00"
+    },
+    "2024-04-01": {
+      "origin_index": 72,
+      "t0": "2024-04-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240401T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:49.381224+00:00"
+    },
+    "2024-04-02": {
+      "origin_index": 73,
+      "t0": "2024-04-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240402T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:54.400364+00:00"
+    },
+    "2024-04-03": {
+      "origin_index": 74,
+      "t0": "2024-04-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240403T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:56.866669+00:00"
+    },
+    "2024-04-04": {
+      "origin_index": 75,
+      "t0": "2024-04-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240404T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:58.646339+00:00"
+    },
+    "2024-04-05": {
+      "origin_index": 76,
+      "t0": "2024-04-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240405T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:57.301075+00:00"
+    },
+    "2024-04-06": {
+      "origin_index": 77,
+      "t0": "2024-04-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240406T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:02.415945+00:00"
+    },
+    "2024-04-07": {
+      "origin_index": 78,
+      "t0": "2024-04-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240407T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:54.876004+00:00"
+    },
+    "2024-04-08": {
+      "origin_index": 79,
+      "t0": "2024-04-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240408T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:00.008072+00:00"
+    },
+    "2024-04-09": {
+      "origin_index": 80,
+      "t0": "2024-04-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240409T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:12:58.350480+00:00"
+    },
+    "2024-04-10": {
+      "origin_index": 81,
+      "t0": "2024-04-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240410T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:08.225110+00:00"
+    },
+    "2024-04-11": {
+      "origin_index": 82,
+      "t0": "2024-04-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240411T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:04.836063+00:00"
+    },
+    "2024-04-12": {
+      "origin_index": 83,
+      "t0": "2024-04-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240412T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:17.395557+00:00"
+    },
+    "2024-04-13": {
+      "origin_index": 84,
+      "t0": "2024-04-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240413T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:25.823452+00:00"
+    },
+    "2024-04-14": {
+      "origin_index": 85,
+      "t0": "2024-04-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240414T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:40.397880+00:00"
+    },
+    "2024-04-15": {
+      "origin_index": 86,
+      "t0": "2024-04-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240415T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:41.796378+00:00"
+    },
+    "2024-04-16": {
+      "origin_index": 87,
+      "t0": "2024-04-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240416T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:44.358634+00:00"
+    },
+    "2024-04-17": {
+      "origin_index": 88,
+      "t0": "2024-04-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240417T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:52.677144+00:00"
+    },
+    "2024-04-18": {
+      "origin_index": 89,
+      "t0": "2024-04-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240418T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:46.003681+00:00"
+    },
+    "2024-04-19": {
+      "origin_index": 90,
+      "t0": "2024-04-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240419T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:54.112951+00:00"
+    },
+    "2024-04-20": {
+      "origin_index": 91,
+      "t0": "2024-04-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240420T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:49.959030+00:00"
+    },
+    "2024-04-21": {
+      "origin_index": 92,
+      "t0": "2024-04-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240421T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:53.071029+00:00"
+    },
+    "2024-04-22": {
+      "origin_index": 93,
+      "t0": "2024-04-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240422T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:53.677385+00:00"
+    },
+    "2024-04-23": {
+      "origin_index": 94,
+      "t0": "2024-04-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240423T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:54.802530+00:00"
+    },
+    "2024-04-24": {
+      "origin_index": 95,
+      "t0": "2024-04-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240424T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:55.978819+00:00"
+    },
+    "2024-04-25": {
+      "origin_index": 96,
+      "t0": "2024-04-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240425T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:57.969201+00:00"
+    },
+    "2024-04-26": {
+      "origin_index": 97,
+      "t0": "2024-04-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240426T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:01.901526+00:00"
+    },
+    "2024-04-27": {
+      "origin_index": 98,
+      "t0": "2024-04-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240427T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:57.281392+00:00"
+    },
+    "2024-04-28": {
+      "origin_index": 99,
+      "t0": "2024-04-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240428T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:10.965174+00:00"
+    },
+    "2024-04-29": {
+      "origin_index": 100,
+      "t0": "2024-04-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240429T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:24.536234+00:00"
+    },
+    "2024-04-30": {
+      "origin_index": 101,
+      "t0": "2024-04-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240430T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:40.390793+00:00"
+    },
+    "2024-05-01": {
+      "origin_index": 102,
+      "t0": "2024-05-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240501T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:13:57.163102+00:00"
+    },
+    "2024-05-02": {
+      "origin_index": 103,
+      "t0": "2024-05-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240502T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:45.115877+00:00"
+    },
+    "2024-05-03": {
+      "origin_index": 104,
+      "t0": "2024-05-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240503T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:00.675984+00:00"
+    },
+    "2024-05-04": {
+      "origin_index": 105,
+      "t0": "2024-05-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240504T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:56.869530+00:00"
+    },
+    "2024-05-05": {
+      "origin_index": 106,
+      "t0": "2024-05-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240505T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:50.089013+00:00"
+    },
+    "2024-05-06": {
+      "origin_index": 107,
+      "t0": "2024-05-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240506T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:04.223556+00:00"
+    },
+    "2024-05-07": {
+      "origin_index": 108,
+      "t0": "2024-05-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240507T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:46.018988+00:00"
+    },
+    "2024-05-08": {
+      "origin_index": 109,
+      "t0": "2024-05-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240508T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:00.869535+00:00"
+    },
+    "2024-05-09": {
+      "origin_index": 110,
+      "t0": "2024-05-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240509T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:43.140498+00:00"
+    },
+    "2024-05-10": {
+      "origin_index": 111,
+      "t0": "2024-05-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240510T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:56.838540+00:00"
+    },
+    "2024-05-11": {
+      "origin_index": 112,
+      "t0": "2024-05-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240511T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:01.387751+00:00"
+    },
+    "2024-05-12": {
+      "origin_index": 113,
+      "t0": "2024-05-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240512T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:04.252150+00:00"
+    },
+    "2024-05-13": {
+      "origin_index": 114,
+      "t0": "2024-05-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240513T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:14:54.597961+00:00"
+    },
+    "2024-05-14": {
+      "origin_index": 115,
+      "t0": "2024-05-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240514T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:07.083511+00:00"
+    },
+    "2024-05-15": {
+      "origin_index": 116,
+      "t0": "2024-05-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240515T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:00.520600+00:00"
+    },
+    "2024-05-16": {
+      "origin_index": 117,
+      "t0": "2024-05-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240516T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:23.146707+00:00"
+    },
+    "2024-05-17": {
+      "origin_index": 118,
+      "t0": "2024-05-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240517T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:29.770347+00:00"
+    },
+    "2024-05-18": {
+      "origin_index": 119,
+      "t0": "2024-05-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240518T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:36.893575+00:00"
+    },
+    "2024-05-19": {
+      "origin_index": 120,
+      "t0": "2024-05-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240519T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:30.987000+00:00"
+    },
+    "2024-05-20": {
+      "origin_index": 121,
+      "t0": "2024-05-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240520T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:46.501459+00:00"
+    },
+    "2024-05-21": {
+      "origin_index": 122,
+      "t0": "2024-05-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240521T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:42.093422+00:00"
+    },
+    "2024-05-22": {
+      "origin_index": 123,
+      "t0": "2024-05-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240522T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:43.142133+00:00"
+    },
+    "2024-05-23": {
+      "origin_index": 124,
+      "t0": "2024-05-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240523T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:47.109067+00:00"
+    },
+    "2024-05-24": {
+      "origin_index": 125,
+      "t0": "2024-05-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240524T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:42.033914+00:00"
+    },
+    "2024-05-25": {
+      "origin_index": 126,
+      "t0": "2024-05-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240525T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:46.931848+00:00"
+    },
+    "2024-05-26": {
+      "origin_index": 127,
+      "t0": "2024-05-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240526T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:46.468353+00:00"
+    },
+    "2024-05-27": {
+      "origin_index": 128,
+      "t0": "2024-05-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240527T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:44.828017+00:00"
+    },
+    "2024-05-28": {
+      "origin_index": 129,
+      "t0": "2024-05-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240528T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:47.407668+00:00"
+    },
+    "2024-05-29": {
+      "origin_index": 130,
+      "t0": "2024-05-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240529T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:04.109138+00:00"
+    },
+    "2024-05-30": {
+      "origin_index": 131,
+      "t0": "2024-05-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240530T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:50.921064+00:00"
+    },
+    "2024-05-31": {
+      "origin_index": 132,
+      "t0": "2024-05-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240531T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:15:55.450723+00:00"
+    },
+    "2024-06-01": {
+      "origin_index": 133,
+      "t0": "2024-06-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240601T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:26.949587+00:00"
+    },
+    "2024-06-02": {
+      "origin_index": 134,
+      "t0": "2024-06-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240602T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:28.475307+00:00"
+    },
+    "2024-06-03": {
+      "origin_index": 135,
+      "t0": "2024-06-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240603T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:26.770453+00:00"
+    },
+    "2024-06-04": {
+      "origin_index": 136,
+      "t0": "2024-06-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240604T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:02.109889+00:00"
+    },
+    "2024-06-05": {
+      "origin_index": 137,
+      "t0": "2024-06-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240605T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:36.845929+00:00"
+    },
+    "2024-06-06": {
+      "origin_index": 138,
+      "t0": "2024-06-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240606T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:42.749823+00:00"
+    },
+    "2024-06-07": {
+      "origin_index": 139,
+      "t0": "2024-06-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240607T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:33.166099+00:00"
+    },
+    "2024-06-08": {
+      "origin_index": 140,
+      "t0": "2024-06-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240608T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:14.282629+00:00"
+    },
+    "2024-06-09": {
+      "origin_index": 141,
+      "t0": "2024-06-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240609T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:34.366157+00:00"
+    },
+    "2024-06-10": {
+      "origin_index": 142,
+      "t0": "2024-06-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240610T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:40.039652+00:00"
+    },
+    "2024-06-11": {
+      "origin_index": 143,
+      "t0": "2024-06-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240611T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:41.480710+00:00"
+    },
+    "2024-06-12": {
+      "origin_index": 144,
+      "t0": "2024-06-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240612T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:44.358428+00:00"
+    },
+    "2024-06-13": {
+      "origin_index": 145,
+      "t0": "2024-06-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240613T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:38.278888+00:00"
+    },
+    "2024-06-14": {
+      "origin_index": 146,
+      "t0": "2024-06-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240614T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:44.039141+00:00"
+    },
+    "2024-06-15": {
+      "origin_index": 147,
+      "t0": "2024-06-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240615T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:45.645084+00:00"
+    },
+    "2024-06-16": {
+      "origin_index": 148,
+      "t0": "2024-06-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240616T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:56.676574+00:00"
+    },
+    "2024-06-17": {
+      "origin_index": 149,
+      "t0": "2024-06-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240617T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:16:54.520976+00:00"
+    },
+    "2024-06-18": {
+      "origin_index": 150,
+      "t0": "2024-06-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240618T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:05.729987+00:00"
+    },
+    "2024-06-19": {
+      "origin_index": 151,
+      "t0": "2024-06-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240619T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:07.645089+00:00"
+    },
+    "2024-06-20": {
+      "origin_index": 152,
+      "t0": "2024-06-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240620T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:11.555690+00:00"
+    },
+    "2024-06-21": {
+      "origin_index": 153,
+      "t0": "2024-06-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240621T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:22.736676+00:00"
+    },
+    "2024-06-22": {
+      "origin_index": 154,
+      "t0": "2024-06-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240622T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:22.919729+00:00"
+    },
+    "2024-06-23": {
+      "origin_index": 155,
+      "t0": "2024-06-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240623T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:12.904014+00:00"
+    },
+    "2024-06-24": {
+      "origin_index": 156,
+      "t0": "2024-06-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240624T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:26.453370+00:00"
+    },
+    "2024-06-25": {
+      "origin_index": 157,
+      "t0": "2024-06-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240625T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:28.448347+00:00"
+    },
+    "2024-06-26": {
+      "origin_index": 158,
+      "t0": "2024-06-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240626T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:35.565073+00:00"
+    },
+    "2024-06-27": {
+      "origin_index": 159,
+      "t0": "2024-06-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240627T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:34.595204+00:00"
+    },
+    "2024-06-28": {
+      "origin_index": 160,
+      "t0": "2024-06-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240628T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:31.050621+00:00"
+    },
+    "2024-06-29": {
+      "origin_index": 161,
+      "t0": "2024-06-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240629T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:34.639156+00:00"
+    },
+    "2024-06-30": {
+      "origin_index": 162,
+      "t0": "2024-06-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240630T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:32.973556+00:00"
+    },
+    "2024-07-01": {
+      "origin_index": 163,
+      "t0": "2024-07-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240701T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:35.882541+00:00"
+    },
+    "2024-07-02": {
+      "origin_index": 164,
+      "t0": "2024-07-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240702T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:48.127022+00:00"
+    },
+    "2024-07-03": {
+      "origin_index": 165,
+      "t0": "2024-07-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240703T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:48.436983+00:00"
+    },
+    "2024-07-04": {
+      "origin_index": 166,
+      "t0": "2024-07-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240704T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:58.297218+00:00"
+    },
+    "2024-07-05": {
+      "origin_index": 167,
+      "t0": "2024-07-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240705T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:58.411778+00:00"
+    },
+    "2024-07-06": {
+      "origin_index": 168,
+      "t0": "2024-07-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240706T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:06.801938+00:00"
+    },
+    "2024-07-07": {
+      "origin_index": 169,
+      "t0": "2024-07-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240707T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:04.420567+00:00"
+    },
+    "2024-07-08": {
+      "origin_index": 170,
+      "t0": "2024-07-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240708T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:17:49.927532+00:00"
+    },
+    "2024-07-09": {
+      "origin_index": 171,
+      "t0": "2024-07-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240709T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:17.470014+00:00"
+    },
+    "2024-07-10": {
+      "origin_index": 172,
+      "t0": "2024-07-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240710T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:12.353408+00:00"
+    },
+    "2024-07-11": {
+      "origin_index": 173,
+      "t0": "2024-07-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240711T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:21.724791+00:00"
+    },
+    "2024-07-12": {
+      "origin_index": 174,
+      "t0": "2024-07-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240712T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:24.893719+00:00"
+    },
+    "2024-07-13": {
+      "origin_index": 175,
+      "t0": "2024-07-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240713T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:22.092918+00:00"
+    },
+    "2024-07-14": {
+      "origin_index": 176,
+      "t0": "2024-07-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240714T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:35.396444+00:00"
+    },
+    "2024-07-15": {
+      "origin_index": 177,
+      "t0": "2024-07-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240715T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:33.654406+00:00"
+    },
+    "2024-07-16": {
+      "origin_index": 178,
+      "t0": "2024-07-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240716T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:31.335741+00:00"
+    },
+    "2024-07-17": {
+      "origin_index": 179,
+      "t0": "2024-07-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240717T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:24.848101+00:00"
+    },
+    "2024-07-18": {
+      "origin_index": 180,
+      "t0": "2024-07-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240718T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:45.635092+00:00"
+    },
+    "2024-07-19": {
+      "origin_index": 181,
+      "t0": "2024-07-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240719T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:49.135123+00:00"
+    },
+    "2024-07-20": {
+      "origin_index": 182,
+      "t0": "2024-07-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240720T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:18:46.560191+00:00"
+    },
+    "2024-07-21": {
+      "origin_index": 183,
+      "t0": "2024-07-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240721T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:01.471097+00:00"
+    },
+    "2024-07-22": {
+      "origin_index": 184,
+      "t0": "2024-07-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240722T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:01.535030+00:00"
+    },
+    "2024-07-23": {
+      "origin_index": 185,
+      "t0": "2024-07-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240723T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:16.037075+00:00"
+    },
+    "2024-07-24": {
+      "origin_index": 186,
+      "t0": "2024-07-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240724T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:11.110170+00:00"
+    },
+    "2024-07-25": {
+      "origin_index": 187,
+      "t0": "2024-07-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240725T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:06.609417+00:00"
+    },
+    "2024-07-26": {
+      "origin_index": 188,
+      "t0": "2024-07-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240726T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:20.355496+00:00"
+    },
+    "2024-07-27": {
+      "origin_index": 189,
+      "t0": "2024-07-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240727T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:21.369008+00:00"
+    },
+    "2024-07-28": {
+      "origin_index": 190,
+      "t0": "2024-07-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240728T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:26.202231+00:00"
+    },
+    "2024-07-29": {
+      "origin_index": 191,
+      "t0": "2024-07-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240729T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:16.238619+00:00"
+    },
+    "2024-07-30": {
+      "origin_index": 192,
+      "t0": "2024-07-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240730T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:21.822270+00:00"
+    },
+    "2024-07-31": {
+      "origin_index": 193,
+      "t0": "2024-07-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240731T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:36.732186+00:00"
+    },
+    "2024-08-01": {
+      "origin_index": 194,
+      "t0": "2024-08-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240801T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:21.320423+00:00"
+    },
+    "2024-08-02": {
+      "origin_index": 195,
+      "t0": "2024-08-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240802T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:31.876167+00:00"
+    },
+    "2024-08-03": {
+      "origin_index": 196,
+      "t0": "2024-08-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240803T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:40.685638+00:00"
+    },
+    "2024-08-04": {
+      "origin_index": 197,
+      "t0": "2024-08-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240804T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:35.234785+00:00"
+    },
+    "2024-08-05": {
+      "origin_index": 198,
+      "t0": "2024-08-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240805T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:48.746691+00:00"
+    },
+    "2024-08-06": {
+      "origin_index": 199,
+      "t0": "2024-08-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240806T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:50.630911+00:00"
+    },
+    "2024-08-07": {
+      "origin_index": 200,
+      "t0": "2024-08-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240807T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:49.769043+00:00"
+    },
+    "2024-08-08": {
+      "origin_index": 201,
+      "t0": "2024-08-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240808T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:58.045048+00:00"
+    },
+    "2024-08-09": {
+      "origin_index": 202,
+      "t0": "2024-08-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240809T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:06.914941+00:00"
+    },
+    "2024-08-10": {
+      "origin_index": 203,
+      "t0": "2024-08-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240810T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:04.390735+00:00"
+    },
+    "2024-08-11": {
+      "origin_index": 204,
+      "t0": "2024-08-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240811T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:19:51.702884+00:00"
+    },
+    "2024-08-12": {
+      "origin_index": 205,
+      "t0": "2024-08-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240812T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:12.094580+00:00"
+    },
+    "2024-08-13": {
+      "origin_index": 206,
+      "t0": "2024-08-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240813T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:15.600070+00:00"
+    },
+    "2024-08-14": {
+      "origin_index": 207,
+      "t0": "2024-08-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240814T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:15.235708+00:00"
+    },
+    "2024-08-15": {
+      "origin_index": 208,
+      "t0": "2024-08-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240815T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:07.553527+00:00"
+    },
+    "2024-08-16": {
+      "origin_index": 209,
+      "t0": "2024-08-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240816T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:17.668524+00:00"
+    },
+    "2024-08-17": {
+      "origin_index": 210,
+      "t0": "2024-08-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240817T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:01.027188+00:00"
+    },
+    "2024-08-18": {
+      "origin_index": 211,
+      "t0": "2024-08-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240818T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:15.312610+00:00"
+    },
+    "2024-08-19": {
+      "origin_index": 212,
+      "t0": "2024-08-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240819T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:23.353070+00:00"
+    },
+    "2024-08-20": {
+      "origin_index": 213,
+      "t0": "2024-08-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240820T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:26.763374+00:00"
+    },
+    "2024-08-21": {
+      "origin_index": 214,
+      "t0": "2024-08-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240821T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:29.147903+00:00"
+    },
+    "2024-08-22": {
+      "origin_index": 215,
+      "t0": "2024-08-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240822T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:42.976036+00:00"
+    },
+    "2024-08-23": {
+      "origin_index": 216,
+      "t0": "2024-08-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240823T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:33.159394+00:00"
+    },
+    "2024-08-24": {
+      "origin_index": 217,
+      "t0": "2024-08-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240824T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:37.799146+00:00"
+    },
+    "2024-08-25": {
+      "origin_index": 218,
+      "t0": "2024-08-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240825T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:46.647339+00:00"
+    },
+    "2024-08-26": {
+      "origin_index": 219,
+      "t0": "2024-08-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240826T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:48.410365+00:00"
+    },
+    "2024-08-27": {
+      "origin_index": 220,
+      "t0": "2024-08-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240827T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:48.910320+00:00"
+    },
+    "2024-08-28": {
+      "origin_index": 221,
+      "t0": "2024-08-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240828T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:52.353631+00:00"
+    },
+    "2024-08-29": {
+      "origin_index": 222,
+      "t0": "2024-08-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240829T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:46.600605+00:00"
+    },
+    "2024-08-30": {
+      "origin_index": 223,
+      "t0": "2024-08-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240830T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:50.825425+00:00"
+    },
+    "2024-08-31": {
+      "origin_index": 224,
+      "t0": "2024-08-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240831T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:57.315606+00:00"
+    },
+    "2024-09-01": {
+      "origin_index": 225,
+      "t0": "2024-09-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240901T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:55.237230+00:00"
+    },
+    "2024-09-02": {
+      "origin_index": 226,
+      "t0": "2024-09-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240902T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:56.036352+00:00"
+    },
+    "2024-09-03": {
+      "origin_index": 227,
+      "t0": "2024-09-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240903T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:20:56.258398+00:00"
+    },
+    "2024-09-04": {
+      "origin_index": 228,
+      "t0": "2024-09-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240904T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:05.794516+00:00"
+    },
+    "2024-09-05": {
+      "origin_index": 229,
+      "t0": "2024-09-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240905T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:12.042282+00:00"
+    },
+    "2024-09-06": {
+      "origin_index": 230,
+      "t0": "2024-09-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240906T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:07.928767+00:00"
+    },
+    "2024-09-07": {
+      "origin_index": 231,
+      "t0": "2024-09-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240907T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:10.595469+00:00"
+    },
+    "2024-09-08": {
+      "origin_index": 232,
+      "t0": "2024-09-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240908T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:25.572177+00:00"
+    },
+    "2024-09-09": {
+      "origin_index": 233,
+      "t0": "2024-09-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240909T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:28.029838+00:00"
+    },
+    "2024-09-10": {
+      "origin_index": 234,
+      "t0": "2024-09-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240910T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:30.596346+00:00"
+    },
+    "2024-09-11": {
+      "origin_index": 235,
+      "t0": "2024-09-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240911T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:31.085920+00:00"
+    },
+    "2024-09-12": {
+      "origin_index": 236,
+      "t0": "2024-09-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240912T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:34.276009+00:00"
+    },
+    "2024-09-13": {
+      "origin_index": 237,
+      "t0": "2024-09-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240913T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:29.631863+00:00"
+    },
+    "2024-09-14": {
+      "origin_index": 238,
+      "t0": "2024-09-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240914T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:19.696014+00:00"
+    },
+    "2024-09-15": {
+      "origin_index": 239,
+      "t0": "2024-09-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240915T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:40.041686+00:00"
+    },
+    "2024-09-16": {
+      "origin_index": 240,
+      "t0": "2024-09-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240916T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:50.950309+00:00"
+    },
+    "2024-09-17": {
+      "origin_index": 241,
+      "t0": "2024-09-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240917T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:32.130548+00:00"
+    },
+    "2024-09-18": {
+      "origin_index": 242,
+      "t0": "2024-09-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240918T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:35.394769+00:00"
+    },
+    "2024-09-19": {
+      "origin_index": 243,
+      "t0": "2024-09-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240919T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:34.362098+00:00"
+    },
+    "2024-09-20": {
+      "origin_index": 244,
+      "t0": "2024-09-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240920T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:50.882149+00:00"
+    },
+    "2024-09-21": {
+      "origin_index": 245,
+      "t0": "2024-09-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240921T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:50.397104+00:00"
+    },
+    "2024-09-22": {
+      "origin_index": 246,
+      "t0": "2024-09-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240922T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:59.435321+00:00"
+    },
+    "2024-09-23": {
+      "origin_index": 247,
+      "t0": "2024-09-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240923T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:21:54.759473+00:00"
+    },
+    "2024-09-24": {
+      "origin_index": 248,
+      "t0": "2024-09-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240924T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:02.886705+00:00"
+    },
+    "2024-09-25": {
+      "origin_index": 249,
+      "t0": "2024-09-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240925T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:06.662271+00:00"
+    },
+    "2024-09-26": {
+      "origin_index": 250,
+      "t0": "2024-09-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240926T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:15.511624+00:00"
+    },
+    "2024-09-27": {
+      "origin_index": 251,
+      "t0": "2024-09-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240927T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:15.229953+00:00"
+    },
+    "2024-09-28": {
+      "origin_index": 252,
+      "t0": "2024-09-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240928T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:11.803305+00:00"
+    },
+    "2024-09-29": {
+      "origin_index": 253,
+      "t0": "2024-09-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240929T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:18.566005+00:00"
+    },
+    "2024-09-30": {
+      "origin_index": 254,
+      "t0": "2024-09-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20240930T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:19.870846+00:00"
+    },
+    "2024-10-01": {
+      "origin_index": 255,
+      "t0": "2024-10-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241001T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:20.273401+00:00"
+    },
+    "2024-10-02": {
+      "origin_index": 256,
+      "t0": "2024-10-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241002T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:29.307379+00:00"
+    },
+    "2024-10-03": {
+      "origin_index": 257,
+      "t0": "2024-10-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241003T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:32.756787+00:00"
+    },
+    "2024-10-04": {
+      "origin_index": 258,
+      "t0": "2024-10-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241004T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:38.092841+00:00"
+    },
+    "2024-10-05": {
+      "origin_index": 259,
+      "t0": "2024-10-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241005T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:38.476310+00:00"
+    },
+    "2024-10-06": {
+      "origin_index": 260,
+      "t0": "2024-10-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241006T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:43.749482+00:00"
+    },
+    "2024-10-07": {
+      "origin_index": 261,
+      "t0": "2024-10-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241007T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:45.952233+00:00"
+    },
+    "2024-10-08": {
+      "origin_index": 262,
+      "t0": "2024-10-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241008T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:42.433670+00:00"
+    },
+    "2024-10-09": {
+      "origin_index": 263,
+      "t0": "2024-10-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241009T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:48.871195+00:00"
+    },
+    "2024-10-10": {
+      "origin_index": 264,
+      "t0": "2024-10-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241010T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:22:58.373617+00:00"
+    },
+    "2024-10-11": {
+      "origin_index": 265,
+      "t0": "2024-10-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241011T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:00.833568+00:00"
+    },
+    "2024-10-12": {
+      "origin_index": 266,
+      "t0": "2024-10-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241012T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:01.826253+00:00"
+    },
+    "2024-10-13": {
+      "origin_index": 267,
+      "t0": "2024-10-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241013T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:04.032957+00:00"
+    },
+    "2024-10-14": {
+      "origin_index": 268,
+      "t0": "2024-10-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241014T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:02.915583+00:00"
+    },
+    "2024-10-15": {
+      "origin_index": 269,
+      "t0": "2024-10-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241015T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:07.138595+00:00"
+    },
+    "2024-10-16": {
+      "origin_index": 270,
+      "t0": "2024-10-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241016T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:06.510301+00:00"
+    },
+    "2024-10-17": {
+      "origin_index": 271,
+      "t0": "2024-10-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241017T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:08.116047+00:00"
+    },
+    "2024-10-18": {
+      "origin_index": 272,
+      "t0": "2024-10-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241018T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:01.548476+00:00"
+    },
+    "2024-10-19": {
+      "origin_index": 273,
+      "t0": "2024-10-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241019T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:16.991355+00:00"
+    },
+    "2024-10-20": {
+      "origin_index": 274,
+      "t0": "2024-10-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241020T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:24.996017+00:00"
+    },
+    "2024-10-21": {
+      "origin_index": 275,
+      "t0": "2024-10-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241021T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:26.919528+00:00"
+    },
+    "2024-10-22": {
+      "origin_index": 276,
+      "t0": "2024-10-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241022T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:31.610161+00:00"
+    },
+    "2024-10-23": {
+      "origin_index": 277,
+      "t0": "2024-10-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241023T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:28.937181+00:00"
+    },
+    "2024-10-24": {
+      "origin_index": 278,
+      "t0": "2024-10-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241024T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:38.283089+00:00"
+    },
+    "2024-10-25": {
+      "origin_index": 279,
+      "t0": "2024-10-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241025T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:31.378481+00:00"
+    },
+    "2024-10-26": {
+      "origin_index": 280,
+      "t0": "2024-10-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241026T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:24.072041+00:00"
+    },
+    "2024-10-27": {
+      "origin_index": 281,
+      "t0": "2024-10-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241027T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:50.883936+00:00"
+    },
+    "2024-10-28": {
+      "origin_index": 282,
+      "t0": "2024-10-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241028T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:45.561850+00:00"
+    },
+    "2024-10-29": {
+      "origin_index": 283,
+      "t0": "2024-10-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241029T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:47.914119+00:00"
+    },
+    "2024-10-30": {
+      "origin_index": 284,
+      "t0": "2024-10-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241030T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:44.038949+00:00"
+    },
+    "2024-10-31": {
+      "origin_index": 285,
+      "t0": "2024-10-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241031T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:41.101394+00:00"
+    },
+    "2024-11-01": {
+      "origin_index": 286,
+      "t0": "2024-11-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241101T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:48.194632+00:00"
+    },
+    "2024-11-02": {
+      "origin_index": 287,
+      "t0": "2024-11-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241102T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:53.675875+00:00"
+    },
+    "2024-11-03": {
+      "origin_index": 288,
+      "t0": "2024-11-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241103T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:23:47.549742+00:00"
+    },
+    "2024-11-04": {
+      "origin_index": 289,
+      "t0": "2024-11-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241104T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:06.104296+00:00"
+    },
+    "2024-11-05": {
+      "origin_index": 290,
+      "t0": "2024-11-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241105T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:12.509096+00:00"
+    },
+    "2024-11-06": {
+      "origin_index": 291,
+      "t0": "2024-11-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241106T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:04.859125+00:00"
+    },
+    "2024-11-07": {
+      "origin_index": 292,
+      "t0": "2024-11-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241107T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:12.736309+00:00"
+    },
+    "2024-11-08": {
+      "origin_index": 293,
+      "t0": "2024-11-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241108T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:09.950027+00:00"
+    },
+    "2024-11-09": {
+      "origin_index": 294,
+      "t0": "2024-11-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241109T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:16.994274+00:00"
+    },
+    "2024-11-10": {
+      "origin_index": 295,
+      "t0": "2024-11-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241110T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:15.570789+00:00"
+    },
+    "2024-11-11": {
+      "origin_index": 296,
+      "t0": "2024-11-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241111T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:22.756398+00:00"
+    },
+    "2024-11-12": {
+      "origin_index": 297,
+      "t0": "2024-11-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241112T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:27.301300+00:00"
+    },
+    "2024-11-13": {
+      "origin_index": 298,
+      "t0": "2024-11-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241113T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:27.667149+00:00"
+    },
+    "2024-11-14": {
+      "origin_index": 299,
+      "t0": "2024-11-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241114T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:27.171121+00:00"
+    },
+    "2024-11-15": {
+      "origin_index": 300,
+      "t0": "2024-11-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241115T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:31.186159+00:00"
+    },
+    "2024-11-16": {
+      "origin_index": 301,
+      "t0": "2024-11-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241116T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:32.993442+00:00"
+    },
+    "2024-11-17": {
+      "origin_index": 302,
+      "t0": "2024-11-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241117T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:29.798662+00:00"
+    },
+    "2024-11-18": {
+      "origin_index": 303,
+      "t0": "2024-11-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241118T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:38.181476+00:00"
+    },
+    "2024-11-19": {
+      "origin_index": 304,
+      "t0": "2024-11-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241119T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:40.597229+00:00"
+    },
+    "2024-11-20": {
+      "origin_index": 305,
+      "t0": "2024-11-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241120T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:56.188772+00:00"
+    },
+    "2024-11-21": {
+      "origin_index": 306,
+      "t0": "2024-11-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241121T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:36.195385+00:00"
+    },
+    "2024-11-22": {
+      "origin_index": 307,
+      "t0": "2024-11-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241122T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:01.781044+00:00"
+    },
+    "2024-11-23": {
+      "origin_index": 308,
+      "t0": "2024-11-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241123T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:24:54.270292+00:00"
+    },
+    "2024-11-24": {
+      "origin_index": 309,
+      "t0": "2024-11-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241124T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:00.820415+00:00"
+    },
+    "2024-11-25": {
+      "origin_index": 310,
+      "t0": "2024-11-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241125T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:02.983072+00:00"
+    },
+    "2024-11-26": {
+      "origin_index": 311,
+      "t0": "2024-11-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241126T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:03.758441+00:00"
+    },
+    "2024-11-27": {
+      "origin_index": 312,
+      "t0": "2024-11-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241127T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:07.785408+00:00"
+    },
+    "2024-11-28": {
+      "origin_index": 313,
+      "t0": "2024-11-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241128T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:13.278156+00:00"
+    },
+    "2024-11-29": {
+      "origin_index": 314,
+      "t0": "2024-11-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241129T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:09.478622+00:00"
+    },
+    "2024-11-30": {
+      "origin_index": 315,
+      "t0": "2024-11-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241130T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:16.609425+00:00"
+    },
+    "2024-12-01": {
+      "origin_index": 316,
+      "t0": "2024-12-01",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241201T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:12.057842+00:00"
+    },
+    "2024-12-02": {
+      "origin_index": 317,
+      "t0": "2024-12-02",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241202T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:05.915679+00:00"
+    },
+    "2024-12-03": {
+      "origin_index": 318,
+      "t0": "2024-12-03",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241203T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:15.883689+00:00"
+    },
+    "2024-12-04": {
+      "origin_index": 319,
+      "t0": "2024-12-04",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241204T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:21.092386+00:00"
+    },
+    "2024-12-05": {
+      "origin_index": 320,
+      "t0": "2024-12-05",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241205T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:16.766763+00:00"
+    },
+    "2024-12-06": {
+      "origin_index": 321,
+      "t0": "2024-12-06",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241206T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:28.640288+00:00"
+    },
+    "2024-12-07": {
+      "origin_index": 322,
+      "t0": "2024-12-07",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241207T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:37.530073+00:00"
+    },
+    "2024-12-08": {
+      "origin_index": 323,
+      "t0": "2024-12-08",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241208T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:37.084322+00:00"
+    },
+    "2024-12-09": {
+      "origin_index": 324,
+      "t0": "2024-12-09",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241209T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:38.628193+00:00"
+    },
+    "2024-12-10": {
+      "origin_index": 325,
+      "t0": "2024-12-10",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241210T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:35.857794+00:00"
+    },
+    "2024-12-11": {
+      "origin_index": 326,
+      "t0": "2024-12-11",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241211T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:41.419089+00:00"
+    },
+    "2024-12-12": {
+      "origin_index": 327,
+      "t0": "2024-12-12",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241212T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:42.859366+00:00"
+    },
+    "2024-12-13": {
+      "origin_index": 328,
+      "t0": "2024-12-13",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241213T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:49.135971+00:00"
+    },
+    "2024-12-14": {
+      "origin_index": 329,
+      "t0": "2024-12-14",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241214T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:48.772825+00:00"
+    },
+    "2024-12-15": {
+      "origin_index": 330,
+      "t0": "2024-12-15",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241215T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:51.014068+00:00"
+    },
+    "2024-12-16": {
+      "origin_index": 331,
+      "t0": "2024-12-16",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241216T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:53.068980+00:00"
+    },
+    "2024-12-17": {
+      "origin_index": 332,
+      "t0": "2024-12-17",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241217T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:54.056302+00:00"
+    },
+    "2024-12-18": {
+      "origin_index": 333,
+      "t0": "2024-12-18",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241218T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:59.979911+00:00"
+    },
+    "2024-12-19": {
+      "origin_index": 334,
+      "t0": "2024-12-19",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241219T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:02.214995+00:00"
+    },
+    "2024-12-20": {
+      "origin_index": 335,
+      "t0": "2024-12-20",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241220T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:59.003241+00:00"
+    },
+    "2024-12-21": {
+      "origin_index": 336,
+      "t0": "2024-12-21",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241221T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:25:58.855001+00:00"
+    },
+    "2024-12-22": {
+      "origin_index": 337,
+      "t0": "2024-12-22",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241222T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:07.657422+00:00"
+    },
+    "2024-12-23": {
+      "origin_index": 338,
+      "t0": "2024-12-23",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241223T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:19.577767+00:00"
+    },
+    "2024-12-24": {
+      "origin_index": 339,
+      "t0": "2024-12-24",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241224T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:16.291571+00:00"
+    },
+    "2024-12-25": {
+      "origin_index": 340,
+      "t0": "2024-12-25",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241225T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:11.995650+00:00"
+    },
+    "2024-12-26": {
+      "origin_index": 341,
+      "t0": "2024-12-26",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241226T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:14.069692+00:00"
+    },
+    "2024-12-27": {
+      "origin_index": 342,
+      "t0": "2024-12-27",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241227T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:22.505740+00:00"
+    },
+    "2024-12-28": {
+      "origin_index": 343,
+      "t0": "2024-12-28",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241228T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:22.663984+00:00"
+    },
+    "2024-12-29": {
+      "origin_index": 344,
+      "t0": "2024-12-29",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241229T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:32.989388+00:00"
+    },
+    "2024-12-30": {
+      "origin_index": 345,
+      "t0": "2024-12-30",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241230T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:31.711494+00:00"
+    },
+    "2024-12-31": {
+      "origin_index": 346,
+      "t0": "2024-12-31",
+      "status": "COMPLETE",
+      "meps_run": "meps_det_20241231T00Z",
+      "completed_horizons": 24,
+      "updated_at": "2026-09-12T08:26:33.935024+00:00"
+    }
+  }
+}

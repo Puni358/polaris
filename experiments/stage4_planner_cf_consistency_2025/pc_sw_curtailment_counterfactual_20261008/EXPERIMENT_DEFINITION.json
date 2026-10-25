@@ -1,0 +1,16 @@
+{
+  "title": "POLARIS PC-SW Diesel-While-Curtailing Counterfactual Diagnostic",
+  "date": "2026-10-08",
+  "purpose": "Test hypothesis whether diesel was necessary in the 147 executed PC-SW hours where diesel_power > 0 and curtailment > 0",
+  "governed_baseline_path": "experiments/stage4_planner_cf_consistency_2025/CAMPAIGN_V12_615_20261006/PC_HOURLY_TELEMETRY.csv",
+  "causal_nwp_path": "system/forecasting/implementations/causal_nwp_physics.py",
+  "telemetry_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+  "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "population": 123,
+  "intervention": "At each flagged (origin, hour) pair, force diesel_power = 0 at horizon step 0 and propagate rolling state",
+  "safety_gate_definitions": {
+    "S1": "R_CF_candidate >= R_CF_control (99.1589%)",
+    "S2": "R_P_candidate >= R_P_control (97.7963%)",
+    "S3": "zero realized SOC violations below 20.0%"
+  }
+}

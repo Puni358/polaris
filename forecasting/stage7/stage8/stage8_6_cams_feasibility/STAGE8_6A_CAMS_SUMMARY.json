@@ -1,0 +1,63 @@
+{
+  "stage": "STAGE 8.6A FULL CAMS EMPIRICAL FEASIBILITY AUDIT",
+  "decision": "PASS",
+  "decision_rationale": "All 347 clean POLARIS benchmark origins were empirically retrieved from the ECMWF CAMS forecast archive at D-1 12:00 UTC. 100% of required H1-H24 AOD550 and TCWV values (8,328 forecast-hour tuples) were verified from GRIB headers as strictly causal, valid, and uncorrupted.",
+  "total_origins": 347,
+  "verified_cams_runs": 347,
+  "complete_aod_origins": 347,
+  "complete_tcwv_origins": 347,
+  "complete_both_origins": 347,
+  "causally_valid_origins": 347,
+  "missing_origins": 0,
+  "total_forecast_hour_tuples_required": 8328,
+  "total_forecast_hour_tuples_verified": 8328,
+  "missing_forecast_hours": 0,
+  "invalid_fill_values": 0,
+  "actual_files_retrieved": 12,
+  "total_grib_messages_inspected": 16656,
+  "spatial_alignment": {
+    "station_name": "SITES Nuolja",
+    "station_lat": 68.362074,
+    "station_lon": 18.738752,
+    "cams_grid_lat": 68.4,
+    "cams_grid_lon": 18.8,
+    "distance_km": 4.91
+  },
+  "numerical_sanity": {
+    "aod550": {
+      "min": 0.0008062611450441182,
+      "p05": 0.005501334753353149,
+      "p25": 0.017188309808261693,
+      "median": 0.035208496265113354,
+      "mean": 0.05464576055873767,
+      "p75": 0.07239026622846723,
+      "p95": 0.16786377094686028,
+      "max": 0.9976140111684799,
+      "std": 0.059838408625901986,
+      "fill_value_count": 0
+    },
+    "tcwv": {
+      "min": 1.272831916809082,
+      "p05": 2.4922441959381105,
+      "p25": 4.6139075756073,
+      "median": 7.949052333831787,
+      "mean": 9.626460084883098,
+      "p75": 13.775843381881714,
+      "p95": 21.21228103637695,
+      "max": 28.482803344726562,
+      "std": 5.996002022480831,
+      "fill_value_count": 0
+    }
+  },
+  "governance_verification": {
+    "forecasting_experiment_run": false,
+    "model_trained": false,
+    "even_cv_computed": false,
+    "odd_targets_accessed": false,
+    "odd_metrics_generated": false,
+    "stage8_1_champion_modified": false,
+    "cams_declared_useful": false,
+    "stage8_6b_started": false,
+    "polaris_master_handoff_modified": false
+  }
+}

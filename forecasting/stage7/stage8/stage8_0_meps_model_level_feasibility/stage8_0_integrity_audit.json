@@ -1,0 +1,13 @@
+{
+  "stage": "STAGE 8.0 MEPS MODEL-LEVEL CLOUD FEASIBILITY AUDIT",
+  "forecasting_experiment_run": false,
+  "cv_run": false,
+  "model_training_run": false,
+  "odd_target_accessed": false,
+  "odd_predictions_generated": false,
+  "odd_metrics_evaluated": false,
+  "hyperparameter_tuning": false,
+  "champion_modified": false,
+  "current_champion": "STAGE 7.5 TERRAIN/HORIZON (MAE 36.613571 W/m\u00b2, nMAE 28.3983%)",
+  "governance_compliance": "PASS"
+}

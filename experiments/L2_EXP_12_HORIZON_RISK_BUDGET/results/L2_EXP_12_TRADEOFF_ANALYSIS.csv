@@ -1,0 +1,7 @@
+arm,total_unmet_wh,reliability_pct,total_fuel_l,diesel_on_hours,total_curtailment_wh,mean_efc,lowest_soc_pct,highest_soc_pct,floor_violations,ceiling_violations
+Arm A (Candidate F Point),983306.0,97.1285,5270.6051,316,4587708.5,0.641464,32.58,95.0,0,0
+Arm B (Static q10 Benchmark),65026.9,99.8101,7283.0461,412,8850136.3,0.729615,40.24,95.0,0,0
+Arm C (Fixed Modest q),96278.5,99.7188,7013.7552,398,8147884.5,0.718518,39.97,95.0,0,0
+Arm D (SOC-Aware q),95641.8,99.7207,7047.73,399,8272515.5,0.718709,40.66,95.0,0,0
+Arm E (Horizon Risk-Budget),111210.1,99.6752,6948.628,396,7951716.8,0.712282,40.37,95.0,0,0
+Arm F (Perfect Foresight),0.0,100.0,5440.9434,330,2778295.5,0.683264,43.63,95.0,0,0

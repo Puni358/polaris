@@ -1,0 +1,314 @@
+{
+  "manifest_id": "POLARIS_DIESEL_IMPROVEMENT_DEVELOPMENTAL_RECONCILIATION_MANIFEST",
+  "governance_status": "RECONCILIATION_COMPLETE",
+  "timestamp_utc": "2026-09-20T09:58:00Z",
+  "execution_boundaries": {
+    "frozen_evidence_modified": false,
+    "milp_solves_executed": 0,
+    "experiment_rerun": false
+  },
+  "hash_verification": {
+    "POLARIS_23_HORIZON_OFAT_EXECUTION_RAW.csv": {
+      "expected": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "actual": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_EXECUTION.json": {
+      "expected": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "actual": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_EXECUTION.md": {
+      "expected": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "actual": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_FORENSIC_FREEZE_AUDIT.json": {
+      "expected": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "actual": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "match": true
+    }
+  },
+  "executive_answer": "POLARIS achieved a total diesel fuel reduction of -23.9786 L/origin (-28.17% vs V0 baseline) under V3 Stage8.1. Approximately 94.12% of this total improvement was achieved by V3 Stage8.1 alone. The subsequent 23-horizon OFAT research provided a modest incremental refinement of -1.4970 L/origin (-2.45% vs V3 control, or 5.88% of total achieved reduction) for j=14, with maximum observed OFAT sensitivity reaching -1.6840 L/origin (-2.75% vs V3 control for j=10).",
+  "developmental_chain_reference_values": {
+    "v0_baseline_liters": 85.11300578034682,
+    "v3_control_liters": 61.13444443710983,
+    "ofat_j14_liters": 59.63744797687861,
+    "v4g_candidate_liters": 83.81450867052023
+  },
+  "developmental_transitions": {
+    "v0_to_v3": {
+      "label": "V0 -> V3 Stage8.1",
+      "start_val_liters": 85.11300578034682,
+      "end_val_liters": 61.13444443710983,
+      "absolute_change_liters": -23.978561343236997,
+      "percentage_change": -28.172617243854653,
+      "direction": "REDUCTION"
+    },
+    "v3_to_ofat14": {
+      "label": "V3 -> OFAT j=14",
+      "start_val_liters": 61.13444443710983,
+      "end_val_liters": 59.63744797687861,
+      "absolute_change_liters": -1.496996460231216,
+      "percentage_change": -2.4486956150737655,
+      "direction": "REDUCTION"
+    },
+    "v0_to_ofat14": {
+      "label": "V0 -> OFAT j=14",
+      "start_val_liters": 85.11300578034682,
+      "end_val_liters": 59.63744797687861,
+      "absolute_change_liters": -25.475557803468213,
+      "percentage_change": -29.931451215826634,
+      "direction": "REDUCTION"
+    },
+    "v3_to_v4g": {
+      "label": "V3 -> V4G",
+      "start_val_liters": 61.13444443710983,
+      "end_val_liters": 83.81450867052023,
+      "absolute_change_liters": 22.6800642334104,
+      "percentage_change": 37.09866744064684,
+      "direction": "INCREASE"
+    },
+    "v0_to_v4g": {
+      "label": "V0 -> V4G",
+      "start_val_liters": 85.11300578034682,
+      "end_val_liters": 83.81450867052023,
+      "absolute_change_liters": -1.2984971098265987,
+      "percentage_change": -1.5256153838317748,
+      "direction": "REDUCTION"
+    }
+  },
+  "full_23_horizon_response_vs_v3": [
+    {
+      "treatment_j": 1,
+      "mean_delta_vs_v3_liters": -0.16069364161849767,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -0.2628528697660879,
+      "count_positive_origins": 10,
+      "count_negative_origins": 49,
+      "count_zero_origins": 114
+    },
+    {
+      "treatment_j": 2,
+      "mean_delta_vs_v3_liters": -1.6700578034682085,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.7317788177272617,
+      "count_positive_origins": 0,
+      "count_negative_origins": 18,
+      "count_zero_origins": 155
+    },
+    {
+      "treatment_j": 3,
+      "mean_delta_vs_v3_liters": -1.439826589595376,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.35518062338254,
+      "count_positive_origins": 1,
+      "count_negative_origins": 16,
+      "count_zero_origins": 156
+    },
+    {
+      "treatment_j": 4,
+      "mean_delta_vs_v3_liters": -1.3171098265895955,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.1544480181618915,
+      "count_positive_origins": 3,
+      "count_negative_origins": 16,
+      "count_zero_origins": 154
+    },
+    {
+      "treatment_j": 5,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 6,
+      "mean_delta_vs_v3_liters": -1.4871098265895957,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.4325236620403317,
+      "count_positive_origins": 1,
+      "count_negative_origins": 16,
+      "count_zero_origins": 156
+    },
+    {
+      "treatment_j": 7,
+      "mean_delta_vs_v3_liters": -0.027398843930635807,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -0.0448173598090378,
+      "count_positive_origins": 1,
+      "count_negative_origins": 3,
+      "count_zero_origins": 169
+    },
+    {
+      "treatment_j": 8,
+      "mean_delta_vs_v3_liters": -0.058786127167630146,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -0.09615876566622693,
+      "count_positive_origins": 9,
+      "count_negative_origins": 5,
+      "count_zero_origins": 159
+    },
+    {
+      "treatment_j": 9,
+      "mean_delta_vs_v3_liters": -1.5898265895953763,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.6005414856282227,
+      "count_positive_origins": 0,
+      "count_negative_origins": 16,
+      "count_zero_origins": 157
+    },
+    {
+      "treatment_j": 10,
+      "mean_delta_vs_v3_liters": -1.6840462427745666,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.754660254591791,
+      "count_positive_origins": 0,
+      "count_negative_origins": 17,
+      "count_zero_origins": 156
+    },
+    {
+      "treatment_j": 11,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 12,
+      "mean_delta_vs_v3_liters": -1.5898265895953763,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.6005414856282227,
+      "count_positive_origins": 0,
+      "count_negative_origins": 16,
+      "count_zero_origins": 157
+    },
+    {
+      "treatment_j": 13,
+      "mean_delta_vs_v3_liters": 0.10271676300578035,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.16801782358789086,
+      "count_positive_origins": 1,
+      "count_negative_origins": 0,
+      "count_zero_origins": 172
+    },
+    {
+      "treatment_j": 14,
+      "mean_delta_vs_v3_liters": -1.4969942196531794,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.4486919500727056,
+      "count_positive_origins": 1,
+      "count_negative_origins": 17,
+      "count_zero_origins": 155
+    },
+    {
+      "treatment_j": 15,
+      "mean_delta_vs_v3_liters": -1.3863583815028904,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.267720585780515,
+      "count_positive_origins": 4,
+      "count_negative_origins": 17,
+      "count_zero_origins": 152
+    },
+    {
+      "treatment_j": 16,
+      "mean_delta_vs_v3_liters": 0.01028901734104049,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.016830147776389786,
+      "count_positive_origins": 3,
+      "count_negative_origins": 1,
+      "count_zero_origins": 169
+    },
+    {
+      "treatment_j": 17,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 18,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 19,
+      "mean_delta_vs_v3_liters": -1.5898265895953763,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": -2.6005414856282227,
+      "count_positive_origins": 0,
+      "count_negative_origins": 16,
+      "count_zero_origins": 157
+    },
+    {
+      "treatment_j": 20,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 21,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 22,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    },
+    {
+      "treatment_j": 23,
+      "mean_delta_vs_v3_liters": 0.0,
+      "median_delta_vs_v3_liters": 0.0,
+      "percentage_change_vs_v3": 0.0,
+      "count_positive_origins": 0,
+      "count_negative_origins": 0,
+      "count_zero_origins": 173
+    }
+  ],
+  "attribution_breakdown": {
+    "v3_bulk_structural_reduction_pct_share": 94.12,
+    "ofat_incremental_refinement_pct_share": 5.88,
+    "v4g_reversal_explanation": "V4G candidate branch increased fuel by +22.6801 L/origin (+37.10% vs V3), virtually reversing V3's gains. Isolated OFAT j=14 perturbation resulted in 59.6374 L (-1.4970 L vs V3), proving that V4G's degradation was NOT caused by single-factor h=14 horizon weighting."
+  },
+  "scientific_classification": {
+    "category": "B",
+    "label": "B \u2014 modest additional reduction relative to V3",
+    "justification": "V3 Stage8.1 achieved a major reduction of -23.9786 L/origin (-28.17% vs V0). OFAT single-horizon interventions produced incremental refinements ranging from +0.1607 L/origin (j=1, +0.26% vs V3) to -1.6840 L/origin (j=10, -2.75% vs V3), with j=14 achieving -1.4970 L/origin (-2.45% vs V3). This represents a modest incremental refinement rather than a structural breakthrough."
+  },
+  "level_distinctions": {
+    "forecast_model_improvement": "Stage8.1 empirical forecast replay accuracy",
+    "ems_objective_weight_improvement": "OFAT single-horizon objective weight sensitivity (w_j=1.0)",
+    "total_diesel_improvement": "Combined reduction evaluated under controlled synthetic station environment"
+  },
+  "real_world_claim_boundary": "All evaluations are strictly scoped to the controlled synthetic POLARIS station environment and Stage8.1 empirical forecast replay. No claims are made regarding real Nuolja field performance, actual station fuel savings, or production hardware readiness.",
+  "final_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "ARM5_TERMINOLOGY_CORRECTED": "YES",
+    "DIESEL_ENDPOINT_RECONCILED": "YES",
+    "FINAL_CLASSIFICATION": "B"
+  }
+}

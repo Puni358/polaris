@@ -1,0 +1,87 @@
+{
+  "specification_package_id": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_HASH_AUDIT",
+  "audit_timestamp": "2026-09-23T10:32:02+05:30",
+  "governance_correction_scope": "SURVIVABILITY_MARGIN_CLOSURE_AND_FAILURE_MATRIX_CORRECTION",
+  "package_directory": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_SPECIFICATION_AUDIT/",
+  "integrity_status": "VERIFIED_VALID",
+  "specification_package_files": [
+    {
+      "filename": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_SPECIFICATION.md",
+      "sha256": "a94c9960be471c645f0bfeb4181cfd315feeb052da4bb9fa21f77af340327e6d",
+      "status": "VERIFIED_PRESENT_AND_UPDATED",
+      "purpose": "Authoritative full specification document for POLARIS Emergency Condition Detector updated with closed time-margin governance"
+    },
+    {
+      "filename": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_SPECIFICATION.json",
+      "sha256": "c2c729b5a53b0b37e94109c6cc5e8f1f230e6806dbac3ff0510a1c93366d2ec0",
+      "status": "VERIFIED_PRESENT_AND_UPDATED",
+      "purpose": "Structured JSON registry of ECD specification classifications and physical model parameters"
+    },
+    {
+      "filename": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_DECISION_TABLE.md",
+      "sha256": "6cb24b540be75014dc1b8d8954324ef2e681c9cb912579fb4a39995170a4a3cc",
+      "status": "VERIFIED_PRESENT_AND_UPDATED",
+      "purpose": "Decision table evaluating ECD components, codebase evidence, and implementation blockers"
+    },
+    {
+      "filename": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_CAUSAL_MODEL.md",
+      "sha256": "bf92b99ffd61d6020b0ffcfeebb07adf7bf3f814bd8fd5d2bdf4646de9be86f0",
+      "status": "VERIFIED_PRESENT_AND_UPDATED",
+      "purpose": "Textual causal diagram, truth firewall audit, and endurance transformations"
+    },
+    {
+      "filename": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_SCHEMA_GAP_AUDIT.md",
+      "sha256": "4f606e2d1b37c2403d2f28a00a2edc2ff5f2dd242211d6752463ced707b97925",
+      "status": "VERIFIED_PRESENT_AND_UPDATED",
+      "purpose": "Field-by-field schema gap audit of StationState, ForecastBundle, and EmergencyAssessment"
+    },
+    {
+      "filename": "POLARIS_EMS_EMERGENCY_CONDITION_DETECTOR_FAILURE_MATRIX.md",
+      "sha256": "f6b3bbee0b867343db0761893a9ebd0507fd193776d922a1e38223ce7bd97073",
+      "status": "VERIFIED_PRESENT_AND_UPDATED",
+      "purpose": "15-scenario failure mode matrix distinguishing closed fail-closed behavior from unresolved failure behaviors"
+    }
+  ],
+  "historical_audit_package_preservation": [
+    {
+      "directory": "POLARIS_EMS_HD03_PROTOTYPE_T_REQUIRED_72H_CLOSURE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Historical closure of 72h prototype test value"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_T_REQUIRED_OPERATIONAL_EVIDENCE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Historical operational evidence investigation"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_AUTHORITY_TIME_RUNTIME_CLOSURE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Authority, time semantics, and runtime variability closure package"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_VALIDITY_FRESHNESS_CLOSURE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Validity and freshness closure package"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_OPERATIONAL_OVERRIDE_CLOSURE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Operational override closure package"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_MISSING_T_REQUIRED_CLOSURE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Missing input fail-closed closure package"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_T_REQUIRED_SEMANTIC_CLOSURE_AUDIT/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "Semantic closure audit package"
+    },
+    {
+      "directory": "POLARIS_EMS_HD03_T_REQUIRED_C_PLUS_A_CLOSURE/",
+      "status": "PRESERVED_UNMODIFIED",
+      "notes": "C+A source architecture closure package"
+    }
+  ]
+}

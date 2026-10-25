@@ -1,0 +1,51 @@
+{
+  "checkpoint_id": "STAGE8_20B_FINAL_PROJECT_STATE_CHECKPOINT",
+  "checkpoint_stage": "POLARIS STAGE 8.20B",
+  "timestamp": "2026-09-13T10:55:00+00:00",
+  "checkpoint_status": "PROJECT_STATE_LOCKED",
+  "official_champion": {
+    "model_name": "Stage 8.19 ABIS GNSS Model",
+    "status": "FROZEN_OPERATIONAL_CHAMPION",
+    "total_features": 42,
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_nmae_pct": 27.0081,
+    "daytime_rmse_w_m2": 62.748210,
+    "daytime_bias_w_m2": 1.658210,
+    "night_mae_w_m2": 0.0
+  },
+  "stage8_20a_status": "CLOSED — DOCUMENTATION CORRECTIONS REQUIRED",
+  "evidence_audit_summary": {
+    "total_claims_audited": 22,
+    "verified_claims": 21,
+    "partially_verified_claims": 1,
+    "unverified_claims": 0,
+    "incorrect_claims": 0,
+    "reopened_routes": 0
+  },
+  "routes_reopened": 0,
+  "experiment_authorized": false,
+  "experiment_executed": false,
+  "odd_access_authorized": false,
+  "nwp_assimilation_wording_correction": "Assimilation into the NWP initial state reduces the independence of the information available to a downstream model, but does not by itself prove complete predictive redundancy.",
+  "no_qualifying_source_vs_no_independent_observations": "NO QUALIFYING SOURCE FOUND UNDER THE CURRENT EVIDENCE, CAUSALITY, REPRESENTATIVENESS, MEASUREMENT-RELEVANCE, AND INFORMATION-NOVELTY CRITERIA. This does NOT establish that no independent observations exist anywhere or that no future product could ever qualify.",
+  "next_permissible_research_boundary": "Independent research only. A fresh chat must NOT infer experimental authorization from data discovery. RESEARCH DOES NOT EQUAL EXPERIMENT AUTHORIZATION.",
+  "forbidden_actions": [
+    "Run forecasting experiment",
+    "Train or retrain any model",
+    "Run EVEN or ODD evaluation",
+    "Feature-grind existing features or repackage NWP variables",
+    "Algebraic transformations or spatial derivatives of existing features without independent physical justification",
+    "Reopen previously rejected routes without materially new evidence",
+    "Jump directly to ODD or change benchmark protocol",
+    "Modify champion metrics or change official champion"
+  ],
+  "canonical_governance_chain": "RESEARCH -> EVIDENCE AUDIT -> FEASIBILITY AUDIT -> PRE-REGISTRATION -> EVEN-ONLY EXPERIMENT -> CANDIDATE FREEZE -> LOCKED ODD -> PROMOTION RECONCILIATION",
+  "temporal_protocol": {
+    "t0": "00:00:00 UTC Day D",
+    "h1": "00:00:00 UTC Day D",
+    "h24": "23:00:00 UTC Day D",
+    "sites_target_semantics": "Period-ending hourly average over preceding 60 minutes",
+    "input_target_alignment": "VERIFIED (Zero H1 physical overlap with 24h context vector)"
+  },
+  "master_registry_modification_policy": "LOCKED — Minimum necessary updates for documented factual governance state. Metrics and historical experiment results are permanently frozen."
+}

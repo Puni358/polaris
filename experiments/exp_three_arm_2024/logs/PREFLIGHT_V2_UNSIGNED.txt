@@ -1,0 +1,22 @@
+$ python3 -B experiments/exp_three_arm_2024/scripts/run_three_arm_2024.py --repo . --preflight
+(run 2026-10-11T06:18:49Z in the sandbox repo replica after the D9 re-freeze; execution_preflight and execution UNSIGNED)
+PREFLIGHT FAILED:
+  [authorization] execution_preflight decision is None, not 'APPROVE'
+  [authorization] execution_preflight is unsigned (signer_name empty)
+  [authorization] execution_preflight signer_role is None, not 'project lead'
+  [authorization] execution_preflight signed_at_utc missing or not ISO-8601 UTC ('...Z')
+  [authorization] execution_preflight package_manifest_sha256 does not match the current manifest
+  [authorization] execution_preflight experiment_config_sha256 does not match the current config
+  [authorization] execution_preflight calibration_artifact_sha256 does not match the calibration artifact
+  [authorization] execution_preflight solve_ceiling does not equal the configured total ceiling
+  [authorization] execution decision is None, not 'APPROVE'
+  [authorization] execution is unsigned (signer_name empty)
+  [authorization] execution signer_role is None, not 'project lead'
+  [authorization] execution signed_at_utc missing or not ISO-8601 UTC ('...Z')
+  [authorization] execution package_manifest_sha256 does not match the current manifest
+  [authorization] execution experiment_config_sha256 does not match the current config
+  [authorization] execution calibration_artifact_sha256 does not match the calibration artifact
+  [authorization] execution solve_ceiling does not equal the configured total ceiling
+  [authorization] execution execute_instruction_ref is empty (must reference the project lead's explicit execute instruction)
+  [inputs] input-content guards skipped because earlier checks failed
+exit code: 2

@@ -1,0 +1,8 @@
+variable_name,sds_name,units,fill_value,valid_range,available_in
+Cloud_Optical_Thickness,Cloud_Optical_Thickness,dimensionless,-9999,0 - 150,CLDPROP_L2_VIIRS_SNPP / NOAA20
+Cloud_Effective_Radius,Cloud_Effective_Radius,microns,-9999,0 - 60,CLDPROP_L2_VIIRS_SNPP / NOAA20
+Cloud_Phase_Optical_Properties,Cloud_Phase_Optical_Properties,category,0,0 - 6,CLDPROP_L2_VIIRS_SNPP / NOAA20
+Cloud_Top_Height,Cloud_Top_Height,meters,-9999,0 - 20000,CLDPROP_L2_VIIRS_SNPP / NOAA20 / NOAA21
+Cloud_Top_Pressure,Cloud_Top_Pressure,hPa,-9999,10 - 1100,CLDPROP_L2_VIIRS_SNPP / NOAA20
+Cloud_Top_Temperature,Cloud_Top_Temperature,K,-9999,150 - 350,CLDPROP_L2_VIIRS_SNPP / NOAA20
+Cloud_Mask,Cloud_Mask,bitflag,0,0 - 3,CLDPROP / CLDMSK

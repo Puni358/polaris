@@ -1,0 +1,20 @@
+{
+  "all_identity_pass": false,
+  "max_diff_soc_pp": 28.97,
+  "max_diff_e_next_wh": 57947.42999999999,
+  "max_diff_battery_charge_w": 44640.219999999994,
+  "max_diff_battery_discharge_w": 17825.99,
+  "max_diff_served_load_w": 1912.5900000000001,
+  "max_diff_critical_served_w": 0.0,
+  "max_diff_unmet_load_w": 1912.59,
+  "per_variable_status": {
+    "soc": false,
+    "e_next": false,
+    "battery_charge": false,
+    "battery_discharge": false,
+    "served_load": false,
+    "critical_served": true,
+    "unmet_load": false
+  },
+  "identity_violations_count": 32
+}

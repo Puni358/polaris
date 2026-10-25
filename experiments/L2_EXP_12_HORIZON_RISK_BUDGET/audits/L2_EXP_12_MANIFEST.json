@@ -1,0 +1,28 @@
+{
+  "experiment_id": "L2-EXP-12",
+  "created_at": "2026-10-04T11:34:29.056328+00:00",
+  "inputs": {
+    "policy_json": "cb47c15baaf954f9ed5b7481dcd8cb6399703d487fe58c12a989574de542b52d",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "deliverables": {
+    "pre_registration_json": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/pre_registration.json",
+    "pre_registration_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/PRE_REGISTRATION.md",
+    "runner_script": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/run_l2_exp_12.py",
+    "results_json": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_RESULTS.json",
+    "results_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_RESULTS.md",
+    "origin_metrics_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_ORIGIN_METRICS.csv",
+    "hourly_trajectories_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_HOURLY_TRAJECTORIES.csv",
+    "mechanism_forensics_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_MECHANISM_FORENSICS.csv",
+    "tradeoff_analysis_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/results/L2_EXP_12_TRADEOFF_ANALYSIS.csv",
+    "non_anticipativity_audit_csv": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/audits/L2_EXP_12_NON_ANTICIPATIVITY_AUDIT.csv",
+    "replay_accounting_audit_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/audits/L2_EXP_12_REPLAY_ACCOUNTING_AUDIT.md",
+    "execution_audit_md": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/audits/L2_EXP_12_EXECUTION_AUDIT.md",
+    "manifest_json": "/home/punith-bs/01polaris (Copy)/experiments/L2_EXP_12_HORIZON_RISK_BUDGET/audits/L2_EXP_12_MANIFEST.json"
+  }
+}

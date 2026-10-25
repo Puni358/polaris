@@ -1,0 +1,342 @@
+{
+  "Control_Frozen_B": {
+    "name": "Control Frozen B",
+    "fuel_l": {
+      "frozen": 6117.9691,
+      "corrected": 6096.9003999999995,
+      "diff": -21.068700000000717
+    },
+    "diesel_saving_pct": {
+      "frozen": 0.0,
+      "corrected": 0.0,
+      "diff": 0.0
+    },
+    "critical_first_rel_pct": {
+      "frozen": 93.669482,
+      "corrected": 93.75383962363331,
+      "diff": 0.08435762363330923
+    },
+    "delta_cf_pp": {
+      "frozen": 0.0,
+      "corrected": 0.0,
+      "diff": 0.0
+    },
+    "proportional_rel_pct": {
+      "frozen": 83.823383,
+      "corrected": 83.84995137907113,
+      "diff": 0.026568379071122195
+    },
+    "delta_p_pp": {
+      "frozen": 0.0,
+      "corrected": 0.0,
+      "diff": 0.0
+    },
+    "unmet_load_mwh": {
+      "frozen": 5.56,
+      "corrected": 7.7972662800000005,
+      "diff": 2.237266280000001
+    },
+    "curtailment_mwh": {
+      "frozen": 6.55,
+      "corrected": 10.01525771,
+      "diff": 3.4652577100000004
+    },
+    "min_soc_pct": {
+      "frozen": 54.99,
+      "corrected": 54.99,
+      "diff": 0.0
+    },
+    "soc_violations": {
+      "frozen": 0,
+      "corrected": 0,
+      "diff": 0
+    },
+    "diesel_on_hours": {
+      "frozen": 589,
+      "corrected": 442,
+      "diff": -147
+    },
+    "diesel_startups": {
+      "frozen": 108,
+      "corrected": 308,
+      "diff": 200
+    },
+    "efc": {
+      "frozen": 79.0,
+      "corrected": 66.450617625,
+      "diff": -12.549382374999993
+    }
+  },
+  "Candidate_S": {
+    "name": "Candidate S",
+    "fuel_l": {
+      "frozen": 4648.3272,
+      "corrected": 4687.6902,
+      "diff": 39.363000000000284
+    },
+    "diesel_saving_pct": {
+      "frozen": 24.02,
+      "corrected": 23.113551272708992,
+      "diff": -0.9064487272910071
+    },
+    "critical_first_rel_pct": {
+      "frozen": 94.327168,
+      "corrected": 94.39446076885338,
+      "diff": 0.06729276885337754
+    },
+    "delta_cf_pp": {
+      "frozen": 0.657686,
+      "corrected": 0.6406211452200665,
+      "diff": -0.01706485477993347
+    },
+    "proportional_rel_pct": {
+      "frozen": 84.604885,
+      "corrected": 84.67263263642377,
+      "diff": 0.06774763642377479
+    },
+    "delta_p_pp": {
+      "frozen": 0.781502,
+      "corrected": 0.8226812573526416,
+      "diff": 0.04117925735264161
+    },
+    "unmet_load_mwh": {
+      "frozen": 5.42,
+      "corrected": 7.42847174,
+      "diff": 2.00847174
+    },
+    "curtailment_mwh": {
+      "frozen": 9.94,
+      "corrected": 8.2699863,
+      "diff": -1.6700137000000002
+    },
+    "min_soc_pct": {
+      "frozen": 20.0,
+      "corrected": 20.0,
+      "diff": 0.0
+    },
+    "soc_violations": {
+      "frozen": 0,
+      "corrected": 0,
+      "diff": 0
+    },
+    "diesel_on_hours": {
+      "frozen": 446,
+      "corrected": 327,
+      "diff": -119
+    },
+    "diesel_startups": {
+      "frozen": 101,
+      "corrected": 237,
+      "diff": 136
+    },
+    "efc": {
+      "frozen": 93.97,
+      "corrected": 69.12163282499999,
+      "diff": -24.848367175000007
+    }
+  },
+  "Candidate_SW": {
+    "name": "Candidate SW",
+    "fuel_l": {
+      "frozen": 3885.0225,
+      "corrected": 3768.5494,
+      "diff": -116.47310000000016
+    },
+    "diesel_saving_pct": {
+      "frozen": 36.5,
+      "corrected": 38.18909359254089,
+      "diff": 1.6890935925408925
+    },
+    "critical_first_rel_pct": {
+      "frozen": 94.090514,
+      "corrected": 94.03612676385384,
+      "diff": -0.05438723614615526
+    },
+    "delta_cf_pp": {
+      "frozen": 0.421032,
+      "corrected": 0.28228714022053225,
+      "diff": -0.13874485977946777
+    },
+    "proportional_rel_pct": {
+      "frozen": 83.467189,
+      "corrected": 83.26846137547865,
+      "diff": -0.19872762452135362
+    },
+    "delta_p_pp": {
+      "frozen": -0.356194,
+      "corrected": -0.5814900035924779,
+      "diff": -0.22529600359247792
+    },
+    "unmet_load_mwh": {
+      "frozen": 6.0,
+      "corrected": 8.14082943,
+      "diff": 2.14082943
+    },
+    "curtailment_mwh": {
+      "frozen": 9.79,
+      "corrected": 8.00908059,
+      "diff": -1.7809194099999992
+    },
+    "min_soc_pct": {
+      "frozen": 20.0,
+      "corrected": 20.0,
+      "diff": 0.0
+    },
+    "soc_violations": {
+      "frozen": 0,
+      "corrected": 0,
+      "diff": 0
+    },
+    "diesel_on_hours": {
+      "frozen": 368,
+      "corrected": 248,
+      "diff": -120
+    },
+    "diesel_startups": {
+      "frozen": 83,
+      "corrected": 159,
+      "diff": 76
+    },
+    "efc": {
+      "frozen": 94.38,
+      "corrected": 67.039240525,
+      "diff": -27.340759475
+    }
+  },
+  "Candidate_SL": {
+    "name": "Candidate S-L",
+    "fuel_l": {
+      "frozen": 5334.1331,
+      "corrected": 5280.2375,
+      "diff": -53.89559999999983
+    },
+    "diesel_saving_pct": {
+      "frozen": 12.81,
+      "corrected": 13.394722669243531,
+      "diff": 0.584722669243531
+    },
+    "critical_first_rel_pct": {
+      "frozen": 94.455173,
+      "corrected": 94.39317747757218,
+      "diff": -0.06199552242782147
+    },
+    "delta_cf_pp": {
+      "frozen": 0.785691,
+      "corrected": 0.6393378539388692,
+      "diff": -0.1463531460611308
+    },
+    "proportional_rel_pct": {
+      "frozen": 85.150455,
+      "corrected": 85.00643547290123,
+      "diff": -0.14401952709876298
+    },
+    "delta_p_pp": {
+      "frozen": 1.327072,
+      "corrected": 1.1564840938301018,
+      "diff": -0.17058790616989827
+    },
+    "unmet_load_mwh": {
+      "frozen": 5.14,
+      "corrected": 7.25022731,
+      "diff": 2.11022731
+    },
+    "curtailment_mwh": {
+      "frozen": 10.35,
+      "corrected": 8.655896449999998,
+      "diff": -1.6941035500000012
+    },
+    "min_soc_pct": {
+      "frozen": 20.0,
+      "corrected": 20.0,
+      "diff": 0.0
+    },
+    "soc_violations": {
+      "frozen": 0,
+      "corrected": 0,
+      "diff": 0
+    },
+    "diesel_on_hours": {
+      "frozen": 506,
+      "corrected": 379,
+      "diff": -127
+    },
+    "diesel_startups": {
+      "frozen": 114,
+      "corrected": 281,
+      "diff": 167
+    },
+    "efc": {
+      "frozen": 86.54,
+      "corrected": 69.2879521,
+      "diff": -17.252047900000008
+    }
+  },
+  "Candidate_SWL": {
+    "name": "Candidate SW-L",
+    "fuel_l": {
+      "frozen": 5221.3152,
+      "corrected": 5263.9645,
+      "diff": 42.64930000000004
+    },
+    "diesel_saving_pct": {
+      "frozen": 14.66,
+      "corrected": 13.661628784357369,
+      "diff": -0.9983712156426314
+    },
+    "critical_first_rel_pct": {
+      "frozen": 94.484413,
+      "corrected": 94.49463134286515,
+      "diff": 0.010218342865144336
+    },
+    "delta_cf_pp": {
+      "frozen": 0.814931,
+      "corrected": 0.7407917192318365,
+      "diff": -0.07413928076816345
+    },
+    "proportional_rel_pct": {
+      "frozen": 85.264223,
+      "corrected": 85.24108847645199,
+      "diff": -0.023134523548009156
+    },
+    "delta_p_pp": {
+      "frozen": 1.44084,
+      "corrected": 1.391137097380863,
+      "diff": -0.0497029026191369
+    },
+    "unmet_load_mwh": {
+      "frozen": 5.08,
+      "corrected": 7.13364711,
+      "diff": 2.05364711
+    },
+    "curtailment_mwh": {
+      "frozen": 10.4,
+      "corrected": 8.6824984,
+      "diff": -1.7175016000000003
+    },
+    "min_soc_pct": {
+      "frozen": 20.0,
+      "corrected": 20.0,
+      "diff": 0.0
+    },
+    "soc_violations": {
+      "frozen": 0,
+      "corrected": 0,
+      "diff": 0
+    },
+    "diesel_on_hours": {
+      "frozen": 496,
+      "corrected": 375,
+      "diff": -121
+    },
+    "diesel_startups": {
+      "frozen": 109,
+      "corrected": 270,
+      "diff": 161
+    },
+    "efc": {
+      "frozen": 89.48,
+      "corrected": 69.46162945,
+      "diff": -20.01837055
+    }
+  }
+}

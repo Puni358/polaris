@@ -1,0 +1,291 @@
+{
+  "checkpoint_name": "SPATIAL_NWP_S0_PROTOCOL_FREEZE",
+  "phase": "Phase S0",
+  "date": "2026-09-14",
+  "target_location": {
+    "name": "SITES Nuolja",
+    "latitude": 68.362074,
+    "longitude": 18.738752,
+    "elevation_m_asl": 702
+  },
+  "verdict": "PROTOCOL FROZEN",
+  "governance_status": {
+    "no_model_training_performed": true,
+    "odd_not_accessed": true,
+    "current_champion_untouched": true
+  },
+  "research_question": "What spatial footprint around SITES Nuolja provides the most useful causal NWP spatial information for 24-hour solar irradiance forecasting, balancing predictive information against irrelevant/noisy spatial context?",
+  "core_hypothesis": "POLARIS may be representation-limited because previous experiments either used point NWP features or collapsed spatial neighborhoods into scalar summaries. Preserving the spatial topology of causal NWP fields may retain predictive information that the current tabular representation destroys.",
+  "locked_benchmark": {
+    "target_variable": "actual_SW_IN",
+    "target_units": "W/m^2",
+    "input_history_hours": 24,
+    "forecast_horizon_hours": 24,
+    "total_clean_origins": 347,
+    "even_development_origins": 173,
+    "odd_official_test_origins": 174,
+    "benchmark_forecast_origin_t0": "00:00 UTC Day D",
+    "causal_nwp_cycle": "Day D-1 18:00 UTC",
+    "horizon_lead_mapping": {
+      "H1": "+6h",
+      "H2": "+7h",
+      "H24": "+29h"
+    },
+    "causal_provenance_verdict": "CAUSALLY VERIFIED"
+  },
+  "protected_champion": {
+    "stage": "Stage 8.1",
+    "model": "HistGradientBoostingRegressor",
+    "feature_count": 37,
+    "official_odd_metrics": {
+      "mae_w_m2": 36.188657,
+      "nmae_percent": 28.0688,
+      "rmse_w_m2": 64.219495,
+      "bias_w_m2": 1.439399,
+      "night_mae_w_m2": 0.0
+    },
+    "protected": true
+  },
+  "previous_experiments_audit": {
+    "stage_8_5": {
+      "description": "9x9 MEPS neighborhood reduced to 14 scalar summary features",
+      "model_type": "tabular GBDT",
+      "spatial_tensor_preserved": false
+    },
+    "stage_8_17A": {
+      "description": "Nearest-point AROME-Arctic disagreement features",
+      "model_type": "tabular GBDT",
+      "spatial_tensor_preserved": false
+    },
+    "verdict": "Raw 2D spatial NWP representation learning remains untested in POLARIS."
+  },
+  "candidate_spatial_footprints": [
+    {
+      "footprint": "5x5",
+      "physical_grid_km": "12.5x12.5",
+      "physical_area_km2": 156.25,
+      "tensor_shape_per_origin": [24, 11, 5, 5],
+      "size_per_origin_kb": 26.4,
+      "even_storage_mb": 4.57,
+      "batch_memory_kb": 211.2,
+      "est_train_time_min": 1.5,
+      "feasible": true
+    },
+    {
+      "footprint": "9x9",
+      "physical_grid_km": "22.5x22.5",
+      "physical_area_km2": 506.25,
+      "tensor_shape_per_origin": [24, 11, 9, 9],
+      "size_per_origin_kb": 85.5,
+      "even_storage_mb": 14.80,
+      "batch_memory_kb": 684.3,
+      "est_train_time_min": 2.5,
+      "feasible": true
+    },
+    {
+      "footprint": "13x13",
+      "physical_grid_km": "32.5x32.5",
+      "physical_area_km2": 1056.25,
+      "tensor_shape_per_origin": [24, 11, 13, 13],
+      "size_per_origin_kb": 178.5,
+      "even_storage_mb": 30.87,
+      "batch_memory_kb": 1430.0,
+      "est_train_time_min": 3.5,
+      "feasible": true
+    },
+    {
+      "footprint": "21x21",
+      "physical_grid_km": "52.5x52.5",
+      "physical_area_km2": 2756.25,
+      "tensor_shape_per_origin": [24, 11, 21, 21],
+      "size_per_origin_kb": 465.7,
+      "even_storage_mb": 80.57,
+      "batch_memory_kb": 3730.0,
+      "est_train_time_min": 5.0,
+      "feasible": true
+    },
+    {
+      "footprint": "33x33",
+      "physical_grid_km": "82.5x82.5",
+      "physical_area_km2": 6806.25,
+      "tensor_shape_per_origin": [24, 11, 33, 33],
+      "size_per_origin_mb": 1.15,
+      "even_storage_mb": 198.97,
+      "batch_memory_mb": 9.20,
+      "est_train_time_min": 8.0,
+      "feasible": true
+    },
+    {
+      "footprint": "49x49",
+      "physical_grid_km": "122.5x122.5",
+      "physical_area_km2": 15006.25,
+      "tensor_shape_per_origin": [24, 11, 49, 49],
+      "size_per_origin_mb": 2.54,
+      "even_storage_mb": 438.63,
+      "batch_memory_mb": 20.28,
+      "est_train_time_min": 14.0,
+      "feasible": true
+    },
+    {
+      "footprint": "64x64",
+      "physical_grid_km": "160.0x160.0",
+      "physical_area_km2": 25600.0,
+      "tensor_shape_per_origin": [24, 11, 64, 64],
+      "size_per_origin_mb": 4.33,
+      "even_storage_mb": 748.29,
+      "batch_memory_mb": 34.60,
+      "est_train_time_min": 20.0,
+      "feasible": true
+    }
+  ],
+  "frozen_nwp_source": {
+    "model": "AROME-Arctic 2.5 km Deterministic Archive",
+    "institution": "MET Norway",
+    "initialization_cycle": "D-1 18:00 UTC",
+    "nearest_grid_index": [209, 548],
+    "nearest_coordinates": [68.364774, 18.715312],
+    "distance_to_nuolja_km": 1.0074
+  },
+  "frozen_channels": [
+    {
+      "index": 1,
+      "name": "surface_downwelling_shortwave_flux_in_air",
+      "level": "Surface",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 2,
+      "name": "cloud_area_fraction",
+      "level": "Surface",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 3,
+      "name": "high_type_cloud_area_fraction",
+      "level": "Surface",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 4,
+      "name": "medium_type_cloud_area_fraction",
+      "level": "Surface",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 5,
+      "name": "low_type_cloud_area_fraction",
+      "level": "Surface",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 6,
+      "name": "atmosphere_mass_content_of_cloud_liquid_water",
+      "level": "Surface (LWP)",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 7,
+      "name": "atmosphere_mass_content_of_cloud_ice",
+      "level": "Surface (IWP)",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 8,
+      "name": "x_wind_10m",
+      "level": "10m Height",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 9,
+      "name": "y_wind_10m",
+      "level": "10m Height",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 10,
+      "name": "x_wind_700hPa",
+      "level": "700 hPa Pressure Level",
+      "classification": "REQUIRED"
+    },
+    {
+      "index": 11,
+      "name": "y_wind_700hPa",
+      "level": "700 hPa Pressure Level",
+      "classification": "REQUIRED"
+    }
+  ],
+  "frozen_vertical_levels": [
+    "Surface (0m)",
+    "10m Height",
+    "700 hPa Pressure Level"
+  ],
+  "patch_extraction_geometry": {
+    "anchor_cell": [209, 548],
+    "odd_footprint_rule": "Symmetric indexing centered at (209, 548) with half-width k=(N-1)/2",
+    "even_64x64_rule": "Anchor (209, 548) placed at position (31, 31) in zero-indexed patch. y-bounds: [178, 241], x-bounds: [517, 580]",
+    "domain_boundary_egress": false,
+    "padding_required": false
+  },
+  "temporal_representation": {
+    "spatial_sequence_length": 24,
+    "lead_hours": "+6h to +29h from D-1 18Z run",
+    "station_history_features": 38,
+    "fusion_method": "Parallel Tabular MLP context vector concatenated with temporal GRU step states"
+  },
+  "normalization": {
+    "fit_scope": "TRAINING ORIGINS ONLY per fold",
+    "method": "Per-channel Z-score standard scaling",
+    "clipping_bounds": [-5.0, 5.0]
+  },
+  "target_and_night_handling": {
+    "target": "reconstructed SW_IN (W/m^2)",
+    "night_rule": "Hard zero override based on deterministic solar geometry (solar elevation <= 0)",
+    "loss": "Masked MSE loss evaluated over daytime hours only"
+  },
+  "frozen_architecture": {
+    "family": "2D CNN Spatial Encoder + GRU Temporal Model + Tabular Branch",
+    "spatial_pooling": "AdaptiveAvgPool2d((1, 1))",
+    "parameter_count_per_footprint": 16033,
+    "parameter_count_parity": true
+  },
+  "training_and_reproducibility": {
+    "master_seed": 42,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 8,
+    "max_epochs": 300,
+    "early_stopping_patience": 20
+  },
+  "cross_validation": {
+    "dataset": "173 EVEN development origins",
+    "strategy": "5-fold GroupKFold by origin date/month",
+    "identical_folds_across_all_footprints": true
+  },
+  "promotion_gates": {
+    "G1": "Aggregated EVEN Delta MAE <= -0.50 W/m^2",
+    "G2": ">= 4/5 folds improved",
+    "G3": "Maximum fold degradation <= +0.50 W/m^2",
+    "G4": "Candidate nMAE <= control nMAE AND candidate RMSE <= control RMSE",
+    "G5": "100% causal availability & parser compliance",
+    "G6": "Exact control reproduction"
+  },
+  "winner_selection_rule": {
+    "step_1": "Filter footprints passing all G1-G6 promotion gates.",
+    "step_2": "If none pass, reject all spatial models and retain champion Stage 8.1.",
+    "step_3": "If multiple pass, select larger footprint only if Delta MAE > 0.25 W/m^2 superior to smaller footprint.",
+    "step_4": "If performance is indistinguishable (|Delta MAE| <= 0.25 W/m^2), select the smaller footprint per parsimony."
+  },
+  "leakage_firewall": {
+    "odd_in_training": false,
+    "odd_in_scaling": false,
+    "post_t0_nwp_used": false,
+    "future_observed_sw_in_used": false,
+    "future_observed_clouds_used": false,
+    "firewall_status": "INTACT"
+  },
+  "checkpoint_files_created": [
+    "spatial_arome_research/SPATIAL_NWP_S0_PROTOCOL_FREEZE.md",
+    "spatial_arome_research/SPATIAL_NWP_S0_PROTOCOL_FREEZE.json"
+  ]
+}

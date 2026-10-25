@@ -1,0 +1,113 @@
+{
+  "route_closure_name": "STAGE8_ENEV_ROUTE_CLOSURE",
+  "timestamp": "2026-09-13T19:47:00+05:30",
+  "route": "ENEV_UPSTREAM_METAR",
+  "final_verdict": "REJECTED_BY_EVEN_GATES",
+  "station": {
+    "icao": "ENEV",
+    "name": "Harstad/Narvik Airport, Evenes",
+    "distance_km": 86,
+    "direction": "WNW",
+    "elevation_m": 26
+  },
+  "route_validity_summary": {
+    "is_real_data": true,
+    "is_causally_valid": true,
+    "data_validity_gate_g5": "PASSED",
+    "control_reproduction_gate_g6": "PASSED",
+    "odd_status": "FIREWALLED",
+    "odd_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false
+  },
+  "candidate_definition": {
+    "control": "Stage 8.1 37-feature HGB control",
+    "candidate_features": [
+      "enev_cloud_cover_okta",
+      "enev_cloud_base_m",
+      "enev_is_missing"
+    ],
+    "control_features_count": 37,
+    "candidate_features_count": 40
+  },
+  "coverage_and_imputation": {
+    "timestamp_rule": "Exact t0 - 10 minutes = 23:50 UTC ENEV METAR report",
+    "total_origins": 347,
+    "exact_2350_observed_count": 329,
+    "exact_2350_observed_pct": 94.81,
+    "exact_2350_missing_count": 18,
+    "exact_2350_missing_pct": 5.19,
+    "imputation_policy": "Pre-declared causal forward-fill with enev_is_missing = 1 indicator"
+  },
+  "gate_evaluations": {
+    "G1_delta_mae": {
+      "metric": "ΔMAE (Candidate - Control)",
+      "value_w_m2": 0.198852,
+      "threshold": "<= -0.50 W/m²",
+      "status": "FAIL",
+      "detail": "Candidate EVEN MAE 37.818906 W/m² vs Control EVEN MAE 37.620054 W/m²"
+    },
+    "G2_folds_improved": {
+      "metric": "Folds Improved",
+      "value": "3/5",
+      "improved_folds": [1, 2, 5],
+      "degraded_folds": [3, 4],
+      "threshold": ">= 4/5 folds",
+      "status": "FAIL"
+    },
+    "G3_max_fold_degradation": {
+      "metric": "Maximum Fold Degradation",
+      "value_w_m2": 1.392324,
+      "degraded_fold": 3,
+      "threshold": "<= +0.50 W/m²",
+      "status": "FAIL"
+    },
+    "G4_rmse_nmae_control": {
+      "metric": "RMSE and nMAE vs Control",
+      "control_rmse_w_m2": 60.160645,
+      "candidate_rmse_w_m2": 60.677351,
+      "delta_rmse_w_m2": 0.516706,
+      "control_nmae_pct": 37.9745,
+      "candidate_nmae_pct": 37.6237,
+      "threshold": "Candidate RMSE and nMAE <= Control",
+      "status": "FAIL",
+      "detail": "Candidate RMSE degraded by +0.516706 W/m² despite minor nMAE shift"
+    },
+    "G5_causal_data_integrity": {
+      "metric": "100% Causal Matching & Timestamp Compliance",
+      "status": "PASS",
+      "detail": "Exact 23:50 UTC timestamp matching on all 347 origins, zero forbidden timestamp substitutions"
+    },
+    "G6_control_reproduction": {
+      "metric": "Stage 8.1 Control Reproduction",
+      "status": "PASS",
+      "detail": "Control EVEN MAE reproduced exactly at 37.620054 W/m²"
+    }
+  },
+  "physical_interpretation": {
+    "finding": "Coastal ENEV METAR cloud cover and base height observations provide no robust incremental predictive value over the frozen Stage 8.1 control for Nuolja GHI forecasting under pre-registered protocol.",
+    "scope_limit": "This closure applies strictly to this specific ENEV representation and feature formulation under the governed benchmark. It does NOT claim upstream observations are universally useless or that ENEV contains zero physical information.",
+    "physical_mechanism": "Scandes mountain range acts as an orographic cloud barrier (upwind slope cloud trapping, lee wave cloud dissipation, and localized cloud transformation) decoupling coastal cloud decks at Evenes (86 km WNW) from inland microclimate cloud dynamics over Nuolja."
+  },
+  "operational_champion_status": {
+    "champion": "Stage 8.1 37-feature HGB control",
+    "status": "UNTOUCHED_AND_RETAINED",
+    "odd_daytime_mae_w_m2": 36.188657,
+    "odd_daytime_nmae_pct": 28.0688,
+    "odd_daytime_rmse_w_m2": 64.219495,
+    "odd_daytime_bias_w_m2": 1.439399
+  },
+  "research_space_reduction_inventory_update": {
+    "ROUTE": "ENEV_UPSTREAM_METAR",
+    "STATUS": "CLOSED_AFTER_GOVERNED_EVEN_REJECTION",
+    "REASON": "FAILED_G1_G2_G3_G4",
+    "DATA_VALIDITY": "PASSED_G5",
+    "CONTROL_VALIDITY": "PASSED_G6",
+    "ODD_STATUS": "FIREWALLED"
+  },
+  "provenance_hashes": {
+    "script_sha256": "8b0ce51d17429f4b0a6bfd2e23c880abf36eabccb1fcd777fdaa44e57921c3a0",
+    "enev_metar_csv_sha256": "fca7069e029fe2c80b8972dc848fa9cbc540673f507ef84fe221d21812055a2d",
+    "nwp_csv_sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"
+  }
+}

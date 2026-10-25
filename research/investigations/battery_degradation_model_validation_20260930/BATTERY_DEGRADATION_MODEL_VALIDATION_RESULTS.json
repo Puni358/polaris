@@ -1,0 +1,129 @@
+{
+  "phase_id": "battery_degradation_model_validation_20260930",
+  "evidence_boundary": {
+    "battery_physical_evidence_status": "PARTIAL",
+    "degradation_model_status": "PARTIALLY_VALIDATED_RESEARCH_MODEL",
+    "production_promotion": "NOT_AUTHORIZED",
+    "target_battery_identity_verified": false,
+    "target_chemistry_status": "UNKNOWN"
+  },
+  "validation_experiments_V0_V7": [
+    {
+      "experiment_id": "V0",
+      "description": "Reference Model (Central evidence parameters under POLARIS C0 profile)",
+      "cycle_throughput_efc": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00012,
+      "q_calendar_loss_pct": 0.09600,
+      "q_total_loss_pct": 0.09612,
+      "uncertainty_range_pct": "0.054% - 0.285%",
+      "validation_status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V1",
+      "description": "Parameter Lower Bounds (Minimum degradation coefficients from Wang/Schmalstieg)",
+      "cycle_throughput_efc": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00006,
+      "q_calendar_loss_pct": 0.05400,
+      "q_total_loss_pct": 0.05406,
+      "uncertainty_range_pct": "LOWER_BOUND_SCENARIO",
+      "validation_status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V2",
+      "description": "Parameter Upper Bounds (Maximum degradation coefficients from literature)",
+      "cycle_throughput_efc": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00035,
+      "q_calendar_loss_pct": 0.28465,
+      "q_total_loss_pct": 0.28500,
+      "uncertainty_range_pct": "UPPER_BOUND_SCENARIO",
+      "validation_status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V3",
+      "description": "No Calendar Aging (Diagnostic isolating pure cycle aging)",
+      "cycle_throughput_efc": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00012,
+      "q_calendar_loss_pct": 0.00000,
+      "q_total_loss_pct": 0.00012,
+      "uncertainty_range_pct": "DIAGNOSTIC_ONLY",
+      "validation_status": "DIAGNOSTIC_PASS"
+    },
+    {
+      "experiment_id": "V4",
+      "description": "No Cycle Aging (Diagnostic isolating pure calendar aging)",
+      "cycle_throughput_efc": 0.00,
+      "avg_dod": 0.000,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00000,
+      "q_calendar_loss_pct": 0.09600,
+      "q_total_loss_pct": 0.09600,
+      "uncertainty_range_pct": "DIAGNOSTIC_ONLY",
+      "validation_status": "DIAGNOSTIC_PASS"
+    },
+    {
+      "experiment_id": "V5",
+      "description": "Temperature Variation (-10°C Unheated Shelter Extrapolation)",
+      "cycle_throughput_efc": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": -10.0,
+      "q_cycle_loss_pct": 0.00001,
+      "q_calendar_loss_pct": 0.00840,
+      "q_total_loss_pct": 0.00841,
+      "uncertainty_range_pct": "EXTRAPOLATION_HIGH_UNCERTAINTY",
+      "validation_status": "EXTRAPOLATION_RISK_LITHIUM_PLATING"
+    },
+    {
+      "experiment_id": "V6",
+      "description": "DoD Variation (Deep cycling at 95% DoD under Reactive profile)",
+      "cycle_throughput_efc": 49.59,
+      "avg_dod": 0.750,
+      "avg_soc": 0.5500,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00399,
+      "q_calendar_loss_pct": 0.12900,
+      "q_total_loss_pct": 0.13299,
+      "uncertainty_range_pct": "0.080% - 0.380%",
+      "validation_status": "PARTIALLY_VALIDATED"
+    },
+    {
+      "experiment_id": "V7",
+      "description": "Combined Uncertainty Envelope (Total range propagation across all variables)",
+      "cycle_throughput_efc": 4.04,
+      "avg_dod": 0.180,
+      "avg_soc": 0.2045,
+      "ambient_temp_C": 20.0,
+      "q_cycle_loss_pct": 0.00012,
+      "q_calendar_loss_pct": 0.09600,
+      "q_total_loss_pct": 0.09612,
+      "uncertainty_range_pct": "0.054% to 0.285% annual fade",
+      "validation_status": "ENVELOPE_BOUNDED"
+    }
+  ],
+  "dimensional_audit": {
+    "capacity_units": "Fractional loss (dimensionless) / kWh capacity",
+    "unit_consistency_passed": true,
+    "capacity_loss_vs_economic_cost_confusion": false
+  },
+  "boundary_condition_tests": {
+    "zero_throughput_pass": true,
+    "zero_calendar_time_pass": true,
+    "zero_dod_pass": true,
+    "normal_temperature_pass": true,
+    "extreme_cold_extrapolation_warning": true
+  },
+  "final_model_gate_status": "PARTIALLY_VALIDATED_RESEARCH_MODEL"
+}

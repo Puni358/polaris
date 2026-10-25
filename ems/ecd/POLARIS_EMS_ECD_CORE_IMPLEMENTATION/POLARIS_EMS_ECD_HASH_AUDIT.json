@@ -1,0 +1,27 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_HASH_AUDIT",
+  "generated_at": "2026-09-23T18:49:30Z",
+  "status": "SEALED",
+  "artifact_hashes": [
+    {
+      "file": "system/control/ecd.py",
+      "sha256": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23"
+    },
+    {
+      "file": "system/tests/test_ecd_core.py",
+      "sha256": "916ea3a676b1dbfcd654301ac90e86754f3800695ee1df68e71ec31d45588253"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_CORE_IMPLEMENTATION/POLARIS_EMS_ECD_IMPLEMENTATION_MANIFEST.json",
+      "sha256": "9bfee9d67185fc480289b67365d655d7386a4ed389106453a79ed59022238b62"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_CORE_IMPLEMENTATION/POLARIS_EMS_ECD_TEST_REPORT.json",
+      "sha256": "e08977e95c2e35a00b5c25e65527d9b330c721f54258885315ab9ef8b68e6abb"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_CORE_IMPLEMENTATION/README.md",
+      "sha256": "9067b2bf5bb82157f0f45ebd6f2b3b4ae651dafc695cdcec3e34961d514d8732"
+    }
+  ]
+}

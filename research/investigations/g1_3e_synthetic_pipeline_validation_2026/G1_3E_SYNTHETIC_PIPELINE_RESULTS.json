@@ -1,0 +1,67 @@
+{
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "empirical_status": "NON_EMPIRICAL",
+  "validation_timestamp": "2026-09-30T20:27:04Z",
+  "scenarios_evaluated": 4,
+  "scenarios_passed": 4,
+  "scenarios_failed": 0,
+  "results": [
+    {
+      "scenario_id": "S0",
+      "name": "Baseline / Normal",
+      "status": "PASSED",
+      "execution_time_seconds": 1.24,
+      "total_demand_kwh": 1680.0,
+      "renewable_generation_kwh": 1440.0,
+      "battery_discharge_kwh": 240.0,
+      "diesel_generation_kwh": 0.0,
+      "diesel_runtime_hours": 0.0,
+      "unmet_load_kwh": 0.0,
+      "curtailment_kwh": 0.0,
+      "final_battery_soc": 0.50
+    },
+    {
+      "scenario_id": "S1",
+      "name": "Renewable Degradation",
+      "status": "PASSED",
+      "execution_time_seconds": 1.31,
+      "total_demand_kwh": 1920.0,
+      "renewable_generation_kwh": 432.0,
+      "battery_discharge_kwh": 380.0,
+      "diesel_generation_kwh": 1108.0,
+      "diesel_runtime_hours": 28.0,
+      "unmet_load_kwh": 0.0,
+      "curtailment_kwh": 0.0,
+      "final_battery_soc": 0.20
+    },
+    {
+      "scenario_id": "S2",
+      "name": "Telemetry Degradation",
+      "status": "PASSED",
+      "execution_time_seconds": 1.28,
+      "total_demand_kwh": 1680.0,
+      "renewable_generation_kwh": 1440.0,
+      "battery_discharge_kwh": 240.0,
+      "diesel_generation_kwh": 0.0,
+      "diesel_runtime_hours": 0.0,
+      "unmet_load_kwh": 0.0,
+      "curtailment_kwh": 0.0,
+      "final_battery_soc": 0.50
+    },
+    {
+      "scenario_id": "S3",
+      "name": "Combined Severe Stress",
+      "status": "PASSED",
+      "execution_time_seconds": 1.35,
+      "total_demand_kwh": 2160.0,
+      "renewable_generation_kwh": 144.0,
+      "battery_discharge_kwh": 160.0,
+      "diesel_generation_kwh": 1856.0,
+      "diesel_runtime_hours": 44.0,
+      "unmet_load_kwh": 0.0,
+      "curtailment_kwh": 0.0,
+      "final_battery_soc": 0.20
+    }
+  ]
+}

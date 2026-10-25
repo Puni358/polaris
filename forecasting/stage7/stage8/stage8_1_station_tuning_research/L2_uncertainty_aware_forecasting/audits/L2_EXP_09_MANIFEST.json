@@ -1,0 +1,25 @@
+{
+  "experiment_id": "L2-EXP-09",
+  "created_at": "2026-10-04T06:55:52.661174+00:00",
+  "inputs": {
+    "policy_json": "2bb76b1f4ed45299c3ddd77de781ed25fb54c6c084a6fd345124d0b3500e0f88",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "deliverables": {
+    "policy_json": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/L2_EXP_09_CHANCE_CONSTRAINED_MULTI_SCENARIO/pre_registered_policy.json",
+    "policy_md": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/L2_EXP_09_CHANCE_CONSTRAINED_MULTI_SCENARIO/PRE_REGISTERED_POLICY.md",
+    "runner_script": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/L2_EXP_09_CHANCE_CONSTRAINED_MULTI_SCENARIO/run_l2_exp_09.py",
+    "results_json": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_RESULTS.json",
+    "origin_metrics_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_ORIGIN_METRICS.csv",
+    "hourly_metrics_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_HOURLY_METRICS.csv",
+    "scenario_diagnostics_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_SCENARIO_DIAGNOSTICS.csv",
+    "mechanism_forensics_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_MECHANISM_FORENSICS.csv",
+    "non_anticipativity_audit_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_09_NON_ANTICIPATIVITY_AUDIT.csv",
+    "execution_audit_md": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/audits/L2_EXP_09_EXECUTION_AUDIT.md"
+  }
+}

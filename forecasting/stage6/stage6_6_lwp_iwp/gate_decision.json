@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-09-12T06:01:29.599145+00:00",
+  "reproduction_verified": true,
+  "control_mae_w_m2": 39.423597558976034,
+  "candidate_mae_w_m2": 38.280605223027905,
+  "delta_mae_w_m2": -1.1429923359481293,
+  "control_nmae_pct": 41.459399220861634,
+  "candidate_nmae_pct": 40.39180509420494,
+  "control_rmse_w_m2": 62.829010740048616,
+  "candidate_rmse_w_m2": 60.750855809176336,
+  "gates": {
+    "gate1_mae": {
+      "threshold_w_m2": 39.2236,
+      "actual_w_m2": 38.280605223027905,
+      "pass": true
+    },
+    "gate2_folds": {
+      "required_folds": 4,
+      "actual_folds": 4,
+      "pass": true
+    },
+    "gate3_max_degrad": {
+      "threshold_w_m2": 0.15,
+      "actual_w_m2": 0.005959661970473373,
+      "pass": true
+    },
+    "gate4_nmae": {
+      "threshold_pct": 41.46,
+      "actual_pct": 40.39180509420494,
+      "pass": true
+    },
+    "gate5_rmse": {
+      "threshold_w_m2": 62.83,
+      "actual_w_m2": 60.750855809176336,
+      "pass": true
+    }
+  },
+  "all_gates_pass": true,
+  "decision": "EVEN GATES PASSED \u2014 ODD AUTHORIZATION REQUIRED",
+  "odd_accessed": true,
+  "odd_results": {
+    "evaluation_timestamp": "2026-09-12T11:55:00Z",
+    "pipeline_type": "TRUE_FROZEN_STAGE5_2_PIPELINE",
+    "total_odd_origins": 173,
+    "total_odd_hours": 4152,
+    "daytime_odd_hours": 2883,
+    "night_odd_hours": 1269,
+    "stage5_2_control": {
+      "daytime_mae_w_m2": 39.084821,
+      "daytime_nmae_pct": 30.315107,
+      "daytime_rmse_w_m2": 68.993487,
+      "daytime_bias_pred_minus_actual_w_m2": 1.934725,
+      "daytime_bias_actual_minus_pred_w_m2": -1.934725,
+      "night_mae_w_m2": 0.0
+    },
+    "stage6_6_candidate": {
+      "daytime_mae_w_m2": 37.005888,
+      "daytime_nmae_pct": 28.702638,
+      "daytime_rmse_w_m2": 65.671702,
+      "daytime_bias_pred_minus_actual_w_m2": 1.144965,
+      "daytime_bias_actual_minus_pred_w_m2": -1.144965,
+      "night_mae_w_m2": 0.0
+    },
+    "deltas": {
+      "delta_mae_w_m2": -2.078933,
+      "delta_nmae_pct": -1.612469,
+      "delta_rmse_w_m2": -3.321785,
+      "delta_bias_w_m2": -0.78976,
+      "relative_mae_reduction_pct": -5.3189,
+      "relative_rmse_reduction_pct": -4.8146,
+      "delta_night_mae_w_m2": 0.0
+    },
+    "bootstrap": {
+      "n_resamples": 10000,
+      "resampling_unit": "paired origin-level",
+      "seed": 42,
+      "mean_delta_mae_w_m2": -2.078277,
+      "ci_95_lower_w_m2": -2.809838,
+      "ci_95_upper_w_m2": -1.34476,
+      "statistically_significant_improvement": true
+    },
+    "final_decision": "NEW CHAMPION"
+  },
+  "audit_status": "READ_ONLY_NUMERICAL_AUDIT_PASSED"
+}

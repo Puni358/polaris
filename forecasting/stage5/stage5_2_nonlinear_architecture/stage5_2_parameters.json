@@ -1,0 +1,32 @@
+{
+  "target": "SITES Nuolja 2024 hourly SW_IN",
+  "locked_splits": {
+    "even_train_origins": 174,
+    "odd_test_origins": 173
+  },
+  "stage4_odd_baseline": {
+    "daytime_mae": 43.450807884206704,
+    "daytime_nmae_pct": 33.70146896576901,
+    "daytime_rmse": 74.85301396395839,
+    "daytime_bias": 1.97155372887419,
+    "night_mae": 0.32418282779520474
+  },
+  "winning_cv_architecture": "Arch A: GBDT Residual Corrector",
+  "cv_even_performance": {
+    "stage4_cv_mae": 40.78224924111278,
+    "winning_cv_mae": 39.423597558976034,
+    "delta_cv_mae": -1.3586516821367454
+  },
+  "odd_test_performance": {
+    "winning_model": "Arch A: GBDT Residual Corrector",
+    "test_daytime_mae": 39.08482066524715,
+    "test_daytime_nmae_pct": 30.315106549750702,
+    "delta_mae_vs_stage4": -4.365987218959553,
+    "bootstrap_mean_delta": -4.361682120212283,
+    "bootstrap_95_ci": [
+      -5.556761888585145,
+      -3.0980609091139497
+    ]
+  },
+  "final_decision": "A \u2014 Non-Linear Architecture Strictly Displaces Stage 4 Champion"
+}

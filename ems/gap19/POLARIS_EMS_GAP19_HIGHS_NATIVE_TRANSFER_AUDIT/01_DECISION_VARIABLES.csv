@@ -1,0 +1,28 @@
+audit_document,01_DECISION_VARIABLES
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,system/optimization/implementations/milp.py
+source_lines,72-84
+generation_mode,READ_ONLY_STATIC_CODE_ANALYSIS
+execution_performed,FALSE
+
+var_index_within_timestep,variable_name,type,domain,lower_bound_expression,upper_bound_expression,scipy_integrality_flag,unit,description,code_line_ref
+0,p_sol_used,continuous,real,0.0,solar_gen[t],0,W,Solar power dispatched to bus-bar at timestep t,L117
+1,p_wind_used,continuous,real,0.0,wind_gen[t],0,W,Wind power dispatched to bus-bar at timestep t,L118
+2,p_curt_sol,continuous,real,0.0,solar_gen[t],0,W,Solar power curtailed (not used) at timestep t,L119
+3,p_curt_wind,continuous,real,0.0,wind_gen[t],0,W,Wind power curtailed (not used) at timestep t,L120
+4,p_chg,continuous,real,0.0,max_p_chg,0,W,Battery charging power at timestep t,L121
+5,p_dis,continuous,real,0.0,max_p_dis,0,W,Battery discharging power at timestep t,L122
+6,E_next,continuous,real,min_e_wh,max_e_wh,0,Wh,Battery stored energy at END of timestep t (state variable),L123
+7,p_diesel,continuous,real,0.0,max_diesel_w,0,W,Diesel generator output power at timestep t,L124
+8,p_served,continuous,real,0.0,demand[t],0,W,Critical load actually served at timestep t,L125
+9,p_unmet,continuous,real,0.0,demand[t],0,W,Unmet critical load (shortfall) at timestep t,L126
+10,p_flex,continuous,real,0.0,flex_power_w OR 0.0,0,W,Deferrable/flexible load served at timestep t,L128-L131
+11,u_chg,binary,{0 1},0.0,1.0,1,dimensionless,Battery charging commitment binary at timestep t,L134 L139
+12,u_dis,binary,{0 1},0.0,1.0,1,dimensionless,Battery discharging commitment binary at timestep t,L135 L140
+13,u_diesel,binary,{0 1},0.0,1.0,1,dimensionless,Diesel generator ON/OFF commitment at timestep t,L136 L141
+14,v_start,binary,{0 1},0.0,1.0,1,dimensionless,Diesel generator startup event binary at timestep t,L137 L142
+
+notes_horizon,H=24 timesteps fixed; total decision variables = 24 * 15 = 360
+notes_flex_bound,"p_flex upper bound = flex_power_w if flex_start_h <= t < flex_finish_h else 0.0; enforced via bounds not integrality"
+notes_E_next_semantics,"E_next at index 6 represents energy at END of the timestep; used as E[t] in the transition constraint for t+1"
+notes_integrality_encoding,"scipy integrality flag: 0 = continuous, 1 = integer (binary enforced by [0,1] bounds)"

@@ -1,0 +1,9 @@
+{
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "firewall_status": "PASS",
+  "leakage_events_count": 0,
+  "arm_a_causality": "VERIFIED \u2014 LocalBaselineForecastEngine consumes only diurnal static curves and current state. Zero future actuals.",
+  "arm_b_causality": "VERIFIED \u2014 CausalNwpPhysicsForecastEngine consumes only MET Norway MEPS 18Z cloud forecasts from previous day and deterministic clear-sky physics. Zero future actuals.",
+  "arm_c_diagnostic_nature": "CONFIRMED \u2014 Noncausal perfect foresight diagnostic ceiling only. Explicitly firewalled from operational claims.",
+  "data_integrity_check": "All 123 origins executed strictly receding horizon (step 0 only) without lookahead leakage."
+}

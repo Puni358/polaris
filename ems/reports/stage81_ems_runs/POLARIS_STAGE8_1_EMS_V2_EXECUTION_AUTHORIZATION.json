@@ -1,0 +1,363 @@
+{
+  "title": "POLARIS Stage8.1 \u2192 EMS V2 Empirical Execution Authorization",
+  "task_type": "GOVERNANCE AUTHORIZATION REVIEW ONLY",
+  "authorization_timestamp": "2026-09-19T15:20:00Z",
+  "governance_decision": "A \u2014 V2 EMPIRICAL MECHANISM EXECUTION AUTHORIZED",
+  "authorization_summary": "Formal review of the complete governance chain, protected file hashes, telemetry implementation, non-intervention exception isolation boundary, and static re-audit confirms that all 16 prerequisites are 100% satisfied and verified. Empirical V2 173-origin mechanism observability replay is hereby formally AUTHORIZED for execution in a separate execution task.",
+  "current_hash_audit": [
+    {
+      "path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "expected_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "current_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv",
+      "expected_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "current_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.json",
+      "expected_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "current_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.md",
+      "expected_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "current_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.md",
+      "expected_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "current_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.json",
+      "expected_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "current_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.md",
+      "expected_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "current_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.json",
+      "expected_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "current_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.md",
+      "expected_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "current_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+      "expected_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "current_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.md",
+      "expected_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "current_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.json",
+      "expected_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "current_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.md",
+      "expected_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "current_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.json",
+      "expected_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "current_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.md",
+      "expected_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "current_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.json",
+      "expected_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "current_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.md",
+      "expected_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "current_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.json",
+      "expected_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "current_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_V2_TELEMETRY_IMPLEMENTATION.md",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "ca7ad3037be3a9eefc0000841ed71905633852eb34d4ac92ba1f50e3f0925ed8",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_MECHANISM_V2_TELEMETRY_IMPLEMENTATION.json",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "6b0d43ad26304f84647726f360200d0b61bf6d1a2d67a21aac42a5be0c5791c4",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_TELEMETRY_NON_INTERVENTION_CORRECTION.md",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "ea3ee080d6ed064148eba6483d13888dc015b61a7e5e6fcddd0a424d53036d9b",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_TELEMETRY_NON_INTERVENTION_CORRECTION.json",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "7ad6fd881075a0cc0f9efd42859a55332d797b1d43a012dfb1c1ec5078cd49a2",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_TELEMETRY_STATIC_REAUDIT.md",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "300ede2ef49edcd39d11f2d78074a9998fc9a6e754cdd5c040681b0a5b5b96b7",
+      "status": "MATCH"
+    },
+    {
+      "path": "POLARIS_STAGE8_1_EMS_V2_TELEMETRY_STATIC_REAUDIT.json",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "544475d0a577aa53a8612518edf481c61b508018341f8de89b910519324f0c96",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/telemetry/v2_logger.py",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "131ff6f4dc83a2a57329362871eaab356b5b41fb2e7318b7a127bd47cd20aaac",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/runtime/runner.py",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/tests/test_v2_telemetry.py",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "aad44e780a850fbb76407496efe7c59cc6c957d8672c99b43faea7cc696abc76",
+      "status": "MATCH"
+    },
+    {
+      "path": "run_polaris_stage8_1_ems_empirical_replay.py",
+      "expected_sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "current_sha256": "c305aa8179015efb892b9517a44fa9aa3abb1899a6584db3039e0798e7e5c4fc",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/forecasting/implementations/s81_solar.py",
+      "expected_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "current_sha256": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/forecasting/implementations/baseline.py",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/schemas/forecast_bundle.py",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/schemas/station_state.py",
+      "expected_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "current_sha256": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/schemas/dispatch_plan.py",
+      "expected_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "current_sha256": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "expected_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+      "current_sha256": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/simulation/simulator.py",
+      "expected_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "current_sha256": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+      "status": "MATCH"
+    },
+    {
+      "path": "system/evaluation/evaluator.py",
+      "expected_sha256": "ESTABLISHED_POST_IMPLEMENTATION",
+      "current_sha256": "79af472d52aab4b63180aaccac044ee48c9893f257c4f6988ccff7da1cec8729",
+      "status": "MATCH"
+    }
+  ],
+  "treatment_artifact_audit": {
+    "file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "total_rows": 4152,
+    "unique_origins_count": 173,
+    "horizon_steps_per_origin": 24,
+    "missing_values_count": 0,
+    "verification_status": "VERIFIED_FROZEN_INTEGRITY"
+  },
+  "telemetry_field_comparison": {
+    "authoritative_field_count": 37,
+    "implemented_field_count": 37,
+    "intersection_count": 37,
+    "missing_fields": [],
+    "extra_fields": [],
+    "match": true
+  },
+  "prerequisites_checklist": [
+    {
+      "prerequisite": "Treatment artifact frozen & SHA256 verified",
+      "status": "VERIFIED",
+      "evidence": "a4d288f9bba4a57c... (4152 rows, 173 origins)"
+    },
+    {
+      "prerequisite": "Control forecast engine frozen & verified",
+      "status": "VERIFIED",
+      "evidence": "LocalBaselineForecastEngine (baseline.py)"
+    },
+    {
+      "prerequisite": "Paired design structurally verified",
+      "status": "VERIFIED",
+      "evidence": "Identical initial states, ground truth, and configs"
+    },
+    {
+      "prerequisite": "Eligibility rules frozen",
+      "status": "VERIFIED",
+      "evidence": "N = 173 origins, no result-dependent exclusions"
+    },
+    {
+      "prerequisite": "Horizon continuation semantics verified",
+      "status": "VERIFIED",
+      "evidence": "Empirical S8.1 predictions + clear-sky extension"
+    },
+    {
+      "prerequisite": "ForecastBundle v1.0 schema verified",
+      "status": "VERIFIED",
+      "evidence": "solar_generation = min(SW_IN * 51.0, 60000.0 W)"
+    },
+    {
+      "prerequisite": "EMS scientific components unchanged",
+      "status": "VERIFIED",
+      "evidence": "milp.py SHA256: 274926d2..., simulator.py SHA256: 7217dc2b..."
+    },
+    {
+      "prerequisite": "Telemetry implementation completed",
+      "status": "VERIFIED",
+      "evidence": "system/telemetry/v2_logger.py (37 fields)"
+    },
+    {
+      "prerequisite": "Telemetry field set matches protocol",
+      "status": "VERIFIED",
+      "evidence": "37/37 exact field match"
+    },
+    {
+      "prerequisite": "Telemetry non-intervention verified",
+      "status": "VERIFIED",
+      "evidence": "runner.py:218-260 isolated try-except block"
+    },
+    {
+      "prerequisite": "Static re-audit completed & reviewed",
+      "status": "VERIFIED",
+      "evidence": "Classification A in POLARIS_STAGE8_1_EMS_V2_TELEMETRY_STATIC_REAUDIT.md"
+    },
+    {
+      "prerequisite": "Future-truth firewall verified",
+      "status": "VERIFIED",
+      "evidence": "Truth loaded on runner.py:191 strictly post-optimization"
+    },
+    {
+      "prerequisite": "Failure semantics established",
+      "status": "VERIFIED",
+      "evidence": "EMS failures -> FAILED_TERMINATED; telemetry errors -> _telemetry_faults"
+    },
+    {
+      "prerequisite": "Solver provenance limitation documented",
+      "status": "VERIFIED",
+      "evidence": "HiGHS interface ESTABLISHED; binary hash NOT_ESTABLISHED"
+    },
+    {
+      "prerequisite": "No result-dependent stopping rule locked",
+      "status": "VERIFIED",
+      "evidence": "Pre-registered 173-origin complete execution requirement"
+    },
+    {
+      "prerequisite": "Engineering change prohibition enforced",
+      "status": "VERIFIED",
+      "evidence": "V2 is 100% observational; EMS modification locked"
+    }
+  ],
+  "locked_execution_protocol": {
+    "experimental_unit": "ONE COMPLETE 24-HOUR FORECAST-ORIGIN REPLAY",
+    "expected_origins": 173,
+    "expected_timesteps": 4152,
+    "treatment": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv (frozen)",
+    "control": "LocalBaselineForecastEngine (baseline.py)",
+    "pairing_design": "Identical initial StationState, realized solar/demand, and MILP config",
+    "horizon_protocol": "Empirical S8.1 predictions for remaining origin hours + baseline continuation up to 24h",
+    "forecast_bundle_mapping": "solar_generation = min(SW_IN * 300 * 0.20 * 0.85, 60000.0 W)",
+    "telemetry_logging": "37-field passive telemetry collector enabled with isolated error handling",
+    "failure_policy": "D4-C1 governed failure containment for EMS; isolated _telemetry_faults for telemetry",
+    "primary_statistical_endpoint": "total_diesel_fuel_liters (Control vs Treatment, 10,000 bootstrap resamples, Wilcoxon signed-rank test)",
+    "mechanism_hypotheses_evaluated": [
+      "M1_diesel_commitment",
+      "M2_battery_dispatch",
+      "M3_renewable_curtailment",
+      "M4_soc_positioning",
+      "M5_forecast_shape",
+      "M6_multi_pathway",
+      "M7_other_mechanism"
+    ],
+    "engineering_change_prohibition": "LOCKED \u2014 No EMS modification permitted during V2 execution"
+  },
+  "solver_provenance_limitation": {
+    "interface_provenance": "ESTABLISHED (Scipy HiGHS interface)",
+    "binary_provenance_hash": "NOT_ESTABLISHED",
+    "note": "Exact solver binary hash is not established; solver parameters and interface version are locked."
+  },
+  "required_final_governance_state": {
+    "v1": "ACCEPTED + FROZEN",
+    "v1_result": "UNCHANGED",
+    "v2_protocol": "HARDENED",
+    "v2_telemetry_implementation": "COMPLETE",
+    "v2_non_intervention_correction": "COMPLETE",
+    "v2_static_non_intervention_reaudit": "A",
+    "v2_execution_authorization": "A \u2014 AUTHORIZED",
+    "v2_empirical_execution": "NOT_YET_EXECUTED"
+  },
+  "exact_next_governed_step": "SEPARATE V2 EMPIRICAL EXECUTION TASK"
+}

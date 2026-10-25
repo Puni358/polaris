@@ -1,0 +1,156 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V3_GATE2A_INTERVENTION_SPECIFICATION_FREEZE_MANIFEST",
+  "governance_status": "V3_GATE2A_MATHEMATICAL_SPECIFICATION_CORRECTED",
+  "status_flags": {
+    "V3_DESIGN_STATUS": "DESIGN_ONLY",
+    "V3_GATE2_STATUS": "REVIEW_COMPLETE",
+    "V3_GATE2A_STATUS": "SPECIFICATION_REVIEW_COMPLETE",
+    "V3_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "V3_EXECUTION": "NOT_AUTHORIZED",
+    "V2_MODIFICATION": "NO",
+    "V2_RERUN": "NO",
+    "V1_MODIFICATION": "NO",
+    "FORECAST_MODIFICATION": "NO",
+    "EMS_MODIFICATION": "NO",
+    "OPTIMIZER_MODIFICATION": "NO",
+    "SIMULATOR_MODIFICATION": "NO",
+    "RAW_EVIDENCE_MODIFICATION": "NO",
+    "CANDIDATE_SELECTION": "NOT_PERFORMED",
+    "CANDIDATE_RANKING": "NOT_PERFORMED"
+  },
+  "timestamp_utc": "2026-09-19T16:32:00+05:30",
+  "correction_manifest": {
+    "correction_count": 6,
+    "corrections_applied": [
+      {
+        "id": "SPEC_CORRECTION_01_CLASS_A_VARIANCE",
+        "target": "Class A (Forecast-Aware SOC Reserve)",
+        "finding": "f_var(yhat_solar) function was mathematically undefined in the existing architecture.",
+        "resolution": "Class A specification status marked INCOMPLETE pending formal definition of the forecast variance calculation function."
+      },
+      {
+        "id": "SPEC_CORRECTION_02_CLASS_C_HYSTERESIS",
+        "target": "Class C (Diesel Commitment Hysteresis)",
+        "finding": "Proposed startup penalty w_hyst * sum(v_start,t) was a startup cost penalty, not hysteresis or minimum runtime.",
+        "resolution": "Reframed Class C explicitly as 'Additional Startup Cost Penalty Intervention' with exact MILP objective coefficient modification c[base+14] = c_start + w_start_penalty."
+      },
+      {
+        "id": "SPEC_CORRECTION_03_CLASS_D_DAYLIGHT",
+        "target": "Class D (Renewable-Absorption-Aware Commitment)",
+        "finding": "T_daylight boundary was undefined.",
+        "resolution": "Defined T_daylight deterministically from forecast as T_daylight = { t | P_solar,gen,t > 0.0 W }, covering polar day (all 24h) and polar night (empty set)."
+      },
+      {
+        "id": "SPEC_CORRECTION_04_CLASS_F_HORIZON_WEIGHTING",
+        "target": "Class F (Horizon-Weighted Objective)",
+        "finding": "gamma^t discounted entire objective including critical load penalty.",
+        "resolution": "Explicitly decomposed objective terms: gamma^t applies to fuel, startup, degradation, and curtailment, while critical load unmet penalty c[base+9] remains UNWEIGHTED."
+      },
+      {
+        "id": "SPEC_CORRECTION_05_CLASS_G_OPERATING_CASES",
+        "target": "Class G (Combined Coupled Policy)",
+        "finding": "Operating cases of coupling equation required explicit derivation.",
+        "resolution": "Derived operating cases: Case 1 (u_diesel=0 -> SOC >= SOC_min + lambda*100%), imposing higher reserve floor when diesel is OFF; Case 2 (u_diesel=1 -> SOC >= SOC_min), reverting to standard floor when diesel is ON."
+      },
+      {
+        "id": "SPEC_CORRECTION_06_HARD_SAFETY_INVARIANTS",
+        "target": "All Candidates (Safety Semantics)",
+        "finding": "P_unmet = 0 was incorrectly described as a MILP hard linear constraint.",
+        "resolution": "Corrected source classification: P_unmet = 0 is an objective-penalized decision variable in MILP (w_unmet = 10.0 $/Wh) and a hard safety invariant in evaluation/verification."
+      }
+    ]
+  },
+  "candidate_specification_matrix": [
+    {
+      "candidate_id": "CLASS_A",
+      "name": "Forecast-Aware SOC Reserve / Terminal-State Policy",
+      "gate2_status": "A — IMPLEMENTATION-READY",
+      "specification_status": "INCOMPLETE",
+      "mathematical_form_complete": false,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = NOT_YET_PREDECLARED",
+      "safety_semantics_corrected": "Objective Penalty in MILP + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:35, 110",
+      "external_dependency": "Forecast Variance Function f_var Undefined in Architecture",
+      "proposed_intervention_equation": "SOC_min_intervention(t) = E_min,base + k_res * f_var(y_hat_solar) * E_cap"
+    },
+    {
+      "candidate_id": "CLASS_B",
+      "name": "Forecast-Uncertainty-Aware Battery Dispatch Constraints",
+      "gate2_status": "B — CONDITIONALLY READY",
+      "specification_status": "CONDITIONALLY_COMPLETE",
+      "mathematical_form_complete": false,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = NOT_YET_PREDECLARED",
+      "safety_semantics_corrected": "Hard Bound in MILP + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:108",
+      "external_dependency": "External Forecast Uncertainty Model (Stage8.1 lower=point=upper degenerate format)",
+      "proposed_intervention_equation": "P_dis,t <= P_dis,max * (1 - alpha_unc * U_t(h)/P_dis,max) * u_dis,t"
+    },
+    {
+      "candidate_id": "CLASS_C",
+      "name": "Additional Startup Cost Penalty Intervention",
+      "gate2_status": "A — IMPLEMENTATION-READY",
+      "specification_status": "COMPLETE",
+      "mathematical_form_complete": true,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = NOT_YET_PREDECLARED",
+      "safety_semantics_corrected": "Objective Penalty in MILP + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:100-101",
+      "external_dependency": "None",
+      "proposed_intervention_equation": "c[base + 14] = c_start + w_start_penalty"
+    },
+    {
+      "candidate_id": "CLASS_D",
+      "name": "Renewable-Absorption-Aware Diesel Commitment Logic",
+      "gate2_status": "A — IMPLEMENTATION-READY",
+      "specification_status": "COMPLETE",
+      "mathematical_form_complete": true,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = NOT_YET_PREDECLARED",
+      "safety_semantics_corrected": "Objective Penalty in MILP + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:94-95",
+      "external_dependency": "None (T_daylight = { t | P_solar,gen,t > 0.0 W })",
+      "proposed_intervention_equation": "c[base + 2] = (w_curt + w_day_curt) * dt for t in T_daylight"
+    },
+    {
+      "candidate_id": "CLASS_E",
+      "name": "Robust MPC / Conservative Treatment of Forecast Uncertainty",
+      "gate2_status": "B — CONDITIONALLY READY",
+      "specification_status": "CONDITIONALLY_COMPLETE",
+      "mathematical_form_complete": false,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = NOT_YET_PREDECLARED",
+      "safety_semantics_corrected": "Hard Bounds in MILP + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:68 + External Model",
+      "external_dependency": "External Probabilistic Quantile Uncertainty Model (Stage8.1 lower=point=upper degenerate format)",
+      "proposed_intervention_equation": "y_solar,t_robust = Q_q(P_solar,t)"
+    },
+    {
+      "candidate_id": "CLASS_F",
+      "name": "Horizon-Weighted MPC Objective or Constraint Treatment",
+      "gate2_status": "A — IMPLEMENTATION-READY",
+      "specification_status": "COMPLETE",
+      "mathematical_form_complete": true,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = FROZEN_PREDECLARED (gamma = 0.95)",
+      "safety_semantics_corrected": "Unmet Load Penalty Unweighted + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:92-102",
+      "external_dependency": "None (gamma^t applied to fuel, startup, curt, deg; unmet load unweighted)",
+      "proposed_intervention_equation": "c_t_intervention = gamma^t * c_t_baseline for operational terms"
+    },
+    {
+      "candidate_id": "CLASS_G",
+      "name": "Combined Battery-SOC + Diesel Commitment Policy",
+      "gate2_status": "A — IMPLEMENTATION-READY",
+      "specification_status": "COMPLETE",
+      "mathematical_form_complete": true,
+      "parameter_definition_complete": true,
+      "parameter_value_status": "PARAMETER_VALUE_STATUS = NOT_YET_PREDECLARED",
+      "safety_semantics_corrected": "Hard Bound in MILP + Invariant in Evaluation",
+      "implementation_location": "system/optimization/implementations/milp.py:110, 123",
+      "external_dependency": "None (Coupled constraint explicitly derived)",
+      "proposed_intervention_equation": "E_next,t + lambda_couple * E_cap * u_diesel,t >= E_min + lambda_couple * E_cap"
+    }
+  ]
+}

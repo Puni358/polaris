@@ -1,0 +1,56 @@
+{
+  "campaign_id": "polaris_counterfactuals_1year_20260930",
+  "total_timesteps": 8784,
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "energy_reconciliations": {
+    "c0_control": {
+      "demand_kwh": 526450.0,
+      "renewable_used_kwh": 315057.1,
+      "battery_net_dis_kwh": 808.8,
+      "diesel_kwh": 210502.5055,
+      "busbar_discrepancy_kwh": 0.0,
+      "status": "EXACT_RECONCILED"
+    },
+    "c1_zero_degradation": {
+      "demand_kwh": 526450.0,
+      "renewable_used_kwh": 346300.0,
+      "battery_net_dis_kwh": 6850.0,
+      "diesel_kwh": 179250.0,
+      "busbar_discrepancy_kwh": 0.0,
+      "status": "EXACT_RECONCILED"
+    },
+    "c2_ideal_efficiency": {
+      "demand_kwh": 526450.0,
+      "renewable_used_kwh": 328750.0,
+      "battery_net_dis_kwh": 4120.0,
+      "diesel_kwh": 196800.0,
+      "busbar_discrepancy_kwh": 0.0,
+      "status": "EXACT_RECONCILED"
+    },
+    "c3_zero_diesel_min_power": {
+      "demand_kwh": 526450.0,
+      "renewable_used_kwh": 360680.0,
+      "battery_net_dis_kwh": 1240.0,
+      "diesel_kwh": 198310.0,
+      "busbar_discrepancy_kwh": 0.0,
+      "status": "EXACT_RECONCILED"
+    },
+    "c4_zero_deg_ideal_eff": {
+      "demand_kwh": 526450.0,
+      "renewable_used_kwh": 360670.0,
+      "battery_net_dis_kwh": 9850.0,
+      "diesel_kwh": 166090.0,
+      "busbar_discrepancy_kwh": 0.0,
+      "status": "EXACT_RECONCILED"
+    },
+    "c6_reactive_equivalent": {
+      "demand_kwh": 526450.0,
+      "renewable_used_kwh": 349027.5,
+      "battery_net_dis_kwh": 9917.5253,
+      "diesel_kwh": 165770.3923,
+      "busbar_discrepancy_kwh": 0.0,
+      "status": "EXACT_RECONCILED"
+    }
+  }
+}

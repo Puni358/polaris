@@ -1,0 +1,507 @@
+{
+  "gates": {
+    "G2": {
+      "violations": [],
+      "PASS": true,
+      "n_records": 14760
+    },
+    "G3": {
+      "violations": [],
+      "PASS": true,
+      "n_records": 14760
+    },
+    "G4": {
+      "non_optimal_rows": [],
+      "n_rows": 14760,
+      "PASS": true
+    },
+    "G6": {
+      "busbar_violations": 0,
+      "soc_violations": 0,
+      "fuel_mismatch_rows": 40,
+      "starvation_rows_listed": [
+        {
+          "origin_id": 2,
+          "hour": 22,
+          "arm": "PC-Control",
+          "diesel_fuel": 0.3541
+        },
+        {
+          "origin_id": 2,
+          "hour": 19,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 3.7367
+        },
+        {
+          "origin_id": 5,
+          "hour": 23,
+          "arm": "PC-S",
+          "diesel_fuel": 3.5004
+        },
+        {
+          "origin_id": 7,
+          "hour": 21,
+          "arm": "PC-S",
+          "diesel_fuel": 0.7484
+        },
+        {
+          "origin_id": 7,
+          "hour": 21,
+          "arm": "PC-SW",
+          "diesel_fuel": 2.3688
+        },
+        {
+          "origin_id": 9,
+          "hour": 21,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 2.5418
+        },
+        {
+          "origin_id": 20,
+          "hour": 23,
+          "arm": "PC-Control",
+          "diesel_fuel": 2.5928
+        },
+        {
+          "origin_id": 20,
+          "hour": 22,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 4.1367
+        },
+        {
+          "origin_id": 24,
+          "hour": 22,
+          "arm": "PC-Control",
+          "diesel_fuel": 4.2999
+        },
+        {
+          "origin_id": 31,
+          "hour": 22,
+          "arm": "PC-Control",
+          "diesel_fuel": 4.5692
+        },
+        {
+          "origin_id": 31,
+          "hour": 19,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 3.6081
+        },
+        {
+          "origin_id": 33,
+          "hour": 19,
+          "arm": "PC-Control",
+          "diesel_fuel": 2.8394
+        },
+        {
+          "origin_id": 41,
+          "hour": 20,
+          "arm": "PC-S",
+          "diesel_fuel": 1.5721
+        },
+        {
+          "origin_id": 41,
+          "hour": 20,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 4.9664
+        },
+        {
+          "origin_id": 45,
+          "hour": 19,
+          "arm": "PC-S",
+          "diesel_fuel": 3.4613
+        },
+        {
+          "origin_id": 50,
+          "hour": 22,
+          "arm": "PC-S",
+          "diesel_fuel": 1.1442
+        },
+        {
+          "origin_id": 56,
+          "hour": 23,
+          "arm": "PC-Control",
+          "diesel_fuel": 2.0828
+        },
+        {
+          "origin_id": 59,
+          "hour": 21,
+          "arm": "PC-S",
+          "diesel_fuel": 3.8794
+        },
+        {
+          "origin_id": 59,
+          "hour": 21,
+          "arm": "PC-S-L",
+          "diesel_fuel": 3.8794
+        },
+        {
+          "origin_id": 60,
+          "hour": 21,
+          "arm": "PC-S",
+          "diesel_fuel": 3.2648
+        },
+        {
+          "origin_id": 60,
+          "hour": 21,
+          "arm": "PC-S-L",
+          "diesel_fuel": 3.2648
+        },
+        {
+          "origin_id": 62,
+          "hour": 22,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 1.3539
+        },
+        {
+          "origin_id": 69,
+          "hour": 21,
+          "arm": "PC-SW",
+          "diesel_fuel": 1.9919
+        },
+        {
+          "origin_id": 72,
+          "hour": 22,
+          "arm": "PC-S",
+          "diesel_fuel": 3.2448
+        },
+        {
+          "origin_id": 72,
+          "hour": 22,
+          "arm": "PC-S-L",
+          "diesel_fuel": 3.2165
+        },
+        {
+          "origin_id": 72,
+          "hour": 22,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 4.0655
+        },
+        {
+          "origin_id": 73,
+          "hour": 21,
+          "arm": "PC-SW",
+          "diesel_fuel": 3.5858
+        },
+        {
+          "origin_id": 73,
+          "hour": 21,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 4.2793
+        },
+        {
+          "origin_id": 89,
+          "hour": 23,
+          "arm": "PC-Control",
+          "diesel_fuel": 2.2308
+        },
+        {
+          "origin_id": 90,
+          "hour": 23,
+          "arm": "PC-Control",
+          "diesel_fuel": 0.8476
+        },
+        {
+          "origin_id": 91,
+          "hour": 19,
+          "arm": "PC-Control",
+          "diesel_fuel": 0.7107
+        },
+        {
+          "origin_id": 97,
+          "hour": 20,
+          "arm": "PC-S-L",
+          "diesel_fuel": 3.9141
+        },
+        {
+          "origin_id": 99,
+          "hour": 22,
+          "arm": "PC-Control",
+          "diesel_fuel": 2.2895
+        },
+        {
+          "origin_id": 102,
+          "hour": 23,
+          "arm": "PC-Control",
+          "diesel_fuel": 4.5131
+        },
+        {
+          "origin_id": 102,
+          "hour": 22,
+          "arm": "PC-S",
+          "diesel_fuel": 0.9895
+        },
+        {
+          "origin_id": 106,
+          "hour": 21,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 1.2226
+        },
+        {
+          "origin_id": 111,
+          "hour": 23,
+          "arm": "PC-S",
+          "diesel_fuel": 4.1444
+        },
+        {
+          "origin_id": 111,
+          "hour": 23,
+          "arm": "PC-SW-L",
+          "diesel_fuel": 0.6415
+        },
+        {
+          "origin_id": 116,
+          "hour": 23,
+          "arm": "PC-Control",
+          "diesel_fuel": 3.8417
+        },
+        {
+          "origin_id": 117,
+          "hour": 21,
+          "arm": "PC-SW",
+          "diesel_fuel": 4.8268
+        }
+      ],
+      "unlisted_fuel_mismatches": 0,
+      "PASS": true
+    },
+    "G7": {
+      "max_abs_diff": 0.0,
+      "PASS": true
+    },
+    "G9": {
+      "arms": {
+        "PC-Control": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-S": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-SW": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-S-L": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-SW-L": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        }
+      },
+      "PASS": true
+    },
+    "G10": {
+      "route_mismatch_rows": 0,
+      "em_row_count_violations": 0,
+      "PASS": true
+    },
+    "G11": {
+      "mismatches": [],
+      "PASS": true
+    }
+  },
+  "all_gates_pass": true,
+  "statistics": {
+    "control_fuel_L": 10382.309399999998,
+    "candidates": {
+      "PC-S": {
+        "arm": "PC-S",
+        "dR_CF_pp": -0.25812926362021926,
+        "S1_PASS": false,
+        "dR_P_pp": -0.24457353308071106,
+        "S2_PASS": false,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 9312.5601,
+        "saving_pct": 10.303577545088357,
+        "E1": {
+          "mean_delta_L": 8.697148780487804,
+          "wilcoxon_p": 4.0765829649602165e-08,
+          "bca_low": 6.252944606005675,
+          "bca_high": 11.669749742535974,
+          "holm_adj_p": 4.0765829649602165e-08,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": false,
+        "E1_PASS": false,
+        "T40_REPORT": false,
+        "startups": 398,
+        "accounting_alt_fuel_L": 10108.5601
+      },
+      "PC-SW": {
+        "arm": "PC-SW",
+        "dR_CF_pp": 0.28662128539389187,
+        "S1_PASS": true,
+        "dR_P_pp": 0.4259108080543541,
+        "S2_PASS": true,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 8963.7379,
+        "saving_pct": 13.663352201775055,
+        "E1": {
+          "mean_delta_L": 11.53310162601626,
+          "wilcoxon_p": 6.190207328981912e-11,
+          "bca_low": 8.82234687757564,
+          "bca_high": 14.595529103272074,
+          "holm_adj_p": 2.4760829315927647e-10,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": true,
+        "E1_PASS": true,
+        "T40_REPORT": false,
+        "startups": 338,
+        "accounting_alt_fuel_L": 9639.7379
+      },
+      "PC-S-L": {
+        "arm": "PC-S-L",
+        "dR_CF_pp": -0.19030300906457853,
+        "S1_PASS": false,
+        "dR_P_pp": -0.20033161736012062,
+        "S2_PASS": false,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 9459.7419,
+        "saving_pct": 8.88595652909359,
+        "E1": {
+          "mean_delta_L": 7.500548780487806,
+          "wilcoxon_p": 2.142890636158236e-09,
+          "bca_low": 5.487873775478977,
+          "bca_high": 9.781074966810605,
+          "holm_adj_p": 4.285781272316472e-09,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": false,
+        "E1_PASS": false,
+        "T40_REPORT": false,
+        "startups": 412,
+        "accounting_alt_fuel_L": 10283.7419
+      },
+      "PC-SW-L": {
+        "arm": "PC-SW-L",
+        "dR_CF_pp": -0.21638926852632778,
+        "S1_PASS": false,
+        "dR_P_pp": -0.253124033683207,
+        "S2_PASS": false,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 9343.151699999999,
+        "saving_pct": 10.008926337718272,
+        "E1": {
+          "mean_delta_L": 8.448436585365853,
+          "wilcoxon_p": 1.4711643163960437e-10,
+          "bca_low": 6.347061051756963,
+          "bca_high": 10.763905827684496,
+          "holm_adj_p": 4.4134929491881315e-10,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": false,
+        "E1_PASS": false,
+        "T40_REPORT": false,
+        "startups": 407,
+        "accounting_alt_fuel_L": 10157.151699999999
+      }
+    },
+    "winner": "PC-SW",
+    "control_accounting_alt_fuel_L": 11326.309399999998
+  },
+  "d_comparisons": {
+    "D1_PC-Control_minus_old_Control": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": 34.84072357723578,
+        "bca_low": 32.71256380828916,
+        "bca_high": 37.02485509307921
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": 3.743717818428184,
+        "bca_low": 3.128452687403948,
+        "bca_high": 4.333340800416697
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": 11.975695010516016,
+        "bca_low": 11.381648097448398,
+        "bca_high": 12.606394835190805
+      }
+    },
+    "D2_PC-S_minus_old_S": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": 37.60056829268293,
+        "bca_low": 34.66889401371073,
+        "bca_high": 40.46974321995056
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": 2.8449674095878876,
+        "bca_low": 2.093778810348759,
+        "bca_high": 3.526183217945879
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": 10.90844022008264,
+        "bca_low": 10.084500351805632,
+        "bca_high": 11.736775892088502
+      }
+    },
+    "D3_PC-S_minus_PC-Control": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": -8.697148780487804,
+        "bca_low": -11.669749742535975,
+        "bca_high": -6.252944606005675
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": -0.2581292636202226,
+        "bca_low": -0.5818340870151326,
+        "bca_high": 0.01298515910685362
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": -0.2445735330807374,
+        "bca_low": -0.6006958674443901,
+        "bca_high": 0.06329798872490056
+      }
+    },
+    "D3_PC-SW-L_minus_PC-Control": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": -8.448436585365853,
+        "bca_low": -10.763905827684496,
+        "bca_high": -6.347061051756964
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": -0.2163892685263063,
+        "bca_low": -0.5412333672852664,
+        "bca_high": 0.04038161985865876
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": -0.2531240336832317,
+        "bca_low": -0.6239649014064446,
+        "bca_high": 0.057018420798948165
+      }
+    }
+  },
+  "note": "G1 and G12 are evaluated on oracle outputs by the oracle audit, not in the campaign."
+}

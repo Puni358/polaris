@@ -1,0 +1,141 @@
+{
+  "document_id": "POLARIS_SYNTHETIC_E2E_INTEGRATION_AUTHORIZATION",
+  "date_utc": "2026-09-19",
+  "track": "SOLAR_FORECASTING_SYSTEM_INTEGRATION_TRACK",
+  "phase": "PHASE_S8_1_C3_SYNTHETIC_END_TO_END_INTEGRATION_AUTHORIZATION_REVIEW",
+  "task_type": "BOUNDED_READ_ONLY_GOVERNANCE_AND_ENGINEERING_AUTHORIZATION_GATE",
+  "governance_decision": "CATEGORY_B_SYNTHETIC_E2E_INTEGRATION_AUTHORIZED_WITH_RESTRICTIONS",
+  "preconditions_verified": {
+    "s8_1_c1_contract_decision": "CATEGORY_B_CONTRACT_COMPATIBLE_THROUGH_ADAPTER_WITHOUT_SCHEMA_CHANGE",
+    "s8_1_c1_contract_change_required": false,
+    "s8_1_c2_adapter_implementation_status": "COMPLETE",
+    "s8_1_c2_stage8_1_model_changed": false,
+    "s8_1_c2_frozen_contract_changed": false,
+    "s8_1_c2_adapter_tests": "12/12 PASS",
+    "s8_1_c2_full_regression_tests": "60/60 PASS",
+    "s8_1_c2_exit_code": 0
+  },
+  "master_governance_context": {
+    "program_governance_state": "SYSTEM_ARCHITECTURE_VALIDATED_SCIENTIFIC_BRANCHES_DATA_BLOCKED",
+    "synthetic_engineering_work_readiness": "UNLOCKED_FOR_ENGINEERING_DEMO_AND_SYSTEM_VALIDATION",
+    "real_world_scientific_validation_status": "DATA_BLOCKED_PENDING_MEASURED_STATION_TELEMETRY"
+  },
+  "authorized_pipeline_architecture": [
+    "Synthetic Local Data Provider",
+    "StationState (at t0)",
+    "Stage81ForecastEngine (s81_solar.py)",
+    "ForecastBundle Validation (v1.0.0 schema)",
+    "LocalMILPEnergyOptimizer (MILP / PuLP)",
+    "DispatchPlan Validation (v1.0.0 schema)",
+    "H1 Action Execution (First Timestep Only)",
+    "DigitalTwinSimulator (State Transition)",
+    "Next MPC Timestep (Receding Horizon)",
+    "EvaluationEngine (Synthetic System Metrics)"
+  ],
+  "forecasting_components_classification": {
+    "solar": {
+      "adapter": "Stage81ForecastEngine (s81_solar.py)",
+      "status": "IMPLEMENTED_AND_QUALIFIED",
+      "model_status": "FROZEN_37_FEATURES"
+    },
+    "wind": {
+      "source": "Baseline persistence / synthetic scenario fixtures",
+      "status": "AUTHORIZED_FOR_ENGINEERING_DEMO_ONLY",
+      "direct_nuolja_forecasting": "NOT_AUTHORIZED_DATA_BLOCKED"
+    },
+    "demand": {
+      "source": "Baseline persistence / synthetic scenario fixtures",
+      "status": "AUTHORIZED_FOR_ENGINEERING_DEMO_ONLY",
+      "direct_station_forecasting": "NOT_AUTHORIZED_DATA_BLOCKED"
+    }
+  },
+  "synthetic_data_firewall": {
+    "authorized_demonstration_scope": [
+      "Pipeline end-to-end execution",
+      "Inter-module contract compatibility",
+      "Energy optimizer MILP dispatch",
+      "MPC receding horizon execution",
+      "Battery SOC constraints & exclusivity",
+      "Diesel generator min/max and fuel conversion",
+      "Renewable curtailment & flexible load",
+      "D4-C1 fault containment",
+      "Deterministic execution replay",
+      "Visualization dashboard / UI"
+    ],
+    "prohibited_claims": [
+      "Real-world station solar forecasting accuracy",
+      "Real station demand forecasting accuracy",
+      "Real Nuolja wind-generation forecasting accuracy",
+      "Real station renewable energy availability",
+      "Real station diesel fuel savings or ROI",
+      "Real-world economic performance",
+      "Empirical station PV calibration",
+      "Real-data scientific validation"
+    ]
+  },
+  "synthetic_scenarios_authorized": [
+    {"id": "S1", "name": "NORMAL_OPERATION", "status": "AUTHORIZED"},
+    {"id": "S2", "name": "LOW_SOLAR_AVAILABILITY", "status": "AUTHORIZED"},
+    {"id": "S3", "name": "LOW_WIND_AVAILABILITY", "status": "AUTHORIZED"},
+    {"id": "S4", "name": "HIGH_DEMAND", "status": "AUTHORIZED"},
+    {"id": "S5", "name": "HIGH_RENEWABLE_CURTAILMENT", "status": "AUTHORIZED"},
+    {"id": "S6", "name": "BATTERY_CONSTRAINED", "status": "AUTHORIZED"},
+    {"id": "S7", "name": "GOVERNED_OPTIMIZER_FAULT", "status": "AUTHORIZED"},
+    {"id": "S8", "name": "FORECAST_PERTURBATION", "status": "AUTHORIZED"}
+  ],
+  "specific_firewalls": {
+    "d5_scientific_firewall": "FROZEN_ISOLATED_FROM_SYNTHETIC_E2E",
+    "d4_c1_fault_governance": "PRESERVED_STRICT_ZERO_DISPATCH_DEGRADED_STATE",
+    "metrics_firewall": "ENGINEERING_METRICS_ONLY_NO_REAL_SAVINGS_CLAIMS",
+    "baseline_comparison": "AUTHORIZED_FOR_DEMO_SAME_SYNTHETIC_TRAJECTORY_ONLY",
+    "offline_firewall": "100_PERCENT_LOCAL_OFFLINE_NO_EXTERNAL_CALLS",
+    "real_data_firewall": "NUOLJA_MEASUREMENTS_AND_DEMAND_DATA_BLOCKED"
+  },
+  "ui_visualization_scope": {
+    "status": "AUTHORIZED_THIN_DOWNSTREAM_VISUALIZATION_ONLY",
+    "must_not_act_as_controller": true,
+    "must_not_modify_scientific_contracts": true
+  },
+  "authorized_implementation_scope_for_next_phase": [
+    {
+      "file": "system/runtime/runner.py",
+      "purpose": "Enable Stage81ForecastEngine option loading in runner config",
+      "frozen_contract_touched": false,
+      "scientific_artifact_touched": false,
+      "authorized": true
+    },
+    {
+      "file": "system/cli.py",
+      "purpose": "Expose --forecast-engine stage81_solar flag in CLI",
+      "frozen_contract_touched": false,
+      "scientific_artifact_touched": false,
+      "authorized": true
+    },
+    {
+      "file": "system/tests/test_s81_e2e_integration.py",
+      "purpose": "Targeted synthetic E2E pipeline integration test suite",
+      "frozen_contract_touched": false,
+      "scientific_artifact_touched": false,
+      "authorized": true
+    }
+  ],
+  "e2e_verification_test_plan": [
+    "test_e2e_s81_runner_instantiation",
+    "test_e2e_forecast_bundle_generation",
+    "test_e2e_optimizer_consumption",
+    "test_e2e_dispatch_plan_validation",
+    "test_e2e_h1_action_extraction",
+    "test_e2e_digital_twin_advancement",
+    "test_e2e_24h_closed_loop_mpc",
+    "test_e2e_168h_endurance_run",
+    "test_e2e_deterministic_replay",
+    "test_e2e_d4c1_fault_containment",
+    "test_e2e_offline_network_firewall",
+    "test_e2e_full_regression_preservation"
+  ],
+  "claim_boundary": {
+    "permitted_statement_example": "POLARIS demonstrates an end-to-end predictive energy-management workflow on deterministic synthetic station scenarios using the Stage 8.1 solar forecasting adapter.",
+    "prohibited_statement_example": "POLARIS saves X% fuel at real polar stations."
+  },
+  "next_governed_step": "SYNTHETIC_END_TO_END_INTEGRATION_IMPLEMENTATION_AUTHORIZATION"
+}

@@ -1,0 +1,13 @@
+column_name,data_type,allowed_values,description
+origin_id,INTEGER,0 to 346,Unique index of the daily benchmark forecast origin (347 total origins in 2024).
+t0,DATETIME ISO-8601,2024-01-20T00:00:00Z to 2024-12-31T00:00:00Z,Forecast origin timestamp.
+acquisition_time,DATETIME ISO-8601,Timestamp or NULL,Physical satellite overpass time T_acq.
+processing_time,DATETIME ISO-8601,Timestamp or NULL,NWC SAF PPS processing completion time T_proc.
+publication_time,DATETIME ISO-8601,Timestamp or NULL,File availability timestamp on public server T_pub.
+causality_pass,BOOLEAN,TRUE / FALSE,Operational causality check: T_pub <= t0.
+granule_available,BOOLEAN,TRUE / FALSE,Granule exists in provider archive covering Nuolja.
+valid_optical,BOOLEAN,TRUE / FALSE,Solar elevation / SZA check: SZA <= 84° and valid COT.
+polar_night,BOOLEAN,TRUE / FALSE,Astronomical polar night or extreme low sun: SZA > 84°.
+quality_pass,BOOLEAN,TRUE / FALSE,"Quality flags pass (cot_quality_flag == 0, theta_s <= 65°)."
+final_feature_state,ENUM STRING,VALID_OPTICAL | POLAR_NIGHT | LOW_SUN_INVALID | NO_GRANULE | QUALITY_REJECTED | CAUSALITY_REJECTED,Final discrete state assignment for origin.
+rejection_reason,STRING,Text description or NONE,Explicit reason if origin feature state is non-optical.

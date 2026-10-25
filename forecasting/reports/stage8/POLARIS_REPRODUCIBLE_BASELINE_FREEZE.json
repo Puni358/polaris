@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-09-13T11:03:03+05:30",
+  "document_title": "POLARIS REPRODUCIBLE BASELINE FREEZE MANIFEST DATA CONTRACT",
+  "selected_baseline": "Stage 8.1 700 hPa Steering Wind Model (37 Features)",
+  "model_specification": {
+    "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "hyperparameters": {
+      "loss": "absolute_error",
+      "max_depth": 4,
+      "min_samples_leaf": 30,
+      "l2_regularization": 10.0,
+      "random_state": 42
+    }
+  },
+  "feature_inventory_count": 37,
+  "data_splits": {
+    "total_origins": 347,
+    "even_training_origins": 174,
+    "odd_test_origins": 173,
+    "odd_total_rows": 4152,
+    "odd_daytime_rows": 2883,
+    "odd_night_rows": 1269
+  },
+  "freeze_status": "FROZEN_REPRODUCIBLE_BASELINE"
+}

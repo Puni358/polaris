@@ -1,0 +1,101 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: OPTIMIZER DISPATCH CONTRACT & TEMPORAL CONVENTIONS
+Source: `system/optimization/implementations/gap19_highs_native.py` (lines 140-325)
+Target Optimizer: GAP19HighsNativeOptimizer
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+--------------------------------------------------------------------------------
+1. VERBATIM SOURCE EXCERPTS: gap19_highs_native.py
+--------------------------------------------------------------------------------
+
+A. Reserve Envelope Construction (lines 146-154):
+146:         # 6. Construct Pointwise Maximum Reserve Envelope Trajectory E_stage2_target[t]
+147:         e_stage2_target = [0.0] * 24
+148:         for t in range(23):
+149:             e_stage2_target[t] = ebr_target_wh_list[t]
+150:         # Horizon edge (t=23): pointwise maximum envelope of EBR and Terminal Reserve
+151:         e_stage2_target[23] = max(ebr_target_wh_list[23], terminal_target_wh)
+152: 
+153:         H = 24
+154:         K = 15
+
+B. Variable Layout and Power Bounds (lines 171-186):
+171:         for t in range(H):
+172:             base = t * K
+173:             p_sol_max = max(0.0, solar_gen[t])
+174:             p_wind_max = max(0.0, wind_gen[t])
+175:             p_dem = max(0.0, demand[t])
+176:             p_crit_dem = max(0.0, critical_demand[t])
+177: 
+178:             # Base variables
+179:             lb[base + 0], ub[base + 0] = 0.0, p_sol_max     # p_sol_used
+180:             lb[base + 1], ub[base + 1] = 0.0, p_wind_max    # p_wind_used
+181:             lb[base + 2], ub[base + 2] = 0.0, p_sol_max     # p_curt_sol
+182:             lb[base + 3], ub[base + 3] = 0.0, p_wind_max    # p_curt_wind
+183:             lb[base + 4], ub[base + 4] = 0.0, max_p_chg     # p_chg
+184:             lb[base + 5], ub[base + 5] = 0.0, max_p_dis     # p_dis
+185:             lb[base + 6], ub[base + 6] = min_e_wh, max_e_wh # E_next
+186:             lb[base + 7], ub[base + 7] = 0.0, max_diesel_w  # p_diesel
+
+C. Solar Decomposition & Bus-Bar Balance (lines 217-231):
+217:             # 1. Solar Decomposition
+218:             row = np.zeros(num_total_vars)
+219:             row[base + 0] = 1.0; row[base + 2] = 1.0
+220:             A_rows.append(row); lhs_list.append(p_sol_max); rhs_list.append(p_sol_max)
+...
+227:             # 3. Bus-Bar Balance
+228:             row = np.zeros(num_total_vars)
+229:             row[base + 0] = 1.0; row[base + 1] = 1.0; row[base + 5] = 1.0; row[base + 7] = 1.0
+230:             row[base + 8] = -1.0; row[base + 4] = -1.0; row[base + 10] = -1.0
+231:             A_rows.append(row); lhs_list.append(0.0); rhs_list.append(0.0)
+
+D. Battery Energy State Transitions (lines 253-266):
+253:             # 8. Battery Energy Discrete Transition
+254:             row = np.zeros(num_total_vars)
+255:             row[base + 6] = 1.0
+256:             if t == 0:
+257:                 row[base + 4] = -eta_chg * dt
+258:                 row[base + 5] = dt / eta_dis
+259:                 A_rows.append(row); lhs_list.append(initial_e_wh); rhs_list.append(initial_e_wh)
+260:             else:
+261:                 prev_base = (t - 1) * K
+262:                 row[prev_base + 6] = -1.0
+263:                 row[base + 4] = -eta_chg * dt
+264:                 row[base + 5] = dt / eta_dis
+265:                 A_rows.append(row); lhs_list.append(0.0); rhs_list.append(0.0)
+
+E. Layer C Reserve Envelope Constraints (lines 297-306):
+297:         # Layer C: 24 Stage 2 Unified Reserve Envelope Constraints (288 .. 311)
+298:         # E_next[t] + s_J2[t] >= E_stage2_target[t] + min_e_wh
+299:         for t in range(H):
+300:             base = t * K
+301:             row = np.zeros(num_total_vars)
+302:             row[base + 6] = 1.0 # E_next[t]
+303:             row[idx_s_j2_start + t] = 1.0 # s_J2[t]
+304:             req_lhs = e_stage2_target[t] + min_e_wh
+305:             A_rows.append(row); lhs_list.append(req_lhs); rhs_list.append(np.inf)
+
+--------------------------------------------------------------------------------
+2. TEMPORAL INTERVAL ANALYSIS
+--------------------------------------------------------------------------------
+1. Fixed Discrete Interval ($\Delta t = 1.0\text{ h}$):
+   - Step $t \in \{0 \dots 23\}$ models an operational duration of 1 hour.
+   - Power variables ($p_{\text{sol\_used}}, p_{\text{wind\_used}}, p_{\text{diesel}}, p_{\text{chg}}, p_{\text{dis}}$)
+     are continuous rates in Watts, converted to Wh energy by multiplying by $\Delta t = 1.0\text{ h}$.
+   - Thus, the optimizer treats $p_{\text{sol\_max}} = \text{solar\_gen}[t]$ as the *average power*
+     available over the 1-hour interval $[t_0 + t\text{h}, t_0 + (t+1)\text{h}]$.
+2. Step 0 Operational Horizon:
+   - Physical interval: $[t_0, t_0 + 1\text{h}]$ (e.g. 00:00:00Z to 01:00:00Z).
+   - Initial condition: $E(0) = \text{initial\_e\_wh}$ (measured at origin $t_0$).
+   - Terminal state of step 0: $E_{\text{next}}[0]$, representing the battery stored energy at $t_0 + 1\text{h}$.
+3. Step 23 Operational Horizon:
+   - Physical interval: $[t_0 + 23\text{h}, t_0 + 24\text{h}]$ (e.g. 23:00:00Z to 24:00:00Z).
+   - Terminal state of horizon: $E_{\text{next}}[23]$, representing stored energy at $t_0 + 24\text{h}$.
+   - Layer C constraint enforces: $E_{\text{next}}[23] + s_{J2}[23] \ge \max(E_{\text{ebr}}[23], E_{\text{term}}) + E_{\min}$.
+4. Multi-Channel Symmetry within GAP19:
+   - Inside GAP19's formulation, all four resource channels (`solar_gen[t]`, `wind_gen[t]`,
+     `demand[t]`, `critical_demand[t]`) and reserve floor `ebr_target_wh[t]` enter
+     identically at index $t \in [0, 23]$.
+   - GAP19 itself imposes *no shift* on any channel. Any shift between solar, wind,
+     and demand is introduced *strictly upstream in the adapters* (`adapters.py`).

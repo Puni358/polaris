@@ -1,0 +1,27 @@
+{
+  "postmortem_title": "POLARIS Stage 8.17A Real AROME Postmortem Forensics (Corrected Version)",
+  "timestamp_utc": "2026-09-13T15:14:51Z",
+  "route_status": "CLOSED — EVIDENCE SUPPORTS A SPECIFIC NEW RESEARCH ROUTE",
+  "revalidated_odd_metrics": {
+    "control_daytime_mae_w_m2": 36.211027,
+    "candidate_daytime_mae_w_m2": 36.426418,
+    "delta_mae_w_m2": 0.215391,
+    "control_daytime_nmae_pct": 28.0861,
+    "candidate_daytime_nmae_pct": 28.2532,
+    "delta_nmae_pct": 0.1671,
+    "control_rmse_w_m2": 64.230507,
+    "candidate_rmse_w_m2": 64.611649,
+    "delta_rmse_w_m2": 0.381142,
+    "candidate_bias_w_m2": 0.537993
+  },
+  "authoritative_feature_correlations_spearman": {
+    "wind_disagreement_700_vs_u700": 0.5694,
+    "wind_disagreement_700_vs_ctx_std_6h": -0.1905,
+    "wind_disagreement_700_vs_signed_residual": 0.0482,
+    "lwp_disagreement_vs_lwp_latest": 0.8939,
+    "lwp_disagreement_vs_cloud_frac": 0.6053,
+    "lwp_disagreement_vs_signed_residual": 0.0763
+  },
+  "architecture_note": "Both AROME-Arctic and MEPS are 2.5 km HARMONIE-AROME family systems. Disagreement arises from domain configuration, boundary conditions, data assimilation, ensemble setup, and initialization.",
+  "conclusion": "Stage 8.17A real-data degradation is verified. Machine-generated tables are authoritative. Raw scalar disagreement is CLOSED."
+}

@@ -1,0 +1,126 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V2_POST_EXECUTION_FORENSIC_AUDIT_MANIFEST",
+  "governance_status": "POST_EXECUTION_FORENSIC_AUDIT_COMPLETE",
+  "classification": "B — VALID COMPLETED V2 EXECUTION BUT MECHANISM CLAIMS REQUIRE CORRECTION / QUALIFICATION",
+  "audit_timestamp_utc": "2026-09-19T16:15:00+05:30",
+  "auditor_role": "INDEPENDENT_SCIENTIFIC_FORENSIC_AUDITOR",
+  "execution_completeness": {
+    "expected_origins": 173,
+    "executed_origins": 173,
+    "successful_origins": 173,
+    "failed_origins": 0,
+    "excluded_origins": 0,
+    "expected_timesteps": 4152,
+    "observed_timestep_records": 4152,
+    "duplicate_records": 0,
+    "missing_required_fields": 0,
+    "telemetry_faults_count": 0,
+    "result_dependent_exclusions": 0,
+    "selective_retries": 0,
+    "completeness_status": "VERIFIED_100_PERCENT_COMPLETE"
+  },
+  "telemetry_schema_verification": {
+    "expected_fields": 37,
+    "observed_fields": 37,
+    "missing_fields": 0,
+    "extra_fields": 0,
+    "schema_match_status": "EXACT_37_FIELD_MATCH"
+  },
+  "pairing_verification": {
+    "paired_origins": 173,
+    "initial_state_mismatches": 0,
+    "realized_trajectory_mismatches": 0,
+    "pairing_status": "VERIFIED_100_PERCENT_PAIRED_EXACT_MATCH"
+  },
+  "treatment_integrity": {
+    "treatment_artifact": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "expected_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "actual_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "horizon_length": 24,
+    "floating_point_fidelity": "PRESERVED_WITHOUT_MUTATION"
+  },
+  "future_truth_firewall": {
+    "status": "VERIFIED_100_PERCENT_INTACT",
+    "access_location": "runner.py:191 strictly post-optimization",
+    "leakage_detected": false
+  },
+  "primary_endpoint_recomputation": {
+    "metric": "total_diesel_fuel_liters",
+    "control_total": 4671.0,
+    "treatment_total": 6447.44,
+    "mean_paired_difference": 10.2684,
+    "median_paired_difference": 5.66,
+    "wilcoxon_test": {
+      "statistic": 5351.5,
+      "p_value": 0.0013565577035714814,
+      "zero_method": "wilcox",
+      "alternative": "two-sided"
+    },
+    "bootstrap_analysis": {
+      "resampling_unit": "COMPLETE_24H_ELIGIBLE_ORIGIN",
+      "iterations": 10000,
+      "random_seed": 42,
+      "bootstrap_mean_estimate": 10.2935,
+      "percentile_95_ci_lower": 5.4795,
+      "percentile_95_ci_upper": 15.2113
+    },
+    "recomputation_match_status": "EXACT_RECOMPUTATION_MATCH"
+  },
+  "critical_forensic_checks": {
+    "check_1_diesel_fuel_energy_consistency": {
+      "control_fuel_l": 4671.0,
+      "control_energy_kwh": 3460.0,
+      "control_implied_kwh_per_l": 0.7407,
+      "treatment_fuel_l": 6447.44,
+      "treatment_energy_kwh": 13517.38,
+      "treatment_implied_kwh_per_l": 2.0965,
+      "classification": "A — FULLY EXPLAINED BY DOCUMENTED MODEL SEMANTICS",
+      "findings": "Nonlinear fuel model F(P) = 5.0 + 0.00025*P + 6.0*I_startup. Control operates in startup/idle penalty regime (346 short 1h bursts at ~10 kW), Treatment operates in continuous high-power regime (400 steps at 33.79 kW mean)."
+    },
+    "check_2_startup_runtime_mechanism": {
+      "treatment_startups": 178,
+      "control_startups": 346,
+      "treatment_commitment_steps": 400,
+      "control_commitment_steps": 346,
+      "treatment_mean_power_kw": 33.79,
+      "control_mean_power_kw": 10.0,
+      "classification": "B — STRONGLY SUPPORTED BY MULTIPLE DIRECT OBSERVATIONS, BUT GENERATED REPORT WORDING REQUIRES CORRECTION/QUALIFICATION",
+      "findings": "Generated manifest text erroneously claimed Treatment induces more startups. Raw telemetry proves Treatment has FEWER startups (178 vs 346) but LONGER continuous runs (400 vs 346 steps) and HIGHER power output (33.79 kW vs 10.0 kW)."
+    },
+    "check_3_temporal_divergence_semantics": {
+      "step_definition": "MPC receding horizon timestep index k (0..23)",
+      "classification": "A — DIRECTLY ESTABLISHED BY PRESERVED TIMESTEP EVIDENCE",
+      "findings": "Decision divergence begins at step k=1 due to multi-horizon (h=5..12) forecast shape differences at k=0, preceding H1 forecast divergence at k=5."
+    },
+    "check_4_heterogeneity_arithmetic": {
+      "positive_group_count": 95,
+      "positive_group_subgroup_mean_l": 36.0633,
+      "positive_group_population_contrib_l": 19.8035,
+      "negative_group_count": 77,
+      "negative_group_subgroup_mean_l": -21.423,
+      "negative_group_population_contrib_l": -9.5351,
+      "zero_group_count": 1,
+      "classification": "A — FULLY EXPLAINED BY DOCUMENTED MODEL SEMANTICS",
+      "findings": "Conflicting reported numbers (+36.06 L vs +21.64 L; -21.42 L vs -13.06 L) reflect two distinct denominators: subgroup mean vs population-weighted contribution (95*36.0633/173 = 19.80 L; 77*-21.4230/173 = -9.54 L; Sum = 10.2684 L)."
+    }
+  },
+  "mechanism_classifications": {
+    "M1_diesel_commitment": "B — STRONGLY SUPPORTED (fewer startups 178 vs 346, longer commitment 400 vs 346 steps, higher power 33.79 kW vs 10 kW)",
+    "M2_battery_dispatch": "A — DIRECTLY ESTABLISHED (SOC positioning divergence precedes diesel dispatch)",
+    "M3_renewable_curtailment": "A — DIRECTLY ESTABLISHED (curtailment increases during forced diesel minimum runtime)",
+    "M4_soc_positioning": "A — DIRECTLY ESTABLISHED (early SOC positioning differences persist)",
+    "M5_forecast_shape": "A — DIRECTLY ESTABLISHED (multi-horizon h=3..12 shape drives k=1 decision divergence)",
+    "M6_multi_pathway": "B — STRONGLY SUPPORTED (interacting forecast -> SOC -> curtailment -> diesel chain)",
+    "M7_other_mechanisms": "E — NOT IDENTIFIABLE (no secondary extraneous mechanisms observed)"
+  },
+  "provenance_verification": {
+    "all_11_files_match": true,
+    "status": "VERIFIED_100_PERCENT_PROVENANCE_MATCH"
+  },
+  "statistical_unit_verification": {
+    "inferential_unit": "173 paired origins (N=173)",
+    "nested_observations": "4152 timesteps",
+    "status": "VERIFIED_CORRECT"
+  },
+  "final_classification": "B — VALID COMPLETED V2 EXECUTION BUT MECHANISM CLAIMS REQUIRE CORRECTION / QUALIFICATION"
+}

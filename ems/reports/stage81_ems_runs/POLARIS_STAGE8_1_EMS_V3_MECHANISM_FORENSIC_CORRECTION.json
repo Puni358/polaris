@@ -1,0 +1,171 @@
+{
+  "correction_id": "POLARIS_STAGE8_1_EMS_V3_MECHANISM_FORENSIC_CORRECTION",
+  "correction_timestamp_utc": "2026-09-19T12:35:00Z",
+  "governance_status": "V3_MECHANISM_FORENSIC_CORRECTION_COMPLETE",
+  "authoritative_execution_preservation": {
+    "raw_csv_path": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv",
+    "raw_csv_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "execution_json_sha256": "9bb13084b1db08c1ff322e6d4bdb4a1fbd62d534a0fa26c66b4c898bdba9d900",
+    "execution_md_sha256": "6d2bf01b26385ba9f403c6dc8e30e511577d97a52e0f918449b23c125ee6cda0",
+    "raw_evidence_modified": false,
+    "replays_executed": 0
+  },
+  "correction_1_battery_throughput_audit": {
+    "v3_class_f_battery_throughput_kwh": 80.04,
+    "v2_treatment_battery_throughput_kwh": "NOT_AVAILABLE_IN_RAW_SCHEMA",
+    "control_battery_throughput_kwh": "NOT_AVAILABLE_IN_RAW_SCHEMA",
+    "paired_v3_vs_v2_throughput_comparison_status": "NOT_ESTABLISHED (UNAVAILABLE IN RAW TELEMETRY SCHEMA)",
+    "forensic_correction_note": "The raw 49-column telemetry schema records cumulative_battery_throughput_after strictly for Arm 3 (V3 Class F). It does not record arm-specific cumulative battery throughput for Arm 2 (V2 Treatment) or Arm 1 (Control). Equality cannot be inferred from the raw CSV."
+  },
+  "correction_2_objective_decomposition": {
+    "milp_source_file": "system/optimization/implementations/milp.py",
+    "gamma_v2": 1.0,
+    "gamma_v3": 0.95,
+    "horizon_weight_formula": "w_t = 0.95^t for t in 0..23",
+    "weighted_objective_terms": [
+      "solar_curtailment_penalty (c = 0.001 * dt * w_t)",
+      "wind_curtailment_penalty (c = 0.001 * dt * w_t)",
+      "battery_charge_degradation (c = 0.00005 * dt * w_t)",
+      "battery_discharge_degradation (c = 0.00005 * dt * w_t)",
+      "diesel_marginal_fuel_cost (c = 2.50 * 0.00025 * dt * w_t = 0.000625 * dt * w_t)",
+      "diesel_base_running_cost (c = 2.50 * 5.0 * dt * w_t = 12.50 * dt * w_t)",
+      "diesel_startup_event_cost (c = 15.00 * w_t)"
+    ],
+    "unweighted_objective_terms": [
+      "critical_unmet_load_penalty (c = 10.0 * dt, gamma^t = 1.0 constant)"
+    ],
+    "horizon_weight_schedule": {
+      "w_0": 1.0,
+      "w_1": 0.95,
+      "w_5": 0.77378,
+      "w_10": 0.59874,
+      "w_13": 0.51334,
+      "w_14": 0.48767,
+      "w_15": 0.46329,
+      "w_23": 0.30736
+    },
+    "stage81_forecast_shape_verification": {
+      "major_overprediction_horizon_range": "h = 14..16 (t = 13..15)",
+      "peak_overprediction_bias_w_m2": 19.72,
+      "peak_overprediction_horizon": 14,
+      "mechanism_interaction": "At h=14..16, Stage 8.1 over-predicts solar irradiance by +19.72 W/m^2. Under gamma=1.0, full penalty weight (w_13=1.0) leads optimizer to expect late solar energy and plan late battery charging. Under gamma=0.95, penalty weights at h=14..16 are discounted by over 50% (w_13=0.5133), suppressing optimizer over-reaction to late-horizon solar over-prediction."
+    }
+  },
+  "correction_3_temporal_divergence_and_wording": {
+    "observed_divergence_sequence": [
+      {
+        "step": "Battery Action / SOC Divergence",
+        "first_observed_timesteps": "t = 0 (30 origins), t = 1 (19 origins), t = 8 (42 origins)",
+        "relationship_to_next": "preceded diesel divergence"
+      },
+      {
+        "step": "Diesel Power / Commitment Divergence",
+        "first_observed_timesteps": "t = 2..3 (14 origins), t = 8 (42 origins), t = 18..21 (46 origins)",
+        "relationship_to_next": "was followed by curtailment divergence"
+      },
+      {
+        "step": "Renewable Curtailment Divergence",
+        "first_observed_timesteps": "t = 15 (39 origins), t = 22 (21 origins)",
+        "relationship_to_next": "final cumulative operational divergence"
+      }
+    ],
+    "non_causal_terminology_enforced": true
+  },
+  "primary_result_preservation": {
+    "mean_control_fuel_l": 27.0,
+    "mean_v2_treatment_fuel_l": 37.27,
+    "mean_v3_class_f_fuel_l": 23.99,
+    "paired_v3_vs_v2_mean_diff_l": -13.28,
+    "paired_v3_vs_v2_median_diff_l": -13.5,
+    "paired_v3_vs_v2_bootstrap_95_ci_l": [-15.11, -11.48],
+    "wilcoxon_w_stat": 32.0,
+    "wilcoxon_p_value": 6.217937e-21
+  },
+  "origin_heterogeneity_preservation": {
+    "reduced_fuel_group_n": 117,
+    "reduced_fuel_group_pct": 67.63,
+    "equal_fuel_group_n": 54,
+    "equal_fuel_group_pct": 31.21,
+    "increased_fuel_group_n": 2,
+    "increased_fuel_group_pct": 1.16
+  },
+  "mechanism_classifications": [
+    {
+      "claim": "V3 Class F reduces mean diesel fuel by 13.28 L/origin relative to V2 Treatment.",
+      "classification": "A — DIRECTLY COMPUTED FROM FROZEN EVIDENCE"
+    },
+    {
+      "claim": "V3 Class F reduces diesel runtime by 0.97 h/origin and startup count by 0.27/origin.",
+      "classification": "A — DIRECTLY COMPUTED FROM FROZEN EVIDENCE"
+    },
+    {
+      "claim": "Arm 3 V3 Class F battery throughput equals 80.04 kWh/origin.",
+      "classification": "A — DIRECTLY COMPUTED FROM FROZEN EVIDENCE"
+    },
+    {
+      "claim": "V2 and Control battery throughput are equal to V3.",
+      "classification": "E — NOT IDENTIFIABLE FROM FROZEN TELEMETRY SCHEMA"
+    },
+    {
+      "claim": "Class F objective weighting discounts operational costs by w_t = 0.95^t while leaving critical unmet-load penalty unweighted.",
+      "classification": "A — DIRECTLY COMPUTED FROM OPTIMIZER SOURCE CODE"
+    },
+    {
+      "claim": "Stage 8.1 solar predictions exhibit peak over-prediction bias (+19.72 W/m^2) at horizon h=14 (t=13), where gamma=0.95 discounts objective weight to w_13 = 0.5133.",
+      "classification": "A — DIRECTLY COMPUTED FROM PREDICTIONS ARTIFACT"
+    },
+    {
+      "claim": "Discounting late-horizon objective weights reduces optimizer sensitivity to mid/late horizon solar over-predictions, avoiding premature diesel commitments.",
+      "classification": "B — STRONGLY SUPPORTED BY OBJECTIVE STRUCTURE AND TELEMETRY"
+    },
+    {
+      "claim": "SOC and battery decision divergence at t=0..1 precedes diesel commitment divergence at t=2..8.",
+      "classification": "A — DIRECTLY COMPUTED FROM TEMPORAL TELEMETRY"
+    },
+    {
+      "claim": "Early SOC divergence causally forced the later reduction in diesel runtime.",
+      "classification": "D — PLAUSIBLE HYPOTHESIS NOT FULLY ISOLATED"
+    },
+    {
+      "claim": "Class F will achieve identical fuel savings on the physical Nuolja station.",
+      "classification": "E — NOT IDENTIFIABLE (SYNTHETIC SIMULATION BOUNDARY)"
+    }
+  ],
+  "candidate_v4_hypotheses": [
+    {
+      "hypothesis_id": "V4.A",
+      "name": "Term-Specific Horizon Discounting (gamma_curtail vs gamma_diesel)",
+      "target_mechanism": "Decouple discount factor applied to solar curtailment penalties from immediate diesel fuel costs.",
+      "supporting_evidence": "Class F objective decomposition proves curtailment penalty discount at h=14..16 reduces pre-emptive diesel dispatch.",
+      "missing_evidence": "Whether keeping gamma_diesel = 1.0 while setting gamma_curtail = 0.90 achieves equal fuel reduction without increasing late diesel risk.",
+      "status": "HYPOTHESIS ONLY (UNTESTED)"
+    },
+    {
+      "hypothesis_id": "V4.B",
+      "name": "Forecast-Uncertainty-Adaptive SOC Reserve Policy",
+      "target_mechanism": "Dynamically adjust minimum SOC reserve bounds E_min(t) based on rolling forecast variance f_var(y_pred).",
+      "supporting_evidence": "Observed early SOC divergence at t=0..1 shows battery positioning absorbs forecast error prior to diesel start.",
+      "missing_evidence": "Whether dynamic SOC reserve bounds outperform uniform horizon discounting under high forecast variance.",
+      "status": "HYPOTHESIS ONLY (UNTESTED)"
+    },
+    {
+      "hypothesis_id": "V4.C",
+      "name": "Minimum-Runtime Diesel Commitment Hysteresis",
+      "target_mechanism": "Enforce explicit minimum runtime constraints T_min,on for diesel generator commitment.",
+      "supporting_evidence": "V3 Class F reduced generator startups from 1.03 to 0.76; explicit hysteresis targets remaining short runs.",
+      "missing_evidence": "Interaction between minimum runtime constraints and receding horizon MPC replays.",
+      "status": "HYPOTHESIS ONLY (UNTESTED)"
+    }
+  ],
+  "non_intervention_verification": {
+    "v1_result_unchanged": true,
+    "v2_result_unchanged": true,
+    "v3_result_unchanged": true,
+    "v3_raw_csv_unchanged": true,
+    "milp_source_unchanged": true,
+    "simulator_unchanged": true,
+    "runner_unchanged": true,
+    "replays_executed": 0,
+    "v4_implemented": false
+  }
+}

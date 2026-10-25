@@ -1,0 +1,690 @@
+{
+  "title": "POLARIS Stage8.1 \u2192 EMS Mechanism Observability V2 Telemetry Implementation",
+  "governance_status": {
+    "v1_empirical_replay": "ACCEPTED_AND_FROZEN",
+    "v1_result": {
+      "control_diesel_total_l": 4671.0,
+      "stage81_treatment_total_l": 6447.44,
+      "mean_paired_difference_l": 10.2684,
+      "bootstrap_95_ci_l": [
+        5.4795,
+        15.2113
+      ],
+      "wilcoxon_w": 5351.5,
+      "wilcoxon_p": 0.0013566,
+      "spearman_rho": -0.9198,
+      "spearman_p": 2.283e-71
+    },
+    "v1_mechanism_status": "C \u2014 ONLY ASSOCIATIONS ESTABLISHED",
+    "v2_protocol": "HARDENED",
+    "v2_pre_implementation_consistency": "COMPLETE",
+    "v2_telemetry_implementation": "COMPLETE",
+    "v2_runtime_equivalence": "NOT_YET_VERIFIED",
+    "v2_execution": "NOT_AUTHORIZED"
+  },
+  "implementation_status": "COMPLETE",
+  "final_classification": "A \u2014 V2 TELEMETRY IMPLEMENTATION COMPLETE AND STATICALLY VERIFIED",
+  "field_summary": {
+    "total_fields": 37,
+    "directly_available_count": 23,
+    "requires_instrumentation_count": 14,
+    "not_available_count": 0
+  },
+  "modified_files": [
+    {
+      "path": "system/runtime/runner.py",
+      "purpose": "Add passive v2_telemetry_collector hook to run_pipeline MPC execution loop",
+      "before_sha256": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69",
+      "after_sha256": "43b3cfb28194802888b277a49741abb07b8f37ba694f9432c0ab2d44655dc1ec",
+      "instrumentation_location": "system/runtime/runner.py:82,194-232",
+      "instrumentation_description": "Optional v2_telemetry_collector argument added to run_pipeline. If provided, records step data passively after simulator step completes. Default is None (zero overhead, zero intervention).",
+      "scientific_logic_changed": "NO",
+      "runtime_decision_logic_changed": "NO"
+    },
+    {
+      "path": "system/telemetry/v2_logger.py [NEW]",
+      "purpose": "Authoritative 37-field V2 Observational Telemetry Schema and Collector Implementation",
+      "before_sha256": "N/A (NEW FILE)",
+      "after_sha256": "131ff6f4dc83a2a57329362871eaab356b5b41fb2e7318b7a127bd47cd20aaac",
+      "instrumentation_location": "system/telemetry/v2_logger.py:1-332",
+      "instrumentation_description": "Defines V2TelemetryRecord dataclass (37 fields), V2TelemetryCollector, REQUIRED_37_FIELDS, and AVAILABILITY_CLASSIFICATION.",
+      "scientific_logic_changed": "NO",
+      "runtime_decision_logic_changed": "NO"
+    },
+    {
+      "path": "system/tests/test_v2_telemetry.py [NEW]",
+      "purpose": "Bounded Unit and Governance Test Suite for V2 Telemetry",
+      "before_sha256": "N/A (NEW FILE)",
+      "after_sha256": "078bae332513898af15b702a6bf00b2096b8b3f6708fcaedbee6df5a6b7effb7",
+      "instrumentation_location": "system/tests/test_v2_telemetry.py:1-165",
+      "instrumentation_description": "6 bounded unit tests verifying 37-field completeness, field uniqueness, passive non-mutation, exact float preservation, and deterministic serialization.",
+      "scientific_logic_changed": "NO",
+      "runtime_decision_logic_changed": "NO"
+    }
+  ],
+  "protected_files_verification": [
+    {
+      "file": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "pre_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "post_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_RAW.csv",
+      "pre_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "post_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.json",
+      "pre_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "post_sha256": "80cf3be4955da83a324b86a2e5154df8687f53101d54547e58ab752888b2b4d2",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXECUTION.md",
+      "pre_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "post_sha256": "0b516787444ed5c9629009de2c0cd2a9c669e8bc442e33ee5f1c1cd9c13e45ed",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.md",
+      "pre_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "post_sha256": "8c2c8da41134b9b231749cc722499a78abd2e49a48971d3e96eee76005871e0f",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_DECOMPOSITION.json",
+      "pre_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "post_sha256": "f3b6ecd581d6c790e85bafe0b8a7571263ce754ea1b2334cfdbfd5b872db8a67",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.md",
+      "pre_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "post_sha256": "ac4dec9e101adc8e17b779e61cfde90e1b83f1c99d0f6caa91d5514026615205",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_BRANCH_CLOSURE.json",
+      "pre_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "post_sha256": "f8e574fb6f774b2ad440fd0ab19bc0b8e3bf995f1a4b4727f380c57d5938ad45",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.md",
+      "pre_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "post_sha256": "c9a61cd0e726e37ac810d9e9e46977cd512f9bd984d3ef68c6cbd9bcaf6aff0b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json",
+      "pre_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "post_sha256": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.md",
+      "pre_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "post_sha256": "1ff1d00ddde7ece3bd9454c4b25aab8031e438abe6a2d09cd29c8ea8362a5314",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_FINAL_PRE_IMPLEMENTATION_CONSISTENCY_CHECK.json",
+      "pre_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "post_sha256": "35b33d1eb8582f374d42370cadc2d644c132c5b44e867bc15ad10c2afea7426d",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.md",
+      "pre_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "post_sha256": "e064a87a09cd2fab0156be6f0cd9e0265edfc41f1e88cbbe74432f5a779d7bcd",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V2_PRE_IMPLEMENTATION_CORRECTION.json",
+      "pre_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "post_sha256": "50c23683fa9a4ad7ea6165e0c7e2c5ea57c499b5450ff1d0ff11b1c85788fe1b",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.md",
+      "pre_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "post_sha256": "e6fd9974cb4fa7d34c631b90f0db1aceb99c5cb0b1a7c57e7b74878221981be7",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION.json",
+      "pre_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "post_sha256": "629f4731cb269cd2ad36a407cde449900d8fb2101aaae055e286a0b674625e95",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.md",
+      "pre_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "post_sha256": "2dbdf65d2c44cc379fc3a5abc212585979e295cf888c68718c0875ebc6218bf9",
+      "match": true
+    },
+    {
+      "file": "POLARIS_STAGE8_1_EMS_V1_MECHANISM_WORDING_CORRECTION_MANIFEST.json",
+      "pre_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "post_sha256": "e5634d69595dee2b4b16848c2e8d216365ef79a3d4f983e0be06d5b0e7b7b7b0",
+      "match": true
+    }
+  ],
+  "all_protected_artifacts_verified": true,
+  "traceability_matrix": [
+    {
+      "field_name": "origin_id",
+      "category": "Identity",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "execution context",
+      "source_variable": "oid",
+      "source_code_location": "run_polaris_stage8_1_ems_empirical_replay.py:83",
+      "capture_method": "Direct pass",
+      "transformation": "None",
+      "units": "unitless",
+      "precision": "integer",
+      "timing_semantics": "Origin ID for 24h simulation window"
+    },
+    {
+      "field_name": "origin_timestamp",
+      "category": "Identity",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "execution context",
+      "source_variable": "t0_ts",
+      "source_code_location": "run_polaris_stage8_1_ems_empirical_replay.py:95",
+      "capture_method": "Direct pass",
+      "transformation": "None",
+      "units": "ISO8601 UTC",
+      "precision": "string",
+      "timing_semantics": "Timestamp of origin t0"
+    },
+    {
+      "field_name": "mpc_timestep_idx",
+      "category": "Identity",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "MPC loop",
+      "source_variable": "step_k / step_idx",
+      "source_code_location": "system/runtime/runner.py:112",
+      "capture_method": "Direct pass",
+      "transformation": "None",
+      "units": "unitless",
+      "precision": "integer (0..23)",
+      "timing_semantics": "MPC horizon step index k"
+    },
+    {
+      "field_name": "timestamp",
+      "category": "Identity",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "StationState",
+      "source_variable": "curr_state.timestamp",
+      "source_code_location": "system/schemas/station_state.py:11",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "ISO8601 UTC",
+      "precision": "string",
+      "timing_semantics": "Current step timestamp"
+    },
+    {
+      "field_name": "treatment_forecast_vector_24",
+      "category": "Forecast Input",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "runtime_context / ForecastBundle",
+      "source_variable": "sw_in_forecast / bundle.solar_irradiance.point",
+      "source_code_location": "system/runtime/runner.py:118",
+      "capture_method": "Direct list read",
+      "transformation": "None",
+      "units": "W/m^2",
+      "precision": "float list [24]",
+      "timing_semantics": "24-step irradiance forecast supplied to optimizer"
+    },
+    {
+      "field_name": "control_forecast_vector_24",
+      "category": "Forecast Input",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "runtime_context / ForecastBundle",
+      "source_variable": "control_sw_in / bundle_ctrl.solar_irradiance.point",
+      "source_code_location": "system/runtime/runner.py:118",
+      "capture_method": "Direct list read",
+      "transformation": "None",
+      "units": "W/m^2",
+      "precision": "float list [24]",
+      "timing_semantics": "Control 24-step forecast supplied to optimizer"
+    },
+    {
+      "field_name": "actual_solar_truth",
+      "category": "Forecast Input",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "future_actuals",
+      "source_variable": "next_actual['actual_SW_IN']",
+      "source_code_location": "system/runtime/runner.py:191",
+      "capture_method": "Dictionary read",
+      "transformation": "None",
+      "units": "W/m^2",
+      "precision": "float",
+      "timing_semantics": "Realized ground truth irradiance for step k"
+    },
+    {
+      "field_name": "treatment_h1_forecast",
+      "category": "Forecast Input",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "treatment_forecast_vector_24",
+      "source_variable": "treatment_forecast_vector_24[0]",
+      "source_code_location": "system/telemetry/v2_logger.py:240",
+      "capture_method": "Array index 0",
+      "transformation": "None",
+      "units": "W/m^2",
+      "precision": "float",
+      "timing_semantics": "H1 forecast step value"
+    },
+    {
+      "field_name": "control_h1_forecast",
+      "category": "Forecast Input",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "control_forecast_vector_24",
+      "source_variable": "control_forecast_vector_24[0]",
+      "source_code_location": "system/telemetry/v2_logger.py:241",
+      "capture_method": "Array index 0",
+      "transformation": "None",
+      "units": "W/m^2",
+      "precision": "float",
+      "timing_semantics": "Control H1 forecast step value"
+    },
+    {
+      "field_name": "treatment_forecast_error_h1",
+      "category": "Forecast Input",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "derived",
+      "source_variable": "treatment_h1 - actual_truth",
+      "source_code_location": "system/telemetry/v2_logger.py:244",
+      "capture_method": "Difference calculation",
+      "transformation": "subtraction",
+      "units": "W/m^2",
+      "precision": "float",
+      "timing_semantics": "H1 forecast error (Treatment - Truth)"
+    },
+    {
+      "field_name": "control_forecast_error_h1",
+      "category": "Forecast Input",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "derived",
+      "source_variable": "control_h1 - actual_truth",
+      "source_code_location": "system/telemetry/v2_logger.py:245",
+      "capture_method": "Difference calculation",
+      "transformation": "subtraction",
+      "units": "W/m^2",
+      "precision": "float",
+      "timing_semantics": "H1 forecast error (Control - Truth)"
+    },
+    {
+      "field_name": "forecast_difference_h1",
+      "category": "Forecast Input",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "derived",
+      "source_variable": "treatment_h1 - control_h1",
+      "source_code_location": "system/telemetry/v2_logger.py:246",
+      "capture_method": "Difference calculation",
+      "transformation": "subtraction",
+      "units": "W/m^2",
+      "precision": "float",
+      "timing_semantics": "H1 forecast difference (Treatment - Control)"
+    },
+    {
+      "field_name": "soc_before",
+      "category": "State Before Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "StationState",
+      "source_variable": "curr_state.battery_soc_pct",
+      "source_code_location": "system/schemas/station_state.py:21",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "%",
+      "precision": "float",
+      "timing_semantics": "SOC prior to step execution"
+    },
+    {
+      "field_name": "diesel_state_before",
+      "category": "State Before Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "StationState",
+      "source_variable": "curr_state.diesel_running",
+      "source_code_location": "system/schemas/station_state.py:23",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "boolean",
+      "precision": "bool",
+      "timing_semantics": "Diesel running status prior to step execution"
+    },
+    {
+      "field_name": "cumulative_diesel_fuel_before",
+      "category": "State Before Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "StationState / Collector",
+      "source_variable": "cumulative_diesel_fuel_l",
+      "source_code_location": "system/runtime/runner.py:208",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "L",
+      "precision": "float",
+      "timing_semantics": "Cumulative fuel consumed prior to step execution"
+    },
+    {
+      "field_name": "cumulative_diesel_energy_before",
+      "category": "State Before Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "StationState / Collector",
+      "source_variable": "cumulative_diesel_energy_kwh",
+      "source_code_location": "system/runtime/runner.py:209",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "kWh",
+      "precision": "float",
+      "timing_semantics": "Cumulative diesel energy produced prior to step execution"
+    },
+    {
+      "field_name": "optimizer_status",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.constraint_status",
+      "source_code_location": "system/schemas/dispatch_plan.py:71",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "text",
+      "precision": "string",
+      "timing_semantics": "Status returned by solver (OPTIMAL / INFEASIBLE)"
+    },
+    {
+      "field_name": "objective_value",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.objective_value",
+      "source_code_location": "system/schemas/dispatch_plan.py:70",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "dimensionless",
+      "precision": "float",
+      "timing_semantics": "MILP objective value"
+    },
+    {
+      "field_name": "diesel_commitment",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.diesel_power[0] > 0",
+      "source_code_location": "system/schemas/dispatch_plan.py:56",
+      "capture_method": "Boolean evaluation",
+      "transformation": "None",
+      "units": "binary (0/1)",
+      "precision": "float / bool",
+      "timing_semantics": "Optimizer H1 binary commitment decision"
+    },
+    {
+      "field_name": "startup_event",
+      "category": "Optimizer",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "derived",
+      "source_variable": "(not diesel_state_before) and bool(diesel_commitment)",
+      "source_code_location": "system/telemetry/v2_logger.py:249",
+      "capture_method": "Logic comparison",
+      "transformation": "binary change",
+      "units": "boolean",
+      "precision": "bool",
+      "timing_semantics": "True if diesel starts at step k"
+    },
+    {
+      "field_name": "shutdown_event",
+      "category": "Optimizer",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "derived",
+      "source_variable": "diesel_state_before and bool(not diesel_commitment)",
+      "source_code_location": "system/telemetry/v2_logger.py:250",
+      "capture_method": "Logic comparison",
+      "transformation": "binary change",
+      "units": "boolean",
+      "precision": "bool",
+      "timing_semantics": "True if diesel shuts down at step k"
+    },
+    {
+      "field_name": "battery_charge_decision",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.battery_charge[0] / 1000.0",
+      "source_code_location": "system/schemas/dispatch_plan.py:53",
+      "capture_method": "Array index 0 / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Optimizer H1 battery charge power decision"
+    },
+    {
+      "field_name": "battery_discharge_decision",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.battery_discharge[0] / 1000.0",
+      "source_code_location": "system/schemas/dispatch_plan.py:54",
+      "capture_method": "Array index 0 / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Optimizer H1 battery discharge power decision"
+    },
+    {
+      "field_name": "reserve_status",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.reserve_status",
+      "source_code_location": "system/schemas/dispatch_plan.py",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "text",
+      "precision": "string",
+      "timing_semantics": "Operating reserve status from solver"
+    },
+    {
+      "field_name": "constraint_status",
+      "category": "Optimizer",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DispatchPlan",
+      "source_variable": "plan.constraint_status",
+      "source_code_location": "system/schemas/dispatch_plan.py:71",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "text",
+      "precision": "string",
+      "timing_semantics": "Detailed constraint fulfillment status"
+    },
+    {
+      "field_name": "h1_diesel_power",
+      "category": "Executed Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DigitalTwinSimulator",
+      "source_variable": "plan.diesel_power[0] / 1000.0",
+      "source_code_location": "system/simulation/simulator.py:35",
+      "capture_method": "Property read / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Actual executed diesel power output in step k"
+    },
+    {
+      "field_name": "h1_battery_charge_power",
+      "category": "Executed Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DigitalTwinSimulator",
+      "source_variable": "plan.battery_charge[0] / 1000.0",
+      "source_code_location": "system/simulation/simulator.py:33",
+      "capture_method": "Property read / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Actual executed battery charge power in step k"
+    },
+    {
+      "field_name": "h1_battery_discharge_power",
+      "category": "Executed Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "DigitalTwinSimulator",
+      "source_variable": "plan.battery_discharge[0] / 1000.0",
+      "source_code_location": "system/simulation/simulator.py:34",
+      "capture_method": "Property read / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Actual executed battery discharge power in step k"
+    },
+    {
+      "field_name": "h1_renewable_dispatch",
+      "category": "Executed Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "DispatchPlan / Simulator",
+      "source_variable": "(plan.solar_used[0] + plan.wind_used[0]) / 1000.0",
+      "source_code_location": "system/runtime/runner.py:218",
+      "capture_method": "Summation / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Actual dispatched renewable power in step k"
+    },
+    {
+      "field_name": "h1_renewable_curtailment",
+      "category": "Executed Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "DispatchPlan / Simulator",
+      "source_variable": "plan.renewable_curtailment[0] / 1000.0",
+      "source_code_location": "system/schemas/dispatch_plan.py:59",
+      "capture_method": "Array index 0 / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Curtailed renewable power in step k"
+    },
+    {
+      "field_name": "h1_served_load",
+      "category": "Executed Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "DispatchPlan / Simulator",
+      "source_variable": "plan.load_served[0] / 1000.0",
+      "source_code_location": "system/schemas/dispatch_plan.py:57",
+      "capture_method": "Array index 0 / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Demand served in step k"
+    },
+    {
+      "field_name": "h1_unmet_load",
+      "category": "Executed Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "DispatchPlan / Simulator",
+      "source_variable": "plan.unmet_load[0] / 1000.0",
+      "source_code_location": "system/schemas/dispatch_plan.py:60",
+      "capture_method": "Array index 0 / 1000",
+      "transformation": "W to kW",
+      "units": "kW",
+      "precision": "float",
+      "timing_semantics": "Unmet demand in step k"
+    },
+    {
+      "field_name": "soc_after",
+      "category": "State After Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "StationState (next)",
+      "source_variable": "next_state.battery_soc_pct",
+      "source_code_location": "system/simulation/simulator.py:59",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "%",
+      "precision": "float",
+      "timing_semantics": "SOC following step execution"
+    },
+    {
+      "field_name": "diesel_state_after",
+      "category": "State After Action",
+      "availability_class": "DIRECTLY_AVAILABLE_IN_EXISTING_EXECUTION_OBJECT",
+      "source_object": "StationState (next)",
+      "source_variable": "next_state.diesel_running",
+      "source_code_location": "system/simulation/simulator.py:61",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "boolean",
+      "precision": "bool",
+      "timing_semantics": "Diesel running status following step execution"
+    },
+    {
+      "field_name": "cumulative_diesel_fuel_after",
+      "category": "State After Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "StationState (next)",
+      "source_variable": "cumulative_diesel_fuel_l",
+      "source_code_location": "system/runtime/runner.py:224",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "L",
+      "precision": "float",
+      "timing_semantics": "Cumulative fuel consumed following step execution"
+    },
+    {
+      "field_name": "cumulative_diesel_energy_after",
+      "category": "State After Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "StationState (next)",
+      "source_variable": "cumulative_diesel_energy_kwh",
+      "source_code_location": "system/runtime/runner.py:225",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "kWh",
+      "precision": "float",
+      "timing_semantics": "Cumulative diesel energy produced following step execution"
+    },
+    {
+      "field_name": "cumulative_battery_throughput_after",
+      "category": "State After Action",
+      "availability_class": "REQUIRES_EXECUTION_CODE_INSTRUMENTATION",
+      "source_object": "StationState (next)",
+      "source_variable": "cumulative_battery_throughput_kwh",
+      "source_code_location": "system/runtime/runner.py:226",
+      "capture_method": "Property read",
+      "transformation": "None",
+      "units": "kWh",
+      "precision": "float",
+      "timing_semantics": "Cumulative battery throughput following step execution"
+    }
+  ],
+  "bounded_tests_executed": [
+    "test_1_exactly_37_unique_fields (PASSED)",
+    "test_2_field_availability_classification_totals (PASSED)",
+    "test_3_record_validation (PASSED)",
+    "test_4_exact_float_forecast_preservation (PASSED)",
+    "test_5_deterministic_serialization (PASSED)",
+    "test_6_passive_non_mutation (PASSED)",
+    "test_s81_adapter.py (12 tests PASSED)",
+    "test_d5_implementation.py (7 tests PASSED)"
+  ],
+  "assessments": {
+    "passive_non_intervention": "VERIFIED PASSIVE: Optional collector argument defaults to None. Zero mutation of execution inputs, plans, state, or solver parameters.",
+    "future_truth_firewall": "VERIFIED INTENSE FIREWALL: Next actual ground truth is accessed strictly AFTER optimization completes.",
+    "forecast_preservation": "VERIFIED EXACT PRESERVATION: Raw float forecast vectors (length 24) are recorded without rounding, truncation, or interpolation.",
+    "pairing_preservation": "VERIFIED PAIR INTEGRITY: Explicit origin_id and timestamp structure maintained.",
+    "deterministic_serialization": "VERIFIED DETERMINISTIC: JSON and CSV exports produce byte-for-byte identical output on repeated runs.",
+    "offline_status": "VERIFIED 100% OFFLINE: Zero external network or cloud dependencies.",
+    "solver_provenance_limitation": "HiGHS interface provenance ESTABLISHED; solver binary hash NOT_ESTABLISHED.",
+    "v1_integrity": "FROZEN AND UNCHANGED: Zero V1 reruns performed.",
+    "v2_execution_status": "NOT AUTHORIZED"
+  },
+  "required_final_governance_state": {
+    "v1": "ACCEPTED + FROZEN",
+    "v1_result": "UNCHANGED",
+    "v1_rerun": "NO",
+    "v2_protocol": "HARDENED",
+    "v2_pre_implementation_consistency": "COMPLETE",
+    "v2_telemetry_implementation": "COMPLETE",
+    "v2_runtime_equivalence": "NOT YET VERIFIED",
+    "v2_execution": "NOT AUTHORIZED"
+  }
+}

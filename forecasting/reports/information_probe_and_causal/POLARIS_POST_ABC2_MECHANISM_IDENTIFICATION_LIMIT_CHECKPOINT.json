@@ -1,0 +1,100 @@
+{
+  "artifact_name": "POLARIS_POST_ABC2_MECHANISM_IDENTIFICATION_LIMIT_CHECKPOINT",
+  "timestamp_utc": "2026-09-16 01:12:55+0000",
+  "governance_status": "POLARIS PROJECT MECHANISM DISCRIMINATION CLOSED UNDER CURRENT GOVERNANCE",
+  "odd_firewall": "SEALED_0_ROWS_ACCESSED",
+  "summary_of_evidence": {
+    "signal_existence": "DEMONSTRATED \u2014 Frozen P1 contains nonlinear predictive information extractable by GBDT for aggregate transmission (Phase A), individual hourly transmission k(t+h) (Phase C-1), and physical SW_IN(t+h) irradiance (Phase C-2).",
+    "mechanism_identification": "UNIDENTIFIED \u2014 Direct observational discrimination among M2 (Readout/Model Utilization), M3 (Point-Loss/Uncertainty), and Event-Timing Uncertainty is NOT IDENTIFIABLE under current frozen artifacts, protocols, and permitted information sources.",
+    "c3_temporal_aggregation_status": "REJECTED_AS_NON_IDENTIFYING \u2014 Target aggregation changes task difficulty and variance; cannot uniquely discriminate M2 vs Event-Timing.",
+    "c3_direct_timing_audit_status": "NON_DISCRIMINATING \u2014 Timing targets do not resolve whether Stage8.1 error gap was caused by timing uncertainty vs model/loss limitations.",
+    "stage8_1_oof_limitation": "Direct paired OOF comparison unavailable because Stage8.1 champion lacks canonical GroupKFold EVEN OOF prediction artifact. Reconstruction is strictly prohibited."
+  },
+  "evidence_matrix": [
+    {
+      "phase": "Phase A",
+      "question": "Does frozen P1 contain incremental predictive info for aggregate future transmission statistics beyond P0?",
+      "main_result": "GBDT \u0394R\u00b2 = +0.305 to +0.599 across T1-T3 (p < 0.0001)",
+      "demonstrated": "P1 contains substantial nonlinear predictive info for aggregate future transmission statistics.",
+      "supported": "Inconsistent with M1 (information absent) for tested aggregate targets.",
+      "not_established": "M2, M3, event timing, or Stage8.1 hourly error cause.",
+      "governance_status": "FROZEN / CLOSED"
+    },
+    {
+      "phase": "Phase B",
+      "question": "Are Stage8.1 point predictions positioned central to local causal state neighbours?",
+      "main_result": "Normalized rank = 0.4459; Pinball loss \u0394 = +0.0209 (p < 0.0001, unclustered)",
+      "demonstrated": "Champion point forecasts concentrate near 5-neighbour local median.",
+      "supported": "Consistent with conditional-median / hedging behavior under L1/pinball loss.",
+      "not_established": "Proof of M3, proof of event timing, or B3 threshold validation (B3 compromised).",
+      "governance_status": "FROZEN / CLOSED"
+    },
+    {
+      "phase": "Phase C-1",
+      "question": "Does frozen P1 provide incremental OOF predictive info for individual transmission targets k(t+h) beyond P0?",
+      "main_result": "GBDT \u0394R\u00b2 = +0.3037 to +0.7013 (p = 0.0010 at all horizons)",
+      "demonstrated": "Frozen P1 contains extractable predictive info for individual hourly transmission targets k(t+h).",
+      "supported": "Inconsistent with M1 for individual transmission targets.",
+      "not_established": "Stage8.1 representation inadequacy, head failure, M2, M3, timing, or physical SW_IN MAE reduction.",
+      "governance_status": "FROZEN / CLOSED"
+    },
+    {
+      "phase": "Phase C-2",
+      "question": "Can a downstream readout on frozen P1 extract predictive info for physical SW_IN(t+h) beyond P0?",
+      "main_result": "GBDT \u0394MAE = +19.51 to +63.05 W/m\u00b2 (all 95% CIs exclude 0)",
+      "demonstrated": "Frozen P1 contains extractable predictive info for physical SW_IN(t+h) beyond P0 under specified GBDT readout.",
+      "supported": "Information demonstrated in C-1 for k(t+h) transfers into physical irradiance prediction.",
+      "not_established": "Stage8.1 representation failure, head failure, loss failure, M2, M3, timing, or ODD performance.",
+      "governance_status": "FROZEN / CLOSED"
+    },
+    {
+      "phase": "C-3 Audit",
+      "question": "Can M2, M3, and Event-Timing be observationally discriminated using current frozen artifacts?",
+      "main_result": "Hard Identification Limit Encountered",
+      "demonstrated": "Signal existence is proven, but mechanism discrimination is non-identifiable under current frozen artifacts.",
+      "supported": "Confirms necessity of explicit governance amendments for any future mechanism-attribution work.",
+      "not_established": "Unique causal mechanism explaining Stage8.1 performance gap.",
+      "governance_status": "CLOSED / REJECTED AS NON-IDENTIFYING"
+    }
+  ],
+  "final_contribution_statement": [
+    "1. Systematically evaluated the solar irradiance forecasting problem under a locked, causally rigorous benchmark.",
+    "2. Evaluated candidate information sources and baseline architectures across canonical 5-fold cross-validation.",
+    "3. Demonstrated that the frozen Stage8.1 causal state P1 contains substantial extractable predictive information for aggregate transmission and individual hourly targets.",
+    "4. Showed that this predictive information is recoverable by a specified downstream GBDT readout for both normalized transmission index k(t+h) and physical surface irradiance SW_IN(t+h) (Phase C-2 \u0394MAE +19.51 to +63.05 W/m\u00b2).",
+    "5. Established that available empirical evidence does NOT identify the specific mechanism (M2, M3, or Event-Timing) responsible for the performance discrepancy with the original Stage8.1 system.",
+    "6. Identified the absence of a canonical GroupKFold Stage8.1 OOF prediction artifact as a hard identification limitation for direct paired attribution.",
+    "7. Maintained 100% strict Out-of-Distribution (ODD) data isolation throughout the entire research and diagnostic program (0 rows accessed)."
+  ],
+  "closed_routes": [
+    "Generic neural-network experimentation",
+    "Arbitrary GBDT/model variants",
+    "Feature sweeps",
+    "Hyperparameter sweeps",
+    "Additional spatial/NWP/satellite feature searches",
+    "Temporal aggregation as a mechanism test",
+    "Direct timing probes that cannot discriminate mechanisms",
+    "Stage8.1 OOF reconstruction",
+    "ODD experimentation"
+  ],
+  "authoritative_hashes": {
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+    "INFORMATION_PROBE_ELIGIBLE_EVEN_ORIGINS.csv": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e",
+    "PHASE_C1_HORIZON_DIAGNOSTIC.json": "6becb0e21567f3f4c86525a2105ce6cad84ee3fc2021ce16cce0a06f5a567c23",
+    "PHASE_C1_HORIZON_DIAGNOSTIC.md": "98a22c27b7717f2b9af91b41c8bdc64ec044cfb3af30dc2a51ebbccf1298c619",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.json": "52b5b97fa31f6b8c9faba0861485ae4e78b145add164c5fc34848c9f3650ed5a",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.md": "3cd44c7eeff9e8e2ff7c9e24708219708a57c1f80a6e2030c3aa64112781d0f9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.json": "0e81f0051f04140b059c29e0ffef914d58404dd16259c4118eb0440e7ca52fb9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.md": "bd4efea996c8d436d60df543aeca5006960d148c085f6ec1bbb4f4c131689fb3",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.json": "da9efe62360d5d3cb96fcfa69eee5a1e9d6afe63ed10a5228acbbffee35da35e",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.md": "d83ed20ae406398391e97850efec34f76e44a9aec13e7c30b92f407fe7047e9d",
+    "PHASE_C1_CORRECTION_AND_CLOSEOUT.json": "c292e0150e3fad00b4c3c20e2eca43cc391aabb5170c5b3db2af4ce06d5dc32f",
+    "PHASE_C1_CORRECTION_AND_CLOSEOUT.md": "6e192e88da0e4b39667da4ea83d32e8f2d79c99087698b9a015edb1c1bf2e3b7",
+    "PHASE_C2_FROZEN_P1_PHYSICAL_SW_IN_DIAGNOSTIC.json": "4db3461ab6296afa644bfa466de639017c47fbfda66d88323c1d77f1ff5417ed",
+    "PHASE_C2_FROZEN_P1_PHYSICAL_SW_IN_DIAGNOSTIC.md": "743ace7c386bd43646b14b67adf8a02a1841b5bb93f4b8131a1ba1e4f4bd863f",
+    "PHASE_C2_FORENSIC_INTEGRITY_AUDIT.json": "4990db86221f5893e7fbad18122d03b51aed5c344bed1e6d15e310c8afd01bbd",
+    "PHASE_C2_FORENSIC_INTEGRITY_AUDIT.md": "34b98ae9a2bb3d6d1b6938588a23c7c1dcd439d33e6a64d3fb85d99c09bc85f5",
+    "POLARIS_PHASE_ABC2_SCIENTIFIC_SYNTHESIS_CHECKPOINT.json": "21e51c44798b8b0ca2fe243b332a42b9e51c7e0f437488c233fc46601dfd8cf0",
+    "POLARIS_PHASE_ABC2_SCIENTIFIC_SYNTHESIS_CHECKPOINT.md": "0a9643826c80cff602b7c23c561425c880dcc1e26a46f3944eb341cbad03affe"
+  }
+}

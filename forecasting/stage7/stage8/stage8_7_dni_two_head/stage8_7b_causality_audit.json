@@ -1,0 +1,6 @@
+{
+  "forecast_reference_time": "D-1 18:00 UTC",
+  "t0": "00:00 CET",
+  "causal_pass_rate_pct": 100.0,
+  "post_t0_info_used": false
+}

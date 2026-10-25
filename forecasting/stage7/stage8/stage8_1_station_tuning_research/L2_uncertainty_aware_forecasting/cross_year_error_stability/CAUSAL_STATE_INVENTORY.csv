@@ -1,0 +1,23 @@
+variable_name,data_type,domain,causal_class,availability_timing,operational_usability,notes
+forecast_start,string (ISO8601),Temporal origin,A,At forecast issuance (18Z / 00:00 UTC),Valid metadata for origin grouping,Forecast issuance origin timestamp
+timestamp,string (ISO8601),Temporal target,A,Deterministic astronomical time,Valid for diurnal/temporal index,Target valid timestamp
+horizon_hour,integer (6..24),"[6, 24]",A,Known at issuance,Valid lead time variable,Lead time from NWP model initialization (18Z)
+year,integer (2020..2023),"[2020, 2023]",A,Known at issuance,Split partitioning only; NOT a causal dispatch feature,Calendar year
+month,integer (1..12),"[1, 12]",A,Known at issuance,Valid for seasonal categorization,Calendar month
+day_of_year,integer (1..366),"[1, 366]",A,Known at issuance,Valid for solar geometry indexing,Day of calendar year
+hour,integer (0..18),"[0, 18]",A,Deterministic astronomical time,Valid diurnal state variable,Target hour of day (UTC)
+prediction,float (W/m^2),"[0, 750]",A,Output of Candidate F model at issuance,Valid causal state variable,Candidate F GHI solar forecast
+solar_elevation,float (degrees),"[-45, 45]",A,Deterministic astronomical calculation,Valid causal state variable,Solar elevation angle above horizon at target location
+clearsky_ghi,float (W/m^2),"[0, 720]",A,Deterministic astronomical clear-sky calculation,Valid causal normalization variable,Clear-sky model geometric radiation potential
+fc_cloud_cover,float (%),"[0, 100]",A,MEPS NWP model output available at issuance,Valid causal forecast regime variable,NWP forecasted total cloud cover
+cloud_frac,float (0..1),"[0.0, 1.0]",A,MEPS NWP output at issuance,Valid causal forecast regime variable,Normalized cloud fraction (fc_cloud_cover / 100)
+elevation_x_cloud_frac,float,"[-45, 45]",A,Product of causal inputs available at issuance,Valid interaction state variable,Candidate F tree feature
+ctx_last_obs,float (W/m^2),"[0, 38]",B,Station sensor measurement prior to 00:00 UTC,UNRESOLVED: sensor latency/dropout not audited,Last observed GHI at station; transmission SLA unresolved
+ctx_std_3h,float (W/m^2),"[0, 11]",B,3-hour pre-issuance sensor history,UNRESOLVED: transmission SLA unresolved,Pre-issuance observation volatility
+ctx_mean_24h,float (W/m^2),"[0, 325]",B,24-hour pre-issuance sensor history,UNRESOLVED: transmission SLA unresolved,24-hour pre-issuance mean solar observation
+split,string,TRAIN/VAL/BLIND,A,Static experimental protocol metadata,Strictly partition definition only,Dataset fold governance label
+actual,float (W/m^2),"[0, 800]",C,Realized at target timestamp (future),TARGET ONLY - strictly forbidden as input,Ground-truth solar sensor observation
+residual,float (W/m^2),"[-600, 600]",C,Realized in future (prediction - actual),TARGET ONLY - strictly forbidden as input,Candidate F forecast error e_t
+forecast_error,float (W/m^2),"[-600, 600]",C,Realized in future,TARGET ONLY - strictly forbidden as input,Duplicate of residual
+absolute_error,float (W/m^2),"[0, 600]",C,Realized in future,TARGET ONLY - strictly forbidden as input,Absolute magnitude |e_t|
+squared_error,float ((W/m^2)^2),"[0, 360000]",C,Realized in future,TARGET ONLY - strictly forbidden as input,Squared error e_t^2

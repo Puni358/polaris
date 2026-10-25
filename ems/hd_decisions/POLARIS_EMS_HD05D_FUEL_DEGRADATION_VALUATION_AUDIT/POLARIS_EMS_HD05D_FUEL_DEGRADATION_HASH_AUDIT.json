@@ -1,0 +1,45 @@
+{
+  "audit_name": "POLARIS EMS HD-05D Hash Audit",
+  "timestamp": "2026-09-23T04:00:00Z",
+  "audited_files": [
+    {
+      "path": "system/config/diesel.yaml",
+      "purpose": "Diesel generator parameters including fuel cost per liter and marginal fuel consumption",
+      "key_lines": {
+        "status_label": "Line 2: PROTOTYPE_ASSUMPTION",
+        "base_fuel_consumption_l_per_h": "Line 5: 5.0",
+        "marginal_fuel_consumption_l_per_wh": "Line 6: 0.00025",
+        "fuel_cost_per_l": "Line 7: 2.50",
+        "startup_cost": "Line 8: 15.0"
+      }
+    },
+    {
+      "path": "system/config/battery.yaml",
+      "purpose": "Battery storage parameters including deg_penalty_per_wh",
+      "key_lines": {
+        "status_label": "Line 2: PROTOTYPE_ASSUMPTION",
+        "deg_penalty_per_wh": "Line 11: 0.00005"
+      }
+    },
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "purpose": "MILP solver implementation containing scalar objective coefficients",
+      "key_lines": {
+        "deg_penalty_retrieval": "Line 33: float(bat_cfg.get(\"deg_penalty_per_wh\", 0.00005))",
+        "fuel_cost_retrieval": "Line 44: float(diesel_cfg.get(\"fuel_cost_per_l\", 2.50))",
+        "charge_deg_term": "Line 109: c[base + 4] = deg_penalty * dt * w_t",
+        "discharge_deg_term": "Line 110: c[base + 5] = deg_penalty * dt * w_t",
+        "marginal_fuel_term": "Line 111: c[base + 7] = fuel_cost_per_l * marg_fuel_l_wh * dt * w_t",
+        "base_fuel_term": "Line 113: c[base + 13] = fuel_cost_per_l * base_fuel_l_h * dt * w_t"
+      }
+    },
+    {
+      "path": "system/config/optimizer.yaml",
+      "purpose": "Optimizer configuration and stage weights",
+      "key_lines": {
+        "fuel_cost_weight": "Line 5: fuel_cost: 1.0"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

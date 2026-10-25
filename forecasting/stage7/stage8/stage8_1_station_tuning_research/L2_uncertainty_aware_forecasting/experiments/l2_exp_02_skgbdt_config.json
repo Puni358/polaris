@@ -1,0 +1,110 @@
+{
+  "experiment_id": "L2-EXP-02-SKGBDT",
+  "title": "Native sklearn HistGradientBoosting Quantile Uncertainty Model",
+  "created_at": "2026-10-04T10:49:00+05:30",
+  "station_target": {
+    "station_id": "ANS_NMS",
+    "station_name": "Mount Nuolja AWS",
+    "elevation_m": 702.0
+  },
+  "authoritative_inputs": {
+    "historical_residual_dataset": {
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "exact_38_feature_matrix": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+      "sha256": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde"
+    },
+    "exact_frozen_f_predictions": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_FROZEN_F_PREDICTIONS_2020_2023.csv",
+      "sha256": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0"
+    },
+    "frozen_candidate_f_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    }
+  },
+  "temporal_splits": {
+    "train": {
+      "years": [2020, 2021],
+      "usage": "Parameter fitting exclusively (Daytime observations)"
+    },
+    "validation": {
+      "year": 2022,
+      "usage": "Validation metrics, quantile crossing checks, gate evaluation"
+    },
+    "blind_test": {
+      "range": "2023-01-01 to 2023-09-30",
+      "usage": "Single-use untouched evaluation"
+    },
+    "quarantined": {
+      "year": 2024,
+      "usage": "STRICTLY FORBIDDEN / QUARANTINED"
+    }
+  },
+  "target_specification": {
+    "type": "residual",
+    "definition": "residual = actual_solar - frozen_Candidate_F_point_forecast",
+    "quantiles": [0.10, 0.50, 0.90],
+    "reconstruction": {
+      "q10_solar": "F_point + q10_residual",
+      "q50_solar": "F_point + q50_residual",
+      "q90_solar": "F_point + q90_residual"
+    },
+    "f_invariance": "F point forecast MUST NOT be retrained, modified, or shifted (0.0 W/m2 error)"
+  },
+  "features": {
+    "count": 38,
+    "feature_sequence": [
+      "horizon_hour", "month", "hour", "solar_elevation", "solar_zenith",
+      "clearsky_ghi", "fc_cloud_cover", "fc_temperature_2m", "fc_relative_humidity_2m",
+      "cloud_frac", "pred_stage3b_cloud_nwp", "phys_pred_fold", "pred_stage4_fold",
+      "disagreement_fold", "ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h",
+      "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h", "ctx_max_diff_6h",
+      "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h", "ctx_last_obs",
+      "ctx_mean_24h", "ctx_max_24h", "lwp_latest", "iwp_latest", "lwp_x_cloud",
+      "terrain_horizon_elevation_deg", "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag", "clearsky_ghi_terrain_adjusted",
+      "u700", "v700", "elevation_x_cloud_frac"
+    ]
+  },
+  "model_specification": {
+    "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "implementation": "scikit-learn 1.9.0",
+    "pre_registered_hyperparameters": {
+      "loss": "quantile",
+      "learning_rate": 0.05,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 30,
+      "l2_regularization": 1.0,
+      "max_bins": 255,
+      "early_stopping": false,
+      "random_state": 42
+    }
+  },
+  "quantile_crossing_governance": {
+    "pre_rearrangement_check": true,
+    "rearrangement_rule": "Deterministic sort(q10, q50, q90)",
+    "learned_correction": false
+  },
+  "physical_bounding_governance": {
+    "lower_bound": 0.0,
+    "upper_bound_formula": "1.25 * clearsky_ghi",
+    "night_zeroing_elevation": 0.0,
+    "classification": "RESEARCH ASSUMPTION (Not production governance)"
+  },
+  "calibration_policy": {
+    "conformal_calibration": false,
+    "post_hoc_shifts": false,
+    "description": "Intrinsic quantile GBDT evaluated; zero post-hoc scalar calibration"
+  },
+  "primary_gates": {
+    "P1_blind_picp": [0.76, 0.84],
+    "P2_validation_picp": [0.76, 0.84],
+    "P3_subslice_floor": 0.60,
+    "P4_physical_constraints": true,
+    "P5_f_point_forecast_invariance": 0.0
+  }
+}

@@ -1,0 +1,4 @@
+POLARIS: at 68.4°N the sun disappears for weeks and the diesel generator takes over.
+POLARIS predicts the sun, plans 24 hours ahead, and burns diesel only as a last resort:
+38,405 L -> 26,890 L (-30%), 0 kWh of load lost, about 31 t of CO2 not emitted.
+Real weather from Nuolja station; wind and demand are simulated.

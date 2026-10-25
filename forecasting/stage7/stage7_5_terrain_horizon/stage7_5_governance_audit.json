@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-09-12T08:50:46.292873+00:00",
+  "stage": "STAGE 7.5 TERRAIN / HORIZON FORECASTING EXPERIMENT",
+  "status": "STAGE_7_5_CANDIDATE_ACCEPTED",
+  "baseline_reproduced": true,
+  "five_fold_forward_chaining_used": true,
+  "odd_access": {
+    "odd_target_accessed": false,
+    "odd_feature_accessed": true,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false
+  },
+  "hyperparameter_tuning_performed": false,
+  "result_shopping_performed": false,
+  "gate_modification_performed": false,
+  "leakage_detected": false,
+  "champion_status": "Stage 6.6 LWP/IWP Model (Frozen Operational Champion)"
+}

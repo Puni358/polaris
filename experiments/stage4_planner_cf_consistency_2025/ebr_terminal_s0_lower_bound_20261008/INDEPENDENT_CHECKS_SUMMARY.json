@@ -1,0 +1,14 @@
+{
+  "total_origins": 123,
+  "all_busbar_residuals_le_1e-3": true,
+  "max_busbar_residual_w": 1.0786607163026929e-08,
+  "all_battery_residuals_le_1e-3": true,
+  "max_battery_residual_wh": 1.6680132830515504e-09,
+  "all_ebr_residuals_le_1e-3": true,
+  "max_ebr_residual_wh": 1.949956640601158e-09,
+  "all_terminal_residuals_le_1e-3": true,
+  "max_terminal_residual_wh": 2.9103830456733704e-11,
+  "all_recompute_diffs_le_1e-6": true,
+  "all_feasible": true,
+  "all_zero_unmet": true
+}

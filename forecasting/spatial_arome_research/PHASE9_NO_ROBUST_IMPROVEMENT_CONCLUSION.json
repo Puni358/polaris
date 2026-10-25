@@ -1,0 +1,146 @@
+{
+  "phase": "PHASE9_NO_ROBUST_IMPROVEMENT_CONCLUSION",
+  "status": "CLOSED",
+  "odd_firewall_intact": true,
+  "stage_6_8_reopened": false,
+  "new_external_data_introduced": false,
+  "hyperparameter_sweeps_performed": false,
+  "variant_search_after_failure": false,
+
+  "metric_bookkeeping": {
+    "note": "These two entries must never be conflated. The reconstructed control is NOT the official champion.",
+    "official_stage8_1_champion": {
+      "split": "ODD",
+      "source": "original protected production pipeline",
+      "mae_w_m2": 36.188657,
+      "rmse_w_m2": 64.219495,
+      "bias_w_m2": 1.439399,
+      "nmae_pct": 28.0688
+    },
+    "reconstructed_control_this_session": {
+      "split": "ODD (sanity check) / EVEN-only folds (experiment)",
+      "source": "sklearn HistGradientBoostingRegressor refit on the same 37 features, this session, used only as Candidate A's baseline arm",
+      "mae_w_m2": 35.41,
+      "rmse_w_m2": 62.99,
+      "bias_w_m2": 0.62,
+      "nmae_pct": 27.49,
+      "disclaimer": "Approximate reproduction only (~2% gap from official champion). Original Stage 8.1 training hyperparameters/code were unavailable in this session. Never to be reported or promoted as the official champion."
+    }
+  },
+
+  "candidate_1_calendar_bias_correction": {
+    "target": "H9-H12 Apr-May systematic negative bias (-41 to -43 W/m^2)",
+    "causal": true,
+    "empirically_tested": true,
+    "tests": [
+      {"method": "in_sample_oracle_coarse_bins", "delta_mae_w_m2": 0.35, "verdict": "worse"},
+      {"method": "in_sample_oracle_narrow_apr_may_h9_12", "delta_mae_w_m2": -0.27, "verdict": "below G1 threshold even best-case in-sample"},
+      {"method": "in_sample_oracle_finest_grain_month_x_horizon", "delta_mae_w_m2": -1.54, "verdict": "overfitting artifact, ~10 obs/bin, not generalizable"},
+      {"method": "forward_chaining_OOF_ridge", "delta_mae_w_m2": 7.67, "folds_improving": "0/4", "verdict": "fails"},
+      {"method": "interleaved_5fold_OOF_ridge", "delta_mae_w_m2": 1.28, "folds_improving": "0/5", "worst_fold_degradation_w_m2": 1.82, "verdict": "fails - fairest test, unambiguous negative result"}
+    ],
+    "status": "EMPIRICALLY_REJECTED",
+    "rescue_attempted": false
+  },
+
+  "candidate_2_cross_model_disagreement": {
+    "target": "t0-available uncertainty/regime flag (magnitude, not direction)",
+    "causal": true,
+    "empirically_tested": true,
+    "result_abs_correlation_with_abs_error": 0.41,
+    "result_signed_correlation_pearson": -0.12,
+    "result_signed_correlation_spearman": -0.07,
+    "status": "REAL_BUT_PARTIAL",
+    "reason_not_promoted": "magnitude-only signal cannot by itself produce a bias correction; not directly testable as a standalone MAE-reduction mechanism against G1-G4"
+  },
+
+  "candidate_3_a_nwp_volatility": {
+    "target": "H9-H12 error via its strongest post-hoc correlate: within-day irradiance volatility (r=0.73, Phase 3, diagnostic only)",
+    "previously_blocked_reason": "raw Stage 8.1 feature matrix not present in original five handoff files",
+    "unblocked_this_session": true,
+    "audit_findings": {
+      "origins": 347,
+      "horizons_per_origin": 24,
+      "even_rows": 4152,
+      "even_origins": 173,
+      "odd_rows": 4176,
+      "odd_origins": 174,
+      "split_matches_origin_id_parity": true,
+      "forecast_structure": "single 00Z-issued 24h forecast per origin, non-overlapping, timestamp = forecast_start + (horizon_hour - 1) hours, verified exactly for all rows",
+      "cloud_frac_equals_fc_cloud_cover_over_100": true,
+      "cloud_frac_lwp_iwp_vary_by_horizon_within_origin": true,
+      "causal_availability_conclusion": "Entire day's forecast trajectory is produced by one t0 run; any same-day aggregate statistic is causally available at t0 for every horizon in that day. No actual/observed future SW_IN or post-t0 information used.",
+      "gate_g5_causal_availability": "PASS"
+    },
+    "candidate_signal": {
+      "name": "nwp_cloud_daytime_std",
+      "definition": "standard deviation of forecast cloud_frac trajectory over the daytime hours of the origin's day",
+      "diagnostic_correlation_with_actual_daytime_volatility": 0.28,
+      "comparison_to_phase3_actual_volatility_correlation": 0.73,
+      "interpretation": "real but weak/smoothed proxy for the true difficult regime"
+    },
+    "control_reproduction_g6": {
+      "achieved": "approximate (~2% gap)",
+      "reconstructed_control_mae_w_m2": 35.41,
+      "official_champion_mae_w_m2": 36.188657,
+      "reason_gap": "original Stage 8.1 training hyperparameters/code unavailable in this session",
+      "gate_g6": "FAIL_STRICT / PARTIAL",
+      "validity_of_relative_comparison": "Candidate A and control were trained identically (same features pipeline, same model class, same folds), so the relative EVEN-only OOF delta is a valid apples-to-apples diagnostic despite the absolute reproduction gap."
+    },
+    "experiment": {
+      "design": "5-fold GroupKFold by origin_id, EVEN-only, control = 37 official features, candidate = 37 features + nwp_cloud_daytime_std, identical HistGradientBoostingRegressor",
+      "fold_results": [
+        {"fold": 1, "val_origins": 35, "mae_control": 41.995, "mae_candidate": 41.936, "delta_mae": -0.059, "delta_mae_h9_12": 0.502},
+        {"fold": 2, "val_origins": 35, "mae_control": 32.862, "mae_candidate": 32.287, "delta_mae": -0.576, "delta_mae_h9_12": -0.988},
+        {"fold": 3, "val_origins": 35, "mae_control": 36.924, "mae_candidate": 37.312, "delta_mae": 0.389, "delta_mae_h9_12": 0.827},
+        {"fold": 4, "val_origins": 34, "mae_control": 42.693, "mae_candidate": 41.367, "delta_mae": -1.325, "delta_mae_h9_12": -0.653},
+        {"fold": 5, "val_origins": 34, "mae_control": 34.345, "mae_candidate": 34.449, "delta_mae": 0.104, "delta_mae_h9_12": -1.410}
+      ],
+      "aggregate": {
+        "delta_mae_w_m2": -0.29,
+        "delta_mae_h9_12_w_m2": -0.34,
+        "rmse_control": 66.00,
+        "rmse_candidate": 65.32,
+        "nmae_control_pct": 29.37,
+        "nmae_candidate_pct": 29.17,
+        "folds_improved": "3/5",
+        "folds_improved_h9_12": "3/5",
+        "max_fold_degradation_w_m2": 0.39
+      }
+    },
+    "gates": {
+      "G1": {"requirement": "aggregated delta_mae <= -0.50 W/m^2", "result": -0.29, "verdict": "FAIL"},
+      "G2": {"requirement": ">=4/5 folds improved", "result": "3/5", "verdict": "FAIL"},
+      "G3": {"requirement": "max fold degradation <= +0.50 W/m^2", "result": 0.39, "verdict": "PASS"},
+      "G4": {"requirement": "candidate nMAE <= control AND candidate RMSE <= control", "result": "true in aggregate", "verdict": "PASS"},
+      "G5": {"requirement": "causal availability / parser compliance", "result": "confirmed by audit", "verdict": "PASS"},
+      "G6": {"requirement": "exact control reproduction", "result": "~2% gap, original hyperparameters/code unavailable", "verdict": "FAIL_PARTIAL"}
+    },
+    "status": "REJECTED_UNDER_LOCKED_GATES",
+    "not_promoted_reason": "small favorable mean effect but insufficient magnitude (fails G1) and insufficient fold consistency (fails G2)",
+    "not_actively_harmful": true,
+    "rescue_attempted": false,
+    "scope_note": "Not evidence that NWP volatility is useless in general; evidence that this specific preregistered minimal implementation does not clear the POLARIS promotion bar."
+  },
+
+  "final_scientific_conclusion": {
+    "code": "PHASE9_NO_ROBUST_IMPROVEMENT_FOUND",
+    "statement": "No robust improvement over the protected Stage 8.1 champion was demonstrated within the tested, causally valid candidate space.",
+    "explicit_non_claims": [
+      "Does NOT claim 28.0688% nMAE is a theoretical or fundamental lower bound.",
+      "Does NOT claim no future method could improve it.",
+      "Does NOT claim all regime-aware methods are impossible."
+    ]
+  },
+
+  "limitations_for_future_sessions": [
+    "G6 was not strictly achieved: original Stage 8.1 training hyperparameters/code unavailable in this session; reconstructed control approximates but does not exactly match the official champion (~2% gap). Future sessions must treat the official numbers as ground truth and the reconstructed control as a same-session diagnostic baseline only.",
+    "Candidate A's forecast-volatility signal correlated only r~0.28 with actual volatility vs r~0.73 for the post-hoc actual signal, suggesting a higher-resolution NWP volatility representation (if one exists upstream, e.g. ensemble spread) might carry more signal. This is an open question, not a recommendation to act on, and was not tested."
+  ],
+
+  "next_action": "NONE - Phase 9 candidate search is closed unless explicitly reopened by the user.",
+  "candidate_1_status": "EMPIRICALLY_REJECTED",
+  "candidate_2_status": "REAL_BUT_PARTIAL_NOT_STANDALONE",
+  "candidate_3_a_status": "REJECTED_UNDER_LOCKED_GATES",
+  "phase_9_final_status": "PHASE9_NO_ROBUST_IMPROVEMENT_FOUND"
+}

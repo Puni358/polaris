@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "addendum_type": "TEST_REGIME_SENSITIVITY_ADDENDUM",
+    "timestamp": "2026-09-21T08:22:21Z",
+    "auditor": "Antigravity Read-Only Forensic Auditor"
+  },
+  "aggregate_verification": {
+    "reported_test_mae": 4.3687,
+    "recalculated_test_mae": 4.3687,
+    "recalculated_test_rmse": 8.4466,
+    "recalculated_test_bias": 4.1804,
+    "verification_status": "EXACT_RECOVERY_MATCH"
+  },
+  "monthly_breakdown": {
+    "november_2024": {
+      "origins_count": 720,
+      "target_points": 17280,
+      "target_mean_w_m2": 2.5749,
+      "target_max_w_m2": 72.7967,
+      "zero_target_pct": 63.5,
+      "mae_w_m2": 5.4876,
+      "rmse_w_m2": 10.7753,
+      "bias_w_m2": 5.1579
+    },
+    "december_2024": {
+      "origins_count": 744,
+      "target_points": 17856,
+      "target_mean_w_m2": 0.3282,
+      "target_max_w_m2": 8.3622,
+      "zero_target_pct": 71.88,
+      "mae_w_m2": 3.2859,
+      "rmse_w_m2": 5.2942,
+      "bias_w_m2": 3.2344
+    }
+  },
+  "irradiance_partition_breakdown": {
+    "sw_in_equals_0": {
+      "count": 23807,
+      "fraction_pct": 67.76,
+      "mae_w_m2": 1.9729,
+      "rmse_w_m2": 3.0313,
+      "bias_w_m2": 1.9293
+    },
+    "sw_in_greater_0": {
+      "count": 11329,
+      "fraction_pct": 32.24,
+      "mae_w_m2": 9.4033,
+      "rmse_w_m2": 14.2114,
+      "bias_w_m2": 8.9109
+    }
+  },
+  "irradiance_threshold_breakdown": {
+    "sw_in_le_5_w_m2": {
+      "count": 32451,
+      "fraction_pct": 92.36,
+      "mae_w_m2": 3.3728,
+      "rmse_w_m2": 5.8617,
+      "bias_w_m2": 3.3345
+    },
+    "sw_in_gt_5_w_m2": {
+      "count": 2685,
+      "fraction_pct": 7.64,
+      "mae_w_m2": 16.4046,
+      "rmse_w_m2": 22.7674,
+      "bias_w_m2": 14.4033
+    }
+  },
+  "governance_classifications": {
+    "TEST_REGIME_CHARACTERIZATION": "SUFFICIENT",
+    "POLAR_NIGHT_EFFECT_ON_TEST_ERROR": "QUANTIFIED",
+    "MODEL_FITTING_PERFORMED": "NO",
+    "SOURCE_FILES_MODIFIED": "NO",
+    "PREVIOUS_TEST_RESULT_UNCHANGED": "YES"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "gate_id": "GATE-03",
+  "subject": "EMERGENCY_RETURN_POLICY",
+  "decision_timestamp": "2026-09-27T01:15:00Z",
+  "gate03_human_decision": "AUTOMATIC_RETURN_WITH_OPERATOR_NOTIFICATION_AND_OVERRIDE",
+  "automatic_return_to_normal": "AUTHORIZED",
+  "pre_return_operator_confirmation": "NOT_REQUIRED",
+  "operator_notification": "MANDATORY_UPON_RETURN",
+  "operator_override_authority": "MANDATORY_POLICY",
+  "gate01_governed_hybrid": "PROTECTED_UNTOUCHED",
+  "gate02_option_c": "PROTECTED_UNTOUCHED",
+  "emergency_separation": "UNKNOWN_INVALID_AND_MILP_INFEASIBLE_SEPARATE",
+  "gate03_policy_status": "RESOLVED",
+  "gate03_implementation_status": "NOT_IMPLEMENTED",
+  "source_modifications": 0,
+  "gate03_status": "RESOLVED_FOR_GOVERNANCE_BUT_IMPLEMENTATION_BLOCKED"
+}

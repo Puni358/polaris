@@ -1,0 +1,5 @@
+ITEM,STATEMENT_OR_REQUIREMENT,CLASSIFICATION,PROVENANCE_SOURCE,SOURCE_SHA256
+GAP19 Decision Status,GAP19 solver realization is IMPLEMENTATION_DEFERRED,UNRESOLVED_GOVERNANCE_QUESTION,POLARIS_EMS_IMPLEMENTATION_SPECIFICATION_REVIEW_V2.md,N/A
+SciPy MILP Interface,scipy.optimize.milp 1.18.1 signature takes single cost vector c,CURRENT_PYTHON_API_CAPABILITY,scipy.optimize.milp module,N/A
+Current MILP Implementation,LocalMILPEnergyOptimizer (milp.py) uses single scalar weighted cost sum,CURRENT_IMPLEMENTATION_FACT,system/optimization/implementations/milp.py,ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35
+ForecastBundle Schema,"Version 1.0.0 point forecasts for solar, wind, demand",IMMUTABLE_SCHEMA,system/schemas/forecast_bundle.py,N/A

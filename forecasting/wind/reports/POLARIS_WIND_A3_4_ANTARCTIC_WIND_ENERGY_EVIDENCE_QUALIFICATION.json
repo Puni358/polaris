@@ -1,0 +1,241 @@
+{
+  "document_id": "POLARIS_WIND_A3_4_ANTARCTIC_WIND_ENERGY_EVIDENCE_QUALIFICATION",
+  "date_utc": "2026-09-18",
+  "track": "PATH_A_WIND_FORECASTING",
+  "phase": "PHASE_A3_4_ANTARCTIC_WIND_ENERGY_EVIDENCE_QUALIFICATION",
+  "task_type": "BOUNDED_READ_ONLY_SCIENTIFIC_EVIDENCE_QUALIFICATION",
+  "authorization_status": "AUTHORIZED_A3_4_QUALIFICATION_ONLY",
+  "overall_evidence_classification": "DECISION_B_REFERENCE_EVIDENCE_ESTABLISHED_BUT_MAPPING_NOT_ESTABLISHED",
+  "governance_decisions": {
+    "ROSS_ISLAND_ASSET_STATUS": "ESTABLISHED",
+    "ROSS_ISLAND_WIND_DATA_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "ROSS_ISLAND_GENERATION_DATA_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "ROSS_ISLAND_POWER_CURVE_STATUS": "ESTABLISHED",
+    "ROSS_ISLAND_WIND_POWER_RELATIONSHIP_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "ROSS_ISLAND_EMPIRICAL_MAPPING_STATUS": "INSUFFICIENT",
+    "ROSS_ISLAND_TO_NUOLJA_TRANSFER_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_GENERATION_MAPPING_STATUS": "NOT_ESTABLISHED",
+    "NEXT_GOVERNED_STEP": "NOT_ESTABLISHED"
+  },
+  "asset_qualification_notes": {
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "statement": "No Nuolja turbine hardware, turbine specifications, or generation telemetry were established in the bounded evidence reviewed.",
+    "governance_principle": "NOT_ESTABLISHED ≠ PROVEN_ABSENT"
+  },
+  "sources_reviewed": [
+    {
+      "source_name": "Antarctica New Zealand Scott Base Redevelopment & Ross Island Wind Farm Operations Reports",
+      "tier": 1,
+      "provenance": "Official Antarctic Program / Station Operator Documentation"
+    },
+    {
+      "source_name": "USAP / NSF McMurdo-Scott Base Microgrid Documentation",
+      "tier": 1,
+      "provenance": "Official Antarctic Program / Station Operator Documentation"
+    },
+    {
+      "source_name": "Meridian Energy Ltd Ross Island Wind Farm Engineering & Commissioning Specifications",
+      "tier": 2,
+      "provenance": "Turbine Owner / Operator Documentation"
+    },
+    {
+      "source_name": "Enercon GmbH E-33 Technical Specification & Polar Cold-Climate Datasheet",
+      "tier": 3,
+      "provenance": "Manufacturer Documentation"
+    },
+    {
+      "source_name": "NREL Polar & Remote Microgrid Technical Reports (NREL/TP-7A40)",
+      "tier": 4,
+      "provenance": "Official Technical Reports"
+    },
+    {
+      "source_name": "Peer-reviewed literature (Renewable Energy, IEEE Trans. Sust. Energy, Cold Reg. Sci. Tech.)",
+      "tier": 5,
+      "provenance": "Peer-Reviewed Scientific Literature"
+    },
+    {
+      "source_name": "Australian Antarctic Division (Mawson Station) & International Polar Foundation (Princess Elisabeth)",
+      "tier": 6,
+      "provenance": "Authoritative Research-Project Documentation"
+    }
+  ],
+  "local_evidence_audited": [
+    "POLARIS_WIND_ASSET_AND_POWER_CURVE_ACQUISITION_QUALIFICATION.md",
+    "POLARIS_WIND_GENERATION_MAPPING_FINAL_QUALIFICATION.md",
+    "POLARIS_REAL_ENERGY_DATA_RECONNAISSANCE.md",
+    "POLARIS_WIND_A3_RESEARCH_DISPOSITION.md",
+    "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+    "data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv"
+  ],
+  "ross_island_asset_identity": {
+    "site_location": "Crater Hill, Ross Island, Antarctica (Scott Base - McMurdo Station Microgrid)",
+    "manufacturer": "Enercon GmbH (Germany)",
+    "model": "Enercon E-33 (Direct-Drive, Gearless, Cold-Climate Polar Modified)",
+    "turbine_count": 3,
+    "rated_power_per_turbine_kw": 330,
+    "total_installed_capacity_kw": 990,
+    "rotor_diameter_m": 33.4,
+    "hub_height_m": 37.0,
+    "cut_in_speed_ms": 3.0,
+    "rated_speed_ms": 13.0,
+    "cut_out_speed_ms": 28.0,
+    "commissioning_date": "2009-12",
+    "operational_period": "2010-present",
+    "electrical_integration": "11 kV inter-station microgrid link connecting Scott Base & McMurdo Station",
+    "operating_status": "ACTIVE_OPERATIONAL",
+    "individual_classifications": {
+      "exact_site": "ESTABLISHED",
+      "manufacturer": "ESTABLISHED",
+      "model": "ESTABLISHED",
+      "number_of_turbines": "ESTABLISHED",
+      "rated_power_per_turbine": "ESTABLISHED",
+      "total_installed_capacity": "ESTABLISHED",
+      "rotor_diameter": "ESTABLISHED",
+      "hub_height": "ESTABLISHED",
+      "cut_in_speed": "ESTABLISHED",
+      "rated_speed": "ESTABLISHED",
+      "cut_out_speed": "ESTABLISHED",
+      "commissioning_period": "ESTABLISHED",
+      "electrical_integration": "ESTABLISHED",
+      "operating_status": "ESTABLISHED"
+    }
+  },
+  "wind_measurement_qualification": {
+    "measurement_location": "Crater Hill Anemometry Mast & Nacelle Sensors (270m a.s.l., Ross Island)",
+    "measurement_heights": ["10m meteorological mast", "37m hub height anemometry"],
+    "long_term_mean_wind_speed_ms": "7.4 - 8.5 m/s",
+    "temporal_tier_qualification": {
+      "timestamped_sub_hourly_wind_series": "NOT_ESTABLISHED",
+      "hourly_daily_observations": "NOT_ESTABLISHED",
+      "monthly_annual_statistics": "ESTABLISHED",
+      "long_term_mean_wind_speed": "ESTABLISHED",
+      "modeled_reanalysis_wind_fields": "CONDITIONALLY_ESTABLISHED"
+    }
+  },
+  "generation_telemetry_qualification": {
+    "DOCUMENTED_EXISTENCE": "ESTABLISHED",
+    "PUBLICLY_ACCESSIBLE_DATA": "NOT_ESTABLISHED",
+    "TIMESTAMPED_EMPIRICAL_WIND_POWER_PAIRS": "NOT_ESTABLISHED",
+    "telemetry_access_status": "RESTRICTED",
+    "notes": "High-level annual output (~3.2 GWh) documented in reports, but raw continuous SCADA time-series pairs are proprietary to Meridian Energy / Antarctica NZ."
+  },
+  "power_curve_qualification": {
+    "manufacturer_power_curve_available": true,
+    "turbine_model": "Enercon E-33",
+    "power_curve_source": "Enercon GmbH Manufacturer Technical Datasheet & NREL Polar Reports",
+    "wind_speed_domain_ms": "0.0 - 28.0 m/s",
+    "power_units": "kW",
+    "rated_output_kw": 330.0,
+    "operating_regions": {
+      "region_1_sub_cut_in": "0.0 to 3.0 m/s (P = 0 kW)",
+      "region_2_partial_load": "3.0 to 13.0 m/s (Cubic aerodynamic rise)",
+      "region_3_rated_load": "13.0 to 28.0 m/s (P = 330 kW flat)",
+      "region_4_cut_out": "> 28.0 m/s (P = 0 kW or storm de-rating)"
+    },
+    "POWER_CURVE_STATUS": "ESTABLISHED"
+  },
+  "empirical_wind_power_relationship_classification": {
+    "A_manufacturer_power_curve": "ESTABLISHED",
+    "B_site_specific_engineering_power_relationship": "CONDITIONALLY_ESTABLISHED",
+    "C_measured_wind_speed_power_pairs": "NOT_ESTABLISHED",
+    "D_measured_wind_speed_generation_time_series": "NOT_ESTABLISHED",
+    "E_empirical_fitted_relationship": "NOT_ESTABLISHED",
+    "F_validated_site_specific_model": "NOT_ESTABLISHED",
+    "G_only_generic_physical_scaling": "ESTABLISHED"
+  },
+  "antarctic_reference_studies": [
+    {
+      "study_name": "Ross Island / Crater Hill (Scott Base - McMurdo)",
+      "turbines": "3 x Enercon E-33 (990 kW)",
+      "relationship_classification": "SITE_SPECIFIC_MODEL / TRANSFERABLE_METHODOLOGY",
+      "scada_data_status": "RESTRICTED"
+    },
+    {
+      "study_name": "Mawson Station (Australian Antarctic Division)",
+      "turbines": "2 x Enercon E-30 (600 kW)",
+      "relationship_classification": "SITE_SPECIFIC_MODEL / TRANSFERABLE_METHODOLOGY",
+      "scada_data_status": "MONTHLY_PUBLIC / HOURLY_RESTRICTED"
+    },
+    {
+      "study_name": "Princess Elisabeth Station (International Polar Foundation)",
+      "turbines": "9 x 6 kW Micro Wind Turbines (54 kW)",
+      "relationship_classification": "SITE_SPECIFIC_MODEL / TRANSFERABLE_METHODOLOGY",
+      "scada_data_status": "RESTRICTED"
+    },
+    {
+      "study_name": "AWACA / Adélie Land Katabatic Wind Shear Profile Studies",
+      "turbines": "Boundary layer meteorological observations",
+      "relationship_classification": "OBSERVED_EMPIRICAL_RELATIONSHIP",
+      "scada_data_status": "OPEN_LITERATURE"
+    }
+  ],
+  "ross_island_to_nuolja_transfer_firewall": {
+    "ross_island_is_nuolja": false,
+    "differences": {
+      "geographic_location": "77.85 S (Ross Island, Antarctica) vs 68.35 N (Mount Nuolja, Sweden)",
+      "terrain_exposure": "Volcanic island ridge (270m a.s.l.) vs Alpine mountain peak (702m a.s.l.)",
+      "elevation": "270m a.s.l. vs 702m a.s.l.",
+      "atmospheric_regime": "Antarctic coastal maritime / ice shelf vs Sub-Arctic Scandinavian mountain",
+      "measurement_height": "37m hub height nacelle/mast vs 10m Abisko proxy / 0m Nuolja sensors",
+      "turbine_technology": "3 x Enercon E-33 (990 kW) vs NUOLJA_WIND_ASSET_STATUS = NOT_ESTABLISHED",
+      "hub_height_m": "37m vs Undefined",
+      "rated_capacity_kw": "990 kW vs NUOLJA_WIND_ASSET_STATUS = NOT_ESTABLISHED",
+      "electrical_system": "11 kV inter-station microgrid vs NOT_ESTABLISHED",
+      "direct_nuolja_wind_measurements": "NOT_ESTABLISHED",
+      "nuolja_turbine_specifications": "NOT_ESTABLISHED",
+      "nuolja_generation_telemetry": "NOT_ESTABLISHED"
+    },
+    "strongest_transfer_claim_supported": "TRANSFER_CLAIM_LEVEL_A_METHODOLOGICAL_REFERENCE_ONLY",
+    "ROSS_ISLAND_TO_NUOLJA_TRANSFER": "NOT_ESTABLISHED"
+  },
+  "data_access_vs_scientific_status": {
+    "ross_island_asset_identity": {
+      "scientific_status": "ESTABLISHED",
+      "access_status": "OPEN"
+    },
+    "enercon_e33_manufacturer_power_curve": {
+      "scientific_status": "ESTABLISHED",
+      "access_status": "OPEN"
+    },
+    "ross_island_scada_paired_time_series": {
+      "scientific_status": "CONDITIONALLY_ESTABLISHED",
+      "access_status": "RESTRICTED"
+    },
+    "nuolja_turbine_and_telemetry": {
+      "scientific_status": "NOT_ESTABLISHED",
+      "access_status": "NOT_ESTABLISHED",
+      "note": "No Nuolja turbine hardware, turbine specifications, or generation telemetry were established in the bounded evidence reviewed (NOT_ESTABLISHED ≠ PROVEN_ABSENT)"
+    }
+  },
+  "polaris_dependency_chain": {
+    "step_1_a3_wind_speed_evidence": "A3 wind-speed forecasting evidence established for the Abisko 10 m conditional regional proxy (MAE 2.0364 m/s, A2 AR-X retained)",
+    "step_2_site_transfer": "CONDITIONALLY_ESTABLISHED (Regional proxy supported; altitude offset unscaled; direct Nuolja accuracy NOT ESTABLISHED)",
+    "step_3_wind_asset_representation": "ESTABLISHED for Ross Island reference; NUOLJA_WIND_ASSET_STATUS = NOT_ESTABLISHED",
+    "step_4_site_specific_wind_speed_to_power_mapping": "INSUFFICIENT for Ross Island empirical SCADA; NOT ESTABLISHED for Nuolja",
+    "step_5_wind_generation_forecasting": "NOT_ESTABLISHED",
+    "step_6_forecastbundle_ems_integration": "NOT_AUTHORIZED",
+    "a3_4_impact": "CONFIRMS_BLOCKING_BOTTLENECK_AT_STEP_3_4_FOR_NUOLJA"
+  },
+  "hard_stop_conditions_verified": {
+    "turbine_specification_guessed": false,
+    "generic_power_law_substituted_as_site_curve": false,
+    "ross_island_assumed_equivalent_to_nuolja": false,
+    "missing_telemetry_fabricated": false,
+    "model_training_executed": false,
+    "forecasting_experiments_executed": false,
+    "code_modified": false
+  },
+  "governance_firewall_verification": {
+    "WIND_SPEED_MODELING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_MODELING": "NOT_AUTHORIZED",
+    "WIND_POWER_MAPPING_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "ALTITUDE_CORRECTION": "NOT_AUTHORIZED",
+    "SITE_TRANSFER_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "MPC_INTEGRATION": "NOT_AUTHORIZED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED",
+    "FROZEN_TRACKS_INTACT": true
+  }
+}

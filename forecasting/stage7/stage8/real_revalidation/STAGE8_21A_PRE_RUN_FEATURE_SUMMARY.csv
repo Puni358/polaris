@@ -1,0 +1,5 @@
+feature_name,units,count,missing,finite,min,p25,median,mean,p75,p95,max
+slant_path_optical_depth_proxy,dimensionless,2082,0,2082,66.9663,141.658,255.715,367.2792,543.5839,1214.2746,1625.343
+slant_path_direct_transmittance,dimensionless,2082,0,2082,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+slant_path_liquid_water_path,kg/m2,2082,0,2082,0.407,0.8609,1.5541,2.2322,3.3037,7.3798,9.8781
+slant_path_ice_water_path,kg/m2,2082,0,2082,0.1085,0.2296,0.4144,0.5952,0.881,1.9679,2.6342

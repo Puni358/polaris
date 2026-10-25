@@ -1,0 +1,32 @@
+{
+  "manifest_version": "1.0",
+  "created_timestamp_iso": "2026-10-08 05:14:06 UTC",
+  "total_runtime_s": 18.67357325553894,
+  "classification": "CERTIFIED BUT NO MATERIAL TIGHTENING",
+  "target_40_pct_status": "40% STILL NOT RULED OUT",
+  "hashes": {
+    "population_hash": "7c81256f12630a2ef2e30ccfa5a7edf697f7a1717ca8c90df60440c61def9c35",
+    "input_hash": "dcabbfa272adeb6e9592e07d3d02decb689ec52b2e0097e43c4e0e9962cf19f1",
+    "solver_settings_hash": "c510da31596cb1ecece7a56c1aba34bebe32fd50155355b302fc56a490e5bb7b",
+    "pc_sw_telemetry_csv_hash": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+    "causal_nwp_physics_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "base_configuration_hash": "e4ef245e7f99c6056be067939c1f325a727c0feaa3894cb657944121d207b829",
+    "formulation_g_configuration_hash": "adaf0e1f635718e32efbc8f868be2460f8ad04c86d16a4c103ecd90175c1fdca",
+    "formulation_h_configuration_hash": "c310c81291817a222aefb8123446b5afa74e96c1b6b103120d8fa997fca545b7",
+    "formulation_i_configuration_hash": "e5c09a3cef4fb5b51a80f4f4fa171c91f026e3c37f6e46cdb681cf2c15f38714",
+    "research_module_i_sha256": "457abcce1ab5f6fc6327c38d77787002fe43ae8566170c1d05a67689e241333d"
+  },
+  "artifact_file_hashes": {
+    "EXPERIMENT_DEFINITION.json": "2bc5e9bf93d8ddd033a0b73ba62bdddbae3e41ade6d6349b8b7eeb35a224c70f",
+    "FORMULATION_CONFIG.json": "304fd5ee553619dccd4368eeb36cb9f720e7decc8aa2f5beafe3ab3982c37f7c",
+    "POPULATION_INPUT_MANIFEST.json": "e6d687ded4c0775a286379bf4cc86cf29ae45954c6c181f5ec39caad33f05412",
+    "EBR_TELEMETRY_MANIFEST.json": "50b69abc3a7a6ab6633b2bca1656f3ae29f4fd28c355d6075719c4e86bbe7ffa",
+    "SOLVER_SETTINGS.json": "f1ef782feaf7728a1f8618fa34e65bfb5f73bc35daa4fc4d7d396c23b20d03b7",
+    "PER_ORIGIN_RESULTS.json": "63ad85d29d4e09c7ebf09ec38570967821bdd23c394a49583ab1d4f4996a4a48",
+    "PER_ORIGIN_RESULTS.csv": "12f89bb53f7fd55134d35f525cc0eaa1109ada1efc98894ee3cf424d0eb7e32f",
+    "AGGREGATE_RESULTS.json": "779ca685facdd9f23771862612074f5242493486ec304b90b51410f3a3d57480",
+    "INDEPENDENT_CHECKS_SUMMARY.json": "1e6b17631f55675217e413a276bd6238a75da2d4c990ec6b4cdc083940ea4457",
+    "FINAL_REPORT.md": "4d74ff8a50a1ffbd3b10e73db5a6f4d7a3f37bc456abda4224166faff9622ea0",
+    "global_lower_bound_ebr_full_realized_i_research.py": "457abcce1ab5f6fc6327c38d77787002fe43ae8566170c1d05a67689e241333d"
+  }
+}

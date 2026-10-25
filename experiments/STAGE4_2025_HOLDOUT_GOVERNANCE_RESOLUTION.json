@@ -1,0 +1,86 @@
+{
+  "record_id": "STAGE4-2025-HOLDOUT-GOVERNANCE-RESOLUTION",
+  "status": "CLEAR",
+  "scope": "input provenance and completeness only; no S-L or SW-L run; no 2025 candidate outcome inspected",
+  "preregistration_created": false,
+  "blocker_resolution": {
+    "1_nwp_chain": "SAME_CAUSAL_FORECAST_CHAIN",
+    "2_origin_rule": "resolved",
+    "3_solar_elevation": "resolved_exact_implementation_documented_with_offset",
+    "4_holdout_completeness": "PASS"
+  },
+  "nwp_chain": {
+    "generator_2024_locked": {"path": "clear_sky/audit_clean_nwp_windows.py", "sha256": "c8f1a2204af1703296e32658e5d8890e2bd7f876d554a2b1a5ee46f1bc50ad21"},
+    "generator_2025_replica": {"path": "clear_sky/audit_clean_nwp_windows_2025.py", "sha256": "5d38d1c4976bffd53a114b652e610d299a713a0bd62e14031a9b661150ce724c"},
+    "nwp_2024_used_by_campaign": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv", "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16", "mtime_utc": "2026-09-09T21:17:45Z", "predates_campaign": true},
+    "nwp_2025_holdout": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2025.csv", "sha256": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5"},
+    "nwp_2025_manifest": {"path": "data/POLARIS_v0_1_future_weather_forecasts_2025_MANIFEST.json", "sha256": "534ed055d632950c474e4a38ff11b4b31f16955e6dff5968b7acabd31edf14cf"},
+    "source_api": "https://previous-runs-api.open-meteo.com/v1/forecast",
+    "model": "metno_seamless",
+    "variables": ["cloud_cover_previous_day1","temperature_2m_previous_day1","relative_humidity_2m_previous_day1","precipitation_previous_day1","surface_pressure_previous_day1","wind_speed_10m_previous_day1"],
+    "imputation": "none",
+    "pass_rule": "all 24 horizons non-null for all six genuine variables",
+    "horizon_convention": "horizon 1 at forecast_start hour (verified)",
+    "schema_identical": true,
+    "transformation_difference": "none in values; retry/checkpoint/atomic-write wrappers only",
+    "origin_source_difference": "2024 locked benchmark CSV vs 2025 SITES-timeline-derived origins; same 00:00 UTC convention",
+    "label_inconsistency": {"freeze_label": "NWP (clean, audit-only)", "classification": "documentation label error; freeze not altered"},
+    "shared_caveat": "previous_day1 release-time semantics not verified by repository; identical for both years"
+  },
+  "origin_rule": {
+    "rule": "every 00:00 UTC forecast_start from 2025-05-01 through 2025-08-31 inclusive with complete required inputs",
+    "exclusions_allowed": ["incomplete required inputs only"],
+    "exclusions_forbidden": ["route","solar_elevation","candidate_behavior","forecast_performance","reliability","diesel_consumption","low_sun_hours"],
+    "equivalence_with_2024_population": "same May-August calendar filter as run_diesel_reduction_campaign.py (count asserted = 123)"
+  },
+  "origin_counts": {"expected_calendar_origins": 123, "available_origins_in_nwp_2025": 123, "missing_origins": [], "eligible_final": 123},
+  "route_counts_diagnostic_only": {
+    "population_label_operating_mode_NORMAL_2025": 123,
+    "router_step0_2025": {"EMERGENCY": 123, "NORMAL": 0},
+    "router_step0_2024_validation": {"EMERGENCY": 123, "NORMAL": 0},
+    "validation_against_campaign": "campaign hour-0 Control B route is EMERGENCY for all 123 origins; reconstruction matches"
+  },
+  "input_completeness_2025_window": {
+    "timestamps_rows": {"actual": 2952, "expected": 2952, "nan": 0},
+    "causal_nwp_rows": {"actual": 2952, "expected": 2952, "nan": 0, "origins": 123},
+    "actual_sw_in_rows": {"actual": 2952, "expected": 2952, "nan": 0, "min_w_m2": 0.0, "max_w_m2": 796.35},
+    "clearsky_file_rows": {"actual": 8760, "expected": 8760, "nan": 0},
+    "solar_elevation_matrix_rows": {"actual": 2952, "expected": 2952, "nan": 0},
+    "demand_wind": "synthetic formulas; no data input",
+    "result": "PASS"
+  },
+  "solar_elevation": {
+    "module": "clear_sky/compute_clearsky_2025.py (mirrors clear_sky/compute_clearsky.py, 2024 LOCKED)",
+    "sha256_2025": "3ac68ee705e9a9ec68044687c5df79100082d9ab172d09baac70dde6be00ed54",
+    "sha256_2024": "3a649a6ff9f227b5a1819f6cf577d896c6bc1488274a86ccdaaafc29a109c145",
+    "library": "pvlib 0.16.1 Location.get_solarposition",
+    "latitude_deg": 68.362074,
+    "longitude_deg": 18.738752,
+    "elevation_argument": "not supplied (pvlib default)",
+    "timestamp_convention": "naive TIMESTAMP localized with tz=Etc/GMT-1 (UTC+1)",
+    "documented_offset": "elevation at timestamp T equals true elevation at UTC instant T-1h; SW_IN diurnal peak at 11:00 suggests UTC-labelled timestamps; not corrected",
+    "units": "degrees above horizon",
+    "atmospheric_assumptions": "none supplied",
+    "feature_equivalence": {
+      "matrix_2025": {"rows": 8736, "max_abs_diff_deg": 0.0, "mean_abs_diff_deg": 0.0, "within_1e-6": 8736},
+      "matrix_2024": {"rows": 8328, "max_abs_diff_deg": 0.0, "mean_abs_diff_deg": 0.0, "within_1e-6": 8328},
+      "alternative_tz_UTC_max_abs_diff_deg": 5.532684
+    },
+    "result": "EXACT"
+  },
+  "fifteen_degree_boundary": {
+    "status": "existing_research_regime_convention_not_changed",
+    "source": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/cross_year_error_stability/CROSS_YEAR_ERROR_STABILITY_AUDIT.md",
+    "source_modified_utc": "2026-10-05T07:29",
+    "precedes_s_sw_campaign": true,
+    "same_bin_in": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/EXP_CONFORMAL_TRAJECTORY_OFFLINE/run_offline_validation.py line 119",
+    "label": "Low_0_15 / Mid_15_30 / High_gt_30"
+  },
+  "holdout_status": {
+    "2025_candidate_results_inspected": false,
+    "2025_untouched_for_stage4_direction": true,
+    "2024_discovery_only_for_stage4": true
+  },
+  "not_created": ["experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.md","experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.json"],
+  "markdown_companion": {"path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.md", "sha256": "22e67a16a90ef90fa88b248614a83d853511a33619548272535e05615314d7a7"}
+}

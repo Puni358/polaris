@@ -1,0 +1,54 @@
+{
+  "_comment": "DEPLOYMENT CONFIG TEMPLATE -- NOT A LIVE CONFIG. No value below has been used for a real run in this pass; every placeholder must be filled in by the operator deploying a real MEPS/SITES/Stage-3b ingestion daemon. This file is read by no code in this repository today -- it documents the fields a future deployment's config SHOULD define, modeled on this package's OperationalEvidenceRecord schema (system/monitoring/operational_evidence/schema.py, SCHEMA_VERSION 1.0.0).",
+  "schema_version": "1.0.0",
+  "deployment_status": "NOT_DEPLOYED",
+  "evidence_log_path": "/var/log/polaris/operational_evidence/<input_type>_evidence.jsonl",
+  "process_run_id_strategy": "one UUID4 per daemon process start; must be unique per invocation, recorded in every record produced by that invocation",
+  "software_version": "<ingestion-daemon-git-sha-or-release-tag>",
+  "streams": {
+    "MEPS_18Z_FORECAST_INPUT": {
+      "source_identity": "MET Norway MEPS THREDDS (thredds.met.no)",
+      "station_or_origin_identity": "<forecast origin timestamp, e.g. the 18Z cycle being polled>",
+      "required_acceptance_window_days": 30,
+      "required_acceptance_window_source": "remediation_plan.md Section 2-3 (Phase 1-2); register item EVID-01",
+      "poll_interval_seconds_suggested": 300,
+      "timeout_seconds_suggested": 60,
+      "retry_policy_suggested": "exponential backoff, max 5 attempts, log a RETRY outcome record per attempt",
+      "fields_the_daemon_must_supply_per_fetch": [
+        "provider_publication_time (from the THREDDS catalog's own publication metadata, NOT assumed)",
+        "local_receipt_time (wall-clock time this process observed the publication, NEVER filesystem mtime unless receipt_time_is_mtime_proxy=true is also set and the record is excluded from acceptance evidence)",
+        "fetch_start_time / fetch_end_time",
+        "ingestion_time / validation_time / downstream_ready_time",
+        "source_cycle, valid_time, lead_time_hours"
+      ]
+    },
+    "SITES_STATION_TELEMETRY": {
+      "source_identity": "SITES Nuolja Middle Station telemetry feed",
+      "station_or_origin_identity": "<SITES station id>",
+      "required_acceptance_window_days": 14,
+      "required_acceptance_window_source": "remediation_plan.md Section 2-3 (Phase 1-2); register item EVID-01",
+      "poll_interval_seconds_suggested": 3600,
+      "timeout_seconds_suggested": 30,
+      "retry_policy_suggested": "exponential backoff, max 5 attempts, log a RETRY outcome record per attempt",
+      "fields_the_daemon_must_supply_per_fetch": [
+        "provider_publication_time (telemetry system's own observation timestamp)",
+        "local_receipt_time",
+        "fetch_start_time / fetch_end_time",
+        "ingestion_time / validation_time / downstream_ready_time"
+      ]
+    },
+    "STAGE_3B_BENCHMARK_EXECUTION": {
+      "source_identity": "local Stage 3b Chronos-2 benchmark/inference execution",
+      "station_or_origin_identity": "<benchmark run identifier / forecast origin under test>",
+      "required_acceptance_window": "10 consecutive live runs",
+      "required_acceptance_window_source": "remediation_plan.md Section 2-3 (Phase 1-2); register item EVID-01",
+      "fields_the_daemon_must_supply_per_run": [
+        "fetch_start_time / fetch_end_time (execution start/end)",
+        "ingestion_time / validation_time / downstream_ready_time",
+        "process_run_id, software_version (model/code version under benchmark)"
+      ]
+    }
+  },
+  "logging_failure_policy": "EvidenceLoggingError must propagate to the daemon's own operator-visible error channel (alerting/log aggregator). A caught-and-ignored EvidenceLoggingError is a deployment defect, not an acceptable production behavior.",
+  "operator_checklist_ref": "docs/evidence_acquisition/EVID01_FOR01_ACQUISITION_PACKAGE.md Section 5"
+}

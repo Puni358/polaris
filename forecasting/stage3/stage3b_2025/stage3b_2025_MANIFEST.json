@@ -1,0 +1,32 @@
+{
+  "output_file": "/home/punith-bs/01polaris (Copy)/stage3/stage3b_2025/stage3b_cloud_nwp_predictions_2025.csv",
+  "sha256": "0a5263e6ea89c2a9f520041d9122ec72a196cc3975b37def8dd7a41803df6465",
+  "row_count": 8736,
+  "unique_origins": 364,
+  "columns": [
+    "forecast_start",
+    "horizon_hour",
+    "timestamp",
+    "actual_SW_IN",
+    "pred_stage3b_cloud_nwp"
+  ],
+  "covariates": [
+    "solar_elevation",
+    "solar_zenith",
+    "clearsky_ghi",
+    "fc_cloud_cover"
+  ],
+  "model": {
+    "id": "amazon/chronos-2",
+    "frozen": true,
+    "retrained": false,
+    "device_map": "cpu",
+    "checkpoint_snapshot_sha256": "ddcda3c7508bf2528087723e98a20707cc04b7f370ae275a9fd88078ddba4f42"
+  },
+  "input_hashes": {
+    "nwp_2025_clean": "2186382391b84ed5464982e036b0b7bc8208c6818b8131f29a382c6ee149dbb5",
+    "clearsky_decomposition_2025": "f5f5e2c4c076c3c3eb40071b9954189bedd02f49654b8de9ad02e74ab4585336"
+  },
+  "causal_timestamp_alignment_verified": true,
+  "note": "Exact replica of the '3B' branch of stage3/run_stage3_experiments.py (2024, LOCKED): same frozen amazon/chronos-2 checkpoint, same covariates, same 24h context / 24h horizon origin construction, same past/future causal covariate split. Only the 2024 experiments 3A and 3C were not re-run (out of scope per request: Stage 3B only)."
+}

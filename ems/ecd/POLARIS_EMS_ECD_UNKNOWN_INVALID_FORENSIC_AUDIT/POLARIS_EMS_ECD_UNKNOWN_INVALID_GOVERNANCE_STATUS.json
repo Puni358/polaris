@@ -1,0 +1,51 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_UNKNOWN_INVALID_GOVERNANCE_STATUS",
+  "version": "1.0.0",
+  "status": "AUDITED",
+  "governance_summary": {
+    "unknown_invalid_state": "ESTABLISHED",
+    "fault_event": "ESTABLISHED",
+    "governed_fail_closed": "NOT_ESTABLISHED",
+    "conservative_safe_state": "NOT_ESTABLISHED",
+    "downstream_consumer": "NOT_ESTABLISHED",
+    "downstream_action": "NOT_ESTABLISHED",
+    "unknown_invalid_distinct_from_emergency": "YES",
+    "fault_event_control_effect": "ESTABLISHED",
+    "overstatement_found": "YES",
+    "correction_required": "YES"
+  },
+  "integration_gating_status": {
+    "ecd_core_implementation": "PASS",
+    "ecd_runtime_integration_blocked": true,
+    "ecd_mpc_integration_blocked": true,
+    "ecd_optimizer_integration_blocked": false,
+    "production_deployment_blocked": true
+  },
+  "verdict_register": {
+    "statement_A": {
+      "statement": "UNKNOWN_INVALID emits a governed FaultEvent.",
+      "verdict": "PARTIALLY_SUPPORTED",
+      "detail": "FaultEvent class exists in runner.py, but ECD integration adapter to log it is not yet implemented."
+    },
+    "statement_B": {
+      "statement": "FaultEvent severity is GOVERNED_FAIL_CLOSED.",
+      "verdict": "NOT_SUPPORTED",
+      "detail": "runner.py uses CRITICAL_TERMINATION and GOVERNED_DEGRADED. GOVERNED_FAIL_CLOSED is a proposed label."
+    },
+    "statement_C": {
+      "statement": "UNKNOWN_INVALID causes the system to hold a conservative safe state.",
+      "verdict": "NOT_SUPPORTED",
+      "detail": "No concrete safe-state action is defined in code or governance for ECD invalid state."
+    },
+    "statement_D": {
+      "statement": "The downstream consumer of UNKNOWN_INVALID is already defined.",
+      "verdict": "PARTIALLY_SUPPORTED",
+      "detail": "Architecture diagrams define EMS Mode Manager, but no consumer module is wired in runner.py."
+    },
+    "statement_E": {
+      "statement": "The resulting operational behavior is already governed.",
+      "verdict": "NOT_ESTABLISHED",
+      "detail": "Classified as UNRESOLVED_DOWNSTREAM_POLICY."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "phase": "S8.1-EMS-EMPIRICAL-REPLAY-EXPERIMENT-AUTHORIZATION",
+  "governance_decision": "A — EXPERIMENT AUTHORIZED",
+  "experiment_authorization": "AUTHORIZED",
+  "timestamp": "2026-09-19T11:54:00+05:30",
+  "decision_summary": "The pre-execution governance authorization for the Stage8.1 → EMS empirical-link replay experiment is fully APPROVED. All 24 protocol requirements (authoritative treatment artifact, control forecast engine, expected origin count, eligibility rules, experimental unit, primary endpoint pre-registration, secondary endpoints, paired design, causality firewall, failure handling, protocol lock, and governance boundaries) are 100% frozen. Execution is authorized for a separate, dedicated execution task.",
+  "treatment_artifact": {
+    "filename": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+    "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "total_evaluation_rows": 4152,
+    "expected_origins": 173,
+    "horizons_per_origin": 24
+  },
+  "control_artifact": {
+    "engine_class": "LocalBaselineForecastEngine",
+    "file_path": "system/forecasting/implementations/baseline.py",
+    "method": "Causal diurnal clear-sky solar irradiance model",
+    "governance_source": "POLARIS_STAGE8_D5_SCIENTIFIC_SYNTHESIS.md"
+  },
+  "experimental_unit": {
+    "definition": "ONE_COMPLETE_24H_FORECAST_ORIGIN_REPLAY",
+    "total_units": 173
+  },
+  "origin_eligibility": {
+    "expected_origins": 173,
+    "final_eligible_origins": "DETERMINED_BY_PREDECLARED_RULES",
+    "ineligible_origins": [],
+    "predeclared_rules": [
+      "Must contain complete 24-step y_pred prediction values (SW_IN >= 0)",
+      "Must contain complete 24-step y_true ground truth values (SW_IN >= 0)",
+      "Must contain valid ISO-8601 UTC timestamps for origin t0 and valid horizons t0+h",
+      "Must possess valid causal runtime context and scenario inputs"
+    ],
+    "result_dependent_exclusion": "PROHIBITED"
+  },
+  "endpoints": {
+    "primary_endpoint": "total_diesel_fuel_liters",
+    "primary_endpoint_rationale": "Direct physical relevance to polar microgrid fuel logistics, non-negative, high sensitivity to solar forecasting accuracy, and exposed natively by EvaluationEngine.",
+    "primary_endpoint_pre_registration_status": "ESTABLISHED",
+    "secondary_endpoints": [
+      "total_diesel_energy_kwh",
+      "total_renewable_energy_used_kwh",
+      "total_renewable_curtailment_kwh",
+      "renewable_curtailment_pct",
+      "renewable_utilization_pct",
+      "battery_throughput_kwh",
+      "battery_equivalent_cycles",
+      "unmet_critical_load_kwh",
+      "system_reliability_pct",
+      "constraint_violations_count"
+    ]
+  },
+  "experimental_design": {
+    "design_type": "PAIRED_ORIGIN_CONTRAST",
+    "condition_a": "Stage81ForecastEngine (y_pred from ODD predictions CSV)",
+    "condition_b": "LocalBaselineForecastEngine (Baseline heuristic forecast)",
+    "invariants": [
+      "Same origin timestamp t0",
+      "Same initial station state (SOC0 = 50.0%, E0 = 100 kWh)",
+      "Same actual solar ground truth trajectory (y_true from Nuolja 2024 data)",
+      "Same station demand trajectory (35 kW synthetic load)",
+      "Same wind power trajectory",
+      "Same SciPy MILP / HiGHS optimizer configuration",
+      "Same Digital Twin simulator physics",
+      "Same 24-step receding horizon MPC execution protocol"
+    ]
+  },
+  "statistical_dependence_handling": {
+    "method": "Paired origin-level non-parametric bootstrap resampling (10,000 iterations over N=173 origins) and Wilcoxon signed-rank test",
+    "row_independence_assumption": "PROHIBITED"
+  },
+  "causality_firewall": {
+    "future_truth_firewall": "ESTABLISHED",
+    "controller_visible_state": ["StationState at t0", "Historical observations <= t0", "Supplied 24h forecast", "PV mapping metadata"],
+    "controller_forbidden_state": ["Future actual SW_IN (y_true at t1...t24)", "Future demand", "Future wind"],
+    "simulator_evaluator_visible_state": ["Realized H1 dispatch action", "Hidden actual ground truth (y_true at t1)"]
+  },
+  "governance_locks": {
+    "protocol_lock_required": true,
+    "result_dependent_stopping": "PROHIBITED",
+    "downstream_environment": "MIXED / SYNTHETIC CONTROLLED",
+    "experiment_executed": false
+  },
+  "next_authorized_step": "SEPARATE_EXECUTION_TASK_FOR_STAGE8.1_EMS_EMPIRICAL_REPLAY_EXPERIMENT",
+  "integrity_register": {
+    "source_files_modified": "NONE",
+    "scientific_model_modified": false,
+    "ems_modified": false,
+    "forecastbundle_schema_modified": false,
+    "dispatchplan_schema_modified": false,
+    "stationstate_schema_modified": false,
+    "simulator_modified": false,
+    "ui_modified": false,
+    "d5_modified": false,
+    "stage8_1_benchmark_modified": false,
+    "experiment_executed": false,
+    "model_retrained": false,
+    "new_predictions_generated": false,
+    "new_dataset_created": false,
+    "smoke_test_executed": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "manifest_version": "1.0",
+  "stage": "STAGE 8.9A",
+  "date": "2026-09-12",
+  "author": "Scientific Research and Data-Feasibility Agent",
+  "environment": {
+    "target_location": "SITES Nuolja (68.362074 N, 18.738752 E, ~702m ASL)",
+    "benchmark_origins": 347,
+    "forecast_horizon_hours": 24,
+    "forecast_total_hours": 8328
+  },
+  "artifacts_generated": [
+    "STAGE8_9A_FEASIBILITY_REPORT.md",
+    "STAGE8_9A_SOURCE_INVENTORY.csv",
+    "STAGE8_9A_CAUSALITY_AUDIT.csv",
+    "STAGE8_9A_COVERAGE_AUDIT.csv",
+    "STAGE8_9A_SPATIAL_REPRESENTATIVENESS.md",
+    "STAGE8_9A_INFORMATION_NOVELTY.md",
+    "STAGE8_9A_CLOUD_MOTION_ASSESSMENT.md",
+    "STAGE8_9A_DECISION.json",
+    "STAGE8_9A_PROVENANCE_MANIFEST.json",
+    "run_stage8_9a_audit.py"
+  ],
+  "governance_compliance": {
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "odd_residuals": 0,
+    "odd_tuning": 0,
+    "model_training": false,
+    "cv_runs": false
+  }
+}

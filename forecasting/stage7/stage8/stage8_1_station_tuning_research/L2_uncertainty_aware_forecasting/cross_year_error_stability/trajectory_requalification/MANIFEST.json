@@ -1,0 +1,53 @@
+{
+  "manifest_version": "1.0.0",
+  "experiment": "POLARIS_CROSS_YEAR_STATE_CONDITIONED_TRAJECTORY_REQUALIFICATION",
+  "created_at": "2026-10-05T07:36:00+05:30",
+  "status": "POINTWISE-STABILITY-ONLY",
+  "inputs": {
+    "dataset": {
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "l2_predictions": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_01_PREDICTIONS_2020_2023.csv",
+      "sha256": "1eb5b6db7c426c2c173c170a2cdd87945f0946f80153cc40f6180410de5a817c"
+    }
+  },
+  "artifacts": [
+    {
+      "filename": "AR1_INNOVATION_DIAGNOSTICS.csv",
+      "bytes": 1094,
+      "sha256": "f9f062499c45628bd2163a481435bb3c0116abd6b36aaaafa53e3d8d4326503f"
+    },
+    {
+      "filename": "TRAJECTORY_COVERAGE_COMPARISON.csv",
+      "bytes": 1239,
+      "sha256": "f7aad9dfb89868939b4fcc28559f57833f53ded91a7ed5fcbeb901a2fe402285"
+    },
+    {
+      "filename": "TRAJECTORY_REGIME_COVERAGE.csv",
+      "bytes": 5879,
+      "sha256": "29ce7ac420d0598279d744ee4ef8424d7e542d8bf41d317609af335222aced1e"
+    },
+    {
+      "filename": "TRAJECTORY_ORIGIN_RESULTS.csv",
+      "bytes": 24782,
+      "sha256": "7ae67c4ee828f90f5662beaf05b106a6385cf4baf439ea215f504749047f8be3"
+    },
+    {
+      "filename": "TRAJECTORY_REQUALIFICATION_RESULTS.json",
+      "bytes": 26304,
+      "sha256": "11f24812986d3798278ae9b844a17afaae46eaef8fecacf6e6cb0c3531699153"
+    },
+    {
+      "filename": "TRAJECTORY_REQUALIFICATION_REPORT.md",
+      "bytes": 14328,
+      "sha256": "43ba4c230ff9ed24b60786b0cf954710c965ddc37b4630aedf8d03c644faf892"
+    },
+    {
+      "filename": "EXECUTION_AUDIT.md",
+      "bytes": 1361,
+      "sha256": "7bb00a3980acfe89b9b3bcd50266fadc872e4b26a4406ad9d4bb553a2fac42ba"
+    }
+  ]
+}

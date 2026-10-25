@@ -1,0 +1,155 @@
+{
+  "audit_metadata": {
+    "date": "2026-10-05",
+    "station": "ANS_NMS (Mount Nuolja, Sweden)",
+    "target_variable": "C_k = sum_{t=1..k} (y_hat_t - y_actual_t) [Wh/m^2]",
+    "start_hour_utc": 5,
+    "horizon_hours": 13,
+    "target_hours_utc": "06:00 to 18:00 UTC",
+    "daylight_status": "Daylight core window (captures 90.4% of annual solar generation)",
+    "origins_train_2020_2021": 731,
+    "origins_calibration_2022": 365,
+    "origins_blind_2023": 273
+  },
+  "ar1_model_fit_2020_2021": {
+    "phi": 0.6435,
+    "c_intercept": 11.7258,
+    "mu_unconditional": 32.8918,
+    "sigma_homo": 85.34,
+    "clear_sky_scaling": {
+      "sigma_0": 24.03,
+      "gamma": 0.1464
+    }
+  },
+  "conformal_calibration_2022": {
+    "alpha": 0.1,
+    "nominal_level": 0.9,
+    "finite_sample_quantile_level": 0.9041,
+    "calibrated_q_conformal_clear_sky": 1.3331,
+    "calibrated_q_conformal_homo": 1.3922,
+    "score_distribution_summary": {
+      "min": -1.5459,
+      "q25": -0.4881,
+      "median": -0.1848,
+      "q75": 0.6481,
+      "q90": 1.2813,
+      "q95": 1.556,
+      "max": 2.9386
+    },
+    "empirical_2022_calibration_coverage": 0.9068
+  },
+  "apples_to_apples_blind_2023_evaluation": {
+    "static_q10_benchmark": {
+      "simultaneous_coverage": 0.8608,
+      "simultaneous_coverage_ci": [
+        0.8205,
+        0.9011
+      ],
+      "mean_pointwise_coverage": 0.9498,
+      "mean_sunset_bound_wh_m2": 1510.0
+    },
+    "global_prefix_q90": {
+      "simultaneous_coverage": 0.7399,
+      "simultaneous_coverage_ci": [
+        0.6886,
+        0.7875
+      ],
+      "mean_pointwise_coverage": 0.858,
+      "mean_sunset_bound_wh_m2": 1116.63
+    },
+    "arm_A_gaussian_ar1_homo": {
+      "simultaneous_coverage": 0.8571,
+      "simultaneous_coverage_ci": [
+        0.8168,
+        0.8974
+      ],
+      "mean_pointwise_coverage": 0.9425,
+      "mean_sunset_bound_wh_m2": 1374.28,
+      "mean_sunset_margin_wh_m2": 975.46
+    },
+    "arm_B_gaussian_ar1_clearsky": {
+      "simultaneous_coverage": 0.8352,
+      "simultaneous_coverage_ci": [
+        0.7839,
+        0.8791
+      ],
+      "mean_pointwise_coverage": 0.9355,
+      "mean_sunset_bound_wh_m2": 1256.42,
+      "mean_sunset_margin_wh_m2": 857.6
+    },
+    "arm_C_split_conformal_ar1": {
+      "simultaneous_coverage": 0.8462,
+      "simultaneous_coverage_ci": [
+        0.8022,
+        0.8864
+      ],
+      "mean_pointwise_coverage": 0.9408,
+      "mean_sunset_bound_wh_m2": 1290.9,
+      "mean_sunset_margin_wh_m2": 892.07,
+      "pointwise_coverage_by_horizon": [
+        0.956,
+        0.9377,
+        0.9451,
+        0.956,
+        0.9487,
+        0.9341,
+        0.9231,
+        0.9304,
+        0.9414,
+        0.9451,
+        0.9451,
+        0.9341,
+        0.9341
+      ]
+    }
+  },
+  "subgroups_blind_2023_arm_C": {
+    "by_season": {
+      "DJF": 1.0,
+      "JJA": 0.75,
+      "MAM": 0.8804,
+      "SON": 0.7333
+    },
+    "by_cloud_regime": {
+      "Clear": 0.8919,
+      "Overcast": 0.8365,
+      "Partial": 0.8409
+    },
+    "by_elevation_regime": {
+      "Low": 0.8352,
+      "Mid": 0.7692,
+      "Night": 0.9615
+    }
+  },
+  "year_by_year_coverage_arm_C": {
+    "2020": 0.9317,
+    "2021": 0.8575,
+    "2022": 0.9068,
+    "2023": 0.8462
+  },
+  "decision": "CONFORMAL-FAILS",
+  "decision_rationale": "Blind 2023 simultaneous coverage is 84.62% [95% CI: 79.85%, 88.64%], strictly below the preregistered >=90% empirical simultaneous-coverage target. Subgroup coverage collapses to 75.00% in JJA and 73.33% in SON. A material distribution shift between 2022 calibration and 2023 blind data is observed (VERIFIED), meaning the exchangeability assumption required for standard split-conformal finite-sample guarantees cannot be assumed (INFERRED). Setting q \u2248 1.7610 would approach or exceed static q10 conservatism; no EMS experiment was run with q=1.7610 and no fuel impact is claimed.",
+  "status_classifications": {
+    "VERIFIED": [
+      "Blind 2023 simultaneous coverage = 84.62%, below the preregistered >=90% target.",
+      "2023 subgroup coverage collapses to 75.00% in JJA and 73.33% in SON.",
+      "2022->2023 trajectory/nonconformity distribution shift is observed.",
+      "2022 empirical calibration coverage is 90.68%.",
+      "q_conf=1.3331 was calibrated only from 2022."
+    ],
+    "INFERRED": [
+      "The observed distribution shift means exchangeability between the 2022 calibration sample and 2023 blind sample cannot be assumed.",
+      "A larger multiplier would be required to recover approximately 90% empirical coverage on 2023, but such a multiplier would be at least as conservative as the tested q10 benchmark according to the reported blind-year calculation."
+    ],
+    "NOT_CLAIMED_OR_TESTED": [
+      "q=1.7610 was NOT tested in the EMS.",
+      "No fuel penalty for q=1.7610 was measured.",
+      "No online/adaptive conformal method was tested.",
+      "No production/controller change was validated."
+    ],
+    "BLOCKED": [
+      "Historical horizons k=20..24 remain unavailable.",
+      "Closed-loop EMS controller experiments remain blocked for this uncertainty branch."
+    ]
+  }
+}

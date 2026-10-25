@@ -1,0 +1,13 @@
+{
+  "experiment_id": "C5_ZERO_CURTAILMENT_PENALTY",
+  "description": "Zero renewable curtailment penalty (renewable_curtailment_penalty = 0.0)",
+  "status": "PASS",
+  "diesel_fuel_l": 93465.6264,
+  "delta_fuel_vs_c0_l": 0.0,
+  "delta_fuel_vs_c0_pct": 0.0,
+  "diesel_energy_kwh": 210502.5055,
+  "renewable_curtailment_kwh": 66192.5,
+  "battery_discharge_kwh": 808.7974,
+  "battery_cycles": 4.044,
+  "unmet_load_kwh": 0.0
+}

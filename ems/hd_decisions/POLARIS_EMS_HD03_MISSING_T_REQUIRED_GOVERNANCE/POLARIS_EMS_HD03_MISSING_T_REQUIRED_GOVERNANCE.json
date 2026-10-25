@@ -1,0 +1,39 @@
+{
+  "audit_package_id": "POLARIS_EMS_HD03_MISSING_T_REQUIRED_GOVERNANCE",
+  "audit_timestamp": "2026-09-23T07:06:52+05:30",
+  "governance_scope": "HD03_MISSING_T_REQUIRED_INPUT_BEHAVIOR",
+  "status": "GOVERNANCE_DECISION_REQUIRED",
+  "classifications": {
+    "HD03_MISSING_INPUT_BEHAVIOR": "GOVERNANCE_REQUIRED",
+    "HD03_NO_VALID_T_REQUIRED_STATE": "GOVERNANCE_REQUIRED",
+    "HD03_LAST_VALID_FALLBACK": "NOT_ESTABLISHED",
+    "HD03_EMERGENCY_ON_UNKNOWN": "NOT_ESTABLISHED",
+    "HD03_FAIL_CLOSED_PATTERN": "ESTABLISHED",
+    "HD03_NUMERICAL_FALLBACK": "NOT_ESTABLISHED",
+    "HD03_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD03_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "exact_human_decision_required": "The human stakeholder must select whether the Emergency Condition Detector fails closed (M-A), declares emergency mode (M-B), uses the last valid T_required (M-C), or uses a separately governed numerical fallback (M-D) when no valid T_required is available.",
+  "policy_options_evaluated": {
+    "M-A_FAIL_CLOSED": {
+      "repository_support": "SUPPORTED_BY_EXISTING_GOVERNANCE",
+      "numerical_value_needed": false,
+      "compatibility": "Compatible with CONSUMER_ONLY and POLARIS FAIL_CLOSED pattern"
+    },
+    "M-B_EMERGENCY": {
+      "repository_support": "NOT_ESTABLISHED",
+      "numerical_value_needed": false,
+      "compatibility": "Conservative for critical load, unestablished in code"
+    },
+    "M-C_LAST_VALID": {
+      "repository_support": "CONFLICTS_WITH_GOVERNANCE",
+      "numerical_value_needed": false,
+      "compatibility": "Conflicts with prohibition against unvalidated stale forward-filling"
+    },
+    "M-D_FALLBACK": {
+      "repository_support": "NOT_ESTABLISHED",
+      "numerical_value_needed": true,
+      "compatibility": "Conflicts with non-derivation directive unless separately governed"
+    }
+  }
+}

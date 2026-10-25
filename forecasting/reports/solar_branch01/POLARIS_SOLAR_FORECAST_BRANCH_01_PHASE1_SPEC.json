@@ -1,0 +1,64 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "specification_version": "1.0.0",
+  "timestamp": "2026-09-21T06:43:31Z",
+  "answers_23_questions": {
+    "q1_target": "Nuolja surface downwelling shortwave radiation (SW_IN) in W/m^2 from (avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv",
+    "q2_temporal_resolution": "1.0 hour uniform timestep",
+    "q3_supported_origins": "Hourly MPC origins t in [1..8784] (2024-01-01T00:00:00Z to 2024-12-31T23:00:00Z)",
+    "q4_available_information": "Observations up to origin t, astronomical clear-sky calculation at t+h, calendar encodings, latest NWP issue run t_issue <= t",
+    "q5_timestamping_rule": "Information available timestamp t_available <= forecast origin t",
+    "q6_causally_valid_features": "SW_IN lookbacks [t-24h, t], rolling stats, clearsky_ghi, terrain obstruction, solar elevation/zenith, calendar features, lead-shifted NWP features",
+    "q7_conditional_features": "NWP features (valid iff t_issue <= t with lead shift H_effective = H + (t - t_issue))",
+    "q8_unavailable_features": "Intra-day NWP issue runs (06:00, 12:00, 18:00 UTC), real-time satellite streams across all 8784 origins, future observations (t' > t)",
+    "q9_nwp_issue_selection": "Deterministically select latest NWP issue run t_issue satisfying t_issue <= t",
+    "q10_effective_lead_calculation": "H_effective = H + (t - t_issue)",
+    "q11_24h_horizon_guarantee": "Multi-output / horizon-specific output heads (H1..H24) using strictly causal feature vector at origin t",
+    "q12_missing_feature_policy": "Fail closed (raise ModelGovernanceError). Zero filling, forward filling, synthetic substitution, or future truth leak strictly forbidden.",
+    "q13_baselines": [
+      "Baseline 1: Persistence (SW_IN(t+h) = SW_IN(t))",
+      "Baseline 2: Diurnal Clear-Sky Persistence (SW_IN(t+h) = clearsky(t+h) * (SW_IN(t) / clearsky(t)))",
+      "Baseline 3: Clear-Sky kt Persistence (kt(t+h) = kt(t), SW_IN(t+h) = kt(t) * clearsky(t+h))"
+    ],
+    "q14_data_splits": {
+      "train": "2024-01-01T00:00:00Z to 2024-08-31T23:00:00Z (5856 hours, 66.67%)",
+      "validation": "2024-09-01T00:00:00Z to 2024-10-31T23:00:00Z (1464 hours, 16.67%)",
+      "test": "2024-11-01T00:00:00Z to 2024-12-31T23:00:00Z (1464 hours, 16.66% frozen)"
+    },
+    "q15_forecasting_metrics": [
+      "MAE",
+      "RMSE",
+      "Bias",
+      "Daytime MAE",
+      "Daytime RMSE",
+      "Night MAE",
+      "Per-Horizon H1..H24 MAE/RMSE"
+    ],
+    "q16_eligible_model_families": [
+      "Ridge Regression",
+      "HistGradientBoosting",
+      "XGBoost",
+      "LightGBM",
+      "PyTorch Multi-Head Neural Network"
+    ],
+    "q17_required_training_artifacts": "34-item reproducibility package in unique immutable directory RUN_<id>/ including 4 JSON manifests, model binary, hashes, logs, predictions",
+    "q18_fitted_model_serialization": ".joblib for tabular models or .pt for PyTorch neural nets",
+    "q19_model_hashing": "SHA-256 hash computed on serialized model binary bytes and stored in model.sha256 and MODEL_MANIFEST.json",
+    "q20_independent_replay_protocol": "Fresh process loads model binary, verifies SHA-256, generates predictions on test features, compares against predictions.json within atol=1e-5, rtol=1e-5",
+    "q21_reproducible_status_criteria": "Assigned MODEL_TRAINING_STATUS = REPRODUCIBLE iff all 34 checklist items pass and independent replay succeeds within declared tolerance",
+    "q22_ems_blocking_conditions": "MODEL_TRAINING_STATUS != REPRODUCIBLE, replay failure, SHA-256 mismatch, missing manifest, or unverified causality",
+    "q23_post_phase1_conditionals": "NWP lead-time degradation evaluation for late intra-day origins (e.g. t=18:00 UTC)"
+  },
+  "firewall_assertions": {
+    "STAGE8_1_MODIFIED": "NO",
+    "STAGE8_1_RETRAINED": "NO",
+    "STAGE8_1_REPLACED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "CANDIDATE_A_EXECUTED": "NO",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO",
+    "EMS_MODIFIED": "NO",
+    "EMS_EXECUTED": "NO",
+    "PHASE2_IMPLEMENTATION_STARTED": "NO"
+  }
+}

@@ -1,0 +1,15 @@
+audit_document,09_OBJECTIVE_HIERARCHY_FINAL
+audit_phase,GAP19_OBJECTIVE_FORMULATION_CLOSURE
+audit_date,2026-09-22
+generation_mode,GOVERNED_FORMULATION_SPECIFICATION
+execution_performed,READ_ONLY
+
+# ============================================================
+# FINAL SOLVER-AGNOSTIC LEXICOGRAPHIC OBJECTIVE HIERARCHY
+# ============================================================
+
+stage_priority,stage_name,objective_mathematical_expression,units,direction,stage_locking_constraint,required_inputs,unresolved_governance_parameters,reporting_field
+1,Critical Reliability,min J1 = sum_{t=0}^{H-1} p_unmet_critical(t) * dt,Wh,Minimize,Physical bounds & p_unmet_critical(t)=0,ForecastBundle demand critical tier,5-tier demand vector split in schema,stage1_achieved_objective
+2,EBR & Terminal Reserve,min J2 = sum_{t=0}^{H-1} max(0 E_EBR_target(t) - E_reserve_avail(t)) + max(0 E_terminal_target - E(H)),Wh,Minimize,J1(x) <= J1* + epsilon_1,E_EBR_target(t) E_terminal_target C_bat min_soc_pct,Numerical E_EBR_target and E_terminal_target values,stage2_achieved_objective
+3,Fuel Conservation,min J3 = sum_{t=0}^{H-1} ((F_base * u_diesel(t) + F_marg * p_diesel(t)) * dt + F_start * v_start(t)),Liters (L),Minimize,J1(x) <= J1* + epsilon_1; J2(x) <= J2* + epsilon_2,F_base F_marg F_start generator bounds,Battery degradation stage placement,stage3_achieved_objective
+4,Renewable Utilization,min J4 = sum_{t=0}^{H-1} (p_curt_sol(t) + p_curt_wind(t)) * dt,Wh,Minimize,J1(x) <= J1* + epsilon_1; J2(x) <= J2* + epsilon_2; J3(x) <= J3* + epsilon_3,P_solar_gen(t) P_wind_gen(t) forecasts,None,stage4_achieved_objective

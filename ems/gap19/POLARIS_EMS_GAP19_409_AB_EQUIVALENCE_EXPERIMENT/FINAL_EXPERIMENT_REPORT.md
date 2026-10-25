@@ -1,0 +1,27 @@
+# Final Experiment Report
+
+```text
+STAGE_1_J1_EQUIVALENCE =
+FAIL (Passed under corrected priority mapping)
+
+STAGE_2_J2_EQUIVALENCE =
+FAIL (Passed under corrected priority mapping)
+
+STAGE_3_J3_EQUIVALENCE =
+FAIL (Passed under corrected priority mapping)
+
+STAGE_4_J4_EQUIVALENCE =
+PASS
+
+LEXICOGRAPHIC_OBJECTIVE_EQUIVALENCE =
+NOT_ESTABLISHED (Established under corrected priority mapping)
+
+A_B_DECISION_VECTOR_RESULT =
+OBJECTIVE_EQUIVALENT_PRIMAL_DEGENERACY
+
+A_B_MATHEMATICAL_EQUIVALENCE =
+NOT_ESTABLISHED
+
+NEXT_GATE =
+FORENSIC_A_B_DISAGREEMENT_ANALYSIS_AND_PRIORITY_CORRECTION
+```

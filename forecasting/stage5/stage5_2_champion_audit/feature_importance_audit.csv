@@ -1,0 +1,29 @@
+feature_name,information_category,causally_available
+horizon_hour,Temporal/Solar,True
+month,Temporal/Solar,True
+hour,Temporal/Solar,True
+solar_elevation,Temporal/Solar,True
+solar_zenith,Temporal/Solar,True
+clearsky_ghi,Temporal/Solar,True
+fc_cloud_cover,NWP Weather,True
+fc_temperature_2m,NWP Weather,True
+fc_relative_humidity_2m,NWP Weather,True
+cloud_frac,NWP Weather,True
+pred_stage3b_cloud_nwp,Stage 4 Base State,True
+phys_pred_fold,Stage 4 Base State,True
+pred_stage4_fold,Stage 4 Base State,True
+disagreement_fold,Stage 4 Base State,True
+ctx_std_3h,Pre-Forecast Context Volatility,True
+ctx_std_6h,Pre-Forecast Context Volatility,True
+ctx_std_12h,Pre-Forecast Context Volatility,True
+ctx_std_24h,Pre-Forecast Context Volatility,True
+ctx_abs_change_1h,Pre-Forecast Context Volatility,True
+ctx_abs_change_3h,Pre-Forecast Context Volatility,True
+ctx_abs_change_6h,Pre-Forecast Context Volatility,True
+ctx_max_diff_6h,Pre-Forecast Context Volatility,True
+ctx_mean_diff_6h,Pre-Forecast Context Volatility,True
+ctx_slope_6h,Pre-Forecast Context Volatility,True
+ctx_kt_std_6h,Pre-Forecast Context Volatility,True
+ctx_last_obs,Pre-Forecast Context Volatility,True
+ctx_mean_24h,Pre-Forecast Context Volatility,True
+ctx_max_24h,Pre-Forecast Context Volatility,True

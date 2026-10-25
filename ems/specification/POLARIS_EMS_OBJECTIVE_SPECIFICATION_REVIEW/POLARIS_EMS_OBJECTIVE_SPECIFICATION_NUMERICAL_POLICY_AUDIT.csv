@@ -1,0 +1,16 @@
+VALUE,UNIT,LOCATION,MEANING,SOURCE,POLICY_STATUS,IMPLEMENTATION_STATUS,AUTHORIZED_YES_NO
+"0,000/kWh",USD/kWh,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.1,Critical load unmet penalty cost,milp.py line 78 prototype implementation,CURRENT_IMPLEMENTATION_FACT,PROTOTYPE_DEFAULT,NO
+bash.625/kWh,USD/kWh,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.1,Base fuel penalty cost coefficient,milp.py prototype implementation,CURRENT_IMPLEMENTATION_FACT,PROTOTYPE_DEFAULT,NO
+20%,% SOC,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 3.2,Technical battery minimum SOC limit (SOC_min_technical),battery.yaml system configuration,CURRENT_IMPLEMENTATION_FACT,HARDWARE_SAFETY_LIMIT,YES_AS_TECHNICAL_FLOOR
+35%,% SOC,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.3,Provisional baseline Emergency Battery Reserve (EBR) floor,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_CALIBRATION,NO
+45%,% SOC,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.3,Provisional dynamic EBR target level,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_CALIBRATION,NO
+55%,% SOC,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.3,Provisional baseline Terminal SOC requirement,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_CALIBRATION,NO
+65%,% SOC,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.3,Provisional high-resilience Terminal SOC requirement,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_CALIBRATION,NO
+-15% to -25%,% derate,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.4,Provisional Solar PV forecast safety margin,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,STATION_SPECIFIC_CALIBRATION_REQUIRED,NO
+-20% to -30%,% derate,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.4,Provisional Wind forecast safety margin,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,STATION_SPECIFIC_CALIBRATION_REQUIRED,NO
++10%,% increase,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.4,Provisional Demand forecast safety margin,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,STATION_SPECIFIC_CALIBRATION_REQUIRED,NO
+30 days,days,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.2,Provisional fuel resupply cycle duration,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,STATION_DATA_REQUIRED,NO
+5 minutes,minutes,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.5,Provisional load shedding minimum dwell time,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_IMPLEMENTATION_SPECIFICATION,NO
+15 minutes,minutes,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.5,Provisional Emergency Mode entry trigger duration,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_IMPLEMENTATION_SPECIFICATION,NO
+2 kWh,kWh,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.5,Provisional energy deficit threshold for Emergency Mode,Engineering proposal / example,PROVISIONAL_ENGINEERING_VALUE,REQUIRES_IMPLEMENTATION_SPECIFICATION,NO
+50–70%,% renewable,POLARIS_EMS_OBJECTIVE_SPECIFICATION.md Section 4.2,Ill-conceived fixed renewable target (EXPLICITLY REJECTED),Rejected legacy proposal,EXPLICITLY_REJECTED_POLICY,NOT_APPLICABLE,NO

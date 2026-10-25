@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-09-12T14:03:00Z",
+  "stage": "STAGE 7.4 VERTICAL CLOUD STRUCTURE FORECASTING EXPERIMENT",
+  "stage_status": "STAGE_7_4_CLOSED",
+  "candidate_decision": "REJECTED",
+  "official_champion": "STAGE_6_6_LWP_IWP",
+  "next_stage_status": "NOT_STARTED",
+  "odd_access_classification": {
+    "odd_target_accessed": false,
+    "odd_feature_accessed": true,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false
+  },
+  "audits": {
+    "stage6_6_champion_metrics_unchanged": true,
+    "stage6_6_champion_artifacts_unchanged": true,
+    "stage7_1_artifacts_unchanged": true,
+    "stage7_2_artifacts_unchanged": true,
+    "stage7_3_artifacts_unchanged": true,
+    "stage7_4_numerical_results_unchanged": true,
+    "stage7_4_fold_results_unchanged": true,
+    "stage7_4_gate_decision_unchanged": true,
+    "odd_targets_not_accessed": true,
+    "odd_predictions_not_generated": true,
+    "odd_metrics_not_evaluated": true,
+    "odd_not_used_for_tuning": true,
+    "odd_feature_access_accurately_documented": true,
+    "no_model_training_during_closure": true,
+    "no_cv_during_closure": true,
+    "no_hyperparameters_changed": true,
+    "no_stage7_5_started": true,
+    "documentation_terminology_consistent": true
+  },
+  "all_audits_passed": true
+}

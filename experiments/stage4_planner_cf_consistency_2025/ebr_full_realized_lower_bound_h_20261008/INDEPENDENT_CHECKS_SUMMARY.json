@@ -1,0 +1,13 @@
+{
+  "validity_requirement_diesel_min": "PASSED (all positive diesel >= 10,000 W; min = 10000.0 W, 0 violations)",
+  "busbar_residual_max_all_origins_w": 7.275957614183426e-12,
+  "battery_residual_max_all_origins_wh": 2.419255906715989e-09,
+  "ebr_residual_max_all_origins_wh": 2.9103830456733704e-11,
+  "all_origins_diesel_min_satisfied": true,
+  "all_origins_zero_unmet": true,
+  "all_origins_no_unmet_vars": true,
+  "all_origins_no_terminal_row": true,
+  "all_origins_recompute_ok": true,
+  "all_origins_h_ge_g": true,
+  "all_origins_h_le_pc_sw": true
+}

@@ -1,0 +1,133 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_FORECASTING_A1_TARGET_AND_DATA_QUALIFICATION",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A1_TARGET_AND_DATA_QUALIFICATION",
+    "task_type": "CONTROLLED_WIND_FORECASTING_RESEARCH_PREPARATION",
+    "authorization_status": "AUTHORIZED_PHASE_A1"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "AUTHORIZED_PHASE_A1",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "A2_TARGET_PROVENANCE": "ESTABLISHED",
+    "A2_TEMPORAL_STRUCTURE": "ESTABLISHED",
+    "A2_CAUSAL_INPUTS": "ESTABLISHED",
+    "A2_HORIZON_COMPATIBILITY": "ESTABLISHED",
+    "ABISKO_NUOLJA_PROXY_LIMITATION": "PRESERVED",
+    "ALTITUDE_TRANSFER_METHOD": "NOT_ESTABLISHED",
+    "WIND_MODEL_TRAINING": "NOT_AUTHORIZED",
+    "WIND_MODEL_INFERENCE": "NOT_AUTHORIZED",
+    "WIND_MODEL_SELECTION": "NOT_AUTHORIZED",
+    "WIND_FORECAST_EXPERIMENT": "NOT_AUTHORIZED",
+    "WIND_FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "WIND_GENERATION_MAPPING": "NOT_AUTHORIZED",
+    "NEW_EXPERIMENT": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "A1_ONLY",
+    "NEXT_GOVERNED_STEP": "WIND_MODEL_DEVELOPMENT_AUTHORIZATION"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_MODEL_ARTIFACT_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXPERIMENT_EXECUTED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "MODEL_SELECTION_EXECUTED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "A1_ONLY"
+  },
+  "authoritative_target_definition": {
+    "target_variable": "WIND_SPEED",
+    "target_units": "m/s",
+    "reference_height": "10m",
+    "temporal_resolution": "1h",
+    "station_id": "188790",
+    "station_name": "SMHI Abisko Aut",
+    "latitude": 68.3538,
+    "longitude": 18.8164,
+    "elevation_masl": 392.2,
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "direct_nuolja_measurement": "NOT_ESTABLISHED",
+    "forecast_horizon_hours": 24,
+    "a2_research_champion": "AUTOREGRESSIVE_RIDGE_ARX",
+    "a2_research_champion_status": "VERIFIED",
+    "a2_audit_status": "VERIFIED_WITH_LIMITATIONS"
+  },
+  "data_provenance": {
+    "source_file": "research/wind_a2/smhi_188790_ws_full.csv",
+    "custodian": "SMHI / Polarforskningssekretariatet",
+    "parameter_code": "4",
+    "parameter_name": "Vindhastighet",
+    "observation_semantics": "Measured 10-minute average logged hourly",
+    "temporal_coverage": "2024-01-01 00:00:00 UTC to 2024-12-31 23:00:00 UTC",
+    "provenance_chain": "SMHI Open Data REST API -> research/wind_a2/smhi_188790_ws_full.csv",
+    "is_empirical_measured": true,
+    "is_synthetic": false
+  },
+  "temporal_structure": {
+    "earliest_timestamp": "2024-01-01T00:00:00Z",
+    "latest_timestamp": "2024-12-31T23:00:00Z",
+    "total_valid_observations": 8690,
+    "nominal_sampling_interval_hours": 1,
+    "missing_timestamps": 0,
+    "duplicate_timestamps": 0,
+    "irregular_intervals": 0,
+    "timezone": "UTC",
+    "longest_continuous_segment_hours": 8690
+  },
+  "forecast_horizon_compatibility": {
+    "forecast_horizon_hours": 24,
+    "time_step_hours": 1,
+    "historical_context_hours": 24,
+    "origin_spacing_hours": 24,
+    "total_usable_origins": 342,
+    "splits": {
+      "train": {"origins": 219, "period": "2024-01-20 to 2024-08-31", "instances": 5265},
+      "validation": {"origins": 61, "period": "2024-09-01 to 2024-10-31", "instances": 1464},
+      "test": {"origins": 62, "period": "2024-11-01 to 2024-12-31", "instances": 1488}
+    }
+  },
+  "causal_predictor_inventory": {
+    "observed_inputs_at_origin": [
+      "v_t0", "v_t0-1", "v_t0-2", "v_t0-3", "v_t0-6", "v_t0-12", "v_t0-23",
+      "v_24h_mean", "v_24h_std", "v_24h_min", "v_24h_max", "v_6h_trend",
+      "sin_wd_t0", "cos_wd_t0", "TA_t0", "RH_t0"
+    ],
+    "forward_forecast_inputs_at_origin": [
+      "fc_wind_speed_10m", "fc_surface_pressure", "fc_temperature_2m",
+      "fc_relative_humidity_2m", "fc_cloud_cover", "fc_precipitation"
+    ],
+    "target_observations": ["v_wind_t0+h"],
+    "future_truth": ["v_wind_t0+h (strictly forbidden as predictor)"]
+  },
+  "proxy_limitations": {
+    "proxy_statement": "Abisko SMHI 188790 10m measured wind speed is used as a conditionally supported regional proxy for Mount Nuolja; it is not direct measured Nuolja wind.",
+    "altitude_transfer_method": "NOT_ESTABLISHED",
+    "elevation_difference_meters": 309.8,
+    "rescaling_applied": false
+  },
+  "wind_generation_firewall": {
+    "WIND_GENERATION_MAPPING_DECISION": "C",
+    "WIND_SPEED_TO_POWER_MAPPING": "NOT_ESTABLISHED",
+    "WIND_GENERATION_REPRESENTATION": "NOT_ESTABLISHED",
+    "WIND_POWER_MAPPING_IMPLEMENTATION_READINESS": "NOT_READY"
+  }
+}

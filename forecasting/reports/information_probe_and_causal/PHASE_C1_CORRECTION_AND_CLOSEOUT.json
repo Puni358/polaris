@@ -1,0 +1,167 @@
+{
+  "artifact_name": "PHASE_C1_CORRECTION_AND_CLOSEOUT",
+  "timestamp_utc": "2026-09-16 00:43:17+0000",
+  "governance_status": "PHASE C-1 OFFICIALLY CLOSED AND FROZEN",
+  "initial_execution_record": {
+    "status": "INVALID_HISTORICAL_ONLY",
+    "root_cause_defect": "Canonical fold labels in STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv are 1-indexed (1,2,3,4,5), whereas initial script used range(5) (0,1,2,3,4). Fold 0 was empty, Fold 5 validation origins were omitted, Fold 5 origins leaked into training for Folds 1-4, and Fold 5 OOF predictions were unpredicted zero-fills.",
+    "preserved_invalid_artifacts": [
+      "PHASE_C1_HORIZON_DIAGNOSTIC.json",
+      "PHASE_C1_HORIZON_DIAGNOSTIC.md",
+      "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.json",
+      "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.md"
+    ]
+  },
+  "authoritative_corrected_execution": {
+    "status": "VALID_AUTHORITATIVE",
+    "execution_script": "scratch/run_phase_c1_horizon_diagnostic_corrected.py",
+    "forensic_audit_verdict": "PASS \u2014 All 15 checks verified",
+    "authoritative_artifacts": [
+      "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.json",
+      "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.md",
+      "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.json",
+      "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.md"
+    ]
+  },
+  "corrected_results_summary": {
+    "population_accounting": {
+      "parent_eligible_origins": 104,
+      "theoretical_max_cells": 624,
+      "aggregate_valid_target_cells": 609,
+      "total_omitted_cells": 15,
+      "omitted_horizon_detail": "All 15 omitted cells occur at H7 due to clear-sky GHI < 20 W/m\u00b2"
+    },
+    "horizon_gbdt_results": {
+      "H7": {
+        "N_h": 89,
+        "delta_R2": 0.5146,
+        "bootstrap_95ci": [
+          0.2639,
+          0.7858
+        ],
+        "permutation_p": 0.001,
+        "folds_1_to_5": [
+          18,
+          17,
+          18,
+          18,
+          18
+        ]
+      },
+      "H8": {
+        "N_h": 104,
+        "delta_R2": 0.5317,
+        "bootstrap_95ci": [
+          0.3024,
+          0.774
+        ],
+        "permutation_p": 0.001,
+        "folds_1_to_5": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ]
+      },
+      "H9": {
+        "N_h": 104,
+        "delta_R2": 0.7013,
+        "bootstrap_95ci": [
+          0.4795,
+          0.9302
+        ],
+        "permutation_p": 0.001,
+        "folds_1_to_5": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ]
+      },
+      "H10": {
+        "N_h": 104,
+        "delta_R2": 0.4718,
+        "bootstrap_95ci": [
+          0.2216,
+          0.7408
+        ],
+        "permutation_p": 0.001,
+        "folds_1_to_5": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ]
+      },
+      "H11": {
+        "N_h": 104,
+        "delta_R2": 0.6373,
+        "bootstrap_95ci": [
+          0.3904,
+          0.8996
+        ],
+        "permutation_p": 0.001,
+        "folds_1_to_5": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ]
+      },
+      "H12": {
+        "N_h": 104,
+        "delta_R2": 0.3037,
+        "bootstrap_95ci": [
+          0.0276,
+          0.585
+        ],
+        "permutation_p": 0.001,
+        "folds_1_to_5": [
+          21,
+          21,
+          21,
+          20,
+          21
+        ]
+      }
+    },
+    "ridge_contrast_summary": {
+      "H7": -0.7366,
+      "H8": -0.4308,
+      "H9": -0.2484,
+      "H10": -0.3494,
+      "H11": -0.2729,
+      "H12": -0.4332
+    }
+  },
+  "hypothesis_ledger": {
+    "M1_information_absent": "DISFAVORED \u2014 Incremental out-of-fold predictive information extracted across all 6 daytime horizons.",
+    "M2_representation_limitation": "NOT ESTABLISHED BY C-1 \u2014 Probe extraction does not establish Stage8.1 architecture inadequacy due to model-class, loss, and capacity confounders.",
+    "M3_point_loss_uncertainty": "NOT ESTABLISHED BY C-1 \u2014 Phase B hedging diagnostics remain consistent with median hedging, but C-1 does not independently test M3.",
+    "event_timing_uncertainty": "NOT ESTABLISHED BY C-1 \u2014 C-1 does not directly measure transition timing.",
+    "odd_performance": "UNKNOWN \u2014 ODD data remains completely sealed (0 rows accessed)."
+  },
+  "governance_closure": {
+    "phase_c1_status": "COMPLETE_AND_CLOSED",
+    "odd_firewall": "SEALED_0_ROWS_ACCESSED",
+    "secondary_analysis_authorized": false
+  },
+  "historical_hashes": {
+    "PHASE_C1_HORIZON_DIAGNOSTIC.json": "6becb0e21567f3f4c86525a2105ce6cad84ee3fc2021ce16cce0a06f5a567c23",
+    "PHASE_C1_HORIZON_DIAGNOSTIC.md": "98a22c27b7717f2b9af91b41c8bdc64ec044cfb3af30dc2a51ebbccf1298c619",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.json": "52b5b97fa31f6b8c9faba0861485ae4e78b145add164c5fc34848c9f3650ed5a",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT.md": "3cd44c7eeff9e8e2ff7c9e24708219708a57c1f80a6e2030c3aa64112781d0f9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.json": "0e81f0051f04140b059c29e0ffef914d58404dd16259c4118eb0440e7ca52fb9",
+    "PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED.md": "bd4efea996c8d436d60df543aeca5006960d148c085f6ec1bbb4f4c131689fb3",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.json": "da9efe62360d5d3cb96fcfa69eee5a1e9d6afe63ed10a5228acbbffee35da35e",
+    "PHASE_C1_FORENSIC_INTEGRITY_AUDIT_CORRECTED.md": "d83ed20ae406398391e97850efec34f76e44a9aec13e7c30b92f407fe7047e9d",
+    "POLARIS_PHASE_AB_SCIENTIFIC_SYNTHESIS_CHECKPOINT.json": "a80dbc19476bd1109da9f0c17825bfc4752aad814e60342b9b3de2f935de59bf",
+    "POLARIS_PHASE_AB_SCIENTIFIC_SYNTHESIS_CHECKPOINT.md": "bef464625f96bdb6dfbd8b34dbf8a5cea708e2fdb2c0b918161ef9587ceb5023",
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+    "INFORMATION_PROBE_ELIGIBLE_EVEN_ORIGINS.csv": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e"
+  }
+}

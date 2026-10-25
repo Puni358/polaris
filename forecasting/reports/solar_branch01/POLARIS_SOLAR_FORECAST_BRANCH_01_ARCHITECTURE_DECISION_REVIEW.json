@@ -1,0 +1,92 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "phase": "ARCHITECTURE_DECISION_REVIEW",
+  "authorization": "READ_ONLY_ARCHITECTURE_REVIEW_ONLY",
+  "architecture_decision_review": "PASS",
+  "candidate_evaluations": {
+    "CANDIDATE_HISTGRADIENTBOOSTING": "COMPATIBLE",
+    "CANDIDATE_RIDGE": "COMPATIBLE"
+  },
+  "contract_compliance": {
+    "INPUT_CONTRACT": "PASS",
+    "OUTPUT_CONTRACT": "PASS",
+    "CAUSALITY_CONTRACT": "PASS",
+    "NWP_CONTRACT": "PASS",
+    "SPLIT_CONTRACT": "PASS",
+    "PREPROCESSING_CONTRACT": "PASS",
+    "REPRODUCIBILITY_CONTRACT": "PASS",
+    "EMS_INTERFACE_COMPATIBILITY": "PASS"
+  },
+  "candidate_details": {
+    "CANDIDATE_A": {
+      "model_class": "sklearn.ensemble.HistGradientBoostingRegressor",
+      "multi_output_strategy": "MultiOutputRegressor (24 separate sub-estimators)",
+      "input_dimension": 18,
+      "output_dimension": 24,
+      "scaling_requirement": "Compatible (StandardScaler fitted strictly on Train split)",
+      "hyperparameters": {
+        "learning_rate": 0.05,
+        "max_iter": 100,
+        "max_depth": 6,
+        "min_samples_leaf": 20,
+        "l2_regularization": 1.0,
+        "random_state": 42
+      },
+      "strengths": "Captures non-linear feature interactions and physical regimes",
+      "limitations": "Requires 24 separate tree ensembles; bounded by min/max training targets"
+    },
+    "CANDIDATE_B": {
+      "model_class": "sklearn.linear_model.Ridge",
+      "multi_output_strategy": "Native 2D target matrix regression (W in R^{18x24})",
+      "input_dimension": 18,
+      "output_dimension": 24,
+      "scaling_requirement": "MANDATORY (StandardScaler fitted strictly on Train split)",
+      "hyperparameters": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "solver": "auto",
+        "random_state": 42
+      },
+      "strengths": "Fast closed-form solution; highly interpretable linear weights",
+      "limitations": "Strictly linear hypothesis space without explicit non-linear terms"
+    }
+  },
+  "empirical_performance_comparison": "NOT_AVAILABLE_WITHOUT_TRAINING",
+  "governance_status": {
+    "ARCHITECTURE_STATUS": "AUTHORIZED_MULTIPLE_CANDIDATES",
+    "ARCHITECTURE_SELECTION": "REQUIRES_GOVERNANCE_DECISION",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO",
+    "REAL_BRANCH01_MODEL_LOADED": "NO",
+    "EMS_EXECUTED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "CANDIDATE_A_EXECUTED": "NO",
+    "MODEL_TRAINING_AUTHORIZATION": "NOT_GRANTED",
+    "NEXT_GOVERNED_STEP": "EXPLICIT_ARCHITECTURE_SELECTION_AND_TRAINING_AUTHORIZATION"
+  },
+  "final_status_block": {
+    "ARCHITECTURE_DECISION_REVIEW": "PASS",
+    "CANDIDATE_HISTGRADIENTBOOSTING": "COMPATIBLE",
+    "CANDIDATE_RIDGE": "COMPATIBLE",
+    "INPUT_CONTRACT": "PASS",
+    "OUTPUT_CONTRACT": "PASS",
+    "CAUSALITY_CONTRACT": "PASS",
+    "NWP_CONTRACT": "PASS",
+    "SPLIT_CONTRACT": "PASS",
+    "PREPROCESSING_CONTRACT": "PASS",
+    "REPRODUCIBILITY_CONTRACT": "PASS",
+    "EMS_INTERFACE_COMPATIBILITY": "PASS",
+    "ARCHITECTURE_STATUS": "AUTHORIZED_MULTIPLE_CANDIDATES",
+    "ARCHITECTURE_SELECTION": "REQUIRES_GOVERNANCE_DECISION",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO",
+    "REAL_BRANCH01_MODEL_LOADED": "NO",
+    "EMS_EXECUTED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "CANDIDATE_A_EXECUTED": "NO",
+    "MODEL_TRAINING_AUTHORIZATION": "NOT_GRANTED",
+    "NEXT_GOVERNED_STEP": "EXPLICIT_ARCHITECTURE_SELECTION_AND_TRAINING_AUTHORIZATION"
+  }
+}

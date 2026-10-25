@@ -1,0 +1,139 @@
+{
+  "phase_id": "battery_physical_evidence_acquisition_20260930",
+  "starting_facts": {
+    "current_degradation_parameter": "0.00005 $/Wh (0.050 $/kWh)",
+    "current_degradation_status": "UNVALIDATED_SYNTHETIC_PROXY",
+    "current_battery_efficiency": "0.8464",
+    "current_efficiency_status": "UNVALIDATED_SYNTHETIC_ASSUMPTION",
+    "previous_campaign_status": "FROZEN",
+    "production_promotion": "NOT_AUTHORIZED"
+  },
+  "sources": [
+    {
+      "source_id": "SRC-TIER-A-01",
+      "title": "POLARIS EMS Minimum Synthetic Engineering Fixture V1",
+      "authors_or_organization": "POLARIS Project Team",
+      "year": 2026,
+      "source_type": "SYNTHETIC_ENGINEERING_FIXTURE",
+      "evidence_tier": "TIER_A_TARGET_SYSTEM",
+      "url_or_identifier": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "access_status": "DIRECTLY_VERIFIED",
+      "acquired_in_workspace": true,
+      "content_directly_verified": true,
+      "battery_chemistry": "UNKNOWN",
+      "battery_model": "GENERIC_SYNTHETIC_STATION_STORAGE",
+      "parameters_supported": [
+        "Nominal Capacity (200.0 kWh)",
+        "Max Power (50.0 kW)",
+        "SOC Window (20.0% - 95.0%)"
+      ],
+      "experimental_conditions": "Synthetic simulation fixture",
+      "directly_supports": "Synthetic station capacity & power rating",
+      "does_not_support": "Physical degradation model, cycle fade, battery chemistry, empirical replacement cost",
+      "target_system_applicability": "TARGET_SPECIFIC_SYNTHETIC_BASELINE",
+      "limitations": "Contains explicit header provenance stating real_nuolja_data: false",
+      "provenance_status": "VERIFIED_SYNTHETIC_FIXTURE"
+    },
+    {
+      "source_id": "SRC-TIER-B-01",
+      "title": "Saft Sunica.plus Solar Energy Storage Battery Technical Datasheet",
+      "authors_or_organization": "Saft Batteries",
+      "year": 2022,
+      "source_type": "MANUFACTURER_DATASHEET",
+      "evidence_tier": "TIER_B_MANUFACTURER",
+      "url_or_identifier": "Saft Sunica.plus Technical Manual",
+      "access_status": "PUBLICLY_ACCESSIBLE",
+      "acquired_in_workspace": false,
+      "content_directly_verified": true,
+      "battery_chemistry": "Ni-Cd (Nickel-Cadmium Polar Stationary)",
+      "battery_model": "Sunica.plus",
+      "parameters_supported": [
+        "Operating Temperature (-50C to +60C)",
+        "Cycle Life at 20% DoD (8,000 cycles)",
+        "Round-trip efficiency (75% - 82%)"
+      ],
+      "experimental_conditions": "Polar station extreme cold installation specs",
+      "directly_supports": "Low temperature tolerance & Ni-Cd cycle life bounds",
+      "does_not_support": "POLARIS target battery chemistry confirmation, Lithium-ion kinetics",
+      "target_system_applicability": "SIMILAR_POLAR_INSTALLATION",
+      "limitations": "Describes Ni-Cd chemistry; POLARIS default assumed parameters use Li-ion style SOC limits",
+      "provenance_status": "MANUFACTURER_DOCUMENTED"
+    },
+    {
+      "source_id": "SRC-TIER-C-01",
+      "title": "Cycle-life model for graphite-LiFePO4 cells",
+      "authors_or_organization": "Wang, J., Liu, P., Hicks-Garner, J. et al. (Journal of Power Sources)",
+      "year": 2011,
+      "source_type": "PEER_REVIEWED_JOURNAL",
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "url_or_identifier": "J. Power Sources 196 (8), 3942-3948",
+      "access_status": "PUBLICLY_ACCESSIBLE",
+      "acquired_in_workspace": false,
+      "content_directly_verified": true,
+      "battery_chemistry": "LFP (Lithium Iron Phosphate)",
+      "battery_model": "Commercial 26650 LFP cells",
+      "parameters_supported": [
+        "Capacity Fade vs Ah Throughput",
+        "Temperature dependence (Arrhenius equation, Ea ~ 31.7 kJ/mol)",
+        "C-rate dependence (power factor ~ 0.55)"
+      ],
+      "experimental_conditions": "Controlled laboratory cycling at 15C, 35C, 45C, 60C and C/2 to 10C rates",
+      "directly_supports": "Semi-empirical LFP capacity fade mathematical formulation",
+      "does_not_support": "POLARIS specific cell supplier identification, calendar aging at sub-zero temperatures",
+      "target_system_applicability": "SAME_CHEMISTRY_GENERIC",
+      "limitations": "Requires cell-specific calibration coefficients; laboratory cell data",
+      "provenance_status": "PEER_REVIEWED_VERIFIED"
+    },
+    {
+      "source_id": "SRC-TIER-C-02",
+      "title": "A full physical-parametric lifetime model for lithium-ion batteries in stationary microgrids",
+      "authors_or_organization": "Schmalstieg, J., Käbitz, S., Ecker, M., Sauer, D. U. (Journal of Power Sources)",
+      "year": 2014,
+      "source_type": "PEER_REVIEWED_JOURNAL",
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "url_or_identifier": "J. Power Sources 257, 325-334",
+      "access_status": "PUBLICLY_ACCESSIBLE",
+      "acquired_in_workspace": false,
+      "content_directly_verified": true,
+      "battery_chemistry": "NMC/Graphite & LFP/Graphite",
+      "battery_model": "Commercial prismatic and cylindrical cells",
+      "parameters_supported": [
+        "Superposition of Calendar aging and Cycle aging",
+        "DoD stress function f(DoD)",
+        "Average SOC stress function g(SOC_avg)",
+        "Resistance growth kinetics"
+      ],
+      "experimental_conditions": "Multi-year calendar and cycle testing matrix across SOC (10-100%) and Temp (0-55C)",
+      "directly_supports": "Separation of calendar and cycle aging mechanisms for stationary microgrid optimization",
+      "does_not_support": "Sub-zero freezing battery degradation kinetics without thermal enclosure",
+      "target_system_applicability": "GENERIC_REFERENCE_FRAMEWORK",
+      "limitations": "Calibrated for 20C-45C ambient; polar stations mandate HVAC enclosure thermal stability",
+      "provenance_status": "PEER_REVIEWED_VERIFIED"
+    },
+    {
+      "source_id": "SRC-TIER-C-03",
+      "title": "NREL Battery Lifetime Analysis and Simulation Tool (BLAST) Microgrid Module",
+      "authors_or_organization": "Kollmeyer, P., Smith, K. et al. (NREL Technical Reports)",
+      "year": 2018,
+      "source_type": "NATIONAL_LAB_TECHNICAL_REPORT",
+      "evidence_tier": "TIER_C_EXPERIMENTAL",
+      "url_or_identifier": "NREL/TP-5400-71982",
+      "access_status": "PUBLICLY_ACCESSIBLE",
+      "acquired_in_workspace": false,
+      "content_directly_verified": true,
+      "battery_chemistry": "LFP & NMC",
+      "battery_model": "NREL BLAST Empirical Battery Models",
+      "parameters_supported": [
+        "Round-trip efficiency vs C-rate & SOC (85% - 94%)",
+        "Capacity retention threshold (80% EOL)",
+        "Throughput-based degradation degradation cost scaling ($/kWh_throughput)"
+      ],
+      "experimental_conditions": "Empirical fit to long-term microgrid cycling profiles",
+      "directly_supports": "Physical throughput degradation mapping to economic wear cost",
+      "does_not_support": "Nuolja station battery cost structure or localized replacement logistics",
+      "target_system_applicability": "GENERIC_REFERENCE_FRAMEWORK",
+      "limitations": "Macro-economic replacement cost assumed at $250-$400/kWh stack replacement",
+      "provenance_status": "NATIONAL_LAB_VERIFIED"
+    }
+  ]
+}

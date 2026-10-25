@@ -1,0 +1,2 @@
+model,evaluation_windows,evaluation_hours,MAE_W_m2,RMSE_W_m2,daytime_MAE_W_m2,daytime_RMSE_W_m2
+Smart Persistence (kt),365,8760,37.15389258016215,84.86133742892987,55.052114174935795,103.29866584696121

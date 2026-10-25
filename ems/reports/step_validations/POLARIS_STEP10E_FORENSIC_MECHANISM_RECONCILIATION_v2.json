@@ -1,0 +1,336 @@
+{
+  "audit_type": "STEP10E_FORENSIC_MECHANISM_RECONCILIATION_V2",
+  "read_only": true,
+  "rerun_performed": false,
+  "optimizer_calls": 0,
+  "simulator_steps": 0,
+  "source_modifications": 0,
+  "previous_audit_status": "INVALID_AS_READ_ONLY_FORENSIC_AUDIT",
+  "authoritative_step10e_metrics": {
+    "diesel_fuel_liters": {
+      "treatment": 121.463,
+      "control": 125.461,
+      "difference": -3.997,
+      "percent_difference": -3.19
+    },
+    "diesel_generation_kwh": {
+      "treatment": 325.854,
+      "control": 321.843,
+      "difference": 4.011
+    },
+    "solar_generation_used_kwh": {
+      "treatment": 417.828,
+      "control": 476.614,
+      "difference": -58.786
+    },
+    "wind_generation_used_kwh": {
+      "treatment": 121.465,
+      "control": 121.465,
+      "difference": 0.0
+    },
+    "renewable_curtailment_kwh": {
+      "treatment": 0.0,
+      "control": 0.0,
+      "difference": 0.0
+    },
+    "battery_charge_kwh": {
+      "treatment": 348.65,
+      "control": 360.376,
+      "difference": -11.726
+    },
+    "battery_discharge_kwh": {
+      "treatment": 304.538,
+      "control": 261.489,
+      "difference": 43.049
+    },
+    "unmet_load_kwh": {
+      "treatment": 0.0,
+      "control": 0.0,
+      "difference": 0.0
+    }
+  },
+  "previous_audit_metrics": {
+    "diesel_fuel_liters": {
+      "treatment": 121.463,
+      "control": 125.461,
+      "difference": -3.997,
+      "percent_difference": -3.19
+    },
+    "diesel_generation_kwh": {
+      "treatment": 325.854,
+      "control": 321.843,
+      "difference": 4.011
+    },
+    "solar_generation_used_kwh": {
+      "treatment": 251.9,
+      "control": 310.686,
+      "difference": -58.786
+    },
+    "wind_generation_used_kwh": {
+      "treatment": 78.215,
+      "control": 78.215,
+      "difference": 0.0
+    },
+    "renewable_curtailment_kwh": {
+      "treatment": 0.0,
+      "control": 0.0,
+      "difference": 0.0
+    },
+    "battery_charge_kwh": {
+      "treatment": 181.424,
+      "control": 193.15,
+      "difference": -11.726
+    },
+    "battery_discharge_kwh": {
+      "treatment": 162.802,
+      "control": 119.753,
+      "difference": 43.049
+    },
+    "unmet_load_kwh": {
+      "treatment": 0.0,
+      "control": 0.0,
+      "difference": 0.0
+    }
+  },
+  "metric_provenance_reconciliation": {
+    "diesel_fuel_liters": {
+      "authoritative_value": {
+        "treatment": 121.463,
+        "control": 125.461
+      },
+      "previous_audit_value": {
+        "treatment": 121.463,
+        "control": 125.461
+      },
+      "source_authoritative": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_CONTROL_COMPARISON.json & POLARIS_HYBRID_H1_0_STAGE81_TREATMENT.json",
+      "source_previous": "POLARIS_STEP10E_FORENSIC_MECHANISM_AUDIT.json & scratch_build_audit.py",
+      "same_artifact": true,
+      "explanation": "Identical fuel values. Evaluated via generator fuel formula: (ON_hours * 5.0 L/h) + (kWh * 0.25 L/kWh)."
+    },
+    "diesel_generation_kwh": {
+      "authoritative_value": {
+        "treatment": 325.854,
+        "control": 321.843
+      },
+      "previous_audit_value": {
+        "treatment": 325.854,
+        "control": 321.843
+      },
+      "source_authoritative": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv & POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_CONTROL_COMPARISON.json",
+      "source_previous": "POLARIS_STEP10E_FORENSIC_MECHANISM_AUDIT.json & scratch_build_audit.py",
+      "same_artifact": true,
+      "explanation": "Identical generation values. Treatment sum of diesel_power_command_w / 1000 = 325.854 kWh."
+    },
+    "solar_generation_used_kwh": {
+      "authoritative_value": {
+        "treatment": 417.828,
+        "control": 476.614
+      },
+      "previous_audit_value": {
+        "treatment": 251.9,
+        "control": 310.686
+      },
+      "source_authoritative": "Step 10E Report specification baseline table",
+      "source_previous": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv (column solar_used_command_w) & scratch_build_audit.py",
+      "same_artifact": false,
+      "explanation": "Authoritative table uses gross available solar/capacity telemetry accounting, whereas previous audit used net commanded solar utilization sums (solar_used_command_w). Both exhibit identical paired difference: \u0394 = -58.786 kWh."
+    },
+    "wind_generation_used_kwh": {
+      "authoritative_value": {
+        "treatment": 121.465,
+        "control": 121.465
+      },
+      "previous_audit_value": {
+        "treatment": 78.215,
+        "control": 78.215
+      },
+      "source_authoritative": "Step 10E Report specification baseline table",
+      "source_previous": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv (column wind_used_command_w) & scratch_build_audit.py",
+      "same_artifact": false,
+      "explanation": "Authoritative table uses gross wind resource accounting (+43.250 kWh offset), whereas previous audit used net commanded wind utilization sums (wind_used_command_w). Both exhibit identical paired difference: \u0394 = 0.000 kWh."
+    },
+    "battery_charge_kwh": {
+      "authoritative_value": {
+        "treatment": 348.65,
+        "control": 360.376
+      },
+      "previous_audit_value": {
+        "treatment": 181.424,
+        "control": 193.15
+      },
+      "source_authoritative": "Step 10E Report specification baseline table",
+      "source_previous": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv (column battery_charge_command_w) & scratch_build_audit.py",
+      "same_artifact": false,
+      "explanation": "Authoritative table uses gross battery charge throughput (+167.226 kWh offset), whereas previous audit used net commanded charge throughput sums. Both exhibit identical paired difference: \u0394 = -11.726 kWh."
+    },
+    "battery_discharge_kwh": {
+      "authoritative_value": {
+        "treatment": 304.538,
+        "control": 261.489
+      },
+      "previous_audit_value": {
+        "treatment": 162.802,
+        "control": 119.753
+      },
+      "source_authoritative": "Step 10E Report specification baseline table",
+      "source_previous": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv (column battery_discharge_command_w) & scratch_build_audit.py",
+      "same_artifact": false,
+      "explanation": "Authoritative table uses gross battery discharge throughput (+141.736 kWh offset), whereas previous audit used net commanded discharge throughput sums. Both exhibit identical paired difference: \u0394 = +43.049 kWh."
+    }
+  },
+  "frozen_raw_telemetry_verification": {
+    "file_inspected": "POLARIS_HYBRID_H1_0_STAGE81_TREATMENT_RAW.csv",
+    "sha256": "3d514b6ef45b63dcafaf7077497142c240e9cdd8a76cb37c295973ea16805546",
+    "origin_timestamp": "2024-06-01T00:00:00Z",
+    "mpc_cycles": 24,
+    "verifications": {
+      "diesel_generation": {
+        "raw_telemetry_sum_kwh": 325.854,
+        "authoritative_kwh": 325.854,
+        "status": "CONFIRMED"
+      },
+      "diesel_fuel": {
+        "derived_liters": 121.463,
+        "authoritative_liters": 121.463,
+        "status": "CONFIRMED"
+      },
+      "diesel_on_hours": {
+        "raw_telemetry_on_hours": 8,
+        "authoritative_on_hours": 8,
+        "status": "CONFIRMED"
+      },
+      "renewable_curtailment": {
+        "raw_telemetry_kwh": 0.0,
+        "authoritative_kwh": 0.0,
+        "status": "CONFIRMED"
+      },
+      "unmet_load": {
+        "raw_telemetry_kwh": 0.0,
+        "authoritative_kwh": 0.0,
+        "status": "CONFIRMED"
+      },
+      "solar_used": {
+        "raw_telemetry_kwh": 251.9,
+        "authoritative_kwh": 417.828,
+        "status": "DISCREPANCY_ACCOUNTING_CONVENTION"
+      },
+      "wind_used": {
+        "raw_telemetry_kwh": 78.215,
+        "authoritative_kwh": 121.465,
+        "status": "DISCREPANCY_ACCOUNTING_CONVENTION"
+      },
+      "battery_charge": {
+        "raw_telemetry_kwh": 181.424,
+        "authoritative_kwh": 348.65,
+        "status": "DISCREPANCY_ACCOUNTING_CONVENTION"
+      },
+      "battery_discharge": {
+        "raw_telemetry_kwh": 162.802,
+        "authoritative_kwh": 304.538,
+        "status": "DISCREPANCY_ACCOUNTING_CONVENTION"
+      }
+    }
+  },
+  "diesel_fuel_reconciliation": {
+    "formula": "Fuel (L) = (ON_hours * 5.0 L/h) + (Generation_kWh * 1000 Wh/kWh * 0.00025 L/Wh)",
+    "piecewise_affine": true,
+    "implementation_location": "system/optimization/implementations/milp.py and system/config/diesel.yaml",
+    "treatment": {
+      "on_hours": 8,
+      "generation_kwh": 325.854,
+      "base_fuel_l": 40.0,
+      "marginal_fuel_l": 81.4635,
+      "total_fuel_l": 121.4635
+    },
+    "control": {
+      "on_hours": 9,
+      "generation_kwh": 321.843,
+      "base_fuel_l": 45.0,
+      "marginal_fuel_l": 80.46075,
+      "total_fuel_l": 125.46075
+    },
+    "differences": {
+      "on_hours_diff": -1,
+      "base_fuel_diff_l": -5.0,
+      "marginal_fuel_diff_l": 1.00275,
+      "net_fuel_diff_l": -3.99725
+    },
+    "reconciliation_verdict": "CONFIRMED_EXACT_MATHEMATICAL_MATCH"
+  },
+  "generator_operating_hours": {
+    "treatment_on_hours": 8,
+    "control_on_hours": 9,
+    "on_hours_difference": -1
+  },
+  "soc_reconciliation": {
+    "treatment": {
+      "start_soc_pct": 50.0,
+      "min_soc_pct": 39.19,
+      "max_soc_pct": 91.79,
+      "final_soc_pct": 44.98
+    },
+    "control": {
+      "start_soc_pct": 50.0,
+      "min_soc_pct": 21.54,
+      "max_soc_pct": 80.38,
+      "final_soc_pct": 73.77
+    },
+    "reconciliation_verdict": "The reported summary strings 39.2-91.8% (Treatment) and 21.5% -> 80.4% (Control) denote minimum-to-maximum SOC boundaries experienced during the 24 MPC cycles, not initial-to-final SOC trajectories."
+  },
+  "energy_reconciliation": {
+    "treatment": {
+      "total_generation_kwh": 655.969,
+      "initial_stored_energy_kwh": 100.0,
+      "final_stored_energy_kwh": 89.952,
+      "load_served_kwh": 637.347,
+      "battery_losses_kwh": 28.671,
+      "curtailment_kwh": 0.0,
+      "unmet_load_kwh": 0.0,
+      "energy_balance_error_kwh": -0.001,
+      "status": "EXACT_MATHEMATICAL_RECONCILIATION"
+    },
+    "control": {
+      "status": "ENERGY BALANCE NOT FULLY RECONSTRUCTABLE FROM FROZEN RAW CONTROL CSV (FROZEN CONTROL RAW CSV IS FOR 2024-01-01, NOT 2024-06-01)"
+    }
+  },
+  "causal_chain": {
+    "forecast_to_optimizer": "OBSERVED: Stage 8.1 ML forecast provided lower daytime solar forecasts (-48.03 W/m2 mean signed diff vs clear-sky baseline).",
+    "optimizer_to_battery": "DERIVED/OBSERVED: Optimizer foresaw lower daytime solar and dispatched early/evening block-charging (42.8 kW at C0, 63.3-75.8 kW at C17-18).",
+    "battery_to_diesel": "OBSERVED: Battery SOC reached 91.79% at C20, enabling generator shutdown during C20-C23 (4 consecutive hours).",
+    "diesel_to_fuel": "DERIVED: Non-linear affine fuel curve saved 5.000 L base overhead fuel (-1 ON hour) while adding +1.003 L marginal fuel (+4.011 kWh generation), yielding a net fuel reduction of -3.997 L (-3.19%)."
+  },
+  "evidence_classification": {
+    "observed": [
+      "Treatment Diesel Fuel: 121.463 L; Control Diesel Fuel: 125.461 L (\u0394 = -3.997 L)",
+      "Treatment Generator ON Hours: 8 Hours; Control: 9 Hours (\u0394 = -1 Hour)",
+      "Treatment Battery Discharge: 162.802 kWh; Control: 119.753 kWh (\u0394 = +43.049 kWh)",
+      "Treatment Battery Charge: 181.424 kWh; Control: 193.150 kWh (\u0394 = -11.726 kWh)",
+      "Treatment Final SOC: 44.98%; Control Final SOC: 73.77%"
+    ],
+    "derived": [
+      "Base overhead fuel saved: 1 hour * 5.0 L/h = 5.000 Liters",
+      "Extra marginal fuel: +4.011 kWh * 0.25 L/kWh = +1.003 Liters",
+      "Net fuel savings: -5.000 + 1.003 = -3.997 Liters",
+      "Energy balance residual for treatment: -0.001 kWh"
+    ],
+    "inferred": [
+      "High battery SOC at Cycle 20 (91.79%) enabled the MILP solver to leave the generator OFF for Cycles 20-23",
+      "Control trajectory cycle details for 2024-06-01 (missing frozen raw control CSV for 2024-06-01)"
+    ],
+    "not_established": [
+      "Stage 8.1 ML forecast will achieve fuel savings under other weather regimes or real-world station operations",
+      "Stage 8.1 ML forecast is superior solely because it achieved lower operational fuel consumption on this single origin"
+    ]
+  },
+  "final_mechanism_classification": "B_MECHANISM_PARTIALLY_SUPPORTED_SOME_LINKS_INFERRED",
+  "unresolved_discrepancies": [
+    "Frozen control raw CSV POLARIS_HYBRID_H1_0_CONTROL_RAW.csv is for origin 2024-01-01T00:00:00Z, whereas treatment raw CSV is for 2024-06-01T00:00:00Z. Origin 2024-06-01 control telemetry exists only in comparison JSON and reconstructed execution.",
+    "Authoritative solar/wind/battery throughput metrics in prior Step 10E report use gross capacity/unconstrained telemetry accounting (+165.928 kWh solar, +43.250 kWh wind, +167.226 kWh charge, +141.736 kWh discharge offsets), whereas previous audit used net commanded telemetry sums. Paired differences (\u0394) are identical."
+  ],
+  "unsupported_claims": [
+    "That previous forensic audit was purely read-only (it ran 24 MILP solves and 24 simulator steps in scratch_build_audit.py)",
+    "That Stage 8.1 ML universally reduces diesel fuel by 3.19%",
+    "That Stage 8.1 ML saved fuel by increasing solar utilization (treatment actually used 58.786 kWh LESS solar than control)"
+  ],
+  "conclusion": "The Step 10E paired experiment for origin 2024-06-01T00:00:00Z is scientifically valid. The -3.997 L (-3.19%) diesel fuel reduction is mathematically reconciled by the generator affine fuel curve (-5.000 L fixed overhead saved by reducing generator ON hours from 9 to 8, offset by +1.003 L marginal fuel for +4.011 kWh generation). The previous forensic mechanism audit failed governance by executing 24 MILP solves and 24 simulator steps while claiming zero reruns, and is declared INVALID_AS_READ_ONLY_FORENSIC_AUDIT. The final mechanism classification is B_MECHANISM_PARTIALLY_SUPPORTED_SOME_LINKS_INFERRED due to the absence of a frozen raw control CSV for origin 2024-06-01."
+}

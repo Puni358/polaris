@@ -1,0 +1,12 @@
+{
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "total_timesteps_audited": 8856,
+  "accounting_equations_checked": [
+    "solar + wind + diesel + battery_discharge == served_load + battery_charge + curtailment",
+    "demand == served_load + unmet_load"
+  ],
+  "max_busbar_balance_residual_w": 0.0,
+  "failed_accounting_timesteps_count": 0,
+  "tolerance_threshold_w": 0.001,
+  "accounting_audit_disposition": "PASS"
+}

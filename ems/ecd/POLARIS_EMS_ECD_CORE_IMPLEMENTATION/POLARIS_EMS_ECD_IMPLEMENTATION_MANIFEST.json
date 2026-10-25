@@ -1,0 +1,31 @@
+{
+  "manifest_name": "POLARIS_EMS_ECD_IMPLEMENTATION_MANIFEST",
+  "version": "1.0.0",
+  "status": "AUTHORIZED_AND_VERIFIED",
+  "created_at": "2026-09-23T18:47:00Z",
+  "contract_version_used": "1.0.0 (POLARIS_EMS_ECD_IMPLEMENTATION_CONTRACT_AUDIT)",
+  "fixture_version_used": "1.0.0 (POLARIS_EMS_ECD_CANONICAL_SYNTHETIC_FIXTURE_V1)",
+  "fixture_sha256": "126110495c4274eecf4f47df2ff2fe4fbba106134d7e9587c561d9f2044edfb0",
+  "tie_epsilon_hours": 1e-06,
+  "source_files_created": [
+    "system/control/ecd.py"
+  ],
+  "test_files_created": [
+    "system/tests/test_ecd_core.py"
+  ],
+  "source_files_modified": [],
+  "dependencies": [
+    "typing",
+    "dataclasses",
+    "enum",
+    "math",
+    "json",
+    "os",
+    "pytest"
+  ],
+  "remaining_deployment_decisions": [
+    "DEC-001: Production T_required override TTL value (BLK-006)",
+    "DEC-002: Production Telemetry & Command Max-Age value (BLK-007)",
+    "DEC-003: Upstream Cryptographic Ingress Scheme (BLK-008)"
+  ]
+}

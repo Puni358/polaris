@@ -1,0 +1,21 @@
+{
+  "adapter_name": "H10RuntimeAdapter",
+  "target_file": "system/adapters/h10_runtime_adapter.py",
+  "sha256": "7425286e5fa478e62ce76aa96b381ba5629c579ff2ebfb55057c13528f0767b1",
+  "contract_preservation": {
+    "forecast_bundle_schema_modified": false,
+    "station_state_schema_modified": false,
+    "dispatch_plan_schema_modified": false,
+    "optimizer_semantics_modified": false,
+    "simulator_semantics_modified": false,
+    "scientific_units_preserved": true,
+    "provenance_labels_preserved": true
+  },
+  "adapter_capabilities": [
+    "Ingests H1.0 fixture CSV (8,784 records) with SHA-256 verification",
+    "Constructs frozen StationState object for timestep origin t0",
+    "Constructs observable runtime_context for ForecastEngine prediction",
+    "Provides hidden future actual ground truth for simulator step ONLY",
+    "Exports scenario-compatible structure for LocalDataProvider"
+  ]
+}

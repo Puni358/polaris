@@ -1,0 +1,8 @@
+candidate_id,candidate_name,calibration_source,n_eligible,n_covered,n_violated,simultaneous_coverage,ci_95,pointwise_coverage,mean_sunset_bound_Wh_m2,mean_cumulative_width_Wh_m2,mean_max_norm_violation
+A_global_ar1_cal,Global AR(1) (2022 Calibrated),2022 Validation Conformal,273,236,37,0.8645,"[81.88%, 90.00%]",0.9391,1521.11,898.07,0.0564
+A_global_ar1_z128,Global AR(1) (Nominal z=1.28),Nominal Gaussian 90%,273,225,48,0.8242,"[77.46%, 86.47%]",0.9259,1396.39,821.72,0.0715
+B_state_cond_ar1_cal,State-Conditioned AR(1) (2022 Calibrated),2022 Validation Conformal,273,223,50,0.8168,"[76.67%, 85.82%]",0.9296,1401.64,824.25,0.0513
+B_state_cond_ar1_z128,State-Conditioned AR(1) (Nominal z=1.28),Nominal Gaussian 90%,273,222,51,0.8132,"[76.27%, 85.50%]",0.9228,1351.57,793.79,0.0592
+C_state_cs_ar1_cal,State-Cond AR(1) + Clear-Sky (2022 Calibrated),2022 Validation Conformal,273,231,42,0.8462,"[79.86%, 88.41%]",0.9332,1418.5,831.91,0.0467
+C_state_cs_ar1_z128,State-Cond AR(1) + Clear-Sky (Nominal z=1.28),Nominal Gaussian 90%,273,215,58,0.7875,"[73.52%, 83.19%]",0.9056,1257.87,734.63,0.0725
+D_static_q10_benchmark,Static q10 Benchmark (L2),Pointwise Requalified q10 Buffer,273,235,38,0.8608,"[81.47%, 89.69%]",0.9498,1510.0,852.16,0.0214

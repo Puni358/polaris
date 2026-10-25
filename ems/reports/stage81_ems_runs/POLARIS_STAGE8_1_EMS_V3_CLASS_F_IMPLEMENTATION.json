@@ -1,0 +1,85 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V3_CLASS_F_IMPLEMENTATION_MANIFEST",
+  "governance_status": "V3_CLASS_F_IMPLEMENTATION_COMPLETE",
+  "status_flags": {
+    "V3_DESIGN_STATUS": "DESIGN_ONLY",
+    "V3_GATE2_STATUS": "REVIEW_COMPLETE",
+    "V3_GATE2A_STATUS": "SPECIFICATION_REVIEW_COMPLETE",
+    "V3_CLASS_F_PARAMETER_STATUS": "FROZEN_PREDECLARED",
+    "V3_IMPLEMENTATION": "COMPLETE",
+    "V3_STATIC_AUDIT": "NOT_YET_COMPLETE",
+    "V3_EXECUTION": "NOT_AUTHORIZED",
+    "V2_MODIFICATION": "NO",
+    "V2_RERUN": "NO",
+    "V1_MODIFICATION": "NO",
+    "FORECAST_MODIFICATION": "NO",
+    "SIMULATOR_MODIFICATION": "NO",
+    "RAW_EVIDENCE_MODIFICATION": "NO"
+  },
+  "timestamp_utc": "2026-09-19T16:47:30+05:30",
+  "target_candidate": {
+    "candidate_id": "CLASS_F",
+    "name": "Horizon-Weighted MPC Objective",
+    "implementation_file": "system/optimization/implementations/milp.py"
+  },
+  "frozen_parameter": {
+    "symbol": "gamma",
+    "frozen_value": 0.95,
+    "weight_equation": "w_t = 0.95^t",
+    "timestep_range": "t in 0..23"
+  },
+  "pre_edit_sha256_hashes": {
+    "system/optimization/implementations/milp.py": "274926d2d04a26f9b105d313c83063e14a9a06c15848dbad828dc393edef6bde",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/runtime/runner.py": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "system/forecasting/implementations/s81_solar.py": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "system/forecasting/implementations/baseline.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/schemas/station_state.py": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+    "system/schemas/dispatch_plan.py": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION.json": "09427eafb49c46caa6fbe9626f4edc57ff8dc8ffc4d64386e6073e1a8ab6f143",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION_RAW.csv": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+    "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.json": "6ddcc73add04bab6075d98378f61c5433da5b1e2399789969bb5622cbe002efd",
+    "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.md": "8ec1d4c66697b52a9045ace89eb1f5b6361b44c3c2b2c53c6172173f70bb1355"
+  },
+  "post_edit_sha256_hashes": {
+    "system/optimization/implementations/milp.py": "fc4fafe712a62fa301b3fbe021cd933c64bd08bd96d6a644ba412207134a19c3",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/runtime/runner.py": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "system/forecasting/implementations/s81_solar.py": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "system/forecasting/implementations/baseline.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/schemas/station_state.py": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+    "system/schemas/dispatch_plan.py": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION.json": "09427eafb49c46caa6fbe9626f4edc57ff8dc8ffc4d64386e6073e1a8ab6f143",
+    "POLARIS_STAGE8_1_EMS_V2_EXECUTION_RAW.csv": "652a047dd272058527d0458fa32738a97cbf70d4aa8a2d59aeaa33b33183415a",
+    "POLARIS_STAGE8_1_EMS_MECHANISM_OBSERVABILITY_V2_PROTOCOL.json": "3c47c8a4b283aa41af39817f6272c613d175b680b6c7626c2856cf6a312cd6dc",
+    "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.json": "6ddcc73add04bab6075d98378f61c5433da5b1e2399789969bb5622cbe002efd",
+    "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE.md": "8ec1d4c66697b52a9045ace89eb1f5b6361b44c3c2b2c53c6172173f70bb1355"
+  },
+  "protected_artifact_verification": {
+    "all_12_non_target_files_byte_identical": true
+  },
+  "exact_objective_terms_modified": [
+    "p_diesel power fuel cost (c[base+7] *= w_t)",
+    "u_diesel base running cost (c[base+13] *= w_t)",
+    "v_start startup event penalty (c[base+14] *= w_t)",
+    "p_chg battery degradation cost (c[base+4] *= w_t)",
+    "p_dis battery degradation cost (c[base+5] *= w_t)",
+    "p_curt_sol renewable curtailment (c[base+2] *= w_t)",
+    "p_curt_wind renewable curtailment (c[base+3] *= w_t)"
+  ],
+  "exact_objective_terms_untouched": [
+    "p_unmet critical load penalty (c[base+9] = unmet_penalty_per_wh * dt, UNWEIGHTED w_t=1.0)"
+  ],
+  "mechanical_test_results": {
+    "test_file": "system/tests/test_class_f_implementation.py",
+    "tests_run": 2,
+    "tests_passed": 2,
+    "tests_failed": 0,
+    "duration_seconds": 0.53,
+    "scientific_replay_run": false
+  },
+  "no_execution_declaration": "V3 execution was NOT authorized and was NOT run. Zero scientific replay executed."
+}

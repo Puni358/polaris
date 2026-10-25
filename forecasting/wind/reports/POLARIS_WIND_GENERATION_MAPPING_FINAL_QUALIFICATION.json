@@ -1,0 +1,57 @@
+{
+  "qualification_metadata": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "WIND_GENERATION_POWER_MAPPING_QUALIFICATION_GATE",
+    "timestamp_utc": "2026-09-18T07:22:00Z",
+    "investigation_type": "READ_ONLY_GOVERNANCE_AND_EVIDENCE_QUALIFICATION",
+    "evaluator": "POLARIS_GOVERNANCE_AGENT"
+  },
+  "machine_readable_state": {
+    "DECISION_STATUS": "BLOCKED_PENDING_ASSET_EVIDENCE",
+    "WIND_GENERATION_MAPPING_DECISION": "C",
+    "WIND_ASSET_IDENTITY_STATUS": "NOT_ESTABLISHED",
+    "TURBINE_SPECIFICATION_STATUS": "NOT_ESTABLISHED",
+    "RATED_POWER_STATUS": "NOT_ESTABLISHED",
+    "ROTOR_DIAMETER_STATUS": "NOT_ESTABLISHED",
+    "HUB_HEIGHT_STATUS": "NOT_ESTABLISHED",
+    "POWER_CURVE_STATUS": "NOT_ESTABLISHED",
+    "MEASURED_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "GENERIC_PHYSICAL_MAPPING": "CONDITIONALLY_ESTABLISHED",
+    "HUB_HEIGHT_TRANSFER_STATUS": "NOT_ESTABLISHED",
+    "SITE_SPECIFIC_NUOLJA_WIND_GENERATION_MAPPING": "NOT_ESTABLISHED",
+    "WIND_SPEED_TO_POWER_MAPPING": "NOT_ESTABLISHED",
+    "WIND_GENERATION_REPRESENTATION": "NOT_ESTABLISHED",
+    "WIND_POWER_MAPPING_IMPLEMENTATION_READINESS": "NOT_READY",
+    "WIND_GENERATION_FORECASTING_RESEARCH_REQUIRED": "YES",
+    "A2_WIND_SPEED_STATUS": "FROZEN",
+    "EVIDENCE_STATUS": "INSUFFICIENT_FOR_SITE_SPECIFIC_GENERATION",
+    "EVIDENCE_FILES": [
+      "POLARIS_WIND_POWER_MAPPING_PREREQUISITE_RESEARCH.json",
+      "POLARIS_WIND_ASSET_AND_POWER_CURVE_ACQUISITION_QUALIFICATION.json",
+      "POLARIS_WIND_A1_6_SITE_TRANSFER_QUALIFICATION.json",
+      "POLARIS_A2_WIND_SPEED_FORECAST_OPERATIONAL_READINESS.json",
+      "POLARIS_OPTION_B_WIND_SPEED_POST_IMPLEMENTATION_FREEZE_CHECKPOINT.json",
+      "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+      "data/SITES_MET_ANS_NMS_20240101-20241231_L2_SH.csv",
+      "research/wind_a2/smhi_188790_ws_full.csv"
+    ],
+    "NEXT_GOVERNED_STEP": "DEMAND_A1_TARGET_AND_DATA_QUALIFICATION",
+    "DECISION_RATIONALE": "No commercial wind turbine or wind-generation asset was established in the bounded local-repository and authoritative-source search. Turbine specifications (rated power, rotor diameter, hub height), power curve, hub-height shear model, and measured wind generation telemetry were not established. The generic aerodynamic power formula P = 0.5 * rho * A * v^3 * Cp is conditionally established as a physical law, but cannot be evaluated without arbitrary unevidenced assumptions. Verified A2 10m wind speed forecasting remains valid and frozen as a standalone meteorological capability under Option-B metadata transport.",
+    "LIMITATIONS": [
+      "No turbine asset identified at Mount Nuolja / ANS.",
+      "No hub-height wind shear conversion model from 10m Abisko proxy.",
+      "No turbine power curve P(v) established.",
+      "No electrical generation telemetry measured.",
+      "Wind-speed to power conversion remains strictly NOT_AUTHORIZED."
+    ],
+    "MODIFICATION_FIREWALL_STATUS": "PASS"
+  },
+  "non_authorizations": {
+    "WIND_POWER_MAPPING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "PRODUCTION_DEPLOYMENT": "NOT_AUTHORIZED"
+  }
+}

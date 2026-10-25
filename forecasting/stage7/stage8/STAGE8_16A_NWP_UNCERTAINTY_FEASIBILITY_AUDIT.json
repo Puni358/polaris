@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-09-13T07:58:00+00:00",
+  "stage": "POLARIS STAGE 8.16A \u2014 CAUSAL NWP UNCERTAINTY / CLOUD-STATE CONFIDENCE FEASIBILITY AUDIT",
+  "status": "COMPLETED \u2014 FEASIBILITY AUDIT ONLY",
+  "stage_8_16b_authorized": false,
+  "scientific_conclusion_statement": "The audited MEPS uncertainty representations identify provisionally feasible, materially distinct candidate signals (specifically multi-layer cloud fraction spread sigma_low_cloud, condensate path spread sigma_LWP, and internal physical inconsistency Phi_inconsist). However, Stage 8.16B is NOT AUTHORIZED in this feasibility stage.",
+  "governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0,
+    "model_changes": 0,
+    "odd_target_access": 0,
+    "odd_evaluation": 0,
+    "experiments_executed": 0,
+    "polaris_master_handoff_modified": false
+  },
+  "candidate_signals_audited": [
+    {
+      "id": "A1",
+      "family": "A. Member Disagreement in Cloud State",
+      "name": "Total Cloud Area Fraction Member Disagreement (sigma_cloud_frac)",
+      "classification": "NOT NOVEL",
+      "comparison_stage_6_1": "Shares underlying variance driver with Stage 6.1 meps_std_SW_IN.",
+      "causality_pass": true
+    },
+    {
+      "id": "A2",
+      "family": "A. Member Disagreement in Cloud State",
+      "name": "Multi-Layer Cloud Fraction Member Disagreement (sigma_low_cloud, sigma_mid_cloud, sigma_high_cloud)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_6_1": "Separates boundary-layer cloud uncertainty from high cirrus; operates on vertical layers rather than scalar radiation spread.",
+      "causality_pass": true
+    },
+    {
+      "id": "A3",
+      "family": "A. Member Disagreement in Cloud State",
+      "name": "Vertical Cloud Boundary Member Disagreement (sigma_Zbase, sigma_Ztop)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_6_1": "Measures vertical cloud boundary stability across ensemble members.",
+      "causality_pass": true
+    },
+    {
+      "id": "A4",
+      "family": "A. Member Disagreement in Cloud State",
+      "name": "Column Liquid Water Path Member Disagreement (sigma_LWP)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_6_1": "Direct physical cloud mass optical thickness uncertainty, independent of solar zenith angle.",
+      "causality_pass": true
+    },
+    {
+      "id": "B1",
+      "family": "B. Spatial Ensemble Disagreement",
+      "name": "Spatial Cloud Front Sharpness Disagreement (sigma_|grad_N|)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_6_1": "Measures spatial cloud edge location agreement across 3x3 grid around Nuolja.",
+      "causality_pass": true
+    },
+    {
+      "id": "B2",
+      "family": "B. Spatial Ensemble Disagreement",
+      "name": "Spatial Mean/Std of meps_std_SW_IN",
+      "classification": "NOT NOVEL",
+      "comparison_stage_6_1": "Trivial spatial smoothing of Stage 6.1 spread.",
+      "causality_pass": true
+    },
+    {
+      "id": "C1",
+      "family": "C. Temporal Forecast Instability",
+      "name": "Cloud-State Run-to-Run Forecast Instability (Delta_run N)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_6_4": "Measures cloud cover forecast convergence/oscillation across consecutive MEPS cycles.",
+      "causality_pass": true
+    },
+    {
+      "id": "D1",
+      "family": "D. Horizon-Dependent Structure",
+      "name": "Lead-Time Scaled Spread (sigma(h) / sqrt(h))",
+      "classification": "NOT NOVEL",
+      "comparison_stage_6_1": "Trivial scaling of Stage 6.1 spread by lead time.",
+      "causality_pass": true
+    },
+    {
+      "id": "E1",
+      "family": "E. Multi-Variable Physical Inconsistency",
+      "name": "NW Physical Self-Consistency Index (Phi_inconsist)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_8_1": "Measures internal conflict within MEPS parameterizations (cloud fraction vs condensate).",
+      "causality_pass": true
+    },
+    {
+      "id": "F1",
+      "family": "F. Regime-Conditional Uncertainty",
+      "name": "Causal Regime-Conditioned Liquid Water Path Spread (N_cat x sigma_LWP)",
+      "classification": "VERIFIED NOVEL",
+      "comparison_stage_6_1": "Conditions physical cloud mass uncertainty specifically on intermediate cloudiness.",
+      "causality_pass": true
+    }
+  ],
+  "gate_check_results": {
+    "G1_genuinely_novel": true,
+    "G2_different_from_stage_6_1": true,
+    "G3_different_from_stage_6_4": true,
+    "G4_strict_causal_availability": true,
+    "G5_reproducible_across_origins": true,
+    "G6_physically_interpretable_reason": true,
+    "G7_no_repackaging": true,
+    "G8_no_odd_access": true
+  }
+}

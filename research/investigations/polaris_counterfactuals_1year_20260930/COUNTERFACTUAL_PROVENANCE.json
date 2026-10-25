@@ -1,0 +1,21 @@
+{
+  "campaign_id": "polaris_counterfactuals_1year_20260930",
+  "execution_timestamp": "2026-09-30T22:20:59Z",
+  "annual_trajectory": {
+    "trajectory_id": "polaris_2024_annual_365d_8784h",
+    "total_timesteps": 8784,
+    "timestep_duration_hours": 1.0
+  },
+  "runtime_environment": {
+    "os": "Linux 6.6+ x86_64",
+    "python_version": "3.10.12",
+    "solver": "scipy.optimize.milp (HiGHS C++ engine)"
+  },
+  "governance": {
+    "g1_3e_policy": "LOCKED",
+    "evidence_boundary": "C",
+    "data_origin": "SYNTHETIC_EXPERIMENTAL_TRAJECTORY",
+    "empirical_status": "NOT_EMPIRICAL",
+    "production_modified": false
+  }
+}

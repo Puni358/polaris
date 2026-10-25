@@ -1,0 +1,8 @@
+REQUIREMENT_ID,FEATURE_AREA,OBJECTIVE_STAGE_OR_POLICY,ARCHITECTURAL_REQUIREMENT,STATE_INPUTS,INTERFACE_IMPACT,GOVERNANCE_STATUS
+FAR-01,Objective Solver,Decision 15 Lexicographic Priority,Multi-pass solver orchestration layer enforcing stage lock constraints,"Stage optimal values J1*, J2*, J3*",None (Internal to Optimizer),READY_FOR_SPECIFICATION
+FAR-02,Critical Reliability,Decision 04 Zero Unmet Critical Load,Hard constraint p_unmet_critical(t)=0 in Stage 1,Critical demand vector,None,READY_FOR_SPECIFICATION
+FAR-03,Emergency Battery Reserve,Decision 11 EBR Target Shortfall,"Energy domain shortfall term sum(max(0, E_EBR_target - E_avail)) in Stage 2","E_EBR_target(t), E(t)",None,NUMERICAL_CALIBRATION_REQUIRED
+FAR-04,Terminal Energy Target,Decision 12 Terminal Energy Requirement,"Energy target constraint max(0, E_terminal_target - E(H)) in Stage 2","E_terminal_target, E(H)",None,NUMERICAL_CALIBRATION_REQUIRED
+FAR-05,Fuel Conservation,Decision 07 Fuel Volume Minimization,Physical Liters fuel objective in Stage 3,Generator fuel curve parameters,None,STATION_VALIDATION_REQUIRED
+FAR-06,Renewable Utilization,Decision 09 Avoidable Curtailment Min,Decompose curtailment into necessary vs avoidable; minimize avoidable in Stage 4,"Bus power balance, inverter bounds",None,READY_FOR_SPECIFICATION
+FAR-07,Load Classification,Decision 05 Five-Tier Load Structure,Decompose total demand into 5 tier vectors,5-tier station load data,Internal demand parsing,STATION_VALIDATION_REQUIRED

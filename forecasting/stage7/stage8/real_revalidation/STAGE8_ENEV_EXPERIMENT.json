@@ -1,0 +1,122 @@
+{
+  "stage": "STAGE 8 \u2014 ENEV METAR UPSTREAM CLOUD FEATURE GOVERNED EXPERIMENT",
+  "timestamp": "2026-09-13T14:01:31.782778+00:00",
+  "station": {
+    "icao": "ENEV",
+    "distance_km": 86,
+    "direction": "WNW"
+  },
+  "candidate_features": [
+    "enev_cloud_cover_okta",
+    "enev_cloud_base_m"
+  ],
+  "control_features_count": 37,
+  "candidate_features_count": 39,
+  "even_benchmark_origins": 174,
+  "missing_origins_count": 0,
+  "unparsed_metar_count": 1,
+  "control_metrics": {
+    "mae_w_m2": 37.620054,
+    "nmae_pct": 37.9745,
+    "rmse_w_m2": 60.160645,
+    "bias_w_m2": 4.218739
+  },
+  "candidate_metrics": {
+    "mae_w_m2": 37.68736,
+    "nmae_pct": 37.8639,
+    "rmse_w_m2": 60.358483,
+    "bias_w_m2": 3.503015
+  },
+  "deltas": {
+    "delta_mae_w_m2": 0.067307,
+    "delta_nmae_pct": -0.1106,
+    "delta_rmse_w_m2": 0.197838
+  },
+  "fold_summary": [
+    {
+      "fold": 1,
+      "ctrl_mae_w_m2": 49.311419,
+      "cand_mae_w_m2": 49.130659,
+      "delta_mae_w_m2": -0.18076,
+      "ctrl_nmae_pct": 29.5265,
+      "cand_nmae_pct": 29.4183,
+      "ctrl_rmse_w_m2": 81.354967,
+      "cand_rmse_w_m2": 81.298297,
+      "ctrl_bias_w_m2": 2.496543,
+      "cand_bias_w_m2": 1.626283,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    },
+    {
+      "fold": 2,
+      "ctrl_mae_w_m2": 70.5688,
+      "cand_mae_w_m2": 70.32854,
+      "delta_mae_w_m2": -0.24026,
+      "ctrl_nmae_pct": 36.9196,
+      "cand_nmae_pct": 36.7939,
+      "ctrl_rmse_w_m2": 103.743912,
+      "cand_rmse_w_m2": 103.556849,
+      "ctrl_bias_w_m2": 11.094607,
+      "cand_bias_w_m2": 7.915359,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    },
+    {
+      "fold": 3,
+      "ctrl_mae_w_m2": 40.345573,
+      "cand_mae_w_m2": 40.306331,
+      "delta_mae_w_m2": -0.039242,
+      "ctrl_nmae_pct": 28.1423,
+      "cand_nmae_pct": 28.1149,
+      "ctrl_rmse_w_m2": 67.25667,
+      "cand_rmse_w_m2": 67.346417,
+      "ctrl_bias_w_m2": 4.228522,
+      "cand_bias_w_m2": 4.943196,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    },
+    {
+      "fold": 4,
+      "ctrl_mae_w_m2": 25.770418,
+      "cand_mae_w_m2": 26.621273,
+      "delta_mae_w_m2": 0.850854,
+      "ctrl_nmae_pct": 36.7313,
+      "cand_nmae_pct": 37.944,
+      "ctrl_rmse_w_m2": 44.613169,
+      "cand_rmse_w_m2": 45.814171,
+      "ctrl_bias_w_m2": 3.861825,
+      "cand_bias_w_m2": 3.748077,
+      "fold_improved": false,
+      "fold_degradation": 0.850854
+    },
+    {
+      "fold": 5,
+      "ctrl_mae_w_m2": 2.104058,
+      "cand_mae_w_m2": 2.049998,
+      "delta_mae_w_m2": -0.05406,
+      "ctrl_nmae_pct": 58.5528,
+      "cand_nmae_pct": 57.0484,
+      "ctrl_rmse_w_m2": 3.834508,
+      "cand_rmse_w_m2": 3.77668,
+      "ctrl_bias_w_m2": -0.587801,
+      "cand_bias_w_m2": -0.717839,
+      "fold_improved": true,
+      "fold_degradation": 0.0
+    }
+  ],
+  "gate_evaluations": {
+    "g1_delta_mae_le_minus_0_50": false,
+    "g2_folds_improved_ge_4": true,
+    "g3_max_fold_degradation_le_0_50": false,
+    "g4_nmae_rmse_le_control": false,
+    "g5_100_percent_causal": true,
+    "g6_control_reproduced": true
+  },
+  "final_decision": "STOP \u2014 EVEN GATE FAILURE",
+  "odd_firewall_status": {
+    "odd_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false,
+    "firewall_reason": "EVEN gate failure \u2014 STOP protocol invoked"
+  }
+}

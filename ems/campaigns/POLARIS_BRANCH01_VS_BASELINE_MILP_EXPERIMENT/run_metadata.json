@@ -1,0 +1,119 @@
+{
+  "scenario_sha256": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8",
+  "config_sha256": {
+    "station": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42",
+    "battery": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "solar_pv": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "loads": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+    "optimizer": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8",
+    "scenario": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8"
+  },
+  "code_sha256": {
+    "milp.py": "3f136ae7201204f425cc895e8a8ee6e41801b7609228ddee60363ac35047d1be",
+    "simulator.py": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "baseline_forecast_engine.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993",
+    "branch01_forecast_engine.py": "ca560e6eabfaa0e68de03a9517e5246851b9cccac390385d937d908ffa2456be",
+    "local_provider_adapter.py": "e2154bc439672e771a4f3e0d5c21d807effb13d6198a522ce06116814b211e0c",
+    "feature_matrix_builder.py": "08b9f57f425b08c55967049275d1ff60dd973c9641ffec77c6104821a03ad3c8",
+    "forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b",
+    "evaluator.py": "79af472d52aab4b63180aaccac044ee48c9893f257c4f6988ccff7da1cec8729",
+    "run_forecast_source_experiment.py": "3c579a95f63756abf715ecc2096badb7ef8f32a31d2fe8fd0a281e1c9668a418"
+  },
+  "branch01_model_run_id": "RUN_BRANCH01_CANDIDATE_A_HGB",
+  "branch01_model_sha256": "65c04d6c3aa426b9ead9e103d4c1c8d033095b9070676dcbffe71f8e16dd4781",
+  "branch01_model_sha256_matches_disk": true,
+  "raw_sites_csv_sha256": "6842e0f71b1b1d4a3ea40d56cb620fd88ca7daa1701177dbf8954680795f45f3",
+  "canonical_clearsky_csv_sha256": "181d27b19f25ae23a3394ff8f5cafcb20bc14c29f26da1db726e1b1bc1778846",
+  "feature_contract": [
+    "sw_in_lag_0h",
+    "sw_in_lag_1h",
+    "sw_in_lag_2h",
+    "sw_in_lag_3h",
+    "sw_in_lag_6h",
+    "sw_in_lag_12h",
+    "sw_in_lag_23h",
+    "sw_in_mean_24h",
+    "sw_in_std_24h",
+    "sw_in_max_24h",
+    "sw_in_min_24h",
+    "solar_elevation",
+    "solar_zenith",
+    "sin_hour",
+    "cos_hour",
+    "sin_doy",
+    "cos_doy",
+    "clearsky_sw_in_origin"
+  ],
+  "feature_contract_version": "POLARIS_SOLAR_FORECAST_BRANCH_01_HGB_V1/18_feature_v1",
+  "initial_state_fingerprint": {
+    "timestamp": "2024-06-01T00:00:00Z",
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 100000.0,
+    "diesel_running": false,
+    "diesel_hours_running": 0.0,
+    "last_observed_solar_irradiance": 0.0,
+    "last_observed_demand": 24550.41,
+    "last_observed_wind_generation": 30600.04,
+    "operating_mode": "NORMAL",
+    "diesel_fuel_remaining_liters": 100.0
+  },
+  "initial_state_sha256": "3a83799329dec2c17896dfb77d8d2c44c8106224ca0435cebcbd458163bb93f7",
+  "protocol": "POLARIS_BRANCH01_VS_BASELINE_MILP_EXPERIMENT",
+  "generated_at_utc": "2026-10-02T13:55:10Z",
+  "scenario_file": "synthetic_168h_endurance_scenario.json",
+  "steps": 168,
+  "arms": [
+    "baseline",
+    "branch01"
+  ],
+  "per_arm_summary": {
+    "baseline": {
+      "requested_steps": 168,
+      "completed_steps": 168,
+      "faults": [],
+      "forecast_sources_seen_in_arm": [
+        "baseline"
+      ],
+      "forecast_source_mixed_within_arm": false,
+      "final_trajectory_hash": "5d4442e47001616962dc9285d30169a8d3cdf3b663fb09e1cadf2cd9d576dc7e",
+      "ems_evaluation": {
+        "total_diesel_fuel_liters": 125.92,
+        "total_diesel_energy_kwh": 243.68,
+        "total_renewable_energy_used_kwh": 5407.44,
+        "total_renewable_curtailment_kwh": 1449.31,
+        "renewable_utilization_pct": 78.86,
+        "renewable_curtailment_pct": 21.14,
+        "battery_throughput_kwh": 1407.48,
+        "battery_equivalent_cycles": 7.0374,
+        "unmet_critical_load_kwh": 184.15,
+        "system_reliability_pct": 96.69,
+        "constraint_violations_count": 0
+      }
+    },
+    "branch01": {
+      "requested_steps": 168,
+      "completed_steps": 168,
+      "faults": [],
+      "forecast_sources_seen_in_arm": [
+        "branch01_candidate_a_hgb"
+      ],
+      "forecast_source_mixed_within_arm": false,
+      "final_trajectory_hash": "4459c45c90cb29ab332c79bd0f537cfc17f366da198c8654bf4f19befb73deb6",
+      "ems_evaluation": {
+        "total_diesel_fuel_liters": 128.6,
+        "total_diesel_energy_kwh": 294.41,
+        "total_renewable_energy_used_kwh": 5246.87,
+        "total_renewable_curtailment_kwh": 1013.44,
+        "renewable_utilization_pct": 83.81,
+        "renewable_curtailment_pct": 16.19,
+        "battery_throughput_kwh": 1271.98,
+        "battery_equivalent_cycles": 6.3599,
+        "unmet_critical_load_kwh": 269.09,
+        "system_reliability_pct": 95.16,
+        "constraint_violations_count": 0
+      }
+    }
+  }
+}

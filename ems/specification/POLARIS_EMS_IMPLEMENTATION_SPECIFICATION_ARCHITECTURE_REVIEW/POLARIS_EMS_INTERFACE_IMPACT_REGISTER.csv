@@ -1,0 +1,5 @@
+INTERFACE,CURRENT_SCHEMA,PROPOSED_CHANGE,BACKWARD_COMPATIBLE,PROVENANCE_IMPACT,SCHEMA_IMPACT_STATUS
+ForecastBundle,"Version 1.0.0 (solar, wind, demand point forecasts)",None (Margins pre-applied),YES,NONE,NO_SCHEMA_CHANGE_REQUIRED
+StationState,"Version 1.0.0 (battery_energy_wh, diesel_running)",None,YES,NONE,NO_SCHEMA_CHANGE_REQUIRED
+DispatchPlan,Version 1.0.0 (dispatch & SOC output vectors),None,YES,NONE,NO_SCHEMA_CHANGE_REQUIRED
+DigitalTwinSimulator,Physics evaluation harness,None (Truth firewall enforced),YES,NONE,NO_SCHEMA_CHANGE_REQUIRED

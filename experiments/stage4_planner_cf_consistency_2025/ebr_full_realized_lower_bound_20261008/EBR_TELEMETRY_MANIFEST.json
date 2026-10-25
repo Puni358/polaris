@@ -1,0 +1,11 @@
+{
+  "source_file": "/home/punith-bs/01polaris (Copy)/experiments/stage4_planner_cf_consistency_2025/CAMPAIGN_V12_615_20261006/PC_HOURLY_TELEMETRY.csv",
+  "source_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+  "arm_filter": "PC-SW",
+  "n_origins": 123,
+  "n_hours_per_origin": 24,
+  "total_values": 2952,
+  "all_j2_shortfall_verified_zero": true,
+  "independent_reconstruction_max_abs_diff_wh": 7.275957614183426e-12,
+  "independent_reconstruction_passed": true
+}

@@ -1,0 +1,67 @@
+{
+  "governance_status": "PREREGISTRATION_COMPLETE",
+  "audit_date": "2026-09-13",
+  "route_id": "STAGE8_24_FAITHFUL_OROGRAPHIC_FLOW",
+  "route_name": "Faithful Scandes Orographic Flow-Regime Expansion",
+  "operational_champion": "Stage 8.1 37-feature HGB control",
+  "odd_benchmark_protected": true,
+  "odd_run": false,
+  "reevaluation_context": "Re-evaluation of Stage 8.24 route following prior implementation qualification (approximate 2-point stability calculation). Continuous physical hypothesis re-tested with faithful discrete layer integration",
+  "quantities_specified": [
+    {
+      "name": "Barrier-Normal Wind (U_perp)",
+      "symbol": "U_perp",
+      "formula": "U_perp = -0.9396926 * u700 + 0.3420201 * v700",
+      "units": "m/s",
+      "description": "Scandes barrier-normal wind component along 290 deg WNW-ESE inflow axis",
+      "level": "700 hPa",
+      "causal_timestamp": "MEPS 18Z D-1 forecast for valid time t0+h",
+      "coverage_2024": "347 / 347 origins (100.0%)",
+      "subterranean_handling": "Not applicable (700 hPa is well above mountain top)",
+      "novelty_vs_stage8_1": "Provides a compact barrier-normal flow coordinate relative to 200 deg Scandes ridge; GBT tree splits cannot construct rotated projections without deep interaction terms"
+    },
+    {
+      "name": "Layer-Integrated Brunt-Vaisala Buoyancy Frequency (N_layer)",
+      "symbol": "N_layer",
+      "formula": "N_layer = sqrt( (g / theta_v_mean) * sum( (theta_v(p_k+1) - theta_v(p_k)) / (z(p_k+1) - z(p_k)) * (dz_k / dZ_tot) ) )",
+      "units": "s-1",
+      "description": "Faithful discrete layer-integrated static atmospheric stability over Psfc to 700 hPa layer using virtual potential temperature profiles",
+      "level": "Psfc to 700 hPa profile (Psfc, 925, 850, 700 hPa)",
+      "causal_timestamp": "MEPS 18Z D-1 forecast for valid time t0+h",
+      "coverage_2024": "347 / 347 origins (100.0%)",
+      "subterranean_handling": "Subterranean pressure levels (p > Psfc) strictly excluded. Layer bottom set to valid surface state (Psfc, T2m, q2m)",
+      "unstable_lapse_rate_floor": "N^2 <= 0 clipped to N_floor = 1e-4 s-1",
+      "novelty_vs_stage8_1": "Stage 8.1 lacks vertical potential temperature profile gradients and buoyancy frequency integrals"
+    },
+    {
+      "name": "Mountain Froude Number (Fr)",
+      "symbol": "Fr",
+      "formula": "Fr = U_perp / (N_layer * h)",
+      "units": "non-dimensional",
+      "description": "Continuous non-dimensional mountain Froude number flow-regime indicator",
+      "mountain_relief_h_m": 828.0,
+      "causal_timestamp": "MEPS 18Z D-1 forecast for valid time t0+h",
+      "coverage_2024": "347 / 347 origins (100.0%)",
+      "novelty_vs_stage8_1": "Unites wind vector, static atmospheric stability, and mountain geometry into a non-linear non-dimensional flow regime index"
+    }
+  ],
+  "w_oro_analysis": {
+    "status": "EXCLUDED",
+    "rationale": "w_oro = U_perp * |grad z| is 100% linearly collinear with U_perp for a single-station static target site (Nuolja). Terrain slope along inflow axis is a constant multiplier (C_slope ~ 0.1507 m/m). Excluded to prevent feature redundancy and adhere to minimal feature set design"
+  },
+  "preregistered_candidate_feature_list": [
+    "ctx_u_perp",
+    "ctx_mountain_froude"
+  ],
+  "candidate_feature_count": 2,
+  "total_feature_count": 39,
+  "control_feature_count": 37,
+  "leakage_causality_audit": {
+    "temporal_causality": "PASSED (MEPS 18Z D-1 forecast published prior to t0 = 00:00 UTC)",
+    "spatial_alignment": "PASSED (Nuolja pyranometer grid cell 68.362 N, 18.739 E)",
+    "target_firewall": "PASSED (Zero pyranometer target data used)",
+    "odd_firewall": "PASSED (ODD_RUN = FALSE)",
+    "audit_verdict": "LEAKAGE_AND_CAUSALITY_AUDIT_PASSED_100_PERCENT_CLEAN"
+  },
+  "readiness_verdict": "READY_FOR_GOVERNED_EVEN_EXPERIMENT"
+}

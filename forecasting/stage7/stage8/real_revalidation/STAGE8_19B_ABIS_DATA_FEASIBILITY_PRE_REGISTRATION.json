@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-09-13T09:40:34+00:00",
+  "stage": "POLARIS STAGE 8.19B ABIS DATA FEASIBILITY & PRE-REGISTRATION AUDIT",
+  "decision": "GO TO PRE-REGISTERED EVEN-ONLY EXPERIMENT",
+  "governance_statement": "RESEARCH ONLY — NO EXPERIMENT AUTHORIZED",
+  "next_stage": "SEPARATE EVEN-ONLY EXPERIMENT EXECUTION (STAGE 8.19C)",
+  "candidate_specification": {
+    "station_id": "ABIS",
+    "station_name": "Abisko Permanent Reference Station",
+    "provider": "Lantmäteriet SWEPOS / EUMETNET E-GVAP",
+    "proximity_to_target": "326 meters horizontally (< 0.5 km)",
+    "primary_variable": "ZTD (Zenith Total Delay, mm)",
+    "derivation_status": "DIRECT GNSS-DERIVED (100% observational phase delay)",
+    "causal_timestamp": "22:00 UTC observation Day D-1 (T_pub <= t0 - 30 min)",
+    "archive_2024_completeness": "100% complete across all 366 days"
+  },
+  "candidate_features": [
+    "abis_ztd_latest",
+    "abis_ztd_trend_3h"
+  ],
+  "pre_registered_acceptance_gates": {
+    "gate1_even_mae_threshold_w_m2": 44.296582,
+    "gate2_even_nmae_threshold_pct": 32.0048,
+    "gate3_majority_folds_improved": ">= 3 / 5",
+    "gate4_max_fold_degradation_w_m2": 0.50,
+    "gate5_even_rmse_threshold_w_m2": 75.892401
+  },
+  "odd_firewall_status": "100% LOCKED AND UNTOUCHED",
+  "official_operational_champion": "Stage 8.17A AROME Structural Disagreement Model",
+  "champion_daytime_nmae_pct": 27.3337
+}

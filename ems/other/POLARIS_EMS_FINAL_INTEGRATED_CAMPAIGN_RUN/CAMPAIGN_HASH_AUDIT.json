@@ -1,0 +1,24 @@
+{
+  "campaign_run_id": "POLARIS_EMS_FINAL_INTEGRATED_CAMPAIGN_RUN",
+  "timestamp": "2026-09-27T02:11:36Z",
+  "human_execution_authorization": "GRANTED",
+  "final_integrated_campaign": "EXECUTED_PASSED",
+  "source_modifications": 0,
+  "protected_hashes": {
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/option_d.py": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+    "system/control/ecd.py": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23",
+    "system/control/router.py": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+    "system/simulation/simulator.py": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "system/runtime/runner.py": "723635dad0b8e06ac579088252e2eab7959e1f2ef2cdf6eba59e5fa0dfacdf32"
+  },
+  "artifacts": {
+    "CAMPAIGN_EXECUTION_LOG.md": "b7ab404e72a42d36e770dd02854967bd21cc1829396f11412a19ed53cb4a97b6",
+    "CAMPAIGN_FINAL_RESULTS.md": "e61c426c3b9ed8d28e593b46cbdadb3df019b5b95c261a0011c2ad2540802c8b",
+    "CAMPAIGN_GOVERNANCE_AUDIT.md": "b9db6573145177b5a22c46821921382b001443fa8549824b1294a8e04bb6661c",
+    "CAMPAIGN_METRICS_AND_ACCOUNTING.md": "a92b4f4114daacd6ccb303d9052c33a6223ac0e670d62a0fd5aeae1afeb352d7",
+    "CAMPAIGN_PROVENANCE_MATRIX.md": "0390ee010e9d4ea7755074e451e65a4c1d70e0703680079c4cd857311fd69901",
+    "CAMPAIGN_STATUS.md": "ad03bcbb37ac596a7f7391b41d10c5084f16c034ab21b419d88efeec091c6c34",
+    "CAMPAIGN_TRUTH_FIREWALL_AUDIT.md": "574f232d39afbc3020cb19186129e0ca0ee2e9d650370837467244599521b44e"
+  }
+}

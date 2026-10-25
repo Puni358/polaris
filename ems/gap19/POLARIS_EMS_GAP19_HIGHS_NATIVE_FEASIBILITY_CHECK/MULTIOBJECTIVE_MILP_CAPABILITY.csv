@@ -1,0 +1,45 @@
+audit_document,MULTIOBJECTIVE_MILP_CAPABILITY
+audit_phase,GAP19_HIGHS_NATIVE_FEASIBILITY_CHECK
+audit_date,2026-09-22
+generation_mode,BINARY_INTROSPECTION_AND_DOCUMENTATION_REVIEW
+execution_performed,READ_ONLY
+
+# ============================================================
+# HIGHS 1.12.0 — MULTI-OBJECTIVE MILP CAPABILITY AUDIT
+# ============================================================
+
+capability_item,highs_112_supports,evidence_source,confidence,qualification
+HighsLinearObjective struct (weight offset coefficients abs_tolerance rel_tolerance priority),YES,"Python introspection: dir(_h.HighsLinearObjective()) confirmed all 6 fields present",CONFIRMED,None
+addLinearObjective method on _Highs instance,YES,"Python introspection: 'addLinearObjective' in dir(_h._Highs()) = True",CONFIRMED,None
+clearLinearObjectives method,YES,"Python introspection: 'clearLinearObjectives' in dir(_h._Highs())",CONFIRMED,None
+getNumLinearObjectives method,YES,"Python introspection: 'getNumLinearObjectives' in dir(_h._Highs())",CONFIRMED,None
+getLinearObjective method,YES,"Python introspection: 'getLinearObjective' in dir(_h._Highs())",CONFIRMED,None
+blend_multi_objectives solver option (bool),YES,"HighsOptionsManager.get_option_type('blend_multi_objectives') = 0 (kBool). Default = True.",CONFIRMED,Default is blending (True); must set False for lexicographic
+Lexicographic mode (blend_multi_objectives=False),YES,"Binary string evidence: 'using lexicographic optimization by priority'. Documentation: blend_multi_objectives=False triggers sequential solve by priority.",CONFIRMED,None
+Priority-based sequential solve,YES,"Binary string: 'After priority %d solve model status is %s'. Documentation: HiGHS processes objectives sequentially by distinct priority values.",CONFIRMED,None
+Objective locking via internal constraint,YES,"Binary string: 'Add constraint for objective %d'. Documentation: after solving priority k HiGHS internally adds constraint on objective k value before solving priority k+1.",CONFIRMED,None
+abs_tolerance / rel_tolerance semantics,YES,"Binary string: 'After priority %d solve no objective constraint due to absolute tolerance being %g < 0 and relative tolerance being %g < 0'. Documentation: tolerances define allowed degradation of higher-priority objective.",CONFIRMED,Negative tolerance disables the locking constraint for that stage
+Multi-objective for LP,YES,"Documentation: HiGHS multi-objective guide covers LP. Binary string: 'blending objectives by weight'.",CONFIRMED,None
+Multi-objective for MILP (binary/integer variables),YES — with documentation support,"Binary string: 'Cannot perform non-trivial lexicographic optimization for QP' — the disabling message is specifically for QP NOT for MIP. MIP/MILP is not excluded. HiGHS documentation describes multi-objective for 'linear objectives' without restricting to LP-only. HiGHS is LP+MIP+QP solver — the lex engine operates at the LP+MIP level.",CONFIRMED — QP is the explicit exclusion; MILP is not excluded,The QP exclusion string is the authoritative dividing line
+Cannot perform non-trivial lexicographic optimization for QP,QP_ONLY_EXCLUSION,"Binary string confirms: lexicographic optimization CANNOT be performed for QP. This exclusion does NOT mention LP or MIP. POLARIS uses MILP (binary variables with linear constraints/objectives — not QP).",CONFIRMED — POLARIS MILP is unaffected by QP exclusion,None
+blend_multi_objectives option recognized by scipy passOptions,YES — but filtered,"_highs_wrapper.py passOptions loop: 'if key in (sense,): continue' — only 'sense' is explicitly filtered. blend_multi_objectives would pass through if included in options dict passed to scipy.optimize.milp(options={...}). However scipy milp() wrapper builds model via _highs_wrapper which uses _Highs() NOT the public addLinearObjective API.",PARTIAL — option can be set but addLinearObjective is not called by wrapper,The single-objective wrapper does not use multi-obj API regardless of options
+
+# ============================================================
+# DOCUMENTATION QUALIFICATION STATUS
+# ============================================================
+
+doc_source,document_type,describes_milp_multi_obj,qualification
+HiGHS official documentation ergo-code.github.io/HiGHS/dev/,Production documentation,"HighsLinearObjective struct documented with full fields. Multi-objective guide present under 'Further features'. No 'experimental' or 'beta' label found in documentation.",DOCUMENTED_AS_PRODUCTION_FEATURE
+Binary strings from HiGHS 1.12.0 bundled in scipy 1.18.1,Compiled library evidence,"'using lexicographic optimization by priority' present. 'After priority %d solve...' message strings present. QP exclusion confirms lex engine active — and that its scope is LP+MIP.",CONFIRMED_IN_INSTALLED_VERSION
+HiGHS options system,Runtime option registry,"blend_multi_objectives registered as kBool option with default True. Option recognized by installed version.",CONFIRMED_IN_INSTALLED_VERSION
+scipy.optimize.milp _highs_wrapper.py,API wrapper source,"Wrapper builds HighsLp and calls passModel then run. Does NOT call addLinearObjective. Multi-objective API is present in _Highs but the wrapper does not use it.",CONFIRMED_WRAPPER_DOES_NOT_USE_IT
+
+# ============================================================
+# FINAL CAPABILITY CLASSIFICATION
+# ============================================================
+
+HIGHS_NATIVE_MILP_MULTI_OBJECTIVE,CONFIRMED_BUT_QUALIFIED
+qualification_1,"CONFIRMED: HiGHS 1.12.0 (installed) natively supports lexicographic multi-objective for LP and MILP via addLinearObjective + blend_multi_objectives=False."
+qualification_2,"QUALIFIED: The feature is accessed via the _Highs internal object (scipy._highspy._core._Highs) or standalone highspy — NOT via scipy.optimize.milp()."
+qualification_3,"QUALIFIED: The QP exclusion ('Cannot perform non-trivial lexicographic optimization for QP') is documented in the binary. POLARIS is MILP (not QP) — this exclusion does not apply."
+qualification_4,"QUALIFIED: Documentation does not carry an 'experimental' label for this feature as of the installed version."

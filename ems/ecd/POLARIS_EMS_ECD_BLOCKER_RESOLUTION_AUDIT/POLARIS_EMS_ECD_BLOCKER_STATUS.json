@@ -1,0 +1,57 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_BLOCKER_STATUS",
+  "version": "1.0.0",
+  "status": "AUDITED",
+  "blockers": [
+    {
+      "id": "BLK-006",
+      "blocker": "T_required TTL numerical value",
+      "classification": "CAN_BE_PARAMETERIZED_WITHOUT_POLICY_DECISION",
+      "unit_implementation_blocked": false,
+      "integration_blocked": false,
+      "production_deployment_blocked": true,
+      "human_decision_required": true,
+      "summary": "TTL expiry check logic is implemented with parameterized configuration (ECDConfig.ttl_seconds). Deployment requires site governance to set the numerical TTL."
+    },
+    {
+      "id": "BLK-007",
+      "blocker": "Telemetry / command maximum-age numerical value",
+      "classification": "CAN_BE_PARAMETERIZED_WITHOUT_POLICY_DECISION",
+      "unit_implementation_blocked": false,
+      "integration_blocked": false,
+      "production_deployment_blocked": true,
+      "human_decision_required": true,
+      "summary": "Freshness guard logic is parameterized (ECDConfig.max_telemetry_age_seconds). Deployment requires site operator configuration."
+    },
+    {
+      "id": "BLK-008",
+      "blocker": "Cryptographic signature/authentication scheme for operational override payloads",
+      "classification": "ALREADY_RESOLVED_BY_EXISTING_REPOSITORY_EVIDENCE",
+      "unit_implementation_blocked": false,
+      "integration_blocked": false,
+      "production_deployment_blocked": true,
+      "human_decision_required": true,
+      "summary": "Upstream boundary established. Cryptographic payload authentication belongs at the API/Ingress layer. ECD consumes pre-validated AuthorizedHorizon objects."
+    },
+    {
+      "id": "BLK-009",
+      "blocker": "Floating-point tie-comparison epsilon",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED",
+      "unit_implementation_blocked": false,
+      "integration_blocked": false,
+      "production_deployment_blocked": false,
+      "human_decision_required": false,
+      "summary": "Engineering definition resolved. Epsilon tolerance epsilon = 1.0e-6 hours (3.6 ms) established for floating-point tie comparison without policy mutation."
+    },
+    {
+      "id": "BLK-010",
+      "blocker": "Time-varying critical-load integration algorithm",
+      "classification": "ENGINEERING_DEFINITION_REQUIRED",
+      "unit_implementation_blocked": false,
+      "integration_blocked": false,
+      "production_deployment_blocked": false,
+      "human_decision_required": false,
+      "summary": "Engineering definition resolved. General cumulative energy & fuel integration model derived for P_crit(t). Maintains 100% backward compatibility with constant-load prototype."
+    }
+  ]
+}

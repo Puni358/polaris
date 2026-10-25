@@ -1,0 +1,26 @@
+{
+  "audit_name": "POLARIS_EMS_GAP19_FINAL_EBR_TIME_INDEX_AUDIT",
+  "execution_timestamp": "2026-09-25T01:13:46Z",
+  "source_file_hashes": {
+    "system/runtime/runner.py": "86aee0b51ba169458aa4cd8bbf678120b43d284144998d9c81e37f5fcaad5efc",
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "system/schemas/station_state.py": "f2cb385efdb2fdc95b681c765642660f1e0d06125c545b7464a8ac4a83e9185f",
+    "system/schemas/dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b"
+  },
+  "file_hashes": {
+    "FINAL_EBR_TIME_INDEX_VERDICT.md": "e0032a7564c1d725d554e227a9ee714629a815248c212607c7dc008c0e09b867",
+    "RUNNER_TIMESTAMP_TRACE.md": "97c2f19e53139dd0a0208cccbd7cd87a2183a885b3cfc0c3fa1b6f6815b07fdb",
+    "HORIZON_EDGE_RECONCILIATION.md": "30fc6631b1e3c4cc8ee8c3147bcb55013d5a6e171bfd7e03bee1a145264c20fe",
+    "CAUSAL_INFORMATION_RECONCILIATION.md": "c91296bfe67fb7dffb1165d069036ae8ed728199017402698df72e056d6f6516",
+    "EBR_INDEX_TRACE.md": "891391733ccc80c234a7ee376dc53143df0e663bdf42a3e47ca74d6830c649d5",
+    "README.md": "fd56883f163ce4105bb6424ed28bcd5175adca794e9d31078536bb9b798af7b2",
+    "EXPLICIT_INDEX_TABLE.md": "614c252c24071b51aa141ada581f45f9a65b94b035e97963bdb83f38331ce1b1",
+    "FORECAST_PROVIDER_TRACE.md": "86ee115bcc8ea5fa923aa411f070f66d968c0c1cef64e56e63fc0022ec389494",
+    "FORECAST_INDEX_SEMANTICS.md": "569ac14fd8214db77db20822fe805d24940dc5ca63e06d56fbdd86589c6fccf6",
+    "DIGITAL_TWIN_TIME_TRACE.md": "ff55f634e9765b5882b6af519140b6a159279936a31cba0ced9ff9f01c528cb1",
+    "MIDNIGHT_CROSSING_RECONCILIATION.md": "dc4af048c55305f06ca267884b318f6ec7087e15701a360595945ca8e05f3305"
+  }
+}

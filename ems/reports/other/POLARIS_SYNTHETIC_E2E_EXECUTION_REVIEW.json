@@ -1,0 +1,118 @@
+{
+  "phase": "S8.1-E2E",
+  "review_type": "Synthetic End-to-End Pipeline Demonstration Review",
+  "final_classification": "A = SYNTHETIC E2E EXECUTION PASS",
+  "execution_status": "SUCCESS_CLEAN",
+  "mandatory_s1_demonstration": {
+    "status": "PASS",
+    "scenario": "demo_scenario.json",
+    "steps_executed": 24,
+    "steps_requested": 24,
+    "forecast_engine": "stage81_solar",
+    "optimizer": "MILP",
+    "environment": "LOCAL_OFFLINE_PC",
+    "network_status": "DISCONNECTED (100% OFFLINE)"
+  },
+  "precondition_verification": {
+    "targeted_e2e_tests": "14/14 PASS",
+    "full_authoritative_regression": "74/74 PASS",
+    "exit_code": 0,
+    "frozen_contracts_and_runtime_integrity": "Frozen runtime/source integrity verified; SHA-256 checksums for the explicitly hashed runtime, schema, interface, optimization, simulation, and S8.1 adapter files matched before and after execution."
+  },
+  "scenario_matrix": {
+    "S1_normal_operation": "PASS (Executed)",
+    "S2_low_solar": "PASS (Executed)",
+    "S3_low_wind": "Authorized / Not Executed",
+    "S4_high_demand": "PASS (Executed)",
+    "S5_high_renewable_curtailment": "PASS (Executed)",
+    "S6_battery_constrained": "PASS (Executed)",
+    "S7_governed_infeasibility_fault": "PASS (Previously Verified through D4-C1 fault-containment testing; not exercised during the S1 demonstration run)",
+    "S8_forecast_perturbation_bias": "Authorized / Not Executed"
+  },
+  "synthetic_simulation_metrics": {
+    "label": "SYNTHETIC SIMULATION METRICS",
+    "ems_performance": {
+      "total_diesel_fuel_liters": 85.92,
+      "total_diesel_energy_kwh": 195.67,
+      "total_renewable_energy_used_kwh": 823.35,
+      "total_renewable_curtailment_kwh": 147.33,
+      "renewable_utilization_pct": 84.82,
+      "renewable_curtailment_pct": 15.18,
+      "battery_throughput_kwh": 213.02,
+      "battery_equivalent_cycles": 1.0651,
+      "unmet_critical_load_kwh": 0.0,
+      "unmet_load_description": "0 kWh unmet critical load during the executed 24-step S1 synthetic trajectory",
+      "constraint_violations_count": 0
+    },
+    "stage81_solar_forecasting": {
+      "execution_run_stage81_solar_irradiance_mae_w_m2": 42.3054,
+      "execution_run_evaluation_context": "Evaluated on S1 synthetic trajectory",
+      "frozen_stage81_ood_benchmark_mae_w_m2": 36.188657,
+      "frozen_benchmark_evaluation_context": "Frozen scientific benchmark on canonical 347-window test set",
+      "execution_run_solar_irradiance_rmse_w_m2": 58.8785,
+      "execution_run_solar_irradiance_nmae": 0.0622,
+      "execution_run_solar_irradiance_bias_w_m2": 8.4588
+    }
+  },
+  "trajectory_preservation": {
+    "runtime_artifact_paths": [
+      "system/artifacts/run_report.json",
+      "system/artifacts/latest_forecast_bundle.json",
+      "system/artifacts/latest_dispatch_plan.json"
+    ],
+    "available_per_step_fields": [
+      "timestamp",
+      "solar_irradiance_point",
+      "solar_generation_point",
+      "wind_generation_point",
+      "demand_point",
+      "solar_used",
+      "battery_charge",
+      "battery_discharge",
+      "diesel_power",
+      "unmet_load",
+      "battery_soc_pct"
+    ],
+    "absent_fields": [
+      "real_station_telemetry_logs"
+    ]
+  },
+  "determinism_characterization": {
+    "runs_compared": 2,
+    "result": "Identical Numerical Metrics and State Trajectories",
+    "diesel_fuel_match": "85.92 L == 85.92 L",
+    "renewable_used_match": "823.35 kWh == 823.35 kWh",
+    "forecast_mae_match": "42.3054 W/m2 == 42.3054 W/m2"
+  },
+  "causality_verification": {
+    "future_truth_leakage": false,
+    "forecast_input_boundary": "t <= t_current only",
+    "simulator_ground_truth_boundary": "DigitalTwin / evaluation only"
+  },
+  "fault_governance": {
+    "d4c1_governance_intact": true,
+    "infeasibility_behavior": "GOVERNED_DEGRADED zero-dispatch state (objective_value = 1e9)"
+  },
+  "offline_isolation": {
+    "offline_status": "100% OFFLINE",
+    "network_isolation_verified": true
+  },
+  "frozen_state_integrity": {
+    "pre_execution_sha256_matched_post_execution": true,
+    "hash_scope": "SHA-256 checksums for the explicitly hashed runtime, schema, interface, optimization, simulation, and S8.1 adapter files matched before and after execution.",
+    "source_code_changed": false,
+    "frozen_contracts_changed": false
+  },
+  "demonstration_limitations": [
+    "Engineering PV mapping formula (SW_IN * 300m2 * 0.20 * 0.85, 60kW cap) used",
+    "Point-only degenerate forecast bounds (lower == point == upper)",
+    "Synthetic data scenarios only"
+  ],
+  "scientific_claim_boundary": {
+    "real_station_fuel_savings_claimed": false,
+    "real_station_forecasting_accuracy_claimed": false,
+    "real_nuolja_validation_claimed": false,
+    "allowed_framing": "POLARIS demonstrates an end-to-end predictive energy-management workflow on deterministic synthetic station scenarios."
+  },
+  "next_governed_step": "SYNTHETIC_E2E_CLOSEOUT_AND_SYSTEM_DEMONSTRATION_ARCHIVING"
+}

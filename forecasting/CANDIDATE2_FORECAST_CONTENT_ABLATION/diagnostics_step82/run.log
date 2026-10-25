@@ -1,0 +1,41 @@
+[progress] start: None
+[progress] replaying_exact_state_0_to_82: None
+[progress] exact_state_reconstructed: {'timestamp': '2024-06-04T10:00:00Z', 'battery_soc_pct': 74.03, 'battery_energy_wh': 148059.89, 'diesel_running': False, 'diesel_hours_running': 0.0, 'last_observed_solar_irradiance': 485.38, 'last_observed_demand': 33045.12, 'last_observed_wind_generation': 35654.05, 'operating_mode': 'NORMAL', 'diesel_fuel_remaining_liters': 67.8514}
+[progress] bundles_built: None
+[progress] diagnostic_1_solving: None
+[progress] diagnostic_1_complete: {'solve_time_ms': 385104.0960859973, 'status': 0, 'dispatch_plan_error': 'DispatchPlan violates charge/discharge exclusivity at index 8: charge=0.04, discharge=45942.94.'}
+[progress] diagnostic_2_complete: {'max_p_chg * u_chg_raw': 50000.0, 'actual_p_chg_raw': 32223.120000000003, 'difference': -17776.879999999997}
+[progress] diagnostic_3_node_limit_100_solving: None
+[progress] diagnostic_3_node_limit_100_complete: {'solve_time_ms': 289.2535150022013, 'mip_gap': 0.045368478668022}
+[progress] diagnostic_3_node_limit_1000_solving: None
+[progress] diagnostic_3_node_limit_1000_complete: {'solve_time_ms': 1032.818263003719, 'mip_gap': 0.04116639082497504}
+[progress] diagnostic_3_node_limit_10000_solving: None
+[progress] diagnostic_3_node_limit_10000_complete: {'solve_time_ms': 5455.698908001068, 'mip_gap': 0.03691293647154791}
+[progress] diagnostic_4_solving: None
+[progress] diagnostic_4_complete: {'diag1_solve_time_ms': 385104.0960859973, 'diag4_solve_time_ms': 343315.5034419906, 'diag1_mip_node_count': 681909, 'diag4_mip_node_count': 608659}
+[progress] all_diagnostics_complete: None
+DONE
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();
+HighsMipSolverData::transformNewIntegerFeasibleSolution tmpSolver.run();

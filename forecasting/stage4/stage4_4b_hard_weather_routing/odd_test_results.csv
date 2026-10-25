@@ -1,0 +1,2 @@
+experiment,specialist,threshold,stage4_mae,stage4_nmae,routed_mae,routed_nmae,delta_mae,delta_nmae,ci_95_lower,ci_95_upper,hours_routed,pct_routed,tp_hard,fp_false_positives,precision,recall
+Stage 4.4B Frozen Specialist Routing,Stage 4 Physics,0.8,43.450807884206704,33.70146896576901,43.458271932882575,33.70725825754649,0.007464048675871027,0.0057892917774822195,-0.7431755846571546,0.780268256202195,340,11.793270898369753,119,221,35.0,56.666666666666664

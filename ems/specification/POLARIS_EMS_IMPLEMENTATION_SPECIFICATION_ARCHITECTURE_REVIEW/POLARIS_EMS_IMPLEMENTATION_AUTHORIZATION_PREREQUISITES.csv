@@ -1,0 +1,12 @@
+PREREQUISITE_ID,NAME,CATEGORY,POLICY_OR_EVIDENCE_SOURCE,CURRENT_STATUS,BLOCKING_FOR_SPEC,BLOCKING_FOR_AUTHORIZATION
+PREREQ-01,Policy Definition Approved,GOVERNANCE,POLARIS_EMS_POLICY_DEFINITION_RESOLUTION.md,PASS,NO,NO
+PREREQ-02,Objective Specification Governance Review,GOVERNANCE,POLARIS_EMS_OBJECTIVE_SPECIFICATION_GOVERNANCE_REVIEW.md,PASS,NO,NO
+PREREQ-03,GAP19 Solver Architecture Decision,ARCHITECTURE,POLARIS_EMS_GAP19_SOLVER_ARCHITECTURE_REGISTER.csv,PENDING,NO,YES
+PREREQ-04,Station Circuit Load Mapping (5 Tiers),ENGINEERING_DATA,Station Load Inventory,PENDING,NO,YES
+PREREQ-05,Generator Empirical Fuel Curve Calibration,ENGINEERING_DATA,Generator Test Data,PENDING,NO,YES
+PREREQ-06,Emergency Battery Reserve (EBR) Wh Target,POLICY_CALIBRATION,Stakeholder Calibration Record,PENDING,NO,YES
+PREREQ-07,Dynamic Terminal Energy Target Function,POLICY_CALIBRATION,Stakeholder Calibration Record,PENDING,NO,YES
+PREREQ-08,Forecast Safety Margin Parameters,ENGINEERING_DATA,Forecast Error Statistics,PENDING,NO,YES
+PREREQ-09,Infeasibility Operational Emergency Protocol,GOVERNANCE,Stakeholder Emergency Policy,PENDING,NO,YES
+PREREQ-10,Rollback & Reversion Plan Approved,ARCHITECTURE,Architecture Review Section 32,PENDING,NO,YES
+PREREQ-11,Code Implementation Authorization Granted,GOVERNANCE,Governance Approval Gate,NOT_GRANTED,NO,YES

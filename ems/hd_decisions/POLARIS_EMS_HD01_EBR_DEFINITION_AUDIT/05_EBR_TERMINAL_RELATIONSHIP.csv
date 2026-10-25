@@ -1,0 +1,3 @@
+Target_Symbol,Temporal_Scope,Primary_Function,Independence_Assessment,Derivability,Recommended_Relationship
+E_EBR_target(t),Timesteps t = 1..H (Intra-horizon),Protects rolling reserve headroom during solve window,Genuinely different temporal scope,Base resilience target,Primary rolling reserve target
+E_terminal_target,Timestep t = H (Inter-horizon boundary),Prevents shortsighted battery depletion at horizon end,Genuinely different temporal scope,Derivable as E_EBR_target(H),Set E_terminal_target = E_EBR_target(H)

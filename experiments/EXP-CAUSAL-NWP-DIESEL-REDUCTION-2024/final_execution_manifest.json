@@ -1,0 +1,14 @@
+{
+  "experiment_id": "EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024",
+  "execution_status": "PASS",
+  "timestamp_completed": "2026-10-04T14:26:25.451984+00:00",
+  "total_origins": 123,
+  "total_hours": 2952,
+  "preregistered_success_gate": "FAIL",
+  "scientific_verdict": "BENEFIT NOT DEMONSTRATED",
+  "frozen_hashes_at_start": {
+    "preregistration": "e738e2d54ad4ede9b5cac4ef9aafef057f6e88ca64e8df10fcc6c77f069c9a98",
+    "manifest": "71413cb81fe7a6f208c5b976af6f227707c9f51a38dbf37a80ef912b73e98cd7",
+    "adapter": "c9aab75bfebf7fc24454ae959173a7892139b70eedafd8680a6c0ea6a3cef640"
+  }
+}

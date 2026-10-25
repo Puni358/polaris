@@ -1,0 +1,176 @@
+{
+  "branch_id": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+  "phase": "PHASE_1_GOVERNANCE_REVIEW",
+  "authorization": "PHASE_1_GOVERNANCE_REVIEW_ONLY",
+  "review_timestamp": "2026-09-21T06:47:00Z",
+  "phase1_artifact_hashes": {
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_PHASE1_SPEC.md": {
+      "status": "EXISTS",
+      "sha256": "7cb6383579c664029cb25f36ab31a7651767aa4f3f943e1ff58daaf79bfe4da1",
+      "size_bytes": 6937
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_PHASE1_SPEC.json": {
+      "status": "EXISTS",
+      "sha256": "9cb33acc1a3b629f329e5bf15cbaf6c8ff872c7ad540f5653737ba52dc4ab8a0",
+      "size_bytes": 4071
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_FEATURE_CONTRACT.csv": {
+      "status": "EXISTS",
+      "sha256": "408423dcc35d038a1a72fa55757a34efeec2c816e7bfc51382f7bdf150f33b5e",
+      "size_bytes": 4560
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_NWP_CAUSAL_CONTRACT.csv": {
+      "status": "EXISTS",
+      "sha256": "05b4128cedd5e2fda71cebf2a4bfbc09f5fb39eacc62f6bdacda985c54cca411",
+      "size_bytes": 1037
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_DATA_SPLIT_SPEC.csv": {
+      "status": "EXISTS",
+      "sha256": "c71fe3cacdf37fc31aaad4be571d09f6b164eaff3466debdaa5db80a7ab63a6d",
+      "size_bytes": 546
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_REPRODUCIBILITY_CONTRACT.md": {
+      "status": "EXISTS",
+      "sha256": "55c476150bc8b61d89b7f4aba81a4875b6969626250de26b4973b570e4168002",
+      "size_bytes": 5638
+    },
+    "POLARIS_SOLAR_FORECAST_BRANCH_01_GOVERNANCE_STATUS.json": {
+      "status": "EXISTS",
+      "sha256": "dda354f4e484328eaf755d769b07c4ece84fdfb59bb4af5beaa9cf9acbbd3395",
+      "size_bytes": 1844
+    }
+  },
+  "artifact_consistency_check": {
+    "target_consistency": "MATCH: All 7 artifacts specify Nuolja station-measured SW_IN in W/m^2 (1h UTC)",
+    "horizon_consistency": "MATCH: All 7 artifacts specify complete 24h horizon (t+1..t+24)",
+    "origin_consistency": "MATCH: All 7 artifacts specify 8,784 hourly MPC origins in 2024",
+    "nwp_consistency": "MATCH: All 7 artifacts specify t_issue <= t with H_effective = H + (t - t_issue)",
+    "split_consistency": "MATCH: All 7 artifacts specify Train (Jan-Aug), Val (Sep-Oct), Test (Nov-Dec)",
+    "reproducibility_consistency": "MATCH: All 7 artifacts enforce 20-point rule and independent replay",
+    "firewall_consistency": "MATCH: All 7 artifacts report NO for training, inference, EMS, and Stage 8.1 modifications"
+  },
+  "gate_matrix": [
+    {
+      "gate": "TARGET_CONTRACT",
+      "evidence": "Nuolja 2024 SW_IN (W/m^2, 1h UTC, station-measured, non-negative)",
+      "status": "PASS",
+      "findings": "Target definition consistent across SPEC.md, SPEC.json, and FEATURE_CONTRACT.csv",
+      "required_action": "Freeze Target Contract for Phase 2"
+    },
+    {
+      "gate": "FEATURE_CAUSALITY",
+      "evidence": "Historical lookbacks [t-24h, t], astronomical clear-sky, and calendar features strictly causal at t",
+      "status": "PASS",
+      "findings": "Zero future truth leakage. All 16 features categorized with exact causal status",
+      "required_action": "Freeze Feature Contract for Phase 2"
+    },
+    {
+      "gate": "NWP_ISSUE_TIME_CAUSALITY",
+      "evidence": "AROME 21x21 NWP selection rule requires t_issue <= t (00:00 UTC base issue run)",
+      "status": "PASS",
+      "findings": "Latest valid issue run selected deterministically. Future issue runs strictly forbidden",
+      "required_action": "Implement deterministic NWP selector in Phase 2 pipeline"
+    },
+    {
+      "gate": "NWP_LEAD_COVERAGE",
+      "evidence": "Effective lead time formula H_effective = H + (t - t_issue) covers intra-day origins",
+      "status": "CONDITIONAL",
+      "findings": "Late intra-day origins (e.g. t=18:00 UTC) require up to 42h lead time from 00:00 UTC issue run",
+      "required_action": "Evaluate lead-time degradation in Phase 2/3 benchmarks"
+    },
+    {
+      "gate": "24H_CAUSAL_HORIZON",
+      "evidence": "Multi-output / horizon-specific output heads (H1..H24) defined without padding or truth leak",
+      "status": "PASS",
+      "findings": "Horizon contract explicitly specifies Y = [SW_IN(t+1)...SW_IN(t+24)]",
+      "required_action": "Proceed to Phase 2 Pipeline Design"
+    },
+    {
+      "gate": "SPLIT_BOUNDARY_INTEGRITY",
+      "evidence": "Chronological Train (Jan-Aug), Val (Sep-Oct), Test (Nov-Dec) with 24h embargo at boundary",
+      "status": "PASS",
+      "findings": "24h horizon embargo rule prevents target overlap across Train/Val/Test split boundaries",
+      "required_action": "Enforce 24h split boundary embargo during dataset construction"
+    },
+    {
+      "gate": "DATA_PROVENANCE",
+      "evidence": "Authoritative local files (Nuolja 5var CSV, Clearsky CSV, AROME 21x21 cache) verified with SHA-256",
+      "status": "PASS",
+      "findings": "Zero undocumented files or synthetic data used",
+      "required_action": "Maintain DATA_MANIFEST.json in all future runs"
+    },
+    {
+      "gate": "STAGE8_1_SEPARATION",
+      "evidence": "Stage 8.1 boundary confirmed frozen and immutable; Branch 01 is independent",
+      "status": "PASS",
+      "findings": "STAGE8_1_MODIFIED = NO. Branch 01 does not depend on missing Stage 8.1 model",
+      "required_action": "Maintain strict Stage 8.1 isolation"
+    },
+    {
+      "gate": "REPRODUCIBILITY_SPECIFICATION",
+      "evidence": "20-point governance rule, 34-item checklist, immutable run directory, and independent replay protocol",
+      "status": "PASS",
+      "findings": "Complete reproducibility contract established in REPRODUCIBILITY_CONTRACT.md",
+      "required_action": "Enforce reproducibility contract in Phase 2 pipeline design"
+    },
+    {
+      "gate": "FAIL_CLOSED_SPECIFICATION",
+      "evidence": "Explicit ModelGovernanceError exceptions defined for missing inputs, hash mismatches, or replay failures",
+      "status": "PASS",
+      "findings": "Zero silent fallbacks, zero-filling, or forward-filling permitted",
+      "required_action": "Implement fail-closed exception handlers in Phase 2 code"
+    },
+    {
+      "gate": "EXECUTION_FIREWALL",
+      "evidence": "NEW_MODEL_TRAINED = NO, NEW_MODEL_INFERRED = NO, EMS_MODIFIED = NO, CANDIDATE_A_EXECUTED = NO",
+      "status": "PASS",
+      "findings": "Zero code execution, zero training, zero inference, zero EMS modifications",
+      "required_action": "Maintain execution firewall until Phase 2 authorization"
+    }
+  ],
+  "governance_classification": {
+    "PHASE1_GOVERNANCE_REVIEW": "PASS",
+    "TARGET_CONTRACT": "PASS",
+    "FEATURE_CAUSALITY": "PASS",
+    "NWP_ISSUE_TIME_CAUSALITY": "PASS",
+    "NWP_LEAD_COVERAGE": "CONDITIONAL",
+    "24H_CAUSAL_HORIZON": "PASS",
+    "SPLIT_BOUNDARY_INTEGRITY": "PASS",
+    "DATA_PROVENANCE": "PASS",
+    "REPRODUCIBILITY_SPECIFICATION": "PASS",
+    "FAIL_CLOSED_SPECIFICATION": "PASS"
+  },
+  "authorizations": {
+    "MODEL_TRAINING_AUTHORIZATION": "NOT_GRANTED",
+    "EMS_INTEGRATION_AUTHORIZATION": "NOT_GRANTED",
+    "NEXT_GOVERNED_STEP": "PHASE2_IMPLEMENTATION_SPECIFICATION"
+  },
+  "final_status_block": {
+    "BRANCH_ID": "POLARIS_SOLAR_FORECAST_BRANCH_01",
+    "PHASE0_RECONNAISSANCE": "COMPLETE",
+    "PHASE0_GOVERNANCE_REVIEW": "COMPLETE",
+    "PHASE1_SPECIFICATION": "COMPLETE",
+    "PHASE1_GOVERNANCE_REVIEW": "PASS",
+    "STAGE8_1_MODIFIED": "NO",
+    "STAGE8_1_RETRAINED": "NO",
+    "STAGE8_1_REPLACED": "NO",
+    "CANDIDATE_A_IMPLEMENTED": "NO",
+    "CANDIDATE_A_EXECUTED": "NO",
+    "NEW_MODEL_TRAINED": "NO",
+    "NEW_MODEL_INFERRED": "NO",
+    "EMS_MODIFIED": "NO",
+    "EMS_EXECUTED": "NO",
+    "TARGET_CONTRACT": "PASS",
+    "FEATURE_CAUSALITY": "PASS",
+    "NWP_ISSUE_TIME_CAUSALITY": "PASS",
+    "NWP_LEAD_COVERAGE": "CONDITIONAL",
+    "24H_CAUSAL_HORIZON": "PASS",
+    "SPLIT_BOUNDARY_INTEGRITY": "PASS",
+    "DATA_PROVENANCE": "PASS",
+    "REPRODUCIBILITY_SPECIFICATION": "PASS",
+    "FAIL_CLOSED_SPECIFICATION": "PASS",
+    "MODEL_TRAINING_AUTHORIZATION": "NOT_GRANTED",
+    "EMS_INTEGRATION_AUTHORIZATION": "NOT_GRANTED",
+    "NEXT_GOVERNED_STEP": "PHASE2_IMPLEMENTATION_SPECIFICATION"
+  }
+}

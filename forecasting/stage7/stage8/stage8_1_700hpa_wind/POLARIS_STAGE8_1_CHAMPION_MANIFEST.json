@@ -1,0 +1,54 @@
+{
+  "manifest_version": "1.0",
+  "stage": "STAGE 8.1 700 hPa FREE-ATMOSPHERE STEERING WIND EXPERIMENT",
+  "status": "FROZEN_OPERATIONAL_CHAMPION",
+  "candidate": "U700 + V700",
+  "feature_count": 37,
+  "model_family": "HistGradientBoostingRegressor",
+  "hyperparameters": {
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "official_odd_metrics": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "control_odd_metrics": {
+    "stage": "STAGE 7.5 TERRAIN MODEL",
+    "daytime_mae_w_m2": 36.613571,
+    "daytime_nmae_pct": 28.3983,
+    "daytime_rmse_w_m2": 65.347064,
+    "daytime_bias_w_m2": 1.307778,
+    "night_mae_w_m2": 0.0
+  },
+  "deltas": {
+    "delta_mae_w_m2": -0.424913,
+    "delta_nmae_pp": -0.3296,
+    "delta_rmse_w_m2": -1.127569,
+    "delta_bias_w_m2": 0.131622
+  },
+  "bootstrap": {
+    "n_resamples": 10000,
+    "seed": 42,
+    "mean_delta_mae_w_m2": -0.424222,
+    "ci_95_lower_w_m2": -0.887999,
+    "ci_95_upper_w_m2": 0.026372,
+    "fraction_delta_mae_lt_0": 0.9665,
+    "statistically_significant": false,
+    "observed_held_out_improvement": true
+  },
+  "governance": {
+    "stage4_refit_executed": false,
+    "control_predictions_source": "stage4_results/ensemble_predictions.csv (pred_ensemble)",
+    "odd_origins": 173,
+    "odd_hours": 4152,
+    "daytime_rows": 2883,
+    "night_rows": 1269
+  }
+}

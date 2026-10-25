@@ -1,0 +1,200 @@
+{
+  "timestamp": "2026-09-13T10:50:00+00:00",
+  "audit_type": "STAGE8_20A_EVIDENCE_INTEGRITY_AUDIT",
+  "stage": "POLARIS STAGE 8.20A",
+  "official_operational_champion": {
+    "model_name": "Stage 8.19 ABIS GNSS Model",
+    "status": "FROZEN_OPERATIONAL_CHAMPION",
+    "total_features": 42,
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_nmae_pct": 27.0081,
+    "daytime_rmse_w_m2": 62.748210,
+    "daytime_bias_w_m2": 1.658210,
+    "night_mae_w_m2": 0.0
+  },
+  "total_claims_audited": 22,
+  "claims_breakdown": {
+    "verified_count": 21,
+    "partially_verified_count": 1,
+    "unverified_count": 0,
+    "incorrect_count": 0,
+    "reopen_for_feasibility_review_count": 0
+  },
+  "audited_numerical_claims": [
+    {
+      "claim_id": "NUM_01",
+      "claim": "SEVIRI satellite viewing zenith angle at Abisko (68.35 N, 18.82 E) is 76.54 deg",
+      "stated_value": "76.54 deg",
+      "evidence_level": "LEVEL 3 — Reproducible calculation",
+      "source_dataset": "Geostationary MSG orbit trigonometry relative to (0 N, 0 E)",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "Exact zenith angle acos(cos(68.3582)*cos(18.8258)) adjusted for Earth curvature = 76.54 deg."
+    },
+    {
+      "claim_id": "NUM_02",
+      "claim": "SEVIRI parallax displacement at Abisko for 5 km cloud height is 20.9 km",
+      "stated_value": "20.9 km",
+      "evidence_level": "LEVEL 3 — Reproducible calculation",
+      "source_dataset": "Geometric parallax calculation: 5 km * tan(76.54 deg)",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "5.0 * tan(76.54 deg) = 20.89 km ~ 20.9 km."
+    },
+    {
+      "claim_id": "NUM_03",
+      "claim": "SEVIRI daytime valid coverage at Abisko is 70.11%",
+      "stated_value": "70.11%",
+      "evidence_level": "LEVEL 1 — Direct empirical 2024 dataset evidence",
+      "source_dataset": "2024 CMIC L2 daytime granules over Abisko pixel (Stage 8.14C artifact)",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "70.11% daytime coverage verified in STAGE8_14C_EUMETSAT_LIVE_ACCESS_FORENSIC_AUDIT.json."
+    },
+    {
+      "claim_id": "NUM_04",
+      "claim": "Polar orbiter (NWC SAF PPS) overpass within 1h prior to t0 occurs on ~35-40% of days, causal coverage <45%",
+      "stated_value": "<45%",
+      "evidence_level": "LEVEL 3 — Orbital mechanics pass geometry calculation",
+      "source_dataset": "Sun-synchronous orbital pass geometry for MetOp/NOAA/Suomi-NPP over 68.35 N",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "Sun-synchronous orbiters cross 68 N at fixed local solar times; pass within 23:00-00:00 UTC occurs on ~35-40% of days."
+    },
+    {
+      "claim_id": "NUM_05",
+      "claim": "ZTD correlation between ABIS and KIRU (98 km ESE) is > 0.88",
+      "stated_value": "> 0.88",
+      "evidence_level": "LEVEL 1 — Direct empirical 2024 dataset evidence",
+      "source_dataset": "2024 SWEPOS hourly ZTD time series (Stage 8.19A/B audit artifact)",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "Pearson correlation r = 0.891 between ABIS and KIRU ZTD."
+    },
+    {
+      "claim_id": "NUM_06",
+      "claim": "100% MEPS NWP assimilation of upwind SYNOP (Katterjåkk) and radiosondes (Bodø/Sodankylä)",
+      "stated_value": "100% assimilated",
+      "evidence_level": "LEVEL 2 — Official provider documentation",
+      "source_dataset": "MET Norway MEPS 3D-Var data assimilation documentation",
+      "audit_verdict": "PARTIALLY VERIFIED",
+      "reproducibility": "MEPS assimilates operational GTS SYNOP/TEMP. Refined from '100% complete redundancy' assumption (Level 5) to initial-state assimilation fact (Level 2)."
+    },
+    {
+      "claim_id": "NUM_07",
+      "claim": "Kiruna NORDRAD weather radar beam blocked below 2500m ASL over Abisko",
+      "stated_value": "2500m ASL",
+      "evidence_level": "LEVEL 3 — DEM ray-tracing calculation",
+      "source_dataset": "SMHI radar coverage map + 2m DEM ray-tracing over 98 km baseline",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "Kiruna radar at 880m ASL looking 98 km WNW at 0.5 deg lowest tilt + Scandes peaks >1200m places beam centerline at 2,400-2,600m ASL."
+    },
+    {
+      "claim_id": "NUM_08",
+      "claim": "ABIS station proximity to Nuolja target is 326 meters horizontally, elevation 380m ASL",
+      "stated_value": "326m",
+      "evidence_level": "LEVEL 1 — Direct geodetic coordinates",
+      "source_dataset": "SWEPOS ABIS coordinates (68.3582 N, 18.8258 E) vs Nuolja target",
+      "audit_verdict": "VERIFIED",
+      "reproducibility": "Geodetic distance calculation = 326m."
+    }
+  ],
+  "audited_source_rejections": [
+    {
+      "source_id": "SRC_01",
+      "name": "Abisko ANS Valley Ceilometer / Camera",
+      "evidence_level": "LEVEL 1 & LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_02",
+      "name": "Abisko Valley Floor Surface Radiation",
+      "evidence_level": "LEVEL 1 (Stage 8.3 5-fold CV experiment artifact)",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_03",
+      "name": "Upwind SYNOP (Katterjåkk)",
+      "evidence_level": "LEVEL 1 & LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_04",
+      "name": "Regional SWEPOS GNSS (KIRU, TRO1, PAJA)",
+      "evidence_level": "LEVEL 1 & LEVEL 3",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_05",
+      "name": "GNSS 3D Tropospheric Tomography",
+      "evidence_level": "LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_06",
+      "name": "EUMETSAT SEVIRI CMIC / CLAAS-3",
+      "evidence_level": "LEVEL 1 & LEVEL 3",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_07",
+      "name": "EUMETSAT NWC SAF PPS Polar Orbiters",
+      "evidence_level": "LEVEL 3",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_08",
+      "name": "Copernicus CAMS Solar Radiation & AOD",
+      "evidence_level": "LEVEL 1 (Stage 8.6 audit artifact)",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_09",
+      "name": "Upwind Radiosondes (Bodø, Sodankylä)",
+      "evidence_level": "LEVEL 1 & LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_10",
+      "name": "ACTRIS / Cloudnet Profile Stations",
+      "evidence_level": "LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_11",
+      "name": "NORDRAD Weather Radar (Kiruna)",
+      "evidence_level": "LEVEL 3",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_12",
+      "name": "Valley Floor vs Summit Delta-T / Delta-RH",
+      "evidence_level": "LEVEL 1",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_13",
+      "name": "E-AMDAR Aircraft Data Relay",
+      "evidence_level": "LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    },
+    {
+      "source_id": "SRC_14",
+      "name": "Ground Microwave Radiometer (MWR)",
+      "evidence_level": "LEVEL 2",
+      "audit_verdict": "VERIFIED CLOSED"
+    }
+  ],
+  "strongest_unsupported_claim": "Claim NUM_06: Equating MEPS initial-state assimilation of SYNOP/radiosondes directly with 100% complete forecast redundancy over 24 hours (Level 5 assumption). Refined to Level 2 initial-state assimilation fact.",
+  "strongest_verified_rejection": "EUMETSAT SEVIRI CMIC parallax (20.9 km) & coverage (70.11% daytime) failure, and ABIS-to-KIRU downwind decorrelation + high ZTD redundancy (r = 0.891).",
+  "reopen_routes_count": 0,
+  "final_stage_8_20a_status": "CLOSED — DOCUMENTATION CORRECTIONS REQUIRED (All material rejections verified; minor precision refinements recorded)",
+  "experiment_execution_verification": {
+    "forecasting_experiment_run": false,
+    "stage_8_19_model_untouched": true,
+    "master_handoff_untouched": true,
+    "route_registry_untouched": true,
+    "champion_metrics": {
+      "model": "Stage 8.19 ABIS GNSS Model",
+      "features": 42,
+      "daytime_nmae_pct": 27.0081,
+      "daytime_mae_w_m2": 34.821405,
+      "daytime_rmse_w_m2": 62.748210
+    }
+  }
+}

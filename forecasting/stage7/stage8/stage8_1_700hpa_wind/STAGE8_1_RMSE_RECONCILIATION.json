@@ -1,0 +1,56 @@
+{
+  "stage": "POLARIS STAGE 8.1 RMSE DISCREPANCY FORENSIC RECONCILIATION",
+  "timestamp_utc": "2026-09-12T17:56:00Z",
+  "decision_state": "RECONCILED_B",
+  "decision_explanation": "64.219495 W/m² is confirmed authoritative for the frozen Stage 8.1 champion ODD Daytime RMSE. The 54.912301 W/m² value was a typographical transcription error introduced at line 2061 of POLARIS_MASTER_HANDOFF.md and propagated to downstream stage documentation.",
+  "authoritative_metrics": {
+    "champion_stage": "Stage 8.1 700 hPa Steering Wind Model",
+    "evaluation_population": "Held-out 173 ODD origins (2,883 daytime hours, SZA <= 84°)",
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "control_metrics": {
+    "control_stage": "Stage 7.5 Terrain Model",
+    "daytime_mae_w_m2": 36.613571,
+    "daytime_nmae_pct": 28.3983,
+    "daytime_rmse_w_m2": 65.347064,
+    "daytime_bias_w_m2": 1.307778
+  },
+  "mathematical_reconciliation_deltas": {
+    "delta_mae_w_m2": -0.424913,
+    "delta_nmae_pp": -0.3296,
+    "delta_rmse_w_m2": -1.127569,
+    "delta_rmse_equation_verification": "64.219495 - 65.347064 = -1.127569 (EXACT MATCH)"
+  },
+  "provenance_54_912301": {
+    "status": "TYPOGRAPHICAL_TRANSCRIPTION_ERROR",
+    "origin_location": "POLARIS_MASTER_HANDOFF.md Line 2061 (Footer summary of Section XIV)",
+    "downstream_propagation": [
+      "stage7/stage8/stage8_7_dni_two_head/STAGE8_7_NEXT_ROUTE_HANDOFF.md (Section F, Line 85)",
+      "stage7/stage8/stage8_7_dni_two_head/STAGE8_7_NEXT_ROUTE_HANDOFF_CORRECTION_AUDIT.json (Line 80)",
+      "stage7/stage8/stage8_8_cloud_radiative_path/STAGE8_8A_FEASIBILITY_REPORT.md",
+      "stage7/stage8/stage8_9_independent_cloud/STAGE8_9A_FEASIBILITY_REPORT.md",
+      "stage7/stage8/stage8_10_meps_model_level/STAGE8_10A_FEASIBILITY_REPORT.md"
+    ]
+  },
+  "provenance_64_219495": {
+    "status": "AUTHORITATIVE_DAYTIME_RMSE",
+    "origin_location": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_results.json (Line 29)",
+    "primary_manifest": "stage7/stage8/stage8_1_700hpa_wind/POLARIS_STAGE8_1_CHAMPION_MANIFEST.json (Line 18)",
+    "report_location": "stage7/stage8/stage8_1_700hpa_wind/STAGE8_1_OFFICIAL_ODD_REPORT.md (Section 2, Line 34)",
+    "master_handoff_location": "POLARIS_MASTER_HANDOFF.md Line 1741 (Section VII, Stage 8.1 Official Results)"
+  },
+  "master_handoff_correction_required": true,
+  "master_handoff_modified": false,
+  "firewall": {
+    "odd_target_reads": 0,
+    "odd_predictions_regenerated": 0,
+    "model_training": "NONE",
+    "cv": "NONE",
+    "hyperparameter_tuning": "NONE",
+    "official_champion_parameters": "UNCHANGED"
+  }
+}

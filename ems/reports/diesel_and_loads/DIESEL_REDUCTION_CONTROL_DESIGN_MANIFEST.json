@@ -1,0 +1,44 @@
+{
+  "manifest_id": "DIESEL-REDUCTION-CONTROL-DESIGN-MANIFEST-CORRECTED",
+  "generated_at_utc": "2026-10-05T09:15:30+00:00",
+  "scope": "POLARIS EMS Diesel-Reduction Control Design Study (Final Post-Audit Correction)",
+  "verdict": "RESEARCH_DESIGN_COMPLETE — AWAITING SAFETY-GATE PREREGISTRATION",
+  "artifacts": [
+    {
+      "path": "DIESEL_REDUCTION_CONTROL_DESIGN.md",
+      "sha256": "96134f4ab41beb5773a8e52f94d1b65d7b122b7d74df7337fc6331610ba76e0c",
+      "type": "control_design_specification_markdown"
+    },
+    {
+      "path": "DIESEL_REDUCTION_CONTROL_DESIGN.json",
+      "sha256": "808f3e95f150b7da16c20b12a5427d695eb78545d41461ef067c5c5fddacdbb2",
+      "type": "control_design_specification_json"
+    },
+    {
+      "path": "DIESEL_REDUCTION_CONTROL_DESIGN_CORRECTION_AUDIT.md",
+      "sha256": "401353402adc638618aa3869097f7eed91074d858f2f4dfdbf76e2d003749f7e",
+      "type": "correction_audit_report_markdown"
+    },
+    {
+      "path": "DIESEL_REDUCTION_CONTROL_DESIGN_CORRECTION_AUDIT.json",
+      "sha256": "6fa9ea3094eb3a3d92abc9c9c3df4d2a0b4ea00ee6178c92be40faac08bad6ab",
+      "type": "correction_audit_metadata_json"
+    },
+    {
+      "path": "DIESEL_REDUCTION_CONTROL_DESIGN_INDEPENDENT_AUDIT.md",
+      "sha256": "f7052417c59ed416c72864f2b34270526a0e55ec62d5fb6f32d5dfb7fd4e3b5c",
+      "type": "independent_ai_audit_markdown"
+    },
+    {
+      "path": "DIESEL_REDUCTION_CONTROL_DESIGN_INDEPENDENT_AUDIT.json",
+      "sha256": "b3b06a46e6c02b1cbf4934be8a3a3214eb00394d2a900ebe2789d8a4e235e1da",
+      "type": "independent_ai_audit_json"
+    }
+  ],
+  "governance_verification": {
+    "production_files_modified": 0,
+    "experiments_executed": 0,
+    "gap19_production_path": "system/optimization/implementations/gap19_highs_native.py",
+    "stage8_1_production_path": "stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_candidate_37feature_model.joblib"
+  }
+}

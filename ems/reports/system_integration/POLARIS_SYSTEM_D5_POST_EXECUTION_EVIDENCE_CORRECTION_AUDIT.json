@@ -1,0 +1,357 @@
+{
+  "audit_id": "POLARIS_SYSTEM_D5_POST_EXECUTION_EVIDENCE_CORRECTION_AUDIT_20260917",
+  "timestamp": "2026-09-17T08:40:00+05:30",
+  "governance_state": {
+    "D4": "CLOSED",
+    "D5_CONTRACT": "FROZEN",
+    "D5_IMPLEMENTATION": "COMPLETE",
+    "D5_IMPLEMENTATION_REVIEW": "PASSED",
+    "D5_EXECUTION": "COMPLETED_ATTEMPTED_AS_AUTHORIZED",
+    "D6": "NOT_INITIATED"
+  },
+  "correction_matrix": [
+    {
+      "previous_claim": "Manifest Hash Provenance Status = VERIFIED_VALID",
+      "evidence_checked": "Recorded manifest_hash (abc622...) vs disk file bytes SHA256 (c4b527...)",
+      "previous_status": "VERIFIED_VALID",
+      "corrected_status": "NOT_VERIFIABLE / AMBIGUOUS",
+      "reason": "Manifest hash was computed on canonical pre-insertion representation. The contract does not specify whether recorded hash must be pre-insertion SHA256 or post-write file bytes SHA256."
+    },
+    {
+      "previous_claim": "Actual Trajectory Identity = VERIFIED_EQUAL (Independently Hashed)",
+      "evidence_checked": "Raw result JSON actual_trajectory_hash field vs scenario data provider file SHA256",
+      "previous_status": "VERIFIED_EQUAL",
+      "corrected_status": "VERIFIED_EQUAL (SHARED SOURCE PROVENANCE)",
+      "reason": "Previous audit copied summary actual_trajectory_hash. Independent audit of raw evidence confirms Control and Perturbed runs used the exact same immutable scenario file (demo_scenario.json / synthetic_168h_endurance_scenario.json)."
+    },
+    {
+      "previous_claim": "Initial State Identity = VERIFIED_EQUAL (Independently Hashed)",
+      "previous_status": "VERIFIED_EQUAL",
+      "evidence_checked": "Raw result initial_state_hash field vs D5Runner initial state constructor output",
+      "corrected_status": "VERIFIED_EQUAL (SHARED CONSTRUCTOR PROVENANCE)",
+      "reason": "Previous audit instantiated a new D5Runner. Historical raw evidence confirms Control and Perturbed runs shared identical initial StationState S0 parameters (SOC 50%, 100 kWh, 0.0h diesel)."
+    },
+    {
+      "previous_claim": "Paired Condition Identity = VERIFIED",
+      "evidence_checked": "Raw run metadata, scenario configs, and optimizer settings",
+      "previous_status": "VERIFIED",
+      "corrected_status": "VERIFIED_EQUAL (PRE-DISPATCH CONDITIONS)",
+      "reason": "Pre-dispatch exogenous conditions, initial state, timestep, duration, and optimizer settings are equal. Post-dispatch state trajectories legitimately diverge."
+    },
+    {
+      "previous_claim": "Physical & Fault Metrics = INDEPENDENTLY DERIVED",
+      "evidence_checked": "Raw JSON physical_outcome_metrics and execution_and_fault_metrics payloads",
+      "previous_status": "VERIFIED_DERIVED",
+      "corrected_status": "CONSISTENT WITH PRESERVED RAW RUN-LEVEL EVIDENCE",
+      "reason": "Raw evidence contains authoritative run-level aggregated metrics. Lower iteration-level raw arrays were aggregated during runtime; run-level metrics match checkpoint 100%."
+    },
+    {
+      "previous_claim": "Preflight Audit = ALL 15 CHECKS VERIFIED",
+      "evidence_checked": "Current state inspection vs. historical preflight temporal logs",
+      "previous_status": "VERIFIED",
+      "corrected_status": "PF-1..10, 12..13, 15 VERIFIED (STRUCTURAL); PF-11, 14 INFERENCE (TEMPORAL)",
+      "reason": "Structural state and code compliance are verified. Pre-execution temporal ordering is inferred from manifest timestamp as no separate preflight log file exists."
+    }
+  ],
+  "preflight_audit": [
+    {
+      "check": "PF-1 D4 = CLOSED",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "D4 closeout checkpoint verified and untouched."
+    },
+    {
+      "check": "PF-2 D5 Contract = FROZEN",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "Contract SHA256 hashes match authoritative values 100%."
+    },
+    {
+      "check": "PF-3 D5 Implementation = COMPLETE",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "Implementation inventory verified in system/robustness/."
+    },
+    {
+      "check": "PF-4 D5 Implementation Review = PASSED",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "POLARIS_SYSTEM_D5_IMPLEMENTATION_REVIEW_CHECKPOINT verified."
+    },
+    {
+      "check": "PF-5 Authorized scenario registry verified",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "D5ScenarioRegistry matches frozen specifications S1-S6."
+    },
+    {
+      "check": "PF-6 Protected artifact integrity verified",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "Zero modifications in system/schemas, system/optimization, system/simulation, system/evaluation."
+    },
+    {
+      "check": "PF-7 Required result directories available",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "D5_RESULTS/ subdirectories D5-1..D5-6 present with raw, summary, provenance, logs."
+    },
+    {
+      "check": "PF-8 Required data available",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "demo_scenario.json (48 steps) and synthetic_168h_endurance_scenario.json (168 steps) available."
+    },
+    {
+      "check": "PF-9 Control/perturbed pairing infrastructure available",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "D5Runner.run_paired_d5_experiment verified."
+    },
+    {
+      "check": "PF-10 No accidental execution-state contamination",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "Fresh StationState created per run with zero shared mutable state."
+    },
+    {
+      "check": "PF-11 Execution manifest established prior to run",
+      "type": "INFERENCE",
+      "status": "INFERRED_VALID",
+      "evidence": "Manifest timestamp precedes run completion timestamp; no separate preflight log."
+    },
+    {
+      "check": "PF-12 Frozen hashes verified",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "All 4 governance hashes match recorded SHA256 values."
+    },
+    {
+      "check": "PF-13 Two-world causal firewall verified",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "Source inspection confirms ForecastPerturber operates on baseline bundle without actuals access."
+    },
+    {
+      "check": "PF-14 No result-dependent stopping rule active",
+      "type": "INFERENCE",
+      "status": "INFERRED_VALID",
+      "evidence": "All 6 gates present in results in exact predefined order."
+    },
+    {
+      "check": "PF-15 No post-hoc experimental changes permitted",
+      "type": "DIRECTLY PRESERVED EVIDENCE",
+      "status": "VERIFIED",
+      "evidence": "Execution manifest parameters match executed runs."
+    }
+  ],
+  "execution_manifest_audit": {
+    "manifest_id": "POLARIS_SYSTEM_D5_EXECUTION_MANIFEST_20260917",
+    "recorded_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "pre_insertion_canonical_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+    "disk_file_hash": "c4b52743dc8a87fce3702b7418497e5d759674df78f4cf04a9bea3f7e48e72dd",
+    "manifest_hash_semantics": "NOT_VERIFIABLE / AMBIGUOUS (Pre-insertion SHA256 vs Post-write file SHA256)",
+    "manifest_table": [
+      {
+        "gate": "D5-1",
+        "scenario": "S1",
+        "solar": 0.7,
+        "wind": 1.0,
+        "demand": 1.0,
+        "n": 24,
+        "order": 1,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-2",
+        "scenario": "S2",
+        "solar": 1.3,
+        "wind": 1.0,
+        "demand": 1.0,
+        "n": 24,
+        "order": 2,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-3",
+        "scenario": "S3",
+        "solar": 1.0,
+        "wind": 0.7,
+        "demand": 1.0,
+        "n": 24,
+        "order": 3,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-4",
+        "scenario": "S4",
+        "solar": 1.0,
+        "wind": 1.0,
+        "demand": 1.2,
+        "n": 24,
+        "order": 4,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-5",
+        "scenario": "S5",
+        "solar": 1.3,
+        "wind": 1.3,
+        "demand": 0.8,
+        "n": 24,
+        "order": 5,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      },
+      {
+        "gate": "D5-6",
+        "scenario": "S6",
+        "solar": 1.15,
+        "wind": 1.15,
+        "demand": 1.0,
+        "n": 168,
+        "order": 6,
+        "authorized_vs_actual": "VERIFIED_MATCH"
+      }
+    ]
+  },
+  "governance_hashes_verification": {
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.md": {
+      "expected": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "actual": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.json": {
+      "expected": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "actual": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md": {
+      "expected": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "actual": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+      "status": "VERIFIED"
+    },
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.json": {
+      "expected": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df",
+      "actual": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df",
+      "status": "VERIFIED"
+    }
+  },
+  "pair_integrity_audit": [
+    {
+      "gate": "D5-1",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL (SHARED SOURCE)",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL (SHARED CONSTRUCTOR)",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-2",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL (SHARED SOURCE)",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL (SHARED CONSTRUCTOR)",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-3",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL (SHARED SOURCE)",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL (SHARED CONSTRUCTOR)",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-4",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL (SHARED SOURCE)",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL (SHARED CONSTRUCTOR)",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-5",
+      "control_actual_id": "demo_scenario.json",
+      "perturbed_actual_id": "demo_scenario.json",
+      "control_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "perturbed_actual_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+      "trajectory_match": "VERIFIED_EQUAL (SHARED SOURCE)",
+      "control_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "perturbed_initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+      "initial_state_match": "VERIFIED_EQUAL (SHARED CONSTRUCTOR)",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    },
+    {
+      "gate": "D5-6",
+      "control_actual_id": "synthetic_168h_endurance_scenario.json",
+      "perturbed_actual_id": "synthetic_168h_endurance_scenario.json",
+      "control_actual_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+      "perturbed_actual_hash": "0e7419b88ef0a9c76ceafd2c12114b6027a2195aead8d146917f542f0aaef6a1",
+      "trajectory_match": "VERIFIED_EQUAL (SHARED SOURCE)",
+      "control_initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+      "perturbed_initial_state_hash": "60fce8bd28b6b06c4d36169a1d8752b5f836eb37ec8f7b7a71d640e128a33266",
+      "initial_state_match": "VERIFIED_EQUAL (SHARED CONSTRUCTOR)",
+      "physical_config_match": "VERIFIED_EQUAL",
+      "timestep_match": "VERIFIED_EQUAL",
+      "duration_match": "VERIFIED_EQUAL",
+      "optimizer_match": "VERIFIED_EQUAL",
+      "solver_config_match": "VERIFIED_EQUAL"
+    }
+  ],
+  "two_world_causal_firewall_audit": {
+    "status": "VERIFIED",
+    "evidence": "Source code inspection confirms ForecastPerturber operates strictly on baseline ForecastBundle without access to future ground truth actuals."
+  },
+  "d5_6_loop_semantics_audit": {
+    "status": "VERIFIED",
+    "iterations_completed_control": 168,
+    "iterations_completed_perturbed": 168,
+    "receding_horizon_h1_only": true
+  },
+  "rerun_audit": {
+    "reruns_count": 0,
+    "status": "NO_RERUNS_PERFORMED"
+  },
+  "final_evidence_decision": {
+    "experimental_validity": "PASS",
+    "evidence_packaging_status": "CORRECTED",
+    "d5_results_checkpoint_status": "READY_FOR_SCIENTIFIC_REVIEW",
+    "d6_status": "NOT_INITIATED"
+  }
+}

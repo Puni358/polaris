@@ -1,0 +1,201 @@
+{
+  "timestamp": "2026-09-13T11:03:03+05:30",
+  "document_title": "POLARIS REPRODUCIBILITY INVENTORY DATA MANIFEST",
+  "inventory_items": [
+    {
+      "relative_path": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 1123197,
+      "sha256": "0a2b9d2cbf3fea14a75d2e448f9650534f2ff540601d8c89df69e3b9334fa1f8",
+      "row_count": 8784,
+      "columns": [
+        "TIMESTAMP",
+        "TA",
+        "RH",
+        "SW_IN",
+        "TS_-0.01m",
+        "PRECIP",
+        "D_SNOW",
+        "TA_STD",
+        "TS_STD"
+      ],
+      "notes": "Target observation dataset (SITES Nuolja 2024 hourly)"
+    },
+    {
+      "relative_path": "data/POLARIS_v0_1_clearsky_decomposition.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 776571,
+      "sha256": "596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a",
+      "row_count": 8784,
+      "columns": [
+        "TIMESTAMP",
+        "actual_SW_IN",
+        "clearsky_ghi",
+        "solar_elevation",
+        "solar_zenith",
+        "kt"
+      ],
+      "notes": "Clear-sky solar decomposition model output"
+    },
+    {
+      "relative_path": "data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 663057,
+      "sha256": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16",
+      "row_count": 8328,
+      "columns": [
+        "forecast_start",
+        "horizon_hour",
+        "timestamp",
+        "actual_SW_IN",
+        "fc_cloud_cover",
+        "fc_temperature_2m",
+        "fc_relative_humidity_2m",
+        "fc_precipitation",
+        "fc_surface_pressure",
+        "fc_wind_speed_10m"
+      ],
+      "notes": "Raw NWP future weather forecasts for 2024"
+    },
+    {
+      "relative_path": "stage4/stage4_results/ensemble_predictions.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 666383,
+      "sha256": "796faf9529cd3863560f8b11342aeff129b6f0c98765a568dddc1bcd273aad20",
+      "row_count": 8328,
+      "columns": [
+        "forecast_start",
+        "horizon_hour",
+        "timestamp",
+        "actual_SW_IN",
+        "pred_stage3b_cloud_nwp",
+        "pred_ensemble"
+      ],
+      "notes": "Globally frozen Stage 4 ensemble base predictions"
+    },
+    {
+      "relative_path": "stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 774648,
+      "sha256": "da6585c3a584f742d4e78f2d5ac5323479a765bcf74bb8b6da31cf1336f600a8",
+      "row_count": 8328,
+      "columns": [
+        "origin_index",
+        "forecast_start",
+        "horizon_hour",
+        "valid_time",
+        "forecast_reference_time",
+        "surface_air_pressure_hpa",
+        "lwp_latest",
+        "iwp_latest",
+        "meps_run_id"
+      ],
+      "notes": "Stage 6.6 LWP/IWP vertical profile feature matrix"
+    },
+    {
+      "relative_path": "stage7/stage7_5_terrain_horizon/nuolja_terrain_features_2024.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 720600,
+      "sha256": "0a29c9c03815cc90faf3540dbd199b430ae292c8c2b327c02062a17732b7d689",
+      "row_count": 8784,
+      "columns": [
+        "TIMESTAMP",
+        "solar_elevation",
+        "solar_azimuth",
+        "clearsky_ghi",
+        "terrain_horizon_elevation_deg",
+        "terrain_elevation_margin_deg",
+        "terrain_solar_obstruction_flag",
+        "clearsky_ghi_terrain_adjusted"
+      ],
+      "notes": "Stage 7.5 terrain elevation & horizon feature matrix"
+    },
+    {
+      "relative_path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_extracted_features.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 994478,
+      "sha256": "aa6ce29f3acec6345b82e11b7182ba0fe4110f7c044486f56f2fd5b179b49b08",
+      "row_count": 8328,
+      "columns": [
+        "origin_index",
+        "forecast_start",
+        "horizon_hour",
+        "valid_time",
+        "forecast_reference_time",
+        "u700",
+        "v700",
+        "meps_run_id",
+        "causal_pass"
+      ],
+      "notes": "Stage 8.1 700 hPa steering wind vector feature matrix"
+    },
+    {
+      "relative_path": "stage7/stage8/stage8_1_700hpa_wind/run_official_odd_evaluation.py",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 19336,
+      "sha256": "c1c99c60b43f00ce1845a68ca166783a30d2ac9dc986bc01a7947381165a3f41",
+      "row_count": 0,
+      "columns": [],
+      "notes": "Executable evaluation pipeline script for Stage 8.1 baseline"
+    },
+    {
+      "relative_path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv",
+      "status": "REAL",
+      "classification": "REAL",
+      "size_bytes": 406701,
+      "sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+      "row_count": 4152,
+      "columns": [
+        "forecast_start",
+        "horizon_hour",
+        "timestamp",
+        "actual_SW_IN",
+        "is_daytime",
+        "is_night_causal",
+        "pred_stage7_5_control",
+        "pred_stage8_1_candidate"
+      ],
+      "notes": "Stage 8.1 ODD predictions source CSV"
+    },
+    {
+      "relative_path": "stage7/stage8/stage8_17a_arome_features.csv",
+      "status": "MISSING",
+      "classification": "MISSING",
+      "size_bytes": 0,
+      "sha256": "ABSENT",
+      "notes": "Stage 8.17A AROME structural disagreement feature matrix (ABSENT)"
+    },
+    {
+      "relative_path": "stage7/stage8/stage8_17a_official_odd_predictions.csv",
+      "status": "MISSING",
+      "classification": "MISSING",
+      "size_bytes": 0,
+      "sha256": "ABSENT",
+      "notes": "Stage 8.17A row-level prediction CSV (ABSENT)"
+    },
+    {
+      "relative_path": "data/abis_swepos_gnss_ztd_2024.csv",
+      "status": "MISSING",
+      "classification": "MISSING",
+      "size_bytes": 0,
+      "sha256": "ABSENT",
+      "notes": "Raw ABIS/SWEPOS GNSS ZTD observation dataset (ABSENT)"
+    },
+    {
+      "relative_path": "data/arome_arctic_2024_forecasts.grib2",
+      "status": "MISSING",
+      "classification": "MISSING",
+      "size_bytes": 0,
+      "sha256": "ABSENT",
+      "notes": "Raw AROME-Arctic NWP forecast GRIB2 swaths (ABSENT)"
+    }
+  ]
+}

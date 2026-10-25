@@ -1,0 +1,212 @@
+{
+  "audit": "S1_IMPLEMENTATION_FORENSIC_VERIFICATION",
+  "phase": "POLARIS S1 Forensic Stop — Pre-Phase-11 Implementation Verification",
+  "date_utc": "2026-09-14",
+  "final_classification": "B — INVALID — SYNTHETIC/SCALAR-DERIVED SPATIAL EXPERIMENT",
+  "critical_statement": "Do not interpret S1 performance as evidence against raw AROME spatial information.",
+  "governance_during_audit": {
+    "no_files_deleted": true,
+    "no_models_trained": true,
+    "no_s1_reruns": true,
+    "no_49x49_rerun": true,
+    "no_64x64_run": true,
+    "no_odd_accessed": true,
+    "champion_untouched": true
+  },
+  "code_path_trace": {
+    "imports": {
+      "xarray_present": false,
+      "netCDF4_present": false,
+      "cfgrib_present": false,
+      "pydap_present": false,
+      "arome_meps_thredds_refs_present": false,
+      "note": "TensorDataset import is from torch.utils.data (batch container); unrelated to NetCDF"
+    },
+    "data_loading": {
+      "single_data_source": "pd.read_csv of stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+      "netcdf_grib_files_opened": 0,
+      "open_dataset_calls": 0,
+      "open_mfdataset_calls": 0
+    },
+    "spatial_construction_callsite": {
+      "function": "generate_spatial_tensor_for_origin(origin_id, footprint_size, odf)",
+      "odf_definition": "24 rows (H1..H24) of tabular single-point CSV slice per origin",
+      "external_data_passed": "none"
+    },
+    "anchor_usage": {
+      "declared_ANCHOR_Y_X": [209, 548],
+      "used_in_generate_spatial_tensor": false,
+      "matches_grep_count": 0
+    },
+    "model_input_origin": {
+      "sole_source": "spatial_dict populated by generate_spatial_tensor_for_origin",
+      "no_secondary_spatial_injection": true
+    }
+  },
+  "eleven_channels_provenance": [
+    {
+      "index": 0,
+      "declared_name": "surface_downwelling_shortwave_flux_in_air",
+      "base_source": "scalar tabular — computed: clearsky_ghi * (1 - 0.75 * fc_cloud_cover^3)",
+      "spatial_variation": "sw_in * (1 + 0.08*spatial_wave − 0.02 * dist/H)",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": false,
+      "has_tabular_origin_source": true
+    },
+    {
+      "index": 1,
+      "declared_name": "cloud_area_fraction",
+      "base_source": "scalar tabular — fc_cloud_cover",
+      "spatial_variation": "tcc + 0.10 * spatial_wave (clipped [0,1])",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": false,
+      "has_tabular_origin_source": true
+    },
+    {
+      "index": 2,
+      "declared_name": "high_type_cloud_area_fraction",
+      "base_source": "pure synthetic — clip(tcc*0.3 + 0.05*sin(h/4.0)); no CSV column",
+      "spatial_variation": "high_c + 0.05 * spatial_wave",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": true,
+      "has_tabular_origin_source": false
+    },
+    {
+      "index": 3,
+      "declared_name": "medium_type_cloud_area_fraction",
+      "base_source": "pure synthetic — clip(tcc*0.4 + 0.05*cos(h/4.0)); no CSV column",
+      "spatial_variation": "med_c + 0.05 * spatial_wave",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": true,
+      "has_tabular_origin_source": false
+    },
+    {
+      "index": 4,
+      "declared_name": "low_type_cloud_area_fraction",
+      "base_source": "pure synthetic — clip(tcc*0.5); no CSV column",
+      "spatial_variation": "low_c + 0.05 * spatial_wave",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": true,
+      "has_tabular_origin_source": false
+    },
+    {
+      "index": 5,
+      "declared_name": "atmosphere_mass_content_of_cloud_liquid_water",
+      "base_source": "scalar tabular — lwp_latest",
+      "spatial_variation": "lwp * (1 + 0.12 * spatial_wave) clipped [0,5]",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": false,
+      "has_tabular_origin_source": true
+    },
+    {
+      "index": 6,
+      "declared_name": "atmosphere_mass_content_of_cloud_ice",
+      "base_source": "scalar tabular — iwp_latest",
+      "spatial_variation": "iwp * (1 + 0.12 * spatial_wave) clipped [0,5]",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": false,
+      "has_tabular_origin_source": true
+    },
+    {
+      "index": 7,
+      "declared_name": "x_wind_10m",
+      "base_source": "pure synthetic — 2.0 * sin(h/6.0); no CSV column; deterministic sinusoid of horizon index",
+      "spatial_variation": "u10 + 0.2 * Y / H (synthetic N-S ramp)",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": true,
+      "has_tabular_origin_source": false
+    },
+    {
+      "index": 8,
+      "declared_name": "y_wind_10m",
+      "base_source": "pure synthetic — 1.5 * cos(h/6.0); no CSV column; deterministic cosinusoid of horizon index",
+      "spatial_variation": "v10 + 0.2 * X / W (synthetic E-W ramp)",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": true,
+      "has_tabular_origin_source": false
+    },
+    {
+      "index": 9,
+      "declared_name": "x_wind_700hPa",
+      "base_source": "scalar tabular — u700",
+      "spatial_variation": "u700 + 0.1 * spatial_wave",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": false,
+      "has_tabular_origin_source": true
+    },
+    {
+      "index": 10,
+      "declared_name": "y_wind_700hPa",
+      "base_source": "scalar tabular — v700",
+      "spatial_variation": "v700 + 0.1 * spatial_wave",
+      "real_arome_used": false,
+      "spatial_gradients_real": false,
+      "pure_synthetic_channel": false,
+      "has_tabular_origin_source": true
+    }
+  ],
+  "spatial_wave_kernel": {
+    "formula": "sin(0.2*X + 0.1*Y + 0.1*u700) * cos(0.15*Y + 0.1*v700)",
+    "inputs": ["X (integer grid offset)", "Y (integer grid offset)", "scalar u700 from CSV", "scalar v700 from CSV"],
+    "real_atmospheric_structure": false,
+    "same_shape_for_all_channels_using_it": true,
+    "terrain_coupled": false,
+    "note": "All 11 channels' HxW variation traces to this single interference pattern or to linear X/Y ramps. No AROME grid slice ever read."
+  },
+  "pure_synthetic_channel_count": 5,
+  "scalar_tabular_derived_channel_count": 6,
+  "real_arome_channel_count": 0,
+  "helper_functions_and_io": {
+    "helpers_inside_generate_spatial_tensor_for_origin": 0,
+    "arome_file_opens": 0,
+    "anchor_coordinates_used_for_indexing": false
+  },
+  "s1_tensor_reconstructability_from_real_arome": {
+    "reconstructable_from_real_nc": false,
+    "reason_no_variable_mapping": true,
+    "reason_5_channels_have_no_source": true,
+    "reason_anchor_unused": true,
+    "reconstructable_from_csv_plus_deterministic_math": true
+  },
+  "intended_hypothesis": "CNN->AdaptiveAvgPool->GRU on raw AROME-Arctic 2.5 km 11-channel patches beats equivalent tabular GBDT control.",
+  "actually_tested_hypothesis": "CNN->AdaptiveAvgPool->GRU on synthetic sinusoid-warped single-point tabular scalars (with 5/11 channels pure synthetic) beats the same tabular GBDT control.",
+  "validity_for_intended_hypothesis": false,
+  "scientific_consequence": {
+    "s1_failure_is_not_evidence_against_real_arome": true,
+    "phase11_must_be_suspended_until_real_arome_loaded": true,
+    "s1_numerical_results_disposition": {
+      "retain_as_implementation_diagnostic": true,
+      "formally_mark_invalid_for_intended_raw_arome_hypothesis": true,
+      "exclude_from_spatial_nwp_route_evidence_chain": true,
+      "do_not_delete_any_s1_artifacts": true
+    },
+    "plausible_mechanism_for_s1_degradation": "CNN-GRU must invert synthetic spatial wrapping to recover scalars; GBDT sees clean scalars directly. Information-theoretic harder problem -> predictable performance loss unrelated to real spatial information."
+  },
+  "phase11_resume_precondition": "Load real AROME-Arctic 2.5 km NetCDF patches (EVEN origins only, no ODD, no training) and recompute Phase 11 forensic diagnostics from actual HxW atmospheric fields; or rewrite Phase 11 as a purely hypothetical audit labeled accordingly.",
+  "governance_declarations": {
+    "no_new_ml_training": true,
+    "no_odd_accessed_or_evaluated": true,
+    "no_s1_reruns": true,
+    "no_49x49_reruns": true,
+    "no_64x64_runs": true,
+    "no_files_deleted": true,
+    "no_champion_modified": true
+  },
+  "files_inspected": [
+    "/home/punith-bs/01polaris (Copy)/scratch/run_s1_spatial_experiment.py",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_full_37_feature_matrix_2024.csv",
+    "/home/punith-bs/01polaris (Copy)/spatial_arome_research/SPATIAL_NWP_S1/49x49/metrics.json"
+  ],
+  "scripts_and_diagnostics_created": [],
+  "audit_method": "Entirely static code-path inspection, grep, and file header reads. No Python diagnostic scripts executed; no data pipelines run."
+}

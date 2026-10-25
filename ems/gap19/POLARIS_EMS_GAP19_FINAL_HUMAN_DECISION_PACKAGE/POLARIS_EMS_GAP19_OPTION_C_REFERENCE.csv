@@ -1,0 +1,8 @@
+ASPECT,TECHNICAL_DESCRIPTION,CLASSIFICATION,EVIDENCE_SOURCE
+Status Classification,Option C is classified as ENGINEERING_RISK_ONLY. It is NOT formally governance-rejected unless an authoritative decision states that.,ENGINEERING_RISK_ONLY,GAP19 Governance Audit
+Mathematical Structure,Single MILP solve combining all 4 stages into scalar objective: c_total = w1*c1 + w2*c2 + w3*c3 + w4*c4.,ARCHITECTURAL_PROPOSAL,Scalarization Theory
+Penalty Weight Derivation,Penalty weights must be derived from bounded numerical ranges of individual objective terms and solver tolerances.,STATIC_TECHNICAL_FINDING,Numerical Analysis
+Illustrative Values Warning,"Example weights (10^12, 10^8, 10^4, 1) are ILLUSTRATIVE_ONLY and are PROVISIONAL / NOT AUTHORIZED FOR PRODUCTION.",PROVISIONAL,Governance Mandate
+Conditioning Concerns,"Large weight scale separation severely degrades MILP constraint matrix condition number, risking numerical instability.",STATIC_TECHNICAL_FINDING,HiGHS Technical Ref
+Priority Leakage Risk,High risk: lower-stage objective accumulation can pollute higher-stage boundaries if scale separation is insufficient.,STATIC_TECHNICAL_FINDING,Optimization Theory
+Verification Burden,High verification burden: requires extensive numerical sensitivity audits across all operational regimes.,STATIC_TECHNICAL_FINDING,Validation Requirements

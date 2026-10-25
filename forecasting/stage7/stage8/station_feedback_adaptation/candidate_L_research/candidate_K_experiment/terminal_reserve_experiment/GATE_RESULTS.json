@@ -1,0 +1,34 @@
+{
+  "degeneracy_gate": {
+    "pass": true,
+    "max_abs_diff_wh": 0.0,
+    "tolerance_wh": 1e-06,
+    "n_checked": 694,
+    "worst_case": null
+  },
+  "leakage_gate": {
+    "pass": true,
+    "checks": {
+      "fit_function_reads_only_these_files": [
+        "/home/punith-bs/01polaris (Copy)/candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+        "/home/punith-bs/01polaris (Copy)/candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv"
+      ],
+      "fit_function_never_opens_2024_matrix": true,
+      "splits_used_in_fit": [
+        "TRAIN_2020_2021",
+        "VALIDATION_2022"
+      ],
+      "blind_test_2023_rows_in_fit_set": 0,
+      "rows_2024_in_fit_set": 0,
+      "fit_input_hashes": {
+        "matrix_38_feature_2020_2023": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+        "historical_residual_dataset_2020_2023": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+      }
+    }
+  },
+  "ems_side_hashes": {
+    "candidate_F_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "historical_residual_dataset_2020_2023": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+  }
+}

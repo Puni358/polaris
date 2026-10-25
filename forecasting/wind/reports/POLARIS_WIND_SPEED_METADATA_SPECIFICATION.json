@@ -1,0 +1,84 @@
+{
+  "governance": {
+    "project": "POLARIS",
+    "track": "PATH_A_WIND_FORECASTING",
+    "specification_type": "OPTION_B_WIND_SPEED_METADATA_SPECIFICATION",
+    "version": "1.0.0",
+    "status": "FROZEN",
+    "authoritative_key": "wind_speed_forecast"
+  },
+  "schema_definition": {
+    "target_location": "ForecastBundle.metadata[\"wind_speed_forecast\"]",
+    "container_type": "dictionary",
+    "required_fields": {
+      "quantity": {
+        "type": "string",
+        "allowed_value": "wind_speed"
+      },
+      "unit": {
+        "type": "string",
+        "allowed_value": "m/s"
+      },
+      "reference_height": {
+        "type": "string",
+        "allowed_value": "10m"
+      },
+      "resolution": {
+        "type": "string",
+        "allowed_value": "hourly"
+      },
+      "horizon_hours": {
+        "type": "integer",
+        "allowed_value": 24
+      },
+      "target_station": {
+        "type": "string",
+        "allowed_value": "SMHI Abisko Aut (188790)"
+      },
+      "site_interpretation": {
+        "type": "string",
+        "allowed_value": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA"
+      },
+      "direct_nuolja_measurement": {
+        "type": "boolean",
+        "allowed_value": false
+      },
+      "model_id": {
+        "type": "string",
+        "allowed_value": "autoregressive_ridge_arx"
+      },
+      "model_status": {
+        "type": "string",
+        "allowed_value": "VERIFIED_WITH_LIMITATIONS"
+      },
+      "origin_timestamp": {
+        "type": "string",
+        "format": "ISO-8601 UTC"
+      },
+      "timestamps": {
+        "type": "array of strings",
+        "length": 24,
+        "format": "ISO-8601 UTC",
+        "step_hours": 1
+      },
+      "point": {
+        "type": "array of floats",
+        "length": 24,
+        "constraints": ["non-negative", "finite"]
+      }
+    }
+  },
+  "validation_rules": {
+    "validator_function": "system.forecasting.implementations.wind_arx.validate_wind_speed_metadata",
+    "horizon_len_check": true,
+    "timestamp_count_check": true,
+    "non_negative_check": true,
+    "key_completeness_check": true
+  },
+  "firewalls": {
+    "forecastbundle_top_level_schema": "1.0.0 (Unchanged)",
+    "wind_generation_unit": "W (Untouched)",
+    "wind_speed_to_power_conversion": "NOT_AUTHORIZED",
+    "ems_mpc_integration": "NOT_AUTHORIZED"
+  }
+}

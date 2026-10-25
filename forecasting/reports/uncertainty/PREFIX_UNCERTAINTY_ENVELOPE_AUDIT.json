@@ -1,0 +1,893 @@
+{
+  "metadata": {
+    "title": "POLARIS Prefix Envelope Statistical Validation Audit",
+    "date": "2026-10-05",
+    "scope": "STATISTICAL_VALIDATION_ONLY",
+    "target_installation": "Mount Nuolja AWS (ANS_NMS)",
+    "estimation_partition": "2020-2022 Train+Val (N=1,096 origins)",
+    "evaluation_partition": "Blind 2023 Test (N=273 origins, single-use)",
+    "firewall_compliance": "Zero 2023 tuning, zero cloud conditioning, zero controller runs, zero missing data synthesis."
+  },
+  "simultaneous_trajectory_coverage": {
+    "q80": {
+      "nominal_candidate_level": "80%",
+      "simultaneous_trajectory_coverage_blind_2023": 0.5018,
+      "simultaneous_coverage_95ci": [
+        0.4395,
+        0.5604
+      ],
+      "violating_origins_count": 136,
+      "violating_origins_pct": 49.82,
+      "overall_max_violation_wh_m2": 2743.57,
+      "worst_violation_origin": "2023-07-02 00:00:00+00:00",
+      "worst_violation_prefix_k": 19,
+      "distribution_of_worst_violation_prefix": {
+        "2": 1,
+        "3": 1,
+        "4": 7,
+        "5": 5,
+        "6": 6,
+        "7": 9,
+        "8": 5,
+        "9": 5,
+        "10": 3,
+        "11": 5,
+        "12": 6,
+        "13": 4,
+        "14": 13,
+        "15": 3,
+        "16": 4,
+        "17": 7,
+        "18": 2,
+        "19": 50
+      }
+    },
+    "q85": {
+      "nominal_candidate_level": "85%",
+      "simultaneous_trajectory_coverage_blind_2023": 0.5751,
+      "simultaneous_coverage_95ci": [
+        0.5165,
+        0.63
+      ],
+      "violating_origins_count": 116,
+      "violating_origins_pct": 42.49,
+      "overall_max_violation_wh_m2": 2492.95,
+      "worst_violation_origin": "2023-07-02 00:00:00+00:00",
+      "worst_violation_prefix_k": 19,
+      "distribution_of_worst_violation_prefix": {
+        "1": 1,
+        "2": 3,
+        "3": 5,
+        "4": 3,
+        "5": 7,
+        "6": 9,
+        "7": 6,
+        "8": 2,
+        "9": 5,
+        "10": 3,
+        "11": 5,
+        "12": 4,
+        "13": 5,
+        "14": 13,
+        "15": 13,
+        "17": 2,
+        "18": 3,
+        "19": 27
+      }
+    },
+    "q90": {
+      "nominal_candidate_level": "90%",
+      "simultaneous_trajectory_coverage_blind_2023": 0.6777,
+      "simultaneous_coverage_95ci": [
+        0.6227,
+        0.7289
+      ],
+      "violating_origins_count": 88,
+      "violating_origins_pct": 32.23,
+      "overall_max_violation_wh_m2": 2178.86,
+      "worst_violation_origin": "2023-07-02 00:00:00+00:00",
+      "worst_violation_prefix_k": 19,
+      "distribution_of_worst_violation_prefix": {
+        "1": 6,
+        "2": 1,
+        "3": 4,
+        "4": 3,
+        "5": 3,
+        "6": 11,
+        "7": 5,
+        "8": 3,
+        "9": 3,
+        "10": 3,
+        "11": 3,
+        "12": 3,
+        "13": 2,
+        "14": 7,
+        "15": 5,
+        "16": 6,
+        "17": 1,
+        "18": 5,
+        "19": 14
+      }
+    }
+  },
+  "static_q10_benchmark_simultaneous_coverage": 0.9011,
+  "per_prefix_validation": [
+    {
+      "prefix_k": 1,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 0.0,
+        "pointwise_coverage_blind_2023": 0.8718,
+        "pointwise_coverage_95ci": [
+          0.8315,
+          0.9121
+        ],
+        "max_violation_wh_m2": 34.31
+      },
+      "q85": {
+        "bound_wh_m2": 0.0,
+        "pointwise_coverage_blind_2023": 0.8718,
+        "pointwise_coverage_95ci": [
+          0.8315,
+          0.9121
+        ],
+        "max_violation_wh_m2": 34.31
+      },
+      "q90": {
+        "bound_wh_m2": 0.0,
+        "pointwise_coverage_blind_2023": 0.8718,
+        "pointwise_coverage_95ci": [
+          0.8315,
+          0.9121
+        ],
+        "max_violation_wh_m2": 34.31
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 4.23,
+        "pointwise_coverage_blind_2023": 1.0
+      }
+    },
+    {
+      "prefix_k": 2,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 0.0,
+        "pointwise_coverage_blind_2023": 0.8132,
+        "pointwise_coverage_95ci": [
+          0.7656,
+          0.8571
+        ],
+        "max_violation_wh_m2": 100.96
+      },
+      "q85": {
+        "bound_wh_m2": 0.0,
+        "pointwise_coverage_blind_2023": 0.8132,
+        "pointwise_coverage_95ci": [
+          0.7656,
+          0.8571
+        ],
+        "max_violation_wh_m2": 100.96
+      },
+      "q90": {
+        "bound_wh_m2": 10.65,
+        "pointwise_coverage_blind_2023": 0.8681,
+        "pointwise_coverage_95ci": [
+          0.8278,
+          0.9049
+        ],
+        "max_violation_wh_m2": 90.31
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 13.94,
+        "pointwise_coverage_blind_2023": 1.0
+      }
+    },
+    {
+      "prefix_k": 3,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 0.0,
+        "pointwise_coverage_blind_2023": 0.7436,
+        "pointwise_coverage_95ci": [
+          0.6923,
+          0.7949
+        ],
+        "max_violation_wh_m2": 207.02
+      },
+      "q85": {
+        "bound_wh_m2": 15.01,
+        "pointwise_coverage_blind_2023": 0.7949,
+        "pointwise_coverage_95ci": [
+          0.7473,
+          0.8425
+        ],
+        "max_violation_wh_m2": 192.0
+      },
+      "q90": {
+        "bound_wh_m2": 44.82,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8205,
+          0.8974
+        ],
+        "max_violation_wh_m2": 162.19
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 36.41,
+        "pointwise_coverage_blind_2023": 1.0
+      }
+    },
+    {
+      "prefix_k": 4,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 26.37,
+        "pointwise_coverage_blind_2023": 0.7179,
+        "pointwise_coverage_95ci": [
+          0.6667,
+          0.7729
+        ],
+        "max_violation_wh_m2": 365.5
+      },
+      "q85": {
+        "bound_wh_m2": 60.13,
+        "pointwise_coverage_blind_2023": 0.7802,
+        "pointwise_coverage_95ci": [
+          0.7326,
+          0.8279
+        ],
+        "max_violation_wh_m2": 331.73
+      },
+      "q90": {
+        "bound_wh_m2": 117.7,
+        "pointwise_coverage_blind_2023": 0.8608,
+        "pointwise_coverage_95ci": [
+          0.8205,
+          0.9011
+        ],
+        "max_violation_wh_m2": 274.17
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 83.44,
+        "pointwise_coverage_blind_2023": 0.9927
+      }
+    },
+    {
+      "prefix_k": 5,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 73.4,
+        "pointwise_coverage_blind_2023": 0.7143,
+        "pointwise_coverage_95ci": [
+          0.663,
+          0.7656
+        ],
+        "max_violation_wh_m2": 508.95
+      },
+      "q85": {
+        "bound_wh_m2": 125.35,
+        "pointwise_coverage_blind_2023": 0.7766,
+        "pointwise_coverage_95ci": [
+          0.7289,
+          0.8242
+        ],
+        "max_violation_wh_m2": 456.99
+      },
+      "q90": {
+        "bound_wh_m2": 216.54,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8168,
+          0.9011
+        ],
+        "max_violation_wh_m2": 365.81
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 152.49,
+        "pointwise_coverage_blind_2023": 0.978
+      }
+    },
+    {
+      "prefix_k": 6,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 110.75,
+        "pointwise_coverage_blind_2023": 0.7216,
+        "pointwise_coverage_95ci": [
+          0.6667,
+          0.7766
+        ],
+        "max_violation_wh_m2": 626.93
+      },
+      "q85": {
+        "bound_wh_m2": 175.19,
+        "pointwise_coverage_blind_2023": 0.8022,
+        "pointwise_coverage_95ci": [
+          0.7546,
+          0.8498
+        ],
+        "max_violation_wh_m2": 562.5
+      },
+      "q90": {
+        "bound_wh_m2": 256.87,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8168,
+          0.8974
+        ],
+        "max_violation_wh_m2": 480.82
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 229.96,
+        "pointwise_coverage_blind_2023": 0.9707
+      }
+    },
+    {
+      "prefix_k": 7,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 147.18,
+        "pointwise_coverage_blind_2023": 0.7179,
+        "pointwise_coverage_95ci": [
+          0.663,
+          0.7692
+        ],
+        "max_violation_wh_m2": 819.58
+      },
+      "q85": {
+        "bound_wh_m2": 239.89,
+        "pointwise_coverage_blind_2023": 0.8022,
+        "pointwise_coverage_95ci": [
+          0.7509,
+          0.8498
+        ],
+        "max_violation_wh_m2": 726.86
+      },
+      "q90": {
+        "bound_wh_m2": 344.64,
+        "pointwise_coverage_blind_2023": 0.8645,
+        "pointwise_coverage_95ci": [
+          0.8242,
+          0.9048
+        ],
+        "max_violation_wh_m2": 622.12
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 327.95,
+        "pointwise_coverage_blind_2023": 0.9597
+      }
+    },
+    {
+      "prefix_k": 8,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 198.05,
+        "pointwise_coverage_blind_2023": 0.7179,
+        "pointwise_coverage_95ci": [
+          0.663,
+          0.7692
+        ],
+        "max_violation_wh_m2": 1077.8
+      },
+      "q85": {
+        "bound_wh_m2": 297.73,
+        "pointwise_coverage_blind_2023": 0.7912,
+        "pointwise_coverage_95ci": [
+          0.7436,
+          0.8388
+        ],
+        "max_violation_wh_m2": 978.11
+      },
+      "q90": {
+        "bound_wh_m2": 420.56,
+        "pointwise_coverage_blind_2023": 0.8535,
+        "pointwise_coverage_95ci": [
+          0.8132,
+          0.8938
+        ],
+        "max_violation_wh_m2": 855.28
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 440.72,
+        "pointwise_coverage_blind_2023": 0.9524
+      }
+    },
+    {
+      "prefix_k": 9,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 204.14,
+        "pointwise_coverage_blind_2023": 0.707,
+        "pointwise_coverage_95ci": [
+          0.6557,
+          0.7547
+        ],
+        "max_violation_wh_m2": 1437.74
+      },
+      "q85": {
+        "bound_wh_m2": 322.52,
+        "pointwise_coverage_blind_2023": 0.7912,
+        "pointwise_coverage_95ci": [
+          0.7435,
+          0.8425
+        ],
+        "max_violation_wh_m2": 1319.36
+      },
+      "q90": {
+        "bound_wh_m2": 475.16,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8168,
+          0.8975
+        ],
+        "max_violation_wh_m2": 1166.71
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 561.55,
+        "pointwise_coverage_blind_2023": 0.956
+      }
+    },
+    {
+      "prefix_k": 10,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 233.33,
+        "pointwise_coverage_blind_2023": 0.7143,
+        "pointwise_coverage_95ci": [
+          0.6593,
+          0.7656
+        ],
+        "max_violation_wh_m2": 1527.84
+      },
+      "q85": {
+        "bound_wh_m2": 363.32,
+        "pointwise_coverage_blind_2023": 0.7692,
+        "pointwise_coverage_95ci": [
+          0.7216,
+          0.8205
+        ],
+        "max_violation_wh_m2": 1397.85
+      },
+      "q90": {
+        "bound_wh_m2": 543.5,
+        "pointwise_coverage_blind_2023": 0.8718,
+        "pointwise_coverage_95ci": [
+          0.8315,
+          0.9084
+        ],
+        "max_violation_wh_m2": 1217.67
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 692.78,
+        "pointwise_coverage_blind_2023": 0.9744
+      }
+    },
+    {
+      "prefix_k": 11,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 263.1,
+        "pointwise_coverage_blind_2023": 0.7179,
+        "pointwise_coverage_95ci": [
+          0.6667,
+          0.7657
+        ],
+        "max_violation_wh_m2": 1594.1
+      },
+      "q85": {
+        "bound_wh_m2": 406.12,
+        "pointwise_coverage_blind_2023": 0.7729,
+        "pointwise_coverage_95ci": [
+          0.7216,
+          0.8205
+        ],
+        "max_violation_wh_m2": 1451.08
+      },
+      "q90": {
+        "bound_wh_m2": 619.44,
+        "pointwise_coverage_blind_2023": 0.8645,
+        "pointwise_coverage_95ci": [
+          0.8242,
+          0.9048
+        ],
+        "max_violation_wh_m2": 1237.75
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 830.37,
+        "pointwise_coverage_blind_2023": 0.9744
+      }
+    },
+    {
+      "prefix_k": 12,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 285.81,
+        "pointwise_coverage_blind_2023": 0.696,
+        "pointwise_coverage_95ci": [
+          0.6447,
+          0.7473
+        ],
+        "max_violation_wh_m2": 1751.38
+      },
+      "q85": {
+        "bound_wh_m2": 457.82,
+        "pointwise_coverage_blind_2023": 0.7656,
+        "pointwise_coverage_95ci": [
+          0.7143,
+          0.8095
+        ],
+        "max_violation_wh_m2": 1579.36
+      },
+      "q90": {
+        "bound_wh_m2": 638.99,
+        "pointwise_coverage_blind_2023": 0.8608,
+        "pointwise_coverage_95ci": [
+          0.8168,
+          0.9011
+        ],
+        "max_violation_wh_m2": 1398.19
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 976.53,
+        "pointwise_coverage_blind_2023": 0.978
+      }
+    },
+    {
+      "prefix_k": 13,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 327.98,
+        "pointwise_coverage_blind_2023": 0.707,
+        "pointwise_coverage_95ci": [
+          0.6557,
+          0.7582
+        ],
+        "max_violation_wh_m2": 1867.39
+      },
+      "q85": {
+        "bound_wh_m2": 480.04,
+        "pointwise_coverage_blind_2023": 0.7582,
+        "pointwise_coverage_95ci": [
+          0.707,
+          0.8022
+        ],
+        "max_violation_wh_m2": 1715.34
+      },
+      "q90": {
+        "bound_wh_m2": 706.09,
+        "pointwise_coverage_blind_2023": 0.8498,
+        "pointwise_coverage_95ci": [
+          0.8059,
+          0.8864
+        ],
+        "max_violation_wh_m2": 1489.28
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1112.92,
+        "pointwise_coverage_blind_2023": 0.9707
+      }
+    },
+    {
+      "prefix_k": 14,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 361.74,
+        "pointwise_coverage_blind_2023": 0.6923,
+        "pointwise_coverage_95ci": [
+          0.6374,
+          0.7436
+        ],
+        "max_violation_wh_m2": 2045.9
+      },
+      "q85": {
+        "bound_wh_m2": 514.41,
+        "pointwise_coverage_blind_2023": 0.7399,
+        "pointwise_coverage_95ci": [
+          0.685,
+          0.784
+        ],
+        "max_violation_wh_m2": 1893.23
+      },
+      "q90": {
+        "bound_wh_m2": 802.52,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8168,
+          0.8974
+        ],
+        "max_violation_wh_m2": 1605.12
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1250.54,
+        "pointwise_coverage_blind_2023": 0.9707
+      }
+    },
+    {
+      "prefix_k": 15,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 432.05,
+        "pointwise_coverage_blind_2023": 0.6923,
+        "pointwise_coverage_95ci": [
+          0.6409,
+          0.7436
+        ],
+        "max_violation_wh_m2": 2205.81
+      },
+      "q85": {
+        "bound_wh_m2": 578.21,
+        "pointwise_coverage_blind_2023": 0.7473,
+        "pointwise_coverage_95ci": [
+          0.6959,
+          0.7949
+        ],
+        "max_violation_wh_m2": 2059.65
+      },
+      "q90": {
+        "bound_wh_m2": 863.4,
+        "pointwise_coverage_blind_2023": 0.8608,
+        "pointwise_coverage_95ci": [
+          0.8205,
+          0.9011
+        ],
+        "max_violation_wh_m2": 1774.46
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1366.59,
+        "pointwise_coverage_blind_2023": 0.967
+      }
+    },
+    {
+      "prefix_k": 16,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 489.47,
+        "pointwise_coverage_blind_2023": 0.685,
+        "pointwise_coverage_95ci": [
+          0.63,
+          0.7363
+        ],
+        "max_violation_wh_m2": 2417.21
+      },
+      "q85": {
+        "bound_wh_m2": 670.52,
+        "pointwise_coverage_blind_2023": 0.7656,
+        "pointwise_coverage_95ci": [
+          0.7179,
+          0.8132
+        ],
+        "max_violation_wh_m2": 2236.16
+      },
+      "q90": {
+        "bound_wh_m2": 925.59,
+        "pointwise_coverage_blind_2023": 0.8425,
+        "pointwise_coverage_95ci": [
+          0.7985,
+          0.8828
+        ],
+        "max_violation_wh_m2": 1981.09
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1465.38,
+        "pointwise_coverage_blind_2023": 0.967
+      }
+    },
+    {
+      "prefix_k": 17,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 630.02,
+        "pointwise_coverage_blind_2023": 0.685,
+        "pointwise_coverage_95ci": [
+          0.63,
+          0.7363
+        ],
+        "max_violation_wh_m2": 2555.43
+      },
+      "q85": {
+        "bound_wh_m2": 869.37,
+        "pointwise_coverage_blind_2023": 0.7802,
+        "pointwise_coverage_95ci": [
+          0.7289,
+          0.8242
+        ],
+        "max_violation_wh_m2": 2316.09
+      },
+      "q90": {
+        "bound_wh_m2": 1137.51,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8132,
+          0.8974
+        ],
+        "max_violation_wh_m2": 2047.95
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1615.5,
+        "pointwise_coverage_blind_2023": 0.9707
+      }
+    },
+    {
+      "prefix_k": 18,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 698.72,
+        "pointwise_coverage_blind_2023": 0.6703,
+        "pointwise_coverage_95ci": [
+          0.6154,
+          0.7217
+        ],
+        "max_violation_wh_m2": 2653.67
+      },
+      "q85": {
+        "bound_wh_m2": 931.7,
+        "pointwise_coverage_blind_2023": 0.7692,
+        "pointwise_coverage_95ci": [
+          0.7216,
+          0.8132
+        ],
+        "max_violation_wh_m2": 2420.69
+      },
+      "q90": {
+        "bound_wh_m2": 1220.49,
+        "pointwise_coverage_blind_2023": 0.8571,
+        "pointwise_coverage_95ci": [
+          0.8168,
+          0.8938
+        ],
+        "max_violation_wh_m2": 2131.91
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1686.71,
+        "pointwise_coverage_blind_2023": 0.9707
+      }
+    },
+    {
+      "prefix_k": 19,
+      "sample_count_train_val": 1096,
+      "sample_count_blind_2023": 273,
+      "q80": {
+        "bound_wh_m2": 755.57,
+        "pointwise_coverage_blind_2023": 0.6703,
+        "pointwise_coverage_95ci": [
+          0.6154,
+          0.7253
+        ],
+        "max_violation_wh_m2": 2743.57
+      },
+      "q85": {
+        "bound_wh_m2": 1006.19,
+        "pointwise_coverage_blind_2023": 0.7802,
+        "pointwise_coverage_95ci": [
+          0.7326,
+          0.8278
+        ],
+        "max_violation_wh_m2": 2492.95
+      },
+      "q90": {
+        "bound_wh_m2": 1320.27,
+        "pointwise_coverage_blind_2023": 0.8645,
+        "pointwise_coverage_95ci": [
+          0.8242,
+          0.9011
+        ],
+        "max_violation_wh_m2": 2178.86
+      },
+      "static_q10_benchmark": {
+        "mean_buffer_wh_m2": 1739.95,
+        "pointwise_coverage_blind_2023": 0.9707
+      }
+    },
+    {
+      "prefix_k": 20,
+      "sample_count_train_val": 0,
+      "sample_count_blind_2023": 0,
+      "evidence_status": "BLOCKED_ON_ARCHIVE_DATA_GAP",
+      "explanation": "Target hours 19:00-23:00 UTC are 100% absent from historical 2020-2023 MEPS 18Z archive. Missing horizons are not silently filled."
+    },
+    {
+      "prefix_k": 21,
+      "sample_count_train_val": 0,
+      "sample_count_blind_2023": 0,
+      "evidence_status": "BLOCKED_ON_ARCHIVE_DATA_GAP",
+      "explanation": "Target hours 19:00-23:00 UTC are 100% absent from historical 2020-2023 MEPS 18Z archive. Missing horizons are not silently filled."
+    },
+    {
+      "prefix_k": 22,
+      "sample_count_train_val": 0,
+      "sample_count_blind_2023": 0,
+      "evidence_status": "BLOCKED_ON_ARCHIVE_DATA_GAP",
+      "explanation": "Target hours 19:00-23:00 UTC are 100% absent from historical 2020-2023 MEPS 18Z archive. Missing horizons are not silently filled."
+    },
+    {
+      "prefix_k": 23,
+      "sample_count_train_val": 0,
+      "sample_count_blind_2023": 0,
+      "evidence_status": "BLOCKED_ON_ARCHIVE_DATA_GAP",
+      "explanation": "Target hours 19:00-23:00 UTC are 100% absent from historical 2020-2023 MEPS 18Z archive. Missing horizons are not silently filled."
+    },
+    {
+      "prefix_k": 24,
+      "sample_count_train_val": 0,
+      "sample_count_blind_2023": 0,
+      "evidence_status": "BLOCKED_ON_ARCHIVE_DATA_GAP",
+      "explanation": "Target hours 19:00-23:00 UTC are 100% absent from historical 2020-2023 MEPS 18Z archive. Missing horizons are not silently filled."
+    }
+  ],
+  "seasonal_robustness_blind_2023": {
+    "Winter": {
+      "origin_count": 59,
+      "q80_simultaneous_coverage": 1.0,
+      "q85_simultaneous_coverage": 1.0,
+      "q90_simultaneous_coverage": 1.0
+    },
+    "Spring": {
+      "origin_count": 92,
+      "q80_simultaneous_coverage": 0.5761,
+      "q85_simultaneous_coverage": 0.663,
+      "q90_simultaneous_coverage": 0.7935
+    },
+    "Summer": {
+      "origin_count": 92,
+      "q80_simultaneous_coverage": 0.1304,
+      "q85_simultaneous_coverage": 0.2283,
+      "q90_simultaneous_coverage": 0.337
+    },
+    "Autumn": {
+      "origin_count": 30,
+      "q80_simultaneous_coverage": 0.4333,
+      "q85_simultaneous_coverage": 0.5333,
+      "q90_simultaneous_coverage": 0.7333
+    }
+  },
+  "year_by_year_robustness": {
+    "2020": {
+      "origin_count": 366,
+      "q80_simultaneous_coverage": 0.6858,
+      "q85_simultaneous_coverage": 0.7514,
+      "q90_simultaneous_coverage": 0.8251
+    },
+    "2021": {
+      "origin_count": 365,
+      "q80_simultaneous_coverage": 0.611,
+      "q85_simultaneous_coverage": 0.6986,
+      "q90_simultaneous_coverage": 0.7699
+    },
+    "2022": {
+      "origin_count": 365,
+      "q80_simultaneous_coverage": 0.6082,
+      "q85_simultaneous_coverage": 0.6822,
+      "q90_simultaneous_coverage": 0.7699
+    },
+    "2023": {
+      "origin_count": 273,
+      "q80_simultaneous_coverage": 0.5018,
+      "q85_simultaneous_coverage": 0.5751,
+      "q90_simultaneous_coverage": 0.6777
+    }
+  },
+  "audit_verdicts": {
+    "section_A_which_envelope_is_defensible": "NO GLOBAL UNCONDITIONED PREFIX ENVELOPE IS STATISTICALLY DEFENSIBLE FOR TRAJECTORY COVERAGE. While q90 achieves 84.2%-87.2% pointwise coverage, its simultaneous trajectory coverage is only 67.77% [95% CI: 62.3%, 72.9%]. Calling it '90% reliable' is refuted. q80 and q85 fail both pointwise (67%-78%) and simultaneous (50%-58%) criteria.",
+    "section_B_achievability_of_simultaneous_coverage": "Simultaneous trajectory coverage >= 90% is NOT ACHIEVABLE with unconditioned static prefix envelopes without excessive conservatism. Achieving 90% simultaneous coverage requires either static q10's 1,740 Wh/m2 buffer (+38% fuel penalty) or split-conformal inflation to 3,852 Wh/m2.",
+    "section_C_closed_loop_recommendation": "DO NOT proceed with an unconditioned global prefix envelope. The prefix formulation is physically valid, but requires regime conditioning (clear vs overcast, or season) before closed-loop testing, because unconditioned bounds collapse in Summer (33.7% simultaneous coverage) while over-buffering Winter (100% coverage).",
+    "section_D_explicit_non_defensibility_declaration": "VERIFIED \u2014 All three unconditioned global prefix candidates (q80, q85, q90) are NOT DEFENSIBLE as reliable 24h trajectory envelopes under unconditioned static parameterization."
+  }
+}

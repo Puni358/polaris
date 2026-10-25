@@ -1,0 +1,15 @@
+{
+  "attempted": 711,
+  "by_status": {
+    "OK": 711
+  },
+  "elapsed_s": 5237.73,
+  "failed": 0,
+  "max_outbound_attempts": 1500,
+  "ok": 711,
+  "pilot_complete_all_711": true,
+  "planned_unique_origins": 711,
+  "skipped_over_bounds": 0,
+  "stopped_early_reason": null,
+  "total_outbound_attempts_used": 698
+}

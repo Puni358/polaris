@@ -1,0 +1,15 @@
+QUESTION_ID,TOPIC,FACTUAL_FINDING,CLASSIFICATION,EVIDENCE_SOURCE
+B1,Required solver capability,Native multi-objective lexicographic optimization capability,NOT_VERIFIED,HiGHS / MO Solver Technical Reference
+B2,Required API capability,Python API exposing native objective priority levels and lexicographic tolerances,STATIC_TECHNICAL_FINDING,GAP19 Correction Review
+B3,Current SciPy exposure,scipy.optimize.milp() does NOT expose native multi-objective priority APIs,DOCUMENTED_FACT,scipy.optimize.milp signature inspection
+B4,Direct HiGHS bindings requirement,POTENTIAL IMPLEMENTATION PATH (Requires separate verification),ENGINEERING_INFERENCE,HiGHS Binding Specs
+B5,Another solver requirement,POTENTIAL IMPLEMENTATION PATH (Requires separate verification),ENGINEERING_INFERENCE,MO Solver API Docs
+B6,Dependency changes requirement,POTENTIAL IMPLEMENTATION PATH (Requires separate dependency and API verification),ENGINEERING_INFERENCE,Dependency Audit
+B7,Licensing implications,POTENTIAL IMPLEMENTATION PATH (Requires license/dependency verification),REQUIRES_VALIDATION,License Register
+B8,Deployment implications,"Architecturally compatible with offline deployment, subject to runtime/package validation",ENGINEERING_INFERENCE,Deployment Analysis
+B9,Windows compatibility validation,DEPENDENCY_AVAILABILITY_VERIFIED (POLARIS_RUNTIME_COMPATIBILITY_REQUIRES_VALIDATION),UNRESOLVED,Platform Verification Requirement
+B10,Linux compatibility validation,DEPENDENCY_AVAILABILITY_VERIFIED (POLARIS_RUNTIME_COMPATIBILITY_REQUIRES_VALIDATION),UNRESOLVED,Platform Verification Requirement
+B11,Deterministic replay requirements,Deterministic replay within authorized numerical and structural replay tolerances,GOVERNANCE_REQUIREMENT,Determinism Audit
+B12,Numerical tolerances handling,"Native lexicographic semantics would represent objective priority at solver layer, subject to solver documented tolerances",NOT_VERIFIED,Native Multi-Objective Specs
+B13,Existing optimizer interface reusability,Requires wrapper adapter around LocalMILPEnergyOptimizer to bridge native solver API,ARCHITECTURAL_PROPOSAL,Interface Impact Analysis
+B14,Rollback complexity,Restore previously authorized runtime dependency manifest and optimizer implementation,ARCHITECTURAL_PROPOSAL,Rollback Register

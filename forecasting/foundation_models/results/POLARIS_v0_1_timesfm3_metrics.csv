@@ -1,0 +1,2 @@
+model,evaluation_windows,evaluation_hours,MAE_W_m2,RMSE_W_m2,daytime_MAE_W_m2,daytime_RMSE_W_m2
+TimesFM-3.0,365,8760,58.25386643024048,123.32163285110788,86.17194660328732,150.11118433878278

@@ -1,0 +1,13 @@
+$ python3 -I -B experiments/exp_three_arm_2024/scripts/run_three_arm_2024.py --repo . --preflight
+(run 2026-10-11T05:43:50Z in the sandbox repo replica; execution section unsigned)
+PREFLIGHT FAILED:
+  [authorization] execution decision is None, not 'APPROVE'
+  [authorization] execution is unsigned (signer_name empty)
+  [authorization] execution signer_role is None, not 'project lead'
+  [authorization] execution signed_at_utc missing or not ISO-8601 UTC ('...Z')
+  [authorization] execution package_manifest_sha256 does not match the current manifest
+  [authorization] execution experiment_config_sha256 does not match the current config
+  [authorization] execution calibration_artifact_sha256 does not match the calibration artifact
+  [authorization] execution solve_ceiling does not equal the configured total ceiling
+  [inputs] input-content guards skipped because earlier checks failed
+exit code: 2

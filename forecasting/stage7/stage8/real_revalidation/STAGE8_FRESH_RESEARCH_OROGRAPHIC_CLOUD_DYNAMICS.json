@@ -1,0 +1,146 @@
+{
+  "timestamp_utc": "2026-09-13T16:44:30Z",
+  "research_round": "POLARIS_FRESH_RESEARCH_OROGRAPHIC_CLOUD_DYNAMICS",
+  "governance_starting_point": "STAGE8_POST_8_22_RESEARCH_STATE_CHECKPOINT.md",
+  "operational_champion": "Stage 8.1 37-feature HGB champion (ODD daytime nMAE 28.0688%)",
+  "governance_firewall": {
+    "experiment_executed": false,
+    "even_cv_run": false,
+    "odd_targets_accessed": false,
+    "champion_changed": false,
+    "master_handoff_changed": false,
+    "route_registry_changed": false
+  },
+  "research_axis_1_orographic_dynamics": {
+    "core_hypothesis": "POLARIS is missing a physical description of the atmospheric flow regime controlling cloud formation, blocking, uplift, persistence, and propagation over Mount Nuolja.",
+    "scandes_terrain_parameters": {
+      "nuolja_summit_height_m": 1169,
+      "pyranometer_elevation_m": 675,
+      "tornetrask_valley_elevation_m": 341,
+      "local_mountain_relief_h_m": 828,
+      "scandes_ridge_orientation_deg": 200.0,
+      "terrain_normal_axis_deg": 290.0
+    },
+    "candidates_evaluated": [
+      {
+        "name": "Scandes Barrier-Normal Wind Component (U_perp)",
+        "formula": "U_perp = u700 * sin(200 deg) + v700 * cos(200 deg)",
+        "physical_process": "Forced cross-barrier moist air mass transport impinging on Nuolja western slope",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Genuinely novel. Stage 8.1 contains raw Cartesian winds (u700, v700). Decision trees cannot compute rotated vector dot-products.",
+        "closest_analogue": "Stage 8.1 (u700, v700)",
+        "target_failure_mode": "Fails to distinguish mountain-perpendicular forced uplift from ridge-parallel along-valley winds",
+        "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE"
+      },
+      {
+        "name": "Mountain Froude Number (Fr = U_perp / (N * h))",
+        "formula": "Fr = U_perp / (sqrt(g / theta_v * dtheta_v/dz) * h)",
+        "physical_process": "Ratio of kinetic energy to potential energy for flow over Scandes obstacle; discriminates blocked low-level valley cloud (Fr < 1) from over-topping wave cloud (Fr >= 1)",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Genuinely novel. Unites wind direction, static stability, and terrain geometry into a non-dimensional flow regime index.",
+        "closest_analogue": "None",
+        "target_failure_mode": "Fails on flow-regime transitions between valley stagnation and mountain-wave cap cloud over-topping",
+        "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE"
+      },
+      {
+        "name": "Moist Mountain Froude Number (Fr_m)",
+        "formula": "Fr_m = U_perp / (N_m * h), with latent heat stability reduction",
+        "physical_process": "Conditionally unstable moist stability flow over-topping regime",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Genuinely novel moist thermodynamic flow-regime indicator",
+        "closest_analogue": "None",
+        "target_failure_mode": "Moist convective cloud formation over Nuolja slope",
+        "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE"
+      },
+      {
+        "name": "Orographic Kinematic Uplift Rate (w_oro)",
+        "formula": "w_oro = U_perp * grad(z_terrain)",
+        "physical_process": "Forced adiabatic cooling and condensation rate along Nuolja mountain slope",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Genuinely novel slope-wind coupling operator",
+        "closest_analogue": "Stage 7.5 (terrain horizon angle)",
+        "target_failure_mode": "Slope forced condensation vs clear-sky descent",
+        "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE"
+      },
+      {
+        "name": "Low-Level Wind Shear Layer (delta_V_shear)",
+        "formula": "sqrt((u700 - u10m)^2 + (v700 - v10m)^2)",
+        "physical_process": "Boundary-layer mechanical turbulence and valley-to-summit shear mixing",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Partially novel, but tree interactions on u700/v700 and fc_wind_speed_10m approximate shear",
+        "closest_analogue": "Stage 8.1",
+        "classification": "B. SCIENTIFICALLY INTERESTING BUT NOT SUFFICIENTLY NOVEL"
+      }
+    ]
+  },
+  "research_axis_2_cloud_evolution": {
+    "core_hypothesis": "POLARIS lacks a causal indicator of cloud condensate growth/decay prior to t0.",
+    "candidates_evaluated": [
+      {
+        "name": "Inter-Run MEPS Cloud Condensate Tendency (delta_LWP_run)",
+        "formula": "LWP_D0(t) - LWP_D1(t) for matching forecast valid times",
+        "physical_process": "NWP physics engine cloud build-up / dissipation rate between consecutive MEPS forecast issuances prior to t0",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Genuinely novel model physics tendency operator",
+        "closest_analogue": "Stage 8.5 (forecast revision)",
+        "target_failure_mode": "Model cloud generation/decay dynamics",
+        "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE"
+      },
+      {
+        "name": "Pre-t0 Surface Transmissivity Rate (dk_t/dt)",
+        "formula": "Rate of change of k_t in hours t0-3h to t0",
+        "physical_process": "Observational cloud optical thickness rate of change prior to t0",
+        "causal_availability": false,
+        "meps_dataset_presence": false,
+        "novelty_vs_stage8_1": "Fails during sub-Arctic polar night and midnight t0=00:00 UTC",
+        "closest_analogue": "Stage 6.1 (ctx_abs_change_1h)",
+        "classification": "C. NOVEL BUT OPERATIONALLY INFEASIBLE"
+      }
+    ]
+  },
+  "research_axis_3_diffuse_broken_cloud": {
+    "core_hypothesis": "POLARIS lacks an explicit non-linear cloud-edge perimeter and diffuse radiation enhancement proxy.",
+    "candidates_evaluated": [
+      {
+        "name": "Broken-Cloud Diffuse Enhancement Index (I_diffuse)",
+        "formula": "cloud_frac * (1 - cloud_frac) * clearsky_ghi",
+        "physical_process": "Cloud-edge perimeter and side-scattering diffuse GHI enhancement",
+        "causal_availability": true,
+        "meps_dataset_presence": true,
+        "novelty_vs_stage8_1": "Approximated by deep tree splits on existing cloud_frac and clearsky_ghi features",
+        "closest_analogue": "Stage 6.4 (cloud_frac)",
+        "classification": "B. SCIENTIFICALLY INTERESTING BUT NOT SUFFICIENTLY NOVEL"
+      }
+    ]
+  },
+  "ranked_top_candidates": [
+    {
+      "rank": 1,
+      "candidate_name": "Orographic Barrier-Normal Wind Component (U_perp) & Mountain Froude Number (Fr)",
+      "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE",
+      "rationale": "Directly resolves Scandes mountain flow-regime control (blocking vs over-topping) using hydrostatically derived stability and terrain-normal 700 hPa wind. Fully novel relative to Stage 8.1 Cartesian winds."
+    },
+    {
+      "rank": 2,
+      "candidate_name": "Orographic Kinematic Uplift Rate (w_oro)",
+      "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE",
+      "rationale": "Couples Scandes slope slope-vector with 3D wind field to compute forced adiabatic cooling and moisture condensation rate."
+    },
+    {
+      "rank": 3,
+      "candidate_name": "Inter-Run MEPS Cloud Condensate Tendency (delta_LWP_run)",
+      "classification": "A. GENUINELY NOVEL + CAUSALLY FEASIBLE + BENCHMARK FEASIBLE",
+      "rationale": "Captures NWP physics engine cloud build-up / dissipation rate between consecutive causal MEPS model runs prior to t0."
+    }
+  ],
+  "experiment_recommendation": {
+    "experiment_authorized": false,
+    "statement": "Three Class A candidates have demonstrated physical novelty, causal availability, and benchmark feasibility. However, NO experiment is authorized by this research task. Any future experiment must be pre-registered under strict EVEN-only protocol."
+  }
+}

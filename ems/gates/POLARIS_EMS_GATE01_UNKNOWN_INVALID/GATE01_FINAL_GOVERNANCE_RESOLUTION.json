@@ -1,0 +1,19 @@
+{
+  "gate_id": "GATE-01",
+  "subject": "UNKNOWN_INVALID_OPERATIONAL_RESPONSE",
+  "decision_timestamp": "2026-09-27T01:02:00Z",
+  "previous_automated_selection": "E",
+  "previous_selection_status": "NOT_A_HUMAN_DECISION",
+  "current_authoritative_selection": "GOVERNED_HYBRID",
+  "automatic_optimization": "STOP",
+  "protected_critical_service": "PRESERVE",
+  "authorized_operator_intervention": "REQUIRED",
+  "operator_authority_details": "SEPARATELY_GOVERNED",
+  "unknown_invalid_equals_emergency": "NO",
+  "automatic_option_d": "NOT_IMPLIED",
+  "digital_twin_state_advancement": "NO",
+  "automatic_recovery_to_normal": "NOT_AUTHORIZED",
+  "physical_fallback_implementation": "NOT_IMPLEMENTED",
+  "recovery_policy": "GOVERNANCE_DECISION_REQUIRED",
+  "gate01_status": "RESOLVED_FOR_GOVERNANCE_BUT_IMPLEMENTATION_BLOCKED"
+}

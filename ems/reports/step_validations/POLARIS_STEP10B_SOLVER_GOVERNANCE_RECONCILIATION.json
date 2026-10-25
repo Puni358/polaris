@@ -1,0 +1,54 @@
+{
+  "reconciliation_version": "1.0.0",
+  "timestamp": "2026-09-20T11:38:00Z",
+  "step": "STEP_10B_GOVERNANCE_RECONCILIATION",
+  "objective": "Reconcile Step 10B execution authorization text with actual solver identity (scipy.optimize.milp / HiGHS)",
+  "original_declared_solver": "PULP CBC",
+  "actual_frozen_solver": "scipy.optimize.milp (HiGHS)",
+  "solver_governance_correction": "TEXT_ONLY",
+  "original_g17_wording": "PULP CBC MILP solver configuration frozen.",
+  "corrected_g17_wording": "SCIPY_OPTIMIZE_MILP_HIGHS: The frozen LocalMILPEnergyOptimizer directly invokes scipy.optimize.milp, which uses the HiGHS MILP engine. No CBC path or solver fallback exists in the verified H1.0 execution path.",
+  "read_only_audit_reference": "POLARIS_STEP10B_SOLVER_IDENTITY_READONLY_AUDIT.json",
+  "optimizer_hash": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+  "optimizer_hash_status": "PASS",
+  "non_intervention_verifications": {
+    "OPTIMIZER_MODIFIED": "NO",
+    "PROTOCOL_MODIFIED": "NO",
+    "RUNTIME_MODIFIED": "NO",
+    "H1.0_FIXTURE_MODIFIED": "NO",
+    "FORECAST_POLICY_CHANGED": "FALSE",
+    "EMS_CHANGED": "FALSE",
+    "SIMULATOR_CHANGED": "FALSE",
+    "TELEMETRY_CHANGED": "FALSE"
+  },
+  "execution_counts": {
+    "MILP_SOLVES": 0,
+    "SIMULATOR_STEPS": 0
+  },
+  "updated_authorization_hashes": {
+    "POLARIS_HYBRID_H1_0_EXECUTION_AUTHORIZATION_json_sha256": "be7f19ae81f556699722a20390c3990bb3a813b10db7cfa24675ca41c5d7f550",
+    "POLARIS_HYBRID_H1_0_EXECUTION_AUTHORIZATION_md_sha256": "8cfc58c4a49670077f4eb2cb8c3a4b03df8bf144c4cdd04b80b5bf41ac5044ee"
+  },
+  "re_audit_gates": {
+    "total_gates": 24,
+    "passed_gates": 24,
+    "failed_gates": 0,
+    "g17_status": "PASS"
+  },
+  "mandatory_status": {
+    "ORIGINAL_DECLARED_SOLVER": "PULP CBC",
+    "ACTUAL_FROZEN_SOLVER": "scipy.optimize.milp (HiGHS)",
+    "SOLVER_GOVERNANCE_CORRECTION": "TEXT_ONLY",
+    "OPTIMIZER_HASH": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "OPTIMIZER_HASH_STATUS": "PASS",
+    "OPTIMIZER_MODIFIED": "NO",
+    "PROTOCOL_MODIFIED": "NO",
+    "RUNTIME_MODIFIED": "NO",
+    "H1.0_FIXTURE_MODIFIED": "NO",
+    "MILP_SOLVES": 0,
+    "SIMULATOR_STEPS": 0,
+    "G17_STATUS": "PASS",
+    "STEP10B_EXECUTION_AUTHORIZATION": "AUTHORIZED",
+    "RUNTIME_EXECUTION_SCOPE": "ONE_TRAJECTORY_ONLY"
+  }
+}

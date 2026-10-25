@@ -1,0 +1,266 @@
+{
+  "gates": {
+    "G2": {
+      "violations": [],
+      "PASS": true,
+      "n_records": 14760
+    },
+    "G3": {
+      "violations": [],
+      "PASS": true,
+      "n_records": 14760
+    },
+    "G4": {
+      "non_optimal_rows": [],
+      "n_rows": 14760,
+      "PASS": true
+    },
+    "G6": {
+      "busbar_violations": 0,
+      "soc_violations": 0,
+      "fuel_mismatch_rows": 0,
+      "starvation_rows_listed": [],
+      "unlisted_fuel_mismatches": 0,
+      "PASS": true
+    },
+    "G7": {
+      "max_abs_diff": 0.0,
+      "PASS": true
+    },
+    "G9": {
+      "arms": {
+        "PC-Control": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-S": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-SW": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-S-L": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        },
+        "PC-SW-L": {
+          "origins": 123,
+          "rows": 2952,
+          "duplicates": 0,
+          "PASS": true
+        }
+      },
+      "PASS": true
+    },
+    "G10": {
+      "route_mismatch_rows": 0,
+      "em_row_count_violations": 0,
+      "PASS": true
+    },
+    "G11": {
+      "mismatches": [],
+      "PASS": true
+    }
+  },
+  "all_gates_pass": true,
+  "statistics": {
+    "control_fuel_L": 10196.9712,
+    "candidates": {
+      "PC-S": {
+        "arm": "PC-S",
+        "dR_CF_pp": 0.03983257989906974,
+        "S1_PASS": true,
+        "dR_P_pp": 0.05784722844205703,
+        "S2_PASS": true,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 9135.7984,
+        "saving_pct": 10.40674509309196,
+        "E1": {
+          "mean_delta_L": 8.627421138211382,
+          "wilcoxon_p": 3.679200500545894e-06,
+          "bca_low": 6.119078226720886,
+          "bca_high": 11.574558122921008,
+          "holm_adj_p": 3.679200500545894e-06,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": true,
+        "E1_PASS": true,
+        "T40_REPORT": false,
+        "startups": 394,
+        "accounting_alt_fuel_L": 9923.7984
+      },
+      "PC-SW": {
+        "arm": "PC-SW",
+        "dR_CF_pp": 0.026127026679731102,
+        "S1_PASS": true,
+        "dR_P_pp": 0.008306473821193094,
+        "S2_PASS": true,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 8729.2446,
+        "saving_pct": 14.393750567815667,
+        "E1": {
+          "mean_delta_L": 11.932736585365854,
+          "wilcoxon_p": 5.2924962996785265e-11,
+          "bca_low": 9.188981442987663,
+          "bca_high": 14.99821684055483,
+          "holm_adj_p": 2.1169985198714106e-10,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": true,
+        "E1_PASS": true,
+        "T40_REPORT": false,
+        "startups": 335,
+        "accounting_alt_fuel_L": 9399.2446
+      },
+      "PC-S-L": {
+        "arm": "PC-S-L",
+        "dR_CF_pp": 0.009861578357146072,
+        "S1_PASS": true,
+        "dR_P_pp": 0.00937803311019536,
+        "S2_PASS": true,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 9306.2112,
+        "saving_pct": 8.735535116545199,
+        "E1": {
+          "mean_delta_L": 7.241951219512195,
+          "wilcoxon_p": 1.5161628929921128e-07,
+          "bca_low": 5.141272799154834,
+          "bca_high": 9.550512597388744,
+          "holm_adj_p": 3.0323257859842256e-07,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": true,
+        "E1_PASS": true,
+        "T40_REPORT": false,
+        "startups": 409,
+        "accounting_alt_fuel_L": 10124.2112
+      },
+      "PC-SW-L": {
+        "arm": "PC-SW-L",
+        "dR_CF_pp": 0.03272386926454374,
+        "S1_PASS": true,
+        "dR_P_pp": 0.050029302226093364,
+        "S2_PASS": true,
+        "soc_violations_below_20": 0,
+        "S3_PASS": true,
+        "min_soc_pct": 20.0,
+        "fuel_L": 9192.765899999999,
+        "saving_pct": 9.84807429876826,
+        "E1": {
+          "mean_delta_L": 8.164270731707317,
+          "wilcoxon_p": 1.2645562214413992e-08,
+          "bca_low": 6.0374832509372585,
+          "bca_high": 10.521227661999061,
+          "holm_adj_p": 3.793668664324197e-08,
+          "E1_STAT_PASS": true
+        },
+        "E1_EVALUATED": true,
+        "E1_PASS": true,
+        "T40_REPORT": false,
+        "startups": 403,
+        "accounting_alt_fuel_L": 9998.765899999999
+      }
+    },
+    "winner": "PC-SW",
+    "control_accounting_alt_fuel_L": 11124.9712
+  },
+  "d_comparisons": {
+    "D1_PC-Control_minus_old_Control": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": 33.33390894308943,
+        "bca_low": 31.1746142065011,
+        "bca_high": 35.59844973660154
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": 5.405108547098402,
+        "bca_low": 4.952468921117905,
+        "bca_high": 5.921562916670146
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": 13.946395832778032,
+        "bca_low": 13.329296537056145,
+        "bca_high": 14.61281625794083
+      }
+    },
+    "D2_PC-S_minus_old_S": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": 36.163481300813004,
+        "bca_low": 33.38073882312057,
+        "bca_high": 38.95998331117215
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": 4.804319981777403,
+        "bca_low": 4.3212300895316975,
+        "bca_high": 5.350307306256726
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": 13.18156180386744,
+        "bca_low": 12.403203346219167,
+        "bca_high": 14.004189964178
+      }
+    },
+    "D3_PC-S_minus_PC-Control": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": -8.627421138211382,
+        "bca_low": -11.574558122921008,
+        "bca_high": -6.119078226720886
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": 0.03983257989907506,
+        "bca_low": -0.037166104240327257,
+        "bca_high": 0.1404157432733277
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": 0.057847228442046865,
+        "bca_low": -0.07572099461433152,
+        "bca_high": 0.20755302179459123
+      }
+    },
+    "D3_PC-SW-L_minus_PC-Control": {
+      "fuel_L": {
+        "n": 123,
+        "mean_diff": -8.164270731707317,
+        "bca_low": -10.521227661999061,
+        "bca_high": -6.0374832509372585
+      },
+      "R_CF_pct": {
+        "n": 123,
+        "mean_diff": 0.03272386926455448,
+        "bca_low": -0.03963732553811046,
+        "bca_high": 0.12931255224565538
+      },
+      "R_P_pct": {
+        "n": 123,
+        "mean_diff": 0.050029302226083656,
+        "bca_low": -0.07660608509943667,
+        "bca_high": 0.1931992551339908
+      }
+    }
+  },
+  "note": "G1 and G12 are evaluated on oracle outputs by the oracle audit, not in the campaign."
+}

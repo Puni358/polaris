@@ -1,0 +1,1458 @@
+{
+  "2025-01-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250103T00Z"
+  },
+  "2025-01-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250104T00Z"
+  },
+  "2025-01-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250105T00Z"
+  },
+  "2025-01-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250106T00Z"
+  },
+  "2025-01-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250107T00Z"
+  },
+  "2025-01-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250102T00Z"
+  },
+  "2025-01-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250108T00Z"
+  },
+  "2025-01-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250111T00Z"
+  },
+  "2025-01-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250110T00Z"
+  },
+  "2025-01-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250109T00Z"
+  },
+  "2025-01-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250112T00Z"
+  },
+  "2025-01-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250113T00Z"
+  },
+  "2025-01-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250115T00Z"
+  },
+  "2025-01-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250116T00Z"
+  },
+  "2025-01-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250114T00Z"
+  },
+  "2025-01-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250117T00Z"
+  },
+  "2025-01-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250118T00Z"
+  },
+  "2025-01-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250119T00Z"
+  },
+  "2025-01-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250120T00Z"
+  },
+  "2025-01-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250121T00Z"
+  },
+  "2025-01-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250122T00Z"
+  },
+  "2025-01-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250123T00Z"
+  },
+  "2025-01-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250124T00Z"
+  },
+  "2025-01-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250125T00Z"
+  },
+  "2025-01-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250126T00Z"
+  },
+  "2025-01-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250127T00Z"
+  },
+  "2025-01-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250130T00Z"
+  },
+  "2025-01-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250129T00Z"
+  },
+  "2025-01-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250128T00Z"
+  },
+  "2025-01-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250131T00Z"
+  },
+  "2025-02-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250201T00Z"
+  },
+  "2025-02-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250203T00Z"
+  },
+  "2025-02-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250205T00Z"
+  },
+  "2025-02-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250202T00Z"
+  },
+  "2025-02-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250204T00Z"
+  },
+  "2025-02-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250206T00Z"
+  },
+  "2025-02-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250207T00Z"
+  },
+  "2025-02-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250210T00Z"
+  },
+  "2025-02-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250208T00Z"
+  },
+  "2025-02-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250209T00Z"
+  },
+  "2025-02-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250211T00Z"
+  },
+  "2025-02-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250212T00Z"
+  },
+  "2025-02-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250213T00Z"
+  },
+  "2025-02-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250215T00Z"
+  },
+  "2025-02-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250217T00Z"
+  },
+  "2025-02-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250214T00Z"
+  },
+  "2025-02-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250216T00Z"
+  },
+  "2025-02-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250218T00Z"
+  },
+  "2025-02-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250219T00Z"
+  },
+  "2025-02-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250220T00Z"
+  },
+  "2025-02-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250221T00Z"
+  },
+  "2025-02-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250222T00Z"
+  },
+  "2025-02-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250223T00Z"
+  },
+  "2025-02-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250224T00Z"
+  },
+  "2025-02-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250225T00Z"
+  },
+  "2025-02-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250226T00Z"
+  },
+  "2025-02-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250227T00Z"
+  },
+  "2025-03-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250301T00Z"
+  },
+  "2025-02-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250228T00Z"
+  },
+  "2025-03-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250302T00Z"
+  },
+  "2025-03-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250303T00Z"
+  },
+  "2025-03-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250304T00Z"
+  },
+  "2025-03-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250306T00Z"
+  },
+  "2025-03-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250307T00Z"
+  },
+  "2025-03-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250305T00Z"
+  },
+  "2025-03-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250308T00Z"
+  },
+  "2025-03-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250309T00Z"
+  },
+  "2025-03-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250310T00Z"
+  },
+  "2025-03-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250314T00Z"
+  },
+  "2025-03-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250313T00Z"
+  },
+  "2025-03-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250312T00Z"
+  },
+  "2025-03-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250311T00Z"
+  },
+  "2025-03-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250315T00Z"
+  },
+  "2025-03-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250316T00Z"
+  },
+  "2025-03-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250319T00Z"
+  },
+  "2025-03-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250320T00Z"
+  },
+  "2025-03-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250318T00Z"
+  },
+  "2025-03-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250317T00Z"
+  },
+  "2025-03-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250321T00Z"
+  },
+  "2025-03-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250322T00Z"
+  },
+  "2025-03-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250323T00Z"
+  },
+  "2025-03-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250324T00Z"
+  },
+  "2025-03-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250326T00Z"
+  },
+  "2025-03-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250325T00Z"
+  },
+  "2025-03-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250327T00Z"
+  },
+  "2025-03-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250328T00Z"
+  },
+  "2025-03-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250329T00Z"
+  },
+  "2025-03-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250330T00Z"
+  },
+  "2025-04-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250401T00Z"
+  },
+  "2025-03-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250331T00Z"
+  },
+  "2025-04-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250402T00Z"
+  },
+  "2025-04-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250403T00Z"
+  },
+  "2025-04-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250404T00Z"
+  },
+  "2025-04-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250405T00Z"
+  },
+  "2025-04-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250406T00Z"
+  },
+  "2025-04-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250407T00Z"
+  },
+  "2025-04-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250408T00Z"
+  },
+  "2025-04-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250409T00Z"
+  },
+  "2025-04-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250410T00Z"
+  },
+  "2025-04-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250411T00Z"
+  },
+  "2025-04-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250413T00Z"
+  },
+  "2025-04-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250412T00Z"
+  },
+  "2025-04-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250414T00Z"
+  },
+  "2025-04-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250416T00Z"
+  },
+  "2025-04-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250415T00Z"
+  },
+  "2025-04-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250417T00Z"
+  },
+  "2025-04-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250419T00Z"
+  },
+  "2025-04-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250418T00Z"
+  },
+  "2025-04-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250420T00Z"
+  },
+  "2025-04-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250422T00Z"
+  },
+  "2025-04-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250421T00Z"
+  },
+  "2025-04-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250423T00Z"
+  },
+  "2025-04-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250424T00Z"
+  },
+  "2025-04-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250425T00Z"
+  },
+  "2025-04-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250426T00Z"
+  },
+  "2025-04-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250428T00Z"
+  },
+  "2025-04-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250427T00Z"
+  },
+  "2025-04-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250429T00Z"
+  },
+  "2025-04-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250430T00Z"
+  },
+  "2025-05-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250501T00Z"
+  },
+  "2025-05-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250502T00Z"
+  },
+  "2025-05-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250504T00Z"
+  },
+  "2025-05-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250503T00Z"
+  },
+  "2025-05-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250505T00Z"
+  },
+  "2025-05-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250506T00Z"
+  },
+  "2025-05-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250507T00Z"
+  },
+  "2025-05-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250508T00Z"
+  },
+  "2025-05-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250509T00Z"
+  },
+  "2025-05-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250510T00Z"
+  },
+  "2025-05-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250511T00Z"
+  },
+  "2025-05-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250512T00Z"
+  },
+  "2025-05-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250513T00Z"
+  },
+  "2025-05-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250514T00Z"
+  },
+  "2025-05-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250515T00Z"
+  },
+  "2025-05-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250516T00Z"
+  },
+  "2025-05-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250517T00Z"
+  },
+  "2025-05-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250518T00Z"
+  },
+  "2025-05-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250519T00Z"
+  },
+  "2025-05-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250520T00Z"
+  },
+  "2025-05-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250522T00Z"
+  },
+  "2025-05-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250521T00Z"
+  },
+  "2025-05-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250523T00Z"
+  },
+  "2025-05-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250524T00Z"
+  },
+  "2025-05-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250525T00Z"
+  },
+  "2025-05-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250526T00Z"
+  },
+  "2025-05-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250528T00Z"
+  },
+  "2025-05-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250527T00Z"
+  },
+  "2025-05-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250529T00Z"
+  },
+  "2025-05-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250530T00Z"
+  },
+  "2025-05-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250531T00Z"
+  },
+  "2025-06-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250601T00Z"
+  },
+  "2025-06-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250602T00Z"
+  },
+  "2025-06-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250603T00Z"
+  },
+  "2025-06-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250604T00Z"
+  },
+  "2025-06-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250605T00Z"
+  },
+  "2025-06-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250606T00Z"
+  },
+  "2025-06-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250607T00Z"
+  },
+  "2025-06-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250608T00Z"
+  },
+  "2025-06-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250609T00Z"
+  },
+  "2025-06-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250610T00Z"
+  },
+  "2025-06-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250611T00Z"
+  },
+  "2025-06-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250612T00Z"
+  },
+  "2025-06-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250613T00Z"
+  },
+  "2025-06-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250615T00Z"
+  },
+  "2025-06-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250614T00Z"
+  },
+  "2025-06-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250616T00Z"
+  },
+  "2025-06-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250617T00Z"
+  },
+  "2025-06-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250618T00Z"
+  },
+  "2025-06-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250619T00Z"
+  },
+  "2025-06-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250620T00Z"
+  },
+  "2025-06-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250621T00Z"
+  },
+  "2025-06-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250622T00Z"
+  },
+  "2025-06-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250623T00Z"
+  },
+  "2025-06-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250624T00Z"
+  },
+  "2025-06-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250625T00Z"
+  },
+  "2025-06-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250626T00Z"
+  },
+  "2025-06-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250627T00Z"
+  },
+  "2025-06-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250628T00Z"
+  },
+  "2025-06-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250629T00Z"
+  },
+  "2025-06-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250630T00Z"
+  },
+  "2025-07-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250701T00Z"
+  },
+  "2025-07-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250702T00Z"
+  },
+  "2025-07-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250703T00Z"
+  },
+  "2025-07-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250704T00Z"
+  },
+  "2025-07-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250705T00Z"
+  },
+  "2025-07-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250706T00Z"
+  },
+  "2025-07-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250707T00Z"
+  },
+  "2025-07-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250708T00Z"
+  },
+  "2025-07-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250709T00Z"
+  },
+  "2025-07-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250710T00Z"
+  },
+  "2025-07-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250711T00Z"
+  },
+  "2025-07-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250712T00Z"
+  },
+  "2025-07-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250713T00Z"
+  },
+  "2025-07-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250714T00Z"
+  },
+  "2025-07-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250715T00Z"
+  },
+  "2025-07-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250716T00Z"
+  },
+  "2025-07-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250717T00Z"
+  },
+  "2025-07-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250718T00Z"
+  },
+  "2025-07-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250719T00Z"
+  },
+  "2025-07-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250720T00Z"
+  },
+  "2025-07-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250721T00Z"
+  },
+  "2025-07-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250722T00Z"
+  },
+  "2025-07-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250723T00Z"
+  },
+  "2025-07-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250724T00Z"
+  },
+  "2025-07-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250725T00Z"
+  },
+  "2025-07-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250726T00Z"
+  },
+  "2025-07-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250727T00Z"
+  },
+  "2025-07-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250728T00Z"
+  },
+  "2025-07-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250729T00Z"
+  },
+  "2025-07-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250730T00Z"
+  },
+  "2025-07-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250731T00Z"
+  },
+  "2025-08-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250801T00Z"
+  },
+  "2025-08-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250802T00Z"
+  },
+  "2025-08-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250803T00Z"
+  },
+  "2025-08-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250804T00Z"
+  },
+  "2025-08-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250805T00Z"
+  },
+  "2025-08-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250806T00Z"
+  },
+  "2025-08-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250807T00Z"
+  },
+  "2025-08-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250808T00Z"
+  },
+  "2025-08-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250809T00Z"
+  },
+  "2025-08-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250810T00Z"
+  },
+  "2025-08-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250811T00Z"
+  },
+  "2025-08-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250812T00Z"
+  },
+  "2025-08-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250813T00Z"
+  },
+  "2025-08-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250814T00Z"
+  },
+  "2025-08-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250815T00Z"
+  },
+  "2025-08-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250816T00Z"
+  },
+  "2025-08-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250817T00Z"
+  },
+  "2025-08-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250818T00Z"
+  },
+  "2025-08-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250819T00Z"
+  },
+  "2025-08-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250820T00Z"
+  },
+  "2025-08-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250821T00Z"
+  },
+  "2025-08-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250822T00Z"
+  },
+  "2025-08-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250823T00Z"
+  },
+  "2025-08-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250824T00Z"
+  },
+  "2025-08-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250825T00Z"
+  },
+  "2025-08-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250826T00Z"
+  },
+  "2025-08-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250827T00Z"
+  },
+  "2025-08-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250828T00Z"
+  },
+  "2025-08-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250829T00Z"
+  },
+  "2025-08-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250830T00Z"
+  },
+  "2025-08-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250831T00Z"
+  },
+  "2025-09-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250901T00Z"
+  },
+  "2025-09-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250902T00Z"
+  },
+  "2025-09-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250903T00Z"
+  },
+  "2025-09-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250904T00Z"
+  },
+  "2025-09-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250905T00Z"
+  },
+  "2025-09-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250906T00Z"
+  },
+  "2025-09-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250907T00Z"
+  },
+  "2025-09-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250908T00Z"
+  },
+  "2025-09-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250909T00Z"
+  },
+  "2025-09-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250910T00Z"
+  },
+  "2025-09-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250911T00Z"
+  },
+  "2025-09-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250912T00Z"
+  },
+  "2025-09-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250913T00Z"
+  },
+  "2025-09-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250914T00Z"
+  },
+  "2025-09-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250915T00Z"
+  },
+  "2025-09-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250916T00Z"
+  },
+  "2025-09-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250917T00Z"
+  },
+  "2025-09-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250918T00Z"
+  },
+  "2025-09-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250919T00Z"
+  },
+  "2025-09-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250920T00Z"
+  },
+  "2025-09-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250921T00Z"
+  },
+  "2025-09-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250922T00Z"
+  },
+  "2025-09-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250923T00Z"
+  },
+  "2025-09-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250924T00Z"
+  },
+  "2025-09-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250925T00Z"
+  },
+  "2025-09-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250926T00Z"
+  },
+  "2025-09-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250927T00Z"
+  },
+  "2025-09-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250928T00Z"
+  },
+  "2025-09-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250929T00Z"
+  },
+  "2025-09-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20250930T00Z"
+  },
+  "2025-10-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251001T00Z"
+  },
+  "2025-10-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251004T00Z"
+  },
+  "2025-10-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251002T00Z"
+  },
+  "2025-10-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251005T00Z"
+  },
+  "2025-10-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251007T00Z"
+  },
+  "2025-10-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251003T00Z"
+  },
+  "2025-10-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251006T00Z"
+  },
+  "2025-10-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251011T00Z"
+  },
+  "2025-10-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251010T00Z"
+  },
+  "2025-10-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251008T00Z"
+  },
+  "2025-10-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251009T00Z"
+  },
+  "2025-10-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251015T00Z"
+  },
+  "2025-10-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251016T00Z"
+  },
+  "2025-10-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251017T00Z"
+  },
+  "2025-10-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251014T00Z"
+  },
+  "2025-10-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251019T00Z"
+  },
+  "2025-10-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251013T00Z"
+  },
+  "2025-10-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251012T00Z"
+  },
+  "2025-10-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251021T00Z"
+  },
+  "2025-10-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251022T00Z"
+  },
+  "2025-10-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251018T00Z"
+  },
+  "2025-10-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251020T00Z"
+  },
+  "2025-10-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251026T00Z"
+  },
+  "2025-10-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251027T00Z"
+  },
+  "2025-10-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251023T00Z"
+  },
+  "2025-10-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251028T00Z"
+  },
+  "2025-10-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251030T00Z"
+  },
+  "2025-10-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251025T00Z"
+  },
+  "2025-11-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251101T00Z"
+  },
+  "2025-10-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251024T00Z"
+  },
+  "2025-10-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251029T00Z"
+  },
+  "2025-11-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251102T00Z"
+  },
+  "2025-11-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251103T00Z"
+  },
+  "2025-10-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251031T00Z"
+  },
+  "2025-11-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251105T00Z"
+  },
+  "2025-11-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251107T00Z"
+  },
+  "2025-11-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251108T00Z"
+  },
+  "2025-11-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251109T00Z"
+  },
+  "2025-11-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251104T00Z"
+  },
+  "2025-11-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251111T00Z"
+  },
+  "2025-11-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251112T00Z"
+  },
+  "2025-11-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251113T00Z"
+  },
+  "2025-11-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251114T00Z"
+  },
+  "2025-11-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251115T00Z"
+  },
+  "2025-11-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251116T00Z"
+  },
+  "2025-11-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251117T00Z"
+  },
+  "2025-11-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251106T00Z"
+  },
+  "2025-11-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251118T00Z"
+  },
+  "2025-11-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251110T00Z"
+  },
+  "2025-11-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251120T00Z"
+  },
+  "2025-11-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251119T00Z"
+  },
+  "2025-11-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251121T00Z"
+  },
+  "2025-11-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251123T00Z"
+  },
+  "2025-11-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251126T00Z"
+  },
+  "2025-11-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251125T00Z"
+  },
+  "2025-11-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251127T00Z"
+  },
+  "2025-11-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251124T00Z"
+  },
+  "2025-11-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251128T00Z"
+  },
+  "2025-11-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251122T00Z"
+  },
+  "2025-11-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251129T00Z"
+  },
+  "2025-11-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251130T00Z"
+  },
+  "2025-12-01": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251201T00Z"
+  },
+  "2025-12-03": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251203T00Z"
+  },
+  "2025-12-04": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251204T00Z"
+  },
+  "2025-12-02": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251202T00Z"
+  },
+  "2025-12-05": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251205T00Z"
+  },
+  "2025-12-06": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251206T00Z"
+  },
+  "2025-12-07": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251207T00Z"
+  },
+  "2025-12-08": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251208T00Z"
+  },
+  "2025-12-10": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251210T00Z"
+  },
+  "2025-12-11": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251211T00Z"
+  },
+  "2025-12-13": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251213T00Z"
+  },
+  "2025-12-14": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251214T00Z"
+  },
+  "2025-12-12": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251212T00Z"
+  },
+  "2025-12-15": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251215T00Z"
+  },
+  "2025-12-16": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251216T00Z"
+  },
+  "2025-12-09": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251209T00Z"
+  },
+  "2025-12-17": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251217T00Z"
+  },
+  "2025-12-18": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251218T00Z"
+  },
+  "2025-12-22": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251222T00Z"
+  },
+  "2025-12-23": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251223T00Z"
+  },
+  "2025-12-24": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251224T00Z"
+  },
+  "2025-12-20": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251220T00Z"
+  },
+  "2025-12-25": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251225T00Z"
+  },
+  "2025-12-28": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251228T00Z"
+  },
+  "2025-12-29": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251229T00Z"
+  },
+  "2025-12-19": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251219T00Z"
+  },
+  "2025-12-26": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251226T00Z"
+  },
+  "2025-12-21": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251221T00Z"
+  },
+  "2025-12-30": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251230T00Z"
+  },
+  "2025-12-27": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251227T00Z"
+  },
+  "2025-12-31": {
+    "status": "COMPLETE",
+    "meps_run": "meps_det_20251231T00Z"
+  }
+}

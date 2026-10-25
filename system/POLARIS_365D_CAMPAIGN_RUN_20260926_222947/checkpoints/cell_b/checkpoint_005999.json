@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "run_id": "polaris_365d_run_20260926_222947",
+  "cell_id": "cell_b",
+  "worker_id": "worker_02",
+  "cycle_index": 5999,
+  "timestamp": "2024-09-07T00:00:00Z",
+  "station_state": {
+    "timestamp": "2024-09-07T00:00:00Z",
+    "battery_soc_pct": 20.0,
+    "battery_energy_wh": 40000.0,
+    "diesel_running": true,
+    "diesel_hours_running": 252.0,
+    "last_observed_solar_irradiance": 0.0,
+    "last_observed_demand": 18000.0,
+    "last_observed_wind_generation": 0.0
+  },
+  "cumulative_fuel_l": 64871.1488,
+  "cumulative_diesel_energy_kwh": 144764.5951,
+  "cumulative_battery_throughput_kwh": 839.422,
+  "integrity_counters": {
+    "truth_leakage_count": 0,
+    "state_reset_count": 0,
+    "fuel_reset_count": 0,
+    "soc_reset_count": 0,
+    "infeasibility_count": 0,
+    "unmet_critical_load_wh": 0.0,
+    "power_balance_max_error_w": 0.0
+  },
+  "protected_hashes": {},
+  "fixture_hash": "H1.0",
+  "previous_checkpoint_hash": "a4d60df346003180afdd46d3df6837d20de3b2d32ca7f85b2287fdfe1f86f4e6",
+  "current_checkpoint_hash": "06b7bdefc5522fe3014c521ee49005c6c08ec10b578d76906f1ac19721d12a7c"
+}

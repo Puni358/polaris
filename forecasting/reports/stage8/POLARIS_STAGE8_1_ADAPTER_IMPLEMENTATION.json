@@ -1,0 +1,96 @@
+{
+  "document_id": "POLARIS_STAGE8_1_ADAPTER_IMPLEMENTATION",
+  "date_utc": "2026-09-19",
+  "track": "SOLAR_FORECASTING_SYSTEM_INTEGRATION_TRACK",
+  "phase": "PHASE_S8_1_C2_STAGE8_1_ADAPTER_IMPLEMENTATION_AUTHORIZATION",
+  "task_type": "BOUNDED_INTERFACE_ADAPTER_IMPLEMENTATION",
+  "adapter_implementation_status": "COMPLETE",
+  "contract_change_required": false,
+  "stage8_1_model_changed": false,
+  "frozen_contract_changed": false,
+  "ems_integration": "NOT_PERFORMED",
+  "governance_disposition": {
+    "STAGE8_1_CAPABILITY_STATUS": "FROZEN",
+    "FORECASTBUNDLE_CONTRACT_STATUS": "FROZEN",
+    "SOLAR_PV_MAPPING_STATUS": "D3_AUTHORIZED_ENGINEERING_REPRESENTATION",
+    "INTERVAL_SEMANTICS_STATUS": "D1_D2_AUTHORIZED_DEGENERATE_POINT_REPRESENTATION",
+    "TIMESTAMP_HORIZON_COMPATIBILITY": "VERIFIED_24H_MONOTONIC",
+    "CAUSAL_RUNTIME_COMPATIBILITY": "VERIFIED_ORIGIN_T0_ONLY",
+    "PROVENANCE_COMPATIBILITY": "VERIFIED_METADATA_PROVENANCE",
+    "SERIALIZATION_COMPATIBILITY": "VERIFIED_LOSSLESS_JSON",
+    "ADAPTER_IMPLEMENTATION_STATUS": "COMPLETE",
+    "ADAPTER_TESTS": "PASS",
+    "REGRESSION_TESTS": "PASS",
+    "EMS_INTEGRATION": "NOT_PERFORMED",
+    "NEXT_GOVERNED_STEP": "SYNTHETIC_END_TO_END_INTEGRATION_AUTHORIZATION_REVIEW"
+  },
+  "files_created_or_modified": [
+    "system/forecasting/implementations/s81_solar.py",
+    "system/tests/test_s81_adapter.py",
+    "POLARIS_STAGE8_1_ADAPTER_IMPLEMENTATION.md",
+    "POLARIS_STAGE8_1_ADAPTER_IMPLEMENTATION.json"
+  ],
+  "exact_contract_consumed": {
+    "schema_name": "ForecastBundle",
+    "schema_version": "1.0.0",
+    "engine_interface": "ForecastEngine",
+    "predict_signature": "predict(station_state: StationState, runtime_context: Optional[Dict[str, Any]]) -> ForecastBundle"
+  },
+  "stage8_1_artifact_identity": {
+    "model_architecture": "HistGradientBoostingRegressor_37_features",
+    "target": "surface_downwelling_shortwave_radiation_SW_IN",
+    "unit": "W/m^2",
+    "horizon_hours": 24,
+    "odd_test_mae_w_m2": 36.188657,
+    "odd_test_nmae_percent": 28.0688
+  },
+  "pv_transformation": {
+    "governance_decision": "D3_AUTHORIZED_ENGINEERING_REPRESENTATION",
+    "formula": "raw_power = SW_IN * 300 * 0.20 * 0.85; solar_generation = min(raw_power, 60000.0)",
+    "array_area_m2": 300.0,
+    "panel_efficiency": 0.20,
+    "performance_ratio": 0.85,
+    "max_inverter_power_w": 60000.0,
+    "empirical_pv_validation_claimed": false
+  },
+  "interval_representation": {
+    "governance_decision_d1": "FORECAST_UNCERTAINTY_BOUNDS_WITHOUT_CLAIMED_STATISTICAL_COVERAGE",
+    "governance_decision_d2": "AUTHORIZED_DEGENERATE_POINT_REPRESENTATION",
+    "mapping": "lower = point = upper = y_pred",
+    "statistical_coverage_claimed": false
+  },
+  "timestamp_and_horizon": {
+    "horizon_hours": 24,
+    "resolution": "hourly",
+    "timestamp_format": "ISO-8601 UTC string (YYYY-MM-DDTHH:MM:SSZ)",
+    "monotonicity_delta_seconds": 3600
+  },
+  "causality": {
+    "uses_only_origin_t0_information": true,
+    "future_ground_truth_required": false,
+    "digital_twin_hidden_state_accessed": false
+  },
+  "provenance": {
+    "metadata_key": "stage8_1_provenance",
+    "schema_change_required": false
+  },
+  "test_summary": {
+    "command_executed": ".venv/bin/python -m pytest system/tests",
+    "adapter_tests_count": 12,
+    "adapter_tests_status": "PASS",
+    "regression_tests_total_count": 60,
+    "regression_tests_passed": 60,
+    "regression_tests_failures": 0,
+    "regression_tests_errors": 0,
+    "regression_tests_skipped": 0,
+    "regression_tests_duration_seconds": 1449.01,
+    "regression_tests_exit_code": 0,
+    "regression_tests_status": "PASS"
+  },
+  "confirmation_checklist": {
+    "frozen_contracts_untouched": true,
+    "stage8_1_model_untouched": true,
+    "ems_integration_not_performed": true
+  },
+  "next_governed_step": "SYNTHETIC_END_TO_END_INTEGRATION_AUTHORIZATION_REVIEW"
+}

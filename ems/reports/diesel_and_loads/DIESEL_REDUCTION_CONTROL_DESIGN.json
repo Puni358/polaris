@@ -1,0 +1,166 @@
+{
+  "design_id": "DIESEL-REDUCTION-CONTROL-DESIGN-2026-CORRECTED",
+  "audit_reference": "DIESEL_REDUCTION_CONTROL_DESIGN_INDEPENDENT_AUDIT.md",
+  "created_at_utc": "2026-10-05T09:15:00+00:00",
+  "governance_mode": "CORRECTED_RESEARCH_DESIGN_ONLY",
+  "verdict": "PREREGISTRATION FROZEN — CANDIDATE EXECUTION AUTHORIZED",
+  "epistemic_standards": {
+    "VERIFIED": "Checked against production code, frozen artifacts, or reproducible simulation outputs.",
+    "INFERRED": "Logically follows from verified facts but not directly measured as an isolated single-variable counterfactual.",
+    "UNSUPPORTED": "Hypotheses, uncalibrated parameters, or speculative claims removed from baseline assertions.",
+    "REQUIRES_EXPERIMENT": "Formally posed research candidates and variants requiring isolated closed-loop campaign testing."
+  },
+  "verified_baseline_facts": {
+    "ebr_window_horizon_shrinkage": "EBR window is range(t, min(t+6, 24)). For t <= 18, 6h window (75,652 Wh). Shrinks at horizon edge: t=19 (63,043 Wh), t=20 (50,435 Wh), t=21 (37,826 Wh), t=22 (25,217 Wh), t=23 (12,609 Wh).",
+    "terminal_target_application": "Applied at t=23 as max(EBR[23], terminal_target_wh) = max(12,609 Wh, 100,000 Wh) = 100,000 Wh in Arm B-100.",
+    "priority_hierarchy": "J1 (Critical Deficit, P4) >> J2 (Reserve Shortfall, P3) >> J3 (Diesel Fuel, P2) >> J4 (Curtailment, P1).",
+    "forcing_mechanism": "Because J2 >> J3, HiGHS strictly forces s_J2 = 0 before minimizing fuel, compelling step-0 diesel dispatch when forecast renewables are low.",
+    "terminal_ablation_evidence": "Terminal removal across 6 origins yielded -14.6% fuel (-56.6 L) and -10.2% curtailment, but +6.3% unmet load (+20.2 kWh)."
+  },
+  "primary_research_candidate": {
+    "candidate_id": "CANDIDATE_2_NET_DEFICIT_EBR",
+    "name": "Forecast-Conditioned Net-Critical-Deficit EBR",
+    "core_research_question": "Can a forecast-conditioned net-critical-deficit EBR reduce unnecessary diesel commitment relative to unconditional EBR while preserving critical-load reliability?",
+    "solar_input_specification": {
+      "input_field": "bundle.solar_generation.point",
+      "units": "Watts",
+      "controller_processing": "Consumes electrical PV power in Watts directly. Does NOT compute 51 * I or apply 60 kW cap inside controller. The 51 W/(W/m²) mapping is a campaign adapter prototype, not an authorized physical constant."
+    },
+    "critical_demand_specification": {
+      "vector_definition": "critical_demand[k] = min(11600.0, demand.point[k]) for each k in 0..23",
+      "units": "Watts",
+      "nature": "Dynamic 24-step vector capped at 11.6 kW, NOT a scalar constant."
+    },
+    "reserve_floor_specification": {
+      "controller_formula_floor": "None. No extra additive or max() reserve floor is added to the EBR formula.",
+      "governed_physical_battery_floor": "E_min = 40,000 Wh remains enforced by GAP19 physical busbar constraints (E_t >= E_min)."
+    },
+    "variants": [
+      {
+        "variant_id": "VARIANT_S_SOLAR_ONLY",
+        "description": "Credits forecasted solar generation only against 6h critical demand; zero wind credit in reserve sizing.",
+        "formula_t_0_to_22": "E_EBR_S[t] = (1 / eta_dis) * sum_{k=t}^{min(t+5, 23)} max(0, critical_demand[k] - solar_generation_point[k]) * dt",
+        "formula_t_23": "E_stage2_target[23] = max((1 / eta_dis) * max(0, critical_demand[23] - solar_generation_point[23]) * dt, E_term_target)",
+        "properties": "Unaffected by wind forecast error in reserve sizing (wind remains active in busbar balance). Reverts to governed unconditional EBR when forecast solar is zero across the entire window."
+      },
+      {
+        "variant_id": "VARIANT_SW_SOLAR_WIND",
+        "description": "Credits forecasted solar and point forecasted wind against 6h critical demand.",
+        "formula_t_0_to_22": "E_EBR_SW[t] = (1 / eta_dis) * sum_{k=t}^{min(t+5, 23)} max(0, critical_demand[k] - solar_generation_point[k] - wind_generation_point[k]) * dt",
+        "formula_t_23": "E_stage2_target[23] = max((1 / eta_dis) * max(0, critical_demand[23] - solar_generation_point[23] - wind_generation_point[23]) * dt, E_term_target)",
+        "synthetic_wind_warning": "Campaign wind series is synthetic (4500 + 5000*sin(2*pi*t/24 + phi)); Variant SW results constitute synthetic-wind research evidence and cannot be generalized to real wind forecasting. Substantively replicates prior critical-aware experiment."
+      }
+    ],
+    "status": "RESEARCH_DESIGN_COMPLETE — AWAITING SAFETY-GATE PREREGISTRATION"
+  },
+  "delisted_or_deferred_candidates": [
+    {
+      "candidate_id": "CANDIDATE_1_SOLAR_HEADROOM",
+      "status": "BLOCKED / NOT READY",
+      "reason": "Cap formula lacks lower clamp, causing negative values and mathematical infeasibility on 53/173 origins; cap below reserve forces s_J2 > 0 and increases diesel under J2 >> J3."
+    },
+    {
+      "candidate_id": "CANDIDATE_3_ELASTIC_RESERVE_SLACK",
+      "status": "DEFERRED / FUTURE RESEARCH ONLY",
+      "reason": "Requires modifying GAP19 objective code; lambda derivation mathematically refuted; requires future parametric Pareto sweep."
+    },
+    {
+      "candidate_id": "CANDIDATE_4_STATE_TRIGGERED_JIT",
+      "status": "BLOCKED / NOT READY",
+      "reason": "Attribution corrected (68.4% is total EBR-OFF fuel reduction); non-linear for t >= 1 without big-M; lacks verified equipment start-delay model."
+    }
+  ],
+  "qualitative_evaluation_matrix": {
+    "Candidate_2_Variant_S": {
+      "diesel_reduction_mechanism": "Releases reserve during daytime solar hours",
+      "safety_risk": "Low in reserve sizing (zero reliance on wind forecasts)",
+      "causal_data_availability": "Complete (uses Stage 8.1 solar forecast)",
+      "implementation_complexity": "Low (Layer C RHS modification)",
+      "causal_isolation": "Excellent (modifies reserve sizing only)"
+    },
+    "Candidate_2_Variant_SW": {
+      "diesel_reduction_mechanism": "Releases reserve during solar & wind hours",
+      "safety_risk": "Medium-High (vulnerable to wind over-forecast; synthetic wind)",
+      "causal_data_availability": "Complete in simulation harness (synthetic wind)",
+      "implementation_complexity": "Low (Layer C RHS modification)",
+      "causal_isolation": "Excellent (modifies reserve sizing only)"
+    },
+    "Candidate_1_Solar_Headroom": {
+      "diesel_reduction_mechanism": "Caps pre-dawn battery charging",
+      "safety_risk": "High (risk of MILP infeasibility)",
+      "causal_data_availability": "Complete (astronomical sunrise)",
+      "implementation_complexity": "Medium (requires soft clamp)",
+      "causal_isolation": "Poor (conflicts with J2 priority)"
+    },
+    "Candidate_4_State_Triggered_JIT": {
+      "diesel_reduction_mechanism": "Inhibits diesel when battery energy is safe",
+      "safety_risk": "Medium (lacks verified start delay)",
+      "causal_data_availability": "Complete (state-based)",
+      "implementation_complexity": "High (requires big-M reformulation)",
+      "causal_isolation": "Moderate (receding-horizon shift)"
+    },
+    "Candidate_3_Elastic_Slack": {
+      "diesel_reduction_mechanism": "Co-optimizes fuel and reserve shortfall",
+      "safety_risk": "High (optimizer indifferent to reserve)",
+      "causal_data_availability": "Complete",
+      "implementation_complexity": "High (modifies GAP19 objective code)",
+      "causal_isolation": "Poor (blends J2 and J3 priorities)"
+    }
+  },
+  "governed_validation_protocol": {
+    "test_bed": "Full 123-origin campaign framework (EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024)",
+    "evaluation_dataset_characterization": "Pre-specified paired historical evaluation set; not a pristine holdout.",
+    "diagnostic_origins_status": "REJECTED for primary testing due to selection bias and small sample size.",
+    "terminal_target_status": "FROZEN at 100 kWh to ensure strict causal isolation.",
+    "arms": [
+      {"arm_id": "Control_Arm", "description": "Frozen Arm B-100 (governed 6h unconditional EBR, 100 kWh terminal target)"},
+      {"arm_id": "Treatment_Arm_1", "description": "Candidate 2, Variant S (solar credit only, 100 kWh terminal target)"},
+      {"arm_id": "Treatment_Arm_2", "description": "Candidate 2, Variant SW (solar + synthetic wind credit, 100 kWh terminal target)"}
+    ],
+    "evaluation_metrics": {
+      "total_diesel_liters": "sum_t (diesel_fuel_liters[t])",
+      "critical_demand_vector": "D_crit[t] = min(11600.0, D_realized[t]) = 11600.0 W constant",
+      "dual_accounting_framework": {
+        "critical_first": {
+          "formula": "served_crit = min(D_crit, S_total), unmet_crit = D_crit - served_crit, R_crit = 1 - sum(unmet_crit)/sum(D_crit)",
+          "control_baseline": 0.93470303
+        },
+        "proportional": {
+          "formula": "served_crit = served_total * (D_crit / D_realized), unmet_crit = D_crit - served_crit, R_prop = 1 - sum(unmet_crit)/sum(D_crit)",
+          "control_baseline": 0.83694610,
+          "flat_approximation_note": "82.284510% is an approximation only, NOT an authorized baseline",
+          "telemetry_artifact": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/hourly_trace_123_frozen_b/hourly_telemetry_123_frozen_b.json",
+          "telemetry_sha256": "13359f2742a0eecce14dc1c506ce0a933a9a5a441082120f83adf21d8c3f48e5",
+          "summary_sha256": "46c412837c5713877c42aabb223b7d22be47bca09eeba25472aa675eb009396f",
+          "reconciliation_report_sha256": "70985bc3ba9e5909fb2ac43fa46feae3a81cc569b65c2a67c334ab40f3f6ce08"
+        }
+      },
+      "prohibited_metrics": ["campaign legacy reliability_pct"]
+    },
+    "statistical_testing": {
+      "origin_pairing": "Paired origin-by-origin comparison across all 123 origins",
+      "confidence_intervals": "95% BCa bootstrap confidence intervals for Delta fuel and Delta critical reliability",
+      "hypothesis_testing": "Two-sided Wilcoxon signed-rank test for paired differences"
+    },
+    "acceptance_criteria": {
+      "primary_objective": "Statistically significant reduction in total diesel fuel relative to Control (paired Wilcoxon signed-rank two-sided p < 0.05 and BCa 95% CI strictly below 0).",
+      "safety_gates": [
+        "Critical-First: Delta R_CRITICAL_FIRST >= 0.00 percentage points (baseline: 93.470303%)",
+        "Proportional: Delta R_PROPORTIONAL >= 0.00 percentage points (baseline: 83.694610%)",
+        "Hard SOC Safety: Zero realized SOC < 20.00% across all 123 origins"
+      ],
+      "safety_precedence_invariant": "A candidate failing either reliability convention or the SOC gate is rejected regardless of fuel savings."
+    }
+  },
+  "governance": {
+    "verdict": "PREREGISTRATION FROZEN — CANDIDATE EXECUTION AUTHORIZED",
+    "production_integrity_verification": "GAP19 solver and Causal NWP forecaster integrity are verified strictly by SHA-256 cryptographic hashes. Git diff is not relied upon because untracked repository artifacts exist.",
+    "production_files_modified": 0,
+    "experiments_executed": 0,
+    "gap19_status": "UNCHANGED",
+    "gap19_sha256": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "stage8_1_status": "UNCHANGED",
+    "blockers_to_execution": []
+  }
+}

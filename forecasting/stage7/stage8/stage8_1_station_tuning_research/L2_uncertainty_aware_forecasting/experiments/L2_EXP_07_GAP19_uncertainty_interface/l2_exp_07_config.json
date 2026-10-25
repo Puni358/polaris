@@ -1,0 +1,72 @@
+{
+  "experiment_id": "L2-EXP-07",
+  "title": "POLARIS L2 / GAP19 Uncertainty-Interface Research Experiment",
+  "governance": {
+    "status": "STRICTLY_RESEARCH_ONLY",
+    "production_change_authorized": false,
+    "physical_envelope_classification": "SIMULATED_RESEARCH_ASSUMPTION",
+    "envelope_formula": "U = max(1.25 * clearsky_ghi, F)",
+    "eighty_wm2_floor_authorized": false,
+    "eighty_wm2_floor_used": false,
+    "governance_statement": "This experiment is research-only. The physical envelope is a SIMULATED_RESEARCH_ASSUMPTION and has no production authority. No production GAP19, Stage8.1, F, SKGBDT, or CQR artifact was modified."
+  },
+  "frozen_parameters": {
+    "alpha": 0.20,
+    "nominal_coverage": 0.80,
+    "cqr_q_hat": 9.8962,
+    "planning_mechanism": "ROBUST_CONSERVATIVE_SOLAR_SCENARIO",
+    "planning_quantile": "q10_calibrated_physical_lower_bound",
+    "terminal_reserve_formula": "TERMINAL_FLOOR_WH + deficit_wh * (1.0 + UNCERTAINTY_MARGIN)"
+  },
+  "authoritative_inputs": {
+    "candidate_f_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    },
+    "skgbdt_q10": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q10.joblib",
+      "sha256": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb"
+    },
+    "skgbdt_q50": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q50.joblib",
+      "sha256": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71"
+    },
+    "skgbdt_q90": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q90.joblib",
+      "sha256": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff"
+    },
+    "matrix_2024": {
+      "path": "stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2024_CORRECTED.csv",
+      "sha256": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43"
+    },
+    "treatment_fixture_2024": {
+      "path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+    },
+    "hybrid_fixture_dir": {
+      "path": "POLARIS_HYBRID_FIXTURE_H1_0"
+    }
+  },
+  "comparison_arms": {
+    "arm_a": {
+      "name": "ARM_A_POINT_FORECAST_CONTROL",
+      "solar_planning_signal": "Candidate F point forecast (pred_f_power_w)",
+      "description": "Baseline control: frozen Candidate F point forecast fed into existing unmodified GAP19"
+    },
+    "arm_b": {
+      "name": "ARM_B_UNCERTAINTY_AWARE_RESEARCH",
+      "solar_planning_signal": "Calibrated lower bound (q10_cal_physical_lower_power_w)",
+      "description": "Uncertainty-aware interface: calibrated 10th percentile conservative solar scenario under SIMULATED_RESEARCH_ASSUMPTION upper envelope U = max(1.25 * clearsky, F)"
+    },
+    "arm_c": {
+      "name": "ARM_C_PERFECT_FORESIGHT_DIAGNOSTIC",
+      "solar_planning_signal": "Realized actual solar (actual_solar_power_w)",
+      "description": "Diagnostic benchmark: zero forecast error planning reference"
+    }
+  },
+  "bootstrap": {
+    "n_iterations": 10000,
+    "seed": 42,
+    "confidence_level": 0.95
+  }
+}

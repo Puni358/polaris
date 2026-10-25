@@ -1,0 +1,11 @@
+{
+  "target_variables": [
+    "x_wind_pl (700 hPa)",
+    "y_wind_pl (700 hPa)"
+  ],
+  "total_origin_runs": 347,
+  "extracted_rows": 8328,
+  "valid_rows": 8328,
+  "missing_rows": 0,
+  "extraction_verdict": "PASS"
+}

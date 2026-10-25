@@ -1,0 +1,8 @@
+Artifact_Path,Artifact_Type,Field_Symbol,Semantic_Meaning,Units,Current_Capability_Classification,Gap_Description
+system/config/loads.yaml,Configuration,critical_load.baseline_power_w,Static baseline power rating for critical loads,Watts,A. total station demand only,Static scalar configuration value; lacks temporal load profile
+system/config/loads.yaml,Configuration,critical_load.unmet_penalty_per_wh,Financial penalty for unserved critical load,Currency/Wh,A. total station demand only,Applied globally to aggregate demand shortfall in prototype
+system/schemas/forecast_bundle.py,Schema,demand,Aggregate 24-hour forecasted station power demand,Watts,A. total station demand only,Lacks critical demand tier breakdown (D_critical vector missing)
+system/schemas/station_state.py,Schema,last_observed_demand,Last observed total station power demand,Watts,A. total station demand only,Single scalar value; no tier classification
+system/schemas/dispatch_plan.py,Schema,load_served,Total electrical load served by microgrid,Watts,A. total station demand only,No tier breakdown of served vs unserved demand
+system/optimization/implementations/milp.py,Optimizer,p_unmet,Unmet total station demand decision variable,Watts,A. total station demand only,Single penalty applied to aggregate unserved demand
+POLARIS_EMS_OBJECTIVE_SPECIFICATION.md,Governance Policy,D1 Five-Tier Classification,Conceptual 5-tier load classification (C/E/D/I/N),Policy Definition,E. Proposed future structure,Policy concept resolved; executable schema formulation deferred (GAP_19)

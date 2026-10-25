@@ -1,0 +1,5 @@
+point,eta_chg,eta_dis,eta_rt,fuel_L,delta_fuel_vs_c0_L,curtailment_kWh,battery_charge_kWh,battery_discharge_kWh,battery_cycles,unmet_load_kWh,status
+E1,0.90,0.90,0.8100,94110.00,644.37,68020.00,617.30,500.00,2.50,0.0,PASS
+E0_C0,0.92,0.92,0.8464,93465.63,0.00,66192.50,955.57,808.80,4.04,0.0,PASS
+E2,0.95,0.95,0.9025,91220.00,-2245.63,59810.00,1728.50,1560.00,7.80,0.0,PASS
+E3,1.00,1.00,1.0000,88340.00,-5125.63,52490.00,4120.00,4120.00,20.60,0.0,PASS

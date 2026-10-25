@@ -1,0 +1,16 @@
+Value,Context,Formal_Status,Authorized_Policy,Calibration_Required,Compliance_Status
+35%,Stage-2 Baseline EBR Target SOC,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+45%,EBR Warning Level SOC Threshold,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+55%,EBR High Reserve SOC Target,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+65%,EBR Maximum Reserve SOC Target,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+-15%,Solar Forecast Lower Margin (Normal),NUMERICAL_CALIBRATION_REQUIRED,NO,YES,PASS
+-20%,Solar/Wind Forecast Lower Margin (Extended),NUMERICAL_CALIBRATION_REQUIRED,NO,YES,PASS
+-25%,Solar Forecast Lower Margin (Extreme),NUMERICAL_CALIBRATION_REQUIRED,NO,YES,PASS
+-30%,Wind Forecast Lower Margin (Extreme),NUMERICAL_CALIBRATION_REQUIRED,NO,YES,PASS
++10%,Demand Forecast Upper Margin,NUMERICAL_CALIBRATION_REQUIRED,NO,YES,PASS
+5 minutes,Emergency Mode Minimum Dwell Time,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+15 minutes,Emergency Mode Trigger Window,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+2 kWh,Unmet Energy Emergency Trigger,PROVISIONAL_ENGINEERING_VALUE,NO,YES,PASS
+30 days,Seasonal Fuel Resupply Horizon,STATION_DATA_REQUIRED,NO,NO,PASS
+50%,Generator Minimum Operating Load Floor,STATION_DATA_REQUIRED,NO,NO,PASS
+70%,Generator Optimal Efficiency Load Point,STATION_DATA_REQUIRED,NO,NO,PASS

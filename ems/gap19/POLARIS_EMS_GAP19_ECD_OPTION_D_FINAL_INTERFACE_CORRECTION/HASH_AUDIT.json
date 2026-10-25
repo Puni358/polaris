@@ -1,0 +1,29 @@
+{
+  "package_name": "POLARIS_EMS_GAP19_ECD_OPTION_D_FINAL_INTERFACE_CORRECTION",
+  "timestamp": "2026-09-26T19:16:00Z",
+  "protected_sources_sha256": {
+    "system/runtime/runner.py": "86aee0b51ba169458aa4cd8bbf678120b43d284144998d9c81e37f5fcaad5efc",
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "system/schemas/station_state.py": "f2cb385efdb2fdc95b681c765642660f1e0d06125c545b7464a8ac4a83e9185f",
+    "system/schemas/dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b",
+    "system/control/ecd.py": "d97c680ca8f4c1ceec57b28ecbe80ed3835ab06b7146cc64b4e197088635af23"
+  },
+  "artifact_hashes_sha256": {
+    "AUTHORITY_ESCALATION_CORRECTION.md": "c5744f3cbf91fabb387dfabfd52c6d80a1ace9545b22a10499b656b7bfda56fc",
+    "MILP_INFEASIBILITY_TEMPORAL_AUDIT.md": "62472b5972ca63b4325e3d7dbeab64100467371a1bf6ddb3f7d5f91ba65345ab",
+    "OPTION_D_HORIZON_CORRECTION.md": "d3a905c4c886bf0320651788bbfdfd93fa8b013e8e1de6fcd0f4be3056717dda",
+    "CURRENT_FUEL_STATE_AUDIT.md": "38b87c158fd24ec8b49ec01fd9bb651aa0ae17803068eb3ece6344d644921d20",
+    "FINAL_INTERFACE_CORRECTION_VERDICT.md": "13eddc401262b3d439b42035554c5c90a6febce03d88db33301588e23d2600a8",
+    "CRITICAL_LOAD_CORRECTION.md": "268a5e43c609cf647cd63efa572e3fc2c16f96acd6ec3ed2c7ce3f9cd9eba1eb",
+    "SOURCE_INTEGRITY_AUDIT.md": "fff7bf4abe149a6ee5b00c64db1d7da1ad85c521b20e9b59c2439fb00e2f5d05",
+    "DISPATCHPLAN_MINIMALITY_CORRECTION.md": "0037225ceb9410f4f941a6ca587918c37515adea1d7c9e9bb28f4e7ac736634a",
+    "OPTION_D_RESOURCE_SEMANTICS_AUDIT.md": "4d13dcddc5a24c2bd8c382ad900f65676cacd0a41ea436ee238577fe970ad806",
+    "README.md": "a09208fdfcbd47bb317de739d42fde6c744745fadcb959ff9a9de9168bca783e",
+    "FINAL_INTERFACE_BLOCKER_REGISTER.md": "db78423f71f0b639c53c3a82b45c085af2fdd4a06a83b136a2fe00ee13ae87bb",
+    "FINAL_FILE_DELTA.md": "48161fce683cc13a35e454893c55ccc6448e117270eb47029c88999fd6f72dd8",
+    "SYNTHETIC_PRODUCTION_FIREWALL.md": "0e70775d5c2a1c47df46914d2c759700e1396ab3c987a295e86c942a66b8e37d"
+  }
+}

@@ -1,0 +1,7 @@
+arm,total_unmet_wh,reliability_pct,total_fuel_l,diesel_on_hours,total_curtailment_wh,mean_efc,lowest_soc_pct,highest_soc_pct,floor_violations,ceiling_violations
+Arm A (Candidate F Point),983306.0,97.1285,5270.6051,316,4587708.5,0.641464,32.58,95.0,0,0
+Arm B (Static q10 Benchmark),65026.9,99.8101,7283.0461,412,8850136.3,0.729615,40.24,95.0,0,0
+Arm C (L2-EXP-10 Arm F),3690264.7,89.2234,4746.2374,269,24575702.2,0.645229,2.75,95.0,62,0
+Arm D (NN Adaptive-q),134139.2,99.6083,6817.3297,388,7680184.4,0.716604,37.91,95.0,0,0
+Arm D_simple (Ridge Adaptive-q),105844.7,99.6909,6941.2342,397,7898101.5,0.722336,39.36,95.0,0,0
+Arm E (Perfect Foresight),0.0,100.0,5440.9434,330,2778295.5,0.683264,43.63,95.0,0,0

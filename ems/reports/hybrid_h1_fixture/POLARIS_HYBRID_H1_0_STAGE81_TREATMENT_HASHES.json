@@ -1,0 +1,11 @@
+{
+  "execution_timestamp": "2026-09-20T07:55:00.600988+00:00",
+  "treatment_policy_id": "POLARIS_STAGE8_1_H10_ML_FORECAST_TREATMENT",
+  "stage81_prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+  "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+  "initial_state_sha256": "e5883089fd82ea51d8fcbd66f0864569452eb857720bcfb5c4d8b13d787cdcd7",
+  "raw_treatment_telemetry_csv_sha256": "3d514b6ef45b63dcafaf7077497142c240e9cdd8a76cb37c295973ea16805546",
+  "treatment_manifest_json_sha256": "61dafd11a2a185472a38d453c271c167edd7b49d16e3673fb600c6414b8511c3",
+  "treatment_report_md_sha256": "36b5a3980d7f4203f9704efda93232a7c55fbeab0f1680611380b56998869082",
+  "treatment_provenance_json_sha256": "6367758f9815a0f22620166fb5a20f62f50b617ab1d6e7a839af448dd4624548"
+}

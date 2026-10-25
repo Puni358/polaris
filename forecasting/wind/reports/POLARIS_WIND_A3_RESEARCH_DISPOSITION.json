@@ -1,0 +1,84 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_A3_RESEARCH_DISPOSITION",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A3_3_RESEARCH_DISPOSITION_AND_GAP_ANALYSIS",
+    "task_type": "READ_ONLY_RESEARCH_DISPOSITION_AND_GAP_ANALYSIS",
+    "authorization_status": "AUTHORIZED_PHASE_A3_3_READ_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "A3_STATUS": "CLOSED",
+    "A3_3_STATUS": "COMPLETE",
+    "CURRENT_EVIDENCE_STATUS": "SCIENTIFICALLY_REVIEWED_AND_FROZEN",
+    "RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "CHAMPION_STATUS": "A2_RESEARCH_CHAMPION_RETAINED",
+    "A3_NEW_CHAMPION": "NOT_ESTABLISHED",
+    "TEST_MAE_ARX_MS": 2.0364,
+    "TEST_MAE_ELASTICNET_MS": 2.0081,
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "BLOCKING_DEPENDENCY": "WIND_ASSET_IDENTITY_AND_POWER_CURVE_TELEMETRY_ABSENT",
+    "NEXT_GOVERNED_STEP": "NOT_ESTABLISHED",
+    "NEXT_STEP_RATIONALE": "No internal wind-track execution step can be uniquely justified without external data acquisition. Additional wind-speed model tuning is unpromising (A3 candidates failed 2% margin); site-transfer qualification was completed in A1.6 (blocked by missing Nuolja wind sensors); asset power mapping was completed in final qualification (blocked by zero turbines/telemetry); wind generation forecasting is blocked by missing power curves."
+  },
+  "established_capabilities": [
+    "Causal 24-hour receding horizon wind-speed forecasting at SMHI Abisko Aut 188790 10m proxy station.",
+    "Frozen A2 AR-X Ridge model achieves 2.0364 m/s held-out test MAE (30.58% improvement over persistence).",
+    "The evaluated ML formulations substantially reduced the observed bias relative to the raw NWP configuration under this test setup (>89% reduction).",
+    "Option B metadata transport architecture frozen for wind speed representation in ForecastBundle.metadata['wind_speed_forecast']."
+  ],
+  "remaining_scientific_gaps": {
+    "direct_nuolja_wind_measurements": "NOT_ESTABLISHED",
+    "abisko_nuolja_site_transfer_validation": "CONDITIONALLY_ESTABLISHED",
+    "altitude_vertical_transfer_method": "NOT_ESTABLISHED",
+    "wind_turbine_asset_identity": "NOT_ESTABLISHED",
+    "turbine_specifications": "NOT_ESTABLISHED",
+    "hub_height": "NOT_ESTABLISHED",
+    "rated_power": "NOT_ESTABLISHED",
+    "power_curve": "NOT_ESTABLISHED",
+    "measured_wind_generation": "NOT_ESTABLISHED",
+    "wind_speed_to_site_specific_generation_mapping": "INSUFFICIENT",
+    "wind_generation_forecasting_capability": "NOT_ESTABLISHED"
+  },
+  "dependency_chain_analysis": {
+    "step_1_wind_speed_forecasting": "ESTABLISHED (A2 AR-X MAE 2.0364 m/s at Abisko 10m proxy)",
+    "step_2_site_target_transfer": "CONDITIONALLY_ESTABLISHED (Proxy only; vertical 309.8m offset unscaled; no Nuolja wind sensors)",
+    "step_3_wind_asset_power_representation": "NOT_ESTABLISHED (Zero turbine identity, specs, hub height, or power curve in repo/SITES)",
+    "step_4_site_specific_speed_to_power_mapping": "INSUFFICIENT (Blocked by Step 2 & Step 3)",
+    "step_5_wind_generation_forecasting": "NOT_ESTABLISHED (Blocked by Step 4)",
+    "step_6_forecastbundle_ems_integration": "NOT_AUTHORIZED (Blocked by Step 5)"
+  },
+  "disposition_evaluations": {
+    "option_a_additional_wind_speed_research": "REJECTED (A3 benchmark executed 16 runs across 6 candidates; best candidate AR-ElasticNet MAE 2.0081 m/s failed pre-registered 2.0% margin; budget exhausted)",
+    "option_b_targeted_site_transfer_qualification": "REJECTED_AS_DUPLICATE (Completed in Phase A1.6; proxy supported, but empirical transfer validation is blocked by missing wind sensors at Mount Nuolja AWS)",
+    "option_c_wind_generation_asset_qualification": "REJECTED_AS_DUPLICATE (Completed in final qualification; established WIND_GENERATION_MAPPING_DECISION = C due to absent turbine assets)",
+    "option_d_wind_generation_forecasting_research": "REJECTED (Blocked by complete absence of power curves, turbine specs, and electrical generation telemetry)",
+    "next_governed_step_decision": "NOT_ESTABLISHED (No internal execution step justified; requires explicit external governance/data acquisition decision before any subsequent step)"
+  },
+  "firewall_state": {
+    "AUTHORIZED_BOUNDARIES": [
+      "Phase A3.3 read-only research disposition and gap analysis",
+      "Documentation of A3 established evidence vs remaining scientific gaps",
+      "Retention of frozen A2 AR-X as research champion for Abisko 10m proxy wind speed series"
+    ],
+    "NOT_AUTHORIZED_BOUNDARIES": [
+      "Additional wind-model experiments or tuning",
+      "New wind-model training or inference",
+      "Site-transfer implementation or altitude correction scaling",
+      "Wind-generation mapping or power curve implementation",
+      "Wind-generation forecasting execution",
+      "ForecastBundle.wind_generation integration",
+      "EMS / MPC / Digital Twin integration",
+      "Production deployment or source code modification"
+    ],
+    "SOURCE_CODE_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-09-13T07:56:00+00:00",
+  "stage": "POLARIS STAGE 8.15A \u2014 LOCAL/UPWIND CLOUD OBSERVATION FEASIBILITY AUDIT",
+  "status": "CLOSED \u2014 PERMANENT RESEARCH CHECKPOINT RECORDED",
+  "stage_8_15b_authorized": false,
+  "stage_8_15b_conclusion": "Stage 8.15B NOT JUSTIFIED.",
+  "scientific_conclusion_statement": "Stage 8.15A did not identify a local/upwind observational source that simultaneously satisfied the required causal availability, 2024 coverage, spatial/terrain representativeness, information novelty, and operational reproducibility conditions. Therefore Stage 8.15B was not justified.",
+  "governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0,
+    "model_changes": 0,
+    "odd_target_access": 0,
+    "odd_evaluation": 0,
+    "experiments_executed": 0,
+    "polaris_master_handoff_modified": false
+  },
+  "future_ai_firewall_rules": [
+    "DO NOT RECOMMEND ANY STAGE 8.15A ROUTE LISTED AS A NEW IDEA. THESE ROUTES HAVE ALREADY BEEN INVESTIGATED AND THEIR STATUS/REJECTION REASONS ARE PART OF THE POLARIS RESEARCH STATE.",
+    "For PPS-CMIC specifically: DO NOT reopen PPS-CMIC merely because it appears in external research recommendations. Reopening requires a materially different and independently verified product identifier/access pathway plus empirical 2024 coverage and causal publication evidence.",
+    "For OCA 0617: DO NOT recommend OCA CDR 0617 for the 2024 benchmark; its verified record ends in 2019.",
+    "For VIIRS: DO NOT treat acquisition time as equivalent to operational availability. Any reopening requires verified publication/availability timestamps satisfying the locked t0 causality rule.",
+    "For local/nearby instruments: DO NOT infer representativeness from geographic proximity alone. Spatial distance, terrain separation, observing geometry, and actual cloud-regime representativeness must be demonstrated."
+  ],
+  "investigated_routes_summary": {
+    "A1_Nuolja_Summit_Sky_Camera": {
+      "status": "REJECTED \u2014 DATA NON-EXISTENCE",
+      "reason": "No continuous calibrated 2024 all-sky camera archive."
+    },
+    "A2_Abisko_ANS_Sky_Camera": {
+      "status": "REJECTED \u2014 PRODUCT MISMATCH",
+      "reason": "Fixed-angle landscape/phenology camera, not a calibrated sky imager."
+    },
+    "A3_Nuolja_Radiation_Logger_Context": {
+      "status": "NOT NOVEL",
+      "reason": "Relevant radiation persistence/variance information is already represented in Stage 8.1."
+    },
+    "B1_Nuolja_Summit_Ceilometer": {
+      "status": "REJECTED \u2014 NON-EXISTENT",
+      "reason": "No 2024 summit ceilometer."
+    },
+    "B2_Abisko_ANS_Ceilometer": {
+      "status": "REJECTED \u2014 INSUFFICIENT COVERAGE",
+      "reason": "Campaign/episodic rather than continuous sufficient 2024 machine-readable coverage."
+    },
+    "B3_Kiruna_METAR_Ceilometer": {
+      "status": "REJECTED \u2014 SPATIAL/TERRAIN MISMATCH",
+      "reason": "Approximately 88.4 km separation and Scandes terrain/air-mass mismatch."
+    },
+    "B4_Regional_Ceilometer_Network": {
+      "status": "REJECTED \u2014 SPATIAL/TERRAIN MISMATCH",
+      "reason": "Relevant candidate stations are too distant and/or separated by major terrain barriers."
+    },
+    "C1_Abisko_ANS_Surface_Radiation": {
+      "status": "REJECTED",
+      "reason": "Already experimentally evaluated in Stage 8.3 and degraded performance (+0.63 W/m2 MAE)."
+    },
+    "C2_Riksgransen_Upwind_Weather_Station": {
+      "status": "NOT NOVEL / REDUNDANT",
+      "reason": "Surface T/RH information is substantially represented by existing MEPS RH/state information."
+    },
+    "C3_Bodo_Radiosonde": {
+      "status": "REJECTED",
+      "reason": "Low cadence (12h) and large spatial/maritime separation (220 km); unsuitable for locked hourly benchmark."
+    },
+    "D1_EUMETSAT_NWC_SAF_PPS_CMIC": {
+      "status": "CONDITIONAL / BLOCKED",
+      "reason": "Live EUMETSAT Data Store route unverified (EO:EUM:DAT:MULT:PPS-CMIC returned HTTP 404, 0/188 live collections); public THREDDS optical coverage (70.11%) below >=90% gate; 27 swaths lack verified publication timestamps; polar-night optical fill values."
+    },
+    "D2_EUMETSAT_OCA_CDR_0617": {
+      "status": "REJECTED \u2014 TEMPORAL CUTOFF",
+      "reason": "Coverage ends 2019-08-31 and cannot support locked 2024 benchmark."
+    },
+    "D3_NASA_VIIRS_Science_L2": {
+      "status": "BLOCKED \u2014 OPERATIONALLY NON-CAUSAL",
+      "reason": "Standard science-product publication latency (3-8h) occurs after required t0."
+    },
+    "D4_NASA_VIIRS_NRT_L2": {
+      "status": "BLOCKED \u2014 OPERATIONALLY NON-CAUSAL",
+      "reason": "Latency (1-3h) remains non-causal for near-t0 passes and no reconstructable 2024 archive."
+    },
+    "D5_Meteosat_SEVIRI_MTG_Geostationary": {
+      "status": "REJECTED",
+      "reason": "Extreme high-latitude viewing geometry (zenith angle 76.54 deg), parallax (20.9 km), and representativeness limitations."
+    },
+    "D6_NORDRAD_Radar_Composite": {
+      "status": "REJECTED",
+      "reason": "Radar geometry/terrain limitations (beam overshooting >2000m ASL) and mismatch with non-precipitating cloud attenuation."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "benchmark_origins": 347,
+  "causal_reference_time_policy": "forecast_reference_time < t0 (D-1 18Z)",
+  "verified_runs_found": "347/347 (100.0%)",
+  "causal_violations": 0,
+  "causality_verdict": "PASS"
+}

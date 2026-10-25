@@ -1,0 +1,58 @@
+{
+  "policy_name": "L2_EXP_08_ADAPTIVE_RISK_BUDGET_V1",
+  "experiment_id": "L2-EXP-08",
+  "status": "PRE_REGISTRATION_LOCKED",
+  "locking_timestamp_utc": "2026-10-04T06:17:00Z",
+  "pre_registration_locked": true,
+  "governance": {
+    "research_only": true,
+    "production_change_authorized": false,
+    "two_thousand_twenty_four_used_for_tuning": false,
+    "two_thousand_twenty_four_purpose": "STRICTLY_HELD_OUT_OPERATIONAL_REPLAY"
+  },
+  "provenance_data_source": {
+    "dataset": "CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+    "split": "VALIDATION_2022",
+    "rows": 6935,
+    "daytime_rows": 5268,
+    "notes": "All normalization thresholds and horizon parameters derived exclusively from 2022 validation distribution."
+  },
+  "mathematical_specification": {
+    "planning_formula": "planning_solar_w = min(F_w, (1.0 - lambda_t) * F_w + lambda_t * q10_w)",
+    "lambda_decomposition": "lambda_t = lambda_uncert * gamma_horizon * gate_operational",
+    "uncertainty_component": {
+      "metric": "rel_width = (upper_sw_in - lower_sw_in) / max(clearsky_ghi, 25.0)",
+      "formula": "lambda_uncert = clip((rel_width - w_min) / (w_max - w_min), 0.0, 1.0)",
+      "parameters": {
+        "w_min": 0.15,
+        "w_max": 0.75,
+        "clearsky_floor_wm2": 25.0
+      },
+      "derivation_rationale": "Derived from 2022 validation daytime relative interval width distribution where 20th percentile is ~0.18 and 80th percentile is ~0.71."
+    },
+    "horizon_component": {
+      "formula": "gamma_horizon = min(1.0, h_min_weight + (1.0 - h_min_weight) * (horizon_hour - 1) / (h_saturation - 1))",
+      "parameters": {
+        "h_min_weight": 0.25,
+        "h_saturation": 12
+      },
+      "derivation_rationale": "On 2022 validation data, MAE at h=1 is 5.48 W/m2, rising to 64.88 W/m2 by h=12. Near-term forecasts have high sensor persistence and can tolerate lower conservatism."
+    },
+    "operational_relevance_gate": {
+      "formula": "gate_operational = clip((critical_demand_w - wind_generation_w) / max(critical_demand_w, 1.0), 0.0, 1.0)",
+      "derivation_rationale": "When anticipated wind generation covers 100% of critical load, solar uncertainty cannot cause an unserved energy deficit in that hour, so conservatism is deactivated to avoid burning diesel."
+    },
+    "ordering_and_boundary_rules": {
+      "monotonicity": "d(lambda)/d(rel_width) >= 0; d(lambda)/d(horizon) >= 0; d(lambda)/d(wind) <= 0",
+      "ordering_handling": "If q10_w > F_w, planning_solar_w = F_w (never inflates above point forecast)",
+      "interval_bounds": "q10_w <= planning_solar_w <= F_w when q10_w <= F_w",
+      "night_rule": "If solar_elevation <= 0 or clearsky_ghi == 0, planning_solar_w = 0.0"
+    }
+  },
+  "comparison_arms": {
+    "arm_a": "ARM_A_POINT_CONTROL (Candidate F point forecast)",
+    "arm_b": "ARM_B_STATIC_Q10 (Static calibrated q10 lower bound from L2-EXP-07)",
+    "arm_c": "ARM_C_ADAPTIVE_RISK (Adaptive risk-budget rule using lambda_t)",
+    "arm_d": "ARM_D_PERFECT_FORESIGHT (Actual 2024 solar diagnostic reference)"
+  }
+}

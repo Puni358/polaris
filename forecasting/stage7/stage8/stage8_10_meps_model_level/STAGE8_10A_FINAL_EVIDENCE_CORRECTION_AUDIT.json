@@ -1,0 +1,50 @@
+{
+  "audit_stage": "STAGE 8.10A FINAL FORENSIC EVIDENCE AND CLAIM AUDIT",
+  "timestamp": "2026-09-12T17:48:00Z",
+  "audit_objective": "Audit evidence integrity of Stage 8.10A artifacts before master-handoff closure",
+  "decision_verdict": "CONDITIONAL",
+  "stage8_10b_justified": false,
+  "decision_semantics_explanation": "CONDITIONAL refers to the existence of an alternative D-1 00Z model-level archive that is causally available but operationally misaligned with the locked Stage 8.1 lead-time protocol (+25h..+48h vs +7h..+30h). Stage 8.10B is NOT JUSTIFIED under the locked POLARIS protocol.",
+  "corrections": [
+    {
+      "claim_id": "C1_RADIATIVE_TRANSFER_NUMERICAL_CLAIM",
+      "target_file": "STAGE8_10A_FEASIBILITY_REPORT.md / STAGE8_10A_INFORMATION_NOVELTY.md",
+      "previous_wording": "Shifting a cloud layer vertically changes surface shortwave GHI by <1.5%",
+      "evidence_status": "UNSUPPORTED NUMERICAL CLAIM (Qualitative physical intuition presented without a reproducible 1D radiative transfer simulation or paper citation)",
+      "corrected_wording": "Vertical condensate profile shape represents potentially novel information relative to total-column LWP/IWP, but Stage 8.10A did not demonstrate that this information is predictively irrelevant to SW_IN. The route remains experimentally untested because the required causally aligned D-1 18Z model-level archive is unavailable.",
+      "reason": "Removed uncalculated numerical claim (<1.5%) and replaced with conservative, scientifically defensible wording."
+    },
+    {
+      "claim_id": "C2_OVERLY_BROAD_REDUNDANCY_CLAIM",
+      "target_file": "STAGE8_10A_FEASIBILITY_REPORT.md / STAGE8_10A_INFORMATION_NOVELTY.md",
+      "previous_wording": "surface GHI is overwhelmingly governed by total column optical depth, making vertical profile shape redundant",
+      "evidence_status": "OVERLY BROAD CLAIM BOUNDARY",
+      "corrected_wording": "Stage 8.10A does NOT establish that vertical cloud structure has no predictive value or is physically redundant. The audit establishes only that the intended causally aligned D-1 18Z model-level archive has 0/347 empirical coverage, and the alternative D-1 00Z archive introduces a severe 18-hour lead-time penalty.",
+      "reason": "Restricted claim boundary strictly to dataset availability and lead-time alignment rather than asserting physical irrelevance."
+    },
+    {
+      "claim_id": "C3_FILE_COUNT_AND_STORAGE_ESTIMATE",
+      "target_file": "STAGE8_10A_FEASIBILITY_REPORT.md",
+      "previous_wording": "347 origins x 48 lead-time steps = 16,656 files, >1.46 TB extraction burden presented as measured values",
+      "evidence_status": "THEORETICAL DERIVATION / CATALOG PATTERN ESTIMATE",
+      "corrected_wording": "347 origins x 48 hourly forecast steps = 16,656 expected step files based on MET Norway THREDDS URL/catalog patterns. The total storage volume of >1.46 TB is an estimated theoretical calculation (347 daily runs x 65 levels x 2 variables x grid size approx 4.2 GB per run), not a direct local disk measurement.",
+      "reason": "Explicitly distinguished catalog URL pattern expectations and theoretical volume estimates from local empirical disk measurements."
+    },
+    {
+      "claim_id": "C4_EXPLICIT_SCIENTIFIC_CONCLUSION",
+      "target_file": "STAGE8_10A_FEASIBILITY_REPORT.md / STAGE8_10A_DECISION.json",
+      "previous_wording": "NO -- True MEPS model-level cloud condensate is NOT operationally available...",
+      "evidence_status": "REFINED SCIENTIFIC BOUNDARY",
+      "corrected_wording": "True MEPS model-level cloud condensate was not demonstrated to be usable for a Stage 8.10B experiment under the locked POLARIS causal-availability and lead-time protocol because the intended D-1 18Z model-level archive has 0/347 empirical coverage. The alternative D-1 00Z archive is available but changes the information set through a materially longer forecast lead time and therefore does not constitute a clean continuation of the locked benchmark.",
+      "reason": "Adopted the exact required safe scientific conclusion."
+    }
+  ],
+  "firewall_integrity_verification": {
+    "odd_target_reads": 0,
+    "odd_predictions": 0,
+    "odd_metrics": 0,
+    "odd_tuning": 0,
+    "stage8_1_champion_unchanged": true,
+    "master_handoff_modified": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "experiment_id": "POLARIS_STAGE81_ROLLING_HORIZON_V2",
+  "audit_type": "PHASE_0_CAUSAL_FORECAST_AVAILABILITY_GATE",
+  "prediction_artifact_path": "stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv",
+  "prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+  "fixture_directory": "POLARIS_HYBRID_FIXTURE_H1_0/",
+  "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+  "optimizer_implementation": "system/optimization/implementations/milp.py",
+  "optimizer_milp_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+  "simulator_implementation": "system/simulation/simulator.py",
+  "causal_availability_gate_status": "FAIL_BLOCKED",
+  "candidate_a_status": "CANDIDATE_A_BLOCKED_INSUFFICIENT_CAUSAL_FORECAST_DATA"
+}

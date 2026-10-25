@@ -1,0 +1,18 @@
+FIELD,VALUE
+DECISION_ID,GAP19
+DECISION_TITLE,POLARIS EMS Lexicographic Solver Architecture Selection
+DECISION_QUESTION,Which solver architecture should POLARIS authorize for implementation of the approved four-stage lexicographic EMS objective?
+OPTION_A_DESCRIPTION,Sequential MILP lexicographic implementation using current SciPy/HiGHS stack
+OPTION_B_DESCRIPTION,Solver-native multi-objective implementation requiring an API/solver path exposing required objective-priority semantics
+OPTION_C_DESCRIPTION,Weighted scalarization / penalty architecture (status: engineering-risk reference only)
+HUMAN_SELECTION_OPTION_A,[ ] Option A
+HUMAN_SELECTION_OPTION_B,[ ] Option B
+HUMAN_SELECTION_OPTION_C,[ ] Option C / Other governance-authorized decision
+DECISION_MAKER,__________________
+DECISION_DATE,__________________
+RATIONALE,__________________
+DECISION_CONDITIONS,__________________
+REQUIRED_DEPENDENCIES,__________________
+IMPLEMENTATION_AUTHORIZATION,[ ] NOT GRANTED (Requires separate Implementation Authorization Review)
+VALIDATION_AUTHORIZATION,[ ] NOT GRANTED (Requires separate Validation Authorization Review)
+NOTES,__________________

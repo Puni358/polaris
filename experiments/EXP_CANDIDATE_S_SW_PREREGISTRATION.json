@@ -1,0 +1,73 @@
+{
+  "experiment_id": "EXP-CANDIDATE-S-SW-DIESEL-REDUCTION-2024",
+  "title": "POLARIS Preregistration: Candidate S & SW Closed-Loop Diesel Reduction",
+  "governance_status": "PREREGISTRATION FROZEN — CANDIDATE EXECUTION AUTHORIZED",
+  "date_utc": "2026-10-05T15:53:00Z",
+  "evaluation_dataset": {
+    "origins_count": 123,
+    "origin_indices": "1..123",
+    "total_timesteps": 2952,
+    "synthetic_demand_formula": "max(10000.0, round(15000.0 + 3000.0*cos(h*pi/12), 2))",
+    "synthetic_wind_formula": "max(0.0, round(4500.0 + 5000.0*sin(h*pi/6), 2))",
+    "critical_demand_constant_w": 11600.0,
+    "total_critical_demand_wh": 34243200.0,
+    "total_realized_demand_wh": 44280000.0
+  },
+  "control_baseline": {
+    "arm_id": "Control_Frozen_B",
+    "total_diesel_fuel_liters": 6603.9802,
+    "total_curtailment_wh": 9477704.0,
+    "min_realized_soc_pct": 54.97,
+    "soc_violations_below_20": 0,
+    "dual_accounting": {
+      "critical_first": {
+        "served_critical_wh": 32007222.81,
+        "unmet_critical_wh": 2235977.19,
+        "reliability_pct": 93.470303
+      },
+      "exact_hourly_proportional": {
+        "served_critical_wh": 28659712.84,
+        "unmet_critical_wh": 5583487.16,
+        "reliability_pct": 83.694610
+      },
+      "flat_proportional_approximation_note": "82.284510% is an approximation only, NOT an authorized baseline"
+    }
+  },
+  "acceptance_gates": {
+    "safety_gates": {
+      "gate_1_critical_first": "Delta R_CRITICAL_FIRST >= 0.00 percentage points (baseline: 93.470303%)",
+      "gate_2_proportional": "Delta R_PROPORTIONAL >= 0.00 percentage points (baseline: 83.694610%)",
+      "gate_3_hard_soc": "Zero realized SOC < 20.00% across all 123 origins"
+    },
+    "fuel_gate": {
+      "condition": "Evaluated ONLY if Gates 1, 2, and 3 pass simultaneously",
+      "test": "Paired Wilcoxon signed-rank two-sided p < 0.05 AND BCa 95% CI for mean fuel saving strictly > 0"
+    },
+    "safety_precedence_invariant": "A candidate failing either reliability convention or the SOC gate is rejected regardless of fuel savings."
+  },
+  "verified_hashes": {
+    "telemetry_artifact": {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/hourly_trace_123_frozen_b/hourly_telemetry_123_frozen_b.json",
+      "sha256": "13359f2742a0eecce14dc1c506ce0a933a9a5a441082120f83adf21d8c3f48e5"
+    },
+    "summary_artifact": {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/hourly_trace_123_frozen_b/hourly_telemetry_123_frozen_b_summary.json",
+      "sha256": "46c412837c5713877c42aabb223b7d22be47bca09eeba25472aa675eb009396f"
+    },
+    "reconciliation_report": {
+      "path": "experiments/EXP-CAUSAL-NWP-DIESEL-REDUCTION-2024/FORENSIC_ANALYSIS/hourly_trace_123_frozen_b/HOURLY_BASELINE_RECONCILIATION_REPORT.md",
+      "sha256": "70985bc3ba9e5909fb2ac43fa46feae3a81cc569b65c2a67c334ab40f3f6ce08"
+    },
+    "gap19_solver": {
+      "path": "system/optimization/implementations/gap19_highs_native.py",
+      "sha256": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737"
+    },
+    "causal_nwp_forecaster": {
+      "path": "system/forecasting/implementations/causal_nwp_physics.py",
+      "sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710"
+    }
+  },
+  "production_integrity_verification": "GAP19 solver and Causal NWP forecaster integrity are verified strictly by SHA-256 cryptographic hashes. Git diff is not relied upon because untracked repository artifacts exist.",
+  "production_files_modified": 0,
+  "experiments_executed": 0
+}

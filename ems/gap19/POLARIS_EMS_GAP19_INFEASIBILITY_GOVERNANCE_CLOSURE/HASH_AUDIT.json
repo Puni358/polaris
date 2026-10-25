@@ -1,0 +1,25 @@
+{
+  "protected_sources": {
+    "system/runtime/runner.py": "86aee0b51ba169458aa4cd8bbf678120b43d284144998d9c81e37f5fcaad5efc",
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/schemas/forecast_bundle.py": "98c0347aff21e05694625b6a77a067e094e9407e1d037d429d8f086332ade428",
+    "system/schemas/station_state.py": "f2cb385efdb2fdc95b681c765642660f1e0d06125c545b7464a8ac4a83e9185f",
+    "system/schemas/dispatch_plan.py": "02ff5550a6fd5d67a559cd188f8e7eafaf847b0e6318d9614d30f5df340c517b"
+  },
+  "artifacts": {
+    "ECD_MILP_RELATIONSHIP_AUDIT.md": "dacbc754482e10140fe184ec332b6593c129561c890f54f2a63ea701c4e7971b",
+    "FINAL_GOVERNANCE_CLOSURE_VERDICT.md": "8dfcf0235464faff59d691723ab5a9cbd07564e605496b0f5b8692e8b1e85a88",
+    "GOVERNANCE_DECISION_REGISTER.md": "c7b4be0ca84a459aceff2baefb0c87be64f019248a0b7ed485bd7921430e4e86",
+    "J2_SEMANTICS_CLOSURE_AUDIT.md": "ba1d61384cd6e2cb61c422c010c05aa04c744e187575e2b3f3e45a29d227951a",
+    "MILP_INFEASIBILITY_SEMANTICS_AUDIT.md": "6b986756ee96344718807545fffd3d00ff89ad97228720dda7473288a9a529e5",
+    "OPEN_ENGINEERING_INPUTS.md": "338f72843b2bd1185d3f035286c78bd95560e83cccbc965f02ec45e961d2d248",
+    "OPTION_D_COMPATIBILITY_AUDIT.md": "19e68a0442bbf6c741ea1bdaf509b5f28681b9021f49ed710e5294c2755ae00d",
+    "README.md": "d489ab2db0746f7f233d0dac67846e6fbdd27c3da67751effcd9ba25ec1fe347",
+    "REPORTING_TERMINOLOGY_STANDARD.md": "25cef8d8ac10a085df0093c95b365ed85a6f7a776d3e89f33894b9df95bdb8b4",
+    "RUNTIME_INFEASIBILITY_ARCHITECTURE_AUDIT.md": "e49b33d9b8e1bb574465122799d5dc8976a104d795dfd03864e6befffc292a99",
+    "SOURCE_INTEGRITY_AUDIT.md": "d1312af80ec1a0ac76f7a064c90003a9b8fc0aa2cf8a4b6762c896b752a1ceaa",
+    "S_J2_BOUND_GOVERNANCE_AUDIT.md": "fe6f78544bcd22cc926c2d751e5e30637ac4feb6e81d0c2f3917462ace4dff71"
+  }
+}

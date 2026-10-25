@@ -1,0 +1,13 @@
+Source,Product,Variable,Units,Valid_Range,Fill_Value,Physical_Meaning,Primary_Use,Physical_Meaning_Detailed
+VIIRS,CLDPROP_L2_VIIRS_SNPP,Cloud_Optical_Thickness,dimensionless,0.0 - 150.0,-9999,Total column cloud optical extinction,Direct cloud shading calculation,
+VIIRS,CLDPROP_L2_VIIRS_SNPP,Cloud_Effective_Radius,microns,0.0 - 60.0,-9999,Droplet/ice effective radius,Cloud droplet size parameterization,
+VIIRS,CLDPROP_L2_VIIRS_SNPP,Cloud_Phase_Optical_Properties,flag,"0:Clear, 1:Liquid, 2:Ice, 3:Undet",255,Thermodynamic phase of cloud top,Ice/liquid scattering distinction,
+VIIRS,CLDPROP_L2_VIIRS_SNPP,Cloud_Top_Height,meters,0 - 20000,-9999,Cloud top altitude above MSL,Vertical cloud altitude,
+NWC SAF,NWC_SAF_PPS_CMIC,cot,dimensionless,0.0 - 150.0,255,NWC SAF retrieved cloud optical thickness,Regional satellite cloud opacity,
+NWC SAF,NWC_SAF_PPS_CMIC,lwp,g/m2,0.0 - 2000.0,-9999,Retrieved liquid water path,Liquid cloud mass path,
+NWC SAF,NWC_SAF_PPS_CMIC,iwp,g/m2,0.0 - 2000.0,-9999,Retrieved ice water path,Ice cloud mass path,
+Abisko SITES ANS,SITES_MET_ANS_L2,SW_IN_DIR,W/m2,0.0 - 1200.0,NaN,Direct shortwave solar irradiance at ground,Direct beam clearness & shading anchor,
+Abisko SITES ANS,SITES_MET_ANS_L2,SW_IN_DIFF,W/m2,0.0 - 800.0,NaN,Diffuse shortwave solar irradiance at ground,Diffuse atmospheric scattering anchor,
+Abisko SITES ANS,SITES_MET_ANS_L2,DIR_DIFF_RATIO,ratio,0.0 - 50.0,NaN,Direct-to-diffuse irradiance ratio,Observed cloud extinction indicator,Observed atmospheric clearness index
+CAMS,cams-global-forecasts,aod550,dimensionless,0.0 - 5.0,NaN,Total aerosol optical depth at 550nm,Clear-sky aerosol extinction,
+CAMS,cams-global-forecasts,tcwv,kg/m2,0.0 - 100.0,NaN,Total column water vapor,Infrared & solar water vapor absorption,

@@ -1,0 +1,2 @@
+ITEM,HISTORICAL_STATUS,VERIFIED_CURRENT_STATUS,GOVERNANCE_REASON,ACTION_REQUIRED
+GAP19 Solver Architecture,IMPLEMENTATION_DEFERRED,REQUIRES_GOVERNANCE_DECISION,"No decision has selected Option A, B, or C on behalf of governance",Formal GAP19 Governance Decision Gate required prior to code authorization

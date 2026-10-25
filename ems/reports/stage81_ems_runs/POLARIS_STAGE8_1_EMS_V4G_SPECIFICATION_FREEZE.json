@@ -1,0 +1,150 @@
+{
+  "document_metadata": {
+    "title": "POLARIS Stage 8.1 EMS V4.G Single-Horizon Mechanism Isolation Specification & Parameter Freeze Gate",
+    "schema_version": "1.0.0",
+    "created_at": "2026-09-19T18:11:00Z",
+    "governance_status": "V4G_SPECIFICATION_FREEZE_COMPLETE",
+    "candidate_id": "V4.G_SINGLE_HORIZON_ISOLATED_DISCOUNTING",
+    "classification": "A — SPECIFICATION + PARAMETER FREEZE COMPLETE"
+  },
+  "governance_state": {
+    "v1_status": "ACCEPTED_AND_FROZEN",
+    "v2_status": "ACCEPTED_AND_FROZEN",
+    "v3_status": "VALID_COMPLETED_EXECUTION_AND_FROZEN",
+    "v3_raw_evidence_csv": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv",
+    "v3_raw_evidence_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "v3_mechanism_evidence": "ACCEPTED_WITH_QUALIFICATIONS",
+    "v3_mechanism_branch": "CLOSED",
+    "v4_design_gate": "COMPLETE",
+    "v4g_specification": "FREEZE_ESTABLISHED",
+    "v4g_implementation": "NOT_STARTED",
+    "v4g_execution": "NOT_AUTHORIZED"
+  },
+  "authoritative_v3_handoff": {
+    "governing_interpretation": "V3 mechanism evidence indicates that the Class F improvement is strongly consistent with reduced optimizer sensitivity to later-horizon forecast-dependent operational costs. Individual forecast-horizon contributions were not isolated.",
+    "classification": "B — STRONGLY SUPPORTED BUT NOT FULLY ISOLATED",
+    "known_evidence": {
+      "key_horizon": "h=14 (t=13)",
+      "h14_forecast_bias_w_m2": 19.72,
+      "v3_gamma": 0.95,
+      "v3_w13_weight": 0.513342,
+      "v2_gamma": 1.0,
+      "v2_w13_weight": 1.0,
+      "unresolved_question": "The fact that h=14 has the largest observed bias does NOT establish that h=14 caused the V2 diesel outcome. V4.G exists specifically to test that unresolved question."
+    },
+    "experimental_framing": "SINGLE-HORIZON MECHANISM ISOLATION (NOT a proven remedy, NOT a fix for V2, NOT declared the cause of V2 diesel use)."
+  },
+  "index_semantics": {
+    "mpc_origin_step_k": "k in [0..172] (sequential 1h receding horizon origins)",
+    "milp_decision_timestep_t": "t in [0..23] (0-indexed internal decision timesteps)",
+    "forecast_horizon_h": "h in [1..24] (1-indexed forecast horizon hours, h = t + 1)",
+    "target_mapping": "t = 13 corresponds to h = 14"
+  },
+  "parameter_freeze": {
+    "target_horizon": "h=14",
+    "target_decision_index": 13,
+    "v4_g_weight": 0.5133,
+    "all_other_weights": 1.0,
+    "weight_vector_definition": "w_t = 0.5133 if t == 13 else 1.0",
+    "parameter_provenance": "Inherited directly from frozen V3 Class F weighting at t=13 (0.95^13 = 0.513342...). NOT an empirically optimized parameter.",
+    "tuning_prohibition": "No tuning, no grid search, no result-dependent adjustments."
+  },
+  "objective_scope_and_invariants": {
+    "weighted_terms": [
+      "diesel_marginal_fuel",
+      "diesel_base_running",
+      "diesel_startup",
+      "battery_degradation",
+      "solar_curtailment",
+      "wind_curtailment"
+    ],
+    "unweighted_terms": [
+      "unmet_critical_load_penalty (w_unmet,t = 1.0 for all t)"
+    ],
+    "immutable_components": [
+      "physical_constraints",
+      "battery_limits",
+      "diesel_limits",
+      "renewable_limits",
+      "soc_limits",
+      "power_balance",
+      "solver_configuration",
+      "digital_twin_simulator",
+      "forecast_engine_and_artifacts",
+      "forecast_bundle_schema_1_0_0",
+      "dispatch_plan_schema_1_0_0",
+      "station_state_schema_1_0_0"
+    ]
+  },
+  "source_inspection_audit": [
+    {
+      "file_path": "system/optimization/implementations/milp.py",
+      "component": "LocalMILPEnergyOptimizer",
+      "lines_audited": "95-106",
+      "unweighted_unmet_load_line": 104,
+      "intended_v4g_modification": "Replace line 97 (w_t = gamma ** t) with single-horizon vector logic: w_t = 0.5133 if t == 13 else 1.0"
+    },
+    {
+      "file_path": "system/runtime/runner.py",
+      "component": "PolarisLocalRunner",
+      "lines_audited": "74-79",
+      "intended_v4g_modification": "Pass v4g mode configuration parameters to optimizer config dictionary"
+    }
+  ],
+  "future_3arm_experiment_design": {
+    "origin_population": "N = 173 paired forecast origins",
+    "arm_1_control": {
+      "forecast_engine": "LocalBaselineForecastEngine",
+      "optimizer_gamma": 1.0,
+      "weight_vector": "w_t = 1.0 for all t in [0..23]"
+    },
+    "arm_2_v3_reference": {
+      "forecast_engine": "Stage81ForecastEngine",
+      "optimizer_gamma": 0.95,
+      "weight_vector": "w_t = 0.95^t for all t in [0..23]"
+    },
+    "arm_3_v4_g_candidate": {
+      "forecast_engine": "Stage81ForecastEngine",
+      "optimizer_gamma": "Custom V4.G Vector",
+      "weight_vector": "w_13 = 0.5133, w_t = 1.0 for t != 13"
+    },
+    "primary_endpoint": "Total diesel fuel liters per 24h origin (L/origin)",
+    "secondary_endpoints": [
+      "Diesel Runtime (h/origin)",
+      "Generator Startup Count (count/origin)",
+      "Diesel Energy (kWh/origin)",
+      "Renewable Energy Used (kWh/origin)",
+      "Renewable Curtailment (kWh/origin)",
+      "Battery Discharge Throughput (kWh/origin)",
+      "Unmet Critical Load (kWh/origin)",
+      "Constraint Violations (count)"
+    ]
+  },
+  "mechanism_analysis_plan": {
+    "comparison": "Arm 3 (V4.G) vs Arm 2 (V3 Reference) vs Arm 1 (Control)",
+    "possible_outcomes": {
+      "outcome_a": "V4.G produces a clear isolated operational change matching V3 Class F, confirming h=14 / t=13 is the primary driver.",
+      "outcome_b": "V4.G produces partial fuel savings, showing h=14 / t=13 is material but multi-horizon decay is also required.",
+      "outcome_c": "V4.G produces little/no change relative to Control, weakening the hypothesis that h=14 / t=13 is dominant.",
+      "outcome_d": "V4.G produces unexpected operational/safety degradation, refuting the candidate mechanism."
+    }
+  },
+  "candidate_classification": {
+    "classification": "A — SPECIFICATION + PARAMETER FREEZE COMPLETE",
+    "justification": "Exact intervention, index mapping (t=13 <-> h=14), weight value (w13=0.5133), objective scope, source code insertion point, and 3-Arm comparison protocol are fully specified and demonstrable from current source code inspection."
+  },
+  "integrity_verification": {
+    "v1_unchanged": true,
+    "v2_unchanged": true,
+    "v3_unchanged": true,
+    "v3_raw_csv_unchanged": true,
+    "v3_raw_sha256": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "no_v4g_code_written": true,
+    "no_v4g_execution_performed": true,
+    "no_parameter_tuning_performed": true
+  },
+  "next_governance_gate": {
+    "next_gate": "V4.G IMPLEMENTATION AUTHORIZATION & STATIC IMPLEMENTATION GATE",
+    "action": "Authorize single-point code modification in milp.py and perform static implementation audit before any execution."
+  }
+}

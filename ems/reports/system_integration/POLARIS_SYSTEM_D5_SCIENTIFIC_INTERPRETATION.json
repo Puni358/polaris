@@ -1,0 +1,227 @@
+{
+  "artifact_id": "POLARIS_SYSTEM_D5_SCIENTIFIC_INTERPRETATION_20260917_LOCK_CORRECTED",
+  "timestamp": "2026-09-17T09:10:00+05:30",
+  "governance_state": {
+    "D4": "CLOSED",
+    "D5_CONTRACT": "FROZEN",
+    "D5_IMPLEMENTATION": "COMPLETE",
+    "D5_IMPLEMENTATION_REVIEW": "PASSED",
+    "D5_EXECUTION": "COMPLETED_AS_AUTHORIZED",
+    "D5_EVIDENCE_PROVENANCE": "RECONCILED_AND_LOCK_CORRECTED",
+    "D5_RESULTS": "PRESERVED_UNMODIFIED",
+    "D6": "NOT_INITIATED"
+  },
+  "correction_type": "FINAL_DOCUMENTATION_LEVEL_SCIENTIFIC_INTERPRETATION_LOCK_CORRECTED",
+  "primary_scientific_question": "How does downstream POLARIS EMS operational behavior change as a function of systematic forecast error in solar, wind, and demand when the frozen closed-loop MPC is supplied with perturbed forecasts under identical hidden ground-truth actual trajectories?",
+  "central_scientific_conclusion": "Under the tested conditions, the frozen POLARIS EMS maintained load service despite the specified systematic forecast perturbations, while its economic and resource-dispatch behavior remained materially sensitive to forecast bias. D5 therefore characterizes forecast-to-EMS operational sensitivity rather than forecasting-model accuracy.",
+  "runtime_forecast_provenance": {
+    "chain": [
+      "LocalDataProvider (system/data/provider.py)",
+      "LocalBaselineForecastEngine (system/forecasting/implementations/baseline.py)",
+      "ForecastBundle (system/schemas/forecast_bundle.py)",
+      "ForecastPerturber (system/robustness/perturbation.py)",
+      "LocalMILPEnergyOptimizer (system/optimization/implementations/milp.py)",
+      "DispatchPlan (system/schemas/dispatch_plan.py)",
+      "DigitalTwinSimulator (system/simulation/simulator.py)",
+      "D5MetricsCalculator (system/robustness/metrics.py)"
+    ],
+    "channels": {
+      "solar_irradiance": {
+        "producer": "LocalBaselineForecastEngine",
+        "producer_type": "DETERMINISTIC_BASELINE",
+        "code_path": "system/forecasting/implementations/baseline.py:65-74",
+        "target_variable": "SW_IN (W/m^2)",
+        "Stage8_1_ML_output": false,
+        "is_input_feature": false,
+        "is_observed": false,
+        "is_synthetic": true,
+        "point_of_entry": "ForecastBundle.solar_irradiance"
+      },
+      "solar_generation": {
+        "producer": "LocalBaselineForecastEngine",
+        "producer_type": "DETERMINISTIC_BASELINE",
+        "code_path": "system/forecasting/implementations/baseline.py:31-37,75",
+        "target_variable": "P_solar (W)",
+        "conversion_formula": "P_solar = SW_IN * A_PV * eta_PV * PR",
+        "divisor_1000_in_executable_code": false,
+        "output_unit": "Watts (W)",
+        "Stage8_1_ML_output": false,
+        "is_input_feature": false,
+        "is_observed": false,
+        "is_synthetic": true,
+        "point_of_entry": "ForecastBundle.solar_power"
+      },
+      "wind_generation": {
+        "producer": "LocalBaselineForecastEngine (Heuristic persistence rule)",
+        "producer_type": "HEURISTIC",
+        "code_path": "system/forecasting/implementations/baseline.py:78-79",
+        "target_variable": "P_wind (W)",
+        "Stage8_1_ML_output": false,
+        "is_input_feature": false,
+        "is_observed": false,
+        "is_synthetic": true,
+        "point_of_entry": "ForecastBundle.wind_power"
+      },
+      "demand": {
+        "producer": "LocalBaselineForecastEngine (Heuristic persistence rule)",
+        "producer_type": "HEURISTIC",
+        "code_path": "system/forecasting/implementations/baseline.py:82-83",
+        "target_variable": "P_demand (W)",
+        "Stage8_1_ML_output": false,
+        "is_input_feature": false,
+        "is_observed": false,
+        "is_synthetic": true,
+        "point_of_entry": "ForecastBundle.load_demand"
+      }
+    }
+  },
+  "stage8_1_vs_d5": {
+    "stage8_1_direct_evaluation_in_d5": false,
+    "explicit_statement": "D5 did not directly evaluate the Stage8.1 ML forecasting model.",
+    "target_hierarchy": [
+      "Stage8.1 forecasting target: SW_IN (solar irradiance in W/m^2)",
+      "Physical / PV conversion semantics: P_solar = SW_IN * PV_area * PV_eff * PR (Watts)",
+      "Downstream electrical generation quantity: P_solar (W)",
+      "EMS solar forecast channel: ForecastBundle.solar_power"
+    ],
+    "distinction": "Input feature != prediction target != forecast channel. Injected D5 perturbation != empirical ML model error."
+  },
+  "scenario_classification_matrix": [
+    {
+      "scenario": "D5-1",
+      "perturbed_channel": "Solar (0.70x)",
+      "d5_forecast_source": "LocalBaselineForecastEngine",
+      "stage8_1_ml_output_used": false,
+      "direct_ml_accuracy_evaluation": false,
+      "primary_scientific_purpose": "Solar-channel EMS sensitivity; indirectly relevant to Stage8.1"
+    },
+    {
+      "scenario": "D5-2",
+      "perturbed_channel": "Solar (1.30x)",
+      "d5_forecast_source": "LocalBaselineForecastEngine",
+      "stage8_1_ml_output_used": false,
+      "direct_ml_accuracy_evaluation": false,
+      "primary_scientific_purpose": "Solar-channel EMS sensitivity; indirectly relevant to Stage8.1"
+    },
+    {
+      "scenario": "D5-3",
+      "perturbed_channel": "Wind (0.70x)",
+      "d5_forecast_source": "LocalBaselineForecastEngine (Heuristic)",
+      "stage8_1_ml_output_used": false,
+      "direct_ml_accuracy_evaluation": false,
+      "primary_scientific_purpose": "Wind-channel EMS sensitivity; EMS system-level sensitivity only"
+    },
+    {
+      "scenario": "D5-4",
+      "perturbed_channel": "Demand (1.20x)",
+      "d5_forecast_source": "LocalBaselineForecastEngine (Heuristic)",
+      "stage8_1_ml_output_used": false,
+      "direct_ml_accuracy_evaluation": false,
+      "primary_scientific_purpose": "Demand-channel EMS sensitivity; EMS system-level sensitivity only"
+    },
+    {
+      "scenario": "D5-5",
+      "perturbed_channel": "Solar (1.30x) + Wind (1.30x) + Demand (0.80x)",
+      "d5_forecast_source": "LocalBaselineForecastEngine",
+      "stage8_1_ml_output_used": false,
+      "direct_ml_accuracy_evaluation": false,
+      "primary_scientific_purpose": "Compound EMS sensitivity; EMS system-level compound sensitivity"
+    },
+    {
+      "scenario": "D5-6",
+      "perturbed_channel": "Solar (1.15x) + Wind (1.15x) persistent 168h",
+      "d5_forecast_source": "LocalBaselineForecastEngine",
+      "stage8_1_ml_output_used": false,
+      "direct_ml_accuracy_evaluation": false,
+      "primary_scientific_purpose": "Persistent multi-channel EMS sensitivity; EMS persistent-bias/endurance sensitivity"
+    }
+  ],
+  "preserved_numerical_results": {
+    "D5-1": {
+      "lsf_pct": 100.0,
+      "delta_fuel_l": 2.15,
+      "delta_fuel_pct": 2.50,
+      "delta_curtailment_kwh": -90.11,
+      "delta_curtailment_pct": -61.16,
+      "min_max_soc_pct": [20.0, 88.03]
+    },
+    "D5-2": {
+      "lsf_pct": 100.0,
+      "delta_fuel_l": -41.90,
+      "delta_fuel_pct": -48.77,
+      "delta_curtailment_kwh": 17.96,
+      "delta_curtailment_pct": 12.19,
+      "min_max_soc_pct": [20.0, 83.30]
+    },
+    "D5-3": {
+      "lsf_pct": 100.0,
+      "delta_fuel_l": 46.04,
+      "delta_fuel_pct": 53.58,
+      "delta_curtailment_kwh": -134.20,
+      "delta_curtailment_pct": -91.09,
+      "min_max_soc_pct": [20.79, 93.10]
+    },
+    "D5-4": {
+      "lsf_pct": 100.0,
+      "delta_fuel_l": 49.81,
+      "delta_fuel_pct": 57.97,
+      "delta_curtailment_kwh": -122.15,
+      "delta_curtailment_pct": -82.91,
+      "min_max_soc_pct": [20.0, 86.29]
+    },
+    "D5-5": {
+      "lsf_pct": 100.0,
+      "delta_fuel_l": -85.92,
+      "delta_fuel_pct": -100.00,
+      "delta_curtailment_kwh": 336.14,
+      "delta_curtailment_pct": 228.16,
+      "min_max_soc_pct": [20.0, 75.46]
+    },
+    "D5-6": {
+      "lsf_pct": 100.0,
+      "delta_fuel_l": -96.66,
+      "delta_fuel_pct": -40.03,
+      "delta_curtailment_kwh": 691.36,
+      "delta_curtailment_pct": 43.91,
+      "min_max_soc_pct": [20.0, 95.00],
+      "steps": 168
+    }
+  },
+  "evidence_hierarchy": {
+    "level_1_directly_demonstrated": [
+      "All six tested scenarios maintained 100% Load-Served Fraction under the specified experimental conditions.",
+      "Forecast perturbations materially change diesel consumption (-100.00% to +57.97%), diesel operating hours, renewable curtailment (-91.09% to +228.16%), and SOC trajectory behavior.",
+      "Solar overprediction (D5-2) reduces diesel fuel by 41.90 L (-48.77%) and increases curtailment by 17.96 kWh (+12.19%).",
+      "Wind underprediction (D5-3) increases diesel fuel by 46.04 L (+53.58%) and reduces curtailment by 134.20 kWh (-91.09%).",
+      "Demand overprediction (D5-4) increases diesel fuel by 49.81 L (+57.97%) and reduces curtailment by 122.15 kWh (-82.91%).",
+      "Compound optimistic perturbation (D5-5) reduces diesel fuel by 85.92 L (-100.00%) and increases curtailment by 336.14 kWh (+228.16%).",
+      "Persistent +15% renewable perturbation (D5-6) reduces 7-day fuel by 96.66 L (-40.03%) and increases curtailment by 691.36 kWh (+43.91%) over 168 closed-loop steps."
+    ],
+    "level_2_reasonable_system_interpretation": [
+      "Under the tested station configuration, hidden actual trajectories, perturbation magnitudes, and durations, the configured resources maintained load service without recorded physical constraint violations.",
+      "The aggregate results are consistent with altered forecast-driven resource scheduling.",
+      "Optimistic forecast bias leads to deferred or reduced diesel commitment, increasing reliance on battery storage.",
+      "Pessimistic forecast bias leads to increased diesel commitment, increasing fuel burn and reducing curtailment."
+    ],
+    "level_3_not_established": [
+      "Stage8.1 empirical model-error distribution or empirical forecast accuracy.",
+      "Stage8.1 model calibration or generalization beyond its benchmark.",
+      "Real-world forecast-error frequency or probability of +/-30% error.",
+      "Global EMS robustness or safety under arbitrary extreme weather.",
+      "Infinite-horizon control stability, universal control stability, or long-term field reliability.",
+      "Field reliability under physical component aging.",
+      "Wind forecasting performance of the solar model.",
+      "Demand forecasting performance."
+    ]
+  },
+  "required_question_answers": {
+    "q1_what_d5_tested": "Controlled systematic forecast perturbations (gamma = 0.70 ... 1.30) across solar, wind, and demand channels and their downstream EMS operational consequences in a closed-loop MPC environment.",
+    "q2_what_d5_observed": "100% Load-Served Fraction across all six tested scenarios, accompanied by material changes in diesel fuel consumption (-100.00% to +57.97%), diesel operating hours, renewable curtailment (-91.09% to +228.16%), and SOC trajectory dynamics.",
+    "q3_did_d5_test_stage8_1_ml_accuracy": "No. D5 did not directly evaluate Stage8.1 ML forecasting accuracy. The D5 runtime used LocalBaselineForecastEngine (a prototype baseline / heuristic forecast engine) and did not ingest Chronos or TimesFM prediction outputs.",
+    "q4_d5_1_d5_2_relationship_to_stage8_1": "They are solar-channel EMS sensitivity experiments that are conceptually relevant to the Stage8.1 solar forecasting problem (modifying the solar channel), but they do NOT evaluate Stage8.1 model accuracy or empirical model error.",
+    "q5_what_are_d5_3_d5_4": "EMS system-level sensitivity experiments for wind and demand forecast channels, evaluating operational sensitivity to non-solar forecast perturbations.",
+    "q6_what_are_d5_5_d5_6": "D5-5 is a compound optimistic forecast perturbation experiment (1.30x / 1.30x / 0.80x). D5-6 is a persistent multi-channel forecast perturbation experiment (1.15x / 1.15x) evaluated over 168 sequential closed-loop MPC steps.",
+    "q7_what_remains_unproven": "Empirical model error distributions, real-world error frequency, field performance under extreme unmodeled weather, global EMS robustness, universal safety, infinite-horizon control stability, wind model accuracy, and demand model accuracy.",
+    "q8_where_does_wind_come_from": "Wind generation (P_wind) is populated in the D5 runtime via a heuristic persistence rule (last_obs_wind + 5000 * sin(...)) in LocalBaselineForecastEngine. It is NOT an output or prediction target of the solar forecasting model."
+  }
+}

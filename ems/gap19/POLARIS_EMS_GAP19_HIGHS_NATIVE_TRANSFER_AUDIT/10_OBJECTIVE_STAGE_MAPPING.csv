@@ -1,0 +1,45 @@
+audit_document,10_OBJECTIVE_STAGE_MAPPING
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,"milp.py lines 107-114, EMS Objective Specification V2"
+generation_mode,READ_ONLY_MAPPING_ANALYSIS
+execution_performed,FALSE
+
+# ============================================================
+# OBJECTIVE STAGE MAPPING
+# Current weighted-sum coefficients → Governed 4-stage lex objectives
+# ============================================================
+
+governed_stage,governed_description,current_coefficient_variables,current_coefficient_formula,transfer_action,transfer_complexity,blocking_item
+Stage_1,Critical Load Reliability — minimize unmet critical load across all 24h,"p_unmet[t] for t=0..23","c[base+9] = unmet_penalty_per_wh * dt (unweighted; gamma forced to 1.0)","Extract p_unmet coefficients into c1 vector only. Set all other c1 entries to zero. After Stage 1 solve: add constraint sum_t(p_unmet[t]*dt) <= z1* to lock.","LOW — direct extraction of existing coefficients","OI-6: confirm temporal weighting policy (unweighted vs discounted)"
+Stage_2,Emergency Battery Reserve — minimize terminal SOC shortfall below reserve target,"NO CURRENT COEFFICIENT — Stage 2 is only represented by min_soc_pct=20% lower bound on E_next[t]","ZERO — not in objective c","NEW TERM REQUIRED: define c2[index_E_next_23] = stage2_shortfall_penalty_per_wh (or add slack variable for shortfall). Alternatively: add Stage 2 as an explicit constraint E_next(23) >= E_EBR_target with epsilon lock from Stage 1.","MODERATE — requires formulation decision and new coefficient or constraint","OI-1: Stage 2 objective must be mathematically specified; OI-2: E_EBR_target value must be defined"
+Stage_3,Diesel/Fuel Minimization — minimize total fuel consumption and startup events,"p_diesel[t] u_diesel[t] v_start[t] for t=0..23","c[base+7] = fuel_cost_per_l * marg_fuel_l_wh * dt * w_t; c[base+13] = fuel_cost_per_l * base_fuel_l_h * dt * w_t; c[base+14] = startup_cost * w_t","Extract p_diesel/u_diesel/v_start coefficients into c3 vector. After Stage 2 lock: solve with c3. After Stage 3 solve: add Stage 3 objective lock.","LOW — direct extraction of existing coefficients","Depends on Stage 2 formulation (OI-1 OI-2)"
+Stage_4,Renewable Utilization — minimize avoidable renewable curtailment,"p_curt_sol[t] p_curt_wind[t] for t=0..23","c[base+2] = curt_penalty_per_wh * dt * w_t; c[base+3] = curt_penalty_per_wh * dt * w_t","Extract p_curt_sol/p_curt_wind coefficients into c4 vector. Solve as final stage after Stages 1-3 locked.","LOW — direct extraction of existing coefficients","Depends on Stages 1-3 all being formulated and locked"
+
+# ============================================================
+# VARIABLES WITH NO GOVERNED STAGE ASSIGNMENT
+# ============================================================
+unassigned_variable,current_coefficient,governance_disposition,notes
+p_sol_used[t],ZERO in c,"Not penalized — correctly used solar contributes to bus-bar balance","No change needed"
+p_wind_used[t],ZERO in c,"Not penalized — correctly used wind contributes to bus-bar balance","No change needed"
+E_next[t] for t=0..22,ZERO in c,"Intermediate battery state — not in objective; constrained by bounds","No change needed for non-terminal timesteps"
+E_next[23],ZERO in c,"Terminal battery energy — currently only floor-bounded by min_soc_pct=20%. Stage 2 objective requires terminal reserve term HERE.","This is the key Stage 2 coefficient location."
+p_served[t],ZERO in c,"Served load — not penalized (maximization of served load is achieved by minimizing p_unmet via C4 equality)","No change needed"
+p_flex[t],ZERO in c,"Flexible load — not directly penalized; scheduled to satisfy C12 equality constraint","No change needed"
+p_chg[t],deg_penalty * dt * w_t,"Battery cycling degradation. Currently in Stage 3 cost domain. Governed spec Stage 3 = diesel/fuel. Battery degradation is not explicitly in the governed 4-stage hierarchy.","GOVERNANCE NOTE: battery degradation cost does not map to any of the 4 governed stages. Either: assign to Stage 3 (included in fuel/operational cost), assign to Stage 4, or create Stage 5. This requires governance clarification."
+p_dis[t],deg_penalty * dt * w_t,"Same governance note as p_chg. Battery discharge degradation.","Same note as p_chg."
+u_chg[t],ZERO in c,"Charge commitment binary — not directly penalized; constrained by C5 C7","No change needed"
+u_dis[t],ZERO in c,"Discharge commitment binary — not directly penalized; constrained by C6 C7","No change needed"
+
+# ============================================================
+# BATTERY DEGRADATION GOVERNANCE NOTE
+# ============================================================
+governance_note_battery_deg,"The current POLARIS milp.py objective includes battery degradation penalties for p_chg and p_dis (deg_penalty_per_wh = 0.00005). The governed EMS Objective V2 defines 4 stages: (1) critical load (2) reserve (3) diesel/fuel (4) renewables. Battery degradation is not explicitly assigned to any stage in the governed specification. This creates a governance ambiguity: should degradation penalties be (a) placed in Stage 3 alongside fuel costs, (b) placed in a new Stage 3.5 or Stage 5, or (c) removed from the lexicographic objective and handled as a soft constraint? This requires a human governance decision before final Stage 3 objective construction."
+
+# ============================================================
+# COMPLETE STAGE COEFFICIENT VECTORS (SCHEMATIC)
+# ============================================================
+stage,non_zero_variable_indices,coefficient_formula,zero_all_others
+c1_Stage1,"[base+9 for base in range(0 15*24 15)]","unmet_penalty_per_wh * dt (unweighted)","all other 336 entries = 0"
+c2_Stage2,"[H*15 - 15 + 6] = index of E_next[23] = 23*15+6 = 351 (TENTATIVE)","terminal_reserve_shortfall_penalty OR handled via epsilon constraint","all other 359 entries = 0 OR Stage 2 as constraint not objective"
+c3_Stage3,"[base+7 base+13 base+14 for base in range(0 15*24 15)]","fuel_cost_per_l*marg_fuel_l_wh*dt*w_t; fuel_cost_per_l*base_fuel_l_h*dt*w_t; startup_cost*w_t","all other entries = 0 (including p_chg p_dis if degradation is excluded from Stage 3)"
+c4_Stage4,"[base+2 base+3 for base in range(0 15*24 15)]","curt_penalty_per_wh*dt*w_t","all other 312 entries = 0"

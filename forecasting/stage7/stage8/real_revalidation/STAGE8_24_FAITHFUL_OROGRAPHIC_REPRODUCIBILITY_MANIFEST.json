@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-09-13T15:22:29.533230+00:00",
+  "experiment_id": "POLARIS_STAGE8_24_FAITHFUL_OROGRAPHIC_GOVERNED_EXPERIMENT",
+  "route_id": "STAGE8.24",
+  "route_name": "Faithful Scandes Orographic Flow-Regime Expansion",
+  "code_files": [
+    "run_stage8_24_faithful_orographic_even_experiment.py",
+    "STAGE8_24_FAITHFUL_OROGRAPHIC_PREREGISTRATION.json",
+    "STAGE8_24_FAITHFUL_OROGRAPHIC_PREREGISTRATION.md"
+  ],
+  "datasets_used": [
+    "POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+    "POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "stage8_1_extracted_features.csv"
+  ],
+  "reproducibility_hashes": {
+    "even_results_json": "daf167aecb4727eaa2f9fd6fed5f140240db7aa1bc479854edda3a723f98d662",
+    "even_results_md": "c5f36cdf6a4700d4c316806f3456b157c2f3842d513ec13075495542270b287c"
+  },
+  "verdict": "REJECTED_BY_EVEN_GATES"
+}

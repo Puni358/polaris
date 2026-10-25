@@ -1,0 +1,219 @@
+{
+  "experiment_id": "EXP-STAGE4-CORRECTED-REPRODUCTION-2025-HOLDOUT",
+  "design_version": "STAGE4-CORRECTED-REPRO-PREREG-v1.0",
+  "date_utc": "2026-10-06",
+  "governance_status": "PREREGISTRATION FROZEN — NOT IMPLEMENTED — NOT EXECUTED",
+  "campaign_run": false,
+  "markdown_companion": {
+    "path": "experiments/EXP_STAGE4_CORRECTED_REPRODUCTION_PREREGISTRATION.md",
+    "sha256": "4f438f466a285d2d230edda168075f883919317922de3a5866dbb7ca5cdac14b"
+  },
+  "reference_hashes": {
+    "original_stage4_freeze_md": {
+      "path": "experiments/STAGE4_2025_SW_LOW_SUN_RESEARCH_FREEZE.md",
+      "sha256": "e73558cfd03acd35fc55d24a055f7ccc6a31d0d973a3cc2e4443a8665ac21cd7"
+    },
+    "original_stage4_freeze_json": {
+      "path": "experiments/STAGE4_2025_SW_LOW_SUN_RESEARCH_FREEZE.json",
+      "sha256": "6b0bb6f7af44ef06731180d50239de222f301fa571c5862d115f7644d3be7b87"
+    },
+    "original_stage4_preregistration_md": {
+      "path": "experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.md",
+      "sha256": "9cb2d5459894be8add07a3bd01595f40ab2485c2a18510765c4d8f0264fe4e46"
+    },
+    "original_stage4_preregistration_json": {
+      "path": "experiments/EXP_STAGE4_SW_LOW_SUN_PREREGISTRATION.json",
+      "sha256": "9a16ccc8c28267331da2816fe0c7c04aeb9afd6f963e49673eb6c3872d892623"
+    },
+    "route_mode_fix_record_md": {
+      "path": "experiments/RESEARCH_HARNESS_ROUTE_MODE_FIX_RECORD.md",
+      "sha256": "0d5c95b3132fec9c21ec12d2129073ed35011893e9af133df431ef3c24b748e0"
+    },
+    "holdout_governance_md": {
+      "path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.md",
+      "sha256": "22e67a16a90ef90fa88b248614a83d853511a33619548272535e05615314d7a7"
+    },
+    "holdout_governance_json": {
+      "path": "experiments/STAGE4_2025_HOLDOUT_GOVERNANCE_RESOLUTION.json",
+      "sha256": "f96fd97c812f44e88455c966c500a3874a99f07b8ae94744759d0fac6b461bf7"
+    }
+  },
+  "corrected_research_files": {
+    "system/research/route_mode_propagation.py": "80456f8776925860ad20c407ec92f3ac78dbd387f4863ea48dc1917490e89376",
+    "system/research/closed_loop_causal_nwp_runner.py": "ef7bbd33ef3d216513b33c535b3ed345a60a412e1f5c90f035237434da047265",
+    "system/research/research_critical_demand_adapter.py": "0601e57c0a0f5f6cb37f463b9d6a35ed23ffa29a6501d2f46902e356c82a6b85",
+    "tests/test_research_route_mode_propagation.py": "4e0afaa8bc31fe54987dbe69f76aa41c75c6983512d2e62cec8c4219627e4298"
+  },
+  "production_boundary_hashes": {
+    "system/optimization/implementations/gap19_highs_native.py": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737",
+    "system/schemas/dispatch_plan.py": "21c0b83e878debf1e7d4c4ee9d472bb17aa84ef545a2f1b9cbb222940fd7fb0b",
+    "system/forecasting/implementations/causal_nwp_physics.py": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "system/control/router.py": "041fc2525acf8f353c15e1fa3aa4853f8fa720b25dfdfea207ca35ca178e338f",
+    "system/simulation/research_realization_executor.py": "c1ab56bf92eab7c1bacb2108b241d97d84f4e935dff9a33fd8f6bd0675b73a6b",
+    "system/schemas/station_state.py": "e763439a6ddecbbadb9287f99258e595ab7f23f0eb9a7377f5a54beb7661df88"
+  },
+  "frozen_research_semantics": {
+    "ebr_formulation": "6h lookahead, eta=0.92, critical load baseline 11.6kW",
+    "low_sun_rule": "15.0 deg strict threshold L_k = 1[e_k < 15.0]",
+    "solar_elevation_ephemeris": "pvlib 0.16.1, Nuolja coordinates, Etc/GMT-1 with frozen 1h offset",
+    "terminal_target_wh": 100000.0,
+    "battery_capacity_wh": 200000.0,
+    "battery_soc_bounds": [20.0, 95.0],
+    "diesel_limits_w": [10000.0, 100000.0],
+    "diesel_consumption_model": {
+      "base_fuel_l_per_h": 5.0,
+      "marginal_fuel_l_per_wh": 0.00025,
+      "startup_fuel_l": 0.0
+    },
+    "simulator_fuel_cap_l": 100.0,
+    "forecast_generation": "causal NWP physics engine, 6 previous_day1 seamless variables, zero ground truth exposure",
+    "demand_wind_generation": "synthetic benchmark curves identical to 2025 holdout",
+    "objective_hierarchy": "Highs lexicographic J1 (critical deficit) -> J2 (reserve shortfall) -> J3 (diesel fuel) -> J4 (wear/curtailment)",
+    "candidate_adapters": "S, SW, S-L, SW-L formulations unchanged",
+    "numerical_residue_threshold_tau_w": 0.055
+  },
+  "holdout_2025": {
+    "origins_count": 123,
+    "start_date": "2025-05-01",
+    "end_date": "2025-08-31",
+    "hours_per_arm": 2952,
+    "total_arm_hours": 14760
+  },
+  "arms": {
+    "Control_Frozen_B": {
+      "renewable_credit": "none",
+      "low_sun_protection": false,
+      "role": "Reference"
+    },
+    "Candidate_S": {
+      "renewable_credit": "solar",
+      "low_sun_protection": false,
+      "role": "Efficiency Reference"
+    },
+    "Candidate_SW": {
+      "renewable_credit": "solar+wind",
+      "low_sun_protection": false,
+      "role": "Unprotected Baseline"
+    },
+    "Candidate_SL": {
+      "renewable_credit": "solar",
+      "low_sun_protection": true,
+      "role": "Efficiency Reference"
+    },
+    "Candidate_SWL": {
+      "renewable_credit": "solar+wind",
+      "low_sun_protection": true,
+      "role": "Primary Decision Candidate"
+    }
+  },
+  "safety_gates": {
+    "gate_1_critical_first": {
+      "formula": "R_CF(candidate) - R_CF(Control B) >= 0.00 pp",
+      "threshold_pp": 0.0
+    },
+    "gate_2_proportional": {
+      "formula": "R_P(candidate) - R_P(Control B) >= 0.00 pp",
+      "threshold_pp": 0.0
+    },
+    "gate_3_soc_floor": {
+      "formula": "min(realized_soc_pct) >= 20.00%",
+      "allowed_violations": 0
+    },
+    "precedence": "safety strictly overrides efficiency"
+  },
+  "statistical_gates": {
+    "diesel_saving": {
+      "wilcoxon_holm_p": 0.05,
+      "bca_95_ci_lower_bound_gt_zero": true,
+      "resamples": 10000,
+      "seed": 42
+    },
+    "target_40pct": {
+      "target_saving_pct": 40.0,
+      "status": "REPORT-ONLY; NOT a safety or statistical gate"
+    }
+  },
+  "old_frozen_stage4_results_baseline": {
+    "Control_Frozen_B": {
+      "fuel_l": 6117.9691,
+      "diesel_saving_pct": 0.0,
+      "critical_first_rel_pct": 93.669482,
+      "delta_cf_pp": 0.0,
+      "proportional_rel_pct": 83.823383,
+      "delta_p_pp": 0.0,
+      "unmet_load_mwh": 5.56,
+      "curtailment_mwh": 6.55,
+      "min_soc_pct": 54.99,
+      "soc_violations": 0,
+      "diesel_on_hours": 589,
+      "diesel_startups": 108,
+      "efc": 79.00
+    },
+    "Candidate_S": {
+      "fuel_l": 4648.3272,
+      "diesel_saving_pct": 24.02,
+      "critical_first_rel_pct": 94.327168,
+      "delta_cf_pp": 0.657686,
+      "proportional_rel_pct": 84.604885,
+      "delta_p_pp": 0.781502,
+      "unmet_load_mwh": 5.42,
+      "curtailment_mwh": 9.94,
+      "min_soc_pct": 20.00,
+      "soc_violations": 0,
+      "diesel_on_hours": 446,
+      "diesel_startups": 101,
+      "efc": 93.97
+    },
+    "Candidate_SW": {
+      "fuel_l": 3885.0225,
+      "diesel_saving_pct": 36.50,
+      "critical_first_rel_pct": 94.090514,
+      "delta_cf_pp": 0.421032,
+      "proportional_rel_pct": 83.467189,
+      "delta_p_pp": -0.356194,
+      "unmet_load_mwh": 6.00,
+      "curtailment_mwh": 9.79,
+      "min_soc_pct": 20.00,
+      "soc_violations": 0,
+      "diesel_on_hours": 368,
+      "diesel_startups": 83,
+      "efc": 94.38
+    },
+    "Candidate_SL": {
+      "fuel_l": 5334.1331,
+      "diesel_saving_pct": 12.81,
+      "critical_first_rel_pct": 94.455173,
+      "delta_cf_pp": 0.785691,
+      "proportional_rel_pct": 85.150455,
+      "delta_p_pp": 1.327072,
+      "unmet_load_mwh": 5.14,
+      "curtailment_mwh": 10.35,
+      "min_soc_pct": 20.00,
+      "soc_violations": 0,
+      "diesel_on_hours": 506,
+      "diesel_startups": 114,
+      "efc": 86.54
+    },
+    "Candidate_SWL": {
+      "fuel_l": 5221.3152,
+      "diesel_saving_pct": 14.66,
+      "critical_first_rel_pct": 94.484413,
+      "delta_cf_pp": 0.814931,
+      "proportional_rel_pct": 85.264223,
+      "delta_p_pp": 1.440840,
+      "unmet_load_mwh": 5.08,
+      "curtailment_mwh": 10.40,
+      "min_soc_pct": 20.00,
+      "soc_violations": 0,
+      "diesel_on_hours": 496,
+      "diesel_startups": 109,
+      "efc": 89.48
+    }
+  },
+  "decision_rules": {
+    "winner_rule": "Highest statistically significant diesel reduction among safety-qualified candidates",
+    "safety_override": "Safety failure strictly overrides efficiency",
+    "production_promotion": "NOT automatically authorized",
+    "supersession_scope": "Corrected results supersede old results strictly for future research decisions; old Stage 4 remains immutable historical evidence"
+  }
+}

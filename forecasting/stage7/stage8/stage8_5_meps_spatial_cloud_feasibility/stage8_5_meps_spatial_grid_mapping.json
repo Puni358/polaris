@@ -1,0 +1,22 @@
+{
+  "target_station": "SITES Nuolja Middle Station",
+  "target_latitude": 68.362074,
+  "target_longitude": 18.738752,
+  "elevation_m": 675,
+  "meps_projection": "Lambert Conformal Conic (Atmospheric_grid_Lambert_Conformal)",
+  "meps_grid_resolution_km": 2.5,
+  "stencils": {
+    "center_pixel": "Nuolja local grid cell (2.5 km x 2.5 km)",
+    "3x3_neighborhood": "8 surrounding cells (7.5 km x 7.5 km box)",
+    "5x5_neighborhood": "24 surrounding cells (12.5 km x 12.5 km box)"
+  },
+  "spatial_feature_formulations": {
+    "upstream_cloud_fraction": "cloud_area_fraction evaluated at upstream cell (x0 - dx, y0 - dy) along opposite 700 hPa wind vector (-U700, -V700)",
+    "downstream_cloud_fraction": "cloud_area_fraction evaluated at downstream cell (x0 + dx, y0 + dy) along 700 hPa wind vector (U700, V700)",
+    "along_wind_cloud_gradient": "(N_downstream - N_upstream) / (2 * ds)",
+    "cross_wind_cloud_gradient": "(N_right - N_left) / (2 * dn) along orthogonal vector (-V700, U700)",
+    "cloud_advection_proxy": "-(U700 * dN/dx + V700 * dN/dy) using 2D spatial finite differences",
+    "cloud_fraction_temporal_tendency": "(N(t0 + H) - N(t0 + H - 1h)) / 1h from MEPS D-1 18Z forecast run"
+  },
+  "causality_verification": "All fields extracted from D-1 18Z forecast run (issued 6 hours prior to t0); 100% causal (t_issuance <= t0)"
+}

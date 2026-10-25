@@ -1,0 +1,131 @@
+{
+  "timestamp_utc": "2026-09-14T13:27:35.214430+00:00",
+  "document_title": "POLARIS LOCAL-SPATIAL 3X3 FINAL REJECTION & ROUTE CLOSURE CHECKPOINT",
+  "route_name": "LOCAL-SPATIAL 3X3 REPRESENTATION ROUTE",
+  "route_status": "CLOSED / REJECTED",
+  "verdict": "VALID + EVEN GATES FAIL \u2014 REJECTED",
+  "verdict_reason": "The single pre-registered horizon-conditional local-spatial 3x3 candidate model failed EVEN promotion gates G1, G2, G3, and G4 despite passing G5 and G6.",
+  "candidate_specification": {
+    "model_name": "PreRegisteredLocalSpatial3x3Model",
+    "trainable_parameters": 15633,
+    "spatial_footprint": "Local 3x3 patch centered at grid [209,548] across 11 AROME channels",
+    "even_origins_count": 173,
+    "even_forecast_rows": 4152,
+    "daytime_even_rows": 2216
+  },
+  "primary_results": {
+    "control_daytime_mae_wm2": 47.451469,
+    "candidate_daytime_mae_wm2": 50.47194,
+    "delta_daytime_mae_wm2": 3.020471,
+    "control_daytime_nmae_pct": 36.8045,
+    "candidate_daytime_nmae_pct": 39.1473,
+    "delta_daytime_nmae_pp": 2.3428,
+    "control_daytime_rmse_wm2": 74.376601,
+    "candidate_daytime_rmse_wm2": 78.069452,
+    "delta_daytime_rmse_wm2": 3.692851,
+    "control_daytime_bias_wm2": -8.863007,
+    "candidate_daytime_bias_wm2": -8.460377,
+    "control_24h_mae_wm2": 25.639318,
+    "candidate_24h_mae_wm2": 27.251399,
+    "control_24h_rmse_wm2": 54.369219,
+    "candidate_24h_rmse_wm2": 57.065529,
+    "night_mae_wm2": 0.672516
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "control_daytime_mae": 51.357263,
+      "candidate_daytime_mae": 51.212555,
+      "delta": -0.144708,
+      "improved": true
+    },
+    {
+      "fold": 2,
+      "control_daytime_mae": 40.240493,
+      "candidate_daytime_mae": 45.383297,
+      "delta": 5.142804,
+      "improved": false
+    },
+    {
+      "fold": 3,
+      "control_daytime_mae": 48.35121,
+      "candidate_daytime_mae": 54.618599,
+      "delta": 6.267389,
+      "improved": false
+    },
+    {
+      "fold": 4,
+      "control_daytime_mae": 52.923952,
+      "candidate_daytime_mae": 57.312267,
+      "delta": 4.388315,
+      "improved": false
+    },
+    {
+      "fold": 5,
+      "control_daytime_mae": 44.393157,
+      "candidate_daytime_mae": 43.80172,
+      "delta": -0.591438,
+      "improved": true
+    }
+  ],
+  "folds_improved": "2/5",
+  "gate_results": {
+    "G1_aggregate_daytime_delta_mae": {
+      "requirement": "\u0394MAE <= -0.50 W/m\u00b2",
+      "result": "+3.020471 W/m\u00b2",
+      "status": "FAIL"
+    },
+    "G2_folds_improved": {
+      "requirement": ">= 4/5 folds improved",
+      "result": "2/5 folds improved",
+      "status": "FAIL"
+    },
+    "G3_max_fold_degradation": {
+      "requirement": "Max fold deg <= +0.50 W/m\u00b2",
+      "result": "+6.267389 W/m\u00b2",
+      "status": "FAIL"
+    },
+    "G4_nmae_and_rmse": {
+      "requirement": "nMAE <= 36.8045% & RMSE <= 74.3766",
+      "result": "nMAE=39.1473%, RMSE=78.069452",
+      "status": "FAIL"
+    },
+    "G5_causal_compliance": {
+      "requirement": "Causal / shape / parser pass",
+      "result": "0 defects",
+      "status": "PASS"
+    },
+    "G6_control_verification": {
+      "requirement": "Control CSV SHA256 verified",
+      "result": "Verified b4cafe...",
+      "status": "PASS"
+    },
+    "final_gate_verdict": "VALID + EVEN GATES FAIL \u2014 REJECTED"
+  },
+  "odd_firewall_record": {
+    "odd_evaluated": false,
+    "odd_rows_accessed": false,
+    "odd_origins_sealed": 174,
+    "protected_official_odd_champion_nmae_pct": 28.0688,
+    "champion_unaltered": true
+  },
+  "scientific_interpretation": "The preceding diagnostic audit established that local 3x3 AROME cloud state contains detectable incremental information. However, the single pre-registered forecasting experiment established that this specific 3x3 local-spatial representation and horizon-conditional architecture failed the locked forecasting promotion gates (degrading EVEN daytime MAE by +3.02 W/m\u00b2) and did not translate spatial information into improved SW_IN forecasting. The local-spatial representation route is therefore closed.",
+  "route_closure_prohibitions": [
+    "No model retraining permitted",
+    "No hyperparameter sweeps permitted",
+    "No alternate random seed sweeps permitted",
+    "No architecture modification permitted",
+    "No alternate spatial footprint (5x5, 9x9, 21x21) permitted",
+    "No additional spatial feature engineering permitted",
+    "No ODD evaluation authorized"
+  ],
+  "provenance_hashes": {
+    "candidate_predictions_csv_sha256": "9120ff9eedca48043b34f613043a221ce8c1727ae824ef222dd07ca84f2e0939",
+    "training_execution_script_sha256": "6fc811d07328c35b212393d38f46ae41b3f9959472194138eb86f9a8c859c0f3",
+    "results_json_sha256": "35e6348f02e82689b25c909cfd0e2f756cd5db1c6783833b63d1dd72501fde1a",
+    "results_md_sha256": "3e181fdd7bd098ed86cbf34d34b306eea7b3265ac2fae0f25930be1e2599ea5a",
+    "preregistration_protocol_md_sha256": "e997b9d6a18858095c7dbc350c198ef0546cd8eda313fd946d7f0d19d588f4c5",
+    "preregistration_protocol_json_sha256": "1c0929ffea75490ee23137f5822fc69c806942572b7922e343dcf72d87c8e4fb"
+  },
+  "checkpoint_json_sha256": "6005c75111405f2a6442c55cc50e976aa436b48b6c7b4a82a2cf84b4fd9d5053"
+}

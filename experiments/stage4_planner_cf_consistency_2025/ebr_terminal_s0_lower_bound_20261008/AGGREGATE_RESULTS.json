@@ -1,0 +1,160 @@
+{
+  "verdict": "BLOCKED",
+  "base_certified_lower_bound_l": 1397.8483,
+  "terminal_only_lower_bound_l": 3196.1171,
+  "new_lower_bound_sum_L_valid": 4885.1972061525585,
+  "new_lower_bound_sum_L_tight": 4592.580124954826,
+  "increase_over_terminal_only_l": 1689.0801061525585,
+  "increase_over_terminal_only_pct": 52.84787926426596,
+  "pc_sw_reference_l": 8729.2446,
+  "target_40_pct_l": 6118.1827,
+  "gap_to_40_pct_target_l": 1232.9854938474418,
+  "gap_to_pc_sw_reference_l": 3844.0473938474415,
+  "n_origins": 123,
+  "count_certified_tight": 116,
+  "count_blocked": 7,
+  "blocked_origins": [
+    15,
+    22,
+    40,
+    75,
+    85,
+    96,
+    97
+  ],
+  "n_origin_exceedances_of_pc_sw": 7,
+  "origin_exceedances": [
+    {
+      "origin_id": 15,
+      "dual": 47.16719720345305,
+      "pc_sw_realized_fuel": 39.4593,
+      "exceedance_l": 7.707897203453051
+    },
+    {
+      "origin_id": 22,
+      "dual": 37.50063512559734,
+      "pc_sw_realized_fuel": 35.404399999999995,
+      "exceedance_l": 2.096235125597346
+    },
+    {
+      "origin_id": 40,
+      "dual": 16.21302802203119,
+      "pc_sw_realized_fuel": 15.4209,
+      "exceedance_l": 0.7921280220311893
+    },
+    {
+      "origin_id": 75,
+      "dual": 19.474368207703154,
+      "pc_sw_realized_fuel": 17.9451,
+      "exceedance_l": 1.5292682077031543
+    },
+    {
+      "origin_id": 85,
+      "dual": 33.38560433074707,
+      "pc_sw_realized_fuel": 30.756,
+      "exceedance_l": 2.629604330747071
+    },
+    {
+      "origin_id": 96,
+      "dual": 49.024219467519345,
+      "pc_sw_realized_fuel": 39.5533,
+      "exceedance_l": 9.470919467519344
+    },
+    {
+      "origin_id": 97,
+      "dual": 89.85202884068146,
+      "pc_sw_realized_fuel": 88.74629999999999,
+      "exceedance_l": 1.105728840681465
+    }
+  ],
+  "s_j2_statistics": {
+    "min_wh": 0.0,
+    "max_wh": 0.0,
+    "mean_wh": 0.0,
+    "median_wh": 0.0
+  },
+  "ebr_target_statistics": {
+    "min_wh": 0.0,
+    "max_wh": 66043.7608695652,
+    "mean_wh": 27718.80452456699,
+    "median_wh": 26021.456521739132
+  },
+  "solve_wall_time_total_s": 24.803820610046387,
+  "validation_results": {
+    "gate_all_evaluated": {
+      "pass": true,
+      "n_origins": 123
+    },
+    "gate_valid_duals": {
+      "pass": true,
+      "count_valid": 123
+    },
+    "gate_feasibility": {
+      "pass": true
+    },
+    "gate_ebr_satisfied": {
+      "pass": true
+    },
+    "gate_term_satisfied": {
+      "pass": true
+    },
+    "gate_ge_terminal_only": {
+      "pass": true,
+      "value": 4885.1972061525585,
+      "threshold": 3196.1171
+    },
+    "gate_agg_le_pc_sw": {
+      "pass": true,
+      "value": 4885.1972061525585,
+      "threshold": 8729.2446
+    },
+    "gate_origin_le_pc_sw": {
+      "pass": false,
+      "n_exceedances": 7,
+      "exceedances": [
+        {
+          "origin_id": 15,
+          "dual": 47.16719720345305,
+          "pc_sw_realized_fuel": 39.4593,
+          "exceedance_l": 7.707897203453051
+        },
+        {
+          "origin_id": 22,
+          "dual": 37.50063512559734,
+          "pc_sw_realized_fuel": 35.404399999999995,
+          "exceedance_l": 2.096235125597346
+        },
+        {
+          "origin_id": 40,
+          "dual": 16.21302802203119,
+          "pc_sw_realized_fuel": 15.4209,
+          "exceedance_l": 0.7921280220311893
+        },
+        {
+          "origin_id": 75,
+          "dual": 19.474368207703154,
+          "pc_sw_realized_fuel": 17.9451,
+          "exceedance_l": 1.5292682077031543
+        },
+        {
+          "origin_id": 85,
+          "dual": 33.38560433074707,
+          "pc_sw_realized_fuel": 30.756,
+          "exceedance_l": 2.629604330747071
+        },
+        {
+          "origin_id": 96,
+          "dual": 49.024219467519345,
+          "pc_sw_realized_fuel": 39.5533,
+          "exceedance_l": 9.470919467519344
+        },
+        {
+          "origin_id": 97,
+          "dual": 89.85202884068146,
+          "pc_sw_realized_fuel": 88.74629999999999,
+          "exceedance_l": 1.105728840681465
+        }
+      ]
+    }
+  }
+}

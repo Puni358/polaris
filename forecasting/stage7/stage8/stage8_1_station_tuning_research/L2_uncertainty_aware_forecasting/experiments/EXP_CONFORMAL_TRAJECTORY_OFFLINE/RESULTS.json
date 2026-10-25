@@ -1,0 +1,62 @@
+{
+  "experiment_id": "EXP-CONFORMAL-TRAJECTORY-OFFLINE",
+  "target_station": "Mount Nuolja AWS (ANS_NMS, 702m a.s.l.)",
+  "execution_timestamp": "2026-10-05T02:39:48.480274+00:00",
+  "status": "SUPERSEDED / NOT QUALIFIED FOR STAGE 8.1",
+  "superseding_verdict": "NOT QUALIFIED — FORECASTER MISMATCH",
+  "superseding_audit_reference": "CORRECTION_AUDIT.md",
+  "superseding_notice": "The 99.73% simultaneous coverage on 2025 is over-coverage under forecaster mismatch (2022 Candidate F calibration evaluated against corrected Stage 8.1 predictions). This experiment does NOT establish Stage 8.1 calibration. No GAP19 or EMS integration authorized.",
+  "historical_verdict": "CONFORMAL-TRAJECTORY-SUPPORTED (SUPERSEDED)",
+  "historical_verdict_rationale": "Method C achieved 99.73% simultaneous coverage on untouched 2025 data at nominal 90% (threshold >= 87.0%), and 99.73% at nominal 95% (threshold >= 92.5%). Zero eligible regimes (n>=30) collapsed below 80% (worst regime: JJA at 98.91%). Envelope width ratio vs empirical benchmark is 1.78x (threshold <= 2.0x).",
+  "conformal_calibration_2022": {
+    "N_cal": 365,
+    "calibration_model": "Candidate F (Historical)",
+    "alpha_0.10": {
+      "rank_k": 330,
+      "multiplier_q_cal": 3.4674
+    },
+    "alpha_0.05": {
+      "rank_k": 348,
+      "multiplier_q_cal": 3.7664
+    }
+  },
+  "primary_blind_2025_metrics": {
+    "N_origins": 364,
+    "evaluation_model": "Stage 8.1 Corrected 37-feature",
+    "forecaster_mismatch_with_calibration": true,
+    "simultaneous_coverage_a10": {
+      "Method_A_AR_Variance": 0.5879,
+      "Method_B_Empirical_Quantile": 0.7115,
+      "Method_C_Split_Conformal": 0.9973
+    },
+    "simultaneous_coverage_a05": {
+      "Method_A_AR_Variance": 0.739,
+      "Method_B_Empirical_Quantile": 0.8077,
+      "Method_C_Split_Conformal": 0.9973
+    },
+    "mean_envelope_width_wh_a10": {
+      "Method_A_AR_Variance": 11688.61,
+      "Method_B_Empirical_Quantile": 18305.04,
+      "Method_C_Split_Conformal": 32519.97,
+      "ratio_C_vs_B": 1.78
+    },
+    "subgroup_regimes_summary_C_a10": {
+      "min_simultaneous_coverage_n_ge_30": 0.9891,
+      "worst_regime_label": "season=JJA",
+      "worst_regime_sample_size": 92
+    }
+  },
+  "prior_evidence_2023_metrics": {
+    "N_origins": 273,
+    "evaluation_model": "Candidate F (Historical)",
+    "simultaneous_coverage_a10": {
+      "Method_A_AR_Variance": 0.2784,
+      "Method_B_Empirical_Quantile": 0.4396,
+      "Method_C_Split_Conformal": 0.8205
+    }
+  },
+  "preregistration_verification": {
+    "preregistration_md_sha256": "90d1fe2f7f654ed15536d0eda92a16ef427c9a7d803397a329e8c2f8feea88fa",
+    "preregistration_json_sha256": "6c085d8fb86254e9567286725f42d4b4e96e1768cb9dce8b07b87cd7c7477f31"
+  }
+}

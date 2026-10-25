@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-09-13T06:45:00+00:00",
+  "stage": "POLARIS STAGE 8.14A — RESIDUAL ERROR FORENSICS",
+  "status": "COMPLETED",
+  "governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0,
+    "odd_target_accessed_for_diagnostics": true,
+    "odd_predictions_modified": false,
+    "odd_predictions_generated": false,
+    "model_retrained": false,
+    "hyperparameters_tuned": false,
+    "cross_validation_executed": false,
+    "master_handoff_modified": false
+  },
+  "files_inspected": [
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/POLARIS_STAGE8_1_CHAMPION_MANIFEST.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_results.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_official_odd_predictions.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/run_official_odd_evaluation.py",
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_future_weather_forecasts_2024.csv",
+    "/home/punith-bs/01polaris (Copy)/data/POLARIS_v0_1_clearsky_decomposition.csv",
+    "/home/punith-bs/01polaris (Copy)/stage6/stage6_6_lwp_iwp/lwp_iwp_extracted_features.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage7_5_terrain_horizon/nuolja_terrain_features_2024.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/stage8_1_extracted_features.csv"
+  ],
+  "artifacts_created": [
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14A_RESIDUAL_ERROR_FORENSICS.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14A_RESIDUAL_ERROR_FORENSICS.md",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14A_PROJECT_STATE_AUDIT.json"
+  ]
+}

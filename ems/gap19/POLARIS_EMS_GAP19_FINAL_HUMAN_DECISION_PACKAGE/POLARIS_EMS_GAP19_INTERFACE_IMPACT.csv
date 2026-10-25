@@ -1,0 +1,7 @@
+COMPONENT_NAME,SCHEMA_OR_INTERFACE_CHANGE,OPTION_A_IMPACT,OPTION_B_IMPACT,OPTION_C_IMPACT,CLASSIFICATION,GOVERNANCE_NOTE
+ForecastBundle,ADDITIVE_EXTENSION_REQUIRED,"Add 5-tier demand forecast arrays (P_crit, P_ess, etc.)","Add 5-tier demand forecast arrays (P_crit, P_ess, etc.)","Add 5-tier demand forecast arrays (P_crit, P_ess, etc.)",ESTABLISHED,Preserves Version 1.0.0 single P_load default
+StationState,ADDITIVE_EXTENSION_REQUIRED,Add generator mode states & EBR reserve target fields,Add generator mode states & EBR reserve target fields,Add generator mode states & EBR reserve target fields,ESTABLISHED,Preserves Version 1.0.0 state defaults
+DispatchPlan,ADDITIVE_EXTENSION_REQUIRED,Add diagnostic fields for Stage 1-4 objectives J1*..J4*,Add diagnostic fields for Stage 1-4 objectives J1*..J4*,Add diagnostic fields for scalar penalty objective,ESTABLISHED,Preserves Version 1.0.0 dispatch fields
+LocalMILPEnergyOptimizer,SOLVER_ARCHITECTURE_DEPENDENT,Add 4-pass sequential loop & linear lock constraint generator,Add wrapper adapter interfacing with native multi-objective solver API,Add composite scalar cost vector generator,ARCHITECTURAL_PROPOSAL,Requires implementation specification after selection
+DigitalTwinSimulator,NO_CHANGE,Zero change required,Zero change required,Zero change required,ESTABLISHED,Isolated behind schema truth firewall
+MPC Loop,NO_CHANGE,Zero change required,Zero change required,Zero change required,ESTABLISHED,Consumes DispatchPlan output transparently

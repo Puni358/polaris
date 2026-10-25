@@ -1,0 +1,74 @@
+{
+  "module": "LocalMILPEnergyOptimizer",
+  "source_file": "system/optimization/implementations/milp.py",
+  "governance_status": "LOCKED",
+  "evidence_boundary": "C",
+  "objective_function_formula": "min sum_{t=0}^{H-1} w_t * [ c_curt * (p_curt_sol + p_curt_wind) + c_deg * (p_chg + p_dis) + c_dies_marg * p_diesel + c_dies_base * u_diesel + c_start * v_start ] + c_unmet * p_unmet",
+  "objective_terms": [
+    {
+      "term_name": "p_curt_sol / p_curt_wind",
+      "description": "Renewable energy curtailment penalty",
+      "coefficient_formula": "curt_penalty_per_wh * dt * w_t",
+      "config_source": "optimizer.yaml -> weights.renewable_curtailment_penalty",
+      "value_raw": 0.05,
+      "units": "$/Wh",
+      "scale_per_kwh": 50.0,
+      "scale_per_kwh_units": "$/kWh"
+    },
+    {
+      "term_name": "p_chg / p_dis",
+      "description": "Battery cycling degradation penalty",
+      "coefficient_formula": "deg_penalty_per_wh * dt * w_t",
+      "config_source": "battery.yaml -> deg_penalty_per_wh",
+      "value_raw": 0.00005,
+      "units": "$/Wh",
+      "scale_per_kwh": 0.05,
+      "scale_per_kwh_units": "$/kWh"
+    },
+    {
+      "term_name": "p_diesel",
+      "description": "Diesel generator marginal fuel cost",
+      "coefficient_formula": "fuel_cost_per_l * marg_fuel_l_wh * dt * w_t",
+      "config_source": "diesel.yaml -> fuel_cost_per_l (2.50) * marginal_fuel_consumption_l_per_wh (0.00025)",
+      "value_raw": 0.000625,
+      "units": "$/Wh",
+      "scale_per_kwh": 0.625,
+      "scale_per_kwh_units": "$/kWh"
+    },
+    {
+      "term_name": "u_diesel",
+      "description": "Diesel generator base fuel cost per hour running",
+      "coefficient_formula": "fuel_cost_per_l * base_fuel_l_h * dt * w_t",
+      "config_source": "diesel.yaml -> fuel_cost_per_l (2.50) * base_fuel_consumption_l_per_h (5.0)",
+      "value_raw": 12.5,
+      "units": "$/h",
+      "scale_per_kwh": "N/A (Fixed hourly cost)",
+      "scale_per_kwh_units": "$/hour"
+    },
+    {
+      "term_name": "v_start",
+      "description": "Diesel generator physical startup penalty",
+      "coefficient_formula": "startup_cost * w_t",
+      "config_source": "diesel.yaml -> startup_cost",
+      "value_raw": 15.0,
+      "units": "$/start",
+      "scale_per_kwh": "N/A (Fixed startup cost)",
+      "scale_per_kwh_units": "$/start"
+    },
+    {
+      "term_name": "p_unmet",
+      "description": "Unmet critical load penalty",
+      "coefficient_formula": "unmet_penalty_per_wh * dt",
+      "config_source": "loads.yaml -> critical_load.unmet_penalty_per_wh",
+      "value_raw": 10.0,
+      "units": "$/Wh",
+      "scale_per_kwh": 10000.0,
+      "scale_per_kwh_units": "$/kWh"
+    }
+  ],
+  "unit_audit_result": {
+    "status": "PASS",
+    "dimensional_consistency": "100% CONSISTENT IN CURRENCY PER WH / PER HOUR / PER START",
+    "scaling_bug_found": false
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "audit_id": "POLARIS_BRANCH01_V2_CAUSAL_FORENSIC_AUDIT",
+  "timestamp": "2026-09-21T14:13:01Z",
+  "audit_mode": "READ_ONLY",
+  "authoritative_campaign": "POLARIS_BRANCH01_REMEDIATED_CAMPAIGN_V2",
+  "key_aggregate_metrics": {
+    "control_diesel_generation_kwh": 62126.805,
+    "treatment_diesel_generation_kwh": 95667.521,
+    "diesel_generation_diff_kwh": 33540.716,
+    "control_fuel_consumption_litres": 22486.701,
+    "treatment_fuel_consumption_litres": 33836.88,
+    "fuel_consumption_diff_litres": 11350.179,
+    "control_load_served_kwh": 75480.485,
+    "treatment_load_served_kwh": 106024.238,
+    "load_served_diff_kwh": 30543.753,
+    "control_unmet_load_kwh": 40352.215,
+    "treatment_unmet_load_kwh": 9808.462,
+    "unmet_load_diff_kwh": -30543.753,
+    "mean_trajectory_fuel_diff_litres": 65.608,
+    "median_trajectory_fuel_diff_litres": 66.5836,
+    "positive_diff_trajectories": 160,
+    "negative_diff_trajectories": 13,
+    "tied_trajectories": 0
+  },
+  "causal_classification": "PRIMARY_CAUSE_ESTABLISHED",
+  "primary_mechanism": "MILP Optimizer Trade-Off: Branch01 predicts realistic solar deficits during cloudy periods. The optimizer dispatches diesel generator power to avoid the $10,000/kWh unmet load penalty, reducing unmet load by 30,543.753 kWh while consuming +11,350.179 L more fuel.",
+  "secondary_mechanisms": [
+    "Control GHI forecast optimism: Stage 8.1 GHI overpredicts solar availability during low/cloudy periods, leading Control to undercommit diesel and accept 40,352.215 kWh of unmet load.",
+    "Diesel minimum generation and base running cost economics (5.0 L/h base fuel + 10,000 W min power).",
+    "Battery SOC headroom and charging dynamics under receding-horizon MPC dispatch."
+  ],
+  "final_pillars_status": {
+    "CAMPAIGN_COMPLETENESS": "PASS",
+    "FROZEN_IDENTITY_RECONCILIATION": "PASS",
+    "CONTROL_FORECAST_IDENTITY": "PASS",
+    "TREATMENT_MODEL_IDENTITY": "PASS",
+    "SOLAR_ONLY_INTERVENTION": "PASS",
+    "DEMAND_INHERITANCE": "PASS",
+    "WIND_INHERITANCE": "PASS",
+    "RECEDING_HORIZON_VALIDITY": "PASS",
+    "FORECAST_VECTOR_TRACEABILITY": "PASS",
+    "OPTIMIZER_INPUT_TRACEABILITY": "PASS",
+    "CAUSALITY": "PASS",
+    "TRUTH_FIREWALL": "PASS",
+    "LOAD_SERVICE_ACCOUNTING": "PASS",
+    "ENERGY_ACCOUNTING": "PASS",
+    "BATTERY_ACCOUNTING": "PASS",
+    "FUEL_ACCOUNTING": "PASS",
+    "OBJECTIVE_SEMANTICS": "PASS",
+    "RESULT_RECONCILIATION": "PASS",
+    "RESULT_REPRODUCIBILITY": "PASS",
+    "FROZEN_COMPONENT_IMMUTABILITY": "PASS"
+  },
+  "governance_bounds": {
+    "ANNUAL_RESULT_STATUS": "REPRESENTATIVE_TRAJECTORY_SET",
+    "NUOLJA_STATION_SPECIFIC_ANNUAL_SAVING": "NOT_ESTABLISHED"
+  }
+}

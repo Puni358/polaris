@@ -1,0 +1,945 @@
+{
+  "manifest_id": "POLARIS_23_HORIZON_OFAT_ANALYSIS_RECONCILIATION_MANIFEST",
+  "governance_status": "FORENSIC_RECONCILIATION_COMPLETE",
+  "timestamp_utc": "2026-09-20T09:50:00Z",
+  "execution_boundaries": {
+    "frozen_ofat_evidence_modified": false,
+    "milp_solves_executed": 0,
+    "experiment_rerun": false
+  },
+  "hash_verification": {
+    "POLARIS_23_HORIZON_OFAT_EXECUTION_RAW.csv": {
+      "expected": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "actual": "365b477dd48b66effbeb7c4b3657901a4df0fdd02c74b9ff807ad8f88ae29d0b",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_EXECUTION.json": {
+      "expected": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "actual": "96e24572214e358734cc7657b8b39f7bcf613417295329dceb6807b3c723f34c",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_EXECUTION.md": {
+      "expected": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "actual": "9667c22bde4953c99cecd2d0666cb4ff2930dd3280f8b5c2c37fe995b2884b70",
+      "match": true
+    },
+    "POLARIS_23_HORIZON_OFAT_FORENSIC_FREEZE_AUDIT.json": {
+      "expected": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "actual": "355e0ed8f2125952c5bf07c9eb3ee8e3a3c60c23433869da754aa285ef643c05",
+      "match": true
+    }
+  },
+  "reconciliation_explanation": {
+    "core_cause": "The original execution harness in run_polaris_23_horizon_ofat_experiment.py (line 478) constructed a control baseline vector by accumulating h1_diesel_power/1000*0.25 (averaging 37.1589 per origin) instead of loading v3_class_f_diesel_fuel_liters (averaging 61.1344 L). In line 512, the harness computed diff = treat_fuel - ctrl_fuel, resulting in a +23.81 L harness offset. The new response-surface analysis computed true paired differences relative to V3 control (treat_fuel - v3_fuel). The two sets of numbers are connected by an EXACT linear identity: Harness Value - Harness V3 Value = True Paired Difference relative to V3 Control.",
+    "exact_linear_identity": "Harness_Summary_Value(Arm j) - 23.9755555628901718 = True_Mean_Delta_vs_V3(Arm j)",
+    "arithmetic_error_max": 0.0
+  },
+  "reconciliation_matrix_by_arm": [
+    {
+      "treatment_j": 1,
+      "ofat_mean_fuel_liters": 23.827572254335266,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.81486192127168,
+      "harness_calc_mean": 23.81486192127168,
+      "true_mean_delta_v3_liters": -0.16069364161849767,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 7.577272143066693e-15,
+      "count_positive_vs_v3": 10,
+      "count_negative_vs_v3": 49,
+      "count_zero_vs_v3": 114,
+      "true_raw_wilcoxon_p_value": 0.00454247649019257
+    },
+    {
+      "treatment_j": 2,
+      "ofat_mean_fuel_liters": 22.318208092485552,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.305497759421968,
+      "harness_calc_mean": 22.305497759421968,
+      "true_mean_delta_v3_liters": -1.6700578034682085,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 4.6629367034256575e-15,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 18,
+      "count_zero_vs_v3": 155,
+      "true_raw_wilcoxon_p_value": 4.7894534681727224e-05
+    },
+    {
+      "treatment_j": 3,
+      "ofat_mean_fuel_liters": 22.548439306358382,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.5357289732948,
+      "harness_calc_mean": 22.5357289732948,
+      "true_mean_delta_v3_liters": -1.439826589595376,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 2.4424906541753444e-15,
+      "count_positive_vs_v3": 1,
+      "count_negative_vs_v3": 16,
+      "count_zero_vs_v3": 156,
+      "true_raw_wilcoxon_p_value": 0.001745118699528905
+    },
+    {
+      "treatment_j": 4,
+      "ofat_mean_fuel_liters": 22.671156069364166,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.65844573630058,
+      "harness_calc_mean": 22.65844573630058,
+      "true_mean_delta_v3_liters": -1.3171098265895955,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 1.9984014443252818e-15,
+      "count_positive_vs_v3": 3,
+      "count_negative_vs_v3": 16,
+      "count_zero_vs_v3": 154,
+      "true_raw_wilcoxon_p_value": 0.0015590301778409322
+    },
+    {
+      "treatment_j": 5,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 6,
+      "ofat_mean_fuel_liters": 22.501156069364168,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.48844573630058,
+      "harness_calc_mean": 22.48844573630058,
+      "true_mean_delta_v3_liters": -1.4871098265895957,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 3.9968028886505635e-15,
+      "count_positive_vs_v3": 1,
+      "count_negative_vs_v3": 16,
+      "count_zero_vs_v3": 156,
+      "true_raw_wilcoxon_p_value": 0.001745118699528905
+    },
+    {
+      "treatment_j": 7,
+      "ofat_mean_fuel_liters": 23.96086705202313,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.948156718959538,
+      "harness_calc_mean": 23.948156718959538,
+      "true_mean_delta_v3_liters": -0.027398843930635807,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 2.175343238874916e-15,
+      "count_positive_vs_v3": 1,
+      "count_negative_vs_v3": 3,
+      "count_zero_vs_v3": 169,
+      "true_raw_wilcoxon_p_value": 0.4652088184521418
+    },
+    {
+      "treatment_j": 8,
+      "ofat_mean_fuel_liters": 23.929479768786134,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.916769435722543,
+      "harness_calc_mean": 23.916769435722543,
+      "true_mean_delta_v3_liters": -0.058786127167630146,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 1.2698175844150228e-15,
+      "count_positive_vs_v3": 9,
+      "count_negative_vs_v3": 5,
+      "count_zero_vs_v3": 159,
+      "true_raw_wilcoxon_p_value": 0.8751079917742616
+    },
+    {
+      "treatment_j": 9,
+      "ofat_mean_fuel_liters": 22.398439306358384,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.385728973294796,
+      "harness_calc_mean": 22.385728973294796,
+      "true_mean_delta_v3_liters": -1.5898265895953763,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 6.661338147750939e-16,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 16,
+      "count_zero_vs_v3": 157,
+      "true_raw_wilcoxon_p_value": 6.334248366623973e-05
+    },
+    {
+      "treatment_j": 10,
+      "ofat_mean_fuel_liters": 22.304219653179192,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.291509320115605,
+      "harness_calc_mean": 22.291509320115605,
+      "true_mean_delta_v3_liters": -1.6840462427745666,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 4.440892098500626e-16,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 17,
+      "count_zero_vs_v3": 156,
+      "true_raw_wilcoxon_p_value": 5.699411623331837e-05
+    },
+    {
+      "treatment_j": 11,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 12,
+      "ofat_mean_fuel_liters": 22.398439306358384,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.385728973294796,
+      "harness_calc_mean": 22.385728973294796,
+      "true_mean_delta_v3_liters": -1.5898265895953763,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 6.661338147750939e-16,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 16,
+      "count_zero_vs_v3": 157,
+      "true_raw_wilcoxon_p_value": 6.334248366623973e-05
+    },
+    {
+      "treatment_j": 13,
+      "ofat_mean_fuel_liters": 24.090982658959543,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 24.078272325895956,
+      "harness_calc_mean": 24.078272325895956,
+      "true_mean_delta_v3_liters": 0.10271676300578035,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 3.566591466608315e-15,
+      "count_positive_vs_v3": 1,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 172,
+      "true_raw_wilcoxon_p_value": 0.31731050786291415
+    },
+    {
+      "treatment_j": 14,
+      "ofat_mean_fuel_liters": 22.49127167630058,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.478561343236997,
+      "harness_calc_mean": 22.478561343236997,
+      "true_mean_delta_v3_liters": -1.4969942196531794,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 4.6629367034256575e-15,
+      "count_positive_vs_v3": 1,
+      "count_negative_vs_v3": 17,
+      "count_zero_vs_v3": 155,
+      "true_raw_wilcoxon_p_value": 7.170171699670942e-05
+    },
+    {
+      "treatment_j": 15,
+      "ofat_mean_fuel_liters": 22.601907514450872,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.58919718138728,
+      "harness_calc_mean": 22.58919718138728,
+      "true_mean_delta_v3_liters": -1.3863583815028904,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 6.661338147750939e-16,
+      "count_positive_vs_v3": 4,
+      "count_negative_vs_v3": 17,
+      "count_zero_vs_v3": 152,
+      "true_raw_wilcoxon_p_value": 0.0017055889627409133
+    },
+    {
+      "treatment_j": 16,
+      "ofat_mean_fuel_liters": 23.998554913294797,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.985844580231216,
+      "harness_calc_mean": 23.985844580231216,
+      "true_mean_delta_v3_liters": 0.01028901734104049,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 3.8805764157601175e-15,
+      "count_positive_vs_v3": 3,
+      "count_negative_vs_v3": 1,
+      "count_zero_vs_v3": 169,
+      "true_raw_wilcoxon_p_value": 0.4652088184521418
+    },
+    {
+      "treatment_j": 17,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 18,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 19,
+      "ofat_mean_fuel_liters": 22.398439306358384,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 22.385728973294796,
+      "harness_calc_mean": 22.385728973294796,
+      "true_mean_delta_v3_liters": -1.5898265895953763,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 6.661338147750939e-16,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 16,
+      "count_zero_vs_v3": 157,
+      "true_raw_wilcoxon_p_value": 6.334248366623973e-05
+    },
+    {
+      "treatment_j": 20,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 21,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 22,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    },
+    {
+      "treatment_j": 23,
+      "ofat_mean_fuel_liters": 23.98826589595376,
+      "v3_control_mean_fuel_liters": 23.98826589595376,
+      "line478_ctrl_mean": 0.012710333063583816,
+      "exec_json_reported_mean": 23.97555556289017,
+      "harness_calc_mean": 23.97555556289017,
+      "true_mean_delta_v3_liters": 0.0,
+      "true_median_delta_v3_liters": 0.0,
+      "arithmetic_identity_error": 0.0,
+      "count_positive_vs_v3": 0,
+      "count_negative_vs_v3": 0,
+      "count_zero_vs_v3": 173,
+      "true_raw_wilcoxon_p_value": 1.0
+    }
+  ],
+  "statistical_validity_reconciliation": {
+    "true_significant_arms_count": 10,
+    "true_significant_arms": [
+      2,
+      3,
+      4,
+      6,
+      9,
+      10,
+      12,
+      14,
+      15,
+      19
+    ],
+    "holm_bonferroni_results": [
+      {
+        "rank": 11,
+        "treatment_j": 1,
+        "non_zero_origins": 59,
+        "mean_delta_v3_liters": -0.16069364161849767,
+        "true_raw_p_value": 0.00454247649019257,
+        "adjusted_alpha": 0.0038461538461538464,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 1,
+        "treatment_j": 2,
+        "non_zero_origins": 18,
+        "mean_delta_v3_liters": -1.6700578034682085,
+        "true_raw_p_value": 4.7894534681727224e-05,
+        "adjusted_alpha": 0.002173913043478261,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 9,
+        "treatment_j": 3,
+        "non_zero_origins": 17,
+        "mean_delta_v3_liters": -1.439826589595376,
+        "true_raw_p_value": 0.001745118699528905,
+        "adjusted_alpha": 0.0033333333333333335,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 7,
+        "treatment_j": 4,
+        "non_zero_origins": 19,
+        "mean_delta_v3_liters": -1.3171098265895955,
+        "true_raw_p_value": 0.0015590301778409322,
+        "adjusted_alpha": 0.0029411764705882353,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 16,
+        "treatment_j": 5,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.00625,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 10,
+        "treatment_j": 6,
+        "non_zero_origins": 17,
+        "mean_delta_v3_liters": -1.4871098265895957,
+        "true_raw_p_value": 0.001745118699528905,
+        "adjusted_alpha": 0.0035714285714285718,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 13,
+        "treatment_j": 7,
+        "non_zero_origins": 4,
+        "mean_delta_v3_liters": -0.027398843930635807,
+        "true_raw_p_value": 0.4652088184521418,
+        "adjusted_alpha": 0.004545454545454546,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 15,
+        "treatment_j": 8,
+        "non_zero_origins": 14,
+        "mean_delta_v3_liters": -0.058786127167630146,
+        "true_raw_p_value": 0.8751079917742616,
+        "adjusted_alpha": 0.005555555555555556,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 3,
+        "treatment_j": 9,
+        "non_zero_origins": 16,
+        "mean_delta_v3_liters": -1.5898265895953763,
+        "true_raw_p_value": 6.334248366623973e-05,
+        "adjusted_alpha": 0.002380952380952381,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 2,
+        "treatment_j": 10,
+        "non_zero_origins": 17,
+        "mean_delta_v3_liters": -1.6840462427745666,
+        "true_raw_p_value": 5.699411623331837e-05,
+        "adjusted_alpha": 0.002272727272727273,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 17,
+        "treatment_j": 11,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.0071428571428571435,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 4,
+        "treatment_j": 12,
+        "non_zero_origins": 16,
+        "mean_delta_v3_liters": -1.5898265895953763,
+        "true_raw_p_value": 6.334248366623973e-05,
+        "adjusted_alpha": 0.0025,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 12,
+        "treatment_j": 13,
+        "non_zero_origins": 1,
+        "mean_delta_v3_liters": 0.10271676300578035,
+        "true_raw_p_value": 0.31731050786291415,
+        "adjusted_alpha": 0.004166666666666667,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 6,
+        "treatment_j": 14,
+        "non_zero_origins": 18,
+        "mean_delta_v3_liters": -1.4969942196531794,
+        "true_raw_p_value": 7.170171699670942e-05,
+        "adjusted_alpha": 0.002777777777777778,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 8,
+        "treatment_j": 15,
+        "non_zero_origins": 21,
+        "mean_delta_v3_liters": -1.3863583815028904,
+        "true_raw_p_value": 0.0017055889627409133,
+        "adjusted_alpha": 0.003125,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 14,
+        "treatment_j": 16,
+        "non_zero_origins": 4,
+        "mean_delta_v3_liters": 0.01028901734104049,
+        "true_raw_p_value": 0.4652088184521418,
+        "adjusted_alpha": 0.005,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 18,
+        "treatment_j": 17,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.008333333333333333,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 19,
+        "treatment_j": 18,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.01,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 5,
+        "treatment_j": 19,
+        "non_zero_origins": 16,
+        "mean_delta_v3_liters": -1.5898265895953763,
+        "true_raw_p_value": 6.334248366623973e-05,
+        "adjusted_alpha": 0.002631578947368421,
+        "holm_decision": "SIGNIFICANT"
+      },
+      {
+        "rank": 20,
+        "treatment_j": 20,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.0125,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 21,
+        "treatment_j": 21,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.016666666666666666,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 22,
+        "treatment_j": 22,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.025,
+        "holm_decision": "NOT SIGNIFICANT"
+      },
+      {
+        "rank": 23,
+        "treatment_j": 23,
+        "non_zero_origins": 0,
+        "mean_delta_v3_liters": 0.0,
+        "true_raw_p_value": 1.0,
+        "adjusted_alpha": 0.05,
+        "holm_decision": "NOT SIGNIFICANT"
+      }
+    ]
+  },
+  "side_by_side_sample_matrix": [
+    {
+      "treatment_j": 1,
+      "origin_id": 1,
+      "ofat_checkpoint_fuel_liters": 61.1,
+      "v3_json_fuel_liters": 61.13,
+      "delta_v3_liters": -0.030000000000001137,
+      "harness_line478_vector": 0.03413242,
+      "harness_subtraction_value": 61.06586758
+    },
+    {
+      "treatment_j": 1,
+      "origin_id": 16,
+      "ofat_checkpoint_fuel_liters": 49.7,
+      "v3_json_fuel_liters": 52.66,
+      "delta_v3_liters": -2.9599999999999937,
+      "harness_line478_vector": 0.025663682500000003,
+      "harness_subtraction_value": 49.6743363175
+    },
+    {
+      "treatment_j": 1,
+      "origin_id": 34,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 1,
+      "origin_id": 100,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 1,
+      "origin_id": 173,
+      "ofat_checkpoint_fuel_liters": 61.55,
+      "v3_json_fuel_liters": 61.59,
+      "delta_v3_liters": -0.04000000000000625,
+      "harness_line478_vector": 0.034585517499999996,
+      "harness_subtraction_value": 61.5154144825
+    },
+    {
+      "treatment_j": 2,
+      "origin_id": 1,
+      "ofat_checkpoint_fuel_liters": 61.13,
+      "v3_json_fuel_liters": 61.13,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.03413242,
+      "harness_subtraction_value": 61.095867580000004
+    },
+    {
+      "treatment_j": 2,
+      "origin_id": 16,
+      "ofat_checkpoint_fuel_liters": 52.66,
+      "v3_json_fuel_liters": 52.66,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.025663682500000003,
+      "harness_subtraction_value": 52.634336317499994
+    },
+    {
+      "treatment_j": 2,
+      "origin_id": 34,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 2,
+      "origin_id": 100,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 2,
+      "origin_id": 173,
+      "ofat_checkpoint_fuel_liters": 44.4,
+      "v3_json_fuel_liters": 61.59,
+      "delta_v3_liters": -17.190000000000005,
+      "harness_line478_vector": 0.034585517499999996,
+      "harness_subtraction_value": 44.3654144825
+    },
+    {
+      "treatment_j": 10,
+      "origin_id": 1,
+      "ofat_checkpoint_fuel_liters": 61.13,
+      "v3_json_fuel_liters": 61.13,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.03413242,
+      "harness_subtraction_value": 61.095867580000004
+    },
+    {
+      "treatment_j": 10,
+      "origin_id": 16,
+      "ofat_checkpoint_fuel_liters": 52.66,
+      "v3_json_fuel_liters": 52.66,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.025663682500000003,
+      "harness_subtraction_value": 52.634336317499994
+    },
+    {
+      "treatment_j": 10,
+      "origin_id": 34,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 10,
+      "origin_id": 100,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 10,
+      "origin_id": 173,
+      "ofat_checkpoint_fuel_liters": 44.4,
+      "v3_json_fuel_liters": 61.59,
+      "delta_v3_liters": -17.190000000000005,
+      "harness_line478_vector": 0.034585517499999996,
+      "harness_subtraction_value": 44.3654144825
+    },
+    {
+      "treatment_j": 14,
+      "origin_id": 1,
+      "ofat_checkpoint_fuel_liters": 61.13,
+      "v3_json_fuel_liters": 61.13,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.03413242,
+      "harness_subtraction_value": 61.095867580000004
+    },
+    {
+      "treatment_j": 14,
+      "origin_id": 16,
+      "ofat_checkpoint_fuel_liters": 52.66,
+      "v3_json_fuel_liters": 52.66,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.025663682500000003,
+      "harness_subtraction_value": 52.634336317499994
+    },
+    {
+      "treatment_j": 14,
+      "origin_id": 34,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 14,
+      "origin_id": 100,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 14,
+      "origin_id": 173,
+      "ofat_checkpoint_fuel_liters": 44.34,
+      "v3_json_fuel_liters": 61.59,
+      "delta_v3_liters": -17.25,
+      "harness_line478_vector": 0.034585517499999996,
+      "harness_subtraction_value": 44.305414482500005
+    },
+    {
+      "treatment_j": 23,
+      "origin_id": 1,
+      "ofat_checkpoint_fuel_liters": 61.13,
+      "v3_json_fuel_liters": 61.13,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.03413242,
+      "harness_subtraction_value": 61.095867580000004
+    },
+    {
+      "treatment_j": 23,
+      "origin_id": 16,
+      "ofat_checkpoint_fuel_liters": 52.66,
+      "v3_json_fuel_liters": 52.66,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.025663682500000003,
+      "harness_subtraction_value": 52.634336317499994
+    },
+    {
+      "treatment_j": 23,
+      "origin_id": 34,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 23,
+      "origin_id": 100,
+      "ofat_checkpoint_fuel_liters": 0.0,
+      "v3_json_fuel_liters": 0.0,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.0,
+      "harness_subtraction_value": 0.0
+    },
+    {
+      "treatment_j": 23,
+      "origin_id": 173,
+      "ofat_checkpoint_fuel_liters": 61.59,
+      "v3_json_fuel_liters": 61.59,
+      "delta_v3_liters": 0.0,
+      "harness_line478_vector": 0.034585517499999996,
+      "harness_subtraction_value": 61.555414482500005
+    }
+  ],
+  "invariant_telemetry_audit": {
+    "5": {
+      "treatment_j": 5,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0008999999999999998,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": false
+    },
+    "11": {
+      "treatment_j": 11,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    },
+    "17": {
+      "treatment_j": 17,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    },
+    "18": {
+      "treatment_j": 18,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    },
+    "20": {
+      "treatment_j": 20,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    },
+    "21": {
+      "treatment_j": 21,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    },
+    "22": {
+      "treatment_j": 22,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    },
+    "23": {
+      "treatment_j": 23,
+      "diesel_power_abs_diff_total": 0.0,
+      "diesel_commitment_abs_diff_total": 0.0,
+      "startup_events_abs_diff_total": 0.0,
+      "battery_charge_abs_diff_total": 0.0,
+      "battery_discharge_abs_diff_total": 0.0,
+      "soc_abs_diff_total": 0.0,
+      "renewable_curtailment_abs_diff_total": 0.0,
+      "is_exact_telemetry_match": true
+    }
+  },
+  "v4g_benchmark_reconciliation": {
+    "v0_baseline_control_mean_fuel_liters": 37.26843930635838,
+    "v3_control_reference_mean_fuel_liters": 23.98826589595376,
+    "ofat_arm_14_mean_fuel_liters": 22.49127167630058,
+    "v4g_candidate_mean_fuel_liters": 32.2542774566474,
+    "delta_ofat14_vs_v3_liters": -1.4969942196531782,
+    "delta_v4g_vs_v3_liters": 8.266011560693642,
+    "resolution_summary": "OFAT Arm 14 (h=14) fuel is 59.6374 L (-1.4970 L vs V3 control 61.1344 L). V4G candidate fuel is 83.8145 L (+22.6801 L vs V3 control). This confirms that V4G's degraded fuel performance (+22.68 L) was NOT caused by single-factor horizon h=14 weight boost, but by non-isolated compound changes in the V4G candidate branch."
+  },
+  "final_classification": "B",
+  "final_status_block": {
+    "FROZEN_OFAT_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "PRIMARY_ENDPOINT_RECONCILED": "YES",
+    "STATISTICAL_RECONCILIATION": "PASS",
+    "V4G_COMPARISON_RECONCILED": "YES",
+    "RESPONSE_SURFACE_ANALYSIS_STATUS": "VALID",
+    "FINAL_CLASSIFICATION": "B"
+  }
+}

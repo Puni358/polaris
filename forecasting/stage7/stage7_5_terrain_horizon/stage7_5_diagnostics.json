@@ -1,0 +1,9 @@
+{
+  "even_validation_samples": 2552,
+  "mae_shaded_hours_w_m2": 23.6926,
+  "mae_unshaded_hours_w_m2": 53.2543,
+  "mae_low_sun_hours_w_m2": 22.1635,
+  "shaded_validation_count": 684,
+  "unshaded_validation_count": 1868,
+  "low_sun_validation_count": 880
+}

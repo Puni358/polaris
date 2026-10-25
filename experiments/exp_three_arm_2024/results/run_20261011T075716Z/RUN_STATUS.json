@@ -1,0 +1,28 @@
+{
+  "status": "FAILED",
+  "started_utc": "2026-10-11T07:57:16.166006+00:00",
+  "runner_sha256": "564e34d22f9c885482a4eba50626b70f9e4f259e5166e7631262b5409757011c",
+  "calibration_artifact_sha256": "65732ccc134f609f2c61a2a22ba4cb17a7e5408b21ac08e76cca22269228dab1",
+  "execute_instruction_ref": "NON_CMSG_REF :: recorded_at_utc=2026-10-11T07:52:41Z :: sha256_of_exact_instruction_text=83b6e0f95f8867b5743d394513af6118471e0a0b7788238b20c38dea07449cd3 :: declaration: this is a non-cmsg-format reference, used because no cmsg-format platform message ID was accessible in this AI assistant session. It identifies, by content hash and recording time, the project lead's (PuNi's) explicit 'POLARIS -- EXPLICIT EXECUTION AUTHORIZATION' instruction message in this conversation, approved by the project lead for use in place of a cmsg_ reference after AI assistant flagged the missing-ID blocker and the project lead chose this alternative binding.",
+  "arms": {
+    "PC-Control": "COMPLETE",
+    "A": "COMPLETE",
+    "A_FIX": "COMPLETE",
+    "B": "COMPLETE",
+    "C": "COMPLETE"
+  },
+  "validity_problems": [
+    "PC-Control: non-optimal solver status present",
+    "A: non-optimal solver status present",
+    "A_FIX: non-optimal solver status present",
+    "B: non-optimal solver status present",
+    "C: non-optimal solver status present"
+  ],
+  "solves_used": {
+    "PC-Control": 2952,
+    "A": 2952,
+    "A_FIX": 2952,
+    "B": 2952,
+    "C": 2952
+  }
+}

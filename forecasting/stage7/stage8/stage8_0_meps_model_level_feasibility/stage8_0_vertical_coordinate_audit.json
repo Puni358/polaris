@@ -1,0 +1,17 @@
+{
+  "dataset_type": "meps_det_ml",
+  "num_model_levels": 65,
+  "level_type": "hybrid_sigma_pressure (hybrid_height)",
+  "ordering": "Top-to-bottom (level 0 = top of atmosphere ~10 hPa, level 64 = surface)",
+  "reference_pressure_p0_Pa": 100000.0,
+  "ap_coefficients_sample": [],
+  "b_coefficients_sample": [],
+  "pressure_reconstruction_formula": "p(k, y, x) = ap(k) + b(k) * surface_air_pressure(y, x)",
+  "verified_formula_supported_by_metadata": true,
+  "nuolja_surface_pressure_hPa_typical": [
+    920.0,
+    960.0
+  ],
+  "nuolja_lowest_level_pressure_hPa": "~940 hPa",
+  "levels_below_nuolja_topography": "Model terrain-following coordinate follows the surface grid elevation (~220m grid DEM vs 675m physical station)."
+}

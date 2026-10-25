@@ -1,0 +1,4 @@
+dataset_id,relative_path,format,n_observations,n_supported_origins,time_range_utc,frequency,target_column,units,timezone,missing_policy,duplicate_policy,preflight_gate
+SITES_Nuolja_2024,"(avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv",CSV,8832,8784,2024-01-01T00:00:00Z..2024-12-31T23:00:00Z,1h,SW_IN,W/m^2,UTC,Fail-Closed,Fail-Closed,MANDATORY
+Clearsky_Nuolja_2024,clear_sky/nuolja_clearsky_2024.csv,CSV,8832,8784,2024-01-01T00:00:00Z..2024-12-31T23:00:00Z,1h,clearsky_sw_in,W/m^2,UTC,Fail-Closed,Fail-Closed,MANDATORY
+AROME_21x21_Cache,arome_cache_21x21/,GRIB2/NetCDF,366 issue runs,8784,2024-01-01T00:00:00Z..2024-12-31T00:00:00Z,24h base (00:00 UTC),SW_IN_nwp,W/m^2,UTC,Fail-Closed,Fail-Closed,MANDATORY

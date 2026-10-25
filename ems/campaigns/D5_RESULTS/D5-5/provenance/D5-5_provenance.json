@@ -1,0 +1,21 @@
+{
+  "gate_id": "D5-5",
+  "scenario_id": "S5",
+  "pair_id": "PAIR_D5-5_20260917",
+  "control_run_id": "RUN_D5-5_CONTROL",
+  "perturbed_run_id": "RUN_D5-5_PERTURBED",
+  "actual_trajectory_id": "demo_scenario.json",
+  "actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+  "initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+  "manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac",
+  "d5_contract_hashes": {
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.md": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+    "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.json": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.md": "f0c829620dded20da0777634b8c4ddf7383e97b8eeed2002c3c52341ea4794b0",
+    "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT.json": "710455f80bb7774f965e536a2dff2da966475ec1d9767eb0660a92ef9864c4df"
+  },
+  "solar_scale": 1.3,
+  "wind_scale": 1.3,
+  "demand_scale": 0.8,
+  "n_iterations": 24
+}

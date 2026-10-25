@@ -1,0 +1,17 @@
+{
+  "globally_frozen_stage6_6_control_used": true,
+  "stage4_refitting_prohibited_and_enforced": true,
+  "exact_frozen_stage7_5_candidate_used": true,
+  "exact_odd_rows_evaluated": true,
+  "exact_target_alignment": true,
+  "exact_daytime_mask": true,
+  "exact_night_handling": true,
+  "correct_nmae_denominator": true,
+  "row_level_reconciliation_pass": true,
+  "corrected_bootstrap_pass": true,
+  "no_tuning": true,
+  "no_feature_selection": true,
+  "no_candidate_modification": true,
+  "no_result_shopping": true,
+  "audit_pass": true
+}

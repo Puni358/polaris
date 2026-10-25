@@ -1,0 +1,92 @@
+{
+  "manifest_id": "POLARIS_HYBRID_FIXTURE_IMPLEMENTATION_MANIFEST",
+  "task_type": "HYBRID_FIXTURE_IMPLEMENTATION_AUDIT",
+  "fixture_version": "H1.0",
+  "implementation_timestamp_utc": "2026-09-20T11:10:00Z",
+  "generator_module": "system/fixtures/hybrid_fixture_generator.py",
+  "output_directory": "POLARIS_HYBRID_FIXTURE_H1_0/",
+  "execution_boundaries": {
+    "frozen_evidence_modified": false,
+    "milp_solves_executed": 0,
+    "simulations_executed": 0,
+    "experiment_rerun": false,
+    "new_modeling": false,
+    "new_tuning": false,
+    "architecture_modified": false,
+    "runtime_execution_authorized": false
+  },
+  "implementation_details": {
+    "solar_channel": {
+      "source_file": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+      "source_sha256": "0a2b9d2cbf3fea14a75d2e448f9650534f2ff540601d8c89df69e3b9334fa1f8",
+      "provenance_class": "REAL_MEASURED",
+      "d3_solar_pv_formula": "min(SW_IN * 300 * 0.20 * 0.85, 60000 W)",
+      "derived_provenance_class": "DERIVED_ENGINEERING_QUANTITY"
+    },
+    "wind_channel": {
+      "source_file": "research/wind_a2/smhi_188790_ws_full.csv",
+      "source_sha256": "b7f694aa957af57103176d9a2cb77bd506e2c0f56402eab5cc584ebd02d379fd",
+      "provenance_class": "CONDITIONALLY_ESTABLISHED_REGIONAL_PROXY",
+      "generic_turbine_curve": "IEC 61400-12 60 kW reference turbine (cut-in 3.0, rated 12.0, cut-out 25.0 m/s)",
+      "generic_turbine_provenance_class": "SYNTHETIC_ENGINEERING_SCENARIO",
+      "disclaimer": "NOT_NUOLJA_HARDWARE"
+    },
+    "demand_channel": {
+      "generator_name": "SYNTHETIC_STATION_DEMAND",
+      "provenance_class": "SYNTHETIC",
+      "base_demand_w": 25000.0,
+      "min_demand_w": 15000.0,
+      "max_demand_w": 45000.0,
+      "stochastic_noise": "0 W (100% Deterministic Baseline H1.0)",
+      "disclaimer": "SYNTHETIC_STATION_DEMAND != NULLOJA_MEASURED_DEMAND"
+    }
+  },
+  "output_files_generated": [
+    {
+      "file_path": "POLARIS_HYBRID_FIXTURE_H1_0/fixture.csv",
+      "sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+      "row_count": 8784,
+      "columns": [
+        "timestamp",
+        "solar_SW_IN_W_m2",
+        "solar_PV_power_W",
+        "wind_speed_proxy_m_s",
+        "wind_power_generic_W",
+        "synthetic_load_W",
+        "provenance_class_solar",
+        "provenance_class_wind",
+        "provenance_class_demand"
+      ]
+    },
+    {
+      "file_path": "POLARIS_HYBRID_FIXTURE_H1_0/provenance.json",
+      "sha256": "ed505b118ee774a628eeac1c8a437b8754f91c71fd2e22764b96e192385a0498"
+    },
+    {
+      "file_path": "POLARIS_HYBRID_FIXTURE_H1_0/config.json",
+      "sha256": "b60ca342f23179cafc7fc3ea5f1301f023e93c37976a188564cff2815a336762"
+    },
+    {
+      "file_path": "POLARIS_HYBRID_FIXTURE_H1_0/hashes.json",
+      "sha256": "80b2a75fa7645f7435fce8a6e87bcbb49bb77b5d153d10fa8cd42a8a81ac712c"
+    }
+  ],
+  "final_classification": "A — H1.0 FIXTURE GENERATED AND EXACTLY REPRODUCIBLE",
+  "mandatory_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "FIXTURE_GENERATED": "YES",
+    "FIXTURE_DETERMINISM": "PASS",
+    "SOURCE_INTEGRITY": "PASS",
+    "PROVENANCE_VALIDATION": "PASS",
+    "PHYSICAL_VALIDATION": "PASS",
+    "HYBRID_FIXTURE_VERSION": "H1.0",
+    "HYBRID_BRANCH": "DESIGN AUTHORIZED / EXECUTION NOT AUTHORIZED",
+    "STEP9_FINAL_CLASSIFICATION": "A — H1.0 FIXTURE GENERATED AND EXACTLY REPRODUCIBLE"
+  }
+}

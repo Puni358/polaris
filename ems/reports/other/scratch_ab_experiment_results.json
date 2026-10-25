@@ -1,0 +1,28 @@
+{
+  "fingerprint": "8c0f5a7ea60712401a0cf24eccad1a7cadab0b02c5ba42820cc5b0677c1b08d2",
+  "opt_a": {
+    "status": "OPTIMAL",
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "max_residual": 0.0,
+    "int_deviation": 0.0
+  },
+  "opt_b": {
+    "status": "HighsModelStatus.kOptimal",
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "max_residual": 1.5916157281026244e-11,
+    "int_deviation": 0.0
+  },
+  "differences": {
+    "J1": 0.0,
+    "J2": 0.0,
+    "J3": 0.0,
+    "J4": 0.0,
+    "max_x": 10580.0
+  }
+}

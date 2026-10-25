@@ -1,0 +1,9 @@
+{
+  "gate_id": "GATE-03",
+  "subject": "ECD_TRANSITION_FORENSIC",
+  "audit_timestamp": "2026-09-27T01:12:00Z",
+  "file_hashes": {
+    "GATE03_ECD_TRANSITION_FORENSIC.md": "97e17145a1a911b1afb0f217b3e4b6eb91e912c02a04d7ceea49ccff38107ea2"
+  },
+  "verification_status": "READ_ONLY_FORENSIC_CLARIFICATION_SEALED"
+}

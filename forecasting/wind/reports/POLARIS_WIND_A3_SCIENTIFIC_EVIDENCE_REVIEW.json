@@ -1,0 +1,112 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_A3_SCIENTIFIC_EVIDENCE_REVIEW",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A3_2_SCIENTIFIC_EVIDENCE_REVIEW",
+    "task_type": "SCIENTIFIC_REVIEW_EVIDENCE_AUDIT_ONLY",
+    "authorization_status": "AUTHORIZED_PHASE_A3_2_REVIEW_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A3_2_REVIEW_COMPLETED",
+    "A3_SCIENTIFIC_EVIDENCE_REVIEW": "PASS",
+    "A3_RESULTS_STATUS": "SCIENTIFICALLY_REVIEWED",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "CHAMPION_STATUS": "A2_RESEARCH_CHAMPION_RETAINED",
+    "A3_NEW_CHAMPION": "NOT_ESTABLISHED",
+    "DOWNSTREAM_INTEGRATION": "NOT_AUTHORIZED",
+    "TOTAL_EXECUTED_RUNS": 16,
+    "GLOBAL_RUN_CEILING": 16,
+    "TEST_MAE_ARX_MS": 2.0364,
+    "TEST_MAE_ELASTICNET_MS": 2.0081,
+    "TEST_MAE_GBDT_MS": 2.2317,
+    "TEST_MAE_PERSISTENCE_MS": 2.9334,
+    "TEST_MAE_RAW_NWP_MS": 18.8024,
+    "WIND_MODEL_TRAINING": "EXECUTED_A3_ONLY",
+    "WIND_MODEL_INFERENCE": "EXECUTED_A3_ONLY",
+    "WIND_MODEL_SELECTION": "COMPLETED_PREDEF_RULE_APPLIED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "EVIDENCE_REVIEW_COMPLETED",
+    "NEXT_GOVERNED_STEP": "WIND_FORECASTING_PATH_A_RESEARCH_CLOSEOUT"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_5_MODIFIED": "NO",
+    "A2_6_MODIFIED": "NO",
+    "A2_7_MODIFIED": "NO",
+    "A3_MODIFIED": "NO",
+    "A3_RESULTS_JSON_MODIFIED": "NO",
+    "A3_1_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "EXTERNAL_PACKAGES_INSTALLED": "NO",
+    "WEIGHTS_DOWNLOADED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "EVIDENCE_REVIEW_COMPLETED"
+  },
+  "evidence_chain_verification": {
+    "target_station": "SMHI Abisko Aut 188790",
+    "target_variable": "10m wind speed (m/s)",
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "direct_nuolja_measurement": "NOT_ESTABLISHED",
+    "altitude_transfer_method": "NOT_ESTABLISHED",
+    "dataset_provenance": "SMHI Parameter 4 Vindhastighet 2024 (8690 valid records, 0 missing)",
+    "splits": {"train_origins": 219, "validation_origins": 61, "test_origins": 62},
+    "forecast_task": "H=24h, delta_t=1h, W_hist=24h"
+  },
+  "descriptive_test_performance_summary": {
+    "EXP-01.1 Naive Persistence": {"MAE": 2.9334, "RMSE": 4.0679, "Bias": -0.0050, "nMAE_pct": 54.84},
+    "EXP-01.2 Diurnal Persistence": {"MAE": 2.9302, "RMSE": 4.0940, "Bias": -2.0132, "nMAE_pct": 54.78},
+    "EXP-01.3 Raw NWP Forecast": {"MAE": 18.8024, "RMSE": 22.7894, "Bias": 18.7913, "nMAE_pct": 351.54},
+    "EXP-02.1 Frozen A2 AR-X": {"MAE": 2.0364, "RMSE": 2.7136, "Bias": -0.2793, "nMAE_pct": 38.07},
+    "EXP-03 Direct GBDT": {"MAE": 2.2317, "RMSE": 2.9581, "Bias": -0.3822, "nMAE_pct": 41.72},
+    "EXP-04 Residual GBDT": {"MAE": 4.1413, "RMSE": 6.3436, "Bias": 0.6626, "nMAE_pct": 77.43},
+    "EXP-05 AR-ElasticNet": {"MAE": 2.0081, "RMSE": 2.6988, "Bias": -0.3434, "nMAE_pct": 37.55}
+  },
+  "pre_registered_selection_rule_audit": {
+    "benchmark_bar_mae_ms": 2.0364,
+    "required_margin_pct": 2.0,
+    "required_threshold_mae_ms": 1.9957,
+    "best_new_candidate_mae_ms": 2.0081,
+    "improvement_achieved_pct": 1.39,
+    "rule_passed": false,
+    "decision": "Frozen A2 AR-X Champion Retained (RESEARCH_CHAMPION = AUTOREGRESSIVE_RIDGE_ARX)"
+  },
+  "scientific_conclusions_scope": {
+    "permissible_conclusions": [
+      "Autoregressive linear/regularized formulations (AR-X and AR-ElasticNet) achieve ~2.01-2.04 m/s MAE on the Abisko 10m proxy series.",
+      "ML bias correction reduces systematic NWP elevation bias by >89%.",
+      "Frozen A2 AR-X is retained as champion under the pre-registered 2.0% improvement rule."
+    ],
+    "prohibited_overclaims": [
+      "Direct Nuolja wind forecasting accuracy",
+      "Site-specific microclimate transfer validity",
+      "Altitude boundary layer scaling validity",
+      "Wind power generation (Watts) or turbine power curve performance",
+      "EMS, MILP, or MPC dispatch impact",
+      "Operational production readiness",
+      "Generalizable model superiority outside frozen 2024 protocol"
+    ]
+  },
+  "raw_nwp_interpretation": "Raw NWP grid cell overestimation (+18.79 m/s bias) reflects grid cell mountain elevation mismatch (1000-1500m vs 392m at Abisko), not intrinsic NWP algorithm failure across all domains. The evaluated ML formulations substantially reduced the observed bias relative to the raw NWP configuration under this test setup.",
+  "proxy_target_limitation": "Target is Abisko 10m wind speed as a conditional regional proxy. Does not establish direct Nuolja instrument accuracy or hub-height wind scaling.",
+  "terminology_correction": "Clarified that A3 training/inference occurred exactly once during authorized A3 execution (task-122); zero post-execution or rerun execution occurred."
+}

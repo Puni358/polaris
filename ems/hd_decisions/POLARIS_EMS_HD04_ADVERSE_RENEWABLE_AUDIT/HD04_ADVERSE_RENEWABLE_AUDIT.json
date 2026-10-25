@@ -1,0 +1,29 @@
+{
+  "audit_metadata": {
+    "title": "POLARIS EMS HD-04 Adverse Renewable Scenario Evidence Audit",
+    "date": "2026-09-22",
+    "mode": "READ-ONLY EVIDENCE AUDIT",
+    "package": "POLARIS_EMS_HD04_ADVERSE_RENEWABLE_AUDIT"
+  },
+  "final_classifications": {
+    "HD04_EXISTING_GOVERNANCE_SUPPORT": "NOT_ESTABLISHED",
+    "HD04_ZERO_RENEWABLE_TECHNICAL_STATUS": "TECHNICALLY_VALID",
+    "HD04_ZERO_RENEWABLE_CAUSALITY": "CAUSALLY_VALID",
+    "HD04_NORMAL_MPC_SEPARATION": "CLEAN",
+    "HD04_SCHEMA_STATUS": "ADDITIVE_EXTENSION_REQUIRED",
+    "HD04_HUMAN_DECISION_REQUIRED": "YES",
+    "HD04_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "zero_renewable_math": {
+    "solar_survival": "P_solar_survival(t) = 0",
+    "wind_survival": "P_wind_survival(t) = 0",
+    "t_batt_formula": "max N s.t. sum_{k=1}^N D_critical(k)*dt / eta_dis <= E(t0) - E_min_tech",
+    "t_fuel_formula": "max N s.t. sum_{k=1}^N F_step(k) <= F_remaining(t0)",
+    "causally_valid": true
+  },
+  "normal_mpc_separation": {
+    "normal_mpc_forecast": "ForecastBundle.solar_generation.point & wind_generation.point",
+    "detector_forecast": "Pre-solve detector local zero vector",
+    "contamination_risk": "NONE (Detector operates strictly pre-solve and passes read-only operating_mode flag)"
+  }
+}

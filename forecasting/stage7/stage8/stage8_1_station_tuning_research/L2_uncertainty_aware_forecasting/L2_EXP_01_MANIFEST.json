@@ -1,0 +1,83 @@
+{
+  "experiment_id": "L2-EXP-01",
+  "generated_at_utc": "2026-10-04T04:14:19.975015+00:00",
+  "runner_script": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/experiments/run_l2_exp_01.py",
+  "governance_locks": {
+    "f_model_frozen": true,
+    "stage8_1_frozen": true,
+    "gap19_unmodified": true,
+    "gap19_integration_authorized": false,
+    "calendar_year_2024_quarantined": true
+  },
+  "immutable_input_hashes": {
+    "frozen_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "exact_2020_2023_f_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions_2020_2023": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "historical_f_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+  },
+  "model_training": {
+    "architecture": "QuantileMLP (12 -> 32 -> 16 -> 3)",
+    "parameter_count": 995,
+    "optimizer": "AdamW (lr=0.001, weight_decay=0.0001, batch_size=64)",
+    "random_seed": 42,
+    "training_samples": 8137,
+    "validation_samples": 4069,
+    "stopped_epoch": 88,
+    "best_validation_epoch": 78,
+    "best_validation_pinball_loss": 16.978465274793283
+  },
+  "conformal_calibration": {
+    "method": "Split Conformal Prediction (CQR) on 80% interval",
+    "validation_samples": 4069,
+    "conformal_quantile_shift": 0.7917000000000058
+  },
+  "qualification_gates": {
+    "P1_nominal_blind_calibration": {
+      "pass": false,
+      "observed_picp": 0.7122243397767493,
+      "band": [
+        0.76,
+        0.84
+      ]
+    },
+    "P2_nominal_validation_consistency": {
+      "pass": false,
+      "observed_picp": 0.6979601867780781,
+      "band": [
+        0.76,
+        0.84
+      ]
+    },
+    "P3_subslice_floor": {
+      "pass": false,
+      "min_slice_picp": 0.25,
+      "floor": 0.6
+    },
+    "P4_physical_consistency": {
+      "pass": true
+    },
+    "P5_point_forecast_invariance": {
+      "pass": true,
+      "max_diff": 0.0
+    },
+    "all_primary_passed": false,
+    "overall_status": "NO-GO"
+  },
+  "output_artifacts": {
+    "full_predictions_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_01_PREDICTIONS_2020_2023.csv",
+      "sha256": "1eb5b6db7c426c2c173c170a2cdd87945f0946f80153cc40f6180410de5a817c",
+      "rows": 26011
+    },
+    "validation_predictions_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_01_VALIDATION_PREDICTIONS.csv",
+      "sha256": "349e3779bad6142e73716f7aa213aba9fb45756e7c6b91a489cf747248c4283b",
+      "rows": 6935
+    },
+    "blind_predictions_csv": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_01_BLIND_PREDICTIONS.csv",
+      "sha256": "609f0835e64cc0b2c73fc42c5a08bb720660d6c2b84e87d0741b2f3864c12b56",
+      "rows": 5187
+    }
+  }
+}

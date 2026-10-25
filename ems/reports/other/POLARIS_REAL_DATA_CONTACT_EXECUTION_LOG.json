@@ -1,0 +1,270 @@
+{
+  "log_id": "POLARIS_REAL_DATA_CONTACT_EXECUTION_LOG",
+  "task_type": "HUMAN_AUTHORIZED_REAL_DATA_ACCESS_EXECUTION",
+  "execution_timestamp_utc": "2026-09-20T10:35:00Z",
+  "execution_environment_capability": {
+    "outbound_email_enabled": false,
+    "web_form_automation_enabled": false,
+    "environment_execution_mode": "HUMAN_ACTION_REQUIRED_READY_TO_SEND_PACKAGE",
+    "faked_contact_prohibited": true
+  },
+  "governance_state_preserved": {
+    "REAL_DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "ACTUALLY_RECEIVED": false
+  },
+  "contact_execution_records": [
+    {
+      "route_id": "EXEC_ROUTE_01_AADC",
+      "organization": "Australian Antarctic Division (AAD) / Australian Antarctic Data Centre (AADC)",
+      "station": "Casey, Davis, Mawson, Macquarie Island Stations (Antarctica)",
+      "official_route": "https://data.aad.gov.au/contact (Web Contact Form) / https://data.aad.gov.au/aadc/portal/",
+      "prohibited_direct_email": "aadcwebqueries@aad.gov.au (Preserved Delivery Bounce 550 5.7.133 — Direct resend prohibited)",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-AADC-001",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "High-resolution logger active electrical demand time series P_load (kW/W)",
+      "expected_response_mechanism": "AADC Web Portal Enquiry Response / Email to Requester",
+      "next_human_action": "Submit prepared web form text via AADC Web Contact Portal (https://data.aad.gov.au/contact)",
+      "evidence_provenance_reference": "AADC Dataset Registry & AAP Research Portal",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — Measured Station Electrical Demand (AADC Logger Series) for POLARIS SIH Research Project",
+        "recipient_portal": "https://data.aad.gov.au/contact",
+        "requested_variables": "Measured active electrical demand P_load (kW or W), UTC timestamps (ISO 8601), 1-hour interval, continuous 1993-2016 logger series",
+        "scientific_purpose": "Offline algorithm evaluation of AI-driven Model Predictive Control (MPC) microgrid dispatch for Smart India Hackathon project POLARIS.",
+        "provenance_requirements": "Metering metadata, physical units declaration, UTC timezone confirmation, missing data flags.",
+        "usage_terms": "Offline academic SIH research, non-commercial publication/reporting."
+      }
+    },
+    {
+      "route_id": "EXEC_ROUTE_02_SANAP",
+      "organization": "South African National Antarctic Programme (SANAP) / DFFE",
+      "station": "SANAE IV Station (Vesleskarvet, Dronning Maud Land, Antarctica)",
+      "official_route": "https://polar.sanap.ac.za (Portal Request Form) / NRF-SAEON Data Office",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-SANAP-002",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "Historical 1-hour station electrical demand telemetry P_load (kW)",
+      "expected_response_mechanism": "SANAP/DFFE Portal Grant/Access Confirmation & Secure FTP",
+      "next_human_action": "Submit prepared portal request via SANAP/DFFE Portal (https://polar.sanap.ac.za)",
+      "evidence_provenance_reference": "SANAE IV Microgrid Literature & DFFE Station Registry",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — SANAE IV Station Measured Electrical Demand Telemetry for POLARIS SIH Research Project",
+        "recipient_portal": "https://polar.sanap.ac.za",
+        "requested_variables": "Measured active electrical load P_load (kW), UTC timestamps (ISO 8601), 1-hour interval, multi-year logging horizon",
+        "scientific_purpose": "Offline validation of predictive EMS dispatch and load-following models for Smart India Hackathon project POLARIS.",
+        "provenance_requirements": "Sensor specifications, physical unit confirmation (kW), UTC timestamps, missing data flags.",
+        "usage_terms": "Academic research use under DFFE / SANAP data sharing guidelines."
+      }
+    },
+    {
+      "route_id": "EXEC_ROUTE_03_IPF",
+      "organization": "International Polar Foundation (IPF) / BELSPO",
+      "station": "Princess Elisabeth Antarctica Station",
+      "official_route": "https://www.polarfoundation.org / https://www.antarcticstation.org (Portal Request Form)",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-IPF-003",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "Zero-emission microgrid active electrical load telemetry P_load (kW)",
+      "expected_response_mechanism": "IPF Secretariat Email Response / Data Sharing Agreement",
+      "next_human_action": "Submit prepared request via IPF / Princess Elisabeth Portal (https://www.polarfoundation.org)",
+      "evidence_provenance_reference": "IPF Microgrid Architecture Reports & BELSPO Secretariat Metadata",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — Princess Elisabeth Station Microgrid Load Telemetry for POLARIS SIH Research Project",
+        "recipient_portal": "https://www.polarfoundation.org",
+        "requested_variables": "Measured active microgrid demand P_load (kW), UTC timestamps (ISO 8601), <= 1-hour interval, multi-year profile",
+        "scientific_purpose": "Offline benchmark evaluation of predictive energy management system on zero-emission polar microgrid profiles for SIH project POLARIS.",
+        "provenance_requirements": "Metering point location, physical unit declaration, UTC timezone specification.",
+        "usage_terms": "Non-commercial academic research and SIH project demonstration."
+      }
+    },
+    {
+      "route_id": "EXEC_ROUTE_04_ACEP",
+      "organization": "Alaska Center for Energy and Power (ACEP / UAF)",
+      "station": "Kotzebue, Cordova, Wales, St. Mary's Arctic Remote Microgrids (Alaska, USA)",
+      "official_route": "https://data.acep.uaf.edu (ACEP Data Portal) / https://energyalaska.uaf.edu",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-ACEP-004",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "Arctic remote community active electrical demand time series P_load (kW)",
+      "expected_response_mechanism": "ACEP Portal Download Authorization / Direct Data Link",
+      "next_human_action": "Submit prepared portal form via ACEP Data Portal (https://data.acep.uaf.edu)",
+      "evidence_provenance_reference": "ACEP Microgrid Database & UAF Alaska Energy Gateway",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — Arctic Remote Microgrid Measured Electrical Demand for POLARIS SIH Research Project",
+        "recipient_portal": "https://data.acep.uaf.edu",
+        "requested_variables": "Measured community electrical demand P_load (kW), UTC timestamps (ISO 8601), 1-hour interval, multi-year time series",
+        "scientific_purpose": "Offline predictive EMS algorithm benchmarking on remote community microgrid load profiles for SIH project POLARIS.",
+        "provenance_requirements": "Utility metering metadata, units (kW), quality control flags.",
+        "usage_terms": "Academic research use under ACEP dataset attribution guidelines."
+      }
+    },
+    {
+      "route_id": "EXEC_ROUTE_05_BAS",
+      "organization": "British Antarctic Survey (BAS) / UK Polar Data Centre (UK PDC)",
+      "station": "Rothera Research Station / Halley VI Research Station (Antarctica)",
+      "official_route": "https://data.bas.ac.uk (UK PDC Portal) / data@bas.ac.uk",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-BAS-005",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "Rothera / Halley station active electrical demand telemetry P_load (kW)",
+      "expected_response_mechanism": "UK PDC Data Curator Email Response / Portal Transfer Link",
+      "next_human_action": "Submit request package to UK PDC Curator (data@bas.ac.uk / https://data.bas.ac.uk)",
+      "evidence_provenance_reference": "UK PDC Dataset Registry & BAS Infrastructure Documentation",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — Rothera/Halley Station Electrical Demand Telemetry for POLARIS SIH Research Project",
+        "recipient_email": "data@bas.ac.uk",
+        "recipient_portal": "https://data.bas.ac.uk",
+        "requested_variables": "Measured active electrical load P_load (kW), UTC timestamps (ISO 8601), 1-hour interval, continuous historical period >= 1 year",
+        "scientific_purpose": "Offline MPC microgrid optimization benchmark on empirical Antarctic station demand for SIH project POLARIS.",
+        "provenance_requirements": "Instrumentation metadata, physical units (kW), timezone specification, data quality flags.",
+        "usage_terms": "UK PDC Academic Data License / SIH project citation."
+      }
+    },
+    {
+      "route_id": "EXEC_ROUTE_06_AWI",
+      "organization": "Alfred Wegener Institute (AWI) / PANGAEA Data Publisher",
+      "station": "Neumayer Station III (Dronning Maud Land, Antarctica)",
+      "official_route": "https://www.pangaea.de (PANGAEA Portal) / info@pangaea.de / station-manager@awi.de",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-AWI-006",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "Neumayer III station active electrical demand & wind-diesel load telemetry P_load (kW)",
+      "expected_response_mechanism": "PANGAEA DOI Ticket Response / Direct Data Download Link",
+      "next_human_action": "Submit request package to PANGAEA / AWI (info@pangaea.de / https://www.pangaea.de)",
+      "evidence_provenance_reference": "PANGAEA Earth Science Publisher Registry & AWI Neumayer III System Spec",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — Neumayer Station III Electrical Demand Telemetry for POLARIS SIH Research Project",
+        "recipient_email": "info@pangaea.de",
+        "recipient_portal": "https://www.pangaea.de",
+        "requested_variables": "Measured active electrical demand P_load (kW), UTC timestamps (ISO 8601), 1-hour interval, multi-year logging",
+        "scientific_purpose": "Offline predictive EMS dispatch simulation under empirical polar station dynamics for SIH project POLARIS.",
+        "provenance_requirements": "Sensor specifications, physical units (kW), UTC timezone declaration, quality control markers.",
+        "usage_terms": "PANGAEA open-access research license / open data terms."
+      }
+    },
+    {
+      "route_id": "EXEC_ROUTE_07_NPI",
+      "organization": "Norwegian Polar Institute (NPI) / Norwegian Polar Data Centre",
+      "station": "Troll Research Station (Jutulsessen, Dronning Maud Land, Antarctica)",
+      "official_route": "https://data.npolar.no (NPI Data Portal) / data@npolar.no",
+      "date_time_prepared_utc": "2026-09-20T10:35:00Z",
+      "request_reference_id": "POLARIS-REQ-2026-NPI-007",
+      "submission_result": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "HUMAN_ACTION_REQUIRED",
+      "response_status": "PENDING_HUMAN_DISPATCH",
+      "data_requested": "Troll Station active electrical demand and smart microgrid load time series P_load (kW)",
+      "expected_response_mechanism": "Norwegian Polar Data Centre Email Response / Download Ticket",
+      "next_human_action": "Submit request package to NPI Data Office (data@npolar.no / https://data.npolar.no)",
+      "evidence_provenance_reference": "Norwegian Polar Data Centre Metadata & Troll Green Station Registry",
+      "ready_to_send_request": {
+        "subject": "Data Access Request — Troll Station Electrical Demand Telemetry for POLARIS SIH Research Project",
+        "recipient_email": "data@npolar.no",
+        "recipient_portal": "https://data.npolar.no",
+        "requested_variables": "Measured active electrical demand P_load (kW), UTC timestamps (ISO 8601), 1-hour interval, continuous historical period >= 1 year",
+        "scientific_purpose": "Offline predictive microgrid controller dispatch benchmarking for Smart India Hackathon project POLARIS.",
+        "provenance_requirements": "Measurement methodology, physical units (kW), UTC timezone, missing data flags.",
+        "usage_terms": "NPI academic research data agreement."
+      }
+    }
+  ],
+  "contact_execution_summary_table": [
+    {
+      "organization": "Australian Antarctic Division (AAD) / AADC",
+      "station": "Casey, Davis, Mawson, Macquarie",
+      "route": "https://data.aad.gov.au/contact",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit prepared web form text via AADC Web Portal"
+    },
+    {
+      "organization": "SANAP (South Africa) / DFFE",
+      "station": "SANAE IV Station",
+      "route": "https://polar.sanap.ac.za",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit prepared request via SANAP/DFFE Portal"
+    },
+    {
+      "organization": "International Polar Foundation (IPF)",
+      "station": "Princess Elisabeth Station",
+      "route": "https://www.polarfoundation.org",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit prepared request via IPF Portal"
+    },
+    {
+      "organization": "Alaska Center for Energy & Power (ACEP)",
+      "station": "Kotzebue, Cordova, Wales",
+      "route": "https://data.acep.uaf.edu",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit prepared request via ACEP Portal"
+    },
+    {
+      "organization": "British Antarctic Survey (BAS) / UK PDC",
+      "station": "Rothera / Halley VI",
+      "route": "https://data.bas.ac.uk / data@bas.ac.uk",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit request package to UK PDC Curator"
+    },
+    {
+      "organization": "Alfred Wegener Institute (AWI) / PANGAEA",
+      "station": "Neumayer Station III",
+      "route": "https://www.pangaea.de / info@pangaea.de",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit request package to PANGAEA / AWI"
+    },
+    {
+      "organization": "Norwegian Polar Institute (NPI)",
+      "station": "Troll Research Station",
+      "route": "https://data.npolar.no / data@npolar.no",
+      "request_status": "HUMAN_ACTION_REQUIRED",
+      "delivery_status": "NOT_EXECUTED",
+      "data_status": "DATA_BLOCKED",
+      "next_action": "Submit request package to NPI Data Office"
+    }
+  ],
+  "dataset_receipt_register": {
+    "datasets_received_count": 0,
+    "received_datasets": [],
+    "note": "Zero external datasets received during Step 5 execution."
+  },
+  "final_execution_status": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "CONTACT_REQUESTS_SUBMITTED": 0,
+    "PACKAGES_PREPARED_FOR_HUMAN_DISPATCH": 7,
+    "DELIVERY_FAILURES": 0,
+    "DATASETS_RECEIVED": 0,
+    "REAL_DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "STEP5_FINAL_CLASSIFICATION": "B — LEGITIMATE ACCESS ROUTES PREPARED FOR HUMAN DISPATCH, DATA NOT YET RECEIVED"
+  }
+}

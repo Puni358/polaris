@@ -1,0 +1,29 @@
+{
+  "stage": "STAGE 8.4 VIIRS EMPIRICAL FEASIBILITY EXTRACTION",
+  "date": "2026-09-12",
+  "snpp_usable_origins": "90/347",
+  "noaa20_usable_origins": "135/347",
+  "noaa21_usable_origins": "0/347",
+  "constellation_union_usable_origins": "225/347",
+  "empirical_usable_rate_pct": 64.84,
+  "physical_causal_origins": "346/347",
+  "operationally_causal_origins": "0/347",
+  "valid_cot_origins": 225,
+  "valid_cer_origins": 225,
+  "valid_phase_origins": 346,
+  "quality_valid_origins": 346,
+  "stage_6_2_reconciliation": "EXPLAINED (MET Norway local antenna THREDDS in Stage 6.2 prioritized AVHRR; NASA LAADS DAAC science archive contains global SNPP/NOAA20 VIIRS L2 granules)",
+  "viirs_classification": "CONDITIONAL",
+  "forecast_experiment_justified": "CONDITIONAL (High physical value, but 3-8h standard science L2 latency requires NRT feeds or post-hoc analysis)",
+  "governance": {
+    "odd_target_access": "NO",
+    "odd_predictions": "NO",
+    "odd_metrics": "NO",
+    "odd_tuning": "NO",
+    "champion_modified": "NO",
+    "current_champion": "Stage 8.1 U700+V700 Steering Wind Model",
+    "forecast_experiment_run": "NO",
+    "cv_run": "NO",
+    "integrity": "PASS"
+  }
+}

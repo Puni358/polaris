@@ -1,0 +1,127 @@
+{
+ "audit_id": "POST-CORRECTED-STAGE4-FORENSIC-AUDIT",
+ "date_utc": "2026-10-06",
+ "overall_status": "ISSUES_FOUND",
+ "campaign_run": false,
+ "corrected_reported_values": {
+  "S": "23.11%",
+  "SW": "38.19% (safety failure, dR_P -0.581490 pp)",
+  "S-L": "13.39%",
+  "SW-L": "13.66%"
+ },
+ "current_research_winner": "S (23.11%) as corrected current frozen research winner, with conditions; not production-validated",
+ "issues": [
+  {
+   "id": 1,
+   "issue": "Startup fuel semantics: MILP charges 2.0 L/start (code default), simulator charges 0, preregistration states 0.0 L",
+   "status": "VERIFIED SEMANTIC MISMATCH",
+   "evidence": [
+    "research_numerical_extractor.py:148,380 startup_fuel_l default 2.0; system/config/diesel.yaml has no startup_fuel_l",
+    "research_realization_executor.py:173 no startup term",
+    "EXP_STAGE4_CORRECTED_REPRODUCTION_PREREGISTRATION.md section 3 item 6 states 0.0 L",
+    "offline: reduction change accounted->MILP-objective: S -0.006pp, S-L -0.425pp, SW +0.935pp, SW-L -0.121pp; starts S237 S-L281 SW159 SW-L270 Control308"
+   ],
+   "materiality": "NON-MATERIAL",
+   "candidate_impact": "magnitudes shift up to 0.94pp (SW); ordering S>SW-L>S-L unchanged",
+   "safety_impact": "none (safety uses served load, not fuel)",
+   "winner_impact": "none (S-SW-L gap ~9.45pp vs max shift 0.12pp)",
+   "required_next_action": "Governance decision and documentation correction: state optimizer startup value (2.0 L) and report both accountings; no result change"
+  },
+  {
+   "id": 2,
+   "issue": "Fuel-cap semantics: 100 L/origin physical stock enforced by executor; MILP unaware; preregistration says no artificial clipping",
+   "status": "VERIFIED SEMANTIC MISMATCH",
+   "evidence": [
+    "make_initial_state diesel_fuel_remaining_liters=100",
+    "research_realization_executor.py:168-192 starvation clip",
+    "corrected telemetry: one capped origin (SW 39) at hour 22; frozen: two (S 39, SW-L 39) at hour 22",
+    "hour-0 max fuel 18.65 L < 100 L",
+    "critical-reliability bound from cap: <=23.2 kWh = 0.068pp < 0.581pp SW gate gap"
+   ],
+   "materiality": "NON-MATERIAL",
+   "candidate_impact": "SW saving inflated in origin 39 (direction verified, magnitude unknown); S, S-L, SW-L not capped in corrected run",
+   "safety_impact": "cannot flip SW gate (bound 0.068pp vs 0.581pp needed)",
+   "winner_impact": "none",
+   "required_next_action": "Documentation: state fuel stock as physical input and report cap occurrences; any fuel-stock constraint in MILP requires a new preregistered experiment"
+  },
+  {
+   "id": 3,
+   "issue": "Planned vs realized battery charge: MILP plan sheds unpriced non-critical load to charge; executor charges realized surplus",
+   "status": "VERIFIED SEMANTIC MISMATCH",
+   "evidence": [
+    "extractor objective: non-critical served/unmet and p_flex unpriced (lines 375-381)",
+    "executor 209-230 surplus charge rule",
+    "corrected mean planned-minus-realized charge kW: Control 1.08, S 0.72, S-L 0.81, SW 0.49, SW-L 0.83; median 0 in all arms",
+    "frozen hour-0 identity: planned-minus-realized equals non-critical demand within 50W in 54% of SW origins (frozen only)"
+   ],
+   "materiality": "MATERIAL",
+   "candidate_impact": "arm-asymmetric planning optimism (Control larger); effect on comparisons not quantifiable offline",
+   "safety_impact": "not quantified; scored outcomes are realized, bias enters via plan quality",
+   "winner_impact": "not shown; cannot be excluded offline",
+   "required_next_action": "New separately preregistered experiment comparing realization-consistent vs free non-critical shedding on 123 origins; do not correct in place"
+  },
+  {
+   "id": 4,
+   "issue": "Terminal-target indexing: index 23 of each reoptimisation horizon (rolling), documented as origin-day hour 23; stage2_target_wh logs index 0",
+   "status": "VERIFIED BUG (telemetry logging) + VERIFIED SEMANTIC MISMATCH (documentation vs implementation)",
+   "evidence": [
+    "config terminal_target_wh 100000 -> extractor 209-212 e_stage2[23]=max(ebr[23],terminal)",
+    "run_stage4_corrected_reproduction.py:136,150,303 stage2_target_wh=stage2_vector[0]; stage2==ebr on all 14760 rows",
+    "corrected prereg section 3 item 4 says horizon index 23; section 5 horizon edge written per origin-day t",
+    "hour-23 realized SOC>=70% share: S 0.47, S-L 0.53, SW 0.33, SW-L 0.56, Control 0.81"
+   ],
+   "materiality": "NON-MATERIAL (ranking); MATERIAL to absolute SOC levels but symmetric across arms",
+   "candidate_impact": "none identified (same rule for all arms)",
+   "safety_impact": "none identified (symmetric)",
+   "winner_impact": "none",
+   "required_next_action": "Fix logging column in next harness version (no optimizer change); correct documentation to horizon index 23 at each reoptimisation; any semantic change requires new preregistered experiment"
+  },
+  {
+   "id": 5,
+   "issue": "Hour-0 diesel ON without index-0 forcing: S 12 origins, SW 39 origins",
+   "status": "UNKNOWN",
+   "evidence": [
+    "corrected counts identical to frozen: S on 94 forced 82 on-not-forced 12; SW on 39 forced 0; SW-L forced 123/123 on 123",
+    "SW-L on = SELECTED under J2>J3 (earlier trace)",
+    "no duals or future trajectory recorded"
+   ],
+   "materiality": "MATERIAL for S (winner, 12 origins); non-material for SW (safety failure)",
+   "candidate_impact": "S hour-0 decisions in 12 origins unattributed",
+   "safety_impact": "unknown",
+   "winner_impact": "not shown; cannot be excluded offline",
+   "required_next_action": "Separately authorised read-only solver trace of hour 0 for the 12 S origins with dual values and constraint activity; not a campaign"
+  },
+  {
+   "id": 6,
+   "issue": "Route-mode fix verification and evidence labelling",
+   "status": "VERIFIED (propagation); VERIFIED BUG (emergency_constraint_active is route-derived, not an observed row count)",
+   "evidence": [
+    "run_stage4_corrected_reproduction.py:215,226 planning_state passed to optimize; :137 interceptor uses same state",
+    "corrected telemetry optimizer_received_mode==route on 14760/14760 rows",
+    "run_stage4_corrected_reproduction.py:278 emergency_constraint_active=bool(route==EMERGENCY)",
+    "EMERGENCY-hour discharge>served violations: corrected 0 vs frozen 6 (weak support)",
+    "corrected prereg hash manifest omits research_numerical_extractor.py"
+   ],
+   "materiality": "NON-MATERIAL",
+   "candidate_impact": "Control also routed; reference changed symmetrically (6117.97->6096.90 L)",
+   "safety_impact": "none",
+   "winner_impact": "none",
+   "required_next_action": "Log actual EMERGENCY rows built per step from the solver in next harness version; pin extractor hash in preregistration (documentation)"
+  },
+  {
+   "id": 7,
+   "issue": "Candidate-ranking robustness and reporting: S diesel gate not reported in corrected statistical report",
+   "status": "DOCUMENTATION ONLY",
+   "evidence": [
+    "STAGE4_REPRO_STATISTICAL_REPORT.md reports S-L and SW-L only; prereg section 9.1 winner rule requires significant diesel reduction",
+    "offline S vs Control: mean 11.457 L, Wilcoxon p=2.45e-10, BCa95 [8.50,14.32] (own implementation; reporting code differs by ~0.1 L for S-L/SW-L)",
+    "S safety margins dR_CF +0.64, dR_P +0.82, min SOC 20.00 zero violations"
+   ],
+   "materiality": "NON-MATERIAL",
+   "candidate_impact": "none; outcome passes offline",
+   "safety_impact": "none",
+   "winner_impact": "none; S remains winner, significance must be reported",
+   "required_next_action": "Report S diesel gate in corrected statistical report (documentation/reporting, no re-run)"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-09-13T10:12:14.955955+00:00",
+  "route_identifier": "STAGE8.21A",
+  "spatial_window": "47x47",
+  "baseline": "Stage8.1 37-feature champion",
+  "candidate": "Baseline + 4 Stage8.21A features",
+  "candidate_feature_count": 41,
+  "EVEN_CONTROL_MAE": 37.6201,
+  "EVEN_CANDIDATE_MAE": 37.5916,
+  "EVEN_DELTA_MAE": -0.0285,
+  "EVEN_GATES": "FAIL",
+  "CANDIDATE_FROZEN": true,
+  "ODD_RUN": false,
+  "FINAL_VERDICT": "REJECTED_ON_EVEN",
+  "rejection_reason": "Fold consistency gate G2 failed (2/5 folds improved, required >= 4)."
+}

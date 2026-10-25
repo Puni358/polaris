@@ -1,0 +1,157 @@
+{
+  "experiment_id": "L2-EXP-10",
+  "title": "Risk-Aware Multi-Scenario Trade-Off Optimization",
+  "classification": "STRICTLY_RESEARCH_ONLY",
+  "governance_status": "NO PRODUCTION PROMOTION AUTHORIZED",
+  "pre_registration_timestamp_utc": "2026-10-04T10:05:00Z",
+  "status": "LOCKED",
+  "seed": 42,
+  "software_environment": {
+    "python_version": "3.12",
+    "highspy_version": "1.15.1",
+    "scipy_version": "1.15.1",
+    "numpy_version": "2.2.3",
+    "pandas_version": "2.2.3",
+    "joblib_version": "1.4.2"
+  },
+  "frozen_inputs": {
+    "candidate_f_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    },
+    "skgbdt_q10": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q10.joblib",
+      "sha256": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb"
+    },
+    "skgbdt_q50": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q50.joblib",
+      "sha256": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71"
+    },
+    "skgbdt_q90": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q90.joblib",
+      "sha256": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff"
+    },
+    "matrix_2024": {
+      "path": "stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2024_CORRECTED.csv",
+      "sha256": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43"
+    },
+    "treatment_fixture_2024": {
+      "path": "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv",
+      "sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+    },
+    "conformal_calibration_q_hat": 9.8962
+  },
+  "evaluation_scope": {
+    "total_odd_origins": 173,
+    "normal_route_origins": 123,
+    "emergency_route_origins": 50,
+    "horizon_hours": 24,
+    "blind_evaluation_year": 2024
+  },
+  "established_reference_ladder": {
+    "arm_a": "Candidate F point-control",
+    "arm_b": "Static q10 conservative control (Primary reliability benchmark)",
+    "arm_c": "L2-EXP-08 adaptive risk-budget interface",
+    "arm_d": "L2-EXP-09 multi-scenario stochastic MILP (Re-evaluated unmodified)",
+    "arm_e": "Perfect-foresight diagnostic"
+  },
+  "new_arm_f_specification": {
+    "name": "Arm F: Risk-Aware Multi-Scenario Optimizer",
+    "parent_formulation": "L2-EXP-09 Two-Stage Stochastic MILP",
+    "scenario_discretization": {
+      "S": 3,
+      "scenarios": [
+        {"id": 0, "name": "downside_solar", "irradiance": "q10_cal", "weight": 0.25},
+        {"id": 1, "name": "central_forecast", "irradiance": "candidate_f", "weight": 0.50},
+        {"id": 2, "name": "upside_solar", "irradiance": "q90_cal_with_research_envelope", "weight": 0.25}
+      ]
+    },
+    "non_anticipativity": {
+      "shared_first_stage_variables": [
+        "u_diesel[t]", "v_start[t]", "p_diesel[t]", "u_chg[t]", "u_dis[t]",
+        "p_dis[t]", "p_wind_used[t]", "p_chg_plan[t]"
+      ],
+      "first_stage_count": 192,
+      "second_stage_count": 792,
+      "total_variables": 984,
+      "binary_variables": 96
+    },
+    "objective_hierarchy": {
+      "solver": "Native HiGHS Lexicographic Multi-Objective",
+      "blend_multi_objectives": false,
+      "levels": [
+        {
+          "level": 1,
+          "name": "Critical Reliability (J1)",
+          "highs_priority": 4,
+          "weight": 1.0,
+          "abs_tolerance": 0.0,
+          "rel_tolerance": 0.0,
+          "mathematical_expression": "sum_{s=0}^{S-1} pi_s sum_{t=0}^{H-1} P_unmet_crit[t, s] * dt",
+          "rationale": "Strictly prioritizes critical load satisfaction across all scenarios, especially protecting against downside scenario deficits."
+        },
+        {
+          "level": 2,
+          "name": "Governed Reserve Envelope Protection (J2)",
+          "highs_priority": 3,
+          "weight": 1.0,
+          "abs_tolerance": 0.0,
+          "rel_tolerance": 0.0,
+          "mathematical_expression": "sum_{s=0}^{S-1} pi_s sum_{t=0}^{H-1} s_J2[t, s]",
+          "rationale": "Maintains 6h EBR critical lookahead reserve and terminal target reserve across plausible realizations."
+        },
+        {
+          "level": 3,
+          "name": "Resource-Aware Diesel Fuel & Cycling Efficiency (J3)",
+          "highs_priority": 2,
+          "weight": 1.0,
+          "abs_tolerance": 0.0,
+          "rel_tolerance": 0.0,
+          "mathematical_expression": "sum_{t=0}^{H-1} (m_fuel * p_diesel[t] + b_fuel * u_diesel[t] + s_fuel * v_start[t] + c_deg * p_dis[t]) * dt",
+          "coefficients": {
+            "m_fuel": 0.00025,
+            "b_fuel": 5.0,
+            "s_fuel": 2.0,
+            "c_deg": 0.000001
+          },
+          "rationale": "Prioritizes minimizing diesel fuel expenditure before curtailment, eliminating unnecessary diesel commitment while lightly discouraging gratuitous battery cycling."
+        },
+        {
+          "level": 4,
+          "name": "Renewable Curtailment Minimization (J4)",
+          "highs_priority": 1,
+          "weight": 1.0,
+          "abs_tolerance": 0.0,
+          "rel_tolerance": 0.0,
+          "mathematical_expression": "sum_{s=0}^{S-1} pi_s sum_{t=0}^{H-1} (p_curt_sol[t, s] + p_curt_wind[t, s]) * dt",
+          "rationale": "Absorbs available renewable energy into battery charging ceiling without compromising diesel efficiency or reserve."
+        }
+      ]
+    }
+  },
+  "primary_success_criteria": {
+    "unmet_load_gate": {
+      "threshold": "Arm F total realized unmet critical load <= Arm B total realized unmet critical load + 10%",
+      "statistical_test": "Paired Wilcoxon signed-rank test and 10,000 bootstrap 95% CI on (Arm F - Arm B) unmet load"
+    },
+    "diesel_goal": {
+      "primary": "Arm F total realized diesel < Arm D total realized diesel",
+      "secondary": "Arm F diesel approaches Arm B diesel without sacrificing reliability"
+    },
+    "battery_cycling": {
+      "target": "Arm F retains a meaningful fraction of Arm D's EFC reduction relative to Arm B"
+    },
+    "curtailment": {
+      "target": "Arm F curtailment < Arm B curtailment"
+    },
+    "safety_hard_gates": {
+      "zero_soc_floor_violations": true,
+      "exact_energy_accounting": true,
+      "exact_scenario_accounting": true,
+      "zero_non_anticipativity_violations": true,
+      "zero_optimizer_failures": true,
+      "firewall_pass": true
+    }
+  },
+  "governance_rule": "NO PRODUCTION PROMOTION AUTHORIZED. 2024 evaluation outcomes were not used to select, tune, or modify the L2-EXP-10 formulation after pre-registration."
+}

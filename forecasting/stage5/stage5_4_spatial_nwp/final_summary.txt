@@ -1,0 +1,37 @@
+POLARIS STAGE 5.4 — SPATIAL NWP EVALUATION (AUDITED & REVISED)
+================================================================================
+Date: 2026-09-10
+Audit Status: COMPLETED & FULLY RECONCILED WITH FROZEN STAGE 5.2 CHAMPION
+
+1. BASELINE REPRODUCIBILITY AUDIT
+   - Identified Cause of Initial Discrepancy: The initial Stage 5.4 script refit Stage 4 parameters (w_h, k_h) on EVEN origins for ODD testing, which shifted base Stage 4 MAE from 43.4508 W/m² to 43.78 W/m² and model MAE from 39.0848 W/m² to 39.3927 W/m².
+   - Corrected Baseline (E0): Matches official frozen Stage 5.2 Architecture A ODD Daytime MAE of 39.084821 W/m² (30.32% nMAE) EXACTLY.
+
+2. EVEN 5-FOLD FORWARD-CHAINING CV RESULTS
+   - E0 (Stage 5.2 Baseline): 39.4236 W/m²
+   - E1 (+ Wind Vectors U10, V10): 39.4679 W/m² (Delta: +0.0443 W/m² - slight CV worsening)
+   - E2 (+ Cardinal Spatial Cloud Probes): 39.1629 W/m² (Delta: -0.2607 W/m²)
+   - E3 (+ Wind-Aligned Advection Proxies): 39.1501 W/m² (Delta: -0.2735 W/m²)
+   - E4 (+ Combined Candidate Set): 38.9974 W/m² (Delta: -0.4262 W/m²)
+
+3. PER-FOLD EVEN-CV SIGNAL INCONSISTENCY
+   - Fold 1: +0.1750 W/m² (Worse)
+   - Fold 2: -1.3758 W/m² (Improved)
+   - Fold 3: -0.9076 W/m² (Improved)
+   - Fold 4: -0.0277 W/m² (Slightly Improved)
+   - Fold 5: +0.0052 W/m² (Worse)
+   - Conclusion: EVEN-CV improvement is non-uniform and inconsistent across temporal folds.
+
+4. APPLES-TO-APPLES ODD HELD-OUT TEST EVALUATION
+   - True Frozen Stage 5.2 Champion Baseline: 39.0848 W/m² Daytime MAE (30.32% nMAE)
+   - Candidate E1 (+ Wind Vectors): 39.1969 W/m² (+0.1121 W/m² WORSE)
+   - Candidate E2 (+ Spatial Cloud Probes): 39.5217 W/m² (+0.4369 W/m² WORSE)
+   - Candidate E3 (+ Advection Proxies): 39.5262 W/m² (+0.4414 W/m² WORSE)
+   - Candidate E4 (+ Combined Candidate Set): 39.6653 W/m² (+0.5804 W/m² WORSE)
+
+5. FORMAL DECISION GATE & CHAMPION LOCK
+   - Selected Gate: B — WEAK / INCONSISTENT SIGNAL
+   - Champion Status: STAGE 5.2 ARCHITECTURE A REMAINS THE UNBEATEN, FROZEN CHAMPION (39.0848 W/m² Daytime MAE / 30.32% nMAE).
+   - Candidate E4 is NOT frozen as a new champion because it fails out-of-sample generalization (+0.5804 W/m² worse on ODD).
+   - Scientific Interpretation: Stage 5.4 spatial NWP probes showed a modest and inconsistent improvement during EVEN forward-chaining cross-validation but failed to generalize to the held-out ODD test set. The candidate spatial features were therefore rejected from the operational champion. This result does not establish that spatial atmospheric information is intrinsically uninformative; it indicates that the tested spatial representation did not provide robust out-of-sample improvement under the current benchmark and model architecture. Spatial features evaluated were spatial NWP probes at approximately the native model-grid scale (~2.5 km offset).
+================================================================================

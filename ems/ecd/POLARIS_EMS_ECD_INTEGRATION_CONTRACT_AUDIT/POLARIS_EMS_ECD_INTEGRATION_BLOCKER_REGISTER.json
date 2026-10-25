@@ -1,0 +1,50 @@
+{
+  "register_name": "POLARIS_EMS_ECD_INTEGRATION_BLOCKER_REGISTER",
+  "version": "1.0.0",
+  "status": "AUDITED",
+  "contract_status": "CONTRACT_READY_FOR_IMPLEMENTATION_AUTHORIZATION",
+  "blockers": [
+    {
+      "id": "INT-BLK-001",
+      "topic": "ForecastBundle Critical Load Additive Schema Extension",
+      "classification": "SCHEMA_EXTENSION_REQUIRED",
+      "status": "PROPOSED_IN_CONTRACT",
+      "summary": "ForecastBundle requires critical_demand_w: Optional[List[float]] additive field so total demand (demand.point) is not reinterpreted as critical demand."
+    },
+    {
+      "id": "INT-BLK-002",
+      "topic": "StationState Fuel Remaining Additive Schema Extension",
+      "classification": "SCHEMA_EXTENSION_REQUIRED",
+      "status": "PROPOSED_IN_CONTRACT",
+      "summary": "StationState requires fuel_remaining_liters: Optional[float] additive field to expose telemetry fuel inventory."
+    },
+    {
+      "id": "INT-BLK-003",
+      "topic": "Downstream Emergency Policy Layer",
+      "classification": "DOWNSTREAM_POLICY_REQUIRED",
+      "status": "GATE_REQUIRED_BEFORE_EMERGENCY_DISPATCH",
+      "summary": "EMS Mode Manager / Policy Layer must be defined to consume EmergencyAssessment and select emergency optimizer objectives or constraints."
+    },
+    {
+      "id": "INT-BLK-004",
+      "topic": "Production T_required Override TTL (DEC-001)",
+      "classification": "GOVERNANCE_DECISION_REQUIRED",
+      "status": "UNRESOLVED_DEPLOYMENT_DECISION",
+      "summary": "Production deployment requires site operator configuration of operational command TTL duration."
+    },
+    {
+      "id": "INT-BLK-005",
+      "topic": "Production Telemetry Max-Age Guard (DEC-002)",
+      "classification": "GOVERNANCE_DECISION_REQUIRED",
+      "status": "UNRESOLVED_DEPLOYMENT_DECISION",
+      "summary": "Production deployment requires site SCADA configuration for telemetry freshness timeout."
+    },
+    {
+      "id": "INT-BLK-006",
+      "topic": "Upstream Cryptographic Ingress Infrastructure (DEC-003)",
+      "classification": "SECURITY_DEPENDENCY",
+      "status": "UNRESOLVED_DEPLOYMENT_DECISION",
+      "summary": "Production deployment requires upstream API ingress security layer for override signature verification."
+    }
+  ]
+}

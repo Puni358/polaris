@@ -1,0 +1,119 @@
+{
+  "generated_at_utc": "2026-10-02T14:43:33.624505+00:00",
+  "purpose": "Reconstruction/serialization of the frozen Stage 8.1 candidate (37-feature) model artifact. The original run_official_odd_evaluation.py never persisted a model artifact; this file captures the SAME fit (identical data/features/split/target/hyperparameters) to disk.",
+  "source_script_unmodified_through_fit": "run_official_odd_evaluation.py (byte-identical up to and including model_e1.fit())",
+  "model_definition": {
+    "estimator": "sklearn.ensemble.HistGradientBoostingRegressor",
+    "loss": "absolute_error",
+    "max_depth": 4,
+    "min_samples_leaf": 30,
+    "l2_regularization": 10.0,
+    "random_state": 42
+  },
+  "target_definition": {
+    "description": "Residual regression: y = actual_SW_IN - pred_stage4_fold (Stage4 ensemble physical/cloud base prediction). Final forecast = max(0, stage4_base + predicted_residual), clipped to 0 at night (is_night_causal).",
+    "daytime_only": true
+  },
+  "feature_contract": {
+    "count": 37,
+    "ordered_names": [
+      "horizon_hour",
+      "month",
+      "hour",
+      "solar_elevation",
+      "solar_zenith",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "fc_temperature_2m",
+      "fc_relative_humidity_2m",
+      "cloud_frac",
+      "pred_stage3b_cloud_nwp",
+      "phys_pred_fold",
+      "pred_stage4_fold",
+      "disagreement_fold",
+      "ctx_std_3h",
+      "ctx_std_6h",
+      "ctx_std_12h",
+      "ctx_std_24h",
+      "ctx_abs_change_1h",
+      "ctx_abs_change_3h",
+      "ctx_abs_change_6h",
+      "ctx_max_diff_6h",
+      "ctx_mean_diff_6h",
+      "ctx_slope_6h",
+      "ctx_kt_std_6h",
+      "ctx_last_obs",
+      "ctx_mean_24h",
+      "ctx_max_24h",
+      "lwp_latest",
+      "iwp_latest",
+      "lwp_x_cloud",
+      "terrain_horizon_elevation_deg",
+      "terrain_elevation_margin_deg",
+      "terrain_solar_obstruction_flag",
+      "clearsky_ghi_terrain_adjusted",
+      "u700",
+      "v700"
+    ]
+  },
+  "split_manifest": {
+    "method": "EVEN/ODD alternating daily forecast-origin split over all 347 real Nuolja/SITES 2024 origins",
+    "total_origins": 347,
+    "train_even_origins": 174,
+    "test_odd_origins": 173,
+    "train_origins_first5": [
+      "2024-01-20 00:00:00+00:00",
+      "2024-01-22 00:00:00+00:00",
+      "2024-01-24 00:00:00+00:00",
+      "2024-01-26 00:00:00+00:00",
+      "2024-01-28 00:00:00+00:00"
+    ],
+    "test_origins_first5": [
+      "2024-01-21 00:00:00+00:00",
+      "2024-01-23 00:00:00+00:00",
+      "2024-01-25 00:00:00+00:00",
+      "2024-01-27 00:00:00+00:00",
+      "2024-01-29 00:00:00+00:00"
+    ],
+    "train_daytime_rows": 2885,
+    "test_daytime_rows": 2883,
+    "test_night_rows": 1269
+  },
+  "dataset_sha256": {
+    "sites_multivariate_csv": "0a2b9d2cbf3fea14a75d2e448f9650534f2ff540601d8c89df69e3b9334fa1f8",
+    "clearsky_decomposition_csv": "596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a",
+    "nwp_future_weather_csv": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16",
+    "stage4_ensemble_predictions_csv": "796faf9529cd3863560f8b11342aeff129b6f0c98765a568dddc1bcd273aad20",
+    "stage4_ensemble_parameters_json": "26cfbd19744a4a01719470d20808b5316af7262aed6c2cd84376d8987ce0abc0",
+    "stage6_6_lwp_iwp_features_csv": "da6585c3a584f742d4e78f2d5ac5323479a765bcf74bb8b6da31cf1336f600a8",
+    "stage7_5_terrain_features_csv": "0a29c9c03815cc90faf3540dbd199b430ae292c8c2b327c02062a17732b7d689",
+    "stage8_1_extracted_wind_features_csv": "aa6ce29f3acec6345b82e11b7182ba0fe4110f7c044486f56f2fd5b179b49b08"
+  },
+  "code_sha256": {
+    "run_official_odd_evaluation.py": "c1c99c60b43f00ce1845a68ca166783a30d2ac9dc986bc01a7947381165a3f41",
+    "save_stage8_1_model_artifact.py": "6fc29b61ef397574df83ab6c0c3276b2477e1df4970d8f33ee1ccbf042703cfd"
+  },
+  "model_artifact": {
+    "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/model_artifact/stage8_1_candidate_37feature_model.joblib",
+    "sha256": "c8009ffbc653afdef39b47a9d304b45414c547dae1ab0f94acd3dcce3df2416d"
+  },
+  "reproduction_verification": {
+    "authoritative_daytime_mae_w_m2": 36.188657,
+    "authoritative_daytime_nmae_pct": 28.0688,
+    "authoritative_daytime_rmse_w_m2": 64.219495,
+    "authoritative_daytime_bias_w_m2": 1.439399,
+    "reproduced_daytime_mae_w_m2": 36.188657,
+    "reproduced_daytime_nmae_pct": 28.0688,
+    "reproduced_daytime_rmse_w_m2": 64.219495,
+    "reproduced_daytime_bias_w_m2": 1.439399,
+    "abs_diff_mae": 5e-08,
+    "abs_diff_nmae_pp": 2.609e-05,
+    "abs_diff_rmse": 2.1e-07,
+    "abs_diff_bias": 4.8e-07,
+    "predictions_csv_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "authoritative_predictions_csv_sha256_backup": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "predictions_csv_byte_identical_to_authoritative_backup": true,
+    "artifact_roundtrip_identical_predictions": true,
+    "prediction_count": 2883
+  }
+}

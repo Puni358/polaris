@@ -1,0 +1,192 @@
+{
+  "package_label": "POLARIS_EMS_POLICY_DEFINITION_RESOLUTION",
+  "package_version": "1.1.0",
+  "version_note": "Corrects v1.0.0 governance classification errors. See CORRECTION_MANIFEST.",
+  "governance_status": "POLICY_DEFINITION_RESOLUTION_CONDITIONAL",
+  "prepared_timestamp": "2026-09-22T00:10:00Z",
+  "governance_boundaries": {
+    "system_status": "FROZEN",
+    "ems_modification": "NOT_AUTHORIZED",
+    "objective_modification": "NOT_AUTHORIZED",
+    "ems_execution": "NOT_AUTHORIZED",
+    "mpc_execution": "NOT_AUTHORIZED",
+    "model_training": "NOT_AUTHORIZED",
+    "milp_execution": "NOT_AUTHORIZED",
+    "simulation_execution": "NOT_AUTHORIZED",
+    "experiment_execution": "NOT_AUTHORIZED",
+    "policy_recommendation": "NONE",
+    "policy_ranking": "NONE",
+    "formal_stakeholder_authorization": "PENDING",
+    "next_governed_step": "HUMAN_POLICY_PACKAGE_REVIEW",
+    "following_step": "GOVERNED_EMS_OBJECTIVE_SPECIFICATION"
+  },
+  "stakeholder_decisions_fixed": {
+    "count": 16,
+    "status": "FIXED_INPUTS__NOT_MODIFIED",
+    "d1_d16_changed": false,
+    "decisions": {
+      "D01": "A + C", "D02": "A + B", "D03": "A", "D04": "A",
+      "D05": "A", "D06": "D + A", "D07": "A + B", "D08": "B + C",
+      "D09": "B", "D10": "B", "D11": "B + A", "D12": "C + B",
+      "D13": "A + D", "D14": "A + C", "D15": "A", "D16": "C"
+    }
+  },
+  "frozen_implementation_hashes": {
+    "milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "battery.yaml": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel.yaml": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "loads.yaml": "ab6943d72f2054b001274de5a3fe229c9987eb31fb11be0422f33754fd5f3cad",
+    "optimizer.yaml": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8",
+    "solar_pv.yaml": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e",
+    "station.yaml": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42"
+  },
+  "corrections_applied": [
+    {"id": "CORRECTION_A", "area": "AREA_01", "corrected": "Emergency modes demoted from RESOLVED policy to CONCEPTUAL_POLICY_FRAMEWORK"},
+    {"id": "CORRECTION_B", "area": "AREA_02", "corrected": "Five-tier structure reclassified from policy to ILLUSTRATIVE_CONCEPTUAL_STRUCTURE__NOT_STAKEHOLDER_AUTHORIZED"},
+    {"id": "CORRECTION_C", "area": "AREA_02", "corrected": "5-minute dwell reclassified from HUMAN_SELECTED_POLICY to NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE"},
+    {"id": "CORRECTION_D", "area": "AREA_03", "corrected": "15-minute and 2-kWh triggers reclassified from HUMAN_SELECTED_POLICY to PROVISIONAL_EXAMPLE_ONLY__NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE"},
+    {"id": "CORRECTION_E", "area": "AREA_05", "corrected": "Monthly fuel ceiling removed; 30-day reserve reclassified from HUMAN_SELECTED_POLICY to PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED"},
+    {"id": "CORRECTION_F", "area": "AREA_06", "corrected": "35%/45% EBR reclassified from HUMAN_SELECTED_POLICY to PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED"},
+    {"id": "CORRECTION_G", "area": "AREA_06", "corrected": "35%/55-65% terminal SOC reclassified from HUMAN_SELECTED_POLICY to PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED"},
+    {"id": "CORRECTION_H", "area": "AREA_07", "corrected": "50-70% renewable utilization target reclassified to NOT_STAKEHOLDER_AUTHORIZED__NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE"},
+    {"id": "CORRECTION_I", "area": "AREA_08", "corrected": "15-25%/20-30%/+10% forecast margins reclassified from HUMAN_SELECTED_POLICY to PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED"},
+    {"id": "CORRECTION_J", "area": "ALL", "corrected": "Overall status corrected from POLICY_DEFINITION_RESOLVED to POLICY_DEFINITION_RESOLUTION_CONDITIONAL"}
+  ],
+  "policy_definition_areas": [
+    {
+      "id": "AREA_01", "name": "Emergency Mode Entry Conditions and Operating Modes",
+      "governing_decisions": ["D01","D02","D03","D04","D05","D06","D14","D15"],
+      "policy_logic_status": "CONCEPTUALLY_RESOLVED",
+      "mode_framework_status": "CONCEPTUAL_POLICY_FRAMEWORK__NOT_FORMALLY_AUTHORIZED",
+      "mode_transition_thresholds": "STATION_DATA_REQUIRED",
+      "mode_transition_logic": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_02", "name": "Load Shedding Direction and Tier Structure",
+      "governing_decisions": ["D01","D02","D03","D04","D05"],
+      "policy_logic_status": "CONCEPTUALLY_RESOLVED",
+      "authorized_tier_structure": "Three conceptual tiers from D01: Critical / Essential-Flexible / Interruptible-Noncritical",
+      "five_tier_structure": "ILLUSTRATIVE_CONCEPTUAL_STRUCTURE__NOT_STAKEHOLDER_AUTHORIZED",
+      "shedding_sequence": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "restoration_sequence": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "dwell_time_5_minutes": "NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE",
+      "circuit_mapping": "STATION_SPECIFIC_VALIDATION_REQUIRED",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_03", "name": "Critical Load Service Level and Exception Protocol",
+      "governing_decisions": ["D03","D04","D05","D06"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "sla_target": "100%_continuous__0_kWh_unmet",
+      "enforcement_type": "HARD_CONSTRAINT_required__soft_penalty_rejected",
+      "trigger_15_minutes": "NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE",
+      "trigger_2_kWh_per_30d": "NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE",
+      "exception_protocol_structure": "CONCEPTUALLY_RESOLVED",
+      "exception_trigger_thresholds": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "hardware_feasibility": "ENGINEERING_VALIDATION_REQUIRED",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_04", "name": "Fuel Metric Definition and Objective Position",
+      "governing_decisions": ["D07","D08","D14","D15"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "primary_metric": "liters_consumed",
+      "objective_stage": 3,
+      "cost_proxy_rejected": true,
+      "fuel_curve_calibration": "STATION_DATA_REQUIRED",
+      "mathematical_formulation": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_05", "name": "Fuel Budget Structure and Management",
+      "governing_decisions": ["D08","D14"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "budget_structure": "seasonal_resupply_cycle__dynamic_management__protected_emergency_reserve",
+      "budget_never_forces_critical_shedding": true,
+      "monthly_fuel_ceiling": "NOT_STAKEHOLDER_AUTHORIZED",
+      "30_day_reserve_figure": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "budget_quantity": "STATION_SPECIFIC_VALIDATION_REQUIRED",
+      "budget_period": "STATION_SPECIFIC_VALIDATION_REQUIRED",
+      "resupply_interval": "STATION_SPECIFIC_VALIDATION_REQUIRED",
+      "emergency_reserve_volume": "STATION_SPECIFIC_VALIDATION_REQUIRED",
+      "dynamic_formulation": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_06", "name": "Emergency Battery Reserve and Terminal SOC Structure",
+      "governing_decisions": ["D11","D12","D13","D15"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "ebr_structure": "dynamic_reserve_plus_baseline_floor_above_technical_minimum",
+      "terminal_soc_structure": "dynamic_plus_minimum_floor",
+      "technical_minimum_soc_pct": {"value": 20, "status": "CURRENT_IMPLEMENTATION_FACT__PROTOTYPE_ASSUMPTION"},
+      "ebr_35_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "ebr_45_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "terminal_soc_35_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "terminal_soc_55_65_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "numerical_ebr_value": "NUMERICAL_CALIBRATION_REQUIRED",
+      "numerical_terminal_soc": "NUMERICAL_CALIBRATION_REQUIRED",
+      "dynamic_ebr_formulation": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "dynamic_terminal_soc_formulation": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_07", "name": "Renewable Curtailment Policy",
+      "governing_decisions": ["D09","D10","D15"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "curtailment_direction": "minimize_avoidable__allow_necessary_unpenalized",
+      "no_percentage_target": true,
+      "target_50_70_pct": "NOT_STAKEHOLDER_AUTHORIZED__NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE",
+      "curtailment_stage": 4,
+      "mathematical_distinction": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_08", "name": "Forecast Uncertainty Method and Margin Policy",
+      "governing_decisions": ["D13","D11","D12"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "selected_method": "deterministic_safety_margins_plus_rolling_MPC_correction",
+      "stochastic_optimization": "NOT_SELECTED",
+      "solar_derate_15_25_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "wind_derate_20_30_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "demand_margin_plus_10_pct": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "reopt_interval_1_6h": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "solar_polar_night": {"value": "0_percent_credit", "status": "ENGINEERING_INFERENCE__station_latitude_68N"},
+      "numerical_margins": "NUMERICAL_CALIBRATION_REQUIRED",
+      "station_data_required": ["SD-09","SD-10","SD-11"],
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_09", "name": "Lexicographic Objective Priority Structure",
+      "governing_decisions": ["D06","D14","D15"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "priority_order": ["Critical_reliability","Emergency_resilience_reserve","Fuel_conservation","Renewable_utilization"],
+      "stage1_enforcement": "HARD_CONSTRAINT__not_soft_penalty",
+      "emergency_fallback": "lexicographic_fallback_when_stage1_infeasible",
+      "current_composite_scalar_rejected": true,
+      "ratio_16000_to_1_rejected": true,
+      "mathematical_formulation": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    },
+    {
+      "id": "AREA_10", "name": "Governance Change-Control and Approval Authority",
+      "governing_decisions": ["D16"],
+      "policy_logic_status": "HUMAN_SELECTED_POLICY",
+      "governance_structure": "multi_tier__no_unilateral_authority",
+      "functional_roles_defined": ["PROPOSER","REVIEWER","TECHNICAL_VALIDATOR","FINAL_APPROVER","EMERGENCY_CHANGE_AUTHORITY","RECORDS_FUNCTION"],
+      "72h_reporting_window": "PROVISIONAL_ENGINEERING_VALUE__NOT_STAKEHOLDER_AUTHORIZED",
+      "named_individuals": "STATION_SPECIFIC_VALIDATION_REQUIRED",
+      "formal_charter": "FORMAL_STAKEHOLDER_AUTHORIZATION_REQUIRED",
+      "change_control_protocol": "NEXT_EMS_OBJECTIVE_SPECIFICATION",
+      "area_overall_status": "CONDITIONAL"
+    }
+  ],
+  "pending_requirements": {
+    "station_data_required_count": 13,
+    "numerical_calibration_required_count": 14,
+    "next_specification_required_count": 11
+  },
+  "unauthorized_numerical_policy_values": 0,
+  "station_specific_assumptions_invented": 0,
+  "overall_resolution_status": "CONDITIONAL__policy_logic_reviewed_all_10_areas__zero_areas_numerically_finalized"
+}

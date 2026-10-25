@@ -1,0 +1,68 @@
+{
+  "phase": "POLARIS_PATH_A_OPTION_B_WIND_SPEED_METADATA_SPECIFICATION_AND_IMPLEMENTATION",
+  "authorization_status": "AUTHORIZED",
+  "architectural_option_selection": "B",
+  "metadata_key": "wind_speed_forecast",
+  "stage_1_metadata_specification": {
+    "quantity": "wind_speed",
+    "unit": "m/s",
+    "reference_height": "10m",
+    "resolution": "hourly",
+    "horizon_hours": 24,
+    "target_station": "SMHI Abisko Aut (188790)",
+    "site_interpretation": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "direct_nuolja_measurement": false,
+    "model_id": "autoregressive_ridge_arx",
+    "model_status": "VERIFIED_WITH_LIMITATIONS",
+    "required_fields": [
+      "quantity", "unit", "reference_height", "resolution", "horizon_hours",
+      "target_station", "site_interpretation", "direct_nuolja_measurement",
+      "model_id", "model_status", "origin_timestamp", "timestamps", "point"
+    ],
+    "validation": {
+      "validator": "system.forecasting.implementations.wind_arx.validate_wind_speed_metadata",
+      "horizon_len": 24,
+      "non_negative": true,
+      "timestamp_monotonic": true
+    }
+  },
+  "stage_2_adapter_implementation": {
+    "adapter_class": "system.forecasting.implementations.wind_arx.WindSpeedARXForecastEngine",
+    "base_interface": "system.forecasting.interface.base.ForecastEngine",
+    "implementation_file": "system/forecasting/implementations/wind_arx.py",
+    "test_file": "system/tests/test_wind_arx_adapter.py"
+  },
+  "verifications": {
+    "causal_runtime_inputs": "PASSED",
+    "horizon_length_24": "PASSED",
+    "timestamp_monotonicity": "PASSED",
+    "json_serialization": "PASSED",
+    "deterministic_repeated_execution": "PASSED",
+    "forecast_engine_interface_compliance": "PASSED",
+    "forecastbundle_schema_v1_0_0_unmodified": "PASSED",
+    "wind_generation_field_untouched": "PASSED"
+  },
+  "testing_summary": {
+    "test_suite": ["system/tests/test_wind_arx_adapter.py", "system/tests/test_d5_implementation.py"],
+    "total_passed": 13,
+    "total_failed": 0,
+    "status": "ALL_PASSED"
+  },
+  "firewall_verification": {
+    "forecastbundle_version": "1.0.0",
+    "forecastbundle_top_level_schema_changed": false,
+    "forecastengine_public_contract_changed": false,
+    "stationstate_changed": false,
+    "wind_generation_repurposed": false,
+    "wind_speed_to_power_conversion": false,
+    "ems_modified": false,
+    "production_wiring_modified": false,
+    "modification_firewall_status": "PASS"
+  },
+  "explicit_non_authorizations": [
+    "WIND_POWER_MAPPING",
+    "WIND_GENERATION_FORECASTING",
+    "EMS_INTEGRATION",
+    "PRODUCTION_DEPLOYMENT"
+  ]
+}

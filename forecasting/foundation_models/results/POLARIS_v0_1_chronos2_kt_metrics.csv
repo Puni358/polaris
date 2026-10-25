@@ -1,0 +1,2 @@
+model,evaluation_windows,evaluation_hours,MAE_W_m2,RMSE_W_m2,daytime_MAE_W_m2,daytime_RMSE_W_m2
+Chronos-2 (kt Reconstructed),365,8760,43.76673670766614,96.96166400790612,64.85057739498569,118.02795989052473

@@ -1,0 +1,234 @@
+{
+  "diagnostic_name": "POLARIS_PHASE_C1_HORIZON_DIAGNOSTIC_CORRECTED",
+  "timestamp_utc": "2026-09-16 00:36:46+0000",
+  "forensic_reconciliation_note": "Initial Phase C-1 execution invalidated due to canonical fold indexing defect (0-indexed loop range(5) vs 1-indexed folds 1..5); corrected execution authorized after forensic reconciliation.",
+  "population_accounting": {
+    "parent_eligible_origins": 104,
+    "theoretical_max_cells": 624,
+    "aggregate_valid_target_cells": 609,
+    "total_omitted_cells": 15,
+    "population_policy": "Option B (Horizon-Specific Valid Origins Only; No Imputation)"
+  },
+  "horizon_results": {
+    "H7": {
+      "horizon_hour": 7,
+      "N_h": 89,
+      "omitted_cells": 15,
+      "validation_fold_counts": {
+        "fold_1": 18,
+        "fold_2": 17,
+        "fold_3": 18,
+        "fold_4": 18,
+        "fold_5": 18
+      },
+      "training_fold_counts": {
+        "fold_1": 71,
+        "fold_2": 72,
+        "fold_3": 71,
+        "fold_4": 71,
+        "fold_5": 71
+      },
+      "ridge": {
+        "r2_P0": 0.03712478996283375,
+        "r2_P1": -0.6994399724776508,
+        "delta_r2": -0.7365647624404845
+      },
+      "gbdt": {
+        "r2_P0": -0.013495711359828855,
+        "r2_P1": 0.501145238538283,
+        "delta_r2": 0.5146409498981118,
+        "bootstrap_95ci": [
+          0.2638863262649641,
+          0.7858356015248109
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H8": {
+      "horizon_hour": 8,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20,
+        "fold_5": 21
+      },
+      "training_fold_counts": {
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84,
+        "fold_5": 83
+      },
+      "ridge": {
+        "r2_P0": -0.020520320837917883,
+        "r2_P1": -0.45135509705591836,
+        "delta_r2": -0.4308347762180005
+      },
+      "gbdt": {
+        "r2_P0": -0.18405821801493638,
+        "r2_P1": 0.34768674407365185,
+        "delta_r2": 0.5317449620885882,
+        "bootstrap_95ci": [
+          0.3024256192788243,
+          0.7740071657137064
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H9": {
+      "horizon_hour": 9,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20,
+        "fold_5": 21
+      },
+      "training_fold_counts": {
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84,
+        "fold_5": 83
+      },
+      "ridge": {
+        "r2_P0": -0.012152582426734337,
+        "r2_P1": -0.26055262858505035,
+        "delta_r2": -0.248400046158316
+      },
+      "gbdt": {
+        "r2_P0": -0.22264288269370036,
+        "r2_P1": 0.47867336012232586,
+        "delta_r2": 0.7013162428160262,
+        "bootstrap_95ci": [
+          0.47948357447644885,
+          0.9302039071055944
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H10": {
+      "horizon_hour": 10,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20,
+        "fold_5": 21
+      },
+      "training_fold_counts": {
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84,
+        "fold_5": 83
+      },
+      "ridge": {
+        "r2_P0": 0.017671567723727244,
+        "r2_P1": -0.3317364124957394,
+        "delta_r2": -0.3494079802194666
+      },
+      "gbdt": {
+        "r2_P0": -0.11249703502037178,
+        "r2_P1": 0.3593358422619811,
+        "delta_r2": 0.4718328772823529,
+        "bootstrap_95ci": [
+          0.22158194899860234,
+          0.7408469171939701
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H11": {
+      "horizon_hour": 11,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20,
+        "fold_5": 21
+      },
+      "training_fold_counts": {
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84,
+        "fold_5": 83
+      },
+      "ridge": {
+        "r2_P0": -0.023329989704991227,
+        "r2_P1": -0.29623388415357255,
+        "delta_r2": -0.2729038944485813
+      },
+      "gbdt": {
+        "r2_P0": -0.20389741103858738,
+        "r2_P1": 0.43338432917151326,
+        "delta_r2": 0.6372817402101006,
+        "bootstrap_95ci": [
+          0.3903743132698135,
+          0.8995558326299355
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    },
+    "H12": {
+      "horizon_hour": 12,
+      "N_h": 104,
+      "omitted_cells": 0,
+      "validation_fold_counts": {
+        "fold_1": 21,
+        "fold_2": 21,
+        "fold_3": 21,
+        "fold_4": 20,
+        "fold_5": 21
+      },
+      "training_fold_counts": {
+        "fold_1": 83,
+        "fold_2": 83,
+        "fold_3": 83,
+        "fold_4": 84,
+        "fold_5": 83
+      },
+      "ridge": {
+        "r2_P0": -0.05000815213017318,
+        "r2_P1": -0.48324463786952876,
+        "delta_r2": -0.4332364857393556
+      },
+      "gbdt": {
+        "r2_P0": -0.05222507897872042,
+        "r2_P1": 0.2514801183698908,
+        "delta_r2": 0.30370519734861123,
+        "bootstrap_95ci": [
+          0.027615331538993943,
+          0.5849622938515765
+        ],
+        "degenerate_bootstrap_count": 0,
+        "permutation_p_value": 0.000999000999000999
+      }
+    }
+  },
+  "artifact_hashes": {
+    "INFORMATION_PROBE_RESULTS.json": "ba801e50fbf583f5ec951b08d7cb61d61574c33a92017eb7a10ce96150f5e467",
+    "PHASE_A_FORENSIC_INTEGRITY_AUDIT.json": "f78bddf72b4a2bfb3780ffdb916d49c81616555ccbc0b7bd11e609ef440f3734",
+    "PHASE_B_HEDGING_DIAGNOSTIC.json": "d376296878b42c0a7981e81550c7077caee81b478669594a7af0c89899b874ca",
+    "PHASE_B_FORENSIC_INTEGRITY_AUDIT.json": "4f69466c743203c81b9b3c605c95a2f1bf7366b61acb07b978b65483e1c3d31a",
+    "POLARIS_PHASE_AB_SCIENTIFIC_SYNTHESIS_CHECKPOINT.json": "a80dbc19476bd1109da9f0c17825bfc4752aad814e60342b9b3de2f935de59bf",
+    "STAGE8_1_CANONICAL_FOLD_ASSIGNMENT.csv": "0cfc8002e6bf0e8ad11d9ec9832b45a1f085c9d435934a24a3c4edb6b51d62ad",
+    "INFORMATION_PROBE_ELIGIBLE_EVEN_ORIGINS.csv": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e"
+  },
+  "controlled_interpretation": "GBDT probes show horizon-specific incremental out-of-fold predictive power, with uncertainty quantified by the prespecified origin-level bootstrap confidence interval and within-month permutation procedure. Successful GBDT extraction of horizon-specific information demonstrates that the specified probe can extract information from P1. It does not establish that Stage8.1 has a representation limitation, because GBDT and Stage8.1 differ in model class, objective, loss, capacity, optimization, and training procedure."
+}

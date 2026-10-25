@@ -1,0 +1,70 @@
+{
+  "cost_weights": {
+    "curtailment_per_wh": 0.05,
+    "battery_deg_per_wh": 5e-05,
+    "diesel_marginal_per_wh": 0.000625,
+    "diesel_base_per_hour": 12.5,
+    "startup": 15.0,
+    "unmet_per_wh": 10.0
+  },
+  "note": "Scored with the SAME FIXED weights as the baseline run; lambda_fuel is NOT included in this post-hoc scoring.",
+  "reactive_hybrid_a2_REUSED_FROM_BASELINE": {
+    "breakdown": {
+      "curtailment": 62553.04,
+      "battery_deg_charge": 41.554513499999985,
+      "battery_deg_discharge": 36.82397949999999,
+      "diesel_marginal": 31.25,
+      "diesel_base": 62.5,
+      "diesel_startup": 30.0,
+      "unmet_load": 0.0
+    },
+    "total": 62755.168493,
+    "diesel_starts": 2
+  },
+  "milp_shadow_price": {
+    "breakdown": {
+      "curtailment": 75410.66500000004,
+      "battery_deg_charge": 85.54155350000005,
+      "battery_deg_discharge": 71.65394900000001,
+      "diesel_marginal": 174.99973124999997,
+      "diesel_base": 75.0,
+      "diesel_startup": 60.0,
+      "unmet_load": 2102943.4000000004
+    },
+    "total": 2178821.2602337506,
+    "diesel_starts": 4
+  },
+  "milp_baseline_REUSED_FROM_BASELINE": {
+    "breakdown": {
+      "curtailment": 72465.291,
+      "battery_deg_charge": 84.08355700000004,
+      "battery_deg_discharge": 70.37396499999998,
+      "diesel_marginal": 152.2981125,
+      "diesel_base": 87.5,
+      "diesel_startup": 75.0,
+      "unmet_load": 1841492.0000000002
+    },
+    "total": 1914426.5466345001,
+    "diesel_starts": 5
+  },
+  "delta_shadow_price_minus_baseline_milp": {
+    "curtailment": 2945.37400000004,
+    "battery_deg_charge": 1.4579965000000072,
+    "battery_deg_discharge": 1.2799840000000273,
+    "diesel_marginal": 22.701618749999966,
+    "diesel_base": -12.5,
+    "diesel_startup": -15.0,
+    "unmet_load": 261451.40000000014
+  },
+  "delta_total_shadow_price_minus_baseline_milp": 264394.7135992504,
+  "delta_shadow_price_minus_reactive": {
+    "curtailment": 12857.625000000036,
+    "battery_deg_charge": 43.987040000000064,
+    "battery_deg_discharge": 34.82996950000002,
+    "diesel_marginal": 143.74973124999997,
+    "diesel_base": 12.5,
+    "diesel_startup": 30.0,
+    "unmet_load": 2102943.4000000004
+  },
+  "delta_total_shadow_price_minus_reactive": 2116066.0917407507
+}

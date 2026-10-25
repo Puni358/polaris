@@ -1,0 +1,111 @@
+{
+  "phase": "S8.1-E2E",
+  "implementation_status": "COMPLETE",
+  "governance_decision": "SYNTHETIC_E2E_INTEGRATION_AUTHORIZED_WITH_RESTRICTIONS",
+  "selected_option": "OPTION_A_AND_OPTION_C",
+  "reason_for_selection": "Minimal wiring of Stage81ForecastEngine in runner.py and CLI exposure in cli.py reusing existing production pipeline interfaces.",
+  "files_changed": [
+    "system/runtime/runner.py",
+    "system/runtime/cli.py"
+  ],
+  "files_created": [
+    "system/tests/test_s81_e2e_integration.py",
+    "POLARIS_SYNTHETIC_E2E_INTEGRATION_IMPLEMENTATION.md",
+    "POLARIS_SYNTHETIC_E2E_INTEGRATION_IMPLEMENTATION.json"
+  ],
+  "architecture_path": "Synthetic/Local Data Provider -> StationState -> Stage81ForecastEngine -> ForecastBundle v1.0.0 -> EnergyOptimizer -> DispatchPlan v1.0.0 -> H1 Action -> DigitalTwinSimulator -> Next MPC Step -> Evaluation",
+  "stage81_forecast_engine_integration": {
+    "module": "system.forecasting.implementations.s81_solar",
+    "class": "Stage81ForecastEngine",
+    "cli_flag": "--forecast-engine stage81_solar",
+    "solar_mapping": "raw_power = SW_IN * 300m2 * 0.20 * 0.85; solar_generation = min(raw_power, 60000W)",
+    "interval_semantics": "lower == point == upper (degenerate point-only bounds)"
+  },
+  "scenario_status": {
+    "S1_normal_operation": "PASS (Executed)",
+    "S2_low_solar": "PASS (Executed)",
+    "S3_low_wind": "Authorized / Not Executed",
+    "S4_high_demand": "PASS (Executed)",
+    "S5_high_renewable_curtailment": "PASS (Executed)",
+    "S6_battery_constrained": "PASS (Executed)",
+    "S7_governed_infeasibility_fault": "PASS (Executed)",
+    "S8_forecast_perturbation_bias": "Authorized / Not Executed"
+  },
+  "mpc_behavior": {
+    "rolling_horizon_steps": 24,
+    "horizon_hours": 24,
+    "closed_loop_progression": "PASS",
+    "no_future_truth_consumed_by_forecasting": true
+  },
+  "fault_behavior": {
+    "d4c1_governance_preserved": true,
+    "infeasibility_state": "GOVERNED_DEGRADED_ZERO_DISPATCH",
+    "objective_value_on_infeasibility": 1000000000.0,
+    "rule_fallbacks_or_relaxations": false
+  },
+  "offline_verification": {
+    "offline_only": true,
+    "network_isolation": "PASS"
+  },
+  "deterministic_replay": {
+    "bit_identical_replay": true,
+    "status": "PASS"
+  },
+  "targeted_test_results": {
+    "test_suite": "system/tests/test_s81_e2e_integration.py",
+    "collected": 14,
+    "passed": 14,
+    "failed": 0,
+    "runtime_seconds": 75.26,
+    "exit_code": 0
+  },
+  "full_authoritative_regression_results": {
+    "test_command": ".venv/bin/python -m pytest system/tests",
+    "collected": 74,
+    "passed": 74,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "warnings": 0,
+    "runtime_seconds": 1521.28,
+    "exit_code": 0,
+    "modules_tested": [
+      "system/tests/test_d5_implementation.py (7/7 PASS)",
+      "system/tests/test_offline_runtime.py (35/35 PASS)",
+      "system/tests/test_s81_adapter.py (12/12 PASS)",
+      "system/tests/test_s81_e2e_integration.py (14/14 PASS)",
+      "system/tests/test_wind_arx_adapter.py (6/6 PASS)"
+    ]
+  },
+  "synthetic_simulation_metrics": {
+    "label": "SYNTHETIC SIMULATION METRICS",
+    "completed_mpc_steps": 24,
+    "optimizer_status": "OPTIMIZATION_SUCCESS",
+    "governed_fault_count": 0,
+    "unmet_load_kwh": 0.0,
+    "note": "Modeled scenario outputs only; not merged into scientific benchmark or real-data claims."
+  },
+  "provenance": {
+    "model_provenance": "Stage 8.1 champion HistGradientBoosting solar model (frozen 37 features, artifact id: stage81_solar_v1)",
+    "synthetic_scenario_provenance": "Deterministic synthetic solar/wind/demand fixtures",
+    "software_provenance": "POLARIS v1.0.0-s81-e2e",
+    "real_data_provenance": "NONE"
+  },
+  "scientific_claim_boundary": {
+    "real_station_fuel_savings_claimed": false,
+    "real_station_forecasting_accuracy_claimed": false,
+    "real_nuolja_validation_claimed": false,
+    "real_station_demand_forecasting_accuracy_claimed": false,
+    "allowed_framing": "POLARIS demonstrates an end-to-end predictive energy-management workflow on deterministic synthetic station scenarios."
+  },
+  "frozen_track_integrity": {
+    "stage81_model_changed": false,
+    "forecast_bundle_schema_changed": false,
+    "station_state_changed": false,
+    "dispatch_plan_changed": false,
+    "d1_d7_d4c1_governance_changed": false,
+    "wind_demand_tracks_changed": false
+  },
+  "blockers": null,
+  "next_governed_step": "SYNTHETIC_E2E_EXECUTION_AND_DEMONSTRATION_REVIEW"
+}

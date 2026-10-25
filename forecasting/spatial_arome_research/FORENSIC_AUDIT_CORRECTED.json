@@ -1,0 +1,354 @@
+{
+  "audit_metadata": {
+    "date": "September 2026",
+    "status": "STRESS-TESTED & CORRECTED",
+    "purpose": "Diagnostic investigation only - no training, no model changes",
+    "scope": "Re-examination of causal claims vs correlations",
+    "corrections_made": "Major corrections to overconfident causal attributions"
+  },
+
+  "executive_summary": {
+    "gap_measured": {
+      "odd_official": 36.188657,
+      "even_reconstructed": 26.3668,
+      "gap_wm2": 9.8204,
+      "gap_percent": 27.1,
+      "status": "REAL and MEASURED"
+    },
+    "gap_explanation": {
+      "previous_claim": "Explained by regime (4-5 W/m²) + clouds (2-3 W/m²) + reconstruction (1-2 W/m²)",
+      "corrected_claim": "Partially explained by plausible mechanisms, not fully quantified",
+      "confidence_shift": "High (before) → Medium (corrected)"
+    }
+  },
+
+  "critical_corrections": {
+    "claim_1_h9_h12_regime": {
+      "previous_classification": "CONFIRMED",
+      "corrected_classification": "PLAUSIBLE but UNQUANTIFIED",
+      "previous_attribution_wm2": "4-5 W/m²",
+      "corrected_status": "Observed irradiance difference (9.7 W/m²), not quantified error contribution",
+      "reason_for_correction": "Higher irradiance does not automatically lower absolute MAE. Actual ODD error rate (27.3%) is better in H9-H12 than rest (29.4%). Cannot show 4-5 W/m² contribution without evaluating same model on both splits.",
+      "required_for_quantification": [
+        "Evaluate same model (reconstructed HGB) on both EVEN and ODD",
+        "Compute error rates in each regime for both splits",
+        "Show error difference × distribution mismatch yields 4-5 W/m²",
+        "Not performed in this audit"
+      ]
+    },
+    "claim_2_cloud_distribution": {
+      "previous_classification": "CONFIRMED",
+      "corrected_classification": "PLAUSIBLE but UNQUANTIFIED",
+      "previous_attribution_wm2": "2-3 W/m²",
+      "corrected_status": "Cloud cover difference is real (p<0.001), error impact unquantified",
+      "reason_for_correction": "Statistical significance of distribution difference ≠ quantified causal impact. Did not segment by cloud regimes or compute error rate changes.",
+      "required_for_quantification": [
+        "Compute MAE/error-rate within cloud bins for both splits",
+        "Show error changes similarly with cloud in both",
+        "Weight by distribution mismatch in each bin",
+        "Sum across bins to get 2-3 W/m² attribution",
+        "Not performed in this audit"
+      ]
+    },
+    "claim_3_reconstruction_variance": {
+      "previous_classification": "PLAUSIBLE",
+      "corrected_classification": "UNRESOLVED",
+      "observed_discrepancy_wm2": 1.5848,
+      "phase10_reported": 26.3668,
+      "audit_reconstruction": 24.7820,
+      "status": "Cannot explain from available artifacts",
+      "potential_causes": [
+        "Random seed differences (sklearn HGB is stochastic)",
+        "Hyperparameter defaults differ",
+        "Different sklearn version behavior",
+        "Stopping criterion differences"
+      ],
+      "artifact_limitation": "Phase 10 says 'default hyperparameters' but does not specify exact values",
+      "recommendation": "Use Phase 10's reported 26.3668 W/m² as official control. 1.58 W/m² discrepancy is UNRESOLVED."
+    },
+    "claim_4_gap_explained": {
+      "previous_classification": "CONFIRMED (gap is explained)",
+      "corrected_classification": "PARTIALLY EXPLAINED, NOT FULLY QUANTIFIED",
+      "fundamental_problem": "Two different models - cannot isolate regime from algorithm contribution",
+      "model_comparison": {
+        "original_stage8_1": {
+          "algorithm": "HistGradientBoostingRegressor",
+          "hyperparameters": "UNKNOWN (code unavailable)",
+          "training_data": "UNKNOWN (presumably EVEN, approved before ODD eval)",
+          "performance_odd": 36.188657,
+          "performance_even": "UNKNOWN"
+        },
+        "reconstructed_hgb": {
+          "algorithm": "sklearn.HistGradientBoostingRegressor",
+          "hyperparameters": "default (not specified)",
+          "training_data": "EVEN only (173 origins, 5-fold OOF)",
+          "performance_even": 26.3668,
+          "performance_odd": "UNKNOWN (not evaluated)"
+        }
+      },
+      "required_to_decompose": "Evaluate SAME model on both splits (would violate dev/test boundary)",
+      "conclusion": "Cannot rigorously decompose 9.82 W/m² gap into regime vs algorithm components from available artifacts"
+    }
+  },
+
+  "audit_findings_corrected": {
+    "confirmed_findings": [
+      {
+        "id": 1,
+        "finding": "No leakage to EVEN",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "Zero missing data, zero ODD reads, 0 fold mismatches verified"
+      },
+      {
+        "id": 2,
+        "finding": "ODD properly firewalled",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "Explicit verification in Phase 10 checkpoints"
+      },
+      {
+        "id": 3,
+        "finding": "Folds group by origin (0 mismatches)",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "GroupKFold verified, 0 mismatches across 173 EVEN origins"
+      },
+      {
+        "id": 4,
+        "finding": "All features are causal",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "No future actual_SW_IN or noncausal features found"
+      },
+      {
+        "id": 5,
+        "finding": "Cloud cover difference (ODD higher by 3.3%, p<0.001)",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "KS test statistic=0.0598, p<0.001"
+      },
+      {
+        "id": 6,
+        "finding": "H9-H12 irradiance difference (EVEN higher by 9.7 W/m², p<0.001)",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "H11: Δ=+13.89 W/m², H12: Δ=+20.53 W/m²"
+      },
+      {
+        "id": 7,
+        "finding": "Seasonal distribution equivalent (p=0.91)",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "Chi-square test, no significant difference"
+      },
+      {
+        "id": 8,
+        "finding": "Day/night fraction equivalent (~69% both)",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "Daytime fraction EVEN 69.44%, ODD 69.09%, p>0.05"
+      },
+      {
+        "id": 9,
+        "finding": "Temperature/humidity distributions equivalent",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "KS tests p>0.36 for temperature and humidity"
+      },
+      {
+        "id": 10,
+        "finding": "Gap is real and measured (9.82 W/m²)",
+        "classification": "CONFIRMED",
+        "confidence": "High",
+        "evidence": "Official predictions verify 36.188657 W/m², Phase 10 reports 26.3668 W/m²"
+      }
+    ],
+
+    "retracted_findings": [
+      {
+        "id": 1,
+        "previous_claim": "~4-5 W/m² from H9-H12 regime",
+        "previous_classification": "CONFIRMED",
+        "corrected_classification": "PLAUSIBLE but UNQUANTIFIED",
+        "reason": "Showed correlation (irradiance difference) not quantified causal mechanism"
+      },
+      {
+        "id": 2,
+        "previous_claim": "~2-3 W/m² from cloud distribution",
+        "previous_classification": "CONFIRMED",
+        "corrected_classification": "PLAUSIBLE but UNQUANTIFIED",
+        "reason": "Showed distribution difference not quantified error impact"
+      },
+      {
+        "id": 3,
+        "previous_claim": "~1-2 W/m² from reconstruction variance",
+        "previous_classification": "PLAUSIBLE",
+        "corrected_classification": "UNRESOLVED",
+        "reason": "Cannot explain 1.58 W/m² discrepancy from available artifacts"
+      },
+      {
+        "id": 4,
+        "previous_claim": "The gap is explained",
+        "previous_classification": "CONFIRMED",
+        "corrected_classification": "PARTIALLY EXPLAINED, NOT FULLY QUANTIFIED",
+        "reason": "Regime differences are plausible but not rigorously quantified"
+      }
+    ],
+
+    "unresolved_findings": [
+      {
+        "id": 1,
+        "question": "What is the exact regime contribution to the gap?",
+        "classification": "UNRESOLVED",
+        "why": "Cannot evaluate same model on both EVEN and ODD simultaneously",
+        "would_require": "Either (A) original Stage 8.1 code for EVEN evaluation, or (B) permission to evaluate reconstructed HGB on ODD"
+      },
+      {
+        "id": 2,
+        "question": "What is the exact algorithm contribution?",
+        "classification": "UNRESOLVED",
+        "why": "Original Stage 8.1 architecture and hyperparameters not available",
+        "would_require": "Original training code and hyperparameter specification"
+      },
+      {
+        "id": 3,
+        "question": "Why does 26.3668 W/m² ≠ 24.7820 W/m²?",
+        "classification": "UNRESOLVED",
+        "why": "Exact hyperparameters not specified in artifacts",
+        "would_require": "Phase 10 must provide exact sklearn HGB hyperparameters and random seed"
+      },
+      {
+        "id": 4,
+        "question": "Will EVEN candidates perform 10 W/m² worse on ODD?",
+        "classification": "UNRESOLVED",
+        "why": "Regime contribution is unquantified",
+        "honest_answer": "Likely 5-10 W/m² worse, but magnitude is unquantified"
+      }
+    ]
+  },
+
+  "corrected_answers": {
+    "A_is_gap_genuinely_explained": {
+      "answer": "PARTIALLY EXPLAINED, NOT FULLY QUANTIFIED",
+      "established": [
+        "Gap is real and measured (9.82 W/m²)",
+        "EVEN and ODD have different data distributions",
+        "These differences are plausible contributors",
+        "No leakage or fraud detected"
+      ],
+      "not_established": [
+        "Quantified causal contribution of each factor",
+        "Whether regime explains 30%, 50%, or 90% of gap",
+        "Whether algorithm/hyperparameter differences dominate"
+      ]
+    },
+
+    "B_is_26_3668_trustworthy": {
+      "answer": "YES FOR RELATIVE COMPARISON, WITH CAVEATS",
+      "trustworthy_for": [
+        "Comparing Candidates A vs B vs C within EVEN",
+        "Relative improvement over baseline"
+      ],
+      "not_trustworthy_for": [
+        "Direct transfer to ODD performance",
+        "Absolute performance claims without regime qualification",
+        "Predicting ODD improvement from EVEN gate results"
+      ],
+      "recommendation": "Use as baseline for relative candidate comparison on EVEN only"
+    },
+
+    "C_is_10_wm2_penalty_justified": {
+      "answer": "NO - EXPLICITLY RETRACTED",
+      "previous_claim": "Expect ~10 W/m² gap when EVEN candidate moves to ODD",
+      "why_unjustified": [
+        "9.82 W/m² gap is between two different models/splits",
+        "Not proven to be regime-specific penalty",
+        "Claiming specific transfer rate without proper attribution is overconfident",
+        "Gap could be 100% algorithm, 100% regime, or mixed"
+      ],
+      "corrected_claim": "ODD likely 5-10 W/m² worse than EVEN, magnitude unquantified",
+      "do_not_promise": "Specific numbers about ODD performance"
+    },
+
+    "D_does_protocol_need_correction": {
+      "answer": "NO - Protocol is sound",
+      "strengths": [
+        "Honest about reconstruction status (labeled 'approximate')",
+        "Properly constructed folds",
+        "Appropriate gates (G1-G6)",
+        "No leakage",
+        "ODD properly firewalled"
+      ],
+      "recommended_additions": [
+        "Add caveat: ODD performance worse due to unquantified regime differences",
+        "Clarify: Gate results on EVEN do not predict ODD performance",
+        "Document: 1.58 W/m² discrepancy between checkpoint and independent reconstruction is UNRESOLVED"
+      ]
+    },
+
+    "E_safe_to_proceed_to_architecture": {
+      "answer": "YES, WITH EXPLICIT REGIME-AWARENESS",
+      "safe_aspects": [
+        "EVEN control is valid for relative comparison",
+        "No leakage prevents proceeding",
+        "Protocol is sound"
+      ],
+      "required_cautions": [
+        "Do NOT optimize for H9-H12 (peak hours EVEN advantage)",
+        "Expect ODD to be substantially worse (likely 5-10 W/m² worse)",
+        "Monitor H9-H12 and rest-of-horizon errors separately",
+        "Do NOT claim EVEN control transfers to ODD",
+        "Be transparent about regime/algorithm uncertainty"
+      ]
+    }
+  },
+
+  "final_verdict": {
+    "what_is_known": [
+      "26.3668 W/m² EVEN vs 36.188657 W/m² ODD gap is real",
+      "EVEN and ODD have detectably different data distributions",
+      "These plausibly contribute to performance difference",
+      "No methodology problems"
+    ],
+    "what_is_not_known": [
+      "Exact quantitative contribution of regime vs algorithm",
+      "Whether EVEN advantage is 3, 5, or 9 W/m²",
+      "How to reliably predict ODD performance from EVEN results",
+      "Root cause of 1.58 W/m² reconstruction variance"
+    ],
+    "scientific_recommendation": "Proceed with architecture research on EVEN baseline, but maintain strict regime-awareness. Do NOT over-claim transferability to ODD. Use conservative expectations about ODD improvement.",
+    "confidence_level": "Medium (appropriately cautious after stress test)"
+  },
+
+  "comparison_before_after": {
+    "gap_explanation": {
+      "before": "Explained by 3 quantified factors",
+      "after": "Partially explained by plausible mechanisms"
+    },
+    "regime_attribution": {
+      "before": "~4-5 W/m² CONFIRMED",
+      "after": "PLAUSIBLE but UNQUANTIFIED"
+    },
+    "cloud_attribution": {
+      "before": "~2-3 W/m² CONFIRMED",
+      "after": "PLAUSIBLE but UNQUANTIFIED"
+    },
+    "reconstruction_variance": {
+      "before": "~1-2 W/m² PLAUSIBLE",
+      "after": "UNRESOLVED"
+    },
+    "even_to_odd_penalty": {
+      "before": "~10 W/m² claimed",
+      "after": "5-10 W/m² likely, magnitude unquantified"
+    },
+    "protocol_status": {
+      "before": "No changes needed",
+      "after": "Sound, but interpretation needs caveats"
+    },
+    "overall_confidence": {
+      "before": "High",
+      "after": "Medium (appropriately cautious)"
+    }
+  }
+}

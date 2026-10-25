@@ -1,0 +1,432 @@
+{
+  "dataset_label": "2020_2023_primary",
+  "input_path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+  "input_sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+  "n_origins": 1369,
+  "n_rows_skipped_missing_or_nonnumeric": 0,
+  "sign_convention": "realized_minus_forecast (actual - prediction), per PCEEB spec wording (M1)",
+  "units": "Wh/m^2 (numerically identical to source hourly W/m^2 under M3)",
+  "horizon_indexing": "lookahead_step_rank, 1-based position within each origin's own chronologically sorted sequence (M2)",
+  "quantile_estimator": "linear interpolation between order statistics (Type 7) (M5)",
+  "envelope_by_lookahead_step": {
+    "1": {
+      "lookahead_step_rank": 1,
+      "n_origins": 1369,
+      "mean_wh_m2": -0.330072,
+      "stdev_wh_m2": 5.307429,
+      "min_wh_m2": -34.3127,
+      "max_wh_m2": 23.097,
+      "quantiles_wh_m2": {
+        "q05": -9.6075,
+        "q10": -0.31688,
+        "q25": 0.0,
+        "q50": 0.0,
+        "q75": 0.0025,
+        "q90": 2.64128,
+        "q95": 5.8156
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 1,
+        "max": 6,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "2": {
+      "lookahead_step_rank": 2,
+      "n_origins": 1369,
+      "mean_wh_m2": -2.366788,
+      "stdev_wh_m2": 15.948171,
+      "min_wh_m2": -101.1493,
+      "max_wh_m2": 52.8775,
+      "quantiles_wh_m2": {
+        "q05": -36.03462,
+        "q10": -12.473,
+        "q25": 0.0,
+        "q50": 0.0,
+        "q75": 0.007,
+        "q90": 5.89404,
+        "q95": 12.54996
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 2,
+        "max": 7,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "3": {
+      "lookahead_step_rank": 3,
+      "n_origins": 1369,
+      "mean_wh_m2": -9.335772,
+      "stdev_wh_m2": 36.554726,
+      "min_wh_m2": -222.7245,
+      "max_wh_m2": 105.1596,
+      "quantiles_wh_m2": {
+        "q05": -97.36226,
+        "q10": -52.57412,
+        "q25": 0.0,
+        "q50": 0.0,
+        "q75": 0.02,
+        "q90": 8.25174,
+        "q95": 21.3785
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 3,
+        "max": 8,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "4": {
+      "lookahead_step_rank": 4,
+      "n_origins": 1369,
+      "mean_wh_m2": -26.401384,
+      "stdev_wh_m2": 71.824622,
+      "min_wh_m2": -411.5401,
+      "max_wh_m2": 146.3334,
+      "quantiles_wh_m2": {
+        "q05": -203.07274,
+        "q10": -130.75534,
+        "q25": -10.8639,
+        "q50": 0.0,
+        "q75": 0.026,
+        "q90": 10.37972,
+        "q95": 24.77386
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 4,
+        "max": 9,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "5": {
+      "lookahead_step_rank": 5,
+      "n_origins": 1369,
+      "mean_wh_m2": -49.144811,
+      "stdev_wh_m2": 117.77224,
+      "min_wh_m2": -601.4105,
+      "max_wh_m2": 258.1523,
+      "quantiles_wh_m2": {
+        "q05": -330.0215,
+        "q10": -224.2006,
+        "q25": -55.832,
+        "q50": 0.0,
+        "q75": 0.1195,
+        "q90": 14.2044,
+        "q95": 40.4134
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 5,
+        "max": 10,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "6": {
+      "lookahead_step_rank": 6,
+      "n_origins": 1369,
+      "mean_wh_m2": -62.100654,
+      "stdev_wh_m2": 159.638755,
+      "min_wh_m2": -820.6273,
+      "max_wh_m2": 396.3232,
+      "quantiles_wh_m2": {
+        "q05": -430.61314,
+        "q10": -272.6148,
+        "q25": -75.0444,
+        "q50": 0.0,
+        "q75": 0.9463,
+        "q90": 32.19116,
+        "q95": 71.54576
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 6,
+        "max": 11,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "7": {
+      "lookahead_step_rank": 7,
+      "n_origins": 1369,
+      "mean_wh_m2": -78.921417,
+      "stdev_wh_m2": 209.02802,
+      "min_wh_m2": -1149.0879,
+      "max_wh_m2": 625.8463,
+      "quantiles_wh_m2": {
+        "q05": -528.73934,
+        "q10": -363.1295,
+        "q25": -113.3433,
+        "q50": 0.0,
+        "q75": 4.3368,
+        "q90": 65.51274,
+        "q95": 123.74494
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 7,
+        "max": 12,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "8": {
+      "lookahead_step_rank": 8,
+      "n_origins": 1369,
+      "mean_wh_m2": -91.64302,
+      "stdev_wh_m2": 261.839685,
+      "min_wh_m2": -1538.7854,
+      "max_wh_m2": 861.0148,
+      "quantiles_wh_m2": {
+        "q05": -638.73034,
+        "q10": -435.07882,
+        "q25": -136.9156,
+        "q50": 0.0017,
+        "q75": 12.2781,
+        "q90": 110.9966,
+        "q95": 190.06338
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 8,
+        "max": 13,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "9": {
+      "lookahead_step_rank": 9,
+      "n_origins": 1369,
+      "mean_wh_m2": -86.9377,
+      "stdev_wh_m2": 316.238844,
+      "min_wh_m2": -1881.7707,
+      "max_wh_m2": 1189.8985,
+      "quantiles_wh_m2": {
+        "q05": -745.60872,
+        "q10": -487.44106,
+        "q25": -157.8721,
+        "q50": 0.2115,
+        "q75": 32.7631,
+        "q90": 184.3575,
+        "q95": 298.07092
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 9,
+        "max": 14,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "10": {
+      "lookahead_step_rank": 10,
+      "n_origins": 1369,
+      "mean_wh_m2": -86.107748,
+      "stdev_wh_m2": 374.900309,
+      "min_wh_m2": -2036.8725,
+      "max_wh_m2": 1509.2084,
+      "quantiles_wh_m2": {
+        "q05": -852.51106,
+        "q10": -573.68864,
+        "q25": -173.5933,
+        "q50": 1.6947,
+        "q75": 55.9631,
+        "q90": 245.41458,
+        "q95": 419.37202
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 10,
+        "max": 15,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "11": {
+      "lookahead_step_rank": 11,
+      "n_origins": 1369,
+      "mean_wh_m2": -75.912887,
+      "stdev_wh_m2": 433.741351,
+      "min_wh_m2": -2117.0013,
+      "max_wh_m2": 1739.5664,
+      "quantiles_wh_m2": {
+        "q05": -909.30976,
+        "q10": -639.976,
+        "q25": -196.3916,
+        "q50": 4.1102,
+        "q75": 89.135,
+        "q90": 333.02408,
+        "q95": 555.58654
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 11,
+        "max": 16,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "12": {
+      "lookahead_step_rank": 12,
+      "n_origins": 1369,
+      "mean_wh_m2": -73.421528,
+      "stdev_wh_m2": 494.151904,
+      "min_wh_m2": -2438.0592,
+      "max_wh_m2": 1892.4043,
+      "quantiles_wh_m2": {
+        "q05": -1026.05512,
+        "q10": -691.67496,
+        "q25": -216.7214,
+        "q50": 5.4531,
+        "q75": 109.4267,
+        "q90": 430.74316,
+        "q95": 664.96238
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 12,
+        "max": 17,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "13": {
+      "lookahead_step_rank": 13,
+      "n_origins": 1369,
+      "mean_wh_m2": -72.867488,
+      "stdev_wh_m2": 544.486806,
+      "min_wh_m2": -2446.1968,
+      "max_wh_m2": 2213.5378,
+      "quantiles_wh_m2": {
+        "q05": -1093.246,
+        "q10": -736.1154,
+        "q25": -253.8783,
+        "q50": 6.8054,
+        "q75": 128.4818,
+        "q90": 480.73282,
+        "q95": 779.20914
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 13,
+        "max": 18,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "14": {
+      "lookahead_step_rank": 14,
+      "n_origins": 1369,
+      "mean_wh_m2": -94.056341,
+      "stdev_wh_m2": 590.344314,
+      "min_wh_m2": -2655.4926,
+      "max_wh_m2": 2462.1189,
+      "quantiles_wh_m2": {
+        "q05": -1217.464,
+        "q10": -823.43736,
+        "q25": -285.6709,
+        "q50": 5.6568,
+        "q75": 113.9529,
+        "q90": 503.85492,
+        "q95": 813.5898
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 14,
+        "max": 19,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "15": {
+      "lookahead_step_rank": 15,
+      "n_origins": 1369,
+      "mean_wh_m2": -116.154729,
+      "stdev_wh_m2": 628.660189,
+      "min_wh_m2": -3021.0588,
+      "max_wh_m2": 2697.0773,
+      "quantiles_wh_m2": {
+        "q05": -1284.05312,
+        "q10": -909.9548,
+        "q25": -343.6508,
+        "q50": 4.7035,
+        "q75": 92.9857,
+        "q90": 526.6716,
+        "q95": 847.8247
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 15,
+        "max": 20,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "16": {
+      "lookahead_step_rank": 16,
+      "n_origins": 1369,
+      "mean_wh_m2": -158.074908,
+      "stdev_wh_m2": 653.326916,
+      "min_wh_m2": -3369.4346,
+      "max_wh_m2": 2858.3751,
+      "quantiles_wh_m2": {
+        "q05": -1342.35282,
+        "q10": -979.48238,
+        "q25": -416.0415,
+        "q50": 3.2303,
+        "q75": 64.4947,
+        "q90": 464.37866,
+        "q95": 812.64666
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 16,
+        "max": 21,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "17": {
+      "lookahead_step_rank": 17,
+      "n_origins": 1369,
+      "mean_wh_m2": -257.115431,
+      "stdev_wh_m2": 690.827433,
+      "min_wh_m2": -3665.3001,
+      "max_wh_m2": 2719.8021,
+      "quantiles_wh_m2": {
+        "q05": -1579.66396,
+        "q10": -1179.14142,
+        "q25": -543.8521,
+        "q50": -34.3066,
+        "q75": 38.6121,
+        "q90": 354.17272,
+        "q95": 661.383
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 17,
+        "max": 22,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "18": {
+      "lookahead_step_rank": 18,
+      "n_origins": 1369,
+      "mean_wh_m2": -298.653373,
+      "stdev_wh_m2": 717.049401,
+      "min_wh_m2": -3868.9329,
+      "max_wh_m2": 2692.3663,
+      "quantiles_wh_m2": {
+        "q05": -1680.46674,
+        "q10": -1262.89668,
+        "q25": -610.8244,
+        "q50": -53.6424,
+        "q75": 32.7375,
+        "q90": 320.73102,
+        "q95": 597.41408
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 18,
+        "max": 23,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    },
+    "19": {
+      "lookahead_step_rank": 19,
+      "n_origins": 1369,
+      "mean_wh_m2": -331.556373,
+      "stdev_wh_m2": 742.191401,
+      "min_wh_m2": -3967.8468,
+      "max_wh_m2": 2620.6775,
+      "quantiles_wh_m2": {
+        "q05": -1751.51414,
+        "q10": -1357.01934,
+        "q25": -659.5517,
+        "q50": -62.4524,
+        "q75": 27.925,
+        "q90": 305.22398,
+        "q95": 559.71134
+      },
+      "raw_horizon_hour_at_this_step": {
+        "min": 19,
+        "max": 24,
+        "note": "Raw horizon_hour value(s) observed at this lookahead-step rank, reported for transparency only (see methodological note M2 / GAP-INDX-03); NOT the grouping key used for the quantile envelope above."
+      }
+    }
+  },
+  "per_origin_csv_output": "research/pceeb_part_a_offline/outputs/pceeb_per_origin_prefix_errors_2020_2023_primary.csv"
+}

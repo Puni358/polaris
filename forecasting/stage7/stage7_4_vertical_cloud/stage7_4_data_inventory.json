@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-09-12T08:01:50.565833+00:00",
+  "stage": "STAGE 7.4 VERTICAL CLOUD STRUCTURE DATA & CAUSALITY FEASIBILITY VERIFICATION",
+  "archive_provider": "MET Norway MEPS 2.5km Deterministic Collection (thredds.met.no)",
+  "archive_collections": [
+    "meps_det_pl_YYYYMMDDTHHZ.ncml",
+    "meps_det_sfc_YYYYMMDDTHHZ.ncml"
+  ],
+  "target_location": {
+    "name": "SITES Nuolja Station",
+    "latitude_deg": 68.362074,
+    "longitude_deg": 18.738752,
+    "elevation_m": 702.0,
+    "meps_grid_y": 760,
+    "meps_grid_x": 486,
+    "meps_grid_latitude_deg": 68.355701,
+    "meps_grid_longitude_deg": 18.763666,
+    "grid_distance_km": 1.24
+  },
+  "pressure_levels": {
+    "count": 13,
+    "values_hpa": [
+      50.0,
+      100.0,
+      150.0,
+      200.0,
+      250.0,
+      300.0,
+      400.0,
+      500.0,
+      700.0,
+      800.0,
+      850.0,
+      925.0,
+      1000.0
+    ],
+    "units": "hPa",
+    "fixed_isobaric": true,
+    "ordering": "top_to_surface (50 hPa -> 1000 hPa)"
+  },
+  "verified_variables": {
+    "cloud_liquid_water": "mass_fraction_of_cloud_condensed_water_in_air_pl (kg/kg)",
+    "cloud_ice_water": "mass_fraction_of_cloud_ice_in_air_pl (kg/kg)",
+    "cloud_area_fraction": "cloud_area_fraction_pl (0..1)",
+    "snow_water": "mass_fraction_of_snow_in_air_pl (kg/kg)",
+    "rain_water": "mass_fraction_of_rain_in_air_pl (kg/kg)",
+    "air_temperature": "air_temperature_pl (K)",
+    "specific_humidity": "specific_humidity_pl (kg/kg)",
+    "u_wind": "x_wind_pl (m/s)",
+    "v_wind": "y_wind_pl (m/s)",
+    "surface_air_pressure": "surface_air_pressure (Pa)"
+  },
+  "benchmark_coverage": {
+    "total_clean_origins": 347,
+    "even_origins": 174,
+    "odd_origins": 173,
+    "forecast_horizons_per_origin": 24,
+    "total_horizon_hours": 8328
+  },
+  "feasibility_decision": "GO"
+}

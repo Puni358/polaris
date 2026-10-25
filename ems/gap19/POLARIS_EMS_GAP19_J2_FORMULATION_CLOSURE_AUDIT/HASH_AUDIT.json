@@ -1,0 +1,27 @@
+{
+  "audit_name": "POLARIS_EMS_GAP19_J2_FORMULATION_CLOSURE_AUDIT",
+  "timestamp": "2026-09-25T04:41:00Z",
+  "files": {
+    "README.md": "b67e9c6cbf4664dbbf29781be24e9bcf8c3a78e1c41f8c1278fed4684cc42985",
+    "EBR_FORMULATION.md": "c036e3d47f5cc3615e3147564d92060783ea9ebe415aa0227630e10d7a875640",
+    "TERMINAL_RESERVE_FORMULATION.md": "66d99c1f9afa5aaca3df406ff8dcaab406b6e1d8436ac2cae486e064ee1c1064",
+    "DOUBLE_COUNTING_AUDIT.md": "2d1bb7ec95e22cc44ea069f51c40c31eaca728a63d73be8f6cd213a526a3f6fa",
+    "HORIZON_EDGE_AUDIT.md": "8c310859d33dfb8ab7ffe19b2f573aada28ce6e0c0c3ea61d5a5730d98a332ed",
+    "MODE_DEPENDENCE_AUDIT.md": "923a5ac5dd8a1a0207aae31a0bfee0364423b3d0f1d3eedb8f49d450a44d6f8e",
+    "SCHEMA_IMPACT_AUDIT.md": "0a6e52c26f91a4f93d83ffe095b7994214ece835245496839b827e420ce72b7b",
+    "REMAINING_GOVERNANCE_DECISIONS.md": "6e95aaae532a4447776f251695e929c9fd703c2f4ba0e3a27bc9da65a861857e",
+    "ENGINEERING_DEFINITION_REQUIREMENTS.md": "a1b37ebfb9740524fc876d485a580970fc0091ab9c827dc9e0a8b59ebfd62656",
+    "IMPLEMENTATION_IMPACT.md": "a7733c30d7b5f538a32e87c768aded2de1b5e90c225eeb46a60af319eaceba6a",
+    "FINAL_FORMULATION_STATUS.md": "bc0d099a3f8b04d6d9a3e35eb5c90109a2e2549bfbb311e8b61550c1d13db460"
+  },
+  "execution_status": {
+    "code_modification": "NONE",
+    "schema_modification": "NONE",
+    "config_modification": "NONE",
+    "solver_execution": "NOT_EXECUTED",
+    "ems_execution": "NOT_EXECUTED",
+    "mpc_execution": "NOT_EXECUTED",
+    "ecd_execution": "NOT_EXECUTED",
+    "option_d_execution": "NOT_EXECUTED"
+  }
+}

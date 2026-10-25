@@ -1,0 +1,180 @@
+{
+  "timestamp": "2026-09-13T10:42:00+00:00",
+  "audit_type": "STAGE8_19_INPUT_TARGET_ALIGNMENT_AUDIT",
+  "stage": "POLARIS STAGE 8.19",
+  "official_operational_champion": {
+    "model_name": "Stage 8.19 ABIS GNSS Model",
+    "status": "FROZEN_OPERATIONAL_CHAMPION",
+    "total_features": 42,
+    "daytime_mae_w_m2": 34.821405,
+    "daytime_nmae_pct": 27.0081,
+    "daytime_rmse_w_m2": 62.748210,
+    "daytime_bias_w_m2": 1.658210,
+    "night_mae_w_m2": 0.0
+  },
+  "environment_used": "/home/punith-bs/01polaris (Copy)/.venv/bin/python (Python 3.12, Pandas 3.0.5)",
+  "forensic_script_executed_successfully": true,
+  "authoritative_t0": "2024-01-20 00:00:00 UTC",
+  "representative_origin_audit": {
+    "t0_timestamp": "2024-01-20 00:00:00 UTC",
+    "input_timestamp_range": [
+      "2024-01-19 00:00:00 UTC",
+      "2024-01-19 23:00:00 UTC"
+    ],
+    "input_observation_count": 24,
+    "first_input_timestamp": "2024-01-19 00:00:00 UTC",
+    "first_input_represented_interval": "2024-01-18 23:00:00 UTC to 2024-01-19 00:00:00 UTC",
+    "last_input_timestamp": "2024-01-19 23:00:00 UTC",
+    "last_input_represented_interval": "2024-01-19 22:00:00 UTC to 2024-01-19 23:00:00 UTC",
+    "last_input_physical_measurement_end": "2024-01-19 23:00:00 UTC (t0 - 1 hour)",
+    "target_timestamp_range": [
+      "2024-01-20 00:00:00 UTC",
+      "2024-01-20 23:00:00 UTC"
+    ],
+    "h1_target_timestamp": "2024-01-20 00:00:00 UTC",
+    "h1_target_represented_interval": "2024-01-19 23:00:00 UTC to 2024-01-20 00:00:00 UTC",
+    "h1_target_10min_readings": [
+      "2024-01-19 23:00:00 UTC",
+      "2024-01-19 23:10:00 UTC",
+      "2024-01-19 23:20:00 UTC",
+      "2024-01-19 23:30:00 UTC",
+      "2024-01-19 23:40:00 UTC",
+      "2024-01-19 23:50:00 UTC"
+    ],
+    "last_input_10min_readings": [
+      "2024-01-19 22:00:00 UTC",
+      "2024-01-19 22:10:00 UTC",
+      "2024-01-19 22:20:00 UTC",
+      "2024-01-19 22:30:00 UTC",
+      "2024-01-19 22:40:00 UTC",
+      "2024-01-19 22:50:00 UTC"
+    ],
+    "shared_10min_readings_count": 0,
+    "h1_target_interval_overlaps_input": false
+  },
+  "seasonal_cross_checks": [
+    {
+      "label": "January Mid-Winter",
+      "t0": "2024-01-20 00:00:00 UTC",
+      "last_input": "2024-01-19 23:00:00 UTC",
+      "h1_target": "2024-01-20 00:00:00 UTC",
+      "overlap": false
+    },
+    {
+      "label": "Spring DST Transition",
+      "t0": "2024-03-31 00:00:00 UTC",
+      "last_input": "2024-03-30 23:00:00 UTC",
+      "h1_target": "2024-03-31 00:00:00 UTC",
+      "overlap": false
+    },
+    {
+      "label": "Summer Solstice",
+      "t0": "2024-06-21 00:00:00 UTC",
+      "last_input": "2024-06-20 23:00:00 UTC",
+      "h1_target": "2024-06-21 00:00:00 UTC",
+      "overlap": false
+    },
+    {
+      "label": "Autumn DST Transition",
+      "t0": "2024-10-27 00:00:00 UTC",
+      "last_input": "2024-10-26 23:00:00 UTC",
+      "h1_target": "2024-10-27 00:00:00 UTC",
+      "overlap": false
+    },
+    {
+      "label": "Winter Solstice",
+      "t0": "2024-12-21 00:00:00 UTC",
+      "last_input": "2024-12-20 23:00:00 UTC",
+      "h1_target": "2024-12-21 00:00:00 UTC",
+      "overlap": false
+    }
+  ],
+  "sw_in_context_feature_boundary_audit": {
+    "feature_count": 14,
+    "features": ["ctx_std_3h", "ctx_std_6h", "ctx_std_12h", "ctx_std_24h", "ctx_abs_change_1h", "ctx_abs_change_3h", "ctx_abs_change_6h", "ctx_max_diff_6h", "ctx_mean_diff_6h", "ctx_slope_6h", "ctx_kt_std_6h", "ctx_last_obs", "ctx_mean_24h", "ctx_max_24h"],
+    "max_physical_measurement_time": "t0 - 1 hour (2024-01-19 23:00:00 UTC)",
+    "condition_max_measurement_time_le_t0": true,
+    "boundary_status": "STRICTLY_CAUSAL_NO_LEAKAGE"
+  },
+  "other_feature_families_audit": [
+    {
+      "family": "Historical SW_IN Context",
+      "source": "SITES Station",
+      "represented_interval": "t0-25h to t0-1h",
+      "acquisition_time": "t0-1h",
+      "publication_time": "00:00 UTC Day D",
+      "causal_margin": "1h prior to t0",
+      "status": "VERIFIED"
+    },
+    {
+      "family": "Solar Geometry",
+      "source": "NREL SPA Algorithm",
+      "represented_interval": "t0+h (h=0..23)",
+      "acquisition_time": "Deterministic",
+      "publication_time": "Known in advance",
+      "causal_margin": "Infinite",
+      "status": "VERIFIED"
+    },
+    {
+      "family": "Clear-Sky Physics",
+      "source": "Solis + MEPS LWP",
+      "represented_interval": "t0+h (h=0..23)",
+      "acquisition_time": "18:00 UTC D-1",
+      "publication_time": "21:30 UTC D-1",
+      "causal_margin": "2.5h prior to t0",
+      "status": "VERIFIED"
+    },
+    {
+      "family": "MEPS NWP Forecasts",
+      "source": "MET Norway MEPS 2.5km",
+      "represented_interval": "t0+h (h=0..23)",
+      "acquisition_time": "18:00 UTC D-1",
+      "publication_time": "21:30 UTC D-1",
+      "causal_margin": "2.5h prior to t0",
+      "status": "VERIFIED"
+    },
+    {
+      "family": "AROME Structural Disagreement",
+      "source": "AROME-Arctic vs MEPS",
+      "represented_interval": "t0+h (h=0..23)",
+      "acquisition_time": "18:00 UTC D-1",
+      "publication_time": "21:30 UTC D-1",
+      "causal_margin": "2.5h prior to t0",
+      "status": "VERIFIED"
+    },
+    {
+      "family": "Terrain & Horizon",
+      "source": "Lantmäteriet 2m DEM",
+      "represented_interval": "t0+h (h=0..23)",
+      "acquisition_time": "Static DEM",
+      "publication_time": "Known in advance",
+      "causal_margin": "Infinite",
+      "status": "VERIFIED"
+    },
+    {
+      "family": "ABIS GNSS Tropospheric Delay",
+      "source": "SWEPOS E-GVAP NRT",
+      "represented_interval": "22:00 UTC D-1",
+      "acquisition_time": "22:00 UTC D-1",
+      "publication_time": "23:30 UTC D-1",
+      "causal_margin": "30m prior to t0",
+      "status": "VERIFIED"
+    }
+  ],
+  "final_alignment_verdict": {
+    "input_target_alignment": "VERIFIED",
+    "h1_target_interval_overlaps_input": false,
+    "shared_10min_observations": 0,
+    "target_leakage_detected": false,
+    "governance_status": "INPUT_TARGET_ALIGNMENT_VERIFIED"
+  },
+  "experiment_execution_verification": {
+    "forecasting_experiment_run": false,
+    "stage_8_19_metrics_untouched": true,
+    "champion_metrics_preserved": {
+      "daytime_nmae_pct": 27.0081,
+      "daytime_mae_w_m2": 34.821405,
+      "daytime_rmse_w_m2": 62.748210
+    }
+  }
+}

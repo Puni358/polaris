@@ -1,0 +1,39 @@
+{
+  "manifest_name": "POLARIS EMS ECD Fixture Provenance Manifest",
+  "fixture_id": "ECD_CANONICAL_SYNTHETIC_FIXTURE_V1",
+  "data_classification": "SYNTHETIC_ENGINEERING_TEST_DATA",
+  "station_meaning": "NONE",
+  "real_station_validation_status": "NOT_ESTABLISHED",
+  "purpose": "CONTROLLED_ECD_LOGIC_VALIDATION",
+  "provenance_boundaries": {
+    "real_station_telemetry_used": false,
+    "real_station_fuel_inventory": "NOT_ESTABLISHED_IN_CURRENT_EVIDENCE_BASE",
+    "real_station_critical_load": "NOT_ESTABLISHED_IN_CURRENT_EVIDENCE_BASE",
+    "real_station_autonomy_requirement": "NOT_ESTABLISHED_IN_CURRENT_EVIDENCE_BASE"
+  },
+  "parameter_provenance": {
+    "T_required": {
+      "value_hours": 72.0,
+      "provenance_class": "GOVERNANCE_DECISION",
+      "meaning": "SYNTHETIC_ENGINEERING_TEST_VALUE_PRESERVED_UNCHANGED"
+    },
+    "T_test": {
+      "value_hours": 2.0,
+      "provenance_class": "GOVERNANCE_DECISION",
+      "meaning": "SYNTHETIC_ECD_LOGIC_VALIDATION_ONLY"
+    },
+    "critical_load_w": {
+      "value": 30000.0,
+      "provenance_class": "CONFIGURATION_PARAMETER",
+      "meaning": "SYNTHETIC_ENGINEERING_TEST_PARAMETER"
+    },
+    "battery_parameters": {
+      "source_file": "system/config/battery.yaml",
+      "provenance_class": "CONFIGURATION_PARAMETER"
+    },
+    "diesel_parameters": {
+      "source_file": "system/config/diesel.yaml",
+      "provenance_class": "ENGINEERING_ASSUMPTION"
+    }
+  }
+}

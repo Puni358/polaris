@@ -1,0 +1,149 @@
+{
+  "research_metadata": {
+    "project": "POLARIS Energy Management System",
+    "task": "GAP1.3-E Resource-Specific Telemetry Freshness Research",
+    "timestamp": "2026-09-27T12:56:00Z",
+    "governance_status": "LOCKED_HUMAN_POLICY",
+    "zero_numerical_thresholds_invented": true,
+    "production_modifications": 0
+  },
+  "core_research_question": {
+    "question": "For each safety-critical resource and measurement, what maximum telemetry age, or other freshness criterion, is justified for the specific survivability decision, and what evidence supports that criterion?",
+    "conclusion": "Telemetry freshness cannot be defined as a single universal age. Physical rate of change (dx/dt) varies by over 4 orders of magnitude across measurements. Uncertainty-bounded freshness based on state estimation variance is scientifically superior to static timestamp limits."
+  },
+  "thirteen_dimensions_summary": {
+    "telemetry_type": "Freshness rules must be measurement-specific (state/health vs fuel level).",
+    "resource_dynamics": "Physical rate of change (dx/dt) dictates unmeasured state drift rate.",
+    "failure_modes": "Class A hazards (unmasked engine trip) require sub-second to second freshness; Class B (fuel leak) allow longer windows.",
+    "survivability_horizon": "6-hour horizon requires bounded integral state variance, not a 6-hour static age.",
+    "generator_state": "Running (u=1) requires active power/temp; OFF (u=0) requires starter battery & block heater status.",
+    "fuel_telemetry": "Fuel depletion level must propagate consumption rate uncertainty into E_fuel_usable.",
+    "start_readiness": "OFF generator safety credit requires validated multi-permissive boolean verification.",
+    "health_fault": "Absence of recent fault code != healthy; latching state + heartbeat required.",
+    "sensor_characteristics": "Timestamp age must be combined with signal quality flags and CRC integrity.",
+    "communication_path": "Satellite link blizzard jitter must be distinguished from sensor drift.",
+    "redundancy": "Independent corroborating signals (flowmeter + tank level) permit extended holdover windows.",
+    "threshold_options": "Dynamic uncertainty-based and hybrid state-dependent criteria supersede static numerical ages.",
+    "safety_basis": "Only OEM specs, IEEE/IEC standards, and HIL test logs provide Class 1/2 evidence for safety rules."
+  },
+  "measurement_analysis": [
+    {
+      "measurement": "generator_operating_state",
+      "why_safety_critical": "Determines u(t) baseline for dispatch",
+      "physical_quantity": "Engine RPM / Relay Bit",
+      "potential_failure_mode": "Silent trip / Breaker open",
+      "relevant_dynamics": "Instantaneous (< 100 ms)",
+      "potential_freshness_criterion": "Alarm polling + Heartbeat pulse",
+      "evidence_supporting_criterion": "ECU SCADA spec (Modbus RTU)",
+      "evidence_limitations": "Polling rate limited by serial link",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "HIL Breaker Trip Test",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "generator_active_power",
+      "why_safety_critical": "Primary input to P_gen_credible(t)",
+      "physical_quantity": "Active kW",
+      "potential_failure_mode": "Engine derating / governor fault",
+      "relevant_dynamics": "Moderate (1s - 5s)",
+      "potential_freshness_criterion": "Moving variance + age bound",
+      "evidence_supporting_criterion": "IEEE 1547 / IEC 61850",
+      "evidence_limitations": "Does not capture thermal decay",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "Generator step-load response",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "generator_available_power",
+      "why_safety_critical": "Sets maximum capacity limit",
+      "physical_quantity": "Capability kW",
+      "potential_failure_mode": "Ambient thermal derating",
+      "relevant_dynamics": "Slow (1 min - 15 min)",
+      "potential_freshness_criterion": "Thermal model bounds",
+      "evidence_supporting_criterion": "Caterpillar/Cummins OEM Spec",
+      "evidence_limitations": "Depends on ambient sensor accuracy",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "Polar chamber thermal test",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "fuel_tank_level",
+      "why_safety_critical": "Primary input to E_fuel_usable",
+      "physical_quantity": "Liquid Liters / %",
+      "potential_failure_mode": "Fuel leak / Tank depletion",
+      "relevant_dynamics": "Very Slow (0.1% / min)",
+      "potential_freshness_criterion": "Level change vs integral check",
+      "evidence_supporting_criterion": "Hydrostatic Sensor Datasheet",
+      "evidence_limitations": "Sensor sloshing under vibration",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "Polar fuel tank calibration",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "fuel_flow_rate",
+      "why_safety_critical": "Validates consumption model",
+      "physical_quantity": "Liters / Hour",
+      "potential_failure_mode": "Injector fouling / line clog",
+      "relevant_dynamics": "Slow (10s - 60s)",
+      "potential_freshness_criterion": "Mass-balance verification",
+      "evidence_supporting_criterion": "Coriolis Flowmeter Spec",
+      "evidence_limitations": "Temperature viscosity drift",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "Fuel line flow test",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "startup_readiness",
+      "why_safety_critical": "Prerequisite for OFF gen credit",
+      "physical_quantity": "Starter V / RTD Temp",
+      "potential_failure_mode": "Starter battery dead / frozen block",
+      "relevant_dynamics": "Slow (1 min - 10 min)",
+      "potential_freshness_criterion": "Multi-permissive boolean flag",
+      "evidence_supporting_criterion": "NFPA 110 / OEM Start Spec",
+      "evidence_limitations": "Temperature gradient lag",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "Cold-start freezing HIL test",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "health_fault_state",
+      "why_safety_critical": "Protects against unsafe start",
+      "physical_quantity": "ECU Diagnostic Code",
+      "potential_failure_mode": "Over-temperature / Oil pressure low",
+      "relevant_dynamics": "Instantaneous (< 1s)",
+      "potential_freshness_criterion": "Latching error state + age",
+      "evidence_supporting_criterion": "SAE J1939 ECU Protocol",
+      "evidence_limitations": "Code latency inside ECU",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "ECU fault injection test",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    },
+    {
+      "measurement": "maintenance_lockout",
+      "why_safety_critical": "Prevents remote start during service",
+      "physical_quantity": "LOTO Switch / Breaker",
+      "potential_failure_mode": "Remote start during human service",
+      "relevant_dynamics": "Manual / Instantaneous",
+      "potential_freshness_criterion": "Hardwired interlock status",
+      "evidence_supporting_criterion": "OSHA LOTO / IEEE 1547",
+      "evidence_limitations": "Manual switch position error",
+      "numerical_threshold_justified": false,
+      "required_future_validation": "Auxiliary contact wiring check",
+      "polaris_status": "UNKNOWN / Uncredited if unestablished"
+    }
+  ],
+  "threshold_options_evaluation": [
+    { "option": "A. Universal Fixed Age", "defensibility": "LOW", "recommended": false },
+    { "option": "B. Measurement-Specific Fixed Age", "defensibility": "MODERATE", "recommended": "PARTIAL" },
+    { "option": "C. Resource-Specific Fixed Age", "defensibility": "MODERATE_HIGH", "recommended": "PARTIAL" },
+    { "option": "D. State-Dependent Age", "defensibility": "HIGH", "recommended": "FURTHER_STUDY" },
+    { "option": "E. Dynamic Uncertainty Criterion", "defensibility": "VERY_HIGH", "recommended": true },
+    { "option": "F. Hybrid Criterion (E + Corroboration)", "defensibility": "EXEMPLARY", "recommended": true }
+  ],
+  "final_decision_boundary": {
+    "classification": "C. Evidence Insufficient — Additional Empirical Research Required",
+    "implementation_authorized": false,
+    "production_lock": "ACTIVE",
+    "hard_stop": true
+  }
+}

@@ -1,0 +1,7 @@
+Input_Item,Data_Source,Uses_Future_Truth,Causality_Status,Causality_Justification
+Initial Battery Energy E(t0),StationState,NO,CAUSALLY_VALID,Observed initial state at t0
+Initial Fuel Stock F_remaining(t0),StationState / Fuel Sensor,NO,CAUSALLY_VALID,Observed initial state at t0
+Critical Load Forecast D_critical(t),ForecastBundle,NO,CAUSALLY_VALID,Forecasted demand vector
+Adverse Renewable Assumption (P=0),Detector Local Rule,NO,CAUSALLY_VALID,Deterministic rule; uses zero future data
+Actual Future Solar / Wind,Future Telemetry post-t0,YES,BLOCKED,Prohibited in runtime detector
+Digital Twin Internal State,Simulator Private State,YES,BLOCKED,Prohibited in runtime detector

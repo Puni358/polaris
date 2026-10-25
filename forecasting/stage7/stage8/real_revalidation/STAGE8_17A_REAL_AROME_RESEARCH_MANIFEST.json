@@ -1,0 +1,61 @@
+{
+  "manifest_title": "POLARIS Stage 8.17A Real AROME Research Artifact Pack Manifest",
+  "timestamp_utc": "2026-09-13T14:39:12Z",
+  "route_status": "CLOSED — EVIDENCE SUPPORTS A SPECIFIC NEW RESEARCH ROUTE",
+  "real_arome_input_sha256": "db5fa7591e586c0e1288a76806a7717d4ad13779458cb48a961959d48ceec298",
+  "odd_predictions_sha256": "26bac202e3ce3cd851f1467a6a1c1b675b0409285058f895924d095eb8f0b908",
+  "revalidated_odd_metrics": {
+    "control_daytime_mae_w_m2": 36.211027,
+    "candidate_daytime_mae_w_m2": 36.426418,
+    "delta_mae_w_m2": 0.215391,
+    "control_daytime_nmae_pct": 28.0861,
+    "candidate_daytime_nmae_pct": 28.2532,
+    "delta_nmae_pct": 0.1671,
+    "control_rmse_w_m2": 64.230507,
+    "candidate_rmse_w_m2": 64.611649,
+    "delta_rmse_w_m2": 0.381142,
+    "candidate_bias_w_m2": 0.537993,
+    "bootstrap_10k_mean_delta": 0.177449,
+    "bootstrap_95_ci": [-0.112722, 0.474933],
+    "bootstrap_improving_pct": 11.81
+  },
+  "artifacts": [
+    {
+      "name": "Real AROME Extraction CSV",
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/arome_arctic_347_origins_real_subset.csv",
+      "sha256": "db5fa7591e586c0e1288a76806a7717d4ad13779458cb48a961959d48ceec298"
+    },
+    {
+      "name": "Persisted ODD Predictions CSV",
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_ODD_PREDICTIONS.csv",
+      "sha256": "26bac202e3ce3cd851f1467a6a1c1b675b0409285058f895924d095eb8f0b908"
+    },
+    {
+      "name": "Postmortem JSON Artifact",
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_POSTMORTEM.json"
+    },
+    {
+      "name": "Postmortem Markdown Report",
+      "path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_POSTMORTEM.md"
+    },
+    {
+      "name": "Error Regimes CSV",
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_ERROR_REGIMES.csv"
+    },
+    {
+      "name": "Feature Forensics CSV",
+      "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/real_revalidation/STAGE8_17A_REAL_AROME_FEATURE_FORENSICS.csv"
+    },
+    {
+      "name": "Research Handoff Document",
+      "path": "/home/punith-bs/.gemini/antigravity/brain/c1ea6e2d-9ca7-4067-9424-926a8be17b43/STAGE8_17A_REAL_AROME_RESEARCH_HANDOFF.md"
+    }
+  ],
+  "governance": {
+    "model_experiment_run": false,
+    "model_tuning": false,
+    "master_handoff_modified": false,
+    "route_registry_modified": false,
+    "official_champion_changed": false
+  }
+}

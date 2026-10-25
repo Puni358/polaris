@@ -1,0 +1,24 @@
+{
+  "audit_type": "STAGE8_1_MASTER_HANDOFF_RMSE_CORRECTION_AUDIT",
+  "timestamp_utc": "2026-09-12T17:58:00Z",
+  "old_value": 54.912301,
+  "new_value": 64.219495,
+  "file_modified": "POLARIS_MASTER_HANDOFF.md",
+  "line_modified": 2061,
+  "experiment_rerun": false,
+  "predictions_changed": false,
+  "model_changed": false,
+  "CV_run": false,
+  "ODD_target_reads": 0,
+  "reason": "typographical transcription correction",
+  "authoritative_source": "stage8_1_official_odd_results.json",
+  "champion_status": {
+    "stage": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0,
+    "status": "FROZEN_OPERATIONAL_CHAMPION_UNCHANGED"
+  }
+}

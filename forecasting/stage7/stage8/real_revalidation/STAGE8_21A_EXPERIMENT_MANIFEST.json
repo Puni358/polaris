@@ -1,0 +1,29 @@
+{
+  "timestamp_utc": "2026-09-13T10:02:55.977525+00:00",
+  "manifest_title": "POLARIS Stage 8.21A Pre-Run Experiment Manifest",
+  "route_identifier": "STAGE8.21A",
+  "design_status": "FROZEN \u2014 READY FOR IMPLEMENTATION & EVEN-ONLY VALIDATION",
+  "artifacts_generated": [
+    "STAGE8_21A_EXPERIMENT_SPECIFICATION.md",
+    "STAGE8_21A_EXPERIMENT_SPECIFICATION.json",
+    "STAGE8_21A_FEATURE_DEFINITION.md",
+    "STAGE8_21A_FEATURE_DEFINITION.json",
+    "STAGE8_21A_DATA_COVERAGE_PLAN.md",
+    "STAGE8_21A_DATA_COVERAGE_PLAN.json",
+    "STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.md",
+    "STAGE8_21A_PRE_RUN_GOVERNANCE_CHECKLIST.json",
+    "STAGE8_21A_EXPERIMENT_MANIFEST.md",
+    "STAGE8_21A_EXPERIMENT_MANIFEST.json",
+    "run_stage8_21a_pre_run_validation.py"
+  ],
+  "governance": {
+    "EXPERIMENT_RUN": false,
+    "MODEL_TRAINING": false,
+    "ODD_ACCESS": false,
+    "ODD_PREDICTIONS": false,
+    "ODD_METRICS": false,
+    "CHAMPION_CHANGED": false,
+    "MASTER_HANDOFF_CHANGED": false,
+    "ROUTE_REGISTRY_CHANGED": false
+  }
+}

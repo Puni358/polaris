@@ -1,0 +1,124 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_A3_EXECUTION_PROVENANCE_AUDIT",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A3_1_A3_EXECUTION_PROVENANCE_AND_GOVERNANCE_AUDIT",
+    "task_type": "POST_EXECUTION_PROVENANCE_AUDIT_ONLY",
+    "authorization_status": "AUTHORIZED_PHASE_A3_1_AUDIT_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A3_1_AUDIT_COMPLETED",
+    "A3_1_AUDIT_STATUS": "PASS",
+    "RESULTS_STATUS": "RESULTS_PROVISIONALLY_VALID",
+    "A3_ACTUAL_MODEL_RUN_COUNT": 16,
+    "A3_RUN_BUDGET_STATUS": "COMPLIANT",
+    "GLOBAL_RUN_CEILING": 16,
+    "SINGLE_COMPLETED_EXECUTION_VERIFIED": "YES",
+    "FAILED_CLI_LAUNCH_ATTEMPTS": 4,
+    "SELECTION_RULE_PRE_REGISTERED": "YES",
+    "TEST_SET_ISOLATION": "PASS",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "CHAMPION_STATUS": "A2_RESEARCH_CHAMPION_RETAINED",
+    "WIND_MODEL_TRAINING": "EXECUTED_A3_ONLY",
+    "WIND_MODEL_INFERENCE": "EXECUTED_A3_ONLY",
+    "WIND_MODEL_SELECTION": "COMPLETED_PREDEF_RULE_APPLIED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "PROVENANCE_AUDIT_COMPLETED",
+    "NEXT_GOVERNED_STEP": "WIND_FORECASTING_A3_SCIENTIFIC_EVIDENCE_REVIEW"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_5_MODIFIED": "NO",
+    "A2_6_MODIFIED": "NO",
+    "A2_7_MODIFIED": "NO",
+    "A3_MODIFIED": "NO",
+    "A3_RESULTS_JSON_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "EXTERNAL_PACKAGES_INSTALLED": "NO",
+    "WEIGHTS_DOWNLOADED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "PROVENANCE_AUDIT_COMPLETED"
+  },
+  "cli_invocations_audit": {
+    "script_path": "research/wind_a3/run_a3_wind_speed_experiments.py",
+    "total_invocation_attempts": 5,
+    "failed_launch_attempts": 4,
+    "failed_attempts_details": [
+      "Invocation 1 & 2: System python missing sklearn (ImportError prior to code execution)",
+      "Invocation 3 & 4: Sandbox socket reset prior to code execution"
+    ],
+    "successful_executions": 1,
+    "successful_execution_task_id": "task-122",
+    "multiple_execution_contamination": false
+  },
+  "run_budget_reconciliation": {
+    "planned_runs": {
+      "EXP-01": 3,
+      "EXP-02": 1,
+      "EXP-03": 4,
+      "EXP-04": 4,
+      "EXP-05": 4,
+      "EXP-06": 0
+    },
+    "completed_model_fits": {
+      "EXP-01": 3,
+      "EXP-02": 1,
+      "EXP-03": 4,
+      "EXP-04": 4,
+      "EXP-05": 4,
+      "EXP-06": 0
+    },
+    "actual_total_model_fits": 16,
+    "global_ceiling": 16,
+    "budget_status": "COMPLIANT"
+  },
+  "result_artifact_provenance": {
+    "result_json_path": "research/wind_a3/a3_wind_research_results.json",
+    "written_by_task_id": "task-122",
+    "is_single_clean_execution": true,
+    "unique_run_ids_verified": true
+  },
+  "script_governance_audit": {
+    "script_location": "research/wind_a3/run_a3_wind_speed_experiments.py",
+    "production_source_modified": false,
+    "compliance_verdict": "PASS — Isolated research script creation is compliant with A3 research execution authorization."
+  },
+  "selection_rule_provenance": {
+    "benchmark_bar_mae_ms": 2.0364,
+    "required_improvement_pct": 2.0,
+    "target_mae_threshold_ms": 1.9957,
+    "pre_registered_in_a2_5": true,
+    "pre_registration_verified": "YES",
+    "actual_best_candidate_test_mae_ms": 2.0081,
+    "improvement_pct": 1.39,
+    "selection_rule_passed": false,
+    "champion_retained": "Autoregressive Ridge AR-X (Frozen A2 Comparator)"
+  },
+  "test_set_isolation_audit": {
+    "test_period": "2024-11-01 to 2024-12-31 (62 origins)",
+    "scalers_fit_on_train_only": true,
+    "hyperparameters_tuned_on_validation_only": true,
+    "test_set_unpeeked": true,
+    "isolation_status": "PASS"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "gate": "GATE-13",
+  "timestamp": "2026-09-27T02:08:41Z",
+  "source_modifications": 0,
+  "final_integrated_campaign": "NOT_PERFORMED",
+  "human_execution_authorization": "NOT_YET_GRANTED",
+  "artifacts": {
+    "GATE13_GOVERNANCE_STATE.md": "818cbae8603a9608c40df2d5c2b6e457131e334fff12d0835fa100709994c5bb",
+    "GATE13_PREFLIGHT.md": "5566c14c41a0974da7d68ab82332d7360f7e43ec2adb368ab90e2fc4f47a34e7",
+    "GATE13_PROTECTED_HASH_REGISTER.md": "291725a1c67c7d113ba66eff86548ec2e517f6fb557732b7b229df44161185ac",
+    "GATE13_PROVENANCE_STATE.md": "c8124b3611dbda0d6dd8c8fa6f9176e43f74470dffd1c90c1648ace995b5530d",
+    "GATE13_STATUS.md": "f0d81e9693fcf96669b55ea46d91227ee3e7ba399b73448ee762dcab5dd305a3",
+    "GATE13_STOP_CONDITIONS.md": "7ca35cad47b74e71dcf1577353e2d25f760ddd62ba904d9b2a17337e28d882f9"
+  }
+}

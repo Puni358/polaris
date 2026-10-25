@@ -1,0 +1,54 @@
+{
+  "study_id": "battery_degradation_physical_sensitivity_1year_20260930",
+  "provenance_records": [
+    {
+      "parameter_name": "deg_penalty_per_wh",
+      "value": 0.00005,
+      "units": "$/Wh",
+      "equivalent_value": 0.05,
+      "equivalent_units": "$/kWh",
+      "origin": "milp.py default configuration",
+      "classification": "Synthetic Research Proxy / Optimization Weight",
+      "physical_validation": "UNVALIDATED",
+      "empirical_data_available": false
+    },
+    {
+      "parameter_name": "eta_charge",
+      "value": 0.92,
+      "units": "fraction",
+      "origin": "milp.py / router.py battery config",
+      "classification": "Synthetic Engineering Assumption",
+      "physical_validation": "UNVALIDATED",
+      "empirical_data_available": false
+    },
+    {
+      "parameter_name": "eta_discharge",
+      "value": 0.92,
+      "units": "fraction",
+      "origin": "milp.py / router.py battery config",
+      "classification": "Synthetic Engineering Assumption",
+      "physical_validation": "UNVALIDATED",
+      "empirical_data_available": false
+    },
+    {
+      "parameter_name": "round_trip_efficiency",
+      "value": 0.8464,
+      "units": "fraction (eta_chg * eta_dis)",
+      "origin": "milp.py derived property",
+      "classification": "Synthetic Engineering Assumption",
+      "physical_validation": "UNVALIDATED",
+      "empirical_data_available": false
+    },
+    {
+      "parameter_name": "diesel_marginal_cost",
+      "value": 0.000625,
+      "units": "$/Wh",
+      "equivalent_value": 0.625,
+      "equivalent_units": "$/kWh",
+      "origin": "Fuel price proxy ($1.40/L / 2.25 kWh/L)",
+      "classification": "Economic Baseline Proxy",
+      "physical_validation": "EMPIRICAL_DERIVED",
+      "empirical_data_available": true
+    }
+  ]
+}

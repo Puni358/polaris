@@ -1,0 +1,16 @@
+{
+  "daytime_rows":2883.0,
+  "all_rows":4152.0,
+  "mean_actual_daytime":128.9285280957,
+  "mean_actual_all":89.5233493497,
+  "stage8_1_daytime_mae":36.1886570536,
+  "stage8_1_daytime_nmae":28.0687739076,
+  "stage8_1_daytime_rmse":64.2194952135,
+  "stage8_1_daytime_bias":1.439399479,
+  "stage8_1_all_hours_rmse":53.5131524972,
+  "stage8_1_all_hours_mae":25.1281065235,
+  "stage7_5_daytime_mae":36.6135705336,
+  "stage7_5_daytime_nmae":28.3983468006,
+  "stage7_5_daytime_rmse":65.3470638334,
+  "stage7_5_all_hours_rmse":54.4527386978
+}

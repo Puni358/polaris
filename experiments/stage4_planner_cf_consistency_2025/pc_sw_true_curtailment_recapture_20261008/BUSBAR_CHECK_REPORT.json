@@ -1,0 +1,13 @@
+{
+  "busbar_check_pass": false,
+  "max_candidate_physical_balance_error_w": 0.0,
+  "max_renewable_plus_diesel_sum_error_w": 59753.6,
+  "recapture_check": {
+    "triggered_hours_count": 149,
+    "recapture_bounds_pass": true,
+    "diesel_reduction_identity_pass": false,
+    "max_diesel_reduction_error_w": 58996.1,
+    "curtailment_reduction_identity_pass": false,
+    "max_curtailment_reduction_error_w": 24295.86
+  }
+}

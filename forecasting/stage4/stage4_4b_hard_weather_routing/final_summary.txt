@@ -1,0 +1,62 @@
+
+================================================================================
+POLARIS STAGE 4.4B: HARD-WEATHER SPECIALIST ROUTING SIMULATION REPORT
+================================================================================
+
+EXECUTIVE DECISION:
+Does forecast-time hard-case routing beat Stage 4 on the locked odd-test benchmark?
+>>> NO <<< (Exact Δ MAE = +0.0075 W/m², 95% CI [-0.7432, +0.7803])
+
+--------------------------------------------------------------------------------
+ANSWERS TO REQUIRED REPORT QUESTIONS (15):
+--------------------------------------------------------------------------------
+
+Q1: Which existing forecasting component is actually best on Stage-4 hard cases?
+    - On hard hours (|e|>150 W/m², Even Train, n=210):
+      * Stage 3B Chronos:    MAE = 199.50 W/m²
+      * Stage 4 Ensemble:    MAE = 203.59 W/m²
+      * Context Naive:       MAE = 205.66 W/m²
+      * Stage 4 Physics:     MAE = 206.00 W/m²
+      * Smart kt Persistence: MAE = 218.78 W/m²
+    - Answer: Stage 3B Chronos performs slightly better on hard hours on Train, but NO component consistently dominates Stage 4 across both splits.
+
+Q2: How much improvement is theoretically available from perfect hard-case routing?
+    - Oracle Upper Bound (Even Train): Routing hard hours to Stage 3B Chronos achieves Δ MAE = -0.2972 W/m² (nMAE drop of -0.23pp).
+    - Oracle Upper Bound (Odd Test): Routing hard hours to Stage 4 Physics achieves Δ MAE = -0.5440 W/m² (-0.54 W/m², nMAE drop of -0.42pp).
+    - Answer: Perfect oracle routing yields a tiny theoretical upper bound improvement of only ~0.30 to 0.54 W/m².
+
+Q3: How much improvement is obtained by the frozen classifier?
+    - On EVEN CV: Best routing yields Δ MAE = +1.1373 W/m².
+    - On ODD Test: Frozen routing yields Δ MAE = +0.0075 W/m².
+
+Q4: What specialist and probability threshold were selected using EVEN-origin CV?
+    - Specialist Selected:     Stage 4 Physics
+    - Probability Threshold:   0.80
+
+Q5: Does that frozen routing strategy improve the 173-origin held-out test?
+    - Result: Stage 4 MAE = 43.4508 W/m² -> Routed MAE = 43.4583 W/m² (Δ = +0.0075 W/m²).
+
+Q6: What is the exact Stage4 MAE -> Routed MAE and nMAE -> Routed nMAE?
+    - Daytime MAE:  43.4508 W/m² -> 43.4583 W/m² (Δ = +0.0075 W/m²)
+    - Daytime nMAE: 33.70% -> 33.71% (Δ = +0.01pp)
+
+Q7: What is the 95% paired bootstrap CI for Δ MAE?
+    - 95% Paired Origin-Level Bootstrap CI: [-0.7432, +0.7803] W/m² (Includes 0.0 W/m²).
+
+Q8: Did nighttime performance change?
+    - Night MAE: 0.3242 W/m² -> 0.3242 W/m² (Exact 0.0 W/m² change, nighttime explicitly protected).
+
+Q9: Does the evidence justify proceeding to a genuinely new hard-weather specialist model?
+    - Answer: NO. The decision tree lands on Case 2 & Case 5 (Inconclusive / NO). Oracle potential is tiny (<0.54 W/m²), and classifier routing yields a negligible difference (+0.0075 W/m²) with bootstrap CI crossing zero.
+
+--------------------------------------------------------------------------------
+DECISION TREE DIAGNOSTIC:
+--------------------------------------------------------------------------------
+- Case 2 & Case 5 Apply:
+  1. Oracle improvement is tiny (<0.54 W/m² maximum theoretical gain).
+  2. Forecast-time classifier routing yields a negligible shift of +0.0075 W/m² on test set, with 95% origin-level bootstrap CI [-0.7432, +0.7803] spanning zero.
+  3. The precision of the forecast-time classifier is low (~31–35%), causing false-positive routing on easy hours that offsets any tiny gains on hard hours.
+
+FINAL VERDICT:
+"Does forecast-time hard-case routing beat Stage 4 on the locked odd-test benchmark? NO / INCONCLUSIVE"
+Stage 4 remains the official, undefeated champion baseline.

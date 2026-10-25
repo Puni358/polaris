@@ -1,0 +1,30 @@
+{
+  "audit_name": "POLARIS EMS HD-01B N=6h Governance Closure Hash Audit",
+  "timestamp": "2026-09-23T05:11:00Z",
+  "audited_files": [
+    {
+      "path": "system/optimization/implementations/milp.py",
+      "purpose": "MILP solver implementation defining MPC horizon H=24",
+      "key_lines": {
+        "MPC_horizon": "Line 72: H = 24 # Horizon hours"
+      }
+    },
+    {
+      "path": "system/config/loads.yaml",
+      "purpose": "Loads configuration defining critical load baseline power",
+      "key_lines": {
+        "status_label": "Line 2: PROTOTYPE_ASSUMPTION",
+        "baseline_power_w": "Line 5: 30000.0"
+      }
+    },
+    {
+      "path": "system/config/battery.yaml",
+      "purpose": "Battery storage configuration defining capacity_wh (200 kWh)",
+      "key_lines": {
+        "capacity_wh": "Line 3: 200000.0",
+        "discharge_efficiency": "Line 7: 0.92"
+      }
+    }
+  ],
+  "verification_status": "ALL_REPOSITORY_FILES_VERIFIED_READ_ONLY"
+}

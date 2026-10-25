@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0.0",
+  "audit_phase": "G1.3-E EXTERNAL EVIDENCE CLAIM VERIFICATION",
+  "policy_status": "LOCKED",
+  "universal_freshness_threshold": "NONE",
+  "evidence_boundary": "C",
+  "total_sources_verified": 6,
+  "verification_summary": {
+    "directly_verified": 0,
+    "partially_verified": 2,
+    "accessible_but_content_unverified": 3,
+    "source_not_verified": 1,
+    "total_claims_fully_supported": 3,
+    "total_claims_partially_supported": 2,
+    "total_claims_unsupported": 3
+  },
+  "sources": [
+    {
+      "evidence_id": "EVD-01",
+      "source_name": "Antarctic Mawson / Halley VI Station SCADA Telemetry Dataset",
+      "source_url_or_identifier": "Australian Antarctic Division (AAD) / British Antarctic Survey (BAS) Polar Data Catalogue",
+      "verification_status": "ACCESSIBLE_BUT_CONTENT_UNVERIFIED",
+      "accessibility_verified": true,
+      "content_directly_inspected": false,
+      "variables_verified": [],
+      "temporal_information_verified": "SCADA timestamps referenced in institutional catalogue",
+      "ground_truth_verified": "Station SCADA master server event logs",
+      "equipment_or_resource_verified": "Antarctic polar station microgrid diesel generators (Caterpillar/Perkins)",
+      "generator_applicability": "EVD-01 is a candidate external acquisition route for Classes 1.1 and 1.4, but the underlying raw time-series content has not been directly inspected and therefore cannot yet be claimed to support either class experimentally.",
+      "resource_class_implications": [
+        "Class 1.1 Operating State: Candidate route only (Content unverified pending data request & inspection)",
+        "Class 1.4 Fuel Tank Level: Candidate route only (Content unverified pending data request & inspection)"
+      ],
+      "unsupported_claims": [
+        "Claim that raw telemetry files have been directly inspected, verified, or support empirical claims for Class 1.1 or 1.4."
+      ],
+      "corrected_interpretation": "EVD-01 is a candidate external acquisition route for Classes 1.1 and 1.4, but the underlying raw time-series content has not been directly inspected and therefore cannot yet be claimed to support either class experimentally.",
+      "experiment_enablement_status": "EXECUTABLE_AFTER_DATA_ACQUISITION"
+    },
+    {
+      "evidence_id": "EVD-02",
+      "source_name": "NREL Open Microgrid Diesel Generator Step-Load & Fuel Performance Dataset",
+      "source_url_or_identifier": "NREL OpenEI / OEDI Data Lake Repository (Dataset ID: microgrid_diesel_stepload_2023)",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "accessibility_verified": true,
+      "content_directly_inspected": true,
+      "variables_verified": [
+        "3phase_AC_line_voltage_V",
+        "3phase_AC_line_current_A",
+        "active_power_kW",
+        "reactive_power_kVAR",
+        "frequency_Hz"
+      ],
+      "temporal_information_verified": "1 Hz revenue-grade power analyzer time-series logs",
+      "ground_truth_verified": "Class 0.2S revenue-grade power analyzer AC bus recordings",
+      "equipment_or_resource_verified": "NREL Flatirons microgrid test facility diesel generator set",
+      "generator_applicability": "Direct empirical applicability to Class 1.2 Active Power step-load acceptance (0 -> 100 kW). Lacks engine fuel flow measurement channels.",
+      "resource_class_implications": [
+        "Class 1.2 Active Power: FULLY SUPPORTED (1 Hz AC power step-load data verified)",
+        "Class 1.5 Fuel Flow Rate: REMOVED / UNSUPPORTED (No fuel flow measurement channels present in dataset)"
+      ],
+      "unsupported_claims": [
+        "Claim that EVD-02 contains dual Coriolis mass flowmeter supply/return fuel flow rate data (m_dot_fuel) for Class 1.5."
+      ],
+      "corrected_interpretation": "EVD-02 verified publicly accessible and contains high-quality 1 Hz AC active power step-load logs for Class 1.2 ONLY. Fuel flow data for Class 1.5 is absent from EVD-02 catalog and removed from Class 1.5 enablement.",
+      "experiment_enablement_status": "EXECUTABLE_AFTER_DATA_ACQUISITION"
+    },
+    {
+      "evidence_id": "EVD-03",
+      "source_name": "Caterpillar Industrial Engine Thermal Chamber Cold-Start & Block Decay Dataset",
+      "source_url_or_identifier": "Caterpillar OEM Technical Engineering Literature Reference (C9/C13 Cold-Soak Test Program)",
+      "verification_status": "ACCESSIBLE_BUT_CONTENT_UNVERIFIED",
+      "accessibility_verified": true,
+      "content_directly_inspected": false,
+      "variables_verified": [],
+      "temporal_information_verified": "Multi-channel thermocouple logger during test cell cold-soak",
+      "ground_truth_verified": "Engine test cell thermocouple logger + ECU internal RAM trace",
+      "equipment_or_resource_verified": "Caterpillar C9/C13 industrial diesel engines",
+      "generator_applicability": "High engine physical applicability; raw multi-channel thermocouple test logs require OEM research NDA/partnership.",
+      "resource_class_implications": [
+        "Class 1.3 Available Capacity: Reference model source (Requires OEM Partnership)",
+        "Class 1.6 Startup Readiness: Reference model source (Requires OEM Partnership)"
+      ],
+      "unsupported_claims": [
+        "Claim that raw OEM thermal chamber test logs are accessible without formal OEM NDA/partnership."
+      ],
+      "corrected_interpretation": "Caterpillar OEM thermal cold-soak reference is documented in technical literature, but raw thermocouple time-series files require formal OEM research NDA/partnership (REQUIRES_PARTNERSHIP).",
+      "experiment_enablement_status": "EXECUTABLE_AFTER_FIELD_INSTRUMENTATION"
+    },
+    {
+      "evidence_id": "EVD-04",
+      "source_name": "SAE J1939 ECU CAN-Bus Diagnostic Fault Broadcast Dataset",
+      "source_url_or_identifier": "Open CAN Benchmark Repository (Zenodo / GitHub OpenCAN Heavy Vehicle CAN Capture)",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "accessibility_verified": true,
+      "content_directly_inspected": true,
+      "variables_verified": [
+        "J1939_CAN_frame_ID",
+        "SAE_PGN",
+        "CAN_raw_payload_bytes",
+        "frame_timestamp_ms"
+      ],
+      "temporal_information_verified": "Raw CAN-bus packet capture timestamps at 1 ms resolution",
+      "ground_truth_verified": "Hardware CAN sniffer packet capture logs",
+      "equipment_or_resource_verified": "Heavy vehicle commercial truck ECU CAN-bus network",
+      "generator_applicability": "Applicable for verifying J1939 CAN frame parsers and decoders; DOES NOT contain stationary polar diesel generator ECU fault latching events.",
+      "resource_class_implications": [
+        "Protocol Reference: SUPPORTED (Verifies SAE J1939 CAN frame decoding for protocol/parser research)",
+        "Class 1.7 Health / Fault Status: UNSUPPORTED FOR GENERATOR EXPERIMENTS (EVD-04 is separated from the separate future HIL/lab generator ECU test harness required for Class 1.7 experimental enablement)"
+      ],
+      "unsupported_claims": [
+        "Claim that EVD-04 provides stationary diesel generator ECU fault latching events or enables Class 1.7 generator health experiments."
+      ],
+      "corrected_interpretation": "EVD-04 verified publicly accessible for J1939 protocol frame parser testing, but captures heavy vehicle truck CAN traffic. EVD-04 is explicitly separated from the separate future HIL/lab generator ECU test harness required for Class 1.7 experimental enablement.",
+      "experiment_enablement_status": "REFERENCE_ONLY"
+    },
+    {
+      "evidence_id": "EVD-05",
+      "source_name": "High-Speed Switchgear Auxiliary Contact Bounce & LOTO Interlock Logging Trial Data",
+      "source_url_or_identifier": "University Power Systems High-Voltage Laboratory Switchgear Test Bench Reference",
+      "verification_status": "ACCESSIBLE_BUT_CONTENT_UNVERIFIED",
+      "accessibility_verified": true,
+      "content_directly_inspected": false,
+      "variables_verified": [],
+      "temporal_information_verified": "Digital logic analyzer capture at 1 ms sampling resolution",
+      "ground_truth_verified": "Digital logic analyzer contact loop recordings",
+      "equipment_or_resource_verified": "480V industrial switchgear auxiliary contact block",
+      "generator_applicability": "Applicable to switchgear aux contact bounce logging; raw logic analyzer logs require university lab testing agreement.",
+      "resource_class_implications": [
+        "Class 1.8 Maintenance / Lockout State: HIL bench candidate source (Requires Lab Partnership)"
+      ],
+      "unsupported_claims": [
+        "Claim that raw lab test bench logic analyzer logs are accessible without research partnership."
+      ],
+      "corrected_interpretation": "Switchgear test bench HIL concept is documented in literature, but raw logic analyzer contact bounce logs require formal laboratory testing partnership (REQUIRES_PARTNERSHIP).",
+      "experiment_enablement_status": "EXECUTABLE_AFTER_HIL/LAB_ENABLEMENT"
+    },
+    {
+      "evidence_id": "EVD-06",
+      "source_name": "Polar Day-Tank Hydrostatic Level & Slosh Settling Calibration Trial Data",
+      "source_url_or_identifier": "Polar Microgrid Literature Reference (Secondary Citation)",
+      "verification_status": "SOURCE_NOT_VERIFIED",
+      "accessibility_verified": false,
+      "content_directly_inspected": false,
+      "variables_verified": [],
+      "temporal_information_verified": "Unverified",
+      "ground_truth_verified": "Unverified",
+      "equipment_or_resource_verified": "Unverified day-tank installation",
+      "generator_applicability": "Unverified; secondary citation could not be independently accessed or located.",
+      "resource_class_implications": [
+        "Class 1.4 Fuel Tank Level: SOURCE NOT VERIFIED (Removed from active candidate list)"
+      ],
+      "unsupported_claims": [
+        "Claim that EVD-06 is an independently verified or accessible empirical dataset."
+      ],
+      "corrected_interpretation": "EVD-06 cited in secondary literature could not be independently located or verified. Marked SOURCE_NOT_VERIFIED and removed from active candidate evidence routes.",
+      "experiment_enablement_status": "BLOCKED_NO_REALISTIC_ROUTE_IDENTIFIED"
+    }
+  ]
+}
+

@@ -1,0 +1,82 @@
+{
+  "protocol": "FINAL_168H_FORECAST_VS_REACTIVE",
+  "generated_at_utc": "2026-10-01T14:26:46Z",
+  "scenario_file": "synthetic_168h_endurance_scenario.json",
+  "steps": 168,
+  "ecd_router_optiond_bypassed": true,
+  "forecast_engine": "baseline",
+  "config_sha256": {
+    "scenario": "25bb7fbef60feddc8b8a8db7c77f088ceebae1b917993ba4df465044f8907eb8",
+    "battery": "eb06f81d8b11364e254cbcd5c37a4769874f8703e9e86e3b067b60d8858da216",
+    "diesel": "421120967328e18366daf41b682fc9f1cbe91b0f9ebe2133b83290bb9e294ac3",
+    "loads": "eacb84d1c25f8768de0ee0cf8fdb286d4dbc9254824d7c17aea738cbe9774467",
+    "optimizer": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8",
+    "station": "e021368133587b5752b9471722d7997d1cd2aa2d674697a47b1b2f5b06052e42",
+    "solar_pv": "611521090b7d551614c23d91fc190320a42bccee667929618d40bab987262e5e"
+  },
+  "code_sha256": {
+    "milp.py": "16c74d86af418aa592a5dfd8d49b53136b51a6718f55094f940a7437c70d27a3",
+    "reactive_hybrid_a2.py": "7afa7dbd2ffbc3347f0208df8af459476ead4c6b316e5bf5c76cd943b7dc1f54",
+    "simulator.py": "8c44f757058e4bdc83e4b9988258d69198d85a766b25fcaeed4204c74b3c5e5f",
+    "baseline_forecast.py": "905c644abdc27d4ec3a8168ff39828bcc0575a4a6e31460c0ff4bfb16c30c993"
+  },
+  "initial_state_fingerprint": {
+    "timestamp": "2024-06-01T00:00:00Z",
+    "battery_soc_pct": 50.0,
+    "battery_energy_wh": 100000.0,
+    "diesel_running": false,
+    "diesel_hours_running": 0.0,
+    "last_observed_solar_irradiance": 0.0,
+    "last_observed_demand": 24550.41,
+    "last_observed_wind_generation": 30600.04,
+    "diesel_fuel_remaining_liters": 100.0
+  },
+  "python_version": "3.12.3",
+  "scipy_version": "1.18.1",
+  "reactive_hybrid_a2": {
+    "requested_steps": 168,
+    "completed_steps": 168,
+    "faults": [],
+    "fuel_overshoot_events": []
+  },
+  "milp": {
+    "requested_steps": 168,
+    "completed_steps": 168,
+    "faults": [],
+    "fuel_overshoot_events": []
+  },
+  "summary_stats": {
+    "reactive_hybrid_a2": {
+      "soc_min": 20.59,
+      "soc_max": 95.0,
+      "soc_mean": 70.7097619047619,
+      "fuel_init_l": 100.0,
+      "fuel_final_l": 62.5,
+      "fuel_consumed_l": 37.5,
+      "diesel_energy_kwh": 50.0,
+      "unmet_kwh": 0.0,
+      "curtailment_kwh": 1251.0608,
+      "battery_throughput_kwh": 736.4795899999999,
+      "efc": 3.68239795,
+      "solve_time_mean_ms": 0.18868547604575897,
+      "solve_time_min_ms": 0.1621549963601865,
+      "solve_time_max_ms": 0.3303300036350265
+    },
+    "milp": {
+      "soc_min": 20.0,
+      "soc_max": 93.56,
+      "soc_mean": 50.75363095238095,
+      "fuel_init_l": 100.0,
+      "fuel_final_l": 4.0807,
+      "fuel_consumed_l": 95.91929999999999,
+      "diesel_energy_kwh": 243.67698,
+      "unmet_kwh": 184.1492,
+      "curtailment_kwh": 1449.30582,
+      "battery_throughput_kwh": 1407.4793,
+      "efc": 7.0373965,
+      "solve_time_mean_ms": 1166.8112778930836,
+      "solve_time_min_ms": 22.476681995613035,
+      "solve_time_max_ms": 26507.309569002246
+    }
+  }
+}

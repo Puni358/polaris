@@ -1,0 +1,287 @@
+{
+  "manifest_id": "POLARIS_STEP4_BOUNDED_REAL_DATA_ROUTE_AUDIT_MANIFEST",
+  "audit_type": "BOUNDED_REAL_DATA_ACCESS_AND_ASSET_ROUTE_INVESTIGATION",
+  "audit_timestamp_utc": "2026-09-20T10:30:00Z",
+  "execution_boundaries": {
+    "frozen_evidence_modified": false,
+    "milp_solves_executed": 0,
+    "experiment_rerun": false,
+    "new_modeling": false,
+    "new_tuning": false,
+    "architecture_modified": false
+  },
+  "current_governance_state": {
+    "REAL_DEMAND_DATA": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_ASSET": "NOT_ESTABLISHED",
+    "ACTUALLY_RECEIVED_MEASURED_DEMAND": false
+  },
+  "existing_access_routes_audit": [
+    {
+      "target_id": "ROUTE_01_AADC",
+      "custodian": "Australian Antarctic Division (AAD) / AADC",
+      "facility_scope": "Mawson, Davis, Casey, Macquarie Island",
+      "initial_attempted_contact": "aadcwebqueries@aad.gov.au",
+      "initial_route_status": "DELIVERY_FAILED_EXTERNAL_SENDER_RESTRICTION",
+      "error_code": "550 5.7.133",
+      "reinterpretation_governance": "ADMINISTRATIVE_MAIL_BOUNCE_NOT_SCIENTIFIC_REJECTION",
+      "retry_same_address_authorized": false,
+      "alternate_bounded_route_identified": true,
+      "alternate_route_details": {
+        "access_mechanism": "AADC Web Enquiry Portal & AAP Research Grant Portal",
+        "official_url": "https://data.aad.gov.au/contact",
+        "institutional_portal": "https://data.aad.gov.au/aadc/portal/",
+        "custodian_contact": "AADC Data Centre Manager / Official Portal Request Form",
+        "qualification_status": "ACCESSIBLE_PENDING_REQUEST",
+        "actually_received": false
+      }
+    },
+    {
+      "target_id": "ROUTE_02_SANAP",
+      "custodian": "South African National Antarctic Programme (SANAP) / Stellenbosch Univ",
+      "facility_scope": "SANAE IV Station, Dronning Maud Land, Antarctica",
+      "initial_attempted_contact": "antarcticlegacy@sun.ac.za",
+      "initial_route_status": "DISPATCHED_NO_RESPONSE",
+      "alternate_bounded_route_identified": true,
+      "alternate_route_details": {
+        "access_mechanism": "DFFE Directorate Southern Oceans & Antarctic Support / NRF-SAEON Portal",
+        "official_url": "https://polar.sanap.ac.za",
+        "institutional_portal": "https://saeon.ac.za",
+        "custodian_contact": "Department of Forestry, Fisheries and the Environment (DFFE) Data Manager",
+        "qualification_status": "ACCESSIBLE_PENDING_REQUEST",
+        "actually_received": false
+      }
+    },
+    {
+      "target_id": "ROUTE_03_IPF",
+      "custodian": "International Polar Foundation (IPF)",
+      "facility_scope": "Princess Elisabeth Antarctica Station",
+      "initial_attempted_contact": "info@polarfoundation.org",
+      "initial_route_status": "DISPATCHED_NO_RESPONSE",
+      "alternate_bounded_route_identified": true,
+      "alternate_route_details": {
+        "access_mechanism": "BELSPO Polar Secretariat / IPF Research Data Portal",
+        "official_url": "https://www.polarfoundation.org",
+        "institutional_portal": "https://www.antarcticstation.org",
+        "custodian_contact": "Belgian Science Policy Office (BELSPO) / Station Operator Secretariat",
+        "qualification_status": "ACCESSIBLE_PENDING_REQUEST",
+        "actually_received": false
+      }
+    },
+    {
+      "target_id": "ROUTE_04_ACEP",
+      "custodian": "Alaska Center for Energy and Power (ACEP / UAF)",
+      "facility_scope": "Kotzebue, Cordova, Wales, St. Mary's Microgrids",
+      "initial_attempted_contact": "ACEP.info@alaska.edu",
+      "initial_route_status": "DISPATCHED_NO_RESPONSE",
+      "alternate_bounded_route_identified": true,
+      "alternate_route_details": {
+        "access_mechanism": "ACEP Microgrid Data Portal & Alaska Energy Data Gateway",
+        "official_url": "https://data.acep.uaf.edu",
+        "institutional_portal": "https://energyalaska.uaf.edu",
+        "custodian_contact": "ACEP Data Management Team / UAF Research Office",
+        "qualification_status": "ACCESSIBLE_PENDING_REQUEST",
+        "actually_received": false
+      }
+    }
+  ],
+  "newly_identified_demand_routes": [
+    {
+      "target_id": "ROUTE_05_BAS",
+      "custodian": "British Antarctic Survey (BAS) / UK Polar Data Centre (UK PDC)",
+      "station": "Rothera Research Station / Halley VI Station",
+      "country_operator": "United Kingdom / NERC / UKRI",
+      "dataset_document": "Rothera / Halley Microgrid Electrical Demand Telemetry",
+      "measurement_type": "Active Station Electrical Demand (P_load)",
+      "measured_vs_modeled": "MEASURED",
+      "temporal_resolution": "1-hour continuous interval",
+      "duration": "Multi-year operational logging",
+      "units": "Kilowatts (kW)",
+      "raw_telemetry_availability": "RESTRICTED",
+      "access_mechanism": "UK Polar Data Centre Formal Data Access Portal & Curator Request",
+      "public_private_restricted": "RESTRICTED",
+      "contact_route": "https://data.bas.ac.uk / data@bas.ac.uk",
+      "evidence_source": "UK PDC Registry & BAS Operational Systems Documentation",
+      "qualification_status": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "actually_received": false
+    },
+    {
+      "target_id": "ROUTE_06_AWI",
+      "custodian": "Alfred Wegener Institute (AWI) / PANGAEA Publisher",
+      "station": "Neumayer Station III",
+      "country_operator": "Germany / Helmholtz Centre for Polar and Marine Research",
+      "dataset_document": "Neumayer III Microgrid Wind-Diesel Electrical Demand Telemetry",
+      "measurement_type": "Active Station Electrical Demand (P_load)",
+      "measured_vs_modeled": "MEASURED",
+      "temporal_resolution": "1-hour / sub-hourly interval",
+      "duration": "Multi-year operational logging",
+      "units": "Kilowatts (kW)",
+      "raw_telemetry_availability": "RESTRICTED",
+      "access_mechanism": "PANGAEA Earth & Environmental Science Data Portal & AWI Logistics",
+      "public_private_restricted": "RESTRICTED",
+      "contact_route": "https://www.pangaea.de / info@pangaea.de / station-manager@awi.de",
+      "evidence_source": "PANGAEA Data Registry & AWI Neumayer III System Architecture",
+      "qualification_status": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "actually_received": false
+    },
+    {
+      "target_id": "ROUTE_07_NPI",
+      "custodian": "Norwegian Polar Institute (NPI) / Norwegian Polar Data Centre",
+      "station": "Troll Research Station",
+      "country_operator": "Norway / Norsk Polarinstitutt",
+      "dataset_document": "Troll Station Smart Microgrid Load Profile Telemetry",
+      "measurement_type": "Active Station Electrical Demand (P_load)",
+      "measured_vs_modeled": "MEASURED",
+      "temporal_resolution": "1-hour interval",
+      "duration": "Multi-year operational profile",
+      "units": "Kilowatts (kW)",
+      "raw_telemetry_availability": "RESTRICTED",
+      "access_mechanism": "Norwegian Polar Data Centre Request Portal",
+      "public_private_restricted": "RESTRICTED",
+      "contact_route": "https://data.npolar.no / data@npolar.no",
+      "evidence_source": "Norwegian Polar Data Centre Metadata & Troll Green Station Documentation",
+      "qualification_status": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "actually_received": false
+    }
+  ],
+  "nuolja_wind_asset_investigation": {
+    "authoritative_routes_audited": [
+      {
+        "route_id": "NUOLJA_ROUTE_01",
+        "authority": "SITES (Swedish Infrastructure for Ecosystem Science)",
+        "source_url": "https://data.fieldsites.se",
+        "finding": "SITES Nuolja Middle Station AWS metadata lists TA, RH, SW_IN, TS, P, D_SNOW. No wind turbine hardware, specs, or electrical generation instrumentation exists."
+      },
+      {
+        "route_id": "NUOLJA_ROUTE_02",
+        "authority": "Swedish Polar Research Secretariat (Polarforskningssekretariatet)",
+        "source_url": "https://polar.se/en/research-in-the-arctic/abisko-scientific-research-station/",
+        "finding": "ANS station infrastructure registry confirms environmental research equipment only. No commercial or operational wind turbine asset exists at Nuolja."
+      },
+      {
+        "route_id": "NUOLJA_ROUTE_03",
+        "authority": "SMHI (Swedish Meteorological and Hydrological Institute)",
+        "source_url": "https://www.smhi.se",
+        "finding": "SMHI Station 188790 (Abisko Aut) records 10m meteorological wind speed (m/s). This is a regional atmospheric proxy, NOT a turbine generation asset."
+      }
+    ],
+    "investigation_answers": {
+      "A_turbine_asset_exists": false,
+      "B_operator_owner": "NOT_APPLICABLE (No turbine asset exists)",
+      "C_asset_identity": "NOT_ESTABLISHED",
+      "D_specifications_publicly_documented": "NOT_ESTABLISHED",
+      "E_generation_telemetry_available": "NOT_ESTABLISHED",
+      "F_power_curve_available": "NOT_ESTABLISHED",
+      "G_paired_wind_speed_generation_data_available": "NOT_ESTABLISHED",
+      "H_official_contact_for_generation_data": "NOT_APPLICABLE (SITES curator handles weather data only)"
+    },
+    "evidence_classification": {
+      "nuolja_wind_asset_identity": "NOT_ESTABLISHED",
+      "nuolja_wind_turbine_specs": "NOT_ESTABLISHED",
+      "nuolja_wind_power_curve": "NOT_ESTABLISHED",
+      "nuolja_wind_generation": "NOT_ESTABLISHED",
+      "abisko_smhi_10m_wind_speed": "CONDITIONALLY_ESTABLISHED_REGIONAL_PROXY"
+    }
+  },
+  "ross_island_reference": {
+    "role": "REFERENCE_ONLY",
+    "system": "Enercon E-33 (3 x 330 kW) Scott Base / McMurdo Polar Wind Microgrid",
+    "establishes_nuolja_turbine_identity": false,
+    "establishes_nuolja_specifications": false,
+    "establishes_nuolja_power_curve": false,
+    "establishes_nuolja_generation": false,
+    "establishes_nuolja_wind_to_power_relationship": false
+  },
+  "complete_route_matrix": [
+    {
+      "category": "EXISTING_ROUTES",
+      "target": "AADC Antarctic Station Demand",
+      "route": "aadcwebqueries@aad.gov.au (Direct) / data.aad.gov.au/contact (Portal)",
+      "authority": "Australian Antarctic Division (AAD)",
+      "evidence": "AADC Metadata & 550 5.7.133 Bounce Log",
+      "access_status": "DELIVERY_FAILED (Direct) / ACCESSIBLE_PENDING_REQUEST (Portal)",
+      "data_received": false,
+      "qualification": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "next_human_action": "Submit formal request via AADC Web Contact Portal"
+    },
+    {
+      "category": "EXISTING_ROUTES",
+      "target": "SANAE IV Station Demand",
+      "route": "antarcticlegacy@sun.ac.za (Direct) / polar.sanap.ac.za (Portal)",
+      "authority": "SANAP / Stellenbosch / DFFE",
+      "evidence": "Literature & DFFE System Metadata",
+      "access_status": "DISPATCHED_AWAITING_RESPONSE / ACCESSIBLE_PENDING_REQUEST",
+      "data_received": false,
+      "qualification": "CONDITIONALLY_ESTABLISHED_PENDING_DATA",
+      "next_human_action": "Submit formal request via DFFE / NRF-SAEON Portal"
+    },
+    {
+      "category": "EXISTING_ROUTES",
+      "target": "Princess Elisabeth Station Demand",
+      "route": "info@polarfoundation.org (Direct) / polarfoundation.org (Portal)",
+      "authority": "International Polar Foundation / BELSPO",
+      "evidence": "IPF Microgrid Technical Reports",
+      "access_status": "DISPATCHED_AWAITING_RESPONSE / ACCESSIBLE_PENDING_REQUEST",
+      "data_received": false,
+      "qualification": "CONDITIONALLY_ESTABLISHED_PENDING_DATA",
+      "next_human_action": "Submit formal request via BELSPO Polar Secretariat Portal"
+    },
+    {
+      "category": "EXISTING_ROUTES",
+      "target": "ACEP Arctic Microgrid Demand",
+      "route": "ACEP.info@alaska.edu (Direct) / data.acep.uaf.edu (Portal)",
+      "authority": "ACEP / University of Alaska Fairbanks",
+      "evidence": "ACEP Microgrid Dataset Registry",
+      "access_status": "DISPATCHED_AWAITING_RESPONSE / ACCESSIBLE_PENDING_REQUEST",
+      "data_received": false,
+      "qualification": "CONDITIONALLY_ESTABLISHED_PENDING_DATA",
+      "next_human_action": "Submit formal request via ACEP Data Portal Form"
+    },
+    {
+      "category": "NEWLY_IDENTIFIED_ROUTES",
+      "target": "Rothera / Halley Station Demand",
+      "route": "https://data.bas.ac.uk / data@bas.ac.uk",
+      "authority": "British Antarctic Survey / UK Polar Data Centre",
+      "evidence": "UK PDC Operational Data Registry",
+      "access_status": "ACCESSIBLE_PENDING_REQUEST",
+      "data_received": false,
+      "qualification": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "next_human_action": "Submit formal request package to UK PDC Data Curator"
+    },
+    {
+      "category": "NEWLY_IDENTIFIED_ROUTES",
+      "target": "Neumayer Station III Demand",
+      "route": "https://www.pangaea.de / info@pangaea.de",
+      "authority": "Alfred Wegener Institute (AWI) / PANGAEA",
+      "evidence": "PANGAEA Microgrid Dataset Metadata",
+      "access_status": "ACCESSIBLE_PENDING_REQUEST",
+      "data_received": false,
+      "qualification": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "next_human_action": "Submit formal request package to PANGAEA Data Publisher"
+    },
+    {
+      "category": "NEWLY_IDENTIFIED_ROUTES",
+      "target": "Troll Research Station Demand",
+      "route": "https://data.npolar.no / data@npolar.no",
+      "authority": "Norwegian Polar Institute (NPI)",
+      "evidence": "Norwegian Polar Data Centre Metadata",
+      "access_status": "ACCESSIBLE_PENDING_REQUEST",
+      "data_received": false,
+      "qualification": "NON-QUALIFYING_UNTIL_OBTAINED",
+      "next_human_action": "Submit formal request package to NPI Data Office"
+    }
+  ],
+  "final_investigation_classification": "B — LEGITIMATE ACCESS ROUTES IDENTIFIED, DATA NOT YET RECEIVED",
+  "mandatory_final_status": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "REAL_DEMAND_DATA_STATUS": "DATA_BLOCKED",
+    "NUOLJA_WIND_ASSET_STATUS": "NOT_ESTABLISHED",
+    "NUOLJA_WIND_GENERATION_STATUS": "NOT_ESTABLISHED",
+    "STEP4_FINAL_CLASSIFICATION": "B — LEGITIMATE ACCESS ROUTES IDENTIFIED, DATA NOT YET RECEIVED"
+  }
+}

@@ -1,0 +1,5 @@
+Optimizer_Stage,Stage_Purpose,Contamination_Risk,Architectural_Guard,Status
+Stage 1 (Reliability),Unmet load minimization,NONE,Detector operates strictly pre-solve,CLEAN
+Stage 2 (Resilience),EBR shortfall minimization,NONE,Detector passes read-only operating_mode flag,CLEAN
+Stage 3 (Fuel),Diesel fuel minimization,NONE,MPC uses point forecast in ForecastBundle,CLEAN
+Stage 4 (Renewables),Curtailment minimization,NONE,MPC uses point forecast in ForecastBundle,CLEAN

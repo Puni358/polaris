@@ -1,0 +1,49 @@
+audit_document,03_OBJECTIVE_FUNCTION_CURRENT
+audit_phase,GAP19_HIGHS_NATIVE_TRANSFER_AUDIT
+source_file,system/optimization/implementations/milp.py
+source_lines,107-114 and 282
+generation_mode,READ_ONLY_STATIC_CODE_ANALYSIS
+execution_performed,FALSE
+
+# ============================================================
+# CURRENT OBJECTIVE FUNCTION — POLARIS EMS (as coded in milp.py)
+# ============================================================
+
+# Architecture: SINGLE SCALAR OBJECTIVE VECTOR (1D)
+# scipy.optimize.milp(c=c, ...) — c is a flat 1D numpy array of length 360
+# All objectives are collapsed into a single weighted-sum minimization
+
+# Objective coefficients per timestep t (base = t * 15):
+
+variable_index_offset,variable_name,coefficient_expression,units,description,code_line,governance_stage_association
+2,p_curt_sol[t],"curt_penalty_per_wh * dt * w_t","$/W","Penalizes solar curtailment. w_t is the temporal discount weight. From optimizer.yaml: renewable_curtailment_penalty=0.05",L107,Stage_4_Renewable_Utilization
+3,p_curt_wind[t],"curt_penalty_per_wh * dt * w_t","$/W","Penalizes wind curtailment. Same penalty as solar.",L108,Stage_4_Renewable_Utilization
+4,p_chg[t],"deg_penalty * dt * w_t","$/W","Battery cycling degradation cost for charging. deg_penalty from battery.deg_penalty_per_wh=0.00005",L109,Stage_3_implicit_battery_cost
+5,p_dis[t],"deg_penalty * dt * w_t","$/W","Battery cycling degradation cost for discharging. Same penalty as charging.",L110,Stage_3_implicit_battery_cost
+7,p_diesel[t],"fuel_cost_per_l * marg_fuel_l_wh * dt * w_t","$/W","Marginal diesel fuel cost. fuel_cost_per_l=2.50 marg_fuel_l_wh=0.00025",L111,Stage_3_Diesel_Fuel_Minimization
+9,p_unmet[t],"unmet_penalty_per_wh * dt","$/W","Unmet critical load penalty. NOTE: UNWEIGHTED — w_t is NOT applied here (gamma^t=1.0 forced).",L112,Stage_1_Critical_Load_Reliability
+13,u_diesel[t],"fuel_cost_per_l * base_fuel_l_h * dt * w_t","$/hr_equivalent","Fixed diesel base fuel cost when running. base_fuel_l_h=5.0 L/hr",L113,Stage_3_Diesel_Fuel_Minimization
+14,v_start[t],"startup_cost * w_t","$","Diesel startup cost. startup_cost=15.0",L114,Stage_3_Diesel_Startup_Penalty
+
+# Variables with ZERO coefficient in current formulation (not in objective):
+zero_coefficient_variables,"p_sol_used(0), p_wind_used(1), E_next(6), p_served(8), p_flex(10), u_chg(11), u_dis(12)"
+
+# ============================================================
+# TEMPORAL WEIGHTING MECHANISM
+# ============================================================
+weighting_mode_1,BASELINE,"gamma=1.0 (default from optimizer.yaml not setting horizon_discount_factor_gamma); w_t = 1.0 for all t. All timesteps equal weight."
+weighting_mode_2,CLASS_F,"gamma=0.95; w_t = 0.95^t. Exponentially declining weights — near timesteps weighted more than distant ones."
+weighting_mode_3,V4G_SINGLE_HORIZON,"v4g_single_horizon_mode=True; w_t = v4g_weight (e.g. 0.5133) for t==v4g_target_index (e.g. 13), else w_t=1.0."
+weighting_mode_4,CUSTOM,"custom_weight_vector=[...] of length H=24; w_t = custom_weight_vector[t]."
+unmet_penalty_weighting_exception,"p_unmet coefficient uses dt only — NOT multiplied by w_t — as explicitly noted in code comment: 'UNWEIGHTED (gamma^t = 1.0)'"
+
+# ============================================================
+# GOVERNANCE STAGE MAPPING — CURRENT vs GOVERNED OBJECTIVE
+# ============================================================
+governance_observation_1,"The current formulation implements a SINGLE WEIGHTED-SUM objective. There is no strict lexicographic priority enforced by the solver."
+governance_observation_2,"Stage 1 (critical load reliability) is represented by the p_unmet penalty coefficient (10.0 $/Wh * dt) — a large penalty intended to discourage unmet load, but NOT a hard lexicographic constraint."
+governance_observation_3,"Stage 2 (emergency battery reserve / terminal reserve) has NO explicit coefficient in the current c vector. It is represented implicitly via battery SOC bounds (min_soc_pct=20%) enforced as variable bounds, not as an objective term."
+governance_observation_4,"Stage 3 (diesel/fuel minimization) is represented by p_diesel, u_diesel, v_start coefficients — correctly penalized."
+governance_observation_5,"Stage 4 (renewable curtailment) is represented by p_curt_sol and p_curt_wind coefficients — correctly penalized."
+governance_observation_6,"The EMS Objective Specification V2 (governed) requires STRICT lexicographic priority: Stage 1 must never be violated to satisfy Stage 3 or 4. The current weighted-sum formulation cannot guarantee this without penalty tuning."
+governance_observation_7,"This observation is NOT a finding about mathematical transferability. It characterizes the GAP between current implementation and governed objective."

@@ -1,0 +1,13 @@
+REQUIREMENT_ID,NAME,STAGE_OR_TYPE,FORMULA,UNITS,TIME_BASIS,STATUS
+MATH-01,Stage 1 Critical Reliability,LEXICOGRAPHIC_STAGE_1,min J1 = sum(p_unmet_critical(t) * dt),Wh,Hourly over H=24,GOVERNED_SPECIFICATION
+MATH-02,Stage 2 Reserve & Terminal Shortfall (Energy Domain),LEXICOGRAPHIC_STAGE_2,"min J2 = sum(max(0, E_EBR_target(t) - E_reserve_avail(t))) + max(0, E_terminal_target - E(H))",Wh,Hourly over H=24,SPECIFICATION_CORRECTION_REQUIRED
+MATH-03,Stage 3 Fuel Minimization,LEXICOGRAPHIC_STAGE_3,min J3 = sum((F_base * u_diesel(t) + F_marg * p_diesel(t)) * dt + Startup_Fuel * v_start(t)),Liters,Hourly over H=24,GOVERNED_SPECIFICATION
+MATH-04,Stage 4 Avoidable Curtailment,LEXICOGRAPHIC_STAGE_4,min J4 = sum(p_curt_avoidable(t) * dt),Wh,Hourly over H=24,GOVERNED_SPECIFICATION
+MATH-05,Battery Energy Transition,PHYSICAL_CONSTRAINT,E(t+1) - E(t) - eta_chg * p_chg(t) * dt + (p_dis(t) / eta_dis) * dt = 0,Wh,Hourly step,GOVERNED_SPECIFICATION
+MATH-06,Battery Exclusivity,PHYSICAL_CONSTRAINT,u_chg(t) + u_dis(t) <= 1,Binary,Hourly step,GOVERNED_SPECIFICATION
+MATH-07,Battery SOC Bounds,EQUIPMENT_CONSTRAINT,E_min <= E(t) <= E_max,Wh,Hourly step,GOVERNED_SPECIFICATION
+MATH-08,Diesel Output Bounds,EQUIPMENT_CONSTRAINT,P_diesel_min * u_diesel(t) <= p_diesel(t) <= P_diesel_max * u_diesel(t),W,Hourly step,GOVERNED_SPECIFICATION
+MATH-09,Diesel Startup Tracking,EQUIPMENT_CONSTRAINT,v_start(t) >= u_diesel(t) - u_diesel(t-1),Binary,Hourly step,GOVERNED_SPECIFICATION
+MATH-10,Bus-Bar Power Balance,PHYSICAL_CONSTRAINT,p_sol_used + p_wind_used + p_dis + p_diesel - p_served - p_chg - p_flex = 0,W,Hourly step,GOVERNED_SPECIFICATION
+MATH-11,Demand Deficit Balance,PHYSICAL_CONSTRAINT,p_served(t) + p_unmet(t) = P_demand(t),W,Hourly step,GOVERNED_SPECIFICATION
+MATH-12,SOC-Energy Conversion,CONVERSION_EQUATION,E(t) = C_bat * (SOC(t) / 100%),Wh vs %,Instantaneous,GOVERNED_SPECIFICATION

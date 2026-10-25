@@ -1,0 +1,89 @@
+{
+  "experiment_id": "L2-CALIBRATION-EXP-01",
+  "experiment_name": "L2 Validation-Only Conditional Calibration Experiment",
+  "created_at_utc": "2026-10-04T10:12:00Z",
+  "research_question": "Can validation-only conditional calibration of the existing L2-EXP-01 quantile predictions produce a blind 2023 interval that satisfies the calibration gates, without retraining or changing the underlying uncertainty model?",
+  "governance": {
+    "status": "AUTHORIZED_CALIBRATION_ONLY_EXPERIMENT",
+    "model_retraining": false,
+    "f_model_frozen": true,
+    "stage8_1_frozen": true,
+    "gap19_unmodified": true,
+    "gap19_integration_prohibited": true,
+    "calendar_year_2024_quarantined": true,
+    "single_use_blind_evaluation": true
+  },
+  "authoritative_inputs": {
+    "frozen_f_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    },
+    "exact_2020_2023_f_38_feature_matrix": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+      "sha256": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde"
+    },
+    "exact_frozen_f_predictions_2020_2023": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_FROZEN_F_PREDICTIONS_2020_2023.csv",
+      "sha256": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0"
+    },
+    "historical_f_residual_dataset": {
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "frozen_l2_exp_01_predictions": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/results/L2_EXP_01_PREDICTIONS_2020_2023.csv",
+      "sha256": "1eb5b6db7c426c2c173c170a2cdd87945f0946f80153cc40f6180410de5a817c"
+    }
+  },
+  "calibration_protocol": {
+    "calibration_dataset": "VALIDATION_2022 (daytime solar_elevation > 0.0 only)",
+    "blind_dataset": "BLIND_TEST_2023 (daytime solar_elevation > 0.0 only)",
+    "nominal_coverage_target": 0.80,
+    "alpha": 0.20,
+    "nonconformity_score_formula": "max(q10_raw - actual, actual - q90_raw)",
+    "sample_adequacy_rule": {
+      "minimum_samples_per_cell": 50,
+      "fallback_policy": "deterministic parent fallback (cell -> regime/horizon -> global)"
+    },
+    "methods": {
+      "A_global": {
+        "description": "Global split-conformal CQR on all 2022 daytime observations",
+        "conditioning": "none"
+      },
+      "B_horizon_conditional": {
+        "description": "Forecast horizon-specific conformal correction (h in 1..24)",
+        "conditioning": "horizon_hour",
+        "fallback": "global"
+      },
+      "C_solar_elevation_conditional": {
+        "description": "Solar elevation regime-specific conformal correction (low sun <= 15 deg vs high sun > 15 deg)",
+        "conditioning": "solar_elevation <= 15 deg vs > 15 deg",
+        "fallback": "global"
+      },
+      "D_horizon_plus_elevation_conditional": {
+        "description": "Combined 4 horizon blocks x 2 solar elevation regimes",
+        "conditioning": "horizon_block x elevation_bin",
+        "fallback": "elevation_bin if >= 50 else global"
+      }
+    },
+    "physical_bounding_rule": {
+      "night_zeroing": "solar_elevation <= 0.0 -> q10=0, q50=0, q90=0",
+      "sorting": "enforced q10 <= q50 <= q90",
+      "lower_clamp": "max(0.0, q)",
+      "upper_clamp": "min(1.25 * clearsky_ghi, q) when clearsky_ghi > 0 else 0.0",
+      "basis": "RESEARCH_ASSUMPTION (matching L2-EXP-01)"
+    }
+  },
+  "qualification_gates": {
+    "P1_blind_picp_band": [0.76, 0.84],
+    "P2_validation_picp_band": [0.76, 0.84],
+    "P3_blind_subslice_floor": 0.60,
+    "P4_physical_constraints": "PASS (100% rows)",
+    "P5_f_point_forecast_invariance": "PASS (max diff == 0.0)"
+  },
+  "bootstrap_configuration": {
+    "replicates": 2000,
+    "seed": 42,
+    "ci_percentiles": [2.5, 97.5]
+  }
+}

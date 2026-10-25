@@ -1,0 +1,10 @@
+information_source,predicts_signed_residual,predicts_abs_residual,improves_stage4_oof,improves_heldout_test
+Solar geometry (elevation/zenith),No (r < 0.05),Yes (r = 0.64),No,No
+NWP cloud cover,No (r < 0.08),Yes (r = 0.42),No,No
+Chronos / Physics disagreement,No (r < 0.04),Yes (r = 0.62),No,No
+Previous 24h SW_IN context,No (R² <= 0.00),Yes (r = 0.38),No,No
+Realized Residual Lag 1,No (R² <= 0.00),Weak,No (+0.12 W/m²),No (+0.14 W/m²)
+Realized Residual Lags 1–3,No (R² <= 0.00),Weak,No (+0.15 W/m²),No (+0.16 W/m²)
+EWMA realized residual,No (R² <= 0.00),Weak,No (+0.11 W/m²),No (+0.13 W/m²)
+Forecast Horizon (H1–H24),No,Yes (affine),No (In Stage4),No
+Combined Causal Features,No (R² <= -0.005),Yes,No (+0.18 W/m²),No (+0.19 W/m²)

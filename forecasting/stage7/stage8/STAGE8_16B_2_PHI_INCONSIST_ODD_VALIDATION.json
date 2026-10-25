@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-09-13T02:47:30+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 — LOCKED ODD VALIDATION",
+  "verdict": "VALIDATED CANDIDATE / POTENTIAL NEW CHAMPION",
+  "generalization_improved": true,
+  "candidate": {
+    "name": "Stage 8.1 + phi_inconsist",
+    "feature": "phi_inconsist",
+    "formula": "| N_total - (1 - exp(-0.02 * LWP_latest)) |",
+    "alpha": 0.02
+  },
+  "governance": {
+    "odd_target_reads": 173,
+    "odd_tuning_decisions": 0,
+    "odd_model_selection_decisions": 0,
+    "post_odd_model_modifications": 0,
+    "production_champion_modified": false,
+    "polaris_master_handoff_modified": false,
+    "production_champion_state": "FROZEN_OPERATIONAL_CHAMPION (Stage 8.1 nMAE = 28.0688%)"
+  },
+  "dataset_summary": {
+    "total_origins": 347,
+    "even_origins_count": 174,
+    "odd_origins_count": 173,
+    "odd_total_hours": 4152,
+    "odd_daytime_hours": 2883,
+    "odd_night_hours": 1269,
+    "odd_mean_daytime_actual_w_m2": 128.9285
+  },
+  "official_globally_frozen_stage4_protocol": {
+    "control": {
+      "daytime_mae_w_m2": 36.188657,
+      "daytime_nmae_pct": 28.0688,
+      "daytime_rmse_w_m2": 64.219495,
+      "daytime_bias_w_m2": 1.439399,
+      "night_mae_w_m2": 0.0
+    },
+    "candidate": {
+      "daytime_mae_w_m2": 35.727549,
+      "daytime_nmae_pct": 27.7111,
+      "daytime_rmse_w_m2": 63.764094,
+      "daytime_bias_w_m2": 1.942735,
+      "night_mae_w_m2": 0.0
+    },
+    "deltas": {
+      "delta_mae_w_m2": -0.461108,
+      "delta_nmae_pct": -0.3576,
+      "delta_rmse_w_m2": -0.455401,
+      "delta_bias_w_m2": 0.503336
+    },
+    "bootstrap": {
+      "resamples_count": 10000,
+      "random_seed": 42,
+      "mean_delta_mae_w_m2": -0.402099,
+      "ci_95_lower_w_m2": -0.759039,
+      "ci_95_upper_w_m2": -0.046315,
+      "pct_improving": 98.59
+    }
+  },
+  "refit_stage4_protocol": {
+    "control": {
+      "daytime_mae_w_m2": 36.707059,
+      "daytime_nmae_pct": 28.4709,
+      "daytime_rmse_w_m2": 65.083569,
+      "daytime_bias_w_m2": 0.172159,
+      "night_mae_w_m2": 0.0
+    },
+    "candidate": {
+      "daytime_mae_w_m2": 36.211027,
+      "daytime_nmae_pct": 28.0861,
+      "daytime_rmse_w_m2": 64.230507,
+      "daytime_bias_w_m2": 0.994557,
+      "night_mae_w_m2": 0.0
+    },
+    "deltas": {
+      "delta_mae_w_m2": -0.496032,
+      "delta_nmae_pct": -0.3847,
+      "delta_rmse_w_m2": -0.853062,
+      "delta_bias_w_m2": 0.822399
+    },
+    "bootstrap": {
+      "resamples_count": 10000,
+      "random_seed": 42,
+      "mean_delta_mae_w_m2": -0.413599,
+      "ci_95_lower_w_m2": -0.758142,
+      "ci_95_upper_w_m2": -0.076533,
+      "pct_improving": 99.19
+    }
+  }
+}

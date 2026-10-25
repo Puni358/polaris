@@ -1,0 +1,14 @@
+{
+  "archive_collection": "meps25epsarchive (MET Norway THREDDS)",
+  "year": 2024,
+  "total_benchmark_runs_required": 347,
+  "sfc_runs_found": 347,
+  "pl_runs_found": 347,
+  "ml_18z_runs_found": 0,
+  "ml_00z_runs_found": 347,
+  "archive_claim_verified": {
+    "meps_det_sfc": "VERIFIED (100% coverage @ D-1 18Z)",
+    "meps_det_pl": "VERIFIED (100% coverage @ D-1 18Z)",
+    "meps_det_ml": "NOT VERIFIED FOR D-1 18Z (0% @ 18Z; 100% @ 00Z only)"
+  }
+}

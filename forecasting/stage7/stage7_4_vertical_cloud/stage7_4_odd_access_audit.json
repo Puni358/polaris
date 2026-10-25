@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-09-12T14:00:00Z",
+  "total_origins_extracted": 347,
+  "even_origins_count": 174,
+  "odd_origins_count": 173,
+  "odd_five_point_classification": {
+    "odd_target_accessed": false,
+    "odd_feature_accessed": true,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false
+  },
+  "forensic_finding_summary": "During Stage 7.4 feature extraction, MEPS pressure-level weather data were extracted for all 347 origins (including 173 ODD origins) to create vertical_cloud_extracted_features.csv. Therefore, odd_feature_accessed is TRUE. However, SITES actual SW_IN target values for ODD origins were NEVER loaded, read, or evaluated during CV or model fitting. Zero ODD predictions were generated, zero ODD metrics were calculated, and no ODD information influenced hyperparameter selection or model decisions. Reporting monolithic 'odd_accessed: false' in earlier summary files was slightly ambiguous, but the 5-fold CV numerical experiment is 100% METHODOLOGICALLY VALID because ODD targets and metrics remained 100% UNTOUCHED.",
+  "experiment_validity_impact": "VALID WITH GOVERNANCE CORRECTION (Refined documentation to distinguish feature extraction from target/evaluation access)."
+}

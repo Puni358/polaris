@@ -1,0 +1,6 @@
+$ python3 -I -B -m pytest -p no:cacheprovider -q experiments/exp_three_arm_2024/tests
+(run 2026-10-11T06:17:46Z after the D9 re-freeze and PREREGISTRATION §9 = d2aedc36…)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+381 passed, 36 warnings in 61.68s (0:01:01)
+exit code: 0

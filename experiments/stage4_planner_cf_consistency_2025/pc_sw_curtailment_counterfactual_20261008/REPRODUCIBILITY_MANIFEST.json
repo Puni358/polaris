@@ -1,0 +1,8 @@
+{
+  "telemetry_sha256": "37e5803725eaf344240d6be8aa5e31f5c13b951f3cef5539748fbf3bcb3969e0",
+  "causal_nwp_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+  "candidate_telemetry_sha256": "ceea07cb2d000408335b87e854e4d9968e2ec05853f67f1ff11d70b3042df06f",
+  "origin_summary_sha256": "1c90c05c12ae358a5b6349d916ad53e2a7affea26809005fd11e7400ec82cb6b",
+  "timestamp_utc": "2026-10-08T05:58:02Z",
+  "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+}

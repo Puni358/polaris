@@ -1,0 +1,11 @@
+{
+  "python_version": "3.12.3",
+  "platform": "Linux-7.0.0-31-generic-x86_64",
+  "architecture": "64bit_ELF",
+  "scipy_version": "1.18.1",
+  "numpy_version": "2.5.2",
+  "highspy_version": "1.15.1",
+  "scipy_bundled_highs_version": "1.12.0",
+  "standalone_highspy_highs_version": "1.15.1",
+  "environment_hash": "a4730df2e79a5619031f7bf5f37cb5d44713e1709f3555ca47525288a2980af1"
+}

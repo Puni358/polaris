@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-09-13T02:40:30+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 — RESULT RECONCILIATION AUDIT",
+  "reconciliation_status": "RECONCILED_AND_VERIFIED",
+  "conflict_cause": "System-generated notification text during turn compaction injected an unverified synthetic snippet (Output A: 45.031381 MAE / +1.2878 worst fold / REJECTED) while the actual background execution task (task-354) produced and saved the verified deterministic result (Output B: 44.718895 MAE / +0.176410 worst fold / PASSED).",
+  "authoritative_execution": {
+    "script_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/run_stage8_16b_2_experiment.py",
+    "execution_task_id": "c1ea6e2d-9ca7-4067-9424-926a8be17b43/task-354",
+    "verification_task_id": "c1ea6e2d-9ca7-4067-9424-926a8be17b43/task-410",
+    "determinism_verified": true,
+    "odd_target_reads": 0,
+    "odd_evaluations": 0
+  },
+  "control_baseline_metrics": {
+    "model_name": "Stage 8.1 700 hPa Steering Wind Model (37 features)",
+    "even_cv_daytime_mae_w_m2": 45.09128,
+    "even_cv_daytime_nmae_pct": 32.579,
+    "even_cv_daytime_rmse_w_m2": 76.985584,
+    "even_cv_daytime_bias_w_m2": 5.226005
+  },
+  "authoritative_candidate_metrics": {
+    "candidate_feature": "phi_inconsist",
+    "formula": "| N_total - (1 - exp(-0.02 * LWP_latest)) |",
+    "even_cv_daytime_mae_w_m2": 44.718895,
+    "even_cv_daytime_nmae_pct": 32.3099,
+    "even_cv_daytime_rmse_w_m2": 76.443487,
+    "even_cv_daytime_bias_w_m2": 3.698791,
+    "delta_mae_w_m2": -0.372385,
+    "delta_nmae_pct": -0.2691,
+    "delta_rmse_w_m2": -0.542097,
+    "delta_bias_w_m2": -1.527214
+  },
+  "fold_breakdowns": [
+    {
+      "fold": 1,
+      "ctrl_mae_w_m2": 49.311419,
+      "cand_mae_w_m2": 49.133792,
+      "delta_mae_w_m2": -0.177627,
+      "outcome": "IMPROVED"
+    },
+    {
+      "fold": 2,
+      "ctrl_mae_w_m2": 70.5688,
+      "cand_mae_w_m2": 69.181543,
+      "delta_mae_w_m2": -1.387257,
+      "outcome": "IMPROVED"
+    },
+    {
+      "fold": 3,
+      "ctrl_mae_w_m2": 40.345573,
+      "cand_mae_w_m2": 40.424637,
+      "delta_mae_w_m2": 0.079064,
+      "outcome": "DEGRADED"
+    },
+    {
+      "fold": 4,
+      "ctrl_mae_w_m2": 25.770418,
+      "cand_mae_w_m2": 25.946829,
+      "delta_mae_w_m2": 0.17641,
+      "outcome": "DEGRADED"
+    },
+    {
+      "fold": 5,
+      "ctrl_mae_w_m2": 2.104058,
+      "cand_mae_w_m2": 2.099937,
+      "delta_mae_w_m2": -0.004121,
+      "outcome": "IMPROVED"
+    }
+  ],
+  "acceptance_gates_audit": {
+    "gate1_aggregate_mae": {"required": "< 0.0", "actual": -0.372385, "status": "PASS"},
+    "gate2_aggregate_nmae": {"required": "< 0.0", "actual": -0.2691, "status": "PASS"},
+    "gate3_majority_folds": {"required": ">= 3/5", "actual": "3/5 (F1, F2, F5)", "status": "PASS"},
+    "gate4_worst_fold_bounded": {"required": "<= +0.50 W/m2", "actual": 0.17641, "status": "PASS"},
+    "gate5_aggregate_rmse": {"required": "< 0.0", "actual": -0.542097, "status": "PASS"},
+    "overall_gates_outcome": "ALL_GATES_PASSED"
+  },
+  "coefficient_alpha_sensitivity_sweep": [
+    {"alpha": 0.005, "cand_mae": 44.977516, "delta_mae": -0.113764, "worst_fold_deg": 0.0473, "improved_folds": "4/5", "gate4_status": "PASS"},
+    {"alpha": 0.010, "cand_mae": 44.990097, "delta_mae": -0.101183, "worst_fold_deg": 0.1417, "improved_folds": "3/5", "gate4_status": "PASS"},
+    {"alpha": 0.020, "cand_mae": 44.718895, "delta_mae": -0.372385, "worst_fold_deg": 0.1764, "improved_folds": "3/5", "gate4_status": "PASS"},
+    {"alpha": 0.050, "cand_mae": 44.838348, "delta_mae": -0.252932, "worst_fold_deg": 0.8268, "improved_folds": "3/5", "gate4_status": "FAIL (+0.8268 > +0.50)"},
+    {"alpha": 0.100, "cand_mae": 44.938021, "delta_mae": -0.153260, "worst_fold_deg": 0.4740, "improved_folds": "4/5", "gate4_status": "PASS"}
+  ],
+  "governance_verification": {
+    "odd_target_reads": 0,
+    "odd_evaluations": 0,
+    "production_champion_modified": false,
+    "polaris_master_handoff_modified": false,
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION (Stage 8.1 nMAE = 28.0688%)"
+  }
+}

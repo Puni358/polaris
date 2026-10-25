@@ -1,0 +1,68 @@
+{
+  "stage": "STAGE 8 \u2014 ENEV METAR IMPLEMENTATION PROVENANCE & PROTOCOL AUDIT",
+  "timestamp": "2026-09-13T19:35:00Z",
+  "audit_type": "PARSER & TIMESTAMP PROTOCOL AUDIT",
+  "decision": "IMPLEMENTATION-QUALIFIED / NOT YET SEALED",
+  "timestamp_breakdown": {
+    "total_benchmark_origins": 347,
+    "exact_2350_utc_origins": 329,
+    "exact_2350_utc_pct": 94.81,
+    "earlier_report_substituted_origins": 18,
+    "earlier_report_substituted_pct": 5.19,
+    "earlier_breakdown": {
+      "23:20_utc_substituted": 16,
+      "22:50_utc_substituted": 2
+    },
+    "other_timestamp_origins": 0,
+    "genuinely_missing_origins": 0
+  },
+  "parser_fallback_audit": {
+    "fallback_range_search_triggered_origins": 18,
+    "unparsed_default_branch_executions": 1,
+    "silent_clear_conversions_count": 1,
+    "silent_clear_details": [
+      {
+        "forecast_start": "2024-10-22 00:00:00+00:00",
+        "report_timestamp": "2024-10-21 23:50:00+00:00",
+        "raw_skyc1": "///",
+        "raw_skyl1_ft": 3000.0,
+        "raw_wxcodes": "-RA",
+        "raw_metar": "ENEV 212350Z AUTO 25017G34KT 220V310 9999 -RA ///030/// 10/08 Q0989 RERA RMK WIND 1400FT 24034G47KT",
+        "erroneous_assignment": {
+          "enev_cloud_cover_okta": 0.0,
+          "enev_cloud_base_m": 5000.0
+        },
+        "issue": "Automated cloud layer code /// with rain -RA and cloud base 3000ft was silently converted into clear sky (0 okta, 5000m base)"
+      }
+    ]
+  },
+  "protocol_deviations_summary": [
+    "Timestamp substitution: 18 origins (5.19%) used earlier reports (23:20 or 22:50 UTC) instead of strict 23:50 UTC matching or explicit missing handling.",
+    "Silent clear fallback: 1 origin (0.29%) with /// sensor cloud code and -RA rain was unparsed and silently assigned 0 oktas / 5000m base."
+  ],
+  "pre_registered_candidate_verification": {
+    "candidate_features": [
+      "enev_cloud_cover_okta",
+      "enev_cloud_base_m"
+    ],
+    "control_features_count": 37,
+    "candidate_features_count": 39,
+    "feature_names_matched": true
+  },
+  "odd_firewall_status": {
+    "odd_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_computed": false,
+    "odd_firewall_intact": true
+  },
+  "historical_even_metrics_preserved": {
+    "control_even_mae": 37.620054,
+    "candidate_even_mae": 37.68736,
+    "delta_even_mae": 0.067307
+  },
+  "spatial_decoupling_interpretation": "Plausible hypothesis for performance gap, pending clean resolution of implementation protocol deviations.",
+  "minimal_required_corrections": [
+    "1. Enforce strict exact 23:50 UTC matching. Flag absent 23:50 UTC reports explicitly as missing rather than substituting 23:20/22:50 reports.",
+    "2. Update cloud cover parser to strip whitespace and parse sensor cloud code /// when skyl1 height is present (e.g. ///030 with rain)."
+  ]
+}

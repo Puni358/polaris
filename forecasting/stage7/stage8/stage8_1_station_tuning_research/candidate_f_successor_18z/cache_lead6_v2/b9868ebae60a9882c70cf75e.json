@@ -1,0 +1,20 @@
+{
+  "cache_key": "b9868ebae60a9882c70cf75e",
+  "content_sha256": "7454e9c3c287da81428cabfeba8bfe791df949bc92e5314fe2481ffea28e85ce",
+  "detail": "validated (v2 lead-6)",
+  "forecast_start": "2024-09-10T00:00:00+00:00",
+  "payload": {
+    "forecast_reference_time_utc": "2024-09-09T18:00:00+00:00",
+    "per_horizon": [
+      {
+        "horizon_hour": 1,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 6,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2024-09-10T00:00:00+00:00"
+      }
+    ],
+    "pressure_hpa": 700.0
+  },
+  "retrieval_status": "OK"
+}

@@ -1,0 +1,84 @@
+{
+  "manifest_id": "POLARIS_23_HORIZON_OFAT_EXECUTION_AUTHORIZATION_AMENDMENT_MANIFEST",
+  "governance_status": "IMPLEMENTATION_AMENDMENT_AUTHORIZED",
+  "original_authorization_status": "AUTHORIZED",
+  "implementation_amendment_status": "AUTHORIZED",
+  "experiment_protocol_status": "UNCHANGED",
+  "experiment_execution_status": "NOT_EXECUTED_AFTER_REPAIR",
+  "milp_solves_since_failed_launch": 0,
+  "final_execution_authorization": "AUTHORIZED",
+  "timestamp_utc": "2026-09-19T20:36:30+05:30",
+  "failed_execution_event_log": {
+    "initial_launch_count": 1,
+    "failure_reason": "AttributeError: type object 'StationState' has no attribute 'default_initial_state' at run_polaris_23_horizon_ofat_experiment.py:118",
+    "milp_solves_completed_at_failure": 0,
+    "completed_trajectories_at_failure": 0,
+    "output_finalized_at_failure": false
+  },
+  "amendment_scope": {
+    "authorized_optimizer_extension": {
+      "target_file": "system/optimization/implementations/milp.py",
+      "sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+      "interface_added": "custom_weight_vector",
+      "semantics": "Applies w_j = 1.0, w_t = 0.95^t for t != j for treatment arm j"
+    },
+    "repaired_harness": {
+      "target_file": "run_polaris_23_horizon_ofat_experiment.py",
+      "sha256": "1140e9db048362a6ef4088175b3d462894263bfb6014233e9d444ac196cabb6a"
+    }
+  },
+  "technical_invariant_audit": {
+    "default_gamma_1_0_behavior_unchanged": true,
+    "v3_gamma_0_95_behavior_unchanged": true,
+    "v4g_single_horizon_behavior_unchanged": true,
+    "constraints_unchanged": true,
+    "variable_bounds_unchanged": true,
+    "integrality_unchanged": true,
+    "solver_configuration_unchanged": true,
+    "unmet_load_penalty_unweighted": true,
+    "simulator_equations_unchanged": true,
+    "forecast_bundle_schema_unchanged": true,
+    "station_state_schema_unchanged": true
+  },
+  "scientific_protocol_invariants": {
+    "treatment_arms": 23,
+    "analytical_j0_exclusion": true,
+    "analytical_j0_delta_liters": 0.0,
+    "frozen_origins_count": 173,
+    "mpc_cycles_per_origin": 24,
+    "total_treatment_milp_solves": 95496,
+    "control_arm_reused": "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv",
+    "new_control_solves": 0,
+    "hidden_truth_firewall_intact": true,
+    "initial_conditions_identical_to_v3": true,
+    "state_trajectory_isolation_intact": true,
+    "telemetry_fields_count": 37,
+    "max_workers": 8,
+    "primary_multiplicity_procedure": "HOLM_BONFERRONI",
+    "familywise_alpha": 0.05,
+    "prohibit_tuning_and_stopping": true
+  },
+  "protected_provenance_hashes": {
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.json": "5c84d72bc13d52d9b1580ca02b66a5e1281db2bd1be97405e3a27f6cf4c0ff95",
+    "POLARIS_23_HORIZON_OFAT_EXPERIMENT_SPECIFICATION.md": "53e5f0b482526167d157257690bd45c3dfb76bb1c8ef15c0a5384eb311f5d085",
+    "POLARIS_23_HORIZON_OFAT_EXPERIMENT_SPECIFICATION.json": "21703425eb572b2698cb13bcfb835419460823d55a4e1d8fbac11e529d445a23",
+    "POLARIS_23_HORIZON_OFAT_EXECUTION_AUTHORIZATION.md": "35cb77160cce59d8b8ee2323c2ff6ffe23e92f04f812ba6858f6b61c754f4109",
+    "POLARIS_23_HORIZON_OFAT_EXECUTION_AUTHORIZATION.json": "3d973f65ed187854550fb93cb8d2a184bc0134664ae442a9fa7a073d92ec6961",
+    "run_polaris_23_horizon_ofat_experiment.py": "1140e9db048362a6ef4088175b3d462894263bfb6014233e9d444ac196cabb6a",
+    "system/optimization/implementations/milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "system/simulation/simulator.py": "7217dc2b034480216e21e3494873189e575a15f3b2e71435d0844c4ca0a9a508",
+    "system/runtime/runner.py": "605a479586777cbc81315effdf0571e52be8e0a393661c0367c7b9ef3c55c58c",
+    "system/forecasting/implementations/s81_solar.py": "d76249bb0fc78680f0ea6723fbec62a234511d181e0a091b2f80fa06838aca7c",
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/schemas/station_state.py": "b6e78e8292bbba407f0af0a56100024cca4831dfb80d138afb1fb38008532d1c",
+    "system/schemas/dispatch_plan.py": "cbf80578a0b4fa289e26b509eeb4d672124a2dad8a77855a42a50ca267349a17"
+  },
+  "authorized_execution_invocation": {
+    "command": "python3 run_polaris_23_horizon_ofat_experiment.py --authorize-execution",
+    "cwd": "/home/punith-bs/01polaris (Copy)",
+    "expected_solves": 95496,
+    "max_workers": 8
+  }
+}

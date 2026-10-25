@@ -1,0 +1,31 @@
+Loading real telemetry and the Scenario 2/3/4 hourly origin window...
+Starting Reactive Baseline loop across 8328 hours...
+[00000/8328] 2024-01-20 00:00 | SOC:  46.4% | Diesel:   0.0 kW
+[00400/8328] 2024-02-05 16:00 | SOC:  20.0% | Diesel:  14.7 kW
+[00800/8328] 2024-02-22 08:00 | SOC:  20.0% | Diesel:  38.0 kW
+[01200/8328] 2024-03-10 00:00 | SOC:  23.2% | Diesel:  10.0 kW
+[01600/8328] 2024-03-26 16:00 | SOC:  26.9% | Diesel:   0.0 kW
+[02000/8328] 2024-04-12 08:00 | SOC:  20.0% | Diesel:  13.3 kW
+[02400/8328] 2024-04-29 00:00 | SOC:  23.2% | Diesel:  10.0 kW
+[02800/8328] 2024-05-15 16:00 | SOC:  79.0% | Diesel:   0.0 kW
+[03200/8328] 2024-06-01 08:00 | SOC:  47.6% | Diesel:   0.0 kW
+[03600/8328] 2024-06-18 00:00 | SOC:  47.9% | Diesel:   0.0 kW
+[04000/8328] 2024-07-04 16:00 | SOC:  84.8% | Diesel:   0.0 kW
+[04400/8328] 2024-07-21 08:00 | SOC:  80.4% | Diesel:   0.0 kW
+[04800/8328] 2024-08-07 00:00 | SOC:  37.7% | Diesel:   0.0 kW
+[05200/8328] 2024-08-23 16:00 | SOC:  25.1% | Diesel:   0.0 kW
+[05600/8328] 2024-09-09 08:00 | SOC:  20.0% | Diesel:  19.1 kW
+[06000/8328] 2024-09-26 00:00 | SOC:  23.2% | Diesel:  10.0 kW
+[06400/8328] 2024-10-12 16:00 | SOC:  22.1% | Diesel:  10.0 kW
+[06800/8328] 2024-10-29 08:00 | SOC:  20.0% | Diesel:  22.3 kW
+[07200/8328] 2024-11-15 00:00 | SOC:  21.6% | Diesel:  10.0 kW
+[07600/8328] 2024-12-01 16:00 | SOC:  20.0% | Diesel:  14.7 kW
+[08000/8328] 2024-12-18 08:00 | SOC:  20.0% | Diesel:  38.7 kW
+============================================================
+SUCCESS! Reactive Baseline completed in 14.2 seconds.
+Total diesel consumed:        38,404.89 L
+Diesel run hours:             3,928 / 8,328
+Diesel start/stop events:     435
+Diesel fuel cost (@2.50/L):   96,012.24
+Data ready at: scratch/ui_dashboard_reactive_baseline.csv
+============================================================

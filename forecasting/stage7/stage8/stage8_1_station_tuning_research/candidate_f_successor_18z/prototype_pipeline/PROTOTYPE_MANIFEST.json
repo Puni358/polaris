@@ -1,0 +1,103 @@
+{
+  "archive_base": "https://thredds.met.no/thredds/dodsC/meps25epsarchive",
+  "pipeline_prototype": "meps_18z_pipeline_prototype.py",
+  "product": "meps_det_pl",
+  "results": [
+    {
+      "available_horizons_count": 24,
+      "cache_status": "CACHE_HIT",
+      "detail": "Loaded from isolated prototype cache",
+      "forecast_start": "2024-01-20T00:00:00+00:00",
+      "missing_horizons": [],
+      "payload_sha256": "5640148162b208ec7369b53a7ba7ecd8926087ad4f36523ea47e56b1827f92d9",
+      "run_init": "2024-01-19T18:00:00+00:00",
+      "status": "OK",
+      "timing": {
+        "catalog_modified_utc": "2026-05-27T13:46:01Z",
+        "client_retrieved_utc": "2026-10-16T11:50:32.753315+00:00",
+        "cutoff_satisfied_provider_side": true,
+        "decision_cutoff_utc": "2024-01-20T00:00:00+00:00",
+        "forecast_start_utc": "2024-01-20T00:00:00+00:00",
+        "provider_creation_margin_seconds": 13892.0,
+        "provider_creation_utc": "2024-01-19T20:08:28",
+        "run_init_utc": "2024-01-19T18:00:00+00:00"
+      },
+      "total_trajectory_steps": 67
+    },
+    {
+      "available_horizons_count": 20,
+      "cache_status": "CACHE_HIT",
+      "detail": "Loaded from isolated prototype cache",
+      "forecast_start": "2024-06-21T00:00:00+00:00",
+      "missing_horizons": [
+        20,
+        21,
+        23,
+        24
+      ],
+      "payload_sha256": "e1680851de0f7e0f1aa30801cba4adda5001bf457808439971f2d3cf5c70a45c",
+      "run_init": "2024-06-20T18:00:00+00:00",
+      "status": "PARTIAL_TIME_TRUNCATION",
+      "timing": {
+        "catalog_modified_utc": "2026-06-04T12:09:30Z",
+        "client_retrieved_utc": "2026-10-16T11:50:37.231988+00:00",
+        "cutoff_satisfied_provider_side": true,
+        "decision_cutoff_utc": "2024-06-21T00:00:00+00:00",
+        "forecast_start_utc": "2024-06-21T00:00:00+00:00",
+        "provider_creation_margin_seconds": 14289.0,
+        "provider_creation_utc": "2024-06-20T20:01:51",
+        "run_init_utc": "2024-06-20T18:00:00+00:00"
+      },
+      "total_trajectory_steps": 39
+    },
+    {
+      "available_horizons_count": 20,
+      "cache_status": "CACHE_HIT",
+      "detail": "Loaded from isolated prototype cache",
+      "forecast_start": "2025-02-15T00:00:00+00:00",
+      "missing_horizons": [
+        20,
+        21,
+        23,
+        24
+      ],
+      "payload_sha256": "9481842d7a7dcb6718ad9a31f04e90d9f276c3ce6efc1f90243cbc0b2fd0908c",
+      "run_init": "2025-02-14T18:00:00+00:00",
+      "status": "PARTIAL_TIME_TRUNCATION",
+      "timing": {
+        "catalog_modified_utc": "2026-06-19T09:47:43Z",
+        "client_retrieved_utc": "2026-10-16T11:50:42.335947+00:00",
+        "cutoff_satisfied_provider_side": true,
+        "decision_cutoff_utc": "2025-02-15T00:00:00+00:00",
+        "forecast_start_utc": "2025-02-15T00:00:00+00:00",
+        "provider_creation_margin_seconds": 14128.0,
+        "provider_creation_utc": "2025-02-14T20:04:32",
+        "run_init_utc": "2025-02-14T18:00:00+00:00"
+      },
+      "total_trajectory_steps": 39
+    },
+    {
+      "available_horizons_count": 24,
+      "cache_status": "CACHE_HIT",
+      "detail": "Loaded from isolated prototype cache",
+      "forecast_start": "2025-06-15T00:00:00+00:00",
+      "missing_horizons": [],
+      "payload_sha256": "100487facf94cd5e8d70460c6130da8d7b8d57b9926b8b72309349d9407b7085",
+      "run_init": "2025-06-14T18:00:00+00:00",
+      "status": "OK",
+      "timing": {
+        "catalog_modified_utc": "2026-03-18T13:58:53Z",
+        "client_retrieved_utc": "2026-10-16T11:50:47.454661+00:00",
+        "cutoff_satisfied_provider_side": true,
+        "decision_cutoff_utc": "2025-06-15T00:00:00+00:00",
+        "forecast_start_utc": "2025-06-15T00:00:00+00:00",
+        "provider_creation_margin_seconds": 14397.0,
+        "provider_creation_utc": "2025-06-14T20:00:03",
+        "run_init_utc": "2025-06-14T18:00:00+00:00"
+      },
+      "total_trajectory_steps": 67
+    }
+  ],
+  "tested_origins_count": 4,
+  "timestamp_utc": "2026-10-16T11:57:17.575356+00:00"
+}

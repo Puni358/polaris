@@ -1,0 +1,153 @@
+{
+  "project": "POLARIS",
+  "task": "REAL POLAR STATION ENERGY / GRID DATA RECONNAISSANCE + FROZEN-INTERFACE COMPATIBILITY AUDIT",
+  "timestamp": "2026-09-17T13:28:35Z",
+  "status": "RECONNAISSANCE_COMPLETE_IMPLEMENTATION_NOT_AUTHORIZED",
+  "primary_research_question": {
+    "question": "Can POLARIS ingest a REAL MEASURED POLAR RESEARCH-STATION ELECTRICAL DEMAND/LOAD time series through the existing data/state interfaces while leaving the frozen EMS architecture untouched?",
+    "conceptual_feasibility": true,
+    "adapter_only_capable": true,
+    "data_availability_barrier": "No open-access, unconstrained, 1-hour resolution measured time-series of total electrical demand for an active Antarctic research station was located in public repositories. Available real datasets are either monthly aggregated (AADC) or access-restricted (SANAE IV, PEA, ACEP).",
+    "conclusion": "No frozen-contract incompatibility was identified during reconnaissance; adapter feasibility appears possible, subject to obtaining and validating the required high-resolution measurements."
+  },
+  "candidate_datasets": [
+    {
+      "dataset_name": "Monthly electricity usage at Australian Antarctic Stations",
+      "facility": "Mawson, Davis, Casey, Macquarie Island",
+      "location": "Antarctica",
+      "institution": "Australian Antarctic Data Centre (AADC) / Australian Antarctic Division",
+      "measurement_period": "1993-01 to 2016-02",
+      "is_real_observation": true,
+      "access_status": "PUBLICLY DOCUMENTED / ARCHIVED",
+      "is_publicly_downloadable": false,
+      "sampling_frequency": "Monthly total aggregation",
+      "energy_demand_fields": ["Monthly total electricity (kWh)"],
+      "missing_fields": ["1-hour interval load", "Peak demand (W)", "Solar irradiance", "Wind generation", "Battery SOC", "Diesel status"],
+      "data_classification": "REAL STATION MEASUREMENT (MONTHLY AGGREGATED)",
+      "technical_relevance": "PARTIALLY COMPATIBLE / IMPORTANT MISSING FIELDS"
+    },
+    {
+      "dataset_name": "SANAE IV Station Energy Operational Profile",
+      "facility": "SANAE IV Station",
+      "location": "Vesleskarvet, Queen Maud Land, Antarctica",
+      "institution": "South African National Antarctic Programme (SANAP) / Stellenbosch University",
+      "measurement_period": "2008 - 2016 (Derived operational logs)",
+      "is_real_observation": true,
+      "access_status": "ACCESS RESTRICTED / REQUEST-ACCESS",
+      "is_publicly_downloadable": false,
+      "sampling_frequency": "Derived operational averages / HOMER input profiles",
+      "energy_demand_fields": ["Average base load (72 kW)", "Peak load (150 kW)", "Annual diesel fuel (300,000 L/yr)"],
+      "missing_fields": ["Public 1-hour time-series CSV data files"],
+      "data_classification": "REAL STATION MEASUREMENT (RESTRICTED ACCESS)",
+      "technical_relevance": "POTENTIALLY COMPATIBLE WITH ADAPTER"
+    },
+    {
+      "dataset_name": "ACEP Arctic Microgrid Time Series",
+      "facility": "Kotzebue, Cordova, Wales, St. Mary's",
+      "location": "Arctic Alaska, USA",
+      "institution": "Alaska Center for Energy and Power (ACEP) / UAF / NREL",
+      "measurement_period": "Multi-year 1-hour time series",
+      "is_real_observation": true,
+      "access_status": "REQUEST-ACCESS / INSTITUTIONAL ACCESS",
+      "is_publicly_downloadable": false,
+      "sampling_frequency": "1-hour interval",
+      "energy_demand_fields": ["Community electrical demand (kW)", "Wind generation (kW)", "Diesel dispatch (kW)"],
+      "missing_fields": ["Antarctic research station specific telemetry", "Public unconstrained download links"],
+      "data_classification": "REAL COMPONENT / MUNICIPAL MEASUREMENT (RESTRICTED ACCESS)",
+      "technical_relevance": "POTENTIALLY COMPATIBLE WITH ADAPTER"
+    },
+    {
+      "dataset_name": "SITES Nuolja Solar Irradiance Dataset (Stage8.1)",
+      "facility": "Nuolja Field Station, Abisko",
+      "location": "Arctic Sweden (68.36 N, 18.74 E)",
+      "institution": "SITES (Swedish Infrastructure for Ecosystem Science)",
+      "measurement_period": "Calendar Year 2024 (8,784 timesteps)",
+      "is_real_observation": true,
+      "access_status": "PUBLICLY DOWNLOADABLE",
+      "is_publicly_downloadable": true,
+      "sampling_frequency": "1-hour regular timesteps",
+      "energy_demand_fields": ["NOT APPLICABLE (Solar Irradiance SW_IN W/m^2 only)"],
+      "solar_generation_fields": ["actual_SW_IN (W/m^2)", "clearsky_ghi (W/m^2)"],
+      "missing_fields": ["Station electrical demand", "Wind generation", "Battery SOC", "Diesel status"],
+      "data_classification": "REAL METEOROLOGICAL MEASUREMENT",
+      "technical_relevance": "CHARACTERIZATION ONLY (Solar Irradiance Input for Stage8.1)"
+    }
+  ],
+  "measurement_semantic_distinctions": {
+    "station_electrical_demand": "Total electrical load consumed by station systems (W). Ingested by POLARIS demand interface.",
+    "solar_irradiance": "Downward shortwave solar radiation (W/m^2). Solar PV model input, NOT station demand.",
+    "solar_generation": "Power produced by solar PV array (W). Renewable generation input, NOT station demand.",
+    "wind_generation": "Power produced by wind turbine (W). Renewable generation input, NOT station demand.",
+    "diesel_fuel_consumption": "Fuel volume/mass rate (L/h). Operational cost metric, NOT station demand.",
+    "grid_import_export": "Utility grid power flow (W). Boundary flow metric, NOT station demand."
+  },
+  "interface_compatibility_audit": {
+    "runtime_semantics_note": "The current POLARIS runtime and synthetic fixtures use hourly timestep semantics; exact interface-level requirements are documented through the inspected compatibility mapping.",
+    "StationState": {
+      "status": "CONCEPTUALLY MAPPABLE",
+      "fields_mapped": ["timestamp", "last_observed_demand", "last_observed_solar_irradiance", "last_observed_wind_generation"],
+      "unmapped_real_fields": ["battery_soc_pct", "battery_energy_wh", "diesel_running", "diesel_hours_running"],
+      "resolution": "Provided by Digital Twin simulator in Hybrid mode"
+    },
+    "LocalDataProvider": {
+      "status": "CONCEPTUALLY MAPPABLE",
+      "expected_json_structure": ["timestep_index", "timestamp", "actual_SW_IN", "clearsky_ghi", "actual_wind_generation", "actual_demand"],
+      "adapter_transformation": "Units conversion (kW to W), ISO UTC formatting"
+    },
+    "ForecastBundle": {
+      "status": "CONCEPTUALLY MAPPABLE",
+      "requirements": "24-hour horizon, 1-hour monotonic UTC timestamps, strict units (W, W/m^2)",
+      "adapter_transformation": "ForecastEngine generates 24h bundle from observed history"
+    },
+    "frozen_contracts_modified": false,
+    "compatibility_conclusion": "No frozen-contract incompatibility was identified during reconnaissance; adapter feasibility appears possible, subject to obtaining and validating the required high-resolution measurements."
+  },
+  "trajectory_completeness": {
+    "outcome_category": "OUTCOME_B_HYBRID_REAL_PLUS_MODELLED_FUTURE_OPTION",
+    "explanation": "No identified public dataset provides simultaneous measured telemetry for station demand, solar generation, wind generation, battery SOC, and diesel engine run state. Real measured demand remains the primary target; if integrated, a hybrid trajectory pairing real demand/irradiance with modelled storage and genset states is a possible future option.",
+    "measured_components": ["Solar Irradiance (SW_IN)", "Electrical Demand (P_load via request/access)"],
+    "modelled_components": ["Battery SOC % and Energy Wh", "Diesel engine status and run hours", "Digital Twin physical dynamics"]
+  },
+  "synthetic_fixture_preservation": {
+    "synthetic_trajectory_preserved": true,
+    "demo_scenario_unaltered": true,
+    "regression_testing_intact": true,
+    "testing_roles": ["architecture testing", "regression testing", "reproducibility", "controlled EMS testing"],
+    "rule": "Real-data scenarios will be strictly additive (new scenario files) and will never overwrite or replace synthetic regression fixtures."
+  },
+  "decision_framework_answers": {
+    "A_found_real_station_demand_dataset": true,
+    "B_actual_measurement_data_publicly_accessible": "PARTIALLY (Publicly documented; high-resolution 1h datasets are access-restricted or monthly aggregated; Nuolja solar irradiance is publicly downloadable)",
+    "C_exact_variables": "AADC: Monthly kWh, fuel litres. ACEP: Hourly kW demand, wind kW, diesel kW. Nuolja: Hourly SW_IN W/m^2.",
+    "D_demand_vs_generation_distinction": "Station load = P_load (W). Irradiance = SW_IN (W/m^2). Wind/Solar = Generation (W). Fuel = Volume (L).",
+    "E_consuming_polaris_interfaces": ["LocalDataProvider", "StationState", "ForecastBundle"],
+    "F_adapter_feasible_without_frozen_changes": "No frozen-contract incompatibility was identified during reconnaissance; adapter feasibility appears possible, subject to obtaining and validating the required high-resolution measurements.",
+    "G_missing_fields": ["Measured Battery SOC % and Wh", "Measured Diesel engine run state/hours", "Open-access 1-hour Antarctic station demand time series"],
+    "H_trajectory_completeness_outcome": "OUTCOME_B_HYBRID_REAL_PLUS_MODELLED_FUTURE_OPTION",
+    "I_exact_next_engineering_step": "Determine whether any identified dataset can be obtained at sufficient temporal resolution and with sufficient measured demand coverage to support an additive real-data scenario; if not, formally define a hybrid real-demand/modelled-system scenario as a separate future option.",
+    "J_implementation_authorized": "RECONNAISSANCE COMPLETE — IMPLEMENTATION IS NOT AUTHORIZED."
+  },
+  "final_firewall_verification": {
+    "source_code_modified": false,
+    "schemas_modified": false,
+    "station_state_modified": false,
+    "forecast_bundle_modified": false,
+    "forecast_engine_modified": false,
+    "ems_modified": false,
+    "optimizer_modified": false,
+    "mpc_modified": false,
+    "dispatch_plan_modified": false,
+    "digital_twin_modified": false,
+    "evaluator_modified": false,
+    "stage8_1_artifacts_modified": false,
+    "d5_artifacts_modified": false,
+    "d5_rerun": false,
+    "stage8_1_rerun": false,
+    "new_experiment_initiated": false,
+    "real_data_integration_implemented": false,
+    "champion_integration_implemented": false,
+    "validation_run": false,
+    "synthetic_fixture_preserved": true,
+    "only_two_artifacts_modified": true
+  }
+}

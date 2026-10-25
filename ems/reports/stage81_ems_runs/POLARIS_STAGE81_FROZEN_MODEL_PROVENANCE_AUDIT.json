@@ -1,0 +1,41 @@
+{
+  "audit_status": "COMPLETED",
+  "read_only": true,
+  "previous_replay_classification": "C_CAUSAL_REPLAY_NOT_REPRODUCIBLE_FROM_FROZEN_ARTIFACTS",
+  "model_recovery_classification": "C",
+  "model_recovery_classification_label": "MODEL_REFERENCED_OR_HISTORICALLY_PRESENT_BUT_NOT_RECOVERABLE",
+  "authoritative_frozen_model_found": false,
+  "authoritative_frozen_model_recoverable": false,
+  "model_artifacts": [],
+  "historical_model_evidence": [
+    {
+      "source": "stage7/stage8/stage8_1_700hpa_wind/POLARIS_STAGE8_1_CHAMPION_MANIFEST.json",
+      "model_family": "HistGradientBoostingRegressor",
+      "hyperparameters": {
+        "loss": "absolute_error",
+        "max_depth": 4,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0,
+        "random_state": 42
+      },
+      "status": "REFERENCED_IN_MANIFEST_BUT_NOT_SERIALIZED"
+    },
+    {
+      "source": "stage7/stage8/stage8_1_700hpa_wind/run_official_odd_evaluation.py",
+      "fitting_scope": "RAM instantiation during EVEN origin training and ODD origin prediction",
+      "status": "INSTANTIATED_AND_FITTED_IN_RAM_ONLY"
+    },
+    {
+      "source": "stage7/stage8/STAGE8_17A_FINAL_ARTIFACT_RECOVERY_AUDIT.md",
+      "status": "PREVIOUS_AUDIT_CONFIRMED_ZERO_SERIALIZED_MODEL_ESTIMATORS_EXIST"
+    }
+  ],
+  "external_model_references": [],
+  "prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+  "training_code_sha256": "51e256a6bacc0aa8861fcdf93f889edc23591915fb68945a9e0d9facb63feb31",
+  "evaluation_code_sha256": "c1c99c60b43f00ce1845a68ca166783a30d2ac9dc986bc01a7947381165a3f41",
+  "candidate_a_implementation_authorized": false,
+  "candidate_a_execution_authorized": false,
+  "retraining_authorized": false,
+  "next_governed_step": "FORMALLY_CLOSE_STAGE81_ROLLING_REPLAY_AND_REQUIRE_NEW_GOVERNED_FORECASTING_BRANCH"
+}

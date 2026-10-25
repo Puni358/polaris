@@ -1,0 +1,59 @@
+{
+  "stage": "STAGE 8.13 SATELLITE CLOUD INFORMATION FEASIBILITY AUDIT",
+  "timestamp": "2026-09-13T01:10:00Z",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+  "official_frozen_odd_metrics": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "nighttime_mae_w_m2": 0.0
+  },
+  "primary_decision": {
+    "initiate_stage_8_13_audit": false,
+    "verdict_code": "CLOSED — NOT JUSTIFIED",
+    "verdict_summary": "No satellite-cloud candidate identified in the current GPT/AI assistant research round was demonstrated to satisfy all required conditions for a POLARIS forecasting experiment: causal availability, empirical coverage, spatial representativeness, information novelty beyond the frozen Stage 8.1 feature set, and a clearly testable operational pathway."
+  },
+  "reconciliation_of_ai_hypotheses": {
+    "gpt_proposals": [
+      {
+        "candidate": "SEVIRI Cloud Physical Properties (COT/CER/Phase)",
+        "audit_verdict": "UNVERIFIED OPERATIONAL PATHWAY / HIGH VZA GEOMETRY",
+        "reasoning": "High calculated Satellite Viewing Zenith Angle (VZA ≈ 76.54° at 68.36°N) induces calculated geometric distortion and horizontal parallax shifts (>20.9 km for 5 km cloud tops). Solar optical channels (COT/CER) are unavailable during polar night (SZA > 84°), though thermal IR phase remains available. Standard publication latency exceeds t0. Stage 8.9A previously classified geostationary products as not feasible for Nuolja."
+      },
+      {
+        "candidate": "Satellite ML Cloud Nowcasting (CloudCast)",
+        "audit_verdict": "UNVERIFIED OPERATIONAL PRODUCT FOR BENCHMARK HORIZON",
+        "reasoning": "Available candidate ML cloud-nowcasting products were not verified to provide a causally available, 2024-reconstructable operational product covering the full H1-H24 benchmark horizon at Nuolja."
+      }
+    ],
+    "ai_proposals": [
+      {
+        "candidate": "Independent Cloud-Position / Motion Observation",
+        "audit_verdict": "UNVERIFIED CAUSAL PATHWAY & NOVELTY",
+        "reasoning": "Existing POLARIS evidence does not establish a sufficiently novel, causally available, and operationally representative satellite cloud-motion route for the current benchmark. Stage 8.5's MEPS spatial-advection rejection cannot by itself be generalized to all satellite cloud-motion methods, but no operational, causally available satellite cloud-motion product was demonstrated."
+      },
+      {
+        "candidate": "Ensemble Forecast-Confidence Conditioning (Stage 8.12)",
+        "audit_verdict": "PROPOSED / NOT YET JUSTIFIED / NOT AUTHORIZED",
+        "reasoning": "Re-packaging meps_std_SW_IN uses a signal already tested and rejected in Stage 6.1. Both GPT and AI assistant agree Stage 8.12 should NOT currently be run without a new forensic justification."
+      }
+    ]
+  },
+  "candidate_family_classifications": {
+    "family_a_satellite_cpp": "Classification E — UNVERIFIED OPERATIONAL PATHWAY & GEOMETRIC DISTORTION",
+    "family_b_satellite_motion": "Classification D — UNVERIFIED CAUSAL PATHWAY & NOVELTY",
+    "family_c_satellite_nowcast": "Classification E — UNVERIFIED OPERATIONAL PRODUCT FOR BENCHMARK HORIZON",
+    "family_d_ensemble_confidence": "Classification C — PROPOSED / NOT YET JUSTIFIED / NOT AUTHORIZED"
+  },
+  "firewall_verification": {
+    "odd_target_sw_in_reads": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "model_training": "NONE",
+    "cross_validation": "NONE",
+    "hyperparameter_tuning": "NONE",
+    "official_champion_status": "UNCHANGED",
+    "polaris_master_handoff_modified": false
+  }
+}

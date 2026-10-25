@@ -1,0 +1,51 @@
+{
+  "audit_name": "POLARIS_EMS_ECD_CONTRACT_HASH_AUDIT",
+  "generated_at": "2026-09-23T18:27:00Z",
+  "status": "SEALED",
+  "artifact_hashes": [
+    {
+      "file": "POLARIS_EMS_ECD_IMPLEMENTATION_CONTRACT.md",
+      "sha256": "8e4191e93e19a0e21130ee0b3958e28a5e2f970f6842294297cdde8dbed1ef48"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_INPUT_CONTRACT.json",
+      "sha256": "cffdf7dbeaab4b207b2e3794decca59b0c82db6e5d16efba598f6aa3cf9c1626"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_OUTPUT_CONTRACT.json",
+      "sha256": "b8b340a5e2cab88729b2748b747c8504cf82d38338d1e8958dfcb45063095d39"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_ARCHITECTURE_PLACEMENT_AUDIT.md",
+      "sha256": "010e623abb01c21f2e8673413fae66832313ce4e57747bf01cc71ab0b339540b"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_SCHEMA_IMPACT_AUDIT.md",
+      "sha256": "4d9390fce4fdd552f0797d6a06181be6f7622a65de1689df520bf951e6014885"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_MISSING_INPUT_BEHAVIOR_MATRIX.md",
+      "sha256": "62d077231ff5f46b8c28c1a71a4dcc6ac08b961a294df3aa2f2464fb006c1adc"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_AUTHORITY_FRESHNESS_AUDIT.md",
+      "sha256": "f4431803fe2aeb1b0091ee896b59e1cdea5576da79dff1de3426e7f4eb32360a"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_PROTOTYPE_VS_PRODUCTION_BOUNDARY.md",
+      "sha256": "3ec320b1b0435d480ec5bb24e92f2529a389f20c83724b328bf99aee090aea9a"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_ACCEPTANCE_TEST_CONTRACT.md",
+      "sha256": "61c2041cb6f2b014597469241da80224edbefe0474a7ce8f180f9a850db8bc6b"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_EDGE_CASE_TEST_SPECIFICATION.md",
+      "sha256": "cb78311459416531b0ba3158fd589028011baf2f0d77b1fec24b1acd03d1428b"
+    },
+    {
+      "file": "POLARIS_EMS_ECD_GOVERNANCE_BLOCKER_REGISTER.json",
+      "sha256": "818f37f403e0cf62c136a28a2d9878142ac1906a16471e6e7132f72edeb2f56d"
+    }
+  ]
+}

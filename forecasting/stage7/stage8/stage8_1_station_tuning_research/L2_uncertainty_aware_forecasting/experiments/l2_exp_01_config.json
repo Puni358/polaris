@@ -1,0 +1,114 @@
+{
+  "experiment_id": "L2-EXP-01",
+  "experiment_name": "Quantile Residual Network with Conformal Calibration",
+  "created_at_utc": "2026-10-04T09:42:00Z",
+  "governance": {
+    "status": "AUTHORIZED_RESEARCH_EXPERIMENT",
+    "f_model_frozen": true,
+    "stage8_1_frozen": true,
+    "gap19_unmodified": true,
+    "gap19_integration_prohibited": true,
+    "calendar_year_2024_quarantined": true,
+    "production_code_modification_prohibited": true,
+    "single_use_blind_evaluation": true
+  },
+  "protocol_decisions": {
+    "D-1_calibration_method": {
+      "choice": "Split Conformal Prediction (CQR) on 80% interval [q10, q90]",
+      "basis": "Standard finite-sample exchangeable coverage guarantee; zero tuning hyperparameters; fitted on VALIDATION 2022 only",
+      "type": "PROJECT_STANDARD"
+    },
+    "D-2_upper_physical_bound_U": {
+      "choice": "1.25 * clearsky_ghi (when clearsky_ghi > 0 else 0.0)",
+      "basis": "Standard solar cloud-enhancement margin; night zeroed unconditionally",
+      "type": "RESEARCH_ASSUMPTION"
+    },
+    "D-3_training_constants": {
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 64,
+      "max_epochs": 100,
+      "patience": 10,
+      "early_stopping_metric": "VALIDATION_2022_daytime_pinball_loss",
+      "random_seed": 42,
+      "type": "RESEARCH_ASSUMPTION"
+    },
+    "D-4_coverage_tolerance": {
+      "nominal_target": 0.80,
+      "acceptable_band": [0.76, 0.84],
+      "slice_floor": 0.60,
+      "basis": "Binomial 3-sigma band on N=3,466 blind samples (+/- 2.0%) expanded to +/- 4.0% for subarctic meteorological variability",
+      "type": "PRE_REGISTERED_GATE"
+    },
+    "D-5_cloud_regime_boundaries": {
+      "clear_sky": [0.0, 0.20],
+      "partial_clouds": [0.20, 0.80],
+      "overcast": [0.80, 1.0],
+      "basis": "Existing POLARIS meteorological standard matching CANDIDATE_F_HISTORICAL_REPLAY_FORENSIC_AUDIT Table 4B",
+      "type": "PROJECT_STANDARD"
+    },
+    "D-6_crossing_frequency_threshold": {
+      "max_acceptable_stage_a_crossing_pct": 5.0,
+      "stage_c_sorting": "enforced_non_crossing",
+      "basis": "Diagnostic monitoring of raw output crossing prior to Stage C physical sorting",
+      "type": "PRE_REGISTERED_GATE"
+    },
+    "D-7_regularization": {
+      "batch_norm": false,
+      "dropout": false,
+      "l2_weight_decay": 0.0001,
+      "capacity": "2-layer MLP (32, 16), 995 parameters (~9:1 train sample-to-parameter ratio)",
+      "basis": "Minimal low-capacity model designed to test concept without architectural over-parameterization",
+      "type": "PROJECT_STANDARD"
+    }
+  },
+  "model_architecture": {
+    "input_dim": 12,
+    "hidden_layers": [32, 16],
+    "activation": "ReLU",
+    "output_dim": 3,
+    "quantiles": [0.10, 0.50, 0.90],
+    "parameter_count": 995
+  },
+  "features": [
+    "pred_candidate_F_total",
+    "solar_elevation",
+    "clearsky_ghi",
+    "horizon_hour",
+    "fc_cloud_cover",
+    "cloud_frac",
+    "elevation_x_cloud_frac",
+    "ctx_last_obs",
+    "ctx_std_3h",
+    "ctx_mean_24h",
+    "lag1_origin_mean_residual",
+    "lag1_origin_daytime_mae"
+  ],
+  "dataset_splits": {
+    "TRAIN": {
+      "range": "2020-01-01T00:00:00Z to 2021-12-31T23:00:00Z",
+      "origins": 730,
+      "total_rows": 13889,
+      "permitted_use": "Model parameter fitting only"
+    },
+    "VALIDATION": {
+      "range": "2022-01-01T00:00:00Z to 2022-12-31T23:00:00Z",
+      "origins": 365,
+      "total_rows": 6935,
+      "permitted_use": "Early stopping epoch selection and conformal calibration fitting only"
+    },
+    "BLIND": {
+      "range": "2023-01-01T00:00:00Z to 2023-09-30T23:00:00Z",
+      "origins": 274,
+      "total_rows": 5187,
+      "permitted_use": "Single untouched evaluation of frozen calibrated model"
+    }
+  },
+  "immutable_input_hashes": {
+    "frozen_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "exact_2020_2023_f_38_feature_matrix": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "exact_frozen_f_predictions_2020_2023": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0",
+    "historical_f_residual_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+  }
+}

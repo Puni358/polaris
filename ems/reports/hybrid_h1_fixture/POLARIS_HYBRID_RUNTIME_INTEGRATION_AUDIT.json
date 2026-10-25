@@ -1,0 +1,94 @@
+{
+  "audit_version": "1.0.0",
+  "timestamp": "2026-09-20T11:21:00Z",
+  "step": "STEP_10A",
+  "objective": "Static integration and governance audit of H1.0 fixture with frozen POLARIS runtime",
+  "governance_baseline": {
+    "STAGE8_1_FORECAST_RESEARCH": "FROZEN",
+    "V3_REFERENCE": "FROZEN",
+    "OFAT": "COMPLETED / FROZEN RESEARCH",
+    "OFAT_PRODUCTION_CHAMPION": "NOT_ESTABLISHED",
+    "REAL_STATION_DEMAND": "DATA_BLOCKED",
+    "NUOLJA_WIND_GENERATION": "NOT_ESTABLISHED",
+    "HYBRID_BRANCH": "DESIGN AUTHORIZED / EXECUTION NOT AUTHORIZED",
+    "H1.0_FIXTURE": "FROZEN"
+  },
+  "decision_matrix": {
+    "1. H1.0 -> data ingestion": {
+      "classification": "B",
+      "description": "COMPATIBLE WITH CONTRACT-PRESERVING ADAPTER (H10RuntimeAdapter)"
+    },
+    "2. H1.0 -> solar input": {
+      "classification": "A",
+      "description": "COMPATIBLE (Stage81ForecastEngine receives solar_SW_IN_W_m2)"
+    },
+    "3. H1.0 -> wind proxy": {
+      "classification": "A",
+      "description": "COMPATIBLE (WindSpeedARXForecastEngine receives wind_speed_proxy_m_s)"
+    },
+    "4. H1.0 -> synthetic demand": {
+      "classification": "A",
+      "description": "COMPATIBLE (synthetic_load_W maps to demand channel in W)"
+    },
+    "5. H1.0 -> wind generation scenario": {
+      "classification": "A",
+      "description": "COMPATIBLE (wind_power_generic_W maps to wind_generation channel in W)"
+    },
+    "6. H1.0 -> ForecastBundle": {
+      "classification": "A",
+      "description": "COMPATIBLE (v1.0.0 schema untouched)"
+    },
+    "7. H1.0 -> StationState": {
+      "classification": "A",
+      "description": "COMPATIBLE (schema untouched)"
+    },
+    "8. H1.0 -> runtime context": {
+      "classification": "A",
+      "description": "COMPATIBLE (provenance preserved externally and in metadata)"
+    },
+    "9. truth firewall": {
+      "classification": "A",
+      "description": "COMPATIBLE (static order strictly enforced before optimization)"
+    },
+    "10. timestamp/horizon semantics": {
+      "classification": "A",
+      "description": "COMPATIBLE (8,784 hourly ISO-8601 UTC steps, 24h receding horizon)"
+    },
+    "11. provenance": {
+      "classification": "A",
+      "description": "COMPATIBLE (all 5 variables retain strict provenance labels)"
+    },
+    "12. serialization": {
+      "classification": "A",
+      "description": "COMPATIBLE (to_dict/from_dict 100% round-trip verified)"
+    }
+  },
+  "verification_summary": {
+    "H1.0_FIXTURE_STATUS": "FROZEN / VERIFIED",
+    "H1.0_TO_RUNTIME": "COMPATIBLE_WITH_CONTRACT_PRESERVING_ADAPTER",
+    "FORECASTBUNDLE_COMPATIBILITY": "PASS",
+    "STATIONSTATE_COMPATIBILITY": "PASS",
+    "DISPATCHPLAN_INTEGRITY": "PASS",
+    "OPTIMIZER_INTEGRITY": "PASS",
+    "SIMULATOR_INTEGRITY": "PASS",
+    "TIMESTAMP_ALIGNMENT": "PASS",
+    "PROVENANCE_INTEGRITY": "PASS",
+    "TRUTH_FIREWALL": "PASS",
+    "DATA_LEAKAGE_AUDIT": "PASS",
+    "FROZEN_ARTIFACT_INTEGRITY": "PASS",
+    "MILP_CALLS": 0,
+    "SIMULATOR_STEPS": 0
+  },
+  "mandatory_status": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "H1.0_FIXTURE": "FROZEN",
+    "RUNTIME_EXECUTION": "NOT_AUTHORIZED",
+    "STEP10A_FINAL_CLASSIFICATION": "A"
+  }
+}

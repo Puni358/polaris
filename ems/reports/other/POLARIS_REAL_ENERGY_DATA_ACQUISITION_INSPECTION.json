@@ -1,0 +1,134 @@
+{
+  "project": "POLARIS",
+  "task": "REAL ENERGY DATA ACQUISITION: DATA ACCESS + TEMPORAL / DEMAND COVERAGE INSPECTION + COMPATIBILITY DECISION",
+  "timestamp": "2026-09-17T13:52:00Z",
+  "phase_status": "LOCKED 🔒",
+  "authoritative_conclusion": "REAL DATA ACCESS RESTRICTED",
+  "status": "RECONNAISSANCE_ACQUISITION_COMPLETE_IMPLEMENTATION_NOT_AUTHORIZED",
+  "primary_question": {
+    "question": "Can we obtain at least one identified real polar-station electrical demand/load dataset with sufficient temporal resolution, duration, continuity, and measured demand coverage to construct an additive real-data scenario compatible with the existing POLARIS interfaces?",
+    "outcome_category": "REAL DATA ACCESS RESTRICTED",
+    "answer": "The acquisition phase did not establish an openly accessible high-resolution measured polar-station demand dataset."
+  },
+  "evidence_boundary": {
+    "real_nuolja_solar_irradiance": "OBTAINED AND INSPECTED ((avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024_hourly_SW_IN(1).csv). Zero electrical demand fields present.",
+    "antarctic_monthly_energy_totals": "Real measurements (AADC), but aggregated monthly (too coarse for 1-hour MPC dispatch).",
+    "antarctic_1hour_demand_candidates": "Source documentation/literature describes 1-hour logging (SANAE IV, PEA); raw measurements were not obtained because access is restricted.",
+    "arctic_1hour_demand_candidates": "Source documentation/literature describes 1-hour logging (ACEP); raw measurements were not obtained because access is restricted.",
+    "open_access_remote_microgrid_proxies": "Accessible, but not to be represented as measured polar-station demand.",
+    "open_access_1hour_measured_polar_station_demand": "NOT OBTAINED."
+  },
+  "datasets_investigated": [
+    {
+      "dataset_name": "Monthly electricity usage at Australian Antarctic Stations",
+      "facility": "Mawson, Davis, Casey, Macquarie Island",
+      "institution": "Australian Antarctic Division (AADC)",
+      "access_category": "PUBLICLY DOCUMENTED / ARCHIVED",
+      "actual_access_result": "Monthly summary archived; 1h logger files unavailable",
+      "qualified_evidence_status": "Real measurements, but monthly aggregated",
+      "raw_data_obtained": false,
+      "obtained_status": "ACTUAL DATA NOT OBTAINED",
+      "temporal_resolution": "Monthly total aggregation",
+      "temporal_compatibility": "INSUFFICIENT"
+    },
+    {
+      "dataset_name": "SANAE IV Station Energy Operational Profile",
+      "facility": "SANAE IV Base",
+      "institution": "SANAP / Stellenbosch University",
+      "access_category": "ACCESS RESTRICTED",
+      "actual_access_result": "Source documentation/literature describes 1-hour logging",
+      "qualified_evidence_status": "Source documentation/literature describes 1-hour logging",
+      "raw_data_obtained": false,
+      "obtained_status": "ACTUAL DATA NOT OBTAINED (Restricted)",
+      "temporal_resolution": "1-hour (Restricted)",
+      "temporal_compatibility": "UNKNOWN"
+    },
+    {
+      "dataset_name": "Princess Elisabeth Station Micro-Smart Grid Profile",
+      "facility": "Princess Elisabeth Station",
+      "institution": "International Polar Foundation (IPF)",
+      "access_category": "INSTITUTIONAL ACCESS",
+      "actual_access_result": "Source documentation/literature describes logging",
+      "qualified_evidence_status": "Source documentation/literature describes logging",
+      "raw_data_obtained": false,
+      "obtained_status": "ACTUAL DATA NOT OBTAINED (Restricted)",
+      "temporal_resolution": "Sub-minute / 1-hour (Restricted)",
+      "temporal_compatibility": "UNKNOWN"
+    },
+    {
+      "dataset_name": "ACEP Arctic Microgrid Time Series",
+      "facility": "Kotzebue, Cordova, Wales, St. Mary's",
+      "institution": "ACEP / UAF / NREL",
+      "access_category": "REQUEST-ACCESS / NDA",
+      "actual_access_result": "Source documentation/literature describes 1h logging",
+      "qualified_evidence_status": "Source documentation/literature describes 1h logging",
+      "raw_data_obtained": false,
+      "obtained_status": "ACTUAL DATA NOT OBTAINED (Restricted)",
+      "temporal_resolution": "1-hour interval",
+      "temporal_compatibility": "REQUIRES FUTURE RESAMPLING"
+    },
+    {
+      "dataset_name": "SITES Nuolja Solar Irradiance Dataset (Stage8.1 Reference)",
+      "facility": "Nuolja Field Station, Abisko",
+      "institution": "SITES",
+      "access_category": "PUBLICLY DOWNLOADABLE",
+      "actual_access_result": "Local file (avg 1hr)POLARIS_v0_1_SITES_Nuolja_2024... inspected",
+      "qualified_evidence_status": "Obtained & inspected",
+      "raw_data_obtained": true,
+      "obtained_status": "ACTUAL DATA OBTAINED",
+      "temporal_resolution": "1-hour regular timesteps (8,784 timesteps)",
+      "temporal_compatibility": "DIRECT",
+      "demand_field_verification": "DIRECTLY OBSERVED: ZERO electrical demand fields present. Solar irradiance SW_IN (W/m^2) only."
+    },
+    {
+      "dataset_name": "OpenEI / Kaggle Remote Microgrid Proxies",
+      "facility": "Generic Remote Microgrids",
+      "institution": "NREL / OpenEI / Kaggle",
+      "access_category": "PUBLICLY DOWNLOADABLE",
+      "actual_access_result": "Public synthetic/anonymized load profiles downloadable",
+      "qualified_evidence_status": "Obtained & inspected (Proxy / Synthetic)",
+      "raw_data_obtained": true,
+      "obtained_status": "ACTUAL DATA OBTAINED (Proxy / Synthetic)",
+      "temporal_resolution": "1-hour regular timesteps",
+      "temporal_compatibility": "DIRECT",
+      "demand_field_verification": "Contains hourly kW load profile; classified as SYNTHETIC / ANONYMIZED PROXY DATA."
+    }
+  ],
+  "architecture_boundary": {
+    "frozen_interface_incompatibility_identified": false,
+    "adapter_feasibility_finding": "No frozen POLARIS interface incompatibility was identified during acquisition/inspection. Proposed adapter feasibility appears possible subject to obtaining and validating the required high-resolution measurements.",
+    "real_data_adapter_implemented": false,
+    "modified_frozen_architecture_components": false,
+    "synthetic_fixture_preserved": true,
+    "stage8_1_status": "FROZEN",
+    "d5_status": "CLOSED"
+  },
+  "exact_phase_conclusion": "The acquisition phase did not establish an openly accessible high-resolution measured polar-station demand dataset. The next project decision is whether to pursue formal access to a restricted measured-demand dataset or, if access is not practical, separately authorize a clearly labeled hybrid real-demand/modelled-system scenario. No adapter implementation is authorized by this phase.",
+  "explicit_next_decision_gate": {
+    "status": "PROJECT DECISION REQUIRED",
+    "branch_A_formal_restricted_data_access": "Pursue formal access to an identified restricted measured-demand dataset, obtain raw data, inspect/validate measurements, reassess compatibility, and only then consider explicit adapter authorization.",
+    "branch_B_governed_hybrid_scenario": "If formal access is not practical, separately define a hybrid real-demand/modelled-system scenario, explicitly document measured vs modelled quantities, keep clearly labeled as HYBRID, and obtain explicit authorization before implementation.",
+    "selected_branch": "NONE (Awaiting explicit project decision)"
+  },
+  "implementation_authorization_status": "RECONNAISSANCE/ACQUISITION COMPLETE — ADAPTER IMPLEMENTATION IS NOT AUTHORIZED.",
+  "final_firewall_verification": {
+    "phase_locked": true,
+    "dataset_access_inspected_read_only": true,
+    "access_restrictions_respected": true,
+    "qualified_wording_used_for_unobtained_data": true,
+    "demand_not_confused_with_generation_or_irradiance": true,
+    "no_frozen_interface_modified": true,
+    "no_source_code_modified": true,
+    "no_synthetic_fixture_modified": true,
+    "no_stage8_1_artifact_modified": true,
+    "no_d5_artifact_modified": true,
+    "no_stage8_1_experiment_rerun": true,
+    "no_d5_experiment_rerun": true,
+    "no_adapter_implemented": true,
+    "no_resampling_pipeline_implemented": true,
+    "no_real_data_validation_experiment_run": true,
+    "no_champion_in_loop_experiment_run": true,
+    "md_and_json_semantically_consistent": true,
+    "implementation_remains_unauthorized": true
+  }
+}

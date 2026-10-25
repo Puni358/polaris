@@ -1,0 +1,101 @@
+{
+  "audit_manifest_id": "POLARIS_STAGE8_1_EMS_TIMESTEP_MECHANISM_VERIFICATION",
+  "final_classification": "C \u2014 ONLY ASSOCIATIONS ESTABLISHED",
+  "experiment_rerun": false,
+  "origin_rerun": false,
+  "pilot_run": false,
+  "model_retrained": false,
+  "ems_modified": false,
+  "optimizer_modified": false,
+  "forecast_modified": false,
+  "forecastbundle_modified": false,
+  "schema_modified": false,
+  "v1_result_modified": false,
+  "v2_implemented": false,
+  "v2_engineering_status": "V2_ENGINEERING_LOCKED",
+  "v1_frozen_result_confirmation": {
+    "n_origins": 173,
+    "control_total_liters": 4671.0,
+    "treatment_total_liters": 6447.44,
+    "mean_paired_difference_liters": 10.2684,
+    "bootstrap_95_ci": [
+      5.4795,
+      15.2113
+    ],
+    "wilcoxon_w": 5351.5,
+    "wilcoxon_p": 0.0013566,
+    "spearman_rho": -0.9198,
+    "spearman_p": 2.283e-71,
+    "diesel_energy_delta_kwh": 58.1351,
+    "renewable_used_delta_kwh": -79.4577,
+    "renewable_curtailment_delta_kwh": -120.4317,
+    "battery_throughput_delta_kwh": -64.6521
+  },
+  "mae_reconciliation": {
+    "official_stage81_ood_benchmark_daytime_mae_w_m2": 36.1887,
+    "official_control_ood_benchmark_daytime_mae_w_m2": 70.4705,
+    "v1_replay_173_origin_treatment_allhours_mae_w_m2": 25.1281,
+    "v1_replay_173_origin_control_allhours_mae_w_m2": 174.2477,
+    "reconciliation_verdict": "RECONCILED_AND_ACCEPTED",
+    "explanation": "Official Stage8.1 benchmark evaluates daytime-only hours (daytime_flag=True) across the full evaluation dataset yielding 36.19 W/m\u00b2. V1 replay raw CSV reports 24-hour all-horizon averages (including 12 nighttime zero-solar hours) yielding 25.13 W/m\u00b2 treatment MAE and 174.25 W/m\u00b2 control clear-sky MAE."
+  },
+  "timestep_level_field_availability": {
+    "origin_summary_metrics": "PRESERVED_IN_RAW_CSV",
+    "origin_horizon_predictions": "PRESERVED_IN_PREDICTIONS_CSV",
+    "hourly_soc_trajectories": "NOT_AVAILABLE_IN_PRESERVED_EVIDENCE",
+    "hourly_diesel_commitment_events": "NOT_AVAILABLE_IN_PRESERVED_EVIDENCE",
+    "hourly_battery_charge_discharge": "NOT_AVAILABLE_IN_PRESERVED_EVIDENCE",
+    "hourly_curtailment_events": "NOT_AVAILABLE_IN_PRESERVED_EVIDENCE"
+  },
+  "group_p_vs_group_n_heterogeneity": {
+    "group_p_count": 95,
+    "group_p_mean_fuel_delta_liters": 36.0633,
+    "group_p_mean_control_signed_error_w_m2": 222.187,
+    "group_p_mean_treatment_mae_w_m2": 9.4333,
+    "group_n_count": 77,
+    "group_n_mean_fuel_delta_liters": -21.423,
+    "group_n_mean_control_signed_error_w_m2": 93.5947,
+    "group_n_mean_treatment_mae_w_m2": 44.6343,
+    "group_z_count": 1
+  },
+  "representative_origin_cases": {
+    "group_p_representative_origin_id": 16,
+    "group_p_representative_timestamp": "2024-02-20 00:00:00+00:00",
+    "group_p_fuel_delta_liters": 38.4,
+    "group_n_representative_origin_id": 34,
+    "group_n_representative_timestamp": "2024-03-27 00:00:00+00:00",
+    "group_n_fuel_delta_liters": -27.0
+  },
+  "mechanism_chain_table": [
+    {
+      "step": 1,
+      "link": "Stage8.1 differs from control forecast",
+      "classification": "A \u2014 DIRECTLY OBSERVED IN TIMESTEP TRAJECTORIES"
+    },
+    {
+      "step": 2,
+      "link": "Forecast difference correlates with origin fuel outcome",
+      "classification": "C \u2014 EXPLORATORY ASSOCIATION ONLY"
+    },
+    {
+      "step": 3,
+      "link": "Hourly EMS decision divergence timing",
+      "classification": "E \u2014 NOT IDENTIFIABLE FROM PRESERVED EVIDENCE"
+    },
+    {
+      "step": 4,
+      "link": "Hourly diesel dispatch vs battery trajectory",
+      "classification": "E \u2014 NOT IDENTIFIABLE FROM PRESERVED EVIDENCE"
+    },
+    {
+      "step": 5,
+      "link": "Hourly renewable absorption & curtailment timing",
+      "classification": "E \u2014 NOT IDENTIFIABLE FROM PRESERVED EVIDENCE"
+    }
+  ],
+  "scientific_claim_boundary": "Empirical Stage8.1 solar forecasts replayed through the frozen POLARIS EMS under the controlled POLARIS synthetic station environment were associated with a mean increase of 10.2684 L/origin in diesel fuel relative to the frozen control forecast, alongside lower battery throughput and lower renewable curtailment.",
+  "provenance_hashes": {
+    "raw_csv_sha256": "7d9c6e7af82b61980a1bec67d5c1b362fc8a526a9db4c4359a003392328bcc3b",
+    "predictions_csv_sha256": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "experiment_name": "POLARIS_INFORMATION_PROBE_PHASE_A",
+  "timestamp_utc": "2026-09-15 23:42:28+0000",
+  "total_even_origins": 174,
+  "eligible_even_origins": 104,
+  "excluded_even_origins": 70,
+  "power_floor_passed": true,
+  "eligible_csv_sha256": "d2beca0747bfe18a4541bdfc664afcd9e9af838f324ecbf586fbec82ea4da88e",
+  "oof_predictions_csv_sha256": "3652f298268e3e41393aa2ae79b6943dac826745e997403309bbb74d3937cce5",
+  "t4_status": "DROPPED",
+  "governance_rule": "Original formal hit criterion: 2-of-4 required (with T4 dropped, 2-of-4 cannot be met using T1-T3 alone). Results report T1-T3 diagnostically.",
+  "results": {
+    "T1_volatility": {
+      "ModelA_Ridge": {
+        "P0_R2": -0.081796,
+        "P1_R2": -1.410153,
+        "delta_R2": -1.328357,
+        "P0_spearman_rho": -0.113187,
+        "P1_spearman_rho": 0.060066,
+        "bootstrap_95ci_lo": -2.20781,
+        "bootstrap_95ci_hi": -0.718217,
+        "bootstrap_ci_excludes_zero": false,
+        "permutation_p_value": 0.342
+      },
+      "ModelB_GBDT": {
+        "P0_R2": -0.461663,
+        "P1_R2": -0.151837,
+        "delta_R2": 0.309826,
+        "P0_spearman_rho": -0.271301,
+        "P1_spearman_rho": 0.123034,
+        "bootstrap_95ci_lo": 0.050597,
+        "bootstrap_95ci_hi": 0.588638,
+        "bootstrap_ci_excludes_zero": true,
+        "permutation_p_value": 0.0
+      }
+    },
+    "T2_max_transition": {
+      "ModelA_Ridge": {
+        "P0_R2": -0.077954,
+        "P1_R2": -1.258759,
+        "delta_R2": -1.180805,
+        "P0_spearman_rho": -0.21882,
+        "P1_spearman_rho": 0.084231,
+        "bootstrap_95ci_lo": -1.975341,
+        "bootstrap_95ci_hi": -0.618664,
+        "bootstrap_ci_excludes_zero": false,
+        "permutation_p_value": 0.26
+      },
+      "ModelB_GBDT": {
+        "P0_R2": -0.443361,
+        "P1_R2": -0.138182,
+        "delta_R2": 0.305179,
+        "P0_spearman_rho": -0.222447,
+        "P1_spearman_rho": 0.171749,
+        "bootstrap_95ci_lo": 0.046965,
+        "bootstrap_95ci_hi": 0.583704,
+        "bootstrap_ci_excludes_zero": true,
+        "permutation_p_value": 0.0
+      }
+    },
+    "T3_mean_kt": {
+      "ModelA_Ridge": {
+        "P0_R2": 0.030879,
+        "P1_R2": -0.095207,
+        "delta_R2": -0.126086,
+        "P0_spearman_rho": 0.220356,
+        "P1_spearman_rho": 0.527334,
+        "bootstrap_95ci_lo": -0.707942,
+        "bootstrap_95ci_hi": 0.303329,
+        "bootstrap_ci_excludes_zero": false,
+        "permutation_p_value": 0.0
+      },
+      "ModelB_GBDT": {
+        "P0_R2": -0.071428,
+        "P1_R2": 0.527374,
+        "delta_R2": 0.598801,
+        "P0_spearman_rho": 0.250549,
+        "P1_spearman_rho": 0.722149,
+        "bootstrap_95ci_lo": 0.363855,
+        "bootstrap_95ci_hi": 0.842121,
+        "bootstrap_ci_excludes_zero": true,
+        "permutation_p_value": 0.0
+      }
+    }
+  }
+}

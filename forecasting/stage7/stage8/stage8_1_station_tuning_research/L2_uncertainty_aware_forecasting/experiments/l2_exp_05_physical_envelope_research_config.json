@@ -1,0 +1,121 @@
+{
+  "experiment_id": "L2-EXP-05",
+  "experiment_title": "POLARIS L2 Physical Uncertainty Envelope Research",
+  "created_at": "2026-10-04T11:15:00+05:30",
+  "station_target": {
+    "station_id": "ANS_NMS",
+    "station_name": "Mount Nuolja Middle Station AWS",
+    "coordinates": {
+      "latitude": 68.36207412,
+      "longitude": 18.73875158,
+      "elevation_m": 702.0
+    },
+    "instrument": {
+      "sensor_type": "Apogee SP110 Silicon-cell Pyranometer",
+      "height_m_agl": 2.86,
+      "variable": "SW_IN",
+      "units": "W/m^2",
+      "sampling_frequency_sec": 5,
+      "logging_interval_min": 10,
+      "aggregation": "Hourly arithmetic mean"
+    }
+  },
+  "research_question": "What physical upper-envelope formulation can constrain the calibrated SKGBDT+CQR interval without reproducing the demonstrated failure of the existing U = 1.25 * clearsky_ghi bound?",
+  "authoritative_inputs": {
+    "historical_residual_dataset": {
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "exact_38_feature_matrix": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+      "sha256": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde"
+    },
+    "exact_frozen_f_predictions": {
+      "path": "candidate_L_research/CANDIDATE_L2_EXACT_FROZEN_F_PREDICTIONS_2020_2023.csv",
+      "sha256": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0"
+    },
+    "frozen_candidate_f_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/model_artifacts/candidateF_elevation_x_cloud.joblib",
+      "sha256": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+    },
+    "frozen_skgbdt_q10_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q10.joblib",
+      "sha256": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb"
+    },
+    "frozen_skgbdt_q50_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q50.joblib",
+      "sha256": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71"
+    },
+    "frozen_skgbdt_q90_model": {
+      "path": "stage7/stage8/stage8_1_station_tuning_research/L2_uncertainty_aware_forecasting/models/l2_exp_02_skgbdt_q90.joblib",
+      "sha256": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff"
+    }
+  },
+  "temporal_splits": {
+    "development": {
+      "years": [2020, 2021],
+      "partition": "Daytime observations only (solar_elevation > 0.0)",
+      "usage": "Empirical envelope characterization and ratio analysis"
+    },
+    "validation": {
+      "year": 2022,
+      "partition": "Daytime observations only (solar_elevation > 0.0)",
+      "usage": "Independent formulation validation and robustness check"
+    },
+    "blind_test": {
+      "range": "2023-01-01 to 2023-09-30",
+      "partition": "Daytime observations only (solar_elevation > 0.0)",
+      "usage": "Post-lock external validation check only"
+    },
+    "quarantined": {
+      "year": 2024,
+      "status": "Quarantined (0 rows accessed)"
+    }
+  },
+  "frozen_calibration_parameter": {
+    "q_hat": 9.8962,
+    "source_experiment": "L2-EXP-03"
+  },
+  "solar_elevation_bins_deg": [
+    {"label": "0-5 deg", "min_deg": 0.0, "max_deg": 5.0},
+    {"label": ">5-10 deg", "min_deg": 5.0, "max_deg": 10.0},
+    {"label": ">10-15 deg", "min_deg": 10.0, "max_deg": 15.0},
+    {"label": ">15-20 deg", "min_deg": 15.0, "max_deg": 20.0},
+    {"label": ">20 deg", "min_deg": 20.0, "max_deg": 90.0}
+  ],
+  "candidate_envelope_formulations": [
+    {
+      "id": "A",
+      "name": "Multiplicative Clear-Sky Bound",
+      "formula": "U = k * clearsky_ghi",
+      "k_ref": 1.25,
+      "physical_basis": "Assumes irradiance is strictly proportional to direct geometric clear-sky GHI with cloud enhancement headroom."
+    },
+    {
+      "id": "B",
+      "name": "Clear-Sky + Positive Diffuse Floor",
+      "formula": "U = max(k * clearsky_ghi, F)",
+      "k_ref": 1.25,
+      "F_ref_research_only": 80.0,
+      "physical_basis": "Decouples geometric beam regime (k*cs) from low-sun atmospheric diffuse/scattered background radiation envelope (F)."
+    },
+    {
+      "id": "C",
+      "name": "Elevation-Aware Envelope",
+      "formula": "U = g(solar_elevation, clearsky_ghi)",
+      "physical_basis": "Continuously modulates diffuse allowance as a function of solar zenith/elevation angle to capture horizon scattering without sharp floor discontinuity."
+    },
+    {
+      "id": "D",
+      "name": "Empirical Historical Regime Envelope",
+      "formula": "U = Q_p(actual | regime)",
+      "physical_basis": "Upper empirical quantile conditioned on physically observable forecast regimes."
+    }
+  ],
+  "scientific_decision_categories": [
+    "PHYSICAL-ENVELOPE-SUPPORTED",
+    "FORMULATION-SUPPORTED-NUMERIC-BOUND-UNRESOLVED",
+    "INSUFFICIENT-EVIDENCE",
+    "BLOCKED"
+  ]
+}

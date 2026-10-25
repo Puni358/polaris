@@ -1,0 +1,11 @@
+{
+  "fixture_version": "H1.0",
+  "random_seed": 42,
+  "base_demand_w": 25000.0,
+  "min_demand_w": 15000.0,
+  "max_demand_w": 45000.0,
+  "pv_capacity_w": 60000.0,
+  "turbine_rated_w": 60000.0,
+  "solar_source": "data/POLARIS_v0_1_SITES_Nuolja_2024_hourly_multivariate.csv",
+  "wind_source": "research/wind_a2/smhi_188790_ws_full.csv"
+}

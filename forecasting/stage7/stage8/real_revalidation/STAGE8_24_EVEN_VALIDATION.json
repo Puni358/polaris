@@ -1,0 +1,104 @@
+{
+  "timestamp_utc": "2026-09-13T16:50:30Z",
+  "experiment_id": "POLARIS_STAGE8_24_GOVERNED_EXPERIMENT",
+  "control_baseline": {
+    "model": "Stage 8.1 37-feature HGB champion",
+    "even_control_mae": 37.6308,
+    "even_control_nmae_pct": 29.2146,
+    "even_control_rmse": 60.0974
+  },
+  "candidate": {
+    "candidate_name": "Stage 8.24 (Orographic Flow Regime: ctx_u_perp + ctx_mountain_froude)",
+    "mean_mae": 38.028,
+    "delta_mae": 0.3972,
+    "mean_nmae_pct": 29.5228,
+    "delta_nmae_pct": 0.3082,
+    "mean_rmse": 60.44,
+    "delta_rmse": 0.3426,
+    "improving_folds": 1,
+    "worst_fold_degradation": 1.1857,
+    "gates": {
+      "G1_MAE_Margin_(-0.50)": {
+        "value": 0.3972,
+        "pass": false
+      },
+      "G2_Fold_Consistency_(4/5)": {
+        "value": 1,
+        "pass": false
+      },
+      "G3_Worst_Fold_Tolerance_(+0.50)": {
+        "value": 1.1857,
+        "pass": false
+      },
+      "G4_nMAE_RMSE_NonDegradation": {
+        "pass": false
+      },
+      "G5_Causal_Integrity": {
+        "pass": true
+      },
+      "G6_Exact_Control_Reproduction": {
+        "pass": true
+      }
+    },
+    "OVERALL_GATES_PASS": false
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "daytime_n": 591,
+      "control_mae": 49.5313,
+      "cand_mae": 49.4888,
+      "delta_mae": -0.0424,
+      "control_nmae_pct": 29.6582,
+      "cand_nmae_pct": 29.6327,
+      "control_rmse": 81.7102,
+      "cand_rmse": 81.6543
+    },
+    {
+      "fold": 2,
+      "daytime_n": 696,
+      "control_mae": 70.7021,
+      "cand_mae": 70.9079,
+      "delta_mae": 0.2058,
+      "control_nmae_pct": 36.9891,
+      "cand_nmae_pct": 37.0967,
+      "control_rmse": 103.8821,
+      "cand_rmse": 104.3012
+    },
+    {
+      "fold": 3,
+      "daytime_n": 648,
+      "control_mae": 40.3698,
+      "cand_mae": 41.5555,
+      "delta_mae": 1.1857,
+      "control_nmae_pct": 28.1592,
+      "cand_nmae_pct": 28.9864,
+      "control_rmse": 67.291,
+      "cand_rmse": 69.8412
+    },
+    {
+      "fold": 4,
+      "daytime_n": 396,
+      "control_mae": 25.6828,
+      "cand_mae": 26.2035,
+      "delta_mae": 0.5207,
+      "control_nmae_pct": 36.6065,
+      "cand_nmae_pct": 37.3486,
+      "control_rmse": 44.4712,
+      "cand_rmse": 45.1205
+    },
+    {
+      "fold": 5,
+      "daytime_n": 221,
+      "control_mae": 1.868,
+      "cand_mae": 1.9841,
+      "delta_mae": 0.1162,
+      "control_nmae_pct": 52.0045,
+      "cand_nmae_pct": 55.2366,
+      "control_rmse": 3.5102,
+      "cand_rmse": 3.6841
+    }
+  ],
+  "ODD_RUN": false,
+  "FINAL_VERDICT": "REJECTED_ON_EVEN"
+}

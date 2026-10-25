@@ -1,0 +1,171 @@
+{
+  "C1_wind_without_protection (SW - S)": {
+    "primary_proportional_reliability_pp": {
+      "mean": -1.137696003205592,
+      "std": 2.4837963206663956,
+      "median": -0.8035602543538971,
+      "ci_95_bca_low": -1.5909665004165408,
+      "ci_95_bca_high": -0.718385059329064,
+      "unit": "pp"
+    },
+    "critical_first_reliability_pp": {
+      "mean": -0.23665408022614623,
+      "std": 0.9480698078617543,
+      "median": 0.0,
+      "ci_95_bca_low": -0.41887810411326803,
+      "ci_95_bca_high": -0.08230559952009463,
+      "unit": "pp"
+    },
+    "fuel_l": {
+      "mean": -6.205729268292682,
+      "std": 12.076275942414245,
+      "median": -5.141100000000002,
+      "ci_95_bca_low": -8.379710623867284,
+      "ci_95_bca_high": -4.08750975364425,
+      "unit": "L"
+    },
+    "unmet_load_kwh": {
+      "mean": 4.691989756097558,
+      "std": 10.30047707536598,
+      "median": 3.6142699999999763,
+      "ci_95_bca_low": 2.9466661919440154,
+      "ci_95_bca_high": 6.568071219966339,
+      "unit": "kWh"
+    },
+    "curtailment_kwh": {
+      "mean": -1.2367824390243916,
+      "std": 14.6868938753042,
+      "median": 0.0,
+      "ci_95_bca_low": -3.7902797563434243,
+      "ci_95_bca_high": 1.3465252820715121,
+      "unit": "kWh"
+    }
+  },
+  "C2_protection_under_solar_plus_wind (SW-L - SW)": {
+    "primary_proportional_reliability_pp": {
+      "mean": 1.7970340418224808,
+      "std": 2.1984670844326324,
+      "median": 1.6078402775963383,
+      "ci_95_bca_low": 1.4205431080654294,
+      "ci_95_bca_high": 2.199549007036094,
+      "unit": "pp"
+    },
+    "critical_first_reliability_pp": {
+      "mean": 0.3938989930847582,
+      "std": 0.857469686810361,
+      "median": 0.17244971264366882,
+      "ci_95_bca_low": 0.25239790245666605,
+      "ci_95_bca_high": 0.5487771612679616,
+      "unit": "pp"
+    },
+    "fuel_l": {
+      "mean": 10.864168292682924,
+      "std": 12.439360090127437,
+      "median": 10.402,
+      "ci_95_bca_low": 8.724423669982869,
+      "ci_95_bca_high": 13.081298661234943,
+      "unit": "L"
+    },
+    "unmet_load_kwh": {
+      "mean": -7.453928861788617,
+      "std": 9.007292033019981,
+      "median": -6.733529999999995,
+      "ci_95_bca_low": -9.103508025638826,
+      "ci_95_bca_high": -5.91456060927637,
+      "unit": "kWh"
+    },
+    "curtailment_kwh": {
+      "mean": 4.9945456097560985,
+      "std": 17.245895972033708,
+      "median": 3.776920000000004,
+      "ci_95_bca_low": 1.8618804442196888,
+      "ci_95_bca_high": 7.8617341549917645,
+      "unit": "kWh"
+    }
+  },
+  "C3_protection_under_solar_only (S-L - S)": {
+    "primary_proportional_reliability_pp": {
+      "mean": 0.5455703794437645,
+      "std": 1.59253799569558,
+      "median": 0.19944729132750183,
+      "ci_95_bca_low": 0.2755228297767577,
+      "ci_95_bca_high": 0.8330581665128051,
+      "unit": "pp"
+    },
+    "critical_first_reliability_pp": {
+      "mean": 0.12800468414166888,
+      "std": 0.6301599217348209,
+      "median": 0.0,
+      "ci_95_bca_low": 0.01501759958892678,
+      "ci_95_bca_high": 0.23782474432870396,
+      "unit": "pp"
+    },
+    "fuel_l": {
+      "mean": 5.575657723577236,
+      "std": 10.21963632857657,
+      "median": 2.5130000000000052,
+      "ci_95_bca_low": 3.897105317236789,
+      "ci_95_bca_high": 7.463960676352734,
+      "unit": "L"
+    },
+    "unmet_load_kwh": {
+      "mean": -2.2737651219512207,
+      "std": 6.548819490025659,
+      "median": -0.7565500000000043,
+      "ci_95_bca_low": -3.461560211047729,
+      "ci_95_bca_high": -1.1740724554013373,
+      "unit": "kWh"
+    },
+    "curtailment_kwh": {
+      "mean": 3.3275200000000007,
+      "std": 10.105208531903687,
+      "median": 0.0,
+      "ci_95_bca_low": 1.711378213662936,
+      "ci_95_bca_high": 5.305466041897295,
+      "unit": "kWh"
+    }
+  },
+  "C4_interaction_primary_mechanism_diagnostic": {
+    "primary_proportional_reliability_pp": {
+      "mean": 1.2514636623787165,
+      "std": 2.225590329893448,
+      "median": 1.1909573142449972,
+      "ci_95_bca_low": 0.868258867490818,
+      "ci_95_bca_high": 1.6546213121386226,
+      "unit": "pp"
+    },
+    "critical_first_reliability_pp": {
+      "mean": 0.2658943089430893,
+      "std": 0.9767216610601218,
+      "median": 0.0,
+      "ci_95_bca_low": 0.10381126008207008,
+      "ci_95_bca_high": 0.44724582577554395,
+      "unit": "pp"
+    },
+    "fuel_l": {
+      "mean": 5.288510569105692,
+      "std": 11.649288076888219,
+      "median": 3.669800000000002,
+      "ci_95_bca_low": 3.231717532082745,
+      "ci_95_bca_high": 7.334478417457218,
+      "unit": "L"
+    },
+    "unmet_load_kwh": {
+      "mean": -5.180163739837396,
+      "std": 9.129448620870647,
+      "median": -4.8803999999999945,
+      "ci_95_bca_low": -6.839778821353949,
+      "ci_95_bca_high": -3.621040336544613,
+      "unit": "kWh"
+    },
+    "curtailment_kwh": {
+      "mean": 1.6670256097560987,
+      "std": 15.090338736972594,
+      "median": 0.2939700000000016,
+      "ci_95_bca_low": -0.9702503683614454,
+      "ci_95_bca_high": 4.273344644991852,
+      "unit": "kWh"
+    },
+    "algebraic_identity_check_max_diff": 0.0
+  }
+}

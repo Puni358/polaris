@@ -1,0 +1,9 @@
+{
+  "test_id": "GAP19_GOVERNED_J2_SINGLE_CYCLE_RUNTIME_TEST",
+  "sha256_hashes": {
+    "test_runner_script": "e1654407b71a258a1c93a8d169e46a782eb5c234a98402db38cf2f01f786a345",
+    "forecast_bundle_payload": "6e9a03fc5c3080ff52136e098867a57a8a0b0dd9bc0df3b2c140228bb51d9237",
+    "station_state_payload": "f85e33d288921a92e1b10629a88adfa0c70d4e4e9f733e8395f162d4766bf9a2",
+    "optimizer_implementation": "fd1afe10a60c6e9caf415d648701a33655a76e5e9f558c49c0f39bc118a2e737"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "checkpoint_id": "POLARIS_SYSTEM_D5_CONTRACT_FREEZE_CHECKPOINT_20260917",
+  "timestamp": "2026-09-17T07:24:00+05:30",
+  "governance_status": {
+    "D4": "CLOSED",
+    "D5": "CONTRACT_FROZEN_AWAITING_EXPLICIT_AUTHORIZATION",
+    "D5_CONTRACT": "FROZEN",
+    "D5_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "D5_EXECUTION": "NOT_AUTHORIZED",
+    "D6": "NOT_INITIATED"
+  },
+  "implementation_boundaries": {
+    "scope_boundary": "Implementation authorization permits construction and modification of D5 implementation code, D5-specific schemas or adapters that do not modify frozen system schemas, configuration, test infrastructure, and supporting documentation required to implement the frozen D5 contract. It does NOT authorize modification of frozen D5 contract, frozen EMS scientific/operational logic, frozen forecasting logic, frozen evaluator definitions, frozen D4 artifacts/governance, or locked historical research artifacts.",
+    "system_schema_immutability_rule": "Frozen system schemas, including ForecastBundle, DispatchPlan, and StationState schemas, MUST NOT be modified. D5-specific validation structures, adapters, scenario representations, or metadata schemas may be added only where they do not alter frozen system schemas.",
+    "trajectory_firewall": "During implementation and implementation testing, hidden future actual trajectories MUST NOT be loaded or consumed as experimental inputs. Synthetic/mock actuals may be used solely to verify software interfaces, state transitions, evaluator wiring, or control flow. A real D5 experimental actual trajectory combined with a D5 perturbation scenario is sufficient to require D5 execution authorization, regardless of whether empirical metrics are ultimately saved.",
+    "gate_fixture_immutability": "D5-1 through D5-6 scenario definitions are frozen contract inputs. Antigravity MUST NOT alter perturbation factors, scenario composition, horizon, iteration count, persistence, evaluation definitions, or causality rules.",
+    "duration_boundary": "For D5-1 through D5-5: exactly N=24 closed-loop iterations. For D5-6: exactly N=168 closed-loop iterations. These durations are frozen contract inputs.",
+    "completion_states": {
+      "after_implementation": "D5 IMPLEMENTATION = COMPLETE / AWAITING REVIEW",
+      "after_review": "D5 IMPLEMENTATION = REVIEWED / EXECUTION NOT AUTHORIZED"
+    },
+    "experimental_execution_trigger": "A test that executes the frozen EMS using a D5 experimental scenario against an experimental actual trajectory constitutes D5 experimental execution, regardless of whether it is invoked through a test, script, integration test, smoke test, or diagnostic command.",
+    "supporting_documentation_boundary": "New implementation documentation may be created where required to implement or review D5. Existing frozen governance/checkpoint artifacts MUST NOT be rewritten, amended, or regenerated during implementation merely for documentation convenience. This governance cleanup is an explicitly authorized controlled revision of the current D5 contract/checkpoint provenance artifacts. After this cleanup is completed and the revised artifacts are frozen, they become authoritative and MUST NOT be amended or rewritten for implementation convenience. Any future implementation dependency requiring modification of a frozen governance/checkpoint artifact is a STOP-and-report condition.",
+    "implementation_test_firewall": "Implementation-level tests may verify software/contract correctness using isolated synthetic/mock inputs, but MUST NOT execute D5-1 through D5-6, consume D5 experimental actual trajectories, generate empirical EMS forecast-error response metrics, or perform baseline-versus-perturbed experimental comparisons."
+  },
+  "proposed_gates_status": {
+    "D5-1": "PROPOSED — NOT YET EXECUTED",
+    "D5-2": "PROPOSED — NOT YET EXECUTED",
+    "D5-3": "PROPOSED — NOT YET EXECUTED",
+    "D5-4": "PROPOSED — NOT YET EXECUTED",
+    "D5-5": "PROPOSED — NOT YET EXECUTED",
+    "D5-6": "PROPOSED — NOT YET EXECUTED"
+  },
+  "d5_contract_artifacts": {
+    "markdown_path": "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.md",
+    "markdown_sha256": "23af7ba4f24bedfce9324323f2e31633e83c2a3f171f19b891644d62b13a2869",
+    "json_path": "POLARIS_SYSTEM_D5_FORECAST_ERROR_ROBUSTNESS_CONTRACT.json",
+    "json_sha256": "544649c8f189d7a01c5c5d88b067e44040df616441b9a759f3ca84b5019bcabd",
+    "hash_supersession_statement": "These checksums supersede the previously recorded D5 contract checksums from the pre-cleanup freeze state (0b1cc5495e93d6dc3338f36eea8acb9db57bb13c1b1a79c186a6e591316d3dc1 and b40356f17c8164ea6fcf1401c7f94cbe80a0ac9f97fce7ce5223b3669fca1f0c). The superseded artifacts remain historical provenance records and are not to be treated as the current D5 contract source of truth. The current SHA256 values recorded in this checkpoint are authoritative for the revised frozen D5 contract.",
+    "superseded_markdown_sha256": "0b1cc5495e93d6dc3338f36eea8acb9db57bb13c1b1a79c186a6e591316d3dc1",
+    "superseded_json_sha256": "b40356f17c8164ea6fcf1401c7f94cbe80a0ac9f97fce7ce5223b3669fca1f0c",
+    "copied_artifact_integrity": "AUTHORITATIVE REVISED FROZEN CONTRACT"
+  },
+  "protected_phase_status": {
+    "D4_A": "FROZEN_APPROVED",
+    "D4_B": "FROZEN_APPROVED",
+    "D4_C0": "FROZEN_APPROVED",
+    "D4_C1": "FROZEN_APPROVED",
+    "D4_C2": "CLOSED_IMPLEMENTATION_NOT_JUSTIFIED",
+    "D4_BRANCH": "CLOSED",
+    "Stage8_1": "FROZEN",
+    "ODD_research": "PROTECTED"
+  },
+  "execution_declarations": {
+    "implementation_performed": false,
+    "execution_performed": false,
+    "experiments_performed": false,
+    "empirical_evidence_exists": false,
+    "gates_passed": 0,
+    "gates_failed": 0,
+    "d6_initiated": false
+  },
+  "governance_transition": "D5 CONTRACT FROZEN -> AWAITING EXPLICIT AUTHORIZATION"
+}

@@ -1,0 +1,34 @@
+{
+  "governance_closure_id": "POLARIS_EMS_HD03_AUTHORITY_TIME_RUNTIME_CLOSURE",
+  "closure_timestamp": "2026-09-23T09:48:26+05:30",
+  "governance_scope": "HD03_OPERATIONAL_AUTHORITY_TIME_SEMANTICS_RUNTIME_VARIABILITY",
+  "status": "GOVERNANCE_CLOSED_ALL_SEMANTIC_DIMENSIONS",
+  "authoritative_policy_statements": {
+    "operational_source_authority": "Only an authenticated and explicitly authorized operational source may issue a T_required override.",
+    "time_semantics": "T_required is represented as a positive duration from the current decision point to the required survival/recovery point.",
+    "runtime_variability": "T_required may be refreshed at MPC-cycle boundaries through a new valid, authorized, and fresh operational instruction."
+  },
+  "classifications": {
+    "HD03_OPERATIONAL_SOURCE_AUTHORITY": "CLOSED_AUTHENTICATED_AUTHORIZED_OPERATIONAL_SOURCE",
+    "HD03_TIME_SEMANTICS": "CLOSED_POSITIVE_DURATION_PLUS_EXPLICIT_EXPIRY",
+    "HD03_RUNTIME_VARIABILITY": "CLOSED_MPC_CYCLE_REFRESH",
+    "HD03_CRYPTOGRAPHIC_MECHANISM": "NOT_ESTABLISHED",
+    "HD03_CLOCK_DRIFT_THRESHOLD": "NOT_ESTABLISHED",
+    "HD03_TTL_VALUE": "NOT_ESTABLISHED",
+    "HD03_NUMERICAL_VALUE": "NOT_ESTABLISHED",
+    "HD03_DETECTOR_OWNERSHIP": "CONSUMER_ONLY",
+    "HD03_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD03_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "governance_baseline_preservation": {
+    "HD03_SOURCE_MODEL": "C_PLUS_A",
+    "HD03_OPERATIONAL_OVERRIDE_CAPABILITY": "CLOSED",
+    "HD03_OVERRIDE_PRECEDENCE": "CLOSED_OPERATIONAL_WINS_WHEN_VALID_AND_AUTHORIZED",
+    "HD03_CONFLICT_RULE": "CLOSED_OPERATIONAL_WINS",
+    "HD03_CONFIG_BASELINE_ROLE": "FALLBACK_CANDIDATE_WHEN_OPERATIONAL_OVERRIDE_IS_NOT_VALID",
+    "HD03_MISSING_INPUT_BEHAVIOR": "CLOSED_FAIL_CLOSED",
+    "HD03_NO_VALID_T_REQUIRED_STATE": "FAIL_CLOSED",
+    "HD03_VALIDITY_RULE": "CLOSED_BASIC_STRUCTURAL_VALIDITY",
+    "HD03_FRESHNESS_RULE": "CLOSED_FC_BOTH"
+  }
+}

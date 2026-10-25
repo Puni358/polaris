@@ -1,0 +1,63 @@
+{
+  "manifest_id": "POLARIS_HYBRID_FIXTURE_VALIDATION_MANIFEST",
+  "task_type": "HYBRID_FIXTURE_PHYSICAL_AND_SCHEMA_VALIDATION",
+  "fixture_version": "H1.0",
+  "validation_timestamp_utc": "2026-09-20T11:10:00Z",
+  "validation_results": {
+    "total_row_count": 8784,
+    "expected_row_count": 8784,
+    "row_count_match": true,
+    "start_timestamp": "2024-01-01T00:00:00Z",
+    "end_timestamp": "2024-12-31T23:00:00Z",
+    "timestamp_grid_monotonic": true,
+    "timestamp_step_hours": 1.0,
+    "duplicate_timestamps_count": 0,
+    "missing_values_count": 0,
+    "invalid_numeric_count": 0,
+    "physical_bounds": {
+      "solar_SW_IN_W_m2": {
+        "observed_min": 0.0,
+        "observed_max": 745.8667,
+        "valid_range": "[0, 1500]",
+        "status": "PASS"
+      },
+      "solar_PV_power_W": {
+        "observed_min": 0.0,
+        "observed_max": 38039.2,
+        "valid_range": "[0, 60000]",
+        "status": "PASS"
+      },
+      "wind_speed_proxy_m_s": {
+        "observed_min": 0.0,
+        "observed_max": 25.4,
+        "valid_range": "[0, 60]",
+        "status": "PASS"
+      },
+      "wind_power_generic_W": {
+        "observed_min": 0.0,
+        "observed_max": 60000.0,
+        "valid_range": "[0, 60000]",
+        "status": "PASS"
+      },
+      "synthetic_load_W": {
+        "observed_min": 15300.0,
+        "observed_max": 45000.0,
+        "valid_range": "[15000, 45000]",
+        "status": "PASS"
+      }
+    }
+  },
+  "overall_validation_status": "PASS",
+  "mandatory_status_block": {
+    "FROZEN_EVIDENCE_MODIFIED": "NO",
+    "MILP_SOLVES_EXECUTED": 0,
+    "SIMULATIONS_EXECUTED": 0,
+    "EXPERIMENT_RERUN": "NO",
+    "NEW_MODELING": "NO",
+    "NEW_TUNING": "NO",
+    "ARCHITECTURE_MODIFIED": "NO",
+    "PHYSICAL_VALIDATION": "PASS",
+    "HYBRID_FIXTURE_VERSION": "H1.0",
+    "STEP9_FINAL_CLASSIFICATION": "A — H1.0 FIXTURE GENERATED AND EXACTLY REPRODUCIBLE"
+  }
+}

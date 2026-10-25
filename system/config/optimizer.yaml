@@ -6,7 +6,7 @@ weights:
   renewable_curtailment_penalty: 0.05
   battery_cycling_penalty: 0.01
   unmet_critical_load_penalty: 1000.0
-  # RT-01 Stage 1 (RT01_CROSS_HORIZON_RESERVATION_DESIGN_MEMO.md Sec.2/6):
+  # RT-01 Stage 1 (ems/reports/rt01_runtime_fixes/RT01_CROSS_HORIZON_RESERVATION_DESIGN_MEMO.md Sec.2/6):
   # soft price ($ per Wh-equivalent) on the two new reservation-shortfall
   # slack variables in system/optimization/implementations/milp.py (s_term,
   # s_fuel). Modest relative to unmet_critical_load_penalty (10.0 $/Wh in
@@ -18,7 +18,7 @@ weights:
   reserve_shortfall_penalty: 0.5
 # RT-01 Stage 1 static reservation sizing (same memo, Sec.2/6), SUPERSEDED as
 # the active mechanism by Stage 2 below (RT01_STAGE2_FORECAST_OUTLOOK_RESERVATION_REPORT.md).
-# Stage 1 was validated (RT01_STAGE1_RESERVATION_IMPLEMENTATION_REPORT.md) to
+# Stage 1 was validated (ems/reports/rt01_runtime_fixes/RT01_STAGE1_RESERVATION_IMPLEMENTATION_REPORT.md) to
 # be a bit-identical no-help / net-negative always-on standing policy on the
 # governed 168h scenario (steps-119-121 shortfall unchanged; +3.69L diesel;
 # first fuel exhaustion 19h earlier; -0.93pp renewable utilization). It is
@@ -33,7 +33,7 @@ weights:
 reservation:
   terminal_target_soc_pct: 20.0   # inert (== battery.yaml min_soc_pct) -- Stage 1 static policy disabled
   fuel_reserve_target_l: 0.0      # inert -- Stage 1 static policy disabled
-  # RT-01 Stage 2 (RT01_CROSS_HORIZON_RESERVATION_DESIGN_MEMO.md Sec.2/6):
+  # RT-01 Stage 2 (ems/reports/rt01_runtime_fixes/RT01_CROSS_HORIZON_RESERVATION_DESIGN_MEMO.md Sec.2/6):
   # genuine forecast-outlook trigger. Only engages the soft terminal-energy /
   # fuel-reserve targets (milp.py) on a receding-horizon call whose
   # ForecastBundle.metadata["extended_outlook"] (system/forecasting/

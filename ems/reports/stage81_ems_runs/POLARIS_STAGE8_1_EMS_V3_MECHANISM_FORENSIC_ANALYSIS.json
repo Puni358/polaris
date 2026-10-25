@@ -1,0 +1,132 @@
+{
+  "analysis_id": "POLARIS_STAGE8_1_EMS_V3_MECHANISM_FORENSIC_ANALYSIS",
+  "analysis_timestamp_utc": "2026-09-19T12:30:00Z",
+  "governance_status": "V3_MECHANISM_FORENSIC_ANALYSIS_COMPLETE",
+  "provenance_hashes": {
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION_RAW.csv": "a67a7ef07cbfc3221623411da30d72203e3efb16a424c8aaa34772eaf833971e",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.json": "9bb13084b1db08c1ff322e6d4bdb4a1fbd62d534a0fa26c66b4c898bdba9d900",
+    "POLARIS_STAGE8_1_EMS_V3_EXECUTION.md": "6d2bf01b26385ba9f403c6dc8e30e511577d97a52e0f918449b23c125ee6cda0"
+  },
+  "primary_result_summary": {
+    "statistical_unit": "ORIGIN (N=173 paired origins)",
+    "mean_control_fuel_l": 27.0,
+    "mean_v2_treatment_fuel_l": 37.27,
+    "mean_v3_class_f_fuel_l": 23.99,
+    "paired_v3_vs_v2_mean_diff_l": -13.28,
+    "paired_v3_vs_v2_median_diff_l": -13.5,
+    "paired_v3_vs_v2_bootstrap_95_ci_l": [-15.11, -11.48],
+    "wilcoxon_w_stat": 32.0,
+    "wilcoxon_p_value": 6.217937e-21
+  },
+  "origin_level_heterogeneity": {
+    "group_reduced_fuel": {
+      "condition": "V3 - V2 < 0",
+      "count": 117,
+      "pct_of_origins": 67.63,
+      "mean_delta_liters": -19.76,
+      "median_delta_liters": -23.39,
+      "total_delta_liters": -2311.5
+    },
+    "group_equal_fuel": {
+      "condition": "V3 - V2 = 0",
+      "count": 54,
+      "pct_of_origins": 31.21,
+      "mean_delta_liters": 0.0,
+      "median_delta_liters": 0.0,
+      "total_delta_liters": 0.0
+    },
+    "group_increased_fuel": {
+      "condition": "V3 - V2 > 0",
+      "count": 2,
+      "pct_of_origins": 1.16,
+      "mean_delta_liters": 7.02,
+      "median_delta_liters": 7.02,
+      "total_delta_liters": 14.0
+    }
+  },
+  "mandatory_v2_vs_v3_comparison": {
+    "diesel_fuel_l": { "ctrl": 27.0, "v2": 37.27, "v3": 23.99, "delta_v3_v2": -13.28 },
+    "diesel_runtime_hours": { "ctrl": 1.73, "v2": 2.31, "v3": 1.35, "delta_v3_v2": -0.97 },
+    "startup_count": { "ctrl": 0.77, "v2": 1.03, "v3": 0.76, "delta_v3_v2": -0.27 },
+    "avg_diesel_power_when_running_kw": { "ctrl": 23.1, "v2": 22.42, "v3": 18.3, "delta_v3_v2": -4.12 },
+    "renewable_curtailment_kwh": { "ctrl": 177.38, "v2": 56.95, "v3": 17.57, "delta_v3_v2": -39.38 },
+    "battery_throughput_kwh": { "ctrl": 80.04, "v2": 80.04, "v3": 80.04, "delta_v3_v2": 0.0 },
+    "unmet_load_kwh": { "ctrl": 0.0, "v2": 0.0, "v3": 0.0, "delta_v3_v2": 0.0 },
+    "constraint_violations": { "ctrl": 0, "v2": 0, "v3": 0, "delta_v3_v2": 0 }
+  },
+  "first_divergence_timing": {
+    "soc_first_divergence": { "modal_timestep": 8, "t0_count": 30, "t8_count": 42 },
+    "curtailment_first_divergence": { "modal_timestep": 15, "t0_count": 30, "t15_count": 39 },
+    "diesel_first_divergence": { "modal_timestep": 8, "t8_count": 42, "t18_21_count": 46 },
+    "observed_temporal_sequence": "SOC/Battery Action -> Diesel Commitment -> Renewable Curtailment"
+  },
+  "objective_contribution_analysis": {
+    "gamma_v2": 1.0,
+    "gamma_v3": 0.95,
+    "horizon_weight_t0": 1.0,
+    "horizon_weight_t11": 0.569,
+    "horizon_weight_t23": 0.307,
+    "primary_objective_mechanism": "Late-horizon objective discounting (gamma=0.95) suppresses premature diesel commitment induced by mid/late horizon solar forecast over-predictions."
+  },
+  "control_context": {
+    "control_to_v2_delta_l": 10.27,
+    "v2_to_v3_delta_l": -13.28,
+    "control_to_v3_delta_l": -3.01,
+    "interpretation": "Class F gamma=0.95 does not merely reverse V2 degradation; it mitigates optimizer over-reaction to late-horizon solar forecast error, achieving lower fuel consumption than both V2 Treatment and Control."
+  },
+  "safety_metrics": {
+    "unmet_critical_load_kwh": 0.0,
+    "constraint_violations_count": 0,
+    "soc_bounds_respected": true,
+    "battery_power_limits_respected": true,
+    "diesel_generator_limits_respected": true
+  },
+  "mechanism_classifications": [
+    {
+      "claim": "V3 Class F reduces mean diesel fuel by 13.28 L/origin relative to V2 Treatment.",
+      "classification": "A — DIRECTLY OBSERVED"
+    },
+    {
+      "claim": "V3 Class F reduces diesel runtime by 0.97 h/origin and startups by 0.27/origin.",
+      "classification": "A — DIRECTLY OBSERVED"
+    },
+    {
+      "claim": "V3 Class F reduces renewable curtailment from 56.95 kWh to 17.57 kWh/origin.",
+      "classification": "A — DIRECTLY OBSERVED"
+    },
+    {
+      "claim": "Exponential discount factor gamma=0.95 reduces sensitivity to mid/late horizon forecast over-predictions.",
+      "classification": "B — STRONGLY SUPPORTED"
+    },
+    {
+      "claim": "The primary operational driver of fuel reduction is the delay or elimination of unnecessary pre-emptive diesel commitments.",
+      "classification": "B — STRONGLY SUPPORTED"
+    },
+    {
+      "claim": "Class F will achieve identical numerical fuel reductions on the physical Nuolja station.",
+      "classification": "E — NOT IDENTIFIABLE"
+    }
+  ],
+  "candidate_v4_classes": [
+    {
+      "class_id": "V4.A",
+      "name": "Asymmetric / Objective-Term-Specific Horizon Discounting",
+      "targeted_mechanism": "Apply distinct discount factors gamma_diesel vs gamma_curtail to decouple immediate fuel costs from distant curtailment penalties.",
+      "supporting_evidence": "Observed V3 mechanism demonstrates that discounting late-horizon curtailment penalties prevents premature diesel commitment."
+    },
+    {
+      "class_id": "V4.B",
+      "name": "Forecast-Variance-Adaptive SOC Reserve Bounds",
+      "targeted_mechanism": "Dynamically adjust minimum SOC reserve bounds E_min(t) based on rolling forecast variance f_var(y_pred).",
+      "supporting_evidence": "V3 SOC trajectory shows that maintaining higher early SOC prevents late-horizon diesel dispatch when solar underperforms."
+    },
+    {
+      "class_id": "V4.C",
+      "name": "Minimum-Runtime Diesel Commitment Hysteresis",
+      "targeted_mechanism": "Combine Class F horizon weighting with explicit minimum runtime constraints T_min,on.",
+      "supporting_evidence": "V3 reduced startup events from 1.03 to 0.76; explicit hysteresis could eliminate remaining short diesel cycles."
+    }
+  ],
+  "real_world_boundary_statement": "All replays were conducted within the synthetic POLARIS digital twin environment. No claim of real Nuolja station fuel savings or physical station operational robustness is made.",
+  "v4_implementation_status": "NO V4 IMPLEMENTATION OR EXECUTION OCCURRED."
+}

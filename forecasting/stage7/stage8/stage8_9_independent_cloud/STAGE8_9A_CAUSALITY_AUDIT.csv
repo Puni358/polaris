@@ -1,0 +1,8 @@
+source_name,acquisition_time_t_acq,observation_timestamp_t_obs,processing_latency_t_proc,publication_time_t_pub,archive_availability,causal_rule,physically_causal_origins,operationally_causal_origins,causality_classification
+NASA VIIRS CLDPROP Science L2,t0 - 0.5h to t0 - 2.0h,t0 - 0.5h to t0 - 2.0h,3.0h to 8.0h,t0 + 1.0h to t0 + 6.0h,Retrospective NASA DAAC Archive,t_pub <= t0,346,0,OPERATIONALLY NON-CAUSAL
+NASA VIIRS CLDPROP NRT L2,t0 - 0.5h to t0 - 2.0h,t0 - 0.5h to t0 - 2.0h,1.0h to 3.0h,t0 + 0.5h to t0 + 2.5h,Ephemeral (Deleted after 7 days),t_pub <= t0,346,0,OPERATIONALLY NON-CAUSAL
+EUMETSAT NWC SAF PPS CMIC,t0 - 0.5h to t0 - 2.0h,t0 - 0.5h to t0 - 2.0h,0.5h to 1.0h,t0 - 0.2h to t0 + 0.5h,Restricted Retrospective Archive,t_pub <= t0,346,142,CONDITIONAL
+Meteosat SEVIRI GEO Imagery,t0 - 15m,t0 - 15m,15m to 30m,t0 - 0m to t0 + 15m,EUMETSAT Permanent Archive,t_pub <= t0,347,347,OPERATIONALLY CAUSAL (Killed by Geometry)
+Kiruna Airport METAR (ESNQ),t0 - 10m,t0 - 10m,5m,t0 - 5m,GTS / NOAA MADIS Permanent Archive,t_pub <= t0,347,347,OPERATIONALLY CAUSAL (Killed by Spatial Relevance)
+NWC SAF PPS AMV (Cloud Motion),t0 - 1.5h to t0 - 2.5h,t0 - 2.0h,1.5h to 3.0h,t0 + 0.5h to t0 + 2.0h,No Continuous 2024 Archive,t_pub <= t0,210,0,OPERATIONALLY NON-CAUSAL
+Satellite Optical Flow Sequences,t0 - 1.0h to t0 - 3.0h,t0 - 1.5h,1.5h to 3.0h,t0 + 0.5h to t0 + 2.5h,Calculated Retrospectively Only,t_pub <= t0,225,0,OPERATIONALLY NON-CAUSAL

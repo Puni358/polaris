@@ -1,0 +1,2 @@
+task,cv_roc_auc,cv_pr_auc,baseline_prevalence,brier_score,cv_r2_abs_error,cv_mae_abs_error_pred
+Hard Error Classification (|err|>150),0.7598429042936838,0.2765828048407274,0.06501521624632657,0.07509570760516651,-8.94139365005099,86.7763829341633

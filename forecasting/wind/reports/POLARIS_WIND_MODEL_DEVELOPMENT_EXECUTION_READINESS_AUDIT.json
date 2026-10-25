@@ -1,0 +1,156 @@
+{
+  "document_info": {
+    "document_id": "POLARIS_WIND_MODEL_DEVELOPMENT_EXECUTION_READINESS_AUDIT",
+    "date_utc": "2026-09-18",
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "PHASE_A2_6_WIND_MODEL_DEVELOPMENT_PROTOCOL_EXECUTION_READINESS_AUDIT",
+    "task_type": "PRE_EXECUTION_GOVERNANCE_AUDIT_ONLY",
+    "authorization_status": "AUTHORIZED_PHASE_A2_6_AUDIT_ONLY"
+  },
+  "governance_state": {
+    "PATH_A_SELECTION": "SELECTED",
+    "WIND_TRACK_STATUS": "A2_6_AUDIT_COMPLETED",
+    "A2_6_AUDIT_STATUS": "PASS",
+    "WIND_TARGET_STATUS": "CONDITIONALLY_ESTABLISHED",
+    "WIND_DATA_STATUS": "SUFFICIENT_FOR_NEXT_RESEARCH_PHASE",
+    "A2_TARGET_STATUS": "FROZEN",
+    "A2_MODEL_STATUS": "FROZEN",
+    "A2_RESEARCH_CHAMPION": "AUTOREGRESSIVE_RIDGE_ARX",
+    "FROZEN_ARX_COMPARATOR_STATUS": "VERIFIED_FROZEN",
+    "RUN_BUDGET_RECONCILIATION": "PASS",
+    "TOTAL_POSSIBLE_RUNS": 16,
+    "GLOBAL_RUN_CEILING": 16,
+    "CAND_01_RATIONALE_STATUS": "ESTABLISHED",
+    "CAND_02_RATIONALE_STATUS": "ESTABLISHED",
+    "CAND_03_RATIONALE_STATUS": "ESTABLISHED",
+    "CAND_04_RATIONALE_STATUS": "EXCLUDED",
+    "CAND_04_STATUS": "EXCLUDED_FROM_EXECUTION_PROTOCOL",
+    "CAUSAL_TEMPORAL_AUDIT": "PASS",
+    "PROTOCOL_COMPLETENESS_STATUS": "PASS",
+    "WIND_MODEL_TRAINING": "NOT_AUTHORIZED",
+    "WIND_MODEL_INFERENCE": "NOT_AUTHORIZED",
+    "WIND_MODEL_SELECTION": "NOT_AUTHORIZED",
+    "WIND_FORECAST_EXPERIMENT": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_STATUS": "AUDIT_ONLY",
+    "NEXT_GOVERNED_STEP": "WIND_MODEL_DEVELOPMENT_EXECUTION_AUTHORIZATION"
+  },
+  "firewall_state": {
+    "SOURCE_CODE_MODIFIED": "NO",
+    "SCHEMA_MODIFIED": "NO",
+    "STAGE8_1_MODIFIED": "NO",
+    "D1_D7_MODIFIED": "NO",
+    "A1_MODIFIED": "NO",
+    "A2_MODIFIED": "NO",
+    "A2_5_MODIFIED": "NO",
+    "A2_MODEL_ARTIFACT_MODIFIED": "NO",
+    "OPTION_B_MODIFIED": "NO",
+    "FORECASTBUNDLE_MODIFIED": "NO",
+    "FORECASTENGINE_MODIFIED": "NO",
+    "STATIONSTATE_MODIFIED": "NO",
+    "EMS_MODIFIED": "NO",
+    "MPC_MODIFIED": "NO",
+    "DIGITAL_TWIN_MODIFIED": "NO",
+    "D5_MODIFIED": "NO",
+    "EXPERIMENT_EXECUTED": "NO",
+    "MODEL_TRAINING_EXECUTED": "NO",
+    "MODEL_INFERENCE_EXECUTED": "NO",
+    "MODEL_SELECTION_EXECUTED": "NO",
+    "EXTERNAL_DATA_ACQUIRED": "NO",
+    "WIND_GENERATION_MAPPING_EXECUTED": "NO",
+    "IMPLEMENTATION_STATUS": "AUDIT_ONLY"
+  },
+  "experiment_matrix_audit": [
+    {
+      "exp_id": "EXP-01",
+      "name": "Reference Baselines",
+      "model_family": "Naive Persistence / Diurnal Climate / Raw NWP",
+      "max_runs": 3,
+      "primary_metric": "MAE (m/s)",
+      "audit_status": "ESTABLISHED"
+    },
+    {
+      "exp_id": "EXP-02",
+      "name": "Frozen A2 AR-X Comparator",
+      "model_family": "Autoregressive Ridge AR-X (Ridge alpha=10.0)",
+      "max_runs": 1,
+      "primary_metric": "MAE (m/s)",
+      "audit_status": "ESTABLISHED"
+    },
+    {
+      "exp_id": "EXP-03",
+      "name": "GBDT-Direct Multi-Horizon",
+      "model_family": "HistGradientBoostingRegressor",
+      "max_runs": 4,
+      "primary_metric": "MAE (m/s)",
+      "audit_status": "ESTABLISHED"
+    },
+    {
+      "exp_id": "EXP-04",
+      "name": "GBDT-Residual Bias Correction",
+      "model_family": "HistGradientBoostingRegressor on NWP error residuals",
+      "max_runs": 4,
+      "primary_metric": "MAE (m/s)",
+      "audit_status": "ESTABLISHED"
+    },
+    {
+      "exp_id": "EXP-05",
+      "name": "AR-ElasticNet Regularized Model",
+      "model_family": "ElasticNet",
+      "max_runs": 4,
+      "primary_metric": "MAE (m/s)",
+      "audit_status": "ESTABLISHED"
+    },
+    {
+      "exp_id": "EXP-06",
+      "name": "Foundation Model Zero-Shot",
+      "model_family": "TimesFM 1.0 / Chronos Zero-Shot",
+      "max_runs": 0,
+      "primary_metric": "MAE (m/s)",
+      "audit_status": "EXCLUDED_FROM_EXECUTION_PROTOCOL"
+    }
+  ],
+  "budget_reconciliation": {
+    "exp_01_runs": 3,
+    "exp_02_runs": 1,
+    "exp_03_runs": 4,
+    "exp_04_runs": 4,
+    "exp_05_runs": 4,
+    "exp_06_runs": 0,
+    "total_calculated_runs": 16,
+    "global_ceiling_runs": 16,
+    "reconciliation_passed": true
+  },
+  "cand_04_foundation_model_audit": {
+    "model_identity_frozen": false,
+    "specified_options": ["TimesFM 1.0", "Chronos Zero-Shot"],
+    "version_checkpoint_pinned": false,
+    "local_weights_availability_pinned": false,
+    "offline_runtime_dependency_pinned": false,
+    "cand_04_status": "EXCLUDED_FROM_EXECUTION_PROTOCOL",
+    "resolution": "Resolved in A2.7 via formal exclusion due to missing local offline pretrained model weights."
+  },
+  "candidate_rationales_audit": {
+    "CAND-01": {"family": "GBDT-Direct Multi-Horizon", "status": "ESTABLISHED", "hypothesis": "Non-linear feature interaction and regime-dependent thresholding per horizon step"},
+    "CAND-02": {"family": "GBDT-Residual Bias Correction", "status": "ESTABLISHED", "hypothesis": "NWP error residual prediction to remove systematic high-altitude grid overestimation bias"},
+    "CAND-03": {"family": "AR-ElasticNet Regularized Model", "status": "ESTABLISHED", "hypothesis": "Joint L1/L2 regularization for feature selection and sparsity control across NWP covariates"},
+    "CAND-04": {"family": "Foundation-ZeroShot Model", "status": "EXCLUDED", "hypothesis": "Excluded due to missing local offline weights"}
+  },
+  "frozen_arx_comparator_audit": {
+    "model": "Autoregressive Ridge AR-X (Ridge alpha=10.0)",
+    "historical_test_mae_ms": 2.0364,
+    "status": "VERIFIED_FROZEN",
+    "retraining_permitted": false,
+    "retuning_permitted": false
+  },
+  "causal_temporal_audit": {
+    "origin_convention": "Daily 00:00 UTC",
+    "historical_lookback_hours": 24,
+    "forecast_horizon_hours": 24,
+    "time_step_hours": 1,
+    "splits": {"train_origins": 219, "validation_origins": 61, "test_origins": 62},
+    "test_isolation_verified": true,
+    "causal_boundary_passed": true
+  }
+}

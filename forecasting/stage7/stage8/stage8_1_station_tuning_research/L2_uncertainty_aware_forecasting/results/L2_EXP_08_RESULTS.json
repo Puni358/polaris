@@ -1,0 +1,124 @@
+{
+  "experiment_id": "L2-EXP-08",
+  "title": "POLARIS L2-EXP-08 \u2014 Pre-Registered Adaptive Risk-Budget EMS Interface",
+  "governance_decision": "PROMISING",
+  "status": "VALID_COMPLETED_RESEARCH_EXPERIMENT",
+  "governance_statement": "2024 outcomes were not used to select or modify the adaptive risk policy. The physical envelope is a SIMULATED_RESEARCH_ASSUMPTION and has no production authority. No production GAP19, Stage8.1, F, SKGBDT, or CQR artifact was modified.",
+  "execution_timestamp_utc": "2026-10-04T06:26:39.519459+00:00",
+  "elapsed_seconds": 247.2,
+  "verified_hashes": {
+    "policy_json": "1a5da66efa73aba1a5cbe45e41573aba2cd7089a1cd866838440cc5615c73c96",
+    "candidate_f_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "skgbdt_q10": "4b6cd3655983fc6b14c09402d9ee27d0f52b68d5dd7d3f9b0c7a514e84eed9cb",
+    "skgbdt_q50": "104d638aae053b5e9eaff886a6d4639f75eaeb0cea5a86328ddcd6d0f4188a71",
+    "skgbdt_q90": "8eb01a6b99b6d939fb01e0dbe58d715e157da8663908e99c93fa9ea80d6833ff",
+    "matrix_2024": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43",
+    "treatment_fixture_2024": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d"
+  },
+  "pre_registered_policy_hash": "1a5da66efa73aba1a5cbe45e41573aba2cd7089a1cd866838440cc5615c73c96",
+  "origins_summary": {
+    "total_evaluated_origins": 173,
+    "common_normal_origins": 123,
+    "route_mismatches": 0,
+    "total_timesteps": 4152
+  },
+  "tradeoff_evaluation": {
+    "unmet_load_reduction_retained_pct": 48.94,
+    "fuel_penalty_avoided_pct": 68.12,
+    "curtailment_penalty_avoided_pct": 76.01
+  },
+  "primary_endpoints": {
+    "unmet_load_wh": {
+      "arm_a_mean": 7994.36,
+      "arm_b_mean": 528.67,
+      "arm_c_mean": 4340.59,
+      "arm_d_mean": 0.0,
+      "arm_a_total": 983306.0,
+      "arm_b_total": 65026.9,
+      "arm_c_total": 533893.0,
+      "arm_d_total": 0.0,
+      "paired_delta_a_minus_c": {
+        "mean": 3653.7642,
+        "median": 1946.6,
+        "ci_95_lower": 2839.5659,
+        "ci_95_upper": 4560.6138,
+        "n": 123
+      },
+      "paired_delta_b_minus_c": {
+        "mean": -3811.9195,
+        "median": -2255.2,
+        "ci_95_lower": -4661.1016,
+        "ci_95_upper": -3020.5642,
+        "n": 123
+      },
+      "wilcoxon_p_value_a_vs_c": 5.1863398256784805e-18,
+      "wilcoxon_p_value_b_vs_c": 1.2469754626335515e-18,
+      "origins_with_unmet": {
+        "arm_a": 110,
+        "arm_b": 41,
+        "arm_c": 103,
+        "arm_d": 0
+      }
+    },
+    "reliability_pct": {
+      "arm_a_mean": 97.1285,
+      "arm_b_mean": 99.8101,
+      "arm_c_mean": 98.4409,
+      "arm_d_mean": 100.0
+    },
+    "soc_floor_violations": {
+      "arm_a": 0,
+      "arm_b": 0,
+      "arm_c": 0,
+      "arm_d": 0
+    }
+  },
+  "secondary_endpoints": {
+    "diesel_fuel_liters": {
+      "arm_a_mean": 42.8504,
+      "arm_b_mean": 59.2118,
+      "arm_c_mean": 48.066,
+      "arm_d_mean": 44.2353,
+      "arm_a_total": 5270.61,
+      "arm_b_total": 7283.05,
+      "arm_c_total": 5912.11,
+      "arm_d_total": 5440.94,
+      "paired_delta_a_minus_c": {
+        "mean": -5.2155,
+        "median": -3.9432,
+        "ci_95_lower": -6.1674,
+        "ci_95_upper": -4.3023,
+        "n": 123
+      },
+      "paired_delta_b_minus_c_fuel_saved": {
+        "mean": 11.1458,
+        "median": 10.6112,
+        "ci_95_lower": 9.7591,
+        "ci_95_upper": 12.6075,
+        "n": 123
+      },
+      "wilcoxon_p_value_b_vs_c": 1.8686821759772635e-19,
+      "n_origins_c_saved_fuel_vs_b": 108,
+      "n_origins_c_used_more_fuel_vs_b": 0
+    },
+    "curtailment_wh": {
+      "arm_a_mean": 37298.44,
+      "arm_b_mean": 71952.33,
+      "arm_c_mean": 45611.58,
+      "arm_d_mean": 22587.77,
+      "paired_delta_b_minus_c_curtail_saved": {
+        "mean": 26340.7472,
+        "median": 24751.9,
+        "ci_95_lower": 23650.4008,
+        "ci_95_upper": 29151.1553,
+        "n": 123
+      }
+    },
+    "battery_efc": {
+      "arm_a_mean": 0.6415,
+      "arm_b_mean": 0.7296,
+      "arm_c_mean": 0.6641,
+      "arm_d_mean": 0.6833
+    }
+  }
+}

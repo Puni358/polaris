@@ -1,0 +1,38 @@
+{
+  "correction_id": "POLARIS_STAGE8_1_EMS_V4G_MECHANISM_WORDING_CORRECTION",
+  "timestamp_utc": "2026-09-19T13:56:12.025199+00:00",
+  "governance_status": {
+    "WORDING_CORRECTION_STATUS": "PASS",
+    "SCIENTIFIC_RESULTS_CHANGED": false,
+    "EXECUTION_RESULTS_CHANGED": false,
+    "RAW_EVIDENCE_CHANGED": false,
+    "CAUSAL_OVERCLAIM_REMOVED": true,
+    "H14_CAUSAL_ISOLATION_CLAIM": "NOT_SUPPORTED",
+    "V4G_VS_V3_COMPOUND_WEIGHT_DIFFERENCE": "ACKNOWLEDGED",
+    "NEW_EXPERIMENT": false,
+    "V4G_EXECUTION": "COMPLETE",
+    "V4G_FORENSIC_AUDIT": "VALID"
+  },
+  "modified_artifacts_sha256": {
+    "POLARIS_STAGE8_1_EMS_V4G_MECHANISM_FORENSIC_ANALYSIS.json": "3653428d3a2453cd3d87f444f37fc562439a21e34027c6becab42d4d984b7bd3",
+    "POLARIS_STAGE8_1_EMS_V4G_MECHANISM_FORENSIC_ANALYSIS.md": "30fa7bf8a7a4c4255d5f4880391a7c7bfda0584f83cb022e771d6f37976d4564"
+  },
+  "core_wording_changes": [
+    {
+      "target": "Causal claim on restored late-horizon weights ('forces MILP solver...')",
+      "correction": "Replaced with calibrated observational statement: 'Relative to V3, V4.G restores full objective weighting at all timesteps except t=13. Under the V4.G execution, earlier diesel commitment was directly observed, with 312 diesel-commitment timesteps versus 233 under V3. The preserved evidence therefore establishes an association between the V4.G objective-weight structure and the observed dispatch difference, but does not independently isolate a causal contribution from the restored late-horizon weights.'"
+    },
+    {
+      "target": "Interpretation of h=14 isolation",
+      "correction": "Explicitly declared: 'V4.G does not provide a causal isolation test of h=14 relative to V3, because the V3 and V4.G objective vectors differ at 23 of 24 decision indices. The t=13 weights themselves are essentially identical.'"
+    },
+    {
+      "target": "Hypothesis attribution for V3 lower fuel",
+      "correction": "Updated explanation for CLASSIFICATION E: 'The V4.G result does not support attribution of V3's lower fuel use to the isolated t=13/h=14 weight. V3 and V4.G assign virtually identical weight at t=13, while differing at the other 23 decision indices. Therefore the observed V4.G increase in diesel use cannot be uniquely attributed to the t=13 weight from this experiment.'"
+    },
+    {
+      "target": "Central Scientific Conclusion",
+      "correction": "Added preferred scientific conclusion: 'V4.G was a valid controlled objective-weight intervention, but it was not a pure h=14 isolation test relative to V3. The V4.G and V3 weights are essentially identical at t=13, while differing at 23 of 24 decision indices. V4.G nevertheless produced a directly observed increase in diesel fuel use, earlier/more extensive diesel commitment, and higher renewable curtailment under the controlled synthetic EMS environment. These findings establish downstream differences associated with the V4.G objective structure, but the contribution of any individual horizon \u2014 including h=14 \u2014 is not causally isolated by this experiment.'"
+    }
+  ]
+}

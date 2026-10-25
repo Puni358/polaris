@@ -1,0 +1,30 @@
+{
+  "output_file": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/nuolja_terrain_features_2024_CORRECTED.csv",
+  "sha256": "ee7f4dc839865846083970e1c2d47c57fec81600e14ad408fd62384f10e8b01b",
+  "row_count": 8784,
+  "columns": [
+    "TIMESTAMP",
+    "solar_elevation",
+    "solar_azimuth",
+    "clearsky_ghi",
+    "terrain_horizon_elevation_deg",
+    "terrain_elevation_margin_deg",
+    "terrain_solar_obstruction_flag",
+    "clearsky_ghi_terrain_adjusted"
+  ],
+  "input_hashes": {
+    "clearsky_decomposition_2024": "596345aa330313414ba41f63ad65278914c6ed1e179965162439e6139a70e52a",
+    "horizon_profile": "0f0dde047c84715b8d325fe66728fd32da12e59b82d86e99dcb261796394c0f3"
+  },
+  "historical_2024_artifact_untouched": {
+    "path": "/home/punith-bs/01polaris (Copy)/stage7/stage7_5_terrain_horizon/nuolja_terrain_features_2024.csv",
+    "sha256": "0a29c9c03815cc90faf3540dbd199b430ae292c8c2b327c02062a17732b7d689"
+  },
+  "quantified_difference_vs_historical_2024_artifact": {
+    "terrain_horizon_elevation_deg_mean_abs_diff_deg": 2.6877915528233154,
+    "terrain_horizon_elevation_deg_max_abs_diff_deg": 10.268699999999999,
+    "pct_hours_with_any_diff": 99.81785063752277,
+    "obstruction_flag_mismatches": 234,
+    "obstruction_flag_mismatches_pct": 2.663934426229508
+  }
+}

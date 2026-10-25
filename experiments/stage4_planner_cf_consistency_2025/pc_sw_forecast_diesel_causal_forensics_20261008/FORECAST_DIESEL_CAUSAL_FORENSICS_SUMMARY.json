@@ -1,0 +1,101 @@
+{
+  "title": "POLARIS PC-SW Forecast-Diesel Causal Forensics and Candidate-F Value/Leakage Closure",
+  "date": "2026-10-08",
+  "status": "READ-ONLY forensic research. No production/policy change. No AGY execution. No model promotion.",
+  "hash_verification": {
+    "repo_protected_hashes_mismatches": [],
+    "causal_nwp_physics_py_sha256": "14e72d8a49b962c70175451fa60c349412d936db02073b2eed746a762cdeb710",
+    "matches_governed_value_in_task": true,
+    "label": "VERIFIED"
+  },
+  "critical_finding_f_causal_not_found": {
+    "searched_terms": ["F-Causal21", "F-Causal35", "causal_21", "causal_35"],
+    "found": false,
+    "scope": "exhaustive case-insensitive search across all .md/.json/.py files in repository",
+    "implication": "The F -> F-Causal21/35 degradation narrative in the task cannot be forensically reconstructed from repository evidence; treated as UNKNOWN, not estimated or assumed",
+    "label": "VERIFIED (absence)"
+  },
+  "candidate_f_identity": {
+    "definition": "frozen Stage 8.1 37-feature HistGradientBoostingRegressor + 1 additive feature (elevation_x_cloud_frac = solar_elevation * cloud_frac) = 38 features total",
+    "training_population": "2024 EVEN origins only",
+    "validation_population": "2024 ODD origins",
+    "blind_population": "2025 (whole year, no further split)",
+    "key_hashes": {
+      "phase2_candidateF_additive_feature.py": "08fdcbe41a636ac0a65a427ceb494405812de8dc33296046bd9247927c52c0aa",
+      "candidateF_elevation_x_cloud.joblib": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+      "frozen_stage8_1_model": "64ea4abada78a257f9ad053f1d869dddb983160490e06d1528954fd2205009ce"
+    },
+    "results": {
+      "blind_2025_MAE_control": 35.9745,
+      "blind_2025_MAE_candidateF": 35.4948,
+      "delta": -0.4797,
+      "bootstrap_CI_excludes_zero": true,
+      "ems_replay_diesel_delta_pct": 0.3555,
+      "ems_replay_unmet_delta_Wh": -80793.5,
+      "ems_replay_unmet_delta_pct": -4.6452
+    },
+    "label": "VERIFIED (reused from CANDIDATE_F_REPORT.md and CANDIDATE_F_PRE_TRAINING_AUDIT.md, independently re-hashed/re-derived in that prior audit, not newly computed here)"
+  },
+  "feature_leakage_audit": {
+    "features_classified": 7,
+    "leaked_features_found": 0,
+    "causal_features_found": 7,
+    "key_result": "lwp_latest and iwp_latest (and lwp_x_cloud) are independently confirmed CAUSAL (per-horizon MEPS forecast quantities computed from the D-1 18Z run, not realized observations) by two separate forensic audits: STAGE8_11A_FINAL_FORENSIC_AUDIT.md ('Causality Status: Strictly causal') and CANDIDATE_F historical replay gate check #10 ('Target Leakage Check: PASS')",
+    "actual_SW_IN_in_feature_matrix": false,
+    "label": "VERIFIED (reused from two independent prior audits)"
+  },
+  "f_to_f_causal_degradation": {
+    "reconstructable": false,
+    "reason": "no F-Causal21/35 artifact exists",
+    "premise_contradicted_by": "LWP/IWP independently verified causal, not leaked; LWP/IWP already fully present in frozen Stage 8.1 (closed as STAGE_8_11_ROUTE_NOT_NOVEL, redundant not leaked); Candidate F's only addition over frozen control is the single elevation_x_cloud_frac term, not the LWP/IWP family",
+    "label": "UNKNOWN (the specific degradation event) / VERIFIED (the contradicting evidence)"
+  },
+  "f_value_assessment": {
+    "performance_reference": "not applicable in the leakage-ceiling sense (no leakage found)",
+    "feature_attribution": "SUPPORTED - elevation x cloud interaction captures real additional signal",
+    "leakage_diagnosis": "NOT APPLICABLE - no leakage found to diagnose",
+    "causal_feature_recovery": "NOT APPLICABLE - nothing needing recovery",
+    "label": "DIAGNOSTIC/DERIVED"
+  },
+  "pc_sw_forecast_diesel_linkage": {
+    "forecaster_used": "system/forecasting/implementations/causal_nwp_physics.py (NOT Stage 8.1/Candidate F's GBDT pipeline)",
+    "wind_forecast_error_Wh": 0.0,
+    "wind_forecast_error_universal": true,
+    "solar_forecast_error_direction": "mildly optimistic on average (realized < forecast)",
+    "solar_forecast_error_mean_6h_Wh": -10771.4,
+    "group_difference_saving_vs_cost_pvalue_range": [0.78, 0.92],
+    "finding": "forecast error does not systematically explain which origins experience EBR-off-beneficial vs EBR-off-harmful outcomes",
+    "label": "VERIFIED (reused from the EBR population forensics task, not re-derived)"
+  },
+  "f_taxonomy_classification_population": {
+    "dominant_category": "D (forecast approximately correct, optimizer still banks diesel)",
+    "per_episode_classification_performed": false,
+    "label": "DERIVED (population-level), UNKNOWN (per-episode)"
+  },
+  "rolling_horizon_amplification": {
+    "demonstrated": true,
+    "source": "T1 temporal tie-break campaign (reused, not re-run)",
+    "evidence": "solve-level invariance 100% verified (J1,J_NC,J2,J3 bit-identical), yet realized fuel increased +241.6L and Gate S2 failed once rolling MPC reacted to altered battery reserve against diverging realized solar/wind",
+    "label": "VERIFIED (reused from immediately preceding task)"
+  },
+  "f_vs_pcsw_conflation_check": {
+    "conflated": false,
+    "statement": "Candidate F metrics (Stage 8.1 GBDT pipeline) never substituted for PC-SW forecast metrics (causal_nwp_physics.py) anywhere in this report"
+  },
+  "legitimate_forecast_lever_search": {
+    "lever_found": false,
+    "reason_pc_sw": "no decision-time forecast feature separates beneficial vs harmful origin populations (established this and prior task)",
+    "reason_candidate_f": "already causal and validated, but belongs to a different forecasting system than PC-SW; porting would require new untested research, not specifiable from this forensic pass",
+    "label": "DERIVED"
+  },
+  "final_f_conclusion": {
+    "classification": "B",
+    "meaning": "Partially valuable - for feature attribution (elevation x cloud interaction is real signal), NOT for leakage diagnosis (no leakage found, premise contradicted), NOT shown deployable to PC-SW (different forecaster)",
+    "f_wasted": false,
+    "label": "DERIVED from VERIFIED underlying evidence"
+  },
+  "governance_classification_note": "This report does not use the A-D online-lever classification scale from the diesel-mechanism tasks; it answers the F-value question (A-D as defined in task section 12) as B.",
+  "policy_experiment_executed": false,
+  "agy_execution_spec_provided": false,
+  "model_promotion": false
+}

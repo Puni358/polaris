@@ -1,0 +1,20 @@
+{
+  "cache_key": "ede469966283a5486d29c459",
+  "content_sha256": "277e2fa256e68dee348af7871384e7745fa554ed9526e98d34b855ea1ac53bbb",
+  "detail": "validated (v2 lead-6)",
+  "forecast_start": "2025-03-07T00:00:00+00:00",
+  "payload": {
+    "forecast_reference_time_utc": "2025-03-06T18:00:00+00:00",
+    "per_horizon": [
+      {
+        "horizon_hour": 1,
+        "iwp_mass_fraction": 0.0,
+        "lead_hour": 6,
+        "lwp_mass_fraction": 0.0,
+        "valid_time_utc": "2025-03-07T00:00:00+00:00"
+      }
+    ],
+    "pressure_hpa": 700.0
+  },
+  "retrieval_status": "OK"
+}

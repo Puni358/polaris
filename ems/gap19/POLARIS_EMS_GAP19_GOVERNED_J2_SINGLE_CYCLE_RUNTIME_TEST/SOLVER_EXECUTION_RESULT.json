@@ -1,0 +1,32 @@
+{
+  "solver_name": "HiGHS Native C++ (highspy)",
+  "model_dimensions": {
+    "num_variables": 408,
+    "num_binary_variables": 96,
+    "num_continuous_variables": 312,
+    "num_linear_constraints": 312
+  },
+  "solver_status": "kOptimal",
+  "constraint_status": "OPTIMAL",
+  "solve_count": 1,
+  "fallback_used": false,
+  "objective_hierarchy": {
+    "J1_critical_deficit_wh": {
+      "priority": 4,
+      "value": 0.0
+    },
+    "J2_reserve_shortfall_wh": {
+      "priority": 3,
+      "value": 0.0
+    },
+    "J3_diesel_fuel_liters": {
+      "priority": 2,
+      "value": 116.5076
+    },
+    "J4_curtailment_wh": {
+      "priority": 1,
+      "value": 0.0
+    }
+  },
+  "execution_time_sec": 0.385
+}

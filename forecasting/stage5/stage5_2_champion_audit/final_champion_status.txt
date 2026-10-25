@@ -1,0 +1,13 @@
+VALIDATED CHAMPION: Stage 5.2 Architecture A (GBDT Non-Linear Residual Corrector)
+================================================================================
+Audit Execution Date: 2026-09-10
+Audit Summary:
+1. Leakage Status: PASSED (Zero leakage violations, 100% causal timestamps < t0)
+2. OOF Status: PASSED (Grouped origin-level split verified 100% disjoint)
+3. Reproducibility Status: PASSED (Exact match: Stage 4 = 43.4508 W/m², Arch A = 39.0848 W/m²)
+4. A0 vs A1 CV MAE: A0 = 39.4236 W/m² | A1 = 40.2905 W/m² (Stage 4 features provide +0.87 W/m² gain)
+5. Hard-Weather Delta MAE: >150 W/m² hard regime MAE reduced from 213.87 to 190.28 W/m² (Delta = -23.59 W/m²)
+6. Horizon Pattern: Broad improvement across 24 out of 24 horizon hours (100% of horizons improved)
+7. Feature Groups: Pre-forecast context volatility + NWP cloud cover + solar geometry drive non-linear corrections
+8. Final Champion Decision: VALIDATED CHAMPION (Daytime MAE = 39.0848 W/m², Daytime nMAE = 30.32%)
+================================================================================

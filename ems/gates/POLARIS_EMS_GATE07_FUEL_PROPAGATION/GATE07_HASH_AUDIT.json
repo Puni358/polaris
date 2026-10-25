@@ -1,0 +1,13 @@
+{
+  "gate": "GATE-07",
+  "timestamp": "2026-09-27T01:37:00Z",
+  "option_d_sha256": "78630c19a3c4be8d634f05a47a2c7eacf0f4083c988b97f64bb7ca98f3d60f12",
+  "source_modifications": 0,
+  "artifacts": {
+    "GATE07_FUEL_ACCOUNTING_AUDIT.md": "6f7e5324226165a1a4cf8cebd1987dbb3a6288a0284a72bfcfe5671d14b3e9f7",
+    "GATE07_FUEL_STATE_TRACE.md": "58a1f4a23b447a636b51b3d2b43eed51c4296209e63ab55cb81f70180506dd62",
+    "GATE07_RESULTS.md": "376d41bffd2cf3cd9a0bb0a2f9da9dd76504f34391e2c98da6a3632a45478ebc",
+    "GATE07_STATUS.md": "c760cab7ffcc6e42cab3671814f15d418ebe6e5e0cc151c7ec54df7538fab9d1",
+    "GATE07_TRUTH_FIREWALL_AUDIT.md": "c3150a6eeb3b4c3a2510b4219fc3a3f4e548c4a77dcd7331e3a4b6b855c6c782"
+  }
+}

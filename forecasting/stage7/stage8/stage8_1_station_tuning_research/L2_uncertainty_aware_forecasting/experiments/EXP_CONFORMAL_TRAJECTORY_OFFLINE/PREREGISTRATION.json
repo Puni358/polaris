@@ -1,0 +1,86 @@
+{
+  "experiment_id": "EXP-CONFORMAL-TRAJECTORY-OFFLINE",
+  "target_station": "Mount Nuolja AWS (ANS_NMS, 702m a.s.l.)",
+  "created_at": "2026-10-05T08:07:15+05:30",
+  "status": "FROZEN_PRE_REGISTRATION",
+  "research_question": "Can POLARIS construct a distribution-free, trajectory-level cumulative solar-energy shortfall envelope in Wh that is more defensible than the failed AR variance envelope?",
+  "chronology": {
+    "model_development_fit": "2020-2021 (731 origins)",
+    "conformal_calibration": "2022 (365 origins)",
+    "primary_blind_evaluation": "2025 (364 origins)",
+    "prior_evidence_reference": "2023 (273 origins)"
+  },
+  "holdout_honesty": {
+    "year_2023": "Prior evidence reference only (exposed in trajectory requalification audit)",
+    "year_2025": "Not a pristine untouched scientific holdout for upstream forecasting (Stage 8.1 metrics previously reported); evaluates out-of-sample transfer of frozen uncertainty representation without tuning"
+  },
+  "target_definition": {
+    "window_starts": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    "window_lengths": [1, 2, 3, 4, 5, 6],
+    "max_hour": 18,
+    "valid_windows_per_origin": 63,
+    "physical_mapping": "P_pv = min(60000.0, 51.0 * max(0.0, I))",
+    "target_unit": "Wh",
+    "shortfall_formula": "C(s, w) = sum_{tau=s}^{s+w-1} (P_pv_pred[tau] - P_pv_act[tau]) * Delta_t"
+  },
+  "conformal_score": {
+    "type": "one_sided_studentized_clear_sky_normalized",
+    "formula": "r_i(s, w) = (C_i(s, w) - C_hat_AR_i(s, w)) / max(S_AR_i(s, w), 1.0)",
+    "trajectory_aggregation": "R_i = max_{(s, w)} r_i(s, w)",
+    "regularization_sigma0_wh": 1.0
+  },
+  "alpha_levels": [0.10, 0.05],
+  "calibration_ranks": {
+    "N_cal": 365,
+    "alpha_0.10": {
+      "k": 330,
+      "quantile_level": 0.9041095890410958
+    },
+    "alpha_0.05": {
+      "k": 348,
+      "quantile_level": 0.9534246575342465
+    }
+  },
+  "methods": [
+    {
+      "code": "A",
+      "name": "V2 AR variance propagation",
+      "status": "comparison_baseline_unvalidated",
+      "formula": "U_A(s, w) = C_hat_AR(s, w) + z_{1-alpha} * S_AR(s, w)"
+    },
+    {
+      "code": "B",
+      "name": "Empirical cumulative-error quantile",
+      "status": "empirical_benchmark",
+      "formula": "U_B(s, w) = Quantile_{1-alpha}({C_i(s, w)}_{cal})"
+    },
+    {
+      "code": "C",
+      "name": "Trajectory-level split-conformal cumulative-energy envelope",
+      "status": "proposed_distribution_free",
+      "formula": "U_C(s, w) = C_hat_AR(s, w) + q_hat_cal(alpha) * S_AR(s, w)"
+    }
+  ],
+  "decision_criteria": {
+    "pass": {
+      "traj_coverage_2025_alpha_0.10": ">= 87.0%",
+      "traj_coverage_2025_alpha_0.05": ">= 92.5%",
+      "subgroup_tolerance": "No eligible regime (n>=30) drops > 10% below nominal",
+      "width_ratio_vs_B": "< 2.0x"
+    },
+    "fail": {
+      "traj_coverage_2025_alpha_0.10": "< 85.0%",
+      "traj_coverage_2025_alpha_0.05": "< 90.0%",
+      "subgroup_collapse": "< 75.0% in any eligible regime (n>=30)",
+      "tuning_required": "Any post-hoc parameter modification on 2025"
+    },
+    "inconclusive": {
+      "condition": "Coverage passes but mean envelope width > 2.5x Method B, indicating extreme over-conservatism"
+    }
+  },
+  "input_hashes": {
+    "historical_dataset": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "blind_2025_predictions": "65e0a0acf2d7196bfa557b319419f0c340b63f1d01d69d5b20c93217742e9500",
+    "blind_2025_features": "9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087"
+  }
+}

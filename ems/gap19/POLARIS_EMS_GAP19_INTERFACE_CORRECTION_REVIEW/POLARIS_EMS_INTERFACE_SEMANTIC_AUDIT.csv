@@ -1,0 +1,6 @@
+SCHEMA,FIELD,CURRENT_SEMANTICS,V2_REQUIRED_SEMANTICS,SEMANTIC_MATCH,CORRECTED_IMPACT_STATUS
+ForecastBundle,demand.point,Single composite station demand vector,Critical load demand vector (if 5-tier decomposed),NO (Semantic Repurposing),ADDITIVE_EXTENSION_REQUIRED
+StationState,battery_energy_wh,Battery energy state at t0,Battery energy state at t0,YES,NO_CHANGE_REQUIRED
+StationState,fuel_remaining_l,Not present in Version 1.0.0,Fuel inventory state at t0,N/A (Missing Field),ADDITIVE_EXTENSION_REQUIRED
+DispatchPlan,load_served,Composite load served power vector,5-tier load served power vectors,NO (Semantic Repurposing),ADDITIVE_EXTENSION_REQUIRED
+DispatchPlan,objective_value,Single scalar objective float,Stage 1-4 objective value tuple/dictionary,NO (Semantic Repurposing),ADDITIVE_EXTENSION_REQUIRED

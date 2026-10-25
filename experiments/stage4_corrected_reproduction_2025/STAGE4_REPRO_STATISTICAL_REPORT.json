@@ -1,0 +1,32 @@
+{
+  "Candidate_SL": {
+    "total_saving_l": 816.6628999999994,
+    "saving_pct": 13.394722669243531,
+    "mean_paired_saving_l": 6.639535772357724,
+    "median_paired_saving_l": 6.446200000000005,
+    "bca_95_ci_low_l": 4.256664628994692,
+    "bca_95_ci_high_l": 8.956217362780702,
+    "ci_strictly_positive": true,
+    "wilcoxon_stat": 1665.0,
+    "wilcoxon_raw_p": 7.196041816356016e-07,
+    "holm_adjusted_p": 1.4392083632712033e-06,
+    "holm_significant_at_005": true,
+    "diesel_gate_pass": true,
+    "target_40pct_achieved": false
+  },
+  "Candidate_SWL": {
+    "total_saving_l": 832.9358999999995,
+    "saving_pct": 13.661628784357369,
+    "mean_paired_saving_l": 6.771836585365854,
+    "median_paired_saving_l": 7.537199999999995,
+    "bca_95_ci_low_l": 4.338153178468929,
+    "bca_95_ci_high_l": 9.128043204566104,
+    "ci_strictly_positive": true,
+    "wilcoxon_stat": 1784.0,
+    "wilcoxon_raw_p": 8.165915350633619e-07,
+    "holm_adjusted_p": 1.4392083632712033e-06,
+    "holm_significant_at_005": true,
+    "diesel_gate_pass": true,
+    "target_40pct_achieved": false
+  }
+}

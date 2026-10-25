@@ -1,0 +1,20 @@
+{
+  "project": "POLARIS",
+  "task": "CANDIDATE L \u2014 2020\u20132023 MEPS ACQUISITION AND EXTRACTION",
+  "requested_years": "2020-2023",
+  "total_origins_requested": 1461,
+  "successfully_acquired_origins": 1321,
+  "failed_origins": 140,
+  "grid_point": {
+    "y": 760,
+    "x": 486,
+    "lat": 68.355701,
+    "lon": 18.763667
+  },
+  "pressure_700_idx": 8,
+  "pressure_700_value_hpa": 700.0,
+  "cache_dir": "/home/punith-bs/01polaris (Copy)/stage7/stage8/station_feedback_adaptation/candidate_L_research/meps_cache",
+  "extracted_dir": "/home/punith-bs/01polaris (Copy)/stage7/stage8/station_feedback_adaptation/candidate_L_research/extracted",
+  "log_file": "/home/punith-bs/01polaris (Copy)/stage7/stage8/station_feedback_adaptation/candidate_L_research/acquisition_log.csv",
+  "generated_utc": "2026-10-03 17:36:12 UTC"
+}

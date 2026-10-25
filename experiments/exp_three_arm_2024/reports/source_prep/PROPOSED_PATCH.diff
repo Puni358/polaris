@@ -1,0 +1,144 @@
+# PROPOSED PATCH — NOT APPLIED, NOT RUN
+# Purpose: remove the confirmed horizon-tail lookahead (finding L1) without touching system/ or
+# any frozen experiment file, and keep every protected 2025 file out of the import/IO path.
+# All changes are NEW files under a new experiment folder. Nothing existing is edited.
+#
+# Repo-relative paths. Apply only after project-lead authorization.
+
+diff --git a/experiments/exp_three_arm_2024/causal_cloud_lookup.py b/experiments/exp_three_arm_2024/causal_cloud_lookup.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/exp_three_arm_2024/causal_cloud_lookup.py
+@@ -0,0 +1,62 @@
++"""
++Causal cloud-trajectory lookup for EXP-THREE-ARM-2024 (research only).
++
++Fixes finding L1: the existing runners build `weather_lookup` from the WHOLE weather file keyed by
++timestamp (system/research/closed_loop_causal_nwp_runner.py:183-218,
++system/research/research_critical_demand_adapter.py:84-104,
++experiments/stage4_planner_cf_consistency_2025/planner_cf_campaign_runner.py:105-116). With
++t0 = forecast_start - 1 h, step k requests targets forecast_start + k .. forecast_start + 23 + k, so the
++last k targets are read from the NEXT origin's forecast package, which is not established as available
++at decision time forecast_start - 1 h + k.
++
++Rule implemented here (most conservative, no latency assumption needed):
++  - Only the 24 rows of the CURRENT origin's package (the one available at t0) may be used.
++  - Targets beyond that package's last timestamp are filled by holding the package's last value
++    (persistence of the final forecast hour). The number of held hours is returned for telemetry.
++"""
++from typing import Dict, List, Tuple
++
++import pandas as pd
++
++
++class OriginCloudPackage:
++    def __init__(self, weather_df: pd.DataFrame, forecast_start: str):
++        sub = weather_df[weather_df["forecast_start"] == forecast_start].sort_values("horizon_hour")
++        if len(sub) != 24:
++            raise RuntimeError(f"origin {forecast_start} has {len(sub)} rows, expected 24")
++        ts = pd.to_datetime(sub["timestamp"], utc=True)
++        vals = [float(v) for v in sub["fc_cloud_cover"]]
++        for v in vals:
++            if not (0.0 <= v <= 100.0):
++                raise ValueError(f"invalid cloud cover {v} in origin {forecast_start}")
++        self.forecast_start = forecast_start
++        self._lookup: Dict[pd.Timestamp, float] = dict(zip(ts, vals))
++        self.first_ts = ts.min()
++        self.last_ts = ts.max()
++        self.last_val = vals[-1]
++
++    def trajectory(self, decision_dt: pd.Timestamp) -> Tuple[List[float], int]:
++        """24 cloud values for targets decision_dt + 1h .. + 24h, using only this package."""
++        decision_dt = pd.Timestamp(decision_dt)
++        if decision_dt.tzinfo is None:
++            decision_dt = decision_dt.tz_localize("UTC")
++        out: List[float] = []
++        held = 0
++        for h in range(1, 25):
++            t = decision_dt + pd.Timedelta(hours=h)
++            if t < self.first_ts:
++                raise ValueError(f"target {t} precedes package start {self.first_ts}")
++            if t <= self.last_ts:
++                out.append(self._lookup[t])
++            else:
++                out.append(self.last_val)
++                held += 1
++        return out, held
++
++
++def assert_no_protected_dates(weather_df: pd.DataFrame) -> None:
++    """Fail closed if any row of the input belongs to 2025 (blind window, boundaries or otherwise)."""
++    fs = pd.to_datetime(weather_df["forecast_start"])
++    ts = pd.to_datetime(weather_df["timestamp"])
++    if (fs.dt.year != 2024).any() or (ts.dt.year != 2024).any():
++        raise PermissionError("EXP-THREE-ARM-2024 input contains non-2024 rows; refusing to run.")
+
+diff --git a/experiments/exp_three_arm_2024/test_causal_cloud_lookup.py b/experiments/exp_three_arm_2024/test_causal_cloud_lookup.py
+new file mode 100644
+--- /dev/null
++++ b/experiments/exp_three_arm_2024/test_causal_cloud_lookup.py
+@@ -0,0 +1,58 @@
++"""Isolated synthetic tests (no repository data read). Run only after authorization."""
++import pandas as pd
++import pytest
++
++from causal_cloud_lookup import OriginCloudPackage, assert_no_protected_dates
++
++SENTINEL = 77.7  # value placed ONLY in the next origin's package
++
++
++def _two_origin_df():
++    rows = []
++    for d, val in (("2024-06-01", 10.0), ("2024-06-02", SENTINEL)):
++        fs = pd.Timestamp(d)
++        for h in range(1, 25):
++            rows.append({"forecast_start": fs.strftime("%Y-%m-%d %H:%M:%S"), "horizon_hour": h,
++                         "timestamp": (fs + pd.Timedelta(hours=h - 1)).strftime("%Y-%m-%d %H:%M:%S"),
++                         "fc_cloud_cover": val + h / 100.0})
++    return pd.DataFrame(rows)
++
++
++@pytest.mark.parametrize("k", range(24))
++def test_never_reads_next_origin(k):
++    df = _two_origin_df()
++    pkg = OriginCloudPackage(df, "2024-06-01 00:00:00")
++    t0 = pd.Timestamp("2024-06-01 00:00:00", tz="UTC") - pd.Timedelta(hours=1)
++    traj, held = pkg.trajectory(t0 + pd.Timedelta(hours=k))
++    assert len(traj) == 24
++    assert all(v < SENTINEL for v in traj)
++    assert held == k  # step k needs exactly k hours beyond the package
++
++
++def test_step0_equals_package():
++    df = _two_origin_df()
++    pkg = OriginCloudPackage(df, "2024-06-01 00:00:00")
++    t0 = pd.Timestamp("2024-05-31 23:00:00", tz="UTC")
++    traj, held = pkg.trajectory(t0)
++    expected = df[df.forecast_start == "2024-06-01 00:00:00"].sort_values("horizon_hour").fc_cloud_cover.tolist()
++    assert traj == expected and held == 0
++
++
++def test_rejects_2025_rows():
++    df = _two_origin_df()
++    df.loc[0, "timestamp"] = "2025-06-01 00:00:00"
++    with pytest.raises(PermissionError):
++        assert_no_protected_dates(df)
++
++
++def test_static_guard_runner_has_no_2025_paths():
++    """Static check: the experiment runner must not reference any 2025 data path or the
++    2025 campaign modules that load them (planner_cf_campaign_runner, planner_cf_hash_guards)."""
++    from pathlib import Path
++    src = (Path(__file__).parent / "run_three_arm_2024.py").read_text()
++    for banned in ("2025.csv", "DECOMPOSITION_2025", "WEATHER_2025", "planner_cf_campaign_runner",
++                   "planner_cf_hash_guards", "stage4_planner_cf_consistency_2025/CAMPAIGN"):
++        assert banned not in src, banned
+
+# NOTE on run_three_arm_2024.py (specified in PROTOCOL.md §4/§9, not drafted as code here):
+#  - re-implements PlannerCFArmRunner.run_origin (planner_cf_campaign_runner.py:101-178) in a new file,
+#    replacing lines 105-116 with OriginCloudPackage(weather_df, fs).trajectory(state_dt);
+#  - constructs SolarElevationProvider(None) (pvlib fallback; stage4_low_sun_adapter.py:80-97) instead of
+#    the 2025 decomposition CSV that planner_cf_campaign_runner.py:214 loads in full;
+#  - reads ONLY a pre-filtered derived file containing 2024 rows (see PROTOCOL.md §2), and calls
+#    assert_no_protected_dates() before anything else;
+#  - imports PlannerCFV1Optimizer, stage4_low_sun_adapter, ResearchRealizationExecutor unmodified.

@@ -1,0 +1,29 @@
+{
+  "timestamp_utc": "2026-09-14T13:27:35.219560+00:00",
+  "document_title": "POLARIS BENCHMARK MASTER ROUTE REGISTRY",
+  "official_odd_champion": {
+    "model_name": "Stage8.1_700hPa_Wind_Control",
+    "odd_daytime_nmae_pct": 28.0688,
+    "status": "FROZEN_OPERATIONAL_CHAMPION"
+  },
+  "reproducible_even_control": {
+    "model_name": "REAL_AROME_21X21_REPRODUCIBLE_CONTROL",
+    "even_daytime_nmae_pct": 36.8045,
+    "even_daytime_mae_wm2": 47.451469,
+    "status": "FROZEN_REPRODUCIBLE_CONTROL"
+  },
+  "registered_routes": {
+    "LOCAL_SPATIAL_3X3": {
+      "route_name": "Local 3x3 Spatial AROME Cloud Representation Route",
+      "status": "CLOSED / REJECTED",
+      "candidate_even_daytime_nmae_pct": 39.1473,
+      "candidate_even_daytime_mae_wm2": 50.47194,
+      "delta_even_daytime_mae_wm2": 3.020471,
+      "gate_outcome": "EVEN GATES FAIL \u2014 REJECTED",
+      "closure_date": "2026-09-14",
+      "rejection_checkpoint_json": "spatial_arome_research/PHASE_LOCAL_SPATIAL_3X3_FINAL_REJECTION_CHECKPOINT.json",
+      "rejection_checkpoint_md": "spatial_arome_research/PHASE_LOCAL_SPATIAL_3X3_FINAL_REJECTION_CHECKPOINT.md",
+      "prohibition": "No retraining, rescue models, seed sweeps, or reopening permitted."
+    }
+  }
+}

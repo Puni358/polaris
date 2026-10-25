@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-09-13T02:49:00+00:00",
+  "stage": "POLARIS STAGE 8.16B-2 — FORMAL PROMOTION CHECKPOINT",
+  "promotion_decision": "PROMOTE STAGE 8.16B-2 PHI_INCONSIST AS THE NEW OFFICIAL POLARIS CHAMPION",
+  "all_12_criteria_passed": true,
+  "champion_transition": {
+    "old_champion": {
+      "model_name": "Stage 8.1 700 hPa Steering Wind Model",
+      "feature_count": 37,
+      "odd_daytime_nmae_pct": 28.0688,
+      "odd_daytime_mae_w_m2": 36.188657,
+      "odd_daytime_rmse_w_m2": 64.219495,
+      "odd_daytime_bias_w_m2": 1.439399,
+      "odd_night_mae_w_m2": 0.0,
+      "status": "PREVIOUS_OFFICIAL_CHAMPION (HISTORICAL PRESERVED)"
+    },
+    "new_champion": {
+      "model_name": "Stage 8.16B-2 Stage 8.1 + phi_inconsist Model",
+      "feature_count": 38,
+      "new_feature": "phi_inconsist",
+      "formula": "| N_total - (1.0 - exp(-0.02 * LWP_latest)) |",
+      "alpha": 0.02,
+      "odd_daytime_nmae_pct": 27.7111,
+      "odd_daytime_mae_w_m2": 35.727549,
+      "odd_daytime_rmse_w_m2": 63.764094,
+      "odd_daytime_bias_w_m2": 1.942735,
+      "odd_night_mae_w_m2": 0.0,
+      "status": "NEW_OFFICIAL_OPERATIONAL_CHAMPION"
+    }
+  },
+  "held_out_odd_improvements": {
+    "odd_origins_count": 173,
+    "odd_total_hours": 4152,
+    "odd_daytime_hours": 2883,
+    "odd_night_hours": 1269,
+    "delta_mae_w_m2": -0.461108,
+    "delta_nmae_pct": -0.3576,
+    "delta_rmse_w_m2": -0.455401,
+    "bootstrap_results": {
+      "resamples_count": 10000,
+      "random_seed": 42,
+      "mean_delta_mae_w_m2": -0.402099,
+      "ci_95_lower_w_m2": -0.759039,
+      "ci_95_upper_w_m2": -0.046315,
+      "pct_improving": 98.59,
+      "strictly_negative_ci": true
+    }
+  },
+  "promotion_criteria_audit": {
+    "c1_candidate_frozen_before_odd": true,
+    "c2_odd_held_out_from_dev": true,
+    "c3_no_odd_tuning": true,
+    "c4_control_reproduced": true,
+    "c5_beats_control_mae": true,
+    "c6_beats_control_nmae": true,
+    "c7_rmse_no_worse": true,
+    "c8_bootstrap_ci_strictly_negative": true,
+    "c9_causality_preserved": true,
+    "c10_night_causally_zeroed": true,
+    "c11_no_unresolved_discrepancy": true,
+    "c12_result_reproducible": true
+  },
+  "future_agent_firewall": {
+    "phi_inconsist_is_new_official_champion": true,
+    "champion_state": "FROZEN_NEW_OFFICIAL_OPERATIONAL_CHAMPION",
+    "directive": "Future agents must treat Stage 8.16B-2 (phi_inconsist) as the frozen official operational champion. No unapproved feature modification, tuning, or refitting is permitted."
+  }
+}

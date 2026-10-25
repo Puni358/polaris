@@ -1,0 +1,51 @@
+{
+  "record_type": "research_governance_reclassification",
+  "target_experiment": "pc_sw_true_curtailment_recapture_20261008",
+  "date": "2026-10-08",
+  "status": "DECIDED - research governance only. No production promotion.",
+  "original_verdict_preserved": "FAIL - SEMANTIC/IDENTITY CHECK",
+  "original_verdict_source": "AGGREGATE_SUMMARY.json / EXPERIMENT_DEFINITION.json",
+  "identity_check_preserved_unmodified": true,
+  "identity_check_metrics": {
+    "max_diff_soc_pp": 28.97,
+    "max_diff_e_next_wh": 57947.43,
+    "identity_violations_count": 32,
+    "all_identity_pass": false
+  },
+  "safety_gates_verified_source": "SAFETY_GATES_REPORT.json",
+  "safety_gates": {
+    "S1": {"description": "R_CF_candidate >= 99.1589%", "candidate_r_cf": 99.18507519741145, "control_r_cf": 99.1589, "pass": true},
+    "S2": {"description": "R_P_candidate >= 97.7963%", "candidate_r_p": 97.81161685801035, "control_r_p": 97.7963, "pass": true},
+    "S3": {"description": "zero realized SOC violations below 20.0%", "violations_count": 0, "pass": true},
+    "fuel_inventory_gate": {"violations_count": 0, "pass": true},
+    "all_gates_pass": true
+  },
+  "governing_framework_precedent": [
+    "experiments/stage4_planner_cf_consistency_2025/planner_cf_statistics.py (S1/S2/S3 definitions, module docstring)",
+    "experiments/stage4_planner_cf_consistency_2025/CAMPAIGN_V12_615_20261006/PC_RESULT_SUMMARY.md (PC-S/PC-SW/PC-S-L/PC-SW-L gated on S1/S2/S3 only, no identity requirement)",
+    "experiments/stage4_planner_cf_consistency_2025/phase1_terrain_correction_20261007/PHASE1_TERRAIN_RESULT_SUMMARY.md (PASS/SAFE-BUT-FUEL-WORSE verdict, S1/S2/S3-gated, trajectory materially different from Control)"
+  ],
+  "fuel_accounting": {
+    "baseline_fuel_l": 8729.2446,
+    "candidate_fuel_l": 8672.6241,
+    "net_saving_l": 56.6205,
+    "direct_recapture_kwh": 743.68404,
+    "direct_recapture_l_derived": 185.921,
+    "implied_downstream_offset_l_derived": 129.300,
+    "decomposition_basis": "direct_recapture_l minus net_saving_l; accounting decomposition only, not an independently re-traced causal attribution"
+  },
+  "reclassification": "PASS - S1/S2/S3 SAFETY-GATED RESEARCH RESULT; TRAJECTORY DIVERGENCE OBSERVED AND ACCEPTED AS A NORMAL CLOSED-LOOP CONSEQUENCE OF THE POLICY",
+  "non_claims": [
+    "not production-ready",
+    "not production-promoted",
+    "not a guaranteed fuel saving under other conditions",
+    "not established as optimal or maximal",
+    "no new safety gate, threshold, or guard introduced"
+  ],
+  "new_safety_gates_introduced": false,
+  "production_files_modified": false,
+  "governance_files_modified": false,
+  "raw_telemetry_modified": false,
+  "agy_execution_required": false,
+  "authorization_scope": "governance classification only; does not authorize production promotion or further campaigns"
+}

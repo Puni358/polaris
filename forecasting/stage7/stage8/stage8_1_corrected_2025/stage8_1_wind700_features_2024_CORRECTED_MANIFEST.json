@@ -1,0 +1,82 @@
+{
+  "output_file": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_wind700_features_2024_CORRECTED.csv",
+  "sha256": "0b6ad84cba7050272400b853cec47435c9ebd6501dac7a5abee00fe5e938eecc",
+  "row_count": 8328,
+  "unique_origins": 347,
+  "columns": [
+    "origin_index",
+    "forecast_start",
+    "horizon_hour",
+    "valid_time",
+    "forecast_reference_time",
+    "u700",
+    "v700",
+    "meps_run_id",
+    "causal_pass",
+    "coverage"
+  ],
+  "input_hashes": {
+    "nwp_2024_clean": "8d24dc72e19e3e42de61485f64299b8fd5ec1888a22ab2f8866b332526e3aa16"
+  },
+  "source": "MET Norway meps25epsarchive (meps_det_pl), via thredds.met.no OPeNDAP ASCII",
+  "station_grid_cell": {
+    "y": 760,
+    "x": 486,
+    "reused_from_2024": true
+  },
+  "coverage": {
+    "hourly_horizon_hours": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "gap_horizon_hours": [
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "gap_reason": "the archived meps_det_pl product is hourly only through lead time +24h from its reference run; beyond that it is 3-hourly. A day-ahead (D-1 18Z) run therefore has genuine hourly data only for 00:00-18:00 of the forecast day. Hours 19:00-23:00 are a structural gap in this archived product, not fabricated or interpolated."
+  },
+  "defects_found_in_2024_artifact_and_fixed_here": [
+    {
+      "defect": "off_by_one_horizon_hour",
+      "detail": "2024's horizon_hour=1 == forecast_start+1h; every other Stage 8.1 feature source uses horizon_hour=1 == forecast_start+0h. A plain join on (forecast_start, horizon_hour) silently shifts 2024's wind features by 1h.",
+      "evidence": "independently reproduced: 2024 row (forecast_start=2024-01-20, horizon_hour=1) has valid_time=2024-01-20 01:00:00, not 00:00:00.",
+      "action": "fixed in this corrected 2024 rebuild (valid_time==forecast_start+(horizon_hour-1)h); 2024 file left unmodified"
+    },
+    {
+      "defect": "hourly_to_3hourly_mislabeling",
+      "detail": "2024's naive 24-length array slice silently mixed genuine hourly values (lead +7h..+24h) with mislabeled 3-hourly values (lead +27h, +30h, ..., +42h) for its horizon_hour 19-24, presenting e.g. a +42h-lead value as if it were sequential-hour data.",
+      "evidence": "independently probed the archive's time dimension (meps_det_pl_20250314T18Z): hourly through index 24 (lead+24h), 3-hourly (3h steps) from index 25 onward -- a structural property of the file, confirmed by direct query, not a one-off.",
+      "action": "this corrected 2024 rebuild reports horizon_hour 20-24 as an explicit NaN/documented gap instead of mislabeling 3-hourly data as hourly; 2024 file left unmodified"
+    }
+  ],
+  "validation": {
+    "origin_count_ok": true,
+    "horizons_per_origin_ok": true,
+    "no_duplicates": true,
+    "no_nan_inf_in_valid_hours": true,
+    "causal_ref_before_valid": true,
+    "causal_ref_is_prev_day_18z": true,
+    "causal_horizon_alignment_ok": true,
+    "schema_ok": true
+  }
+}

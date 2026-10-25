@@ -1,0 +1,6 @@
+audit_dimension,evaluated_scope,check_description,valid_count,invalid_count,missing_count,fill_value_code,status
+18Z Archive Presence,347 Origins x 24 Hours,Query MET Norway THREDDS for meps_det_ml 18Z runs,0,8328,8328,N/A,FAIL (0/347 Origins Archived)
+00Z Archive Presence,347 Origins x 24 Hours,Query MET Norway THREDDS for meps_det_ml 00Z runs,8328,0,0,N/A,PASS (347/347 Origins Archived)
+Vertical Coordinate Coefficients,65 Hybrid Levels (k=0..64),Inspection of ap(k) and b(k) Arakawa hybrid coefficients,65,0,0,N/A,PASS (Valid Arakawa Hybrid Schema)
+Surface Pressure Truncation,347 Nuolja Origins (702m ASL),Truncation of levels where p(k) > p_sfc (~928 hPa),347,0,0,N/A,PASS (Sub-surface levels k=52..64 masked)
+Fill Value Masking,8328 Forecast Hours,Detection and masking of default NetCDF fill values,8328,0,0,9.96921E36,PASS (Standard Masking Enforced)

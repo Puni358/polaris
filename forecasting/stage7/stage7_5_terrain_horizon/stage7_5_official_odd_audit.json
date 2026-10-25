@@ -1,0 +1,17 @@
+{
+  "exact_frozen_candidate_used": true,
+  "exact_frozen_control_used": true,
+  "no_refitting_stage4_control_params": true,
+  "exact_odd_rows_evaluated": true,
+  "exact_24h_horizon": true,
+  "no_missing_or_duplicate_rows": true,
+  "correct_daytime_mask": true,
+  "correct_night_masking": true,
+  "correct_nmae_denominator": true,
+  "row_level_metric_reconciliation_pass": true,
+  "bootstrap_reproducibility_pass": true,
+  "no_tuning_on_odd": true,
+  "no_result_shopping": true,
+  "no_candidate_modification": true,
+  "odd_governance_pass": true
+}

@@ -1,0 +1,31 @@
+{
+  "governance_status": {
+    "correction_status": "CORRECTION_REQUIRED",
+    "gap19_solver_architecture": "REQUIRES_GOVERNANCE_DECISION",
+    "current_scipy_milp_capability": "VERIFIED",
+    "native_multiobjective_api": "NOT_EXPOSED_BY_CURRENT_API",
+    "sequential_lexicographic_architecture": "TECHNICALLY_FEASIBLE",
+    "option_c_status": "ENGINEERING_RISK_ONLY",
+    "forecastbundle_schema": "ADDITIVE_EXTENSION_REQUIRED",
+    "stationstate_schema": "ADDITIVE_EXTENSION_REQUIRED",
+    "dispatchplan_schema": "ADDITIVE_EXTENSION_REQUIRED",
+    "no_schema_modification": "YES",
+    "no_solver_selection": "YES",
+    "no_implementation": "YES",
+    "milp_modified": "NO",
+    "ems_executed": "NO",
+    "mpc_executed": "NO",
+    "digital_twin_executed": "NO",
+    "execution_firewall": "PASS",
+    "next_governed_step": "GAP19_SOLVER_ARCHITECTURE_GOVERNANCE_DECISION"
+  },
+  "scipy_metadata": {
+    "scipy_version": "1.18.1",
+    "milp_signature": "scipy.optimize.milp(c, *, integrality=None, bounds=None, constraints=None, options=None)",
+    "single_cost_vector_only": true
+  },
+  "protected_hashes": {
+    "milp.py": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35",
+    "optimizer.yaml": "bdf5a61487fddf0695b8926a24499be17fef0181d3f755731d154c1fabbca1e8"
+  }
+}

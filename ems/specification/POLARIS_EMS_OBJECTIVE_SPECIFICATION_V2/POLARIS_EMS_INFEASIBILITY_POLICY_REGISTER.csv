@@ -1,0 +1,5 @@
+SCENARIO_ID,CONDITION,GOVERNED_BEHAVIOR,POLICY_STATUS,ENGINEERING_ACTION
+INF-01,Stage 1 Infeasible (Capacity < Critical Load),Set CRITICAL_RELIABILITY_INFEASIBLE = DETECTED; surface fault; log governed record; no silent trade-off,REQUIRES_GOVERNANCE_CLARIFICATION,Register missing emergency response protocol
+INF-02,Stage 2 Infeasible (EBR Target Unattainable),Satisfy Stage 1; minimize EBR shortfall J2; raise RESERVE_DEFICIT_WARNING,ALREADY_POLICY_DEFINED,Formulate Stage 2 shortfall objective
+INF-03,Fuel Budget Exhausted (V_fuel_avail = 0),Operate purely on renewables + battery; trigger FUEL_EXHAUSTION_ALERT,ALREADY_POLICY_DEFINED,Enforce hard fuel inventory bound
+INF-04,Solver Runtime Failure / Timeout,Raise OPTIMIZATION_RUNTIME_FAILURE; log governed fault; retain last valid plan,ALREADY_POLICY_DEFINED,Implement watchdog timer & safe state logging

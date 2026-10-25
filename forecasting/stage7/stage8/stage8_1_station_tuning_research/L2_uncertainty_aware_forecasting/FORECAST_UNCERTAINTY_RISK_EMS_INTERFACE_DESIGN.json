@@ -1,0 +1,152 @@
+{
+  "document_title": "POLARIS Forecast Uncertainty -> Risk -> EMS Interface Design",
+  "document_version": "1.0.0-RESEARCH-DESIGN",
+  "branch": "NEW RESEARCH BRANCH: FORECAST UNCERTAINTY -> RISK -> EMS INTERFACE DESIGN",
+  "target_station": "Mount Nuolja AWS (ANS_NMS, 702m a.s.l.)",
+  "governance_status": "DESIGN_ONLY_STRICT_SEPARATION",
+  "timestamp": "2026-10-05T07:53:30+05:30",
+  "current_bottleneck": {
+    "core_problem": "Conflation of pointwise forecast uncertainty, physical energy reserve, and critical load protection.",
+    "point_forecast_failure": "Candidate F point forecast lower MAE/RMSE failed to reduce closed-loop diesel consumption; over-prediction bias during cloudy periods depleted battery storage, causing 983.3 kWh of critical unmet load.",
+    "static_q10_failure": "Static q10 slashes unmet load by 93.4% but forces +38.2% diesel fuel increase and +92.9% solar curtailment by assuming all 24 hours simultaneously breach the 10th percentile.",
+    "ebr_failure": "Governed 6-hour EBR reserve (38.6 kWh, 57.83% SOC) is unconditional on incoming solar; because it sits at J2 (Priority 3) above J3 fuel (Priority 2), GAP19 burns diesel at step 0 to satisfy the reserve, resulting in +20.5% fuel penalty in Causal NWP.",
+    "ebr_off_failure": "Removing EBR entirely cuts fuel by 68.4% but causes critical unmet load to surge +16.9%, failing reliability gates in 101 of 123 origins.",
+    "stochastic_milp_failure": "Multi-scenario MILP introduces lexicographic priority inversions in HiGHS (J4 curtailment chasing depleted battery storage prematurely on Origin 77, causing SOC floor breach to 19.61%)."
+  },
+  "candidate_interfaces": [
+    {
+      "code": "A",
+      "name": "Static Quantile (q10)",
+      "description": "Replace point forecast with static empirical lower quantile (q10).",
+      "verdict": "REJECTED",
+      "flaw": "Ignores AR(1) temporal correlation and microgrid state; causes chronic diesel over-dispatch and excessive curtailment."
+    },
+    {
+      "code": "B",
+      "name": "Fixed Reserve (EBR 6h)",
+      "description": "Unconditional 6-hour critical load survivability reserve in battery storage.",
+      "verdict": "REJECTED",
+      "flaw": "Unconditional on renewable forecast; forces step-0 diesel generation even before clear-sky solar peaks."
+    },
+    {
+      "code": "C",
+      "name": "Cumulative Shortfall Risk",
+      "description": "Convert forecast errors into cumulative shortfall distribution via AR(1) and clear-sky scaling.",
+      "verdict": "VALIDATED_STATISTICALLY_BUT_INSUFFICIENT_ALONE",
+      "flaw": "Focuses only on solar error distribution; ignores battery state-of-charge headroom and diesel capacity."
+    },
+    {
+      "code": "D",
+      "name": "Chance-Constrained / Probabilistic Dynamic Reserve",
+      "description": "State-dependent dynamic reserve trajectory bounding probability of critical deficit over all horizons.",
+      "verdict": "RECOMMENDED_PRIMARY",
+      "merit": "Scales reserve with forecast uncertainty and critical demand while discounting existing battery energy and scheduled generation; drop-in compatible with GAP19."
+    },
+    {
+      "code": "E",
+      "name": "Scenario-Based Multi-MILP",
+      "description": "Sample discrete solar trajectories and solve stochastic MILP with non-anticipativity.",
+      "verdict": "REJECTED",
+      "flaw": "Excessive computational overhead (up to 74s solve time) and HiGHS priority inversion artifacts."
+    },
+    {
+      "code": "F",
+      "name": "Economic Risk Pricing Interface",
+      "description": "Replace hard reserve constraint with expected cost of critical deficit in objective function.",
+      "verdict": "THEORETICAL_BENCHMARK_ONLY",
+      "flaw": "Compromises strict lexicographic priority of critical load protection; vulnerable to numerical scaling tradeoffs."
+    }
+  ],
+  "mathematical_formulation_summary": {
+    "model_type": "Chance-Constrained State-Dependent Dynamic Reserve (Candidate D)",
+    "error_process": "AR(1) with conditional regime bias: e_{t+k} = mu(x_{t+k}) * (1 - phi^k) + phi^k * e_t^{obs} + epsilon_{t+k}",
+    "persistence_parameter": 0.6386,
+    "innovation_scale": "sigma_{innov}(x) = 24.03 + 0.1464 * clearsky_ghi(x) [W/m^2]",
+    "cumulative_variance": "sigma_{C, k}^2 = sum_{j=1}^k [ sum_{l=j}^k phi^{l-j} ]^2 * sigma_{innov}^2(x_{t+j})",
+    "shortfall_quantile": "Q_{1-epsilon}(C_k) = sum_{j=1}^k e_{hat, j} + q_{cal}(1-epsilon) * sigma_{C, k}",
+    "solar_risk_energy_wh": "Delta E_{sol, k}^{risk} = K_{pv} * Delta t * max(0, Q_{1-epsilon}(C_k))",
+    "dynamic_reserve_trajectory": "R_k^{dyn}(t) = max( R_{base}^{surv}, Delta E_{sol, k}^{risk} + sum_{j=1}^k [ P_{crit, j} / eta_{dis} - P_{pv, j}^{point} - P_{wind, j}^{point} ] * Delta t )",
+    "terminal_alignment": "E_{stage2_target}[23] = max( R_{23}^{dyn}, E_{term}^{governed} )"
+  },
+  "required_inputs": [
+    "Solar elevation angle (deterministic ephemeris)",
+    "Clear-sky GHI (deterministic Ineichen model)",
+    "Forecast cloud cover (causal MEPS NWP 18Z trajectory)",
+    "Candidate F / Stage 8.1 point forecast vector",
+    "Current station battery energy and SOC (SCADA telemetry)",
+    "Diesel running state (SCADA telemetry)",
+    "Critical demand trajectory (loads.yaml baseline)",
+    "AR(1) parameters (phi, mu, alpha_0, alpha_1 fit on 2020-2021)",
+    "Conformal multiplier q_cal(1-epsilon) (calibrated on 2022)"
+  ],
+  "causal_availability": {
+    "Class_A_Approved": [
+      "solar_elevation",
+      "clearsky_ghi",
+      "fc_cloud_cover",
+      "prediction_stage8_1",
+      "station_battery_energy_wh",
+      "diesel_running"
+    ],
+    "Class_B_Quarantined": [
+      "ctx_last_obs",
+      "ctx_std_3h",
+      "recent_pyranometer_error_e_t"
+    ],
+    "Class_C_Forbidden": [
+      "actual_sw_in",
+      "actual_wind",
+      "actual_demand",
+      "future_residuals"
+    ]
+  },
+  "gap19_insertion_point": {
+    "component": "system/optimization/implementations/gap19_highs_native.py",
+    "layer": "Layer C: Stage 2 Unified Reserve Envelope (Constraints 288-311)",
+    "target_variable": "ebr_target_wh_list (E_stage2_target[t])",
+    "integration_mechanism": "Pass 24-element array via config['ebr_target_wh'] or station_state.ebr_target_wh_override",
+    "governance_action": "REPLACE the rigid 6-hour static formula with Candidate D dynamic reserve trajectory in research harness",
+    "production_code_modification": "ZERO (GAP19 already accepts 24-element arrays natively)"
+  },
+  "validation_design": {
+    "split_governance": {
+      "training_period": "2020-2021 (731 origins) for AR(1) dynamics and scale fitting",
+      "calibration_period": "2022 (365 origins) for conformal risk calibration q_cal(1-epsilon)",
+      "blind_evaluation_period": "2025 Blind Dataset (364 origins) completely untouched; 2024 quarantined from primary evaluation"
+    },
+    "simulation_protocol": "24-hour receding-horizon closed-loop simulation with hourly reoptimization and strict realization firewall",
+    "experimental_arms": [
+      "Arm 0: Candidate F Point Baseline + Static 6h EBR",
+      "Arm 1: Static q10 Benchmark + Static 6h EBR",
+      "Arm 2: Candidate D Dynamic Risk Reserve (Proposed)",
+      "Arm 3: Perfect Foresight Upper Benchmark"
+    ],
+    "metrics": {
+      "safety_reliability": "Realized critical unmet load (Wh) and System Reliability (%)",
+      "economic_resource": "Diesel fuel consumed (L), Renewable curtailment (Wh), Battery EFC",
+      "statistical_test": "Paired Wilcoxon signed-rank test and 10,000-sample BCa bootstrap confidence intervals"
+    }
+  },
+  "risks_and_blockers": {
+    "blocked_items": [
+      "Horizons k in [20..24] in historical solar dataset due to polar night termination",
+      "Ground telemetry context features (Class B) quarantined until ingestion latency is modeled",
+      "Closed-loop controller execution on production code"
+    ],
+    "unresolved_risks": [
+      "Synthetic wind benchmark: current wind errors are synthetic artifacts, requiring validation on real wind telemetry",
+      "Sub-Arctic winter extreme cold events causing diesel startup delays not modeled in linear MILP"
+    ]
+  },
+  "recommended_first_experiment": {
+    "experiment_id": "EXP-DYNAMIC-RISK-RESERVE-2025",
+    "objective": "Evaluate closed-loop receding-horizon performance of Candidate D vs Arm 1 (static q10) and Arm 0 (baseline) across 364 origins of untouched 2025 data",
+    "parameter_freeze": "Freeze phi=0.6386, clearsky scaling, and q_cal on 2020-2022 data prior to execution",
+    "primary_hypothesis": "Candidate D matches Arm 1's critical reliability (>= 99.80%) while reducing diesel fuel by >= 15% and curtailment by >= 30%"
+  },
+  "decision_criteria": {
+    "pass": "Critical reliability >= 99.80%, 0 SOC floor violations (<20%), diesel fuel statistically lower than Arm 1 (p < 0.01, >= 10% reduction), and curtailment reduced >= 25%",
+    "fail": "Critical unmet load > 10% higher than Arm 1, OR any SOC floor violation (<20%), OR fuel reduction not statistically significant",
+    "inconclusive": "Fuel is reduced but critical unmet load falls in the ambiguous +0% to +10% band, or statistical significance is marginal (p >= 0.05)"
+  }
+}

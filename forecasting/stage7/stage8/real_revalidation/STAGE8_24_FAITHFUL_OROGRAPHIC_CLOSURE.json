@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-09-13T20:54:30Z",
+  "closure_type": "FAITHFUL_IMPLEMENTATION_ROUTE_CLOSURE",
+  "route_id": "STAGE8.24",
+  "route_name": "Faithful Scandes Orographic Flow-Regime Expansion",
+  "governance_status": "REJECTED_BY_EVEN_GATES",
+  "operational_champion_status": "UNCHANGED (Stage 8.1 37-feature HGB champion preserved)",
+  "candidate_definition": {
+    "control_features_count": 37,
+    "candidate_features_count": 39,
+    "added_candidate_features": [
+      "ctx_u_perp",
+      "ctx_mountain_froude"
+    ],
+    "unregistered_features_added": false,
+    "w_oro_added": false,
+    "regime_labels_added": false
+  },
+  "even_validation_summary": {
+    "origins_count": 173,
+    "control_mae_w_m2": 37.5529,
+    "candidate_mae_w_m2": 37.8072,
+    "delta_mae_w_m2": 0.2543,
+    "control_nmae_pct": 27.1324,
+    "candidate_nmae_pct": 27.3161,
+    "delta_nmae_pct": 0.1837,
+    "control_rmse_w_m2": 76.9839,
+    "candidate_rmse_w_m2": 77.4707,
+    "delta_rmse_w_m2": 0.4869,
+    "improving_folds": "1/5",
+    "worst_fold_degradation_w_m2": 0.7186
+  },
+  "gate_audit": {
+    "G1_MAE_Margin": "FAIL (+0.2543 W/m2)",
+    "G2_Fold_Consistency": "FAIL (1/5 folds)",
+    "G3_Worst_Fold_Tolerance": "FAIL (+0.7186 W/m2)",
+    "G4_nMAE_RMSE_NonDegradation": "FAIL (+0.1837 pp nMAE, +0.4869 W/m2 RMSE)",
+    "G5_Causal_Integrity": "PASS (100% causal antecedents)",
+    "G6_Exact_Control_Reproduction": "PASS (37.5529 W/m2)"
+  },
+  "n2_floor_diagnostics": {
+    "sublayers_evaluated": 21694,
+    "sublayers_floor_activations": 0,
+    "sublayers_floor_pct": 0.0,
+    "origins_evaluated": 347,
+    "origins_affected": 0,
+    "origins_affected_pct": 0.0,
+    "n_layer_distribution": {
+      "mean": 0.0107634,
+      "std": 0.00028495,
+      "min": 0.010068,
+      "median": 0.010808,
+      "max": 0.011451
+    }
+  },
+  "odd_firewall_status": "100% MAINTAINED (Zero ODD targets or predictions accessed)",
+  "scientific_interpretation_boundary": "This result does NOT prove that orographic physical processes or Scandes terrain effects are non-existent. It proves specifically that THIS preregistered 2-feature surface-to-700hPa representation (ctx_u_perp + ctx_mountain_froude) fails to provide robust incremental predictive value over the frozen Stage 8.1 37-feature control.",
+  "final_verdict": "REJECTED_BY_EVEN_GATES"
+}

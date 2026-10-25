@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-09-13T07:00:00+00:00",
+  "stage": "POLARIS STAGE 8.14C \u2014 CMIC BLOCKER RESOLUTION PHASE 1 AUDIT",
+  "status": "COMPLETED \u2014 BLOCKER RESOLUTION PHASE 1 AUDIT",
+  "candidate": "EUMETSAT NWC SAF PPS CMIC",
+  "final_classification": "CONDITIONAL",
+  "forecasting_experiment_authorized": false,
+  "governance": {
+    "champion_state": "FROZEN_OPERATIONAL_CHAMPION",
+    "champion_name": "Stage 8.1 700 hPa Steering Wind Model",
+    "daytime_nmae_pct": 28.0688,
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "night_mae_w_m2": 0.0
+  },
+  "artifacts_created": [
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_ARCHIVE_ENUMERATION.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_347_ORIGIN_COVERAGE.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_CAUSALITY_AUDIT.csv",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_DATA_SOURCE_AUDIT.md",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_DATA_SOURCE_AUDIT.json",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_BLOCKER_RESOLUTION_PHASE1_AUDIT.md",
+    "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_700hpa_wind/STAGE8_14C_CMIC_BLOCKER_RESOLUTION_PHASE1_AUDIT.json"
+  ]
+}

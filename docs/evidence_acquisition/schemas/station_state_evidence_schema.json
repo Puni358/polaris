@@ -1,0 +1,60 @@
+{
+  "_comment": "VERSIONED STATION-STATE EVIDENCE SCHEMA (EVID-02-adjacent / Workstream C initial-state evidence). Documents the record shape a real, cited, per-origin initial-state submission must satisfy. The 8 REQUIRED_STATION_STATE_FIELDS below are reused VERBATIM from system/evaluation/n6_multi_origin_harness/adapters.py (the exact positional-argument contract of system/schemas/station_state.py's StationState.from_dict) -- never redefined or widened here. This file documents the contract; it is not itself imported by any code (the authoritative, enforced field list lives in adapters.py). Validation against this schema is performed by tools/evidence_acquisition/validate_station_state_evidence.py, which imports adapters.py's REQUIRED_STATION_STATE_FIELDS rather than duplicating it.",
+  "schema_version": "1.0.0",
+  "record_shape": {
+    "required_station_state_fields_reused_from_adapters_py": [
+      "timestamp",
+      "battery_soc_pct",
+      "battery_energy_wh",
+      "diesel_running",
+      "diesel_hours_running",
+      "last_observed_solar_irradiance",
+      "last_observed_demand",
+      "last_observed_wind_generation"
+    ],
+    "required_provenance_field_reused_from_adapters_py": "_provenance",
+    "additional_evidence_metadata_fields_this_schema_adds": {
+      "origin_id": "string -- the forecast-origin timestamp this record's state applies to at t0. Must match the key used in the authoritative_initial_states_by_origin registry.",
+      "station_identity": "string -- e.g. 'Nuolja Middle Station'. Never blank.",
+      "measurement_timestamp_utc": "ISO-8601 string with explicit UTC offset -- when the UNDERLYING measurement was actually taken (may differ from 'timestamp', which is the StationState's own t0 field; this field exists so a submission can be checked for staleness against t0).",
+      "units": {
+        "battery_soc_pct": "percent, 0-100",
+        "battery_energy_wh": "watt-hours",
+        "diesel_hours_running": "hours",
+        "last_observed_solar_irradiance": "W/m^2",
+        "last_observed_demand": "watts",
+        "last_observed_wind_generation": "watts",
+        "diesel_fuel_remaining_liters": "liters (optional field; None/absent means genuinely unknown, never 0)"
+      },
+      "source_reference": "string -- exact citation of the measurement source (SCADA log id, meter serial + read, manual log entry + inspector name/date). Must be independently checkable, not merely asserted.",
+      "calibration_quality_metadata": {
+        "instrument_last_calibrated_utc": "ISO-8601 UTC or 'UNKNOWN' (explicit, never silently omitted)",
+        "measurement_quality_flag": "one of: VERIFIED | UNVERIFIED | SUSPECT | UNKNOWN",
+        "notes": "free text"
+      }
+    },
+    "explicit_missingness_policy": "A field this schema lists is either present with a real measured/cited value, or explicitly absent/null. An absent field must NEVER be filled with a smoke-test constant, a mean, a default, or any other invented value and then labeled authoritative. system/evaluation/n6_multi_origin_harness/adapters.py's resolve_and_validate_authoritative_initial_state(...) enforces this for the 8 core StationState fields and the provenance field by raising MalformedInitialStateRecordError on any missing one -- this schema's additional metadata fields are checked by the completeness/quality report (see validate_station_state_evidence.py) but do NOT block the core validator, since they are evidence-quality context, not part of the StationState construction contract itself."
+  },
+  "example_submission_NOT_REAL_DATA": {
+    "_comment": "ILLUSTRATIVE SHAPE ONLY. Every value below is a placeholder, not a real Nuolja measurement. Do not use this example as a stand-in for real station evidence.",
+    "origin_id": "<REPLACE: forecast origin timestamp, ISO-8601 UTC>",
+    "timestamp": "<REPLACE: same as origin_id or the StationState's own t0>",
+    "battery_soc_pct": "<REPLACE: real measured value>",
+    "battery_energy_wh": "<REPLACE: real measured value>",
+    "diesel_running": "<REPLACE: true/false, observed>",
+    "diesel_hours_running": "<REPLACE: real measured value>",
+    "last_observed_solar_irradiance": "<REPLACE: real measured value>",
+    "last_observed_demand": "<REPLACE: real measured value>",
+    "last_observed_wind_generation": "<REPLACE: real measured value>",
+    "diesel_fuel_remaining_liters": null,
+    "_provenance": "<REPLACE: exact citation of source>",
+    "station_identity": "<REPLACE>",
+    "measurement_timestamp_utc": "<REPLACE: ISO-8601 UTC>",
+    "source_reference": "<REPLACE>",
+    "calibration_quality_metadata": {
+      "instrument_last_calibrated_utc": "UNKNOWN",
+      "measurement_quality_flag": "UNKNOWN",
+      "notes": ""
+    }
+  }
+}

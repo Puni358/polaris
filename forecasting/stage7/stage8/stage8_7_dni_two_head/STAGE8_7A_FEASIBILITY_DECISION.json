@@ -1,0 +1,80 @@
+{
+  "stage": "8.7A",
+  "title": "POLARIS Stage 8.7A DNI-Anchored Direct/Diffuse Feasibility & Proxy Sanity Audit",
+  "timestamp_utc": "2026-09-12 16:47:00 UTC",
+  "decision": "CONDITIONAL_PENDING_PROXY_APPROVAL",
+  "coverage_summary": {
+    "total_tuples": 8328,
+    "valid_tuples": 8328,
+    "missing_tuples": 0,
+    "sentinel_tuples": 0,
+    "nan_tuples": 0,
+    "inf_tuples": 0,
+    "causal_tuples": 8328,
+    "coverage_pass_rate_pct": 100.0
+  },
+  "causality_summary": {
+    "total_origins": 347,
+    "causal_origins": 347,
+    "non_causal_origins": 0,
+    "causality_pass_rate_pct": 100.0
+  },
+  "temporal_alignment": {
+    "meps_run_selected": "D-1 18:00 UTC",
+    "t_init_relative_to_t0": "-6 hours",
+    "offset_hours": 0,
+    "h1_to_h24_mapped_exactly": true
+  },
+  "sentinel_audit": {
+    "raw_sentinel_count": 0,
+    "masked_sentinel_count": 0,
+    "unmasked_daytime_sentinels": 0
+  },
+  "direct_proxy_sanity": {
+    "min_w_m2": 0.0,
+    "median_w_m2": 0.0,
+    "max_w_m2": 550.2741009713087,
+    "invalid_bounds_exceed_dni_count": 0,
+    "diagnostic_exceed_actual_count": 95,
+    "diagnostic_exceed_actual_pct": 1.1407300672430354
+  },
+  "diffuse_residual_sanity": {
+    "min_w_m2": -333.42853108207544,
+    "median_w_m2": 7.1750834999999995,
+    "max_w_m2": 745.866667,
+    "mean_w_m2": 72.74334397745312,
+    "std_w_m2": 127.84791378648325,
+    "negative_count_all": 95,
+    "negative_pct_all": 1.1407300672430354,
+    "negative_count_daytime": 95,
+    "negative_pct_daytime": 1.647018030513176,
+    "negative_regime_breakdown": {
+      "low_solar_elevation_le_5deg": 3,
+      "mid_solar_elevation_5_to_20deg": 1,
+      "high_solar_elevation_gt_20deg": 91
+    }
+  },
+  "proxy_provenance": {
+    "formula_evaluated": "DirectProxy_h = DNI_h * max(0, sin(solar_elevation_h)) * (1 - terrain_solar_obstruction_flag_h)",
+    "classification": "IMPLEMENTATION_ASSUMPTION",
+    "predeclared_in_study": false
+  },
+  "decision_criteria_eval": {
+    "c1_full_coverage_ge_99pct": true,
+    "c2_zero_post_t0_leakage": true,
+    "c3_exact_h1_h24_valid_time_mapping": true,
+    "c4_zero_unmasked_daytime_sentinels": true,
+    "c5_zero_unexplained_temporal_shift": true,
+    "c6_deterministic_direct_proxy_formula": true,
+    "c7_physically_interpretable_proxy": true,
+    "c8_diffuse_residual_no_external_obs_needed": true,
+    "c9_negative_residuals_limited_to_edge_cases": true
+  },
+  "odd_firewall": {
+    "odd_target_reads_for_forecasting": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "odd_tuning": 0
+  },
+  "stage8_7b_authorized": false
+}

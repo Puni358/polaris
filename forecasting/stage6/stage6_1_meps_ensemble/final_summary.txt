@@ -1,0 +1,33 @@
+POLARIS STAGE 6.1 — MEPS ENSEMBLE EVALUATION FINAL SUMMARY
+================================================================================
+Date: 2026-09-10
+Status: COMPLETED (AUDITED & RECONCILED)
+
+1. BASELINE REPRODUCIBILITY GATE
+   - Target Stage 5.2 EVEN-CV MAE: 39.4236 W/m²
+   - Observed EVEN-CV MAE:        39.4236 W/m²
+   - Gate Result:                 PASSED EXACTLY (100% Reproduction)
+
+2. EVEN 5-FOLD FORWARD-CHAINING CV RESULTS
+   - Control (Stage 5.2 Champion): 39.4236 W/m² MAE | 41.46% nMAE | 62.8290 W/m² RMSE
+   - Candidate (+ MEPS 6 Features): 39.4693 W/m² MAE | 42.28% nMAE | 63.1004 W/m² RMSE
+   - Aggregate MAE Delta:         +0.0457 W/m²
+   - Improved Folds:              1 / 5 Folds
+   - Max Single-Fold Degradation: +0.4425 W/m²
+
+3. PREDEFINED EVEN-CV DECISION GATE EVALUATION
+   - Gate 1 (MAE Delta <= -0.20 W/m²): FAIL (+0.0457 W/m²)
+   - Gate 2 (Fold Consistency >= 4/5): FAIL (1/5)
+   - Gate 3 (Max Fold Degradation <= 0.15): FAIL (+0.4425 W/m²)
+   - Gate 4 (Neutral/Improved nMAE & RMSE): FAIL
+   - Overall Gate Status: FAILED PREDEFINED GATES
+
+4. ODD HELD-OUT TEST EVALUATION
+   - Evaluated on ODD: False
+   - Frozen Stage 5.2 Champion: 39.084821 W/m² Daytime MAE (30.32% nMAE)
+   - Candidate ODD MAE:       N/A (Untouched)
+
+5. FORMAL FINAL DECISION
+   - Selected Gate: MEPS ENSEMBLE — NO IMPROVEMENT
+   - Champion Lock: STAGE 5.2 ARCHITECTURE A REMAINS THE UNBEATEN, FROZEN CHAMPION (39.084821 W/m² Daytime MAE / 30.32% nMAE).
+================================================================================

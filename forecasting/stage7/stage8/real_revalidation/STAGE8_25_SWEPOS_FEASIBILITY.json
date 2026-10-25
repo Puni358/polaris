@@ -1,0 +1,85 @@
+{
+  "stage": "STAGE8.25",
+  "route_name": "Real SWEPOS GNSS Tropospheric Delay / PWV at ABIS",
+  "timestamp": "2026-09-13T21:36:54.299386+05:30",
+  "audit_verdict": "CLOSED_FEASIBILITY_UNAVAILABLE",
+  "feasibility_status": "FAILED_REAL_DATA_REQUIREMENTS",
+  "governance_status": "ROUTE_CLOSED_INFEASIBLE",
+  "strict_data_rule_compliance": {
+    "synthetic_data_used": false,
+    "random_generation_used": false,
+    "hardcoded_metric_literals_used": false,
+    "invented_observations_used": false,
+    "silent_imputation_used": false
+  },
+  "audit_checks": {
+    "1_station_identity_location": {
+      "station_id": "ABIS",
+      "name": "Abisko Permanent Reference Station",
+      "lat": 68.35827,
+      "lon": 18.825,
+      "elevation_m_asl": 387.6,
+      "horizontal_distance_to_nuolja_m": 326.0,
+      "verified": true
+    },
+    "2_real_swepos_2024_availability": {
+      "available_in_workspace": false,
+      "workspace_files_found": 0,
+      "archive_access_requirement": "Requires user login credentials for Lantmateriet SWEPOS / E-GVAP portals",
+      "verified": false
+    },
+    "3_exact_variables_available": {
+      "ztd": null,
+      "zhd": null,
+      "zwd": null,
+      "pwv": null,
+      "real_observations_present": 0,
+      "verified": false
+    },
+    "4_timestamp_semantics": {
+      "static_archive_timestamp": "t_obs (observation time)",
+      "operational_publication_timestamp": "t_pub (missing in static archives)",
+      "verified": false
+    },
+    "5_temporal_resolution": {
+      "nominal_resolution": "15-minute / 1-hour",
+      "real_series_available": false,
+      "verified": false
+    },
+    "6_publication_availability_latency": {
+      "nominal_nrt_latency": "45-90 minutes",
+      "real_2024_latency_logs_present": false,
+      "verified": false
+    },
+    "7_causality_at_benchmark_t0": {
+      "benchmark_t0": "00:00:00 UTC Day D",
+      "causality_verified": false,
+      "reason": "Static archives lack t_pub wall-clock publication logs required to verify t_pub <= t0"
+    },
+    "8_coverage_across_347_origins": {
+      "total_origins": 347,
+      "origins_with_real_swepos_data": 0,
+      "coverage_percent": 0.0,
+      "verified": false
+    },
+    "9_missingness": {
+      "missingness_percent": 100.0,
+      "silent_imputation_permitted": false,
+      "verified": false
+    },
+    "10_pwv_real_vs_synthetic": {
+      "real_pwv_available": false,
+      "synthetic_pwv_allowed": false,
+      "verified": false
+    },
+    "11_spatial_representativeness": {
+      "representativeness": "High potential (326m horizontal offset), but infeasible due to missing real data",
+      "verified": false
+    },
+    "12_complementary_to_meps": {
+      "theoretical_complementarity": "High potential (microwave phase delay column moisture), but cannot be tested without authentic data",
+      "verified": false
+    }
+  },
+  "reason_for_closure": "Real raw SWEPOS GNSS observation files for 2024 (ABIS station) are absent from the workspace. Reacquisition requires external user authentication (Lantmateriet/E-GVAP portals). Furthermore, static RINEX/COST-716 archives record observation time t_obs but lack t_pub publication latency logs required to prove strict causality before benchmark t0 = 00:00 UTC. Under the strict POLARIS data rule prohibiting synthetic GNSS generation or hardcoded metric literals, the route cannot satisfy causal real-data requirements and is formally CLOSED as infeasible."
+}

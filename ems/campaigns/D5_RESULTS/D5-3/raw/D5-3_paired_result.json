@@ -1,0 +1,94 @@
+{
+  "gate_id": "D5-3",
+  "scenario_id": "S3",
+  "scenario_name": "Wind Underprediction Sensitivity",
+  "duration_iterations": 24,
+  "control_run": {
+    "physical_outcome_metrics": {
+      "unmet_load_wh": 0.0,
+      "total_demand_wh": 985504.26,
+      "load_served_fraction_pct": 100.0,
+      "meets_95_percent_lsf_threshold": true,
+      "diesel_fuel_liters": 85.9172,
+      "diesel_operating_hours": 5.0,
+      "renewable_curtailment_wh": 147334.09,
+      "renewable_utilization_pct": 84.8217,
+      "min_soc_pct": 20.0,
+      "max_soc_pct": 70.43,
+      "soc_boundary_contacts_count": 1,
+      "physical_constraint_violations_count": 0,
+      "max_busbar_residual_w": 0.0
+    },
+    "execution_and_fault_metrics": {
+      "execution_status": "SUCCESS_CLEAN",
+      "termination_reason": null,
+      "milp_infeasibility_events_count": 0,
+      "solver_runtime_failure_events_count": 0,
+      "governed_zero_dispatch_responses_count": 0,
+      "fault_events_count": 0,
+      "fault_events": [],
+      "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+    },
+    "perturbation_parameters": {
+      "scenario_id": "S3_CONTROL",
+      "solar_scale": 1.0,
+      "wind_scale": 1.0,
+      "demand_scale": 1.0,
+      "irradiance_scale": 1.0,
+      "requested_steps": 24,
+      "completed_steps": 24
+    },
+    "run_metadata": {
+      "optimizer_type": "MILP",
+      "completed_steps": 24,
+      "max_steps": 24
+    }
+  },
+  "counterfactual_run": {
+    "physical_outcome_metrics": {
+      "unmet_load_wh": 0.0,
+      "total_demand_wh": 985504.26,
+      "load_served_fraction_pct": 100.0,
+      "meets_95_percent_lsf_threshold": true,
+      "diesel_fuel_liters": 131.9612,
+      "diesel_operating_hours": 7.0,
+      "renewable_curtailment_wh": 13130.94,
+      "renewable_utilization_pct": 98.3006,
+      "min_soc_pct": 20.79,
+      "max_soc_pct": 93.1,
+      "soc_boundary_contacts_count": 0,
+      "physical_constraint_violations_count": 0,
+      "max_busbar_residual_w": 0.0
+    },
+    "execution_and_fault_metrics": {
+      "execution_status": "SUCCESS_CLEAN",
+      "termination_reason": null,
+      "milp_infeasibility_events_count": 0,
+      "solver_runtime_failure_events_count": 0,
+      "governed_zero_dispatch_responses_count": 0,
+      "fault_events_count": 0,
+      "fault_events": [],
+      "deterministic_replay_result": "PASSED_C11_TOLERANCE"
+    },
+    "perturbation_parameters": {
+      "scenario_id": "S3",
+      "solar_scale": 1.0,
+      "wind_scale": 0.7,
+      "demand_scale": 1.0,
+      "irradiance_scale": 1.0,
+      "requested_steps": 24,
+      "completed_steps": 24
+    },
+    "run_metadata": {
+      "optimizer_type": "MILP",
+      "completed_steps": 24,
+      "max_steps": 24
+    }
+  },
+  "pair_id": "PAIR_D5-3_20260917",
+  "control_run_id": "RUN_D5-3_CONTROL",
+  "perturbed_run_id": "RUN_D5-3_PERTURBED",
+  "actual_trajectory_hash": "e33a95d0644c5cae2354749161b4749b02ef565864cf6273a69e0f51dc7306b6",
+  "initial_state_hash": "5b1f732ab888a5e438da64f8b1b3baa13d78769e7cd15ce3b960f3fe357f1aea",
+  "execution_manifest_hash": "abc62294e381b915186a8d5dd5c951f576d10f10c60b1c41ccea72fdaff390ac"
+}

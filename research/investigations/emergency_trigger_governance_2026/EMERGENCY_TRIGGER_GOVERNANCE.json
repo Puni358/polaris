@@ -1,0 +1,18 @@
+{
+  "investigation_id": "polaris_emergency_trigger_governance_2026",
+  "status": "HUMAN_DECISION_CHECKPOINT_ONLY",
+  "states_defined": [
+    "NORMAL",
+    "RESERVE DEFICIT / RECOVERY",
+    "EMERGENCY",
+    "UNKNOWN / INVALID"
+  ],
+  "unresolved_human_decisions": 5,
+  "production_modifications": 0,
+  "governance_modifications": 0,
+  "ecd_modifications": 0,
+  "optimizer_modifications": 0,
+  "battery_configuration_modifications": 0,
+  "canonical_fixture_modifications": 0,
+  "frozen_campaign_modifications": 0
+}

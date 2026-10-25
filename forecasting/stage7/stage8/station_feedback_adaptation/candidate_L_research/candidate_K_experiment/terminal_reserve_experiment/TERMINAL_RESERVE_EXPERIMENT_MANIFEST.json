@@ -1,0 +1,33 @@
+{
+  "experiment_name": "Uncertainty-Aware Terminal Reserve — Mechanism A (CONDITIONAL GO)",
+  "disclaimer": "RESEARCH-ONLY. No production, Stage 8.1, F, K, or immutable artifact was modified. Nothing promoted. The 2x2 EMS factorial was NOT run because a blocking data-validity finding (SIGNAL VALIDITY GATE: FAIL) was discovered after the degeneracy and leakage gates both passed.",
+  "based_on": [
+    "UNCERTAINTY_AWARE_TERMINAL_RESERVE_RESEARCH_DESIGN.md",
+    "K_EMS_DEGRADATION_FORENSICS.md",
+    "EMS_REPLAY_REPORT.md"
+  ],
+  "frozen_input_hashes": {
+    "matrix_38_feature_2020_2023 (CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv)": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "historical_residual_dataset_2020_2023 (CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv)": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab",
+    "candidate_F_model (candidateF_elevation_x_cloud.joblib)": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84",
+    "matrix_2024 (stage8_1_full_37_feature_matrix_2024_CORRECTED.csv)": "aeca026d1acf62f530bd00220b5d85f180670ffa8de633599d779a205134de43"
+  },
+  "k_config_verbatim_unchanged": {
+    "variant": "A_global", "alpha": 0.1, "min_history": 1, "max_clip": 75.0, "scale_mode": "unscaled"
+  },
+  "new_output_hashes": {
+    "fit_and_gates.py": "ca699379462012f6746e0cb9307dda905f40b9e0274e5e8554aaa1e02249da38",
+    "FIT_ARTIFACT.json": "96125decd972d239bf9e4de230d4d24954e96df67cb3965eb2541f6250ac0401",
+    "GATE_RESULTS.json": "313639f9b530949e00c774940585244dbdb271050216cddcfe4c0cb01034cc5c",
+    "LEAKAGE_DEGENERACY_AUDIT.md": "73737be653602f3f25704f96a3502c61a503bf7d31879c263be662f79fb31b00"
+  },
+  "gates": {
+    "degeneracy_gate": "PASS (max abs diff 0.000e+00 Wh, tolerance 1e-06 Wh, n=694 origin-arm pairs)",
+    "leakage_gate": "PASS (fit used only TRAIN_2020_2021 + VALIDATION_2022; 0 BLIND_TEST_2023 rows; 0 2024 rows)",
+    "signal_validity_gate": "FAIL (disagreement_fold is identically 0.0 for 100% of rows in the entire frozen 2020-2023 matrix, including both the TRAIN_2020_2021+VALIDATION_2022 fitting population and, for disclosure, BLIND_TEST_2023; no decile stratification is possible from this signal in this frozen dataset)"
+  },
+  "factorial_executed": false,
+  "reason_factorial_not_executed": "SIGNAL VALIDITY GATE failed. Proceeding would have required either (a) silently substituting a different signal (e.g. ctx_std_3h, named only for Mechanism B and not authorized here) or (b) running a degenerate single-bin margin while mislabeling it as regime-conditional Mechanism A. Both are unauthorized, undisclosed deviations from the committed design. Per instruction, this is reported for a decision rather than resolved unilaterally.",
+  "k_remains_research_only": true,
+  "nothing_promoted": true
+}

@@ -1,0 +1,64 @@
+{
+  "stage": "STAGE 8.2 OBSERVABILITY FEASIBILITY AUDIT",
+  "status": "AUDIT_COMPLETE",
+  "governance": {
+    "champion_preserved": "Stage 8.1 U700+V700 Steering Wind Model",
+    "champion_modified": false,
+    "forecasting_experiment_run": false,
+    "cv_run": false,
+    "odd_target_access": "NO",
+    "odd_predictions": "NO",
+    "odd_metrics": "NO",
+    "odd_tuning": "NO",
+    "integrity_check": "PASS"
+  },
+  "champion_metrics": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495
+  },
+  "candidate_classifications": {
+    "viirs_cloud_properties": {
+      "classification": "CONDITIONAL",
+      "causal_origins": "347/347",
+      "usable_rate_pct": 81.8,
+      "dissemination_latency_hours": "3 to 8",
+      "reconciliation_with_stage6_2": "Stage 6.2 queried MET Norway local reception archive (mostly AVHRR). Global NASA LAADS DAAC maintains complete VIIRS L2 files (~42 passes/day over 68.36\u00b0N)."
+    },
+    "nwc_saf_pps": {
+      "classification": "CONDITIONAL",
+      "causal_origins": "210/347",
+      "usable_rate_pct": 60.5,
+      "dissemination_latency_minutes": "30 to 60",
+      "limitation": "Public 2024 bulk CMIC archive is restricted; optical retrievals fail during polar night SZA > 84\u00b0"
+    },
+    "abisko_sites_ans": {
+      "classification": "VERIFIED",
+      "causal_origins": "347/347",
+      "usable_rate_pct": 100.0,
+      "dissemination_latency": "Instantaneous (< 1 min)",
+      "spatial_distance_km": 3.23,
+      "elevation_diff_m": 287,
+      "advantage": "Provides 100% causal, continuous, zero-latency direct and diffuse ground shortwave radiation measurements"
+    },
+    "cams_atmosphere": {
+      "classification": "VERIFIED",
+      "causal_origins": "347/347",
+      "usable_rate_pct": 100.0,
+      "spatial_resolution": "0.4\u00b0 x 0.4\u00b0 (~40 km x 15 km)",
+      "limitation": "Coarse spatial grid; Lapland background AOD is clean with minimal variability"
+    }
+  },
+  "answers_to_core_questions": {
+    "Q1_viirs_obtainable": "YES. NASA LAADS DAAC has complete global L2 VIIRS files (~42 passes/day over 68.36\u00b0N across SNPP, NOAA-20, NOAA-21).",
+    "Q2_viirs_causal": "CONDITIONAL. Physical acquisition t_acq <= t0 holds for 100% of origins, but standard science L2 files have 3-8h archiving latency.",
+    "Q3_viirs_genuinely_new": "YES. Observed cloud optical thickness, effective radius, phase, and cloud-top height are independent physical observations.",
+    "Q4_nwc_saf_obtainable": "CONDITIONAL. Operational real-time feeds exist, but continuous retrospective 2024 L2 CMIC bulk archive access is restricted.",
+    "Q5_nwc_saf_causal": "YES (Operationally). Real-time local NWC SAF PPS execution latency is fast (~30-60 min).",
+    "Q6_abisko_available": "YES. SITES Abisko ANS 2024 records contain continuous hourly/10-min direct and diffuse shortwave radiation (>98.5% complete).",
+    "Q7_abisko_useful": "YES. Located 3.23 km away (287m elevation difference), Abisko ground observations provide a direct physical measurement of prevailing atmospheric clearness and direct/diffuse ratio immediately prior to t0.",
+    "Q8_highest_upside_source": "CANDIDATE C (Abisko Direct/Diffuse Radiation) and CANDIDATE A (VIIRS Cloud Optical Thickness).",
+    "Q9_strongest_evidence_source": "CANDIDATE C (Abisko SITES ANS observations). 100% 2024 evidence, zero latency, exact variables, 100% usable rate.",
+    "Q10_best_next_experiment": "STAGE 8.3 \u2014 ABISKO OBSERVED DIRECT/DIFFUSE TRANSMISSIVITY & VIIRS CLOUD OPTICAL DENSITY EVALUATION."
+  }
+}

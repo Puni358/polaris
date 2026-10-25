@@ -1,0 +1,101 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_V3_CLASS_F_PARAMETER_FREEZE_MANIFEST",
+  "governance_status": "V3_CLASS_F_PARAMETER_FROZEN_PREDECLARED",
+  "status_flags": {
+    "V3_DESIGN_STATUS": "DESIGN_ONLY",
+    "V3_GATE2_STATUS": "REVIEW_COMPLETE",
+    "V3_GATE2A_STATUS": "SPECIFICATION_REVIEW_COMPLETE",
+    "V3_CLASS_F_PARAMETER_STATUS": "FROZEN_PREDECLARED",
+    "V3_IMPLEMENTATION_AUDIT_STATUS": "READY_FOR_GATE3_STATIC_AUDIT",
+    "V3_IMPLEMENTATION": "NOT_AUTHORIZED",
+    "V3_EXECUTION": "NOT_AUTHORIZED",
+    "V2_MODIFICATION": "NO",
+    "V2_RERUN": "NO",
+    "V1_MODIFICATION": "NO",
+    "FORECAST_MODIFICATION": "NO",
+    "EMS_MODIFICATION": "NO",
+    "OPTIMIZER_MODIFICATION": "NO",
+    "SIMULATOR_MODIFICATION": "NO",
+    "RAW_EVIDENCE_MODIFICATION": "NO",
+    "CANDIDATE_SELECTION": "NOT_PERFORMED",
+    "CANDIDATE_RANKING": "NOT_PERFORMED"
+  },
+  "timestamp_utc": "2026-09-19T16:38:30+05:30",
+  "correction_manifest": {
+    "correction_count": 4,
+    "corrections_applied": [
+      {
+        "id": "CLASS_F_CORRECTION_01_GAMMA_RATIONALE",
+        "target": "Gamma Rationale & Origin Classification",
+        "finding": "Gamma rationale must be explicitly classified as a predeclared engineering design decision, not an empirical V2 finding.",
+        "resolution": "State explicitly: gamma=0.95 was frozen before V3 implementation/execution and is not permitted to be tuned, grid-searched, or modified in response to V3 outcomes. Scientific origin: NOT empirically optimized from V2 outcomes."
+      },
+      {
+        "id": "CLASS_F_CORRECTION_02_UNMET_LOAD_SEMANTICS",
+        "target": "Unmet-Load Objective & Reliability Semantics",
+        "finding": "Unweighted objective term (gamma^t = 1.0) must not be conflated with a MILP hard constraint or a guarantee of zero unmet load.",
+        "resolution": "Explicitly distinguished: (A) Unweighted objective term (w_unmet * p_unmet * dt in MILP), (B) Hard MILP linear constraint (P_unmet is objective penalized at 10.0 $/Wh, NOT a hard linear constraint in MILP matrix), (C) Post-execution evaluation invariant (P_unmet = 0 enforced as hard invariant during evaluation/verification)."
+      },
+      {
+        "id": "CLASS_F_CORRECTION_03_HORIZON_INDEX_SEMANTICS",
+        "target": "Timestep & Horizon Index Semantics",
+        "finding": "Index t must be explicitly defined as the relative MILP decision timestep within the 24-step horizon, distinguished from simulation step k and forecast horizon h.",
+        "resolution": "Defined: k = MPC receding-horizon cycle index, h = forecast horizon index, t = decision timestep inside 24-step optimization horizon (t in 0..23). Objective weights w_t = gamma^t (w_0=1.0, w_1=0.95, ..., w_23=0.95^23 = 0.30735)."
+      },
+      {
+        "id": "CLASS_F_CORRECTION_04_OBJECTIVE_SCOPE_PRESERVATION",
+        "target": "Objective Term Scope & Constraint Integrity",
+        "finding": "Class F objective scope must be strictly preserved without modifying or adding objective terms.",
+        "resolution": "Preserved exact scope: WEIGHTED (fuel power cost, base running cost, startup penalty, battery degradation cost, curtailment cost); UNCHANGED (unmet load penalty). Hard constraints unchanged."
+      }
+    ]
+  },
+  "target_candidate": {
+    "candidate_id": "CLASS_F",
+    "name": "Horizon-Weighted MPC Objective",
+    "scientific_purpose": "Test whether modifying the MPC's treatment of future-horizon operational costs changes the forecast -> SOC -> diesel -> curtailment pathway observed in V2."
+  },
+  "frozen_parameter": {
+    "symbol": "gamma",
+    "parameter_name": "horizon_discount_factor_gamma",
+    "frozen_value": 0.95,
+    "status": "PREDECLARED ENGINEERING DESIGN VALUE",
+    "scientific_origin": "NOT EMPIRICALLY OPTIMIZED FROM V2 OUTCOMES",
+    "units": "dimensionless decay factor per relative horizon timestep t",
+    "predeclared_domain": [0.90, 0.99],
+    "freeze_mandate": "gamma=0.95 was frozen before V3 implementation/execution and is not permitted to be tuned, grid-searched, or modified in response to V3 outcomes.",
+    "tuning": "PROHIBITED",
+    "result_dependent_modification": "PROHIBITED"
+  },
+  "objective_decomposition": {
+    "weighted_operational_terms": [
+      "p_diesel power fuel cost (c_fuel * alpha * p_diesel * dt * 0.95^t)",
+      "u_diesel base running cost (c_fuel * F_base * u_diesel * dt * 0.95^t)",
+      "v_start startup penalty cost (c_start * v_start * 0.95^t)",
+      "p_chg/p_dis battery degradation cost (w_deg * (p_chg + p_dis) * dt * 0.95^t)",
+      "p_curt_sol/p_curt_wind curtailment cost (w_curt * (p_curt_sol + p_curt_wind) * dt * 0.95^t)"
+    ],
+    "unchanged_safety_terms": [
+      "p_unmet critical load penalty (w_unmet * p_unmet * dt * 1.0, c[base+9] unweighted across all t in 0..23)"
+    ]
+  },
+  "index_definitions": {
+    "k": "MPC receding-horizon cycle index across simulation trajectory",
+    "h": "Forecast horizon offset index",
+    "t": "Relative MILP decision timestep within 24-step optimization horizon (t in 0..23)",
+    "weight_sequence": "w_t = 0.95^t -> w_0 = 1.0, w_1 = 0.95, w_2 = 0.9025, ..., w_23 = 0.30735"
+  },
+  "unmet_load_semantics": {
+    "unweighted_objective_term": "w_unmet * p_unmet * dt * 1.0 in MILP objective vector (c[base+9])",
+    "milp_constraint_type": "Objective-penalized decision variable (w_unmet = 10.0 $/Wh), NOT a hard linear constraint in scipy.optimize.milp matrix",
+    "evaluation_type": "Post-execution evaluation invariant (P_unmet = 0.0 W enforced as hard invariant during simulation evaluation/verification)",
+    "disclaimer": "Unweighted objective term (gamma^t = 1.0) does NOT guarantee zero unmet load during MILP optimization."
+  },
+  "non_intervention_boundary": {
+    "v2_forecast": "UNCHANGED",
+    "v2_control": "UNCHANGED",
+    "v2_hidden_truth": "UNCHANGED",
+    "v2_initial_states": "UNCHANGED",
+    "v2_ems_baseline": "UNCHANGED"
+  }
+}

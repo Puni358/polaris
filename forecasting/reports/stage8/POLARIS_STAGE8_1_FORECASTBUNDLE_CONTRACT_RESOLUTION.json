@@ -1,0 +1,105 @@
+{
+  "project": "POLARIS",
+  "task": "STAGE8.1 CHAMPION -> FORECASTBUNDLE v1.0 CONTRACT/GOVERNANCE RESOLUTION",
+  "timestamp": "2026-09-17T19:42:00Z",
+  "starting_control_state": {
+    "compatibility_audit_decision": "NOT ESTABLISHED",
+    "implementation_authorization": "NOT AUTHORIZED",
+    "compatibility_audit_preserved": true
+  },
+  "stage8_1_champion_contract": {
+    "target_variable": "SW_IN (Solar Irradiance)",
+    "units": "W/m^2",
+    "horizon": "24 hourly steps (h=1..24)",
+    "prediction_type": "Point estimate (y_pred) only",
+    "native_bounds": false,
+    "status": "FROZEN / CLOSED"
+  },
+  "forecastbundle_v1_0_contract": {
+    "schema_version": "1.0.0",
+    "horizon_hours": 24,
+    "required_fields": [
+      "solar_irradiance",
+      "solar_generation",
+      "wind_generation",
+      "demand",
+      "metadata"
+    ],
+    "interval_constraints": "lower <= point <= upper"
+  },
+  "absence_of_evidence_rule_applied": true,
+  "evidence_level_classification": {
+    "pv_mapping": {
+      "level": "Level 1 (Existing Implementation)",
+      "status": "NOT ESTABLISHED",
+      "details": "_irradiance_to_power_w exists in LocalBaselineForecastEngine, but is not defined in base ForecastEngine contract nor explicitly authorized for Stage8.1"
+    },
+    "interval_semantics": {
+      "level": "Level 3 (Existing Contract - Structural Only)",
+      "status": "NOT ESTABLISHED",
+      "details": "ForecastBundle mandates lower <= point <= upper, but does not define statistical vs operational semantics"
+    },
+    "point_only_representation": {
+      "level": "Not Established",
+      "status": "NOT ESTABLISHED",
+      "details": "NO EXISTING AUTHORIZED UNCERTAINTY REPRESENTATION FOR THE POINT-ONLY STAGE8.1 CHAMPION WAS ESTABLISHED."
+    },
+    "wind_sourcing": {
+      "level": "Level 1 (Existing Implementation)",
+      "status": "NOT ESTABLISHED",
+      "details": "Baseline engine uses persistent station observation arrays. Stage8.1 + wind pairing is not authorized."
+    },
+    "demand_sourcing": {
+      "level": "Level 1 (Existing Implementation)",
+      "status": "NOT ESTABLISHED",
+      "details": "Baseline engine uses persistent station observation arrays. Stage8.1 + demand pairing is not authorized."
+    },
+    "combined_composition": {
+      "level": "Level 1 (Existing Implementation - Baseline Internal Only)",
+      "status": "NOT ESTABLISHED",
+      "details": "COMPOSITION PATH NOT CURRENTLY ESTABLISHED."
+    },
+    "adapter_status": {
+      "status": "NEW ADAPTER LIKELY REQUIRED",
+      "details": "NEW ADAPTER LIKELY REQUIRED, BUT THE EXACT ADAPTER OPERATIONS ARE NOT YET ESTABLISHED."
+    }
+  },
+  "frozen_contract_check": {
+    "schema_changes_required": false,
+    "status": "FROZEN_CONTRACT_CHANGE_REQUIRED = NOT ESTABLISHED",
+    "statement": "No modification to the frozen contracts is currently authorized or proposed. Whether a contract extension would be required depends on the unresolved governance decisions."
+  },
+  "unresolved_items": [
+    "PV Conversion Mapping Authorization",
+    "Point-Only Uncertainty Representation Policy",
+    "Wind Forecast Provider Definition",
+    "Demand Forecast Provider Definition",
+    "Multi-Source Composition Architecture"
+  ],
+  "governance_decisions_required": {
+    "category": "G. COMBINATION OF THE ABOVE",
+    "neutrality_principle": "Identifies required decisions only; makes NO recommendations or selections.",
+    "required_resolutions": [
+      "A. PV / Solar-Generation Mapping Authorization",
+      "B. ForecastBundle Interval Semantics and Point-Only Representation",
+      "C. Wind Forecast Source Authorization",
+      "D. Demand Forecast Source Authorization",
+      "E. Multi-Source Forecast Composition Authorization",
+      "F. ForecastBundle Contract Amendment / Extension Assessment"
+    ]
+  },
+  "final_governance_decision": "NOT ESTABLISHED",
+  "implementation_status": "NOT AUTHORIZED",
+  "prohibitions_verified": {
+    "existing_compatibility_audit_modified": false,
+    "stage8_1_changed": false,
+    "d5_changed": false,
+    "forecastbundle_changed": false,
+    "adapter_implemented": false,
+    "stage81_forecastengine_implemented": false,
+    "ems_executed": false,
+    "experiment_executed": false,
+    "uncertainty_semantics_invented": false,
+    "new_composition_introduced": false
+  }
+}

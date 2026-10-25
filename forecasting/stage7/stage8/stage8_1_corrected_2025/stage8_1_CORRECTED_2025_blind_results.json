@@ -1,0 +1,76 @@
+{
+  "generated_at_utc": "2026-10-02T23:13:44.107245+00:00",
+  "purpose": "2025 blind evaluation of the CORRECTED frozen Stage 8.1 37-feature model. No retraining, no tuning, no feature/model modification. actual_SW_IN used only for post-inference metrics, never as a model input.",
+  "hash_verification": {
+    "feature_matrix_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_full_37_feature_matrix_2025_CORRECTED.csv",
+    "feature_matrix_sha256": "9fe6b9f8b46b89e28315606b365ab6cf6055292240980f211304d379143d2087",
+    "feature_matrix_hash_expected_match": true,
+    "model_path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/model_artifact/stage8_1_CORRECTED_candidate_37feature_model.joblib",
+    "model_sha256": "64ea4abada78a257f9ad053f1d869dddb983160490e06d1528954fd2205009ce",
+    "model_hash_expected_match": true
+  },
+  "coverage": {
+    "rows": 8736,
+    "origins": 364,
+    "unique_valid_time_hours": 8736,
+    "expected_full_year_hours": 8760,
+    "missing_hours_count": 24,
+    "missing_hours_reason": "Stage 3b origin set starts 2025-01-02 (2025-01-01 excluded for lacking prior-day context); pre-existing, not introduced here.",
+    "horizons_per_origin_ok": true,
+    "duplicates": 0
+  },
+  "blind_inference_audit": {
+    "actual_SW_IN_in_model_input_columns": false,
+    "n_model_input_columns": 37,
+    "nan_cells_in_X": 3640,
+    "day_night_gate_used_for_primary_run": "causal (solar_elevation<=0 OR clearsky_ghi==0); does not read actual_SW_IN",
+    "day_night_gate_disagreement_with_target_based_gate": 1532,
+    "single_vectorized_predict_call": true,
+    "parallel_workers_used": 0,
+    "parallelization_rationale": "single in-memory predict() over 8,736 rows on an already-fitted sklearn estimator completes in well under a second; no I/O-bound or long-running work exists to parallelize, so no worker threads were forced (up to 8 were permitted, 0 were needed)."
+  },
+  "metrics_primary_causal_gate": {
+    "overall": {
+      "n": 8736,
+      "mae": 24.617159796246128,
+      "rmse": 54.54919135923021,
+      "bias": 2.7920742773367584,
+      "nmae_pct": 28.247809014835934,
+      "mean_actual": 87.14714753033425
+    },
+    "daytime_actual_gt_0": {
+      "n": 5978,
+      "mae": 35.97449113081401,
+      "rmse": 65.94269226980208,
+      "bias": 4.080220957981586,
+      "nmae_pct": 28.24780901483593,
+      "mean_actual": 127.35320856891937
+    }
+  },
+  "metrics_reference_target_based_gate": {
+    "overall": {
+      "n": 8736,
+      "mae": 24.485163094696482,
+      "rmse": 54.53125794628869,
+      "bias": 3.0987269159263686,
+      "nmae_pct": 28.096344847286787,
+      "mean_actual": 87.14714753033425
+    },
+    "daytime_actual_gt_0": {
+      "n": 5978,
+      "mae": 35.78159665360798,
+      "rmse": 65.92101316693213,
+      "bias": 4.528350340838534,
+      "nmae_pct": 28.09634484728679,
+      "mean_actual": 127.35320856891937
+    }
+  },
+  "per_horizon_daytime_metrics_csv": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_horizon_metrics.csv",
+  "predictions_csv": {
+    "path": "/home/punith-bs/01polaris (Copy)/stage7/stage8/stage8_1_corrected_2025/stage8_1_CORRECTED_2025_blind_predictions.csv",
+    "sha256": "65e0a0acf2d7196bfa557b319419f0c340b63f1d01d69d5b20c93217742e9500"
+  },
+  "branch01_comparison_performed": false,
+  "retraining_or_tuning_performed": false,
+  "model_or_features_modified": false
+}

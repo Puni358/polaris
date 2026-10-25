@@ -1,0 +1,40 @@
+{
+  "audit_version": "1.0.0",
+  "audit_title": "POLARIS Stage 8.1 Candidate A Rolling-Horizon Step-A Audit",
+  "timestamp": "2026-09-21T00:45:19.159371+00:00",
+  "frozen_previous_experiment_reference": "POLARIS_STAGE81_MULTI_TRAJECTORY_2024_HELD_OUT_EVALUATION (-50.55% aggregate saving, 173 trajectories)",
+  "frozen_input_hashes": {
+    "prediction_artifact_sha256": "213a71e132f51ed5673634d42f61d8bf2b26386ccfad358aca8bc3704d18d707",
+    "fixture_csv_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023"
+  },
+  "phase_0_causal_forecast_availability_gate": {
+    "status": "FAIL",
+    "verdict": "CANDIDATE_A_BLOCKED_INSUFFICIENT_CAUSAL_FORECAST_DATA",
+    "total_mpc_steps_audited": 48,
+    "failing_mpc_steps": 48,
+    "primary_reason": "In the frozen prediction artifact (stage8_1_official_odd_predictions.csv), forecast origins occur only every 48 hours with max horizon_hour=24. At MPC step k >= 1 (e.g. 01:00), the 24th required target (01:00 + 24h = 01:00 next day) is not present in origin 00:00 (which maxes out at 24:00). The next origin in the artifact is 48 hours later (origin 2024-12-18T00:00:00Z). No prediction from origin <= current_MPC_time exists for hours t_k + 25h onwards. Governance strictly prohibits synthetic prediction generation, clear-sky filling, zero-padding, or future-origin prediction leakage."
+  },
+  "phase_1_r2_source_verification": {
+    "status": "PASS",
+    "verified_defect": "In run_polaris_stage81_multi_trajectory_experiment.py, horizon_fcst = s81_vec[k:] + [s81_vec[-1]] * k truncates the 24h vector and pads remaining hours with s81_vec[-1] (0.0 W/m^2)."
+  },
+  "candidate_a_implementation": "BLOCKED",
+  "step_a_execution": "NOT_EXECUTED",
+  "step_a_trajectories": 0,
+  "governance_status": {
+    "FROZEN_PREVIOUS_EXPERIMENT_MODIFIED": "NO",
+    "ORIGINAL_173_TRAJECTORY_RERUN": "NO",
+    "NEW_173_TRAJECTORY_RUN": "NO",
+    "NEW_10_TRAJECTORY_RUN": "NO",
+    "CAUSAL_FORECAST_AVAILABILITY": "FAIL",
+    "R2_SOURCE_VERIFICATION": "PASS",
+    "CANDIDATE_A_IMPLEMENTATION": "BLOCKED",
+    "STEP_A_EXECUTION": "NOT_EXECUTED",
+    "STEP_A_TRAJECTORIES": 0,
+    "FUTURE_TRUTH_LEAKAGE": "NONE",
+    "ZERO_PADDING": "NONE",
+    "HORIZON_SYMMETRY": "FAIL",
+    "CANDIDATE_A_CLASSIFICATION": "D",
+    "NEXT_STEP": "STOP_PENDING_SEPARATE_AUTHORIZATION"
+  }
+}

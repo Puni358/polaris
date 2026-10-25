@@ -1,0 +1,70 @@
+{
+  "governance_package_metadata": {
+    "title": "POLARIS EMS Objective Stakeholder Governance Review Package",
+    "version": "1.0.0-FINAL",
+    "governance_status": "STAKEHOLDER_REVIEW_PACKAGE_COMPLETE",
+    "timestamp": "2026-09-21T21:56:54Z",
+    "directory": "POLARIS_EMS_OBJECTIVE_STAKEHOLDER_REVIEW/",
+    "frozen_optimizer_file": "system/optimization/implementations/milp.py",
+    "frozen_optimizer_sha256": "ee913b68b736602ef8f50163198ae34fe59efe8e0ba852c6f4710fbe91999b35"
+  },
+  "final_governance_status": {
+    "AUTHORITATIVE_REQUIREMENTS_AUDIT": "INSUFFICIENT_EVIDENCE",
+    "CURRENT_OBJECTIVE_IMPLEMENTATION_AUDIT": "PASS",
+    "OBJECTIVE_REQUIREMENT_ALIGNMENT": "PARTIALLY_ALIGNED",
+    "RELIABILITY_REQUIREMENT": "QUALITATIVELY_SPECIFIED",
+    "FUEL_REQUIREMENT": "QUALITATIVELY_SPECIFIED",
+    "RENEWABLE_REQUIREMENT": "QUALITATIVELY_SPECIFIED",
+    "BATTERY_REQUIREMENT": "PARTIALLY_GOVERNED",
+    "CRITICAL_LOAD_POLICY": "QUALITATIVELY_SPECIFIED",
+    "LOAD_SHEDDING_POLICY": "QUALITATIVELY_SPECIFIED",
+    "FORECAST_UNCERTAINTY_POLICY": "QUALITATIVELY_SPECIFIED",
+    "FUEL_VS_RELIABILITY_TRADEOFF": "NOT_SPECIFIED",
+    "OBJECTIVE_PRIORITY": "NOT_SPECIFIED",
+    "OBJECTIVE_FORMULATION_POLICY": "NOT_SPECIFIED",
+    "NUMERICAL_POLICY_GAPS": 10,
+    "STAKEHOLDER_DECISIONS_REQUIRED": 16,
+    "DRAFT_REVIEW_SPECIFICATION": "COMPLETE",
+    "STAKEHOLDER_AUTHORIZATION": "NOT_GRANTED",
+    "OBJECTIVE_MODIFICATION": "NOT_AUTHORIZED",
+    "EMS_MODIFICATION": "NOT_AUTHORIZED",
+    "MODEL_MODIFICATION": "NOT_AUTHORIZED",
+    "NEW_EMS_EXPERIMENT": "NOT_AUTHORIZED",
+    "V2_EVIDENCE_LOCK": "PASS",
+    "ANNUAL_RESULT_STATUS": "REPRESENTATIVE_TRAJECTORY_SET",
+    "NUOLJA_STATION_SPECIFIC_ANNUAL_SAVING": "NOT_ESTABLISHED",
+    "NEXT_GOVERNED_STEP": "STAKEHOLDER_REVIEW_AND_DECISION_ON_EXPLICIT_EMS_POLICY"
+  },
+  "current_implementation_coefficients": {
+    "renewable_curtailment_penalty_per_kwh": 1.0,
+    "bess_degradation_penalty_per_kwh": 0.05,
+    "marginal_diesel_cost_per_kwh": 0.625,
+    "unmet_load_penalty_per_kwh": 10000.0,
+    "base_running_fuel_cost_per_hour": 12.5,
+    "generator_startup_penalty": 15.0,
+    "objective_cost_coefficient_ratio": "16000:1"
+  },
+  "v2_evidence_summary": {
+    "trajectories_evaluated": 173,
+    "h1_steps_evaluated": 4152,
+    "control": {
+      "diesel_generation_kwh": 62126.805,
+      "fuel_consumption_liters": 22486.701,
+      "load_served_kwh": 75480.485,
+      "unmet_load_kwh": 40352.215
+    },
+    "treatment": {
+      "diesel_generation_kwh": 95667.521,
+      "fuel_consumption_liters": 33836.880,
+      "load_served_kwh": 106024.238,
+      "unmet_load_kwh": 9808.462
+    },
+    "difference": {
+      "fuel_liters_diff": 11350.179,
+      "load_served_kwh_diff": 30543.753,
+      "unmet_load_kwh_diff": -30543.753
+    },
+    "observed_v2_fuel_unmet_load_change_ratio_l_per_kwh": 0.3716,
+    "classification": "OBSERVED_AGGREGATE_V2_TRAJECTORY_DEPENDENT_RESULT"
+  }
+}

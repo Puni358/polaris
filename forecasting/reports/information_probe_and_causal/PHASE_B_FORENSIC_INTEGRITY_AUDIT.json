@@ -1,0 +1,35 @@
+{
+  "audit_name": "PHASE_B_FORENSIC_INTEGRITY_AUDIT",
+  "timestamp_utc": "2026-09-16T05:28:50Z",
+  "overall_verdict": "PASS — Scientifically verified under controlled interpretation boundaries",
+  "checks": {
+    "1_artifact_numerical_agreement": "PASS",
+    "2_artifact_hash_verification": "PASS",
+    "3_phase_b_population": "PASS",
+    "4_k5_nearest_neighbour_construction": "PASS",
+    "5_b1_rank_diagnostic_verification": "PASS",
+    "6_b2_pinball_loss_verification": "PASS",
+    "7_b3_bimodality_procedural_check": "NOT VERIFIABLE / PROCEDURALLY COMPROMISED",
+    "8_leakage_causality_audit": "PASS",
+    "9_model_fitting_audit": "PASS",
+    "10_feature_integrity_audit": "PASS",
+    "11_odd_firewall": "PASS",
+    "12_scientific_interpretation_audit": "PASS",
+    "13_preserve_phase_a_context": "PASS",
+    "14_governance": "PASS",
+    "15_artifact_provenance": "PASS",
+    "16_no_experimental_rerun": "PASS",
+    "17_final_audit_status": "PASS"
+  },
+  "artifact_hashes": {
+    "PHASE_B_HEDGING_DIAGNOSTIC.md": "f101bdcd8f29ea3cbcf7918a38fe4119dcfed458eb9b7b952fef9bcbf37108aa",
+    "PHASE_B_HEDGING_DIAGNOSTIC.json": "d376296878b42c0a7981e81550c7077caee81b478669594a7af0c89899b874ca",
+    "run_phase_b_hedging_diagnostic.py": "229f1b8c1b0375027d5f84702da23b1905ce49dadd0afd5001f82782432e1004"
+  },
+  "structured_synthesis": {
+    "DEMONSTRATED": "Directly established by audit: 104 eligible EVEN origins evaluated over 604 daytime H7-H12 hours. Champion forecasts concentrate at mean rank 2.2219/5.0 (0.4459 normalized) within local 5-neighbour ensembles. Champion point forecast achieves q=0.5 pinball loss of 0.1058 vs 0.1267 for 5-neighbour empirical median. Champion MAE is 1.09x higher (0.2145 vs 0.1974) during high-spread/bimodal ensemble hours.",
+    "SUPPORTED_CONSISTENT_WITH": "Compatible with diagnostics: Evidence is consistent with conditional-median hedging behavior in local causal-state neighbourhoods and shows error elevation during multi-regime hours.",
+    "NOT_ESTABLISHED": "Cannot be concluded: M3 is not established to the exclusion of representation limitations (M2) or event-timing uncertainty. Bimodality is not proven to cause MAE elevation. No Phase C decision or model candidate is established."
+  },
+  "controlled_phase_b_interpretation": "Phase B provides diagnostic evidence consistent with conditional-median hedging in the tested local causal-state neighbourhoods: champion forecasts tend to occupy central positions within the five-neighbour empirical ensembles, while the neighbour-ensemble median does not outperform the champion under the q=0.5 pinball-loss comparison. The reported bimodality/high-spread diagnostic is also associated with elevated champion MAE. However, these results do not by themselves establish M3, because the five-neighbour empirical ensemble is a small local approximation and the diagnostics do not exclude representation limitations or unresolved event-timing uncertainty."
+}

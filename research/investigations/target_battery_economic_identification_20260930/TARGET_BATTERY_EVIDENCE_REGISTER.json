@@ -1,0 +1,53 @@
+{
+  "study_metadata": {
+    "study_id": "target_battery_economic_identification_20260930",
+    "timestamp": "2026-09-30T23:38:00Z",
+    "target_context": "SITES Nuolja Field Research Station, Abisko, Sweden",
+    "lead_investigator": "POLARIS Research & Governance Execution Agent",
+    "governance_mode": "RESEARCH_ONLY",
+    "final_evidence_status": "TARGET_BATTERY_EVIDENCE_INSUFFICIENT",
+    "degradation_economics_status": "NOT_IDENTIFIABLE",
+    "target_model_identification_status": "NOT_IDENTIFIABLE"
+  },
+  "evidence_sources": [
+    {
+      "source_id": "SRC-001",
+      "name": "POLARIS_v0_1_SITES_Nuolja_2024_hourly_5var.csv",
+      "type": "METEOROLOGICAL_GROUND_TRUTH",
+      "tier": "TIER_A",
+      "target_relevance": "Direct weather telemetry from Nuolja Middle Station (SW_IN, Temp, Wind). Contains ZERO battery hardware or BMS telemetry.",
+      "evidence_findings": "Confirms site is an atmospheric field station."
+    },
+    {
+      "source_id": "SRC-002",
+      "name": "POLARIS_EMS_MINIMUM_SYNTHETIC_FIXTURE.json",
+      "type": "SYNTHETIC_ENGINEERING_FIXTURE",
+      "tier": "TIER_SYNTHETIC",
+      "target_relevance": "Defines synthetic 200.0 kWh / 50.0 kW BESS fixture for MILP algorithm benchmarking. Explicitly sets real_nuolja_data: false.",
+      "evidence_findings": "Synthetic reference, NOT physical target hardware."
+    },
+    {
+      "source_id": "SRC-003",
+      "name": "Swedish Polar Research Secretariat Site Infrastructure Catalog",
+      "type": "INSTITUTIONAL_DOCUMENTATION",
+      "tier": "TIER_A",
+      "target_relevance": "Station infrastructure inventory for Abisko Scientific Research Station & Nuolja field sites.",
+      "evidence_findings": "No utility-scale (200 kWh) BESS asset listed for Nuolja Middle Station."
+    },
+    {
+      "source_id": "SRC-004",
+      "name": "NREL / Academic Lithium-Ion Aging Literature (Wang 2011, Schmalstieg 2014)",
+      "type": "GENERAL_TECHNICAL_LITERATURE",
+      "tier": "TIER_C",
+      "target_relevance": "Provides semi-empirical degradation equation structures (Q_loss = A * exp(-Ea/RT) * t^z + B * Ah).",
+      "evidence_findings": "Supports model structure ONLY. Cannot parameterize unestablished Nuolja hardware."
+    }
+  ],
+  "evidence_hierarchy_summary": {
+    "tier_a_sources_count": 2,
+    "tier_b_sources_count": 0,
+    "tier_c_sources_count": 2,
+    "tier_d_sources_count": 0,
+    "target_specific_hardware_evidence_found": false
+  }
+}

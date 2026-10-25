@@ -1,0 +1,198 @@
+{
+  "project": "POLARIS",
+  "task": "REAL ENERGY-DEMAND DATA PATH DECISION RECORD",
+  "timestamp": "2026-09-17T18:12:06Z",
+  "project_decision": "PENDING HUMAN AUTHORIZATION",
+  "access_status": "REAL DATA ACCESS RESTRICTED",
+  "adapter_status": "NOT IMPLEMENTED / NOT AUTHORIZED",
+  "hybrid_scenario_status": "NOT AUTHORIZED",
+  "stage8_1_status": "FROZEN / NOT CONNECTED / NOT AUTHORIZED",
+  "d5_status": "CLOSED / UNTOUCHED / NOT RERUN",
+  "synthetic_fixtures_status": "PRESERVED",
+  "architectural_compatibility": "NO FROZEN-CONTRACT INCOMPATIBILITY IDENTIFIED DURING RECONNAISSANCE/INSPECTION",
+  "purpose": "Provide neutral decision support comparing Path A (Formal Restricted-Data Access) and Path B (Explicitly Authorized Hybrid Scenario) without ranking, scoring, or recommending.",
+  "authoritative_current_state": {
+    "access_status": "REAL DATA ACCESS RESTRICTED",
+    "inspected_evidence": {
+      "sites_nuolja": "Real hourly SW_IN data exists, but NOT electrical demand.",
+      "aadc_antarctic": "Monthly energy totals available, but not continuous high-resolution demand series.",
+      "sanae_iv": "Literature describes 1h logging, but raw measured time series access is restricted.",
+      "princess_elisabeth": "Literature describes operational profiles, but raw telemetry access is restricted.",
+      "acep_arctic": "Microgrid load information exists, but raw data access is restricted/institutional.",
+      "openei_kaggle": "Explicitly treated as synthetic/anonymized proxies, NOT real polar station demand."
+    },
+    "adapter_implemented": false,
+    "synthetic_fixtures_preserved": true,
+    "frozen_contracts_preserved": true
+  },
+  "decision_required": {
+    "statement": "The project team must decide whether to pursue formal restricted-data access (Path A) or separately authorize a clearly labelled hybrid scenario (Path B).",
+    "authorization_granted": false,
+    "exhaustive": false
+  },
+  "path_a_formal_restricted_data_access": {
+    "objective": "Pursue formal access to a restricted continuous high-resolution measured polar-station electrical-demand dataset.",
+    "required_inputs": "Authorized raw measured electrical demand time-series data from an active or historical polar station.",
+    "required_access_authorization": "Formal institutional data request, data-sharing agreement, credentials, or explicit operator authorization.",
+    "engineering_work_required_after_authorization": [
+      "Inspect and validate raw measurement quality, timestamps, missing values, and physical units",
+      "Determine temporal resolution, coverage, and continuity",
+      "Assess boundary compatibility with StationState and LocalDataProvider",
+      "Design, implement, and verify dedicated RealDataIngestionAdapter",
+      "Execute validation suite on adapter output"
+    ],
+    "scientific_validity": "If obtained and validated, allows claiming system execution and evaluation against actual measured polar-station electrical demand.",
+    "what_it_does_not_allow_to_claim": [
+      "Does NOT allow claiming global generalization across all polar stations",
+      "Does NOT allow claiming real-world physical safety guarantees or live operational control validation",
+      "Does NOT allow claiming empirical Stage8.1 -> EMS causality unless Stage8.1 is also authorized and connected"
+    ],
+    "main_dependencies": [
+      "Successful formal access approval from station data owners",
+      "Delivery of uncorrupted, continuous, high-resolution demand series"
+    ],
+    "main_limitations": [
+      "Unpredictable timelines for institutional approval (NOT ESTABLISHED BY CURRENT EVIDENCE)",
+      "Potential data gaps, confidentiality restrictions, or non-disclosure terms"
+    ],
+    "reproducibility_implications": "If access is restricted/proprietary, third-party reproduction may require explicit access credentials or data-sharing agreements.",
+    "relationship_to_frozen_architecture": "Integrates upstream of LocalDataProvider via a dedicated adapter. Requires zero changes to frozen EMS, MILP, MPC, or Digital Twin logic.",
+    "preconditions_before_implementation": [
+      "Formal project decision selecting Path A",
+      "Approval and delivery of authorized measured dataset",
+      "Measurement validation audit"
+    ]
+  },
+  "path_b_explicitly_authorized_hybrid_scenario": {
+    "objective": "Construct and evaluate an explicitly labelled hybrid scenario combining legitimate measured renewable/weather observations with explicitly modelled demand components.",
+    "required_inputs": [
+      "Real measured solar irradiance / weather observations (e.g., SITES Nuolja SW_IN)",
+      "Clearly identified measured demand sources where legitimately available",
+      "Explicitly documented synthetic/modelled demand trajectories where measured station demand is unavailable"
+    ],
+    "required_access_authorization": "Explicit project governance authorization to define and execute a hybrid scenario.",
+    "engineering_work_required_after_authorization": [
+      "Define explicit mathematical models or profile generators for station demand",
+      "Implement hybrid data provider / scenario generator",
+      "Label all outputs explicitly as HYBRID / MODELLED-SYSTEM artifacts",
+      "Validate dataset integrity through DataProvider -> StationState pipeline"
+    ],
+    "scientific_validity": "Allows evaluating EMS/MPC optimization performance and control interactions under realistic environmental driving conditions with explicitly controlled demand assumptions.",
+    "what_it_does_not_allow_to_claim": [
+      "Must NOT be presented as a fully measured polar-station system",
+      "Must NOT be claimed as real-station empirical validation",
+      "Must NOT be claimed as empirical validation of actual station demand",
+      "Must NOT be claimed as a replacement for the missing measured-demand dataset"
+    ],
+    "main_dependencies": [
+      "Project governance authorization for hybrid scope",
+      "Validated real renewable/weather time series"
+    ],
+    "main_limitations": [
+      "Demand profiles rely on synthetic/modelled assumptions rather than empirical telemetry"
+    ],
+    "reproducibility_implications": "Fully reproducible using open weather datasets and published demand model scripts.",
+    "relationship_to_frozen_architecture": "Fully compatible with LocalDataProvider and existing pipeline; requires zero modifications to downstream frozen contracts.",
+    "preconditions_before_implementation": [
+      "Formal project decision selecting Path B",
+      "Written governance authorization specifying allowed hybrid parameters and explicit labelling rules"
+    ]
+  },
+  "neutral_comparison": {
+    "primary_data_source": {
+      "path_a": "Real measured polar station demand time series",
+      "path_b": "Measured weather/renewable data + modelled demand"
+    },
+    "access_requirement": {
+      "path_a": "Formal institutional access request / agreement",
+      "path_b": "Project governance authorization"
+    },
+    "empirical_validity": {
+      "path_a": "Measured station demand trajectory",
+      "path_b": "Synthetic/modelled demand trajectory"
+    },
+    "third_party_reproducibility": {
+      "path_a": "Subject to data access restrictions",
+      "path_b": "100% reproducible with open code/weather data"
+    },
+    "timeline_access_likelihood": {
+      "path_a": "NOT ESTABLISHED BY CURRENT EVIDENCE",
+      "path_b": "Immediate upon project authorization"
+    },
+    "downstream_architecture_impact": {
+      "path_a": "Zero change to frozen EMS/contracts",
+      "path_b": "Zero change to frozen EMS/contracts"
+    },
+    "primary_claim_boundary": {
+      "path_a": "Validated on actual station demand",
+      "path_b": "Validated on hybrid weather/modelled demand"
+    }
+  },
+  "scientific_claim_boundaries": [
+    "Neither Path A nor Path B, by itself, automatically establishes real-station operational validation.",
+    "Neither path automatically establishes generalization across polar stations.",
+    "Neither path automatically establishes global EMS robustness guarantees.",
+    "Neither path automatically establishes real-world physical safety guarantees.",
+    "Neither path automatically establishes empirical Stage8.1 -> EMS causality.",
+    "Neither path automatically establishes universal forecasting-to-operations benefit."
+  ],
+  "architectural_compatibility": {
+    "finding": "No frozen-contract incompatibility was identified during reconnaissance/inspection; adapter feasibility appears possible, subject to obtaining and validating the required high-resolution measurements.",
+    "clarifications": [
+      "Does NOT mean adapter is validated",
+      "Does NOT mean adapter is ready",
+      "Does NOT mean real-data integration is complete",
+      "Does NOT mean real-data compatibility is 100% proven",
+      "Does NOT mean real-data path has been experimentally demonstrated"
+    ],
+    "target_pipeline": "Real measured demand -> authorized provider/adapter -> StationState -> existing ForecastEngine boundary -> ForecastBundle v1.0 -> frozen EMS / MILP / MPC -> DispatchPlan -> DigitalTwin -> Evaluation"
+  },
+  "dependencies_and_preconditions": {
+    "path_a": [
+      "Project decision selecting Path A",
+      "Formal data request submitted",
+      "Access granted and dataset received",
+      "Measurement quality audited",
+      "Adapter implementation authorized"
+    ],
+    "path_b": [
+      "Project decision selecting Path B",
+      "Hybrid scenario scope defined",
+      "Labelling rules established",
+      "Governance authorization granted",
+      "Scenario generator implementation authorized"
+    ]
+  },
+  "synthetic_fixture_preservation": {
+    "status": "PRESERVED",
+    "fixtures": [
+      "demo_scenario.json",
+      "synthetic_168h_endurance_scenario.json",
+      "renewable_stress_scenario.json",
+      "demand_stress_scenario.json",
+      "battery_stress_scenario.json"
+    ],
+    "role": "Validated engineering/regression test backend"
+  },
+  "stage8_1_and_d5_status": {
+    "stage8_1": "FROZEN / NOT CONNECTED / NOT AUTHORIZED",
+    "d5": "CLOSED / UNTOUCHED / NOT RERUN"
+  },
+  "decision_authority": {
+    "current_access": "REAL DATA ACCESS RESTRICTED",
+    "decision_required": "The project team must decide whether to pursue formal restricted-data access (Path A) or separately authorize a clearly labelled hybrid scenario (Path B).",
+    "authorization_status": "No implementation should begin until that decision is explicitly authorized. Creation of this decision record does NOT constitute authorization for either path.",
+    "project_decision": "PENDING HUMAN AUTHORIZATION"
+  },
+  "required_next_action_after_human_decision": "Once the project team renders a formal decision: if Path A is selected, initiate formal data request process; if Path B is selected, draft hybrid scenario specification document. No software implementation, data ingestion, or experiment shall be initiated prior to explicit authorization.",
+  "final_status_summary": {
+    "real_energy_demand_path": "DECISION PENDING HUMAN AUTHORIZATION",
+    "access_status": "REAL DATA ACCESS RESTRICTED",
+    "adapter_status": "NOT IMPLEMENTED / NOT AUTHORIZED",
+    "hybrid_scenario": "NOT AUTHORIZED",
+    "stage8_1": "FROZEN / NOT CONNECTED / NOT AUTHORIZED",
+    "d5": "CLOSED / UNTOUCHED / NOT RERUN",
+    "synthetic_fixtures": "PRESERVED",
+    "architectural_compatibility": "NO FROZEN-CONTRACT INCOMPATIBILITY IDENTIFIED DURING RECONNAISSANCE/INSPECTION"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "checkpoint_metadata": {
+    "track": "PATH_A_WIND_FORECASTING",
+    "phase": "POLARIS_WIND_SPEED_REPRESENTATION_FREEZE_CHECKPOINT",
+    "timestamp_utc": "2026-09-18T06:38:30Z",
+    "checkpoint_type": "GOVERNANCE_FREEZE_CHECKPOINT",
+    "evaluator": "POLARIS_GOVERNANCE_AGENT"
+  },
+  "authoritative_frozen_decision": {
+    "WIND_SPEED_REPRESENTATION_ARCHITECTURE_DECISION": "B",
+    "ARCHITECTURAL_OPTION_SELECTION": "B",
+    "OPTION_B_STATUS": "VIABLE",
+    "OPTION_C_STATUS": "CONDITIONALLY_VIABLE",
+    "FORECASTBUNDLE_VERSION": "1.0.0",
+    "FORECASTBUNDLE_CONTRACT_REVISION_REQUIRED": "NO",
+    "FORECASTENGINE_CONTRACT_CHANGE_REQUIRED": "NO",
+    "STATIONSTATE_CHANGE_REQUIRED": "NO",
+    "DOWNSTREAM_CONSUMER_CHANGE_REQUIRED": "NO",
+    "A2_WIND_SPEED_SEMANTICS_PRESERVED": "YES",
+    "WIND_GENERATION_SEMANTICS_PRESERVED": "YES",
+    "NEW_ARCHITECTURE_REQUIRED": "NO"
+  },
+  "option_b_frozen_specification": {
+    "forecastbundle_schema_action": "Preserve frozen ForecastBundle v1.0.0 top-level schema unchanged.",
+    "transport_channel": "ForecastBundle.metadata dictionary (Dict[str, Any]).",
+    "target_field_key": "wind_speed_forecast",
+    "units": "m/s",
+    "target_height": "10m",
+    "target_station": "SMHI Abisko Aut 188790",
+    "proxy_label": "CONDITIONAL_REGIONAL_PROXY_FOR_NUOLJA",
+    "horizon_hours": 24,
+    "timestep": "1-hour",
+    "wind_generation_semantics": "Preserve existing wind_generation (W) semantics intact without repurposing or overwriting.",
+    "forecastengine_contract": "Preserve system/forecasting/interface/base.py abstract predict(...) contract unchanged.",
+    "stationstate_contract": "Preserve system/schemas/station_state.py unchanged."
+  },
+  "source_artifacts": [
+    {
+      "path": "POLARIS_WIND_SPEED_REPRESENTATION_ARCHITECTURE_DECISION.md",
+      "type": "ARCHITECTURE_DECISION_MD"
+    },
+    {
+      "path": "POLARIS_WIND_SPEED_REPRESENTATION_ARCHITECTURE_DECISION.json",
+      "type": "ARCHITECTURE_DECISION_JSON"
+    },
+    {
+      "path": "POLARIS_WIND_SPEED_METADATA_TRANSPORT_GOVERNANCE_DECISION.md",
+      "type": "GOVERNANCE_DECISION_MD"
+    },
+    {
+      "path": "POLARIS_WIND_SPEED_METADATA_TRANSPORT_GOVERNANCE_DECISION.json",
+      "type": "GOVERNANCE_DECISION_JSON"
+    }
+  ],
+  "governance_and_firewall_verifications": {
+    "IMPLEMENTATION_STATUS": "NOT_AUTHORIZED",
+    "IMPLEMENTATION_AUTHORIZATION": "NOT_AUTHORIZED",
+    "FORECASTBUNDLE_INTEGRATION": "NOT_AUTHORIZED",
+    "EMS_INTEGRATION": "NOT_AUTHORIZED",
+    "PRODUCTION_MODIFICATION": "NOT_AUTHORIZED",
+    "FROZEN_CONTRACT_CHANGE": "NOT_AUTHORIZED",
+    "WIND_POWER_MAPPING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_FORECASTING": "NOT_AUTHORIZED",
+    "WIND_GENERATION_MAPPING_DECISION": "C",
+    "WIND_POWER_MAPPING_IMPLEMENTATION_READINESS": "NOT_READY",
+    "MODIFICATION_FIREWALL_STATUS": "PASS"
+  },
+  "single_next_governed_step": "AUTHORIZATION_GATE_FOR_OPTION_B_METADATA_SPECIFICATION_AND_ADAPTER_IMPLEMENTATION"
+}

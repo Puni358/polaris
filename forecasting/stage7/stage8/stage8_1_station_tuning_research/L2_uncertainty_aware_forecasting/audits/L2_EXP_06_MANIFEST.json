@@ -1,0 +1,67 @@
+{
+  "experiment_id": "L2-EXP-06",
+  "title": "POLARIS L2 Domain / Measurement Evidence Audit for Solar Physical Uncertainty Envelope",
+  "status": "PASS",
+  "decision_category": "DOMAIN-AUTHORITY-REQUIRED",
+  "timestamp_utc": "2026-10-04T05:52:00+00:00",
+  "authoritative_evidence_inspected": {
+    "sites_nuolja_2020_raw_l2": {
+      "path": "data/raw_historical_sites_download/SITES_MET_ANS_NMS_20200101-20210101_L2_SH.csv",
+      "sha256": "0964f90c735c3c3d3473c21680066d726aedb6166464e1aa900b410da68df590"
+    },
+    "sites_nuolja_2021_raw_l2": {
+      "path": "data/raw_historical_sites_download/SITES_MET_ANS_NMS_20210101-20220101_L2_SH.csv",
+      "sha256": "b7401e25c267dd1517cc2bddcba5fc29623915c73c54636fd1343769a8bc58bd"
+    },
+    "sites_nuolja_2022_raw_l2": {
+      "path": "data/raw_historical_sites_download/SITES_MET_ANS_NMS_20220101-20221231_L2_SH.csv",
+      "sha256": "85652531b70d85346f2c064420976cbdbd2e9e4946dd83b33d013eb9777e72d6"
+    },
+    "sites_nuolja_2023_raw_l2": {
+      "path": "data/raw_historical_sites_download/SITES_MET_ANS_NMS_20230101-20231231_L2_SH.csv",
+      "sha256": "38bee0f31503f797275a6e59144ba8530361bf2af81d039201af4b4c1e19fd5a"
+    },
+    "sites_nuolja_2019_context_l2": {
+      "path": "data/raw_historical_sites_download/SITES_MET_ANS_NMS_20190619-20191231_L2_SH.csv",
+      "sha256": "773ea0c717fffe712d124a84bf1b5d02192f183b13a3f55b0bad9153d9ac24e9"
+    },
+    "candidate_f_historical_residual_dataset": {
+      "path": "candidate_L_research/CANDIDATE_F_HISTORICAL_RESIDUAL_DATASET_2020_2023.csv",
+      "sha256": "1337a56896ba1ea2d3ff40ad2513e02c7f662bbfc3c71ffb717c22542ee2dbab"
+    },
+    "sites_historical_nuolja_manifest": {
+      "path": "data/POLARIS_HISTORICAL_NUOLJA_ACQUISITION_MANIFEST.json",
+      "sha256": "c04d6be5410680205e5864fc03b63dc2ba67375a8ab42fbe57bbf62f3d526070"
+    },
+    "sites_historical_nuolja_validation_doc": {
+      "path": "candidate_L_research/HISTORICAL_NUOLJA_STATION_DATA_ACQUISITION_VALIDATION.md",
+      "sha256": "3b24b38ed75f983929004f67cfcc3e7de4bd6b4007b9c26e8cb832225606968f"
+    },
+    "dem_terrain_horizon_profile": {
+      "path": "stage7/stage7_5_terrain_horizon/nuolja_horizon_profile_360deg.csv",
+      "sha256": "0f0dde047c84715b8d325fe66728fd32da12e59b82d86e99dcb261796394c0f3"
+    },
+    "stage7_5_terrain_horizon_method": {
+      "path": "stage7/stage7_5_terrain_horizon/stage7_5_horizon_method.md",
+      "sha256": "c2e2cecb023060d87231a37209388d3872e0e9dd6c099b2d56a1ca3f17ac6b65"
+    }
+  },
+  "governance_confirmations": {
+    "production_code_modified": false,
+    "candidate_f_modified": false,
+    "stage8_1_modified": false,
+    "skgbdt_models_modified": false,
+    "calibration_q_hat_modified": false,
+    "gap19_modified": false,
+    "year_2024_used": false,
+    "year_2023_used_for_evaluation": false
+  },
+  "artifacts_produced": {
+    "evidence_inventory_csv": "results/L2_EXP_06_EVIDENCE_INVENTORY.csv",
+    "boundary_support_matrix_csv": "results/L2_EXP_06_BOUNDARY_SUPPORT_MATRIX.csv",
+    "results_md": "results/L2_EXP_06_RESULTS.md",
+    "domain_evidence_audit_md": "audits/L2_EXP_06_DOMAIN_MEASUREMENT_EVIDENCE_AUDIT.md",
+    "execution_audit_md": "audits/L2_EXP_06_EXECUTION_AUDIT.md",
+    "manifest_json": "audits/L2_EXP_06_MANIFEST.json"
+  }
+}

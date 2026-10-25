@@ -1,0 +1,26 @@
+{
+  "audit_name": "POLARIS_EMS_GAP19_ROLLING_MPC_EBR_HORIZON_AUDIT",
+  "timestamp": "2026-09-25T04:53:20Z",
+  "files": {
+    "README.md": "0c7a159b759e60399181e9bcb0170f4e5ba3e3d20e83c7383a9725e49061ccd3",
+    "RUNTIME_HORIZON_TRACE.md": "7a0ca10af8ac7ccdf637561cfcde7cf304e409584571d483f641fd315060cb06",
+    "FORECASTBUNDLE_HORIZON_TRACE.md": "104a3cab6257daf0f5507f876f23cf7cdac202692a7267ed4845c0e6a9458bf1",
+    "MPC_ROLLING_SEMANTICS.md": "10bae21459a08093a9273274a86eef0d34e23f98ebfbabb0f4d2a3a4428ee1b3",
+    "EBR_LOOKAHEAD_ANALYSIS.md": "5967ae963d007da67540a91afcfc16d3bf14f08138fe5d6f1c9f28d1f3d58333",
+    "MIDNIGHT_CROSSING_ANALYSIS.md": "314b06b9e844495dac0c230eb53a8e48ac61137578770888497a67d72a3cf39b",
+    "END_OF_HORIZON_ANALYSIS.md": "fca453e8d5b5f184ac251408693063e7ddf1951d5beeda02185e8c34872c264f",
+    "CAUSAL_INFORMATION_AUDIT.md": "0a80f2b5b4e907a1f23a48de89d7fba38002067fe80a96b733bffffde1841d68",
+    "30H_REQUIREMENT_DECISION.md": "40e6c0f19a71344a8196278de71cd0d93226528c94f730d4c9f71713c0c4c4e6",
+    "FINAL_ROLLING_HORIZON_VERDICT.md": "94ff4a37740f61cee6c1b56e4b7472e821a8a7f23285f64dfc6ac4f351afbccf"
+  },
+  "execution_status": {
+    "code_modification": "NONE",
+    "schema_modification": "NONE",
+    "config_modification": "NONE",
+    "solver_execution": "NOT_EXECUTED",
+    "ems_execution": "NOT_EXECUTED",
+    "mpc_execution": "NOT_EXECUTED",
+    "ecd_execution": "NOT_EXECUTED",
+    "option_d_execution": "NOT_EXECUTED"
+  }
+}

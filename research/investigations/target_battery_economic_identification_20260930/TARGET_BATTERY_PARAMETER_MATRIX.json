@@ -1,0 +1,171 @@
+{
+  "parameter_matrix_metadata": {
+    "study_id": "target_battery_economic_identification_20260930",
+    "timestamp": "2026-09-30T23:38:00Z",
+    "status": "TARGET_BATTERY_EVIDENCE_INSUFFICIENT"
+  },
+  "matrix_entries": [
+    {
+      "parameter": "Manufacturer",
+      "value": "NOT ESTABLISHED",
+      "unit": "N/A",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "Synthetic fixture uses unassigned reference"
+    },
+    {
+      "parameter": "Model",
+      "value": "NOT ESTABLISHED",
+      "unit": "N/A",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "Synthetic fixture uses unassigned reference"
+    },
+    {
+      "parameter": "Chemistry",
+      "value": "NOT ESTABLISHED",
+      "unit": "N/A",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "Literature assumes LFP or NMC, zero site evidence"
+    },
+    {
+      "parameter": "Nominal Capacity",
+      "value": "NOT ESTABLISHED",
+      "unit": "kWh",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "SYNTHETIC_FIXTURE_ONLY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Synthetic fixture specifies 200.0 kWh; site is meteorological station"
+    },
+    {
+      "parameter": "Usable Capacity",
+      "value": "NOT ESTABLISHED",
+      "unit": "kWh",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "SYNTHETIC_FIXTURE_ONLY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Synthetic fixture assumes 160.0 kWh usable (80% window)"
+    },
+    {
+      "parameter": "Continuous Power",
+      "value": "NOT ESTABLISHED",
+      "unit": "kW",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "SYNTHETIC_FIXTURE_ONLY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Synthetic fixture specifies 50.0 kW"
+    },
+    {
+      "parameter": "Peak Power",
+      "value": "NOT ESTABLISHED",
+      "unit": "kW",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "Unspecified"
+    },
+    {
+      "parameter": "Round-Trip Efficiency",
+      "value": "NOT ESTABLISHED",
+      "unit": "%",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "SYNTHETIC_PROXY_ONLY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Production uses 84.64% synthetic assumption"
+    },
+    {
+      "parameter": "SOC Minimum",
+      "value": "NOT ESTABLISHED",
+      "unit": "%",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "SYNTHETIC_PROXY_ONLY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Production uses 20.0% safety reserve"
+    },
+    {
+      "parameter": "SOC Maximum",
+      "value": "NOT ESTABLISHED",
+      "unit": "%",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "SYNTHETIC_PROXY_ONLY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Production uses 100.0%"
+    },
+    {
+      "parameter": "Operating Temperature",
+      "value": "NOT ESTABLISHED",
+      "unit": "°C",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "Ambient outdoor temp available (-25 to +20°C), cell temp log ABSENT"
+    },
+    {
+      "parameter": "BMS Interface",
+      "value": "NOT ESTABLISHED",
+      "unit": "N/A",
+      "source_tier": "NONE",
+      "status": "VERIFIED_ABSENT",
+      "confidence": "HIGH_FOR_ABSENCE",
+      "contradictions": "No BMS telemetry logged"
+    },
+    {
+      "parameter": "SOH Telemetry",
+      "value": "NOT ESTABLISHED",
+      "unit": "%",
+      "source_tier": "NONE",
+      "status": "VERIFIED_ABSENT",
+      "confidence": "HIGH_FOR_ABSENCE",
+      "contradictions": "No capacity fade logs"
+    },
+    {
+      "parameter": "Cycle Count",
+      "value": "NOT ESTABLISHED",
+      "unit": "cycles",
+      "source_tier": "NONE",
+      "status": "VERIFIED_ABSENT",
+      "confidence": "HIGH_FOR_ABSENCE",
+      "contradictions": "No operational cycle counter logged"
+    },
+    {
+      "parameter": "Cycle-Life Specification",
+      "value": "NOT ESTABLISHED",
+      "unit": "cycles",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "No manufacturer datasheet"
+    },
+    {
+      "parameter": "Replacement Cost",
+      "value": "NOT ESTABLISHED",
+      "unit": "$",
+      "source_tier": "NONE",
+      "status": "NOT IDENTIFIABLE",
+      "confidence": "NONE",
+      "contradictions": "No procurement invoices or logistics quotes"
+    },
+    {
+      "parameter": "Battery Lifetime",
+      "value": "NOT ESTABLISHED",
+      "unit": "years",
+      "source_tier": "NONE",
+      "status": "NOT ESTABLISHED",
+      "confidence": "NONE",
+      "contradictions": "Unspecified"
+    },
+    {
+      "parameter": "Degradation Cost",
+      "value": "NOT ESTABLISHED",
+      "unit": "$/kWh",
+      "source_tier": "TIER_SYNTHETIC",
+      "status": "UNVALIDATED_SYNTHETIC_PROXY",
+      "confidence": "NONE_FOR_TARGET",
+      "contradictions": "Production uses $0.05/kWh synthetic linear proxy"
+    }
+  ]
+}

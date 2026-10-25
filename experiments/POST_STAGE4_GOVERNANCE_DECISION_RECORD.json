@@ -1,0 +1,82 @@
+{
+ "record_id": "GOV-DECISION-REALIZATION-POLICY-2026-10-06",
+ "timestamp_utc": "2026-10-06T00:00:44Z",
+ "status": "DECIDED (research governance); production promotion UNAUTHORIZED; realization-consistency results QUARANTINED",
+ "decision": {
+  "policy": "customer-first realization",
+  "hierarchy": [
+   "customer load service",
+   "battery charging",
+   "curtailment"
+  ]
+ },
+ "governing_realization": {
+  "arm": "A",
+  "semantics": "existing executor surplus semantics used in corrected Stage 4 reproduction"
+ },
+ "quarantined": {
+  "arm": "B",
+  "status": "unapproved storage-first/brownout variant; not a winner",
+  "artifacts_retained_not_deleted": true
+ },
+ "winner": {
+  "candidate": "S",
+  "diesel_reduction_pct": 23.11,
+  "status": "conditional, frozen Stage 4 research winner under Arm A",
+  "conditions": [
+   "Arm A governing",
+   "planner-realization defect unresolved",
+   "S diesel gate not yet officially reported (offline pass)",
+   "provenance of realization run unresolved"
+  ]
+ },
+ "candidate_SW": {
+  "status": "not winner",
+  "arm_A_gate2_delta_pp": -0.5815,
+  "reason": "fails Arm-A proportional reliability Gate 2"
+ },
+ "production_promotion": "UNAUTHORIZED",
+ "affected_experiment_ids": [
+  "EXP-STAGE4-SW-LOW-SUN-2025-HOLDOUT (frozen original; unchanged)",
+  "EXP-STAGE4-CORRECTED-REPRODUCTION-2025-HOLDOUT (Arm A reference; governing)",
+  "EXP-STAGE4-REALIZATION-CONSISTENCY-2025 (Arm A retained; Arm B quarantined; results quarantined)"
+ ],
+ "open_defects": [
+  "planner-vs-realization charging mismatch (Issue 3): requires NEW preregistered study with priced non-critical load"
+ ],
+ "unresolved_governance_items": [
+  "provenance and authorization of realization-consistency run (preregistration never frozen/authorized; prior report stated not run)",
+  "'CC review' cited in decision request not located in repository; not characterized here"
+ ],
+ "next_steps": [
+  "resolve run provenance; log in governance record; do not delete artifacts",
+  "record the CC review contents if it exists",
+  "draft new preregistration pricing non-critical load in planner objective; do not reuse quarantined Arm B as confirmatory",
+  "correct documentation: startup 2.0 L statement, fuel-cap wording, terminal indexing",
+  "keep production promotion blocked"
+ ],
+ "hashes_of_record_sha256": {
+  "POST_STAGE4_REALIZATION_CAUSAL_GOVERNANCE_AUDIT.md": "16cac67c4eb7e98f479ad49f2b29ac2cd9deace423419d476ab366a1fd470491",
+  "POST_STAGE4_REALIZATION_CAUSAL_GOVERNANCE_AUDIT.json": "319f70beb5c76ff81fafdd636c5eaa11b5262d75c4cddd4f42faf542f2281982",
+  "EXP_STAGE4_REALIZATION_CONSISTENCY_PREREGISTRATION.md": "1e9077d4bb3f3828f7040a9fbd39a31e46308c547ce648a80c7579099124cf0b",
+  "EXP_STAGE4_REALIZATION_CONSISTENCY_PREREGISTRATION.json": "076279c227be7c8f866e90226adc719042c3ad7f9977161e5dad4b006a14bb8b",
+  "stage4_realization_consistency_2025/STAGE4_REALIZATION_CONSISTENCY_RESULTS.csv": "87849c7cb882d9cfc21a17759a6abf8043050d47811768daae177250e05f5eb5",
+  "stage4_realization_consistency_2025/STAGE4_REALIZATION_CONSISTENCY_TELEMETRY.csv": "2ccc80687baadeeb2bca05b151b17c9349a21126d76e9fecb71f1cba870a20d9",
+  "stage4_realization_consistency_2025/STAGE4_REALIZATION_CONSISTENCY_AUDIT.json": "328de18f46bdc88e9bab8d2cfe5120bc8114791377814792d23f34cbe1ede898",
+  "stage4_realization_consistency_2025/STAGE4_REALIZATION_CONSISTENCY_EXECUTION_MANIFEST.json": "12099a9503764fd7be36cf4080649721d4ce8186afa2cef11e08f9233bb3126e",
+  "stage4_realization_consistency_2025/plan_consistent_realization.py": "dea4b46b623e83fd7bc5428ef013a3b57b58af756f3397099a5863f6d59cbadd",
+  "stage4_realization_consistency_2025/run_stage4_realization_consistency.py": "ecda2ce1fd464a1373af9131588ad069297b4459ef041278c75b284a6f8cae04",
+  "EXP_STAGE4_CORRECTED_REPRODUCTION_PREREGISTRATION.md": "4f438f466a285d2d230edda168075f883919317922de3a5866dbb7ca5cdac14b",
+  "STAGE4_2025_SW_LOW_SUN_RESEARCH_FREEZE.md": "e73558cfd03acd35fc55d24a055f7ccc6a31d0d973a3cc2e4443a8665ac21cd7",
+  "STAGE4_2025_SW_LOW_SUN_RESEARCH_FREEZE.json": "6b0bb6f7af44ef06731180d50239de222f301fa571c5862d115f7644d3be7b87",
+  "stage4_corrected_reproduction_2025/STAGE4_REPRO_123_ORIGIN_RESULTS.csv": "8c13b904e286e25167a8eca5144e545627b6c598f36716e93fcf9ee95a2ab57e",
+  "stage4_sw_low_sun_2025_holdout/STAGE4_123_ORIGIN_RESULTS.csv": "18d13dec71eab82919c900da52b5248699e4b5b8fa4c4ed8499aff494f4fa62b",
+  "POST_STAGE4_GOVERNANCE_DECISION_RECORD.md": "d3239b3ac9209644606014d1d52e63d2c3103560771b9c6c42924942f93d977f"
+ },
+ "modifications": {
+  "production_code": false,
+  "frozen_artifacts": false,
+  "prior_stage4_results": false,
+  "experiments_run": false
+ }
+}

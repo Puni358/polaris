@@ -1,0 +1,43 @@
+{
+  "stage": "STAGE 8.3 ABISKO OBSERVED DIRECT/DIFFUSE EXPERIMENT",
+  "candidate": "E1 Abisko Direct/Diffuse/Transmissivity Features",
+  "status": "REJECTED",
+  "control_even_cv_metrics": {
+    "mae_w_m2": 35.0690588,
+    "nmae_pct": 35.83306,
+    "rmse_w_m2": 56.69108460000001,
+    "bias_w_m2": 3.5034908000000007
+  },
+  "candidate_even_cv_metrics": {
+    "mae_w_m2": 35.6962858,
+    "nmae_pct": 36.8364,
+    "rmse_w_m2": 57.206395,
+    "bias_w_m2": 4.5096774
+  },
+  "deltas": {
+    "delta_mae_w_m2": 0.6272269999999978,
+    "delta_nmae_pp": 1.0033399999999943,
+    "delta_rmse_w_m2": 0.51531039999999,
+    "delta_bias_w_m2": 1.0061865999999995
+  },
+  "fold_summary": {
+    "folds_improved": 1,
+    "max_degradation_w_m2": 1.334685
+  },
+  "gate_results": {
+    "gate1_mae_improvement_ge_0_20": false,
+    "gate2_folds_improved_ge_4": false,
+    "gate3_max_degradation_le_0_15": false,
+    "gate4_nmae_le_control": false,
+    "gate5_rmse_le_control": false,
+    "all_gates_passed": false
+  },
+  "governance": {
+    "odd_target_accessed": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "odd_used_for_tuning": false,
+    "champion_modified": false,
+    "current_champion": "Stage 8.1 U700+V700 Steering Wind Model"
+  }
+}

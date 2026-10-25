@@ -1,0 +1,11 @@
+{
+  "control_source_verified": true,
+  "stage4_refit_executed": false,
+  "causality_verified": true,
+  "row_alignment_verified": true,
+  "feature_count_verified": true,
+  "leakage_audit_pass": true,
+  "odd_isolation_pass": true,
+  "bootstrap_audit_pass": true,
+  "overall_integrity": "PASS"
+}

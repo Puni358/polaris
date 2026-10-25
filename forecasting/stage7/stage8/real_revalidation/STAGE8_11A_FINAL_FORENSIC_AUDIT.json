@@ -1,0 +1,67 @@
+{
+  "stage": "STAGE 8.11A FINAL FORENSIC AUDIT",
+  "timestamp": "2026-09-12T18:15:00Z",
+  "official_champion": "Stage 8.1 700 hPa Steering Wind Model",
+  "official_frozen_odd_metrics": {
+    "daytime_mae_w_m2": 36.188657,
+    "daytime_nmae_pct": 28.0688,
+    "daytime_rmse_w_m2": 64.219495,
+    "daytime_bias_w_m2": 1.439399,
+    "nighttime_mae_w_m2": 0.0
+  },
+  "audit_findings": {
+    "source_time_semantics": {
+      "t0_definition": "Forecast origin timestamp (00:00:00 UTC)",
+      "h_idx_definition": "Loop index 0..23 mapping to horizon hours 1..24",
+      "valid_time_formula": "t0 + h (e.g. 01:00:00 UTC for H1 to 00:00:00 UTC next day for H24)",
+      "meps_retrieval_lead_steps": "D-1 18Z run lead times +6h (H1) to +29h (H24)",
+      "variable_synchrony": "surface_air_pressure, q_l, and q_i retrieved synchronously for identical valid time t0+h",
+      "per_horizon_computation": "compute_surface_aware_lwp_iwp() evaluated independently per horizon step"
+    },
+    "feature_construction_semantics": "OPTION_B (lwp_latest and iwp_latest are independently calculated at t0+h for each horizon H1..H24)",
+    "horizon_alignment": {
+      "mapping": "h_idx 0 -> H1 (t0 + 1h), h_idx 23 -> H24 (t0 + 24h)",
+      "shift": "Zero hidden shift. 1-to-1 correspondence with POLARIS 24-hour prediction grid."
+    },
+    "causality": {
+      "issuance_check": "MEPS D-1 18Z issuance time <= t0 (00Z) strictly satisfied (6h causality margin)",
+      "target_access": "Zero ODD target reads"
+    },
+    "stage8_1_consumption_verification": {
+      "consumed_cols": ["lwp_latest", "iwp_latest", "lwp_x_cloud"],
+      "join_keys": ["forecast_start", "horizon_hour"],
+      "preserves_horizon_variation": true,
+      "accidental_repetition": false
+    },
+    "duplication_classification": "EXACT_DUPLICATE"
+  },
+  "decision": {
+    "stage_8_11_route_not_novel": "CONFIRMED",
+    "stage_8_11b_justified": false
+  },
+  "evidence_correction": {
+    "sample_audit_discrepancy_detected": true,
+    "correction_artifact": "STAGE8_11A_EVIDENCE_CORRECTION_AUDIT.json"
+  },
+  "scientific_boundary": {
+    "can_conclude": [
+      "The proposed per-horizon MEPS LWP/IWP trajectory feature set is already present in the frozen Stage 8.1 feature pipeline."
+    ],
+    "cannot_conclude": [
+      "Cloud evolution is physically irrelevant to solar forecasting.",
+      "NWP cloud forecast errors are solved or non-existent.",
+      "All cloud temporal dynamics are fully captured by GBDTs.",
+      "Stage 8.11 proved cloud evolution is not the bottleneck."
+    ]
+  },
+  "firewall_verification": {
+    "odd_target_sw_in_reads": 0,
+    "odd_predictions_generated": 0,
+    "odd_metrics_computed": 0,
+    "model_training_conducted": "NONE",
+    "cross_validation_runs": "NONE",
+    "hyperparameter_tuning": "NONE",
+    "official_champion_status": "UNCHANGED",
+    "polaris_master_handoff_modified": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "experiment_name": "EXP-PLANNER-CF-TERMINAL-ONLY-LOWER-BOUND-20261008",
+  "objective": "Quantify effect of restoring ONE soft terminal SOC constraint while keeping EBR fully relaxed",
+  "base_certified_lower_bound_l": 1397.8482963577756,
+  "pc_sw_reference_l": 8729.2446,
+  "target_40_pct_l": 6118.1827,
+  "terminal_row_specification": "E[24] + s_term >= 100000 Wh, s_term >= 0, penalty = 1.0",
+  "relaxation_status": {
+    "ebr_reserve": "FULLY RELAXED",
+    "fuel_inventory": "FULLY RELAXED",
+    "diesel_min": "FULLY RELAXED",
+    "startup_fuel": "0.0 L",
+    "terminal_soc": "RESTORED (SOFT ANCHOR)"
+  },
+  "verdict": "PASS"
+}

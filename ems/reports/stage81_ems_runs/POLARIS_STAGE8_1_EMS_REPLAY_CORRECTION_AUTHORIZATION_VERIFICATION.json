@@ -1,0 +1,32 @@
+{
+  "manifest_id": "POLARIS_STAGE8_1_EMS_REPLAY_CORRECTION_AUTHORIZATION_VERIFICATION",
+  "verification_date_utc": "2026-09-19",
+  "verification_type": "READ-ONLY_AUTHORIZATION_COMPATIBILITY_VERIFICATION",
+  "authorization_compatibility": "PASS",
+  "common_baseline_continuation_status": "AUTHORITATIVELY_IMPLIED",
+  "temporal_alignment": "PASS",
+  "horizon_symmetry": "PASS",
+  "treatment_value_precision": "PASS",
+  "origin_spacing_impact": "NONE",
+  "precision_fix_contract_status": "CONTRACT-PRESERVING",
+  "governance_amendment_required": "NO",
+  "implementation_authorized": "YES",
+  "experiment_execution_authorized": "NO",
+  "authoritative_checksums": {
+    "POLARIS_REPRODUCIBLE_BASELINE_ODD_PREDICTIONS.csv": "a4d288f9bba4a57c045f3671c1a4a78f2be11de7829af6e78103da97fa836a2d",
+    "POLARIS_COMPLETE_MODEL_PREDICTION_INDEX.csv": "b86f19476a9c5fa97df406cedf399a40c33496dc085cb077ab829afa9dd79b3c",
+    "system/forecasting/implementations/s81_solar.py": "22e50f122d2b6f689b94c93498aefe51441d8a1a2636ab1bc4a343189f24be94",
+    "system/schemas/forecast_bundle.py": "899aaa48272fd44691cef4b32939adb931a837c99203db37edfc14a9bb2d2045",
+    "system/runtime/runner.py": "0a1bb4f13134ea5f0637b54de4399cdfee4269bacc9cac29a442b1dfa69a7e69"
+  },
+  "verification_findings": {
+    "common_baseline_continuation": "AUTHORITATIVELY_IMPLIED — LocalBaselineForecastEngine is the frozen control engine. Extending forecast hours beyond t0+24 using baseline clear-sky forecasts is authoritatively implied by the requirement for identical non-treatment forecast inputs across Treatment and Control.",
+    "scientific_contrast": "VERIFIED — Treatment differs from Control strictly in the empirical Stage8.1 solar forecast channel for target hours h <= 24-k. For h > 24-k, both arms receive identical baseline clear-sky forecasts, yielding zero contrast beyond empirical data availability.",
+    "horizon_symmetry": "VERIFIED — Both arms receive complete 24-value forecast vectors at every MPC cycle for identical target timestamps. Stage8.1 empirical values comprise 24-k steps, and baseline continuation comprises k steps.",
+    "temporal_alignment": "VERIFIED — Target timestamps t_target = t0 + k + j align with 1-hour discretization. Remaining-horizon baseline continuation begins at t0 + 25h exactly.",
+    "48_hour_origin_spacing": "VERIFIED (NONE) — 48-hour spacing between origins ensures origin independence across the 2024 ODD split and does not invalidate the N=173 origin experimental unit.",
+    "precision_correction": "CONTRACT-PRESERVING — Updating validator check in s81_solar.py line 98 to compare round(expected_gen, 2) aligns floating point rounding without changing ForecastBundle schema or physical power semantics.",
+    "governance_impact": "NO AMENDMENT REQUIRED — The proposed correction is fully compliant with the existing authorization POLARIS_STAGE8_1_EMS_EMPIRICAL_REPLAY_EXPERIMENT_AUTHORIZATION.md."
+  },
+  "required_next_step": "EXECUTE_GOVERNED_CODE_CORRECTION_FOR_S81_SOLAR_AND_REPLAY_HARNESS"
+}

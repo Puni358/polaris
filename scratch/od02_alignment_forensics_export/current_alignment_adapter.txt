@@ -1,0 +1,118 @@
+================================================================================
+POLARIS FORENSIC EVIDENCE: CURRENT ALIGNMENT ADAPTER IMPLEMENTATION
+Source: `system/evaluation/n6_multi_origin_harness/adapters.py` (Lines 606-696)
+Target Functions: `_align_timeseries_od02`, `_align_n6_bundle_od02`
+Tracking ID: OD02-ALIGNMENT-FORENSICS-2026-10-20
+================================================================================
+
+--------------------------------------------------------------------------------
+VERBATIM SOURCE EXCERPT: lines 606 - 696 of adapters.py
+--------------------------------------------------------------------------------
+606: def _align_timeseries_od02(ts: Any) -> Any:
+607:     """
+608:     Aligns a 24-step forecast timeseries with simulator dispatch steps under
+609:     approved Decision OD-02:
+610:       - Shifts horizons 1..23 (indices 1..23) to dispatch steps 0..22.
+611:       - Appends 0.0 (approved baseline solar fallback) for dispatch step 23.
+612:     Preserves lower/upper bounds and unit if present.
+613:     """
+614:     if ts is None:
+615:         return None
+616:     pts = list(ts.point)
+617:     if len(pts) != 24:
+618:         raise ValueError(
+619:             f"Fail-closed: OD-02 alignment requires 24-step forecast, got {len(pts)}."
+620:         )
+621:     aligned_ts = copy.copy(ts)
+622:     aligned_ts.point = pts[1:] + [0.0]
+623: 
+624:     if hasattr(ts, "lower") and ts.lower is not None:
+625:         low = list(ts.lower)
+626:         if len(low) == 24:
+627:             aligned_ts.lower = low[1:] + [0.0]
+628:         else:
+629:             aligned_ts.lower = aligned_ts.point
+630: 
+631:     if hasattr(ts, "upper") and ts.upper is not None:
+632:         upp = list(ts.upper)
+633:         if len(upp) == 24:
+634:             aligned_ts.upper = upp[1:] + [0.0]
+635:         else:
+636:             aligned_ts.upper = aligned_ts.point
+637: 
+638:     return aligned_ts
+639: 
+640: 
+641: def _align_n6_bundle_od02(bundle: Any) -> Any:
+642:     """
+643:     Aligns a 24-horizon N6 ForecastBundle (or duck-typed equivalent) with
+644:     simulator dispatch steps 0-23 per approved Decision OD-02 (POLARIS Master
+645:     Decision Register v1.9.12 Section 38):
+646: 
+647:       1. Shifts solar forecast horizons 1..23 (indices 1..23) to dispatch steps 0..22.
+648:       2. Injects the approved OD-02 baseline solar fallback (0.0 W/m^2, 0.0 W) for
+649:          dispatch step 23 (horizon h=25 / t0 + 24h).
+650:       3. Advances bundle timestamps (if present) from [t0, t0+23h] to [t0+1h, t0+24h].
+651:       4. Preserves demand, demand_critical, wind_generation, and ebr_target_wh
+652:          unshifted, maintaining exact Policy B and OD-01 parity.
+653: 
+654:     Safe and idempotent: returns unmodified if already marked aligned.
+655:     """
+656:     if bundle is None:
+657:         return None
+658: 
+659:     meta = getattr(bundle, "metadata", None)
+660:     if isinstance(meta, dict) and meta.get("od02_time_aligned"):
+661:         return bundle
+662: 
+663:     aligned_bundle = copy.copy(bundle)
+664: 
+665:     # 1. Align solar_irradiance (indices 1..23 -> 0..22, step 23 -> 0.0)
+666:     if hasattr(bundle, "solar_irradiance") and bundle.solar_irradiance is not None:
+667:         aligned_bundle.solar_irradiance = _align_timeseries_od02(bundle.solar_irradiance)
+668: 
+669:     # 2. Align solar_generation (if present: indices 1..23 -> 0..22, step 23 -> 0.0)
+670:     if hasattr(bundle, "solar_generation") and bundle.solar_generation is not None:
+671:         aligned_bundle.solar_generation = _align_timeseries_od02(bundle.solar_generation)
+672: 
+673:     # 3. Align timestamps (if present and len == 24)
+674:     if hasattr(bundle, "timestamps") and bundle.timestamps is not None and len(bundle.timestamps) == 24:
+675:         try:
+676:             last_ts_str = str(bundle.timestamps[-1])
+677:             dt_last = datetime.fromisoformat(last_ts_str.replace("Z", "+00:00"))
+678:             dt_24 = dt_last + timedelta(hours=1)
+679:             if last_ts_str.endswith("Z"):
+680:                 t_24 = dt_24.strftime("%Y-%m-%dT%H:%M:%SZ")
+681:             else:
+682:                 t_24 = dt_24.isoformat()
+683:             aligned_bundle.timestamps = list(bundle.timestamps[1:]) + [t_24]
+684:         except Exception:
+685:             aligned_bundle.timestamps = list(bundle.timestamps[1:]) + [f"{bundle.timestamps[-1]}+1h"]
+686: 
+687:     # 4. Provenance in metadata
+688:     if isinstance(meta, dict):
+689:         new_meta = dict(meta)
+690:         new_meta["od02_time_aligned"] = True
+691:         aligned_bundle.metadata = new_meta
+692:     elif hasattr(bundle, "metadata"):
+693:         aligned_bundle.metadata = {"od02_time_aligned": True}
+694: 
+695:     return aligned_bundle
+
+--------------------------------------------------------------------------------
+TECHNICAL ANALYSIS OF INPUT/OUTPUT STRUCTURE & BEHAVIOR:
+--------------------------------------------------------------------------------
+1. Fixed Input Length: Requires exactly 24 elements in `ts.point`. Fails closed
+   with `ValueError` if `len(pts) != 24`.
+2. Asymmetric Channel Handling:
+   - `solar_irradiance`: SHIFTED (`pts[1:] + [0.0]`).
+   - `solar_generation`: SHIFTED (`pts[1:] + [0.0]`).
+   - `timestamps`: ADVANCED (`timestamps[1:] + [t_24]`).
+   - `demand`: UNSHIFTED (`aligned_bundle.demand` left untouched).
+   - `demand_critical`: UNSHIFTED (`aligned_bundle.demand_critical` left untouched).
+   - `wind_generation`: UNSHIFTED (`aligned_bundle.wind_generation` left untouched).
+   - `metadata["ebr_target_wh"]`: UNSHIFTED (`metadata` copied without modifying EBR).
+3. Terminal Slot Injection: Slot 23 is forced to `0.0 W/m^2` (and `0.0 W`), discarding
+   any physical irradiance or model forecast at horizon $t_0 + 24\text{h}$.
+4. Idempotency Guard: Checks `bundle.metadata.get("od02_time_aligned")`. If True, returns
+   bundle unmodified, preventing cascade shifts upon multiple adapter calls.

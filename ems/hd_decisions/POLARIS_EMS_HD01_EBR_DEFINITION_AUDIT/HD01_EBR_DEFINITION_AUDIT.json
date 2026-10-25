@@ -1,0 +1,84 @@
+{
+  "audit_metadata": {
+    "title": "POLARIS EMS HD-01 EBR Definition & Target Evidence Audit",
+    "date": "2026-09-22",
+    "mode": "READ-ONLY TECHNICAL EVIDENCE AUDIT",
+    "package": "POLARIS_EMS_HD01_EBR_DEFINITION_AUDIT"
+  },
+  "final_classifications": {
+    "EBR_DEFINITION_STATUS": "READY_FOR_HUMAN_DECISION",
+    "EBR_CAUSALITY_STATUS": "CAUSALLY_VALID",
+    "EBR_SCHEMA_STATUS": "ADDITIVE_EXTENSION_REQUIRED",
+    "HD01_NUMERICAL_TARGET_STATUS": "DERIVABLE",
+    "HD01_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "battery_model_facts": {
+    "capacity_wh": 200000.0,
+    "min_soc_pct": 20.0,
+    "min_e_wh": 40000.0,
+    "max_soc_pct": 95.0,
+    "max_e_wh": 190000.0,
+    "charge_efficiency": 0.92,
+    "discharge_efficiency": 0.92,
+    "max_charge_power_w": 50000.0,
+    "max_discharge_power_w": 50000.0,
+    "deg_penalty_per_wh": 0.00005,
+    "existing_reserve_fields_in_schemas": false
+  },
+  "demand_representation": {
+    "available_now": "A. total station demand only",
+    "proposed_future_structure": "D. five-tier demand vector",
+    "critical_load_baseline_w": 30000.0,
+    "forecast_bundle_demand_type": "aggregate_station_demand_vector_24h"
+  },
+  "stage_2_formulation_audit": {
+    "conceptual_objective": "min sum max(0, E_EBR_target(t) - E_reserve_available(t)) + max(0, E_terminal_target - E(H))",
+    "E_reserve_available_meaning": "Stored cell energy E(t) above technical minimum E_min_tech (40 kWh)",
+    "implemented_in_milp": false
+  },
+  "candidate_definitions": {
+    "CAND_A": {
+      "name": "Fixed SOC EBR",
+      "implementable": true,
+      "requires_numerical_auth": true,
+      "adapts_to_load": false,
+      "duplicates_tech_min": "YES if 20%",
+      "schema_impact": "NO_CHANGE",
+      "causality": "CAUSALLY_VALID"
+    },
+    "CAND_B": {
+      "name": "Fixed Energy EBR",
+      "implementable": true,
+      "requires_numerical_auth": true,
+      "adapts_to_load": false,
+      "duplicates_tech_min": "YES if 40 kWh",
+      "schema_impact": "NO_CHANGE",
+      "causality": "CAUSALLY_VALID"
+    },
+    "CAND_C": {
+      "name": "Critical-Load-Based EBR",
+      "implementable": true,
+      "requires_numerical_auth": false,
+      "numerical_auth_status": "DERIVABLE_FROM_N",
+      "adapts_to_load": true,
+      "duplicates_tech_min": false,
+      "schema_impact": "ADDITIVE_EXTENSION_REQUIRED",
+      "causality": "CAUSALLY_VALID"
+    },
+    "CAND_D": {
+      "name": "Dynamic Exogenous EBR",
+      "implementable": true,
+      "requires_numerical_auth": false,
+      "numerical_auth_status": "NOT_REQUIRED_IF_DYNAMIC",
+      "adapts_to_load": true,
+      "duplicates_tech_min": false,
+      "schema_impact": "ADDITIVE_EXTENSION_REQUIRED",
+      "causality": "CAUSALLY_VALID_IF_EXOGENOUS"
+    }
+  },
+  "architectural_relationships": {
+    "ebr_vs_survivability": "Related but distinct concepts. EBR is rolling intra-horizon Stage-2 target inside 24h MPC. Survivability is full-horizon T_required assessment outside MPC loop.",
+    "ebr_vs_tech_min": "Conceptually distinct. Tech min is 20% cell protection floor (hard bound). EBR is soft resilience target above tech min.",
+    "ebr_vs_terminal_target": "Distinct temporal scopes. E_terminal_target can be derived as E_EBR_target(H)."
+  }
+}

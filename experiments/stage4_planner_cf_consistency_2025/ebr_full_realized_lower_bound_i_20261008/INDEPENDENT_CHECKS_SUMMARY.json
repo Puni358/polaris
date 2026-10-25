@@ -1,0 +1,14 @@
+{
+  "busbar_residual_max_all_origins_w": 7.275957614183426e-12,
+  "battery_residual_max_all_origins_wh": 1.6152625903487206e-09,
+  "ebr_residual_max_all_origins_wh": 1.760781742632389e-09,
+  "fuel_balance_residual_max_all_origins_l": 8.948290997068398e-13,
+  "all_origins_diesel_min_satisfied": true,
+  "all_origins_fuel_inventory_satisfied": true,
+  "all_origins_zero_unmet": true,
+  "all_origins_no_unmet_vars": true,
+  "all_origins_no_terminal_row": true,
+  "all_origins_recompute_ok": true,
+  "all_origins_i_ge_h": true,
+  "all_origins_i_le_pc_sw": true
+}

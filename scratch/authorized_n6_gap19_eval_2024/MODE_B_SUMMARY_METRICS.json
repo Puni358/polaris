@@ -1,0 +1,42 @@
+{
+  "evaluation_scope": "EXECUTE_N6_2024_END_TO_END",
+  "timestamp_completed_utc": "2026-10-20T21:20:19.242275+00:00",
+  "total_wall_runtime_seconds": 503.03,
+  "mode_a_smoke_summary": {
+    "origin": "2024-06-01T00:00:00Z",
+    "status": "OPTIMAL",
+    "diesel_consumed_liters": 36.1971,
+    "baseline_consumed_liters": 27.7419,
+    "delta_liters": 8.4552
+  },
+  "mode_b_campaign_summary": {
+    "origins_in_catalog": 347,
+    "origins_attempted": 347,
+    "origins_completed_optimal": 347,
+    "origins_failed": 0,
+    "temporal_resolution": "Fixed 00:00 UTC daily origins, 24-hour lookahead horizon, 1-hour physical simulation steps",
+    "candidate_n6": {
+      "total_diesel_consumed_liters": 18298.28,
+      "mean_diesel_per_origin_liters": 52.73,
+      "total_generator_run_hours": 1011,
+      "total_solar_energy_used_kwh": 34039.66,
+      "total_solar_curtailed_kwh": 23655.11,
+      "total_unmet_load_kwh": 54141.6
+    },
+    "frozen_baseline": {
+      "total_diesel_consumed_liters": 8120.48,
+      "mean_diesel_per_origin_liters": 23.4,
+      "total_generator_run_hours": 593,
+      "total_unmet_load_kwh": 54141.6
+    },
+    "comparison": {
+      "delta_diesel_consumed_liters": 10177.81,
+      "relative_difference_pct": 125.34
+    }
+  },
+  "cryptographic_manifest": {
+    "n6_model_sha256": "b1b54c93e2dbefdcb562e4229394a2492b299b66426beaafead17f6777395197",
+    "fixture_h10_sha256": "762297aae21c0cb9d79fede0c9b2b266cf0d57e544ee147ffd4aff133e884023",
+    "candidate_k_parquet_sha256": "db9222dbd1bf02ac3dfaeff3b47ccea4990ffeeb27de2318bfe68dbbc3bfea0d"
+  }
+}

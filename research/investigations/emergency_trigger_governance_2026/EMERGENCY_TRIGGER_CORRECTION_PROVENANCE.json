@@ -1,0 +1,33 @@
+{
+  "provenance_metadata": {
+    "project": "POLARIS Energy Management System",
+    "pass": "CORRECTION_PASS_STORED_RESERVE_VS_DELIVERABLE_ENERGY",
+    "timestamp": "2026-09-27T11:37:00Z",
+    "workspace": "/home/punith-bs/01polaris (Copy)",
+    "investigation_folder": "investigations/emergency_trigger_governance_2026"
+  },
+  "verification_status": {
+    "human_governance_decision": "UNCHANGED",
+    "specification_correction": "COMPLETED",
+    "production_modifications": 0,
+    "ecd_modifications": 0,
+    "optimizer_modifications": 0,
+    "battery_configuration_modifications": 0,
+    "campaign_modifications": 0
+  },
+  "reconciled_artifacts": [
+    "EMERGENCY_TRIGGER_MATH_RECONCILIATION.md",
+    "EMERGENCY_TRIGGER_MATH_RECONCILIATION.json",
+    "EMERGENCY_TRIGGER_CORRECTED_TEST_PLAN.md",
+    "EMERGENCY_TRIGGER_RESERVE_SEMANTICS.md",
+    "EMERGENCY_TRIGGER_GOVERNANCE_GAP_REGISTER.md",
+    "EMERGENCY_TRIGGER_CORRECTION_PROVENANCE.json"
+  ],
+  "governance_classification_summary": {
+    "governed_human_decisions": 5,
+    "documented_project_facts": 6,
+    "derived_mathematical_values": 5,
+    "engineering_assumptions": 3,
+    "unresolved_governance_decisions": 2
+  }
+}

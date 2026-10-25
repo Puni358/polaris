@@ -1,0 +1,23 @@
+Item_ID,Item_Name,Formal_Classification,Governance_Layer,Dependency,Validation_Requirement,Status,Compliance_Check
+GAP_01,Power Flow Directionality & Feeder Constraints,IMPLEMENTATION_DEFERRED,Layer C,Feeder single-line & impedance data,Engineering validation of line limits,DEFERRED,PASS
+GAP_02,Load Shedding & Restoration Hysteresis,IMPLEMENTATION_DEFERRED,Layer C,Transient load profile data,Stability & chatter testing,DEFERRED,PASS
+GAP_03,Deferrable Load Scheduling & Preemption,IMPLEMENTATION_DEFERRED,Layer C,Task-level load specifications,Preemption compliance verification,DEFERRED,PASS
+GAP_04,Generator Minimum Run Time & Cycle Limits,IMPLEMENTATION_DEFERRED,Layer C,Genset spec sheets & maintenance policy,Duty cycle simulation test,DEFERRED,PASS
+GAP_05,Frequency / Voltage Support Exclusion,IMPLEMENTATION_SPECIFIED,Layer C,Primary EMS boundary decision,Formal boundary validation,SPECIFIED,PASS
+GAP_06,Primary vs Secondary Feeder Priority Mapping,STATION_DATA_REQUIRED,Layer C,Physical feeder assignment matrix,Feeder mapping audit,DATA_REQUIRED,PASS
+GAP_07,Non-Linear Fuel Curve Linearization,STATION_DATA_REQUIRED,Layer C,Manufacturer fuel consumption curves,Linearization error bound test,DATA_REQUIRED,PASS
+GAP_08,Black-Start & Islanding Transition,GOVERNANCE_CLARIFICATION_REQUIRED,Layer C,Stakeholder black-start policy decision,Islanding control sequence test,GOVERNANCE_REQUIRED,PASS
+GAP_09,Multi-Genset Load Sharing,GOVERNANCE_CLARIFICATION_REQUIRED,Layer C,Stakeholder multi-genset dispatch policy,Equal/merit sharing verification,GOVERNANCE_REQUIRED,PASS
+GAP_10,Stage-2 Dynamic Target Generation,IMPLEMENTATION_DEFERRED,Layer C,Target generation algorithm selection,Target tracking accuracy test,DEFERRED,PASS
+GAP_11,BESS Degradation & C-rate Limits,IMPLEMENTATION_SPECIFIED,Layer C,Battery cell datasheet limits,C-rate & SOC bound check,SPECIFIED,PASS
+GAP_12,Terminal SOC Constraint Stage Placement,IMPLEMENTATION_DEFERRED,Layer C,Stage placement decision (Stage 0/2/3),Terminal SOC compliance check,DEFERRED,PASS
+GAP_13,Renewable Asset Availability Signaling,STATION_DATA_REQUIRED,Layer C,Telemetry & status signal protocol,Loss-of-signal fallback check,DATA_REQUIRED,PASS
+GAP_14,Grid Export / Net Metering Policy,GOVERNANCE_CLARIFICATION_REQUIRED,Layer C,Utility interconnection agreement,Export limitation test,GOVERNANCE_REQUIRED,PASS
+GAP_15,Curtailment Classification & Accounting,IMPLEMENTATION_DEFERRED,Layer C,Physical boundary formulation,Curtailment diagnostic test,DEFERRED,PASS
+GAP_16,Dynamic Reserve Margin Calibration,NUMERICAL_CALIBRATION_REQUIRED,Layer C,Historical forecast error dataset,Margin adequacy verification,CALIBRATION_REQUIRED,PASS
+GAP_17,BESS Value of Lost Energy Calibration,NUMERICAL_CALIBRATION_REQUIRED,Layer C,VOLL economic study data,Penalty weight sensitivity test,CALIBRATION_REQUIRED,PASS
+GAP_18,Temperature Derating of Solar & Battery,STATION_DATA_REQUIRED,Layer C,Site thermal derating curves,Thermal derating validation,DATA_REQUIRED,PASS
+GAP_19,Lexicographic Solver Architecture,IMPLEMENTATION_DEFERRED,Layer C,Solver selection & benchmark,Multi-pass convergence test,DEFERRED,PASS
+GAP_20,Energy Balance Equivalence Formulation,IMPLEMENTATION_SPECIFIED,Layer C,Power conservation math contract,Mass balance error check,SPECIFIED,PASS
+GAP_21,Fail-Closed Control & Fallback Dispatch,GOVERNANCE_CLARIFICATION_REQUIRED,Layer C,Fallback dispatch policy sign-off,Fail-closed safety audit,GOVERNANCE_REQUIRED,PASS
+GAP_22,Communication Latency & Loss Mitigation,STATION_DATA_REQUIRED,Layer C,Network latency & loss profile,Stale data fallback verification,DATA_REQUIRED,PASS

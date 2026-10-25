@@ -1,0 +1,50 @@
+{
+  "audit_name": "POLARIS EMS HD-04 Adverse Renewable Scenario Governance Audit",
+  "timestamp": "2026-09-23T05:20:00Z",
+  "governance_scope": {
+    "decision_id": "HD-04",
+    "topic": "Emergency Mode Detector Adverse Renewable Assumption",
+    "status": "OPEN_HUMAN_DECISION_REQUIRED"
+  },
+  "closed_baseline_decisions": {
+    "HD-01A": "EBR = CRITICAL_LOAD_BASED_DYNAMIC",
+    "HD-01B": "EBR resilience interval N = 6 HOURS",
+    "HD-02": "Terminal target derived from EBR at MPC boundary",
+    "HD-03": "T_required is independent operational survival window",
+    "HD-05": "Normal 5% relative extra-fuel tolerance; Emergency degradation subordinate",
+    "E3_policy": "In emergency mode, dynamically preserve resource with larger survivability margin"
+  },
+  "classifications": {
+    "HD04_EXISTING_GOVERNANCE_SUPPORT": "NOT_ESTABLISHED",
+    "HD04_ZERO_RENEWABLE_TECHNICAL_STATUS": "TECHNICALLY_VALID",
+    "HD04_ZERO_RENEWABLE_CAUSALITY": "CAUSALLY_VALID",
+    "HD04_NORMAL_MPC_SEPARATION": "CLEAN",
+    "HD04_FORECAST_SEMANTIC_CONTAMINATION": "NONE",
+    "HD04_NUMERICAL_POLICY_DEPENDENCY": "NONE",
+    "HD04_HUMAN_DECISION_REQUIRED": "YES",
+    "HD04_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD04_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  },
+  "policy_options": [
+    {
+      "id": "OPTION_A",
+      "name": "Zero-Renewable Emergency Survivability Baseline",
+      "formula": "P_solar = 0, P_wind = 0 in detector",
+      "repository_status": "RECOMMENDED / TECHNICALLY_VALID",
+      "required_inputs": "None",
+      "proposed_wording": "The Emergency Mode Detector shall evaluate station fuel and battery survivability through T_required assuming zero future renewable generation (P_solar = 0, P_wind = 0) as a detector-local stress scenario. Normal MPC optimization shall continue using standard causal forecasts without modification."
+    },
+    {
+      "id": "OPTION_B",
+      "name": "Derated / Quantile Renewable Scenario",
+      "formula": "P_solar = P_quantile, P_wind = P_quantile",
+      "repository_status": "UNAUTHORIZED / NO_AUTHORITATIVE_DATA",
+      "required_inputs": "Quantile percentage or derating factor + probabilistic forecast pipeline"
+    }
+  ],
+  "final_verdict": {
+    "HD04_HUMAN_DECISION_REQUIRED": "YES",
+    "HD04_IMPLEMENTATION_AUTHORIZATION": "NOT_GRANTED",
+    "HD04_EXECUTION_AUTHORIZATION": "NOT_GRANTED"
+  }
+}

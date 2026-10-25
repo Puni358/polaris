@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-09-12T15:54:30Z",
+  "stage": "STAGE 8.1 700 hPa STEERING WIND EXPERIMENT",
+  "audit_type": "FINAL_CHAMPION_CLOSURE_AUDIT",
+  "closure_checks": {
+    "manifest_reconciliation": "PASS",
+    "master_handoff_reconciliation": "PASS",
+    "odd_metrics_reconciliation": "PASS",
+    "bootstrap_reconciliation": "PASS",
+    "stage4_refit_executed": false,
+    "frozen_control_reproduced": true,
+    "feature_set_exact_37": true,
+    "no_post_odd_tuning": true,
+    "no_result_shopping": true,
+    "no_new_experiment_started": true,
+    "artifacts_preserved": true,
+    "statistical_wording_audit": "PASS"
+  },
+  "metrics": {
+    "champion_mae_w_m2": 36.188657,
+    "champion_nmae_pct": 28.0688,
+    "champion_rmse_w_m2": 64.219495,
+    "previous_champion_mae_w_m2": 36.613571,
+    "previous_champion_nmae_pct": 28.3983,
+    "observed_nmae_improvement_pp": -0.3296,
+    "bootstrap_mean_delta_mae": -0.424222,
+    "bootstrap_95_ci": [-0.887999, 0.026372],
+    "bootstrap_fraction_lt_0": 0.9665,
+    "statistically_significant": false,
+    "observed_held_out_improvement": true
+  },
+  "final_status": "FROZEN_OPERATIONAL_CHAMPION",
+  "next_experiment": "NOT_STARTED"
+}

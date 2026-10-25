@@ -1,0 +1,15 @@
+metric,control,treatment,difference_treatment_minus_control
+diesel_generation_kwh,62126.805,95667.521,+33540.716
+fuel_consumption_litres,22486.701,33836.880,+11350.179
+load_served_kwh,75480.485,106024.238,+30543.753
+unmet_load_kwh,40352.215,9808.462,-30543.753
+solar_used_kwh,17130.029,17125.575,-4.454
+wind_used_kwh,12358.639,13142.536,+783.897
+battery_charge_kwh,38940.576,44751.305,+5810.729
+battery_discharge_kwh,27519.510,31266.293,+3746.782
+renewable_curtailment_kwh,9647.175,6835.509,-2811.665
+mean_trajectory_fuel_diff_litres,-,-,+65.6080
+median_trajectory_fuel_diff_litres,-,-,+66.5836
+positive_diff_trajectories,-,-,160
+negative_diff_trajectories,-,-,13
+tied_trajectories,-,-,0

@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-09-13T09:08:43+00:00",
+  "stage": "POLARIS STAGE 8.17A CHAMPION DIAGNOSTIC ANALYSIS",
+  "champion_model": "Stage 8.17A AROME Structural Disagreement Model",
+  "feature_importance": {
+    "LWP_disagreement_perm_imp": 0.024185,
+    "wind_disagreement_700_perm_imp": 0.018412,
+    "more_influential_feature": "LWP_disagreement"
+  },
+  "horizon_breakdown": {
+    "H1_H6_early": { "control_mae": 28.4521, "candidate_mae": 28.0214, "delta_mae": -0.4307 },
+    "H7_H18_peak_daylight": { "control_mae": 45.1245, "candidate_mae": 44.4821, "delta_mae": -0.6424 },
+    "H19_H24_late": { "control_mae": 18.2510, "candidate_mae": 18.0105, "delta_mae": -0.2405 }
+  },
+  "seasonal_breakdown": {
+    "winter": { "control_mae": 2.104058, "candidate_mae": 2.091210, "delta_mae": -0.012848 },
+    "spring": { "control_mae": 40.3541, "candidate_mae": 39.8412, "delta_mae": -0.5129 },
+    "summer": { "control_mae": 49.3114, "candidate_mae": 48.5910, "delta_mae": -0.7204 },
+    "autumn": { "control_mae": 25.7704, "candidate_mae": 25.5601, "delta_mae": -0.2103 }
+  },
+  "irradiance_regimes": {
+    "0_100_w_m2": { "control_mae": 12.1405, "candidate_mae": 12.0801, "delta_mae": -0.0604 },
+    "100_300_w_m2": { "control_mae": 32.5012, "candidate_mae": 32.0810, "delta_mae": -0.4202 },
+    "300_500_w_m2": { "control_mae": 52.8041, "candidate_mae": 51.9835, "delta_mae": -0.8206 },
+    "gt_500_w_m2": { "control_mae": 68.9012, "candidate_mae": 67.9210, "delta_mae": -0.9802 }
+  },
+  "disagreement_regimes": {
+    "low_disagreement": { "delta_mae": -0.07 },
+    "medium_disagreement": { "delta_mae": -0.39 },
+    "high_disagreement": { "delta_mae": -1.00 }
+  },
+  "error_condition": {
+    "extreme_error_mean_wind_disagreement_m_s": 2.85,
+    "normal_error_mean_wind_disagreement_m_s": 1.42,
+    "extreme_error_mean_lwp_disagreement_g_m2": 38.5,
+    "normal_error_mean_lwp_disagreement_g_m2": 14.2
+  },
+  "stage_8_18_recommendation": {
+    "hypothesis": "Joint AROME-Arctic + MEPS Spatial Disagreement Gradient (nabla Disagreement)",
+    "description": "Evaluate spatial gradient of disagreement across 9 adjacent grid cells surrounding Nuolja to capture upwind cloud-edge uncertainty."
+  }
+}

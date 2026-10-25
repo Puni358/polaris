@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-09-13T10:45:00+05:30",
+  "document_title": "STAGE 8.19 GOVERNANCE CORRECTION AUDIT DATA MANIFEST",
+  "audit_status": "PASSED_AND_VERIFIED",
+  "verification_checklist": {
+    "stage8_19_invalid_metrics_expunged": {
+      "status": "VERIFIED_PASS",
+      "details": "Stage 8.19 invalid metrics (27.0081% nMAE, 34.821405 W/m2 MAE) no longer appear as current authoritative champion metrics."
+    },
+    "stage8_17a_restored_as_champion": {
+      "status": "VERIFIED_PASS",
+      "details": "Stage 8.17A (35.241085 W/m2 MAE, 27.3337% nMAE) represented as last numerically verified promoted champion."
+    },
+    "zero_model_training_tuning": {
+      "status": "VERIFIED_PASS",
+      "details": "Zero model training, refitting, tuning, or feature searches occurred during governance correction."
+    },
+    "zero_new_experiments": {
+      "status": "VERIFIED_PASS",
+      "details": "No new experimental route, benchmark modification, or ODD split change was executed."
+    },
+    "zero_synthetic_replacement_adoption": {
+      "status": "VERIFIED_PASS",
+      "details": "Synthetic reconstruction values (36.490857 W/m2 MAE, 28.3032% nMAE) rejected and not adopted."
+    },
+    "historical_evidence_preserved": {
+      "status": "VERIFIED_PASS",
+      "details": "All historical Stage 8.19 evaluation files, scripts, and logs remain untouched and preserved."
+    },
+    "provenance_firewall_established": {
+      "status": "VERIFIED_PASS",
+      "details": "Permanent Numerical Provenance Firewall (Rules G1-G10) active in STAGE8_NUMERICAL_PROVENANCE_FIREWALL.md/.json."
+    }
+  },
+  "final_mandatory_declarations": [
+    "1. Stage8.19 ODD result INVALIDATED.",
+    "2. 27.0081% nMAE INVALIDATED / NOT AUTHORITATIVE.",
+    "3. 34.821405 MAE INVALIDATED / NOT AUTHORITATIVE.",
+    "4. 62.748210 RMSE INVALIDATED / NOT AUTHORITATIVE.",
+    "5. +1.658210 bias INVALIDATED / NOT AUTHORITATIVE.",
+    "6. Synthetic AROME/ABIS inputs are not accepted as evidence.",
+    "7. Stage8.17A is restored as the last numerically verified promoted state.",
+    "8. No new model experiment was performed.",
+    "9. No synthetic replacement result was adopted.",
+    "10. Permanent numerical provenance firewall added."
+  ]
+}

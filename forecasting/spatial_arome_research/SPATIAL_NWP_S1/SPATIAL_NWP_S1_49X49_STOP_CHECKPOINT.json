@@ -1,0 +1,112 @@
+{
+  "checkpoint_name": "SPATIAL_NWP_S1_49X49_STOP_CHECKPOINT",
+  "phase": "POLARIS Phase S1",
+  "timestamp": "2026-09-14T05:04:00Z",
+  "verdict": "49x49 COMPLETED | S1 STOPPED | 64x64 NOT EXECUTED",
+  "governance": {
+    "s0_1_protocol_unchanged": true,
+    "compute_budget_stop_executed": true,
+    "completed_footprints": ["5x5", "9x9", "13x13", "21x21", "33x33", "49x49"],
+    "unexecuted_footprint": "64x64",
+    "odd_data_accessed": false,
+    "post_hoc_tuning_performed": false,
+    "spatial_footprint_promoted": false,
+    "champion_untouched": true,
+    "next_action": "REQUIRES EXPLICIT HUMAN AUTHORIZATION"
+  },
+  "control_reproduction": {
+    "stage": "Stage 8.1 GBDT",
+    "gate6_pass": true,
+    "even_agg_mae_w_m2": 26.35631,
+    "even_agg_nmae_pct": 29.6088,
+    "even_agg_rmse_w_m2": 55.884041,
+    "even_agg_bias_w_m2": -2.045438
+  },
+  "completed_footprints_summary": [
+    {
+      "footprint": "5x5",
+      "span_km": 10.0,
+      "directory": "spatial_arome_research/SPATIAL_NWP_S1/5x5/",
+      "elapsed_time_sec": 151.01,
+      "param_count": 16033,
+      "agg_mae": 33.129507,
+      "delta_mae": 6.773197,
+      "agg_nmae": 37.2019,
+      "agg_rmse": 65.853318,
+      "folds_improved": 0,
+      "all_gates_pass": false
+    },
+    {
+      "footprint": "9x9",
+      "span_km": 20.0,
+      "directory": "spatial_arome_research/SPATIAL_NWP_S1/9x9/",
+      "elapsed_time_sec": 175.94,
+      "param_count": 16033,
+      "agg_mae": 34.017923,
+      "delta_mae": 7.661613,
+      "agg_nmae": 38.2839,
+      "agg_rmse": 65.629166,
+      "folds_improved": 0,
+      "all_gates_pass": false
+    },
+    {
+      "footprint": "13x13",
+      "span_km": 30.0,
+      "directory": "spatial_arome_research/SPATIAL_NWP_S1/13x13/",
+      "elapsed_time_sec": 297.59,
+      "param_count": 16033,
+      "agg_mae": 33.299844,
+      "delta_mae": 6.943534,
+      "agg_nmae": 37.4619,
+      "agg_rmse": 65.718401,
+      "folds_improved": 0,
+      "all_gates_pass": false
+    },
+    {
+      "footprint": "21x21",
+      "span_km": 50.0,
+      "directory": "spatial_arome_research/SPATIAL_NWP_S1/21x21/",
+      "elapsed_time_sec": 534.20,
+      "param_count": 16033,
+      "agg_mae": 33.251522,
+      "delta_mae": 6.895212,
+      "agg_nmae": 37.3144,
+      "agg_rmse": 65.646173,
+      "folds_improved": 0,
+      "all_gates_pass": false
+    },
+    {
+      "footprint": "33x33",
+      "span_km": 80.0,
+      "directory": "spatial_arome_research/SPATIAL_NWP_S1/33x33/",
+      "elapsed_time_sec": 1065.78,
+      "param_count": 16033,
+      "agg_mae": 33.321818,
+      "delta_mae": 6.965508,
+      "agg_nmae": 37.4687,
+      "agg_rmse": 65.579344,
+      "folds_improved": 0,
+      "all_gates_pass": false
+    },
+    {
+      "footprint": "49x49",
+      "span_km": 120.0,
+      "directory": "spatial_arome_research/SPATIAL_NWP_S1/49x49/",
+      "elapsed_time_sec": 4418.64,
+      "param_count": 16033,
+      "agg_mae": 32.63897,
+      "delta_mae": 6.28266,
+      "agg_nmae": 36.6136,
+      "agg_rmse": 64.207044,
+      "folds_improved": 0,
+      "all_gates_pass": false
+    }
+  ],
+  "unexecuted_footprints": [
+    {
+      "footprint": "64x64",
+      "span_km": 157.5,
+      "reason": "Compute-budget auto-stop instruction executed after 49x49 completion"
+    }
+  ]
+}

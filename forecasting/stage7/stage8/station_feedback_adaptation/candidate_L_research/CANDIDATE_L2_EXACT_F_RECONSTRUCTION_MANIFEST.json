@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-10-03T19:36:50.622451+00:00",
+  "purpose": "Historical Candidate F 38-Feature Matrix Rebuild & Frozen Model Replay Pass (2020-2023).",
+  "input_hashes": {
+    "meps_18z": "d376857ba59896873aad2f8d708469f8408d6a5733d126566abef9028f84b5dc",
+    "meps_00z": "96522192f4c40d0715b3921c94c791ebb3d02124028a61bce5d2c7a985577a0f",
+    "horizon_profile": "0f0dde047c84715b8d325fe66728fd32da12e59b82d86e99dcb261796394c0f3",
+    "candidateF_model": "e8b89b2790286ea342b97594961d260bb5fa585cb8b89d7c3c536f30cc0a1c84"
+  },
+  "output_artifacts": {
+    "matrix_csv": "/home/punith-bs/01polaris (Copy)/candidate_L_research/CANDIDATE_L2_EXACT_38_FEATURE_MATRIX_2020_2023.csv",
+    "matrix_sha256": "bb5700c9dc8aa1a81c3007717eb21fb0385aac97937f2b12940d3f99e569edde",
+    "predictions_csv": "/home/punith-bs/01polaris (Copy)/candidate_L_research/CANDIDATE_L2_EXACT_FROZEN_F_PREDICTIONS_2020_2023.csv",
+    "predictions_sha256": "b3e2044bb07e860189cf7eea1cbf239b43c621c4fc876801aa2bad59bf7694a0"
+  },
+  "feature_count": 38,
+  "row_count": 26011,
+  "origin_count": 1369,
+  "split_counts": {
+    "TRAIN_2020_2021": 13889,
+    "VALIDATION_2022": 6935,
+    "BLIND_TEST_2023": 5187
+  },
+  "pre_inference_verifications": {
+    "nan_count": 0,
+    "inf_count": 0,
+    "daytime_zero_context_count": 0,
+    "dynamic_terrain_azimuth_lookup": true,
+    "unsupported_constants_eliminated": true,
+    "station_provenance_verified": true
+  }
+}

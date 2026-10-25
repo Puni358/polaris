@@ -1,0 +1,6 @@
+{
+  "direct_proxy_uses_future_sw_in": false,
+  "diffuse_residual_used_as_feature": false,
+  "actual_sw_in_read_before_prediction_for_val_test": false,
+  "leakage_pass": true
+}

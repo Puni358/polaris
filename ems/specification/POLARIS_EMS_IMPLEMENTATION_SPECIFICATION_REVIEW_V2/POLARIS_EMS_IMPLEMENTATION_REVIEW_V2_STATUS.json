@@ -1,0 +1,41 @@
+{
+  "governance_status": {
+    "review_gate": "POLARIS_EMS_IMPLEMENTATION_SPECIFICATION_REVIEW_V2",
+    "timestamp": "2026-09-22T06:37:30+05:30",
+    "stakeholder_policy": "APPROVED",
+    "objective_specification": "REVIEW_PASSED",
+    "implementation_specification_package": "REVIEW_PASSED_PENDING_AUTHORIZATION",
+    "implementation_specification_correction": "COMPLETE",
+    "implementation_specification_review": "PASS",
+    "implementation_authorization": "NOT_GRANTED",
+    "next_governed_step": "IMPLEMENTATION_AUTHORIZATION_REVIEW",
+    "execution_flags": {
+      "ems_code_modification": false,
+      "milp_modification": false,
+      "configuration_modification": false,
+      "model_modification": false,
+      "model_training": false,
+      "model_inference": false,
+      "milp_execution": false,
+      "mpc_execution": false,
+      "ems_execution": false,
+      "digital_twin_execution": false,
+      "v2_rerun": false,
+      "new_ems_experiment": false
+    },
+    "classification_counts": {
+      "implementation_specified": 3,
+      "implementation_deferred": 8,
+      "station_data_required": 5,
+      "governance_clarification_required": 4,
+      "numerical_calibration_required": 2,
+      "total": 22
+    },
+    "pass_criteria": {
+      "total": 28,
+      "passed": 28,
+      "failed": 0,
+      "all_passed": true
+    }
+  }
+}

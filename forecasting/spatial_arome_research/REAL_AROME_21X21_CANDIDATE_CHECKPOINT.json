@@ -1,0 +1,162 @@
+{
+  "timestamp_utc": "2026-09-14T10:25:08.869265+00:00",
+  "document_title": "POLARIS 21\u00d721 REAL-AROME CANDIDATE EXPERIMENT CHECKPOINT",
+  "verdict": "B \u2014 VALID + EVEN GATES FAIL (REJECTED)",
+  "verdict_text": "The 21\u00d721 Real-AROME candidate failed one or more EVEN promotion gates against the frozen reproducible control baseline.",
+  "training_completed_successfully": true,
+  "candidate_architecture": {
+    "name": "SpatialTemporalCNNGRU",
+    "trainable_parameters": 16033,
+    "spatial_input_shape": "(B, 24, 11, 21, 21)",
+    "tabular_input_shape": "(B, 38)",
+    "hyperparameters": {
+      "optimizer": "AdamW",
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 8,
+      "max_epochs": 300,
+      "patience": 20,
+      "seed": 42
+    }
+  },
+  "frozen_control_reference": {
+    "MAE_24h_W_m2": 25.639318,
+    "nMAE_24h_pct": 19.8865,
+    "RMSE_24h_W_m2": 54.369219,
+    "bias_24h_W_m2": -5.043934,
+    "daytime_MAE_W_m2": 47.451469,
+    "night_MAE_W_m2": 0.672516,
+    "n_total_rows": 4152,
+    "n_daytime_rows": 2216,
+    "n_night_rows": 1936,
+    "fixed_normalizer_W_m2": 128.9284,
+    "fold_metrics": [
+      {
+        "fold": 1,
+        "n_origins": 35,
+        "mae_wm2": 27.358628
+      },
+      {
+        "fold": 2,
+        "n_origins": 35,
+        "mae_wm2": 21.591261
+      },
+      {
+        "fold": 3,
+        "n_origins": 35,
+        "mae_wm2": 25.950014
+      },
+      {
+        "fold": 4,
+        "n_origins": 34,
+        "mae_wm2": 29.003698
+      },
+      {
+        "fold": 5,
+        "n_origins": 34,
+        "mae_wm2": 24.352342
+      }
+    ],
+    "aggregate_oof_mae_W_m2": 25.651189
+  },
+  "candidate_results": {
+    "candidate_metrics": {
+      "MAE_24h_W_m2": 31.3268,
+      "nMAE_24h_pct": 24.2978,
+      "RMSE_24h_W_m2": 62.311886,
+      "bias_24h_W_m2": -3.06515,
+      "daytime_MAE_W_m2": 58.107798,
+      "night_MAE_W_m2": 0.672516,
+      "delta_MAE_vs_ctrl_W_m2": 5.687482,
+      "delta_nMAE_vs_ctrl_pp": 4.4113,
+      "delta_RMSE_vs_ctrl_W_m2": 7.942667,
+      "folds_improved_count": 0,
+      "max_fold_degradation_W_m2": 11.508724
+    },
+    "fold_results": [
+      {
+        "fold": 1,
+        "epochs_run": 66,
+        "cand_24h_mae": 38.867352,
+        "ctrl_24h_mae": 27.358628,
+        "delta_mae": 11.508724,
+        "improved_vs_ctrl": false
+      },
+      {
+        "fold": 2,
+        "epochs_run": 163,
+        "cand_24h_mae": 28.128925,
+        "ctrl_24h_mae": 21.591261,
+        "delta_mae": 6.537664,
+        "improved_vs_ctrl": false
+      },
+      {
+        "fold": 3,
+        "epochs_run": 222,
+        "cand_24h_mae": 31.136938,
+        "ctrl_24h_mae": 25.950014,
+        "delta_mae": 5.186924,
+        "improved_vs_ctrl": false
+      },
+      {
+        "fold": 4,
+        "epochs_run": 160,
+        "cand_24h_mae": 29.600183,
+        "ctrl_24h_mae": 29.003698,
+        "delta_mae": 0.596485,
+        "improved_vs_ctrl": false
+      },
+      {
+        "fold": 5,
+        "epochs_run": 118,
+        "cand_24h_mae": 28.77846,
+        "ctrl_24h_mae": 24.352342,
+        "delta_mae": 4.426118,
+        "improved_vs_ctrl": false
+      }
+    ],
+    "gates": {
+      "G1_delta_mae_threshold": {
+        "value_wm2": 5.687482,
+        "target_wm2": -0.5,
+        "pass": false
+      },
+      "G2_folds_improved": {
+        "value": 0,
+        "target": 4,
+        "pass": false
+      },
+      "G3_max_fold_degradation": {
+        "value_wm2": 11.508724,
+        "target_wm2": 0.5,
+        "pass": false
+      },
+      "G4_nmae_and_rmse_non_degradation": {
+        "cand_nmae_pct": 24.2978,
+        "ctrl_nmae_pct": 19.8865,
+        "cand_rmse_wm2": 62.311886,
+        "ctrl_rmse_wm2": 54.369219,
+        "pass": false
+      },
+      "G5_parser_and_causal_compliance": {
+        "pass": true
+      },
+      "G6_control_reproduction": {
+        "pass": true
+      },
+      "ALL_EVEN_GATES_PASS": false
+    }
+  },
+  "odd_firewall_audit": {
+    "odd_origins_accessed": false,
+    "odd_tensors_loaded": false,
+    "odd_predictions_generated": false,
+    "odd_metrics_evaluated": false,
+    "firewall_status": "UNBREACHED \u2014 174 ODD origins completely sealed"
+  },
+  "cryptographic_hashes": {
+    "candidate_predictions_csv_sha256": "72b54fa89c7daf2d2d23b68cf7aa7c0ffa15b6882e6d451cea24cf1dc627b94b",
+    "experiment_script_sha256": "60a209e41e1f1cfca9eb137092df89b2701d4dffba869b086b449205bf917322",
+    "checkpoint_json_sha256": "ebd90a3875fe13ba14eeab3925b22d783ca9754b20e34275bb5e3d0ae458ec38"
+  }
+}
